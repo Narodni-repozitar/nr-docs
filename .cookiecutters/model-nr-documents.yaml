@@ -1,0 +1,19 @@
+default_context:
+  author_email: miroslav.simek@techlib.cz
+  author_name: Miroslav Simek
+  base_model_package: (none)
+  base_model_use: (none)
+  installation_site: nr-documents
+  model_dir: models/nr-documents
+  model_kind: empty
+  model_name: nr-documents
+  model_package: nr_documents
+  permissions_presets: read_only
+  run_tests: skip
+  update_opensearch: run
+  use_custom_fields: 'yes'
+  use_expandable_fields: 'no'
+  use_files: 'no'
+  use_relations: 'yes'
+  use_requests: 'yes'
+  use_vocabularies: 'yes'

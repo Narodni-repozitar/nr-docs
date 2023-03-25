@@ -1,0 +1,8 @@
+# TODO: add your requests definitions here
+#Example
+#requests:
+#  approve-thesis:
+#    class: thesis.requests.ApproveAction
+#    generate: False
+requests:
+  default_request: {}
