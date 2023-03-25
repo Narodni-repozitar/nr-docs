@@ -1,0 +1,18 @@
+
+[cookiecutter]
+project_name = Document part of the Czech National Repository
+project_shortname = nr-docs
+project_site = https://docs.narodni-repozitar.cz/
+github_repo = 
+description = Document part of the Czech National Repository OARepo Instance
+author_name = Miroslav Simek
+author_email = miroslav.simek@techlib.cz
+year = 2023
+python_version = 3.9
+database = postgresql
+search = opensearch2
+file_storage = S3
+development_tools = yes
+site_code = yes
+use_oarepo_vocabularies = yes
+                

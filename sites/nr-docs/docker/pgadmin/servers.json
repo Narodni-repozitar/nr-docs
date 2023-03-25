@@ -1,0 +1,13 @@
+{
+  "Servers": {
+    "1": {
+      "Name": "nr-docs-db",
+      "Group": "Servers",
+      "Host": "nr-docs-db-1",
+      "Port": 5432,
+      "MaintenanceDB": "postgres",
+      "Username": "nr-docs",
+      "SSLMode": "prefer"
+    }
+  }
+}
