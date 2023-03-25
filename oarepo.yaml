@@ -1,0 +1,23 @@
+config:
+  invenio_cli: .venv/invenio-cli/bin/invenio-cli
+  oarepo_cli: .venv/nrp-cli/bin/nrp-cli
+  packaging: single
+  primary_site_name: nr-documents
+  project_package: nr_documents
+  python: python3.9
+sites:
+  nr-docs:
+    author_email: miroslav.simek@techlib.cz
+    author_name: Miroslav Simek
+    copyright_holder: "N\xE1rodn\xED technick\xE1 knihovna"
+    create_pipenv_in_site: 'yes'
+    init_database: 'yes'
+    repository_name: Document part of the Czech National Repository
+    site_dir: sites/nr-docs
+    site_package: nr_docs
+    site_pipenv_dir: sites/nr-docs/.venv
+    transifex_project: nr_docs
+    use_oarepo_vocabularies: 'yes'
+    www: https://docs.narodni-repozitar.cz/
+    year: '2023'
+type: monorepo
