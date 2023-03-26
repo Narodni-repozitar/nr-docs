@@ -1,0 +1,31 @@
+include *.rst
+include *.md
+include *.sh
+include *.txt
+include *.lock
+include .dockerignore
+include .editorconfig
+include .tx/config
+include LICENSE
+include babel.ini
+include pytest.ini
+recursive-exclude .github/workflows *.yml
+recursive-exclude docs *
+recursive-exclude playground *
+recursive-include examples *
+recursive-include {cookiecutter.app_package} *.html
+recursive-include {cookiecutter.app_package} *.js
+recursive-include {cookiecutter.app_package} *.mo
+recursive-include {cookiecutter.app_package} *.po
+recursive-include {cookiecutter.app_package} *.pot
+recursive-include {cookiecutter.app_package} *.scss
+recursive-exclude tests *
+recursive-include {cookiecutter.app_package} *.gitkeep
+recursive-include {cookiecutter.app_package} *.jsx *.less *.json
+recursive-include {cookiecutter.app_package} *.overrides
+recursive-include {cookiecutter.app_package} *.variables
+recursive-include {cookiecutter.app_package} *.png *.svg
+recursive-include {cookiecutter.app_package} *.css
+recursive-include {cookiecutter.app_package} *.jinja2
+recursive-include {cookiecutter.app_package} *.lock
+recursive-exclude {cookiecutter.app_package} *.DS_Store

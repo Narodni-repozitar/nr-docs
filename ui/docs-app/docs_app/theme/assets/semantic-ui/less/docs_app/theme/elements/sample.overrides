@@ -1,0 +1,6 @@
+/*
+  Define any css overrides in here. Normally this is empty, 
+  user might override them by placing this file to themes/oarepo/elements/sample.overrides
+  inside another application or by placing this file to site/elements/sample.overrides inside
+  the site directory. 
+ */
