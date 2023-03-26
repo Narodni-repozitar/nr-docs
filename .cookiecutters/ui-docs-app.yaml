@@ -1,0 +1,15 @@
+default_context:
+  api_service: nr_documents
+  app_name: docs-app
+  app_package: docs_app
+  author: Miroslav Simek
+  author_email: miroslav.simek@techlib.cz
+  ext_name: DocsAppExtension
+  local_model_path: ../../models/nr-documents
+  model_name: nr-documents
+  model_package: nr_documents
+  repository_url: ''
+  resource: DocsAppResource
+  resource_config: DocsAppResourceConfig
+  ui_serializer_class: nr_documents.resources.records.ui.NrDocumentsUIJSONSerializer
+  url_prefix: /docs/
