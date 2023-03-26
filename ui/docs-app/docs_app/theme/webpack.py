@@ -6,15 +6,10 @@ theme = WebpackThemeBundle(
     default="semantic-ui",
     themes={
         "semantic-ui": dict(
-            entry={
-                "docs_app_components": "./js/docs_app/custom-components.js"
-            },
-            dependencies={
-            },
-            devDependencies={
-            },
-            aliases={
-            }
+            entry={"docs_app_components": "./js/docs_app/custom-components.js"},
+            dependencies={},
+            devDependencies={},
+            aliases={},
         )
     },
 )

@@ -1,39 +1,54 @@
 <!-- place your record detail main content in here ... -->
 
-<h1>{%- value "metadata.title" -%}</h1>
-<hr class="divider"/>
-<dl class="detail-fields">
-{%- field "$schema" -%}
-{%- field "created" -%}
-{%- field "id" -%}
-{%- field "metadata.abstract" -%}
-{%- field "metadata.accessRights" -%}
-{%- field "metadata.accessibility" -%}
-{%- field "metadata.additionalTitles" -%}
-{%- field "metadata.collection" -%}
-{%- field "metadata.contributors" -%}
-{%- field "metadata.creators" -%}
-{%- field "metadata.dateAvailable" -%}
-{%- field "metadata.dateModified" -%}
-{%- field "metadata.events" -%}
-{%- field "metadata.externalLocation" -%}
-{%- field "metadata.fundingReferences" -%}
-{%- field "metadata.geoLocations" -%}
-{%- field "metadata.languages" -%}
-{%- field "metadata.methods" -%}
-{%- field "metadata.notes" -%}
-{%- field "metadata.objectIdentifiers" -%}
-{%- field "metadata.originalRecord" -%}
-{%- field "metadata.publishers" -%}
-{%- field "metadata.relatedItems" -%}
-{%- field "metadata.resourceType" -%}
-{%- field "metadata.rights" -%}
-{%- field "metadata.series" -%}
-{%- field "metadata.subjectCategories" -%}
-{%- field "metadata.subjects" -%}
-{%- field "metadata.systemIdentifiers" -%}
-{%- field "metadata.technicalInfo" -%}
-{%- field "metadata.thesis" -%}
-{%- field "metadata.version" -%}
-{%- field "updated" -%}
+<h1 style="margin-bottom: 1em">{%- value "metadata.title" -%}</h1>
+<dl class="ui very basic table">
+    {%- field "metadata.additionalTitles" -%}
+
+    <dt>{{ _('People') }}</dt>
+    <dd>
+        {%- value "metadata", component="people"-%}
+    </dd>
+    
+    {%- field "metadata.dateAvailable" -%}
+    {%- field "metadata.dateModified" -%}
+    {%- field "metadata.languages" -%}
+    {%- field "metadata.resourceType" -%}
+    {%- field "metadata.subjects", component="subjects" -%}
+    {%- field "metadata.abstract", component="multilingual" -%}
+    {%- field "metadata.thesis.degreeGrantors", component="degree_grantors" -%}
+    {%- field "metadata.thesis.studyFields" -%}
+    {%- field "metadata.accessibility", component="string" -%}
+    {%- field "metadata.originalRecord" -%}
+    {%- field "metadata.publishers" -%}
+    {%- field "metadata.accessRights" -%}
+
 </dl>
+{# tohle zatim asi nikde neni, ale pro jistotu to sem davam #}
+<dl>
+{%- field "metadata.events", component="string" -%}
+{%- field "metadata.externalLocation", component="string" -%}
+{%- field "metadata.fundingReferences", component="string" -%}
+{%- field "metadata.geoLocations", component="string" -%}
+{%- field "metadata.methods", component="string" -%}
+{%- field "metadata.notes", component="string" -%}
+{%- field "metadata.objectIdentifiers", component="string" -%}
+{%- field "metadata.relatedItems", component="string" -%}
+{%- field "metadata.rights", component="string" -%}
+{%- field "metadata.series", component="string" -%}
+{%- field "metadata.subjectCategories", component="string" -%}
+{%- field "metadata.technicalInfo", component="string" -%}
+{%- field "metadata.version", component="string" -%}
+</dl>
+
+<!--
+    System details:
+
+    Id: {{ data.id }}
+    Created: {{ data.created }}
+    Updated: {{ data.updated }}
+    Revision: {{ data.revision_id }}
+    Links: 
+{%- for link in data.links.items() %}
+    {{ link.0 }} = {{ link.1 }}
+{%- endfor %}
+-->

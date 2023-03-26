@@ -1,0 +1,61 @@
+<section aria-label="Collection" class="ui segment">
+  <h2 class="ui small header">{{_('Collection')}}</h2>
+  {% value "metadata.collection" %}
+</section>
+<section id="export-record" aria-label="Export" class="ui segment exports">
+  <h2 class="ui small header">{{_('Export')}}</h2>
+  <div id="recordExportDownload">
+    <div class="ui grid">
+      <div class="eleven wide column">
+        <div
+          role="listbox"
+          aria-expanded="false"
+          class="ui fluid selection dropdown"
+          tabindex="0"
+        >
+          <div
+            aria-atomic="true"
+            aria-live="polite"
+            role="alert"
+            class="divider text"
+          >
+            JSON
+          </div>
+          <i aria-hidden="true" class="dropdown icon"></i>
+          <div class="menu transition">
+            <div
+              style="pointer-events: all"
+              role="option"
+              aria-checked="true"
+              aria-selected="true"
+              class="active selected item"
+            >
+              <span class="text">JSON</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="five wide column pl-0">
+        <a
+          href="/records/{{data['id']}}/export/json"
+          title="Download file"
+          class="ui fluid button"
+          role="button"
+          >Export</a
+        >
+      </div>
+    </div>
+  </div>
+</section>
+<section aria-label="Links" class="ui segment">
+  <h2 class="ui small header">{{_('Links')}}</h2>
+    <dl class="ui">
+        {% for l in data.links.items() %}
+            <dt>{{_(l.0)}}</dt>
+            <dd>
+                <a href="{{l.1}}" target="_blank">{{l.1}}</a>
+            </dd>
+        {% endfor %}
+    </dl>
+  </div>
+</section>

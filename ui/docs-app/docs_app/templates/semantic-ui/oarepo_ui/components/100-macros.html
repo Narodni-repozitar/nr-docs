@@ -1,6 +1,91 @@
 
 
-{%- macro render_multilingual(arg) -%}{{arg}}{%- endmacro -%}
+{%- macro render_multilingual(arg) -%}
+<div class="ui multilingual-tabs">
+    <div class="ui compact text menu separated">
+        {% for item in arg %}
+            <a class="green item {{'active' if loop.first else ''}}" data-tab="{{item|id}}-{{item.lang|e}}">{{item.lang|upper}}</a>
+            {% if not loop.last %}
+            <div class="separator"><div class="vertical-bar"></div></div>
+            {% endif %}
+        {% endfor %}
+    </div>
+    {% for item in arg %}
+    <div class="ui tab {{'active' if loop.first else ''}}" data-tab="{{item|id}}-{{item.lang|e}}">
+        {{ item.value|e }}
+    </div>
+    {% endfor %}
+</div>
+{%- endmacro -%}
+
+{%- macro render_people(arg) -%}
+<div class="ui separated">
+{% for person in arg.creators %}
+    {% value ui=person, component="person" %}
+    {% if not loop.last %}
+    <div class="separator"><div class="vertical-bar"></div></div>
+    {% endif %}
+{% endfor %}
+{% if arg.contributors %}
+    <div class="separator"><div class="vertical-bar"></div><div class="vertical-bar"></div></div>
+    {% for person in arg.contributors %}
+    {% value ui=person, component="person" %}
+    {% if not loop.last %}
+    <div class="separator"><div class="vertical-bar"></div></div>
+    {% endif %}
+{% endfor %}
+{% endif %}
+</div>
+{%- endmacro -%}
+
+{%- macro render_person(arg) -%}
+    {{ arg.fullName}}
+{%- endmacro -%}
+
+{%- macro render_subjects(arg) -%}
+<div class="ui separated">
+    {% for a in arg %}
+    {% if a.valueURI %}
+    <a href="{{a.valueURI|e}}" target="_blank">{{a.subject}}</a>
+    {% else %}
+    {{a.subject}}
+    {% endif %}
+    {% if not loop.last %}
+    <div class="separator"><div class="vertical-bar"></div></div>
+    {% endif %}
+    {% endfor %}
+</div>
+{%- endmacro -%}
+
+{%- macro render_url(arg) -%}<a href="{{arg|e}}">{{arg|e}}</a>{%- endmacro -%}
+
+{%- macro render_degree_grantors(arg) -%}
+{%- for a in arg -%}
+<div>
+    {% value ui=a, component="taxonomy_item" %}
+</div>
+{%- endfor -%}
+{%- endmacro -%}
+
+{%- macro render_edtf(arg) -%}{{arg}}{%- endmacro -%}
+
+{%- macro render_string(arg) -%}{{arg}}{%- endmacro -%}
+
+
+{# -------------------------------------- #}
+{# -------------------------------------- #}
+{# -------------------------------------- #}
+
+
+{%- macro render_access_rights(arg) -%}
+<dl class='detail-subfields'>
+{%- field "id" -%}
+{%- field "title" -%}
+{%- field "@v" -%}
+</dl>
+{%- endmacro -%}
+
+
 
 
 {%- macro render_additionalTitle(arg) -%}
@@ -18,6 +103,24 @@
 {%- field "nameType" -%}
 {%- field "fullName" -%}
 {%- field "authorityIdentifiers" -%}
+</dl>
+{%- endmacro -%}
+
+
+{%- macro render_authority(arg) -%}
+<dl class='detail-subfields'>
+{%- field "id" -%}
+{%- field "title" -%}
+{%- field "@v" -%}
+</dl>
+{%- endmacro -%}
+
+
+{%- macro render_affiliation(arg) -%}
+<dl class='detail-subfields'>
+{%- field "id" -%}
+{%- field "title" -%}
+{%- field "@v" -%}
 </dl>
 {%- endmacro -%}
 
@@ -40,12 +143,21 @@
 {%- endmacro -%}
 
 
+
+
 {%- macro render_identifier(arg) -%}
 <dl class='detail-subfields'>
 {%- field "eventNameOriginal" -%}
 {%- field "eventNameAlternate" -%}
 {%- field "eventDate" -%}
 {%- field "eventLocation" -%}
+</dl>
+{%- endmacro -%}
+
+
+{%- macro render_edtf__45__interval(arg) -%}
+<dl class='detail-subfields'>
+
 </dl>
 {%- endmacro -%}
 
@@ -58,6 +170,15 @@
 {%- endmacro -%}
 
 
+{%- macro render_country(arg) -%}
+<dl class='detail-subfields'>
+{%- field "id" -%}
+{%- field "title" -%}
+{%- field "@v" -%}
+</dl>
+{%- endmacro -%}
+
+
 {%- macro render_external_location(arg) -%}
 <dl class='detail-subfields'>
 {%- field "externalLocationURL" -%}
@@ -66,12 +187,23 @@
 {%- endmacro -%}
 
 
+
+
 {%- macro render_funding_reference(arg) -%}
 <dl class='detail-subfields'>
 {%- field "projectID" -%}
 {%- field "projectName" -%}
 {%- field "fundingProgram" -%}
 {%- field "funder" -%}
+</dl>
+{%- endmacro -%}
+
+
+{%- macro render_funder(arg) -%}
+<dl class='detail-subfields'>
+{%- field "id" -%}
+{%- field "title" -%}
+{%- field "@v" -%}
 </dl>
 {%- endmacro -%}
 
@@ -90,6 +222,7 @@
 {%- field "pointLatitude" -%}
 </dl>
 {%- endmacro -%}
+
 
 
 {%- macro render_nr_object_pid(arg) -%}
@@ -119,6 +252,31 @@
 {%- endmacro -%}
 
 
+{%- macro render_integer(arg) -%}
+<dl class='detail-subfields'>
+
+</dl>
+{%- endmacro -%}
+
+
+{%- macro render_item_relation_type(arg) -%}
+<dl class='detail-subfields'>
+{%- field "id" -%}
+{%- field "title" -%}
+{%- field "@v" -%}
+</dl>
+{%- endmacro -%}
+
+
+{%- macro render_resource_type(arg) -%}
+<dl class='detail-subfields'>
+{%- field "id" -%}
+{%- field "title" -%}
+{%- field "@v" -%}
+</dl>
+{%- endmacro -%}
+
+
 {%- macro render_series(arg) -%}
 <dl class='detail-subfields'>
 {%- field "seriesTitle" -%}
@@ -129,10 +287,9 @@
 
 {%- macro render_subject(arg) -%}
 <dl class='detail-subfields'>
-{%- field "subjectScheme" -%}
-{%- field "subject" -%}
-{%- field "valueURI" -%}
-{%- field "classificationCode" -%}
+{%- field "id" -%}
+{%- field "title" -%}
+{%- field "@v" -%}
 </dl>
 {%- endmacro -%}
 
@@ -147,14 +304,31 @@
 {%- endmacro -%}
 
 
+{%- macro render_boolean(arg) -%}
+<dl class='detail-subfields'>
+
+</dl>
+{%- endmacro -%}
+
+
 {%- macro render_nr_degree_grantor(arg) -%}
 <dl class='detail-subfields'>
-{%- field "detail" -%}
-{%- field "input" -%}
 {%- field "id" -%}
 {%- field "title" -%}
-{%- field "type" -%}
 {%- field "hierarchy" -%}
 {%- field "@v" -%}
 </dl>
+{%- endmacro -%}
+
+{%- macro render_array(arg) -%}
+    {% for a in (arg or {}) -%}
+        {% value ui=a, layout=layout.child %}
+    {%- endfor %}
+{%- endmacro -%}
+
+
+{%- macro render_separated_array(arg) -%}
+    {% for a in (arg or {}) -%}
+        {% value ui=a, layout=layout.child %}
+    {%- endfor %}
 {%- endmacro -%}

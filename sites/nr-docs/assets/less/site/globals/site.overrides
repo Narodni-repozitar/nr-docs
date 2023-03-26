@@ -1,0 +1,49 @@
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../../../fonts/Roboto-Regular.ttf') format('truetype');
+};
+
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 400;
+  src: url('../../../fonts/Roboto-Italic.ttf') format('truetype');
+};
+
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  src: url('../../../fonts/Roboto-Medium.ttf') format('truetype');
+};
+
+
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../../../fonts/Roboto-Bold.ttf') format('truetype');
+};
+
+/*
+ * Global-wide CSS
+ */
+
+body {
+    font-family: Roboto;
+
+    h1, h2, h3, h4, h5 {
+        font-family: Roboto;
+    }
+}
+
+.nr-documents.theme.header {
+  nav {
+    background-image: url('../../../../static/images/background.png');
+    background-color: white;
+    border: 0;
+    border-bottom: 1px solid lightgrey;
+  }
+}

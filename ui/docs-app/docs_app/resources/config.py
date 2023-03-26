@@ -11,7 +11,10 @@ class DocsAppResourceConfig(RecordsUIResourceConfig):
     templates = {
         "detail": {
             "layout": "docs_app/detail.html",
-            "blocks": {"record_main_content": "docs_app/main.html"},
+            "blocks": {
+               "record_main_content": "docs_app/main.html",
+               "record_sidebar": "docs_app/sidebar.html"
+            },
         },
         "search": {"layout": "oarepo_ui/search.html.jinja2"},
     }
