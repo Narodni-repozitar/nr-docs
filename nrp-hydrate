@@ -1,0 +1,48 @@
+#!/bin/bash
+
+set -e
+
+cd $(dirname $0)
+
+PYTHON="${PYTHON:-python3.9}"
+
+if [ ! -d .venv ] ; then
+    mkdir .venv
+fi
+
+if [ ! -d .venv/nrp-cli ] ; then
+    $PYTHON -m venv .venv/nrp-cli
+fi
+
+.venv/nrp-cli/bin/pip install -U setuptools pip wheel
+.venv/nrp-cli/bin/pip install -U oarepo-cli
+
+if [ ! -d .venv/invenio-cli ] ; then
+    $PYTHON -m venv .venv/invenio-cli
+fi
+
+.venv/invenio-cli/bin/pip install -U setuptools pip wheel
+.venv/invenio-cli/bin/pip install -U invenio-cli
+
+for site in sites/* ; do
+(
+  if [ -d $site ] ; then
+     cd $site
+     if [ ! -d .venv ] ; then
+        $PYTHON -m venv .venv
+     fi
+     mkdir -p .venv/var/instance
+     if [ ! -f .venv/var/instance/invenio.cfg ] ; then
+         ln -s $PWD/invenio.cfg .venv/var/instance/invenio.cfg
+     fi
+     cat <<EOF >.invenio.private
+[cli]
+services_setup = False
+instance_path = .venv/var/instance
+EOF
+     # pipenv install
+     ../../invenio-cli assets build
+  fi
+)
+done
+
