@@ -22,7 +22,7 @@ if [ ! -d .venv/invenio-cli ] ; then
 fi
 
 .venv/invenio-cli/bin/pip install -U setuptools pip wheel
-.venv/invenio-cli/bin/pip install -U invenio-cli
+.venv/invenio-cli/bin/pip install -U 'invenio-cli==1.0.16'
 
 for site in sites/* ; do
 (
