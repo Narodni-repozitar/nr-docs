@@ -1,3 +1,4 @@
+<div>
 <section aria-label="Collection" class="ui segment">
   <h2 class="ui small header">{{_('Collection')}}</h2>
   {% value "metadata.collection" %}
@@ -37,12 +38,11 @@
       </div>
       <div class="five wide column pl-0">
         <a
-          href="/records/{{data['id']}}/export/json"
+          href="{{export_path}}/json"
           title="Download file"
           class="ui fluid button"
           role="button"
-          >Export</a
-        >
+          >Export</a>
       </div>
     </div>
   </div>
@@ -59,3 +59,4 @@
     </dl>
   </div>
 </section>
+</div>

@@ -59,3 +59,4 @@ class NrDocumentsUISchema(InvenioUISchema):
     """NrDocumentsUISchema schema."""
 
     metadata = ma_fields.Nested(lambda: NRDocumentMetadataUISchema())
+    links = ma_fields.Raw()
