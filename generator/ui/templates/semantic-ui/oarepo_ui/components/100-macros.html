@@ -67,268 +67,261 @@
 {%- endfor -%}
 {%- endmacro -%}
 
-{%- macro render_edtf(arg) -%}{{arg}}{%- endmacro -%}
-
-{%- macro render_string(arg) -%}{{arg}}{%- endmacro -%}
-
-
-{# -------------------------------------- #}
-{# -------------------------------------- #}
-{# -------------------------------------- #}
-
-
-{%- macro render_access_rights(arg) -%}
-<dl class='detail-subfields'>
-{%- field "id" -%}
-{%- field "title" -%}
-{%- field "@v" -%}
-</dl>
-{%- endmacro -%}
-
-
-
-
 {%- macro render_additionalTitle(arg) -%}
-<dl class='detail-subfields'>
-{%- field "title" -%}
-{%- field "titleType" -%}
-</dl>
+<span title="{{_(arg.titleType)}}">{{ arg.title }}</span>
 {%- endmacro -%}
 
 
-{%- macro render_contributor(arg) -%}
-<dl class='detail-subfields'>
-{%- field "role" -%}
-{%- field "affiliations" -%}
-{%- field "nameType" -%}
-{%- field "fullName" -%}
-{%- field "authorityIdentifiers" -%}
-</dl>
-{%- endmacro -%}
+{# -------------------------------------- #}
+{# -------------------------------------- #}
+{# -------------------------------------- #}
 
-
-{%- macro render_authority(arg) -%}
-<dl class='detail-subfields'>
-{%- field "id" -%}
-{%- field "title" -%}
-{%- field "@v" -%}
-</dl>
-{%- endmacro -%}
-
-
-{%- macro render_affiliation(arg) -%}
-<dl class='detail-subfields'>
-{%- field "id" -%}
-{%- field "title" -%}
-{%- field "@v" -%}
-</dl>
-{%- endmacro -%}
-
-
-{%- macro render_nr_authority_identifier(arg) -%}
-<dl class='detail-subfields'>
-{%- field "identifier" -%}
-{%- field "scheme" -%}
-</dl>
-{%- endmacro -%}
-
-
-{%- macro render_creator(arg) -%}
-<dl class='detail-subfields'>
-{%- field "affiliations" -%}
-{%- field "nameType" -%}
-{%- field "fullName" -%}
-{%- field "authorityIdentifiers" -%}
-</dl>
-{%- endmacro -%}
-
-
-
-
-{%- macro render_identifier(arg) -%}
-<dl class='detail-subfields'>
-{%- field "eventNameOriginal" -%}
-{%- field "eventNameAlternate" -%}
-{%- field "eventDate" -%}
-{%- field "eventLocation" -%}
-</dl>
-{%- endmacro -%}
-
-
-{%- macro render_edtf__45__interval(arg) -%}
-<dl class='detail-subfields'>
-
-</dl>
-{%- endmacro -%}
-
-
-{%- macro render_location(arg) -%}
-<dl class='detail-subfields'>
-{%- field "place" -%}
-{%- field "country" -%}
-</dl>
-{%- endmacro -%}
-
-
-{%- macro render_country(arg) -%}
-<dl class='detail-subfields'>
-{%- field "id" -%}
-{%- field "title" -%}
-{%- field "@v" -%}
-</dl>
-{%- endmacro -%}
-
-
-{%- macro render_external_location(arg) -%}
-<dl class='detail-subfields'>
-{%- field "externalLocationURL" -%}
-{%- field "externalLocationNote" -%}
-</dl>
-{%- endmacro -%}
-
-
-
-
-{%- macro render_funding_reference(arg) -%}
-<dl class='detail-subfields'>
-{%- field "projectID" -%}
-{%- field "projectName" -%}
-{%- field "fundingProgram" -%}
-{%- field "funder" -%}
-</dl>
-{%- endmacro -%}
-
-
-{%- macro render_funder(arg) -%}
-<dl class='detail-subfields'>
-{%- field "id" -%}
-{%- field "title" -%}
-{%- field "@v" -%}
-</dl>
-{%- endmacro -%}
-
-
-{%- macro render_geolocation(arg) -%}
-<dl class='detail-subfields'>
-{%- field "geoLocationPlace" -%}
-{%- field "geoLocationPoint" -%}
-</dl>
-{%- endmacro -%}
-
-
-{%- macro render_geolocation_point(arg) -%}
-<dl class='detail-subfields'>
-{%- field "pointLongitude" -%}
-{%- field "pointLatitude" -%}
-</dl>
-{%- endmacro -%}
-
-
-
-{%- macro render_nr_object_pid(arg) -%}
-<dl class='detail-subfields'>
-{%- field "identifier" -%}
-{%- field "scheme" -%}
-</dl>
-{%- endmacro -%}
-
-
-{%- macro render_related_item(arg) -%}
-<dl class='detail-subfields'>
-{%- field "itemTitle" -%}
-{%- field "itemCreators" -%}
-{%- field "itemContributors" -%}
-{%- field "itemPIDs" -%}
-{%- field "itemURL" -%}
-{%- field "itemYear" -%}
-{%- field "itemVolume" -%}
-{%- field "itemIssue" -%}
-{%- field "itemStartPage" -%}
-{%- field "itemEndPage" -%}
-{%- field "itemPublisher" -%}
-{%- field "itemRelationType" -%}
-{%- field "itemResourceType" -%}
-</dl>
-{%- endmacro -%}
-
-
-{%- macro render_integer(arg) -%}
-<dl class='detail-subfields'>
-
-</dl>
-{%- endmacro -%}
-
-
-{%- macro render_item_relation_type(arg) -%}
-<dl class='detail-subfields'>
-{%- field "id" -%}
-{%- field "title" -%}
-{%- field "@v" -%}
-</dl>
-{%- endmacro -%}
-
-
-{%- macro render_resource_type(arg) -%}
-<dl class='detail-subfields'>
-{%- field "id" -%}
-{%- field "title" -%}
-{%- field "@v" -%}
-</dl>
-{%- endmacro -%}
-
-
-{%- macro render_series(arg) -%}
-<dl class='detail-subfields'>
-{%- field "seriesTitle" -%}
-{%- field "seriesVolume" -%}
-</dl>
-{%- endmacro -%}
-
-
-{%- macro render_subject(arg) -%}
-<dl class='detail-subfields'>
-{%- field "id" -%}
-{%- field "title" -%}
-{%- field "@v" -%}
-</dl>
-{%- endmacro -%}
-
-
-{%- macro render_thesis(arg) -%}
-<dl class='detail-subfields'>
-{%- field "dateDefended" -%}
-{%- field "defended" -%}
-{%- field "degreeGrantors" -%}
-{%- field "studyFields" -%}
-</dl>
-{%- endmacro -%}
-
-
-{%- macro render_boolean(arg) -%}
-<dl class='detail-subfields'>
-
-</dl>
-{%- endmacro -%}
-
-
-{%- macro render_nr_degree_grantor(arg) -%}
-<dl class='detail-subfields'>
-{%- field "id" -%}
-{%- field "title" -%}
-{%- field "hierarchy" -%}
-{%- field "@v" -%}
-</dl>
-{%- endmacro -%}
-
-{%- macro render_array(arg) -%}
-    {% for a in (arg or {}) -%}
-        {% value ui=a, layout=layout.child %}
-    {%- endfor %}
-{%- endmacro -%}
-
-
-{%- macro render_separated_array(arg) -%}
-    {% for a in (arg or {}) -%}
-        {% value ui=a, layout=layout.child %}
-    {%- endfor %}
-{%- endmacro -%}
+{# {%- macro render_access_rights(arg) -%} #}
+{# <dl class='detail-subfields'> #}
+{# {%- field "id" -%} #}
+{# {%- field "title" -%} #}
+{# {%- field "@v" -%} #}
+{# </dl> #}
+{# {%- endmacro -%} #}
+{#  #}
+{#  #}
+{#  #}
+{#  #}
+{#  #}
+{#  #}
+{# {%- macro render_contributor(arg) -%} #}
+{# <dl class='detail-subfields'> #}
+{# {%- field "role" -%} #}
+{# {%- field "affiliations" -%} #}
+{# {%- field "nameType" -%} #}
+{# {%- field "fullName" -%} #}
+{# {%- field "authorityIdentifiers" -%} #}
+{# </dl> #}
+{# {%- endmacro -%} #}
+{#  #}
+{#  #}
+{# {%- macro render_authority(arg) -%} #}
+{# <dl class='detail-subfields'> #}
+{# {%- field "id" -%} #}
+{# {%- field "title" -%} #}
+{# {%- field "@v" -%} #}
+{# </dl> #}
+{# {%- endmacro -%} #}
+{#  #}
+{#  #}
+{# {%- macro render_affiliation(arg) -%} #}
+{# <dl class='detail-subfields'> #}
+{# {%- field "id" -%} #}
+{# {%- field "title" -%} #}
+{# {%- field "@v" -%} #}
+{# </dl> #}
+{# {%- endmacro -%} #}
+{#  #}
+{#  #}
+{# {%- macro render_nr_authority_identifier(arg) -%} #}
+{# <dl class='detail-subfields'> #}
+{# {%- field "identifier" -%} #}
+{# {%- field "scheme" -%} #}
+{# </dl> #}
+{# {%- endmacro -%} #}
+{#  #}
+{#  #}
+{# {%- macro render_creator(arg) -%} #}
+{# <dl class='detail-subfields'> #}
+{# {%- field "affiliations" -%} #}
+{# {%- field "nameType" -%} #}
+{# {%- field "fullName" -%} #}
+{# {%- field "authorityIdentifiers" -%} #}
+{# </dl> #}
+{# {%- endmacro -%} #}
+{#  #}
+{#  #}
+{#  #}
+{#  #}
+{# {%- macro render_identifier(arg) -%} #}
+{# <dl class='detail-subfields'> #}
+{# {%- field "eventNameOriginal" -%} #}
+{# {%- field "eventNameAlternate" -%} #}
+{# {%- field "eventDate" -%} #}
+{# {%- field "eventLocation" -%} #}
+{# </dl> #}
+{# {%- endmacro -%} #}
+{#  #}
+{#  #}
+{# {%- macro render_edtf__45__interval(arg) -%} #}
+{# <dl class='detail-subfields'> #}
+{#  #}
+{# </dl> #}
+{# {%- endmacro -%} #}
+{#  #}
+{#  #}
+{# {%- macro render_location(arg) -%} #}
+{# <dl class='detail-subfields'> #}
+{# {%- field "place" -%} #}
+{# {%- field "country" -%} #}
+{# </dl> #}
+{# {%- endmacro -%} #}
+{#  #}
+{#  #}
+{# {%- macro render_country(arg) -%} #}
+{# <dl class='detail-subfields'> #}
+{# {%- field "id" -%} #}
+{# {%- field "title" -%} #}
+{# {%- field "@v" -%} #}
+{# </dl> #}
+{# {%- endmacro -%} #}
+{#  #}
+{#  #}
+{# {%- macro render_external_location(arg) -%} #}
+{# <dl class='detail-subfields'> #}
+{# {%- field "externalLocationURL" -%} #}
+{# {%- field "externalLocationNote" -%} #}
+{# </dl> #}
+{# {%- endmacro -%} #}
+{#  #}
+{#  #}
+{#  #}
+{#  #}
+{# {%- macro render_funding_reference(arg) -%} #}
+{# <dl class='detail-subfields'> #}
+{# {%- field "projectID" -%} #}
+{# {%- field "projectName" -%} #}
+{# {%- field "fundingProgram" -%} #}
+{# {%- field "funder" -%} #}
+{# </dl> #}
+{# {%- endmacro -%} #}
+{#  #}
+{#  #}
+{# {%- macro render_funder(arg) -%} #}
+{# <dl class='detail-subfields'> #}
+{# {%- field "id" -%} #}
+{# {%- field "title" -%} #}
+{# {%- field "@v" -%} #}
+{# </dl> #}
+{# {%- endmacro -%} #}
+{#  #}
+{#  #}
+{# {%- macro render_geolocation(arg) -%} #}
+{# <dl class='detail-subfields'> #}
+{# {%- field "geoLocationPlace" -%} #}
+{# {%- field "geoLocationPoint" -%} #}
+{# </dl> #}
+{# {%- endmacro -%} #}
+{#  #}
+{#  #}
+{# {%- macro render_geolocation_point(arg) -%} #}
+{# <dl class='detail-subfields'> #}
+{# {%- field "pointLongitude" -%} #}
+{# {%- field "pointLatitude" -%} #}
+{# </dl> #}
+{# {%- endmacro -%} #}
+{#  #}
+{#  #}
+{#  #}
+{# {%- macro render_nr_object_pid(arg) -%} #}
+{# <dl class='detail-subfields'> #}
+{# {%- field "identifier" -%} #}
+{# {%- field "scheme" -%} #}
+{# </dl> #}
+{# {%- endmacro -%} #}
+{#  #}
+{#  #}
+{# {%- macro render_related_item(arg) -%} #}
+{# <dl class='detail-subfields'> #}
+{# {%- field "itemTitle" -%} #}
+{# {%- field "itemCreators" -%} #}
+{# {%- field "itemContributors" -%} #}
+{# {%- field "itemPIDs" -%} #}
+{# {%- field "itemURL" -%} #}
+{# {%- field "itemYear" -%} #}
+{# {%- field "itemVolume" -%} #}
+{# {%- field "itemIssue" -%} #}
+{# {%- field "itemStartPage" -%} #}
+{# {%- field "itemEndPage" -%} #}
+{# {%- field "itemPublisher" -%} #}
+{# {%- field "itemRelationType" -%} #}
+{# {%- field "itemResourceType" -%} #}
+{# </dl> #}
+{# {%- endmacro -%} #}
+{#  #}
+{#  #}
+{# {%- macro render_integer(arg) -%} #}
+{# <dl class='detail-subfields'> #}
+{#  #}
+{# </dl> #}
+{# {%- endmacro -%} #}
+{#  #}
+{#  #}
+{# {%- macro render_item_relation_type(arg) -%} #}
+{# <dl class='detail-subfields'> #}
+{# {%- field "id" -%} #}
+{# {%- field "title" -%} #}
+{# {%- field "@v" -%} #}
+{# </dl> #}
+{# {%- endmacro -%} #}
+{#  #}
+{#  #}
+{# {%- macro render_resource_type(arg) -%} #}
+{# <dl class='detail-subfields'> #}
+{# {%- field "id" -%} #}
+{# {%- field "title" -%} #}
+{# {%- field "@v" -%} #}
+{# </dl> #}
+{# {%- endmacro -%} #}
+{#  #}
+{#  #}
+{# {%- macro render_series(arg) -%} #}
+{# <dl class='detail-subfields'> #}
+{# {%- field "seriesTitle" -%} #}
+{# {%- field "seriesVolume" -%} #}
+{# </dl> #}
+{# {%- endmacro -%} #}
+{#  #}
+{#  #}
+{# {%- macro render_subject(arg) -%} #}
+{# <dl class='detail-subfields'> #}
+{# {%- field "id" -%} #}
+{# {%- field "title" -%} #}
+{# {%- field "@v" -%} #}
+{# </dl> #}
+{# {%- endmacro -%} #}
+{#  #}
+{#  #}
+{# {%- macro render_thesis(arg) -%} #}
+{# <dl class='detail-subfields'> #}
+{# {%- field "dateDefended" -%} #}
+{# {%- field "defended" -%} #}
+{# {%- field "degreeGrantors" -%} #}
+{# {%- field "studyFields" -%} #}
+{# </dl> #}
+{# {%- endmacro -%} #}
+{#  #}
+{#  #}
+{# {%- macro render_boolean(arg) -%} #}
+{# <dl class='detail-subfields'> #}
+{#  #}
+{# </dl> #}
+{# {%- endmacro -%} #}
+{#  #}
+{#  #}
+{# {%- macro render_nr_degree_grantor(arg) -%} #}
+{# <dl class='detail-subfields'> #}
+{# {%- field "id" -%} #}
+{# {%- field "title" -%} #}
+{# {%- field "hierarchy" -%} #}
+{# {%- field "@v" -%} #}
+{# </dl> #}
+{# {%- endmacro -%} #}
+{#  #}
+{# {%- macro render_array(arg) -%} #}
+{#     {% for a in (arg or {}) -%} #}
+{#         {% value ui=a, layout=layout.child %} #}
+{#     {%- endfor %} #}
+{# {%- endmacro -%} #}
+{#  #}
+{#  #}
+{# {%- macro render_separated_array(arg) -%} #}
+{#     {% for a in (arg or {}) -%} #}
+{#         {% value ui=a, layout=layout.child %} #}
+{#     {%- endfor %} #}
+{# {%- endmacro -%} #}

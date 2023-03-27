@@ -40,7 +40,7 @@ for site in sites/* ; do
 services_setup = False
 instance_path = .venv/var/instance
 EOF
-     # pipenv install
+     pipenv install
      ../../invenio-cli assets build
   fi
 )
