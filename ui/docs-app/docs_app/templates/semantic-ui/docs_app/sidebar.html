@@ -47,16 +47,32 @@
     </div>
   </div>
 </section>
-<section aria-label="Links" class="ui segment">
+<!-- section aria-label="Links" class="ui segment">
   <h2 class="ui small header">{{_('Links')}}</h2>
-    <dl class="ui">
-        {% for l in data.links.items() %}
-            <dt>{{_(l.0)}}</dt>
-            <dd>
-                <a href="{{l.1}}" target="_blank">{{l.1}}</a>
-            </dd>
-        {% endfor %}
-    </dl>
+      <dl class="ui">
+          {% for l in data.links.items() %}
+              {% if l.0 != 'self' %}
+                  <dt>{{_("links." + l.0)}}</dt>
+                  <dd>
+                      <a href="{{l.1|replace("/api/", "/")}}" target="_blank">{{l.1|replace("/api/", "/")}}</a>
+                  </dd>
+              {% endif %}
+          {% endfor %}
+      </dl>
   </div>
+</section -->
+
+<section aria-label="API" class="ui segment">
+<h2 class="ui small header">{{_('API')}}</h2>
+  <dl class="ui">
+      {% for l in data.links.items() %}
+          <dt>{{_("api." + l.0)}}</dt>
+          <dd>
+              <a href="{{l.1}}" target="_blank">{{l.1}}</a>
+          </dd>
+      {% endfor %}
+  </dl>
+</div>
 </section>
+
 </div>
