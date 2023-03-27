@@ -1,0 +1,8 @@
+@fontName: 'Roboto';
+@importGoogleFonts: false;
+
+
+/* colors etc */
+
+@navbar_background_image: url('../../../static/images/background.png');
+@navbar_background_color: #fff;
