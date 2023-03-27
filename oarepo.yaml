@@ -52,6 +52,7 @@ ui:
     cookiecutter_resource: DocsAppResource
     cookiecutter_resource_config: DocsAppResourceConfig
     cookiecutter_ui_record_serializer_class: nr_documents.resources.records.ui.NrDocumentsUIJSONSerializer
+    installation_site: nr-docs
     model_name: nr-documents
     ui_dir: ui/docs-app
     url_prefix: /docs/
