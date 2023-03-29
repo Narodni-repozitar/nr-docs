@@ -52,7 +52,10 @@ from oarepo_runtime.i18n.ui_schema import (
 from oarepo_runtime.ui import marshmallow as l10n
 from oarepo_runtime.ui.marshmallow import InvenioUISchema
 from oarepo_runtime.validation import validate_date
-from oarepo_vocabularies.services.ui_schemas import HierarchyUISchema, I18nStrUIField
+from oarepo_vocabularies.services.ui_schemas import (
+    HierarchyUISchema,
+    VocabularyI18nStrUIField,
+)
 
 
 class NrDocumentsUISchema(InvenioUISchema):
