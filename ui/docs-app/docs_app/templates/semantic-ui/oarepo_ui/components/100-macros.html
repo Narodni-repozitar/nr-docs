@@ -68,7 +68,7 @@
 {%- endmacro -%}
 
 {%- macro render_additionalTitle(arg) -%}
-<span title="{{_(arg.titleType)}}">{{ arg.title }}</span>
+<span title="{{_(arg.titleType)}}">{{ arg.title.value }}</span>
 {%- endmacro -%}
 
 
