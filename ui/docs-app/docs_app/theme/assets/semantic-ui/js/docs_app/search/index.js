@@ -1,53 +1,38 @@
 import { createSearchAppInit } from '@js/invenio_search_ui'
 import {
-  RDMCountComponent,
-  RDMEmptyResults,
-  RDMErrorComponent,
-  RDMRecordResultsGridItem,
-  RDMRecordResultsListItemWithState,
-  RDMRecordSearchBarContainer,
-  RDMRecordMultipleSearchBarElement,
-  RDMToggleComponent,
-} from './components'
+  BucketAggregationElement,
+  BucketAggregationValuesElement,
+  CountElement,
+  EmptyResultsElement,
+  ErrorElement,
+  ResultsGridItemWithState,
+  ResultsListItemWithState,
+  SearchAppFacets,
+  SearchAppSearchbarContainer,
+  SearchFiltersToggleElement,
+  SortElement
+} from '@js/oarepo_ui/search'
 import { parametrize, overrideStore } from 'react-overridable'
-import {
-  ContribSearchAppFacets,
-  ContribBucketAggregationElement,
-  ContribBucketAggregationValuesElement,
-} from '@js/invenio_search_ui/components'
-
-const ContribSearchAppFacetsWithConfig = parametrize(ContribSearchAppFacets, {
-  toogle: true,
-})
 
 const appName = 'DocsApp.Search'
 
-const RDMRecordSearchBarContainerWithConfig = parametrize(
-  RDMRecordSearchBarContainer,
-  {
-    appName: appName,
-  },
-)
-
-const RDMRecordResultsListItemWithConfig = parametrize(
-  RDMRecordResultsListItemWithState,
-  {
-    appName: appName,
-  },
-)
+const SearchAppSearchbarContainerWithConfig = parametrize(SearchAppSearchbarContainer, { appName: appName })
+const ResultsListItemWithConfig = parametrize(ResultsListItemWithState, { appName: appName })
+const ResultsGridItemWithConfig = parametrize(ResultsGridItemWithState, { appName: appName })
 
 export const defaultComponents = {
-  [`${appName}.BucketAggregation.element`]: ContribBucketAggregationElement,
-  [`${appName}.BucketAggregationValues.element`]: ContribBucketAggregationValuesElement,
-  [`${appName}.ResultsGrid.item`]: RDMRecordResultsGridItem,
-  [`${appName}.EmptyResults.element`]: RDMEmptyResults,
-  [`${appName}.ResultsList.item`]: RDMRecordResultsListItemWithConfig,
-  [`${appName}.SearchApp.facets`]: ContribSearchAppFacetsWithConfig,
-  [`${appName}.SearchApp.searchbarContainer`]: RDMRecordSearchBarContainerWithConfig,
+  [`${appName}.BucketAggregation.element`]: BucketAggregationElement,
+  [`${appName}.BucketAggregationValues.element`]: BucketAggregationValuesElement,
+  [`${appName}.Count.element`]: CountElement,
+  [`${appName}.EmptyResults.element`]: EmptyResultsElement,
+  [`${appName}.Error.element`]: ErrorElement,
+  [`${appName}.ResultsGrid.item`]: ResultsGridItemWithConfig,
+  [`${appName}.ResultsList.item`]: ResultsListItemWithConfig,
+  [`${appName}.SearchApp.facets`]: SearchAppFacets,
+  [`${appName}.SearchApp.searchbarContainer`]: SearchAppSearchbarContainerWithConfig,
+  [`${appName}.SearchFilters.Toggle.element`]: SearchFiltersToggleElement,
+  // [`${appName}.Sort.element`]: SortElement,
   //   [`${appName}.SearchBar.element`]: RDMRecordMultipleSearchBarElement,
-  [`${appName}.Count.element`]: RDMCountComponent,
-  [`${appName}.Error.element`]: RDMErrorComponent,
-  [`${appName}.SearchFilters.Toggle.element`]: RDMToggleComponent,
 }
 
 const overriddenComponents = overrideStore.getAll()
