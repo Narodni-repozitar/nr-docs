@@ -44,15 +44,24 @@
 
 {%- macro render_subjects(arg) -%}
 <div class="ui separated">
-    {% for a in arg %}
-    {% if a.valueURI %}
-    <a href="{{a.valueURI|e}}" target="_blank">{{a.subject}}</a>
-    {% else %}
-    {{a.subject}}
-    {% endif %}
-    {% if not loop.last %}
-    <div class="separator"><div class="vertical-bar"></div></div>
-    {% endif %}
+    {% for lang, subjects in arg|groupby('subject.lang')%}
+        <div>
+        <div class="ui green basic label lang-tag">
+        {{lang|upper}}
+        </div>
+        {% for a in subjects %}
+        {% if a.valueURI %}
+        <a href="{{a.valueURI|e}}" target="_blank">
+            {{a.subject.value}}
+        </a>
+        {% else %}
+        {{a.subject.value}}
+        {% endif %}
+        {% if not loop.last %}
+        <div class="separator"><div class="vertical-bar"></div></div>
+        {% endif %}
+        {% endfor %}
+        </div>
     {% endfor %}
 </div>
 {%- endmacro -%}
@@ -68,7 +77,12 @@
 {%- endmacro -%}
 
 {%- macro render_additionalTitle(arg) -%}
-<span title="{{_(arg.titleType)}}">{{ arg.title.value }}</span>
+<span title="{{_(arg.titleType)}}">
+    <div class="ui green basic label lang-tag">
+      {{arg.title.lang|upper}}
+    </div>
+    {{ arg.title.value }}
+</span>
 {%- endmacro -%}
 
 
