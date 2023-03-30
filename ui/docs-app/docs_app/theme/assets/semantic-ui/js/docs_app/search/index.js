@@ -10,7 +10,7 @@ import {
   SearchAppFacets,
   SearchAppSearchbarContainer,
   SearchFiltersToggleElement,
-  SortElement
+  SearchAppSort
 } from '@js/oarepo_ui/search'
 import { parametrize, overrideStore } from 'react-overridable'
 
@@ -30,8 +30,8 @@ export const defaultComponents = {
   [`${appName}.ResultsList.item`]: ResultsListItemWithConfig,
   [`${appName}.SearchApp.facets`]: SearchAppFacets,
   [`${appName}.SearchApp.searchbarContainer`]: SearchAppSearchbarContainerWithConfig,
+  [`${appName}.SearchApp.sort`]: SearchAppSort,
   [`${appName}.SearchFilters.Toggle.element`]: SearchFiltersToggleElement,
-  // [`${appName}.Sort.element`]: SortElement,
   //   [`${appName}.SearchBar.element`]: RDMRecordMultipleSearchBarElement,
 }
 
