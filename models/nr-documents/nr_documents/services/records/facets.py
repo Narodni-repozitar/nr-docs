@@ -3,6 +3,12 @@
 from invenio_records_resources.services.records.facets import TermsFacet
 from oarepo_runtime.facets.nested_facet import NestedLabeledFacet
 
+
+def _(x):
+    """Identity function for string extraction."""
+    return x
+
+
 metadata_thesis_dateDefended = TermsFacet(
     field="metadata.thesis.dateDefended", label=_("metadata.thesis.dateDefended.label")
 )
