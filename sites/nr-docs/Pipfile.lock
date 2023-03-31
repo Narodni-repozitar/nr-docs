@@ -1883,11 +1883,11 @@
         },
         "nr-vocabularies": {
             "hashes": [
-                "sha256:31698113b6906a3ba2a0aa503ce7b2ca1ffbd6073bda2e26769c8f7bef32ec7e",
-                "sha256:c65c9ac7fa77bfab21f1651fbde13f144dedf8bc594fe33cad6652c710591675"
+                "sha256:107a00741c4000cb5892e32082fa25e329a1acca4e10ee099e1a6a031093de6b",
+                "sha256:dd2ad31c644ad2080b7c0cb609efa437f37981dd3b6540b3b8f4191b73685238"
             ],
             "index": "pypi",
-            "version": "==2.0.3"
+            "version": "==2.0.4"
         },
         "oarepo": {
             "hashes": [
@@ -1906,26 +1906,26 @@
         },
         "oarepo-runtime": {
             "hashes": [
-                "sha256:2496c97e259df666becd07b0a129eb6e4279322205a11199600811089ad55905",
-                "sha256:fc420ee6b863e1b49da87c5aa65c17a54a979fbdf4052d9b11baae246937bde4"
+                "sha256:ae71c14f794361b9548c3c69d338ea49382f2e2fdeb244e404de30fba6f4f2cc",
+                "sha256:f7ef70cbdff2ca631a29ad7973fde80e0b3ddacec2d1a3fcabde3d3ac3f6990c"
             ],
-            "version": "==1.2.15"
+            "version": "==1.2.17"
         },
         "oarepo-ui": {
             "hashes": [
-                "sha256:b8f6952973deeb48b3ca98ffe0163595d5d1737d0ba3556d5a3c17c261a59a91",
-                "sha256:eeb7e757ecd82801ba899e317192aea1ae5829fdbf5976b5dcdfc58677df6e0b"
+                "sha256:60e8f1136b9e775ff9d8c6135047449e12aa8d4bd820e4fa5e45e01b910f320b",
+                "sha256:7e59b21fbf1cd3ddf78ca45be0a53f71379ce44cf5629efbbb4d12a4f47a2c0c"
             ],
             "index": "pypi",
-            "version": "==5.0.8"
+            "version": "==5.0.11"
         },
         "oarepo-vocabularies": {
             "hashes": [
-                "sha256:1eb6ddea250d0f83ec137d4a0dd9fa1961568f3335e35dae0323447960e1e900",
-                "sha256:256d1ba094f05fc01f1e51adfe657a26e878aeb8a19aad1be6aa20c5a225b75b"
+                "sha256:1125ba5772418776b73cd63e58fafd377eb84c398b32463a2e01d3dfc1d2aba1",
+                "sha256:e568f7be08ad37be5bffd86b66437ec78bfd60b8e0228d1a044163db5b267947"
             ],
             "index": "pypi",
-            "version": "==1.0.9"
+            "version": "==1.0.13"
         },
         "oauthlib": {
             "hashes": [
@@ -2628,11 +2628,11 @@
         },
         "setuptools": {
             "hashes": [
-                "sha256:2ee892cd5f29f3373097f5a814697e397cf3ce313616df0af11231e2ad118077",
-                "sha256:b78aaa36f6b90a074c1fa651168723acbf45d14cb1196b6f02c0fd07f17623b2"
+                "sha256:257de92a9d50a60b8e22abfcbb771571fde0dbf3ec234463212027a4eeecbe9a",
+                "sha256:e728ca814a823bf7bf60162daf9db95b93d532948c4c0bea762ce62f60189078"
             ],
             "markers": "python_version >= '3.7'",
-            "version": "==67.6.0"
+            "version": "==67.6.1"
         },
         "sickle": {
             "hashes": [
@@ -3087,11 +3087,11 @@
         },
         "setuptools": {
             "hashes": [
-                "sha256:2ee892cd5f29f3373097f5a814697e397cf3ce313616df0af11231e2ad118077",
-                "sha256:b78aaa36f6b90a074c1fa651168723acbf45d14cb1196b6f02c0fd07f17623b2"
+                "sha256:257de92a9d50a60b8e22abfcbb771571fde0dbf3ec234463212027a4eeecbe9a",
+                "sha256:e728ca814a823bf7bf60162daf9db95b93d532948c4c0bea762ce62f60189078"
             ],
             "markers": "python_version >= '3.7'",
-            "version": "==67.6.0"
+            "version": "==67.6.1"
         },
         "tomli": {
             "hashes": [
