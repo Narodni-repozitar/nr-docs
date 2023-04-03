@@ -10,7 +10,7 @@ import { Item, Label, Icon } from "semantic-ui-react";
 import { withState, buildUID } from "react-searchkit";
 import { SearchConfigurationContext } from "@js/invenio_search_ui/components";
 
-import { i18next } from "@translations/oarepo_ui/i18next";
+import { i18next } from "@translations/docs_app/i18next";
 
 import { ResultsItemCreators } from "./ResultsItemCreators";
 import { ResultsItemSubjects } from "./ResultsItemSubjects";
@@ -53,7 +53,6 @@ export const ResultsListItemComponent = ({
     ","
   );
 
-  console.log(subjects);
   const filters =
     currentQueryState && Object.fromEntries(currentQueryState.filters);
   const allVersionsVisible = filters?.allversions;

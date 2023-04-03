@@ -14,7 +14,9 @@ theme = WebpackThemeBundle(
                 "react-searchkit": "^2.0.0",
             },
             devDependencies={},
-            aliases={},
+            aliases={
+                "@translations/docs_app": "translations/docs_app",
+            },
         )
     },
 )

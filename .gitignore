@@ -70,3 +70,6 @@ target/
 .DS_Store
 
 .venv-*/
+
+# node modules
+**/*/node_modules

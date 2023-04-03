@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 import _groupBy from "lodash/groupBy";
 import { Label, List } from "semantic-ui-react";
-import { i18next } from "@translations/oarepo_ui/i18next";
+import { i18next } from "@translations/docs_app/i18next";
 
 const SubjectElement = ({ subject }) => {
   const { subject: subjectName, valueURI, subjectScheme } = subject;

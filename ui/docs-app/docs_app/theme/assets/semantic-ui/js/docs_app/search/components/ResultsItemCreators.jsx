@@ -1,7 +1,7 @@
 import React from "react";
 
 import _get from "lodash/get";
-import { i18next } from "@translations/oarepo_ui/i18next";
+import { i18next } from "@translations/docs_app/i18next";
 
 export function ResultsItemCreators({ creators, className }) {
   let spanClass = "creatibutor-wrap separated";

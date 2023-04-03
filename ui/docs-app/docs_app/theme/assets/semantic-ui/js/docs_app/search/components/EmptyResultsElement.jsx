@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import { Grid, Header, Button, Icon, Segment } from "semantic-ui-react";
-import { i18next } from "@translations/oarepo_ui/i18next";
+import { i18next } from "@translations/docs_app/i18next";
 
 export const EmptyResultsElement = ({
   queryString,
