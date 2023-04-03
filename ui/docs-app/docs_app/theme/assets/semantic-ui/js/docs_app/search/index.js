@@ -3,15 +3,17 @@ import {
   BucketAggregationElement,
   BucketAggregationValuesElement,
   CountElement,
-  EmptyResultsElement,
   ErrorElement,
-  ResultsGridItemWithState,
-  ResultsListItemWithState,
   SearchAppFacets,
   SearchAppSearchbarContainer,
   SearchFiltersToggleElement,
   SearchAppSort
 } from '@js/oarepo_ui/search'
+import {
+  EmptyResultsElement,
+  ResultsGridItemWithState,
+  ResultsListItemWithState
+} from './components'
 import { parametrize, overrideStore } from 'react-overridable'
 
 const appName = 'DocsApp.Search'
