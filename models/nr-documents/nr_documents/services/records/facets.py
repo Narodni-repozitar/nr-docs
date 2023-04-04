@@ -804,10 +804,11 @@ metadata_systemIdentifiers_scheme = TermsFacet(
     label=_("metadata.systemIdentifiers.scheme.label"),
 )
 
-
-metadata_events_eventDate = TermsFacet(
-    field="metadata.events.eventDate", label=_("metadata.events.eventDate.label")
-)
+# TODO: generate proper facet type
+# ! date_range cannot be of type TermsFacet
+# metadata_events_eventDate = TermsFacet(
+#     field="metadata.events.eventDate", label=_("metadata.events.eventDate.label")
+# )
 
 
 metadata_events_eventLocation_place = TermsFacet(

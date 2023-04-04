@@ -297,7 +297,9 @@ class NrDocumentsSearchOptions(InvenioSearchOptions):
             facets.metadata_systemIdentifiers_identifier
         ),
         "metadata_systemIdentifiers_scheme": facets.metadata_systemIdentifiers_scheme,
-        "metadata_events_eventDate": facets.metadata_events_eventDate,
+        # TODO: generate proper facet type
+        # ! date_range cannot be of type TermsFacet
+        # "metadata_events_eventDate": facets.metadata_events_eventDate,
         "metadata_events_eventLocation_place": (
             facets.metadata_events_eventLocation_place
         ),

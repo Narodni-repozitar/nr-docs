@@ -21,3 +21,6 @@ class DocsAppResourceConfig(RecordsUIResourceConfig):
         },
         "search": {"layout": "docs_app/search.html"},
     }
+
+    def search_active_facets(self, api_config, identity):
+        return list(self.search_available_facets(api_config, identity).keys())
