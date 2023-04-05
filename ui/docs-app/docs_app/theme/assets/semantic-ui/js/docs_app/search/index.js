@@ -5,6 +5,8 @@ import {
   CountElement,
   ErrorElement,
   SearchAppFacets,
+  SearchAppLayout,
+  SearchAppResultOptions,
   SearchAppSearchbarContainer,
   SearchFiltersToggleElement,
   SearchAppSort
@@ -31,8 +33,10 @@ export const defaultComponents = {
   [`${appName}.ResultsGrid.item`]: ResultsGridItemWithConfig,
   [`${appName}.ResultsList.item`]: ResultsListItemWithConfig,
   [`${appName}.SearchApp.facets`]: SearchAppFacets,
+  [`${appName}.SearchApp.layout`]: SearchAppLayout,
   [`${appName}.SearchApp.searchbarContainer`]: SearchAppSearchbarContainerWithConfig,
   [`${appName}.SearchApp.sort`]: SearchAppSort,
+  [`${appName}.SearchApp.resultOptions`]: SearchAppResultOptions,
   [`${appName}.SearchFilters.Toggle.element`]: SearchFiltersToggleElement,
   //   [`${appName}.SearchBar.element`]: RDMRecordMultipleSearchBarElement,
 }

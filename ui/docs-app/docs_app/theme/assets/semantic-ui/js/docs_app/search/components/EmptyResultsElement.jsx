@@ -9,10 +9,6 @@ export const EmptyResultsElement = ({
   searchPath,
   resetQuery,
 }) => {
-  const searchAppConfig = useContext(SearchConfigurationContext);
-
-  console.log(searchAppConfig);
-
   return (
     <Grid>
       <Grid.Row centered>
