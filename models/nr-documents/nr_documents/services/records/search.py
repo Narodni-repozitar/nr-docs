@@ -1,11 +1,7 @@
 from invenio_records_resources.services import SearchOptions as InvenioSearchOptions
+from flask_babelex import lazy_gettext as _
 
 from . import facets
-
-
-def _(x):
-    """Identity function for string extraction."""
-    return x
 
 
 class NrDocumentsSearchOptions(InvenioSearchOptions):

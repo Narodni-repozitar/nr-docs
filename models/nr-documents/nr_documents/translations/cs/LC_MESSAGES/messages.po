@@ -1840,3 +1840,12 @@ msgstr "Schema záznamu"
 
 msgid "$schema.hint"
 msgstr ""
+
+msgid "Best match"
+msgstr "Nejlepší shoda"
+
+msgid "Newest"
+msgstr "Nejnovější"
+
+msgid "Oldest"
+msgstr "Nejstarší"
