@@ -1,8 +1,5 @@
 from invenio_records_resources.services import RecordLink
 from invenio_records_resources.services import RecordServiceConfig
-from invenio_records_resources.services import (
-    RecordServiceConfig as InvenioRecordServiceConfig,
-)
 from invenio_records_resources.services import pagination_links
 from oarepo_runtime.config.service import PermissionsPresetsConfigMixin
 

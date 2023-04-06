@@ -49,9 +49,7 @@
   '<libraryName>/@{theme}/@{type}s/@{element}.variables';
  */
 
- @import (optional, multiple)
- 'docs_app/theme/@{type}s/@{element}.variables';
-
+@import (optional, multiple) 'docs_app/theme/@{type}s/@{element}.variables';
 
 /* Invenio-theme Theme */
 @import (optional, multiple) 'themes/invenio/@{type}s/@{element}.variables';
@@ -61,7 +59,6 @@
 
 /* Site Theme */
 @import (optional, multiple) '@{siteFolder}/@{type}s/@{element}.variables';
-
 
 /*******************************
              Mix-ins
@@ -84,13 +81,13 @@
   @import (optional, multiple)
     '@{themesFolder}/@{theme}/@{type}s/@{element}.overrides';
 
-/* Your components
+  /* Your components
   @import (optional, multiple)
     '<libraryName>/@{theme}/@{type}s/@{element}.overrides';
  */
 
- @import (optional, multiple)
- 'docs_app/theme/@{type}s/@{element}.overrides';
+  @import (optional, multiple) 'oarepo_ui/theme/@{type}s/@{element}.overrides';
+  @import (optional, multiple) 'docs_app/theme/@{type}s/@{element}.overrides';
 
   @import (optional, multiple) 'themes/invenio/@{type}s/@{element}.overrides';
   @import (optional, multiple) 'themes/oarepo/@{type}s/@{element}.overrides';

@@ -1,0 +1,15 @@
+{%- set title = _("Document search results") %}
+{%- extends config.BASE_TEMPLATE %}
+
+{%- block javascript %}
+    {{ super() }}
+    {{ webpack['docs_app_components.js']}}
+    {{ webpack['docs_app_components.css']}}
+    {{ webpack['docs_app_search.js'] }}
+{%- endblock %}
+
+{%- block page_body %}
+<div class="ui container">
+  <div data-invenio-search-config='{{ search_app_config(app_id="DocsApp.Search") | tojson }}'></div>
+</div>
+{%- endblock page_body %}

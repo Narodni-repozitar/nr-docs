@@ -3,9 +3,6 @@
         "properties": {
             "metadata": {
                 "properties": {
-                    "title": {
-                        "type": "text"
-                    },
                     "thesis": {
                         "properties": {
                             "dateDefended": {
@@ -71,10 +68,18 @@
                     "collection": {
                         "type": "keyword"
                     },
+                    "title": {
+                        "type": "text",
+                        "fields": {
+                            "keyword": {
+                                "type": "keyword"
+                            }
+                        }
+                    },
                     "additionalTitles": {
                         "properties": {
                             "title": {
-                                "type": "object",
+                                "type": "nested",
                                 "properties": {
                                     "lang": {
                                         "type": "keyword"
@@ -322,7 +327,7 @@
                                 "type": "keyword"
                             },
                             "subject": {
-                                "type": "object",
+                                "type": "nested",
                                 "properties": {
                                     "lang": {
                                         "type": "keyword"
@@ -428,7 +433,7 @@
                         "type": "text"
                     },
                     "abstract": {
-                        "type": "object",
+                        "type": "nested",
                         "properties": {
                             "lang": {
                                 "type": "keyword"
@@ -461,7 +466,7 @@
                         }
                     },
                     "methods": {
-                        "type": "object",
+                        "type": "nested",
                         "properties": {
                             "lang": {
                                 "type": "keyword"
@@ -494,7 +499,7 @@
                         }
                     },
                     "technicalInfo": {
-                        "type": "object",
+                        "type": "nested",
                         "properties": {
                             "lang": {
                                 "type": "keyword"
@@ -917,7 +922,7 @@
                         "type": "object"
                     },
                     "accessibility": {
-                        "type": "object",
+                        "type": "nested",
                         "properties": {
                             "lang": {
                                 "type": "keyword"
