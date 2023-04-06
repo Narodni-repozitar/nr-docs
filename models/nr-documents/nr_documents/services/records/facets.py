@@ -2,8 +2,9 @@
 from flask_babelex import lazy_gettext as _
 from invenio_records_resources.services.records.facets import TermsFacet
 from oarepo_runtime.facets.nested_facet import NestedLabeledFacet
+from oarepo_runtime.facets.date import DateFacet, DateTimeFacet, EDTFFacet
 
-metadata_thesis_dateDefended = TermsFacet(
+metadata_thesis_dateDefended = DateFacet(
     field="metadata.thesis.dateDefended", label=_("metadata/thesis/dateDefended.label")
 )
 
@@ -249,12 +250,12 @@ metadata_resourceType__version = TermsFacet(
 )
 
 
-metadata_dateAvailable = TermsFacet(
+metadata_dateAvailable = EDTFFacet(
     field="metadata.dateAvailable", label=_("metadata/dateAvailable.label")
 )
 
 
-metadata_dateModified = TermsFacet(
+metadata_dateModified = EDTFFacet(
     field="metadata.dateModified", label=_("metadata/dateModified.label")
 )
 
@@ -799,7 +800,7 @@ metadata_systemIdentifiers_scheme = TermsFacet(
 )
 
 
-metadata_events_eventDate = TermsFacet(
+metadata_events_eventDate = EDTFFacet(
     field="metadata.events.eventDate", label=_("metadata/events/eventDate.label")
 )
 
@@ -831,10 +832,10 @@ metadata_events_eventLocation_country__version = TermsFacet(
 _id = TermsFacet(field="id", label=_("id.label"))
 
 
-created = TermsFacet(field="created", label=_("created.label"))
+created = DateTimeFacet(field="created", label=_("created.label"))
 
 
-updated = TermsFacet(field="updated", label=_("updated.label"))
+updated = DateTimeFacet(field="updated", label=_("updated.label"))
 
 
 _schema = TermsFacet(field="$schema", label=_("$schema.label"))
