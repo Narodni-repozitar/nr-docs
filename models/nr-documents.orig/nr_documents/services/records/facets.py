@@ -3,6 +3,7 @@ from flask_babelex import lazy_gettext as _
 from invenio_records_resources.services.records.facets import TermsFacet
 from oarepo_runtime.facets.nested_facet import NestedLabeledFacet
 from oarepo_runtime.facets.date import DateFacet, DateTimeFacet, EDTFFacet
+from oarepo_runtime.facets.enum import EnumTermsFacet
 
 metadata_thesis_dateDefended = DateFacet(
     field="metadata.thesis.dateDefended", label=_("metadata/thesis/dateDefended.label")
@@ -93,7 +94,7 @@ metadata_additionalTitles_title_value_keyword = NestedLabeledFacet(
 )
 
 
-metadata_additionalTitles_titleType = TermsFacet(
+metadata_additionalTitles_titleType = EnumTermsFacet(
     field="metadata.additionalTitles.titleType",
     label=_("metadata/additionalTitles/titleType.label"),
 )
@@ -163,7 +164,7 @@ metadata_contributors_role_id = TermsFacet(
 )
 
 
-metadata_contributors_role_type = TermsFacet(
+metadata_contributors_role_type = EnumTermsFacet(
     field="metadata.contributors.role.type",
     label=_("metadata/contributors/role/type.label"),
 )
