@@ -33,7 +33,7 @@ export function ResultsItemSubjects({ subjects, maxCount = 6, ...rest }) {
       <Label className="green basic lang-tag" size="tiny">
         {lang.toUpperCase()}
       </Label>
-      <List horizontal divided size="tiny" style={{ display: "inline" }}>
+      <List horizontal divided size="tiny" className="inline">
         {values.slice(0, maxCount).map((sub) => (
           <List.Item
             key={`${sub.subject.lang}-${sub.subject.value}-${sub.valueURI}`}

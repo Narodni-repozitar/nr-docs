@@ -6,14 +6,16 @@ import _get from "lodash/get";
 import _join from "lodash/join";
 import _truncate from "lodash/truncate";
 
-import { Item, Label, Icon } from "semantic-ui-react";
+import { Grid, Item, Label, Icon } from "semantic-ui-react";
 import { withState, buildUID } from "react-searchkit";
 import { SearchConfigurationContext } from "@js/invenio_search_ui/components";
 
 import { i18next } from "@translations/docs_app/i18next";
 
-import { ResultsItemCreators } from "./ResultsItemCreators";
+import { ResultsItemAccessStatus } from "./ResultsItemAccessStatus";
+import { ResultsItemCreatibutors } from "./ResultsItemCreatibutors";
 import { ResultsItemSubjects } from "./ResultsItemSubjects";
+import { ResultsItemLicense } from "./ResultsItemLicense";
 
 export const ResultsListItemComponent = ({
   currentQueryState,
@@ -21,11 +23,12 @@ export const ResultsListItemComponent = ({
   appName,
 }) => {
   const searchAppConfig = useContext(SearchConfigurationContext);
-  const accessStatusId = _get(result, "ui.access_status.id", "open");
   const accessStatus = _get(result, "metadata.accessRights.title", "Open");
-  const accessStatusIcon = _get(result, "ui.access_status.icon", "unlock");
   const createdDate = _get(result, "created", "No creation date found.");
-  const creators = result.metadata.creators.slice(0, 3);
+  const creators = result.metadata.creators;
+  const contributors = _get(result, "metadata.contributors", []);
+
+  const rights = _get(result, "metadata.rights");
 
   const descriptionStripped = _get(
     result,
@@ -66,9 +69,7 @@ export const ResultsListItemComponent = ({
     <Overridable
       id={buildUID("RecordsResultsListItem.layout", "", appName)}
       result={result}
-      accessStatusId={accessStatusId}
       accessStatus={accessStatus}
-      accessStatusIcon={accessStatusIcon}
       createdDate={createdDate}
       creators={creators}
       descriptionStripped={descriptionStripped}
@@ -78,64 +79,75 @@ export const ResultsListItemComponent = ({
       title={title}
       version={version}
       versions={versions}
+      rights={rights}
       allVersionsVisible={allVersionsVisible}
       numOtherVersions={numOtherVersions}
     >
       <Item key={result.id}>
         <Item.Content>
-          <Item.Extra className="labels-actions">
-            <Label size="tiny" className="primary">
-              {publicationDate} (v{version})
-            </Label>
-            <Label size="tiny" className="neutral">
-              {resourceType}
-            </Label>
-            <Label size="tiny" className={`access-status ${accessStatusId}`}>
-              {accessStatusIcon && <Icon name={accessStatusIcon} />}
-              {accessStatus}
-            </Label>
-          </Item.Extra>
-          <Item.Header as="h2">
-            <a href={viewLink}>{title}</a>
-          </Item.Header>
-          <Item className="creatibutors">
-            <ResultsItemCreators creators={creators} />
-          </Item>
-          <Item.Description>
-            {_truncate(descriptionStripped, { length: 350 })}
-          </Item.Description>
-          <Item.Extra>
-            <ResultsItemSubjects subjects={subjects} />
-            <div>
-              <small>
-                <p>
-                  {createdDate && (
-                    <>
-                      {i18next.t("Uploaded on")} <span>{createdDate}</span>
-                    </>
+          <Grid>
+            <Grid.Row columns={2}>
+              <Grid.Column width={2}>
+                <Item.Extra className="labels-actions">
+                  <ResultsItemAccessStatus status={accessStatus} />
+                  <Label size="tiny" className="primary">
+                    {publicationDate} (v{version})
+                  </Label>
+                  <Label size="tiny" className="neutral">
+                    {resourceType}
+                  </Label>
+                  <ResultsItemLicense rights={rights} />
+                </Item.Extra>
+              </Grid.Column>
+              <Grid.Column width={14}>
+                <Item.Header as="h2">
+                  <a href={viewLink}>{title}</a>
+                </Item.Header>
+                <Item className="creatibutors">
+                  <ResultsItemCreatibutors
+                    creators={creators}
+                    contributors={contributors}
+                  />
+                </Item>
+                <Item.Description>
+                  {_truncate(descriptionStripped, { length: 350 })}
+                </Item.Description>
+                <Item.Extra>
+                  <ResultsItemSubjects subjects={subjects} />
+                  <div>
+                    <small>
+                      <p>
+                        {createdDate && (
+                          <>
+                            {i18next.t("Uploaded on")}{" "}
+                            <span>{createdDate}</span>
+                          </>
+                        )}
+                        {createdDate && publishingInformation && " | "}
+                        {publishingInformation && (
+                          <>
+                            {i18next.t("Published in: ")}{" "}
+                            <span>{publishingInformation}</span>
+                          </>
+                        )}
+                      </p>
+                    </small>
+                  </div>
+                  {!allVersionsVisible && version > 1 && (
+                    <p>
+                      <small>
+                        <b>
+                          {numOtherVersions} more{" "}
+                          {numOtherVersions > 1 ? "versions" : "version"} exist
+                          for this record
+                        </b>
+                      </small>
+                    </p>
                   )}
-                  {createdDate && publishingInformation && " | "}
-                  {publishingInformation && (
-                    <>
-                      {i18next.t("Published in: ")}{" "}
-                      <span>{publishingInformation}</span>
-                    </>
-                  )}
-                </p>
-              </small>
-            </div>
-            {!allVersionsVisible && version > 1 && (
-              <p>
-                <small>
-                  <b>
-                    {numOtherVersions} more{" "}
-                    {numOtherVersions > 1 ? "versions" : "version"} exist for
-                    this record
-                  </b>
-                </small>
-              </p>
-            )}
-          </Item.Extra>
+                </Item.Extra>
+              </Grid.Column>
+            </Grid.Row>
+          </Grid>
         </Item.Content>
       </Item>
     </Overridable>

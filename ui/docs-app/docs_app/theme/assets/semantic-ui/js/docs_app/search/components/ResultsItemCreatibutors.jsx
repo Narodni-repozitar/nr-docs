@@ -1,9 +1,17 @@
 import React from "react";
 
+import { List } from "semantic-ui-react";
+
 import _get from "lodash/get";
 import { i18next } from "@translations/docs_app/i18next";
 
-export function ResultsItemCreators({ creators, className }) {
+export function ResultsItemCreatibutors({
+  creators = [],
+  contributors = [],
+  maxCreators = 3,
+  maxContributors = 3,
+  className,
+}) {
   let spanClass = "creatibutor-wrap separated";
   className && (spanClass += ` ${className}`);
 
@@ -70,10 +78,26 @@ export function ResultsItemCreators({ creators, className }) {
     );
     return link;
   }
-  return creators.map((creator) => (
-    <span className={spanClass} key={creator.fullName}>
-      {getLink(creator)}
-      {getIcons(creator)}
-    </span>
-  ));
+
+  return (
+    <>
+      <List horizontal divided className="inline">
+        {creators.slice(0, maxCreators).map((creator) => (
+          <List.Item as="span" className={spanClass} key={creator.fullName}>
+            {getLink(creator)}
+            {getIcons(creator)}
+          </List.Item>
+        ))}
+      </List>
+      a
+      <List horizontal divided className="inline">
+        {contributors.slice(0, maxContributors).map((creator) => (
+          <List.Item as="span" className={spanClass} key={creator.fullName}>
+            {getLink(creator)}
+            {getIcons(creator)}
+          </List.Item>
+        ))}
+      </List>
+    </>
+  );
 }
