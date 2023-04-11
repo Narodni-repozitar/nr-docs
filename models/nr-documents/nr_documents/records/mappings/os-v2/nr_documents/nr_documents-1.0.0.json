@@ -1,0 +1,1067 @@
+{
+    "mappings": {
+        "properties": {
+            "metadata": {
+                "type": "object",
+                "properties": {
+                    "title": {
+                        "type": "text"
+                    },
+                    "thesis": {
+                        "type": "object",
+                        "properties": {
+                            "dateDefended": {
+                                "type": "date"
+                            },
+                            "defended": {
+                                "type": "boolean"
+                            },
+                            "degreeGrantors": {
+                                "type": "object",
+                                "properties": {
+                                    "id": {
+                                        "type": "keyword",
+                                        "fields": {
+                                            "text": {
+                                                "type": "search_as_you_type"
+                                            }
+                                        }
+                                    },
+                                    "title": {
+                                        "type": "object",
+                                        "dynamic": true,
+                                        "properties": {
+                                            "en": {
+                                                "type": "search_as_you_type"
+                                            }
+                                        },
+                                        "enabled": false
+                                    },
+                                    "type": {
+                                        "type": "keyword"
+                                    },
+                                    "hierarchy": {
+                                        "type": "object",
+                                        "properties": {
+                                            "parent": {
+                                                "type": "keyword"
+                                            },
+                                            "level": {
+                                                "type": "integer"
+                                            },
+                                            "title": {
+                                                "type": "object",
+                                                "dynamic": true,
+                                                "enabled": false
+                                            },
+                                            "ancestors": {
+                                                "type": "keyword"
+                                            }
+                                        }
+                                    },
+                                    "@v": {
+                                        "type": "keyword"
+                                    }
+                                }
+                            },
+                            "studyFields": {
+                                "type": "keyword"
+                            }
+                        }
+                    },
+                    "collection": {
+                        "type": "keyword"
+                    },
+                    "additionalTitles": {
+                        "type": "object",
+                        "properties": {
+                            "title": {
+                                "type": "nested",
+                                "properties": {
+                                    "lang": {
+                                        "type": "keyword"
+                                    },
+                                    "value": {
+                                        "type": "text",
+                                        "fields": {
+                                            "keyword": {
+                                                "type": "keyword"
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "title_cs": {
+                                "type": "text",
+                                "analyzer": "czech",
+                                "fields": {
+                                    "keyword": {
+                                        "type": "keyword"
+                                    }
+                                }
+                            },
+                            "title_en": {
+                                "type": "text",
+                                "fields": {
+                                    "keyword": {
+                                        "type": "keyword"
+                                    }
+                                }
+                            },
+                            "titleType": {
+                                "type": "keyword"
+                            }
+                        }
+                    },
+                    "creators": {
+                        "type": "object",
+                        "properties": {
+                            "affiliations": {
+                                "type": "object",
+                                "properties": {
+                                    "id": {
+                                        "type": "keyword",
+                                        "fields": {
+                                            "text": {
+                                                "type": "search_as_you_type"
+                                            }
+                                        }
+                                    },
+                                    "title": {
+                                        "type": "object",
+                                        "dynamic": true,
+                                        "properties": {
+                                            "en": {
+                                                "type": "search_as_you_type"
+                                            }
+                                        },
+                                        "enabled": false
+                                    },
+                                    "type": {
+                                        "type": "keyword"
+                                    },
+                                    "hierarchy": {
+                                        "type": "object",
+                                        "properties": {
+                                            "parent": {
+                                                "type": "keyword"
+                                            },
+                                            "level": {
+                                                "type": "integer"
+                                            },
+                                            "title": {
+                                                "type": "object",
+                                                "dynamic": true,
+                                                "enabled": false
+                                            },
+                                            "ancestors": {
+                                                "type": "keyword"
+                                            }
+                                        }
+                                    },
+                                    "@v": {
+                                        "type": "keyword"
+                                    }
+                                }
+                            },
+                            "nameType": {
+                                "type": "keyword"
+                            },
+                            "fullName": {
+                                "type": "keyword"
+                            },
+                            "authorityIdentifiers": {
+                                "type": "object",
+                                "properties": {
+                                    "identifier": {
+                                        "type": "keyword"
+                                    },
+                                    "scheme": {
+                                        "type": "keyword"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "contributors": {
+                        "type": "object",
+                        "properties": {
+                            "role": {
+                                "type": "object",
+                                "properties": {
+                                    "id": {
+                                        "type": "keyword",
+                                        "fields": {
+                                            "text": {
+                                                "type": "search_as_you_type"
+                                            }
+                                        }
+                                    },
+                                    "title": {
+                                        "type": "object",
+                                        "dynamic": true,
+                                        "properties": {
+                                            "en": {
+                                                "type": "search_as_you_type"
+                                            }
+                                        },
+                                        "enabled": false
+                                    },
+                                    "type": {
+                                        "type": "keyword"
+                                    },
+                                    "@v": {
+                                        "type": "keyword"
+                                    }
+                                }
+                            },
+                            "affiliations": {
+                                "type": "object",
+                                "properties": {
+                                    "id": {
+                                        "type": "keyword",
+                                        "fields": {
+                                            "text": {
+                                                "type": "search_as_you_type"
+                                            }
+                                        }
+                                    },
+                                    "title": {
+                                        "type": "object",
+                                        "dynamic": true,
+                                        "properties": {
+                                            "en": {
+                                                "type": "search_as_you_type"
+                                            }
+                                        },
+                                        "enabled": false
+                                    },
+                                    "type": {
+                                        "type": "keyword"
+                                    },
+                                    "hierarchy": {
+                                        "type": "object",
+                                        "properties": {
+                                            "parent": {
+                                                "type": "keyword"
+                                            },
+                                            "level": {
+                                                "type": "integer"
+                                            },
+                                            "title": {
+                                                "type": "object",
+                                                "dynamic": true,
+                                                "enabled": false
+                                            },
+                                            "ancestors": {
+                                                "type": "keyword"
+                                            }
+                                        }
+                                    },
+                                    "@v": {
+                                        "type": "keyword"
+                                    }
+                                }
+                            },
+                            "nameType": {
+                                "type": "keyword"
+                            },
+                            "fullName": {
+                                "type": "keyword"
+                            },
+                            "authorityIdentifiers": {
+                                "type": "object",
+                                "properties": {
+                                    "identifier": {
+                                        "type": "keyword"
+                                    },
+                                    "scheme": {
+                                        "type": "keyword"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "resourceType": {
+                        "type": "object",
+                        "properties": {
+                            "id": {
+                                "type": "keyword",
+                                "fields": {
+                                    "text": {
+                                        "type": "search_as_you_type"
+                                    }
+                                }
+                            },
+                            "title": {
+                                "type": "object",
+                                "dynamic": true,
+                                "properties": {
+                                    "en": {
+                                        "type": "search_as_you_type"
+                                    }
+                                },
+                                "enabled": false
+                            },
+                            "type": {
+                                "type": "keyword"
+                            },
+                            "@v": {
+                                "type": "keyword"
+                            }
+                        }
+                    },
+                    "dateAvailable": {
+                        "type": "date"
+                    },
+                    "dateModified": {
+                        "type": "date"
+                    },
+                    "subjects": {
+                        "type": "object",
+                        "properties": {
+                            "subjectScheme": {
+                                "type": "keyword"
+                            },
+                            "subject": {
+                                "type": "nested",
+                                "properties": {
+                                    "lang": {
+                                        "type": "keyword"
+                                    },
+                                    "value": {
+                                        "type": "text",
+                                        "fields": {
+                                            "keyword": {
+                                                "type": "keyword"
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "subject_cs": {
+                                "type": "text",
+                                "analyzer": "czech",
+                                "fields": {
+                                    "keyword": {
+                                        "type": "keyword"
+                                    }
+                                }
+                            },
+                            "subject_en": {
+                                "type": "text",
+                                "fields": {
+                                    "keyword": {
+                                        "type": "keyword"
+                                    }
+                                }
+                            },
+                            "valueURI": {
+                                "type": "keyword"
+                            },
+                            "classificationCode": {
+                                "type": "keyword"
+                            }
+                        }
+                    },
+                    "publishers": {
+                        "type": "text"
+                    },
+                    "subjectCategories": {
+                        "type": "object",
+                        "properties": {
+                            "id": {
+                                "type": "keyword",
+                                "fields": {
+                                    "text": {
+                                        "type": "search_as_you_type"
+                                    }
+                                }
+                            },
+                            "title": {
+                                "type": "object",
+                                "dynamic": true,
+                                "properties": {
+                                    "en": {
+                                        "type": "search_as_you_type"
+                                    }
+                                },
+                                "enabled": false
+                            },
+                            "type": {
+                                "type": "keyword"
+                            },
+                            "@v": {
+                                "type": "keyword"
+                            }
+                        }
+                    },
+                    "languages": {
+                        "type": "object",
+                        "properties": {
+                            "id": {
+                                "type": "keyword",
+                                "fields": {
+                                    "text": {
+                                        "type": "search_as_you_type"
+                                    }
+                                }
+                            },
+                            "title": {
+                                "type": "object",
+                                "dynamic": true,
+                                "properties": {
+                                    "en": {
+                                        "type": "search_as_you_type"
+                                    }
+                                },
+                                "enabled": false
+                            },
+                            "type": {
+                                "type": "keyword"
+                            },
+                            "@v": {
+                                "type": "keyword"
+                            }
+                        }
+                    },
+                    "notes": {
+                        "type": "text"
+                    },
+                    "abstract": {
+                        "type": "nested",
+                        "properties": {
+                            "lang": {
+                                "type": "keyword"
+                            },
+                            "value": {
+                                "type": "text",
+                                "fields": {
+                                    "keyword": {
+                                        "type": "keyword"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "abstract_cs": {
+                        "type": "text",
+                        "analyzer": "czech",
+                        "fields": {
+                            "keyword": {
+                                "type": "keyword"
+                            }
+                        }
+                    },
+                    "abstract_en": {
+                        "type": "text",
+                        "fields": {
+                            "keyword": {
+                                "type": "keyword"
+                            }
+                        }
+                    },
+                    "methods": {
+                        "type": "nested",
+                        "properties": {
+                            "lang": {
+                                "type": "keyword"
+                            },
+                            "value": {
+                                "type": "text",
+                                "fields": {
+                                    "keyword": {
+                                        "type": "keyword"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "methods_cs": {
+                        "type": "text",
+                        "analyzer": "czech",
+                        "fields": {
+                            "keyword": {
+                                "type": "keyword"
+                            }
+                        }
+                    },
+                    "methods_en": {
+                        "type": "text",
+                        "fields": {
+                            "keyword": {
+                                "type": "keyword"
+                            }
+                        }
+                    },
+                    "technicalInfo": {
+                        "type": "nested",
+                        "properties": {
+                            "lang": {
+                                "type": "keyword"
+                            },
+                            "value": {
+                                "type": "text",
+                                "fields": {
+                                    "keyword": {
+                                        "type": "keyword"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "technicalInfo_cs": {
+                        "type": "text",
+                        "analyzer": "czech",
+                        "fields": {
+                            "keyword": {
+                                "type": "keyword"
+                            }
+                        }
+                    },
+                    "technicalInfo_en": {
+                        "type": "text",
+                        "fields": {
+                            "keyword": {
+                                "type": "keyword"
+                            }
+                        }
+                    },
+                    "rights": {
+                        "type": "object",
+                        "properties": {
+                            "id": {
+                                "type": "keyword",
+                                "fields": {
+                                    "text": {
+                                        "type": "search_as_you_type"
+                                    }
+                                }
+                            },
+                            "title": {
+                                "type": "object",
+                                "dynamic": true,
+                                "properties": {
+                                    "en": {
+                                        "type": "search_as_you_type"
+                                    }
+                                },
+                                "enabled": false
+                            },
+                            "type": {
+                                "type": "keyword"
+                            },
+                            "@v": {
+                                "type": "keyword"
+                            }
+                        }
+                    },
+                    "accessRights": {
+                        "type": "object",
+                        "properties": {
+                            "id": {
+                                "type": "keyword",
+                                "fields": {
+                                    "text": {
+                                        "type": "search_as_you_type"
+                                    }
+                                }
+                            },
+                            "title": {
+                                "type": "object",
+                                "dynamic": true,
+                                "properties": {
+                                    "en": {
+                                        "type": "search_as_you_type"
+                                    }
+                                },
+                                "enabled": false
+                            },
+                            "type": {
+                                "type": "keyword"
+                            },
+                            "@v": {
+                                "type": "keyword"
+                            }
+                        }
+                    },
+                    "relatedItems": {
+                        "type": "object",
+                        "properties": {
+                            "itemTitle": {
+                                "type": "text"
+                            },
+                            "itemCreators": {
+                                "type": "object",
+                                "properties": {
+                                    "affiliations": {
+                                        "type": "object",
+                                        "properties": {
+                                            "id": {
+                                                "type": "keyword",
+                                                "fields": {
+                                                    "text": {
+                                                        "type": "search_as_you_type"
+                                                    }
+                                                }
+                                            },
+                                            "title": {
+                                                "type": "object",
+                                                "dynamic": true,
+                                                "properties": {
+                                                    "en": {
+                                                        "type": "search_as_you_type"
+                                                    }
+                                                },
+                                                "enabled": false
+                                            },
+                                            "type": {
+                                                "type": "keyword"
+                                            },
+                                            "hierarchy": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "parent": {
+                                                        "type": "keyword"
+                                                    },
+                                                    "level": {
+                                                        "type": "integer"
+                                                    },
+                                                    "title": {
+                                                        "type": "object",
+                                                        "dynamic": true,
+                                                        "enabled": false
+                                                    },
+                                                    "ancestors": {
+                                                        "type": "keyword"
+                                                    }
+                                                }
+                                            },
+                                            "@v": {
+                                                "type": "keyword"
+                                            }
+                                        }
+                                    },
+                                    "nameType": {
+                                        "type": "keyword"
+                                    },
+                                    "fullName": {
+                                        "type": "keyword"
+                                    },
+                                    "authorityIdentifiers": {
+                                        "type": "object",
+                                        "properties": {
+                                            "identifier": {
+                                                "type": "keyword"
+                                            },
+                                            "scheme": {
+                                                "type": "keyword"
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "itemContributors": {
+                                "type": "object",
+                                "properties": {
+                                    "role": {
+                                        "type": "object",
+                                        "properties": {
+                                            "id": {
+                                                "type": "keyword",
+                                                "fields": {
+                                                    "text": {
+                                                        "type": "search_as_you_type"
+                                                    }
+                                                }
+                                            },
+                                            "title": {
+                                                "type": "object",
+                                                "dynamic": true,
+                                                "properties": {
+                                                    "en": {
+                                                        "type": "search_as_you_type"
+                                                    }
+                                                },
+                                                "enabled": false
+                                            },
+                                            "type": {
+                                                "type": "keyword"
+                                            },
+                                            "@v": {
+                                                "type": "keyword"
+                                            }
+                                        }
+                                    },
+                                    "affiliations": {
+                                        "type": "object",
+                                        "properties": {
+                                            "id": {
+                                                "type": "keyword",
+                                                "fields": {
+                                                    "text": {
+                                                        "type": "search_as_you_type"
+                                                    }
+                                                }
+                                            },
+                                            "title": {
+                                                "type": "object",
+                                                "dynamic": true,
+                                                "properties": {
+                                                    "en": {
+                                                        "type": "search_as_you_type"
+                                                    }
+                                                },
+                                                "enabled": false
+                                            },
+                                            "type": {
+                                                "type": "keyword"
+                                            },
+                                            "hierarchy": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "parent": {
+                                                        "type": "keyword"
+                                                    },
+                                                    "level": {
+                                                        "type": "integer"
+                                                    },
+                                                    "title": {
+                                                        "type": "object",
+                                                        "dynamic": true,
+                                                        "enabled": false
+                                                    },
+                                                    "ancestors": {
+                                                        "type": "keyword"
+                                                    }
+                                                }
+                                            },
+                                            "@v": {
+                                                "type": "keyword"
+                                            }
+                                        }
+                                    },
+                                    "nameType": {
+                                        "type": "keyword"
+                                    },
+                                    "fullName": {
+                                        "type": "keyword"
+                                    },
+                                    "authorityIdentifiers": {
+                                        "type": "object",
+                                        "properties": {
+                                            "identifier": {
+                                                "type": "keyword"
+                                            },
+                                            "scheme": {
+                                                "type": "keyword"
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "itemPIDs": {
+                                "type": "object",
+                                "properties": {
+                                    "identifier": {
+                                        "type": "keyword"
+                                    },
+                                    "scheme": {
+                                        "type": "keyword"
+                                    }
+                                }
+                            },
+                            "itemURL": {
+                                "type": "keyword"
+                            },
+                            "itemYear": {
+                                "type": "integer"
+                            },
+                            "itemVolume": {
+                                "type": "keyword"
+                            },
+                            "itemIssue": {
+                                "type": "keyword"
+                            },
+                            "itemStartPage": {
+                                "type": "keyword"
+                            },
+                            "itemEndPage": {
+                                "type": "keyword"
+                            },
+                            "itemPublisher": {
+                                "type": "keyword"
+                            },
+                            "itemRelationType": {
+                                "type": "object",
+                                "properties": {
+                                    "id": {
+                                        "type": "keyword",
+                                        "fields": {
+                                            "text": {
+                                                "type": "search_as_you_type"
+                                            }
+                                        }
+                                    },
+                                    "title": {
+                                        "type": "object",
+                                        "dynamic": true,
+                                        "properties": {
+                                            "en": {
+                                                "type": "search_as_you_type"
+                                            }
+                                        },
+                                        "enabled": false
+                                    },
+                                    "type": {
+                                        "type": "keyword"
+                                    },
+                                    "@v": {
+                                        "type": "keyword"
+                                    }
+                                }
+                            },
+                            "itemResourceType": {
+                                "type": "object",
+                                "properties": {
+                                    "id": {
+                                        "type": "keyword",
+                                        "fields": {
+                                            "text": {
+                                                "type": "search_as_you_type"
+                                            }
+                                        }
+                                    },
+                                    "title": {
+                                        "type": "object",
+                                        "dynamic": true,
+                                        "properties": {
+                                            "en": {
+                                                "type": "search_as_you_type"
+                                            }
+                                        },
+                                        "enabled": false
+                                    },
+                                    "type": {
+                                        "type": "keyword"
+                                    },
+                                    "@v": {
+                                        "type": "keyword"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "fundingReferences": {
+                        "type": "object",
+                        "properties": {
+                            "projectID": {
+                                "type": "keyword"
+                            },
+                            "projectName": {
+                                "type": "text"
+                            },
+                            "fundingProgram": {
+                                "type": "text"
+                            },
+                            "funder": {
+                                "type": "object",
+                                "properties": {
+                                    "id": {
+                                        "type": "keyword",
+                                        "fields": {
+                                            "text": {
+                                                "type": "search_as_you_type"
+                                            }
+                                        }
+                                    },
+                                    "title": {
+                                        "type": "object",
+                                        "dynamic": true,
+                                        "properties": {
+                                            "en": {
+                                                "type": "search_as_you_type"
+                                            }
+                                        },
+                                        "enabled": false
+                                    },
+                                    "type": {
+                                        "type": "keyword"
+                                    },
+                                    "@v": {
+                                        "type": "keyword"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "version": {
+                        "type": "keyword"
+                    },
+                    "geoLocations": {
+                        "type": "object",
+                        "properties": {
+                            "geoLocationPlace": {
+                                "type": "keyword"
+                            },
+                            "geoLocationPoint": {
+                                "type": "object",
+                                "properties": {
+                                    "pointLongitude": {
+                                        "type": "double"
+                                    },
+                                    "pointLatitude": {
+                                        "type": "double"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "accessibility": {
+                        "type": "nested",
+                        "properties": {
+                            "lang": {
+                                "type": "keyword"
+                            },
+                            "value": {
+                                "type": "text",
+                                "fields": {
+                                    "keyword": {
+                                        "type": "keyword"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "accessibility_cs": {
+                        "type": "text",
+                        "analyzer": "czech",
+                        "fields": {
+                            "keyword": {
+                                "type": "keyword"
+                            }
+                        }
+                    },
+                    "accessibility_en": {
+                        "type": "text",
+                        "fields": {
+                            "keyword": {
+                                "type": "keyword"
+                            }
+                        }
+                    },
+                    "series": {
+                        "type": "object",
+                        "properties": {
+                            "seriesTitle": {
+                                "type": "keyword"
+                            },
+                            "seriesVolume": {
+                                "type": "keyword"
+                            }
+                        }
+                    },
+                    "externalLocation": {
+                        "type": "object",
+                        "properties": {
+                            "externalLocationURL": {
+                                "type": "keyword"
+                            },
+                            "externalLocationNote": {
+                                "type": "text"
+                            }
+                        }
+                    },
+                    "originalRecord": {
+                        "type": "keyword"
+                    },
+                    "objectIdentifiers": {
+                        "type": "object",
+                        "properties": {
+                            "identifier": {
+                                "type": "keyword"
+                            },
+                            "scheme": {
+                                "type": "keyword"
+                            }
+                        }
+                    },
+                    "systemIdentifiers": {
+                        "type": "object",
+                        "properties": {
+                            "identifier": {
+                                "type": "keyword"
+                            },
+                            "scheme": {
+                                "type": "keyword"
+                            }
+                        }
+                    },
+                    "events": {
+                        "type": "object",
+                        "properties": {
+                            "eventNameOriginal": {
+                                "type": "text"
+                            },
+                            "eventNameAlternate": {
+                                "type": "text"
+                            },
+                            "eventDate": {
+                                "type": "date_range"
+                            },
+                            "eventLocation": {
+                                "type": "object",
+                                "properties": {
+                                    "place": {
+                                        "type": "keyword"
+                                    },
+                                    "country": {
+                                        "type": "object",
+                                        "properties": {
+                                            "id": {
+                                                "type": "keyword",
+                                                "fields": {
+                                                    "text": {
+                                                        "type": "search_as_you_type"
+                                                    }
+                                                }
+                                            },
+                                            "title": {
+                                                "type": "object",
+                                                "dynamic": true,
+                                                "properties": {
+                                                    "en": {
+                                                        "type": "search_as_you_type"
+                                                    }
+                                                },
+                                                "enabled": false
+                                            },
+                                            "type": {
+                                                "type": "keyword"
+                                            },
+                                            "@v": {
+                                                "type": "keyword"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "id": {
+                "type": "keyword"
+            },
+            "created": {
+                "type": "date"
+            },
+            "updated": {
+                "type": "date"
+            },
+            "$schema": {
+                "type": "keyword"
+            }
+        }
+    }
+}
