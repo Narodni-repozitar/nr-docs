@@ -15,12 +15,6 @@ class MultilingualDumper(SearchDumperExt):
 
     def dump(self, record, data):
         paths = [
-            "/metadata/additionalTitles/title",
-            "/metadata/subjects/subject",
-            "/metadata/abstract",
-            "/metadata/methods",
-            "/metadata/technicalInfo",
-            "/metadata/accessibility",
         ]
         SUPPORTED_LANGS = ["cs", "en"]
 
@@ -52,12 +46,6 @@ class MultilingualDumper(SearchDumperExt):
 
     def load(self, record, data):
         paths = [
-            "/metadata/additionalTitles/title",
-            "/metadata/subjects/subject",
-            "/metadata/abstract",
-            "/metadata/methods",
-            "/metadata/technicalInfo",
-            "/metadata/accessibility",
         ]
         SUPPORTED_LANGS = ["cs", "en"]
         for path in paths:
@@ -70,8 +58,14 @@ class MultilingualDumper(SearchDumperExt):
             path_array2.pop(0)
             path_array2 = path_array2[:-1]
 
+            ok = True
             for x in path_array2:
+                if x not in record2:
+                    ok = False
+                    break
                 record2 = record2[x]
+            if not ok:
+                continue
 
             path_array.pop(0)
             multilingual_element = getFromDict(record, path_array)
