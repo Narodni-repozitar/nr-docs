@@ -1,0 +1,41 @@
+$defs:
+  use:
+  - ./definitions.yaml
+model:
+  extend: nr-documents#DocumentModel
+  package: nr_documents
+  permissions:
+    presets:
+    - read_only
+  plugins:
+    builder:
+      disable:
+      - script_sample_data
+    packages:
+    - oarepo-model-builder-nr
+  properties:
+    metadata:
+      properties:
+        use: ./metadata.yaml
+  schema-server: local://
+  use:
+  - invenio
+  - ./custom_fields.yaml
+runtime-dependencies:
+  nr-metadata: 1.0.0
+  nr-oaipmh-harvesters: 1.0.0
+  nr-vocabularies: 1.0.0
+settings:
+  i18n-languages:
+  - cs
+  - en
+  supported-langs:
+    cs:
+      keyword:
+        type: keyword
+      text:
+        analyzer: czech
+    en:
+      text: {}
+use:
+- ./requests.yaml
