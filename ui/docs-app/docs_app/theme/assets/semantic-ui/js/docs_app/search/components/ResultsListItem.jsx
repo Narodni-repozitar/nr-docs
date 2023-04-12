@@ -103,12 +103,13 @@ export const ResultsListItemComponent = ({
                 <Item.Header as="h2">
                   <a href={viewLink}>{title}</a>
                 </Item.Header>
-                <Item className="creatibutors">
+                <Item.Meta className="ui separated creatibutors">
                   <ResultsItemCreatibutors
                     creators={creators}
                     contributors={contributors}
+                    searchUrl={searchAppConfig.ui_endpoint}
                   />
-                </Item>
+                </Item.Meta>
                 <Item.Description>
                   {_truncate(descriptionStripped, { length: 350 })}
                 </Item.Description>
