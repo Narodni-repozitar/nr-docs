@@ -1,11 +1,22 @@
 import React from "react";
-import { Label, Icon } from "semantic-ui-react";
+import { Image } from "semantic-ui-react";
 
 export const ResultsItemAccessStatus = ({ status }) => {
+  const { id, title } = status;
+  const iconFile = id === "c_abf2" ? "zamky_open_access.svg" : null;
+  console.log(status);
   return (
-    <Label size="tiny" className={`access-status ${status}`}>
-      {status.icon && <Icon name={status} />}
-      {status}
-    </Label>
+    iconFile && (
+      <Image
+        as="a"
+        size="tiny"
+        centered
+        fluid
+        title={title}
+        aria-label={title}
+        className={`access-status ${title}`}
+        src={`/static/icons/locks/${iconFile}`}
+      />
+    )
   );
 };
