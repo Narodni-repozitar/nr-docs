@@ -9,7 +9,6 @@ export const ResultsItemAccessStatus = ({ status }) => {
     iconFile && (
       <Image
         as="a"
-        size="tiny"
         centered
         fluid
         title={title}

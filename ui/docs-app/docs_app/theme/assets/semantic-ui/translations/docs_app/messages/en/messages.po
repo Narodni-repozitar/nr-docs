@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2023-04-04T08:44:57.074Z\n"
-"PO-Revision-Date: 2023-04-04T08:44:57.074Z\n"
+"POT-Creation-Date: 2023-04-14T14:39:24.201Z\n"
+"PO-Revision-Date: 2023-04-14T14:39:24.201Z\n"
 "Language: en\n"
 
 msgid "We couldn't find any matches for "
@@ -45,9 +45,6 @@ msgstr "ROR profile"
 msgid "GND profile"
 msgstr "GND profile"
 
-msgid "Search"
-msgstr "Search"
-
 msgid "subject definition"
 msgstr "subject definition"
 
@@ -56,3 +53,30 @@ msgstr "Uploaded on"
 
 msgid "Published in: "
 msgstr "Published in: "
+
+msgid "Scopus ID profile"
+msgstr "Scopus ID profile"
+
+msgid "WOS Researcher ID"
+msgstr "WOS Researcher ID"
+
+msgid "DOI profile"
+msgstr "DOI profile"
+
+msgid "Find more records by this person"
+msgstr "Find more records by this person"
+
+msgid "Publication date"
+msgstr "Publication date"
+
+msgid "Languages"
+msgstr "Languages"
+
+msgid "Document type"
+msgstr "Document type"
+
+msgid "defended"
+msgstr "defended"
+
+msgid "not defended"
+msgstr "not defended"

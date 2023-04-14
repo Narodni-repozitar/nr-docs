@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2\n"
-"POT-Creation-Date: 2023-04-04T08:44:56.937Z\n"
-"PO-Revision-Date: 2023-04-04T08:44:56.937Z\n"
+"POT-Creation-Date: 2023-04-14T14:39:23.986Z\n"
+"PO-Revision-Date: 2023-04-14T14:39:23.986Z\n"
 "Language: cs\n"
 
 msgid "We couldn't find any matches for "
@@ -45,9 +45,6 @@ msgstr "ROR profil"
 msgid "GND profile"
 msgstr "GND profil"
 
-msgid "Search"
-msgstr "Hledat"
-
 msgid "subject definition"
 msgstr "definice subjektu"
 
@@ -56,3 +53,30 @@ msgstr "Nahráno dne"
 
 msgid "Published in: "
 msgstr "Zveřejněno v: "
+
+msgid "Scopus ID profile"
+msgstr "Scopus ID profil"
+
+msgid "WOS Researcher ID"
+msgstr "WOS Researcher ID"
+
+msgid "DOI profile"
+msgstr "DOI profil"
+
+msgid "Find more records by this person"
+msgstr "Vyhledat další záznamy této osoby"
+
+msgid "Publication date"
+msgstr "Datum zveřejnění"
+
+msgid "Languages"
+msgstr "Jazyky"
+
+msgid "Document type"
+msgstr "Typ dokumentu"
+
+msgid "defended"
+msgstr "obhájeno"
+
+msgid "not defended"
+msgstr "neobhájeno"

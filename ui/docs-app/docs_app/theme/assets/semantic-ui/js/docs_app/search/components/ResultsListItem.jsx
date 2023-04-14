@@ -81,7 +81,7 @@ const ItemSubheader = ({
               <Label
                 pointing="left"
                 size="mini"
-                color={defended ? "positive" : "negative"}
+                color={defended ? "green" : "red"}
               >
                 {defended ? i18next.t("defended") : i18next.t("not defended")}
               </Label>
@@ -124,7 +124,7 @@ const ItemExtraInfo = ({ createdDate, publishers }) => {
 const ItemSidebarIcons = ({ accessStatus, rights }) => {
   return (
     <Item.Extra className="labels-actions">
-      <List vertical>
+      <List>
         <List.Item>
           <ResultsItemAccessStatus status={accessStatus} />
         </List.Item>
