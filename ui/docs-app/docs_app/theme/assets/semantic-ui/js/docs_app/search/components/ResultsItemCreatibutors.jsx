@@ -34,7 +34,9 @@ export function ResultsItemCreatibutors({
     let link = (
       <a
         className="creatibutor-link"
-        href={`${searchUrl}?q=&f=metadata_${searchField}_fullName:${personName}`}
+        href={`${searchUrl}?q=&f=metadata_${searchField}_fullName:${encodeURI(
+          personName
+        )}`}
         title={`${personName}: ${i18next.t(
           "Find more records by this person"
         )}`}
