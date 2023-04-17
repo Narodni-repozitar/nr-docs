@@ -5,8 +5,9 @@ import Overridable from "react-overridable";
 import _get from "lodash/get";
 import _join from "lodash/join";
 import _truncate from "lodash/truncate";
+import _mapValues from "lodash/mapValues";
 
-import { Grid, Item, Label, List } from "semantic-ui-react";
+import { Grid, Item, Label, List, Icon } from "semantic-ui-react";
 import { withState, buildUID } from "react-searchkit";
 import { SearchConfigurationContext } from "@js/invenio_search_ui/components";
 
@@ -37,10 +38,12 @@ const ItemSubheader = ({
   languages,
   version,
   resourceType,
-  defended,
+  thesis,
   subjects,
   searchUrl,
 }) => {
+  const isThesisDefended = thesis?.dateDefended;
+
   return (
     <>
       <Item.Meta>
@@ -78,13 +81,17 @@ const ItemSubheader = ({
               >
                 {resourceType}
               </span>
-              <Label
-                pointing="left"
-                size="mini"
-                color={defended ? "green" : "red"}
-              >
-                {defended ? i18next.t("defended") : i18next.t("not defended")}
-              </Label>
+              {thesis && (
+                <Label pointing="left" size="mini" basic>
+                  <Icon
+                    name={isThesisDefended ? "check circle" : "remove circle"}
+                    color={isThesisDefended ? "green" : "red"}
+                  />{" "}
+                  {isThesisDefended
+                    ? i18next.t("defended")
+                    : i18next.t("not defended")}
+                </Label>
+              )}
             </Grid.Row>
             <Grid.Row>
               <ResultsItemSubjects subjects={subjects} />
@@ -142,6 +149,7 @@ export const ResultsListItemComponent = ({
   appName,
 }) => {
   const searchAppConfig = useContext(SearchConfigurationContext);
+
   const accessRights = _get(result, "metadata.accessRights");
   const createdDate = _get(result, "created", "No creation date found.");
   const creators = result.metadata.creators;
@@ -172,15 +180,13 @@ export const ResultsListItemComponent = ({
   const version = _get(result, "revision_id", null);
   const versions = _get(result, "versions");
 
-  const thesis = _get(result, "metadata.thesis", {});
+  const thesis = _get(result, "metadata.thesis");
   const publishers = _get(result, "metadata.publishers", []);
 
   const filters =
     currentQueryState && Object.fromEntries(currentQueryState.filters);
   const allVersionsVisible = filters?.allversions;
   const numOtherVersions = version - 1;
-
-  const sidebarColumnWidth = 2;
 
   return (
     <Overridable
@@ -207,10 +213,10 @@ export const ResultsListItemComponent = ({
         <Item.Content>
           <Grid>
             <Grid.Row columns={2}>
-              <Grid.Column width={sidebarColumnWidth}>
+              <Grid.Column className="results-list item-side">
                 <ItemSidebarIcons rights={rights} accessStatus={accessRights} />
               </Grid.Column>
-              <Grid.Column width={16 - sidebarColumnWidth}>
+              <Grid.Column className="results-list item-main">
                 <ItemHeader
                   title={title}
                   searchUrl={searchAppConfig.ui_endpoint}
@@ -223,7 +229,7 @@ export const ResultsListItemComponent = ({
                   languages={languages}
                   version={version}
                   resourceType={resourceType}
-                  defended={thesis.dateDefended}
+                  thesis={thesis}
                   subjects={subjects}
                   searchUrl={searchAppConfig.ui_endpoint}
                 />

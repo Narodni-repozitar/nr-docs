@@ -44,8 +44,6 @@ export function ResultsItemCreatibutors({
     ),
   }));
 
-  console.log(uniqueContributors);
-
   function getIcons(personName = "No name", identifiers = []) {
     let icons = identifiers.map((i) => (
       <IconPersonIdentifier
@@ -86,7 +84,7 @@ export function ResultsItemCreatibutors({
             </List.Item>
           ))}
       </List>
-      <DoubleSeparator />
+      {uniqueContributors.length > 0 && <DoubleSeparator />}
       <List horizontal divided className="inline">
         {uniqueContributors.map(({ id, fullName, identifiers, roles }) => (
           <List.Item as="span" className={spanClass} key={id}>
