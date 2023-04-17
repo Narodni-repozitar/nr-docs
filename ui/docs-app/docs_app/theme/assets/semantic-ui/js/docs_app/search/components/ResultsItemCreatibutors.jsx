@@ -6,6 +6,10 @@ import { DoubleSeparator } from "./DoubleSeparator";
 import { IconPersonIdentifier } from "./IconPersonIdentifier";
 
 import _get from "lodash/get";
+import _groupBy from "lodash/groupBy";
+import _toPairs from "lodash/toPairs";
+import _join from "lodash/join";
+
 import { i18next } from "@translations/docs_app/i18next";
 
 export function ResultsItemCreatibutors({
@@ -18,6 +22,29 @@ export function ResultsItemCreatibutors({
 }) {
   let spanClass = "creatibutor-wrap separated";
   className && (spanClass += ` ${className}`);
+
+  const uniqueContributors = _toPairs(
+    _groupBy(
+      contributors.slice(0, maxContributors),
+      ({ fullName, authorityIdentifiers = [] }) => {
+        const idKeys = _join(
+          authorityIdentifiers.map((i) => `${i.scheme}:${i.identifier}`),
+          ";"
+        );
+        return `${fullName}-${idKeys}`;
+      }
+    )
+  ).map(([groupKey, entries]) => ({
+    id: groupKey,
+    fullName: entries[0].fullName,
+    authorityIdentifiers: entries[0].authorityIdentifiers,
+    roles: _join(
+      entries.map(({ role }) => role.title),
+      ", "
+    ),
+  }));
+
+  console.log(uniqueContributors);
 
   function getIcons(personName = "No name", identifiers = []) {
     let icons = identifiers.map((i) => (
@@ -61,15 +88,13 @@ export function ResultsItemCreatibutors({
       </List>
       <DoubleSeparator />
       <List horizontal divided className="inline">
-        {contributors
-          .slice(0, maxContributors)
-          .map(({ fullName, authorityIdentifiers, role }) => (
-            <List.Item as="span" className={spanClass} key={fullName}>
-              {getLink(fullName, "contributors")}
-              {getIcons(fullName, authorityIdentifiers)}
-              {role && <span className="contributor-role">({role.title})</span>}
-            </List.Item>
-          ))}
+        {uniqueContributors.map(({ id, fullName, identifiers, roles }) => (
+          <List.Item as="span" className={spanClass} key={id}>
+            {getLink(fullName, "contributors")}
+            {getIcons(fullName, identifiers)}
+            {roles && <span className="contributor-role">({roles})</span>}
+          </List.Item>
+        ))}
       </List>
     </>
   );
