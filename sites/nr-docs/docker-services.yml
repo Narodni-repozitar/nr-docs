@@ -6,68 +6,68 @@ services:
       args:
         - ENVIRONMENT=DEV
     image: nr-docs
-    restart: "unless-stopped"
+    restart: 'unless-stopped'
     environment:
-      - "INVENIO_ACCOUNTS_SESSION_REDIS_URL=redis://cache:6379/1"
-      - "INVENIO_BROKER_URL=amqp://guest:guest@mq:5672/"
-      - "INVENIO_CACHE_REDIS_URL=redis://cache:6379/0"
-      - "INVENIO_CACHE_TYPE=redis"
-      - "INVENIO_CELERY_BROKER_URL=amqp://guest:guest@mq:5672/"
-      - "INVENIO_CELERY_RESULT_BACKEND=redis://cache:6379/2"
+      - 'INVENIO_ACCOUNTS_SESSION_REDIS_URL=redis://cache:6379/1'
+      - 'INVENIO_BROKER_URL=amqp://guest:guest@mq:5672/'
+      - 'INVENIO_CACHE_REDIS_URL=redis://cache:6379/0'
+      - 'INVENIO_CACHE_TYPE=redis'
+      - 'INVENIO_CELERY_BROKER_URL=amqp://guest:guest@mq:5672/'
+      - 'INVENIO_CELERY_RESULT_BACKEND=redis://cache:6379/2'
       - "INVENIO_SEARCH_HOSTS=['search:9200']"
-      - "INVENIO_SECRET_KEY=CHANGE_ME"
-      - "INVENIO_SQLALCHEMY_DATABASE_URI=postgresql+psycopg2://nr-docs:nr-docs@db/nr-docs"
-      - "INVENIO_WSGI_PROXIES=2"
-      - "INVENIO_RATELIMIT_STORAGE_URL=redis://cache:6379/3"
+      - 'INVENIO_SECRET_KEY=CHANGE_ME'
+      - 'INVENIO_SQLALCHEMY_DATABASE_URI=postgresql+psycopg2://nr-docs:nr-docs@db/nr-docs'
+      - 'INVENIO_WSGI_PROXIES=2'
+      - 'INVENIO_RATELIMIT_STORAGE_URL=redis://cache:6379/3'
   frontend:
     build: ./docker/nginx/
     image: nr-docs-frontend
-    restart: "unless-stopped"
+    restart: 'unless-stopped'
     ports:
-      - "280"
-      - "643"
+      - '127.0.0.1:280:280'
+      - '127.0.0.1:643:280'
   cache:
     image: redis:7
-    restart: "unless-stopped"
+    restart: 'unless-stopped'
     read_only: true
     ports:
-      - "6579:6379"
+      - '127.0.0.1:6579:6379'
   db:
     image: postgres:12.4
-    restart: "unless-stopped"
+    restart: 'unless-stopped'
     environment:
-      - "POSTGRES_USER=nr-docs"
-      - "POSTGRES_PASSWORD=nr-docs"
-      - "POSTGRES_DB=nr-docs"
+      - 'POSTGRES_USER=nr-docs'
+      - 'POSTGRES_PASSWORD=nr-docs'
+      - 'POSTGRES_DB=nr-docs'
     ports:
-      - "5632:5432"
+      - '127.0.0.1:5632:5432'
   pgadmin:
     image: dpage/pgadmin4:6
-    restart: "unless-stopped"
+    restart: 'unless-stopped'
     ports:
-      - "5250:80"
-      - "5251:443"
+      - '127.0.0.1:5250:80'
+      - '127.0.0.1:5251:443'
     environment:
-      PGADMIN_DEFAULT_EMAIL: "miroslav.simek@techlib.cz"
-      PGADMIN_DEFAULT_PASSWORD: "nr-docs"
+      PGADMIN_DEFAULT_EMAIL: 'miroslav.simek@techlib.cz'
+      PGADMIN_DEFAULT_PASSWORD: 'nr-docs'
     volumes:
       - ./docker/pgadmin/servers.json:/pgadmin4/servers.json
   mq:
     image: rabbitmq:3-management
-    restart: "unless-stopped"
+    restart: 'unless-stopped'
     ports:
-      - "15872:15672"
-      - "5872:5672"
+      - '127.0.0.1:15872:15672'
+      - '127.0.0.1:5872:5672'
   search:
     image: opensearchproject/opensearch:2.3.0
-    restart: "unless-stopped"
+    restart: 'unless-stopped'
     environment:
       # settings only for development. DO NOT use in production!
       - bootstrap.memory_lock=true
-      - "OPENSEARCH_JAVA_OPTS=-Xms512m -Xmx512m"
-      - "DISABLE_INSTALL_DEMO_CONFIG=true"
-      - "DISABLE_SECURITY_PLUGIN=true"
-      - "discovery.type=single-node"
+      - 'OPENSEARCH_JAVA_OPTS=-Xms512m -Xmx512m'
+      - 'DISABLE_INSTALL_DEMO_CONFIG=true'
+      - 'DISABLE_SECURITY_PLUGIN=true'
+      - 'discovery.type=single-node'
     ulimits:
       memlock:
         soft: -1
@@ -77,24 +77,24 @@ services:
         hard: 65536
     mem_limit: 2g
     ports:
-      - "9400:9200"
-      - "9800:9600"
+      - '127.0.0.1:9400:9200'
+      - '127.0.0.1:9800:9600'
   opensearch-dashboards:
     image: opensearchproject/opensearch-dashboards:2.3.0
     ports:
-      - "5801:5601"
+      - '127.0.0.1:5801:5601'
     expose:
-      - "5601"
+      - '5601'
     environment:
       # settings only for development. DO NOT use in production!
       - 'OPENSEARCH_HOSTS=["http://search:9200"]'
-      - "DISABLE_SECURITY_DASHBOARDS_PLUGIN=true"
+      - 'DISABLE_SECURITY_DASHBOARDS_PLUGIN=true'
   s3:
     image: minio/minio
-    restart: "unless-stopped"
+    restart: 'unless-stopped'
     ports:
-      - "9000:9000"
-      - "9001:9001"
+      - '127.0.0.1:9000:9000'
+      - '127.0.0.1:9001:9001'
     environment:
       MINIO_ROOT_USER: CHANGE_ME
       MINIO_ROOT_PASSWORD: CHANGE_ME
@@ -102,7 +102,7 @@ services:
       - ./data:/data
     command: server /data --console-address :9001
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:9000/minio/health/live"]
+      test: ['CMD', 'curl', '-f', 'http://localhost:9000/minio/health/live']
       interval: 30s
       timeout: 20s
       retries: 3
