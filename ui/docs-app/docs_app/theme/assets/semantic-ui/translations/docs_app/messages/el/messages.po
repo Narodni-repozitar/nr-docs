@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2023-04-14T14:39:24.421Z\n"
-"PO-Revision-Date: 2023-04-14T14:39:24.421Z\n"
+"POT-Creation-Date: 2023-04-17T14:05:51.687Z\n"
+"PO-Revision-Date: 2023-04-17T14:05:51.687Z\n"
 "Language: el\n"
 
 msgid "We couldn't find any matches for "
@@ -72,11 +72,14 @@ msgstr ""
 msgid "Languages"
 msgstr ""
 
-msgid "Document type"
-msgstr ""
-
 msgid "defended"
 msgstr ""
 
 msgid "not defended"
+msgstr ""
+
+msgid "Find all records"
+msgstr ""
+
+msgid "by this document type"
 msgstr ""

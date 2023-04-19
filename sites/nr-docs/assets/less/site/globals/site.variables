@@ -30,3 +30,5 @@
 @inputBackground: @lightGrey;
 @selectionBackground: @lightGrey;
 @celledBorderColor: @green;
+
+@linkHoverUnderline: underline;

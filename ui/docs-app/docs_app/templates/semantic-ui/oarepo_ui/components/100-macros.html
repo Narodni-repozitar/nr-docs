@@ -20,7 +20,9 @@
 
 {%- macro render_people(arg) -%}
 <div class="ui separated">
+
 {% for person in arg.creators %}
+    {{layout.children.creators}}
     {% value ui=person, component="person" %}
     {% if not loop.last %}
     <div class="separator"><div class="vertical-bar"></div></div>
@@ -44,6 +46,7 @@
 
 {%- macro render_subjects(arg) -%}
 <div class="ui separated">
+    {{layout}}
     {% for lang, subjects in arg|groupby('subject.lang')%}
         <div>
         <div class="ui green basic label lang-tag">

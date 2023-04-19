@@ -75,12 +75,21 @@ const ItemSubheader = ({
               </span>
             </Grid.Row>
             <Grid.Row>
-              <span
-                aria-label={i18next.t("Document type")}
-                title={i18next.t("Document type")}
+              <a
+                href={
+                  resourceType
+                    ? `/vocabularies/${resourceType.type}/${resourceType.id}`
+                    : ""
+                }
+                aria-label={`${i18next.t("Find all records")} ${i18next.t(
+                  "by this document type"
+                )}`}
+                title={`${i18next.t("Find all records")} ${i18next.t(
+                  "by this document type"
+                )}`}
               >
-                {resourceType}
-              </span>
+                {resourceType.title || "No resource type"}
+              </a>
               {thesis && (
                 <Label pointing="left" size="mini" basic>
                   <Icon
@@ -147,6 +156,7 @@ export const ResultsListItemComponent = ({
   currentQueryState,
   result,
   appName,
+  ...rest
 }) => {
   const searchAppConfig = useContext(SearchConfigurationContext);
 
@@ -170,11 +180,7 @@ export const ResultsListItemComponent = ({
     "metadata.dateAvailable",
     "No publication date found."
   );
-  const resourceType = _get(
-    result,
-    "metadata.resourceType.title",
-    "No resource type"
-  );
+  const resourceType = _get(result, "metadata.resourceType");
   const subjects = _get(result, "metadata.subjects", []);
   const title = _get(result, "metadata.title", "No title");
   const version = _get(result, "revision_id", null);
@@ -187,6 +193,8 @@ export const ResultsListItemComponent = ({
     currentQueryState && Object.fromEntries(currentQueryState.filters);
   const allVersionsVisible = filters?.allversions;
   const numOtherVersions = version - 1;
+
+  console.log(currentQueryState);
 
   return (
     <Overridable
@@ -280,9 +288,10 @@ ResultsListItem.defaultProps = {
 };
 
 export const ResultsListItemWithState = withState(
-  ({ currentQueryState, result, appName }) => (
+  ({ currentQueryState, updateQueryState, result, appName }) => (
     <ResultsListItem
       currentQueryState={currentQueryState}
+      updateQueryState={updateQueryState}
       result={result}
       appName={appName}
     />

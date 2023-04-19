@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2\n"
-"POT-Creation-Date: 2023-04-14T14:39:23.986Z\n"
-"PO-Revision-Date: 2023-04-14T14:39:23.986Z\n"
+"POT-Creation-Date: 2023-04-17T14:05:51.410Z\n"
+"PO-Revision-Date: 2023-04-17T14:05:51.410Z\n"
 "Language: cs\n"
 
 msgid "We couldn't find any matches for "
@@ -72,11 +72,14 @@ msgstr "Datum zveřejnění"
 msgid "Languages"
 msgstr "Jazyky"
 
-msgid "Document type"
-msgstr "Typ dokumentu"
-
 msgid "defended"
 msgstr "obhájeno"
 
 msgid "not defended"
 msgstr "neobhájeno"
+
+msgid "Find all records"
+msgstr "Vyhledat všechny záznamy"
+
+msgid "by this document type"
+msgstr "s tímto typem dokumentu"

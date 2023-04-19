@@ -6,9 +6,8 @@
 
     <dt>{{ _('People') }}</dt>
     <dd>
-        {%- value "metadata", component="people"-%}
+        {%- field "metadata", component="people"-%}
     </dd>
-    
     {%- field "metadata.dateAvailable" -%}
     {%- field "metadata.dateModified" -%}
     {%- field "metadata.languages" -%}
