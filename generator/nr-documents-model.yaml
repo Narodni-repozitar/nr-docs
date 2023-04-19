@@ -13,3 +13,4 @@ use_files: 'no'
 use_relations: 'yes'
 use_requests: 'yes'
 use_vocabularies: 'yes'
+pid_type: dcmnts
