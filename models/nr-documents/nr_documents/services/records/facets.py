@@ -1,8 +1,6 @@
 """Facet definitions."""
-
 from flask_babelex import lazy_gettext as _
 from invenio_records_resources.services.records.facets import TermsFacet
-from invenio_search.engine import dsl
 from oarepo_runtime.facets.date import (
     DateFacet,
     DateTimeFacet,
@@ -11,6 +9,10 @@ from oarepo_runtime.facets.date import (
 )
 from oarepo_runtime.facets.enum import EnumTermsFacet
 from oarepo_runtime.facets.nested_facet import NestedLabeledFacet
+from oarepo_vocabularies.services.facets import (
+    HierarchyVocabularyFacet,
+    VocabularyFacet,
+)
 
 metadata_thesis_dateDefended = DateFacet(
     field="metadata.thesis.dateDefended", label=_("metadata/thesis/dateDefended.label")
@@ -842,3 +844,113 @@ updated = DateTimeFacet(field="updated", label=_("updated.label"))
 
 
 _schema = TermsFacet(field="$schema", label=_("$schema.label"))
+
+
+metadata_thesis_degreeGrantors = HierarchyVocabularyFacet(
+    field="metadata.thesis.degreeGrantors",
+    label=_("metadata/thesis/degreeGrantors.label"),
+    vocabulary="institutions",
+)
+
+
+metadata_creators_affiliations = HierarchyVocabularyFacet(
+    field="metadata.creators.affiliations",
+    label=_("metadata/creators/affiliations.label"),
+    vocabulary="institutions",
+)
+
+
+metadata_contributors_role = VocabularyFacet(
+    field="metadata.contributors.role",
+    label=_("metadata/contributors/role.label"),
+    vocabulary="contributor-roles",
+)
+
+
+metadata_contributors_affiliations = HierarchyVocabularyFacet(
+    field="metadata.contributors.affiliations",
+    label=_("metadata/contributors/affiliations.label"),
+    vocabulary="institutions",
+)
+
+
+metadata_resourceType = VocabularyFacet(
+    field="metadata.resourceType",
+    label=_("metadata/resourceType.label"),
+    vocabulary="resource-types",
+)
+
+
+metadata_subjectCategories = VocabularyFacet(
+    field="metadata.subjectCategories",
+    label=_("metadata/subjectCategories.label"),
+    vocabulary="subject-categories",
+)
+
+
+metadata_languages = VocabularyFacet(
+    field="metadata.languages",
+    label=_("metadata/languages.label"),
+    vocabulary="languages",
+)
+
+
+metadata_rights = VocabularyFacet(
+    field="metadata.rights", label=_("metadata/rights.label"), vocabulary="licenses"
+)
+
+
+metadata_accessRights = VocabularyFacet(
+    field="metadata.accessRights",
+    label=_("metadata/accessRights.label"),
+    vocabulary="access-rights",
+)
+
+
+metadata_relatedItems_itemCreators_affiliations = HierarchyVocabularyFacet(
+    field="metadata.relatedItems.itemCreators.affiliations",
+    label=_("metadata/relatedItems/itemCreators/affiliations.label"),
+    vocabulary="institutions",
+)
+
+
+metadata_relatedItems_itemContributors_role = VocabularyFacet(
+    field="metadata.relatedItems.itemContributors.role",
+    label=_("metadata/relatedItems/itemContributors/role.label"),
+    vocabulary="contributor-roles",
+)
+
+
+metadata_relatedItems_itemContributors_affiliations = HierarchyVocabularyFacet(
+    field="metadata.relatedItems.itemContributors.affiliations",
+    label=_("metadata/relatedItems/itemContributors/affiliations.label"),
+    vocabulary="institutions",
+)
+
+
+metadata_relatedItems_itemRelationType = VocabularyFacet(
+    field="metadata.relatedItems.itemRelationType",
+    label=_("metadata/relatedItems/itemRelationType.label"),
+    vocabulary="item-relation-types",
+)
+
+
+metadata_relatedItems_itemResourceType = VocabularyFacet(
+    field="metadata.relatedItems.itemResourceType",
+    label=_("metadata/relatedItems/itemResourceType.label"),
+    vocabulary="resource-types",
+)
+
+
+metadata_fundingReferences_funder = VocabularyFacet(
+    field="metadata.fundingReferences.funder",
+    label=_("metadata/fundingReferences/funder.label"),
+    vocabulary="funders",
+)
+
+
+metadata_events_eventLocation_country = VocabularyFacet(
+    field="metadata.events.eventLocation.country",
+    label=_("metadata/events/eventLocation/country.label"),
+    vocabulary="countries",
+)

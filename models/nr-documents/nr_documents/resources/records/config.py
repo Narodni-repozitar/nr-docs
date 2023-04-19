@@ -1,5 +1,6 @@
 import importlib_metadata
 from flask_resources import ResponseHandler
+from invenio_drafts_resources.resources import RecordResourceConfig
 from invenio_records_resources.resources import RecordResourceConfig
 
 from nr_documents.resources.records.ui import NrDocumentsUIJSONSerializer

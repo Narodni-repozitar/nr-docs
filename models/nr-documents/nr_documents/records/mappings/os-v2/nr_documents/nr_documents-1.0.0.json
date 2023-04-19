@@ -56,6 +56,9 @@
                                             },
                                             "ancestors": {
                                                 "type": "keyword"
+                                            },
+                                            "ancestors_or_self": {
+                                                "type": "keyword"
                                             }
                                         }
                                     },
@@ -156,6 +159,9 @@
                                             },
                                             "ancestors": {
                                                 "type": "keyword"
+                                            },
+                                            "ancestors_or_self": {
+                                                "type": "keyword"
                                             }
                                         }
                                     },
@@ -254,6 +260,9 @@
                                                 "enabled": false
                                             },
                                             "ancestors": {
+                                                "type": "keyword"
+                                            },
+                                            "ancestors_or_self": {
                                                 "type": "keyword"
                                             }
                                         }
@@ -634,6 +643,9 @@
                                                     },
                                                     "ancestors": {
                                                         "type": "keyword"
+                                                    },
+                                                    "ancestors_or_self": {
+                                                        "type": "keyword"
                                                     }
                                                 }
                                             },
@@ -732,6 +744,9 @@
                                                         "enabled": false
                                                     },
                                                     "ancestors": {
+                                                        "type": "keyword"
+                                                    },
+                                                    "ancestors_or_self": {
                                                         "type": "keyword"
                                                     }
                                                 }

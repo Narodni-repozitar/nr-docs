@@ -12,6 +12,263 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 3.2.2\n"
 
+msgid "metadata/title.label"
+msgstr "Název"
+
+msgid "metadata/thesis/dateDefended.label"
+msgstr "Datum obhajoby"
+
+msgid "metadata/thesis/defended.label"
+msgstr "Obhájeno?"
+
+msgid "metadata/thesis/degreeGrantors.label"
+msgstr "Instituce / grantor"
+
+msgid "metadata/thesis/studyFields.label"
+msgstr "Oblasti studia"
+
+msgid "metadata/collection.label"
+msgstr "Kolekce"
+
+msgid "metadata/additionalTitles.label"
+msgstr "Další názvy"
+
+msgid "metadata/creators.label"
+msgstr "Autoři"
+
+msgid "metadata/creators/nameType.hint"
+msgstr "Jako tvůrce je možné označit osobu nebo instituci."
+
+msgid "metadata/creators/nameType.label"
+msgstr "Typ"
+
+msgid "identifier.label"
+msgstr "Identifikátor"
+
+msgid "identifier_type.hint"
+msgstr ""
+"Doporučujeme zadat alespoň jeden z typů identifikátorů.\n"
+"Pokud potřebujete rozšířit nabídku typů identifikátorů, kontaktujte nás na support@narodni-repozitar.cz."
+
+msgid "identifier_type.label"
+msgstr "Typ identifikátoru"
+
+msgid "metadata/contributors.label"
+msgstr "Přispěvatelé"
+
+msgid "metadata/contributors/role.label"
+msgstr "Role přispěvatele"
+
+msgid "metadata/contributors/nameType.hint"
+msgstr "Jako tvůrce je možné označit osobu nebo instituci."
+
+msgid "metadata/contributors/nameType.label"
+msgstr "Typ"
+
+msgid "metadata/resourceType.label"
+msgstr "Typ zdroje"
+
+msgid "metadata/dateAvailable.label"
+msgstr "Datum zveřejnění"
+
+msgid "metadata/dateModified.label"
+msgstr "Datum změny zdroje"
+
+msgid "metadata/subjects.label"
+msgstr "Klíčová slova"
+
+msgid "metadata/subjects/subject.label"
+msgstr "Klíčová slova"
+
+msgid "metadata/publishers.label"
+msgstr "Vydavatelé"
+
+msgid "metadata/subjectCategories.label"
+msgstr "Oborové třídění"
+
+msgid "metadata/languages.label"
+msgstr "Jazyk"
+
+msgid "metadata/notes.label"
+msgstr "Poznámky"
+
+msgid "metadata/abstract.label"
+msgstr "Abstrakt"
+
+msgid "metadata/methods.label"
+msgstr "Metodologie"
+
+msgid "metadata/technicalInfo.label"
+msgstr "Technické informace"
+
+msgid "metadata/rights.label"
+msgstr "Autoři"
+
+msgid "metadata/accessRights.label"
+msgstr "Přístupová práva"
+
+msgid "metadata/relatedItems.label"
+msgstr "Vazba na/z dalších zdrojů:"
+
+msgid "metadata/relatedItems/itemTitle.label"
+msgstr "Název"
+
+msgid "metadata/relatedItems/itemCreators.label"
+msgstr "Autoři"
+
+msgid "metadata/relatedItems/itemCreators/affiliations.label"
+msgstr "Afiliace"
+
+msgid "metadata/relatedItems/itemCreators/nameType.hint"
+msgstr "Jako tvůrce je možné označit osobu nebo instituci."
+
+msgid "metadata/relatedItems/itemCreators/nameType.label"
+msgstr "Typ"
+
+msgid "metadata/relatedItems/itemContributors.label"
+msgstr "Přispěvatelé"
+
+msgid "metadata/relatedItems/itemContributors/role.label"
+msgstr "Role přispěvatele"
+
+msgid "metadata/relatedItems/itemContributors/affiliations.label"
+msgstr "Afiliace"
+
+msgid "metadata/relatedItems/itemContributors/nameType.hint"
+msgstr "Jako tvůrce je možné označit osobu nebo instituci."
+
+msgid "metadata/relatedItems/itemContributors/nameType.label"
+msgstr "Typ"
+
+msgid "metadata/relatedItems/itemPIDs/identifier.label"
+msgstr "Identifikátor objektu"
+
+msgid "metadata/relatedItems/itemPIDs/scheme.label"
+msgstr "Typ identifikátoru"
+
+msgid "metadata/relatedItems/itemURL.label"
+msgstr "URL"
+
+msgid "metadata/relatedItems/itemYear.label"
+msgstr "Rok"
+
+msgid "metadata/relatedItems/itemVolume.label"
+msgstr "Ročník"
+
+msgid "metadata/relatedItems/itemIssue.label"
+msgstr "Číslo"
+
+msgid "metadata/relatedItems/itemStartPage.label"
+msgstr "Počáteční strana"
+
+msgid "metadata/relatedItems/itemEndPage.label"
+msgstr "Poslední strana"
+
+msgid "metadata/relatedItems/itemPublisher.label"
+msgstr "Vydavatel"
+
+msgid "metadata/relatedItems/itemRelationType.label"
+msgstr "Typ vazby"
+
+msgid "metadata/relatedItems/itemResourceType.label"
+msgstr "Typ zdroje"
+
+msgid "metadata/fundingReferences.label"
+msgstr "Projekt nebo financování"
+
+msgid "metadata/fundingReferences/projectID.label"
+msgstr "Číslo projektu"
+
+msgid "metadata/fundingReferences/projectName.label"
+msgstr "Název projektu"
+
+msgid "metadata/fundingReferences/fundingProgram.label"
+msgstr "Výzkumný program"
+
+msgid "metadata/fundingReferences/funder.label"
+msgstr "Poskytovatel financí"
+
+msgid "metadata/version.label"
+msgstr "Verze zdroje"
+
+msgid "metadata/geoLocations.label"
+msgstr "Geolokace"
+
+msgid "metadata/geoLocations/geoLocationPoint/pointLongitude.label"
+msgstr "Zeměpisná délka"
+
+msgid "metadata/geoLocations/geoLocationPoint/pointLatitude.label"
+msgstr "Zeměpisná šířka"
+
+msgid "metadata/accessibility.label"
+msgstr "Dostupnost zdroje"
+
+msgid "metadata/series.label"
+msgstr "Série"
+
+msgid "metadata/series/seriesTitle.label"
+msgstr "Název edice"
+
+msgid "metadata/series/seriesVolume.label"
+msgstr "Svazek edice"
+
+msgid "metadata/externalLocation.label"
+msgstr "Externí umístění"
+
+msgid "metadata/externalLocation/externalLocationURL.label"
+msgstr "Externí umístění zdroje"
+
+msgid "metadata/externalLocation/externalLocationNote.label"
+msgstr "Poznámka"
+
+msgid "metadata/originalRecord.label"
+msgstr "Odkaz na původní záznam"
+
+msgid "metadata/objectIdentifiers.label"
+msgstr "Identifikátory objektu"
+
+msgid "metadata/objectIdentifiers/identifier.label"
+msgstr "Identifikátor objektu"
+
+msgid "metadata/objectIdentifiers/scheme.label"
+msgstr "Typ identifikátoru"
+
+msgid "metadata/systemIdentifiers.label"
+msgstr "Systémové identifikátory"
+
+msgid "metadata/systemIdentifiers/identifier.label"
+msgstr "Systémový identifikátor"
+
+msgid "metadata/systemIdentifiers/scheme.label"
+msgstr "Typ identifikátoru"
+
+msgid "metadata/events.label"
+msgstr "Události"
+
+msgid "metadata/events/eventNameOriginal.label"
+msgstr "Název akce"
+
+msgid "metadata/events/eventDate.label"
+msgstr "Datum konání akce"
+
+msgid "metadata/events/eventLocation.label"
+msgstr "Umístění"
+
+msgid "metadata/events/eventLocation/place.label"
+msgstr "Místo"
+
+msgid "metadata/events/eventLocation/country.label"
+msgstr "Země"
+
+msgid "Best match"
+msgstr "Nejlepší shoda"
+
+msgid "Newest"
+msgstr "Nejnovější"
+
+msgid "Oldest"
+msgstr "Nejstarší"
+
 msgid "metadata.help"
 msgstr ""
 
@@ -20,9 +277,6 @@ msgstr ""
 
 msgid "metadata.hint"
 msgstr ""
-
-msgid "metadata/title.label"
-msgstr "Název"
 
 msgid "metadata/title.help"
 msgstr ""
@@ -39,26 +293,17 @@ msgstr ""
 msgid "metadata/thesis.hint"
 msgstr ""
 
-msgid "metadata/thesis/dateDefended.label"
-msgstr "Datum obhajoby"
-
 msgid "metadata/thesis/dateDefended.help"
 msgstr ""
 
 msgid "metadata/thesis/dateDefended.hint"
 msgstr ""
 
-msgid "metadata/thesis/defended.label"
-msgstr "Obhájeno?"
-
 msgid "metadata/thesis/defended.help"
 msgstr ""
 
 msgid "metadata/thesis/defended.hint"
 msgstr ""
-
-msgid "metadata/thesis/degreeGrantors.label"
-msgstr "Instituce / grantor"
 
 msgid "metadata/thesis/degreeGrantors.help"
 msgstr ""
@@ -138,6 +383,15 @@ msgstr ""
 msgid "metadata/thesis/degreeGrantors/hierarchy/ancestors.hint"
 msgstr ""
 
+msgid "metadata/thesis/degreeGrantors/hierarchy/ancestors_or_self.help"
+msgstr ""
+
+msgid "metadata/thesis/degreeGrantors/hierarchy/ancestors_or_self.label"
+msgstr ""
+
+msgid "metadata/thesis/degreeGrantors/hierarchy/ancestors_or_self.hint"
+msgstr ""
+
 msgid "metadata/thesis/degreeGrantors/@v.help"
 msgstr ""
 
@@ -147,26 +401,17 @@ msgstr ""
 msgid "metadata/thesis/degreeGrantors/@v.hint"
 msgstr ""
 
-msgid "metadata/thesis/studyFields.label"
-msgstr "Oblasti studia"
-
 msgid "metadata/thesis/studyFields.help"
 msgstr ""
 
 msgid "metadata/thesis/studyFields.hint"
 msgstr ""
 
-msgid "metadata/collection.label"
-msgstr "Kolekce"
-
 msgid "metadata/collection.help"
 msgstr ""
 
 msgid "metadata/collection.hint"
 msgstr ""
-
-msgid "metadata/additionalTitles.label"
-msgstr "Další názvy"
 
 msgid "metadata/additionalTitles.help"
 msgstr ""
@@ -221,9 +466,6 @@ msgstr ""
 
 msgid "metadata/additionalTitles/titleType.enum.other"
 msgstr ""
-
-msgid "metadata/creators.label"
-msgstr "Autoři"
 
 msgid "metadata/creators.help"
 msgstr ""
@@ -312,6 +554,15 @@ msgstr ""
 msgid "metadata/creators/affiliations/hierarchy/ancestors.hint"
 msgstr ""
 
+msgid "metadata/creators/affiliations/hierarchy/ancestors_or_self.help"
+msgstr ""
+
+msgid "metadata/creators/affiliations/hierarchy/ancestors_or_self.label"
+msgstr ""
+
+msgid "metadata/creators/affiliations/hierarchy/ancestors_or_self.hint"
+msgstr ""
+
 msgid "metadata/creators/affiliations/@v.help"
 msgstr ""
 
@@ -320,12 +571,6 @@ msgstr ""
 
 msgid "metadata/creators/affiliations/@v.hint"
 msgstr ""
-
-msgid "metadata/creators/nameType.hint"
-msgstr "Jako tvůrce je možné označit osobu nebo instituci."
-
-msgid "metadata/creators/nameType.label"
-msgstr "Typ"
 
 msgid "metadata/creators/nameType.help"
 msgstr ""
@@ -354,22 +599,11 @@ msgstr ""
 msgid "metadata/creators/authorityIdentifiers.hint"
 msgstr ""
 
-msgid "identifier.label"
-msgstr "Identifikátor"
-
 msgid "identifier.help"
 msgstr ""
 
 msgid "identifier.hint"
 msgstr ""
-
-msgid "identifier_type.hint"
-msgstr ""
-"Doporučujeme zadat alespoň jeden z typů identifikátorů.\n"
-"Pokud potřebujete rozšířit nabídku typů identifikátorů, kontaktujte nás na support@narodni-repozitar.cz."
-
-msgid "identifier_type.label"
-msgstr "Typ identifikátoru"
 
 msgid "identifier_type.help"
 msgstr ""
@@ -404,17 +638,11 @@ msgstr ""
 msgid "identifier_type.enum.DOI"
 msgstr ""
 
-msgid "metadata/contributors.label"
-msgstr "Přispěvatelé"
-
 msgid "metadata/contributors.help"
 msgstr ""
 
 msgid "metadata/contributors.hint"
 msgstr ""
-
-msgid "metadata/contributors/role.label"
-msgstr "Role přispěvatele"
 
 msgid "metadata/contributors/role.help"
 msgstr ""
@@ -539,6 +767,15 @@ msgstr ""
 msgid "metadata/contributors/affiliations/hierarchy/ancestors.hint"
 msgstr ""
 
+msgid "metadata/contributors/affiliations/hierarchy/ancestors_or_self.help"
+msgstr ""
+
+msgid "metadata/contributors/affiliations/hierarchy/ancestors_or_self.label"
+msgstr ""
+
+msgid "metadata/contributors/affiliations/hierarchy/ancestors_or_self.hint"
+msgstr ""
+
 msgid "metadata/contributors/affiliations/@v.help"
 msgstr ""
 
@@ -547,12 +784,6 @@ msgstr ""
 
 msgid "metadata/contributors/affiliations/@v.hint"
 msgstr ""
-
-msgid "metadata/contributors/nameType.hint"
-msgstr "Jako tvůrce je možné označit osobu nebo instituci."
-
-msgid "metadata/contributors/nameType.label"
-msgstr "Typ"
 
 msgid "metadata/contributors/nameType.help"
 msgstr ""
@@ -580,9 +811,6 @@ msgstr ""
 
 msgid "metadata/contributors/authorityIdentifiers.hint"
 msgstr ""
-
-msgid "metadata/resourceType.label"
-msgstr "Typ zdroje"
 
 msgid "metadata/resourceType.help"
 msgstr ""
@@ -626,26 +854,17 @@ msgstr ""
 msgid "metadata/resourceType/@v.hint"
 msgstr ""
 
-msgid "metadata/dateAvailable.label"
-msgstr "Datum zveřejnění"
-
 msgid "metadata/dateAvailable.help"
 msgstr ""
 
 msgid "metadata/dateAvailable.hint"
 msgstr ""
 
-msgid "metadata/dateModified.label"
-msgstr "Datum změny zdroje"
-
 msgid "metadata/dateModified.help"
 msgstr ""
 
 msgid "metadata/dateModified.hint"
 msgstr ""
-
-msgid "metadata/subjects.label"
-msgstr "Klíčová slova"
 
 msgid "metadata/subjects.help"
 msgstr ""
@@ -661,9 +880,6 @@ msgstr ""
 
 msgid "metadata/subjects/subjectScheme.hint"
 msgstr ""
-
-msgid "metadata/subjects/subject.label"
-msgstr "Klíčová slova"
 
 msgid "metadata/subjects/subject.help"
 msgstr ""
@@ -707,17 +923,11 @@ msgstr ""
 msgid "metadata/subjects/classificationCode.hint"
 msgstr ""
 
-msgid "metadata/publishers.label"
-msgstr "Vydavatelé"
-
 msgid "metadata/publishers.help"
 msgstr ""
 
 msgid "metadata/publishers.hint"
 msgstr ""
-
-msgid "metadata/subjectCategories.label"
-msgstr "Oborové třídění"
 
 msgid "metadata/subjectCategories.help"
 msgstr ""
@@ -761,9 +971,6 @@ msgstr ""
 msgid "metadata/subjectCategories/@v.hint"
 msgstr ""
 
-msgid "metadata/languages.label"
-msgstr "Jazyk"
-
 msgid "metadata/languages.help"
 msgstr ""
 
@@ -806,17 +1013,11 @@ msgstr ""
 msgid "metadata/languages/@v.hint"
 msgstr ""
 
-msgid "metadata/notes.label"
-msgstr "Poznámky"
-
 msgid "metadata/notes.help"
 msgstr ""
 
 msgid "metadata/notes.hint"
 msgstr ""
-
-msgid "metadata/abstract.label"
-msgstr "Abstrakt"
 
 msgid "metadata/abstract.help"
 msgstr ""
@@ -842,9 +1043,6 @@ msgstr ""
 msgid "metadata/abstract/value.hint"
 msgstr ""
 
-msgid "metadata/methods.label"
-msgstr "Metodologie"
-
 msgid "metadata/methods.help"
 msgstr ""
 
@@ -869,9 +1067,6 @@ msgstr ""
 msgid "metadata/methods/value.hint"
 msgstr ""
 
-msgid "metadata/technicalInfo.label"
-msgstr "Technické informace"
-
 msgid "metadata/technicalInfo.help"
 msgstr ""
 
@@ -895,9 +1090,6 @@ msgstr ""
 
 msgid "metadata/technicalInfo/value.hint"
 msgstr ""
-
-msgid "metadata/rights.label"
-msgstr "Autoři"
 
 msgid "metadata/rights.help"
 msgstr ""
@@ -941,9 +1133,6 @@ msgstr ""
 msgid "metadata/rights/@v.hint"
 msgstr ""
 
-msgid "metadata/accessRights.label"
-msgstr "Přístupová práva"
-
 msgid "metadata/accessRights.help"
 msgstr ""
 
@@ -986,17 +1175,11 @@ msgstr ""
 msgid "metadata/accessRights/@v.hint"
 msgstr ""
 
-msgid "metadata/relatedItems.label"
-msgstr "Vazba na/z dalších zdrojů:"
-
 msgid "metadata/relatedItems.help"
 msgstr ""
 
 msgid "metadata/relatedItems.hint"
 msgstr ""
-
-msgid "metadata/relatedItems/itemTitle.label"
-msgstr "Název"
 
 msgid "metadata/relatedItems/itemTitle.help"
 msgstr ""
@@ -1004,17 +1187,11 @@ msgstr ""
 msgid "metadata/relatedItems/itemTitle.hint"
 msgstr ""
 
-msgid "metadata/relatedItems/itemCreators.label"
-msgstr "Autoři"
-
 msgid "metadata/relatedItems/itemCreators.help"
 msgstr ""
 
 msgid "metadata/relatedItems/itemCreators.hint"
 msgstr ""
-
-msgid "metadata/relatedItems/itemCreators/affiliations.label"
-msgstr "Afiliace"
 
 msgid "metadata/relatedItems/itemCreators/affiliations.help"
 msgstr ""
@@ -1085,13 +1262,28 @@ msgstr ""
 msgid "metadata/relatedItems/itemCreators/affiliations/hierarchy/title.hint"
 msgstr ""
 
-msgid "metadata/relatedItems/itemCreators/affiliations/hierarchy/ancestors.help"
+msgid ""
+"metadata/relatedItems/itemCreators/affiliations/hierarchy/ancestors.help"
 msgstr ""
 
-msgid "metadata/relatedItems/itemCreators/affiliations/hierarchy/ancestors.label"
+msgid ""
+"metadata/relatedItems/itemCreators/affiliations/hierarchy/ancestors.label"
 msgstr ""
 
-msgid "metadata/relatedItems/itemCreators/affiliations/hierarchy/ancestors.hint"
+msgid ""
+"metadata/relatedItems/itemCreators/affiliations/hierarchy/ancestors.hint"
+msgstr ""
+
+msgid ""
+"metadata/relatedItems/itemCreators/affiliations/hierarchy/ancestors_or_self.help"
+msgstr ""
+
+msgid ""
+"metadata/relatedItems/itemCreators/affiliations/hierarchy/ancestors_or_self.label"
+msgstr ""
+
+msgid ""
+"metadata/relatedItems/itemCreators/affiliations/hierarchy/ancestors_or_self.hint"
 msgstr ""
 
 msgid "metadata/relatedItems/itemCreators/affiliations/@v.help"
@@ -1102,12 +1294,6 @@ msgstr ""
 
 msgid "metadata/relatedItems/itemCreators/affiliations/@v.hint"
 msgstr ""
-
-msgid "metadata/relatedItems/itemCreators/nameType.hint"
-msgstr "Jako tvůrce je možné označit osobu nebo instituci."
-
-msgid "metadata/relatedItems/itemCreators/nameType.label"
-msgstr "Typ"
 
 msgid "metadata/relatedItems/itemCreators/nameType.help"
 msgstr ""
@@ -1136,17 +1322,11 @@ msgstr ""
 msgid "metadata/relatedItems/itemCreators/authorityIdentifiers.hint"
 msgstr ""
 
-msgid "metadata/relatedItems/itemContributors.label"
-msgstr "Přispěvatelé"
-
 msgid "metadata/relatedItems/itemContributors.help"
 msgstr ""
 
 msgid "metadata/relatedItems/itemContributors.hint"
 msgstr ""
-
-msgid "metadata/relatedItems/itemContributors/role.label"
-msgstr "Role přispěvatele"
 
 msgid "metadata/relatedItems/itemContributors/role.help"
 msgstr ""
@@ -1190,9 +1370,6 @@ msgstr ""
 msgid "metadata/relatedItems/itemContributors/role/@v.hint"
 msgstr ""
 
-msgid "metadata/relatedItems/itemContributors/affiliations.label"
-msgstr "Afiliace"
-
 msgid "metadata/relatedItems/itemContributors/affiliations.help"
 msgstr ""
 
@@ -1235,40 +1412,64 @@ msgstr ""
 msgid "metadata/relatedItems/itemContributors/affiliations/hierarchy.hint"
 msgstr ""
 
-msgid "metadata/relatedItems/itemContributors/affiliations/hierarchy/parent.help"
+msgid ""
+"metadata/relatedItems/itemContributors/affiliations/hierarchy/parent.help"
 msgstr ""
 
-msgid "metadata/relatedItems/itemContributors/affiliations/hierarchy/parent.label"
+msgid ""
+"metadata/relatedItems/itemContributors/affiliations/hierarchy/parent.label"
 msgstr ""
 
-msgid "metadata/relatedItems/itemContributors/affiliations/hierarchy/parent.hint"
+msgid ""
+"metadata/relatedItems/itemContributors/affiliations/hierarchy/parent.hint"
 msgstr ""
 
-msgid "metadata/relatedItems/itemContributors/affiliations/hierarchy/level.help"
+msgid ""
+"metadata/relatedItems/itemContributors/affiliations/hierarchy/level.help"
 msgstr ""
 
-msgid "metadata/relatedItems/itemContributors/affiliations/hierarchy/level.label"
+msgid ""
+"metadata/relatedItems/itemContributors/affiliations/hierarchy/level.label"
 msgstr ""
 
-msgid "metadata/relatedItems/itemContributors/affiliations/hierarchy/level.hint"
+msgid ""
+"metadata/relatedItems/itemContributors/affiliations/hierarchy/level.hint"
 msgstr ""
 
-msgid "metadata/relatedItems/itemContributors/affiliations/hierarchy/title.help"
+msgid ""
+"metadata/relatedItems/itemContributors/affiliations/hierarchy/title.help"
 msgstr ""
 
-msgid "metadata/relatedItems/itemContributors/affiliations/hierarchy/title.label"
+msgid ""
+"metadata/relatedItems/itemContributors/affiliations/hierarchy/title.label"
 msgstr ""
 
-msgid "metadata/relatedItems/itemContributors/affiliations/hierarchy/title.hint"
+msgid ""
+"metadata/relatedItems/itemContributors/affiliations/hierarchy/title.hint"
 msgstr ""
 
-msgid "metadata/relatedItems/itemContributors/affiliations/hierarchy/ancestors.help"
+msgid ""
+"metadata/relatedItems/itemContributors/affiliations/hierarchy/ancestors.help"
 msgstr ""
 
-msgid "metadata/relatedItems/itemContributors/affiliations/hierarchy/ancestors.label"
+msgid ""
+"metadata/relatedItems/itemContributors/affiliations/hierarchy/ancestors.label"
 msgstr ""
 
-msgid "metadata/relatedItems/itemContributors/affiliations/hierarchy/ancestors.hint"
+msgid ""
+"metadata/relatedItems/itemContributors/affiliations/hierarchy/ancestors.hint"
+msgstr ""
+
+msgid ""
+"metadata/relatedItems/itemContributors/affiliations/hierarchy/ancestors_or_self.help"
+msgstr ""
+
+msgid ""
+"metadata/relatedItems/itemContributors/affiliations/hierarchy/ancestors_or_self.label"
+msgstr ""
+
+msgid ""
+"metadata/relatedItems/itemContributors/affiliations/hierarchy/ancestors_or_self.hint"
 msgstr ""
 
 msgid "metadata/relatedItems/itemContributors/affiliations/@v.help"
@@ -1279,12 +1480,6 @@ msgstr ""
 
 msgid "metadata/relatedItems/itemContributors/affiliations/@v.hint"
 msgstr ""
-
-msgid "metadata/relatedItems/itemContributors/nameType.hint"
-msgstr "Jako tvůrce je možné označit osobu nebo instituci."
-
-msgid "metadata/relatedItems/itemContributors/nameType.label"
-msgstr "Typ"
 
 msgid "metadata/relatedItems/itemContributors/nameType.help"
 msgstr ""
@@ -1322,17 +1517,11 @@ msgstr ""
 msgid "metadata/relatedItems/itemPIDs.hint"
 msgstr ""
 
-msgid "metadata/relatedItems/itemPIDs/identifier.label"
-msgstr "Identifikátor objektu"
-
 msgid "metadata/relatedItems/itemPIDs/identifier.help"
 msgstr ""
 
 msgid "metadata/relatedItems/itemPIDs/identifier.hint"
 msgstr ""
-
-msgid "metadata/relatedItems/itemPIDs/scheme.label"
-msgstr "Typ identifikátoru"
 
 msgid "metadata/relatedItems/itemPIDs/scheme.help"
 msgstr ""
@@ -1355,17 +1544,11 @@ msgstr ""
 msgid "metadata/relatedItems/itemPIDs/scheme.enum.RIV"
 msgstr ""
 
-msgid "metadata/relatedItems/itemURL.label"
-msgstr "URL"
-
 msgid "metadata/relatedItems/itemURL.help"
 msgstr ""
 
 msgid "metadata/relatedItems/itemURL.hint"
 msgstr ""
-
-msgid "metadata/relatedItems/itemYear.label"
-msgstr "Rok"
 
 msgid "metadata/relatedItems/itemYear.help"
 msgstr ""
@@ -1373,17 +1556,11 @@ msgstr ""
 msgid "metadata/relatedItems/itemYear.hint"
 msgstr ""
 
-msgid "metadata/relatedItems/itemVolume.label"
-msgstr "Ročník"
-
 msgid "metadata/relatedItems/itemVolume.help"
 msgstr ""
 
 msgid "metadata/relatedItems/itemVolume.hint"
 msgstr ""
-
-msgid "metadata/relatedItems/itemIssue.label"
-msgstr "Číslo"
 
 msgid "metadata/relatedItems/itemIssue.help"
 msgstr ""
@@ -1391,17 +1568,11 @@ msgstr ""
 msgid "metadata/relatedItems/itemIssue.hint"
 msgstr ""
 
-msgid "metadata/relatedItems/itemStartPage.label"
-msgstr "Počáteční strana"
-
 msgid "metadata/relatedItems/itemStartPage.help"
 msgstr ""
 
 msgid "metadata/relatedItems/itemStartPage.hint"
 msgstr ""
-
-msgid "metadata/relatedItems/itemEndPage.label"
-msgstr "Poslední strana"
 
 msgid "metadata/relatedItems/itemEndPage.help"
 msgstr ""
@@ -1409,17 +1580,11 @@ msgstr ""
 msgid "metadata/relatedItems/itemEndPage.hint"
 msgstr ""
 
-msgid "metadata/relatedItems/itemPublisher.label"
-msgstr "Vydavatel"
-
 msgid "metadata/relatedItems/itemPublisher.help"
 msgstr ""
 
 msgid "metadata/relatedItems/itemPublisher.hint"
 msgstr ""
-
-msgid "metadata/relatedItems/itemRelationType.label"
-msgstr "Typ vazby"
 
 msgid "metadata/relatedItems/itemRelationType.help"
 msgstr ""
@@ -1463,9 +1628,6 @@ msgstr ""
 msgid "metadata/relatedItems/itemRelationType/@v.hint"
 msgstr ""
 
-msgid "metadata/relatedItems/itemResourceType.label"
-msgstr "Typ zdroje"
-
 msgid "metadata/relatedItems/itemResourceType.help"
 msgstr ""
 
@@ -1508,17 +1670,11 @@ msgstr ""
 msgid "metadata/relatedItems/itemResourceType/@v.hint"
 msgstr ""
 
-msgid "metadata/fundingReferences.label"
-msgstr "Projekt nebo financování"
-
 msgid "metadata/fundingReferences.help"
 msgstr ""
 
 msgid "metadata/fundingReferences.hint"
 msgstr ""
-
-msgid "metadata/fundingReferences/projectID.label"
-msgstr "Číslo projektu"
 
 msgid "metadata/fundingReferences/projectID.help"
 msgstr ""
@@ -1526,26 +1682,17 @@ msgstr ""
 msgid "metadata/fundingReferences/projectID.hint"
 msgstr ""
 
-msgid "metadata/fundingReferences/projectName.label"
-msgstr "Název projektu"
-
 msgid "metadata/fundingReferences/projectName.help"
 msgstr ""
 
 msgid "metadata/fundingReferences/projectName.hint"
 msgstr ""
 
-msgid "metadata/fundingReferences/fundingProgram.label"
-msgstr "Výzkumný program"
-
 msgid "metadata/fundingReferences/fundingProgram.help"
 msgstr ""
 
 msgid "metadata/fundingReferences/fundingProgram.hint"
 msgstr ""
-
-msgid "metadata/fundingReferences/funder.label"
-msgstr "Poskytovatel financí"
 
 msgid "metadata/fundingReferences/funder.help"
 msgstr ""
@@ -1589,17 +1736,11 @@ msgstr ""
 msgid "metadata/fundingReferences/funder/@v.hint"
 msgstr ""
 
-msgid "metadata/version.label"
-msgstr "Verze zdroje"
-
 msgid "metadata/version.help"
 msgstr ""
 
 msgid "metadata/version.hint"
 msgstr ""
-
-msgid "metadata/geoLocations.label"
-msgstr "Geolokace"
 
 msgid "metadata/geoLocations.help"
 msgstr ""
@@ -1625,26 +1766,17 @@ msgstr ""
 msgid "metadata/geoLocations/geoLocationPoint.hint"
 msgstr ""
 
-msgid "metadata/geoLocations/geoLocationPoint/pointLongitude.label"
-msgstr "Zeměpisná délka"
-
 msgid "metadata/geoLocations/geoLocationPoint/pointLongitude.help"
 msgstr ""
 
 msgid "metadata/geoLocations/geoLocationPoint/pointLongitude.hint"
 msgstr ""
 
-msgid "metadata/geoLocations/geoLocationPoint/pointLatitude.label"
-msgstr "Zeměpisná šířka"
-
 msgid "metadata/geoLocations/geoLocationPoint/pointLatitude.help"
 msgstr ""
 
 msgid "metadata/geoLocations/geoLocationPoint/pointLatitude.hint"
 msgstr ""
-
-msgid "metadata/accessibility.label"
-msgstr "Dostupnost zdroje"
 
 msgid "metadata/accessibility.help"
 msgstr ""
@@ -1670,17 +1802,11 @@ msgstr ""
 msgid "metadata/accessibility/value.hint"
 msgstr ""
 
-msgid "metadata/series.label"
-msgstr "Série"
-
 msgid "metadata/series.help"
 msgstr ""
 
 msgid "metadata/series.hint"
 msgstr ""
-
-msgid "metadata/series/seriesTitle.label"
-msgstr "Název edice"
 
 msgid "metadata/series/seriesTitle.help"
 msgstr ""
@@ -1688,17 +1814,11 @@ msgstr ""
 msgid "metadata/series/seriesTitle.hint"
 msgstr ""
 
-msgid "metadata/series/seriesVolume.label"
-msgstr "Svazek edice"
-
 msgid "metadata/series/seriesVolume.help"
 msgstr ""
 
 msgid "metadata/series/seriesVolume.hint"
 msgstr ""
-
-msgid "metadata/externalLocation.label"
-msgstr "Externí umístění"
 
 msgid "metadata/externalLocation.help"
 msgstr ""
@@ -1706,17 +1826,11 @@ msgstr ""
 msgid "metadata/externalLocation.hint"
 msgstr ""
 
-msgid "metadata/externalLocation/externalLocationURL.label"
-msgstr "Externí umístění zdroje"
-
 msgid "metadata/externalLocation/externalLocationURL.help"
 msgstr ""
 
 msgid "metadata/externalLocation/externalLocationURL.hint"
 msgstr ""
-
-msgid "metadata/externalLocation/externalLocationNote.label"
-msgstr "Poznámka"
 
 msgid "metadata/externalLocation/externalLocationNote.help"
 msgstr ""
@@ -1724,17 +1838,11 @@ msgstr ""
 msgid "metadata/externalLocation/externalLocationNote.hint"
 msgstr ""
 
-msgid "metadata/originalRecord.label"
-msgstr "Odkaz na původní záznam"
-
 msgid "metadata/originalRecord.help"
 msgstr ""
 
 msgid "metadata/originalRecord.hint"
 msgstr ""
-
-msgid "metadata/objectIdentifiers.label"
-msgstr "Identifikátory objektu"
 
 msgid "metadata/objectIdentifiers.help"
 msgstr ""
@@ -1742,17 +1850,11 @@ msgstr ""
 msgid "metadata/objectIdentifiers.hint"
 msgstr ""
 
-msgid "metadata/objectIdentifiers/identifier.label"
-msgstr "Identifikátor objektu"
-
 msgid "metadata/objectIdentifiers/identifier.help"
 msgstr ""
 
 msgid "metadata/objectIdentifiers/identifier.hint"
 msgstr ""
-
-msgid "metadata/objectIdentifiers/scheme.label"
-msgstr "Typ identifikátoru"
 
 msgid "metadata/objectIdentifiers/scheme.help"
 msgstr ""
@@ -1775,26 +1877,17 @@ msgstr ""
 msgid "metadata/objectIdentifiers/scheme.enum.RIV"
 msgstr ""
 
-msgid "metadata/systemIdentifiers.label"
-msgstr "Systémové identifikátory"
-
 msgid "metadata/systemIdentifiers.help"
 msgstr ""
 
 msgid "metadata/systemIdentifiers.hint"
 msgstr ""
 
-msgid "metadata/systemIdentifiers/identifier.label"
-msgstr "Systémový identifikátor"
-
 msgid "metadata/systemIdentifiers/identifier.help"
 msgstr ""
 
 msgid "metadata/systemIdentifiers/identifier.hint"
 msgstr ""
-
-msgid "metadata/systemIdentifiers/scheme.label"
-msgstr "Typ identifikátoru"
 
 msgid "metadata/systemIdentifiers/scheme.help"
 msgstr ""
@@ -1817,17 +1910,11 @@ msgstr ""
 msgid "metadata/systemIdentifiers/scheme.enum.nrOAI"
 msgstr ""
 
-msgid "metadata/events.label"
-msgstr "Události"
-
 msgid "metadata/events.help"
 msgstr ""
 
 msgid "metadata/events.hint"
 msgstr ""
-
-msgid "metadata/events/eventNameOriginal.label"
-msgstr "Název akce"
 
 msgid "metadata/events/eventNameOriginal.help"
 msgstr ""
@@ -1844,17 +1931,11 @@ msgstr ""
 msgid "metadata/events/eventNameAlternate.hint"
 msgstr ""
 
-msgid "metadata/events/eventDate.label"
-msgstr "Datum konání akce"
-
 msgid "metadata/events/eventDate.help"
 msgstr ""
 
 msgid "metadata/events/eventDate.hint"
 msgstr ""
-
-msgid "metadata/events/eventLocation.label"
-msgstr "Umístění"
 
 msgid "metadata/events/eventLocation.help"
 msgstr ""
@@ -1862,17 +1943,11 @@ msgstr ""
 msgid "metadata/events/eventLocation.hint"
 msgstr ""
 
-msgid "metadata/events/eventLocation/place.label"
-msgstr "Místo"
-
 msgid "metadata/events/eventLocation/place.help"
 msgstr ""
 
 msgid "metadata/events/eventLocation/place.hint"
 msgstr ""
-
-msgid "metadata/events/eventLocation/country.label"
-msgstr "Země"
 
 msgid "metadata/events/eventLocation/country.help"
 msgstr ""
@@ -1951,12 +2026,3 @@ msgstr ""
 
 msgid "$schema.hint"
 msgstr ""
-
-msgid "Best match"
-msgstr "Nejlepší shoda"
-
-msgid "Newest"
-msgstr "Nejnovější"
-
-msgid "Oldest"
-msgstr "Nejstarší"

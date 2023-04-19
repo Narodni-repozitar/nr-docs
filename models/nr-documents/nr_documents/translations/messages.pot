@@ -134,6 +134,15 @@ msgstr ""
 msgid "metadata/thesis/degreeGrantors/hierarchy/ancestors.hint"
 msgstr ""
 
+msgid "metadata/thesis/degreeGrantors/hierarchy/ancestors_or_self.help"
+msgstr ""
+
+msgid "metadata/thesis/degreeGrantors/hierarchy/ancestors_or_self.label"
+msgstr ""
+
+msgid "metadata/thesis/degreeGrantors/hierarchy/ancestors_or_self.hint"
+msgstr ""
+
 msgid "metadata/thesis/degreeGrantors/@v.help"
 msgstr ""
 
@@ -306,6 +315,15 @@ msgid "metadata/creators/affiliations/hierarchy/ancestors.label"
 msgstr ""
 
 msgid "metadata/creators/affiliations/hierarchy/ancestors.hint"
+msgstr ""
+
+msgid "metadata/creators/affiliations/hierarchy/ancestors_or_self.help"
+msgstr ""
+
+msgid "metadata/creators/affiliations/hierarchy/ancestors_or_self.label"
+msgstr ""
+
+msgid "metadata/creators/affiliations/hierarchy/ancestors_or_self.hint"
 msgstr ""
 
 msgid "metadata/creators/affiliations/@v.help"
@@ -531,6 +549,15 @@ msgid "metadata/contributors/affiliations/hierarchy/ancestors.label"
 msgstr ""
 
 msgid "metadata/contributors/affiliations/hierarchy/ancestors.hint"
+msgstr ""
+
+msgid "metadata/contributors/affiliations/hierarchy/ancestors_or_self.help"
+msgstr ""
+
+msgid "metadata/contributors/affiliations/hierarchy/ancestors_or_self.label"
+msgstr ""
+
+msgid "metadata/contributors/affiliations/hierarchy/ancestors_or_self.hint"
 msgstr ""
 
 msgid "metadata/contributors/affiliations/@v.help"
@@ -1091,6 +1118,18 @@ msgid ""
 "metadata/relatedItems/itemCreators/affiliations/hierarchy/ancestors.hint"
 msgstr ""
 
+msgid ""
+"metadata/relatedItems/itemCreators/affiliations/hierarchy/ancestors_or_self.help"
+msgstr ""
+
+msgid ""
+"metadata/relatedItems/itemCreators/affiliations/hierarchy/ancestors_or_self.label"
+msgstr ""
+
+msgid ""
+"metadata/relatedItems/itemCreators/affiliations/hierarchy/ancestors_or_self.hint"
+msgstr ""
+
 msgid "metadata/relatedItems/itemCreators/affiliations/@v.help"
 msgstr ""
 
@@ -1278,6 +1317,18 @@ msgstr ""
 
 msgid ""
 "metadata/relatedItems/itemContributors/affiliations/hierarchy/ancestors.hint"
+msgstr ""
+
+msgid ""
+"metadata/relatedItems/itemContributors/affiliations/hierarchy/ancestors_or_self.help"
+msgstr ""
+
+msgid ""
+"metadata/relatedItems/itemContributors/affiliations/hierarchy/ancestors_or_self.label"
+msgstr ""
+
+msgid ""
+"metadata/relatedItems/itemContributors/affiliations/hierarchy/ancestors_or_self.hint"
 msgstr ""
 
 msgid "metadata/relatedItems/itemContributors/affiliations/@v.help"
