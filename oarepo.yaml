@@ -14,9 +14,11 @@ models:
     model_kind: empty
     model_package: nr_documents
     permissions_presets: read_only
+    pid_type: dcmnts
     run_tests: skip
     update_opensearch: run
     use_custom_fields: 'yes'
+    use_drafts: 'yes'
     use_expandable_fields: 'no'
     use_files: 'no'
     use_relations: 'yes'
