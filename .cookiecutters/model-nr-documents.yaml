@@ -4,14 +4,17 @@ default_context:
   base_model_package: (none)
   base_model_use: (none)
   installation_site: nr-documents
+  merge_changes: merge
   model_dir: models/nr-documents
   model_kind: empty
   model_name: nr-documents
   model_package: nr_documents
   permissions_presets: read_only
+  pid_type: dcmnts
   run_tests: skip
   update_opensearch: run
   use_custom_fields: 'yes'
+  use_drafts: 'yes'
   use_expandable_fields: 'no'
   use_files: 'no'
   use_relations: 'yes'
