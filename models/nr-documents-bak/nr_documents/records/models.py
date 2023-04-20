@@ -7,6 +7,10 @@ from invenio_drafts_resources.records import (
 from invenio_records.models import RecordMetadataBase
 
 
+class NrDocumentsParentRecordMetadata(db.Model, RecordMetadataBase):
+    __tablename__ = "nr_documents_parent_metadata"
+
+
 class NrDocumentsMetadata(db.Model, RecordMetadataBase, ParentRecordMixin):
     """Model for NrDocumentsRecord metadata."""
 
@@ -15,10 +19,6 @@ class NrDocumentsMetadata(db.Model, RecordMetadataBase, ParentRecordMixin):
     # Enables SQLAlchemy-Continuum versioning
     __versioned__ = {}
     __parent_record_model__ = NrDocumentsParentRecordMetadata
-
-
-class NrDocumentsParentRecordMetadata(db.Model, RecordMetadataBase):
-    __tablename__ = "nr_documents_parent_metadata"
 
 
 class NrDocumentsDraftMetadata(db.Model, DraftMetadataBase, ParentRecordMixin):
