@@ -17,9 +17,7 @@ uwsgi-tools = ">=1.1.1"
 oarepo-vocabularies = ">=1.0.0"
 deepmerge = ">=1.1.0"
 nr-vocabularies = ">=1.0.0"
-
-
-
+invenio-records-resources = "==1.0.9"
 
 
 nr-documents = {editable = true, path = "../../models/nr-documents"} # Added by nrp-cli
