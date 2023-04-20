@@ -1922,10 +1922,10 @@
         },
         "oarepo-oai-pmh-harvester": {
             "hashes": [
-                "sha256:34d70d2b0a911c4e64718528313653e358228a6c3a8d82858e4d1bc06fc5176f",
-                "sha256:75b4d8abd35786ded9f131bd5cabffbd0487a52d28e71f3e19444d3dff1b9ac6"
+                "sha256:1029d7659c1a326cb61128f09f71067f1d1addf1fd5d738ab1d048fe5fbffef3",
+                "sha256:594a4ecccc835ca178582ed6a9f4697566a3617290fe8aeda3fc61e5f92214ec"
             ],
-            "version": "==4.0.6"
+            "version": "==4.0.7"
         },
         "oarepo-runtime": {
             "hashes": [
