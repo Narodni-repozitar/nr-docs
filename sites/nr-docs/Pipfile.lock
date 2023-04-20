@@ -1891,11 +1891,11 @@
         },
         "nr-metadata": {
             "hashes": [
-                "sha256:26264c55eac140fbeffd2b95e74401a133fd59b8884a33ec1a226162e56c4fc3",
-                "sha256:866147868290af67f4210189fad058c22ac16c3a7aa5ba72e83ae66a2401bd2e"
+                "sha256:2dc4edcca761b463acebb3145da490c7f4b19637cb758084dab4865e9319bf8c",
+                "sha256:f26600884ee4b203423ac5ac79b9e2b0401c30baaad52c155c711ec973fd87f0"
             ],
             "markers": "python_version >= '3.9'",
-            "version": "==1.0.35"
+            "version": "==1.0.36"
         },
         "nr-oaipmh-harvesters": {
             "hashes": [

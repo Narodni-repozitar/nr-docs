@@ -7,6 +7,7 @@ from invenio_records.dumpers import SearchDumperExt
 
 
 def getFromDict(dataDict, mapList):
+    print(mapList)
     return reduce(operator.getitem, mapList, dataDict)
 
 
@@ -14,14 +15,7 @@ class MultilingualDumper(SearchDumperExt):
     """NrDocumentsRecord search dumper."""
 
     def dump(self, record, data):
-        paths = [
-            "/metadata/additionalTitles/title",
-            "/metadata/subjects/subject",
-            "/metadata/abstract",
-            "/metadata/methods",
-            "/metadata/technicalInfo",
-            "/metadata/accessibility",
-        ]
+        paths = []
         SUPPORTED_LANGS = ["cs", "en"]
 
         for path in paths:
@@ -51,14 +45,7 @@ class MultilingualDumper(SearchDumperExt):
         return data
 
     def load(self, record, data):
-        paths = [
-            "/metadata/additionalTitles/title",
-            "/metadata/subjects/subject",
-            "/metadata/abstract",
-            "/metadata/methods",
-            "/metadata/technicalInfo",
-            "/metadata/accessibility",
-        ]
+        paths = []
         SUPPORTED_LANGS = ["cs", "en"]
         for path in paths:
             record2 = record
