@@ -6,12 +6,12 @@
   The type is the type of the component as defined in semantic-ui - element, collection, view, module
   For simple component, 'element' is the correct type
 */
-@type    : 'element';
+@type: 'element';
 
 /*
   This is the name of the component - though not required, keep it the same as the filename
 */
-@element : 'separated';
+@element: 'separated';
 
 /*******************************
 
@@ -25,7 +25,6 @@ name of the component from above)
 
 *******************************/
 
-
 @import (multiple) '../../theme.config';
 
 /*
@@ -35,25 +34,22 @@ name of the component from above)
   will allow users to override these values.
  */
 .ui.separated {
-  .separator {
-      display: inline-flex; 
-      flex-direction: row;
-      align-items: center;
-      justify-content: center;
-      margin: 0 .2em;
-    
-    .vertical-bar {
-      display: inline-block;
-      width: 1.5px;
-      height: 1.2em;
-      background-color: @green;
-      margin: 0 1px;
-      position: relative;
-      bottom: -.2em;
-    }
+  align-items: center;
+  line-height: 1.2;
+
+  .double.separator {
+    display: inline-block;
+    width: 0.5rem;
+    margin: 0 0.2rem -0.4em 0.2rem;
+    height: 1.5rem;
+    border-left: 1.5px solid @green;
+    border-right: 1.5px solid @green;
   }
-  * {
-    white-space: nowrap;
+
+  .list > .item:nth-child(n + 2) {
+    border-left: 1.5px solid @green;
+    padding-left: 0.5rem;
+    margin-left: 0.5rem;
   }
 }
 

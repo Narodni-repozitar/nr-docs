@@ -194,8 +194,6 @@ export const ResultsListItemComponent = ({
   const allVersionsVisible = filters?.allversions;
   const numOtherVersions = version - 1;
 
-  console.log(currentQueryState);
-
   return (
     <Overridable
       id={buildUID("RecordsResultsListItem.layout", "", appName)}

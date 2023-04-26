@@ -1,116 +1,109 @@
 
 
 {%- macro render_multilingual(arg) -%}
-<div class="ui multilingual-tabs">
-    <div class="ui compact text menu separated">
+    <div class="ui multilingual-tabs">
+        <div class="ui compact text menu separated">
+            {% for item in arg %}
+                <a class="green item {{'active' if loop.first else ''}}" data-tab="{{item|id}}-{{item.lang|e}}">{{item.lang|upper}}</a>
+                {% if not loop.last %}
+                <div class="separator"><div class="vertical-bar"></div></div>
+                {% endif %}
+            {% endfor %}
+        </div>
         {% for item in arg %}
-            <a class="green item {{'active' if loop.first else ''}}" data-tab="{{item|id}}-{{item.lang|e}}">{{item.lang|upper}}</a>
-            {% if not loop.last %}
-            <div class="separator"><div class="vertical-bar"></div></div>
-            {% endif %}
+        <div class="ui tab {{'active' if loop.first else ''}}" data-tab="{{item|id}}-{{item.lang|e}}">
+            {{ item.value|e }}
+        </div>
         {% endfor %}
     </div>
-    {% for item in arg %}
-    <div class="ui tab {{'active' if loop.first else ''}}" data-tab="{{item|id}}-{{item.lang|e}}">
-        {{ item.value|e }}
-    </div>
-    {% endfor %}
-</div>
 {%- endmacro -%}
 
 {%- macro render_people(arg) -%}
-<div class="row ui separated creatibutors">
-    <div role="list" class="ui divided horizontal list inline">
-    {% for person in arg.creators %}
-        <span role="listitem" class="item creatibutor-wrap separated">
-        {% value ui=({
-            "person": person,
-            "searchField": layout.children.creators.child.children.fullName.facet
-            }),
-            component="person" %}
-        </span>
-    {% endfor %}
-    </div>
-    {% if arg.contributors %}
-        <div class="separator"><div class="vertical-bar"></div><div class="vertical-bar"></div></div>
-        <div role="list" class="ui divided horizontal list inline">
-        {% for fullName, matches in arg.contributors | groupby('fullName') %}
-            <span role="listitem" class="item creatibutor-wrap separated">
-            {% value ui=({
-                "person": matches[0],
-                "roles": matches | map(attribute='role'),
-                "searchField": layout.children.contributors.child.children.fullName.facet}),
-                component="person" %}
-            </span>
-        {% endfor %}
+    <div class="ui double separated">
+        <div role="list" class="ui horizontal separated creatibutors list">
+            {% for person in arg.creators %}
+                {% value
+                    ui=({"person": person}),
+                    component="person",
+                    searchFacet=layout.children.creators.child.children.fullName.facet
+                %}
+            {% endfor %}
         </div>
-    {% endif %}
-</div>
+        {% if arg.contributors %}
+            <div class="double separator"></div>
+            <div role="list" class="ui horizontal separated creatibutors list">
+                {% for fullName, matches in arg.contributors | groupby('fullName') %}
+                    {% value ui=({
+                            "person": matches[0],
+                            "roles": matches | map(attribute='role')
+                        }),
+                        component="person",
+                        searchFacet=layout.children.contributors.child.children.fullName.facet
+                    %}
+                {% endfor %}
+            </div>
+        {% endif %}
+    </div>
 {%- endmacro -%}
 
 {%- macro render_person(arg) -%}
-    {% value ui=({
-        "value": arg.person.fullName,
-        "field": arg.searchField,
-        "title": arg.person.fullName ~ ": " ~ _("Find more records by this person"),
-        "className": "creatibutor-link"
-        }),
-        component="search_link" %} 
-    {%- if arg.roles -%}
-    ({{arg.roles | map(attribute='title') | join(', ') }})
-    {%- endif -%}
+    <div role="listitem" class="item creatibutor-wrap separated">
+        <div class="content">
+            {% value ui=({
+                    "value": arg.person.fullName,
+                    "title": arg.person.fullName ~ ": " ~ _("Find more records by this person"),
+                    "label": arg.person.fullName
+                }),
+                component="search_link",
+                className="creatibutor-link",
+            %}
+            {%- if arg.roles -%}
+            ({{arg.roles | map(attribute='title') | join(', ') }})
+            {%- endif -%}
+        </div>
+    </div>
 {%- endmacro -%}
 
 {%- macro render_subjects(arg) -%}
-<div class="ui separated">
     {% for lang, subjects in arg|groupby('subject.lang')%}
-        <div>
-        <div class="ui green basic label lang-tag">
-        {{lang|upper}}
-        </div>
-        {% for a in subjects %}
-        {% if a.valueURI %}
-        <a href="{{a.valueURI|e}}" target="_blank">
-            {{a.subject.value}}
-        </a>
-        {% else %}
-        {{a.subject.value}}
-        {% endif %}
-        {% if not loop.last %}
-        <div class="separator"><div class="vertical-bar"></div></div>
-        {% endif %}
-        {% endfor %}
+        <div class="ui separated">    
+            <div class="ui green basic label lang-tag">
+                {{lang|upper}}
+            </div>
+            <div role="list" class="ui horizontal separated medium subjects list">
+            {% for a in subjects %}
+                <div role="listitem" class="item">
+                    {% if a.valueURI %}
+                        {%- value ui=a.valueURI, component="definition_link" -%}
+                    {% endif %}
+                    {%- value ui=({
+                        "value": a.subject.value,
+                        "label": a.subject.value,
+                        "title": _("Find more records with this subject")
+                        }),
+                        component="search_link",
+                        searchFacet="metadata_subjects_subject_" ~ lang ~ "_keyword",
+                        className="subject-link" -%}
+                </div>
+            {% endfor %}
         </div>
     {% endfor %}
-</div>
 {%- endmacro -%}
 
-{%- macro render_url(arg) -%}<a href="{{arg|e}}">{{arg|e}}</a>{%- endmacro -%}
-
-{%- macro render_degree_grantors(arg) -%}
-{%- for a in arg -%}
-<div>
-    {% value ui=a, component="taxonomy_item" %}
-</div>
-{%- endfor -%}
+{%- macro render_nr_degree_grantor(arg) -%}
+    {% value
+        ui=arg,
+        component="taxonomy_item",
+    %}
 {%- endmacro -%}
 
 {%- macro render_additionalTitle(arg) -%}
-<span title="{{_(arg.titleType)}}">
-    <div class="ui green basic label lang-tag">
-      {{arg.title.lang|upper}}
-    </div>
-    {{ arg.title.value }}
-</span>
-{%- endmacro -%}
-
-
-{%- macro render_search_link(arg) -%}
-<a class="{{arg.className}}" href="/docs/?q=&amp;f={{arg.field | urlencode}}:{{arg.value | urlencode}}" title="{{arg.title}}">
-    <span class="{{arg.className}} value">
-        {{arg.value}}
+    <span title="{{_(arg.titleType)}}">
+        <div class="ui green basic label lang-tag">
+        {{arg.title.lang|upper}}
+        </div>
+        {{ arg.title.value }}
     </span>
-</a>
 {%- endmacro -%}
 
 {# -------------------------------------- #}

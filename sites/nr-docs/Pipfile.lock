@@ -1922,17 +1922,17 @@
         },
         "oarepo-oai-pmh-harvester": {
             "hashes": [
-                "sha256:1029d7659c1a326cb61128f09f71067f1d1addf1fd5d738ab1d048fe5fbffef3",
-                "sha256:594a4ecccc835ca178582ed6a9f4697566a3617290fe8aeda3fc61e5f92214ec"
+                "sha256:6b20af9648be5c407c793ef969077dfe367bb66ffdea3fb75b17b551f49b4ecf",
+                "sha256:ae872e27f0045c0419df96566cd357c43bf0640fb80913b987e50ae237855ab2"
             ],
-            "version": "==4.0.7"
+            "version": "==4.0.14"
         },
         "oarepo-runtime": {
             "hashes": [
-                "sha256:493bf68ce64bafbc442106f3a537aafb6ca48f3e4662470c3996fce35cbc3bb2",
-                "sha256:f683f6acfced87eafcd6286c9e114b5b24531a1ff0deadf30ec55fd1957899a1"
+                "sha256:80704d945226a0dc6b202d66a92a560152f0b35ef0cec4e78c4f1f3e2a7a5db2",
+                "sha256:b85fe7a4e4e9107daeeff8574ac245d8fd8e021bc5168e1968cf33a19af045c8"
             ],
-            "version": "==1.2.22"
+            "version": "==1.2.24"
         },
         "oarepo-ui": {
             "hashes": [
@@ -2634,11 +2634,11 @@
         },
         "setuptools": {
             "hashes": [
-                "sha256:6f0839fbdb7e3cfef1fc38d7954f5c1c26bf4eebb155a55c9bf8faf997b9fb67",
-                "sha256:bb16732e8eb928922eabaa022f881ae2b7cdcfaf9993ef1f5e841a96d32b8e0c"
+                "sha256:23aaf86b85ca52ceb801d32703f12d77517b2556af839621c641fca11287952b",
+                "sha256:f104fa03692a2602fa0fec6c6a9e63b6c8a968de13e17c026957dd1f53d80990"
             ],
             "markers": "python_version >= '3.7'",
-            "version": "==67.7.1"
+            "version": "==67.7.2"
         },
         "sickle": {
             "hashes": [
@@ -3093,11 +3093,11 @@
         },
         "setuptools": {
             "hashes": [
-                "sha256:6f0839fbdb7e3cfef1fc38d7954f5c1c26bf4eebb155a55c9bf8faf997b9fb67",
-                "sha256:bb16732e8eb928922eabaa022f881ae2b7cdcfaf9993ef1f5e841a96d32b8e0c"
+                "sha256:23aaf86b85ca52ceb801d32703f12d77517b2556af839621c641fca11287952b",
+                "sha256:f104fa03692a2602fa0fec6c6a9e63b6c8a968de13e17c026957dd1f53d80990"
             ],
             "markers": "python_version >= '3.7'",
-            "version": "==67.7.1"
+            "version": "==67.7.2"
         },
         "tomli": {
             "hashes": [
