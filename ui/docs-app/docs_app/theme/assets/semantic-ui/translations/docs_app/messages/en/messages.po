@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2023-04-17T14:05:51.545Z\n"
-"PO-Revision-Date: 2023-04-17T14:05:51.545Z\n"
+"POT-Creation-Date: 2023-04-27T08:32:51.813Z\n"
+"PO-Revision-Date: 2023-04-27T08:32:51.813Z\n"
 "Language: en\n"
 
 msgid "We couldn't find any matches for "
@@ -45,9 +45,6 @@ msgstr "ROR profile"
 msgid "GND profile"
 msgstr "GND profile"
 
-msgid "subject definition"
-msgstr "subject definition"
-
 msgid "Uploaded on"
 msgstr "Uploaded on"
 
@@ -83,3 +80,6 @@ msgstr "Find all records"
 
 msgid "by this document type"
 msgstr "by this document type"
+
+msgid "Find more records with this subject"
+msgstr "Find more records with this subject"

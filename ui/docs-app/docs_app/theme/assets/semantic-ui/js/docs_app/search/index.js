@@ -1,5 +1,6 @@
 import { createSearchAppInit } from '@js/invenio_search_ui'
 import {
+  ActiveFiltersElement,
   BucketAggregationElement,
   BucketAggregationValuesElement,
   CountElement,
@@ -25,6 +26,7 @@ const ResultsListItemWithConfig = parametrize(ResultsListItemWithState, { appNam
 const ResultsGridItemWithConfig = parametrize(ResultsGridItemWithState, { appName: appName })
 
 export const defaultComponents = {
+  [`${appName}.ActiveFilters.element`]: ActiveFiltersElement,
   [`${appName}.BucketAggregation.element`]: BucketAggregationElement,
   [`${appName}.BucketAggregationValues.element`]: BucketAggregationValuesElement,
   [`${appName}.Count.element`]: CountElement,

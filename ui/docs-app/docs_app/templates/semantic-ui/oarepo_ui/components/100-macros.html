@@ -75,7 +75,7 @@
                 <div role="listitem" class="item">
                     {% if a.valueURI %}
                         {%- value ui=a.valueURI, component="definition_link" -%}
-                    {% endif %}
+                    {% endif %} 
                     {%- value ui=({
                         "value": a.subject.value,
                         "label": a.subject.value,
@@ -86,6 +86,7 @@
                         className="subject-link" -%}
                 </div>
             {% endfor %}
+            </div>
         </div>
     {% endfor %}
 {%- endmacro -%}

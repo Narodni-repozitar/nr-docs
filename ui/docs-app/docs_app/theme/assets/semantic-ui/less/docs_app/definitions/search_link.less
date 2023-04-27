@@ -6,12 +6,12 @@
   The type is the type of the component as defined in semantic-ui - element, collection, view, module
   For simple component, 'element' is the correct type
 */
-@type: 'module';
+@type: 'element';
 
 /*
   This is the name of the component - though not required, keep it the same as the filename
 */
-@element: 'lang_tag';
+@element: 'search_link';
 
 /*******************************
 
@@ -33,12 +33,14 @@ name of the component from above)
   Note: use variables here, not the exact values. Placing the values to another file (sample.variables)
   will allow users to override these values.
  */
-.ui.label.lang-tag {
-  font-weight: normal;
-  font-size: xx-small;
-  padding: 0.15em 0.6em;
-  margin: 0 0.5em 0 0 !important;
-  position: relative;
-  bottom: 2px;
-  text-transform: uppercase;
+a.ui.search.link {
+  cursor: pointer;
+
+  :hover::before {
+    content: ' 🔎  ';
+  }
 }
+/*
+  This will load the overrides, enabling the user of your component to override your css if required
+ */
+.loadUIOverrides();
