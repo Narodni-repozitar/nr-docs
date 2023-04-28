@@ -1,3 +1,7 @@
 .main.container {
     margin-top: 4rem;
 }
+
+.ui.container.cover-page.masthead {
+    height: 70vh;
+}

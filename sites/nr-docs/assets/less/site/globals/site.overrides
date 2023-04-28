@@ -39,19 +39,50 @@ body {
     }
 }
 
+.frontpage-logo {
+  width: auto !important;
+  height: 126px !important;
+}
+
+.backdrop {
+  background: rgb(224,248,255);
+  background: linear-gradient(90deg, #ebf4ff 0%, rgba(240,253,255,1) 30%,  rgba(240,253,255,1) 60%, #ecffe4);
+
+  &.frontpage-header  {
+    background: none;
+  }
+}
+
+.invenio-header-container {
+  background-color: #ffffffaa
+}
+
 .nr-documents.theme.header {
-  nav {
+  .nr-logo {
+    margin-inline-start: -2rem;
+    padding: 1rem 2rem;
+    background: white;
+    border-radius: 10px;
+  }
+
+  .outer-navbar {
     background-image: url('../../../../static/images/background.png');
     background-color: white;
+    background-size: 1024px;
+    background-repeat-x: repeat;
+    background-repeat-y: no-repeat;
     border: 0;
-    border-bottom: 1px solid lightgrey;
   }
 }
 
 .borderless {
   border: none !important;
+}
+
+.shadowless, .ui.borderless.facet.card {
   box-shadow: none !important;
 }
+
 
 .facet-wrapper.content:not(.parent) {
   padding: .5em 0;
@@ -85,4 +116,20 @@ body {
 
 .facet-list {
   margin: 0 -1rem;
+}
+
+#skip-to-main {
+  display: none;
+}
+
+#invenio-nav {
+  background: none;
+}
+
+#nr-footer-element {
+  border-top: 1px solid @green;
+}
+
+#frontpage-search-bar {
+  background: none;
 }

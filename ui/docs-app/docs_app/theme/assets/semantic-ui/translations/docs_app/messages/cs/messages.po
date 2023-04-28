@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2\n"
-"POT-Creation-Date: 2023-04-27T08:32:51.656Z\n"
-"PO-Revision-Date: 2023-04-27T08:32:51.656Z\n"
+"POT-Creation-Date: 2023-04-28T14:58:13.107Z\n"
+"PO-Revision-Date: 2023-04-28T14:58:13.107Z\n"
 "Language: cs\n"
 
 msgid "We couldn't find any matches for "
@@ -83,3 +83,6 @@ msgstr "s tímto typem dokumentu"
 
 msgid "Find more records with this subject"
 msgstr "Najít další záznamy s tímto heslem"
+
+msgid "Search"
+msgstr "Hledat"

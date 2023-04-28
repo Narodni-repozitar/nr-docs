@@ -14,6 +14,7 @@ import {
 } from '@js/oarepo_ui/search'
 import {
   EmptyResultsElement,
+  MultipleSearchBarElement,
   ResultsGridItemWithState,
   ResultsListItemWithState
 } from './components'
@@ -40,7 +41,7 @@ export const defaultComponents = {
   [`${appName}.SearchApp.sort`]: SearchAppSort,
   [`${appName}.SearchApp.resultOptions`]: SearchAppResultOptions,
   [`${appName}.SearchFilters.Toggle.element`]: SearchFiltersToggleElement,
-  //   [`${appName}.SearchBar.element`]: RDMRecordMultipleSearchBarElement,
+  [`${appName}.SearchBar.element`]: MultipleSearchBarElement,
 }
 
 const overriddenComponents = overrideStore.getAll()
