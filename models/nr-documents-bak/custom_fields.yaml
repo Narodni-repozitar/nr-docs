@@ -1,8 +1,0 @@
-#TODO: add your expandable fields definitions for the base record here
-#example:
-#custom-fields:
-#- element: custom_fields
-#  config: TEST_CUSTOM_FIELDS
-#- config: INLINE_CUSTOM_FIELDS
-custom-fields: []
-
