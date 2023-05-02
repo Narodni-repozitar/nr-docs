@@ -17,16 +17,15 @@
 
   {%- block grid_section %}
     <div class="backdrop">
-    <div class="ui stackable grid container rel-mt-2">
-
+    <div class="ui stackable container">
+      <div class="ui one column centered grid">
       {% block main_column %}
-        <div class="eleven wide computer sixteen wide tablet centered column">
+        <div class="ui eleven wide computer sixteen wide tablet centered column">
 
           {% block main_column_content %}
           {%- block frontpage_search %}
             <div id="frontpage-search-bar" class="ui container fluid frontpage-header masthead center aligned borderless segment cover-page">
             <div class="ui container grid rel-mt-2">
-                <div class="row">
                 <div class="sixteen wide column center aligned">
                     {%- block frontpage_title %}
                     <div class="ui text container">
@@ -57,22 +56,14 @@
                     </div>
                     </div>
                     <div class="ui divider hidden"></div>
-                    {%- endblock frontpage_form %}
-            </div>
+                {%- endblock frontpage_form %}
             </div>
             {%- endblock frontpage_search %}
           {% endblock main_column_content %}
 
         </div>
       {% endblock main_column %}
-
-      {% block side_column %}
-        <aside class="five wide computer sixteen wide tablet column">
-
-          {% block side_column_content %}{% endblock side_column_content %}
-
-        </aside>
-      {% endblock side_column %}
+      </div>
     </div>
     </div>
   {%- endblock grid_section %}

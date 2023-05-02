@@ -8,10 +8,10 @@
   under the terms of the MIT License; see LICENSE file for more details.
 #}
 
-<footer id="nr-footer-element" class="rel-pt-1">
+<footer id="nr-footer-element">
+  <div id="nr-footer-container">
   {%- block footer_top %}
-    
-      <div class="ui container">
+      <div class="ui container rel-pt-2">
         {%- block footer_top_left %}
             <div class="footer-top">
                 <p class="margin-small">
@@ -51,4 +51,5 @@
       </div>
     </div>
     {%- endblock footer_bottom %}
+  </div>
 </footer>
