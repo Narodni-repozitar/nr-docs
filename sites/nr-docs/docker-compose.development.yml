@@ -46,6 +46,8 @@ services:
       - 'INVENIO_SECRET_KEY=CHANGE_ME'
       - 'INVENIO_SQLALCHEMY_DATABASE_URI=postgresql+psycopg2://nr-docs:nr-docs@db/nr-docs'
       - 'INVENIO_RATELIMIT_STORAGE_URL=redis://cache:6379/3'
+    stdin_open: true 
+    tty: true
     volumes:
       - type: bind
         source: ../../
