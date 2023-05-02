@@ -71,3 +71,8 @@ target/
 
 # node modules
 **/*/node_modules
+
+
+.ash_history
+.local
+sites/*/requirements.txt

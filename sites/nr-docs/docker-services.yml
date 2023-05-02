@@ -23,15 +23,15 @@ services:
     build: ./docker/nginx/
     image: nr-docs-frontend
     restart: 'unless-stopped'
-    ports:
-      - '127.0.0.1:280:280'
-      - '127.0.0.1:643:280'
+    expose:
+      - 80
+      - 443
   cache:
     image: redis:7
     restart: 'unless-stopped'
     read_only: true
-    ports:
-      - '127.0.0.1:6579:6379'
+    expose:
+      - 6379
   db:
     image: postgres:12.4
     restart: 'unless-stopped'
@@ -39,14 +39,14 @@ services:
       - 'POSTGRES_USER=nr-docs'
       - 'POSTGRES_PASSWORD=nr-docs'
       - 'POSTGRES_DB=nr-docs'
-    ports:
-      - '127.0.0.1:5632:5432'
+    expose:
+      - 5432
   pgadmin:
     image: dpage/pgadmin4:6
     restart: 'unless-stopped'
-    ports:
-      - '127.0.0.1:5250:80'
-      - '127.0.0.1:5251:443'
+    expose:
+      - 80
+      - 443
     environment:
       PGADMIN_DEFAULT_EMAIL: 'miroslav.simek@techlib.cz'
       PGADMIN_DEFAULT_PASSWORD: 'nr-docs'
@@ -55,9 +55,9 @@ services:
   mq:
     image: rabbitmq:3-management
     restart: 'unless-stopped'
-    ports:
-      - '127.0.0.1:15872:15672'
-      - '127.0.0.1:5872:5672'
+    expose:
+      - 15672
+      - 5672
   search:
     image: opensearchproject/opensearch:2.3.0
     restart: 'unless-stopped'
@@ -76,13 +76,11 @@ services:
         soft: 65536
         hard: 65536
     mem_limit: 2g
-    ports:
-      - '127.0.0.1:9400:9200'
-      - '127.0.0.1:9800:9600'
+    expose:
+      - 9200
+      - 9600
   opensearch-dashboards:
     image: opensearchproject/opensearch-dashboards:2.3.0
-    ports:
-      - '127.0.0.1:5801:5601'
     expose:
       - '5601'
     environment:
@@ -92,9 +90,9 @@ services:
   s3:
     image: minio/minio
     restart: 'unless-stopped'
-    ports:
-      - '127.0.0.1:9000:9000'
-      - '127.0.0.1:9001:9001'
+    expose:
+      - 9000
+      - 9001
     environment:
       MINIO_ROOT_USER: CHANGE_ME
       MINIO_ROOT_PASSWORD: CHANGE_ME

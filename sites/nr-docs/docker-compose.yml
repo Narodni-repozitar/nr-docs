@@ -20,22 +20,34 @@ services:
     extends:
       file: docker-services.yml
       service: cache
+    ports:
+      - '127.0.0.1:6579:6379'
   db:
     extends:
       file: docker-services.yml
       service: db
+    ports:
+      - '127.0.0.1:5632:5432'
   mq:
     extends:
       file: docker-services.yml
       service: mq
+    ports:
+      - '127.0.0.1:15872:15672'
+      - '127.0.0.1:5872:5672'
   search:
     extends:
       file: docker-services.yml
       service: search
+    ports:
+      - '127.0.0.1:9400:9200'
+      - '127.0.0.1:9800:9600'
   opensearch-dashboards:
     extends:
       file: docker-services.yml
       service: opensearch-dashboards
+    ports:
+      - '127.0.0.1:5801:5601'
   pgadmin:
     extends:
       file: docker-services.yml
@@ -44,5 +56,8 @@ services:
     extends:
       file: docker-services.yml
       service: s3
+    ports:
+      - '127.0.0.1:9000:9000'
+      - '127.0.0.1:9001:9001'
 volumes:
   data:
