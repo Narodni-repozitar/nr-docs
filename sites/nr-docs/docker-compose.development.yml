@@ -50,9 +50,9 @@ services:
       - type: bind
         source: ../../
         target: /repository
-      - type: bind
-        source: /Users/m/w/cesnet/oarepo-cli
-        target: /nrp-cli-sources
+      # - type: bind
+      #   source: /Users/m/w/cesnet/oarepo-cli
+      #   target: /nrp-cli-sources
 volumes:
   data:
     driver: local
