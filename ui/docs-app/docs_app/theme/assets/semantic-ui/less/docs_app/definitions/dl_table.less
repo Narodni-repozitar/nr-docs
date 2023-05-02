@@ -6,12 +6,12 @@
   The type is the type of the component as defined in semantic-ui - element, collection, view, module
   For simple component, 'element' is the correct type
 */
-@type    : 'collections';
+@type: 'collections';
 
 /*
   This is the name of the component - though not required, keep it the same as the filename
 */
-@element : 'dl_table';
+@element: 'dl_table';
 
 /*******************************
 
@@ -25,7 +25,6 @@ name of the component from above)
 
 *******************************/
 
-
 @import (multiple) '../../theme.config';
 
 /*
@@ -38,23 +37,24 @@ dl.ui.table {
   display: flex;
   flex-flow: row wrap;
 
-  & >dt {
+  & > dt {
     flex-basis: 15%;
     padding: 0px 4px;
+    margin-bottom: 1em;
     font-weight: 600;
   }
-  & >dd {
+  & > dd {
     flex-basis: 70%;
     flex-grow: 1;
     margin-bottom: 1em;
     break-after: always;
   }
 
-  @media only screen and (max-width : @largestMobileScreen) {
-    & >dt {
+  @media only screen and (max-width: @largestMobileScreen) {
+    & > dt {
       flex-basis: 100%;
     }
-    & >dd {
+    & > dd {
       flex-basis: 100%;
     }
   }

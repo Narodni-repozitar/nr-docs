@@ -1,5 +1,6 @@
 import { createSearchAppInit } from '@js/invenio_search_ui'
 import {
+  ActiveFiltersElement,
   BucketAggregationElement,
   BucketAggregationValuesElement,
   CountElement,
@@ -13,6 +14,7 @@ import {
 } from '@js/oarepo_ui/search'
 import {
   EmptyResultsElement,
+  MultipleSearchBarElement,
   ResultsGridItemWithState,
   ResultsListItemWithState
 } from './components'
@@ -25,6 +27,7 @@ const ResultsListItemWithConfig = parametrize(ResultsListItemWithState, { appNam
 const ResultsGridItemWithConfig = parametrize(ResultsGridItemWithState, { appName: appName })
 
 export const defaultComponents = {
+  [`${appName}.ActiveFilters.element`]: ActiveFiltersElement,
   [`${appName}.BucketAggregation.element`]: BucketAggregationElement,
   [`${appName}.BucketAggregationValues.element`]: BucketAggregationValuesElement,
   [`${appName}.Count.element`]: CountElement,
@@ -38,7 +41,7 @@ export const defaultComponents = {
   [`${appName}.SearchApp.sort`]: SearchAppSort,
   [`${appName}.SearchApp.resultOptions`]: SearchAppResultOptions,
   [`${appName}.SearchFilters.Toggle.element`]: SearchFiltersToggleElement,
-  //   [`${appName}.SearchBar.element`]: RDMRecordMultipleSearchBarElement,
+  [`${appName}.SearchBar.element`]: MultipleSearchBarElement,
 }
 
 const overriddenComponents = overrideStore.getAll()

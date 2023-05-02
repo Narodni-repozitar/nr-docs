@@ -23,4 +23,9 @@ class DocsAppResourceConfig(RecordsUIResourceConfig):
     }
 
     def search_active_facets(self, api_config, identity):
-        return list(self.search_available_facets(api_config, identity).keys())
+        return [
+            k
+            for k in self.search_available_facets(api_config, identity).keys()
+            # TODO: replace with a more generic `item.filterable` attribute check
+            if not k.startswith("metadata_abstract")
+        ]

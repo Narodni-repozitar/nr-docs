@@ -2,8 +2,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
-"POT-Creation-Date: 2023-04-24T09:55:22.740318\n"
-"PO-Revision-Date: 2023-04-24T09:55:22.740346\n"
+"POT-Creation-Date: 2023-05-02T17:38:33.400749\n"
+"PO-Revision-Date: 2023-05-02T17:38:33.400751\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -206,10 +206,10 @@ msgstr ""
 msgid "metadata/additionalTitles/title/value.hint"
 msgstr ""
 
-msgid "metadata/additionalTitles/titleType.help"
+msgid "metadata/additionalTitles/titleType.label"
 msgstr ""
 
-msgid "metadata/additionalTitles/titleType.label"
+msgid "metadata/additionalTitles/titleType.help"
 msgstr ""
 
 msgid "metadata/additionalTitles/titleType.hint"
@@ -350,10 +350,10 @@ msgstr ""
 msgid "metadata/creators/nameType.enum.Personal"
 msgstr ""
 
-msgid "metadata/creators/fullName.help"
+msgid "metadata/creators/fullName.label"
 msgstr ""
 
-msgid "metadata/creators/fullName.label"
+msgid "metadata/creators/fullName.help"
 msgstr ""
 
 msgid "metadata/creators/fullName.hint"
@@ -470,6 +470,15 @@ msgstr ""
 msgid "metadata/contributors/role/@v.hint"
 msgstr ""
 
+msgid "metadata/contributors/fullName.label"
+msgstr ""
+
+msgid "metadata/contributors/fullName.help"
+msgstr ""
+
+msgid "metadata/contributors/fullName.hint"
+msgstr ""
+
 msgid "metadata/contributors/affiliations.help"
 msgstr ""
 
@@ -584,15 +593,6 @@ msgstr ""
 msgid "metadata/contributors/nameType.enum.Personal"
 msgstr ""
 
-msgid "metadata/contributors/fullName.help"
-msgstr ""
-
-msgid "metadata/contributors/fullName.label"
-msgstr ""
-
-msgid "metadata/contributors/fullName.hint"
-msgstr ""
-
 msgid "metadata/contributors/authorityIdentifiers.help"
 msgstr ""
 
@@ -674,10 +674,10 @@ msgstr ""
 msgid "metadata/subjects.hint"
 msgstr ""
 
-msgid "metadata/subjects/subjectScheme.help"
+msgid "metadata/subjects/subjectScheme.label"
 msgstr ""
 
-msgid "metadata/subjects/subjectScheme.label"
+msgid "metadata/subjects/subjectScheme.help"
 msgstr ""
 
 msgid "metadata/subjects/subjectScheme.hint"
@@ -710,10 +710,10 @@ msgstr ""
 msgid "metadata/subjects/subject/value.hint"
 msgstr ""
 
-msgid "metadata/subjects/valueURI.help"
+msgid "metadata/subjects/valueURI.label"
 msgstr ""
 
-msgid "metadata/subjects/valueURI.label"
+msgid "metadata/subjects/valueURI.help"
 msgstr ""
 
 msgid "metadata/subjects/valueURI.hint"
@@ -1154,10 +1154,10 @@ msgstr ""
 msgid "metadata/relatedItems/itemCreators/nameType.enum.Personal"
 msgstr ""
 
-msgid "metadata/relatedItems/itemCreators/fullName.help"
+msgid "metadata/relatedItems/itemCreators/fullName.label"
 msgstr ""
 
-msgid "metadata/relatedItems/itemCreators/fullName.label"
+msgid "metadata/relatedItems/itemCreators/fullName.help"
 msgstr ""
 
 msgid "metadata/relatedItems/itemCreators/fullName.hint"
@@ -1355,10 +1355,10 @@ msgstr ""
 msgid "metadata/relatedItems/itemContributors/nameType.enum.Personal"
 msgstr ""
 
-msgid "metadata/relatedItems/itemContributors/fullName.help"
+msgid "metadata/relatedItems/itemContributors/fullName.label"
 msgstr ""
 
-msgid "metadata/relatedItems/itemContributors/fullName.label"
+msgid "metadata/relatedItems/itemContributors/fullName.help"
 msgstr ""
 
 msgid "metadata/relatedItems/itemContributors/fullName.hint"

@@ -6,6 +6,7 @@
 /*-------------------
       Site Colors
 --------------------*/
+@brandColor: hsl(0deg, 0%, 100% / 50%);
 @green: #23D26E;
 @blue: #0478F0;
 @grey: darken(@lightGrey, 50);

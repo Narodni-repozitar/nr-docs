@@ -4,6 +4,7 @@ import { List } from "semantic-ui-react";
 
 import { DoubleSeparator } from "./DoubleSeparator";
 import { IconPersonIdentifier } from "./IconPersonIdentifier";
+import { SearchFacetLink } from "./SearchFacetLink";
 
 import _get from "lodash/get";
 import _groupBy from "lodash/groupBy";
@@ -11,6 +12,30 @@ import _toPairs from "lodash/toPairs";
 import _join from "lodash/join";
 
 import { i18next } from "@translations/docs_app/i18next";
+
+const CreatibutorSearchLink = ({
+  personName = "No name",
+  searchField = "creators",
+  searchUrl = "/",
+}) => (
+  <SearchFacetLink
+    searchUrl={searchUrl}
+    searchFacet={`metadata_${searchField}_fullName`}
+    value={personName}
+    className={`${searchField}-link`}
+    title={`${personName}: ${i18next.t("Find more records by this person")}`}
+    label={personName}
+  />
+);
+
+const CreatibutorIcons = ({ personName = "No name", identifiers = [] }) =>
+  identifiers.map((i) => (
+    <IconPersonIdentifier
+      key={`${i.scheme}:${i.identifier}`}
+      identifier={i}
+      personName={personName}
+    />
+  ));
 
 export function ResultsItemCreatibutors({
   creators = [],
@@ -20,9 +45,6 @@ export function ResultsItemCreatibutors({
   searchUrl,
   className,
 }) {
-  let spanClass = "creatibutor-wrap separated";
-  className && (spanClass += ` ${className}`);
-
   const uniqueContributors = _toPairs(
     _groupBy(
       contributors.slice(0, maxContributors),
@@ -44,52 +66,42 @@ export function ResultsItemCreatibutors({
     ),
   }));
 
-  function getIcons(personName = "No name", identifiers = []) {
-    let icons = identifiers.map((i) => (
-      <IconPersonIdentifier
-        key={`${i.scheme}:${i.identifier}`}
-        identifier={i}
-        personName={personName}
-      />
-    ));
-    return icons;
-  }
-
-  function getLink(personName = "No name", searchField = "creators") {
-    let link = (
-      <a
-        className="creatibutor-link"
-        href={`${searchUrl}?q=&f=metadata_${searchField}_fullName:${encodeURI(
-          personName
-        )}`}
-        title={`${personName}: ${i18next.t(
-          "Find more records by this person"
-        )}`}
-      >
-        <span className="creatibutor-name">{personName}</span>
-      </a>
-    );
-    return link;
-  }
-
   return (
     <>
-      <List horizontal divided className="inline">
+      <List horizontal className="separated creators inline">
         {creators
           .slice(0, maxCreators)
           .map(({ fullName, authorityIdentifiers }) => (
-            <List.Item as="span" className={spanClass} key={fullName}>
-              {getLink(fullName)}
-              {getIcons(fullName, authorityIdentifiers)}
+            <List.Item
+              as="span"
+              className={`creatibutor-wrap separated ${className}`}
+              key={fullName}
+            >
+              <CreatibutorSearchLink
+                personName={fullName}
+                searchUrl={searchUrl}
+              />
+              <CreatibutorIcons
+                personName={fullName}
+                identifiers={authorityIdentifiers}
+              />
             </List.Item>
           ))}
       </List>
       {uniqueContributors.length > 0 && <DoubleSeparator />}
-      <List horizontal divided className="inline">
+      <List horizontal className="separated contributors inline">
         {uniqueContributors.map(({ id, fullName, identifiers, roles }) => (
-          <List.Item as="span" className={spanClass} key={id}>
-            {getLink(fullName, "contributors")}
-            {getIcons(fullName, identifiers)}
+          <List.Item
+            as="span"
+            className={`creatibutor-wrap separated ${className}`}
+            key={id}
+          >
+            <CreatibutorSearchLink
+              personName={fullName}
+              searchUrl={searchUrl}
+              searchField="contributors"
+            />
+            <CreatibutorIcons personName={fullName} identifiers={identifiers} />
             {roles && <span className="contributor-role">({roles})</span>}
           </List.Item>
         ))}

@@ -1,4 +1,3 @@
-<div>
 <section aria-label="Collection" class="ui segment">
   <h2 class="ui small header">{{_('Collection')}}</h2>
   {% value "metadata.collection" %}
@@ -25,7 +24,7 @@
           <i aria-hidden="true" class="dropdown icon"></i>
           <div class="menu transition">
             <div
-              style="pointer-events: all"
+              style="pointer-events: all;"
               role="option"
               aria-checked="true"
               aria-selected="true"
@@ -42,37 +41,15 @@
           title="Download file"
           class="ui fluid button"
           role="button"
-          >Export</a>
+        >
+          Export
+        </a>
       </div>
     </div>
   </div>
 </section>
-<!-- section aria-label="Links" class="ui segment">
-  <h2 class="ui small header">{{_('Links')}}</h2>
-      <dl class="ui">
-          {% for l in data.links.items() %}
-              {% if l.0 != 'self' %}
-                  <dt>{{_("links." + l.0)}}</dt>
-                  <dd>
-                      <a href="{{l.1|replace("/api/", "/")}}" target="_blank">{{l.1|replace("/api/", "/")}}</a>
-                  </dd>
-              {% endif %}
-          {% endfor %}
-      </dl>
-  </div>
-</section -->
 
-<section aria-label="API" class="ui segment">
-<h2 class="ui small header">{{_('API')}}</h2>
-  <dl class="ui">
-      {% for l in data.links.items() %}
-          <dt>{{_("api." + l.0)}}</dt>
-          <dd>
-              <a href="{{l.1}}" target="_blank">{{l.1}}</a>
-          </dd>
-      {% endfor %}
-  </dl>
-</div>
+<section aria-label="API Links" class="ui segment">
+  <h2 class="ui small header">{{_('API')}} {{_('Links')}}</h2>
+  {%- value ui=data.links, component="sidebar_links" -%}
 </section>
-
-</div>

@@ -6,12 +6,12 @@
   The type is the type of the component as defined in semantic-ui - element, collection, view, module
   For simple component, 'element' is the correct type
 */
-@type: 'collections';
+@type: 'element';
 
 /*
   This is the name of the component - though not required, keep it the same as the filename
 */
-@element: 'dl_table';
+@element: 'search_link';
 
 /*******************************
 
@@ -33,33 +33,13 @@ name of the component from above)
   Note: use variables here, not the exact values. Placing the values to another file (sample.variables)
   will allow users to override these values.
  */
-dl.ui.table {
-  display: flex;
-  flex-flow: row wrap;
+a.ui.search.link {
+  cursor: pointer;
 
-  & > dt {
-    flex-basis: 15%;
-    padding: 0px 4px;
-    margin-bottom: 1em;
-    font-weight: 600;
-  }
-  & > dd {
-    flex-basis: 70%;
-    flex-grow: 1;
-    margin-bottom: 1em;
-    break-after: always;
-  }
-
-  @media only screen and (max-width: @largestMobileScreen) {
-    & > dt {
-      flex-basis: 100%;
-    }
-    & > dd {
-      flex-basis: 100%;
-    }
+  :hover::before {
+    content: ' 🔎  ';
   }
 }
-
 /*
   This will load the overrides, enabling the user of your component to override your css if required
  */

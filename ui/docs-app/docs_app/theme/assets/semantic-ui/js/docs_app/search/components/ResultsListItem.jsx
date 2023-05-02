@@ -18,6 +18,7 @@ import { ResultsItemCreatibutors } from "./ResultsItemCreatibutors";
 import { ResultsItemSubjects } from "./ResultsItemSubjects";
 import { ResultsItemLicense } from "./ResultsItemLicense";
 import { DoubleSeparator } from "./DoubleSeparator";
+import { ResultsItemResourceType } from "./ResultsItemResourceType";
 
 const ItemHeader = ({ title, searchUrl, selfLink }) => {
   const viewLink = new URL(
@@ -49,7 +50,7 @@ const ItemSubheader = ({
       <Item.Meta>
         <Grid columns={1}>
           <Grid.Column>
-            <Grid.Row className="ui separated creatibutors">
+            <Grid.Row className="ui double separated creatibutors">
               <ResultsItemCreatibutors
                 creators={creators}
                 contributors={contributors}
@@ -75,21 +76,10 @@ const ItemSubheader = ({
               </span>
             </Grid.Row>
             <Grid.Row>
-              <a
-                href={
-                  resourceType
-                    ? `/vocabularies/${resourceType.type}/${resourceType.id}`
-                    : ""
-                }
-                aria-label={`${i18next.t("Find all records")} ${i18next.t(
-                  "by this document type"
-                )}`}
-                title={`${i18next.t("Find all records")} ${i18next.t(
-                  "by this document type"
-                )}`}
-              >
-                {resourceType.title || "No resource type"}
-              </a>
+              <ResultsItemResourceType
+                searchUrl={searchUrl}
+                resourceType={resourceType}
+              />
               {thesis && (
                 <Label pointing="left" size="mini" basic>
                   <Icon
@@ -103,7 +93,7 @@ const ItemSubheader = ({
               )}
             </Grid.Row>
             <Grid.Row>
-              <ResultsItemSubjects subjects={subjects} />
+              <ResultsItemSubjects searchUrl={searchUrl} subjects={subjects} />
             </Grid.Row>
           </Grid.Column>
         </Grid>
@@ -193,8 +183,6 @@ export const ResultsListItemComponent = ({
     currentQueryState && Object.fromEntries(currentQueryState.filters);
   const allVersionsVisible = filters?.allversions;
   const numOtherVersions = version - 1;
-
-  console.log(currentQueryState);
 
   return (
     <Overridable

@@ -3,24 +3,24 @@
 <h1 style="margin-bottom: 1em">{%- value "metadata.title" -%}</h1>
 <dl class="ui very basic table">
     {%- field "metadata.additionalTitles" -%}
-
     <dt>{{ _('People') }}</dt>
     <dd>
-        {%- field "metadata", component="people"-%}
+        {%- value "metadata", component="people"-%}
     </dd>
     {%- field "metadata.dateAvailable" -%}
     {%- field "metadata.dateModified" -%}
-    {%- field "metadata.languages" -%}
-    {%- field "metadata.resourceType" -%}
-    {%- field "metadata.subjects", component="subjects" -%}
+    {%- field "metadata.languages", searchFacet="metadata_languages" -%}
+    {%- field "metadata.resourceType", searchFacet="metadata_resourceType" -%}
+    {%- field "metadata.thesis.dateDefended" %}
+    {%- field "metadata.subjects", component="subjects", searchFacet="metadata_subjects" -%}
     {%- field "metadata.abstract", component="multilingual" -%}
-    {%- field "metadata.thesis.degreeGrantors", component="degree_grantors" -%}
+    {%- field "metadata.thesis.degreeGrantors", searchFacet="metadata_thesis_degreeGrantors" -%}
     {%- field "metadata.thesis.studyFields" -%}
     {%- field "metadata.accessibility", component="string" -%}
     {%- field "metadata.originalRecord" -%}
     {%- field "metadata.publishers" -%}
-    {%- field "metadata.accessRights" -%}
-
+    {%- field "metadata.accessRights", searchFacet="metadata_accessRights" -%}
+    {%- field "metadata.rights", searchFacet="metadata_rights" -%}
 </dl>
 {# tohle zatim asi nikde neni, ale pro jistotu to sem davam #}
 <dl>
@@ -32,7 +32,6 @@
 {%- field "metadata.notes", component="string" -%}
 {%- field "metadata.objectIdentifiers", component="string" -%}
 {%- field "metadata.relatedItems", component="string" -%}
-{%- field "metadata.rights", component="string" -%}
 {%- field "metadata.series", component="string" -%}
 {%- field "metadata.subjectCategories", component="string" -%}
 {%- field "metadata.technicalInfo", component="string" -%}

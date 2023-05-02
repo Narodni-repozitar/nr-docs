@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2\n"
-"POT-Creation-Date: 2023-04-17T14:05:51.410Z\n"
-"PO-Revision-Date: 2023-04-17T14:05:51.410Z\n"
+"POT-Creation-Date: 2023-04-28T14:58:13.107Z\n"
+"PO-Revision-Date: 2023-04-28T14:58:13.107Z\n"
 "Language: cs\n"
 
 msgid "We couldn't find any matches for "
@@ -45,9 +45,6 @@ msgstr "ROR profil"
 msgid "GND profile"
 msgstr "GND profil"
 
-msgid "subject definition"
-msgstr "definice subjektu"
-
 msgid "Uploaded on"
 msgstr "Nahráno dne"
 
@@ -83,3 +80,9 @@ msgstr "Vyhledat všechny záznamy"
 
 msgid "by this document type"
 msgstr "s tímto typem dokumentu"
+
+msgid "Find more records with this subject"
+msgstr "Najít další záznamy s tímto heslem"
+
+msgid "Search"
+msgstr "Hledat"

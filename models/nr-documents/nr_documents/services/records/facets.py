@@ -1,4 +1,5 @@
 """Facet definitions."""
+
 from flask_babelex import lazy_gettext as _
 from invenio_records_resources.services.records.facets import TermsFacet
 from oarepo_runtime.facets.date import (
@@ -111,6 +112,12 @@ metadata_contributors_role = VocabularyFacet(
 )
 
 
+metadata_contributors_fullName = TermsFacet(
+    field="metadata.contributors.fullName",
+    label=_("metadata/contributors/fullName.label"),
+)
+
+
 metadata_contributors_affiliations = HierarchyVocabularyFacet(
     field="metadata.contributors.affiliations",
     label=_("metadata/contributors/affiliations.label"),
@@ -121,12 +128,6 @@ metadata_contributors_affiliations = HierarchyVocabularyFacet(
 metadata_contributors_nameType = EnumTermsFacet(
     field="metadata.contributors.nameType",
     label=_("metadata/contributors/nameType.label"),
-)
-
-
-metadata_contributors_fullName = TermsFacet(
-    field="metadata.contributors.fullName",
-    label=_("metadata/contributors/fullName.label"),
 )
 
 
