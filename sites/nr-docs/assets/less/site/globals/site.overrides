@@ -135,7 +135,7 @@ body {
   background: none;
 }
 
-.frontpage-logo: {
+.frontpage-logo {
   margin-right: 0 !important;
 }
 
