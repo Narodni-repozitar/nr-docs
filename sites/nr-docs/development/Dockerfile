@@ -1,4 +1,4 @@
-from oarepo/oarepo-base:11
+from oarepo/oarepo-base-development:11
 
 # repository is mounted at /repository
 
