@@ -31,7 +31,7 @@ RUN ${INVENIO_VENV}/bin/pip install -r ${INVENIO_VENV}/requirements.txt --no-dep
 RUN ${INVENIO_VENV}/bin/pip check || echo "check failed. cairocffi and pypackaging should be expected"
 
 RUN python -m venv /nrp-cli
-RUN /nrp-cli/bin/pip install oarepo-cli
+RUN /nrp-cli/bin/pip install 'oarepo-cli>=11.0.0,<12'
 ENV NRP_CLI=/nrp-cli/bin/nrp-cli
 
 WORKDIR /repository/sites/${REPOSITORY_SITE_NAME}
