@@ -41,10 +41,10 @@ RUN apk add git
 EXPOSE 5000
 
 # nrp-cli development only
-# RUN echo "cat ${INVENIO_VENV}/requirements-editable.txt; if [ -d /nrp-cli-sources ] ; then /nrp-cli/bin/pip uninstall -y oarepo-cli; /nrp-cli/bin/pip install -e /nrp-cli-sources; fi; /nrp-cli/bin/nrp-cli \$@" > /tmp/nrp-cli-command
-# CMD /bin/sh /tmp/nrp-cli-command docker-develop \
-#     --virtualenv ${INVENIO_VENV} \
-#     --invenio ${INVENIO_INSTANCE_PATH}
+# RUN echo "if [ -d /nrp-cli-sources ] ; then /nrp-cli/bin/pip uninstall -y oarepo-cli; /nrp-cli/bin/pip install -e /nrp-cli-sources; fi; /nrp-cli/bin/nrp-cli \$@" > /tmp/nrp-cli-command
+# # CMD /bin/sh $NRP_CLI docker-develop \
+# #     --virtualenv ${INVENIO_VENV} \
+# #     --invenio ${INVENIO_INSTANCE_PATH}
 # CMD /bin/sh -c 'while true ; do sleep 3600; done'
 
 

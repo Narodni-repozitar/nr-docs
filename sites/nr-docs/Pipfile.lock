@@ -537,7 +537,7 @@
         },
         "docs-app": {
             "editable": true,
-            "path": "./../../ui/docs-app"
+            "path": "../../ui/docs-app"
         },
         "dojson": {
             "hashes": [
@@ -1887,7 +1887,7 @@
         },
         "nr-documents": {
             "editable": true,
-            "path": "./../../models/nr-documents"
+            "path": "../../models/nr-documents"
         },
         "nr-metadata": {
             "hashes": [
@@ -1913,7 +1913,6 @@
             "version": "==2.0.5"
         },
         "oarepo": {
-            "extras": [],
             "hashes": [
                 "sha256:0c44690dfa782673caedf3c36a80e176a626165ba5820a6bb8754c7f9d0d810f",
                 "sha256:2038f0f7df5cfe89585338f660632b077cffa6390d9626642813ebc7bef945ab"
@@ -1930,10 +1929,10 @@
         },
         "oarepo-runtime": {
             "hashes": [
-                "sha256:0f22ccff7cb4b44b39c5e3f96b2046fd653217a862041678ee3e5d742d82c9ae",
-                "sha256:36637ade8e70857c653d806927ba202d6fb11df02cf669cfce333255e5c1376f"
+                "sha256:1b913cf330e180936b9e9e483ececf9a1aa2e48786532a68b71090b883f301e4",
+                "sha256:eac60393f9855b60f2be3d9deef6914e81fedc25615a2283e9c6bcdfc65aa91b"
             ],
-            "version": "==1.2.25"
+            "version": "==1.2.28"
         },
         "oarepo-ui": {
             "hashes": [
