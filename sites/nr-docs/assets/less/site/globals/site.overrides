@@ -110,9 +110,9 @@ body {
   text-transform: initial;
 }
 
-.vertical.scroll {
-  height: 100vh;
-  overflow-y: scroll;
+.facet-list.vertical.scroll {
+  max-height: 200vh;
+  overflow-y: auto;
 }
 
 .facet-list {
