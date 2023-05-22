@@ -21,21 +21,18 @@
     {%- field "metadata.publishers" -%}
     {%- field "metadata.accessRights", searchFacet="metadata_accessRights" -%}
     {%- field "metadata.rights", searchFacet="metadata_rights" -%}
-</dl>
-{# tohle zatim asi nikde neni, ale pro jistotu to sem davam #}
-<dl>
-{%- field "metadata.events", component="string" -%}
-{%- field "metadata.externalLocation", component="string" -%}
-{%- field "metadata.fundingReferences", component="string" -%}
-{%- field "metadata.geoLocations", component="string" -%}
-{%- field "metadata.methods", component="string" -%}
-{%- field "metadata.notes", component="string" -%}
-{%- field "metadata.objectIdentifiers", component="string" -%}
-{%- field "metadata.relatedItems", component="string" -%}
-{%- field "metadata.series", component="string" -%}
-{%- field "metadata.subjectCategories", component="string" -%}
-{%- field "metadata.technicalInfo", component="string" -%}
-{%- field "metadata.version", component="string" -%}
+    {%- field "metadata.events", component="string" -%}
+    {%- field "metadata.externalLocation", component="string" -%}
+    {%- field "metadata.fundingReferences", searchFacet="metadata_fundingReferences" -%}
+    {%- field "metadata.geoLocations", component="string" -%}
+    {%- field "metadata.methods", component="string" -%}
+    {%- field "metadata.notes", component="string" -%}
+    {%- field "metadata.objectIdentifiers", component="string" -%}
+    {%- field "metadata.relatedItems", component="string" -%}
+    {%- field "metadata.series", component="string" -%}
+    {%- field "metadata.subjectCategories", component="string" -%}
+    {%- field "metadata.technicalInfo", component="string" -%}
+    {%- field "metadata.version", component="string" -%}
 </dl>
 
 <!--

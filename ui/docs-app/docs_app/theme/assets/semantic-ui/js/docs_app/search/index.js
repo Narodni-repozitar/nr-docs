@@ -25,6 +25,7 @@ const appName = 'DocsApp.Search'
 const SearchAppSearchbarContainerWithConfig = parametrize(SearchAppSearchbarContainer, { appName: appName })
 const ResultsListItemWithConfig = parametrize(ResultsListItemWithState, { appName: appName })
 const ResultsGridItemWithConfig = parametrize(ResultsGridItemWithState, { appName: appName })
+console.log(CountElement)
 
 export const defaultComponents = {
   [`${appName}.ActiveFilters.element`]: ActiveFiltersElement,

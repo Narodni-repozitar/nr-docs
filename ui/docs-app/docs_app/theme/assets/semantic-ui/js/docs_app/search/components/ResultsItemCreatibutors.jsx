@@ -61,7 +61,7 @@ export function ResultsItemCreatibutors({
     fullName: entries[0].fullName,
     authorityIdentifiers: entries[0].authorityIdentifiers,
     roles: _join(
-      entries.map(({ role }) => role.title),
+      entries.filter(({ role }) => role).map(({ role }) => role.title),
       ", "
     ),
   }));

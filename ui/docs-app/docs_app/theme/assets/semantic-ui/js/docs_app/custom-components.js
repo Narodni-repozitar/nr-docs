@@ -30,19 +30,6 @@ toggleIcon.on("click", function () {
     menu.toggleClass("active");
 });
 
-const tabElementSelector = ".invenio-tab-menu .item";
-const $tabElement = $(tabElementSelector);
-
-$tabElement.tab({
-    onVisible: function (tab) {
-        $(tabElementSelector).attr("aria-selected", false);
-        $(`#${tab}-tab`).attr("aria-selected", true);
-
-        $(".invenio-tab-container .tab.segment").attr("hidden", true);
-        $(`#${tab}-tab-panel`).attr("hidden", false);
-    },
-});
-
 /* Burger menu */
 const $burgerIcon = $("#invenio-burger-menu-icon");
 const $closeBurgerIcon = $("#invenio-close-burger-menu-icon");
@@ -71,14 +58,3 @@ $invenioMenu.on("keydown", (event) => {
         handleBurgerCloseClick();
     }
 });
-
-const headerSearchbar = document.getElementById("header-search-bar");
-const searchBarOptions = JSON.parse(headerSearchbar.dataset.options);
-
-// ReactDOM.render(
-//     <MultipleOptionsSearchBar
-//         options={searchBarOptions}
-//         placeholder={`${i18next.t("Search")}...`}
-//     />,
-//     headerSearchbar
-// );

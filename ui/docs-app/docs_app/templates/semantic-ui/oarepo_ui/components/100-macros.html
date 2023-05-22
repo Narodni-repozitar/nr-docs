@@ -35,7 +35,7 @@
                 {% for fullName, matches in arg.contributors | groupby('fullName') %}
                     {% value ui=({
                             "person": matches[0],
-                            "roles": matches | map(attribute='role')
+                            "roles": matches |  map(attribute='role')
                         }),
                         component="person",
                         searchFacet=layout.children.contributors.child.children.fullName.facet
@@ -58,7 +58,10 @@
                 className="creatibutor-link",
             %}
             {%- if arg.roles -%}
-            ({{arg.roles | map(attribute='title') | join(', ') }})
+                {{arg.roles | list}}
+                ({{arg.roles | map(attribute='title') | join(', ') }})
+            {%- else -%}
+                nope
             {%- endif -%}
         </div>
     </div>
@@ -111,67 +114,6 @@
 {# -------------------------------------- #}
 {# -------------------------------------- #}
 
-{# {%- macro render_access_rights(arg) -%} #}
-{# <dl class='detail-subfields'> #}
-{# {%- field "id" -%} #}
-{# {%- field "title" -%} #}
-{# {%- field "@v" -%} #}
-{# </dl> #}
-{# {%- endmacro -%} #}
-{#  #}
-{#  #}
-{#  #}
-{#  #}
-{#  #}
-{#  #}
-{# {%- macro render_contributor(arg) -%} #}
-{# <dl class='detail-subfields'> #}
-{# {%- field "role" -%} #}
-{# {%- field "affiliations" -%} #}
-{# {%- field "nameType" -%} #}
-{# {%- field "fullName" -%} #}
-{# {%- field "authorityIdentifiers" -%} #}
-{# </dl> #}
-{# {%- endmacro -%} #}
-{#  #}
-{#  #}
-{# {%- macro render_authority(arg) -%} #}
-{# <dl class='detail-subfields'> #}
-{# {%- field "id" -%} #}
-{# {%- field "title" -%} #}
-{# {%- field "@v" -%} #}
-{# </dl> #}
-{# {%- endmacro -%} #}
-{#  #}
-{#  #}
-{# {%- macro render_affiliation(arg) -%} #}
-{# <dl class='detail-subfields'> #}
-{# {%- field "id" -%} #}
-{# {%- field "title" -%} #}
-{# {%- field "@v" -%} #}
-{# </dl> #}
-{# {%- endmacro -%} #}
-{#  #}
-{#  #}
-{# {%- macro render_nr_authority_identifier(arg) -%} #}
-{# <dl class='detail-subfields'> #}
-{# {%- field "identifier" -%} #}
-{# {%- field "scheme" -%} #}
-{# </dl> #}
-{# {%- endmacro -%} #}
-{#  #}
-{#  #}
-{# {%- macro render_creator(arg) -%} #}
-{# <dl class='detail-subfields'> #}
-{# {%- field "affiliations" -%} #}
-{# {%- field "nameType" -%} #}
-{# {%- field "fullName" -%} #}
-{# {%- field "authorityIdentifiers" -%} #}
-{# </dl> #}
-{# {%- endmacro -%} #}
-{#  #}
-{#  #}
-{#  #}
 {#  #}
 {# {%- macro render_identifier(arg) -%} #}
 {# <dl class='detail-subfields'> #}
@@ -213,29 +155,16 @@
 {# {%- field "externalLocationNote" -%} #}
 {# </dl> #}
 {# {%- endmacro -%} #}
-{#  #}
-{#  #}
-{#  #}
-{#  #}
-{# {%- macro render_funding_reference(arg) -%} #}
-{# <dl class='detail-subfields'> #}
-{# {%- field "projectID" -%} #}
-{# {%- field "projectName" -%} #}
-{# {%- field "fundingProgram" -%} #}
-{# {%- field "funder" -%} #}
-{# </dl> #}
-{# {%- endmacro -%} #}
-{#  #}
-{#  #}
-{# {%- macro render_funder(arg) -%} #}
-{# <dl class='detail-subfields'> #}
-{# {%- field "id" -%} #}
-{# {%- field "title" -%} #}
-{# {%- field "@v" -%} #}
-{# </dl> #}
-{# {%- endmacro -%} #}
-{#  #}
-{#  #}
+
+{%- macro render_funding_reference(arg) -%}
+<dl class='detail-subfields'>
+{%- field "projectID" -%}
+{%- field "projectName" -%}
+{%- field "fundingProgram" -%}
+{%- field "funder" -%}
+</dl>
+{%- endmacro -%}
+
 {# {%- macro render_geolocation(arg) -%} #}
 {# <dl class='detail-subfields'> #}
 {# {%- field "geoLocationPlace" -%} #}
@@ -285,39 +214,12 @@
 {#  #}
 {# </dl> #}
 {# {%- endmacro -%} #}
-{#  #}
-{#  #}
-{# {%- macro render_item_relation_type(arg) -%} #}
-{# <dl class='detail-subfields'> #}
-{# {%- field "id" -%} #}
-{# {%- field "title" -%} #}
-{# {%- field "@v" -%} #}
-{# </dl> #}
-{# {%- endmacro -%} #}
-{#  #}
-{#  #}
-{# {%- macro render_resource_type(arg) -%} #}
-{# <dl class='detail-subfields'> #}
-{# {%- field "id" -%} #}
-{# {%- field "title" -%} #}
-{# {%- field "@v" -%} #}
-{# </dl> #}
-{# {%- endmacro -%} #}
-{#  #}
+
 {#  #}
 {# {%- macro render_series(arg) -%} #}
 {# <dl class='detail-subfields'> #}
 {# {%- field "seriesTitle" -%} #}
 {# {%- field "seriesVolume" -%} #}
-{# </dl> #}
-{# {%- endmacro -%} #}
-{#  #}
-{#  #}
-{# {%- macro render_subject(arg) -%} #}
-{# <dl class='detail-subfields'> #}
-{# {%- field "id" -%} #}
-{# {%- field "title" -%} #}
-{# {%- field "@v" -%} #}
 {# </dl> #}
 {# {%- endmacro -%} #}
 {#  #}
@@ -346,17 +248,4 @@
 {# {%- field "hierarchy" -%} #}
 {# {%- field "@v" -%} #}
 {# </dl> #}
-{# {%- endmacro -%} #}
-{#  #}
-{# {%- macro render_array(arg) -%} #}
-{#     {% for a in (arg or {}) -%} #}
-{#         {% value ui=a, layout=layout.child %} #}
-{#     {%- endfor %} #}
-{# {%- endmacro -%} #}
-{#  #}
-{#  #}
-{# {%- macro render_separated_array(arg) -%} #}
-{#     {% for a in (arg or {}) -%} #}
-{#         {% value ui=a, layout=layout.child %} #}
-{#     {%- endfor %} #}
 {# {%- endmacro -%} #}
