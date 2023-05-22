@@ -58,10 +58,7 @@
                 className="creatibutor-link",
             %}
             {%- if arg.roles -%}
-                {{arg.roles | list}}
                 ({{arg.roles | map(attribute='title') | join(', ') }})
-            {%- else -%}
-                nope
             {%- endif -%}
         </div>
     </div>
