@@ -35,7 +35,7 @@
                 {% for fullName, matches in arg.contributors | groupby('fullName') %}
                     {% value ui=({
                             "person": matches[0],
-                            "roles": matches |  map(attribute='role')
+                            "roles": matches |  map(attribute='role') | select('defined') | list
                         }),
                         component="person",
                         searchFacet=layout.children.contributors.child.children.fullName.facet
@@ -107,6 +107,47 @@
     </span>
 {%- endmacro -%}
 
+
+{%- macro render_funding_reference(arg) -%}
+<dl class='detail-subfields'>
+    {%- field "projectID" -%}
+    {%- field "projectName" -%}
+    {%- field "fundingProgram" -%}
+    {%- field "funder" -%}
+</dl>
+{%- endmacro -%}
+
+{%- macro render_nr_object_pid(arg) -%}
+<div class="item">
+    
+    <{{ 'a href={url} target="_blank"'.format(url=arg.url) if arg.url else 'span' }}  class="ui label green image">
+        <i class="external alternate icon"></i>
+        {%- value "scheme" -%}
+        <div class="detail">
+            {%- value "identifier" -%}
+        </div>
+    </{{ 'a' if arg.url else 'span'}}>
+</div>
+{%- endmacro -%}
+
+{%- macro render_related_item(arg) -%}
+<dl class='detail-subfields'>
+    {%- field "itemTitle" -%}
+    {%- field "itemCreators" -%}
+    {%- field "itemContributors" -%}
+    {%- field "itemPIDs" -%}
+    {%- field "itemURL" -%}
+    {%- field "itemYear" -%}
+    {%- field "itemVolume" -%}
+    {%- field "itemIssue" -%}
+    {%- field "itemStartPage" -%}
+    {%- field "itemEndPage" -%}
+    {%- field "itemPublisher" -%}
+    {%- field "itemRelationType" -%}
+    {%- field "itemResourceType" -%}
+</dl>
+{%- endmacro -%}
+
 {# -------------------------------------- #}
 {# -------------------------------------- #}
 {# -------------------------------------- #}
@@ -153,15 +194,6 @@
 {# </dl> #}
 {# {%- endmacro -%} #}
 
-{%- macro render_funding_reference(arg) -%}
-<dl class='detail-subfields'>
-{%- field "projectID" -%}
-{%- field "projectName" -%}
-{%- field "fundingProgram" -%}
-{%- field "funder" -%}
-</dl>
-{%- endmacro -%}
-
 {# {%- macro render_geolocation(arg) -%} #}
 {# <dl class='detail-subfields'> #}
 {# {%- field "geoLocationPlace" -%} #}
@@ -179,30 +211,8 @@
 {#  #}
 {#  #}
 {#  #}
-{# {%- macro render_nr_object_pid(arg) -%} #}
-{# <dl class='detail-subfields'> #}
-{# {%- field "identifier" -%} #}
-{# {%- field "scheme" -%} #}
-{# </dl> #}
-{# {%- endmacro -%} #}
 {#  #}
 {#  #}
-{# {%- macro render_related_item(arg) -%} #}
-{# <dl class='detail-subfields'> #}
-{# {%- field "itemTitle" -%} #}
-{# {%- field "itemCreators" -%} #}
-{# {%- field "itemContributors" -%} #}
-{# {%- field "itemPIDs" -%} #}
-{# {%- field "itemURL" -%} #}
-{# {%- field "itemYear" -%} #}
-{# {%- field "itemVolume" -%} #}
-{# {%- field "itemIssue" -%} #}
-{# {%- field "itemStartPage" -%} #}
-{# {%- field "itemEndPage" -%} #}
-{# {%- field "itemPublisher" -%} #}
-{# {%- field "itemRelationType" -%} #}
-{# {%- field "itemResourceType" -%} #}
-{# </dl> #}
 {# {%- endmacro -%} #}
 {#  #}
 {#  #}

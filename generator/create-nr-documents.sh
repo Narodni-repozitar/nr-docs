@@ -35,7 +35,7 @@ chmod 755 nrp-installer.sh
 # this is problem with vocabularies - their indices has not been created as when site (and indices) are created,
 # vocabularies are not installed yet. Moreover invenio index init can not ignore existing indices.
 # do need to wipe them and recreate.
-# fortunately at this point the indices are empty
+# fortunately at this point the indices are empty 
 
 ( 
   cd $NR_DOCS_DIR/sites/nr-docs

@@ -131,12 +131,16 @@ const ItemSidebarIcons = ({ accessStatus, rights }) => {
   return (
     <Item.Extra className="labels-actions">
       <List>
-        <List.Item>
-          <ResultsItemAccessStatus status={accessStatus} />
-        </List.Item>
-        <List.Item>
-          <ResultsItemLicense rights={rights} />
-        </List.Item>
+        {accessStatus && (
+          <List.Item>
+            <ResultsItemAccessStatus status={accessStatus} />
+          </List.Item>
+        )}
+        {rights && (
+          <List.Item>
+            <ResultsItemLicense rights={rights} />
+          </List.Item>
+        )}
       </List>
     </Item.Extra>
   );
