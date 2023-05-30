@@ -175,6 +175,14 @@
             "markers": "python_version >= '3.7'",
             "version": "==0.9.0"
         },
+        "cachetools": {
+            "hashes": [
+                "sha256:95ef631eeaea14ba2e36f06437f36463aac3a096799e876ee55e5cdccb102590",
+                "sha256:dce83f2d9b4e1f732a8cd44af8e8fab2dbe46201467fc98b3ef8f269092bf62b"
+            ],
+            "markers": "python_version >= '3.7'",
+            "version": "==5.3.1"
+        },
         "cairocffi": {
             "hashes": [
                 "sha256:071ab7b72e3533300b0bfd55a52056b4ffdc1ed6e656779e2aced9b709b8a295"
@@ -857,7 +865,7 @@
             "hashes": [
                 "sha256:34a17436ed1e96697a86f9de3d15a3b0be01d8bc8de9c1dffd59fb8234ed5307"
             ],
-            "markers": "python_version >= '2.6' and python_version not in '3.0, 3.1, 3.2, 3.3'",
+            "markers": "python_version >= '2.6' and python_version not in '3.0, 3.1, 3.2'",
             "version": "==0.18.3"
         },
         "geojson": {
@@ -1891,11 +1899,11 @@
         },
         "nr-metadata": {
             "hashes": [
-                "sha256:2dc4edcca761b463acebb3145da490c7f4b19637cb758084dab4865e9319bf8c",
-                "sha256:f26600884ee4b203423ac5ac79b9e2b0401c30baaad52c155c711ec973fd87f0"
+                "sha256:273cccee963187b08deb0faf031171b5fa5919ce85f1cea053827d17eea22971",
+                "sha256:885f4c75ac49a80f99aa3c21a0820261358e8cbdd163e135ba67e95009d3bd89"
             ],
             "markers": "python_version >= '3.9'",
-            "version": "==1.0.36"
+            "version": "==1.0.38"
         },
         "nr-oaipmh-harvesters": {
             "hashes": [
@@ -1913,6 +1921,7 @@
             "version": "==2.0.5"
         },
         "oarepo": {
+            "extras": [],
             "hashes": [
                 "sha256:1fafb16adc536aefba1af71afb90fe4b548f90694bcb5c88cb72e82b9063d8ae",
                 "sha256:361aba580a2267157a0faeda773de40aeaa7972c6e6ca5de7ee39671dc864331"
@@ -1929,10 +1938,10 @@
         },
         "oarepo-runtime": {
             "hashes": [
-                "sha256:457a6750226cfda9c0db1398799dcd8048e97d931df337ff39883daad4909402",
-                "sha256:b0b3d7aef9d46393bf770e46345abe561bd4ea77f2f0c792786cb506d1397e33"
+                "sha256:bd3614a6620f7e701f92aa5027acd547b8b4fd2c97b02a0eb17e5e3aac5a073c",
+                "sha256:cb728b86d1073a0aeb12a28c59ddc08f683e4971df6bb4c5bd8fcf0f085d8fdb"
             ],
-            "version": "==1.2.35"
+            "version": "==1.3.0"
         },
         "oarepo-ui": {
             "hashes": [
@@ -1944,11 +1953,11 @@
         },
         "oarepo-vocabularies": {
             "hashes": [
-                "sha256:cb4ee6e864f08ae7ca4d76d2df190fd55621e4ac093db49bf70a4b3436cf75f8",
-                "sha256:e3c599840d673a040880d9158b29fbef3c250eda88df96607d97afeeac388d1c"
+                "sha256:3e3c4938c3a7d974297c2b5a088213903e8002819d4e0b8af5f2cdb40e1fa369",
+                "sha256:ce882dc39bd73dc54bfd4058b6b408b5513646693eca2e772aa749cc62d032a4"
             ],
             "index": "pypi",
-            "version": "==1.0.22"
+            "version": "==2.0.3"
         },
         "oauthlib": {
             "hashes": [
@@ -2334,7 +2343,7 @@
                 "sha256:0123cacc1627ae19ddf3c27a5de5bd67ee4586fbdd6440d9748f8abb483d3e86",
                 "sha256:961d03dc3453ebbc59dbdea9e4e11c5651520a876d0f4db161e8674aae935da9"
             ],
-            "markers": "python_version >= '2.7' and python_version not in '3.0, 3.1, 3.2, 3.3'",
+            "markers": "python_version >= '2.7' and python_version not in '3.0, 3.1, 3.2'",
             "version": "==2.8.2"
         },
         "pytz": {
@@ -2735,7 +2744,7 @@
                 "sha256:f41915a4e1f059dfad614b187bc06021fefb5fc5255bfe63abf8247d2f7a646a",
                 "sha256:f96def94576f857abf58e031ce881b5a3fc25cbec64b2bc4824824a8a4367af9"
             ],
-            "markers": "python_version >= '2.5' and python_version not in '3.0, 3.1, 3.2, 3.3'",
+            "markers": "python_version >= '2.5' and python_version not in '3.0, 3.1, 3.2'",
             "version": "==3.19.1"
         },
         "simplekv": {
@@ -2751,7 +2760,7 @@
                 "sha256:1e61c37477a1626458e36f7b1d82aa5c9b094fa4802892072e49de9c60c4c926",
                 "sha256:8abb2f1d86890a2dfb989f9a77cfcfd3e47c2a354b01111771326f8aa26e0254"
             ],
-            "markers": "python_version >= '2.7' and python_version not in '3.0, 3.1, 3.2, 3.3'",
+            "markers": "python_version >= '2.7' and python_version not in '3.0, 3.1, 3.2'",
             "version": "==1.16.0"
         },
         "soupsieve": {
