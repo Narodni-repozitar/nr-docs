@@ -545,7 +545,7 @@
         },
         "docs-app": {
             "editable": true,
-            "path": "./../../ui/docs-app"
+            "path": "../../ui/docs-app"
         },
         "dojson": {
             "hashes": [
@@ -865,7 +865,7 @@
             "hashes": [
                 "sha256:34a17436ed1e96697a86f9de3d15a3b0be01d8bc8de9c1dffd59fb8234ed5307"
             ],
-            "markers": "python_version >= '2.6' and python_version not in '3.0, 3.1, 3.2'",
+            "markers": "python_version >= '2.6' and python_version not in '3.0, 3.1, 3.2, 3.3'",
             "version": "==0.18.3"
         },
         "geojson": {
@@ -1895,7 +1895,7 @@
         },
         "nr-documents": {
             "editable": true,
-            "path": "./../../models/nr-documents"
+            "path": "../../models/nr-documents"
         },
         "nr-metadata": {
             "hashes": [
@@ -1921,7 +1921,6 @@
             "version": "==2.0.5"
         },
         "oarepo": {
-            "extras": [],
             "hashes": [
                 "sha256:1fafb16adc536aefba1af71afb90fe4b548f90694bcb5c88cb72e82b9063d8ae",
                 "sha256:361aba580a2267157a0faeda773de40aeaa7972c6e6ca5de7ee39671dc864331"
@@ -1931,17 +1930,17 @@
         },
         "oarepo-oai-pmh-harvester": {
             "hashes": [
-                "sha256:44c1f7f68e532ddb37536e0ae41469d92953c2687319af3c2fd206f79fba3e45",
-                "sha256:ff75479d7a4536ec650c3f54f70d3934993aa5fb21f5f802f2e7ab115839a488"
+                "sha256:551f6e0797716a0bcae2fade6b1339083e7463e0aabead91b3cc36feaa74f25d",
+                "sha256:e9c74d01946ef20d2b6228d7c028c97ed3af10bc99311d1c8e8a43d786bfc53c"
             ],
-            "version": "==4.0.19"
+            "version": "==4.0.21"
         },
         "oarepo-runtime": {
             "hashes": [
-                "sha256:bd3614a6620f7e701f92aa5027acd547b8b4fd2c97b02a0eb17e5e3aac5a073c",
-                "sha256:cb728b86d1073a0aeb12a28c59ddc08f683e4971df6bb4c5bd8fcf0f085d8fdb"
+                "sha256:495475010a261c835641fd27955a00b3cf9d6f17dcf9e6e7ee8c6bb37fb35abd",
+                "sha256:5e8da676452dc5ceb9fe287057e60f8fed75b02650ab93d104ad9cc6844c2ad2"
             ],
-            "version": "==1.3.0"
+            "version": "==1.3.4"
         },
         "oarepo-ui": {
             "hashes": [
@@ -2343,7 +2342,7 @@
                 "sha256:0123cacc1627ae19ddf3c27a5de5bd67ee4586fbdd6440d9748f8abb483d3e86",
                 "sha256:961d03dc3453ebbc59dbdea9e4e11c5651520a876d0f4db161e8674aae935da9"
             ],
-            "markers": "python_version >= '2.7' and python_version not in '3.0, 3.1, 3.2'",
+            "markers": "python_version >= '2.7' and python_version not in '3.0, 3.1, 3.2, 3.3'",
             "version": "==2.8.2"
         },
         "pytz": {
@@ -2744,7 +2743,7 @@
                 "sha256:f41915a4e1f059dfad614b187bc06021fefb5fc5255bfe63abf8247d2f7a646a",
                 "sha256:f96def94576f857abf58e031ce881b5a3fc25cbec64b2bc4824824a8a4367af9"
             ],
-            "markers": "python_version >= '2.5' and python_version not in '3.0, 3.1, 3.2'",
+            "markers": "python_version >= '2.5' and python_version not in '3.0, 3.1, 3.2, 3.3'",
             "version": "==3.19.1"
         },
         "simplekv": {
@@ -2760,7 +2759,7 @@
                 "sha256:1e61c37477a1626458e36f7b1d82aa5c9b094fa4802892072e49de9c60c4c926",
                 "sha256:8abb2f1d86890a2dfb989f9a77cfcfd3e47c2a354b01111771326f8aa26e0254"
             ],
-            "markers": "python_version >= '2.7' and python_version not in '3.0, 3.1, 3.2'",
+            "markers": "python_version >= '2.7' and python_version not in '3.0, 3.1, 3.2, 3.3'",
             "version": "==1.16.0"
         },
         "soupsieve": {
