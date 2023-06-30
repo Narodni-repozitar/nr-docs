@@ -17,6 +17,7 @@ WORKDIR ${SITE_DIR}
 RUN cp invenio.cfg ${INVENIO_INSTANCE_PATH}
 
 RUN ${INVENIO_VENV}/bin/pipenv requirements > requirements-orig.txt
+RUN cp requirements.txt requirements-orig.txt
 RUN cat requirements-orig.txt | \
     egrep -iv '^cffi=|^cairocffi=|^uwsgi=|^packaging=|^pip=|^setuptools=|^pyparsing=|^xcffib=|^cchardet=' \
     > requirements.txt

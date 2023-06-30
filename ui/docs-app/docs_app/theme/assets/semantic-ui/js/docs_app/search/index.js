@@ -10,7 +10,8 @@ import {
   SearchAppResultOptions,
   SearchAppSearchbarContainer,
   SearchFiltersToggleElement,
-  SearchAppSort
+  SearchAppSort,
+  SortByElement
 } from '@js/oarepo_ui/search'
 import {
   EmptyResultsElement,
@@ -18,14 +19,13 @@ import {
   ResultsGridItemWithState,
   ResultsListItemWithState
 } from './components'
-import { parametrize, overrideStore } from 'react-overridable'
+import { parametrize } from 'react-overridable'
 
 const appName = 'DocsApp.Search'
 
 const SearchAppSearchbarContainerWithConfig = parametrize(SearchAppSearchbarContainer, { appName: appName })
 const ResultsListItemWithConfig = parametrize(ResultsListItemWithState, { appName: appName })
 const ResultsGridItemWithConfig = parametrize(ResultsGridItemWithState, { appName: appName })
-console.log(CountElement)
 
 export const defaultComponents = {
   [`${appName}.ActiveFilters.element`]: ActiveFiltersElement,
@@ -40,15 +40,14 @@ export const defaultComponents = {
   [`${appName}.SearchApp.layout`]: SearchAppLayout,
   [`${appName}.SearchApp.searchbarContainer`]: SearchAppSearchbarContainerWithConfig,
   [`${appName}.SearchApp.sort`]: SearchAppSort,
+  [`${appName}.SortBy.element`]: SortByElement,
   [`${appName}.SearchApp.resultOptions`]: SearchAppResultOptions,
   [`${appName}.SearchFilters.Toggle.element`]: SearchFiltersToggleElement,
   [`${appName}.SearchBar.element`]: MultipleSearchBarElement,
 }
 
-const overriddenComponents = overrideStore.getAll()
-
 createSearchAppInit(
-  { ...defaultComponents, ...overriddenComponents },
+  {...defaultComponents },
   true,
   'invenio-search-config',
   true,

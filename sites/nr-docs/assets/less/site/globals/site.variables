@@ -28,7 +28,6 @@
 @lightSecondaryColor : lighten(@blue, 50);
 
 
-@inputBackground: @lightGrey;
 @selectionBackground: @lightGrey;
 @celledBorderColor: @green;
 
