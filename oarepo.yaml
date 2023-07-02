@@ -17,6 +17,8 @@ models:
     permissions_presets: read_only
     pid_type: dcmnts
     run_tests: skip
+    sites:
+    - nr-docs
     update_opensearch: run
     use_custom_fields: 'yes'
     use_drafts: 'no'
@@ -57,5 +59,7 @@ ui:
     cookiecutter_ui_record_serializer_class: nr_documents.resources.records.ui.NrDocumentsUIJSONSerializer
     installation_site: nr-docs
     model_name: nr-documents
+    sites:
+    - nr-docs
     ui_dir: ui/docs-app
     url_prefix: /docs/

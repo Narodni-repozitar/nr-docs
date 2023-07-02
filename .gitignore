@@ -80,3 +80,10 @@ sites/*/requirements.txt
 # Ignore local 3rdparty libraries for development
 vendor
 local
+
+__pypackages__
+.env
+.oarepo-user.yaml
+.pdm-python
+pdm.lock
+
