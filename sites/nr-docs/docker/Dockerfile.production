@@ -1,59 +1,55 @@
+ARG OAREPO_DEVELOPMENT_IMAGE=oarepo/oarepo-base-development:11
+ARG OAREPO_PRODUCTION_IMAGE=oarepo/oarepo-base-production:11
+ARG BUILDPLATFORM=linux/amd64
+
+FROM --platform=$BUILDPLATFORM $OAREPO_DEVELOPMENT_IMAGE as production-build
 
 ARG REPOSITORY_SITE_NAME
+ARG SITE_DIR=/repository/sites/${REPOSITORY_SITE_NAME}
 
-FROM oarepo/oarepo-base-development:11 AS production-build
+ENV SITE_DIR=$SITE_DIR
+ENV REPOSITORY_SITE_NAME=${REPOSITORY_SITE_NAME}
+
+RUN echo "Site dir is ${SITE_DIR}, repository site name is ${REPOSITORY_SITE_NAME}"
+
+COPY . /repository
+
+# DEBUG only
+COPY nrp-sources /nrp-sources
+RUN PYTHONPATH=/nrp-sources DOCKER_AROUND=1 /nrp/bin/nrp build --production --site $REPOSITORY_SITE_NAME --project-dir /repository
+
+# production
+# RUN DOCKER_AROUND=1  /nrp/bin/nrp build --production --site $REPOSITORY_SITE_NAME --project-dir /repository
+
+
+FROM --platform=$BUILDPLATFORM ${OAREPO_PRODUCTION_IMAGE} as production
+
+ARG REPOSITORY_SITE_ORGANIZATION
 ARG REPOSITORY_SITE_NAME
-ENV SITE_DIR=/repository/sites/${REPOSITORY_SITE_NAME}
+ARG REPOSITORY_IMAGE_URL
+ARG REPOSITORY_AUTHOR
+ARG REPOSITORY_GITHUB_URL
+ARG REPOSITORY_URL
+ARG REPOSITORY_DOCUMENTATION
 
-RUN ${INVENIO_VENV}/bin/pip install -U pipenv
+ARG SITE_DIR=/repository/sites/${REPOSITORY_SITE_NAME}
 
-RUN mkdir /repository
+LABEL maintainer="${REPOSITORY_SITE_ORGANIZATION}" \
+    org.opencontainers.image.authors="${REPOSITORY_AUTHOR}" \
+    org.opencontainers.image.title="NR Site production image for ${REPOSITORY_SITE_NAME}" \
+    org.opencontainers.image.url="${REPOSITORY_IMAGE_URL}" \
+    org.opencontainers.image.source="${REPOSITORY_GITHUB_URL}" \
+    org.opencontainers.image.documentation="${REPOSITORY_DOCUMENTATION}"
 
-COPY ./ui /repository/ui
-COPY ./models /repository/models
-COPY ./sites /repository/sites
+# copy build
+RUN mkdir -p /invenio/instance
+COPY --from=production-build /invenio/instance/invenio.cfg /invenio/instance/invenio.cfg
+COPY --from=production-build /invenio/instance/static /invenio/instance/static
+COPY --from=production-build /invenio/venv /invenio/venv
 
-WORKDIR ${SITE_DIR}
-RUN cp invenio.cfg ${INVENIO_INSTANCE_PATH}
-
-RUN ${INVENIO_VENV}/bin/pipenv requirements > requirements-orig.txt
-RUN cp requirements.txt requirements-orig.txt
-RUN cat requirements-orig.txt | \
-    egrep -iv '^cffi=|^cairocffi=|^uwsgi=|^packaging=|^pip=|^setuptools=|^pyparsing=|^xcffib=|^cchardet=' \
-    > requirements.txt
-
-RUN ${INVENIO_VENV}/bin/pip install -r requirements.txt --no-deps
-RUN ${INVENIO_VENV}/bin/pip check || echo "check failed. cairocffi and pypackaging should be expected"
-
-RUN cp -r ./static/. ${INVENIO_INSTANCE_PATH}/static/ && \
-    cp -r ./assets/. ${INVENIO_INSTANCE_PATH}/assets/ && \
-    ${INVENIO_CLI} collect --verbose  && \
-    ${INVENIO_CLI} webpack buildall
-
-
-FROM oarepo/oarepo-base-production:11
-LABEL maintainer="CESNET" \
-    org.opencontainers.image.authors="Miroslav Bauer <bauer@cesnet.cz>" \
-    org.opencontainers.image.title="NR Document Production repository image" \
-    org.opencontainers.image.url="https://hub.docker.com/r/Narodni-repozitar/nr-docs" \
-    org.opencontainers.image.source="https://github.com/Narodni-repozitar/nr-docs" \
-    org.opencontainers.image.documentation="https://github.com/Narodni-repozitar/nr-docs"
-ARG REPOSITORY_SITE_NAME
-ENV SITE_DIR=/repository/sites/${REPOSITORY_SITE_NAME}
-
+# copy sources (just for sure, should not be needed for production run)
 COPY --from=production-build /repository /repository
-RUN mkdir -p /opt/invenio/var/instance/static
 
-COPY --from=production-build ${INVENIO_INSTANCE_PATH}/static ${INVENIO_INSTANCE_PATH}/static
-COPY --from=production-build ${INVENIO_INSTANCE_PATH}/invenio.cfg ${INVENIO_INSTANCE_PATH}/invenio.cfg
-
-RUN cp -rp ${SITE_DIR}/templates/ ${INVENIO_INSTANCE_PATH}/templates/
-RUN cp -rp ${SITE_DIR}/app_data/ ${INVENIO_INSTANCE_PATH}/app_data/
-RUN cp -rp ${SITE_DIR}/translations/ ${INVENIO_INSTANCE_PATH}/translations/
-
-WORKDIR ${SITE_DIR}
-COPY --from=production-build ${SITE_DIR}/requirements.txt ${SITE_DIR}/requirements.txt
-RUN pip install -r requirements.txt --no-deps
-RUN pip check || echo "check failed. cairocffi and pypackaging should be expected"
+RUN cp ${SITE_DIR}/docker/uwsgi/uwsgi.ini ${INVENIO_BASE_DIR}/uwsgi.ini
 
 ENTRYPOINT [ "sh", "-c" ]
