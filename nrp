@@ -1,0 +1,16 @@
+#!/bin/bash
+
+set -e
+
+PYTHON="${PYTHON:-python3}"
+
+cli_directory=$(dirname "$0")/.venv/nrp
+
+test -d "$cli_directory" || {
+  $PYTHON -m venv "${cli_directory}"
+  "${cli_directory}"/bin/pip install -U setuptools pip wheel
+  "${cli_directory}"/bin/pip install oarepo-cli
+}
+
+source "$cli_directory"/bin/activate
+"$cli_directory"/bin/nrp "$@"
