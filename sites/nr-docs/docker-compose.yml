@@ -79,9 +79,7 @@ services:
       - type: bind
         source: ../..
         target: /repository
-      - type: bind
-        source: /Users/m/w/cesnet/oarepo-cli
-        target: /nrp-sources
+
       - type: volume
         source: invenio
         target: /invenio

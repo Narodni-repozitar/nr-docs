@@ -1,0 +1,31 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: i18next-conv\n"
+"mime-version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2\n"
+"POT-Creation-Date: 2023-04-14T15:15:59.084Z\n"
+"PO-Revision-Date: 2023-04-14T15:15:59.084Z\n"
+"Language: cs\n"
+
+msgid "coarType"
+msgstr "COAR typ"
+
+msgid "dataCiteType"
+msgstr "DataCite typ"
+
+msgid "alpha3CodeENG"
+msgstr "Alpha 3 anglický kód"
+
+msgid "alpha3CodeNative"
+msgstr "Alpha 3 nativní kód"
+
+msgid "ICO"
+msgstr "IČO"
+
+msgid "acronym"
+msgstr "Zkratka"
+
+msgid "nameType"
+msgstr "Typ názvu"

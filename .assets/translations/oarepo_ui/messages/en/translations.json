@@ -1,0 +1,22 @@
+{
+  "Sort": "Sort",
+  "Sort by": "Sort by",
+  "Filter results": "Filter results",
+  "totalResults": "{{count}} result",
+  "totalResults_plural": "{{count}} results",
+  "results per page": "results per page",
+  "Filters": "Filters",
+  "bestmatch": "Best match",
+  "title": "Title",
+  "newest": "Newest",
+  "oldest": "Oldest",
+  "resultsPerPage": "results per page",
+  "We couldn't find any matches for ": "We couldn't find any matches for ",
+  "Start over": "Start over",
+  "descendants": "children items",
+  "hide": "Hide",
+  "show": "Show",
+  "totalDescendants": "{{count}} child item",
+  "totalDescendants_plural": "{{count}} children items",
+  "search": "Search"
+}

@@ -1,0 +1,88 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: i18next-conv\n"
+"mime-version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"POT-Creation-Date: 2023-04-28T14:58:13.242Z\n"
+"PO-Revision-Date: 2023-04-28T14:58:13.242Z\n"
+"Language: en\n"
+
+msgid "We couldn't find any matches for "
+msgstr "We couldn't find any matches for "
+
+msgid "your search"
+msgstr "your search"
+
+msgid "Start over"
+msgstr "Start over"
+
+msgid "ProTip"
+msgstr "ProTip"
+
+msgid "will give you all the publications from 2017 until today."
+msgstr "will give you all the publications from 2017 until today."
+
+msgid "For more tips, check out our "
+msgstr "For more tips, check out our "
+
+msgid "Search guide"
+msgstr "Search guide"
+
+msgid "search guide"
+msgstr "search guide"
+
+msgid " for defining advanced search queries."
+msgstr " for defining advanced search queries."
+
+msgid "ORCID profile"
+msgstr "ORCID profile"
+
+msgid "ROR profile"
+msgstr "ROR profile"
+
+msgid "GND profile"
+msgstr "GND profile"
+
+msgid "Uploaded on"
+msgstr "Uploaded on"
+
+msgid "Published in: "
+msgstr "Published in: "
+
+msgid "Scopus ID profile"
+msgstr "Scopus ID profile"
+
+msgid "WOS Researcher ID"
+msgstr "WOS Researcher ID"
+
+msgid "DOI profile"
+msgstr "DOI profile"
+
+msgid "Find more records by this person"
+msgstr "Find more records by this person"
+
+msgid "Publication date"
+msgstr "Publication date"
+
+msgid "Languages"
+msgstr "Languages"
+
+msgid "defended"
+msgstr "defended"
+
+msgid "not defended"
+msgstr "not defended"
+
+msgid "Find all records"
+msgstr "Find all records"
+
+msgid "by this document type"
+msgstr "by this document type"
+
+msgid "Find more records with this subject"
+msgstr "Find more records with this subject"
+
+msgid "Search"
+msgstr "Search"

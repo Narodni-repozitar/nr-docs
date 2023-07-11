@@ -1,0 +1,61 @@
+{
+    "baseUrl": ".",
+    "compilerOptions": {
+        "paths": {
+            "@js/invenio_search_ui": [
+                "./.assets/js/invenio_search_ui"
+            ],
+            "@translations/invenio_search_ui": [
+                "./.assets/translations/invenio_search_ui"
+            ],
+            "@translations/oarepo_vocabularies_ui": [
+                "./.assets/translations/oarepo_vocabularies_ui"
+            ],
+            "@js/invenio_theme": [
+                "./.assets/js/invenio_theme"
+            ],
+            "@less/invenio_theme": [
+                "./.assets/less/invenio_theme"
+            ],
+            "themes/invenio": [
+                "./.assets/less/invenio_theme/theme"
+            ],
+            "@js/invenio_administration": [
+                "./.assets/js/invenio_administration"
+            ],
+            "@translations/invenio_administration": [
+                "./.assets/translations/invenio_administration"
+            ],
+            "@js/invenio_communities": [
+                "./.assets/js/invenio_communities"
+            ],
+            "@translations/invenio_communities": [
+                "./.assets/translations/invenio_communities"
+            ],
+            "@translations/invenio_requests": [
+                "./.assets/translations/invenio_requests"
+            ],
+            "@js/invenio_requests": [
+                "./.assets/js/invenio_requests"
+            ],
+            "@translations/oarepo_ui": [
+                "./.assets/translations/oarepo_ui"
+            ],
+            "../../less": [
+                "./ui/docs-app/docs_app/theme/assets/semantic-ui/less"
+            ],
+            "@js/oarepo_ui": [
+                "./.assets/js/oarepo_ui"
+            ],
+            "@translations/invenio_app_rdm/i18next": [
+                "./.assets/translations/oarepo_ui/i18next.js"
+            ],
+            "@templates/custom_fields": [
+                "./.assets/js/custom_fields"
+            ],
+            "@translations/docs_app": [
+                "./ui/docs-app/docs_app/theme/assets/semantic-ui/translations/docs_app"
+            ]
+        }
+    }
+}

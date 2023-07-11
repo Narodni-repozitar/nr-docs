@@ -1,0 +1,34 @@
+@fontName: 'Roboto';
+@importGoogleFonts: false;
+
+
+
+/*-------------------
+      Site Colors
+--------------------*/
+@brandColor: hsl(0deg, 0%, 100% / 50%);
+@green: #23D26E;
+@blue: #0478F0;
+@grey: darken(@lightGrey, 50);
+@lightGrey: #E8E6E6;
+
+@navbar_background_image: url('../../../static/images/background.png');
+@navbar_background_color: #fff;
+
+@borderColor: @green;
+
+/*-------------------
+    Brand Colors
+--------------------*/
+
+@primaryColor        : @green;
+@secondaryColor      : @blue;
+
+@lightPrimaryColor   : lighten(@green, 50);
+@lightSecondaryColor : lighten(@blue, 50);
+
+
+@selectionBackground: @lightGrey;
+@celledBorderColor: @green;
+
+@linkHoverUnderline: underline;

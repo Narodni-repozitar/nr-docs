@@ -1,0 +1,4 @@
+.ui.celled.dense.grid > .column:not(.row),
+.ui.celled.dense.grid > .row > .column {
+  padding: calc(@celledPadding * 0.5);
+}
