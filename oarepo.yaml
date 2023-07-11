@@ -5,6 +5,13 @@ config:
   primary_site_name: nr-documents
   project_package: nr_documents
   python: python3.9
+local:
+  oarepo-ui:
+    branch: move-count-compoment
+    github_clone_url: https://github.com/oarepo/oarepo-ui.git
+    local_dir: local/oarepo-ui
+    sites:
+    - nr-docs
 models:
   nr-documents:
     author_email: miroslav.simek@techlib.cz
