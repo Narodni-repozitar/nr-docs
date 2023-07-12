@@ -39,19 +39,19 @@
                 "./.assets/js/invenio_requests"
             ],
             "@translations/oarepo_ui": [
-                "./.assets/translations/oarepo_ui"
+                "./local/oarepo-ui/oarepo_ui/theme/assets/semantic-ui/translations/oarepo_ui"
             ],
             "../../less": [
                 "./ui/docs-app/docs_app/theme/assets/semantic-ui/less"
             ],
             "@js/oarepo_ui": [
-                "./.assets/js/oarepo_ui"
+                "./local/oarepo-ui/oarepo_ui/theme/assets/semantic-ui/js/oarepo_ui"
             ],
             "@translations/invenio_app_rdm/i18next": [
-                "./.assets/translations/oarepo_ui/i18next.js"
+                "./local/oarepo-ui/oarepo_ui/theme/assets/semantic-ui/translations/oarepo_ui/i18next.js"
             ],
             "@templates/custom_fields": [
-                "./.assets/js/custom_fields"
+                "./local/oarepo-ui/oarepo_ui/theme/assets/semantic-ui/js/custom_fields"
             ],
             "@translations/docs_app": [
                 "./ui/docs-app/docs_app/theme/assets/semantic-ui/translations/docs_app"

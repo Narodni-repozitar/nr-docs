@@ -5,6 +5,8 @@ config:
   primary_site_name: nr-documents
   project_package: nr_documents
   python: python3.9
+  sites:
+  - nr-docs
 local:
   oarepo-ui:
     branch: move-count-compoment

@@ -14,7 +14,7 @@ export const CountElement = ({ totalResults }) => {
   );
 };
 
-const ResultCount = ({ currentResultsState = {} }) => {
+export const ResultCount = ({ currentResultsState = {} }) => {
   const { total } = currentResultsState.data;
   const { loading } = currentResultsState;
   // determine if we are in searchApp context or pure searchkit

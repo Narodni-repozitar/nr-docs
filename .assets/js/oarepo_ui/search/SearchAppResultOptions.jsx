@@ -3,7 +3,7 @@ import Overridable from "react-overridable";
 import { PropTypes } from "prop-types";
 import { Grid } from "semantic-ui-react";
 import { LayoutSwitcher, ActiveFilters } from "react-searchkit";
-import { ResultCountWithState } from "./CountElement";
+import { ResultCountWithState } from "./ResultCount";
 import { i18next } from "@translations/oarepo_ui/i18next";
 import { SearchConfigurationContext } from "@js/invenio_search_ui/components";
 import { SearchAppSort } from "./SearchAppSort";

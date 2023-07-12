@@ -9,8 +9,7 @@ import {
   SearchAppResultOptions,
   SearchAppSearchbarContainer,
   SearchFiltersToggleElement,
-  SearchAppSort,
-  SortByElement
+  SearchAppSort
 } from '@js/oarepo_ui/search'
 import {
   EmptyResultsElement,
@@ -38,7 +37,6 @@ export const defaultComponents = {
   [`${appName}.SearchApp.layout`]: SearchAppLayout,
   [`${appName}.SearchApp.searchbarContainer`]: SearchAppSearchbarContainerWithConfig,
   [`${appName}.SearchApp.sort`]: SearchAppSort,
-  [`${appName}.SortBy.element`]: SortByElement,
   [`${appName}.SearchApp.resultOptions`]: SearchAppResultOptions,
   [`${appName}.SearchFilters.Toggle.element`]: SearchFiltersToggleElement,
   [`${appName}.SearchBar.element`]: MultipleSearchBarElement,
