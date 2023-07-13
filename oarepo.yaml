@@ -18,6 +18,8 @@ local:
     branch: create-edit-form
     github_clone_url: https://github.com/oarepo/oarepo-vocabularies.git
     local_dir: local/oarepo-vocabularies
+    sites:
+    - nr-docs
 models:
   nr-documents:
     author_email: miroslav.simek@techlib.cz
