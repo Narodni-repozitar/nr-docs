@@ -28,7 +28,7 @@ plugins:
   - oarepo-model-builder-nr
   - oarepo-model-builder-requests
   - oarepo-model-builder-drafts
-  -
+
 runtime-dependencies:
   nr-metadata: 1.0.0
   nr-oaipmh-harvesters: 1.0.0
