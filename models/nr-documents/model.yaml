@@ -34,9 +34,9 @@ runtime-dependencies:
   nr-oaipmh-harvesters: 1.0.0
   nr-vocabularies: 1.0.0
 settings:
-  i18n-languages:
-  - cs
-  - en
+  #i18n-languages:
+  #- cs
+  #- en
   supported-langs:
     cs:
       keyword:
