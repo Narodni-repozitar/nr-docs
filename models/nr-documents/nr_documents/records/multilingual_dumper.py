@@ -25,8 +25,14 @@ class MultilingualSearchDumper(MultilingualDumper):
         "/metadata/methods",
         "/metadata/subjects/subject",
         "/metadata/technicalInfo",
+        "/metadata/abstract",
+        "/metadata/accessibility",
+        "/metadata/additionalTitles/title",
+        "/metadata/methods",
+        "/metadata/subjects/subject",
+        "/metadata/technicalInfo",
     ]
-    SUPPORTED_LANGS = ["cs", "en", "cs", "en", "cs", "en"]
+    SUPPORTED_LANGS = ["cs", "en", "cs", "en", "cs", "en", "cs", "en"]
 
     def dump(self, record, data):
         super().dump(record, data)

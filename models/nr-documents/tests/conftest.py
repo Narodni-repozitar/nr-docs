@@ -12,7 +12,7 @@ from invenio_app.factory import create_api
 from invenio_records_resources.services.uow import RecordCommitOp, UnitOfWork
 
 from nr_documents.proxies import current_service
-from nr_documents.records.api import NrDocumentsRecord
+from nr_documents.records.api import NrDocumentsDraft, NrDocumentsRecord
 
 
 @pytest.fixture(scope="function")
@@ -120,3 +120,12 @@ def client_with_credentials(db, client, user, role, sample_metadata_list):
 @pytest.fixture
 def record_service():
     return current_service
+
+
+@pytest.fixture(scope="function")
+def sample_draft(app, db, input_data):
+    with UnitOfWork(db.session) as uow:
+        record = NrDocumentsDraft.create(input_data)
+        uow.register(RecordCommitOp(record, current_service.indexer, True))
+        uow.commit()
+        return record

@@ -10,7 +10,7 @@ from invenio_records_resources.services.records.components import DataComponent
 from oarepo_runtime.config.service import PermissionsPresetsConfigMixin
 from oarepo_runtime.relations.components import CachingRelationsComponent
 
-from nr_documents.records.api import NrDocumentsRecord
+from nr_documents.records.api import NrDocumentsDraft, NrDocumentsRecord
 from nr_documents.services.records.permissions import NrDocumentsPermissionPolicy
 from nr_documents.services.records.schema import NrDocumentsSchema
 from nr_documents.services.records.search import NrDocumentsSearchOptions
@@ -38,11 +38,14 @@ class NrDocumentsServiceConfig(PermissionsPresetsConfigMixin, RecordServiceConfi
         DataComponent,
         *PermissionsPresetsConfigMixin.components,
         *InvenioRecordServiceConfig.components,
+        *PermissionsPresetsConfigMixin.components,
+        *InvenioRecordServiceConfig.components,
     ]
 
     model = "nr_documents"
 
     base_permission_policy_cls = NrDocumentsPermissionPolicy
+    draft_cls = NrDocumentsDraft
 
     @property
     def links_item(self):

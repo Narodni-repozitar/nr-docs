@@ -220,6 +220,7 @@ class NrDocumentsSearchOptions(InvenioSearchOptions):
         "metadata_technicalInfo_en": facets.metadata_technicalInfo_en,
         "metadata_technicalInfo_value": facets.metadata_technicalInfo_value,
         **getattr(InvenioSearchOptions, "facets", {}),
+        **getattr(InvenioSearchOptions, "facets", {}),
         "_schema": facets._schema,
         "created": facets.created,
         "_id": facets._id,
