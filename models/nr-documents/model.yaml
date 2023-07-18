@@ -1,7 +1,7 @@
 $defs:
   use:
   - ./definitions.yaml
-model:
+record:
   extend: nr-documents#DocumentModel
   package: nr_documents
   permissions:
