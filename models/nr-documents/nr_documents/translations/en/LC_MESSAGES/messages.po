@@ -285,6 +285,18 @@ msgstr "Place"
 msgid "metadata/events/eventLocation/country.label"
 msgstr "Country"
 
+msgid "metadata/contributors/affiliations.label"
+msgstr "Affiliation"
+
+msgid "metadata/creators/affiliations.label"
+msgstr "Affiliation"
+
+msgid "metadata/events/eventNameAlternate.label"
+msgstr "Event alternate name"
+
+msgid "metadata/relatedItems/itemPIDs.label"
+msgstr "Object identifier"
+
 msgid "$schema.help"
 msgstr ""
 
@@ -467,9 +479,6 @@ msgstr ""
 
 msgid "metadata/contributors/affiliations.help"
 msgstr ""
-
-msgid "metadata/contributors/affiliations.label"
-msgstr "Affiliation"
 
 msgid "metadata/contributors/affiliations.hint"
 msgstr ""
@@ -660,9 +669,6 @@ msgstr ""
 msgid "metadata/creators/affiliations.help"
 msgstr ""
 
-msgid "metadata/creators/affiliations.label"
-msgstr "Affiliation"
-
 msgid "metadata/creators/affiliations.hint"
 msgstr ""
 
@@ -842,9 +848,6 @@ msgstr ""
 
 msgid "metadata/events/eventNameAlternate.help"
 msgstr ""
-
-msgid "metadata/events/eventNameAlternate.label"
-msgstr "Event alternate name"
 
 msgid "metadata/events/eventNameAlternate.hint"
 msgstr ""
@@ -1382,9 +1385,6 @@ msgstr ""
 
 msgid "metadata/relatedItems/itemPIDs.help"
 msgstr ""
-
-msgid "metadata/relatedItems/itemPIDs.label"
-msgstr "Object identifier"
 
 msgid "metadata/relatedItems/itemPIDs.hint"
 msgstr ""

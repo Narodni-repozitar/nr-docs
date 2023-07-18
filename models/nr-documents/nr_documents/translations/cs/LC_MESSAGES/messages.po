@@ -277,6 +277,38 @@ msgstr "Místo"
 msgid "metadata/events/eventLocation/country.label"
 msgstr "Země"
 
+msgid "metadata/contributors/affiliations.label"
+msgstr "Afiliace"
+
+msgid "metadata/contributors/affiliations.hint"
+msgstr ""
+"Uveďte instituci/instituce, pod jejíž záštitou jste se na tvorbě objektu "
+"podíleli."
+
+msgid "metadata/creators/affiliations.label"
+msgstr "Afiliace"
+
+msgid "metadata/creators/affiliations.hint"
+msgstr ""
+"Uveďte instituci/instituce, pod jejíž záštitou jste se na tvorbě objektu "
+"podíleli."
+
+msgid "metadata/events/eventNameAlternate.label"
+msgstr "Alternativní název akce"
+
+msgid "metadata/relatedItems/itemContributors/affiliations.hint"
+msgstr ""
+"Uveďte instituci/instituce, pod jejíž záštitou jste se na tvorbě objektu "
+"podíleli."
+
+msgid "metadata/relatedItems/itemCreators/affiliations.hint"
+msgstr ""
+"Uveďte instituci/instituce, pod jejíž záštitou jste se na tvorbě objektu "
+"podíleli."
+
+msgid "metadata/relatedItems/itemPIDs.label"
+msgstr "Identifikátor objektu"
+
 msgid "$schema.help"
 msgstr ""
 
@@ -459,14 +491,6 @@ msgstr ""
 
 msgid "metadata/contributors/affiliations.help"
 msgstr ""
-
-msgid "metadata/contributors/affiliations.label"
-msgstr "Afiliace"
-
-msgid "metadata/contributors/affiliations.hint"
-msgstr ""
-"Uveďte instituci/instituce, pod jejíž záštitou jste se na tvorbě objektu "
-"podíleli."
 
 msgid "metadata/contributors/affiliations/id.help"
 msgstr ""
@@ -654,14 +678,6 @@ msgstr ""
 msgid "metadata/creators/affiliations.help"
 msgstr ""
 
-msgid "metadata/creators/affiliations.label"
-msgstr "Afiliace"
-
-msgid "metadata/creators/affiliations.hint"
-msgstr ""
-"Uveďte instituci/instituce, pod jejíž záštitou jste se na tvorbě objektu "
-"podíleli."
-
 msgid "metadata/creators/affiliations/id.help"
 msgstr ""
 
@@ -838,9 +854,6 @@ msgstr ""
 
 msgid "metadata/events/eventNameAlternate.help"
 msgstr ""
-
-msgid "metadata/events/eventNameAlternate.label"
-msgstr "Alternativní název akce"
 
 msgid "metadata/events/eventNameAlternate.hint"
 msgstr ""
@@ -1085,11 +1098,6 @@ msgstr ""
 msgid "metadata/relatedItems/itemContributors/affiliations.help"
 msgstr ""
 
-msgid "metadata/relatedItems/itemContributors/affiliations.hint"
-msgstr ""
-"Uveďte instituci/instituce, pod jejíž záštitou jste se na tvorbě objektu "
-"podíleli."
-
 msgid "metadata/relatedItems/itemContributors/affiliations/id.help"
 msgstr ""
 
@@ -1252,11 +1260,6 @@ msgstr ""
 msgid "metadata/relatedItems/itemCreators/affiliations.help"
 msgstr ""
 
-msgid "metadata/relatedItems/itemCreators/affiliations.hint"
-msgstr ""
-"Uveďte instituci/instituce, pod jejíž záštitou jste se na tvorbě objektu "
-"podíleli."
-
 msgid "metadata/relatedItems/itemCreators/affiliations/id.help"
 msgstr ""
 
@@ -1382,9 +1385,6 @@ msgstr ""
 
 msgid "metadata/relatedItems/itemPIDs.help"
 msgstr ""
-
-msgid "metadata/relatedItems/itemPIDs.label"
-msgstr "Identifikátor objektu"
 
 msgid "metadata/relatedItems/itemPIDs.hint"
 msgstr ""
