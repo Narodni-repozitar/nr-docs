@@ -48,6 +48,8 @@ class NrDocumentsServiceConfig(PermissionsPresetsConfigMixin, RecordServiceConfi
         *InvenioRecordServiceConfig.components,
         *PermissionsPresetsConfigMixin.components,
         *InvenioRecordServiceConfig.components,
+        *PermissionsPresetsConfigMixin.components,
+        *InvenioRecordServiceConfig.components,
     ]
 
     model = "nr_documents"
