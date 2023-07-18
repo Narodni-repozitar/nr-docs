@@ -3,17 +3,12 @@ $defs:
   - ./definitions.yaml
 record:
   extend: nr-documents#DocumentModel
-  package: nr_documents
+  module:
+    qualified: nr_documents
   permissions:
     presets:
     - read_only
   pid-type: dcmnts
-  plugins:
-    builder:
-      disable:
-      - script_sample_data
-    packages:
-    - oarepo-model-builder-nr
   properties:
     metadata:
       properties:
@@ -26,9 +21,9 @@ record:
 
 plugins:
   packages:
+  - oarepo-model-builder-nr
   - oarepo-model-builder-requests
   - oarepo-model-builder-drafts
-  - oarepo-model-builder-multilingual
 runtime-dependencies:
   nr-metadata: 1.0.0
   nr-oaipmh-harvesters: 1.0.0
