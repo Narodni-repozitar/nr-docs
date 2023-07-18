@@ -21,6 +21,9 @@ record:
   - ./requests.yaml
 
 plugins:
+  builder:
+    disable:
+      - script_sample_data
   packages:
   - oarepo-model-builder-nr
   - oarepo-model-builder-requests
