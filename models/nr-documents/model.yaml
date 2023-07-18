@@ -14,7 +14,9 @@ record:
     metadata:
       properties:
         use: ./metadata.yaml
-  draft: {}
+  draft:
+    extend: nr-documents#DocumentModel
+
   use:
   - invenio
   - ./custom_fields.yaml
