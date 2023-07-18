@@ -225,3 +225,60 @@ def test_search(
         assert len(res_created.json["hits"]["hits"]) == 25
         assert len(res_created_fail.json["hits"]["hits"]) == 0
         assert len(res_facets.json["hits"]["hits"]) == 1
+
+
+def test_read(client_with_credentials, sample_draft, search_clear):
+    non_existing = client_with_credentials.get(f"{BASE_URL}yjuykyukyuk")
+    assert non_existing.status_code == 404
+
+    get_response = client_with_credentials.get(f"{BASE_URL}{sample_draft['id']}/draft")
+    assert response_code_ok("read", True, get_response, 200)
+    if is_action_allowed("read", True):
+        assert get_response.json["metadata"] == sample_draft["metadata"]
+
+
+"""
+def test_create(
+    client_with_credentials, client, sample_metadata_list, app, search_clear
+):
+    created_responses = []
+    for sample_metadata_point in sample_metadata_list:
+        created_responses.append(
+            client_with_credentials.post(f"{BASE_URL}", json=sample_metadata_point)
+        )
+        with app.test_client() as unauth_client:
+            unauth_response = unauth_client.post(
+                f"{BASE_URL}", json=sample_metadata_point
+            )
+            assert response_code_ok("create", False, unauth_response, 201)
+    assert all([response_code_ok("create", True, new_response, 201) for new_response in created_responses])
+
+    if is_action_allowed("create", True):
+        for sample_metadata_point, created_response in zip(
+            sample_metadata_list, created_responses
+        ):
+            created_response_reread = client_with_credentials.get(
+                f"{BASE_URL}{created_response.json['id']}"
+            )
+            assert response_code_ok("read", True, created_response_reread, 200)
+            assert (
+                created_response_reread.json["metadata"]
+                == sample_metadata_point["metadata"]
+            )
+"""
+
+"""
+def test_listing( client_with_credentials, sample_records, search_clear):
+    listing_response = client_with_credentials.get(BASE_URL)
+    hits = listing_response.json["hits"]["hits"]
+    assert len(hits) == 10
+"""
+
+"""
+def test_delete_unauth(sample_record, search_clear, app):
+    with app.test_client() as unauth_client:
+        unauth_delete_response = unauth_client.delete(
+            f"{BASE_URL}{sample_record['id']}"
+        )
+        assert response_code_ok("delete", False, unauth_delete_response, 204)
+"""

@@ -1,10 +1,17 @@
-from invenio_records_resources.services import RecordLink
-from invenio_records_resources.services import RecordServiceConfig
-from invenio_records_resources.services import pagination_links
+from invenio_drafts_resources.services import (
+    RecordServiceConfig as InvenioRecordServiceConfig,
+)
+from invenio_records_resources.services import (
+    RecordLink,
+    RecordServiceConfig,
+    pagination_links,
+)
+from invenio_records_resources.services.records.components import DataComponent
 from oarepo_runtime.config.service import PermissionsPresetsConfigMixin
 from oarepo_runtime.relations.components import CachingRelationsComponent
 
 from nr_documents.records.api import NrDocumentsRecord
+from nr_documents.services.records.permissions import NrDocumentsPermissionPolicy
 from nr_documents.services.records.schema import NrDocumentsSchema
 from nr_documents.services.records.search import NrDocumentsSearchOptions
 
@@ -23,9 +30,17 @@ class NrDocumentsServiceConfig(PermissionsPresetsConfigMixin, RecordServiceConfi
     record_cls = NrDocumentsRecord
     service_id = "nr_documents"
 
-    components = [*RecordServiceConfig.components, CachingRelationsComponent]
+    components = [
+        *RecordServiceConfig.components,
+        CachingRelationsComponent,
+        *PermissionsPresetsConfigMixin.components,
+        *InvenioRecordServiceConfig.components,
+        DataComponent,
+    ]
 
     model = "nr_documents"
+
+    base_permission_policy_cls = NrDocumentsPermissionPolicy
 
     @property
     def links_item(self):
