@@ -8,7 +8,8 @@ record:
   permissions:
     presets:
     - read_only
-  pid-type: dcmnts
+  pid:
+    type: dcmnts
   properties:
     metadata:
       properties:
