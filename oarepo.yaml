@@ -12,7 +12,6 @@ models:
     author_email: miroslav.simek@techlib.cz
     author_name: Miroslav Simek
     installation_site: nr-docs
-    merge_changes: merge
     model_dir: models/nr-documents
     model_kind: empty
     model_package: nr_documents
