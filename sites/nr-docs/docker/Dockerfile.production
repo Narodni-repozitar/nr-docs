@@ -15,11 +15,11 @@ RUN echo "Site dir is ${SITE_DIR}, repository site name is ${REPOSITORY_SITE_NAM
 COPY . /repository
 
 # DEBUG only
-COPY nrp-sources /nrp-sources
-RUN PYTHONPATH=/nrp-sources DOCKER_AROUND=1 /nrp/bin/nrp build --production --site $REPOSITORY_SITE_NAME --project-dir /repository
+#COPY nrp-sources /nrp-sources
+#RUN PYTHONPATH=/nrp-sources DOCKER_AROUND=1 /nrp/bin/nrp build --production --site $REPOSITORY_SITE_NAME --project-dir /repository
 
 # production
-# RUN DOCKER_AROUND=1  /nrp/bin/nrp build --production --site $REPOSITORY_SITE_NAME --project-dir /repository
+RUN DOCKER_AROUND=1  /nrp/bin/nrp build --production --site $REPOSITORY_SITE_NAME --project-dir /repository
 
 
 FROM --platform=$BUILDPLATFORM ${OAREPO_PRODUCTION_IMAGE} as production
