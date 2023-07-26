@@ -27,8 +27,8 @@ plugins:
   packages:
   - oarepo-model-builder-nr
   - oarepo-model-builder-requests
-  - /home/ron/prace/oarepo-model-builder-drafts
-  - /home/ron/prace/oarepo-model-builder-relations
+  - oarepo-model-builder-drafts
+  - oarepo-model-builder-relations
 
 runtime-dependencies:
   nr-metadata: 1.0.0

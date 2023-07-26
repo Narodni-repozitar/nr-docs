@@ -1,0 +1,98 @@
+vocabulary-access-rights:
+  - writer: vocabulary
+    vocabulary: access-rights
+    pid_type: v-ar
+    title:
+      cs: Přístupová práva
+      en: Access rights
+  - source: accessRights.xlsx
+
+vocabulary-contributor-types:
+  - writer: vocabulary
+    vocabulary: contributor-types
+    pid_type: v-ct
+    title:
+      cs: Role přispěvatele
+      en: Contributor Type
+  - source: contributorType.xlsx
+
+vocabulary-countries:
+  - writer: vocabulary
+    vocabulary: countries
+    pid_type: v-c
+    title:
+      cs: Státy
+      en: Countries
+  - source: countries.xlsx
+
+vocabulary-funders:
+  - writer: vocabulary
+    vocabulary: funders
+    pid_type: v-f
+    title:
+      cs: Poskytovatelé finanční podpory
+      en: Research funders
+  - source: funders.xlsx
+
+vocabulary-institutions:
+  - writer: vocabulary
+    vocabulary: institutions
+    pid_type: v-i
+    title:
+      cs: Instituce
+      en: Institutions
+  - source: institutions.xlsx
+
+vocabulary-item-relation-types:
+  - writer: vocabulary
+    vocabulary: item-relation-types
+    pid_type: v-relt
+    title:
+      cs: Typ vztahu popisovaného dokumentu k propojené jednotce
+      en: The type of relationship of the described document to the interconnected item (unit)
+  - source: itemRelationType.xlsx
+
+vocabulary-languages:
+  - writer: vocabulary
+    vocabulary: languages
+    pid_type: v-lang
+    title:
+      cs: Jazyky
+      en: Languages
+  - source: languages.xlsx
+
+vocabulary-licenses:
+  - writer: vocabulary
+    vocabulary: licenses
+    pid_type: v-lic
+    title:
+      cs: Licence
+      en: Licenses
+  - source: licenses.xlsx
+
+vocabulary-resource-types:
+  - writer: vocabulary
+    vocabulary: resource-types
+    pid_type: v-rest
+    title:
+      cs: Typ zdroje
+      en: Resource type
+  - source: resourceType.xlsx
+
+vocabulary-related-resource-types:
+  - writer: vocabulary
+    vocabulary: related-resource-types
+    pid_type: v-rel
+    title:
+      cs: Typ přidruženého zdroje
+      en: Related resource type
+  - source: resourceType_relatedItem.xlsx
+
+vocabulary-subject-categories:
+  - writer: vocabulary
+    vocabulary: subject-categories
+    pid_type: v-subj
+    title:
+      cs: Oborové třídění
+      en: Subject categories
+  - source: subjectCategories.xlsx
