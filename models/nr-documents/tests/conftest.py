@@ -1,4 +1,3 @@
-import json
 import os
 from pathlib import Path
 
@@ -12,8 +11,6 @@ from invenio_accounts.testutils import login_user_via_session
 from invenio_app.factory import create_api
 from invenio_records_resources.services.uow import RecordCommitOp, UnitOfWork
 
-from invenio_cache import current_cache
-
 from nr_documents.proxies import current_service
 from nr_documents.records.api import NrDocumentsDraft, NrDocumentsRecord
 
@@ -25,8 +22,8 @@ def record_service():
 
 @pytest.fixture(scope="function")
 def sample_metadata_list():
-    data_path = f"{Path(__file__).parent}/data1.json"
-    docs = [json.load(open(data_path, 'r'))]
+    data_path = f"{Path(__file__).parent.parent}/data/sample_data.yaml"
+    docs = list(yaml.load_all(open(data_path), Loader=yaml.SafeLoader))
     return docs
 
 
@@ -40,21 +37,6 @@ def create_app(instance_path, entry_points):
     """Application factory fixture."""
     return create_api
 
-# FIXME: https://github.com/inveniosoftware/pytest-invenio/issues/30
-# Without this, success of test depends on the tests order
-@pytest.fixture()
-def cache():
-    """Empty cache."""
-    try:
-        yield current_cache
-    finally:
-        current_cache.clear()
-
-@pytest.fixture()
-def vocab_cf(app, db, cache):
-    from oarepo_runtime.cf.mappings import prepare_cf_indices
-
-    prepare_cf_indices()
 
 @pytest.fixture(scope="module")
 def app_config(app_config):
@@ -76,78 +58,6 @@ def app_config(app_config):
     # disable redis cache
     app_config["CACHE_TYPE"] = "SimpleCache"  # Flask-Caching related configs
     app_config["CACHE_DEFAULT_TIMEOUT"] = 300
-
-    # note: This line must always be added to the invenio.cfg file
-    from oarepo_vocabularies.resources.config import VocabulariesResourceConfig
-    from oarepo_vocabularies.services.config import (
-        VocabulariesConfig,
-        VocabularyTypeServiceConfig,
-    )
-    from oarepo_vocabularies.services.service import VocabularyTypeService
-    from oarepo_vocabularies.resources.vocabulary_type import (
-        VocabularyTypeResource,
-        VocabularyTypeResourceConfig
-    )
-    from oarepo_vocabularies.authorities.resources import (
-        AuthoritativeVocabulariesResource,
-        AuthoritativeVocabulariesResourceConfig
-    )
-
-    app_config["VOCABULARIES_SERVICE_CONFIG"] = VocabulariesConfig
-    app_config["VOCABULARIES_RESOURCE_CONFIG"] = VocabulariesResourceConfig
-
-    app_config["OAREPO_VOCABULARIES_TYPE_SERVICE"] = VocabularyTypeService
-    app_config["OAREPO_VOCABULARIES_TYPE_SERVICE_CONFIG"] = VocabularyTypeServiceConfig
-
-    app_config["VOCABULARY_TYPE_RESOURCE"] = VocabularyTypeResource
-    app_config["VOCABULARY_TYPE_RESOURCE_CONFIG"] = VocabularyTypeResourceConfig
-
-    app_config["VOCABULARIES_AUTHORITIES"] = AuthoritativeVocabulariesResource
-    app_config["VOCABULARIES_AUTHORITIES_CONFIG"] = AuthoritativeVocabulariesResourceConfig
-
-    from invenio_records_resources.services.custom_fields.text import KeywordCF
-    from invenio_records_resources.services.custom_fields.boolean import BooleanCF
-
-    from tests.customfields import HintCF, NonPreferredLabelsCF, RelatedURICF
-
-    app_config["OAREPO_VOCABULARIES_CUSTOM_CF"] = [
-        KeywordCF("blah"),
-        RelatedURICF("relatedURI"),
-        HintCF("hint"),
-        NonPreferredLabelsCF("nonpreferredLabels"),
-    ]
-
-    app_config["HAS_DRAFT"] = [
-        BooleanCF("has_draft")
-    ]
-
-    # disable redis cache
-    app_config["CACHE_TYPE"] = "SimpleCache"  # Flask-Caching related configs
-    app_config["CACHE_DEFAULT_TIMEOUT"] = 300
-
-    app_config["INVENIO_VOCABULARY_TYPE_METADATA"] = {
-        "languages": {
-            "name": {
-                "cs": "jazyky",
-                "en": "languages",
-            },
-            "description": {
-                "cs": "slovnikovy typ ceskeho jazyka.",
-                "en": "czech language vocabulary type.",
-            },
-        },
-        "licenses": {
-            "name": {
-                "cs": "license",
-                "en": "licenses",
-            },
-            "description": {
-                "cs": "slovnikovy typ licencii.",
-                "en": "lincenses vocabulary type.",
-            },
-        },
-    }
-
     return app_config
 
 
@@ -222,3 +132,10 @@ def sample_draft(app, db, input_data):
         uow.register(RecordCommitOp(record, current_service.indexer, True))
         uow.commit()
         return record
+
+
+@pytest.fixture()
+def vocab_cf(app, db, cache):
+    from oarepo_runtime.cf.mappings import prepare_cf_indices
+
+    prepare_cf_indices()

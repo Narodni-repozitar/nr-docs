@@ -1,3 +1,4 @@
+from invenio_records_resources.services.custom_fields import BooleanCF
 from invenio_users_resources.resolvers import UserResolver
 
 from nr_documents.records.api import NrDocumentsRecord
@@ -32,3 +33,5 @@ REQUESTS_ENTITY_RESOLVERS = [
         record_cls=NrDocumentsRecord, service_id="nr_documents", type_key="nr_documents"
     ),
 ]
+
+HAS_DRAFT_CUSTOM_FIELD = [BooleanCF("has_draft")]

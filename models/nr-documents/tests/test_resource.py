@@ -1,21 +1,18 @@
 import copy
-import time
-from pathlib import Path
 
+import pytest
 from invenio_records_permissions.generators import (
     AnyUser,
     AuthenticatedUser,
     SystemProcess,
 )
 
+# todo move to conftest
+from invenio_records_resources.services.custom_fields import BooleanCF
+
 from nr_documents.proxies import current_service
-from nr_documents.records.api import NrDocumentsDraft
+from nr_documents.records.api import NrDocumentsDraft, NrDocumentsRecord
 from nr_documents.resources.records.config import NrDocumentsResourceConfig
-
-from oarepo_runtime.datastreams.fixtures import load_fixtures
-from invenio_vocabularies.records.api import Vocabulary
-
-from invenio_access.permissions import system_identity
 
 
 def _get_paths(cur_path, cur_val):
@@ -34,6 +31,12 @@ def _get_paths(cur_path, cur_val):
 
 def get_paths(prefix, data):
     return _get_paths(prefix, data)
+
+
+@pytest.fixture(scope="module")
+def app_config(app_config):
+    app_config["HAS_DRAFT"] = [BooleanCF("has_draft")]
+    return app_config
 
 
 def _assert_single_item_response(response):
@@ -67,25 +70,6 @@ def _create_and_publish(client, input_data):
     assert response.status_code == 202
     _assert_single_item_response(response)
     return recid
-
-def test_create_publish(app, client, sample_metadata_list, cache, vocab_cf):
-    input_data = sample_metadata_list[0]
-    result = load_fixtures(
-        Path(__file__).parent / "complex-data", system_fixtures=False
-    )
-    Vocabulary.index.refresh()
-    recid = _create_and_publish(client, input_data)
-    recid2 = client.post(NrDocumentsResourceConfig.url_prefix, json=sample_metadata_list[0])
-    time.sleep(10)
-    response = client.get(NrDocumentsResourceConfig.url_prefix)
-    response2 = client.get(f"user{NrDocumentsResourceConfig.url_prefix}")
-    import pickle
-    #pickle.dump(response, open("response_example.p", "wb"))
-    print("#######")
-    print(response.json["hits"]["hits"])
-    print("#######")
-    print(response2.json["hits"]["hits"])
-    print("#######")
 
 
 def test_publish_draft(client, input_data, search_clear):
@@ -208,7 +192,7 @@ def test_mutiple_edit(client, input_data, search_clear):
     assert response.json["revision_id"] == 8
 
 
-def test_redirect_to_latest_version(client, input_data):
+def test_redirect_to_latest_version(client, input_data, search_clear):
     """Creates a new version of a record.
 
     Publishes the draft to obtain 2 versions of a record.
@@ -238,6 +222,59 @@ def test_redirect_to_latest_version(client, input_data):
 
     assert response.status_code == 301
     assert response.headers["location"] == latest_version_self_link
+
+
+def test_list_drafts(client, input_data, vocab_cf, search_clear):
+    assert (
+        len(client.get(NrDocumentsResourceConfig.url_prefix).json["hits"]["hits"]) == 0
+    )
+    assert (
+        len(
+            client.get(f"user{ NrDocumentsResourceConfig.url_prefix}").json["hits"][
+                "hits"
+            ]
+        )
+        == 0
+    )
+
+    create_draft_response = client.post(
+        ThesisResourceConfig.url_prefix, json=input_data
+    )
+    assert create_draft_response.status_code == 201
+    recid = create_draft_response.json["id"]
+
+    NrDocumentsDraft.index.refresh()
+    NrDocumentsRecord.index.refresh()
+    assert (
+        len(client.get(NrDocumentsResourceConfig.url_prefix).json["hits"]["hits"]) == 0
+    )
+    assert (
+        len(
+            client.get(f"user{ NrDocumentsResourceConfig.url_prefix}").json["hits"][
+                "hits"
+            ]
+        )
+        == 1
+    )
+
+    response_publish = client.post(
+        f"{ThesisResourceConfig.url_prefix}{recid}/draft/actions/publish"
+    )
+    assert response_publish.status_code == 202
+
+    NrDocumentsDraft.index.refresh()
+    NrDocumentsRecord.index.refresh()
+    assert (
+        len(client.get(NrDocumentsResourceConfig.url_prefix).json["hits"]["hits"]) == 1
+    )
+    assert (
+        len(
+            client.get(f"user{ NrDocumentsResourceConfig.url_prefix}").json["hits"][
+                "hits"
+            ]
+        )
+        == 0
+    )
 
 
 BASE_URL = NrDocumentsResourceConfig.url_prefix
