@@ -1,0 +1,114 @@
+{
+  "metadata": {
+    "accessRights": {
+      "@v": "b291749a-5356-4cb7-b33f-ea10979a0347::1",
+      "id": "c_14cb",
+      "title": {
+        "cs": "pouze metadata",
+        "en": "metadata only access"
+      },
+      "type": "access-rights"
+    },
+    "languages": [
+      {
+        "@v": "dbaf2715-390f-4bb2-a18d-ef4bdafb705f::1",
+        "id": "en",
+        "title": {
+          "cs": "angli\u010dtina",
+          "en": "English"
+        },
+        "type": "languages"
+      }
+    ],
+    "systemIdentifiers": [
+      {
+        "scheme": "nusl",
+        "identifier": "http://www.nusl.cz/ntk/nusl-34848"
+      },
+      {
+        "scheme": "originalRecordOAI",
+        "identifier": "oai:asep.lib.cas.cz:CavUnEpca/0410593"
+      },
+      {
+        "scheme": "catalogueSysNo",
+        "identifier": "0410593"
+      },
+      {
+        "scheme": "nuslOAI",
+        "identifier": "oai:invenio.nusl.cz:34848"
+      }
+    ],
+    "accessibility": [
+      {
+        "value": "Dokument je dostupn\u00fd v p\u0159\u00edslu\u0161n\u00e9m \u00fastavu Akademie v\u011bd \u010cR.",
+        "lang": "cs"
+      },
+      {
+        "value": "Fulltext is available at the institute of the Academy of Sciences.",
+        "lang": "en"
+      }
+    ],
+    "creators": [
+      {
+        "fullName": "Volf, Petr",
+        "nameType": "Personal"
+      }
+    ],
+    "resourceType": {
+      "@v": "10406f79-65da-4ea4-8134-ffe6975a2658::1",
+      "id": "paper",
+      "title": {
+        "cs": "Konferen\u010dn\u00ed p\u0159\u00edsp\u011bvek",
+        "en": "Conference paper"
+      },
+      "type": "resource-types"
+    },
+    "fundingReferences": [
+      {
+        "projectID": "GA402/98/0742",
+        "funder": {
+          "@v": "afcd4bb8-bd64-4bcc-95f0-dafac91d2fc9::1",
+          "id": "GA0",
+          "title": {
+            "cs": "Grantov\u00e1 agentura \u010cesk\u00e9 republiky",
+            "en": "Czech Science Foundation"
+          },
+          "type": "funders"
+        }
+      },
+      {
+        "projectID": "VS97084",
+        "funder": {
+          "@v": "ccf320bd-1ae5-4cd7-895b-0e56eea12d67::1",
+          "id": "MSM",
+          "title": {
+            "cs": "Ministerstvo \u0161kolstv\u00ed, ml\u00e1de\u017ee a t\u011blov\u00fdchovy",
+            "en": "Ministry of Education, Youth and Sports of the Czech Republic"
+          },
+          "type": "funders"
+        }
+      }
+    ],
+    "dateAvailable": "2001",
+    "relatedItems": [
+      {
+        "itemTitle": "ROBUST'2000. Sborn\u00edk prac\u00ed jeden\u00e1ct\u00e9 letn\u00ed \u0161koly J\u010cMF"
+      }
+    ],
+    "originalRecord": "http://hdl.handle.net/11104/0130682",
+    "title": "Statistical models and analysis of cumulated damage processes",
+    "abstract": [
+      {
+        "value": "The contribution deals with a stochastic process which cumulates random increments at random moments. We derive its martingale - compensator decomposition and then we propose the estimator of characteristics of distribution of increments. An application deals with the process of growing damage of a technical device leading to a break of device when cumulated damage exceeds a certain level. We also discuss the problem of prediction of the cumulative process behaviour.",
+        "lang": "en"
+      }
+    ],
+    "collection": "ustav_teorie_informace_a_automatizace",
+    "objectIdentifiers": [
+      {
+        "scheme": "Handle",
+        "identifier": "11104/0130682"
+      }
+    ]
+  }
+}

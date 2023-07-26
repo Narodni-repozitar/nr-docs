@@ -5,6 +5,8 @@ from invenio_records.systemfields import ConstantField, RelationsField
 from invenio_records_resources.records.systemfields import IndexField
 from invenio_records_resources.records.systemfields.pid import PIDField, PIDFieldContext
 from invenio_vocabularies.records.api import Vocabulary
+
+from oarepo_runtime.drafts.systemfields.has_draftcheck import HasDraftCheckField
 from oarepo_runtime.relations import PIDRelation, RelationsField
 
 from nr_documents.records.dumper import NrDocumentsDraftDumper, NrDocumentsDumper
@@ -27,7 +29,6 @@ class DraftParentRecord(
 
 class NrDocumentsIdProvider(DraftRecordIdProviderV2):
     pid_type = "dcmnts"
-
 
 class NrDocumentsRecord(InvenioRecord):
     model_cls = NrDocumentsMetadata
@@ -129,6 +130,7 @@ class NrDocumentsRecord(InvenioRecord):
     versions_model_cls = ParentState
 
     parent_record_cls = DraftParentRecord
+
 
 
 class NrDocumentsDraft(InvenioDraft):
@@ -234,3 +236,8 @@ class NrDocumentsDraft(InvenioDraft):
     versions_model_cls = ParentState
 
     parent_record_cls = DraftParentRecord
+
+    has_draft = HasDraftCheckField(config_key="HAS_DRAFT")
+
+
+NrDocumentsRecord.has_draft = HasDraftCheckField(draft_cls=NrDocumentsDraft, config_key="HAS_DRAFT")

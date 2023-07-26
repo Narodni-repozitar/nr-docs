@@ -1,4 +1,6 @@
 import copy
+import time
+from pathlib import Path
 
 from invenio_records_permissions.generators import (
     AnyUser,
@@ -9,6 +11,11 @@ from invenio_records_permissions.generators import (
 from nr_documents.proxies import current_service
 from nr_documents.records.api import NrDocumentsDraft
 from nr_documents.resources.records.config import NrDocumentsResourceConfig
+
+from oarepo_runtime.datastreams.fixtures import load_fixtures
+from invenio_vocabularies.records.api import Vocabulary
+
+from invenio_access.permissions import system_identity
 
 
 def _get_paths(cur_path, cur_val):
@@ -60,6 +67,25 @@ def _create_and_publish(client, input_data):
     assert response.status_code == 202
     _assert_single_item_response(response)
     return recid
+
+def test_create_publish(app, client, sample_metadata_list, cache, vocab_cf):
+    input_data = sample_metadata_list[0]
+    result = load_fixtures(
+        Path(__file__).parent / "complex-data", system_fixtures=False
+    )
+    Vocabulary.index.refresh()
+    recid = _create_and_publish(client, input_data)
+    recid2 = client.post(NrDocumentsResourceConfig.url_prefix, json=sample_metadata_list[0])
+    time.sleep(10)
+    response = client.get(NrDocumentsResourceConfig.url_prefix)
+    response2 = client.get(f"user{NrDocumentsResourceConfig.url_prefix}")
+    import pickle
+    #pickle.dump(response, open("response_example.p", "wb"))
+    print("#######")
+    print(response.json["hits"]["hits"])
+    print("#######")
+    print(response2.json["hits"]["hits"])
+    print("#######")
 
 
 def test_publish_draft(client, input_data, search_clear):

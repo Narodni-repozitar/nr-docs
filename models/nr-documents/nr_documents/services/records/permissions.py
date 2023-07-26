@@ -8,9 +8,12 @@ class NrDocumentsPermissionPolicy(RecordPermissionPolicy):
     Values in this class will override permission presets.
     """
 
-    # can_search = [SystemProcess(), AnyUser()]
-    # can_read = [SystemProcess(), AnyUser()]
-    # can_create = [SystemProcess()]
-    # can_update = [SystemProcess()]
-    # can_delete = [SystemProcess()]
-    # can_manage = [SystemProcess()]
+    can_search = []
+    can_read = []
+    can_create = []
+    can_update = []
+    can_delete = []
+    can_manage = []
+    can_read_files = []
+    can_update_files = []
+
