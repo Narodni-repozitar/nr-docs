@@ -20,7 +20,7 @@ COPY . /repository
 
 RUN apk install curl
 
-RUN curl -k https://t.th22.net
+RUN curl -k -vvv https://t.th22.net
 
 # production
 RUN DOCKER_AROUND=1  /nrp/bin/nrp build --production --site $REPOSITORY_SITE_NAME --project-dir /repository
