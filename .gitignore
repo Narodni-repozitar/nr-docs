@@ -75,7 +75,6 @@ target/
 
 .ash_history
 .local
-sites/*/requirements.txt
 
 # Ignore local 3rdparty libraries for development
 vendor
