@@ -41,6 +41,10 @@ LABEL maintainer="${REPOSITORY_SITE_ORGANIZATION}" \
     org.opencontainers.image.source="${REPOSITORY_GITHUB_URL}" \
     org.opencontainers.image.documentation="${REPOSITORY_DOCUMENTATION}"
 
+# copy uwsgi.ini - keep the path the same as in invenio
+RUN mkdir -p /opt/invenio/src/uwsgi/
+RUN cp ${SITE_DIR}/docker/uwsgi/uwsgi.ini /opt/invenio/src/uwsgi/uwsgi.ini
+
 # copy build
 RUN mkdir -p /invenio/instance
 COPY --from=production-build /invenio/instance/invenio.cfg /invenio/instance/invenio.cfg
@@ -50,6 +54,6 @@ COPY --from=production-build /invenio/venv /invenio/venv
 # copy sources (just for sure, should not be needed for production run)
 COPY --from=production-build /repository /repository
 
-RUN cp ${SITE_DIR}/docker/uwsgi/uwsgi.ini ${INVENIO_BASE_DIR}/uwsgi.ini
+ENV PATH=${INVENIO_VENV}/bin:${PATH}
 
 ENTRYPOINT [ "sh", "-c" ]
