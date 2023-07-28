@@ -48,14 +48,8 @@ COPY --from=production-build /invenio/instance/invenio.cfg /invenio/instance/inv
 COPY --from=production-build /invenio/instance/static /invenio/instance/static
 COPY --from=production-build /invenio/venv /invenio/venv
 
-
-# copy uwsgi.ini - keep the path the same as in invenio
-RUN mkdir -p /opt/invenio/src/uwsgi/
-RUN cp ${SITE_DIR}/docker/uwsgi/uwsgi.ini /opt/invenio/src/uwsgi/uwsgi.ini
-
-
-## copy sources (just for sure, should not be needed for production run)
-#COPY --from=production-build /repository /repository
+# copy sources (just for sure, should not be needed for production run)
+COPY --from=production-build /repository /repository
 
 # copy uwsgi.ini - keep the path the same as in invenio
 RUN mkdir -p /opt/invenio/src/uwsgi/
