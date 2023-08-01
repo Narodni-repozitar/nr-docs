@@ -75,7 +75,6 @@ target/
 
 .ash_history
 .local
-sites/*/requirements.txt
 
 # Ignore local 3rdparty libraries for development
 vendor
@@ -87,3 +86,9 @@ __pypackages__
 .pdm-python
 pdm.lock
 
+# editor support
+package.json
+tsconfig.json
+jsconfig.json
+.assets
+node_modules
