@@ -20,6 +20,8 @@ class DocsAppResourceConfig(RecordsUIResourceConfig):
             },
         },
         "search": {"layout": "docs_app/search.html"},
+        "edit": {"layout": "docs_app/deposit.html"},
+        "create": {"layout": "docs_app/deposit.html"},
     }
 
     def search_active_facets(self, api_config, identity):
