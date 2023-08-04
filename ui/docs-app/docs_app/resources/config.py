@@ -1,4 +1,6 @@
 from oarepo_ui.resources.config import RecordsUIResourceConfig
+from oarepo_ui.resources import BabelComponent
+from oarepo_vocabularies.ui.resources.components import DepositVocabularyOptionsComponent
 
 
 class DocsAppResourceConfig(RecordsUIResourceConfig):
@@ -10,6 +12,7 @@ class DocsAppResourceConfig(RecordsUIResourceConfig):
     )
     api_service = "nr_documents"
     layout = "nr_documents"
+    components = [BabelComponent, DepositVocabularyOptionsComponent]
 
     templates = {
         "detail": {
@@ -20,6 +23,8 @@ class DocsAppResourceConfig(RecordsUIResourceConfig):
             },
         },
         "search": {"layout": "docs_app/search.html"},
+        "edit": {"layout": "docs_app/deposit.html"},
+        "create": {"layout": "docs_app/deposit.html"},
     }
 
     def search_active_facets(self, api_config, identity):
