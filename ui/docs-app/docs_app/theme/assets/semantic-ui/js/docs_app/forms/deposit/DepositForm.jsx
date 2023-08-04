@@ -12,7 +12,7 @@ const VocabularyForm = () => {
       <BaseForm
         onSubmit={onSubmit}
         formik={{
-          initialValues: initialValues,
+          initialValues: record,
           validationSchema: VocabularyFormSchema,
           validateOnChange: false,
           validateOnBlur: false,

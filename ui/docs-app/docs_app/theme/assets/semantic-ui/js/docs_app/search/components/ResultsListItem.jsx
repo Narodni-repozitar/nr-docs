@@ -31,7 +31,6 @@ const ItemHeader = ({ title, searchUrl, selfLink }) => {
     </Item.Header>
   );
 };
-
 const ItemSubheader = ({
   creators,
   contributors,
