@@ -1,6 +1,6 @@
 import React from "react";
 import _isEmpty from "lodash/isEmpty";
-import { useFormConfig, useOnSubmit } from "@js/oarepo_ui";
+import { useFormConfig, useOnSubmit, submitContextType } from "@js/oarepo_ui";
 import { BaseForm } from "react-invenio-forms";
 import { Container } from "semantic-ui-react";
 import { NRDocumentValidationSchema } from "./NRDocumentValidationSchema";
