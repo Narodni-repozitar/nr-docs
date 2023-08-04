@@ -1,11 +1,23 @@
 import React from "react";
 import _isEmpty from "lodash/isEmpty";
-import { useFormConfig } from "@js/oarepo_ui/forms";
+import { useFormConfig, useOnSubmit } from "@js/oarepo_ui";
 import { BaseForm } from "react-invenio-forms";
 import { Container } from "semantic-ui-react";
+import { NRDocumentValidationSchema } from "./NRDocumentValidationSchema";
 
-const VocabularyForm = () => {
+
+export const DepositForm = () => {
   const { record, formConfig } = useFormConfig();
+  const context = formConfig.createUrl? submitContextType.create : submitContextType.update
+  const { onSubmit, onSubmitError } = useOnSubmit({
+    apiUrl: formConfig.createUrl || formConfig.updateUrl,
+    context: context,
+    onSubmitSuccess: (result) => {
+      window.location.href = editMode
+        ? currentPath.replace("/edit", "")
+        : currentPath.replace("_new", result.id)
+    }
+  });
 
   return (
     <Container>
@@ -13,16 +25,15 @@ const VocabularyForm = () => {
         onSubmit={onSubmit}
         formik={{
           initialValues: record,
-          validationSchema: VocabularyFormSchema,
+          validationSchema: NRDocumentValidationSchema,
           validateOnChange: false,
           validateOnBlur: false,
           enableReinitialize: true,
         }}
       >
-        <h1>Deposit form</h1>
+        <pre>Add your deposit form fields here 👇</pre>
       </BaseForm>
     </Container>
   );
 };
 
-export default VocabularyForm;
