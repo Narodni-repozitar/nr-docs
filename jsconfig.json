@@ -2,14 +2,17 @@
     "baseUrl": ".",
     "compilerOptions": {
         "paths": {
-            "@js/invenio_search_ui": [
-                "./.assets/js/invenio_search_ui"
+            "@js/invenio_communities": [
+                "./.assets/js/invenio_communities"
             ],
-            "@translations/invenio_search_ui": [
-                "./.assets/translations/invenio_search_ui"
+            "@translations/invenio_communities": [
+                "./.assets/translations/invenio_communities"
             ],
             "@translations/oarepo_vocabularies_ui": [
-                "./.assets/translations/oarepo_vocabularies_ui"
+                "./local/oarepo-vocabularies/oarepo_vocabularies/ui/theme/assets/semantic-ui/translations/oarepo_vocabularies_ui"
+            ],
+            "@js/oarepo_vocabularies_ui": [
+                "./local/oarepo-vocabularies/oarepo_vocabularies/ui/theme/assets/semantic-ui/js/oarepo_vocabularies_ui"
             ],
             "@js/invenio_theme": [
                 "./.assets/js/invenio_theme"
@@ -26,18 +29,6 @@
             "@translations/invenio_administration": [
                 "./.assets/translations/invenio_administration"
             ],
-            "@js/invenio_communities": [
-                "./.assets/js/invenio_communities"
-            ],
-            "@translations/invenio_communities": [
-                "./.assets/translations/invenio_communities"
-            ],
-            "@translations/invenio_requests": [
-                "./.assets/translations/invenio_requests"
-            ],
-            "@js/invenio_requests": [
-                "./.assets/js/invenio_requests"
-            ],
             "@translations/oarepo_ui": [
                 "./local/oarepo-ui/oarepo_ui/theme/assets/semantic-ui/translations/oarepo_ui"
             ],
@@ -52,6 +43,18 @@
             ],
             "@templates/custom_fields": [
                 "./local/oarepo-ui/oarepo_ui/theme/assets/semantic-ui/js/custom_fields"
+            ],
+            "@js/invenio_search_ui": [
+                "./.assets/js/invenio_search_ui"
+            ],
+            "@translations/invenio_search_ui": [
+                "./.assets/translations/invenio_search_ui"
+            ],
+            "@translations/invenio_requests": [
+                "./.assets/translations/invenio_requests"
+            ],
+            "@js/invenio_requests": [
+                "./.assets/js/invenio_requests"
             ],
             "@translations/docs_app": [
                 "./ui/docs-app/docs_app/theme/assets/semantic-ui/translations/docs_app"
