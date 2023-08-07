@@ -1,0 +1,9 @@
+default_context:
+  build_docs: n
+  build_rpm: n
+  exemple: n
+  git_init: n
+  package_name: '{{ cookiecutter.project_slug.replace(''-'', ''_'') }}'
+  project_name: Python Project
+  project_slug: nr-docs-extensions
+  test_runner: pytest

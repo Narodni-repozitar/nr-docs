@@ -8,6 +8,12 @@ config:
   sites:
   - nr-docs
 local:
+  nr-docs-extensions:
+    branch: null
+    github_clone_url: null
+    local_dir: local/nr-docs-extensions
+    sites:
+    - nr-docs
   oarepo-published-service:
     branch: setup
     github_clone_url: git@github.com:oarepo/oarepo-published-service.git
