@@ -1,11 +1,17 @@
+import copy
 
+import pytest
 from invenio_records_permissions.generators import (
     AnyUser,
     AuthenticatedUser,
     SystemProcess,
 )
 
+# todo move to conftest
+from invenio_records_resources.services.custom_fields import BooleanCF
+
 from nr_documents.proxies import current_service
+from nr_documents.records.api import NrDocumentsDraft, NrDocumentsRecord
 from nr_documents.resources.records.config import NrDocumentsResourceConfig
 
 
@@ -25,6 +31,250 @@ def _get_paths(cur_path, cur_val):
 
 def get_paths(prefix, data):
     return _get_paths(prefix, data)
+
+
+@pytest.fixture(scope="module")
+def app_config(app_config):
+    app_config["HAS_DRAFT"] = [BooleanCF("has_draft")]
+    return app_config
+
+
+def _assert_single_item_response(response):
+    """Assert the fields present on a single item response."""
+    response_fields = response.json.keys()
+    fields_to_check = ["id", "metadata", "created", "updated", "links"]
+
+    for field in fields_to_check:
+        assert field in response_fields
+
+
+#
+# Operations tests
+#
+
+
+def _create_and_publish(client, input_data):
+    """Create a draft and publish it."""
+    # Create the draft
+    response = client.post(NrDocumentsResourceConfig.url_prefix, json=input_data)
+
+    assert response.status_code == 201
+
+    recid = response.json["id"]
+
+    # Publish it
+    response = client.post(
+        f"{ NrDocumentsResourceConfig.url_prefix}{recid}/draft/actions/publish"
+    )
+
+    assert response.status_code == 202
+    _assert_single_item_response(response)
+    return recid
+
+
+def test_publish_draft(client, input_data, search_clear):
+    """Test draft publication of a non-existing record.
+
+    It has to first create said draft.
+    """
+    recid = _create_and_publish(client, input_data)
+
+    # Check draft does not exists anymore
+    response = client.get(f"{ NrDocumentsResourceConfig.url_prefix}{recid}/draft")
+
+    assert response.status_code == 404
+
+    # Check record exists
+    response = client.get(f"{ NrDocumentsResourceConfig.url_prefix}{recid}")
+
+    assert response.status_code == 200
+
+    _assert_single_item_response(response)
+
+
+def test_search_versions(client, input_data, search_clear):
+    """Test search for versions."""
+    recid = _create_and_publish(client, input_data)
+    NrDocumentsDraft.index.refresh()
+
+    # Check draft does not exists anymore
+    res = client.get(f"{ NrDocumentsResourceConfig.url_prefix}{recid}/versions")
+    assert res.status_code == 200
+
+
+#
+# Flow tests (Note that operations are tested above
+# therefore these tests do not assert their output)
+#
+
+
+def test_create_publish_new_revision(
+    client, input_data, search_clear, sample_metadata_list
+):
+    """Test draft creation of an existing record and publish it."""
+    recid = _create_and_publish(client, input_data)
+
+    # Create new draft of said record
+
+    edited_input_data = copy.deepcopy(input_data)
+    edited_input_data["metadata"] = sample_metadata_list[1]["metadata"]
+    edited_metadata = edited_input_data["metadata"]
+    orig_metadata = input_data["metadata"]
+
+    response = client.post(f"{ NrDocumentsResourceConfig.url_prefix}{recid}/draft")
+
+    assert response.status_code == 201
+    assert response.json["revision_id"] == 5
+    _assert_single_item_response(response)
+
+    # Update that new draft
+    response = client.put(
+        f"{ NrDocumentsResourceConfig.url_prefix}{recid}/draft", json=edited_input_data
+    )
+
+    assert response.status_code == 200
+
+    # Check the actual record was not modified
+    response = client.get(f"{ NrDocumentsResourceConfig.url_prefix}{recid}")
+
+    assert response.status_code == 200
+    _assert_single_item_response(response)
+    assert response.json["metadata"] == orig_metadata
+
+    # Publish it to check the increment in reversion
+    response = client.post(
+        f"{ NrDocumentsResourceConfig.url_prefix}{recid}/draft/actions/publish"
+    )
+
+    assert response.status_code == 202
+    _assert_single_item_response(response)
+
+    assert response.json["id"] == recid
+    assert response.json["revision_id"] == 2
+    assert response.json["metadata"] == edited_metadata
+
+    # Check it was actually edited
+    response = client.get(f"{ NrDocumentsResourceConfig.url_prefix}{recid}")
+
+    assert response.json["metadata"] == edited_metadata
+
+
+def test_mutiple_edit(client, input_data, search_clear):
+    """Test the revision_id when editing record multiple times.
+
+    This tests the `edit` service method.
+    """
+    recid = _create_and_publish(client, input_data)
+
+    # Create new draft of said record
+    response = client.post(f"{ NrDocumentsResourceConfig.url_prefix}{recid}/draft")
+
+    assert response.status_code == 201
+    assert response.json["revision_id"] == 5
+
+    # Request a second edit. Get the same draft (revision_id)
+    response = client.post(f"{ NrDocumentsResourceConfig.url_prefix}{recid}/draft")
+
+    assert response.status_code == 201
+    assert response.json["revision_id"] == 5
+
+    # Publish it to check the increment in version_id
+    response = client.post(
+        f"{ NrDocumentsResourceConfig.url_prefix}{recid}/draft/actions/publish"
+    )
+
+    assert response.status_code == 202
+
+    # Edit again
+    response = client.post(f"{ NrDocumentsResourceConfig.url_prefix}{recid}/draft")
+
+    assert response.status_code == 201
+    assert response.json["revision_id"] == 8
+
+
+def test_redirect_to_latest_version(client, input_data, search_clear):
+    """Creates a new version of a record.
+
+    Publishes the draft to obtain 2 versions of a record.
+    """
+    recid = _create_and_publish(client, input_data)
+
+    # Create new version of said record
+    response = client.post(f"{ NrDocumentsResourceConfig.url_prefix}{recid}/versions")
+    recid_2 = response.json["id"]
+
+    # NOTE: Assuming a new version should indeed have its files.enabled set to
+    #       True automatically, we have to reset it to False for this test.
+    client.put(
+        f"{ NrDocumentsResourceConfig.url_prefix}{recid_2}/draft", json=input_data
+    )
+
+    # Publish it to check the increment in version
+    response = client.post(
+        f"{ NrDocumentsResourceConfig.url_prefix}{recid_2}/draft/actions/publish"
+    )
+    latest_version_self_link = response.json["links"]["self"]
+
+    # Read a previous versions latest
+    response = client.get(
+        f"{ NrDocumentsResourceConfig.url_prefix}{recid}/versions/latest"
+    )
+
+    assert response.status_code == 301
+    assert response.headers["location"] == latest_version_self_link
+
+
+def test_list_drafts(client, input_data, vocab_cf, search_clear):
+    assert (
+        len(client.get(NrDocumentsResourceConfig.url_prefix).json["hits"]["hits"]) == 0
+    )
+    assert (
+        len(
+            client.get(f"user{ NrDocumentsResourceConfig.url_prefix}").json["hits"][
+                "hits"
+            ]
+        )
+        == 0
+    )
+
+    create_draft_response = client.post(
+        ThesisResourceConfig.url_prefix, json=input_data
+    )
+    assert create_draft_response.status_code == 201
+    recid = create_draft_response.json["id"]
+
+    NrDocumentsDraft.index.refresh()
+    NrDocumentsRecord.index.refresh()
+    assert (
+        len(client.get(NrDocumentsResourceConfig.url_prefix).json["hits"]["hits"]) == 0
+    )
+    assert (
+        len(
+            client.get(f"user{ NrDocumentsResourceConfig.url_prefix}").json["hits"][
+                "hits"
+            ]
+        )
+        == 1
+    )
+
+    response_publish = client.post(
+        f"{ThesisResourceConfig.url_prefix}{recid}/draft/actions/publish"
+    )
+    assert response_publish.status_code == 202
+
+    NrDocumentsDraft.index.refresh()
+    NrDocumentsRecord.index.refresh()
+    assert (
+        len(client.get(NrDocumentsResourceConfig.url_prefix).json["hits"]["hits"]) == 1
+    )
+    assert (
+        len(
+            client.get(f"user{ NrDocumentsResourceConfig.url_prefix}").json["hits"][
+                "hits"
+            ]
+        )
+        == 0
+    )
 
 
 BASE_URL = NrDocumentsResourceConfig.url_prefix
