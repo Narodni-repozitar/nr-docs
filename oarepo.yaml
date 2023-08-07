@@ -20,10 +20,11 @@ local:
     - nr-docs
     - nr-docs
   oarepo-vocabularies:
-    branch: create-edit-form
+    branch: null
     github_clone_url: https://github.com/oarepo/oarepo-vocabularies.git
     local_dir: local/oarepo-vocabularies
     sites:
+    - nr-docs
     - nr-docs
     - nr-docs
 models:
