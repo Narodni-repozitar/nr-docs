@@ -14,7 +14,6 @@ record:
     metadata:
       properties:
         use: ./metadata.yaml
-  schema-server: local://
   use:
   - invenio
   - ./custom_fields.yaml
@@ -29,6 +28,7 @@ plugins:
   - oarepo-model-builder-cf==4.*
   - oarepo-model-builder-vocabularies==4.*
   - oarepo-model-builder-relations==4.*
+  - oarepo-model-builder-requests
 runtime-dependencies:
   nr-metadata: 1.0.0
   nr-oaipmh-harvesters: 1.0.0
