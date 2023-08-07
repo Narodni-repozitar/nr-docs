@@ -19,6 +19,7 @@ local:
     sites:
     - nr-docs
     - nr-docs
+    - nr-docs
   oarepo-vocabularies:
     branch: null
     github_clone_url: https://github.com/oarepo/oarepo-vocabularies.git
