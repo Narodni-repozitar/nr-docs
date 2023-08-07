@@ -8,6 +8,10 @@ config:
   sites:
   - nr-docs
 local:
+  https://github.com/oarepo/oarepo-ui.git:
+    branch: null
+    github_clone_url: null
+    local_dir: local/https://github.com/oarepo/oarepo-ui.git
   oarepo-ui:
     branch: move-count-compoment
     github_clone_url: https://github.com/oarepo/oarepo-ui.git
