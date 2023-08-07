@@ -27,6 +27,7 @@ local:
     - nr-docs
     - nr-docs
     - nr-docs
+    - nr-docs
 models:
   nr-documents:
     author_email: miroslav.simek@techlib.cz

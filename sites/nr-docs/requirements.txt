@@ -1,4 +1,4 @@
-oarepo==11.0.42
+oarepo==11.0.44
 cachetools==5.3.1
 deepmerge==1.1.0
 et-xmlfile==1.1.0
@@ -10,11 +10,9 @@ nr-metadata==1.0.38
 nr-oaipmh-harvesters==1.0.0
 nr-vocabularies==2.0.5
 oarepo-oai-pmh-harvester==4.0.21
-oarepo-runtime==1.3.21
-oarepo-ui==5.0.35
-oarepo-vocabularies==2.0.17
+oarepo-runtime==1.3.24
 openpyxl==3.1.2
 python-dotenv==1.0.0
-rapidfuzz==3.1.2
+rapidfuzz==3.2.0
 sickle==0.7.0
 tqdm==4.65.0
