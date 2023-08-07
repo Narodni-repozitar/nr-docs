@@ -1,19 +1,26 @@
 $defs:
   use:
   - ./definitions.yaml
-model:
+record:
+  module:
+    qualified: nr_documents
   extend: nr-documents#DocumentModel
-  package: nr_documents
   permissions:
     presets:
     - read_only
-  pid-type: dcmnts
+  pid:
+    type: dcmnts
   plugins:
     builder:
       disable:
       - script_sample_data
     packages:
     - oarepo-model-builder-nr
+    - oarepo-model-builder-ui
+    - oarepo-model-builder-files==4.*
+    - oarepo-model-builder-cf==4.*
+    - oarepo-model-builder-vocabularies==4.*
+    - oarepo-model-builder-relations==4.*
   properties:
     metadata:
       properties:
