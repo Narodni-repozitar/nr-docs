@@ -581,3 +581,102 @@ updated = DateTimeFacet(field="updated", label=_("updated.label"))
 
 
 _schema = TermsFacet(field="$schema", label=_("$schema.label"))
+
+metadata_abstract_cs = TermsFacet(
+    field="metadata.abstract.cs.keyword", label=_("metadata/abstract.label")
+)
+
+metadata_abstract_en = TermsFacet(
+    field="metadata.abstract.en.keyword", label=_("metadata/abstract.label")
+)
+
+metadata_abstract_value = NestedLabeledFacet(
+    path="metadata.abstract",
+    nested_facet=TermsFacet(
+        field="metadata.abstract.value.keyword",
+        label=_("metadata/abstract/value.label"),
+    ),
+)
+
+metadata_accessibility_cs = TermsFacet(
+    field="metadata.accessibility.cs.keyword", label=_("metadata/accessibility.label")
+)
+
+metadata_accessibility_en = TermsFacet(
+    field="metadata.accessibility.en.keyword", label=_("metadata/accessibility.label")
+)
+
+metadata_accessibility_value = NestedLabeledFacet(
+    path="metadata.accessibility",
+    nested_facet=TermsFacet(
+        field="metadata.accessibility.value.keyword",
+        label=_("metadata/accessibility/value.label"),
+    ),
+)
+
+metadata_additionalTitles_title_cs = TermsFacet(
+    field="metadata.additionalTitles.title.cs.keyword",
+    label=_("metadata/additionalTitles/title.label"),
+)
+
+metadata_additionalTitles_title_en = TermsFacet(
+    field="metadata.additionalTitles.title.en.keyword",
+    label=_("metadata/additionalTitles/title.label"),
+)
+
+metadata_additionalTitles_title_value = NestedLabeledFacet(
+    path="metadata.additionalTitles.title",
+    nested_facet=TermsFacet(
+        field="metadata.additionalTitles.title.value.keyword",
+        label=_("metadata/additionalTitles/title/value.label"),
+    ),
+)
+
+metadata_methods_cs = TermsFacet(
+    field="metadata.methods.cs.keyword", label=_("metadata/methods.label")
+)
+
+metadata_methods_en = TermsFacet(
+    field="metadata.methods.en.keyword", label=_("metadata/methods.label")
+)
+
+metadata_methods_value = NestedLabeledFacet(
+    path="metadata.methods",
+    nested_facet=TermsFacet(
+        field="metadata.methods.value.keyword", label=_("metadata/methods/value.label")
+    ),
+)
+
+metadata_subjects_subject_cs = TermsFacet(
+    field="metadata.subjects.subject.cs.keyword",
+    label=_("metadata/subjects/subject.label"),
+)
+
+metadata_subjects_subject_en = TermsFacet(
+    field="metadata.subjects.subject.en.keyword",
+    label=_("metadata/subjects/subject.label"),
+)
+
+metadata_subjects_subject_value = NestedLabeledFacet(
+    path="metadata.subjects.subject",
+    nested_facet=TermsFacet(
+        field="metadata.subjects.subject.value.keyword",
+        label=_("metadata/subjects/subject/value.label"),
+    ),
+)
+
+metadata_technicalInfo_cs = TermsFacet(
+    field="metadata.technicalInfo.cs.keyword", label=_("metadata/technicalInfo.label")
+)
+
+metadata_technicalInfo_en = TermsFacet(
+    field="metadata.technicalInfo.en.keyword", label=_("metadata/technicalInfo.label")
+)
+
+metadata_technicalInfo_value = NestedLabeledFacet(
+    path="metadata.technicalInfo",
+    nested_facet=TermsFacet(
+        field="metadata.technicalInfo.value.keyword",
+        label=_("metadata/technicalInfo/value.label"),
+    ),
+)

@@ -42,7 +42,7 @@ class NrDocumentsRecord(Record):
         ),
         role=PIDRelation(
             "metadata.contributors.role",
-            keys=["id", "title", {"key": "type.id", "target": "type"}],
+            keys=["id", "title", {"key": "type.id", "target": "type"}, "id", "title"],
             pid_field=Vocabulary.pid.with_type_ctx("contributor-roles"),
         ),
         affiliations_item_1=PIDRelation(
@@ -52,7 +52,7 @@ class NrDocumentsRecord(Record):
         ),
         resourceType=PIDRelation(
             "metadata.resourceType",
-            keys=["id", "title", {"key": "type.id", "target": "type"}],
+            keys=["id", "title", {"key": "type.id", "target": "type"}, "id", "title"],
             pid_field=Vocabulary.pid.with_type_ctx("resource-types"),
         ),
         subjectCategories_item=PIDRelation(
@@ -72,7 +72,7 @@ class NrDocumentsRecord(Record):
         ),
         accessRights=PIDRelation(
             "metadata.accessRights",
-            keys=["id", "title", {"key": "type.id", "target": "type"}],
+            keys=["id", "title", {"key": "type.id", "target": "type"}, "id", "title"],
             pid_field=Vocabulary.pid.with_type_ctx("access-rights"),
         ),
         affiliations_item_2=PIDRelation(
@@ -92,22 +92,67 @@ class NrDocumentsRecord(Record):
         ),
         itemRelationType=PIDRelation(
             "metadata.relatedItems.itemRelationType",
-            keys=["id", "title", {"key": "type.id", "target": "type"}],
+            keys=["id", "title", {"key": "type.id", "target": "type"}, "id", "title"],
             pid_field=Vocabulary.pid.with_type_ctx("item-relation-types"),
         ),
         itemResourceType=PIDRelation(
             "metadata.relatedItems.itemResourceType",
-            keys=["id", "title", {"key": "type.id", "target": "type"}],
+            keys=["id", "title", {"key": "type.id", "target": "type"}, "id", "title"],
             pid_field=Vocabulary.pid.with_type_ctx("resource-types"),
         ),
         funder=PIDRelation(
             "metadata.fundingReferences.funder",
-            keys=["id", "title", {"key": "type.id", "target": "type"}],
+            keys=["id", "title", {"key": "type.id", "target": "type"}, "id", "title"],
             pid_field=Vocabulary.pid.with_type_ctx("funders"),
         ),
         country=PIDRelation(
             "metadata.events.eventLocation.country",
-            keys=["id", "title", {"key": "type.id", "target": "type"}],
+            keys=["id", "title", {"key": "type.id", "target": "type"}, "id", "title"],
             pid_field=Vocabulary.pid.with_type_ctx("countries"),
+        ),
+        affiliations=PIDRelation(
+            "metadata.contributors.affiliations",
+            keys=["id", "title", "hierarchy"],
+            pid_field=Vocabulary.pid.with_type_ctx("institutions"),
+        ),
+        creators_affiliations=PIDRelation(
+            "metadata.creators.affiliations",
+            keys=["id", "title", "hierarchy"],
+            pid_field=Vocabulary.pid.with_type_ctx("institutions"),
+        ),
+        languages=PIDRelation(
+            "metadata.languages",
+            keys=["id", "title"],
+            pid_field=Vocabulary.pid.with_type_ctx("languages"),
+        ),
+        itemContributors_affiliations=PIDRelation(
+            "metadata.relatedItems.itemContributors.affiliations",
+            keys=["id", "title", "hierarchy"],
+            pid_field=Vocabulary.pid.with_type_ctx("institutions"),
+        ),
+        itemContributors_role=PIDRelation(
+            "metadata.relatedItems.itemContributors.role",
+            keys=["id", "title"],
+            pid_field=Vocabulary.pid.with_type_ctx("contributor-roles"),
+        ),
+        itemCreators_affiliations=PIDRelation(
+            "metadata.relatedItems.itemCreators.affiliations",
+            keys=["id", "title", "hierarchy"],
+            pid_field=Vocabulary.pid.with_type_ctx("institutions"),
+        ),
+        rights=PIDRelation(
+            "metadata.rights",
+            keys=["id", "title"],
+            pid_field=Vocabulary.pid.with_type_ctx("licenses"),
+        ),
+        subjectCategories=PIDRelation(
+            "metadata.subjectCategories",
+            keys=["id", "title"],
+            pid_field=Vocabulary.pid.with_type_ctx("subject-categories"),
+        ),
+        degreeGrantors=PIDRelation(
+            "metadata.thesis.degreeGrantors",
+            keys=["id", "title", "hierarchy"],
+            pid_field=Vocabulary.pid.with_type_ctx("institutions"),
         ),
     )

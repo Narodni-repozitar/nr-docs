@@ -1,3 +1,4 @@
+import marshmallow as ma
 from invenio_records_resources.services.records.schema import (
     BaseRecordSchema as InvenioBaseRecordSchema,
 )
@@ -11,3 +12,13 @@ class NrDocumentsSchema(InvenioBaseRecordSchema):
     """NrDocumentsSchema schema."""
 
     metadata = ma_fields.Nested(lambda: NRDocumentMetadataSchema())
+
+    class Meta:
+        unknown = ma.RAISE
+
+    metadata = ma.fields.Nested(lambda: NrDocumentsMetadataSchema())
+
+
+class NrDocumentsMetadataSchema(NRDocumentMetadataSchema):
+    class Meta:
+        unknown = ma.RAISE
