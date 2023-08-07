@@ -4,7 +4,7 @@ config:
   packaging: single
   primary_site_name: nr-documents
   project_package: nr_documents
-  python: python3.9
+  python: python3
   sites:
   - nr-docs
 local:
@@ -26,7 +26,7 @@ models:
     author_email: miroslav.simek@techlib.cz
     author_name: Miroslav Simek
     installation_site: nr-docs
-    merge_changes: merge
+    merge_changes: overwrite
     model_dir: models/nr-documents
     model_kind: empty
     model_package: nr_documents
