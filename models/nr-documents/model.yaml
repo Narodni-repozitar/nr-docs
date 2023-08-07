@@ -17,6 +17,7 @@ record:
   use:
   - invenio
   - ./custom_fields.yaml
+  - ./requests.yaml
 plugins:
   builder:
     disable:
@@ -45,5 +46,3 @@ settings:
         analyzer: czech
     en:
       text: {}
-use:
-- ./requests.yaml
