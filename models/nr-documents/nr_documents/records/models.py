@@ -9,3 +9,9 @@ class NrDocumentsMetadata(db.Model, RecordMetadataBase):
 
     # Enables SQLAlchemy-Continuum versioning
     __versioned__ = {}
+
+    __parent_record_model__ = DraftParentMetadata
+
+
+class DraftParentMetadata(db.Model, RecordMetadataBase):
+    __tablename__ = "nr_documents_parent_metadata"

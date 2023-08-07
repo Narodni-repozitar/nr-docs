@@ -3,7 +3,6 @@ $defs:
   - ./definitions.yaml
 profiles:
 - record
-- drafts
 record:
   module:
     qualified: nr_documents

@@ -63,16 +63,8 @@
         },
         "pid": {
             "type": "dcmnts",
-            "generate": true,
-            "module": "nr_documents.records.api",
-            "provider-class": "nr_documents.records.api.NrDocumentsIdProvider",
             "provider-base-classes": [
-                "RecordIdProviderV2"
-            ],
-            "field-class": "PIDField",
-            "context-class": "PIDFieldContext",
-            "field-args": [
-                "create=True"
+                "DraftRecordIdProviderV2"
             ],
             "imports": [
                 {
@@ -82,8 +74,16 @@
                     "import": "invenio_records_resources.records.systemfields.pid.PIDFieldContext"
                 },
                 {
-                    "import": "invenio_pidstore.providers.recordid_v2.RecordIdProviderV2"
+                    "import": "invenio_drafts_resources.records.api.DraftRecordIdProviderV2"
                 }
+            ],
+            "generate": true,
+            "module": "nr_documents.records.api",
+            "provider-class": "nr_documents.records.api.NrDocumentsIdProvider",
+            "field-class": "PIDField",
+            "context-class": "PIDFieldContext",
+            "field-args": [
+                "create=True"
             ]
         },
         "requests": {
@@ -135,6 +135,16 @@
             "suffix-upper": "NR_DOCUMENTS",
             "suffix-snake": "nr_documents"
         },
+        "draft": {
+            "type": "draft_record",
+            "properties": {},
+            "searchable": true,
+            "tests": {
+                "extra-fixtures": [],
+                "extra-code": "",
+                "module": "tests"
+            }
+        },
         "tests": {
             "extra-fixtures": [],
             "extra-code": "",
@@ -148,6 +158,53 @@
             "skip": false
         },
         "model-name": "Nr_Documents",
+        "record": {
+            "imports": [
+                {
+                    "import": "invenio_drafts_resources.records.api.Record",
+                    "alias": "InvenioRecord"
+                }
+            ],
+            "generate": true,
+            "module": "nr_documents.records.api",
+            "class": "nr_documents.records.api.NrDocumentsRecord",
+            "base-classes": [
+                "InvenioRecord"
+            ],
+            "extra-code": ""
+        },
+        "resource": {
+            "imports": [
+                {
+                    "import": "invenio_drafts_resources.resources.RecordResource"
+                }
+            ],
+            "generate": true,
+            "config-key": "NR_DOCUMENTS_RECORD_RESOURCE_CLASS",
+            "module": "nr_documents.resources.records.resource",
+            "class": "nr_documents.resources.records.resource.NrDocumentsResource",
+            "proxy": "current_resource",
+            "extra-code": "",
+            "base-classes": [
+                "RecordResource"
+            ]
+        },
+        "resource-config": {
+            "imports": [
+                {
+                    "import": "invenio_drafts_resources.resources.RecordResourceConfig"
+                }
+            ],
+            "generate": true,
+            "base-url": "/nr-documents/",
+            "config-key": "NR_DOCUMENTS_RECORD_RESOURCE_CONFIG",
+            "module": "nr_documents.resources.records.config",
+            "class": "nr_documents.resources.records.config.NrDocumentsResourceConfig",
+            "extra-code": "",
+            "base-classes": [
+                "RecordResourceConfig"
+            ]
+        },
         "search-options": {
             "generate": true,
             "module": "nr_documents.services.records.search",
@@ -199,53 +256,6 @@
             "module": "nr_documents.services.records.facets",
             "extra-code": ""
         },
-        "record": {
-            "generate": true,
-            "module": "nr_documents.records.api",
-            "class": "nr_documents.records.api.NrDocumentsRecord",
-            "base-classes": [
-                "InvenioRecord"
-            ],
-            "imports": [
-                {
-                    "import": "invenio_records_resources.records.api.Record",
-                    "alias": "InvenioRecord"
-                }
-            ],
-            "extra-code": ""
-        },
-        "resource": {
-            "generate": true,
-            "config-key": "NR_DOCUMENTS_RECORD_RESOURCE_CLASS",
-            "module": "nr_documents.resources.records.resource",
-            "class": "nr_documents.resources.records.resource.NrDocumentsResource",
-            "proxy": "current_resource",
-            "extra-code": "",
-            "base-classes": [
-                "RecordResource"
-            ],
-            "imports": [
-                {
-                    "import": "invenio_records_resources.resources.RecordResource"
-                }
-            ]
-        },
-        "resource-config": {
-            "generate": true,
-            "base-url": "/nr-documents/",
-            "config-key": "NR_DOCUMENTS_RECORD_RESOURCE_CONFIG",
-            "module": "nr_documents.resources.records.config",
-            "class": "nr_documents.resources.records.config.NrDocumentsResourceConfig",
-            "extra-code": "",
-            "base-classes": [
-                "RecordResourceConfig"
-            ],
-            "imports": [
-                {
-                    "import": "invenio_records_resources.resources.RecordResourceConfig"
-                }
-            ]
-        },
         "saved-model": {
             "file": "nr_documents/models/records.json",
             "module": "nr_documents.models",
@@ -254,6 +264,76 @@
         "proxy": {
             "module": "nr_documents.proxies",
             "generate": true
+        },
+        "record-metadata": {
+            "generate": true,
+            "module": "nr_documents.records.models",
+            "class": "nr_documents.records.models.NrDocumentsMetadata",
+            "base-classes": [
+                "db.Model",
+                "RecordMetadataBase",
+                "ParentRecordMixin"
+            ],
+            "extra-code": "",
+            "imports": [
+                {
+                    "import": "invenio_records.models.RecordMetadataBase"
+                },
+                {
+                    "import": "invenio_db.db"
+                },
+                {
+                    "import": "invenio_drafts_resources.records.ParentRecordMixin"
+                }
+            ],
+            "table": "nrdocuments_metadata",
+            "alias": "nr_documents",
+            "use-versioning": true,
+            "alembic": "nr_documents.alembic"
+        },
+        "service": {
+            "imports": [
+                {
+                    "import": "invenio_drafts_resources.services.RecordService",
+                    "alias": "InvenioRecordService"
+                }
+            ],
+            "generate": true,
+            "config-key": "NR_DOCUMENTS_RECORD_SERVICE_CLASS",
+            "proxy": "current_service",
+            "module": "nr_documents.services.records.service",
+            "class": "nr_documents.services.records.service.NrDocumentsService",
+            "extra-code": "",
+            "base-classes": [
+                "InvenioRecordService"
+            ]
+        },
+        "service-config": {
+            "imports": [
+                {
+                    "import": "invenio_drafts_resources.services.RecordServiceConfig",
+                    "alias": "InvenioRecordServiceConfig"
+                },
+                {
+                    "import": "oarepo_runtime.config.service.PermissionsPresetsConfigMixin"
+                },
+                {
+                    "import": "invenio_records_resources.services.records.components.DataComponent"
+                }
+            ],
+            "generate": true,
+            "config-key": "NR_DOCUMENTS_RECORD_SERVICE_CONFIG",
+            "module": "nr_documents.services.records.config",
+            "class": "nr_documents.services.records.config.NrDocumentsServiceConfig",
+            "extra-code": "",
+            "service-id": "nr_documents",
+            "base-classes": [
+                "PermissionsPresetsConfigMixin",
+                "InvenioRecordServiceConfig"
+            ],
+            "components": [
+                "DataComponent"
+            ]
         },
         "translations": {
             "module": "nr_documents.translations",
@@ -279,72 +359,6 @@
             "imports": [
                 {
                     "import": "invenio_records.dumpers.SearchDumper"
-                }
-            ]
-        },
-        "record-metadata": {
-            "generate": true,
-            "module": "nr_documents.records.models",
-            "class": "nr_documents.records.models.NrDocumentsMetadata",
-            "base-classes": [
-                "db.Model",
-                "RecordMetadataBase"
-            ],
-            "extra-code": "",
-            "imports": [
-                {
-                    "import": "invenio_records.models.RecordMetadataBase"
-                },
-                {
-                    "import": "invenio_db.db"
-                }
-            ],
-            "table": "nrdocuments_metadata",
-            "alias": "nr_documents",
-            "use-versioning": true,
-            "alembic": "nr_documents.alembic"
-        },
-        "service-config": {
-            "generate": true,
-            "config-key": "NR_DOCUMENTS_RECORD_SERVICE_CONFIG",
-            "module": "nr_documents.services.records.config",
-            "class": "nr_documents.services.records.config.NrDocumentsServiceConfig",
-            "extra-code": "",
-            "service-id": "nr_documents",
-            "base-classes": [
-                "PermissionsPresetsConfigMixin",
-                "InvenioRecordServiceConfig"
-            ],
-            "components": [
-                "DataComponent"
-            ],
-            "imports": [
-                {
-                    "import": "invenio_records_resources.services.RecordServiceConfig",
-                    "alias": "InvenioRecordServiceConfig"
-                },
-                {
-                    "import": "oarepo_runtime.config.service.PermissionsPresetsConfigMixin"
-                },
-                {
-                    "import": "invenio_records_resources.services.records.components.DataComponent"
-                }
-            ]
-        },
-        "service": {
-            "generate": true,
-            "config-key": "NR_DOCUMENTS_RECORD_SERVICE_CLASS",
-            "proxy": "current_service",
-            "module": "nr_documents.services.records.service",
-            "class": "nr_documents.services.records.service.NrDocumentsService",
-            "extra-code": "",
-            "base-classes": [
-                "InvenioRecordService"
-            ],
-            "imports": [
-                {
-                    "import": "invenio_records_resources.services.RecordService",
-                    "alias": "InvenioRecordService"
                 }
             ]
         },
@@ -411,6 +425,59 @@
                     "import": "invenio_records_resources.references.RecordResolver"
                 }
             ]
+        },
+        "draft-parent-record": {
+            "class": "nr_documents.records.api.DraftParentRecord",
+            "base-classes": [
+                "ParentRecord"
+            ],
+            "imports": [
+                {
+                    "import": "invenio_drafts_resources.records.api.ParentRecord"
+                }
+            ],
+            "module": "nr_documents.records.api",
+            "generate": true
+        },
+        "draft-parent-record-state": {
+            "class": "nr_documents.records.models.ParentState",
+            "base-classes": [
+                "db.Model",
+                "ParentRecordStateMixin"
+            ],
+            "imports": [
+                {
+                    "import": "invenio_drafts_resources.records.ParentRecordStateMixin"
+                },
+                {
+                    "import": "invenio_db.db"
+                }
+            ],
+            "module": "nr_documents.records.models",
+            "generate": true,
+            "table": "parent_state_metadata"
+        },
+        "draft-parent-record-metadata": {
+            "class": "nr_documents.records.models.DraftParentMetadata",
+            "base-classes": [
+                "db.Model",
+                "RecordMetadataBase"
+            ],
+            "imports": [
+                {
+                    "import": "invenio_records.models.RecordMetadataBase"
+                },
+                {
+                    "import": "invenio_db.db"
+                }
+            ],
+            "module": "nr_documents.records.models",
+            "generate": true
+        },
+        "draft-parent-record-schema": {
+            "name": "parent-v1.0.0.json",
+            "file": "nr_documents/records/jsonschemas/parent-v1.0.0.json",
+            "generate": true
         },
         "mapping": {
             "generate": true,

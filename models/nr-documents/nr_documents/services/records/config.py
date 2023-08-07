@@ -1,3 +1,6 @@
+from invenio_drafts_resources.services import (
+    RecordServiceConfig as InvenioRecordServiceConfig,
+)
 from invenio_records_resources.services import RecordLink
 from invenio_records_resources.services import RecordServiceConfig
 from invenio_records_resources.services import (
@@ -34,6 +37,8 @@ class NrDocumentsServiceConfig(PermissionsPresetsConfigMixin, RecordServiceConfi
         *PermissionsPresetsConfigMixin.components,
         *InvenioRecordServiceConfig.components,
         DataComponent,
+        *PermissionsPresetsConfigMixin.components,
+        *InvenioRecordServiceConfig.components,
     ]
 
     model = "nr_documents"
