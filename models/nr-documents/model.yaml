@@ -17,7 +17,7 @@ record:
     metadata:
       properties:
         use: ./metadata.yaml
-  drafts: {}
+  draft: {}
   use:
   - invenio
   - ./custom_fields.yaml
