@@ -1022,7 +1022,7 @@
                                 "type": "text"
                             },
                             "eventDate": {
-                                "type": "date_range"
+                                "type": "keyword"
                             },
                             "eventLocation": {
                                 "type": "object",
