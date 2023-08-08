@@ -6,11 +6,13 @@ import {
   ArrayField,
   FieldLabel,
   SelectField,
+  RichInputField,
 } from "react-invenio-forms";
-import { Button, Form, Icon } from "semantic-ui-react";
+import { Button, Form, Icon, Popup } from "semantic-ui-react";
 import { useFormikContext, getIn } from "formik";
 import _toPairs from "lodash/toPairs";
 import { useFormConfig } from "@js/oarepo_ui/forms";
+import { i18next } from "@translations/oarepo_ui/i18next";
 
 const translateObjectToArray = (obj) => {
   return _toPairs(obj).map(([language, title]) => ({ language, name: title }));
@@ -48,6 +50,8 @@ export const MultiLingualTextInput = ({
   required,
   emptyNewInput,
   newItemInitialValue,
+  hasRichInput,
+  editorConfig,
 }) => {
   const {
     formConfig: {
@@ -78,7 +82,9 @@ export const MultiLingualTextInput = ({
       addButtonLabel="Add another language"
       defaultNewValue={emptyNewInput}
       fieldPath={placeholderFieldPath}
-      label={<FieldLabel htmlFor={fieldPath} icon="" label={label} />}
+      label={
+        <FieldLabel htmlFor={fieldPath} icon={labelIcon ?? ""} label={label} />
+      }
       required={required}
     >
       {({ indexPath, array, arrayHelpers }) => {
@@ -92,39 +98,77 @@ export const MultiLingualTextInput = ({
 
         return (
           <GroupField optimized>
-            <SelectField
-              // necessary because otherwise other inputs are not rerendered and keep the previous state i.e. I could potentially choose two same languages in some scenarios
-              key={availableOptions}
-              clearable
-              fieldPath={`${fieldPathPrefix}.language`}
-              label="Language"
-              optimized
-              options={availableOptions}
-              required
-              width={2}
-              selectOnBlur={false}
-            />
-
-            <TextField
-              fieldPath={`${fieldPathPrefix}.name`}
-              label="Name"
-              width={9}
-              required
-            />
-
-            <Form.Field>
-              {indexPath > 0 && (
-                <Button
-                  style={{ marginTop: "1.75rem" }}
-                  aria-label="remove field"
-                  className="close-btn"
-                  icon
-                  onClick={() => arrayHelpers.remove(indexPath)}
-                >
-                  <Icon name="close" />
-                </Button>
+            <Form.Field width={3}>
+              <SelectField
+                // necessary because otherwise other inputs are not rerendered and keep the previous state i.e. I could potentially choose two same languages in some scenarios
+                key={availableOptions}
+                clearable
+                fieldPath={`${fieldPathPrefix}.language`}
+                label="Language"
+                optimized
+                options={availableOptions}
+                required={required}
+                selectOnBlur={false}
+                search
+              />
+              {indexPath > 0 && hasRichInput && (
+                <Popup
+                  basic
+                  inverted
+                  position="bottom center"
+                  content={i18next.t("Remove description")}
+                  trigger={
+                    <Button
+                      aria-label="remove field"
+                      className="rel-mt-1"
+                      icon
+                      onClick={() => arrayHelpers.remove(indexPath)}
+                      fluid
+                    >
+                      <Icon name="close" />
+                    </Button>
+                  }
+                />
               )}
             </Form.Field>
+
+            {hasRichInput ? (
+              <Form.Field width={13}>
+                <RichInputField
+                  fieldPath={`${fieldPathPrefix}.name`}
+                  label={i18next.t("Description")}
+                  editorConfig={editorConfig}
+                  optimized
+                  required={required}
+                />
+              </Form.Field>
+            ) : (
+              <TextField
+                fieldPath={`${fieldPathPrefix}.name`}
+                label="Name"
+                required={required}
+                width={13}
+                icon={
+                  indexPath > 0 ? (
+                    <Popup
+                      basic
+                      inverted
+                      position="bottom center"
+                      content={i18next.t("Remove field")}
+                      trigger={
+                        <Icon
+                          as="button"
+                          onClick={() => arrayHelpers.remove(indexPath)}
+                        >
+                          <Icon name="close" />
+                        </Icon>
+                      }
+                    />
+                  ) : null
+                }
+                iconPosition="right"
+              />
+            )}
           </GroupField>
         );
       }}
@@ -137,12 +181,9 @@ MultiLingualTextInput.propTypes = {
   label: PropTypes.string,
   labelIcon: PropTypes.string,
   required: PropTypes.bool,
-  options: PropTypes.object.isRequired,
-  emptyNewInput: PropTypes.shape({
-    language: PropTypes.string,
-    name: PropTypes.string,
-  }),
   newItemInitialValue: PropTypes.object,
+  hasRichInput: PropTypes.bool,
+  editorConfig: PropTypes.object,
 };
 
 MultiLingualTextInput.defaultProps = {
@@ -153,4 +194,19 @@ MultiLingualTextInput.defaultProps = {
     name: "",
   },
   newItemInitialValue: { cs: "" },
+  hasRichInput: false,
+  editorConfig: {
+    removePlugins: [
+      "Image",
+      "ImageCaption",
+      "ImageStyle",
+      "ImageToolbar",
+      "ImageUpload",
+      "MediaEmbed",
+      "Table",
+      "TableToolbar",
+      "TableProperties",
+      "TableCellProperties",
+    ],
+  },
 };

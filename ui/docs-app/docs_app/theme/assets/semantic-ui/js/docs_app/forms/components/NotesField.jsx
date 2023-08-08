@@ -1,12 +1,12 @@
 import React, { useEffect } from "react";
 import PropTypes from "prop-types";
 import { ArrayField, TextField } from "react-invenio-forms";
-import { i18next } from "@translations/oarepo_ui/i18next";
+import { i18next } from "@translations/docs_app/i18next";
 import { useFormikContext, getIn } from "formik";
-import { Form, Button, Icon, Grid } from "semantic-ui-react";
-import _toPairs from "lodash/toPairs";
-import _get from "lodash/get";
+import { Icon, Popup } from "semantic-ui-react";
 
+// similar issue as in multiling component. The invenio form's arrayfield adds an object when you add an item and we want the state to be notes:["string", "string",...]
+// so I applied similar approach
 const arrayToArrayOfObjects = (arr) => {
   return arr.map((item) => ({ note: item }));
 };
@@ -32,8 +32,8 @@ export const NotesField = ({
       setFieldValue(
         placeholderFieldPath,
         getIn(values, fieldPath)
-          ? arrayToArrayOfObjects(getIn(values, fieldPath, ""))
-          : arrayToArrayOfObjects(newItemInitialValue)
+          ? arrayToArrayOfObjects(getIn(values, fieldPath))
+          : arrayToArrayOfObjects([])
       );
       return;
     }
@@ -50,38 +50,34 @@ export const NotesField = ({
       required={required}
       helpText={helpText}
       labelIcon={labelIcon}
+      defaultNewValue={{ note: "" }}
     >
       {({ arrayHelpers, indexPath }) => {
         const fieldPathPrefix = `${placeholderFieldPath}.${indexPath}`;
 
         return (
-          <Grid>
-            <Grid.Row stretched>
-              <Grid.Column width={12}>
-                <TextField
-                  fieldPath={`${fieldPathPrefix}.note`}
-                  label={i18next.t("Description")}
-                  optimized
-                  required
-                  fluid
-                />
-              </Grid.Column>
-              <Grid.Column width={3}>
-                <Form.Field>
-                  <Button
-                    fluid
-                    style={{ marginTop: "1.75rem" }}
-                    aria-label="remove field"
-                    className="close-btn"
-                    icon
+          <TextField
+            fieldPath={`${fieldPathPrefix}.note`}
+            label={`#${indexPath + 1}`}
+            optimized
+            fluid
+            icon={
+              <Popup
+                basic
+                inverted
+                position="bottom center"
+                content={i18next.t("Remove note")}
+                trigger={
+                  <Icon
+                    as="button"
                     onClick={() => arrayHelpers.remove(indexPath)}
                   >
                     <Icon name="close" />
-                  </Button>
-                </Form.Field>
-              </Grid.Column>
-            </Grid.Row>
-          </Grid>
+                  </Icon>
+                }
+              />
+            }
+          />
         );
       }}
     </ArrayField>
@@ -91,24 +87,15 @@ export const NotesField = ({
 NotesField.propTypes = {
   fieldPath: PropTypes.string.isRequired,
   label: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
-  options: PropTypes.shape({
-    languages: PropTypes.arrayOf(
-      PropTypes.shape({
-        key: PropTypes.string,
-        text: PropTypes.string,
-        value: PropTypes.string,
-      })
-    ).isRequired,
-  }).isRequired,
-  editorConfig: PropTypes.object.isRequired,
-  newItemInitialValue: PropTypes.object,
+  newItemInitialValue: PropTypes.string,
   addButtonLabel: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
   helpText: PropTypes.string,
   labelIcon: PropTypes.string,
 };
 
 NotesField.defaultProps = {
-  addButtonLabel: i18next.t("Add description in another language"),
+  addButtonLabel: i18next.t("Add note"),
   newItemInitialValue: "",
   labelIcon: "pencil square",
+  label: i18next.t("Notes"),
 };

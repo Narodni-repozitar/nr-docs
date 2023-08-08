@@ -12,8 +12,6 @@ export const PublicationDateField = ({
   required,
   ...uiProps
 }) => {
-  console.log(uiProps);
-
   return (
     <TextField
       fieldPath={fieldPath}
