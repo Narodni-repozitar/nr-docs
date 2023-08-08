@@ -247,7 +247,15 @@ export const DepositForm = () => {
                 </Overridable>
               </AccordionField>
             </Overridable>
-
+            <RelatedSelectField
+              fieldPath="remote"
+              suggestionAPIUrl={"/api/vocabularies/institutions"}
+              clearable
+              externalSuggestionApi={"/api/vocabularies/licenses"}
+              search={(options) => options}
+              selectOnBlur={false}
+              multiple={true}
+            />
             <FormikStateLogger />
           </Grid.Column>
           <Ref innerRef={sidebarRef}>

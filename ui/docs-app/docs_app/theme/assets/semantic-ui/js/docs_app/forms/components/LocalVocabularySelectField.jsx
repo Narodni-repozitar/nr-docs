@@ -19,21 +19,34 @@ export const LocalVocabularySelectField = ({
   const { formConfig } = useFormConfig();
   const optionsList = formConfig.vocabularies[optionsListName] || [];
 
-  const { values } = useFormikContext();
+  const { values, handleBlur } = useFormikContext();
   return (
     <SelectField
+      {...uiProps}
+      onBlur={() => {}}
       search
       fieldPath={fieldPath}
-      multiple={true}
+      multiple={multiple}
       options={optionsList}
-      onChange={({ e, data, formikProps }) => {
-        formikProps.form.setFieldValue(
-          fieldPath,
-          data.value.map((vocabItem) => ({ id: vocabItem }))
-        );
-      }}
-      value={getIn(values, fieldPath, []).map((vocabItem) => vocabItem.id)}
-      {...uiProps}
+      onChange={
+        multiple
+          ? ({ e, data, formikProps }) => {
+              formikProps.form.setFieldValue(
+                fieldPath,
+                data.value.map((vocabItem) => ({ id: vocabItem }))
+              );
+            }
+          : ({ e, data, formikProps }) => {
+              formikProps.form.setFieldValue(fieldPath, { id: data.value });
+            }
+      }
+      value={
+        multiple
+          ? getIn(values, fieldPath, []).map((vocabItem) => vocabItem.id)
+          : getIn(values, fieldPath)?.id
+          ? getIn(values, fieldPath)?.id
+          : ""
+      }
     />
   );
 };
