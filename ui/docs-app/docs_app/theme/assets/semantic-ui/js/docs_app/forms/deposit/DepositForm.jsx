@@ -3,21 +3,24 @@ import {
   useFormConfig,
   useOnSubmit,
   submitContextType,
-  RelatedSelectField,
   MultiLingualTextInput,
 } from "@js/oarepo_ui";
-import { BaseForm, AccordionField, FieldLabel } from "react-invenio-forms";
+import {
+  BaseForm,
+  AccordionField,
+  FieldLabel,
+  TextField,
+} from "react-invenio-forms";
 import { Container, Grid, Ref, Sticky } from "semantic-ui-react";
 import { NRDocumentValidationSchema } from "./NRDocumentValidationSchema";
 import {
   DateField,
   LocalVocabularySelectField,
   NotesField,
-  // MultiLingualTextInput,
+  AdditionalTitlesField,
 } from "../components/";
 import Overridable from "react-overridable";
 import { i18next } from "@translations/docs_app/i18next";
-import { options } from "./fakeData";
 import { FormikStateLogger, VocabularySelect } from "@js/oarepo_vocabularies";
 
 export const DepositForm = () => {
@@ -35,6 +38,25 @@ export const DepositForm = () => {
     },
   });
   const sidebarRef = useRef(null);
+  const initialValues = {
+    ...record,
+    additionalTitles: [
+      {
+        title: {
+          cs: "wadawdwadwad",
+          ab: "dwadawdadw",
+        },
+        titleType: "alternative-title",
+      },
+      {
+        title: {
+          ab: "dwadadawda",
+          am: "dwadawdadwadwa",
+        },
+        titleType: "subtitle",
+      },
+    ],
+  };
   // fake boolean to simulate if we are editing existing or creating new item
   const editMode = false;
   return (
@@ -42,7 +64,7 @@ export const DepositForm = () => {
       <BaseForm
         onSubmit={onSubmit}
         formik={{
-          initialValues: record,
+          initialValues: initialValues,
           validationSchema: NRDocumentValidationSchema,
           validateOnChange: false,
           validateOnBlur: false,
@@ -96,7 +118,26 @@ export const DepositForm = () => {
                 <Overridable
                   id="NrDocs.Deposit.TitleField.container"
                   fieldPath="title"
-                ></Overridable>
+                >
+                  <TextField
+                    fieldPath="title"
+                    required
+                    label={
+                      <FieldLabel
+                        htmlFor={"title"}
+                        icon="pencil"
+                        label={i18next.t("Title")}
+                      />
+                    }
+                  />
+                </Overridable>
+
+                <Overridable
+                  id="NrDocs.Deposit.AdditionalTitlesField.container"
+                  fieldPath="additionalTitles"
+                >
+                  <AdditionalTitlesField fieldPath="additionalTitles" />
+                </Overridable>
 
                 <Overridable
                   id="NrDocs.Deposit.DateAvailableField.container"
@@ -243,15 +284,7 @@ export const DepositForm = () => {
                 </Overridable>
               </AccordionField>
             </Overridable>
-            <RelatedSelectField
-              fieldPath="remote"
-              suggestionAPIUrl={"/api/vocabularies/institutions"}
-              clearable
-              externalSuggestionApi={"/api/vocabularies/licenses"}
-              search={(options) => options}
-              selectOnBlur={false}
-              multiple={true}
-            />
+
             <FormikStateLogger />
           </Grid.Column>
           <Ref innerRef={sidebarRef}>

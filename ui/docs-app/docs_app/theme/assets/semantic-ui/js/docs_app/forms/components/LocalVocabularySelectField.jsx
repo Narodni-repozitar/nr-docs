@@ -16,14 +16,17 @@ export const LocalVocabularySelectField = ({
   optionsListName,
   ...uiProps
 }) => {
-  const { formConfig } = useFormConfig();
-  const optionsList = formConfig.vocabularies[optionsListName] || [];
+  const {
+    formConfig: { vocabularies },
+  } = useFormConfig();
+  const optionsList = vocabularies[optionsListName] || [];
 
-  const { values, handleBlur } = useFormikContext();
+  const { values, setFieldTouched } = useFormikContext();
   return (
     <SelectField
-      {...uiProps}
-      onBlur={() => {}}
+      // formik exhibits strange behavior when you enable search prop to semantic ui's dropdown i.e. handleBlur stops working - did not investigate the details very deep
+      // but imperatively calling setFieldTouched gets the job done
+      onBlur={() => setFieldTouched(fieldPath)}
       search
       fieldPath={fieldPath}
       multiple={multiple}
@@ -47,6 +50,7 @@ export const LocalVocabularySelectField = ({
           ? getIn(values, fieldPath)?.id
           : ""
       }
+      {...uiProps}
     />
   );
 };
