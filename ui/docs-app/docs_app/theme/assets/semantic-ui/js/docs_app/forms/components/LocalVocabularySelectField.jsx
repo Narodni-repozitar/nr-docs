@@ -1,5 +1,5 @@
 import React from "react";
-import { SelectField } from "./SelectField";
+import { SelectField } from "react-invenio-forms";
 import { useFormConfig } from "@js/oarepo_ui/forms";
 import { useFormikContext, getIn } from "formik";
 import PropTypes from "prop-types";

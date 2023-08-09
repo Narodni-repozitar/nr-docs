@@ -1,28 +1,24 @@
 import React, { useRef } from "react";
-import _isEmpty from "lodash/isEmpty";
 import {
   useFormConfig,
   useOnSubmit,
   submitContextType,
   RelatedSelectField,
+  MultiLingualTextInput,
 } from "@js/oarepo_ui";
 import { BaseForm, AccordionField, FieldLabel } from "react-invenio-forms";
 import { Container, Grid, Ref, Sticky } from "semantic-ui-react";
 import { NRDocumentValidationSchema } from "./NRDocumentValidationSchema";
 import {
-  ResourceTypeField,
-  PublicationDateField,
+  DateField,
   LocalVocabularySelectField,
   NotesField,
-  MultiLingualTextInput,
+  // MultiLingualTextInput,
 } from "../components/";
 import Overridable from "react-overridable";
 import { i18next } from "@translations/docs_app/i18next";
 import { options } from "./fakeData";
-import {
-  FormikStateLogger,
-  VocabularySelect,
-} from "@js/oarepo_vocabularies_ui/form/components";
+import { FormikStateLogger, VocabularySelect } from "@js/oarepo_vocabularies";
 
 export const DepositForm = () => {
   const { record, formConfig } = useFormConfig();
@@ -106,7 +102,7 @@ export const DepositForm = () => {
                   id="NrDocs.Deposit.DateAvailableField.container"
                   fieldPath="dateAvailable"
                 >
-                  <PublicationDateField
+                  <DateField
                     fieldPath="dateAvailable"
                     required
                     label={i18next.t("Date available")}
@@ -117,7 +113,7 @@ export const DepositForm = () => {
                   fieldPath="dateModified"
                 >
                   {editMode && (
-                    <PublicationDateField
+                    <DateField
                       fieldPath="dateModified"
                       required
                       label={i18next.t("Date modified")}

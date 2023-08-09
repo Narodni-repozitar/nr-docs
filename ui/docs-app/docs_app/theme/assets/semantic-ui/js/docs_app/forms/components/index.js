@@ -1,5 +1,4 @@
 export { NotesField } from "./NotesField";
-export { PublicationDateField } from "./PublicationDateField";
-export { ResourceTypeField } from "./ResourceTypeField";
+export { DateField } from "./DateField";
 export { LocalVocabularySelectField } from "./LocalVocabularySelectField";
 export { MultiLingualTextInput } from "./MultiLingualTextInput";

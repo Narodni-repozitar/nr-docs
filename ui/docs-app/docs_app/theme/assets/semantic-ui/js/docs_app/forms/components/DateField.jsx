@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { FieldLabel, TextField } from "react-invenio-forms";
 import { i18next } from "@translations/oarepo_vocabularies_ui/i18next";
 
-export const PublicationDateField = ({
+export const DateField = ({
   fieldPath,
   helpText,
   label,
@@ -24,7 +24,7 @@ export const PublicationDateField = ({
   );
 };
 
-PublicationDateField.propTypes = {
+DateField.propTypes = {
   fieldPath: PropTypes.string.isRequired,
   helpText: PropTypes.string,
   label: PropTypes.string,
@@ -33,7 +33,7 @@ PublicationDateField.propTypes = {
   required: PropTypes.bool,
 };
 
-PublicationDateField.defaultProps = {
+DateField.defaultProps = {
   helpText: i18next.t(
     "In case your upload was already published elsewhere, please use the date of the first publication. Format: YYYY-MM-DD, YYYY-MM, or YYYY. For intervals use DATE/DATE, e.g. 1939/1945."
   ),
