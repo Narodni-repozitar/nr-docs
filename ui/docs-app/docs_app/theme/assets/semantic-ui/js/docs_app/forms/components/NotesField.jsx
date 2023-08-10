@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { ArrayField, TextField } from "react-invenio-forms";
 import { i18next } from "@translations/docs_app/i18next";
 import { useFormikContext, getIn } from "formik";
-import { Icon, Popup } from "semantic-ui-react";
+import { Icon, Popup, Button } from "semantic-ui-react";
 
 // similar issue as in multiling component. The invenio form's arrayfield adds an object when you add an item and we want the state to be notes:["string", "string",...]
 // so I applied similar approach
@@ -68,12 +68,12 @@ export const NotesField = ({
                 position="bottom center"
                 content={i18next.t("Remove note")}
                 trigger={
-                  <Icon
-                    as="button"
+                  <Button
+                    className="rel-ml-1"
                     onClick={() => arrayHelpers.remove(indexPath)}
                   >
-                    <Icon name="close" />
-                  </Icon>
+                    <Icon fitted name="close" />
+                  </Button>
                 }
               />
             }

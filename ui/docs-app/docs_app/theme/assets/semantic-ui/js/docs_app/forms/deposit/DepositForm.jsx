@@ -56,6 +56,7 @@ export const DepositForm = () => {
         titleType: "subtitle",
       },
     ],
+    abstract: { cs: "dawdwadwa", en: "dwadwadawd" },
   };
   // fake boolean to simulate if we are editing existing or creating new item
   const editMode = false;
