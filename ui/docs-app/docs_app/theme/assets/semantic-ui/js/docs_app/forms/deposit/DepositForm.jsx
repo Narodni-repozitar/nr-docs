@@ -16,7 +16,7 @@ import { NRDocumentValidationSchema } from "./NRDocumentValidationSchema";
 import {
   DateField,
   LocalVocabularySelectField,
-  NotesField,
+  StringArrayField,
   AdditionalTitlesField,
 } from "../components/";
 import Overridable from "react-overridable";
@@ -219,6 +219,16 @@ export const DepositForm = () => {
                     optionsListName="licenses"
                   />
                 </Overridable>
+                <Overridable
+                  id="NrDocs.Deposit.PublishersField.container"
+                  fieldPath="publishers"
+                >
+                  <StringArrayField
+                    fieldPath="publishers"
+                    addButtonLabel={i18next.t("Add publisher")}
+                    label={i18next.t("Publishers")}
+                  />
+                </Overridable>
               </AccordionField>
             </Overridable>
             <Overridable id="NrDocs.Deposit.AccordionFieldDescription.container">
@@ -281,7 +291,7 @@ export const DepositForm = () => {
                   id="NrDocs.Deposit.NotesField.container"
                   fieldPath="notes"
                 >
-                  <NotesField fieldPath="notes" />
+                  <StringArrayField fieldPath="notes" />
                 </Overridable>
               </AccordionField>
             </Overridable>
