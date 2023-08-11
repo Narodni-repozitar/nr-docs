@@ -3,7 +3,7 @@ import {
   useFormConfig,
   useOnSubmit,
   submitContextType,
-  MultiLingualTextInput,
+  MultilingualTextInput,
 } from "@js/oarepo_ui";
 import {
   BaseForm,
@@ -18,6 +18,7 @@ import {
   LocalVocabularySelectField,
   StringArrayField,
   AdditionalTitlesField,
+  GeoLocationsField,
 } from "../components/";
 import Overridable from "react-overridable";
 import { i18next } from "@translations/docs_app/i18next";
@@ -57,6 +58,7 @@ export const DepositForm = () => {
       },
     ],
     abstract: { cs: "dawdwadwa", en: "dwadwadawd" },
+    notes: ["dwadwadwad", "dawdadwad", "dadwada"],
   };
   // fake boolean to simulate if we are editing existing or creating new item
   const editMode = false;
@@ -171,7 +173,7 @@ export const DepositForm = () => {
                   id="NrDocs.Deposit.AbstractField.container"
                   fieldPath="abstract"
                 >
-                  <MultiLingualTextInput
+                  <MultilingualTextInput
                     labelIcon="pencil"
                     label={i18next.t("Abstract")}
                     fieldPath="abstract"
@@ -267,7 +269,7 @@ export const DepositForm = () => {
                   id="NrDocs.Deposit.MethodsField.container"
                   fieldPath="title"
                 >
-                  <MultiLingualTextInput
+                  <MultilingualTextInput
                     labelIcon="pencil"
                     label={i18next.t("Methods")}
                     fieldPath="methods"
@@ -279,7 +281,7 @@ export const DepositForm = () => {
                   id="NrDocs.Deposit.TechnicalInfoField.container"
                   fieldPath="title"
                 >
-                  <MultiLingualTextInput
+                  <MultilingualTextInput
                     labelIcon="pencil"
                     label={i18next.t("Technical info")}
                     fieldPath="technicalInfo"
@@ -292,6 +294,12 @@ export const DepositForm = () => {
                   fieldPath="notes"
                 >
                   <StringArrayField fieldPath="notes" />
+                </Overridable>
+                <Overridable
+                  id="NrDocs.Deposit.GeoLocationsField.container"
+                  fieldPath="geoLocations"
+                >
+                  <GeoLocationsField fieldPath="geoLocations" />
                 </Overridable>
               </AccordionField>
             </Overridable>

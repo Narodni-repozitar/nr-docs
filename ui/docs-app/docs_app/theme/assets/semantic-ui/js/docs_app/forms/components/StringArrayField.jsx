@@ -9,15 +9,10 @@ import _uniq from "lodash/uniq";
 // similar issue as in multiling component. The invenio form's arrayfield adds an object when you add an item and we want the state to be notes:["string", "string",...]
 // so I applied similar approach
 const arrayToArrayOfObjects = (arr) => {
-  return arr.map((item) => ({ note: item }));
-};
-
-export const transformArrayToObject = (arr) => {
-  return arr.map((item) => item.note);
+  return arr.map((item) => ({ text: item }));
 };
 
 const checkForDuplicates = (arr) => {
-  console.log(arr.length !== _uniq(arr).length);
   return arr.length !== _uniq(arr).length;
 };
 
@@ -30,7 +25,6 @@ export const StringArrayField = ({
   helpText,
   labelIcon,
 }) => {
-  console.log(fieldPath);
   const placeholderFieldPath = `_${fieldPath}`;
   const { setFieldValue, values } = useFormikContext();
 
@@ -47,7 +41,7 @@ export const StringArrayField = ({
     }
     setFieldValue(
       fieldPath,
-      transformArrayToObject(getIn(values, placeholderFieldPath))
+      getIn(values, placeholderFieldPath).map((item) => item.text)
     );
   }, [values[placeholderFieldPath]]);
   return (
@@ -59,14 +53,14 @@ export const StringArrayField = ({
         required={required}
         helpText={helpText}
         labelIcon={labelIcon}
-        defaultNewValue={{ note: "" }}
+        defaultNewValue={{ text: "" }}
       >
         {({ arrayHelpers, indexPath }) => {
           const fieldPathPrefix = `${placeholderFieldPath}.${indexPath}`;
 
           return (
             <TextField
-              fieldPath={`${fieldPathPrefix}.note`}
+              fieldPath={`${fieldPathPrefix}.text`}
               label={`#${indexPath + 1}`}
               optimized
               fluid
@@ -75,7 +69,7 @@ export const StringArrayField = ({
                   basic
                   inverted
                   position="bottom center"
-                  content={i18next.t("Remove note")}
+                  content={i18next.t("Remove item")}
                   trigger={
                     <Button
                       className="rel-ml-1"
