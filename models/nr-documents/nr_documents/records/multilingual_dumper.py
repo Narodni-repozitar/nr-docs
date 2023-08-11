@@ -2,15 +2,15 @@ from oarepo_runtime.i18n.dumper import MultilingualDumper
 
 
 class MultilingualSearchDumper(MultilingualDumper):
-    """NrDocumentsRecord search dumper."""
+    """Multilingual search dumper."""
 
     paths = [
-        "/metadata/additionalTitles/title",
-        "/metadata/subjects/subject",
         "/metadata/abstract",
-        "/metadata/methods",
-        "/metadata/technicalInfo",
         "/metadata/accessibility",
+        "/metadata/additionalTitles/title",
+        "/metadata/methods",
+        "/metadata/subjects/subject",
+        "/metadata/technicalInfo",
     ]
     SUPPORTED_LANGS = ["cs", "en"]
 

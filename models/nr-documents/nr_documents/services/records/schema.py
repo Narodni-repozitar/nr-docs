@@ -1,13 +1,18 @@
-from invenio_records_resources.services.records.schema import (
-    BaseRecordSchema as InvenioBaseRecordSchema,
-)
-from marshmallow import fields as ma_fields
+import marshmallow as ma
 from nr_metadata.documents.services.records.schema import (
     NRDocumentMetadataSchema,
+    NRDocumentRecordSchema,
 )
+from oarepo_runtime.marshmallow import BaseRecordSchema
 
 
-class NrDocumentsSchema(InvenioBaseRecordSchema):
-    """NrDocumentsSchema schema."""
+class NrDocumentsSchema(NRDocumentRecordSchema, BaseRecordSchema):
+    class Meta:
+        unknown = ma.RAISE
 
-    metadata = ma_fields.Nested(lambda: NRDocumentMetadataSchema())
+    metadata = ma.fields.Nested(lambda: NrDocumentsMetadataSchema())
+
+
+class NrDocumentsMetadataSchema(NRDocumentMetadataSchema):
+    class Meta:
+        unknown = ma.RAISE
