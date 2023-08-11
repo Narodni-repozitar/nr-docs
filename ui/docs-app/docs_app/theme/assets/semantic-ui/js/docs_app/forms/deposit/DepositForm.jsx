@@ -19,6 +19,8 @@ import {
   StringArrayField,
   AdditionalTitlesField,
   GeoLocationsField,
+  FundersField,
+  ExternalLocationField,
 } from "../components/";
 import Overridable from "react-overridable";
 import { i18next } from "@translations/docs_app/i18next";
@@ -41,24 +43,36 @@ export const DepositForm = () => {
   const sidebarRef = useRef(null);
   const initialValues = {
     ...record,
-    additionalTitles: [
+    // additionalTitles: [
+    //   {
+    //     title: {
+    //       cs: "wadawdwadwad",
+    //       ab: "dwadawdadw",
+    //     },
+    //     titleType: "alternative-title",
+    //   },
+    //   {
+    //     title: {
+    //       ab: "dwadadawda",
+    //       am: "dwadawdadwadwa",
+    //     },
+    //     titleType: "subtitle",
+    //   },
+    // ],
+    // abstract: [
+    //   { lang: "cs", value: "ducciano" },
+    //   { lang: "en", value: "Ducciano" },
+    // ],
+    notes: ["dwadwadwad", "dawdadwad", "dadwada"],
+    geoLocations: [
       {
-        title: {
-          cs: "wadawdwadwad",
-          ab: "dwadawdadw",
+        geoLocationPlace: "Ducica's place",
+        geoLocationPoint: {
+          pointLongitude: 130.3232,
+          pointLatitude: 82.44242,
         },
-        titleType: "alternative-title",
-      },
-      {
-        title: {
-          ab: "dwadadawda",
-          am: "dwadawdadwadwa",
-        },
-        titleType: "subtitle",
       },
     ],
-    abstract: { cs: "dawdwadwa", en: "dwadwadawd" },
-    notes: ["dwadwadwad", "dawdadwad", "dadwada"],
   };
   // fake boolean to simulate if we are editing existing or creating new item
   const editMode = false;
@@ -179,6 +193,9 @@ export const DepositForm = () => {
                     fieldPath="abstract"
                     hasRichInput={true}
                     required={false}
+                    helpText={i18next.t(
+                      "Detailed description of the methodology and technical information should be specified in the 'Dataset Description' section"
+                    )}
                   />
                 </Overridable>
                 <Overridable
@@ -213,12 +230,15 @@ export const DepositForm = () => {
                       <FieldLabel
                         htmlFor={"rights"}
                         icon="drivers license"
-                        label={i18next.t("Licenses")}
+                        label={i18next.t("License")}
                       />
                     }
                     placeholder={i18next.t("Choose licenses")}
                     clearable
                     optionsListName="licenses"
+                    helpText={i18next.t(
+                      "If a Creative Commons license is associated with the dataset, select the appropriate license option from the menu. We recommend choosing the latest versions, namely 3.0 Czech and 4.0 International."
+                    )}
                   />
                 </Overridable>
                 <Overridable
@@ -299,7 +319,31 @@ export const DepositForm = () => {
                   id="NrDocs.Deposit.GeoLocationsField.container"
                   fieldPath="geoLocations"
                 >
-                  <GeoLocationsField fieldPath="geoLocations" />
+                  <GeoLocationsField
+                    fieldPath="geoLocations"
+                    helpText={i18next.t(
+                      "Free description of the location; ie. Atlantic Ocean. Longitude must be a number between -180 and 180 and latitude between -90 and 90."
+                    )}
+                  />
+                </Overridable>
+                {/* as I understand shoul exist only for items with restricted access as additional explanation why it is restricted? */}
+                <Overridable
+                  id="NrDocs.Deposit.AccessibilityField.container"
+                  fieldPath="accessibility"
+                >
+                  <MultilingualTextInput
+                    label="Accessibility"
+                    fieldPath="accessibility"
+                  />
+                </Overridable>
+                <Overridable
+                  id="NrDocs.Deposit.FundersField.container"
+                  fieldPath="fundingReferences"
+                >
+                  <FundersField fieldPath="fundingReferences" />
+                </Overridable>
+                <Overridable id="NrDocs.Deposit.ExternalLocationField.container">
+                  <ExternalLocationField fieldPath="externalLocation" />
                 </Overridable>
               </AccordionField>
             </Overridable>

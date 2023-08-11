@@ -1,59 +1,10 @@
-import React, { useEffect, useMemo } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 import { Button, Form, Icon } from "semantic-ui-react";
-import {
-  ArrayField,
-  GroupField,
-  SelectField,
-  TextField,
-} from "react-invenio-forms";
+import { ArrayField, GroupField, TextField } from "react-invenio-forms";
 import { i18next } from "@translations/docs_app/i18next";
-import { useFormConfig, MultiLingualTextInput } from "@js/oarepo_ui";
-import { useFormikContext, getIn } from "formik";
 
-// the final state of the component contains array of objects and the objects also contain the _title (placeholder representation for multilingual field) and this shall
-// ne removed before form submitting
-
-export const transformArrayToObject = (arr) => {
-  if (!Array.isArray(arr)) return;
-  const result = {};
-  arr.forEach(({ language, name }) => {
-    result[language] = name;
-  });
-
-  return result;
-};
-
-// this should come from formConfig in the actual use case
-const subtitleTypes = [
-  { text: "Alternative title", value: "alternative-title" },
-  { text: "Translated title", value: "translated-title" },
-  { text: "Subtitle", value: "subtitle" },
-  { text: "Other", value: "other" },
-];
-
-export const GeoLocationsField = ({ fieldPath }) => {
-  const { values, setFieldValue } = useFormikContext();
-  // as it is a nested structure, I had to use useMemo to avoid infinite rerenders
-  //   const titlesState = useMemo(() => {
-  //     if (!values.additionalTitles) return;
-  //     return JSON.stringify(values.additionalTitles.map((item) => item._title));
-  //   }, [values.additionalTitles]);
-
-  //   useEffect(() => {
-  //     if (!getIn(values, `${fieldPath}.0._title`)) return;
-  //     setFieldValue(
-  //       `${fieldPath}`,
-  //       getIn(values, fieldPath, []).map(({ title, titleType, _title }) => {
-  //         return {
-  //           title: transformArrayToObject(_title),
-  //           titleType,
-  //           _title,
-  //         };
-  //       })
-  //     );
-  //   }, [titlesState]);
-
+export const GeoLocationsField = ({ fieldPath, helpText }) => {
   return (
     <ArrayField
       addButtonLabel={i18next.t("Add location")}
@@ -61,25 +12,44 @@ export const GeoLocationsField = ({ fieldPath }) => {
       fieldPath={fieldPath}
       label={i18next.t("Geolocation")}
       labelIcon="globe"
+      helpText={helpText}
     >
       {({ arrayHelpers, indexPath }) => {
         const fieldPathPrefix = `${fieldPath}.${indexPath}`;
         return (
           <GroupField>
             <TextField
-              width={6}
+              width={10}
               fieldPath={`${fieldPathPrefix}.geoLocationPlace`}
+              label={i18next.t("Location")}
+              required
             />
             <TextField
-              width={6}
+              width={3}
               fieldPath={`${fieldPathPrefix}.geoLocationPoint.pointLongitude`}
+              label={i18next.t("Longitude")}
+              onChange={(e) =>
+                setFieldValue(
+                  `${fieldPathPrefix}.geoLocationPoint.pointLongitude`,
+                  parseFloat(e.target.value)
+                )
+              }
+              required
             />
             <TextField
-              width={6}
+              width={3}
               fieldPath={`${fieldPathPrefix}.geoLocationPoint.pointLatitude`}
+              label={i18next.t("Latitude")}
+              onChange={(e) =>
+                setFieldValue(
+                  `${fieldPathPrefix}.geoLocationPoint.pointLatitude`,
+                  parseFloat(e.target.value)
+                )
+              }
+              required
             />
 
-            <Form.Field style={{ marginTop: "2rem" }}>
+            <Form.Field style={{ marginTop: "1.75rem" }}>
               <Button
                 aria-label={i18next.t("Remove field")}
                 className="close-btn"
@@ -98,4 +68,5 @@ export const GeoLocationsField = ({ fieldPath }) => {
 
 GeoLocationsField.propTypes = {
   fieldPath: PropTypes.string.isRequired,
+  helpText: PropTypes.string,
 };

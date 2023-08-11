@@ -14,6 +14,7 @@ export const LocalVocabularySelectField = ({
   fieldPath,
   multiple,
   optionsListName,
+  helpText,
   ...uiProps
 }) => {
   const {
@@ -23,35 +24,38 @@ export const LocalVocabularySelectField = ({
 
   const { values, setFieldTouched } = useFormikContext();
   return (
-    <SelectField
-      // formik exhibits strange behavior when you enable search prop to semantic ui's dropdown i.e. handleBlur stops working - did not investigate the details very deep
-      // but imperatively calling setFieldTouched gets the job done
-      onBlur={() => setFieldTouched(fieldPath)}
-      search
-      fieldPath={fieldPath}
-      multiple={multiple}
-      options={optionsList}
-      onChange={
-        multiple
-          ? ({ e, data, formikProps }) => {
-              formikProps.form.setFieldValue(
-                fieldPath,
-                data.value.map((vocabItem) => ({ id: vocabItem }))
-              );
-            }
-          : ({ e, data, formikProps }) => {
-              formikProps.form.setFieldValue(fieldPath, { id: data.value });
-            }
-      }
-      value={
-        multiple
-          ? getIn(values, fieldPath, []).map((vocabItem) => vocabItem.id)
-          : getIn(values, fieldPath)?.id
-          ? getIn(values, fieldPath)?.id
-          : ""
-      }
-      {...uiProps}
-    />
+    <React.Fragment>
+      <SelectField
+        // formik exhibits strange behavior when you enable search prop to semantic ui's dropdown i.e. handleBlur stops working - did not investigate the details very deep
+        // but imperatively calling setFieldTouched gets the job done
+        onBlur={() => setFieldTouched(fieldPath)}
+        search
+        fieldPath={fieldPath}
+        multiple={multiple}
+        options={optionsList}
+        onChange={
+          multiple
+            ? ({ e, data, formikProps }) => {
+                formikProps.form.setFieldValue(
+                  fieldPath,
+                  data.value.map((vocabItem) => ({ id: vocabItem }))
+                );
+              }
+            : ({ e, data, formikProps }) => {
+                formikProps.form.setFieldValue(fieldPath, { id: data.value });
+              }
+        }
+        value={
+          multiple
+            ? getIn(values, fieldPath, []).map((vocabItem) => vocabItem.id)
+            : getIn(values, fieldPath)?.id
+            ? getIn(values, fieldPath)?.id
+            : ""
+        }
+        {...uiProps}
+      />
+      <label>{helpText}</label>
+    </React.Fragment>
   );
 };
 
@@ -59,4 +63,5 @@ LocalVocabularySelectField.propTypes = {
   fieldPath: PropTypes.string.isRequired,
   multiple: PropTypes.bool,
   optionsListName: PropTypes.string.isRequired,
+  helpText: PropTypes.string,
 };
