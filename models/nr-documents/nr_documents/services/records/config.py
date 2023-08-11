@@ -1,8 +1,8 @@
 from invenio_drafts_resources.services import (
     RecordServiceConfig as InvenioRecordServiceConfig,
 )
-from invenio_drafts_resources.services.records.config import is_record
-from invenio_records_resources.services import ConditionalLink, RecordLink
+from invenio_records_resources.services import pagination_links
+from invenio_records_resources.services import RecordLink
 from invenio_records_resources.services.records.components import DataComponent
 from oarepo_runtime.config.service import PermissionsPresetsConfigMixin
 
@@ -43,20 +43,9 @@ class NrDocumentsServiceConfig(
     @property
     def links_item(self):
         return {
-            "draft": RecordLink("{+api}/{self.url_prefix}{id}/draft"),
-            "latest": RecordLink("{+api}/{self.url_prefix}{id}/versions/latest"),
-            "latest_html": RecordLink("{+ui}/{self.url_prefix}{id}/latest"),
-            "publish": RecordLink("{+api}/{self.url_prefix}{id}/draft/actions/publish"),
-            "record": RecordLink("{+api}/{self.url_prefix}{id}"),
-            "self": ConditionalLink(
-                cond=is_record,
-                if_=RecordLink("{+api}{self.url_prefix}{id}"),
-                else_=RecordLink("{+api}{self.url_prefix}{id}/draft"),
-            ),
-            "self_html": ConditionalLink(
-                cond=is_record,
-                if_=RecordLink("{+ui}{self.url_prefix}{id}"),
-                else_=RecordLink("{+ui}/uploads/{id}"),
-            ),
-            "versions": RecordLink("{+api}/{self.url_prefix}{id}/versions"),
+            "self": RecordLink("{+api}{self.url_prefix}{id}"),
         }
+
+    @property
+    def links_search(self):
+        return pagination_links("{+api}{self.url_prefix}{?args*}")

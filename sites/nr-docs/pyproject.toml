@@ -2,7 +2,6 @@
 name = "nr-docs-repository"
 version = "1.0.0"
 description = ""
-packages = []
 authors = [
     { name = "Miroslav Simek", email = "miroslav.simek@techlib.cz" },
 ]
