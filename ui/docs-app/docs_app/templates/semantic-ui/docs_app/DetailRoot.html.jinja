@@ -1,0 +1,10 @@
+{#def metadata #}
+{% extends "oarepo_ui/detail.html" %}
+
+{%- block head_links %}
+
+{{ super() }}
+{{ webpack['docs_app_components.js']}}
+{{ webpack['docs_app_components.css']}}
+
+{%- endblock %}
