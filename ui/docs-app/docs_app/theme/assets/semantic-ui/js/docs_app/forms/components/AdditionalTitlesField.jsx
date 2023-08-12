@@ -1,23 +1,9 @@
-import React, { useEffect, useMemo } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 import { Button, Form, Icon } from "semantic-ui-react";
 import { ArrayField, GroupField, SelectField } from "react-invenio-forms";
 import { i18next } from "@translations/docs_app/i18next";
-import { useFormConfig, MultilingualTextInput } from "@js/oarepo_ui";
-import { useFormikContext, getIn } from "formik";
-
-// the final state of the component contains array of objects and the objects also contain the _title (placeholder representation for multilingual field) and this shall
-// ne removed before form submitting
-
-export const transformArrayToObject = (arr) => {
-  if (!Array.isArray(arr)) return;
-  const result = {};
-  arr.forEach(({ language, name }) => {
-    result[language] = name;
-  });
-
-  return result;
-};
+import { I18nTextInputField } from "@js/oarepo_ui";
 
 // this should come from formConfig in the actual use case
 const subtitleTypes = [
@@ -28,27 +14,6 @@ const subtitleTypes = [
 ];
 
 export const AdditionalTitlesField = ({ fieldPath }) => {
-  const { values, setFieldValue } = useFormikContext();
-  // as it is a nested structure, I had to use useMemo to avoid infinite rerenders
-  const titlesState = useMemo(() => {
-    if (!values.additionalTitles) return;
-    return JSON.stringify(values.additionalTitles.map((item) => item._title));
-  }, [values.additionalTitles]);
-
-  useEffect(() => {
-    if (!getIn(values, `${fieldPath}.0._title`)) return;
-    setFieldValue(
-      `${fieldPath}`,
-      getIn(values, fieldPath, []).map(({ title, titleType, _title }) => {
-        return {
-          title: transformArrayToObject(_title),
-          titleType,
-          _title,
-        };
-      })
-    );
-  }, [titlesState]);
-
   return (
     <ArrayField
       addButtonLabel={i18next.t("Add additional title")}
@@ -62,13 +27,12 @@ export const AdditionalTitlesField = ({ fieldPath }) => {
         return (
           <GroupField>
             <Form.Field width={13}>
-              <MultilingualTextInput
+              <I18nTextInputField
                 fieldPath={`${fieldPathPrefix}.title`}
                 label=""
-                textFieldLabel={i18next.t("Title")}
               />
             </Form.Field>
-            <Form.Field style={{ marginTop: "0.3rem" }} width={3}>
+            <Form.Field width={3}>
               <SelectField
                 fieldPath={`${fieldPathPrefix}.titleType`}
                 label={i18next.t("Title type")}
@@ -77,7 +41,7 @@ export const AdditionalTitlesField = ({ fieldPath }) => {
               />
             </Form.Field>
 
-            <Form.Field style={{ marginTop: "2rem" }}>
+            <Form.Field style={{ marginTop: "1.75rem" }}>
               <Button
                 aria-label={i18next.t("Remove field")}
                 className="close-btn"
