@@ -10,7 +10,7 @@ import {
   BaseForm,
   AccordionField,
   FieldLabel,
-  TextField,
+  // TextField,
 } from "react-invenio-forms";
 import { Container, Grid, Ref, Sticky } from "semantic-ui-react";
 import { NRDocumentValidationSchema } from "./NRDocumentValidationSchema";
@@ -22,6 +22,8 @@ import {
   GeoLocationsField,
   FundersField,
   ExternalLocationField,
+  ValidateButton,
+  TextField,
 } from "../components/";
 import Overridable from "react-overridable";
 import { i18next } from "@translations/docs_app/i18next";
@@ -84,7 +86,7 @@ export const DepositForm = () => {
       <BaseForm
         onSubmit={onSubmit}
         formik={{
-          initialValues: initialValues,
+          initialValues: {},
           validationSchema: NRDocumentValidationSchema,
           validateOnChange: false,
           validateOnBlur: false,
@@ -154,9 +156,9 @@ export const DepositForm = () => {
 
                 <Overridable
                   id="NrDocs.Deposit.AdditionalTitlesField.container"
-                  fieldPath="additionalTitles"
+                  fieldPath="metadata.additionalTitles"
                 >
-                  <AdditionalTitlesField fieldPath="additionalTitles" />
+                  <AdditionalTitlesField fieldPath="metadata.additionalTitles" />
                 </Overridable>
 
                 <Overridable
@@ -361,6 +363,7 @@ export const DepositForm = () => {
               <Sticky context={sidebarRef} offset={20}>
                 <Overridable id="FormApp.buttons">
                   <React.Fragment>
+                    <ValidateButton />
                     {/* <PublishButton />
                     <ResetButton /> */}
                   </React.Fragment>

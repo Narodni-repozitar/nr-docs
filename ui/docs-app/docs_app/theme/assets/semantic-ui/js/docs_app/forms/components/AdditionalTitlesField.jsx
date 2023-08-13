@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Button, Form, Icon } from "semantic-ui-react";
+import { Button, Form, Icon, Message } from "semantic-ui-react";
 import { ArrayField, GroupField, SelectField } from "react-invenio-forms";
 import { i18next } from "@translations/docs_app/i18next";
 import { I18nTextInputField } from "@js/oarepo_ui";
@@ -25,11 +25,12 @@ export const AdditionalTitlesField = ({ fieldPath }) => {
       {({ arrayHelpers, indexPath }) => {
         const fieldPathPrefix = `${fieldPath}.${indexPath}`;
         return (
-          <GroupField>
+          <GroupField border>
             <Form.Field width={13}>
               <I18nTextInputField
                 fieldPath={`${fieldPathPrefix}.title`}
-                label=""
+                label={i18next.t("Title")}
+                required
               />
             </Form.Field>
             <Form.Field width={3}>
@@ -38,6 +39,7 @@ export const AdditionalTitlesField = ({ fieldPath }) => {
                 label={i18next.t("Title type")}
                 optimized
                 options={subtitleTypes}
+                required
               />
             </Form.Field>
 
