@@ -25,6 +25,7 @@ export const StringArrayField = ({
   helpText,
   labelIcon,
 }) => {
+  const { setFieldValue } = useFormikContext();
   // const placeholderFieldPath = useMemo(() => {
   //   return fieldPath
   //     .split(".")
@@ -63,15 +64,17 @@ export const StringArrayField = ({
         labelIcon={labelIcon}
         defaultNewValue={{ text: "" }}
       >
-        {({ arrayHelpers, indexPath }) => {
+        {({ arrayHelpers, indexPath, values }) => {
           const fieldPathPrefix = `${fieldPath}.${indexPath}`;
 
           return (
             <TextField
-              fieldPath={`${fieldPath}`}
+              fieldPath={`${fieldPathPrefix}`}
               label={`#${indexPath + 1}`}
               optimized
               fluid
+              value={getIn(values, fieldPathPrefix)}
+              onChange={(e) => setFieldValue(fieldPathPrefix, e.target.value)}
               icon={
                 <Popup
                   basic

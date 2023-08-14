@@ -198,7 +198,7 @@ export const DepositForm = () => {
                     label={i18next.t("Abstract")}
                     fieldPath="metadata.abstract"
                     hasRichInput={true}
-                    required={false}
+                    required
                     helpText={i18next.t(
                       "Detailed description of the methodology and technical information should be specified in the 'Dataset Description' section"
                     )}
