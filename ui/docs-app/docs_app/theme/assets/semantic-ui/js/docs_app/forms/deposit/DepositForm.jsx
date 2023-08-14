@@ -338,11 +338,10 @@ export const DepositForm = () => {
                   fieldPath="metadata.accessibility"
                 >
                   <Form.Field>
-                    <label>{i18next.t("Accessibility")}</label>
+                    <label>{i18next.t("Resource accessibility")}</label>
                     <I18nTextInputField
-                      label={i18next.t("Reason")}
+                      label={i18next.t("Description")}
                       fieldPath="metadata.accessibility"
-                      required
                     />
                   </Form.Field>
                 </Overridable>

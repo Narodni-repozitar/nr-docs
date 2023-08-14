@@ -68,7 +68,7 @@ export const StringArrayField = ({
 
           return (
             <TextField
-              fieldPath={`${fieldPath}.text`}
+              fieldPath={`${fieldPath}`}
               label={`#${indexPath + 1}`}
               optimized
               fluid
