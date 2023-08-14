@@ -196,8 +196,9 @@ export const DepositForm = () => {
                   <MultilingualTextInput
                     labelIcon="pencil"
                     label={i18next.t("Abstract")}
+                    textFieldLabel={i18next.t("Description")}
                     fieldPath="metadata.abstract"
-                    hasRichInput={true}
+                    rich={true}
                     required
                     helpText={i18next.t(
                       "Detailed description of the methodology and technical information should be specified in the 'Dataset Description' section"
@@ -299,7 +300,7 @@ export const DepositForm = () => {
                     labelIcon="pencil"
                     label={i18next.t("Methods")}
                     fieldPath="metadata.methods"
-                    hasRichInput={true}
+                    rich={true}
                     required={false}
                   />
                 </Overridable>
@@ -311,7 +312,7 @@ export const DepositForm = () => {
                     labelIcon="pencil"
                     label={i18next.t("Technical info")}
                     fieldPath="metadata.technicalInfo"
-                    hasRichInput={true}
+                    rich={true}
                     required={false}
                   />
                 </Overridable>
