@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useMemo } from "react";
 import PropTypes from "prop-types";
 import { ArrayField, TextField } from "react-invenio-forms";
 import { i18next } from "@translations/docs_app/i18next";
@@ -25,30 +25,38 @@ export const StringArrayField = ({
   helpText,
   labelIcon,
 }) => {
-  const placeholderFieldPath = `_${fieldPath}`;
-  const { setFieldValue, values } = useFormikContext();
+  // const placeholderFieldPath = useMemo(() => {
+  //   return fieldPath
+  //     .split(".")
+  //     .map((part, index, array) =>
+  //       index === array.length - 1 ? `_${part}` : part
+  //     )
+  //     .join(".");
+  // }, [fieldPath]);
+  // const { setFieldValue, values } = useFormikContext();
+  // console.log(values.metadata?._notes);
 
-  const hasDuplicateStrings = checkForDuplicates(getIn(values, fieldPath, []));
-  useEffect(() => {
-    if (!getIn(values, placeholderFieldPath)) {
-      setFieldValue(
-        placeholderFieldPath,
-        getIn(values, fieldPath)
-          ? arrayToArrayOfObjects(getIn(values, fieldPath))
-          : arrayToArrayOfObjects([])
-      );
-      return;
-    }
-    setFieldValue(
-      fieldPath,
-      getIn(values, placeholderFieldPath).map((item) => item.text)
-    );
-  }, [values[placeholderFieldPath]]);
+  // const hasDuplicateStrings = checkForDuplicates(getIn(values, fieldPath, []));
+  // useEffect(() => {
+  //   if (!getIn(values, placeholderFieldPath)) {
+  //     setFieldValue(
+  //       placeholderFieldPath,
+  //       getIn(values, fieldPath)
+  //         ? arrayToArrayOfObjects(getIn(values, fieldPath))
+  //         : arrayToArrayOfObjects([])
+  //     );
+  //     return;
+  //   }
+  //   setFieldValue(
+  //     fieldPath,
+  //     getIn(values, placeholderFieldPath).map((item) => item.text)
+  //   );
+  // }, [values.placeholderFieldPath]);
   return (
     <React.Fragment>
       <ArrayField
         addButtonLabel={addButtonLabel}
-        fieldPath={placeholderFieldPath}
+        fieldPath={fieldPath}
         label={label}
         required={required}
         helpText={helpText}
@@ -56,11 +64,11 @@ export const StringArrayField = ({
         defaultNewValue={{ text: "" }}
       >
         {({ arrayHelpers, indexPath }) => {
-          const fieldPathPrefix = `${placeholderFieldPath}.${indexPath}`;
+          const fieldPathPrefix = `${fieldPath}.${indexPath}`;
 
           return (
             <TextField
-              fieldPath={`${fieldPathPrefix}.text`}
+              fieldPath={`${fieldPath}.text`}
               label={`#${indexPath + 1}`}
               optimized
               fluid
@@ -84,14 +92,6 @@ export const StringArrayField = ({
           );
         }}
       </ArrayField>
-      {hasDuplicateStrings && (
-        <Message
-          negative
-          content={i18next.t(
-            "You have provided two identical items. Please remove or modify one"
-          )}
-        />
-      )}
     </React.Fragment>
   );
 };

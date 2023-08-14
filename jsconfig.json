@@ -17,17 +17,17 @@
             "themes/invenio": [
                 "./.assets/less/invenio_theme/theme"
             ],
-            "@translations/oarepo_vocabularies_ui": [
-                "./local/oarepo-vocabularies/oarepo_vocabularies/ui/theme/assets/semantic-ui/translations/oarepo_vocabularies_ui"
-            ],
-            "@js/oarepo_vocabularies": [
-                "./local/oarepo-vocabularies/oarepo_vocabularies/ui/theme/assets/semantic-ui/js/oarepo_vocabularies_ui"
-            ],
             "@js/invenio_administration": [
                 "./.assets/js/invenio_administration"
             ],
             "@translations/invenio_administration": [
                 "./.assets/translations/invenio_administration"
+            ],
+            "@translations/oarepo_vocabularies_ui": [
+                "./local/oarepo-vocabularies/oarepo_vocabularies/ui/theme/assets/semantic-ui/translations/oarepo_vocabularies_ui"
+            ],
+            "@js/oarepo_vocabularies": [
+                "./local/oarepo-vocabularies/oarepo_vocabularies/ui/theme/assets/semantic-ui/js/oarepo_vocabularies_ui"
             ],
             "@translations/oarepo_ui": [
                 "./local/oarepo-ui/oarepo_ui/theme/assets/semantic-ui/translations/oarepo_ui"

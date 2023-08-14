@@ -28,24 +28,12 @@ export const GeoLocationsField = ({ fieldPath, helpText }) => {
               width={3}
               fieldPath={`${fieldPathPrefix}.geoLocationPoint.pointLongitude`}
               label={i18next.t("Longitude")}
-              onChange={(e) =>
-                setFieldValue(
-                  `${fieldPathPrefix}.geoLocationPoint.pointLongitude`,
-                  parseFloat(e.target.value)
-                )
-              }
               required
             />
             <TextField
               width={3}
               fieldPath={`${fieldPathPrefix}.geoLocationPoint.pointLatitude`}
               label={i18next.t("Latitude")}
-              onChange={(e) =>
-                setFieldValue(
-                  `${fieldPathPrefix}.geoLocationPoint.pointLatitude`,
-                  parseFloat(e.target.value)
-                )
-              }
               required
             />
 

@@ -4,15 +4,15 @@ import {
   useOnSubmit,
   submitContextType,
   MultilingualTextInput,
-  RelatedSelectField,
+  I18nTextInputField,
 } from "@js/oarepo_ui";
 import {
   BaseForm,
   AccordionField,
   FieldLabel,
-  // TextField,
+  TextField,
 } from "react-invenio-forms";
-import { Container, Grid, Ref, Sticky } from "semantic-ui-react";
+import { Container, Grid, Ref, Sticky, Form } from "semantic-ui-react";
 import { NRDocumentValidationSchema } from "./NRDocumentValidationSchema";
 import {
   DateField,
@@ -23,7 +23,6 @@ import {
   FundersField,
   ExternalLocationField,
   ValidateButton,
-  TextField,
 } from "../components/";
 import Overridable from "react-overridable";
 import { i18next } from "@translations/docs_app/i18next";
@@ -46,38 +45,40 @@ export const DepositForm = () => {
   const sidebarRef = useRef(null);
   const initialValues = {
     ...record,
-    additionalTitles: [
-      {
-        __key: -1,
-        title: {
-          lang: "ab",
-          value: "dwadaw",
+    metadata: {
+      additionalTitles: [
+        {
+          __key: -1,
+          title: {
+            lang: "ab",
+            value: "dwadaw",
+          },
+          titleType: "alternative-title",
         },
-        titleType: "alternative-title",
-      },
-      {
-        __key: -2,
-        title: {
-          lang: "ab",
-          value: "dwadwad",
+        {
+          __key: -2,
+          title: {
+            lang: "ab",
+            value: "dwadwad",
+          },
+          titleType: "alternative-title",
         },
-        titleType: "alternative-title",
-      },
-    ],
-    // abstract: [
-    //   { lang: "cs", value: "ducciano" },
-    //   { lang: "en", value: "Ducciano" },
-    // ],
-    notes: ["dwadwadwad", "dawdadwad", "dadwada"],
-    geoLocations: [
-      {
-        geoLocationPlace: "Ducica's place",
-        geoLocationPoint: {
-          pointLongitude: 130.3232,
-          pointLatitude: 82.44242,
+      ],
+      // abstract: [
+      //   { lang: "cs", value: "ducciano" },
+      //   { lang: "en", value: "Ducciano" },
+      // ],
+      notes: ["dwadwadwad", "dawdadwad", "dadwada"],
+      geoLocations: [
+        {
+          geoLocationPlace: "Ducica's place",
+          geoLocationPoint: {
+            pointLongitude: 130.3232,
+            pointLatitude: 82.44242,
+          },
         },
-      },
-    ],
+      ],
+    },
   };
   // fake boolean to simulate if we are editing existing or creating new item
   const editMode = false;
@@ -336,10 +337,14 @@ export const DepositForm = () => {
                   id="NrDocs.Deposit.AccessibilityField.container"
                   fieldPath="metadata.accessibility"
                 >
-                  <MultilingualTextInput
-                    label="Accessibility"
-                    fieldPath="metadata.accessibility"
-                  />
+                  <Form.Field>
+                    <label>{i18next.t("Accessibility")}</label>
+                    <I18nTextInputField
+                      label={i18next.t("Reason")}
+                      fieldPath="metadata.accessibility"
+                      required
+                    />
+                  </Form.Field>
                 </Overridable>
                 <Overridable
                   id="NrDocs.Deposit.FundersField.container"
