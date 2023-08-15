@@ -43,9 +43,9 @@ class NrDocumentsServiceConfig(
     @property
     def links_item(self):
         return {
-            "self": RecordLink("{+api}{self.url_prefix}{id}"),
+            "self": RecordLink("{self.url_prefix}{id}"),
         }
 
     @property
     def links_search(self):
-        return pagination_links("{+api}{self.url_prefix}{?args*}")
+        return pagination_links("{self.url_prefix}{?args*}")
