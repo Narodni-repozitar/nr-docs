@@ -8,7 +8,7 @@ from invenio_records.models import RecordMetadataBase
 
 
 class DraftParentMetadata(db.Model, RecordMetadataBase):
-    __tablename__ = "nr_documents_parent_metadata"
+    __tablename__ = "nrdocuments_parent_metadata"
 
 
 class NrDocumentsMetadata(db.Model, RecordMetadataBase, ParentRecordMixin):
