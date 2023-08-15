@@ -23,7 +23,6 @@ export const NRDocumentValidationSchema = Yup.object().shape({
         })
       )
       .test("unique-titles", i18next.t("Titles must be unique"), (value) => {
-        console.log(value);
         if (!value || value.length < 2) {
           return true;
         }
@@ -33,8 +32,24 @@ export const NRDocumentValidationSchema = Yup.object().shape({
       }),
     // creators: "",
     languages: Yup.array().required(requiredMessage),
-    // publishers: "",
-    // notes: "",
+    publishers: Yup.array()
+      .of(Yup.string().required(requiredMessage))
+      .test(
+        "unique-items",
+        (value) => ({ error: i18next.t("Items must be unique.") }),
+        (value, context) => {
+          return _uniqBy(value, (item) => item).length === value?.length ?? 0;
+        }
+      ),
+    notes: Yup.array()
+      .of(Yup.string().required(requiredMessage))
+      .test(
+        "unique-items",
+        (value) => ({ error: i18next.t("Items must be unique.") }),
+        (value, context) => {
+          return _uniqBy(value, (item) => item).length === value?.length ?? 0;
+        }
+      ),
     geoLocations: Yup.array().of(
       Yup.object().shape({
         geoLocationPlace: Yup.string().required(requiredMessage),
@@ -75,6 +90,7 @@ export const NRDocumentValidationSchema = Yup.object().shape({
         }
       ),
     // externalLocation: "",
+    // fundingReferences: "",
   }),
 });
 // dateAvailable: "",
@@ -83,5 +99,4 @@ export const NRDocumentValidationSchema = Yup.object().shape({
 // technicalInfo: "",
 // methods: "",
 // rights: "", as you are choosing from options, I don't see how it is possible to choose same item twice
-// fundingReferences: "",  as you are choosing from options, I don't see how it is possible to choose same item twice
 // subjectCategories: "",as you are choosing from options, I don't see how it is possible to choose same item twice

@@ -87,7 +87,7 @@ export const DepositForm = () => {
       <BaseForm
         onSubmit={onSubmit}
         formik={{
-          initialValues: {},
+          initialValues: initialValues,
           validationSchema: NRDocumentValidationSchema,
           validateOnChange: false,
           validateOnBlur: false,

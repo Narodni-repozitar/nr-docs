@@ -1,20 +1,9 @@
-import React, { useEffect, useMemo } from "react";
+import React from "react";
 import PropTypes from "prop-types";
-import { ArrayField, TextField } from "react-invenio-forms";
+import { FieldLabel } from "react-invenio-forms";
 import { i18next } from "@translations/docs_app/i18next";
-import { useFormikContext, getIn } from "formik";
-import { Icon, Popup, Button, Message } from "semantic-ui-react";
-import _uniq from "lodash/uniq";
-
-// similar issue as in multiling component. The invenio form's arrayfield adds an object when you add an item and we want the state to be notes:["string", "string",...]
-// so I applied similar approach
-const arrayToArrayOfObjects = (arr) => {
-  return arr.map((item) => ({ text: item }));
-};
-
-const checkForDuplicates = (arr) => {
-  return arr.length !== _uniq(arr).length;
-};
+import { useFormikContext, getIn, FieldArray, Field } from "formik";
+import { Icon, Popup, Button, Form } from "semantic-ui-react";
 
 export const StringArrayField = ({
   fieldPath,
@@ -24,78 +13,77 @@ export const StringArrayField = ({
   addButtonLabel,
   helpText,
   labelIcon,
+  disabled,
+  ...uiProps
 }) => {
-  const { setFieldValue } = useFormikContext();
-  // const placeholderFieldPath = useMemo(() => {
-  //   return fieldPath
-  //     .split(".")
-  //     .map((part, index, array) =>
-  //       index === array.length - 1 ? `_${part}` : part
-  //     )
-  //     .join(".");
-  // }, [fieldPath]);
-  // const { setFieldValue, values } = useFormikContext();
-  // console.log(values.metadata?._notes);
-
-  // const hasDuplicateStrings = checkForDuplicates(getIn(values, fieldPath, []));
-  // useEffect(() => {
-  //   if (!getIn(values, placeholderFieldPath)) {
-  //     setFieldValue(
-  //       placeholderFieldPath,
-  //       getIn(values, fieldPath)
-  //         ? arrayToArrayOfObjects(getIn(values, fieldPath))
-  //         : arrayToArrayOfObjects([])
-  //     );
-  //     return;
-  //   }
-  //   setFieldValue(
-  //     fieldPath,
-  //     getIn(values, placeholderFieldPath).map((item) => item.text)
-  //   );
-  // }, [values.placeholderFieldPath]);
+  const { values, errors } = useFormikContext();
   return (
-    <React.Fragment>
-      <ArrayField
-        addButtonLabel={addButtonLabel}
-        fieldPath={fieldPath}
-        label={label}
-        required={required}
-        helpText={helpText}
-        labelIcon={labelIcon}
-        defaultNewValue={{ text: "" }}
-      >
-        {({ arrayHelpers, indexPath, values }) => {
-          const fieldPathPrefix = `${fieldPath}.${indexPath}`;
-
-          return (
-            <TextField
-              fieldPath={`${fieldPathPrefix}`}
-              label={`#${indexPath + 1}`}
-              optimized
-              fluid
-              value={getIn(values, fieldPathPrefix)}
-              onChange={(e) => setFieldValue(fieldPathPrefix, e.target.value)}
-              icon={
-                <Popup
-                  basic
-                  inverted
-                  position="bottom center"
-                  content={i18next.t("Remove item")}
-                  trigger={
-                    <Button
-                      className="rel-ml-1"
-                      onClick={() => arrayHelpers.remove(indexPath)}
-                    >
-                      <Icon fitted name="close" />
-                    </Button>
-                  }
-                />
-              }
-            />
-          );
-        }}
-      </ArrayField>
-    </React.Fragment>
+    <Form.Field>
+      <FieldLabel label={label} icon={labelIcon} htmlFor={fieldPath} />
+      <FieldArray
+        name={fieldPath}
+        render={({ remove, push }) => (
+          <React.Fragment>
+            {getIn(values, fieldPath, []).map((item, index) => (
+              <Field
+                // maybe use UUID library to generate unique keys when some unique Ids are not available?
+                key={index}
+                name={`${fieldPath}.${index}`}
+                id={`${fieldPath}.${index}`}
+              >
+                {({ field, meta }) => {
+                  // really struggled to use invenio's Text field, but as they are hard coding error as meta.error, it creates major issues when you have a group error, as Yup
+                  // does not seem to allow to set the error as array of strings, which leads to problems i.e. if your error is "Must be unique" error meta equals to the letters from
+                  // the returned string
+                  return (
+                    <Form.Input
+                      {...field}
+                      error={meta.error ?? getIn(errors, fieldPath, {}).error}
+                      icon={
+                        <Popup
+                          basic
+                          inverted
+                          position="bottom center"
+                          content={i18next.t("Remove item")}
+                          trigger={
+                            <Button
+                              className="rel-ml-1"
+                              onClick={() => remove(index)}
+                            >
+                              <Icon fitted name="close" />
+                            </Button>
+                          }
+                        />
+                      }
+                      disabled={disabled}
+                      fluid
+                      label={`#${index + 1}`}
+                      required={required}
+                      {...uiProps}
+                    />
+                  );
+                }}
+              </Field>
+            ))}
+            <label>{helpText}</label>
+            <Form.Button
+              type="button"
+              icon
+              labelPosition="left"
+              onClick={() => {
+                push(newItemInitialValue);
+              }}
+            >
+              <Icon name="add" />
+              {addButtonLabel}
+            </Form.Button>
+            {/* {getIn(errors, fieldPath, {}).error && (
+              <Message negative content={getIn(errors, fieldPath, {}).error} />
+            )} */}
+          </React.Fragment>
+        )}
+      />
+    </Form.Field>
   );
 };
 
@@ -106,12 +94,13 @@ StringArrayField.propTypes = {
   addButtonLabel: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
   helpText: PropTypes.string,
   labelIcon: PropTypes.string,
+  disabled: PropTypes.bool,
 };
 
 StringArrayField.defaultProps = {
   addButtonLabel: i18next.t("Add note"),
   newItemInitialValue: "",
-  labelIcon: "pencil square",
+  labelIcon: "pencil",
   label: i18next.t("Notes"),
   helpText: i18next.t("Items shall be unique"),
 };
