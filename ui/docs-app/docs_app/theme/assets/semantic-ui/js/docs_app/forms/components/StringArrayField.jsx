@@ -24,47 +24,50 @@ export const StringArrayField = ({
         name={fieldPath}
         render={({ remove, push }) => (
           <React.Fragment>
-            {getIn(values, fieldPath, []).map((item, index) => (
-              <Field
-                // maybe use UUID library to generate unique keys when some unique Ids are not available?
-                key={index}
-                name={`${fieldPath}.${index}`}
-                id={`${fieldPath}.${index}`}
-              >
-                {({ field, meta }) => {
-                  // really struggled to use invenio's Text field, but as they are hard coding error as meta.error, it creates major issues when you have a group error, as Yup
-                  // does not seem to allow to set the error as array of strings, which leads to problems i.e. if your error is "Must be unique" error meta equals to the letters from
-                  // the returned string
-                  return (
-                    <Form.Input
-                      {...field}
-                      error={meta.error ?? getIn(errors, fieldPath, {}).error}
-                      icon={
-                        <Popup
-                          basic
-                          inverted
-                          position="bottom center"
-                          content={i18next.t("Remove item")}
-                          trigger={
-                            <Button
-                              className="rel-ml-1"
-                              onClick={() => remove(index)}
-                            >
-                              <Icon fitted name="close" />
-                            </Button>
-                          }
-                        />
-                      }
-                      disabled={disabled}
-                      fluid
-                      label={`#${index + 1}`}
-                      required={required}
-                      {...uiProps}
-                    />
-                  );
-                }}
-              </Field>
-            ))}
+            {getIn(values, fieldPath, []).map((item, index) => {
+              const indexPath = `${fieldPath}.${index}`;
+              return (
+                <Field
+                  // maybe use UUID library to generate unique keys when some unique Ids are not available?
+                  key={indexPath}
+                  name={indexPath}
+                  id={indexPath}
+                >
+                  {({ field, meta }) => {
+                    // really struggled to use invenio's Text field, as they are hard coding error as meta.error, it creates major issues when you have a group error, as Yup
+                    // does not seem to allow to set the error as array of strings, which leads to problems i.e. if your error is for example "Must be unique" error meta equals to the letters from
+                    // the returned string
+                    return (
+                      <Form.Input
+                        {...field}
+                        error={meta.error ?? getIn(errors, fieldPath, {}).error}
+                        icon={
+                          <Popup
+                            basic
+                            inverted
+                            position="bottom center"
+                            content={i18next.t("Remove item")}
+                            trigger={
+                              <Button
+                                className="rel-ml-1"
+                                onClick={() => remove(index)}
+                              >
+                                <Icon fitted name="close" />
+                              </Button>
+                            }
+                          />
+                        }
+                        disabled={disabled}
+                        fluid
+                        label={`#${index + 1}`}
+                        required={required}
+                        {...uiProps}
+                      />
+                    );
+                  }}
+                </Field>
+              );
+            })}
             <label>{helpText}</label>
             <Form.Button
               type="button"
@@ -77,9 +80,6 @@ export const StringArrayField = ({
               <Icon name="add" />
               {addButtonLabel}
             </Form.Button>
-            {/* {getIn(errors, fieldPath, {}).error && (
-              <Message negative content={getIn(errors, fieldPath, {}).error} />
-            )} */}
           </React.Fragment>
         )}
       />
