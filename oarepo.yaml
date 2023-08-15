@@ -44,7 +44,7 @@ models:
     model_package: nr_documents
     permissions_presets: read_only
     pid_type: dcmnts
-    run_tests: skip
+    run_tests: run
     sites:
     - nr-docs
     update_opensearch: run
