@@ -11,6 +11,8 @@ from nr_documents.services.records.permissions import NrDocumentsPermissionPolic
 from nr_documents.services.records.schema import NrDocumentsSchema
 from nr_documents.services.records.search import NrDocumentsSearchOptions
 
+from oarepo_requests.components.requests import PublishDraftComponent
+
 
 class NrDocumentsServiceConfig(
     PermissionsPresetsConfigMixin, InvenioRecordServiceConfig
@@ -35,6 +37,7 @@ class NrDocumentsServiceConfig(
         *PermissionsPresetsConfigMixin.components,
         *InvenioRecordServiceConfig.components,
         DataComponent,
+        PublishDraftComponent("publish_draft", "delete_record"),
     ]
 
     model = "nr_documents"

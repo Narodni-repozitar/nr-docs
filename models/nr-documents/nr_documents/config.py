@@ -9,6 +9,8 @@ from nr_documents.resources.records.config import NrDocumentsResourceConfig
 from nr_documents.resources.records.resource import NrDocumentsResource
 from nr_documents.services.records.config import NrDocumentsServiceConfig
 from nr_documents.services.records.service import NrDocumentsService
+from nr_documents.records.requests.delete_record.types import DeleteRecordRequestType
+from nr_documents.records.requests.publish_draft.types import PublishDraftRequestType
 
 NR_DOCUMENTS_RECORD_RESOURCE_CONFIG = NrDocumentsResourceConfig
 
@@ -23,7 +25,9 @@ NR_DOCUMENTS_RECORD_SERVICE_CLASS = NrDocumentsService
 
 
 REQUESTS_REGISTERED_TYPES = [
-    DefaultRequestRequestType,
+    DefaultRequestRequestType(),
+    DeleteRecordRequestType(),
+    PublishDraftRequestType(),
 ]
 
 REQUESTS_ENTITY_RESOLVERS = [
