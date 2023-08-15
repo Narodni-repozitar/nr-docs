@@ -4,7 +4,9 @@ import { FieldLabel } from "react-invenio-forms";
 import { i18next } from "@translations/docs_app/i18next";
 import { useFormikContext, getIn, FieldArray, Field } from "formik";
 import { Icon, Popup, Button, Form } from "semantic-ui-react";
+import { v4 as uuidv4 } from "uuid";
 
+// TODO: implement our fieldArray component that wraps formiks FieldArray, so that we can use it instead of invenio's component
 export const StringArrayField = ({
   fieldPath,
   label,
@@ -29,7 +31,7 @@ export const StringArrayField = ({
               return (
                 <Field
                   // maybe use UUID library to generate unique keys when some unique Ids are not available?
-                  key={indexPath}
+                  key={uuidv4()}
                   name={indexPath}
                   id={indexPath}
                 >

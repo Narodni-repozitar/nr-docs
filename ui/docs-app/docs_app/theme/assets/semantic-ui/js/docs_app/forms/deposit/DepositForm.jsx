@@ -48,7 +48,6 @@ export const DepositForm = () => {
     metadata: {
       additionalTitles: [
         {
-          __key: -1,
           title: {
             lang: "ab",
             value: "dwadaw",
@@ -56,7 +55,6 @@ export const DepositForm = () => {
           titleType: "alternative-title",
         },
         {
-          __key: -2,
           title: {
             lang: "ab",
             value: "dwadwad",
@@ -64,10 +62,10 @@ export const DepositForm = () => {
           titleType: "alternative-title",
         },
       ],
-      // abstract: [
-      //   { lang: "cs", value: "ducciano" },
-      //   { lang: "en", value: "Ducciano" },
-      // ],
+      abstract: [
+        { lang: "cs", value: "ducciano" },
+        { lang: "en", value: "Ducciano" },
+      ],
       notes: ["dwadwadwad", "dawdadwad", "dadwada"],
       geoLocations: [
         {
