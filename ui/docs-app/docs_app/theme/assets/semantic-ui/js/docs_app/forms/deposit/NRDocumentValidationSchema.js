@@ -91,6 +91,15 @@ export const NRDocumentValidationSchema = Yup.object().shape({
       ),
     // externalLocation: "",
     // fundingReferences: "",
+    // subjects:"",
+    // accessRights:"",
+    // relatedItems:"",
+    // version:"",
+    // accessibility"",
+    // series:""
+    // events:"",
+    // objectIdentifiers:"",
+    // systemIdentifiers:""
   }),
 });
 // dateAvailable: "",

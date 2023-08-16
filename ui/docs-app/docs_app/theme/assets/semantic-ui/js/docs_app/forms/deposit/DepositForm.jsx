@@ -23,6 +23,7 @@ import {
   FundersField,
   ExternalLocationField,
   ValidateButton,
+  SubjectsField,
 } from "../components/";
 import Overridable from "react-overridable";
 import { i18next } from "@translations/docs_app/i18next";
@@ -63,8 +64,8 @@ export const DepositForm = () => {
         },
       ],
       abstract: [
-        { lang: "cs", value: "ducciano" },
-        { lang: "en", value: "Ducciano" },
+        { __key: 1, lang: "cs", value: "ducciano" },
+        { __key: 2, lang: "en", value: "Ducciano" },
       ],
       notes: ["dwadwadwad", "dawdadwad", "dadwada"],
       geoLocations: [
@@ -110,11 +111,32 @@ export const DepositForm = () => {
                   "metadata.publicationDate",
                   "metadata.abstract",
                   "metadata.rights",
+                  "metadata.accessRights",
                 ]}
                 active
                 label={i18next.t("Basic information")}
               >
                 <Overridable id="NrDocs.Deposit.PIDField.container"></Overridable>
+                <Overridable
+                  id="NrDocs.Deposit.AccessRightsField.container"
+                  fieldPath="metadata.accessRights"
+                >
+                  <LocalVocabularySelectField
+                    // shouldn't access rights be required?
+                    fieldPath="metadata.accessRights"
+                    required
+                    clearable
+                    label={
+                      <FieldLabel
+                        htmlFor={"metadata.accessRights"}
+                        icon="tag"
+                        label={i18next.t("Access rights")}
+                      />
+                    }
+                    placeholder={i18next.t("Select access rights")}
+                    optionsListName="accessRights"
+                  />
+                </Overridable>
 
                 <Overridable
                   id="NrDocs.Deposit.ResourceTypeField.container"
@@ -228,12 +250,11 @@ export const DepositForm = () => {
                   <LocalVocabularySelectField
                     fieldPath="metadata.rights"
                     multiple={true}
-                    required
                     label={
                       <FieldLabel
                         htmlFor={"metadata.rights"}
                         icon="drivers license"
-                        label={i18next.t("License")}
+                        label={i18next.t("Licenses")}
                       />
                     }
                     placeholder={i18next.t("Choose licenses")}
@@ -353,6 +374,12 @@ export const DepositForm = () => {
                   fieldPath="metadata.externalLocation"
                 >
                   <ExternalLocationField fieldPath="metadata.externalLocation" />
+                </Overridable>
+                <Overridable
+                  id="NrDocs.Deposit.SubjectsField.container"
+                  fieldPath="metadata.subjects"
+                >
+                  <SubjectsField fieldPath="metadata.subjects" />
                 </Overridable>
               </AccordionField>
             </Overridable>
