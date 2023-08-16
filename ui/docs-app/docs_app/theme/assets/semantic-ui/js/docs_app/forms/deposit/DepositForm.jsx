@@ -166,7 +166,6 @@ export const DepositForm = () => {
                 >
                   <DateField
                     fieldPath="metadata.dateAvailable"
-                    required
                     label={i18next.t("Date available")}
                   />
                 </Overridable>
@@ -177,7 +176,6 @@ export const DepositForm = () => {
                   {editMode && (
                     <DateField
                       fieldPath="metadata.dateModified"
-                      required
                       label={i18next.t("Date modified")}
                       helpText=""
                     />
