@@ -12,7 +12,7 @@ class PublishDraftRequestType(SubmitDraftRequestType):
     }
 
     allowed_topic_ref_types = [
-        "nr_documents"
+        "nr_documents_draft"
     ]  # On the Request record object, the topic is referenced by pid. This pid is
     # extracted by Resolver subclassed from RecordResolver, which has hardcoded
     # {"record": {pid}} as reference value. This reference is then by

@@ -19,7 +19,7 @@ class NrDocumentsServiceConfig(
 ):
     """NrDocumentsRecord service config."""
 
-    PERMISSIONS_PRESETS = ["read_only"]
+    PERMISSIONS_PRESETS = ["everyone"]
 
     url_prefix = "/nr-documents/"
 
@@ -46,9 +46,9 @@ class NrDocumentsServiceConfig(
     @property
     def links_item(self):
         return {
-            "self": RecordLink("{+api}{self.url_prefix}{id}"),
+            "self": RecordLink("{self.url_prefix}{id}"),
         }
 
     @property
     def links_search(self):
-        return pagination_links("{+api}{self.url_prefix}{?args*}")
+        return pagination_links("{self.url_prefix}{?args*}")

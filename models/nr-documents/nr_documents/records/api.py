@@ -16,6 +16,8 @@ from nr_documents.records.models import (
     ParentState,
 )
 from nr_documents.records.multilingual_dumper import MultilingualSearchDumper
+from invenio_requests.records import Request
+from invenio_requests.records.systemfields.relatedrecord import RelatedRecord
 
 
 class DraftParentRecord(
@@ -23,7 +25,14 @@ class DraftParentRecord(
 ):  # TODO create special name for these? assuming yes
     model_cls = DraftParentMetadata
 
-    schema = ConstantField("$schema", "local://parent-v1.0.0.json")
+    delete_record = RelatedRecord(
+        Request,
+        keys=["type", "receiver", "status"],
+    )
+    publish_draft = RelatedRecord(
+        Request,
+        keys=["type", "receiver", "status"],
+    )
 
 
 class NrDocumentsIdProvider(DraftRecordIdProviderV2):

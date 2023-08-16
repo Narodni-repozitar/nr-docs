@@ -1,10 +1,10 @@
 from invenio_users_resources.resolvers import UserResolver
 
-from nr_documents.records.api import NrDocumentsRecord
+from nr_documents.records.api import NrDocumentsRecord, NrDocumentsDraft
 from nr_documents.records.requests.default_request.types import (
     DefaultRequestRequestType,
 )
-from nr_documents.records.requests.resolvers import NrDocumentsResolver
+from nr_documents.records.requests.resolvers import NrDocumentsResolver, NrDocumentsDraftResolver
 from nr_documents.resources.records.config import NrDocumentsResourceConfig
 from nr_documents.resources.records.resource import NrDocumentsResource
 from nr_documents.services.records.config import NrDocumentsServiceConfig
@@ -35,4 +35,7 @@ REQUESTS_ENTITY_RESOLVERS = [
     NrDocumentsResolver(
         record_cls=NrDocumentsRecord, service_id="nr_documents", type_key="nr_documents"
     ),
+    NrDocumentsDraftResolver(
+        record_cls=NrDocumentsDraft, service_id="nr_documents", type_key="nr_documents_draft"
+    )
 ]
