@@ -24,6 +24,7 @@ import {
   ExternalLocationField,
   ValidateButton,
   SubjectsField,
+  SeriesField,
 } from "../components/";
 import Overridable from "react-overridable";
 import { i18next } from "@translations/docs_app/i18next";
@@ -122,7 +123,7 @@ export const DepositForm = () => {
                   fieldPath="metadata.accessRights"
                 >
                   <LocalVocabularySelectField
-                    // shouldn't access rights be required?
+                    //TODO: shouldn't access rights be required?
                     fieldPath="metadata.accessRights"
                     required
                     clearable
@@ -380,6 +381,12 @@ export const DepositForm = () => {
                   fieldPath="metadata.subjects"
                 >
                   <SubjectsField fieldPath="metadata.subjects" />
+                </Overridable>
+                <Overridable
+                  id="NrDocs.Deposit.SeriesField.container"
+                  fieldPath="metadata.series"
+                >
+                  <SeriesField fieldPath="metadata.series" />
                 </Overridable>
               </AccordionField>
             </Overridable>

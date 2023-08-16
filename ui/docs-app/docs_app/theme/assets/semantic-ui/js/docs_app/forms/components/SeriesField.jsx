@@ -3,18 +3,26 @@ import PropTypes from "prop-types";
 import { Button, Form, Icon } from "semantic-ui-react";
 import { ArrayField, SelectField, GroupField } from "react-invenio-forms";
 import { i18next } from "@translations/docs_app/i18next";
-import { I18nTextInputField } from "@js/oarepo_ui";
-
 const options = [{ value: "keyword", text: "Keyword" }];
-// TODO: still not fully clear on this input
+// TODO: I assume that seriesTitle and volume will come from formConfig similar to languages. Not sure about the volumes??
+const seriesTitle = [
+  { value: "series A", text: "series A" },
+  { value: "series B", text: "series B" },
+  { value: "series C", text: "series C" },
+];
+const seriesVolume = [
+  { value: "1", text: "1" },
+  { value: "2", text: "2" },
+  { value: "3", text: "3" },
+];
 
-export const SubjectsField = ({ fieldPath, helpText }) => {
+export const SeriesField = ({ fieldPath, helpText }) => {
   return (
     <ArrayField
-      addButtonLabel={i18next.t("Add subject")}
+      addButtonLabel={i18next.t("Add series")}
       defaultNewValue={{}}
       fieldPath={fieldPath}
-      label={i18next.t("Subjects")}
+      label={i18next.t("Series")}
       labelIcon="pencil"
       helpText={helpText}
     >
@@ -24,18 +32,19 @@ export const SubjectsField = ({ fieldPath, helpText }) => {
           <GroupField>
             <SelectField
               clearable
-              width={3}
-              fieldPath={`${fieldPathPrefix}.subjectScheme`}
-              label={i18next.t("Subject scheme")}
+              width={8}
+              fieldPath={`${fieldPathPrefix}.seriesTitle`}
+              label={i18next.t("Series title")}
               required
-              options={options}
+              options={seriesTitle}
             />
-            <Form.Field width={13}>
-              <I18nTextInputField
-                fieldPath={`${fieldPathPrefix}.subject`}
-                label={i18next.t("Keyword")}
-              />
-            </Form.Field>
+            <SelectField
+              clearable
+              width={8}
+              fieldPath={`${fieldPathPrefix}.seriesVolume`}
+              label={i18next.t("Series volume")}
+              options={seriesVolume}
+            />
 
             <Form.Field style={{ marginTop: "1.75rem" }}>
               <Button
@@ -53,7 +62,7 @@ export const SubjectsField = ({ fieldPath, helpText }) => {
   );
 };
 
-SubjectsField.propTypes = {
+SeriesField.propTypes = {
   fieldPath: PropTypes.string.isRequired,
   helpText: PropTypes.string,
 };
