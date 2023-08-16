@@ -13,7 +13,6 @@ theme = WebpackThemeBundle(
             },
             dependencies={
                 "react-searchkit": "^2.0.0",
-                "uuid":"9.0.0"
             },
             devDependencies={},
             aliases={

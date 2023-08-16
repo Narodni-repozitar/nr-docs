@@ -26,6 +26,7 @@ import {
   SubjectsField,
   SeriesField,
   EventsField,
+  IdentifiersField,
 } from "../components/";
 import Overridable from "react-overridable";
 import { i18next } from "@translations/docs_app/i18next";
@@ -33,6 +34,7 @@ import { FormikStateLogger } from "@js/oarepo_vocabularies";
 
 export const DepositForm = () => {
   const { record, formConfig } = useFormConfig();
+  console.log(formConfig);
   const context = formConfig.createUrl
     ? submitContextType.create
     : submitContextType.update;
@@ -114,11 +116,35 @@ export const DepositForm = () => {
                   "metadata.abstract",
                   "metadata.rights",
                   "metadata.accessRights",
+                  "metadata.objectIdentifiers",
+                  "metadata.systemIdentifiers",
                 ]}
                 active
                 label={i18next.t("Basic information")}
               >
-                <Overridable id="NrDocs.Deposit.PIDField.container"></Overridable>
+                <Overridable
+                  id="NrDocs.Deposit.ObjectIdentifiersField.container"
+                  fieldPath="metadata.objectIdentifiers"
+                >
+                  <IdentifiersField
+                    options={[]}
+                    fieldPath="metadata.objectIdentifiers"
+                    identifierLabel={i18next.t("Object identifier")}
+                    label={i18next.t("Object identifiers")}
+                  />
+                </Overridable>
+                <Overridable
+                  id="NrDocs.Deposit.SystemIdentifiersField.container"
+                  fieldPath="metadata.systemIdentifiers"
+                >
+                  <IdentifiersField
+                    options={[]}
+                    fieldPath="metadata.systemIdentifiers"
+                    identifierLabel={i18next.t("System identifier")}
+                    label={i18next.t("System identifiers")}
+                  />
+                </Overridable>
+
                 <Overridable
                   id="NrDocs.Deposit.AccessRightsField.container"
                   fieldPath="metadata.accessRights"
