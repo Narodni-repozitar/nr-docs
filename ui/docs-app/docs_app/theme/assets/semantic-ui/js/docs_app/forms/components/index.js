@@ -8,3 +8,4 @@ export { ExternalLocationField } from "./ExternalLocationField";
 export { ValidateButton } from "./ValidationButton";
 export { SubjectsField } from "./SubjectsField";
 export { SeriesField } from "./SeriesField";
+export { EventsField } from "./EventsField";

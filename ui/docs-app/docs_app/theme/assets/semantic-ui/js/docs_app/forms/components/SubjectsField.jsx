@@ -12,7 +12,6 @@ export const SubjectsField = ({ fieldPath, helpText }) => {
   return (
     <ArrayField
       addButtonLabel={i18next.t("Add subject")}
-      defaultNewValue={{}}
       fieldPath={fieldPath}
       label={i18next.t("Subjects")}
       labelIcon="pencil"

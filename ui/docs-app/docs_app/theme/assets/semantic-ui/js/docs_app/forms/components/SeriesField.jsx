@@ -20,7 +20,6 @@ export const SeriesField = ({ fieldPath, helpText }) => {
   return (
     <ArrayField
       addButtonLabel={i18next.t("Add series")}
-      defaultNewValue={{}}
       fieldPath={fieldPath}
       label={i18next.t("Series")}
       labelIcon="pencil"

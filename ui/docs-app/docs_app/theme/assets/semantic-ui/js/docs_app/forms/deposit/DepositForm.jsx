@@ -25,6 +25,7 @@ import {
   ValidateButton,
   SubjectsField,
   SeriesField,
+  EventsField,
 } from "../components/";
 import Overridable from "react-overridable";
 import { i18next } from "@translations/docs_app/i18next";
@@ -387,6 +388,12 @@ export const DepositForm = () => {
                   fieldPath="metadata.series"
                 >
                   <SeriesField fieldPath="metadata.series" />
+                </Overridable>
+                <Overridable
+                  id="NrDocs.Deposit.EventsField.container"
+                  fieldPath="metadata.events"
+                >
+                  <EventsField fieldPath="metadata.events" />
                 </Overridable>
               </AccordionField>
             </Overridable>
