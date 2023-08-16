@@ -1,13 +1,13 @@
 from oarepo_requests.actions.publish_draft import PublishDraftSubmitAction
-from oarepo_requests.types.publish_draft import SubmitDraftRequestType
+from oarepo_requests.types.publish_draft import PublishDraftRequestType
 
 
-class PublishDraftRequestType(SubmitDraftRequestType):
+class PublishDraftRequestType(PublishDraftRequestType):
     type_id = "publish_draft"
     name = "Publish-draft"
 
     available_actions = {
-        **SubmitDraftRequestType.available_actions,
+        **PublishDraftRequestType.available_actions,
         "submit": PublishDraftSubmitAction,
     }
 

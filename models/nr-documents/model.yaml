@@ -17,7 +17,34 @@ record:
     metadata:
       properties:
         use: ./metadata.yaml
-  draft: {}
+  service-config:
+    components:
+      - PublishDraftComponent("publish_draft", "delete_record")
+    imports:
+      - import: oarepo_requests.components.requests.PublishDraftComponent
+  draft:
+    requests:
+      publish-draft:
+        type:
+          base-classes:
+            - PublishDraftRequestType
+          imports:
+            - import: oarepo_requests.types.publish_draft.PublishDraftRequestType
+        actions:
+          submit:
+            class: oarepo_requests.actions.publish_draft.PublishDraftSubmitAction
+            generate: False
+  requests:
+    delete-record:
+      type:
+        base-classes:
+          - DeleteRecordRequestType
+        imports:
+          - import: oarepo_requests.types.delete_record.DeleteRecordRequestType
+      actions:
+        submit:
+          class: oarepo_requests.actions.delete_topic.DeleteTopicSubmitAction
+          generate: False
   use:
   - invenio
   - ./custom_fields.yaml
