@@ -27,17 +27,29 @@ import {
 import Overridable from "react-overridable";
 import { i18next } from "@translations/docs_app/i18next";
 import { FormikStateLogger, PublishButton } from "@js/oarepo_vocabularies";
+import { useLocation } from "react-router-dom";
+import _has from "lodash/has";
 
 export const DepositForm = () => {
   const { record, formConfig } = useFormConfig();
+  const { pathname: currentPath } = useLocation();
   console.log(formConfig, record);
   const context = formConfig.createUrl
     ? submitContextType.create
     : submitContextType.update;
-  const { onSubmit, onSubmitError } = useOnSubmit({
+
+  // need to have edit tag in the code. Context is not reliable enough
+  // as it can have other values than
+  // update and create when we will support all features?
+  // Maybe we shoud consider simply providing editMode or edit boolean as part of formConfig?
+
+  const editMode = _has(formConfig, "updateUrl");
+
+  const { onSubmit, submitError } = useOnSubmit({
     apiUrl: formConfig.createUrl || formConfig.updateUrl,
     context: context,
     onSubmitSuccess: (result) => {
+      console.log(result);
       window.location.href = editMode
         ? currentPath.replace("/edit", "")
         : currentPath.replace("_new", result.id);
@@ -45,7 +57,6 @@ export const DepositForm = () => {
   });
   const sidebarRef = useRef(null);
   const initialValues = {
-    ...record,
     metadata: {
       additionalTitles: [
         {
@@ -65,8 +76,8 @@ export const DepositForm = () => {
         { title: { value: "" } },
       ],
       abstract: [
-        { __key: 1, lang: "cs", value: "ducciano" },
-        { __key: 2, lang: "en", value: "Ducciano" },
+        { lang: "cs", value: "ducciano" },
+        { lang: "en", value: "Ducciano" },
       ],
       notes: ["dwadwadwad", "dawdadwad", "dadwada"],
       geoLocations: [
@@ -80,8 +91,6 @@ export const DepositForm = () => {
       ],
     },
   };
-  // fake boolean to simulate if we are editing existing or creating new item
-  const editMode = false;
   return (
     <Container>
       <BaseForm
