@@ -12,6 +12,8 @@ from nr_documents.services.records.service import NrDocumentsService
 from nr_documents.records.requests.delete_record.types import DeleteRecordRequestType
 from nr_documents.records.requests.publish_draft.types import PublishDraftRequestType
 
+from oarepo_runtime.config.permissions_presets import RequestsPermissionPolicy
+
 NR_DOCUMENTS_RECORD_RESOURCE_CONFIG = NrDocumentsResourceConfig
 
 
@@ -39,3 +41,5 @@ REQUESTS_ENTITY_RESOLVERS = [
         record_cls=NrDocumentsDraft, service_id="nr_documents", type_key="nr_documents_draft"
     )
 ]
+
+REQUESTS_PERMISSION_POLICY = RequestsPermissionPolicy
