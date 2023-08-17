@@ -10,3 +10,4 @@ export { SubjectsField } from "./SubjectsField";
 export { SeriesField } from "./SeriesField";
 export { EventsField } from "./EventsField";
 export { IdentifiersField } from "./IdentifiersField";
+export { FieldArrayComponent } from "./FieldArrayComponent";

@@ -5,8 +5,9 @@ import { ArrayField, SelectField, GroupField } from "react-invenio-forms";
 import { i18next } from "@translations/docs_app/i18next";
 import { I18nTextInputField } from "@js/oarepo_ui";
 import { getIn, useFormikContext } from "formik";
+import { FieldArrayComponent } from "./FieldArrayComponent";
 
-// this should come from formConfig in the actual use casGroupFielde
+// this should come from formConfig in the actual use case
 const subtitleTypes = [
   { text: "Alternative title", value: "alternative-title" },
   { text: "Translated title", value: "translated-title" },

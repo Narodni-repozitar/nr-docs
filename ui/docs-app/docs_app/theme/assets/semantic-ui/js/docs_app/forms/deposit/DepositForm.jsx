@@ -62,6 +62,7 @@ export const DepositForm = () => {
           },
           titleType: "alternative-title",
         },
+        { title: { value: "" } },
       ],
       abstract: [
         { __key: 1, lang: "cs", value: "ducciano" },
@@ -86,7 +87,7 @@ export const DepositForm = () => {
       <BaseForm
         onSubmit={onSubmit}
         formik={{
-          initialValues: record,
+          initialValues: initialValues,
           // validationSchema: NRDocumentValidationSchema,
           validateOnChange: false,
           validateOnBlur: false,
