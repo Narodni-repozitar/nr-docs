@@ -5,13 +5,9 @@ import {
   submitContextType,
   MultilingualTextInput,
   I18nTextInputField,
-} from "@js/oarepo_ui";
-import {
   BaseForm,
-  AccordionField,
-  FieldLabel,
-  TextField,
-} from "react-invenio-forms";
+} from "@js/oarepo_ui";
+import { AccordionField, FieldLabel, TextField } from "react-invenio-forms";
 import { Container, Grid, Ref, Sticky, Form } from "semantic-ui-react";
 import { NRDocumentValidationSchema } from "./NRDocumentValidationSchema";
 import {
@@ -30,7 +26,7 @@ import {
 } from "../components/";
 import Overridable from "react-overridable";
 import { i18next } from "@translations/docs_app/i18next";
-import { FormikStateLogger } from "@js/oarepo_vocabularies";
+import { FormikStateLogger, PublishButton } from "@js/oarepo_vocabularies";
 
 export const DepositForm = () => {
   const { record, formConfig } = useFormConfig();
@@ -90,8 +86,8 @@ export const DepositForm = () => {
       <BaseForm
         onSubmit={onSubmit}
         formik={{
-          initialValues: initialValues,
-          validationSchema: NRDocumentValidationSchema,
+          initialValues: record,
+          // validationSchema: NRDocumentValidationSchema,
           validateOnChange: false,
           validateOnBlur: false,
           enableReinitialize: true,
@@ -432,6 +428,7 @@ export const DepositForm = () => {
                 <Overridable id="FormApp.buttons">
                   <React.Fragment>
                     <ValidateButton />
+                    <PublishButton />
                     {/* <PublishButton />
                     <ResetButton /> */}
                   </React.Fragment>

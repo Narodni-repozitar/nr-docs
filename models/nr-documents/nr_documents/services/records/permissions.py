@@ -7,7 +7,7 @@ class NrDocumentsPermissionPolicy(RecordPermissionPolicy):
 
     can_search = [SystemProcess(), AnyUser()]
     can_read = [SystemProcess(), AnyUser()]
-    can_create = [SystemProcess()]
-    can_update = [SystemProcess()]
-    can_delete = [SystemProcess()]
-    can_manage = [SystemProcess()]
+    can_create = [SystemProcess(), AnyUser()]
+    can_update = [SystemProcess(), AnyUser()]
+    can_delete = [SystemProcess(), AnyUser()]
+    can_manage = [SystemProcess(), AnyUser()]

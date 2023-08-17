@@ -102,10 +102,18 @@ export const NRDocumentValidationSchema = Yup.object().shape({
     // systemIdentifiers:""
   }),
 });
-// dateAvailable: "",
-// dateModified: "",
-// abstract: "",
-// technicalInfo: "",
-// methods: "",
+
 // rights: "", as you are choosing from options, I don't see how it is possible to choose same item twice
 // subjectCategories: "",as you are choosing from options, I don't see how it is possible to choose same item twice
+
+// arrayFields -> need __key or some such identifier i.e. need to use serialization/deserialization
+// additionalTitles
+// creators
+// geoLocations
+// fundingReferences
+// subjects
+// relatedItems
+// series
+// events
+// objectIdentifiers
+// systemIdentifiers
