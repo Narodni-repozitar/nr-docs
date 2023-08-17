@@ -3,6 +3,7 @@ from invenio_records_resources.services import RecordServiceConfig
 from invenio_records_resources.services import pagination_links
 from oarepo_runtime.config.service import PermissionsPresetsConfigMixin
 from oarepo_runtime.relations.components import CachingRelationsComponent
+from nr_documents.services.records.permissions import NrDocumentsPermissionPolicy
 
 from nr_documents.records.api import NrDocumentsRecord
 from nr_documents.services.records.schema import NrDocumentsSchema
@@ -14,7 +15,8 @@ class NrDocumentsServiceConfig(PermissionsPresetsConfigMixin, RecordServiceConfi
 
     url_prefix = "/nr-documents/"
 
-    PERMISSIONS_PRESETS = ["read_only"]
+    PERMISSIONS_PRESETS = []
+    base_permission_policy_cls = NrDocumentsPermissionPolicy
 
     schema = NrDocumentsSchema
 

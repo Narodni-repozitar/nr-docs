@@ -38,6 +38,7 @@ export const IdentifiersField = ({
               options={options}
             />
             <TextField
+              required
               width={12}
               fieldPath={`${fieldPathPrefix}.identifier`}
               label={identifierLabel}

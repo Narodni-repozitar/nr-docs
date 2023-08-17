@@ -54,7 +54,7 @@ export const LocalVocabularySelectField = ({
         }
         {...uiProps}
       />
-      <label>{helpText}</label>
+      <label style={{ fontWeight: "bold" }}>{helpText}</label>
     </React.Fragment>
   );
 };

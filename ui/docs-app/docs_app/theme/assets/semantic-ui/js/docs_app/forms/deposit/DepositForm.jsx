@@ -30,7 +30,7 @@ import { FormikStateLogger, PublishButton } from "@js/oarepo_vocabularies";
 
 export const DepositForm = () => {
   const { record, formConfig } = useFormConfig();
-  console.log(formConfig);
+  console.log(formConfig, record);
   const context = formConfig.createUrl
     ? submitContextType.create
     : submitContextType.update;
@@ -128,13 +128,18 @@ export const DepositForm = () => {
                     fieldPath="metadata.objectIdentifiers"
                     identifierLabel={i18next.t("Object identifier")}
                     label={i18next.t("Object identifiers")}
+                    helpText={i18next.t(
+                      "Persistent identifier/s of object as ISBN, DOI, etc."
+                    )}
                   />
                 </Overridable>
                 <Overridable
                   id="NrDocs.Deposit.SystemIdentifiersField.container"
                   fieldPath="metadata.systemIdentifiers"
+                  style={{ marginTop: "20px" }}
                 >
                   <IdentifiersField
+                    style={{ marginTop: "20px" }}
                     options={[]}
                     fieldPath="metadata.systemIdentifiers"
                     identifierLabel={i18next.t("System identifier")}
@@ -332,6 +337,9 @@ export const DepositForm = () => {
                     placeholder={i18next.t("Choose subject categories")}
                     clearable
                     optionsListName="subjectCategories"
+                    helpText={i18next.t(
+                      "Select the subject field(s) to which the dataset belongs."
+                    )}
                   />
                 </Overridable>
                 <Overridable
@@ -356,13 +364,21 @@ export const DepositForm = () => {
                     fieldPath="metadata.technicalInfo"
                     rich={true}
                     required={false}
+                    helpText={i18next.t(
+                      "Detailed information that may be associated with design, implementation, operation, use, and/or maintenance of a process or system"
+                    )}
                   />
                 </Overridable>
                 <Overridable
                   id="NrDocs.Deposit.NotesField.container"
                   fieldPath="metadata.notes"
                 >
-                  <StringArrayField fieldPath="metadata.notes" />
+                  <StringArrayField
+                    fieldPath="metadata.notes"
+                    helpText={i18next.t(
+                      "Free-form note for any comment that couldn't be inserted in any other fields."
+                    )}
+                  />
                 </Overridable>
                 <Overridable
                   id="NrDocs.Deposit.GeoLocationsField.container"

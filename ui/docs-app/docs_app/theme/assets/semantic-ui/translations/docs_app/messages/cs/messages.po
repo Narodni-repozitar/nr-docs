@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2\n"
-"POT-Creation-Date: 2023-04-28T14:58:13.107Z\n"
-"PO-Revision-Date: 2023-04-28T14:58:13.107Z\n"
+"POT-Creation-Date: 2023-08-17T09:57:39.570Z\n"
+"PO-Revision-Date: 2023-08-17T09:57:39.570Z\n"
 "Language: cs\n"
 
 msgid "We couldn't find any matches for "
@@ -86,3 +86,266 @@ msgstr "Najít další záznamy s tímto heslem"
 
 msgid "Search"
 msgstr "Hledat"
+
+msgid "Add additional title"
+msgstr ""
+
+msgid "Additional titles"
+msgstr ""
+
+msgid "Title"
+msgstr ""
+
+msgid "Title type"
+msgstr ""
+
+msgid "Remove field"
+msgstr ""
+
+msgid ""
+"In case your upload was already published elsewhere, please use the date of "
+"the first publication. Format: YYYY-MM-DD, YYYY-MM, or YYYY. For intervals "
+"use DATE/DATE, e.g. 1939/1945."
+msgstr ""
+
+msgid "YYYY-MM-DD or YYYY-MM-DD/YYYY-MM-DD for intervals. MM and DD are optional."
+msgstr ""
+
+msgid "Add event"
+msgstr ""
+
+msgid "Events"
+msgstr ""
+
+msgid "Event name"
+msgstr ""
+
+msgid "Event alternate name"
+msgstr ""
+
+msgid "Add event alternate name"
+msgstr ""
+
+msgid "Event date"
+msgstr ""
+
+msgid "Place"
+msgstr ""
+
+msgid "Country"
+msgstr ""
+
+msgid "External location"
+msgstr ""
+
+msgid "Resource external location"
+msgstr ""
+
+msgid "Note"
+msgstr ""
+
+msgid "Add funder"
+msgstr ""
+
+msgid "Funding"
+msgstr ""
+
+msgid "Project code"
+msgstr ""
+
+msgid "Project name"
+msgstr ""
+
+msgid "Funding program"
+msgstr ""
+
+msgid "Funder"
+msgstr ""
+
+msgid "Add location"
+msgstr ""
+
+msgid "Geolocation"
+msgstr ""
+
+msgid "Location"
+msgstr ""
+
+msgid "Longitude"
+msgstr ""
+
+msgid "Latitude"
+msgstr ""
+
+msgid "Add identifier"
+msgstr ""
+
+msgid "Identifier type"
+msgstr ""
+
+msgid "Identifier field"
+msgstr ""
+
+msgid "Object identifier"
+msgstr ""
+
+msgid "Add series"
+msgstr ""
+
+msgid "Series"
+msgstr ""
+
+msgid "Series title"
+msgstr ""
+
+msgid "Series volume"
+msgstr ""
+
+msgid "Add note"
+msgstr ""
+
+msgid "Notes"
+msgstr ""
+
+msgid "Items shall be unique"
+msgstr ""
+
+msgid "Add subject"
+msgstr ""
+
+msgid "Subjects"
+msgstr ""
+
+msgid "Subject scheme"
+msgstr ""
+
+msgid "Keyword"
+msgstr ""
+
+msgid "Validate form"
+msgstr ""
+
+msgid "Files"
+msgstr ""
+
+msgid "Basic information"
+msgstr ""
+
+msgid "Object identifiers"
+msgstr ""
+
+msgid "Persistent identifier/s of object as ISBN, DOI, etc."
+msgstr ""
+
+msgid "System identifier"
+msgstr ""
+
+msgid "System identifiers"
+msgstr ""
+
+msgid "Access rights"
+msgstr ""
+
+msgid "Select access rights"
+msgstr ""
+
+msgid "Resource type"
+msgstr ""
+
+msgid "Select resource type"
+msgstr ""
+
+msgid "Date available"
+msgstr ""
+
+msgid "Date modified"
+msgstr ""
+
+msgid "Abstract"
+msgstr ""
+
+msgid "Description"
+msgstr ""
+
+msgid ""
+"Detailed description of the methodology and technical information should be "
+"specified in the 'Dataset Description' section"
+msgstr ""
+
+msgid "Language"
+msgstr ""
+
+msgid "Choose languages"
+msgstr ""
+
+msgid "Licenses"
+msgstr ""
+
+msgid "Choose licenses"
+msgstr ""
+
+msgid ""
+"If a Creative Commons license is associated with the dataset, select the "
+"appropriate license option from the menu. We recommend choosing the latest "
+"versions, namely 3.0 Czech and 4.0 International."
+msgstr ""
+
+msgid "Add publisher"
+msgstr ""
+
+msgid "Publishers"
+msgstr ""
+
+msgid "Dataset description"
+msgstr ""
+
+msgid "Subject Categories"
+msgstr ""
+
+msgid "Choose subject categories"
+msgstr ""
+
+msgid "Select the subject field(s) to which the dataset belongs."
+msgstr ""
+
+msgid "Methods"
+msgstr ""
+
+msgid "Technical info"
+msgstr ""
+
+msgid ""
+"Detailed information that may be associated with design, implementation, "
+"operation, use, and/or maintenance of a process or system"
+msgstr ""
+
+msgid ""
+"Free-form note for any comment that couldn't be inserted in any other "
+"fields."
+msgstr ""
+
+msgid ""
+"Free description of the location; ie. Atlantic Ocean. Longitude must be a "
+"number between -180 and 180 and latitude between -90 and 90."
+msgstr ""
+
+msgid "Resource accessibility"
+msgstr ""
+
+msgid "This field is required"
+msgstr ""
+
+msgid "Must have at least x characters"
+msgstr ""
+
+msgid "Titles must be unique"
+msgstr ""
+
+msgid "Items must be unique."
+msgstr ""
+
+msgid "Must be between -180 and 180"
+msgstr ""
+
+msgid "Must be between -90 and 90"
+msgstr ""

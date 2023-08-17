@@ -49,7 +49,7 @@ export const StringArrayField = ({
                 </GroupField>
               );
             })}
-            <label>{helpText}</label>
+            <label style={{ fontWeight: "bold" }}>{helpText}</label>
             <Form.Button
               type="button"
               icon

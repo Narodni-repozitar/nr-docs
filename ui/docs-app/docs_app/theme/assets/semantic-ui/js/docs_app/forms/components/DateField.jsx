@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { FieldLabel, TextField } from "react-invenio-forms";
-import { i18next } from "@translations/oarepo_vocabularies_ui/i18next";
+import { i18next } from "@translations/docs_app/i18next";
 
 export const DateField = ({
   fieldPath,
