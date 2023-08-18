@@ -34,6 +34,9 @@ services:
   mq:
     image: rabbitmq:3-management
     restart: "unless-stopped"
+    environment:
+      RABBITMQ_DEFAULT_USER: "${INVENIO_RABBIT_USER}"
+      RABBITMQ_DEFAULT_PASS: "${INVENIO_RABBIT_PASSWORD}"
   search:
     image: opensearchproject/opensearch:2
     restart: "unless-stopped"
