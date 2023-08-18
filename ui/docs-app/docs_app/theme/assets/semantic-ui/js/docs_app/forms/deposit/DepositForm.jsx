@@ -29,6 +29,55 @@ import { i18next } from "@translations/docs_app/i18next";
 import { FormikStateLogger, PublishButton } from "@js/oarepo_vocabularies";
 import { useLocation } from "react-router-dom";
 import _has from "lodash/has";
+import _omitBy from "lodash/omitBy";
+import _omit from "lodash/omit";
+import _isObject from "lodash/isObject";
+import _mapValues from "lodash/mapValues";
+import _isArray from "lodash/isArray";
+
+// testing purposes removing __keys from arrayfield items
+
+const removeKeyFromNestedObjects = (inputObject) => {
+  const processArray = (arr) => {
+    return arr.map((item) => {
+      if (_isObject(item)) {
+        return _omit(item, "__key");
+      }
+      return item;
+    });
+  };
+
+  const processObject = (obj) => {
+    return _mapValues(obj, (value) => {
+      if (_isArray(value)) {
+        return processArray(value);
+      }
+      return value;
+    });
+  };
+
+  return processObject(inputObject);
+};
+
+// duplicate function from vocabularies just for testing purposes, probably will need a different kind for deposits
+// in case this one works out, then we maybe hoist it to oarepoui utils
+const removeNullAndUnderscoreProperties = (values, formik) => {
+  const newValues = _omitBy(
+    values,
+    (value, key) =>
+      value === null ||
+      (Array.isArray(value) && value.every((item) => item === null)) ||
+      key.startsWith("_") ||
+      key === "revision_id" ||
+      key === "links" ||
+      key === "updated" ||
+      key === "created"
+  );
+  console.log(newValues);
+  newValues.metadata = removeKeyFromNestedObjects(newValues.metadata);
+  console.log(newValues);
+  return newValues;
+};
 
 export const DepositForm = () => {
   const { record, formConfig } = useFormConfig();
@@ -46,8 +95,9 @@ export const DepositForm = () => {
   const editMode = _has(formConfig, "updateUrl");
 
   const { onSubmit, submitError } = useOnSubmit({
-    apiUrl: formConfig.createUrl || formConfig.updateUrl,
+    apiUrl: formConfig.createUrl || "/api/nr-documents/" + formConfig.updateUrl,
     context: context,
+    onBeforeSubmit: removeNullAndUnderscoreProperties,
     onSubmitSuccess: (result) => {
       console.log(result);
       window.location.href = editMode
@@ -56,47 +106,47 @@ export const DepositForm = () => {
     },
   });
   const sidebarRef = useRef(null);
-  const initialValues = {
-    metadata: {
-      additionalTitles: [
-        {
-          title: {
-            lang: "ab",
-            value: "dwadaw",
-          },
-          titleType: "alternative-title",
-        },
-        {
-          title: {
-            lang: "ab",
-            value: "dwadwad",
-          },
-          titleType: "alternative-title",
-        },
-        { title: { value: "" } },
-      ],
-      abstract: [
-        { lang: "cs", value: "ducciano" },
-        { lang: "en", value: "Ducciano" },
-      ],
-      notes: ["dwadwadwad", "dawdadwad", "dadwada"],
-      geoLocations: [
-        {
-          geoLocationPlace: "Ducica's place",
-          geoLocationPoint: {
-            pointLongitude: 130.3232,
-            pointLatitude: 82.44242,
-          },
-        },
-      ],
-    },
-  };
+  // const initialValues = {
+  //   metadata: {
+  //     additionalTitles: [
+  //       {
+  //         title: {
+  //           lang: "ab",
+  //           value: "dwadaw",
+  //         },
+  //         titleType: "alternativeTitle",
+  //       },
+  //       {
+  //         title: {
+  //           lang: "ab",
+  //           value: "dwadwad",
+  //         },
+  //         titleType: "alternativeTitle",
+  //       },
+  //       { title: { value: "" } },
+  //     ],
+  //     abstract: [
+  //       { lang: "cs", value: "ducciano" },
+  //       { lang: "en", value: "Ducciano" },
+  //     ],
+  //     notes: ["dwadwadwad", "dawdadwad", "dadwada"],
+  //     geoLocations: [
+  //       {
+  //         geoLocationPlace: "Ducica's place",
+  //         geoLocationPoint: {
+  //           pointLongitude: 130.3232,
+  //           pointLatitude: 82.44242,
+  //         },
+  //       },
+  //     ],
+  //   },
+  // };
   return (
     <Container>
       <BaseForm
         onSubmit={onSubmit}
         formik={{
-          initialValues: initialValues,
+          initialValues: record,
           // validationSchema: NRDocumentValidationSchema,
           validateOnChange: false,
           validateOnBlur: false,
@@ -335,7 +385,6 @@ export const DepositForm = () => {
                   <LocalVocabularySelectField
                     fieldPath="metadata.subjectCategories"
                     multiple={true}
-                    required
                     label={
                       <FieldLabel
                         htmlFor={"metadata.subjectCategories"}
@@ -360,7 +409,8 @@ export const DepositForm = () => {
                     label={i18next.t("Methods")}
                     fieldPath="metadata.methods"
                     rich={true}
-                    required={false}
+                    required
+                    textFieldLabel={i18next.t("Description")}
                   />
                 </Overridable>
                 <Overridable
@@ -368,11 +418,12 @@ export const DepositForm = () => {
                   fieldPath="metadata.technicalInfo"
                 >
                   <MultilingualTextInput
+                    textFieldLabel={i18next.t("Description")}
                     labelIcon="pencil"
                     label={i18next.t("Technical info")}
                     fieldPath="metadata.technicalInfo"
                     rich={true}
-                    required={false}
+                    required
                     helpText={i18next.t(
                       "Detailed information that may be associated with design, implementation, operation, use, and/or maintenance of a process or system"
                     )}

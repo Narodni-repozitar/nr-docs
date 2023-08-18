@@ -9,8 +9,8 @@ import { FieldArrayComponent } from "./FieldArrayComponent";
 
 // this should come from formConfig in the actual use case
 const subtitleTypes = [
-  { text: "Alternative title", value: "alternative-title" },
-  { text: "Translated title", value: "translated-title" },
+  { text: "Alternative title", value: "alternativeTitle" },
+  { text: "Translated title", value: "translatedTitle" },
   { text: "Subtitle", value: "subtitle" },
   { text: "Other", value: "other" },
 ];
