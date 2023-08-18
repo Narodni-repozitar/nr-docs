@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { Button, Form, Icon } from "semantic-ui-react";
 import { ArrayField, SelectField, GroupField } from "react-invenio-forms";
 import { i18next } from "@translations/docs_app/i18next";
-import { I18nTextInputField } from "@js/oarepo_ui";
+import { MultilingualTextInput } from "@js/oarepo_ui";
 
 const options = [{ value: "keyword", text: "Keyword" }];
 // TODO: still not fully clear on this input
@@ -30,7 +30,7 @@ export const SubjectsField = ({ fieldPath, helpText }) => {
               options={options}
             />
             <Form.Field width={13}>
-              <I18nTextInputField
+              <MultilingualTextInput
                 fieldPath={`${fieldPathPrefix}.subject`}
                 label={i18next.t("Keyword")}
               />

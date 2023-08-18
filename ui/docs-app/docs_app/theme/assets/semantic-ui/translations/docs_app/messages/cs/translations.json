@@ -103,7 +103,7 @@
   "Free description of the location; ie. Atlantic Ocean. Longitude must be a number between -180 and 180 and latitude between -90 and 90.": "Volný popis místa; npr. Atlantický oceán. Zeměpisná délka musí být číslo mezi -180 a 180 a zeměpisná šířka mezi -90 a 90.",
   "Resource accessibility": "Dostupnost zdroje",
   "This field is required": "Toto pole je vyžadováno",
-  "Must have at least x characters": "",
+  "Must have at least x characters": "Musí mít alespoň {{min}} znaků",
   "Titles must be unique": "Názvy musí být jedinečné",
   "Items must be unique.": "Položky musí být jedinečné.",
   "Must be between -180 and 180": "Musí být mezi -180 a 180",

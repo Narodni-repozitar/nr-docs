@@ -103,7 +103,7 @@
   "Free description of the location; ie. Atlantic Ocean. Longitude must be a number between -180 and 180 and latitude between -90 and 90.": "Free description of the location; ie. Atlantic Ocean. Longitude must be a number between -180 and 180 and latitude between -90 and 90.",
   "Resource accessibility": "Resource accessibility",
   "This field is required": "This field is required",
-  "Must have at least x characters": "Must have at least x characters",
+  "Must have at least x characters": "Must have at least {{min}} characters",
   "Titles must be unique": "Titles must be unique",
   "Items must be unique.": "Items must be unique.",
   "Must be between -180 and 180": "Must be between -180 and 180",

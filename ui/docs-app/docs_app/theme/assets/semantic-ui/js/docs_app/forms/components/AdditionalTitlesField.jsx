@@ -5,7 +5,7 @@ import { ArrayField, SelectField, GroupField } from "react-invenio-forms";
 import { i18next } from "@translations/docs_app/i18next";
 import { I18nTextInputField } from "@js/oarepo_ui";
 import { getIn, useFormikContext } from "formik";
-import { FieldArrayComponent } from "./FieldArrayComponent";
+import { GroupErrorMessage } from "./GroupErrorMessage";
 
 // this should come from formConfig in the actual use case
 const subtitleTypes = [
@@ -63,9 +63,7 @@ export const AdditionalTitlesField = ({ fieldPath }) => {
           );
         }}
       </ArrayField>
-      {groupError && typeof groupError === "string" && (
-        <Message negative content={groupError} />
-      )}
+      <GroupErrorMessage fieldPath={fieldPath} />
     </React.Fragment>
   );
 };

@@ -3,12 +3,17 @@ import { i18next } from "@translations/docs_app/i18next";
 import _uniqBy from "lodash/uniqBy";
 
 const requiredMessage = i18next.t("This field is required");
-const stringLengthMessage = ({ length }) =>
-  i18next.t("Must have at least x characters", { length: length });
+const stringLengthMessage = ({ min }) =>
+  i18next.t("Must have at least x characters", { min: min });
+
+const returnGroupError = () => {
+  return { groupError: i18next.t("Items must be unique") };
+};
 
 export const NRDocumentValidationSchema = Yup.object().shape({
   metadata: Yup.object().shape({
-    title: Yup.string().required(requiredMessage).min(6, stringLengthMessage),
+    // not sure but I assume it would be good idea to ask for a minimum length of title
+    title: Yup.string().required(requiredMessage).min(10, stringLengthMessage),
     resourceType: Yup.object().required(requiredMessage),
     additionalTitles: Yup.array()
       .of(
@@ -17,39 +22,44 @@ export const NRDocumentValidationSchema = Yup.object().shape({
             lang: Yup.string().required(requiredMessage),
             value: Yup.string()
               .required(requiredMessage)
-              .min(6, stringLengthMessage),
+              .min(10, stringLengthMessage),
           }),
           titleType: Yup.string().required(requiredMessage),
         })
       )
-      .test("unique-titles", i18next.t("Titles must be unique"), (value) => {
+      .test("unique-titles", returnGroupError, (value, context) => {
         if (!value || value.length < 2) {
           return true;
         }
-        return (
-          _uniqBy(value, (item) => item.title.value).length === value.length
-        );
+
+        if (
+          _uniqBy(value, (item) => item.title.value).length !== value.length
+        ) {
+          console.log("Items are not unique");
+          return false;
+        }
+
+        return true;
       }),
     // creators: "",
+    // contributors:"",
     languages: Yup.array().required(requiredMessage),
     publishers: Yup.array()
       .of(Yup.string().required(requiredMessage))
-      .test(
-        "unique-items",
-        (value) => ({ error: i18next.t("Items must be unique.") }),
-        (value, context) => {
-          return _uniqBy(value, (item) => item).length === value?.length ?? 0;
+      .test("unique-items", returnGroupError, (value, context) => {
+        if (!value || value.length < 2) {
+          return true;
         }
-      ),
+        return _uniqBy(value, (item) => item).length === value?.length ?? 0;
+      }),
     notes: Yup.array()
       .of(Yup.string().required(requiredMessage))
-      .test(
-        "unique-items",
-        (value) => ({ error: i18next.t("Items must be unique.") }),
-        (value, context) => {
-          return _uniqBy(value, (item) => item).length === value?.length ?? 0;
+      .test("unique-items", returnGroupError, (value, context) => {
+        if (!value || value.length < 2) {
+          return true;
         }
-      ),
+        return _uniqBy(value, (item) => item).length === value?.length ?? 0;
+      }),
     geoLocations: Yup.array().of(
       Yup.object().shape({
         geoLocationPlace: Yup.string().required(requiredMessage),
@@ -98,14 +108,19 @@ export const NRDocumentValidationSchema = Yup.object().shape({
     // accessibility"",
     // series:""
     // events:"",
-    // objectIdentifiers:"",
+    objectIdentifiers: Yup.array().of(
+      Yup.object().shape({
+        identifier: Yup.string().required(requiredMessage),
+        scheme: Yup.string().required(requiredMessage),
+      })
+    ),
     // systemIdentifiers:""
   }),
 });
 
 // rights: "", as you are choosing from options, I don't see how it is possible to choose same item twice
 // subjectCategories: "",as you are choosing from options, I don't see how it is possible to choose same item twice
-
+// abstract, method and technical info seem to not have any validation at all
 // arrayFields -> need __key or some such identifier i.e. need to use serialization/deserialization
 // additionalTitles
 // creators
@@ -116,4 +131,4 @@ export const NRDocumentValidationSchema = Yup.object().shape({
 // series
 // events
 // objectIdentifiers
-// systemIdentifiers
+// dateAvailable/modified - maybe use some regexp?

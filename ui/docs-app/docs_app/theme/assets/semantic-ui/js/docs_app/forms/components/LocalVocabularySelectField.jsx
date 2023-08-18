@@ -20,7 +20,7 @@ export const LocalVocabularySelectField = ({
   const {
     formConfig: { vocabularies },
   } = useFormConfig();
-  const optionsList = vocabularies[optionsListName] || [];
+  let optionsList = vocabularies[optionsListName] || [];
 
   const { values, setFieldTouched } = useFormikContext();
   return (

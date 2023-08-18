@@ -147,7 +147,7 @@ export const DepositForm = () => {
         onSubmit={onSubmit}
         formik={{
           initialValues: record,
-          // validationSchema: NRDocumentValidationSchema,
+          validationSchema: NRDocumentValidationSchema,
           validateOnChange: false,
           validateOnBlur: false,
           enableReinitialize: true,
@@ -452,6 +452,7 @@ export const DepositForm = () => {
                   />
                 </Overridable>
                 {/* as I understand shoul exist only for items with restricted access as additional explanation why it is restricted? */}
+                {/* still not clear what this field does exactly */}
                 <Overridable
                   id="NrDocs.Deposit.AccessibilityField.container"
                   fieldPath="metadata.accessibility"
