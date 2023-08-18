@@ -3,7 +3,8 @@ import PropTypes from "prop-types";
 import { Button, Form, Icon } from "semantic-ui-react";
 import { ArrayField, SelectField, GroupField } from "react-invenio-forms";
 import { i18next } from "@translations/docs_app/i18next";
-const options = [{ value: "keyword", text: "Keyword" }];
+import { GroupErrorMessage } from "./GroupErrorMessage";
+
 // TODO: I assume that seriesTitle and volume will come from formConfig similar to languages. Not sure about the volumes??
 const seriesTitle = [
   { value: "series A", text: "series A" },
@@ -18,46 +19,49 @@ const seriesVolume = [
 
 export const SeriesField = ({ fieldPath, helpText }) => {
   return (
-    <ArrayField
-      addButtonLabel={i18next.t("Add series")}
-      fieldPath={fieldPath}
-      label={i18next.t("Series")}
-      labelIcon="pencil"
-      helpText={helpText}
-    >
-      {({ arrayHelpers, indexPath }) => {
-        const fieldPathPrefix = `${fieldPath}.${indexPath}`;
-        return (
-          <GroupField>
-            <SelectField
-              clearable
-              width={8}
-              fieldPath={`${fieldPathPrefix}.seriesTitle`}
-              label={i18next.t("Series title")}
-              required
-              options={seriesTitle}
-            />
-            <SelectField
-              clearable
-              width={8}
-              fieldPath={`${fieldPathPrefix}.seriesVolume`}
-              label={i18next.t("Series volume")}
-              options={seriesVolume}
-            />
+    <React.Fragment>
+      <ArrayField
+        addButtonLabel={i18next.t("Add series")}
+        fieldPath={fieldPath}
+        label={i18next.t("Series")}
+        labelIcon="pencil"
+        helpText={helpText}
+      >
+        {({ arrayHelpers, indexPath }) => {
+          const fieldPathPrefix = `${fieldPath}.${indexPath}`;
+          return (
+            <GroupField>
+              <SelectField
+                clearable
+                width={8}
+                fieldPath={`${fieldPathPrefix}.seriesTitle`}
+                label={i18next.t("Series title")}
+                required
+                options={seriesTitle}
+              />
+              <SelectField
+                clearable
+                width={8}
+                fieldPath={`${fieldPathPrefix}.seriesVolume`}
+                label={i18next.t("Series volume")}
+                options={seriesVolume}
+              />
 
-            <Form.Field style={{ marginTop: "1.75rem" }}>
-              <Button
-                aria-label={i18next.t("Remove field")}
-                icon
-                onClick={() => arrayHelpers.remove(indexPath)}
-              >
-                <Icon name="close" />
-              </Button>
-            </Form.Field>
-          </GroupField>
-        );
-      }}
-    </ArrayField>
+              <Form.Field style={{ marginTop: "1.75rem" }}>
+                <Button
+                  aria-label={i18next.t("Remove field")}
+                  icon
+                  onClick={() => arrayHelpers.remove(indexPath)}
+                >
+                  <Icon name="close" />
+                </Button>
+              </Form.Field>
+            </GroupField>
+          );
+        }}
+      </ArrayField>
+      <GroupErrorMessage fieldPath={fieldPath} />
+    </React.Fragment>
   );
 };
 

@@ -35,6 +35,23 @@ import _isObject from "lodash/isObject";
 import _mapValues from "lodash/mapValues";
 import _isArray from "lodash/isArray";
 
+// not sure if these should come from formConfig better to not clutter the code
+const objectIdentifiersSchema = [
+  { value: "DOI", text: "DOI" },
+  { value: "Handle", text: "Handle" },
+  { value: "ISBN", text: "ISBN" },
+  { value: "ISSN", text: "ISSN" },
+  { value: "RIV", text: "RIV" },
+];
+
+const systemIdentifiersSchema = [
+  { value: "nusl", text: "nusl" },
+  { value: "nuslOAI", text: "nuslOAI" },
+  { value: "originalRecordOAI", text: "originalRecordOAI" },
+  { value: "catalogueSysNo", text: "catalogueSysNo" },
+  { value: "nrOAI", text: "nrOAI" },
+];
+
 // testing purposes removing __keys from arrayfield items
 
 const removeKeyFromNestedObjects = (inputObject) => {
@@ -183,7 +200,7 @@ export const DepositForm = () => {
                   fieldPath="metadata.objectIdentifiers"
                 >
                   <IdentifiersField
-                    options={[]}
+                    options={objectIdentifiersSchema}
                     fieldPath="metadata.objectIdentifiers"
                     identifierLabel={i18next.t("Object identifier")}
                     label={i18next.t("Object identifiers")}
@@ -199,7 +216,7 @@ export const DepositForm = () => {
                 >
                   <IdentifiersField
                     style={{ marginTop: "20px" }}
-                    options={[]}
+                    options={systemIdentifiersSchema}
                     fieldPath="metadata.systemIdentifiers"
                     identifierLabel={i18next.t("System identifier")}
                     label={i18next.t("System identifiers")}
