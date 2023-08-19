@@ -169,7 +169,7 @@ export const NRDocumentValidationSchema = Yup.object().shape({
         }
 
         return (
-          _uniqBy(value, (item) => item.identifier).length !== value.length
+          _uniqBy(value, (item) => item.identifier).length === value.length
         );
       }),
     systemIdentifiers: Yup.array().of(
@@ -185,13 +185,7 @@ export const NRDocumentValidationSchema = Yup.object().shape({
 // subjectCategories: "",as you are choosing from options, I don't see how it is possible to choose same item twice
 // abstract, method and technical info seem to not have any validation at all
 // arrayFields -> need __key or some such identifier i.e. need to use serialization/deserialization
-// additionalTitles
 // creators
-// geoLocations
-// fundingReferences
 // subjects
 // relatedItems
-// series
-// events
-// objectIdentifiers
 // dateAvailable/modified - maybe use some regexp?
