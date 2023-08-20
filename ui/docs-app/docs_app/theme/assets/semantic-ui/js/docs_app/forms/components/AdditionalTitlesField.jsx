@@ -4,7 +4,7 @@ import { Button, Form, Icon, Message } from "semantic-ui-react";
 import { ArrayField, SelectField, GroupField } from "react-invenio-forms";
 import { i18next } from "@translations/docs_app/i18next";
 import { I18nTextInputField } from "@js/oarepo_ui";
-import { getIn, useFormikContext } from "formik";
+import { useFormikContext } from "formik";
 import { GroupErrorMessage } from "./GroupErrorMessage";
 
 // this should come from formConfig in the actual use case
@@ -17,7 +17,6 @@ const subtitleTypes = [
 
 export const AdditionalTitlesField = ({ fieldPath }) => {
   const { errors } = useFormikContext();
-  const groupError = getIn(errors, fieldPath);
 
   return (
     <React.Fragment>

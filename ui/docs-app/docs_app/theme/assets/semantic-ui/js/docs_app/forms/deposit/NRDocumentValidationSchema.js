@@ -105,7 +105,24 @@ export const NRDocumentValidationSchema = Yup.object().shape({
           return (lang && !fieldValue) || (!lang && fieldValue);
         }
       ),
-    // externalLocation: "",
+    externalLocation: Yup.object()
+      .shape({
+        externalLocationURL: Yup.string().url(
+          i18next.t("Please provide an URL in valid format")
+        ),
+        externalLocationNote: Yup.string(),
+      })
+      .test(
+        "must-have-url-if-used",
+        () => {
+          return {
+            groupError: i18next.t(
+              "URL must be provided for this field if used"
+            ),
+          };
+        },
+        (value) => !(value.externalLocationNote && !value.externalLocationURL)
+      ),
     fundingReferences: Yup.array()
       .of(
         Yup.object().shape({
