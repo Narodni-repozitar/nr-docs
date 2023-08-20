@@ -164,7 +164,7 @@ export const DepositForm = () => {
         onSubmit={onSubmit}
         formik={{
           initialValues: record,
-          validationSchema: NRDocumentValidationSchema,
+          // validationSchema: NRDocumentValidationSchema,
           validateOnChange: false,
           validateOnBlur: false,
           enableReinitialize: true,
@@ -185,12 +185,15 @@ export const DepositForm = () => {
                   "metadata.resourceType",
                   "metadata.title",
                   "metadata.additionalTitles",
+                  "metadata.dateModified",
                   "metadata.publicationDate",
                   "metadata.abstract",
                   "metadata.rights",
+                  "metadata.languages",
                   "metadata.accessRights",
                   "metadata.objectIdentifiers",
                   "metadata.systemIdentifiers",
+                  "metadata.publishers",
                 ]}
                 active
                 label={i18next.t("Basic information")}
@@ -212,10 +215,8 @@ export const DepositForm = () => {
                 <Overridable
                   id="NrDocs.Deposit.SystemIdentifiersField.container"
                   fieldPath="metadata.systemIdentifiers"
-                  style={{ marginTop: "20px" }}
                 >
                   <IdentifiersField
-                    style={{ marginTop: "20px" }}
                     options={systemIdentifiersSchema}
                     fieldPath="metadata.systemIdentifiers"
                     identifierLabel={i18next.t("System identifier")}
@@ -458,6 +459,27 @@ export const DepositForm = () => {
                   />
                 </Overridable>
                 <Overridable
+                  id="NrDocs.Deposit.SubjectsField.container"
+                  fieldPath="metadata.subjects"
+                >
+                  <SubjectsField fieldPath="metadata.subjects" />
+                </Overridable>
+              </AccordionField>
+            </Overridable>
+            <Overridable id="NrDocs.Deposit.AccordionAdditionalInformation.container">
+              <AccordionField
+                includesPaths={[
+                  "metadata.geoLocations",
+                  "metadata.accessibility",
+                  "metadata.fundingReferences",
+                  "metadata.externalLocation",
+                  "metadata.series",
+                  "metadata.events",
+                ]}
+                active
+                label={i18next.t("Additional information")}
+              >
+                <Overridable
                   id="NrDocs.Deposit.GeoLocationsField.container"
                   fieldPath="metadata.geoLocations"
                 >
@@ -494,12 +516,7 @@ export const DepositForm = () => {
                 >
                   <ExternalLocationField fieldPath="metadata.externalLocation" />
                 </Overridable>
-                <Overridable
-                  id="NrDocs.Deposit.SubjectsField.container"
-                  fieldPath="metadata.subjects"
-                >
-                  <SubjectsField fieldPath="metadata.subjects" />
-                </Overridable>
+
                 <Overridable
                   id="NrDocs.Deposit.SeriesField.container"
                   fieldPath="metadata.series"

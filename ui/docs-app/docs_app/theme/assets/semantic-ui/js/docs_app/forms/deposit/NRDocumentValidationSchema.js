@@ -36,6 +36,24 @@ export const NRDocumentValidationSchema = Yup.object().shape({
           _uniqBy(value, (item) => item.title.value).length === value.length
         );
       }),
+    abstract: Yup.array().of(
+      Yup.object().shape({
+        lang: Yup.string().required(requiredMessage),
+        value: Yup.string().required(requiredMessage),
+      })
+    ),
+    method: Yup.array().of(
+      Yup.object().shape({
+        lang: Yup.string().required(requiredMessage),
+        value: Yup.string().required(requiredMessage),
+      })
+    ),
+    technicalInfo: Yup.array().of(
+      Yup.object().shape({
+        lang: Yup.string().required(requiredMessage),
+        value: Yup.string().required(requiredMessage),
+      })
+    ),
     // creators: "",
     // contributors:"",
     languages: Yup.array().required(requiredMessage),
@@ -200,9 +218,11 @@ export const NRDocumentValidationSchema = Yup.object().shape({
 
 // rights: "", as you are choosing from options, I don't see how it is possible to choose same item twice
 // subjectCategories: "",as you are choosing from options, I don't see how it is possible to choose same item twice
-// abstract, method and technical info seem to not have any validation at all
+// abstract, method and technical info seem to not have any validation at all, but I think maybe we should put the lang and
+// field content as required i.e. if someone did click to add this, he should either be required to provide it
+// or he should close the input
 // arrayFields -> need __key or some such identifier i.e. need to use serialization/deserialization
 // creators
 // subjects
 // relatedItems
-// dateAvailable/modified - maybe use some regexp?
+// dateAvailable/modified - maybe use some regexp for edtf, as there does not seem to be some premade solution for JS?
