@@ -39,7 +39,7 @@ export const GeoLocationsField = ({ fieldPath, helpText }) => {
                 required
               />
 
-              <Form.Field style={{ marginTop: "1.75rem" }}>
+              <Form.Field>
                 <Button
                   aria-label={i18next.t("Remove field")}
                   className="close-btn"

@@ -37,7 +37,7 @@ export const StringArrayField = ({
                     fluid
                     {...uiProps}
                   />
-                  <Form.Field style={{ marginTop: "1.75rem" }}>
+                  <Form.Field>
                     <Button
                       aria-label={i18next.t("Remove field")}
                       className="close-btn"

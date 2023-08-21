@@ -26,6 +26,7 @@ export const AdditionalTitlesField = ({ fieldPath }) => {
         fieldPath={fieldPath}
         label={i18next.t("Additional titles")}
         labelIcon="pencil"
+        className="additional-titles"
       >
         {({ arrayHelpers, indexPath, errors }) => {
           const fieldPathPrefix = `${fieldPath}.${indexPath}`;
@@ -38,7 +39,7 @@ export const AdditionalTitlesField = ({ fieldPath }) => {
                   required
                 />
               </Form.Field>
-              <Form.Field width={3}>
+              <Form.Field style={{ marginTop: "2rem" }} width={3}>
                 <SelectField
                   fieldPath={`${fieldPathPrefix}.titleType`}
                   label={i18next.t("Title type")}
@@ -48,7 +49,7 @@ export const AdditionalTitlesField = ({ fieldPath }) => {
                 />
               </Form.Field>
 
-              <Form.Field style={{ marginTop: "1.75rem" }}>
+              <Form.Field>
                 <Button
                   aria-label={i18next.t("Remove field")}
                   className="close-btn"

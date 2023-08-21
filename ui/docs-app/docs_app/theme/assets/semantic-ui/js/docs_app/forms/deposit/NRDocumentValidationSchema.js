@@ -42,7 +42,7 @@ export const NRDocumentValidationSchema = Yup.object().shape({
         value: Yup.string().required(requiredMessage),
       })
     ),
-    method: Yup.array().of(
+    methods: Yup.array().of(
       Yup.object().shape({
         lang: Yup.string().required(requiredMessage),
         value: Yup.string().required(requiredMessage),
@@ -109,20 +109,10 @@ export const NRDocumentValidationSchema = Yup.object().shape({
           value.length
         );
       }),
-    accessibility: Yup.object()
-      .shape({
-        lang: Yup.string().nullable(),
-        value: Yup.string().nullable(),
-      })
-      .test(
-        "has-lang-or-value",
-        "Either language or value is required",
-        function (value) {
-          const { lang, value: fieldValue } = value;
-
-          return (lang && !fieldValue) || (!lang && fieldValue);
-        }
-      ),
+    accessibility: Yup.object().shape({
+      lang: Yup.string(),
+      value: Yup.string(),
+    }),
     externalLocation: Yup.object()
       .shape({
         externalLocationURL: Yup.string().url(

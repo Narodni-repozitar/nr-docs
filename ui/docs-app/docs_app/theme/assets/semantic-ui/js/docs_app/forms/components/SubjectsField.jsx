@@ -16,13 +16,14 @@ export const SubjectsField = ({ fieldPath, helpText }) => {
       label={i18next.t("Subjects")}
       labelIcon="pencil"
       helpText={helpText}
+      className="subjects"
     >
       {({ arrayHelpers, indexPath }) => {
         const fieldPathPrefix = `${fieldPath}.${indexPath}`;
         return (
           <GroupField>
             <SelectField
-              style={{ marginTop: "0.5rem" }}
+              // style={{ marginTop: "0.5rem" }}
               clearable
               width={3}
               fieldPath={`${fieldPathPrefix}.subjectScheme`}
@@ -30,14 +31,14 @@ export const SubjectsField = ({ fieldPath, helpText }) => {
               required
               options={options}
             />
-            <Form.Field width={13}>
+            <Form.Field style={{ marginTop: 0 }} width={13}>
               <MultilingualTextInput
                 fieldPath={`${fieldPathPrefix}.subject`}
                 label=""
               />
             </Form.Field>
 
-            <Form.Field style={{ marginTop: "2rem" }}>
+            <Form.Field>
               <Button
                 aria-label={i18next.t("Remove field")}
                 icon
