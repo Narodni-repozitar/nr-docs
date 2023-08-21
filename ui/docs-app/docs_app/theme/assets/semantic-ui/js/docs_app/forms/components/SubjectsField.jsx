@@ -22,6 +22,7 @@ export const SubjectsField = ({ fieldPath, helpText }) => {
         return (
           <GroupField>
             <SelectField
+              style={{ marginTop: "0.5rem" }}
               clearable
               width={3}
               fieldPath={`${fieldPathPrefix}.subjectScheme`}
@@ -32,11 +33,11 @@ export const SubjectsField = ({ fieldPath, helpText }) => {
             <Form.Field width={13}>
               <MultilingualTextInput
                 fieldPath={`${fieldPathPrefix}.subject`}
-                label={i18next.t("Keyword")}
+                label=""
               />
             </Form.Field>
 
-            <Form.Field style={{ marginTop: "1.75rem" }}>
+            <Form.Field style={{ marginTop: "2rem" }}>
               <Button
                 aria-label={i18next.t("Remove field")}
                 icon

@@ -9,7 +9,6 @@ import {
 } from "react-invenio-forms";
 import { i18next } from "@translations/docs_app/i18next";
 import { GroupErrorMessage } from "./GroupErrorMessage";
-// TODO: where will options come from?
 
 export const IdentifiersField = ({
   fieldPath,
