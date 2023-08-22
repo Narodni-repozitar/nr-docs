@@ -8,7 +8,7 @@ import {
   BaseForm,
 } from "@js/oarepo_ui";
 import { AccordionField, FieldLabel, TextField } from "react-invenio-forms";
-import { Container, Grid, Ref, Sticky, Form } from "semantic-ui-react";
+import { Container, Grid, Ref, Sticky, Form, Card } from "semantic-ui-react";
 import { NRDocumentValidationSchema } from "./NRDocumentValidationSchema";
 import {
   DateField,
@@ -23,6 +23,8 @@ import {
   SeriesField,
   EventsField,
   IdentifiersField,
+  PreviewButton,
+  SaveButton,
 } from "../components/";
 import Overridable from "react-overridable";
 import { i18next } from "@translations/docs_app/i18next";
@@ -121,7 +123,19 @@ export const DepositForm = () => {
         ? currentPath.replace("/edit", "")
         : currentPath.replace("_new", result.id);
     },
+    onSubmitError: (error, formik) => {
+      if (
+        error &&
+        error.status === 400 &&
+        error.message === "A validation error occurred."
+      ) {
+        error.errors?.forEach((err) =>
+          formik.setFieldError(err.field, err.messages.join(" "))
+        );
+      }
+    },
   });
+  console.log(submitError);
   const sidebarRef = useRef(null);
   // const initialValues = {
   //   metadata: {
@@ -164,14 +178,14 @@ export const DepositForm = () => {
         onSubmit={onSubmit}
         formik={{
           initialValues: record,
-          validationSchema: NRDocumentValidationSchema,
+          // validationSchema: NRDocumentValidationSchema,
           validateOnChange: false,
           validateOnBlur: false,
           enableReinitialize: true,
         }}
       >
         <Grid>
-          <Grid.Column mobile={16} tablet={16} computer={12}>
+          <Grid.Column mobile={16} tablet={16} computer={11}>
             <Overridable id="NrDocs.Deposit.AccordionFieldFiles.container">
               <AccordionField
                 includesPaths={["files.enabled"]}
@@ -535,16 +549,64 @@ export const DepositForm = () => {
             <FormikStateLogger />
           </Grid.Column>
           <Ref innerRef={sidebarRef}>
-            <Grid.Column mobile={16} tablet={16} computer={4}>
+            <Grid.Column mobile={16} tablet={16} computer={5}>
               <Sticky context={sidebarRef} offset={20}>
-                <Overridable id="FormApp.buttons">
-                  <React.Fragment>
-                    <ValidateButton />
-                    <PublishButton />
-                    {/* <PublishButton />
-                    <ResetButton /> */}
-                  </React.Fragment>
+                <Overridable id="NrDocs.Deposit.ControlPanel.container">
+                  <Card fluid>
+                    {/* <Card.Content>
+                        <DepositStatusBox />
+                      </Card.Content> */}
+                    <Card.Content>
+                      <Grid>
+                        <Grid.Column
+                          computer={8}
+                          mobile={16}
+                          className="pb-0 left-btn-col"
+                        >
+                          <SaveButton fluid />
+                        </Grid.Column>
+
+                        <Grid.Column
+                          computer={8}
+                          mobile={16}
+                          className="pb-0 right-btn-col"
+                        >
+                          <PreviewButton fluid />
+                        </Grid.Column>
+
+                        <Grid.Column width={16} className="pt-10">
+                          <PublishButton fluid />
+                        </Grid.Column>
+                        <Grid.Column width={16} className="pt-10">
+                          <ValidateButton fluid />
+                        </Grid.Column>
+                      </Grid>
+                    </Card.Content>
+                  </Card>
                 </Overridable>
+                {/* <Overridable
+                    id="NrDocs.Deposit.AccessRightField.container"
+                    fieldPath="access"
+                  >
+                    <AccessRightField
+                      label={i18next.t("Visibility")}
+                      labelIcon="shield"
+                      fieldPath="access"
+                      showMetadataAccess={permissions?.can_manage_record_access}
+                    />
+                  </Overridable> */}
+                {/* {permissions?.can_delete_draft && (
+                    <Overridable
+                      id="InvenioAppRdm.Deposit.CardDeleteButton.container"
+                      record={record}
+                    >
+                      <Card>
+                        <Card.Content>
+                          <DeleteButton fluid />
+                        </Card.Content>
+                      </Card>
+                    </Overridable>
+                  )} */}
               </Sticky>
             </Grid.Column>
           </Ref>
