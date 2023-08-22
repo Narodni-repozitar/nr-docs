@@ -47,10 +47,9 @@
       }
     }
 
-    .additional-descriptions .ui.grid .row,
     .invenio-group-field.fields {
       background-color: @borderColor;
-      padding: 1rem;
+      padding: 0.5rem;
       border-radius: 0.5rem;
 
       .invenio-group-field.fields {
@@ -82,7 +81,7 @@
 
     .additional-titles.field {
       .ui.icon.button.close-btn {
-        margin-top: 3.75rem;
+        margin-top: 3.25rem;
       }
 
       .ui.grid.description {
@@ -93,9 +92,14 @@
         }
       }
     }
-    .subjects.field {
-      .ui.icon.left.labeled.button.align-self-end {
-        margin-top: 5rem;
+    .subjects.field,
+    .invenio-group-field.fields {
+      .multilingual .invenio-group-field {
+        background-color: yellow;
+      }
+
+      .ui.icon.left.labeled.button {
+        margin-top: 1rem;
       }
     }
 

@@ -39,7 +39,7 @@ export const AdditionalTitlesField = ({ fieldPath }) => {
                   required
                 />
               </Form.Field>
-              <Form.Field style={{ marginTop: "2rem" }} width={3}>
+              <Form.Field style={{ marginTop: "1.5rem" }} width={3}>
                 <SelectField
                   fieldPath={`${fieldPathPrefix}.titleType`}
                   label={i18next.t("Title type")}

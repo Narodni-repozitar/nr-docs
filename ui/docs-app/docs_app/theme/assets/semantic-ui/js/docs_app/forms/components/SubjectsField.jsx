@@ -25,13 +25,13 @@ export const SubjectsField = ({ fieldPath, helpText }) => {
             <SelectField
               // style={{ marginTop: "0.5rem" }}
               clearable
-              width={3}
+              width={4}
               fieldPath={`${fieldPathPrefix}.subjectScheme`}
               label={i18next.t("Subject scheme")}
               required
               options={options}
             />
-            <Form.Field style={{ marginTop: 0 }} width={13}>
+            <Form.Field style={{ marginTop: 0 }} width={12}>
               <MultilingualTextInput
                 fieldPath={`${fieldPathPrefix}.subject`}
                 label=""
