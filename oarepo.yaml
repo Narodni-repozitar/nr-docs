@@ -38,6 +38,12 @@ local:
     sites:
     - nr-docs
     - nr-docs
+  oarepo-vocacbularies:
+    branch: null
+    github_clone_url: null
+    local_dir: local/oarepo-vocacbularies
+    sites:
+    - nr-docs
 models:
   nr-documents:
     author_email: miroslav.simek@techlib.cz

@@ -11,8 +11,9 @@ dependencies = [
     "nr-documents @ file:///${PROJECT_ROOT}/../../models/nr-documents",
     "docs-app @ file:///${PROJECT_ROOT}/../../ui/docs-app",
     "nr-docs-extensions @ file:///${PROJECT_ROOT}/../../local/nr-docs-extensions",
-    "oarepo-ui @ file:///${PROJECT_ROOT}/../../local/oarepo-ui",
+    "oarepo-oai-pmh-harvester @ file:///${PROJECT_ROOT}/../../local/oarepo-oai-pmh-harvester",
     "oarepo-vocabularies @ file:///${PROJECT_ROOT}/../../local/oarepo-vocabularies",
+    "oarepo-vocacbularies @ file:///${PROJECT_ROOT}/../../local/oarepo-vocacbularies",
     "site @ file:///${PROJECT_ROOT}/site",
 ]
 requires-python = ">=3.9,<3.11"
