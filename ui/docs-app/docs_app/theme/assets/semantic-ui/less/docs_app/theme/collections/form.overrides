@@ -48,7 +48,7 @@
     }
 
     .invenio-group-field.fields {
-      background-color: @borderColor;
+      background-color: lightblue;
       padding: 0.5rem;
       border-radius: 0.5rem;
 
@@ -92,10 +92,9 @@
         }
       }
     }
-    .subjects.field,
-    .invenio-group-field.fields {
-      .multilingual .invenio-group-field {
-        background-color: yellow;
+    .subjects {
+      .invenio-group-field.fields {
+        background-color: green;
       }
 
       .ui.icon.left.labeled.button {

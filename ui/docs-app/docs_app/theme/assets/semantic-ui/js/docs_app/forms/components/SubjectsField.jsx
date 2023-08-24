@@ -21,7 +21,7 @@ export const SubjectsField = ({ fieldPath, helpText }) => {
       {({ arrayHelpers, indexPath }) => {
         const fieldPathPrefix = `${fieldPath}.${indexPath}`;
         return (
-          <GroupField>
+          <GroupField className="subjects invenio-group-field">
             <SelectField
               // style={{ marginTop: "0.5rem" }}
               clearable
