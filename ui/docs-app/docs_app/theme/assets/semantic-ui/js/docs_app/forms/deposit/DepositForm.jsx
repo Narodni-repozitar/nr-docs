@@ -4,7 +4,6 @@ import { useFormConfig, useOnSubmit, submitContextType } from "@js/oarepo_ui";
 import { BaseForm } from "react-invenio-forms";
 import { Container } from "semantic-ui-react";
 import { NRDocumentValidationSchema } from "./NRDocumentValidationSchema";
-import { VocabularySelectField } from '@js/oarepo_vocabularies'
 
 export const DepositForm = () => {
   const { record, formConfig } = useFormConfig();
@@ -31,7 +30,6 @@ export const DepositForm = () => {
           enableReinitialize: true,
         }}
       >
-        <VocabularySelectField fieldPath="home" type="institutions" />
         <pre>Add your deposit form fields here 👇</pre>
       </BaseForm>
     </Container>
