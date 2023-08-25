@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Button, Form, Icon } from "semantic-ui-react";
-import { ArrayField, TextField } from "react-invenio-forms";
+import { ArrayField, TextField, GroupField } from "react-invenio-forms";
 import { i18next } from "@translations/docs_app/i18next";
 import { LocalVocabularySelectField } from "./LocalVocabularySelectField";
 import { GroupErrorMessage } from "./GroupErrorMessage";
@@ -20,7 +20,7 @@ export const FundersField = ({ fieldPath, helpText }) => {
         {({ arrayHelpers, indexPath }) => {
           const fieldPathPrefix = `${fieldPath}.${indexPath}`;
           return (
-            <React.Fragment>
+            <GroupField>
               <TextField
                 width={16}
                 fieldPath={`${fieldPathPrefix}.projectID`}
@@ -44,7 +44,7 @@ export const FundersField = ({ fieldPath, helpText }) => {
                 optionsListName="funders"
               />
 
-              <Form.Field className="rel-mt-1 rel-mb-1">
+              <Form.Field>
                 <Button
                   aria-label={i18next.t("Remove field")}
                   className="close-btn"
@@ -54,7 +54,7 @@ export const FundersField = ({ fieldPath, helpText }) => {
                   <Icon name="close" />
                 </Button>
               </Form.Field>
-            </React.Fragment>
+            </GroupField>
           );
         }}
       </ArrayField>

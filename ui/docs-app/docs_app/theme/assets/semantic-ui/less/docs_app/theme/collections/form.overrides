@@ -48,7 +48,7 @@
     }
 
     .invenio-group-field.fields {
-      background-color: lightblue;
+      background-color: @arrayFieldColor;
       padding: 0.5rem;
       border-radius: 0.5rem;
 
@@ -92,13 +92,23 @@
         }
       }
     }
-    .subjects {
+    .subjects.invenio-group-field {
       .invenio-group-field.fields {
-        background-color: green;
+        background-color: @internalArrayFieldColor;
       }
 
       .ui.icon.left.labeled.button {
-        margin-top: 1rem;
+        margin-top: 0.75rem;
+      }
+    }
+
+    .events {
+      background-color: @arrayFieldColor;
+      padding: 0.5rem;
+      border-radius: 0.5rem;
+      .invenio-group-field.fields {
+        background-color: @internalArrayFieldColor;
+        padding: 0.5rem;
       }
     }
 
@@ -151,15 +161,3 @@
     }
   }
 }
-
-/* due to complex config interface of CKEditor 5 */
-.generate-ck-editor-heights(@max, @i: 0) when (@i =< @max) {
-  .ck-height-@{i} {
-    .ck-editor__editable {
-      height: unit(@i, em) !important;
-    }
-  }
-  .generate-ck-editor-heights(@max, (@i + 1));
-}
-
-.generate-ck-editor-heights(30);

@@ -1,4 +1,5 @@
 /***********************************************
          Invenio App RDM Form Variables
 ***********************************************/
-@borderColor: #0e576c;
+@arrayFieldColor: #d1d6bd;
+@internalArrayFieldColor: rgba(232, 234, 220, 0.761);

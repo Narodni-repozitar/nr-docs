@@ -43,6 +43,7 @@ export const SubjectsField = ({ fieldPath, helpText }) => {
                 aria-label={i18next.t("Remove field")}
                 icon
                 onClick={() => arrayHelpers.remove(indexPath)}
+                className="close-btn"
               >
                 <Icon name="close" />
               </Button>

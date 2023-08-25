@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Button, Form, Icon } from "semantic-ui-react";
+import { Button, Form, Icon, Container } from "semantic-ui-react";
 import { ArrayField, TextField, GroupField } from "react-invenio-forms";
 import { i18next } from "@translations/docs_app/i18next";
 import { LocalVocabularySelectField } from "./LocalVocabularySelectField";
@@ -19,7 +19,7 @@ export const EventsField = ({ fieldPath, helpText }) => {
       {({ arrayHelpers, indexPath }) => {
         const fieldPathPrefix = `${fieldPath}.${indexPath}`;
         return (
-          <React.Fragment>
+          <Container className="events">
             <TextField
               width={16}
               fieldPath={`${fieldPathPrefix}.eventNameOriginal`}
@@ -64,7 +64,7 @@ export const EventsField = ({ fieldPath, helpText }) => {
                 <Icon name="close" />
               </Button>
             </Form.Field>
-          </React.Fragment>
+          </Container>
         );
       }}
     </ArrayField>
