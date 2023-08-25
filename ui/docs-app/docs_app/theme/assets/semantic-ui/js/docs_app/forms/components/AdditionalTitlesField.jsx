@@ -1,13 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
-import { Button, Form, Icon, Message } from "semantic-ui-react";
+import { Button, Form, Icon } from "semantic-ui-react";
 import { ArrayField, SelectField, GroupField } from "react-invenio-forms";
 import { i18next } from "@translations/docs_app/i18next";
 import { I18nTextInputField } from "@js/oarepo_ui";
-import { useFormikContext } from "formik";
 import { GroupErrorMessage } from "./GroupErrorMessage";
+import { useHighlightState } from "../hooks";
 
-// this should come from formConfig in the actual use case
+// this should come from formConfig in the actual use case?
 const subtitleTypes = [
   { text: "Alternative title", value: "alternativeTitle" },
   { text: "Translated title", value: "translatedTitle" },
@@ -16,7 +16,8 @@ const subtitleTypes = [
 ];
 
 export const AdditionalTitlesField = ({ fieldPath }) => {
-  const { errors } = useFormikContext();
+  const { highlightedStates, handleHover, handleMouseLeave } =
+    useHighlightState();
 
   return (
     <React.Fragment>
@@ -28,10 +29,17 @@ export const AdditionalTitlesField = ({ fieldPath }) => {
         labelIcon="pencil"
         className="additional-titles"
       >
-        {({ arrayHelpers, indexPath, errors }) => {
+        {({ arrayHelpers, indexPath }) => {
           const fieldPathPrefix = `${fieldPath}.${indexPath}`;
           return (
-            <GroupField border>
+            <GroupField
+              border
+              className={
+                highlightedStates[indexPath]
+                  ? "highlighted invenio-group-field"
+                  : "invenio-group-field"
+              }
+            >
               <Form.Field width={13}>
                 <I18nTextInputField
                   fieldPath={`${fieldPathPrefix}.title`}
@@ -54,7 +62,12 @@ export const AdditionalTitlesField = ({ fieldPath }) => {
                   aria-label={i18next.t("Remove field")}
                   className="close-btn"
                   icon
-                  onClick={() => arrayHelpers.remove(indexPath)}
+                  onClick={() => {
+                    arrayHelpers.remove(indexPath);
+                    handleMouseLeave(indexPath);
+                  }}
+                  onMouseEnter={() => handleHover(indexPath)}
+                  onMouseLeave={() => handleMouseLeave(indexPath)}
                 >
                   <Icon name="close" />
                 </Button>

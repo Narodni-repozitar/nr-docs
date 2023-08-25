@@ -6,8 +6,11 @@ import { i18next } from "@translations/docs_app/i18next";
 import { LocalVocabularySelectField } from "./LocalVocabularySelectField";
 import { StringArrayField } from "./StringArrayField";
 import { DateField } from "./DateField";
+import { useHighlightState } from "../hooks";
 
 export const EventsField = ({ fieldPath, helpText }) => {
+  const { highlightedStates, handleHover, handleMouseLeave } =
+    useHighlightState();
   return (
     <ArrayField
       addButtonLabel={i18next.t("Add event")}
@@ -19,7 +22,11 @@ export const EventsField = ({ fieldPath, helpText }) => {
       {({ arrayHelpers, indexPath }) => {
         const fieldPathPrefix = `${fieldPath}.${indexPath}`;
         return (
-          <Container className="events">
+          <Container
+            className={
+              highlightedStates[indexPath] ? "highlighted events" : "events"
+            }
+          >
             <TextField
               width={16}
               fieldPath={`${fieldPathPrefix}.eventNameOriginal`}
@@ -59,7 +66,12 @@ export const EventsField = ({ fieldPath, helpText }) => {
                 aria-label={i18next.t("Remove field")}
                 className="close-btn"
                 icon
-                onClick={() => arrayHelpers.remove(indexPath)}
+                onClick={() => {
+                  arrayHelpers.remove(indexPath);
+                  handleMouseLeave(indexPath);
+                }}
+                onMouseEnter={() => handleHover(indexPath)}
+                onMouseLeave={() => handleMouseLeave(indexPath)}
               >
                 <Icon name="close" />
               </Button>

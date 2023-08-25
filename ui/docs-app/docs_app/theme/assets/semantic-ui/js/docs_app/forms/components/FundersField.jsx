@@ -5,8 +5,11 @@ import { ArrayField, TextField, GroupField } from "react-invenio-forms";
 import { i18next } from "@translations/docs_app/i18next";
 import { LocalVocabularySelectField } from "./LocalVocabularySelectField";
 import { GroupErrorMessage } from "./GroupErrorMessage";
+import { useHighlightState } from "../hooks";
 
 export const FundersField = ({ fieldPath, helpText }) => {
+  const { highlightedStates, handleHover, handleMouseLeave } =
+    useHighlightState();
   return (
     <React.Fragment>
       <ArrayField
@@ -20,7 +23,13 @@ export const FundersField = ({ fieldPath, helpText }) => {
         {({ arrayHelpers, indexPath }) => {
           const fieldPathPrefix = `${fieldPath}.${indexPath}`;
           return (
-            <GroupField>
+            <GroupField
+              className={
+                highlightedStates[indexPath]
+                  ? "highlighted invenio-group-field"
+                  : "invenio-group-field"
+              }
+            >
               <TextField
                 width={16}
                 fieldPath={`${fieldPathPrefix}.projectID`}
@@ -49,7 +58,12 @@ export const FundersField = ({ fieldPath, helpText }) => {
                   aria-label={i18next.t("Remove field")}
                   className="close-btn"
                   icon
-                  onClick={() => arrayHelpers.remove(indexPath)}
+                  onClick={() => {
+                    arrayHelpers.remove(indexPath);
+                    handleMouseLeave(indexPath);
+                  }}
+                  onMouseEnter={() => handleHover(indexPath)}
+                  onMouseLeave={() => handleMouseLeave(indexPath)}
                 >
                   <Icon name="close" />
                 </Button>

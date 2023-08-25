@@ -16,7 +16,12 @@
     content: "*";
     color: @red;
   }
-
+  .highlighted {
+    input,
+    .dropdown {
+      box-shadow: 0 0 5pt 0.5pt #997d7d;
+    }
+  }
   .ck-editor__editable {
     min-height: 8.5em;
   }
