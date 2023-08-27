@@ -9,6 +9,7 @@ const stringLengthMessage = ({ min }) =>
 const returnGroupError = () => {
   return { groupError: i18next.t("Items must be unique") };
 };
+const edtfRegEx = /^(\d{4})(-(\d{2})(-(\d{2}))?)?(\/\d{4}(-\d{2}(-\d{2})?)?)?$/;
 
 export const NRDocumentValidationSchema = Yup.object().shape({
   metadata: Yup.object().shape({
@@ -53,6 +54,14 @@ export const NRDocumentValidationSchema = Yup.object().shape({
         lang: Yup.string().required(requiredMessage),
         value: Yup.string().required(requiredMessage),
       })
+    ),
+    dateModified: Yup.string().matches(
+      edtfRegEx,
+      i18next.t("Invalid date format")
+    ),
+    dateAvailable: Yup.string().matches(
+      edtfRegEx,
+      i18next.t("Invalid date format")
     ),
     // creators: "",
     // contributors:"",
@@ -172,7 +181,9 @@ export const NRDocumentValidationSchema = Yup.object().shape({
       Yup.object().shape({
         eventNameOriginal: Yup.string().required(requiredMessage),
         eventNameAlternate: Yup.array().of(Yup.string()),
-        eventDate: Yup.string().required(requiredMessage),
+        eventDate: Yup.string()
+          .required(requiredMessage)
+          .matches(edtfRegEx, i18next.t("Invalid date format")),
         eventLocation: Yup.object()
           .shape({
             place: Yup.string().required(requiredMessage),
@@ -211,8 +222,5 @@ export const NRDocumentValidationSchema = Yup.object().shape({
 // abstract, method and technical info seem to not have any validation at all, but I think maybe we should put the lang and
 // field content as required i.e. if someone did click to add this, he should either be required to provide it
 // or he should close the input
-// arrayFields -> need __key or some such identifier i.e. need to use serialization/deserialization
-// creators
-// subjects
-// relatedItems
+
 // dateAvailable/modified - maybe use some regexp for edtf, as there does not seem to be some premade solution for JS?
