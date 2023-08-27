@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 import { Button, Form, Icon } from "semantic-ui-react";
 import { ArrayField, SelectField, GroupField } from "react-invenio-forms";
@@ -7,7 +7,6 @@ import { I18nTextInputField } from "@js/oarepo_ui";
 import { GroupErrorMessage } from "./GroupErrorMessage";
 import { useHighlightState } from "../hooks";
 
-// this should come from formConfig in the actual use case?
 const subtitleTypes = [
   { text: "Alternative title", value: "alternativeTitle" },
   { text: "Translated title", value: "translatedTitle" },

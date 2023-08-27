@@ -4,6 +4,7 @@ import { Button, Form, Icon } from "semantic-ui-react";
 import { ArrayField, SelectField, GroupField } from "react-invenio-forms";
 import { i18next } from "@translations/docs_app/i18next";
 import { GroupErrorMessage } from "./GroupErrorMessage";
+import { useHighlightState } from "../hooks";
 
 // TODO: I assume that seriesTitle and volume will come from formConfig similar to languages. Not sure about the volumes??
 const seriesTitle = [
@@ -18,6 +19,8 @@ const seriesVolume = [
 ];
 
 export const SeriesField = ({ fieldPath, helpText }) => {
+  const { highlightedStates, handleHover, handleMouseLeave } =
+    useHighlightState();
   return (
     <React.Fragment>
       <ArrayField
@@ -30,7 +33,13 @@ export const SeriesField = ({ fieldPath, helpText }) => {
         {({ arrayHelpers, indexPath }) => {
           const fieldPathPrefix = `${fieldPath}.${indexPath}`;
           return (
-            <GroupField>
+            <GroupField
+              className={
+                highlightedStates[indexPath]
+                  ? "highlighted invenio-group-field"
+                  : "invenio-group-field"
+              }
+            >
               <SelectField
                 clearable
                 width={8}
@@ -47,11 +56,17 @@ export const SeriesField = ({ fieldPath, helpText }) => {
                 options={seriesVolume}
               />
 
-              <Form.Field style={{ marginTop: "1.75rem" }}>
+              <Form.Field>
                 <Button
                   aria-label={i18next.t("Remove field")}
+                  className="close-btn"
                   icon
-                  onClick={() => arrayHelpers.remove(indexPath)}
+                  onClick={() => {
+                    arrayHelpers.remove(indexPath);
+                    handleMouseLeave(indexPath);
+                  }}
+                  onMouseEnter={() => handleHover(indexPath)}
+                  onMouseLeave={() => handleMouseLeave(indexPath)}
                 >
                   <Icon name="close" />
                 </Button>

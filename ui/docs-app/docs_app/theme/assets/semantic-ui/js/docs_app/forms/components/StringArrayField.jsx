@@ -5,6 +5,7 @@ import { i18next } from "@translations/docs_app/i18next";
 import { useFormikContext, getIn, FieldArray, Field } from "formik";
 import { Icon, Button, Form } from "semantic-ui-react";
 import { GroupErrorMessage } from "./GroupErrorMessage";
+import { useHighlightState } from "../hooks";
 
 export const StringArrayField = ({
   fieldPath,
@@ -17,6 +18,8 @@ export const StringArrayField = ({
   disabled,
   ...uiProps
 }) => {
+  const { highlightedStates, handleHover, handleMouseLeave } =
+    useHighlightState();
   const { values } = useFormikContext();
   return (
     <Form.Field>
@@ -28,7 +31,14 @@ export const StringArrayField = ({
             {getIn(values, fieldPath, []).map((item, index) => {
               const indexPath = `${fieldPath}.${index}`;
               return (
-                <GroupField key={index}>
+                <GroupField
+                  key={index}
+                  className={
+                    highlightedStates[indexPath]
+                      ? "highlighted invenio-group-field"
+                      : "invenio-group-field"
+                  }
+                >
                   <TextField
                     width={16}
                     fieldPath={indexPath}
@@ -42,7 +52,12 @@ export const StringArrayField = ({
                       aria-label={i18next.t("Remove field")}
                       className="close-btn"
                       icon
-                      onClick={() => remove(indexPath)}
+                      onClick={() => {
+                        arrayHelpers.remove(indexPath);
+                        handleMouseLeave(indexPath);
+                      }}
+                      onMouseEnter={() => handleHover(indexPath)}
+                      onMouseLeave={() => handleMouseLeave(indexPath)}
                     >
                       <Icon name="close" />
                     </Button>

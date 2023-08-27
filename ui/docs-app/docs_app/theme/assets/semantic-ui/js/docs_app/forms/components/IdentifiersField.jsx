@@ -9,6 +9,7 @@ import {
 } from "react-invenio-forms";
 import { i18next } from "@translations/docs_app/i18next";
 import { GroupErrorMessage } from "./GroupErrorMessage";
+import { useHighlightState } from "../hooks";
 
 export const IdentifiersField = ({
   fieldPath,
@@ -17,6 +18,8 @@ export const IdentifiersField = ({
   label,
   identifierLabel,
 }) => {
+  const { highlightedStates, handleHover, handleMouseLeave } =
+    useHighlightState();
   return (
     <React.Fragment>
       <ArrayField
@@ -29,7 +32,13 @@ export const IdentifiersField = ({
         {({ arrayHelpers, indexPath }) => {
           const fieldPathPrefix = `${fieldPath}.${indexPath}`;
           return (
-            <GroupField>
+            <GroupField
+              className={
+                highlightedStates[indexPath]
+                  ? "highlighted invenio-group-field"
+                  : "invenio-group-field"
+              }
+            >
               <SelectField
                 clearable
                 width={4}
@@ -45,11 +54,17 @@ export const IdentifiersField = ({
                 label={identifierLabel}
               />
 
-              <Form.Field style={{ marginTop: "1.75rem" }}>
+              <Form.Field>
                 <Button
                   aria-label={i18next.t("Remove field")}
+                  className="close-btn"
                   icon
-                  onClick={() => arrayHelpers.remove(indexPath)}
+                  onClick={() => {
+                    arrayHelpers.remove(indexPath);
+                    handleMouseLeave(indexPath);
+                  }}
+                  onMouseEnter={() => handleHover(indexPath)}
+                  onMouseLeave={() => handleMouseLeave(indexPath)}
                 >
                   <Icon name="close" />
                 </Button>

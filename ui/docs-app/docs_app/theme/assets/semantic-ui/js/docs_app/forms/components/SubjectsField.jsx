@@ -4,11 +4,13 @@ import { Button, Form, Icon } from "semantic-ui-react";
 import { ArrayField, SelectField, GroupField } from "react-invenio-forms";
 import { i18next } from "@translations/docs_app/i18next";
 import { MultilingualTextInput } from "@js/oarepo_ui";
+import { useHighlightState } from "../hooks";
 
 const options = [{ value: "keyword", text: "Keyword" }];
-// TODO: still not fully clear on this input
 
 export const SubjectsField = ({ fieldPath, helpText }) => {
+  const { highlightedStates, handleHover, handleMouseLeave } =
+    useHighlightState();
   return (
     <ArrayField
       addButtonLabel={i18next.t("Add subject")}
@@ -21,9 +23,14 @@ export const SubjectsField = ({ fieldPath, helpText }) => {
       {({ arrayHelpers, indexPath }) => {
         const fieldPathPrefix = `${fieldPath}.${indexPath}`;
         return (
-          <GroupField className="subjects invenio-group-field">
+          <GroupField
+            className={
+              highlightedStates[indexPath]
+                ? "subjects highlighted invenio-group-field"
+                : "subjects invenio-group-field"
+            }
+          >
             <SelectField
-              // style={{ marginTop: "0.5rem" }}
               clearable
               width={4}
               fieldPath={`${fieldPathPrefix}.subjectScheme`}
@@ -41,9 +48,14 @@ export const SubjectsField = ({ fieldPath, helpText }) => {
             <Form.Field>
               <Button
                 aria-label={i18next.t("Remove field")}
-                icon
-                onClick={() => arrayHelpers.remove(indexPath)}
                 className="close-btn"
+                icon
+                onClick={() => {
+                  arrayHelpers.remove(indexPath);
+                  handleMouseLeave(indexPath);
+                }}
+                onMouseEnter={() => handleHover(indexPath)}
+                onMouseLeave={() => handleMouseLeave(indexPath)}
               >
                 <Icon name="close" />
               </Button>

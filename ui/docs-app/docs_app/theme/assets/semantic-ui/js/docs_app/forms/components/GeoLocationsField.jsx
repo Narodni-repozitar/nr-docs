@@ -4,8 +4,11 @@ import { Button, Form, Icon } from "semantic-ui-react";
 import { ArrayField, GroupField, TextField } from "react-invenio-forms";
 import { i18next } from "@translations/docs_app/i18next";
 import { GroupErrorMessage } from "./GroupErrorMessage";
+import { useHighlightState } from "../hooks";
 
 export const GeoLocationsField = ({ fieldPath, helpText }) => {
+  const { highlightedStates, handleHover, handleMouseLeave } =
+    useHighlightState();
   return (
     <React.Fragment>
       <ArrayField
@@ -19,7 +22,13 @@ export const GeoLocationsField = ({ fieldPath, helpText }) => {
         {({ arrayHelpers, indexPath }) => {
           const fieldPathPrefix = `${fieldPath}.${indexPath}`;
           return (
-            <GroupField>
+            <GroupField
+              className={
+                highlightedStates[indexPath]
+                  ? "highlighted invenio-group-field"
+                  : "invenio-group-field"
+              }
+            >
               <TextField
                 width={10}
                 fieldPath={`${fieldPathPrefix}.geoLocationPlace`}
@@ -44,7 +53,12 @@ export const GeoLocationsField = ({ fieldPath, helpText }) => {
                   aria-label={i18next.t("Remove field")}
                   className="close-btn"
                   icon
-                  onClick={() => arrayHelpers.remove(indexPath)}
+                  onClick={() => {
+                    arrayHelpers.remove(indexPath);
+                    handleMouseLeave(indexPath);
+                  }}
+                  onMouseEnter={() => handleHover(indexPath)}
+                  onMouseLeave={() => handleMouseLeave(indexPath)}
                 >
                   <Icon name="close" />
                 </Button>
