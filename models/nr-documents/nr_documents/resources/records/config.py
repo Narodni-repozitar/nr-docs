@@ -1,6 +1,6 @@
 import importlib_metadata
 from flask_resources import ResponseHandler
-from invenio_records_resources.resources import RecordResourceConfig
+from invenio_drafts_resources.resources import RecordResourceConfig
 
 from nr_documents.resources.records.ui import NrDocumentsUIJSONSerializer
 
@@ -8,7 +8,7 @@ from nr_documents.resources.records.ui import NrDocumentsUIJSONSerializer
 class NrDocumentsResourceConfig(RecordResourceConfig):
     """NrDocumentsRecord resource config."""
 
-    blueprint_name = "NrDocuments"
+    blueprint_name = "nr_documents"
     url_prefix = "/nr-documents/"
 
     @property

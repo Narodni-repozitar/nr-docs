@@ -1,6 +1,8 @@
 from invenio_requests.customizations import RequestType
 
-from nr_documents.requests.actions import DefaultRequestRequestAcceptAction
+from nr_documents.records.requests.default_request.actions import (
+    DefaultRequestRequestAcceptAction,
+)
 
 
 class DefaultRequestRequestType(RequestType):

@@ -57,7 +57,7 @@ chmod 755 nrp-installer.sh
   pipenv run invenio oarepo oai harvester add nusl --name "NUSL harvester" \
             --url http://invenio.nusl.cz/oai2d/ --set global --prefix marcxml \
             --loader sickle --transformer marcxml --transformer nusl \
-            --writer 'service{service=nr_documents}'
+            --writer 'service{service=nr_documents_published}'
 )
 
 # ui

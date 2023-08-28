@@ -16,5 +16,8 @@ class DefaultRequestRequestAcceptAction(AcceptAction):
                 break
         else:
             raise KeyError(f"topic {topic} service not found")
-        uow.register(RecordCommitOp(topic, topic_service.indexer))
+        if hasattr(topic_service, "indexer"):
+            uow.register(RecordCommitOp(topic, topic_service.indexer))
+        else:
+            uow.register(RecordCommitOp(topic))
         super().execute(identity, uow)

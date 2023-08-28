@@ -1,11 +1,18 @@
-from marshmallow import fields as ma_fields
+import marshmallow as ma
 from nr_metadata.documents.services.records.ui_schema import (
     NRDocumentMetadataUISchema,
+    NRDocumentRecordUISchema,
 )
 from oarepo_runtime.ui.marshmallow import InvenioUISchema
 
 
-class NrDocumentsUISchema(InvenioUISchema):
-    """NrDocumentsUISchema schema."""
+class NrDocumentsUISchema(NRDocumentRecordUISchema, InvenioUISchema):
+    class Meta:
+        unknown = ma.RAISE
 
-    metadata = ma_fields.Nested(lambda: NRDocumentMetadataUISchema())
+    metadata = ma.fields.Nested(lambda: NrDocumentsMetadataUISchema())
+
+
+class NrDocumentsMetadataUISchema(NRDocumentMetadataUISchema):
+    class Meta:
+        unknown = ma.RAISE
