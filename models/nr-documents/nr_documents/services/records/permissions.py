@@ -7,10 +7,11 @@ class NrDocumentsPermissionPolicy(RecordPermissionPolicy):
     """nr_documents.records.api.NrDocumentsRecord permissions.
     Values in this class will be merged with permission presets.
     """
-
-    can_search = [SystemProcess(), AnyUser()]
-    can_read = [SystemProcess(), AnyUser()]
-    can_create = [SystemProcess(), AnyUser()]
-    can_update = [SystemProcess(), AnyUser()]
-    can_delete = [SystemProcess(), AnyUser()]
-    can_manage = [SystemProcess(), AnyUser()]
+    can_search = []
+    can_read = []
+    can_create = []
+    can_update = []
+    can_delete = []
+    can_manage = []
+    can_read_files = []
+    can_update_files = []
