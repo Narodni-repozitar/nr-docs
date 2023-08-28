@@ -15,7 +15,7 @@ from sqlalchemy.dialects import mysql
 from sqlalchemy.dialects import postgresql
 
 # revision identifiers, used by Alembic.
-revision = '4df3724483aa'
+revision = 'nr_documents_3'
 down_revision = 'nr_documents_2'
 branch_labels = ()
 depends_on = None
