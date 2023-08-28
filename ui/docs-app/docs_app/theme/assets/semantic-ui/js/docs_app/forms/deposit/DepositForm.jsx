@@ -5,7 +5,6 @@ import { BaseForm } from "react-invenio-forms";
 import { Container } from "semantic-ui-react";
 import { NRDocumentValidationSchema } from "./NRDocumentValidationSchema";
 
-
 export const DepositForm = () => {
   const { record, formConfig } = useFormConfig();
   const context = formConfig.createUrl? submitContextType.create : submitContextType.update
