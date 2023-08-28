@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 import { TextField, GroupField, FieldLabel } from "react-invenio-forms";
 import { i18next } from "@translations/docs_app/i18next";
 import { Form } from "semantic-ui-react";
-import { GroupErrorMessage } from "./GroupErrorMessage";
 
 export const ExternalLocationField = ({ fieldPath }) => {
   return (
@@ -22,7 +21,6 @@ export const ExternalLocationField = ({ fieldPath }) => {
           label={i18next.t("Note")}
         />
       </GroupField>
-      <GroupErrorMessage fieldPath={fieldPath} />
     </Form.Field>
   );
 };

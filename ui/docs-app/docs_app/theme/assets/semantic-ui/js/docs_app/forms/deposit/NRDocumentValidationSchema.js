@@ -8,10 +8,31 @@ const stringLengthMessage = ({ min }) =>
   i18next.t("Must have at least x characters", { min: min });
 
 const returnGroupError = (value, context) => {
-  console.log(value, context);
-  return { groupError: i18next.t("Items must be unique") };
+  return i18next.t("Items must be unique");
 };
 const edtfRegEx = /^(\d{4})(-(\d{2})(-(\d{2}))?)?(\/\d{4}(-\d{2}(-\d{2})?)?)?$/;
+
+const unique = (value, context, path, errorString) => {
+  if (!value || value.length < 2) {
+    return true;
+  }
+
+  if (
+    _uniqBy(value, (item) => (path ? item[path] : item)).length !== value.length
+  ) {
+    const errors = value
+      .map((value, index) => {
+        return new Yup.ValidationError(
+          errorString,
+          value,
+          path ? `${context.path}.${index}.${path}` : `${context.path}.${index}`
+        );
+      })
+      .filter(Boolean);
+    return new Yup.ValidationError(errors);
+  }
+  return true;
+};
 
 export const NRDocumentValidationSchema = Yup.object().shape({
   metadata: Yup.object().shape({
@@ -30,15 +51,14 @@ export const NRDocumentValidationSchema = Yup.object().shape({
           titleType: Yup.string().required(requiredMessage),
         })
       )
-      .test("unique-additional-titles", returnGroupError, (value) => {
-        if (!value || value.length < 2) {
-          return true;
-        }
-
-        return (
-          _uniqBy(value, (item) => item.title.value).length === value.length
-        );
-      }),
+      .test("unique-additional-titles", returnGroupError, (value, context) =>
+        unique(
+          value,
+          context,
+          "title.value",
+          i18next.t("Additional titles must be unique")
+        )
+      ),
     abstract: Yup.array().of(
       Yup.object().shape({
         lang: Yup.string().required(requiredMessage),
@@ -70,20 +90,19 @@ export const NRDocumentValidationSchema = Yup.object().shape({
     languages: Yup.array().required(requiredMessage),
     publishers: Yup.array()
       .of(Yup.string().required(requiredMessage))
-      .test("unique-publishers", returnGroupError, (value) => {
-        if (!value || value.length < 2) {
-          return true;
-        }
-        return _uniqBy(value, (item) => item).length === (value?.length ?? 0);
-      }),
+      .test("unique-publishers", returnGroupError, (value, context) =>
+        unique(
+          value,
+          context,
+          undefined,
+          i18next.t("Publishers must be unique")
+        )
+      ),
     notes: Yup.array()
       .of(Yup.string().required(requiredMessage))
-      .test("unique-notes", returnGroupError, (value) => {
-        if (!value || value.length < 2) {
-          return true;
-        }
-        return _uniqBy(value, (item) => item).length === (value?.length ?? 0);
-      }),
+      .test("unique-notes", returnGroupError, (value, context) =>
+        unique(value, context, undefined, i18next.t("Notes must be unique"))
+      ),
     geoLocations: Yup.array()
       .of(
         Yup.object().shape({
@@ -110,16 +129,14 @@ export const NRDocumentValidationSchema = Yup.object().shape({
           }),
         })
       )
-      .test("unique-locations", returnGroupError, (value) => {
-        if (!value || value.length < 2) {
-          return true;
-        }
-
-        return (
-          _uniqBy(value, (item) => item.geoLocationPlace).length ===
-          value.length
-        );
-      }),
+      .test("unique-locations", returnGroupError, (value, context) =>
+        unique(
+          value,
+          context,
+          "geoLocationPlace",
+          i18next.t("Locations must be unique")
+        )
+      ),
     accessibility: Yup.object().shape({
       lang: Yup.string(),
       value: Yup.string(),
@@ -140,7 +157,16 @@ export const NRDocumentValidationSchema = Yup.object().shape({
             ),
           };
         },
-        (value) => !(value.externalLocationNote && !value.externalLocationURL)
+        (value, context) => {
+          if (value.externalLocationNote && !value.externalLocationURL) {
+            return new Yup.ValidationError(
+              i18next.t("URL must be provided for this field if used"),
+              value,
+              `${context.path}.externalLocationURL`
+            );
+          }
+          return true;
+        }
       ),
     fundingReferences: Yup.array()
       .of(
@@ -151,14 +177,36 @@ export const NRDocumentValidationSchema = Yup.object().shape({
           funder: Yup.object(),
         })
       )
-      .test("unique-project-codes", returnGroupError, (value) => {
-        if (!value || value.length < 2) {
-          return true;
-        }
-
-        return _uniqBy(value, (item) => item.projectID).length === value.length;
-      }),
-    // subjects:"",
+      .test("unique-project-codes", returnGroupError, (value, context) =>
+        unique(
+          value,
+          context,
+          "projectID",
+          i18next.t("Project codes must be unique")
+        )
+      ),
+    subjects: Yup.array().of(
+      Yup.object().shape({
+        subjectScheme: Yup.string().required(requiredMessage),
+        subject: Yup.array()
+          .of(
+            Yup.object().shape({
+              lang: Yup.string().required(requiredMessage),
+              value: Yup.string()
+                .required(requiredMessage)
+                .min(10, stringLengthMessage),
+            })
+          )
+          .test("unique-subjects", returnGroupError, (value, context) =>
+            unique(
+              value,
+              context,
+              "value",
+              i18next.t("Subjects must be unique")
+            )
+          ),
+      })
+    ),
     // relatedItems:"",
     // version:"",
     // accessibility"",
@@ -169,15 +217,14 @@ export const NRDocumentValidationSchema = Yup.object().shape({
           seriesVolume: Yup.string(),
         })
       )
-      .test("unique-series", returnGroupError, (value) => {
-        if (!value || value.length < 2) {
-          return true;
-        }
-
-        return (
-          _uniqBy(value, (item) => item.seriesTitle).length === value.length
-        );
-      }),
+      .test("unique-series", returnGroupError, (value, context) =>
+        unique(
+          value,
+          context,
+          "seriesTitle",
+          i18next.t("Series titles must be unique")
+        )
+      ),
     events: Yup.array().of(
       Yup.object().shape({
         eventNameOriginal: Yup.string().required(requiredMessage),
@@ -200,15 +247,14 @@ export const NRDocumentValidationSchema = Yup.object().shape({
           scheme: Yup.string().required(requiredMessage),
         })
       )
-      .test("unique-objectIdentifiers", returnGroupError, (value) => {
-        if (!value || value.length < 2) {
-          return true;
-        }
-
-        return (
-          _uniqBy(value, (item) => item.identifier).length === value.length
-        );
-      }),
+      .test("unique-objectIdentifiers", returnGroupError, (value, context) =>
+        unique(
+          value,
+          context,
+          "identifier",
+          i18next.t("Object identifiers must be unique")
+        )
+      ),
     systemIdentifiers: Yup.array().of(
       Yup.object().shape({
         identifier: Yup.string().required(requiredMessage),

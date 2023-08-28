@@ -4,7 +4,6 @@ import { FieldLabel, TextField, GroupField } from "react-invenio-forms";
 import { i18next } from "@translations/docs_app/i18next";
 import { useFormikContext, getIn, FieldArray, Field } from "formik";
 import { Icon, Button, Form } from "semantic-ui-react";
-import { GroupErrorMessage } from "./GroupErrorMessage";
 import { useHighlightState } from "../hooks";
 
 export const StringArrayField = ({
@@ -66,7 +65,6 @@ export const StringArrayField = ({
               );
             })}
             <label style={{ fontWeight: "bold" }}>{helpText}</label>
-            <GroupErrorMessage fieldPath={fieldPath} />
             <Form.Button
               type="button"
               icon

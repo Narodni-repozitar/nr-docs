@@ -8,7 +8,6 @@ import {
   TextField,
 } from "react-invenio-forms";
 import { i18next } from "@translations/docs_app/i18next";
-import { GroupErrorMessage } from "./GroupErrorMessage";
 import { useHighlightState } from "../hooks";
 
 export const IdentifiersField = ({
@@ -21,60 +20,57 @@ export const IdentifiersField = ({
   const { highlightedStates, handleHover, handleMouseLeave } =
     useHighlightState();
   return (
-    <React.Fragment>
-      <ArrayField
-        addButtonLabel={i18next.t("Add identifier")}
-        fieldPath={fieldPath}
-        label={label}
-        labelIcon="pencil"
-        helpText={helpText}
-      >
-        {({ arrayHelpers, indexPath }) => {
-          const fieldPathPrefix = `${fieldPath}.${indexPath}`;
-          return (
-            <GroupField
-              className={
-                highlightedStates[indexPath]
-                  ? "highlighted invenio-group-field"
-                  : "invenio-group-field"
-              }
-            >
-              <SelectField
-                clearable
-                width={4}
-                fieldPath={`${fieldPathPrefix}.scheme`}
-                label={i18next.t("Identifier type")}
-                required
-                options={options}
-              />
-              <TextField
-                required
-                width={12}
-                fieldPath={`${fieldPathPrefix}.identifier`}
-                label={identifierLabel}
-              />
+    <ArrayField
+      addButtonLabel={i18next.t("Add identifier")}
+      fieldPath={fieldPath}
+      label={label}
+      labelIcon="pencil"
+      helpText={helpText}
+    >
+      {({ arrayHelpers, indexPath }) => {
+        const fieldPathPrefix = `${fieldPath}.${indexPath}`;
+        return (
+          <GroupField
+            className={
+              highlightedStates[indexPath]
+                ? "highlighted invenio-group-field"
+                : "invenio-group-field"
+            }
+          >
+            <SelectField
+              clearable
+              width={4}
+              fieldPath={`${fieldPathPrefix}.scheme`}
+              label={i18next.t("Identifier type")}
+              required
+              options={options}
+            />
+            <TextField
+              required
+              width={12}
+              fieldPath={`${fieldPathPrefix}.identifier`}
+              label={identifierLabel}
+            />
 
-              <Form.Field>
-                <Button
-                  aria-label={i18next.t("Remove field")}
-                  className="close-btn"
-                  icon
-                  onClick={() => {
-                    arrayHelpers.remove(indexPath);
-                    handleMouseLeave(indexPath);
-                  }}
-                  onMouseEnter={() => handleHover(indexPath)}
-                  onMouseLeave={() => handleMouseLeave(indexPath)}
-                >
-                  <Icon name="close" />
-                </Button>
-              </Form.Field>
-            </GroupField>
-          );
-        }}
-      </ArrayField>
-      <GroupErrorMessage fieldPath={fieldPath} />
-    </React.Fragment>
+            <Form.Field>
+              <Button
+                aria-label={i18next.t("Remove field")}
+                className="close-btn"
+                icon
+                onClick={() => {
+                  arrayHelpers.remove(indexPath);
+                  handleMouseLeave(indexPath);
+                }}
+                onMouseEnter={() => handleHover(indexPath)}
+                onMouseLeave={() => handleMouseLeave(indexPath)}
+              >
+                <Icon name="close" />
+              </Button>
+            </Form.Field>
+          </GroupField>
+        );
+      }}
+    </ArrayField>
   );
 };
 
