@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Message } from "semantic-ui-react";
+import { Message, Icon } from "semantic-ui-react";
 import { getIn, useFormikContext } from "formik";
 import _has from "lodash/has";
 import _isObject from "lodash/isObject";
@@ -17,7 +17,12 @@ export const GroupErrorMessage = ({ fieldPath }) => {
   const groupError = getIn(errors, fieldPath);
 
   if (groupError && _isObject(groupError) && _has(groupError, "groupError")) {
-    return <Message negative content={groupError.groupError} />;
+    return (
+      <Message negative attached="top">
+        <Icon name="warning" />
+        {groupError.groupError}
+      </Message>
+    );
   }
   return null;
 };

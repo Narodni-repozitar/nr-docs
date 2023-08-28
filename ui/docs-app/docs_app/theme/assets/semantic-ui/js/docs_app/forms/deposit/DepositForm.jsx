@@ -178,7 +178,7 @@ export const DepositForm = () => {
         onSubmit={onSubmit}
         formik={{
           initialValues: record,
-          // validationSchema: NRDocumentValidationSchema,
+          validationSchema: NRDocumentValidationSchema,
           validateOnChange: false,
           validateOnBlur: false,
           enableReinitialize: true,

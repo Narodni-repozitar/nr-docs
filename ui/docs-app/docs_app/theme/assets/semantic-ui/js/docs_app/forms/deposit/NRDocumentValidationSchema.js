@@ -3,10 +3,12 @@ import { i18next } from "@translations/docs_app/i18next";
 import _uniqBy from "lodash/uniqBy";
 
 const requiredMessage = i18next.t("This field is required");
+
 const stringLengthMessage = ({ min }) =>
   i18next.t("Must have at least x characters", { min: min });
 
-const returnGroupError = () => {
+const returnGroupError = (value, context) => {
+  console.log(value, context);
   return { groupError: i18next.t("Items must be unique") };
 };
 const edtfRegEx = /^(\d{4})(-(\d{2})(-(\d{2}))?)?(\/\d{4}(-\d{2}(-\d{2})?)?)?$/;
@@ -157,7 +159,6 @@ export const NRDocumentValidationSchema = Yup.object().shape({
         return _uniqBy(value, (item) => item.projectID).length === value.length;
       }),
     // subjects:"",
-    // accessRights:"",
     // relatedItems:"",
     // version:"",
     // accessibility"",
@@ -216,11 +217,3 @@ export const NRDocumentValidationSchema = Yup.object().shape({
     ),
   }),
 });
-
-// rights: "", as you are choosing from options, I don't see how it is possible to choose same item twice
-// subjectCategories: "",as you are choosing from options, I don't see how it is possible to choose same item twice
-// abstract, method and technical info seem to not have any validation at all, but I think maybe we should put the lang and
-// field content as required i.e. if someone did click to add this, he should either be required to provide it
-// or he should close the input
-
-// dateAvailable/modified - maybe use some regexp for edtf, as there does not seem to be some premade solution for JS?

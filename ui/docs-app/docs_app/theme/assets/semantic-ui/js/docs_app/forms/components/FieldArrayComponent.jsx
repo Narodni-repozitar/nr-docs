@@ -5,6 +5,8 @@ import { Form, Icon } from "semantic-ui-react";
 import _isEmpty from "lodash/isEmpty";
 import { FieldLabel } from "react-invenio-forms";
 
+// component made when we were planning to use it instead of invenio's ArrayField. Keeping
+// it here for now just in case
 export const FieldArrayComponent = ({
   addButtonLabel,
   children,
