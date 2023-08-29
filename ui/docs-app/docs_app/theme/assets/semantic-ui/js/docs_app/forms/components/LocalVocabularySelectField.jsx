@@ -21,7 +21,9 @@ export const LocalVocabularySelectField = ({
     formConfig: { vocabularies },
   } = useFormConfig();
   let optionsList = vocabularies[optionsListName] || [];
-
+  if (optionsListName === "resourceTypes") {
+    optionsList = [{ value: "book", text: "Book" }];
+  }
   const { values, setFieldTouched } = useFormikContext();
   return (
     <React.Fragment>

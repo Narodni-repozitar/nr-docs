@@ -52,7 +52,7 @@ export const StringArrayField = ({
                       className="close-btn"
                       icon
                       onClick={() => {
-                        arrayHelpers.remove(indexPath);
+                        remove(indexPath);
                         handleMouseLeave(indexPath);
                       }}
                       onMouseEnter={() => handleHover(indexPath)}

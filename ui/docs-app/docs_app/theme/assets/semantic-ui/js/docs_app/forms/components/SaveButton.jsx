@@ -13,8 +13,6 @@ export const SaveButton = ({ ...uiProps }) => {
   const { record, formConfig } = useFormConfig();
   const { updateConfig } = useSubmitConfig();
   const existingRecord = !!record.id;
-  console.log(existingRecord);
-  console.log(formConfig.createUrl);
 
   return (
     <Button
