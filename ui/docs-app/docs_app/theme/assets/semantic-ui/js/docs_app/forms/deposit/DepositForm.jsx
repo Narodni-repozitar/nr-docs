@@ -26,6 +26,7 @@ import {
   IdentifiersField,
   PreviewButton,
   SaveButton,
+  DeleteButton,
 } from "../components/";
 import Overridable from "react-overridable";
 import { i18next } from "@translations/docs_app/i18next";
@@ -580,6 +581,9 @@ export const DepositForm = () => {
                         </Grid.Column>
                         <Grid.Column width={16} className="pt-10">
                           <ValidateButton fluid />
+                        </Grid.Column>
+                        <Grid.Column width={16} className="pt-10">
+                          <DeleteButton fluid />
                         </Grid.Column>
                       </Grid>
                     </Card.Content>
