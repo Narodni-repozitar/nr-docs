@@ -6,6 +6,7 @@ import {
   MultilingualTextInput,
   I18nTextInputField,
   BaseForm,
+  useSubmitConfig,
 } from "@js/oarepo_ui";
 import { AccordionField, FieldLabel, TextField } from "react-invenio-forms";
 import { Container, Grid, Ref, Sticky, Form, Card } from "semantic-ui-react";
@@ -99,6 +100,7 @@ const removeNullAndUnderscoreProperties = (values, formik) => {
 };
 
 export const DepositForm = () => {
+  const { submitConfig } = useSubmitConfig();
   const { record, formConfig } = useFormConfig();
   const { pathname: currentPath } = useLocation();
   console.log(formConfig, record);
@@ -113,28 +115,27 @@ export const DepositForm = () => {
 
   const editMode = _has(formConfig, "updateUrl");
 
-  const { onSubmit, submitError } = useOnSubmit({
-    apiUrl: formConfig.createUrl || "/api/nr-documents/" + formConfig.updateUrl,
-    context: context,
-    onBeforeSubmit: removeNullAndUnderscoreProperties,
-    onSubmitSuccess: (result) => {
-      console.log(result);
-      window.location.href = editMode
-        ? currentPath.replace("/edit", "")
-        : currentPath.replace("_new", result.id);
-    },
-    onSubmitError: (error, formik) => {
-      if (
-        error &&
-        error.status === 400 &&
-        error.message === "A validation error occurred."
-      ) {
-        error.errors?.forEach((err) =>
-          formik.setFieldError(err.field, err.messages.join(" "))
-        );
-      }
-    },
-  });
+  // const { onSubmit, submitError } = useOnSubmit({
+  //   apiUrl: formConfig.createUrl || "/api/nr-documents/" + formConfig.updateUrl,
+  //   context: context,
+  //   onBeforeSubmit: removeNullAndUnderscoreProperties,
+  // onSubmitSuccess: (result) => {
+  //   console.log(result);
+  //   window.location.href = result.links.self_html;
+  // },
+  //   onSubmitError: (error, formik) => {
+  //     if (
+  //       error &&
+  //       error.status === 400 &&
+  //       error.message === "A validation error occurred."
+  //     ) {
+  //       error.errors?.forEach((err) =>
+  //         formik.setFieldError(err.field, err.messages.join(" "))
+  //       );
+  //     }
+  //   },
+  // });
+  const { onSubmit, submitError } = useOnSubmit(submitConfig);
   console.log(submitError);
   const sidebarRef = useRef(null);
   // const initialValues = {
