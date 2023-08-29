@@ -25,7 +25,7 @@ chmod 755 nrp-installer.sh
 # -- data model
 (
   cd $NR_DOCS_DIR
-  ./nrp-cli model add nr-documents --merge $pth/nr-documents-schema.yaml=model.yaml --no-input --config $pth/nr-documents-model.yaml
+  ./nrp-cli model add nr-documents --use local/model/requests.yaml:/record --no-input --config $pth/nr-documents-model.yaml
   ./nrp-cli model compile nr-documents --no-input
   ./nrp-cli model install nr-documents --no-input
 )
