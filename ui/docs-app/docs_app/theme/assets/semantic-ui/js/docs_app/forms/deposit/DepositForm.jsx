@@ -2,11 +2,11 @@ import React, { useRef } from "react";
 import {
   useFormConfig,
   useOnSubmit,
-  submitContextType,
   MultilingualTextInput,
   I18nTextInputField,
   BaseForm,
   useSubmitConfig,
+  removeNullAndInternalFields,
 } from "@js/oarepo_ui";
 import { AccordionField, FieldLabel, TextField } from "react-invenio-forms";
 import { Container, Grid, Ref, Sticky, Form, Card } from "semantic-ui-react";
@@ -27,11 +27,11 @@ import {
   PreviewButton,
   SaveButton,
   DeleteButton,
+  PublishButton,
 } from "../components/";
 import Overridable from "react-overridable";
 import { i18next } from "@translations/docs_app/i18next";
-import { FormikStateLogger, PublishButton } from "@js/oarepo_vocabularies";
-import { useLocation } from "react-router-dom";
+import { FormikStateLogger } from "@js/oarepo_vocabularies";
 import _has from "lodash/has";
 import _omitBy from "lodash/omitBy";
 import _omit from "lodash/omit";
@@ -103,84 +103,47 @@ const removeNullAndUnderscoreProperties = (values, formik) => {
 export const DepositForm = () => {
   const { submitConfig } = useSubmitConfig();
   const { record, formConfig } = useFormConfig();
-  const { pathname: currentPath } = useLocation();
   console.log(formConfig, record);
-  const context = formConfig.createUrl
-    ? submitContextType.create
-    : submitContextType.update;
-
-  // need to have edit tag in the code. Context is not reliable enough
-  // as it can have other values than
-  // update and create when we will support all features?
-  // Maybe we shoud consider simply providing editMode or edit boolean as part of formConfig?
 
   const editMode = _has(formConfig, "updateUrl");
 
-  // const { onSubmit, submitError } = useOnSubmit({
-  //   apiUrl: formConfig.createUrl || "/api/nr-documents/" + formConfig.updateUrl,
-  //   context: context,
-  //   onBeforeSubmit: removeNullAndUnderscoreProperties,
-  // onSubmitSuccess: (result) => {
-  //   console.log(result);
-  //   window.location.href = result.links.self_html;
-  // },
-  //   onSubmitError: (error, formik) => {
-  //     if (
-  //       error &&
-  //       error.status === 400 &&
-  //       error.message === "A validation error occurred."
-  //     ) {
-  //       error.errors?.forEach((err) =>
-  //         formik.setFieldError(err.field, err.messages.join(" "))
-  //       );
-  //     }
-  //   },
-  // });
-  const { onSubmit, submitError } = useOnSubmit(submitConfig);
-  console.log(submitError);
+  const { onSubmit, submitError } = useOnSubmit({
+    context: submitConfig,
+    onBeforeSubmit: removeNullAndInternalFields([], ["__key"]),
+    onSubmitSuccess: [
+      (result, formik) => {
+        if (result.errors) {
+          result.errors?.forEach((err) =>
+            formik.setFieldError(err.field, err.messages.join(" "))
+          );
+        }
+      },
+      // (result) => {
+      //   console.log(result);
+      //   window.location.href = result.links.self_html;
+      // },
+    ],
+    onSubmitError: (error, formik) => {
+      if (
+        error &&
+        error.status === 400 &&
+        error.message === "A validation error occurred."
+      ) {
+        error.errors?.forEach((err) =>
+          formik.setFieldError(err.field, err.messages.join(" "))
+        );
+      }
+    },
+  });
   const sidebarRef = useRef(null);
-  // const initialValues = {
-  //   metadata: {
-  //     additionalTitles: [
-  //       {
-  //         title: {
-  //           lang: "ab",
-  //           value: "dwadaw",
-  //         },
-  //         titleType: "alternativeTitle",
-  //       },
-  //       {
-  //         title: {
-  //           lang: "ab",
-  //           value: "dwadwad",
-  //         },
-  //         titleType: "alternativeTitle",
-  //       },
-  //       { title: { value: "" } },
-  //     ],
-  //     abstract: [
-  //       { lang: "cs", value: "ducciano" },
-  //       { lang: "en", value: "Ducciano" },
-  //     ],
-  //     notes: ["dwadwadwad", "dawdadwad", "dadwada"],
-  //     geoLocations: [
-  //       {
-  //         geoLocationPlace: "Ducica's place",
-  //         geoLocationPoint: {
-  //           pointLongitude: 130.3232,
-  //           pointLatitude: 82.44242,
-  //         },
-  //       },
-  //     ],
-  //   },
-  // };
+
   return (
     <Container>
       <BaseForm
         onSubmit={onSubmit}
         formik={{
           initialValues: record,
-          validationSchema: NRDocumentValidationSchema,
+          // validationSchema: NRDocumentValidationSchema,
           validateOnChange: false,
           validateOnBlur: false,
           enableReinitialize: true,

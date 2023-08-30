@@ -14,3 +14,4 @@ export { FieldArrayComponent } from "./FieldArrayComponent";
 export { PreviewButton } from "./PreviewButton";
 export { SaveButton } from "./SaveButton";
 export { DeleteButton } from "./DeleteButton";
+export { PublishButton } from "./PublishButton";

@@ -2,31 +2,25 @@ import React from "react";
 import { Button } from "semantic-ui-react";
 import { i18next } from "@translations/docs_app/i18next";
 import { useFormikContext } from "formik";
-import {
-  useFormConfig,
-  useSubmitConfig,
-  submitContextType,
-} from "@js/oarepo_ui";
+import { useSubmitConfig, submitContextType } from "@js/oarepo_ui";
 
-export const SaveButton = ({ ...uiProps }) => {
+export const PublishButton = ({ ...uiProps }) => {
   const { handleSubmit, isSubmitting } = useFormikContext();
-  const { record, formConfig } = useFormConfig();
   const { updateConfig } = useSubmitConfig();
-  const existingRecord = !!record.id;
 
   return (
     <Button
-      name="save"
+      name="publish"
       disabled={isSubmitting}
       loading={isSubmitting}
-      color="grey"
+      color="green"
       onClick={(e) => {
-        updateConfig(submitContextType.save);
+        updateConfig(submitContextType.publish);
         handleSubmit(e);
       }}
       icon="save"
       labelPosition="left"
-      content={i18next.t("Save")}
+      content={i18next.t("Publish")}
       type="button"
       {...uiProps}
     />
