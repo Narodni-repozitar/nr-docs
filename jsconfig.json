@@ -2,21 +2,6 @@
     "baseUrl": ".",
     "compilerOptions": {
         "paths": {
-            "@translations/oarepo_ui": [
-                "./.assets/translations/oarepo_ui"
-            ],
-            "../../less": [
-                "./local/oarepo-vocabularies/oarepo_vocabularies/ui/theme/assets/semantic-ui/less"
-            ],
-            "@js/oarepo_ui": [
-                "./.assets/js/oarepo_ui"
-            ],
-            "@translations/invenio_app_rdm/i18next": [
-                "./.assets/translations/oarepo_ui/i18next.js"
-            ],
-            "@templates/custom_fields": [
-                "./.assets/js/custom_fields"
-            ],
             "@js/invenio_theme": [
                 "./.assets/js/invenio_theme"
             ],
@@ -52,6 +37,21 @@
             ],
             "@translations/docs_app": [
                 "./ui/docs-app/docs_app/theme/assets/semantic-ui/translations/docs_app"
+            ],
+            "@translations/oarepo_ui": [
+                "./local/oarepo-ui/oarepo_ui/theme/assets/semantic-ui/translations/oarepo_ui"
+            ],
+            "../../less": [
+                "./local/oarepo-vocabularies/oarepo_vocabularies/ui/theme/assets/semantic-ui/less"
+            ],
+            "@js/oarepo_ui": [
+                "./local/oarepo-ui/oarepo_ui/theme/assets/semantic-ui/js/oarepo_ui"
+            ],
+            "@translations/invenio_app_rdm/i18next": [
+                "./local/oarepo-ui/oarepo_ui/theme/assets/semantic-ui/translations/oarepo_ui/i18next.js"
+            ],
+            "@templates/custom_fields": [
+                "./local/oarepo-ui/oarepo_ui/theme/assets/semantic-ui/js/custom_fields"
             ],
             "@translations/oarepo_vocabularies_ui": [
                 "./local/oarepo-vocabularies/oarepo_vocabularies/ui/theme/assets/semantic-ui/translations/oarepo_vocabularies_ui"
