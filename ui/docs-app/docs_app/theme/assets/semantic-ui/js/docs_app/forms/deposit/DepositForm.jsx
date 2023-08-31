@@ -33,11 +33,6 @@ import Overridable from "react-overridable";
 import { i18next } from "@translations/docs_app/i18next";
 import { FormikStateLogger } from "@js/oarepo_vocabularies";
 import _has from "lodash/has";
-import _omitBy from "lodash/omitBy";
-import _omit from "lodash/omit";
-import _isObject from "lodash/isObject";
-import _mapValues from "lodash/mapValues";
-import _isArray from "lodash/isArray";
 
 // not sure if these should come from formConfig better to not clutter the code
 const objectIdentifiersSchema = [
@@ -56,50 +51,6 @@ const systemIdentifiersSchema = [
   { value: "nrOAI", text: "nrOAI" },
 ];
 
-// testing purposes removing __keys from arrayfield items
-
-const removeKeyFromNestedObjects = (inputObject) => {
-  const processArray = (arr) => {
-    return arr.map((item) => {
-      if (_isObject(item)) {
-        return _omit(item, "__key");
-      }
-      return item;
-    });
-  };
-
-  const processObject = (obj) => {
-    return _mapValues(obj, (value) => {
-      if (_isArray(value)) {
-        return processArray(value);
-      }
-      return value;
-    });
-  };
-
-  return processObject(inputObject);
-};
-
-// duplicate function from vocabularies just for testing purposes, probably will need a different kind for deposits
-// in case this one works out, then we maybe hoist it to oarepoui utils
-const removeNullAndUnderscoreProperties = (values, formik) => {
-  const newValues = _omitBy(
-    values,
-    (value, key) =>
-      value === null ||
-      (Array.isArray(value) && value.every((item) => item === null)) ||
-      key.startsWith("_") ||
-      key === "revision_id" ||
-      key === "links" ||
-      key === "updated" ||
-      key === "created"
-  );
-  console.log(newValues);
-  newValues.metadata = removeKeyFromNestedObjects(newValues.metadata);
-  console.log(newValues);
-  return newValues;
-};
-
 export const DepositForm = () => {
   const { submitConfig } = useSubmitConfig();
   const { record, formConfig } = useFormConfig();
@@ -107,38 +58,7 @@ export const DepositForm = () => {
 
   const editMode = _has(formConfig, "updateUrl");
 
-  const { onSubmit, submitError } = useOnSubmit({
-    context: submitConfig,
-    onBeforeSubmit: removeNullAndInternalFields([], ["__key"]),
-    onSubmitSuccess: [
-      (result, formik) => {
-        if (result.errors) {
-          result.errors?.forEach((err) =>
-            formik.setFieldError(err.field, err.messages.join(" "))
-          );
-        }
-      },
-      (result) => {
-        console.log(result.links.self_html);
-        window.history.replaceState(
-          undefined,
-          "",
-          result.links.self_html.replace("https://0.0.0.0:5000", "")
-        );
-      },
-    ],
-    onSubmitError: (error, formik) => {
-      if (
-        error &&
-        error.status === 400 &&
-        error.message === "A validation error occurred."
-      ) {
-        error.errors?.forEach((err) =>
-          formik.setFieldError(err.field, err.messages.join(" "))
-        );
-      }
-    },
-  });
+  const { onSubmit, submitError } = useOnSubmit(submitConfig);
   const sidebarRef = useRef(null);
 
   return (
