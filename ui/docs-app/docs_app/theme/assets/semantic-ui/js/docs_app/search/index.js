@@ -15,7 +15,8 @@ import {
   EmptyResultsElement,
   MultipleSearchBarElement,
   ResultsGridItemWithState,
-  ResultsListItemWithState
+  ResultsListItemWithState,
+  SearchAppResults
 } from './components'
 import { parametrize } from 'react-overridable'
 
@@ -38,12 +39,13 @@ export const defaultComponents = {
   [`${appName}.SearchApp.searchbarContainer`]: SearchAppSearchbarContainerWithConfig,
   [`${appName}.SearchApp.sort`]: SearchAppSort,
   [`${appName}.SearchApp.resultOptions`]: SearchAppResultOptions,
+  [`${appName}.SearchApp.results`]: SearchAppResults,
   [`${appName}.SearchFilters.Toggle.element`]: SearchFiltersToggleElement,
   [`${appName}.SearchBar.element`]: MultipleSearchBarElement,
 }
 
 createSearchAppInit(
-  {...defaultComponents },
+  { ...defaultComponents },
   true,
   'invenio-search-config',
   true,

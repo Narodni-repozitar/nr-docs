@@ -5,7 +5,6 @@ import Overridable from "react-overridable";
 import _get from "lodash/get";
 import _join from "lodash/join";
 import _truncate from "lodash/truncate";
-import _mapValues from "lodash/mapValues";
 
 import { Grid, Item, Label, List, Icon } from "semantic-ui-react";
 import { withState, buildUID } from "react-searchkit";
