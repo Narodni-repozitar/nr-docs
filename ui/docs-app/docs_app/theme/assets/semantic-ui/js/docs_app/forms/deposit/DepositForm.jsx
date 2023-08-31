@@ -118,10 +118,14 @@ export const DepositForm = () => {
           );
         }
       },
-      // (result) => {
-      //   console.log(result);
-      //   window.location.href = result.links.self_html;
-      // },
+      (result) => {
+        console.log(result.links.self_html);
+        window.history.replaceState(
+          undefined,
+          "",
+          result.links.self_html.replace("https://0.0.0.0:5000", "")
+        );
+      },
     ],
     onSubmitError: (error, formik) => {
       if (
