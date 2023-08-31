@@ -1,7 +1,7 @@
 import React from "react";
 import { Button } from "semantic-ui-react";
 import { i18next } from "@translations/docs_app/i18next";
-import { useFormikContext } from "formik";
+import { useFormikContext, getIn } from "formik";
 import {
   useFormConfig,
   useSubmitConfig,
@@ -9,7 +9,7 @@ import {
 } from "@js/oarepo_ui";
 
 export const SaveButton = ({ ...uiProps }) => {
-  const { handleSubmit, isSubmitting, setValues } = useFormikContext();
+  const { handleSubmit, isSubmitting, setValues, values } = useFormikContext();
   const { updateConfig } = useSubmitConfig();
 
   // two functions passed to submitSuccess. One function to manage validation errors that come
@@ -22,11 +22,15 @@ export const SaveButton = ({ ...uiProps }) => {
     context: submitContextType.save,
     onSubmitSuccess: [
       (result, formik) => {
-        if (!result.id) {
+        if (!values.id) {
+          window.history.replaceState(
+            undefined,
+            "",
+            new URL(result.links.self_html).pathname
+          );
           setValues(result);
         }
       },
-
       (result, formik) => {
         if (result.errors) {
           result.errors?.forEach((err) =>
