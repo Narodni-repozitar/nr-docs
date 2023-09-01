@@ -45,7 +45,6 @@ def init_addons_nr_documents_requests(state):
 
     from nr_documents import config as config
 
-
     for rt in getattr(config, "REQUESTS_REGISTERED_TYPES", []):
         requests.request_type_registry.register_type(rt)
 

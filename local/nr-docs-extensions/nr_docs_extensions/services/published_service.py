@@ -17,7 +17,6 @@ def get_published_service():
     components = config.components
     for idx, component in enumerate(components):
         if isinstance(component, partial) and component.func == PublishDraftComponentPrivate:
-            components.insert(idx, OAICreateRequestsComponent("delete_record"))
             components.remove(component)
             break
 

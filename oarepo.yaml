@@ -32,7 +32,6 @@ local:
     local_dir: local/oarepo-vocabularies
     sites:
     - nr-docs
-    - nr-docs
 models:
   nr-documents:
     author_email: miroslav.simek@techlib.cz

@@ -1,15 +1,16 @@
 import marshmallow as ma
+from invenio_drafts_resources.services.records.schema import (
+    ParentSchema as InvenioParentSchema,
+)
 from nr_metadata.documents.services.records.ui_schema import (
     NRDocumentMetadataUISchema,
     NRDocumentRecordUISchema,
 )
+from oarepo_requests.schemas.marshmallow import NoneReceiverGenericRequestSchema
 from oarepo_runtime.ui.marshmallow import InvenioUISchema
 
-from invenio_drafts_resources.services.records.schema import (
-    ParentSchema as InvenioParentSchema,
-)
+from nr_documents.services.records.schema import GeneratedParentSchema
 
-from oarepo_requests.schemas.marshmallow import NoneReceiverGenericRequestSchema
 
 class GeneratedParentSchema(InvenioParentSchema):
     """"""
@@ -75,3 +76,7 @@ class NrDocumentsUISchema(NRDocumentRecordUISchema, InvenioUISchema):
 class NrDocumentsMetadataUISchema(NRDocumentMetadataUISchema):
     class Meta:
         unknown = ma.RAISE
+
+
+class NrDocumentsDraftUISchema(InvenioUISchema):
+    parent = ma.fields.Nested(GeneratedParentSchema)

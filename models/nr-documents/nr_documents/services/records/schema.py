@@ -1,15 +1,14 @@
 import marshmallow as ma
+from invenio_drafts_resources.services.records.schema import (
+    ParentSchema as InvenioParentSchema,
+)
 from nr_metadata.documents.services.records.schema import (
     NRDocumentMetadataSchema,
     NRDocumentRecordSchema,
 )
+from oarepo_requests.schemas.marshmallow import NoneReceiverGenericRequestSchema
 from oarepo_runtime.marshmallow import BaseRecordSchema
 
-from invenio_drafts_resources.services.records.schema import (
-    ParentSchema as InvenioParentSchema,
-)
-
-from oarepo_requests.schemas.marshmallow import NoneReceiverGenericRequestSchema
 
 class GeneratedParentSchema(InvenioParentSchema):
     """"""

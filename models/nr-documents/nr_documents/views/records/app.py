@@ -38,12 +38,12 @@ def init_create_app_blueprint(state):
             indexer_id=ext.service_records.config.service_id,
         )
 
+
 def init_addons_nr_documents_requests(state):
     app = state.app
     requests = app.extensions["invenio-requests"]
 
     from nr_documents import config as config
-
 
     for rt in getattr(config, "REQUESTS_REGISTERED_TYPES", []):
         requests.request_type_registry.register_type(rt)
