@@ -6,6 +6,7 @@ import {
   ErrorElement,
   SearchAppFacets,
   SearchAppLayout,
+  SearchAppResults,
   SearchAppResultOptions,
   SearchAppSearchbarContainer,
   SearchFiltersToggleElement,
@@ -15,8 +16,7 @@ import {
   EmptyResultsElement,
   MultipleSearchBarElement,
   ResultsGridItemWithState,
-  ResultsListItemWithState,
-  SearchAppResults
+  ResultsListItemWithState
 } from './components'
 import { parametrize } from 'react-overridable'
 

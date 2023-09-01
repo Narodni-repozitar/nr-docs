@@ -44,6 +44,9 @@
             "../../less": [
                 "./local/oarepo-vocabularies/oarepo_vocabularies/ui/theme/assets/semantic-ui/less"
             ],
+            "@less/oarepo_ui": [
+                "./local/oarepo-ui/oarepo_ui/theme/assets/semantic-ui/less/oarepo_ui"
+            ],
             "@js/oarepo_ui": [
                 "./local/oarepo-ui/oarepo_ui/theme/assets/semantic-ui/js/oarepo_ui"
             ],
