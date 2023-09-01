@@ -1,8 +1,0 @@
-[run]
-branch = True
-
-source = oarepo_vocacbularies
-omit = tests
-
-[report]
-skip_covered = True
