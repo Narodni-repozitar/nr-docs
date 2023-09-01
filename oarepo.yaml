@@ -14,6 +14,12 @@ local:
     local_dir: local/nr-docs-extensions
     sites:
     - nr-docs
+  oarepo-oai-pmh-harvester:
+    branch: null
+    github_clone_url: https://github.com/oarepo/oarepo-oai-pmh-harvester.git
+    local_dir: local/oarepo-oai-pmh-harvester
+    sites:
+    - nr-docs
   oarepo-published-service:
     branch: setup
     github_clone_url: git@github.com:oarepo/oarepo-published-service.git
@@ -21,15 +27,23 @@ local:
     sites:
     - nr-docs
   oarepo-ui:
-    branch: move-count-compoment
+    branch: null
     github_clone_url: https://github.com/oarepo/oarepo-ui.git
     local_dir: local/oarepo-ui
     sites:
     - nr-docs
   oarepo-vocabularies:
-    branch: create-edit-form
+    branch: null
     github_clone_url: https://github.com/oarepo/oarepo-vocabularies.git
     local_dir: local/oarepo-vocabularies
+    sites:
+    - nr-docs
+    - nr-docs
+    - nr-docs
+  oarepo-vocacbularies:
+    branch: null
+    github_clone_url: null
+    local_dir: local/oarepo-vocacbularies
     sites:
     - nr-docs
 models:
@@ -48,7 +62,7 @@ models:
     - nr-docs
     update_opensearch: run
     use_custom_fields: 'yes'
-    use_drafts: 'no'
+    use_drafts: 'yes'
     use_expandable_fields: 'no'
     use_files: 'no'
     use_relations: 'yes'

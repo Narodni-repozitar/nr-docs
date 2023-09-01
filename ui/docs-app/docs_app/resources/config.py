@@ -1,5 +1,5 @@
 from oarepo_ui.resources.config import RecordsUIResourceConfig
-from oarepo_ui.resources import BabelComponent
+from oarepo_ui.resources import BabelComponent, PermissionsComponent
 from oarepo_vocabularies.ui.resources.components import DepositVocabularyOptionsComponent
 from oarepo_requests.components.requests import AllowedRequestsComponent
 
@@ -13,7 +13,14 @@ class DocsAppResourceConfig(RecordsUIResourceConfig):
     )
     api_service = "nr_documents"
     layout = "nr_documents"
-    components = [BabelComponent, DepositVocabularyOptionsComponent, AllowedRequestsComponent]
+    
+    components = [
+        BabelComponent,
+        DepositVocabularyOptionsComponent,
+        PermissionsComponent,
+        AllowedRequestsComponent
+    ]
+
 
     templates = {
         "detail": {

@@ -1,8 +1,9 @@
 from invenio_drafts_resources.services import (
     RecordServiceConfig as InvenioRecordDraftsServiceConfig,
 )
-from invenio_drafts_resources.services.records.config import is_record, is_draft
-from invenio_records_resources.services import ConditionalLink, RecordLink, pagination_links
+
+from invenio_records_resources.services import pagination_links
+from invenio_records_resources.services import RecordLink, ConditionalLink
 from invenio_records_resources.services.records.components import DataComponent
 from oarepo_requests.components.requests import PublishDraftComponent
 from oarepo_runtime.config.service import PermissionsPresetsConfigMixin
@@ -11,6 +12,16 @@ from nr_documents.records.api import NrDocumentsDraft, NrDocumentsRecord
 from nr_documents.services.records.permissions import NrDocumentsPermissionPolicy
 from nr_documents.services.records.schema import NrDocumentsSchema
 from nr_documents.services.records.search import NrDocumentsSearchOptions
+
+
+def is_draft(record, ctx):
+    """Shortcut for links to determine if record is a draft."""
+    return record.is_draft
+
+
+def is_record(record, ctx):
+    """Shortcut for links to determine if record is a record."""
+    return not record.is_draft
 
 
 class NrDocumentsServiceConfig(
