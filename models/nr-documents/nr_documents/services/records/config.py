@@ -1,8 +1,8 @@
 from invenio_drafts_resources.services import (
     RecordServiceConfig as InvenioRecordDraftsServiceConfig,
 )
-from invenio_drafts_resources.services.records.config import is_record
-from invenio_records_resources.services import ConditionalLink, RecordLink
+from invenio_drafts_resources.services.records.config import is_record, is_draft
+from invenio_records_resources.services import ConditionalLink, RecordLink, pagination_links
 from invenio_records_resources.services.records.components import DataComponent
 from oarepo_requests.components.requests import PublishDraftComponent
 from oarepo_runtime.config.service import PermissionsPresetsConfigMixin
@@ -45,20 +45,26 @@ class NrDocumentsServiceConfig(
     @property
     def links_item(self):
         return {
-            "draft": RecordLink("{+api}/{self.url_prefix}{id}/draft"),
-            "latest": RecordLink("{+api}/{self.url_prefix}{id}/versions/latest"),
-            "latest_html": RecordLink("{+ui}/{self.url_prefix}{id}/latest"),
-            "publish": RecordLink("{+api}/{self.url_prefix}{id}/draft/actions/publish"),
-            "record": RecordLink("{+api}/{self.url_prefix}{id}"),
             "self": ConditionalLink(
                 cond=is_record,
-                if_=RecordLink("{+api}{self.url_prefix}{id}"),
-                else_=RecordLink("{+api}{self.url_prefix}{id}/draft"),
+                if_=RecordLink("{+api}/nr-documents/{id}"),
+                else_=RecordLink("{+api}/nr-documents/{id}/draft"),
             ),
             "self_html": ConditionalLink(
                 cond=is_record,
-                if_=RecordLink("{+ui}{self.url_prefix}{id}"),
-                else_=RecordLink("{+ui}/uploads/{id}"),
+                if_=RecordLink("{+ui}/docs/{id}"),
+                else_=RecordLink("{+ui}/docs/{id}/edit"),
             ),
-            "versions": RecordLink("{+api}/{self.url_prefix}{id}/versions"),
+            "latest": RecordLink("{+api}/nr-documents/{id}/versions/latest"),
+            # TODO: "latest_html": RecordLink("{+ui}/docs/{id}/latest"),
+            "draft": RecordLink("{+api}/nr-documents/{id}/draft", when=is_record),
+            "record": RecordLink("{+api}/nr-documents/{id}", when=is_draft),
+            "publish": RecordLink(
+                "{+api}/nr-documents/{id}/draft/actions/publish", when=is_draft
+            ),
+            "versions": RecordLink("{+api}/nr-documents/{id}/versions"),
         }
+
+    @property
+    def links_search(self):
+        return pagination_links("{self.url_prefix}{?args*}")
