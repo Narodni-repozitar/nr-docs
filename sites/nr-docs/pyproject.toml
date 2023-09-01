@@ -2,6 +2,7 @@
 name = "nr-docs-repository"
 version = "1.0.0"
 description = ""
+packages = []
 authors = [
     { name = "Miroslav Simek", email = "miroslav.simek@techlib.cz" },
 ]
@@ -10,7 +11,6 @@ dependencies = [
     "nr-documents @ file:///${PROJECT_ROOT}/../../models/nr-documents",
     "docs-app @ file:///${PROJECT_ROOT}/../../ui/docs-app",
     "nr-docs-extensions @ file:///${PROJECT_ROOT}/../../local/nr-docs-extensions",
-    "oarepo-published-service @ file:///${PROJECT_ROOT}/../../local/oarepo-published-service",
     "site @ file:///${PROJECT_ROOT}/site",
 ]
 requires-python = ">=3.9,<3.11"
