@@ -8,20 +8,29 @@ export const PublishButton = ({ ...uiProps }) => {
   const { handleSubmit, isSubmitting } = useFormikContext();
   const { updateConfig } = useSubmitConfig();
 
+  const draftSaveSubmitConfig = {
+    context: submitContextType.publish,
+    onSubmitSuccess: [
+      (result, formik) => {
+        window.location.href = result.links.self_html;
+      },
+    ],
+  };
+
   return (
     <Button
       name="publish"
       disabled={isSubmitting}
       loading={isSubmitting}
       color="green"
-      onClick={(e) => {
-        updateConfig(submitContextType.publish);
-        handleSubmit(e);
+      onClick={async () => {
+        await updateConfig(draftSaveSubmitConfig);
+        handleSubmit();
       }}
       icon="save"
       labelPosition="left"
       content={i18next.t("Publish")}
-      type="button"
+      type="submit"
       {...uiProps}
     />
   );

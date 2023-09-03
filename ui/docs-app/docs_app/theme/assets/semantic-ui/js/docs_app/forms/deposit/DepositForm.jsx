@@ -6,7 +6,7 @@ import {
   I18nTextInputField,
   BaseForm,
   useSubmitConfig,
-  removeNullAndInternalFields,
+  submitContextType,
 } from "@js/oarepo_ui";
 import { AccordionField, FieldLabel, TextField } from "react-invenio-forms";
 import { Container, Grid, Ref, Sticky, Form, Card } from "semantic-ui-react";
@@ -28,6 +28,7 @@ import {
   SaveButton,
   DeleteButton,
   PublishButton,
+  FormFeedback,
 } from "../components/";
 import Overridable from "react-overridable";
 import { i18next } from "@translations/docs_app/i18next";
@@ -60,6 +61,10 @@ export const DepositForm = () => {
 
   const { onSubmit, submitError } = useOnSubmit(submitConfig);
   const sidebarRef = useRef(null);
+  const validationSchema =
+    submitConfig.context === submitContextType.publish
+      ? NRDocumentValidationSchema
+      : undefined;
 
   return (
     <Container>
@@ -67,7 +72,7 @@ export const DepositForm = () => {
         onSubmit={onSubmit}
         formik={{
           initialValues: record,
-          // validationSchema: NRDocumentValidationSchema,
+          validationSchema: validationSchema,
           validateOnChange: false,
           validateOnBlur: false,
           enableReinitialize: true,
@@ -75,6 +80,9 @@ export const DepositForm = () => {
       >
         <Grid>
           <Grid.Column mobile={16} tablet={16} computer={11}>
+            <Overridable id="NrDocs.Deposit.FormFeedback.container">
+              <FormFeedback />
+            </Overridable>
             <Overridable id="NrDocs.Deposit.AccordionFieldFiles.container">
               <AccordionField
                 includesPaths={["files.enabled"]}
@@ -89,6 +97,7 @@ export const DepositForm = () => {
                   "metadata.title",
                   "metadata.additionalTitles",
                   "metadata.dateModified",
+                  "metadata.dateAvailable",
                   "metadata.publicationDate",
                   "metadata.abstract",
                   "metadata.rights",
