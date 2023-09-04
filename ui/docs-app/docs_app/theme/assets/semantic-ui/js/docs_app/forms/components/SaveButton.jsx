@@ -3,9 +3,14 @@ import { Button } from "semantic-ui-react";
 import { i18next } from "@translations/docs_app/i18next";
 import { useFormikContext } from "formik";
 import { useSubmitConfig, submitContextType } from "@js/oarepo_ui";
+import {useSubmitSupport} from "@js/oarepo_ui"
+
+
+
 
 export const SaveButton = ({ ...uiProps }) => {
-  const { handleSubmit, isSubmitting, setValues, values } = useFormikContext();
+  // const { handleSubmit, isSubmitting, setValues, values } = useFormikContext();
+  const {submit, isSubmitting, setValues, values} = useSaveSupport(useFormikContext(), submitContextType.save)
   const { updateConfig } = useSubmitConfig();
 
   // two functions passed to submitSuccess. One function to manage validation errors that come
@@ -50,6 +55,7 @@ export const SaveButton = ({ ...uiProps }) => {
       disabled={isSubmitting}
       loading={isSubmitting}
       color="grey"
+      onclick={submit({context: submitContextType.save, ...})}
       onClick={async () => {
         await updateConfig(draftSaveSubmitConfig);
         handleSubmit();
