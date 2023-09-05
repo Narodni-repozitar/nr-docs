@@ -25,6 +25,7 @@ import {
   IdentifiersField,
   PreviewButton,
   SaveButton,
+  CreatibutorsField
 } from "../components/";
 import Overridable from "react-overridable";
 import { i18next } from "@translations/docs_app/i18next";
@@ -186,13 +187,6 @@ export const DepositForm = () => {
       >
         <Grid>
           <Grid.Column mobile={16} tablet={16} computer={11}>
-            <Overridable id="NrDocs.Deposit.AccordionFieldFiles.container">
-              <AccordionField
-                includesPaths={["files.enabled"]}
-                active
-                label={i18next.t("Files")}
-              ></AccordionField>
-            </Overridable>
             <Overridable id="NrDocs.Deposit.AccordionFieldBasicInformation.container">
               <AccordionField
                 includesPaths={[
@@ -201,6 +195,7 @@ export const DepositForm = () => {
                   "metadata.additionalTitles",
                   "metadata.dateModified",
                   "metadata.publicationDate",
+                  "metadata.creators",
                   "metadata.abstract",
                   "metadata.rights",
                   "metadata.languages",
@@ -327,7 +322,17 @@ export const DepositForm = () => {
                 <Overridable
                   id="NrDocs.Deposit.CreatorsField.container"
                   fieldPath="metadata.creators"
-                ></Overridable>
+                >
+                  <CreatibutorsField
+                    label={i18next.t("Creators")}
+                    labelIcon="user"
+                    fieldPath="metadata.creators"
+                    roleOptions={[]}
+                    schema="creators"
+                    autocompleteNames="off"
+                    required
+                  />
+                </Overridable>
                 <Overridable
                   id="NrDocs.Deposit.AbstractField.container"
                   fieldPath="metadata.abstract"
