@@ -1,15 +1,16 @@
 import React from "react";
 import { Button } from "semantic-ui-react";
 import { i18next } from "@translations/docs_app/i18next";
+import { submitContextType, useSubmitConfig } from "@js/oarepo_ui";
 import { useFormikContext } from "formik";
-import { useSubmitConfig, submitContextType } from "@js/oarepo_ui";
-import { useSubmitSupport } from "@js/oarepo_ui";
 
 export const SaveButton = ({ ...uiProps }) => {
-  // const { handleSubmit, isSubmitting, setValues, values } = useFormikContext();
-  const { submit, isSubmitting, setValues, values } = useSubmitSupport(
-    submitContextType.save
-  );
+  const { isSubmitting, handleSubmit } = useFormikContext();
+  const { updateConfig } = useSubmitConfig();
+  const handleSave = () => {
+    updateConfig(submitContextType.save);
+    setTimeout(handleSubmit, 0);
+  };
 
   // two functions passed to submitSuccess. One function to manage validation errors that come
   // in the response body. Other one is used to update the record in formik's state with drafts PID
@@ -26,7 +27,7 @@ export const SaveButton = ({ ...uiProps }) => {
       loading={isSubmitting}
       color="grey"
       // onclick={submit({context: submitContextType.save, ...})}
-      onClick={() => submit()()}
+      onClick={() => handleSave()}
       icon="save"
       labelPosition="left"
       content={i18next.t("Save")}

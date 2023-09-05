@@ -2,13 +2,14 @@ import React from "react";
 import { Message } from "semantic-ui-react";
 import { useFormikContext, getIn } from "formik";
 import _isEmpty from "lodash/isEmpty";
+import PropTypes from "prop-types";
 
-export const FormFeedback = () => {
+export const FormFeedback = ({ submitError }) => {
   const { values } = useFormikContext();
   const validationErrors = getIn(values, "validationErrors", {});
   const hasValidationErrors = !_isEmpty(validationErrors);
-  return (
-    hasValidationErrors && (
+  if (hasValidationErrors)
+    return (
       <Message>
         <Message.Header>{validationErrors?.errorMessage}</Message.Header>
         <Message.List>
@@ -19,6 +20,16 @@ export const FormFeedback = () => {
           ))}
         </Message.List>
       </Message>
-    )
-  );
+    );
+  if (submitError)
+    return (
+      <Message>
+        <Message.Header>{submitError?.errorMessage}</Message.Header>
+      </Message>
+    );
+  return null;
+};
+
+FormFeedback.propTypes = {
+  submitError: PropTypes.object,
 };

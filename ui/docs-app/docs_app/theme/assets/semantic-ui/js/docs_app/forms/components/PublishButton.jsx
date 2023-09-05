@@ -5,16 +5,11 @@ import { useFormikContext } from "formik";
 import { useSubmitConfig, submitContextType } from "@js/oarepo_ui";
 
 export const PublishButton = ({ ...uiProps }) => {
-  const { handleSubmit, isSubmitting } = useFormikContext();
+  const { isSubmitting, handleSubmit } = useFormikContext();
   const { updateConfig } = useSubmitConfig();
-
-  const draftSaveSubmitConfig = {
-    context: submitContextType.publish,
-    onSubmitSuccess: [
-      (result, formik) => {
-        window.location.href = result.links.self_html;
-      },
-    ],
+  const handlePublish = () => {
+    updateConfig(submitContextType.publish);
+    setTimeout(handleSubmit, 0);
   };
 
   return (
@@ -23,10 +18,7 @@ export const PublishButton = ({ ...uiProps }) => {
       disabled={isSubmitting}
       loading={isSubmitting}
       color="green"
-      onClick={async () => {
-        await updateConfig(draftSaveSubmitConfig);
-        handleSubmit();
-      }}
+      onClick={() => handlePublish()}
       icon="save"
       labelPosition="left"
       content={i18next.t("Publish")}

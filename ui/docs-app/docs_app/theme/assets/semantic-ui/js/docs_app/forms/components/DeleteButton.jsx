@@ -5,34 +5,27 @@ import { useFormikContext } from "formik";
 import { useSubmitConfig, submitContextType } from "@js/oarepo_ui";
 
 export const DeleteButton = ({ ...uiProps }) => {
-  const { handleSubmit, isSubmitting } = useFormikContext();
+  const { isSubmitting, values, handleSubmit } = useFormikContext();
   const { updateConfig } = useSubmitConfig();
-
-  const draftSaveSubmitConfig = {
-    context: submitContextType.delete,
-    onSubmitSuccess: [
-      (result, formik) => {
-        //  TODO: should redirect to /me page but we don't have that one yet
-        window.location.href = "/docs/";
-      },
-    ],
+  const handleDelete = () => {
+    updateConfig(submitContextType.delete);
+    setTimeout(handleSubmit, 0);
   };
 
   return (
-    <Button
-      name="preview"
-      disabled={isSubmitting}
-      loading={isSubmitting}
-      color="red"
-      onClick={async () => {
-        await updateConfig(draftSaveSubmitConfig);
-        handleSubmit();
-      }}
-      icon="delete"
-      labelPosition="left"
-      content={i18next.t("Delete")}
-      type="button"
-      {...uiProps}
-    />
+    values.id && (
+      <Button
+        name="preview"
+        disabled={isSubmitting}
+        loading={isSubmitting}
+        color="red"
+        onClick={() => handleDelete()}
+        icon="delete"
+        labelPosition="left"
+        content={i18next.t("Delete")}
+        type="button"
+        {...uiProps}
+      />
+    )
   );
 };

@@ -7,6 +7,7 @@ import {
   BaseForm,
   useSubmitConfig,
   submitContextType,
+  removeNullAndInternalFields,
 } from "@js/oarepo_ui";
 import { AccordionField, FieldLabel, TextField } from "react-invenio-forms";
 import { Container, Grid, Ref, Sticky, Form, Card } from "semantic-ui-react";
@@ -58,21 +59,38 @@ export const DepositForm = () => {
   console.log(formConfig, record);
 
   const editMode = _has(formConfig, "updateUrl");
-
-  const { onSubmit, submitError } = useOnSubmit(submitConfig);
+  const { submitConfig: actionName } = useSubmitConfig();
+  const { onSubmit, submitError } = useOnSubmit({
+    actionName: actionName,
+    onBeforeSubmit: [
+      removeNullAndInternalFields(["errors", "validationErrors"], ["__key"]),
+    ],
+    // TODO: handle various errors (talking about 400/500 status codes)
+    onSubmitError: (error, formik) => {
+      if (
+        error &&
+        error.status === 400 &&
+        error.message === "A validation error occurred."
+      ) {
+        error.errors?.forEach((err) =>
+          formik.setFieldError(err.field, err.messages.join(" "))
+        );
+      }
+    },
+  });
   const sidebarRef = useRef(null);
   const validationSchema =
-    submitConfig.context === submitContextType.publish
+    submitConfig === submitContextType.publish
       ? NRDocumentValidationSchema
       : undefined;
-
+  console.log("submit error is ", submitError);
   return (
     <Container>
       <BaseForm
         onSubmit={onSubmit}
         formik={{
           initialValues: record,
-          validationSchema: validationSchema,
+          validationSchema: undefined,
           validateOnChange: false,
           validateOnBlur: false,
           enableReinitialize: true,
@@ -81,7 +99,7 @@ export const DepositForm = () => {
         <Grid>
           <Grid.Column mobile={16} tablet={16} computer={11}>
             <Overridable id="NrDocs.Deposit.FormFeedback.container">
-              <FormFeedback />
+              <FormFeedback submitError={submitError} />
             </Overridable>
             <Overridable id="NrDocs.Deposit.AccordionFieldFiles.container">
               <AccordionField
