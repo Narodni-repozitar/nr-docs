@@ -9,7 +9,7 @@ from oarepo_requests.components import PublishDraftComponent, OAICreateRequestsC
 from oarepo_requests.components.requests import PublishDraftComponentPrivate
 from functools import partial
 
-
+# todo: do this better, edit this on the lvel of published service config
 class NrDocumentsPublishedServiceConfig(NrDocumentsServiceConfig):
     components = copy.deepcopy(NrDocumentsServiceConfig.components)
 def get_published_service():
