@@ -5,7 +5,7 @@ import {
   MultilingualTextInput,
   I18nTextInputField,
   BaseForm,
-  useSubmitConfig,
+  useActionName,
   submitContextType,
   removeNullAndInternalFields,
 } from "@js/oarepo_ui";
@@ -54,12 +54,11 @@ const systemIdentifiersSchema = [
 ];
 
 export const DepositForm = () => {
-  const { submitConfig } = useSubmitConfig();
+  const { actionName } = useActionName();
   const { record, formConfig } = useFormConfig();
   console.log(formConfig, record);
 
   const editMode = _has(formConfig, "updateUrl");
-  const { submitConfig: actionName } = useSubmitConfig();
   const { onSubmit, submitError } = useOnSubmit({
     actionName: actionName,
     onBeforeSubmit: [
@@ -79,11 +78,10 @@ export const DepositForm = () => {
     },
   });
   const sidebarRef = useRef(null);
-  const validationSchema =
-    submitConfig === submitContextType.publish
-      ? NRDocumentValidationSchema
-      : undefined;
-  console.log("submit error is ", submitError);
+  // const validationSchema =
+  //   actionName === submitContextType.publish
+  //     ? NRDocumentValidationSchema
+  //     : undefined;
   return (
     <Container>
       <BaseForm

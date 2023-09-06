@@ -1,16 +1,10 @@
 import React from "react";
 import { Button } from "semantic-ui-react";
 import { i18next } from "@translations/docs_app/i18next";
-import { submitContextType, useSubmitConfig } from "@js/oarepo_ui";
-import { useFormikContext } from "formik";
+import { submitContextType, useSubmitSupport } from "@js/oarepo_ui";
 
 export const SaveButton = ({ ...uiProps }) => {
-  const { isSubmitting, handleSubmit } = useFormikContext();
-  const { updateConfig } = useSubmitConfig();
-  const handleSave = () => {
-    updateConfig(submitContextType.save);
-    setTimeout(handleSubmit, 0);
-  };
+  const { isSubmitting, submit } = useSubmitSupport(submitContextType.save);
 
   return (
     <Button
@@ -19,7 +13,7 @@ export const SaveButton = ({ ...uiProps }) => {
       loading={isSubmitting}
       color="grey"
       // onclick={submit({context: submitContextType.save, ...})}
-      onClick={() => handleSave()}
+      onClick={() => submit()}
       icon="save"
       labelPosition="left"
       content={i18next.t("Save")}

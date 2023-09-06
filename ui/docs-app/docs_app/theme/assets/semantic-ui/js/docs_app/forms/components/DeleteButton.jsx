@@ -1,16 +1,12 @@
 import React from "react";
 import { Button } from "semantic-ui-react";
 import { i18next } from "@translations/docs_app/i18next";
-import { useFormikContext } from "formik";
-import { useSubmitConfig, submitContextType } from "@js/oarepo_ui";
+import { submitContextType, useSubmitSupport } from "@js/oarepo_ui";
 
 export const DeleteButton = ({ ...uiProps }) => {
-  const { isSubmitting, values, handleSubmit } = useFormikContext();
-  const { updateConfig } = useSubmitConfig();
-  const handleDelete = () => {
-    updateConfig(submitContextType.delete);
-    setTimeout(handleSubmit, 0);
-  };
+  const { isSubmitting, submit, values } = useSubmitSupport(
+    submitContextType.delete
+  );
 
   return (
     values.id && (
@@ -19,7 +15,7 @@ export const DeleteButton = ({ ...uiProps }) => {
         disabled={isSubmitting}
         loading={isSubmitting}
         color="red"
-        onClick={() => handleDelete()}
+        onClick={() => submit()}
         icon="delete"
         labelPosition="left"
         content={i18next.t("Delete")}
