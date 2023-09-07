@@ -2,36 +2,42 @@ import React from "react";
 import { Message } from "semantic-ui-react";
 import { useFormikContext, getIn } from "formik";
 import _isEmpty from "lodash/isEmpty";
-import PropTypes from "prop-types";
+import _startCase from "lodash/startCase";
 
-export const FormFeedback = ({ submitError }) => {
-  // plug into httpErrors in formik too. Make a function that can parse out fieldPath
-  //  (i.e. take metadata.resourceType and produce) Resource type
+// function to turn last part of fieldPath from form camelCase to Camel Case
+
+const titleCase = (fieldPath) =>
+  _startCase(fieldPath.split(".")[fieldPath.split(".").length - 1]);
+
+export const FormFeedback = () => {
   const { values } = useFormikContext();
   const validationErrors = getIn(values, "validationErrors", {});
-  const hasValidationErrors = !_isEmpty(validationErrors);
-  if (hasValidationErrors)
+  const httpError = getIn(values, "httpErrors", "");
+  const successMessage = getIn(values, "successMessage", "");
+  if (!_isEmpty(validationErrors))
     return (
-      <Message>
+      <Message negative color="orange">
         <Message.Header>{validationErrors?.errorMessage}</Message.Header>
         <Message.List>
           {validationErrors?.errors?.map((error, index) => (
-            <Message.Item
-              key={index}
-            >{`${error.field}:${error.messages[0]}`}</Message.Item>
+            <Message.Item key={index}>{`${titleCase(error.field)}:${
+              error.messages[0]
+            }`}</Message.Item>
           ))}
         </Message.List>
       </Message>
     );
-  if (submitError)
+  if (httpError)
     return (
-      <Message>
-        <Message.Header>{submitError?.errorMessage}</Message.Header>
+      <Message negative color="orange">
+        <Message.Header>{httpError}</Message.Header>
+      </Message>
+    );
+  if (successMessage)
+    return (
+      <Message positive color="green">
+        <Message.Header>{successMessage}</Message.Header>
       </Message>
     );
   return null;
-};
-
-FormFeedback.propTypes = {
-  submitError: PropTypes.object,
 };
