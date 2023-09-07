@@ -20,6 +20,12 @@ local:
     - nr-docs
     - nr-docs
     - nr-docs
+  oarepo-ui:
+    branch: null
+    github_clone_url: https://github.com/oarepo/oarepo-ui.git
+    local_dir: local/oarepo-ui
+    sites:
+    - nr-docs
   oarepo-vocabularies:
     branch: null
     github_clone_url: https://github.com/oarepo/oarepo-vocabularies.git
@@ -28,6 +34,11 @@ local:
     - nr-docs
     - nr-docs
     - nr-docs
+  oarepo-vocacbularies:
+    branch: null
+    github_clone_url: null
+    local_dir: local/oarepo-vocacbularies
+    sites:
     - nr-docs
 models:
   nr-documents:

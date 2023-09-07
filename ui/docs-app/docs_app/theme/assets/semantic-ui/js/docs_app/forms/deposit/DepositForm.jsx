@@ -79,7 +79,7 @@ export const DepositForm = () => {
   return (
     <Container>
       <BaseForm
-        // onSubmit={onSubmit}
+        onSubmit={() => {}}
         formik={{
           initialValues: record,
           validationSchema: NRDocumentValidationSchema,
@@ -92,7 +92,7 @@ export const DepositForm = () => {
           <Grid>
             <Grid.Column mobile={16} tablet={16} computer={11}>
               <Overridable id="NrDocs.Deposit.FormFeedback.container">
-                <FormFeedback submitError={submitError} />
+                <FormFeedback />
               </Overridable>
               <Overridable id="NrDocs.Deposit.AccordionFieldFiles.container">
                 <AccordionField
