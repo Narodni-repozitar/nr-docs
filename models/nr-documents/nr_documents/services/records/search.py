@@ -1,11 +1,13 @@
 from flask_babelex import lazy_gettext as _
 from invenio_records_resources.services import SearchOptions as InvenioSearchOptions
-from invenio_records_resources.services.records.params import PaginationParam, QueryStrParam, \
-    SortParam
+from invenio_records_resources.services.records.params import (
+    PaginationParam,
+    QueryStrParam,
+    SortParam,
+)
 from oarepo_runtime.facets.params import FilteredFacetsParam
 
 from . import facets
-
 
 
 class NrDocumentsSearchOptions(InvenioSearchOptions):

@@ -1,0 +1,30 @@
+{#def metadata, url_prefix #}
+{% set metadata_dict = metadata | to_dict %}
+{% set creators = metadata_dict['creators'] %}
+{% set contributors = metadata_dict['contributors'] %}
+
+<div class="ui double separated">
+   <div role="list" class="ui horizontal separated creatibutors list">
+
+            {% for person in creators %}
+                <Person person={person} url_prefix={url_prefix} searchFacet="metadata_creators_fullName"></Person>
+            {% endfor %}
+    </div>
+     {% if contributors %}
+        <div class="double separator"></div>
+            <div role="list" class="ui horizontal separated creatibutors list">
+
+                {% for fullName, matches in contributors | groupby('fullName') %}
+                  {% set roles= matches |  map(attribute='role') | select('defined') | list %}
+                  <Person person={matches[0]} url_prefix={url_prefix} searchFacet="metadata_contributors_fullName" roles ={roles}></Person>
+
+                {% endfor %}
+            </div>
+        {% endif %}
+
+ </div>
+
+
+
+
+

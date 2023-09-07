@@ -2,7 +2,7 @@
 
 set -e
 
-PYTHON="${PYTHON:-python3}"
+PYTHON="${PYTHON:-python3.9}"
 
 cli_directory=$(dirname "$0")/.venv/nrp
 
