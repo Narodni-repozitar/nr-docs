@@ -16,4 +16,3 @@ export { SaveButton } from "./SaveButton";
 export { DeleteButtonComponent } from "./DeleteButton";
 export { PublishButtonComponent } from "./PublishButton";
 export { FormFeedback } from "./FormFeedback";
-export { ConfirmationModal } from "./ConfirmationModal";

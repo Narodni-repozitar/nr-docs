@@ -5,10 +5,10 @@ import _isEmpty from "lodash/isEmpty";
 import _startCase from "lodash/startCase";
 
 // function to turn last part of fieldPath from form camelCase to Camel Case
-
 const titleCase = (fieldPath) =>
   _startCase(fieldPath.split(".")[fieldPath.split(".").length - 1]);
-
+// TODO: fix broken margins on the error message. Also potentially make Error dismissible, as
+// it could be annoying for the user
 export const FormFeedback = () => {
   const { values } = useFormikContext();
   const validationErrors = getIn(values, "validationErrors", {});
@@ -16,7 +16,7 @@ export const FormFeedback = () => {
   const successMessage = getIn(values, "successMessage", "");
   if (!_isEmpty(validationErrors))
     return (
-      <Message negative color="orange">
+      <Message className="rel-mb-5" negative color="orange">
         <Message.Header>{validationErrors?.errorMessage}</Message.Header>
         <Message.List>
           {validationErrors?.errors?.map((error, index) => (

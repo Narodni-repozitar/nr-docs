@@ -93,9 +93,13 @@ export const DepositForm = () => {
           <Grid>
             <Ref innerRef={formFeedbackRef}>
               <Grid.Column mobile={16} tablet={16} computer={11}>
-                <Sticky context={formFeedbackRef} offset={20}>
+                <Sticky
+                  className="rel-mt-0"
+                  context={formFeedbackRef}
+                  offset={20}
+                >
                   <Overridable id="NrDocs.Deposit.FormFeedback.container">
-                    <FormFeedback />
+                    <FormFeedback className="rel-mb-1" />
                   </Overridable>
                 </Sticky>
                 <Overridable id="NrDocs.Deposit.AccordionFieldFiles.container">

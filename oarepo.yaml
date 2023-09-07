@@ -18,14 +18,6 @@ local:
     local_dir: local/oarepo-ui
     sites:
     - nr-docs
-    - nr-docs
-    - nr-docs
-  oarepo-ui:
-    branch: null
-    github_clone_url: https://github.com/oarepo/oarepo-ui.git
-    local_dir: local/oarepo-ui
-    sites:
-    - nr-docs
   oarepo-vocabularies:
     branch: null
     github_clone_url: https://github.com/oarepo/oarepo-vocabularies.git
