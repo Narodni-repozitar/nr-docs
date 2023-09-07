@@ -1,18 +1,18 @@
 import React from "react";
 import { Button } from "semantic-ui-react";
 import { i18next } from "@translations/docs_app/i18next";
-import { submitContextType, useSubmitSupport } from "@js/oarepo_ui";
+import { useApiClient } from "@js/oarepo_ui";
 
 export const PublishButton = ({ ...uiProps }) => {
-  const { isSubmitting, submit } = useSubmitSupport(submitContextType.publish);
+  const apiClient = useApiClient();
   return (
     <Button
       name="publish"
-      disabled={isSubmitting}
-      loading={isSubmitting}
+      disabled={apiClient.isSubmitting}
+      loading={apiClient.isSubmitting}
       color="green"
-      onClick={() => submit()}
-      icon="save"
+      onClick={() => apiClient.publish()}
+      icon="upload"
       labelPosition="left"
       content={i18next.t("Publish")}
       type="submit"

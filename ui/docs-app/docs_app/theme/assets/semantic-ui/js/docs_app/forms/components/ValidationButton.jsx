@@ -13,7 +13,7 @@ export const ValidateButton = () => {
         loading={isSubmitting}
         color="green"
         onClick={() => validateForm()}
-        icon="upload"
+        icon="check"
         labelPosition="left"
         content={i18next.t("Validate form")}
         type="button"

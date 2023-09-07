@@ -3,8 +3,7 @@ import PropTypes from "prop-types";
 import { Button, Form, Icon } from "semantic-ui-react";
 import { ArrayField, SelectField, GroupField } from "react-invenio-forms";
 import { i18next } from "@translations/docs_app/i18next";
-import { I18nTextInputField } from "@js/oarepo_ui";
-import { useHighlightState } from "../hooks";
+import { I18nTextInputField, useHighlightState } from "@js/oarepo_ui";
 
 const subtitleTypes = [
   { text: "Alternative title", value: "alternativeTitle" },

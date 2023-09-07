@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { Button, Form, Icon } from "semantic-ui-react";
 import { ArrayField, SelectField, GroupField } from "react-invenio-forms";
 import { i18next } from "@translations/docs_app/i18next";
-import { useHighlightState } from "../hooks";
+import { useHighlightState } from "@js/oarepo_ui";
 
 // TODO: I assume that seriesTitle and volume will come from formConfig similar to languages. Not sure about the volumes??
 const seriesTitle = [

@@ -4,7 +4,7 @@ import { Button, Form, Icon } from "semantic-ui-react";
 import { ArrayField, TextField, GroupField } from "react-invenio-forms";
 import { i18next } from "@translations/docs_app/i18next";
 import { LocalVocabularySelectField } from "./LocalVocabularySelectField";
-import { useHighlightState } from "../hooks";
+import { useHighlightState } from "@js/oarepo_ui";
 
 export const FundersField = ({ fieldPath, helpText }) => {
   const { highlightedStates, handleHover, handleMouseLeave } =

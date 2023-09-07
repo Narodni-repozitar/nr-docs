@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { Button, Form, Icon } from "semantic-ui-react";
 import { ArrayField, GroupField, TextField } from "react-invenio-forms";
 import { i18next } from "@translations/docs_app/i18next";
-import { useHighlightState } from "../hooks";
+import { useHighlightState } from "@js/oarepo_ui";
 
 export const GeoLocationsField = ({ fieldPath, helpText }) => {
   const { highlightedStates, handleHover, handleMouseLeave } =
