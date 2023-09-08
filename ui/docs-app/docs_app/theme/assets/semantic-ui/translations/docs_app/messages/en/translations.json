@@ -112,7 +112,6 @@
   "Type the value of an identifier...": "Type the value of an identifier...",
   "e.g. ORCID, ISNI or GND.": "e.g. ORCID, ISNI or GND.",
   "Save and add another": "Save and add another",
-  "Family name is a required field.": "Family name is a required field.",
   "Name is a required field.": "Name is a required field.",
   "Role is a required field.": "Role is a required field.",
   "Added": "Added",
@@ -145,5 +144,7 @@
   "Series titles must be unique": "Series titles must be unique",
   "Object identifiers must be unique": "Object identifiers must be unique",
   "Identifier": "Identifier",
-  "Author identifiers": "Author identifiers"
+  "Identifiers": "Identifiers",
+  "Affiliations": "Affiliations",
+  "Select one or more affiliations": "Select one or more affiliations"
 }

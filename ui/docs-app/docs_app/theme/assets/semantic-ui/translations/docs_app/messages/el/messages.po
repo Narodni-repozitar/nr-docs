@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2023-09-05T15:48:05.084Z\n"
-"PO-Revision-Date: 2023-09-05T15:48:05.084Z\n"
+"POT-Creation-Date: 2023-09-06T10:25:07.401Z\n"
+"PO-Revision-Date: 2023-09-06T10:25:07.401Z\n"
 "Language: el\n"
 
 msgid "We couldn't find any matches for "
@@ -362,9 +362,6 @@ msgstr ""
 msgid "Save and add another"
 msgstr ""
 
-msgid "Family name is a required field."
-msgstr ""
-
 msgid "Name is a required field."
 msgstr ""
 
@@ -461,5 +458,11 @@ msgstr ""
 msgid "Identifier"
 msgstr ""
 
-msgid "Author identifiers"
+msgid "Identifiers"
+msgstr ""
+
+msgid "Affiliations"
+msgstr ""
+
+msgid "Select one or more affiliations"
 msgstr ""

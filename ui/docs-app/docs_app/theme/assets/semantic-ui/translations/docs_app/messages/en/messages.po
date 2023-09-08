@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2023-09-05T15:48:04.869Z\n"
-"PO-Revision-Date: 2023-09-05T15:48:04.869Z\n"
+"POT-Creation-Date: 2023-09-06T10:25:07.106Z\n"
+"PO-Revision-Date: 2023-09-06T10:25:07.106Z\n"
 "Language: en\n"
 
 msgid "We couldn't find any matches for "
@@ -376,9 +376,6 @@ msgstr "e.g. ORCID, ISNI or GND."
 msgid "Save and add another"
 msgstr "Save and add another"
 
-msgid "Family name is a required field."
-msgstr "Family name is a required field."
-
 msgid "Name is a required field."
 msgstr "Name is a required field."
 
@@ -475,5 +472,11 @@ msgstr "Object identifiers must be unique"
 msgid "Identifier"
 msgstr "Identifier"
 
-msgid "Author identifiers"
-msgstr "Author identifiers"
+msgid "Identifiers"
+msgstr "Identifiers"
+
+msgid "Affiliations"
+msgstr "Affiliations"
+
+msgid "Select one or more affiliations"
+msgstr "Select one or more affiliations"

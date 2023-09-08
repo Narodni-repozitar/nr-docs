@@ -82,6 +82,7 @@ class CreatibutorsFieldForm extends Component {
               const identifiersError =
                 creatibutorsError &&
                 creatibutorsError[index]?.authorityIdentifiers;
+              console.log('error', creatibutorsError, identifiersError)
               const displayName = creatibutorNameDisplay(value);
 
               return (
