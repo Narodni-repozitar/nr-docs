@@ -1951,6 +1951,47 @@
                 }
             }
         },
+        "syntheticFields": {
+            "detail": "syntheticfield",
+            "input": "syntheticfield",
+            "help": "syntheticFields.help",
+            "label": "syntheticFields.label",
+            "hint": "syntheticFields.hint",
+            "children": {
+                "institutions": {
+                    "detail": "keyword",
+                    "input": "keyword",
+                    "help": "syntheticFields/institutions.help",
+                    "label": "syntheticFields/institutions.label",
+                    "hint": "syntheticFields/institutions.hint",
+                    "facet": "syntheticFields_institutions"
+                },
+                "keywords_cs": {
+                    "detail": "keyword",
+                    "input": "keyword",
+                    "help": "syntheticFields/keywords_cs.help",
+                    "label": "syntheticFields/keywords_cs.label",
+                    "hint": "syntheticFields/keywords_cs.hint",
+                    "facet": "syntheticFields_keywords_cs"
+                },
+                "keywords_en": {
+                    "detail": "keyword",
+                    "input": "keyword",
+                    "help": "syntheticFields/keywords_en.help",
+                    "label": "syntheticFields/keywords_en.label",
+                    "hint": "syntheticFields/keywords_en.hint",
+                    "facet": "syntheticFields_keywords_en"
+                },
+                "person": {
+                    "detail": "keyword",
+                    "input": "keyword",
+                    "help": "syntheticFields/person.help",
+                    "label": "syntheticFields/person.label",
+                    "hint": "syntheticFields/person.hint",
+                    "facet": "syntheticFields_person"
+                }
+            }
+        },
         "updated": {
             "detail": "datetime",
             "input": "datetime",

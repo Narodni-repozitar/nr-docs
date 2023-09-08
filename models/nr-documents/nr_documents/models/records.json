@@ -1,7 +1,51 @@
 {
     "model": {
         "type": "model",
-        "custom-fields": [],
+        "requests": {
+            "delete-record": {
+                "type": {
+                    "base-classes": [
+                        "DeleteRecordRequestType"
+                    ],
+                    "imports": [
+                        {
+                            "import": "oarepo_requests.types.delete_record.DeleteRecordRequestType"
+                        }
+                    ],
+                    "module": "nr_documents.records.requests.delete_record.types",
+                    "class": "nr_documents.records.requests.delete_record.types.DeleteRecordRequestType",
+                    "generate": true,
+                    "parent-actions": "**DeleteRecordRequestType.available_actions",
+                    "id": "delete_record"
+                },
+                "actions": {
+                    "submit": {
+                        "class": "oarepo_requests.actions.delete_topic.DeleteTopicSubmitAction",
+                        "generate": false,
+                        "module": "nr_documents.records.requests.delete_record.actions",
+                        "base-classes": [
+                            "AcceptAction"
+                        ],
+                        "imports": [
+                            {
+                                "import": "invenio_requests.customizations.AcceptAction"
+                            }
+                        ]
+                    }
+                },
+                "parent-marshmallow": {
+                    "parent-field": "delete_record",
+                    "schema-class": "invenio_requests.services.schemas.NoneReceiverGenericRequestSchema",
+                    "module": "nr_documents.services.records.schema",
+                    "generate": true,
+                    "imports": [
+                        {
+                            "import": "oarepo_requests.schemas.marshmallow.NoneReceiverGenericRequestSchema"
+                        }
+                    ]
+                }
+            }
+        },
         "permissions": {
             "presets": [
                 "read_only"
@@ -38,6 +82,7 @@
             "extra-code": ""
         },
         "searchable": true,
+        "custom-fields": [],
         "ui": {
             "marshmallow": {
                 "imports": [
@@ -60,6 +105,41 @@
             "module": "nr_documents.models",
             "file": "nr_documents/models/ui.json",
             "alias": "nr_documents"
+        },
+        "service-config": {
+            "components": [
+                "PublishDraftComponent(\"publish_draft\", \"delete_record\")",
+                "DataComponent"
+            ],
+            "imports": [
+                {
+                    "import": "oarepo_requests.components.requests.PublishDraftComponent"
+                },
+                {
+                    "import": "invenio_drafts_resources.services.RecordServiceConfig",
+                    "alias": "InvenioRecordDraftsServiceConfig"
+                },
+                {
+                    "import": "invenio_records_resources.services.RecordServiceConfig",
+                    "alias": "InvenioRecordServiceConfig"
+                },
+                {
+                    "import": "oarepo_runtime.config.service.PermissionsPresetsConfigMixin"
+                },
+                {
+                    "import": "invenio_records_resources.services.records.components.DataComponent"
+                }
+            ],
+            "base-classes": [
+                "PermissionsPresetsConfigMixin",
+                "InvenioRecordDraftsServiceConfig"
+            ],
+            "generate": true,
+            "config-key": "NR_DOCUMENTS_RECORD_SERVICE_CONFIG",
+            "module": "nr_documents.services.records.config",
+            "class": "nr_documents.services.records.config.NrDocumentsServiceConfig",
+            "extra-code": "",
+            "service-id": "nr_documents"
         },
         "pid": {
             "type": "dcmnts",
@@ -86,39 +166,6 @@
                 "create=True"
             ]
         },
-        "requests": {
-            "default_request": {
-                "type": {
-                    "module": "nr_documents.records.requests.default_request.types",
-                    "class": "nr_documents.records.requests.default_request.types.DefaultRequestRequestType",
-                    "generate": true,
-                    "base-classes": [
-                        "RequestType"
-                    ],
-                    "imports": [
-                        {
-                            "import": "invenio_requests.customizations.RequestType"
-                        }
-                    ],
-                    "parent-actions": "**RequestType.available_actions"
-                },
-                "actions": {
-                    "approve": {
-                        "module": "nr_documents.records.requests.default_request.actions",
-                        "class": "nr_documents.records.requests.default_request.actions.DefaultRequestRequestAcceptAction",
-                        "generate": true,
-                        "base-classes": [
-                            "AcceptAction"
-                        ],
-                        "imports": [
-                            {
-                                "import": "invenio_requests.customizations.AcceptAction"
-                            }
-                        ]
-                    }
-                }
-            }
-        },
         "extend": "nr-documents#DocumentModel",
         "module": {
             "qualified": "nr_documents",
@@ -138,6 +185,26 @@
         "draft": {
             "type": "draft_record",
             "properties": {},
+            "requests": {
+                "publish-draft": {
+                    "type": {
+                        "base-classes": [
+                            "PublishDraftRequestType"
+                        ],
+                        "imports": [
+                            {
+                                "import": "oarepo_requests.types.publish_draft.PublishDraftRequestType"
+                            }
+                        ]
+                    },
+                    "actions": {
+                        "submit": {
+                            "class": "oarepo_requests.actions.publish_draft.PublishDraftSubmitAction",
+                            "generate": false
+                        }
+                    }
+                }
+            },
             "searchable": true,
             "tests": {
                 "extra-fixtures": [],
@@ -265,6 +332,10 @@
             "module": "nr_documents.proxies",
             "generate": true
         },
+        "translations": {
+            "module": "nr_documents.translations",
+            "alias": "nr_documents"
+        },
         "record-metadata": {
             "generate": true,
             "module": "nr_documents.records.models",
@@ -286,7 +357,7 @@
                     "import": "invenio_drafts_resources.records.ParentRecordMixin"
                 }
             ],
-            "table": "nrdocuments_metadata",
+            "table": "nr_documents_metadata",
             "alias": "nr_documents",
             "use-versioning": true,
             "alembic": "nr_documents.alembic"
@@ -308,36 +379,20 @@
                 "InvenioRecordService"
             ]
         },
-        "service-config": {
+        "multilingual-dumper": {
+            "generate": true,
+            "module": "nr_documents.records.multilingual_dumper",
+            "class": "nr_documents.records.multilingual_dumper.MultilingualSearchDumper",
+            "base-classes": [
+                "MultilingualDumper"
+            ],
+            "extra-code": "",
+            "extensions": [],
             "imports": [
                 {
-                    "import": "invenio_drafts_resources.services.RecordServiceConfig",
-                    "alias": "InvenioRecordServiceConfig"
-                },
-                {
-                    "import": "oarepo_runtime.config.service.PermissionsPresetsConfigMixin"
-                },
-                {
-                    "import": "invenio_records_resources.services.records.components.DataComponent"
+                    "import": "oarepo_runtime.i18n.dumper.MultilingualDumper"
                 }
-            ],
-            "generate": true,
-            "config-key": "NR_DOCUMENTS_RECORD_SERVICE_CONFIG",
-            "module": "nr_documents.services.records.config",
-            "class": "nr_documents.services.records.config.NrDocumentsServiceConfig",
-            "extra-code": "",
-            "service-id": "nr_documents",
-            "base-classes": [
-                "PermissionsPresetsConfigMixin",
-                "InvenioRecordServiceConfig"
-            ],
-            "components": [
-                "DataComponent"
             ]
-        },
-        "translations": {
-            "module": "nr_documents.translations",
-            "alias": "nr_documents"
         },
         "json-schema-settings": {
             "generate": true,
@@ -382,21 +437,6 @@
             "extra-code": "",
             "generate": true
         },
-        "multilingual-dumper": {
-            "generate": true,
-            "module": "nr_documents.records.multilingual_dumper",
-            "class": "nr_documents.records.multilingual_dumper.MultilingualSearchDumper",
-            "base-classes": [
-                "MultilingualDumper"
-            ],
-            "extra-code": "",
-            "extensions": [],
-            "imports": [
-                {
-                    "import": "oarepo_runtime.i18n.dumper.MultilingualDumper"
-                }
-            ]
-        },
         "files-field": {
             "generate": true,
             "field-class": "FilesField",
@@ -413,21 +453,8 @@
                 }
             ]
         },
-        "record-resolver": {
-            "generate": true,
-            "module": "nr_documents.records.requests.resolvers",
-            "class": "nr_documents.records.requests.resolvers.NrDocumentsResolver",
-            "base-classes": [
-                "RecordResolver"
-            ],
-            "imports": [
-                {
-                    "import": "invenio_records_resources.references.RecordResolver"
-                }
-            ]
-        },
         "draft-parent-record": {
-            "class": "nr_documents.records.api.DraftParentRecord",
+            "class": "nr_documents.records.api.NrDocumentsParentRecord",
             "base-classes": [
                 "ParentRecord"
             ],
@@ -440,7 +467,7 @@
             "generate": true
         },
         "draft-parent-record-state": {
-            "class": "nr_documents.records.models.ParentState",
+            "class": "nr_documents.records.models.NrDocumentsParentState",
             "base-classes": [
                 "db.Model",
                 "ParentRecordStateMixin"
@@ -455,10 +482,10 @@
             ],
             "module": "nr_documents.records.models",
             "generate": true,
-            "table": "parent_state_metadata"
+            "table": "nr_documents_parent_state_metadata"
         },
         "draft-parent-record-metadata": {
-            "class": "nr_documents.records.models.DraftParentMetadata",
+            "class": "nr_documents.records.models.NrDocumentsParentMetadata",
             "base-classes": [
                 "db.Model",
                 "RecordMetadataBase"
@@ -471,6 +498,7 @@
                     "import": "invenio_db.db"
                 }
             ],
+            "table": "nr_documents_parent_record_metadata",
             "module": "nr_documents.records.models",
             "generate": true
         },
@@ -486,10 +514,41 @@
             "index": "nr_documents-nr_documents-1.0.0",
             "file": "nr_documents/records/mappings/os-v2/nr_documents/nr_documents-1.0.0.json"
         },
+        "parent-record-marshmallow": {
+            "module": "nr_documents.services.records.schema",
+            "class": "nr_documents.services.records.schema.GeneratedParentSchema",
+            "generate": true,
+            "base-classes": [
+                "InvenioParentSchema"
+            ],
+            "imports": [
+                {
+                    "import": "invenio_drafts_resources.services.records.schema.ParentSchema",
+                    "alias": "InvenioParentSchema"
+                }
+            ]
+        },
+        "record-resolver": {
+            "generate": true,
+            "module": "nr_documents.records.requests.resolvers",
+            "class": "nr_documents.records.requests.resolvers.NrDocumentsResolver",
+            "base-classes": [
+                "RecordResolver"
+            ],
+            "imports": [
+                {
+                    "import": "invenio_records_resources.references.RecordResolver"
+                }
+            ]
+        },
         "sortable": [],
         "properties": {
             "$schema": {
                 "type": "keyword",
+                "marshmallow": {
+                    "read": false,
+                    "write": false
+                },
                 "facets": {
                     "searchable": true
                 },
@@ -498,10 +557,6 @@
                         "read": false,
                         "write": false
                     }
-                },
-                "marshmallow": {
-                    "read": false,
-                    "write": false
                 },
                 "sample": {
                     "skip": true
@@ -528,6 +583,10 @@
             },
             "id": {
                 "type": "keyword",
+                "marshmallow": {
+                    "read": false,
+                    "write": false
+                },
                 "facets": {
                     "searchable": true
                 },
@@ -536,10 +595,6 @@
                         "read": false,
                         "write": false
                     }
-                },
-                "marshmallow": {
-                    "read": false,
-                    "write": false
                 },
                 "sample": {
                     "skip": true
@@ -868,7 +923,6 @@
                     },
                     "additionalTitles": {
                         "type": "array",
-                        "uniqueItems": true,
                         "label.cs": "Další názvy",
                         "label.en": "Additional titles",
                         "marshmallow": {
@@ -999,7 +1053,6 @@
                     },
                     "contributors": {
                         "type": "array",
-                        "uniqueItems": true,
                         "label.cs": "Přispěvatelé",
                         "label.en": "Contributors",
                         "marshmallow": {
@@ -1042,7 +1095,6 @@
                             "properties": {
                                 "affiliations": {
                                     "type": "array",
-                                    "uniqueItems": true,
                                     "marshmallow": {
                                         "read": false,
                                         "write": false
@@ -1349,7 +1401,6 @@
                                 },
                                 "authorityIdentifiers": {
                                     "type": "array",
-                                    "uniqueItems": true,
                                     "marshmallow": {
                                         "read": false,
                                         "write": false
@@ -1621,11 +1672,14 @@
                     "creators": {
                         "type": "array",
                         "required": true,
-                        "uniqueItems": true,
                         "minItems": 1,
                         "label.cs": "Autoři",
                         "label.en": "Authors",
                         "marshmallow": {
+                            "validators": [
+                                "ma.validate.Length(min=1)",
+                                "ma.validate.Length(min=1)"
+                            ],
                             "read": false,
                             "write": false
                         },
@@ -1665,7 +1719,6 @@
                             "properties": {
                                 "affiliations": {
                                     "type": "array",
-                                    "uniqueItems": true,
                                     "marshmallow": {
                                         "read": false,
                                         "write": false
@@ -1972,7 +2025,6 @@
                                 },
                                 "authorityIdentifiers": {
                                     "type": "array",
-                                    "uniqueItems": true,
                                     "marshmallow": {
                                         "read": false,
                                         "write": false
@@ -2501,7 +2553,6 @@
                     },
                     "fundingReferences": {
                         "type": "array",
-                        "uniqueItems": true,
                         "label.cs": "Projekt nebo financování",
                         "label.en": "Funding",
                         "marshmallow": {
@@ -2724,7 +2775,6 @@
                     },
                     "geoLocations": {
                         "type": "array",
-                        "uniqueItems": true,
                         "label.cs": "Geolokace",
                         "label.en": "Geolocation",
                         "marshmallow": {
@@ -2818,6 +2868,10 @@
                                             "label.cs": "Zeměpisná šířka",
                                             "label.en": "Latitude",
                                             "marshmallow": {
+                                                "validators": [
+                                                    "ma.validate.Range(min=-90.0, max=90.0)",
+                                                    "ma.validate.Range(min=-90.0, max=90.0)"
+                                                ],
                                                 "read": false,
                                                 "write": false
                                             },
@@ -2836,6 +2890,10 @@
                                             "label.cs": "Zeměpisná délka",
                                             "label.en": "Longitude",
                                             "marshmallow": {
+                                                "validators": [
+                                                    "ma.validate.Range(min=-180.0, max=180.0)",
+                                                    "ma.validate.Range(min=-180.0, max=180.0)"
+                                                ],
                                                 "read": false,
                                                 "write": false
                                             },
@@ -2854,11 +2912,14 @@
                     "languages": {
                         "type": "array",
                         "required": true,
-                        "uniqueItems": true,
                         "minItems": 1,
                         "label.cs": "Jazyk",
                         "label.en": "Language",
                         "marshmallow": {
+                            "validators": [
+                                "ma.validate.Length(min=1)",
+                                "ma.validate.Length(min=1)"
+                            ],
                             "read": false,
                             "write": false
                         },
@@ -3082,7 +3143,6 @@
                     },
                     "notes": {
                         "type": "array",
-                        "uniqueItems": true,
                         "label.cs": "Poznámky",
                         "label.en": "Notes",
                         "marshmallow": {
@@ -3111,7 +3171,6 @@
                     },
                     "objectIdentifiers": {
                         "type": "array",
-                        "uniqueItems": true,
                         "label.cs": "Identifikátory objektu",
                         "label.en": "Object identifiers",
                         "marshmallow": {
@@ -3219,7 +3278,6 @@
                     },
                     "publishers": {
                         "type": "array",
-                        "uniqueItems": true,
                         "label.cs": "Vydavatelé",
                         "label.en": "Publishers",
                         "marshmallow": {
@@ -3251,7 +3309,6 @@
                     },
                     "relatedItems": {
                         "type": "array",
-                        "uniqueItems": true,
                         "label.cs": "Vazba na/z dalších zdrojů:",
                         "label.en": "Link to/from other resources:",
                         "marshmallow": {
@@ -3297,7 +3354,6 @@
                             "properties": {
                                 "itemContributors": {
                                     "type": "array",
-                                    "uniqueItems": true,
                                     "label.cs": "Přispěvatelé",
                                     "label.en": "Contributors",
                                     "marshmallow": {
@@ -3340,7 +3396,6 @@
                                         "properties": {
                                             "affiliations": {
                                                 "type": "array",
-                                                "uniqueItems": true,
                                                 "label.cs": "Afiliace",
                                                 "label.en": "Affiliation",
                                                 "marshmallow": {
@@ -3649,7 +3704,6 @@
                                             },
                                             "authorityIdentifiers": {
                                                 "type": "array",
-                                                "uniqueItems": true,
                                                 "marshmallow": {
                                                     "read": false,
                                                     "write": false
@@ -3920,7 +3974,6 @@
                                 },
                                 "itemCreators": {
                                     "type": "array",
-                                    "uniqueItems": true,
                                     "label.cs": "Autoři",
                                     "label.en": "Authors",
                                     "marshmallow": {
@@ -3963,7 +4016,6 @@
                                         "properties": {
                                             "affiliations": {
                                                 "type": "array",
-                                                "uniqueItems": true,
                                                 "label.cs": "Afiliace",
                                                 "label.en": "Affiliation",
                                                 "marshmallow": {
@@ -4272,7 +4324,6 @@
                                             },
                                             "authorityIdentifiers": {
                                                 "type": "array",
-                                                "uniqueItems": true,
                                                 "marshmallow": {
                                                     "read": false,
                                                     "write": false
@@ -4444,7 +4495,6 @@
                                 },
                                 "itemPIDs": {
                                     "type": "array",
-                                    "uniqueItems": true,
                                     "marshmallow": {
                                         "read": false,
                                         "write": false
@@ -5029,7 +5079,6 @@
                     },
                     "rights": {
                         "type": "array",
-                        "uniqueItems": true,
                         "label.cs": "Licence",
                         "label.en": "License",
                         "marshmallow": {
@@ -5182,7 +5231,6 @@
                     },
                     "series": {
                         "type": "array",
-                        "uniqueItems": true,
                         "label.cs": "Série",
                         "label.en": "Series",
                         "marshmallow": {
@@ -5272,7 +5320,6 @@
                     },
                     "subjectCategories": {
                         "type": "array",
-                        "uniqueItems": true,
                         "label.cs": "Oborové třídění",
                         "label.en": "Subject categories",
                         "marshmallow": {
@@ -5417,7 +5464,6 @@
                     },
                     "subjects": {
                         "type": "array",
-                        "uniqueItems": true,
                         "ui": {
                             "marshmallow": {
                                 "imports": [
@@ -6178,6 +6224,77 @@
                         ],
                         "label.cs": "Verze zdroje",
                         "label.en": "Resource version",
+                        "marshmallow": {
+                            "read": false,
+                            "write": false
+                        },
+                        "ui": {
+                            "marshmallow": {
+                                "read": false,
+                                "write": false
+                            }
+                        }
+                    }
+                }
+            },
+            "syntheticFields": {
+                "type": "object",
+                "marshmallow": {
+                    "generate": false,
+                    "class": "nr_documents.services.records.schema.SyntheticFieldsSchema",
+                    "read": false,
+                    "write": false
+                },
+                "ui": {
+                    "marshmallow": {
+                        "generate": false,
+                        "class": "nr_documents.services.records.ui_schema.SyntheticFieldsUISchema",
+                        "read": false,
+                        "write": false
+                    }
+                },
+                "properties": {
+                    "institutions": {
+                        "type": "keyword",
+                        "marshmallow": {
+                            "read": false,
+                            "write": false
+                        },
+                        "ui": {
+                            "marshmallow": {
+                                "read": false,
+                                "write": false
+                            }
+                        }
+                    },
+                    "keywords_cs": {
+                        "type": "keyword",
+                        "marshmallow": {
+                            "read": false,
+                            "write": false
+                        },
+                        "ui": {
+                            "marshmallow": {
+                                "read": false,
+                                "write": false
+                            }
+                        }
+                    },
+                    "keywords_en": {
+                        "type": "keyword",
+                        "marshmallow": {
+                            "read": false,
+                            "write": false
+                        },
+                        "ui": {
+                            "marshmallow": {
+                                "read": false,
+                                "write": false
+                            }
+                        }
+                    },
+                    "person": {
+                        "type": "keyword",
                         "marshmallow": {
                             "read": false,
                             "write": false
