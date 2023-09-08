@@ -54,7 +54,7 @@
       </div>
       <div class="five wide column pl-0">
         <a
-          href="{{record.links.export_path}}/json"
+          href="{{record.extra_links.export_path}}/json"
           title="Download file"
           class="ui fluid button"
           role="button"
@@ -68,6 +68,6 @@
 
 <section aria-label="API Links" class="ui segment">
   <h2 class="ui small header">{{_('API')}} {{_('Links')}}</h2>
-    <SidebarLinks links={record.links.api_links}></SidebarLinks>
+    <SidebarLinks links={record.links}></SidebarLinks>
 
 </section>
