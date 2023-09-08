@@ -1,5 +1,3 @@
-
-
 def create_api_blueprint(app):
     """Create NrDocumentsRecord blueprint."""
     blueprint = app.extensions["nr_documents"].resource_records.as_blueprint()

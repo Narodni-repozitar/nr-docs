@@ -1,5 +1,6 @@
 import sqlalchemy_utils.types
 import sqlalchemy_utils
+
 #
 # This file is part of Invenio.
 # Copyright (C) 2016-2018 CERN.
@@ -14,9 +15,9 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = 'nr_documents_1'
+revision = "nr_documents_1"
 down_revision = None
-branch_labels = ('nr_documents',)
+branch_labels = ("nr_documents",)
 depends_on = None
 
 
