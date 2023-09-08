@@ -1,4 +1,4 @@
-{#def metadata, ui, layout, url_prefix #}
+{#def metadata, ui, layout, record #}
 <h1 style="margin-bottom: 1em">{{ metadata.title }}</h1>
 
 <dl class="ui very basic table">
@@ -8,23 +8,23 @@
     </Field>
         <dt>{{ _('People') }}</dt>
     <dd>
-        <People  metadata={metadata} url_prefix={url_prefix}></People>
+        <People  metadata={metadata} search_link={record.links.search_link}></People>
     </dd>
     <Field label={ _('metadata/dateAvailable.label') }>{{metadata.dateAvailable}}</Field>
     <Field label={ _('metadata/dateModified.label') }>{{metadata.dateModified}}</Field>
 
     <Field label={ _('metadata/languages.label') }>
-        <VocabularyArray vocabulary={metadata.languages} url_prefix={url_prefix} searchFacet="metadata_languages" vocabulary_type="languages"></VocabularyArray>
+        <VocabularyArray vocabulary={metadata.languages} search_link={record.links.search_link} searchFacet="metadata_languages" vocabulary_type="languages"></VocabularyArray>
     </Field>
      <Field label={ _('metadata/resourceType.label') }>
-        <VocabularyItem vocabulary={metadata.resourceType} url_prefix={url_prefix} searchFacet="metadata_resourceType" vocabulary_type="resource-type"></VocabularyItem>
+        <VocabularyItem vocabulary={metadata.resourceType} search_link={record.links.search_link} searchFacet="metadata_resourceType" vocabulary_type="resource-type"></VocabularyItem>
     </Field>
     {% if metadata.thesis %}
         <Field label={ _('metadata/thesis/dateDefended.label') }>{{metadata.thesis.dateDefended}}</Field>
     {% endif %}
 
     <Field label={ _('metadata/subjectCategories.label') }>
-        <Subjects subjects={metadata.subjects} url_prefix={url_prefix}></Subjects>
+        <Subjects subjects={metadata.subjects} search_link={record.links.search_link}></Subjects>
     </Field>
 
     <Field label={ _('metadata/abstract.label') }>
@@ -33,7 +33,7 @@
 
         {% if metadata.thesis %}
           <Field label={ _('metadata/thesis/degreeGrantors.label') }>
-            <TaxonomyArray taxonomy={metadata.thesis.degreeGrantors} url_prefix={url_prefix} searchFacet="metadata_thesis_degreeGrantors" vocabulary_type="institutions"></TaxonomyArray>
+            <TaxonomyArray taxonomy={metadata.thesis.degreeGrantors} search_link={record.links.search_link} searchFacet="metadata_thesis_degreeGrantors" vocabulary_type="institutions"></TaxonomyArray>
         </Field>
         <Field label={ _('metadata/thesis/studyFields.label') }>
             <Array data={metadata.thesis.studyFields}></Array>
@@ -45,17 +45,17 @@
         <Array data={metadata.publishers}></Array>
     </Field>
     <Field label={ _('metadata/accessRights.label') }>
-        <VocabularyItem vocabulary={metadata.accessRights} url_prefix={url_prefix} searchFacet="metadata_accessRights" vocabulary_type="access-rights"></VocabularyItem>
+        <VocabularyItem vocabulary={metadata.accessRights} search_link={record.links.search_link} searchFacet="metadata_accessRights" vocabulary_type="access-rights"></VocabularyItem>
        </Field>
     <Field label={ _('metadata/rights.label') }>
-        <VocabularyArray vocabulary={metadata.rights} url_prefix={url_prefix} searchFacet="metadata_rights" vocabulary_type="licenses"></VocabularyArray>
+        <VocabularyArray vocabulary={metadata.rights} search_link={record.links.search_link} searchFacet="metadata_rights" vocabulary_type="licenses"></VocabularyArray>
     </Field>
 
     <Field label={ _('metadata/events.label') }>{{metadata.events}}</Field>
     <Field label={ _('metadata/externalLocation.label') }>{{metadata.externalLocation}}</Field>
     {% if metadata.fundingReferences %}
     <Field label={ _('metadata/fundingReferences.label') }>
-    <FundingReference funders={metadata.fundingReferences} url_prefix={url_prefix}></FundingReference>
+    <FundingReference funders={metadata.fundingReferences} search_link={record.links.search_link}></FundingReference>
     </Field>
     {% endif %}
     {% if metadata.relatedItems %}

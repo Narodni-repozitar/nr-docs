@@ -1,4 +1,4 @@
-{#def subjects, url_prefix #}
+{#def subjects, search_link #}
 
 {% for lang, subjects in subjects|groupby('subject.lang')%}
     <div class="ui separated">
@@ -21,7 +21,7 @@
                             "label": subject.subject.value
                     } %}
                     {% set searchFacet = "metadata_subjects_subject_" ~ lang ~ "_keyword" %}
-                    <SearchLink url_prefix={url_prefix} className="subject-link" searchFacet={searchFacet} data = {data}>
+                    <SearchLink search_link={search_link} className="subject-link" searchFacet={searchFacet} data = {data}>
                     </SearchLink>
 
                 </div>
