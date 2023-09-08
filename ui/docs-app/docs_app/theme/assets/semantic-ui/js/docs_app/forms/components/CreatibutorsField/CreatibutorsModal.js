@@ -50,8 +50,6 @@ export class CreatibutorsModal extends Component {
         props.autocompleteNames !== NamesAutocompleteOptions.SEARCH_ONLY ||
         !_isEmpty(props.initialCreatibutor),
     };
-    this.inputRef = createRef();
-    this.identifiersRef = createRef();
     this.namesAutocompleteRef = createRef();
   }
 
@@ -65,7 +63,7 @@ export class CreatibutorsModal extends Component {
     }),
   });
 
-  focusInput = () => this.inputRef.current.focus();
+  focusInput = () => {};
 
   openModal = () => {
     this.setState({ open: true, action: null }, () => { });
@@ -103,6 +101,7 @@ export class CreatibutorsModal extends Component {
       });
       return knownField ? knownField : { [key]: value };
     };
+    const fullName = `${submittedCreatibutor.family_name}, ${submittedCreatibutor.given_name}`
     const identifiersFieldPath = "authorityIdentifiers";
     const affiliationsFieldPath = "affiliations";
     // The modal is saving only identifiers values, thus
@@ -115,9 +114,9 @@ export class CreatibutorsModal extends Component {
     });
 
     const submittedAffiliations = _get(submittedCreatibutor, affiliationsFieldPath, []);
-    console.log(submittedCreatibutor)
     return {
       ...submittedCreatibutor,
+      fullName,
       ...identifiers,
       affiliations: submittedAffiliations,
     };
@@ -132,18 +131,22 @@ export class CreatibutorsModal extends Component {
    */
   deserializeCreatibutor = (initialCreatibutor) => {
     const identifiersFieldPath = "authorityIdentifiers";
-
-    return {
+    const [family_name = '', given_name = ''] = _get(initialCreatibutor, "fullName", "").trim().split(',', 1)
+    const result = {
       // default type to personal
       nameType: CREATIBUTOR_TYPE.PERSON,
+      family_name,
+      given_name,
       ...initialCreatibutor,
       authorityIdentifiers: _map(
         _get(initialCreatibutor, identifiersFieldPath, []),
         "identifier"
       ),
       affiliations: _get(initialCreatibutor, "affiliations", []),
-      role: _get(initialCreatibutor, "role", ""),
+      ...(!this.isCreator() && {role: _get(initialCreatibutor, "role", "")})
     };
+    console.log('des', result)
+    return result
   };
 
   isCreator = () => {
@@ -153,7 +156,7 @@ export class CreatibutorsModal extends Component {
   };
 
   onSubmit = (values, formikBag) => {
-    console.log('values', values)
+    alert('blah')
     const { onCreatibutorChange } = this.props;
     const { action } = this.state;
 
@@ -316,10 +319,6 @@ export class CreatibutorsModal extends Component {
         Object.entries(chosen).forEach(([path, value]) => {
           formikProps.form.setFieldValue(path, value);
         });
-        // Update identifiers render
-        this.identifiersRef.current.setState({
-          selectedOptions: this.identifiersRef.current.valuesToOptions(identifiers),
-        });
       }
     );
   };
@@ -444,12 +443,12 @@ export class CreatibutorsModal extends Component {
                               label={i18next.t("Given names")}
                               placeholder={i18next.t("Given names")}
                               fieldPath={givenNameFieldPath}
+                              required={this.isCreator()}
                             />
                           </Form.Group>
                           <Form.Group widths="equal">
                             <CreatibutorsIdentifiers
                               fieldPath={identifiersFieldPath}
-                              ref={this.identifiersRef}
                             />
                           </Form.Group>
                         </div>
@@ -462,9 +461,6 @@ export class CreatibutorsModal extends Component {
                         placeholder={i18next.t("Organization name")}
                         fieldPath={nameFieldPath}
                         required={this.isCreator()}
-                        // forward ref to Input component because Form.Input
-                        // doesn't handle it
-                        input={{ ref: this.inputRef }}
                       />
                       <CreatibutorsIdentifiers
                         fieldPath={identifiersFieldPath}
@@ -581,7 +577,11 @@ CreatibutorsModal.propTypes = {
 };
 
 CreatibutorsModal.defaultProps = {
-  roleOptions: [],
-  initialCreatibutor: {},
+  initialCreatibutor: {
+    nameType: CREATIBUTOR_TYPE.PERSON,
+    fullName: '',
+    affiliations: [],
+    identifiers: []
+  },
   autocompleteNames: "search",
 };
