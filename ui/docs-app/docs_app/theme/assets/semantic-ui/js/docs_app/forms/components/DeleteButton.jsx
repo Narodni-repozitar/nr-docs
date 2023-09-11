@@ -5,20 +5,22 @@ import {
   useApiClient,
   useConfirmationModal,
   useFormConfig,
+  useDepositApiClient,
 } from "@js/oarepo_ui";
 import PropTypes from "prop-types";
 
 export const DeleteButtonComponent = ({ modalMessage, modalHeader }) => {
   const { isModalOpen, handleCloseModal, handleOpenModal } =
     useConfirmationModal();
-  const apiClient = useApiClient();
+  // const apiClient = useApiClient();
   const {
     formConfig: { permissions },
   } = useFormConfig();
+  const { values, isSubmitting, _delete } = useDepositApiClient();
 
   return (
     <React.Fragment>
-      {apiClient.formik.values.id && permissions.can_delete_draft && (
+      {values.id && permissions.can_delete_draft && (
         <Button
           name="delete"
           color="red"
@@ -27,8 +29,8 @@ export const DeleteButtonComponent = ({ modalMessage, modalHeader }) => {
           labelPosition="left"
           content={i18next.t("Delete")}
           type="button"
-          disabled={apiClient.isSubmitting}
-          loading={apiClient.isSubmitting}
+          disabled={isSubmitting}
+          loading={isSubmitting}
           fluid
         />
       )}
@@ -55,11 +57,11 @@ export const DeleteButtonComponent = ({ modalMessage, modalHeader }) => {
           </Button>
           <Button
             name="delete"
-            disabled={apiClient.isSubmitting}
-            loading={apiClient.isSubmitting}
+            disabled={isSubmitting}
+            loading={isSubmitting}
             color="red"
             onClick={() => {
-              apiClient.delete();
+              _delete();
               handleCloseModal();
             }}
             icon="delete"

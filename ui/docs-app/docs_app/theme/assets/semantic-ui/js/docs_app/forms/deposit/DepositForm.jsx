@@ -31,7 +31,10 @@ import {
 } from "../components/";
 import Overridable from "react-overridable";
 import { i18next } from "@translations/docs_app/i18next";
-import { FormikStateLogger } from "@js/oarepo_vocabularies";
+import {
+  FormikStateLogger,
+  VocabularySelectField,
+} from "@js/oarepo_vocabularies";
 import _has from "lodash/has";
 
 // not sure if these should come from formConfig better to not clutter the code
@@ -73,6 +76,7 @@ export const DepositForm = () => {
         }}
       >
         <ApiClientProvider>
+          <VocabularySelectField type="institutions" fieldPath="test" />
           <Grid>
             <Ref innerRef={formFeedbackRef}>
               <Grid.Column mobile={16} tablet={16} computer={11}>

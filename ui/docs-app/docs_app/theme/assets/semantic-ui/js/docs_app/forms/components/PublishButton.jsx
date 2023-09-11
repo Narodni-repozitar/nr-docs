@@ -1,13 +1,18 @@
 import React from "react";
 import { Button, Modal, Message, Icon } from "semantic-ui-react";
 import { i18next } from "@translations/docs_app/i18next";
-import { useApiClient, useConfirmationModal } from "@js/oarepo_ui";
+import {
+  useApiClient,
+  useConfirmationModal,
+  useDepositApiClient,
+} from "@js/oarepo_ui";
 import PropTypes from "prop-types";
 
 export const PublishButtonComponent = ({ modalMessage, modalHeader }) => {
   const { isModalOpen, handleCloseModal, handleOpenModal } =
     useConfirmationModal();
-  const apiClient = useApiClient();
+  // const apiClient = useApiClient();
+  const { isSubmitting, publish } = useDepositApiClient();
 
   return (
     <React.Fragment>
@@ -19,8 +24,8 @@ export const PublishButtonComponent = ({ modalMessage, modalHeader }) => {
         labelPosition="left"
         content={i18next.t("Publish")}
         type="button"
-        disabled={apiClient.isSubmitting}
-        loading={apiClient.isSubmitting}
+        disabled={isSubmitting}
+        loading={isSubmitting}
         fluid
       />
       <Modal
@@ -46,11 +51,11 @@ export const PublishButtonComponent = ({ modalMessage, modalHeader }) => {
           </Button>
           <Button
             name="publish"
-            disabled={apiClient.isSubmitting}
-            loading={apiClient.isSubmitting}
+            disabled={isSubmitting}
+            loading={isSubmitting}
             color="green"
             onClick={() => {
-              apiClient.publish();
+              publish();
               handleCloseModal();
             }}
             icon="upload"
