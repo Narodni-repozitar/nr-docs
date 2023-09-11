@@ -1,7 +1,6 @@
 import React, { useRef } from "react";
 import {
   useFormConfig,
-  useOnSubmit,
   MultilingualTextInput,
   I18nTextInputField,
   BaseForm,
@@ -57,23 +56,7 @@ export const DepositForm = () => {
   console.log(formConfig, record);
 
   const editMode = _has(formConfig, "updateUrl");
-  // const { onSubmit, submitError } = useOnSubmit({
-  //   onBeforeSubmit: [
-  //     removeNullAndInternalFields(["errors", "validationErrors"], ["__key"]),
-  //   ],
-  //   // TODO: handle various errors (talking about 400/500 status codes)
-  //   onSubmitError: (error, formik) => {
-  //     if (
-  //       error &&
-  //       error.status === 400 &&
-  //       error.message === "A validation error occurred."
-  //     ) {
-  //       error.errors?.forEach((err) =>
-  //         formik.setFieldError(err.field, err.messages.join(" "))
-  //       );
-  //     }
-  //   },
-  // });
+
   const sidebarRef = useRef(null);
   const formFeedbackRef = useRef(null);
 
@@ -93,13 +76,9 @@ export const DepositForm = () => {
           <Grid>
             <Ref innerRef={formFeedbackRef}>
               <Grid.Column mobile={16} tablet={16} computer={11}>
-                <Sticky
-                  className="rel-mt-0"
-                  context={formFeedbackRef}
-                  offset={20}
-                >
+                <Sticky context={formFeedbackRef} offset={20}>
                   <Overridable id="NrDocs.Deposit.FormFeedback.container">
-                    <FormFeedback className="rel-mb-1" />
+                    <FormFeedback />
                   </Overridable>
                 </Sticky>
                 <Overridable id="NrDocs.Deposit.AccordionFieldFiles.container">

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Message } from "semantic-ui-react";
 import { useFormikContext, getIn } from "formik";
 import _isEmpty from "lodash/isEmpty";
@@ -9,6 +9,23 @@ const titleCase = (fieldPath) =>
   _startCase(fieldPath.split(".")[fieldPath.split(".").length - 1]);
 // TODO: fix broken margins on the error message. Also potentially make Error dismissible, as
 // it could be annoying for the user
+
+const CustomMessage = ({ children, ...uiProps }) => {
+  const [visible, setVisible] = useState(true);
+  console.log("custom message", visible);
+
+  // useEffect(() => {
+  //   return () => setVisible(true);
+  // }, []);
+  const handleDismiss = () => setVisible(false);
+  return (
+    visible && (
+      <Message onDismiss={handleDismiss} className="rel-mb-2" {...uiProps}>
+        {children}
+      </Message>
+    )
+  );
+};
 export const FormFeedback = () => {
   const { values } = useFormikContext();
   const validationErrors = getIn(values, "validationErrors", {});
@@ -16,7 +33,7 @@ export const FormFeedback = () => {
   const successMessage = getIn(values, "successMessage", "");
   if (!_isEmpty(validationErrors))
     return (
-      <Message className="rel-mb-5" negative color="orange">
+      <CustomMessage negative color="orange">
         <Message.Header>{validationErrors?.errorMessage}</Message.Header>
         <Message.List>
           {validationErrors?.errors?.map((error, index) => (
@@ -25,19 +42,19 @@ export const FormFeedback = () => {
             }`}</Message.Item>
           ))}
         </Message.List>
-      </Message>
+      </CustomMessage>
     );
   if (httpError)
     return (
-      <Message negative color="orange">
+      <CustomMessage negative color="orange">
         <Message.Header>{httpError}</Message.Header>
-      </Message>
+      </CustomMessage>
     );
   if (successMessage)
     return (
-      <Message positive color="green">
+      <CustomMessage positive color="green">
         <Message.Header>{successMessage}</Message.Header>
-      </Message>
+      </CustomMessage>
     );
   return null;
 };
