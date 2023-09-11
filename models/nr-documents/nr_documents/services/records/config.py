@@ -29,7 +29,7 @@ class NrDocumentsServiceConfig(
 ):
     """NrDocumentsRecord service config."""
 
-    PERMISSIONS_PRESETS = ["read_only"]
+    PERMISSIONS_PRESETS = ["everyone"]
 
     url_prefix = "/nr-documents/"
 
