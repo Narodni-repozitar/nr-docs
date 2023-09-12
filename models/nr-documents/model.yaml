@@ -17,6 +17,8 @@ record:
     metadata:
       properties:
         use: ./metadata.yaml
+    abc:
+      type: keyword
   draft: {}
   use:
   - invenio
@@ -51,3 +53,5 @@ settings:
         analyzer: czech
     en:
       text: {}
+  python:
+    use-autoflake: false
