@@ -53,5 +53,3 @@ settings:
         analyzer: czech
     en:
       text: {}
-  python:
-    use-autoflake: false
