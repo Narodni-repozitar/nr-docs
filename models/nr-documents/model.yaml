@@ -17,8 +17,6 @@ record:
     metadata:
       properties:
         use: ./metadata.yaml
-    abc:
-      type: keyword
   draft: {}
   use:
   - invenio
