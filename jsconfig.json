@@ -14,29 +14,20 @@
             "@translations/invenio_communities": [
                 "./sites/nr-docs/.venv/lib/python3.10/site-packages/invenio_communities/assets/semantic-ui/translations/invenio_communities"
             ],
-            "@translations/oarepo_vocabularies_ui": [
-                "./sites/nr-docs/.venv/lib/python3.10/site-packages/oarepo_vocabularies/ui/theme/assets/semantic-ui/translations/oarepo_vocabularies_ui"
-            ],
-            "@js/oarepo_vocabularies": [
-                "./sites/nr-docs/.venv/lib/python3.10/site-packages/oarepo_vocabularies/ui/theme/assets/semantic-ui/js/oarepo_vocabularies_ui"
-            ],
             "@js/invenio_search_ui": [
                 "./sites/nr-docs/.venv/lib/python3.10/site-packages/invenio_search_ui/assets/semantic-ui/js/invenio_search_ui"
             ],
             "@translations/invenio_search_ui": [
                 "./sites/nr-docs/.venv/lib/python3.10/site-packages/invenio_search_ui/assets/semantic-ui/translations/invenio_search_ui"
             ],
-            "@translations/invenio_requests": [
-                "./sites/nr-docs/.venv/lib/python3.10/site-packages/invenio_requests/assets/semantic-ui/translations/invenio_requests"
-            ],
-            "@js/invenio_requests": [
-                "./sites/nr-docs/.venv/lib/python3.10/site-packages/invenio_requests/assets/semantic-ui/js/invenio_requests"
-            ],
             "@translations/oarepo_ui": [
                 "./sites/nr-docs/.venv/lib/python3.10/site-packages/oarepo_ui/theme/assets/semantic-ui/translations/oarepo_ui"
             ],
             "../../less": [
                 "./sites/nr-docs/site/nr_docs/assets/semantic-ui/less"
+            ],
+            "@less/oarepo_ui": [
+                "./sites/nr-docs/.venv/lib/python3.10/site-packages/oarepo_ui/theme/assets/semantic-ui/less/oarepo_ui"
             ],
             "@js/oarepo_ui": [
                 "./sites/nr-docs/.venv/lib/python3.10/site-packages/oarepo_ui/theme/assets/semantic-ui/js/oarepo_ui"
@@ -46,6 +37,18 @@
             ],
             "@templates/custom_fields": [
                 "./sites/nr-docs/.venv/lib/python3.10/site-packages/oarepo_ui/theme/assets/semantic-ui/js/custom_fields"
+            ],
+            "@translations/invenio_requests": [
+                "./sites/nr-docs/.venv/lib/python3.10/site-packages/invenio_requests/assets/semantic-ui/translations/invenio_requests"
+            ],
+            "@js/invenio_requests": [
+                "./sites/nr-docs/.venv/lib/python3.10/site-packages/invenio_requests/assets/semantic-ui/js/invenio_requests"
+            ],
+            "@translations/oarepo_vocabularies_ui": [
+                "./sites/nr-docs/.venv/lib/python3.10/site-packages/oarepo_vocabularies/ui/theme/assets/semantic-ui/translations/oarepo_vocabularies_ui"
+            ],
+            "@js/oarepo_vocabularies": [
+                "./sites/nr-docs/.venv/lib/python3.10/site-packages/oarepo_vocabularies/ui/theme/assets/semantic-ui/js/oarepo_vocabularies_ui"
             ],
             "@js/invenio_theme": [
                 "./sites/nr-docs/.venv/lib/python3.10/site-packages/invenio_theme/assets/semantic-ui/js/invenio_theme"
