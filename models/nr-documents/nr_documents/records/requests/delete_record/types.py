@@ -1,17 +1,14 @@
-from invenio_requests.customizations import RequestType
-
-from nr_documents.records.requests.default_request.actions import (
-    DefaultRequestRequestAcceptAction,
-)
+from oarepo_requests.actions.delete_topic import DeleteTopicSubmitAction
+from oarepo_requests.types.delete_record import DeleteRecordRequestType
 
 
-class DefaultRequestRequestType(RequestType):
-    type_id = "default_request"
-    name = "Default_request"
+class DeleteRecordRequestType(DeleteRecordRequestType):
+    type_id = "delete_record"
+    name = "Delete-record"
 
     available_actions = {
-        **RequestType.available_actions,
-        "accept": DefaultRequestRequestAcceptAction,
+        **DeleteRecordRequestType.available_actions,
+        "submit": DeleteTopicSubmitAction,
     }
 
     allowed_topic_ref_types = [

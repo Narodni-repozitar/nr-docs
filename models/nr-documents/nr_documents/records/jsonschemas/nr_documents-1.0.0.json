@@ -847,6 +847,23 @@
                 }
             }
         },
+        "syntheticFields": {
+            "type": "object",
+            "properties": {
+                "institutions": {
+                    "type": "string"
+                },
+                "keywords_cs": {
+                    "type": "string"
+                },
+                "keywords_en": {
+                    "type": "string"
+                },
+                "person": {
+                    "type": "string"
+                }
+            }
+        },
         "updated": {
             "type": "string",
             "format": "date-time"
