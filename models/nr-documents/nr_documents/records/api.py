@@ -4,26 +4,36 @@ from invenio_drafts_resources.records.api import Record as InvenioRecord
 from invenio_records.systemfields import ConstantField, RelationsField
 from invenio_records_resources.records.systemfields import IndexField
 from invenio_records_resources.records.systemfields.pid import PIDField, PIDFieldContext
+from invenio_requests.records import Request
+from invenio_requests.records.systemfields.relatedrecord import RelatedRecord
 from invenio_vocabularies.records.api import Vocabulary
 from oarepo_runtime.drafts.systemfields.has_draftcheck import HasDraftCheckField
 from oarepo_runtime.relations import PIDRelation, RelationsField
 
 from nr_documents.records.dumper import NrDocumentsDraftDumper, NrDocumentsDumper
 from nr_documents.records.models import (
-    DraftParentMetadata,
     NrDocumentsDraftMetadata,
     NrDocumentsMetadata,
-    ParentState,
+    NrDocumentsParentMetadata,
+    NrDocumentsParentState,
 )
 from nr_documents.records.multilingual_dumper import MultilingualSearchDumper
 
 
-class DraftParentRecord(
-    ParentRecord
-):  # TODO create special name for these? assuming yes
-    model_cls = DraftParentMetadata
+class NrDocumentsParentRecord(ParentRecord):
+    model_cls = NrDocumentsParentMetadata
+    delete_record = RelatedRecord(
+        Request,
+        keys=["type", "receiver", "status"],
+    )
+    publish_draft = RelatedRecord(
+        Request,
+        keys=["type", "receiver", "status"],
+    )
 
-    schema = ConstantField("$schema", "local://parent-v1.0.0.json")
+    # schema = ConstantField(
+    #    "$schema", "local://parent-v1.0.0.json"
+    # )
 
 
 class NrDocumentsIdProvider(DraftRecordIdProviderV2):
@@ -127,9 +137,9 @@ class NrDocumentsRecord(InvenioRecord):
         ),
     )
 
-    versions_model_cls = ParentState
+    versions_model_cls = NrDocumentsParentState
 
-    parent_record_cls = DraftParentRecord
+    parent_record_cls = NrDocumentsParentRecord
 
 
 class NrDocumentsDraft(InvenioDraft):
@@ -232,9 +242,9 @@ class NrDocumentsDraft(InvenioDraft):
         ),
     )
 
-    versions_model_cls = ParentState
+    versions_model_cls = NrDocumentsParentState
 
-    parent_record_cls = DraftParentRecord
+    parent_record_cls = NrDocumentsParentRecord
     has_draft = HasDraftCheckField(config_key="HAS_DRAFT_CUSTOM_FIELD")
 
 

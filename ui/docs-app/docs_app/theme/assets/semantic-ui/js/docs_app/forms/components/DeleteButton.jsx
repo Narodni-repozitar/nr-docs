@@ -2,17 +2,19 @@ import React from "react";
 import { Button, Modal, Icon, Message } from "semantic-ui-react";
 import { i18next } from "@translations/docs_app/i18next";
 import {
-  useApiClient,
   useConfirmationModal,
   useFormConfig,
   useDepositApiClient,
 } from "@js/oarepo_ui";
 import PropTypes from "prop-types";
 
-export const DeleteButtonComponent = ({ modalMessage, modalHeader }) => {
+export const DeleteButtonComponent = ({
+  modalMessage,
+  modalHeader,
+  redirectUrl,
+}) => {
   const { isModalOpen, handleCloseModal, handleOpenModal } =
     useConfirmationModal();
-  // const apiClient = useApiClient();
   const {
     formConfig: { permissions },
   } = useFormConfig();
@@ -61,7 +63,7 @@ export const DeleteButtonComponent = ({ modalMessage, modalHeader }) => {
             loading={isSubmitting}
             color="red"
             onClick={() => {
-              _delete();
+              _delete(redirectUrl);
               handleCloseModal();
             }}
             icon="delete"
@@ -83,6 +85,6 @@ DeleteButtonComponent.propTypes = {
 DeleteButtonComponent.defaultProps = {
   modalHeader: i18next.t("Are you sure you wish delete this draft?"),
   modalMessage: i18next.t(
-    "If you delete the draft, the work you have done on it will be lost"
+    "If you delete the draft, the work you have done on it will be lost."
   ),
 };

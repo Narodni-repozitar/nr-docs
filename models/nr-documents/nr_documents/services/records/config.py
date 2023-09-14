@@ -1,9 +1,11 @@
 from invenio_drafts_resources.services import (
-    RecordServiceConfig as InvenioRecordServiceConfig,
+    RecordServiceConfig as InvenioRecordDraftsServiceConfig,
 )
+
 from invenio_records_resources.services import pagination_links
 from invenio_records_resources.services import RecordLink, ConditionalLink
 from invenio_records_resources.services.records.components import DataComponent
+from oarepo_requests.components.requests import PublishDraftComponent
 from oarepo_runtime.config.service import PermissionsPresetsConfigMixin
 
 from nr_documents.records.api import NrDocumentsDraft, NrDocumentsRecord
@@ -23,7 +25,7 @@ def is_record(record, ctx):
 
 
 class NrDocumentsServiceConfig(
-    PermissionsPresetsConfigMixin, InvenioRecordServiceConfig
+    PermissionsPresetsConfigMixin, InvenioRecordDraftsServiceConfig
 ):
     """NrDocumentsRecord service config."""
 
@@ -43,7 +45,8 @@ class NrDocumentsServiceConfig(
 
     components = [
         *PermissionsPresetsConfigMixin.components,
-        *InvenioRecordServiceConfig.components,
+        *InvenioRecordDraftsServiceConfig.components,
+        PublishDraftComponent("publish_draft", "delete_record"),
         DataComponent,
     ]
 

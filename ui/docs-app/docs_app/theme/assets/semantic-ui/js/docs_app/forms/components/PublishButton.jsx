@@ -1,17 +1,12 @@
 import React from "react";
 import { Button, Modal, Message, Icon } from "semantic-ui-react";
 import { i18next } from "@translations/docs_app/i18next";
-import {
-  useApiClient,
-  useConfirmationModal,
-  useDepositApiClient,
-} from "@js/oarepo_ui";
+import { useConfirmationModal, useDepositApiClient } from "@js/oarepo_ui";
 import PropTypes from "prop-types";
 
 export const PublishButtonComponent = ({ modalMessage, modalHeader }) => {
   const { isModalOpen, handleCloseModal, handleOpenModal } =
     useConfirmationModal();
-  // const apiClient = useApiClient();
   const { isSubmitting, publish } = useDepositApiClient();
 
   return (

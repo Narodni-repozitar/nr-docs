@@ -1,35 +1,30 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Message } from "semantic-ui-react";
 import { useFormikContext, getIn } from "formik";
 import _isEmpty from "lodash/isEmpty";
 import _startCase from "lodash/startCase";
 
+// component to be used downstream of Formik that plugs into Formik's state and displays any errors
+// that apiClient sent to formik in auxilary keys. The keys are later removed when submitting the form
+
 // function to turn last part of fieldPath from form camelCase to Camel Case
 const titleCase = (fieldPath) =>
   _startCase(fieldPath.split(".")[fieldPath.split(".").length - 1]);
-// TODO: fix broken margins on the error message. Also potentially make Error dismissible, as
-// it could be annoying for the user
 
 const CustomMessage = ({ children, ...uiProps }) => {
-  const [visible, setVisible] = useState(true);
-  console.log("custom message", visible);
-
-  // useEffect(() => {
-  //   return () => setVisible(true);
-  // }, []);
-  const handleDismiss = () => setVisible(false);
   return (
-    visible && (
-      <Message onDismiss={handleDismiss} className="rel-mb-2" {...uiProps}>
-        {children}
-      </Message>
-    )
+    <Message className="rel-mb-2" {...uiProps}>
+      {children}
+    </Message>
   );
 };
 export const FormFeedback = () => {
   const { values } = useFormikContext();
   const validationErrors = getIn(values, "validationErrors", {});
-  const httpError = getIn(values, "httpErrors", "");
+  let httpError = getIn(values, "httpErrors", "");
+  if (httpError?.response?.data) {
+    httpError = httpError?.response?.data.message;
+  }
   const successMessage = getIn(values, "successMessage", "");
   if (!_isEmpty(validationErrors))
     return (

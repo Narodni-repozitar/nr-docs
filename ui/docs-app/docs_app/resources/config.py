@@ -1,6 +1,8 @@
 from oarepo_ui.resources.config import RecordsUIResourceConfig
 from oarepo_ui.resources import BabelComponent, PermissionsComponent
-from oarepo_vocabularies.ui.resources.components import DepositVocabularyOptionsComponent
+from oarepo_vocabularies.ui.resources.components import (
+    DepositVocabularyOptionsComponent,
+)
 
 
 class DocsAppResourceConfig(RecordsUIResourceConfig):
@@ -15,15 +17,15 @@ class DocsAppResourceConfig(RecordsUIResourceConfig):
     components = [
         BabelComponent,
         DepositVocabularyOptionsComponent,
-        PermissionsComponent
+        PermissionsComponent,
     ]
 
     templates = {
         "detail": {
-            "layout": "docs_app/detail.html",
+            "layout": "docs_app/Detail.html.jinja",
             "blocks": {
-                "record_main_content": "docs_app/main.html",
-                "record_sidebar": "docs_app/sidebar.html",
+                "record_main_content": "Main",
+                "record_sidebar": "Sidebar",
             },
         },
         "search": {"layout": "docs_app/search.html"},
