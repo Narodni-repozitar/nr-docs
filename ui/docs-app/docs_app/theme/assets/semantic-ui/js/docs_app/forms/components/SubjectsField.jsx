@@ -3,8 +3,7 @@ import PropTypes from "prop-types";
 import { Button, Form, Icon } from "semantic-ui-react";
 import { ArrayField, SelectField, GroupField } from "react-invenio-forms";
 import { i18next } from "@translations/docs_app/i18next";
-import { MultilingualTextInput } from "@js/oarepo_ui";
-import { useHighlightState } from "../hooks";
+import { MultilingualTextInput, useHighlightState } from "@js/oarepo_ui";
 
 const options = [{ value: "keyword", text: "Keyword" }];
 

@@ -7,11 +7,14 @@ jinja2-simple-tags==0.5.0
 jinjax==0.25
 langcodes==3.3.0
 Levenshtein==0.21.1
-nr-metadata==1.0.39
+nr-metadata==1.0.40
 nr-oaipmh-harvesters==1.0.1
 nr-vocabularies==2.0.5
+oarepo-oai-pmh-harvester==4.0.26
 oarepo-published-service==1.0.1
 oarepo-runtime==1.4.5
+oarepo-ui==5.0.55
+oarepo-vocabularies==2.0.29
 openpyxl==3.1.2
 python-dotenv==1.0.0
 rapidfuzz==3.2.0

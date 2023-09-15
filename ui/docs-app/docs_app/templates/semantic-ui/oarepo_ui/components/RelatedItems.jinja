@@ -1,0 +1,21 @@
+{#def relatedItems #}
+<dl class='detail-subfields'>
+    {% for ri in relatedItems %}
+    <Field label={_('metadata/relatedItems/itemTitle.label')}>{{ri.itemTitle}}</Field>
+    <Field label={_('metadata/relatedItems/itemCreators.label')}>{{ri.itemCreators}}</Field>
+    <Field label={_('metadata/relatedItems/itemContributors.label')}>{{ri.itemContributors}}</Field>
+    <Field label={_('metadata/relatedItems/itemPIDs.label')}><NrObjectPid pids={ri.itemPIDs}></NrObjectPid></Field>
+    <Field label={_('metadata/relatedItems/itemURL.label')}>{{ri.itemURL}}</Field>
+    <Field label={_('metadata/relatedItems/itemYear.label')}>{{ri.itemYear}}</Field>
+    <Field label={_('metadata/relatedItems/itemVolume.label')}>{{ri.itemVolume}}</Field>
+
+<Field label={_('metadata/relatedItems/itemIssue.label')}>{{ri.itemIssue}}</Field>
+<Field label={_('metadata/relatedItems/itemVolume.label')}>{{ri.itemVolume}}</Field>
+<Field label={_('metadata/relatedItems/itemStartPage.label')}>{{ri.itemStartPage}}</Field>
+<Field label={_('metadata/relatedItems/itemEndPage.label')}>{{ri.itemEndPage}}</Field>
+<Field label={_('metadata/relatedItems/itemPublisher.label')}>{{ri.itemPublisher}}</Field>
+<Field label={_('metadata/relatedItems/itemRelationType.label')}>{{ri.itemRelationType}}</Field>
+<Field label={_('metadata/relatedItems/itemResourceType.label')}>{{ri.itemResourceType}}</Field>
+
+    {% endfor %}
+</dl>

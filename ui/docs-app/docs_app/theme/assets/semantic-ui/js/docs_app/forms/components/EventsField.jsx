@@ -6,7 +6,7 @@ import { i18next } from "@translations/docs_app/i18next";
 import { LocalVocabularySelectField } from "./LocalVocabularySelectField";
 import { StringArrayField } from "./StringArrayField";
 import { DateField } from "./DateField";
-import { useHighlightState } from "../hooks";
+import { useHighlightState } from "@js/oarepo_ui";
 
 export const EventsField = ({ fieldPath, helpText }) => {
   const { highlightedStates, handleHover, handleMouseLeave } =

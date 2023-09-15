@@ -13,4 +13,7 @@ export { IdentifiersField } from "./IdentifiersField";
 export { FieldArrayComponent } from "./FieldArrayComponent";
 export { PreviewButton } from "./PreviewButton";
 export { SaveButton } from "./SaveButton";
+export { DeleteButtonComponent } from "./DeleteButton";
+export { PublishButtonComponent } from "./PublishButton";
+export { FormFeedback } from "./FormFeedback";
 export { CreatibutorsField } from './CreatibutorsField'

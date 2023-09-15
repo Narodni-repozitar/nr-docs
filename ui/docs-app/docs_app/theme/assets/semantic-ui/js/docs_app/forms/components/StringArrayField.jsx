@@ -2,9 +2,9 @@ import React from "react";
 import PropTypes from "prop-types";
 import { FieldLabel, TextField, GroupField } from "react-invenio-forms";
 import { i18next } from "@translations/docs_app/i18next";
-import { useFormikContext, getIn, FieldArray, Field } from "formik";
+import { useFormikContext, getIn, FieldArray } from "formik";
 import { Icon, Button, Form } from "semantic-ui-react";
-import { useHighlightState } from "../hooks";
+import { useHighlightState } from "@js/oarepo_ui";
 
 export const StringArrayField = ({
   fieldPath,
@@ -52,7 +52,7 @@ export const StringArrayField = ({
                       className="close-btn"
                       icon
                       onClick={() => {
-                        arrayHelpers.remove(indexPath);
+                        remove(indexPath);
                         handleMouseLeave(indexPath);
                       }}
                       onMouseEnter={() => handleHover(indexPath)}
