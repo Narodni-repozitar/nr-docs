@@ -2,12 +2,11 @@ import React, { useRef } from "react";
 import {
   useFormConfig,
   MultilingualTextInput,
-  I18nTextInputField,
   BaseForm,
   FormikStateLogger,
 } from "@js/oarepo_ui";
 import { AccordionField, FieldLabel, TextField } from "react-invenio-forms";
-import { Container, Grid, Ref, Sticky, Form, Card } from "semantic-ui-react";
+import { Container, Grid, Ref, Sticky, Card } from "semantic-ui-react";
 import { NRDocumentValidationSchema } from "./NRDocumentValidationSchema";
 import {
   DateField,
@@ -226,6 +225,7 @@ export const DepositForm = () => {
                     fieldPath="metadata.abstract"
                   >
                     <MultilingualTextInput
+                      hasHighlighting
                       labelIcon="pencil"
                       label={i18next.t("Abstract")}
                       textFieldLabel={i18next.t("Description")}
@@ -330,6 +330,7 @@ export const DepositForm = () => {
                     fieldPath="metadata.methods"
                   >
                     <MultilingualTextInput
+                      hasHighlighting
                       labelIcon="pencil"
                       label={i18next.t("Methods")}
                       fieldPath="metadata.methods"
@@ -343,6 +344,7 @@ export const DepositForm = () => {
                     fieldPath="metadata.technicalInfo"
                   >
                     <MultilingualTextInput
+                      hasHighlighting
                       textFieldLabel={i18next.t("Description")}
                       labelIcon="pencil"
                       label={i18next.t("Technical info")}
@@ -403,13 +405,18 @@ export const DepositForm = () => {
                     id="NrDocs.Deposit.AccessibilityField.container"
                     fieldPath="metadata.accessibility"
                   >
-                    <Form.Field>
-                      <label>{i18next.t("Resource accessibility")}</label>
-                      <I18nTextInputField
-                        label={i18next.t("Description")}
-                        fieldPath="metadata.accessibility"
-                      />
-                    </Form.Field>
+                    {/* TODO: not clear how this input is going to work i.e. our access is within metadata */}
+                    <MultilingualTextInput
+                      hasHighlighting
+                      className="invenio-group-field accessibility"
+                      labelIcon="pencil"
+                      label={i18next.t("Accessibility")}
+                      textFieldLabel={i18next.t("Description")}
+                      fieldPath="metadata.accessibility"
+                      helpText={i18next.t(
+                        "Explanation regarding restricted status of an item"
+                      )}
+                    />
                   </Overridable>
                   <Overridable
                     id="NrDocs.Deposit.FundersField.container"
