@@ -77,13 +77,6 @@ export const DepositForm = () => {
                   <FormFeedback />
                 </Overridable>
               </Sticky>
-              <Overridable id="NrDocs.Deposit.AccordionFieldFiles.container">
-                <AccordionField
-                  includesPaths={["files.enabled"]}
-                  active
-                  label={i18next.t("Files")}
-                ></AccordionField>
-              </Overridable>
               <Overridable id="NrDocs.Deposit.AccordionFieldBasicInformation.container">
                 <AccordionField
                   includesPaths={[
