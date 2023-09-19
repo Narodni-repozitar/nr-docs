@@ -1,16 +1,13 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Button, Form, Icon, Container } from "semantic-ui-react";
 import { ArrayField, TextField, GroupField } from "react-invenio-forms";
 import { i18next } from "@translations/docs_app/i18next";
 import { LocalVocabularySelectField } from "./LocalVocabularySelectField";
 import { StringArrayField } from "./StringArrayField";
 import { DateField } from "./DateField";
-import { useHighlightState } from "@js/oarepo_ui";
+import { ArrayFieldItem } from "@js/oarepo_ui";
 
 export const EventsField = ({ fieldPath, helpText }) => {
-  const { highlightedStates, handleHover, handleMouseLeave } =
-    useHighlightState();
   return (
     <ArrayField
       addButtonLabel={i18next.t("Add event")}
@@ -22,10 +19,10 @@ export const EventsField = ({ fieldPath, helpText }) => {
       {({ arrayHelpers, indexPath }) => {
         const fieldPathPrefix = `${fieldPath}.${indexPath}`;
         return (
-          <Container
-            className={
-              highlightedStates[indexPath] ? "highlighted events" : "events"
-            }
+          <ArrayFieldItem
+            indexPath={indexPath}
+            arrayHelpers={arrayHelpers}
+            className={"invenio-group-field events"}
           >
             <TextField
               width={16}
@@ -51,6 +48,7 @@ export const EventsField = ({ fieldPath, helpText }) => {
                 fieldPath={`${fieldPathPrefix}.eventLocation.place`}
                 label={i18next.t("Place")}
                 required
+                inline
               />
               <LocalVocabularySelectField
                 width={4}
@@ -58,25 +56,10 @@ export const EventsField = ({ fieldPath, helpText }) => {
                 label={i18next.t("Country")}
                 optionsListName="countries"
                 required
+                inline
               />
             </GroupField>
-
-            <Form.Field className="rel-mt-1 rel-mb-1">
-              <Button
-                aria-label={i18next.t("Remove field")}
-                className="close-btn"
-                icon
-                onClick={() => {
-                  arrayHelpers.remove(indexPath);
-                  handleMouseLeave(indexPath);
-                }}
-                onMouseEnter={() => handleHover(indexPath)}
-                onMouseLeave={() => handleMouseLeave(indexPath)}
-              >
-                <Icon name="close" />
-              </Button>
-            </Form.Field>
-          </Container>
+          </ArrayFieldItem>
         );
       }}
     </ArrayField>

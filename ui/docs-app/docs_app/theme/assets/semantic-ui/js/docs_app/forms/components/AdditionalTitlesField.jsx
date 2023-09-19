@@ -1,9 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Button, Form, Icon } from "semantic-ui-react";
-import { ArrayField, SelectField, GroupField } from "react-invenio-forms";
+import { Form } from "semantic-ui-react";
+import { ArrayField, SelectField } from "react-invenio-forms";
 import { i18next } from "@translations/docs_app/i18next";
-import { I18nTextInputField, useHighlightState } from "@js/oarepo_ui";
+import { I18nTextInputField, ArrayFieldItem } from "@js/oarepo_ui";
 
 const subtitleTypes = [
   { text: "Alternative title", value: "alternativeTitle" },
@@ -13,9 +13,6 @@ const subtitleTypes = [
 ];
 
 export const AdditionalTitlesField = ({ fieldPath }) => {
-  const { highlightedStates, handleHover, handleMouseLeave } =
-    useHighlightState();
-
   return (
     <ArrayField
       addButtonLabel={i18next.t("Add additional title")}
@@ -25,16 +22,13 @@ export const AdditionalTitlesField = ({ fieldPath }) => {
       labelIcon="pencil"
       className="additional-titles"
     >
-      {({ arrayHelpers, indexPath }) => {
+      {({ arrayHelpers, indexPath, array }) => {
         const fieldPathPrefix = `${fieldPath}.${indexPath}`;
         return (
-          <GroupField
-            border
-            className={
-              highlightedStates[indexPath]
-                ? "highlighted invenio-group-field"
-                : "invenio-group-field"
-            }
+          <ArrayFieldItem
+            indexPath={indexPath}
+            array={array}
+            arrayHelpers={arrayHelpers}
           >
             <Form.Field width={13}>
               <I18nTextInputField
@@ -54,23 +48,7 @@ export const AdditionalTitlesField = ({ fieldPath }) => {
                 required
               />
             </Form.Field>
-
-            <Form.Field>
-              <Button
-                aria-label={i18next.t("Remove field")}
-                className="close-btn"
-                icon
-                onClick={() => {
-                  arrayHelpers.remove(indexPath);
-                  handleMouseLeave(indexPath);
-                }}
-                onMouseEnter={() => handleHover(indexPath)}
-                onMouseLeave={() => handleMouseLeave(indexPath)}
-              >
-                <Icon name="close" />
-              </Button>
-            </Form.Field>
-          </GroupField>
+          </ArrayFieldItem>
         );
       }}
     </ArrayField>

@@ -12,17 +12,10 @@
     > label::after,
   .ui.form .required.fields.grouped > .content > .header > label::after,
   .ui.form .required.field > .content > .header > label::after {
-    // margin: -0.2em 0 0 0.2em;
     content: "*";
     color: @red;
   }
-  .highlighted {
-    input,
-    .dropdown,
-    .ck-editor {
-      box-shadow: 0 0 5pt 0.5pt #997d7d;
-    }
-  }
+
   .ck-editor__editable {
     min-height: 8.5em;
   }
@@ -55,6 +48,14 @@
         margin-top: 1.75rem;
       }
     }
+    .invenio-group-field.fields {
+      .invenio-group-field.fields {
+        margin: 0;
+        padding: 0;
+        border-radius: 0.5rem;
+        background-color: transparent;
+      }
+    }
     .accessibility.fields {
       .invenio-group-field.fields {
         padding: 0;
@@ -63,13 +64,15 @@
     }
     .additional-titles {
       .invenio-group-field.fields {
-        padding: 0.3rem 0 0 0;
+        padding: 0.3rem 0 1rem 0;
       }
     }
 
     .subjects.invenio-group-field {
       .invenio-group-field.fields {
-        background-color: @internalArrayFieldColor;
+        background-color: transparent;
+        margin-bottom: 1rem;
+        padding: 0.3rem;
       }
 
       .ui.icon.left.labeled.button {
@@ -81,15 +84,27 @@
       margin: 0;
     }
     .events {
-      background-color: @arrayFieldColor;
+      display: block;
+      // background-color: @arrayFieldColor;
       padding: 0.5rem;
       margin: 0.5rem;
       border-radius: 0.5rem;
-      margin-top: 0.5rem;
-      .invenio-group-field.fields {
-        background-color: @internalArrayFieldColor;
-        margin: 0.3rem;
+      .field {
+        margin-top: 0.3rem;
+        margin-bottom: 1rem;
       }
+      label.helptext {
+        padding: 1 rem;
+        margin: 1rem;
+      }
+      .invenio-group-field.fields {
+        background-color: transparent;
+        margin: 0.5rem;
+        padding: 1rem;
+      }
+    }
+    .highlighted {
+      background-color: red !important;
     }
   }
 }

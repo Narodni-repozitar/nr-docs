@@ -1,10 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { FieldLabel, TextField, GroupField } from "react-invenio-forms";
+import { FieldLabel, TextField } from "react-invenio-forms";
 import { i18next } from "@translations/docs_app/i18next";
 import { useFormikContext, getIn, FieldArray } from "formik";
-import { Icon, Button, Form } from "semantic-ui-react";
-import { useHighlightState } from "@js/oarepo_ui";
+import { Icon, Form } from "semantic-ui-react";
+import { ArrayFieldItem } from "@js/oarepo_ui";
 
 export const StringArrayField = ({
   fieldPath,
@@ -14,29 +14,23 @@ export const StringArrayField = ({
   addButtonLabel,
   helpText,
   labelIcon,
-  disabled,
   ...uiProps
 }) => {
-  const { highlightedStates, handleHover, handleMouseLeave } =
-    useHighlightState();
   const { values } = useFormikContext();
   return (
     <Form.Field>
       <FieldLabel label={label} icon={labelIcon} htmlFor={fieldPath} />
       <FieldArray
         name={fieldPath}
-        render={({ remove, push }) => (
+        render={(arrayHelpers) => (
           <React.Fragment>
             {getIn(values, fieldPath, []).map((item, index) => {
               const indexPath = `${fieldPath}.${index}`;
               return (
-                <GroupField
+                <ArrayFieldItem
                   key={index}
-                  className={
-                    highlightedStates[indexPath]
-                      ? "highlighted invenio-group-field"
-                      : "invenio-group-field"
-                  }
+                  indexPath={index}
+                  arrayHelpers={arrayHelpers}
                 >
                   <TextField
                     width={16}
@@ -46,22 +40,7 @@ export const StringArrayField = ({
                     fluid
                     {...uiProps}
                   />
-                  <Form.Field>
-                    <Button
-                      aria-label={i18next.t("Remove field")}
-                      className="close-btn"
-                      icon
-                      onClick={() => {
-                        remove(indexPath);
-                        handleMouseLeave(indexPath);
-                      }}
-                      onMouseEnter={() => handleHover(indexPath)}
-                      onMouseLeave={() => handleMouseLeave(indexPath)}
-                    >
-                      <Icon name="close" />
-                    </Button>
-                  </Form.Field>
-                </GroupField>
+                </ArrayFieldItem>
               );
             })}
             <label style={{ fontWeight: "bold" }}>{helpText}</label>
@@ -70,7 +49,7 @@ export const StringArrayField = ({
               icon
               labelPosition="left"
               onClick={() => {
-                push(newItemInitialValue);
+                arrayHelpers.push(newItemInitialValue);
               }}
             >
               <Icon name="add" />
@@ -90,7 +69,6 @@ StringArrayField.propTypes = {
   addButtonLabel: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
   helpText: PropTypes.string,
   labelIcon: PropTypes.string,
-  disabled: PropTypes.bool,
 };
 
 StringArrayField.defaultProps = {
