@@ -28,7 +28,7 @@ class DocsAppResourceConfig(RecordsUIResourceConfig):
                 "record_sidebar": "Sidebar",
             },
         },
-        "search": {"layout": "docs_app/search.html"},
+        "search": {"layout": "docs_app/Search.html.jinja"},
         "edit": {"layout": "docs_app/deposit.html"},
         "create": {"layout": "docs_app/deposit.html"},
     }
