@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2\n"
-"POT-Creation-Date: 2023-08-17T09:57:39.570Z\n"
-"PO-Revision-Date: 2023-08-17T09:57:39.570Z\n"
+"POT-Creation-Date: 2023-09-20T05:46:40.748Z\n"
+"PO-Revision-Date: 2023-09-20T05:46:40.748Z\n"
 "Language: cs\n"
 
 msgid "We couldn't find any matches for "
@@ -88,264 +88,329 @@ msgid "Search"
 msgstr "Hledat"
 
 msgid "Add additional title"
-msgstr ""
+msgstr "Přidat další název"
 
 msgid "Additional titles"
-msgstr ""
+msgstr "Další názvy"
 
 msgid "Title"
-msgstr ""
+msgstr "Název"
 
 msgid "Title type"
-msgstr ""
-
-msgid "Remove field"
-msgstr ""
+msgstr "Druh názvu"
 
 msgid ""
 "In case your upload was already published elsewhere, please use the date of "
 "the first publication. Format: YYYY-MM-DD, YYYY-MM, or YYYY. For intervals "
 "use DATE/DATE, e.g. 1939/1945."
 msgstr ""
+"V případě, že váš příspěvek již byl publikován jinde, použijte prosím datum "
+"prvního zveřejnění. Formát: RRRR-MM-DD, RRRR-MM nebo RRRR. Pro intervaly "
+"použijte DATUM/DATUM, např. 1939/1945."
 
 msgid "YYYY-MM-DD or YYYY-MM-DD/YYYY-MM-DD for intervals. MM and DD are optional."
-msgstr ""
+msgstr "RRRR-MM-DD nebo RRRR-MM-DD/RRRR-MM-DD pro intervaly. MM a DD jsou volitelné."
 
 msgid "Add event"
-msgstr ""
+msgstr "Přidat událost"
 
 msgid "Events"
-msgstr ""
+msgstr "Události"
 
 msgid "Event name"
-msgstr ""
+msgstr "Název akce"
 
 msgid "Event alternate name"
-msgstr ""
+msgstr "Alternativní název akce"
 
 msgid "Add event alternate name"
-msgstr ""
+msgstr "Přidejte alternativní název akce"
 
 msgid "Event date"
-msgstr ""
+msgstr "Datum události"
 
 msgid "Place"
-msgstr ""
+msgstr "Místo"
 
 msgid "Country"
-msgstr ""
+msgstr "Země"
 
 msgid "External location"
-msgstr ""
+msgstr "Externí umístění"
 
 msgid "Resource external location"
-msgstr ""
+msgstr "Externí umístění zdroje"
 
 msgid "Note"
-msgstr ""
+msgstr "Poznámka"
 
 msgid "Add funder"
-msgstr ""
+msgstr "Přidat poskytovatele financí"
 
 msgid "Funding"
-msgstr ""
+msgstr "Projekt nebo financování"
 
 msgid "Project code"
-msgstr ""
+msgstr "Číslo projektu"
 
 msgid "Project name"
-msgstr ""
+msgstr "Název projektu"
 
 msgid "Funding program"
-msgstr ""
+msgstr "Výzkumný program"
 
 msgid "Funder"
-msgstr ""
+msgstr "Poskytovatel financí"
 
 msgid "Add location"
-msgstr ""
+msgstr "Přidat lokace"
 
 msgid "Geolocation"
-msgstr ""
+msgstr "Geolokace"
 
 msgid "Location"
-msgstr ""
+msgstr "Lokace"
 
 msgid "Longitude"
-msgstr ""
+msgstr "Zeměpisná délka"
 
 msgid "Latitude"
-msgstr ""
+msgstr "Zeměpisná šířka"
 
 msgid "Add identifier"
-msgstr ""
+msgstr "Přidat identifikátor"
 
 msgid "Identifier type"
-msgstr ""
+msgstr "Typ identifikátoru"
 
 msgid "Identifier field"
-msgstr ""
+msgstr "Pole identifikátoru"
 
 msgid "Object identifier"
-msgstr ""
+msgstr "Identifikátor objektu"
 
 msgid "Add series"
-msgstr ""
+msgstr "Přidat sérii"
 
 msgid "Series"
-msgstr ""
+msgstr "Série"
 
 msgid "Series title"
-msgstr ""
+msgstr "Název edice"
 
 msgid "Series volume"
-msgstr ""
+msgstr "Svazek edice"
 
 msgid "Add note"
-msgstr ""
+msgstr "Přidat poznámku"
 
 msgid "Notes"
-msgstr ""
+msgstr "Poznámky"
 
 msgid "Items shall be unique"
-msgstr ""
+msgstr "Položky musí být jedinečné"
 
 msgid "Add subject"
-msgstr ""
+msgstr "Přidat předmět"
 
 msgid "Subjects"
-msgstr ""
+msgstr "Klíčová slova"
 
 msgid "Subject scheme"
-msgstr ""
-
-msgid "Keyword"
-msgstr ""
+msgstr "Schema klíčového slova"
 
 msgid "Validate form"
-msgstr ""
-
-msgid "Files"
-msgstr ""
+msgstr "Potvrďte formulář"
 
 msgid "Basic information"
-msgstr ""
+msgstr "Základní informace"
 
 msgid "Object identifiers"
-msgstr ""
+msgstr "Identifikátory objektů"
 
 msgid "Persistent identifier/s of object as ISBN, DOI, etc."
-msgstr ""
+msgstr "Trvalé identifikátory objektu jako ISBN, DOI atd."
 
 msgid "System identifier"
-msgstr ""
+msgstr "Systémový identifikátor"
 
 msgid "System identifiers"
-msgstr ""
+msgstr "Identifikátory systému"
 
 msgid "Access rights"
-msgstr ""
+msgstr "Přístupová práva"
 
 msgid "Select access rights"
-msgstr ""
+msgstr "Vyberte přístupová práva"
 
 msgid "Resource type"
-msgstr ""
+msgstr "Typ zdroje"
 
 msgid "Select resource type"
-msgstr ""
+msgstr "Vyberte typ zdroje"
 
 msgid "Date available"
-msgstr ""
+msgstr "Datum zveřejnění"
 
 msgid "Date modified"
-msgstr ""
+msgstr "Datum změny zdroje"
 
 msgid "Abstract"
-msgstr ""
+msgstr "Abstrakt"
 
 msgid "Description"
-msgstr ""
+msgstr "Popis"
 
 msgid ""
 "Detailed description of the methodology and technical information should be "
 "specified in the 'Dataset Description' section"
 msgstr ""
+"Podrobný popis metodiky a technické informace by měly být uvedeny v části "
+"„Popis datové sady“."
 
 msgid "Language"
-msgstr ""
+msgstr "Jazyk"
 
 msgid "Choose languages"
-msgstr ""
+msgstr "Vyberte jazyky"
 
 msgid "Licenses"
-msgstr ""
+msgstr "Licence"
 
 msgid "Choose licenses"
-msgstr ""
+msgstr "Vyberte licence"
 
 msgid ""
 "If a Creative Commons license is associated with the dataset, select the "
 "appropriate license option from the menu. We recommend choosing the latest "
 "versions, namely 3.0 Czech and 4.0 International."
 msgstr ""
+"Pokud se k datové sadě váže licence Creative Commons, vyberte příslušnou "
+"variantu licence z nabídky. Doporučujeme výběr nejnovějších verzí a to 3.0 "
+"Česko a 4.0 International."
 
 msgid "Add publisher"
-msgstr ""
+msgstr "Přidat vydavatele"
 
 msgid "Publishers"
-msgstr ""
+msgstr "Vydavatelé"
 
 msgid "Dataset description"
-msgstr ""
+msgstr "Popis datové sady"
 
 msgid "Subject Categories"
-msgstr ""
+msgstr "Oborové třídění"
 
 msgid "Choose subject categories"
-msgstr ""
+msgstr "Vyberte kategorie předmětů"
 
 msgid "Select the subject field(s) to which the dataset belongs."
-msgstr ""
+msgstr "Vyberte obor/y, do kterého/kterých datová sada spadá"
 
 msgid "Methods"
-msgstr ""
+msgstr "Metodologie"
 
 msgid "Technical info"
-msgstr ""
+msgstr "Technické informace"
 
 msgid ""
 "Detailed information that may be associated with design, implementation, "
 "operation, use, and/or maintenance of a process or system"
 msgstr ""
+"Podrobné informace, které mohou být spojeny s návrhem, implementací, "
+"provozem, používáním a/nebo údržbou procesu nebo systému"
 
 msgid ""
 "Free-form note for any comment that couldn't be inserted in any other "
 "fields."
 msgstr ""
+"Volně tvarovaná poznámka pro jakýkoli komentář, který nebylo možné vložit "
+"do jiných polí."
 
 msgid ""
 "Free description of the location; ie. Atlantic Ocean. Longitude must be a "
 "number between -180 and 180 and latitude between -90 and 90."
 msgstr ""
-
-msgid "Resource accessibility"
-msgstr ""
+"Volný popis místa; npr. Atlantický oceán. Zeměpisná délka musí být číslo "
+"mezi -180 a 180 a zeměpisná šířka mezi -90 a 90."
 
 msgid "This field is required"
-msgstr ""
+msgstr "Toto pole je vyžadováno"
 
 msgid "Must have at least x characters"
-msgstr ""
-
-msgid "Titles must be unique"
-msgstr ""
-
-msgid "Items must be unique."
-msgstr ""
+msgstr "Musí mít alespoň {{min}} znaků"
 
 msgid "Must be between -180 and 180"
-msgstr ""
+msgstr "Musí být mezi -180 a 180"
 
 msgid "Must be between -90 and 90"
+msgstr "Musí být mezi -90 a 90"
+
+msgid "Delete"
+msgstr ""
+
+msgid "Cancel"
+msgstr ""
+
+msgid "Are you sure you wish delete this draft?"
+msgstr ""
+
+msgid "If you delete the draft, the work you have done on it will be lost."
+msgstr ""
+
+msgid "Preview"
+msgstr ""
+
+msgid "Publish"
+msgstr ""
+
+msgid "Are you sure you wish to publish this draft?"
+msgstr ""
+
+msgid "Save"
+msgstr ""
+
+msgid "Additional information"
+msgstr ""
+
+msgid "Accessibility"
+msgstr ""
+
+msgid "Explanation regarding restricted status of an item"
+msgstr ""
+
+msgid "Items must be unique"
+msgstr ""
+
+msgid "Additional titles must be unique"
+msgstr ""
+
+msgid "Invalid date format"
+msgstr ""
+
+msgid "Publishers must be unique"
+msgstr ""
+
+msgid "Notes must be unique"
+msgstr ""
+
+msgid "Locations must be unique"
+msgstr ""
+
+msgid "Please provide an URL in valid format"
+msgstr ""
+
+msgid "URL must be provided for this field if used"
+msgstr ""
+
+msgid "Project codes must be unique"
+msgstr ""
+
+msgid "Subjects must be unique"
+msgstr ""
+
+msgid "Series titles must be unique"
+msgstr ""
+
+msgid "Object identifiers must be unique"
 msgstr ""

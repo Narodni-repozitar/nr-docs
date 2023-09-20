@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2023-08-17T09:57:39.634Z\n"
-"PO-Revision-Date: 2023-08-17T09:57:39.634Z\n"
+"POT-Creation-Date: 2023-09-20T05:46:40.802Z\n"
+"PO-Revision-Date: 2023-09-20T05:46:40.802Z\n"
 "Language: en\n"
 
 msgid "We couldn't find any matches for "
@@ -98,9 +98,6 @@ msgstr "Title"
 
 msgid "Title type"
 msgstr "Title type"
-
-msgid "Remove field"
-msgstr "Remove field"
 
 msgid ""
 "In case your upload was already published elsewhere, please use the date of "
@@ -222,14 +219,8 @@ msgstr "Subjects"
 msgid "Subject scheme"
 msgstr "Subject scheme"
 
-msgid "Keyword"
-msgstr "Keyword"
-
 msgid "Validate form"
 msgstr "Validate form"
-
-msgid "Files"
-msgstr "Files"
 
 msgid "Basic information"
 msgstr "Basic information"
@@ -343,23 +334,83 @@ msgstr ""
 "Free description of the location; ie. Atlantic Ocean. Longitude must be a "
 "number between -180 and 180 and latitude between -90 and 90."
 
-msgid "Resource accessibility"
-msgstr "Resource accessibility"
-
 msgid "This field is required"
 msgstr "This field is required"
 
 msgid "Must have at least x characters"
-msgstr "Must have at least x characters"
-
-msgid "Titles must be unique"
-msgstr "Titles must be unique"
-
-msgid "Items must be unique."
-msgstr "Items must be unique."
+msgstr "Must have at least {{min}} characters"
 
 msgid "Must be between -180 and 180"
 msgstr "Must be between -180 and 180"
 
 msgid "Must be between -90 and 90"
 msgstr "Must be between -90 and 90"
+
+msgid "Delete"
+msgstr "Delete"
+
+msgid "Cancel"
+msgstr "Cancel"
+
+msgid "Are you sure you wish delete this draft?"
+msgstr "Are you sure you wish delete this draft?"
+
+msgid "If you delete the draft, the work you have done on it will be lost."
+msgstr "If you delete the draft, the work you have done on it will be lost."
+
+msgid "Preview"
+msgstr "Preview"
+
+msgid "Publish"
+msgstr "Publish"
+
+msgid "Are you sure you wish to publish this draft?"
+msgstr "Are you sure you wish to publish this draft?"
+
+msgid "Save"
+msgstr "Save"
+
+msgid "Additional information"
+msgstr "Additional information"
+
+msgid "Accessibility"
+msgstr "Accessibility"
+
+msgid "Explanation regarding restricted status of an item"
+msgstr "Explanation regarding restricted status of an item"
+
+msgid "Items must be unique"
+msgstr "Items must be unique"
+
+msgid "Additional titles must be unique"
+msgstr "Additional titles must be unique"
+
+msgid "Invalid date format"
+msgstr "Invalid date format"
+
+msgid "Publishers must be unique"
+msgstr "Publishers must be unique"
+
+msgid "Notes must be unique"
+msgstr "Notes must be unique"
+
+msgid "Locations must be unique"
+msgstr "Locations must be unique"
+
+msgid "Please provide an URL in valid format"
+msgstr "Please provide an URL in valid format"
+
+msgid "URL must be provided for this field if used"
+msgstr "URL must be provided for this field if used"
+
+msgid "Project codes must be unique"
+msgstr "Project codes must be unique"
+
+msgid "Subjects must be unique"
+msgstr "Subjects must be unique"
+
+msgid "Series titles must be unique"
+msgstr "Series titles must be unique"
+
+msgid "Object identifiers must be unique"
+msgstr "Object identifiers must be unique"
