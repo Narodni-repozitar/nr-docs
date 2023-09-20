@@ -108,7 +108,7 @@ class CreatibutorsFieldForm extends Component {
             })}
             <CreatibutorsModal
               onCreatibutorChange={this.handleOnContributorChange}
-              action="add"
+              initialAction="add"
               addLabel={modal.addLabel}
               editLabel={modal.editLabel}
               roleOptions={roleOptions}
