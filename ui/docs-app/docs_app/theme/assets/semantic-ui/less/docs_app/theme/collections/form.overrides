@@ -104,7 +104,7 @@
       }
     }
     .highlighted {
-      background-color: red !important;
+      background-color: rgb(211, 124, 124) !important;
     }
   }
 }

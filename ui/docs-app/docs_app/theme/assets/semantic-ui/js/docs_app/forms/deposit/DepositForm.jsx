@@ -4,6 +4,7 @@ import {
   MultilingualTextInput,
   BaseForm,
   FormikStateLogger,
+  FormFeedback,
 } from "@js/oarepo_ui";
 import { AccordionField, FieldLabel, TextField } from "react-invenio-forms";
 import { Container, Grid, Ref, Sticky, Card } from "semantic-ui-react";
@@ -25,7 +26,6 @@ import {
   SaveButton,
   DeleteButtonComponent,
   PublishButtonComponent,
-  FormFeedback,
 } from "../components/";
 import Overridable from "react-overridable";
 import { i18next } from "@translations/docs_app/i18next";
@@ -482,29 +482,6 @@ export const DepositForm = () => {
                     </Card.Content>
                   </Card>
                 </Overridable>
-                {/* <Overridable
-                  id="NrDocs.Deposit.AccessRightField.container"
-                  fieldPath="access"
-                >
-                  <AccessRightField
-                    label={i18next.t("Visibility")}
-                    labelIcon="shield"
-                    fieldPath="access"
-                    showMetadataAccess={permissions?.can_manage_record_access}
-                  />
-                </Overridable> */}
-                {/* {permissions?.can_delete_draft && (
-                  <Overridable
-                    id="InvenioAppRdm.Deposit.CardDeleteButton.container"
-                    record={record}
-                  >
-                    <Card>
-                      <Card.Content>
-                        <DeleteButton fluid />
-                      </Card.Content>
-                    </Card>
-                  </Overridable>
-                )} */}
               </Sticky>
             </Grid.Column>
           </Ref>
