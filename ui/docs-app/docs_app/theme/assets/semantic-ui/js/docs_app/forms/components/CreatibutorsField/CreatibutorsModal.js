@@ -206,7 +206,8 @@ export const CreatibutorsModal = ({ autocompleteNames, initialCreatibutor, initi
 
   const CreatorSchema = Yup.object({
     nameType: Yup.string(),
-    fullName: Yup.string().required(i18next.t("Name is a required field.")),
+    given_name: Yup.string().required(i18next.t("Given name is a required field.")),
+    family_name: Yup.string().required(i18next.t("Family name is a required field.")),
     role: Yup.string().when("_", (_, schema) => {
       if (!isCreator) {
         return schema.required(i18next.t("Role is a required field."));
@@ -236,7 +237,7 @@ export const CreatibutorsModal = ({ autocompleteNames, initialCreatibutor, initi
 
   const onSubmit = (values, formikBag) => {
     console.log('onSubmit', values)
-    onCreatibutorChange(serializeCreatibutor(values));
+    onCreatibutorChange(serializeCreatibutor(initialCreatibutor, values));
     formikBag.setSubmitting(false);
     formikBag.resetForm();
     switch (action) {
@@ -313,7 +314,7 @@ export const CreatibutorsModal = ({ autocompleteNames, initialCreatibutor, initi
       validateOnChange={false}
       validateOnBlur={false}
     >
-      {({ values, resetForm, handleSubmit }) => (
+      {({ values, resetForm, handleSubmit, errors, isValidating, isSubmitting }) => (
         <Modal
           centered={false}
           onOpen={() => openModal()}
@@ -330,6 +331,7 @@ export const CreatibutorsModal = ({ autocompleteNames, initialCreatibutor, initi
             <Grid>
               <Grid.Column floated="left" width={4}>
                 <Header as="h2">
+                  {JSON.stringify(errors)}
                   <ActionLabel />
                 </Header>
               </Grid.Column>
