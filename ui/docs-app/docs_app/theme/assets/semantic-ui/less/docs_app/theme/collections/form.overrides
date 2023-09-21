@@ -43,10 +43,6 @@
       margin: 0 0 1rem 0;
       padding: 0.3rem 0 1rem 0;
       border-radius: 0.5rem;
-
-      .ui.icon.button.close-btn {
-        margin-top: 1.75rem;
-      }
     }
     .invenio-group-field.fields {
       .invenio-group-field.fields {
@@ -85,7 +81,6 @@
     }
     .events {
       display: block;
-      // background-color: @arrayFieldColor;
       padding: 0.5rem;
       margin: 0.5rem;
       border-radius: 0.5rem;
@@ -104,7 +99,7 @@
       }
     }
     .highlighted {
-      background-color: rgb(211, 124, 124) !important;
+      background-color: @highlightedfieldcolor !important;
     }
   }
 }
