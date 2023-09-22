@@ -3,7 +3,6 @@
 
 {%- block javascript %}
     {{ super() }}
-    {{ webpack['docs_app_components.js']}}
     {{ webpack['docs_app_components.css']}}
     {{ webpack['docs_app_search.js'] }}
 {%- endblock %}
