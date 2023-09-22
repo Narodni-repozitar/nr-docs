@@ -18,8 +18,7 @@ local:
     branch: null
     github_clone_url: https://github.com/oarepo/oarepo-oai-pmh-harvester.git
     local_dir: local/oarepo-oai-pmh-harvester
-    sites:
-    - nr-docs
+    sites: []
   oarepo-published-service:
     branch: setup
     github_clone_url: git@github.com:oarepo/oarepo-published-service.git

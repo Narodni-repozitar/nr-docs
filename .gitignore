@@ -91,3 +91,11 @@ tsconfig.json
 jsconfig.json
 .assets
 node_modules
+
+# node modules
+**/*/node_modules
+yarn.lock
+package-lock.json
+
+#eslint
+.eslintrc.js

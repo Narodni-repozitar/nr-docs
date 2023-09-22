@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2023-04-28T14:58:13.242Z\n"
-"PO-Revision-Date: 2023-04-28T14:58:13.242Z\n"
+"POT-Creation-Date: 2023-09-06T10:25:07.106Z\n"
+"PO-Revision-Date: 2023-09-06T10:25:07.106Z\n"
 "Language: en\n"
 
 msgid "We couldn't find any matches for "
@@ -86,3 +86,461 @@ msgstr "Find more records with this subject"
 
 msgid "Search"
 msgstr "Search"
+
+msgid "Add additional title"
+msgstr "Add additional title"
+
+msgid "Additional titles"
+msgstr "Additional titles"
+
+msgid "Title"
+msgstr "Title"
+
+msgid "Title type"
+msgstr "Title type"
+
+msgid ""
+"In case your upload was already published elsewhere, please use the date of "
+"the first publication. Format: YYYY-MM-DD, YYYY-MM, or YYYY. For intervals "
+"use DATE/DATE, e.g. 1939/1945."
+msgstr ""
+"In case your upload was already published elsewhere, please use the date of "
+"the first publication. Format: YYYY-MM-DD, YYYY-MM, or YYYY. For intervals "
+"use DATE/DATE, e.g. 1939/1945."
+
+msgid "YYYY-MM-DD or YYYY-MM-DD/YYYY-MM-DD for intervals. MM and DD are optional."
+msgstr "YYYY-MM-DD or YYYY-MM-DD/YYYY-MM-DD for intervals. MM and DD are optional."
+
+msgid "Add event"
+msgstr "Add event"
+
+msgid "Events"
+msgstr "Events"
+
+msgid "Event name"
+msgstr "Event name"
+
+msgid "Event alternate name"
+msgstr "Event alternate name"
+
+msgid "Add event alternate name"
+msgstr "Add event alternate name"
+
+msgid "Event date"
+msgstr "Event date"
+
+msgid "Place"
+msgstr "Place"
+
+msgid "Country"
+msgstr "Country"
+
+msgid "External location"
+msgstr "External location"
+
+msgid "Resource external location"
+msgstr "Resource external location"
+
+msgid "Note"
+msgstr "Note"
+
+msgid "Add funder"
+msgstr "Add funder"
+
+msgid "Funding"
+msgstr "Funding"
+
+msgid "Project code"
+msgstr "Project code"
+
+msgid "Project name"
+msgstr "Project name"
+
+msgid "Funding program"
+msgstr "Funding program"
+
+msgid "Funder"
+msgstr "Funder"
+
+msgid "Add location"
+msgstr "Add location"
+
+msgid "Geolocation"
+msgstr "Geolocation"
+
+msgid "Location"
+msgstr "Location"
+
+msgid "Longitude"
+msgstr "Longitude"
+
+msgid "Latitude"
+msgstr "Latitude"
+
+msgid "Add identifier"
+msgstr "Add identifier"
+
+msgid "Identifier type"
+msgstr "Identifier type"
+
+msgid "Identifier field"
+msgstr "Identifier field"
+
+msgid "Object identifier"
+msgstr "Object identifier"
+
+msgid "Add series"
+msgstr "Add series"
+
+msgid "Series"
+msgstr "Series"
+
+msgid "Series title"
+msgstr "Series title"
+
+msgid "Series volume"
+msgstr "Series volume"
+
+msgid "Add note"
+msgstr "Add note"
+
+msgid "Notes"
+msgstr "Notes"
+
+msgid "Items shall be unique"
+msgstr "Items shall be unique"
+
+msgid "Add subject"
+msgstr "Add subject"
+
+msgid "Subjects"
+msgstr "Subjects"
+
+msgid "Subject scheme"
+msgstr "Subject scheme"
+
+msgid "Validate form"
+msgstr "Validate form"
+
+msgid "Basic information"
+msgstr "Basic information"
+
+msgid "Object identifiers"
+msgstr "Object identifiers"
+
+msgid "Persistent identifier/s of object as ISBN, DOI, etc."
+msgstr "Persistent identifier/s of object as ISBN, DOI, etc."
+
+msgid "System identifier"
+msgstr "System identifier"
+
+msgid "System identifiers"
+msgstr "System identifiers"
+
+msgid "Access rights"
+msgstr "Access rights"
+
+msgid "Select access rights"
+msgstr "Select access rights"
+
+msgid "Resource type"
+msgstr "Resource type"
+
+msgid "Select resource type"
+msgstr "Select resource type"
+
+msgid "Date available"
+msgstr "Date available"
+
+msgid "Date modified"
+msgstr "Date modified"
+
+msgid "Abstract"
+msgstr "Abstract"
+
+msgid "Description"
+msgstr "Description"
+
+msgid ""
+"Detailed description of the methodology and technical information should be "
+"specified in the 'Dataset Description' section"
+msgstr ""
+"Detailed description of the methodology and technical information should be "
+"specified in the 'Dataset Description' section"
+
+msgid "Language"
+msgstr "Language"
+
+msgid "Choose languages"
+msgstr "Choose languages"
+
+msgid "Licenses"
+msgstr "Licenses"
+
+msgid "Choose licenses"
+msgstr "Choose licenses"
+
+msgid ""
+"If a Creative Commons license is associated with the dataset, select the "
+"appropriate license option from the menu. We recommend choosing the latest "
+"versions, namely 3.0 Czech and 4.0 International."
+msgstr ""
+"If a Creative Commons license is associated with the dataset, select the "
+"appropriate license option from the menu. We recommend choosing the latest "
+"versions, namely 3.0 Czech and 4.0 International."
+
+msgid "Add publisher"
+msgstr "Add publisher"
+
+msgid "Publishers"
+msgstr "Publishers"
+
+msgid "Dataset description"
+msgstr "Dataset description"
+
+msgid "Subject Categories"
+msgstr "Subject Categories"
+
+msgid "Choose subject categories"
+msgstr "Choose subject categories"
+
+msgid "Select the subject field(s) to which the dataset belongs."
+msgstr "Select the subject field(s) to which the dataset belongs."
+
+msgid "Methods"
+msgstr "Methods"
+
+msgid "Technical info"
+msgstr "Technical info"
+
+msgid ""
+"Detailed information that may be associated with design, implementation, "
+"operation, use, and/or maintenance of a process or system"
+msgstr ""
+"Detailed information that may be associated with design, implementation, "
+"operation, use, and/or maintenance of a process or system"
+
+msgid ""
+"Free-form note for any comment that couldn't be inserted in any other "
+"fields."
+msgstr ""
+"Free-form note for any comment that couldn't be inserted in any other "
+"fields."
+
+msgid ""
+"Free description of the location; ie. Atlantic Ocean. Longitude must be a "
+"number between -180 and 180 and latitude between -90 and 90."
+msgstr ""
+"Free description of the location; ie. Atlantic Ocean. Longitude must be a "
+"number between -180 and 180 and latitude between -90 and 90."
+
+msgid "This field is required"
+msgstr "This field is required"
+
+msgid "Must have at least x characters"
+msgstr "Must have at least {{min}} characters"
+msgstr "Must have at least {{min}} characters"
+
+msgid "Must be between -180 and 180"
+msgstr "Must be between -180 and 180"
+
+msgid "Must be between -90 and 90"
+msgstr "Must be between -90 and 90"
+
+msgid "Delete"
+msgstr "Delete"
+
+msgid "Cancel"
+msgstr "Cancel"
+
+msgid "Are you sure you wish delete this draft?"
+msgstr "Are you sure you wish delete this draft?"
+
+msgid "If you delete the draft, the work you have done on it will be lost."
+msgstr "If you delete the draft, the work you have done on it will be lost."
+
+msgid "Preview"
+msgstr "Preview"
+
+msgid "Publish"
+msgstr "Publish"
+
+msgid "Are you sure you wish to publish this draft?"
+msgstr "Are you sure you wish to publish this draft?"
+
+msgid "Save"
+msgstr "Save"
+
+msgid "Additional information"
+msgstr "Additional information"
+
+msgid "Accessibility"
+msgstr "Accessibility"
+
+msgid "Explanation regarding restricted status of an item"
+msgstr "Explanation regarding restricted status of an item"
+
+msgid "Items must be unique"
+msgstr "Items must be unique"
+
+msgid "Additional titles must be unique"
+msgstr "Additional titles must be unique"
+
+msgid "Invalid date format"
+msgstr "Invalid date format"
+
+msgid "Publishers must be unique"
+msgstr "Publishers must be unique"
+
+msgid "Notes must be unique"
+msgstr "Notes must be unique"
+
+msgid "Locations must be unique"
+msgstr "Locations must be unique"
+
+msgid "Please provide an URL in valid format"
+msgstr "Please provide an URL in valid format"
+
+msgid "URL must be provided for this field if used"
+msgstr "URL must be provided for this field if used"
+
+msgid "Project codes must be unique"
+msgstr "Project codes must be unique"
+
+msgid "Subjects must be unique"
+msgstr "Subjects must be unique"
+
+msgid "Series titles must be unique"
+msgstr "Series titles must be unique"
+
+msgid "Object identifiers must be unique"
+msgstr "Object identifiers must be unique"
+
+msgid "Creators"
+msgstr "Creators"
+
+msgid "Add creator"
+msgstr "Add creator"
+
+msgid "Edit creator"
+msgstr "Edit creator"
+
+msgid "Edit"
+msgstr "Edit"
+
+msgid "Remove"
+msgstr "Remove"
+
+msgid "Type the value of an identifier..."
+msgstr "Type the value of an identifier..."
+
+msgid "e.g. ORCID, ISNI or GND."
+msgstr "e.g. ORCID, ISNI or GND."
+
+msgid "Save and add another"
+msgstr "Save and add another"
+
+msgid "Name is a required field."
+msgstr "Name is a required field."
+
+msgid "Role is a required field."
+msgstr "Role is a required field."
+
+msgid "Added"
+msgstr "Added"
+
+msgid "Person"
+msgstr "Person"
+
+msgid "Organization"
+msgstr "Organization"
+
+msgid "Search for persons by name, identifier, or affiliation..."
+msgstr "Search for persons by name, identifier, or affiliation..."
+
+msgid "Family name"
+msgstr "Family name"
+
+msgid "Given names"
+msgstr "Given names"
+
+msgid "Name"
+msgstr "Name"
+
+msgid "Organization name"
+msgstr "Organization name"
+
+msgid "e.g. ROR, ISNI or GND."
+msgstr "e.g. ROR, ISNI or GND."
+
+msgid "Role"
+msgstr "Role"
+
+msgid "Select role"
+msgstr "Select role"
+
+msgid "Cancel"
+msgstr "Cancel"
+
+msgid "Save"
+msgstr "Save"
+
+msgid "Couldn't find your person? You can <2>create a new entry</2>."
+msgstr "Couldn't find your person? You can <2>create a new entry</2>."
+
+msgid "Preview"
+msgstr "Preview"
+
+msgid "Additional information"
+msgstr "Additional information"
+
+msgid "Visibility"
+msgstr "Visibility"
+
+msgid "Items must be unique"
+msgstr "Items must be unique"
+
+msgid "Additional titles must be unique"
+msgstr "Additional titles must be unique"
+
+msgid "Invalid date format"
+msgstr "Invalid date format"
+
+msgid "Publishers must be unique"
+msgstr "Publishers must be unique"
+
+msgid "Notes must be unique"
+msgstr "Notes must be unique"
+
+msgid "Locations must be unique"
+msgstr "Locations must be unique"
+
+msgid "Please provide an URL in valid format"
+msgstr "Please provide an URL in valid format"
+
+msgid "URL must be provided for this field if used"
+msgstr "URL must be provided for this field if used"
+
+msgid "Project codes must be unique"
+msgstr "Project codes must be unique"
+
+msgid "Subjects must be unique"
+msgstr "Subjects must be unique"
+
+msgid "Series titles must be unique"
+msgstr "Series titles must be unique"
+
+msgid "Object identifiers must be unique"
+msgstr "Object identifiers must be unique"
+
+msgid "Identifier"
+msgstr "Identifier"
+
+msgid "Identifiers"
+msgstr "Identifiers"
+
+msgid "Affiliations"
+msgstr "Affiliations"
+
+msgid "Select one or more affiliations"
+msgstr "Select one or more affiliations"

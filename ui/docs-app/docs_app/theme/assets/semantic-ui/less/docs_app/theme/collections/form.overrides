@@ -1,0 +1,105 @@
+/***********************************************
+         Invenio App RDM Form Overrides
+***********************************************/
+@import "./form.variables";
+
+#form-app {
+  .ui.form
+    .required.fields:not(.grouped)
+    > .field
+    > .content
+    > .header
+    > label::after,
+  .ui.form .required.fields.grouped > .content > .header > label::after,
+  .ui.form .required.field > .content > .header > label::after {
+    content: "*";
+    color: @red;
+  }
+
+  .ck-editor__editable {
+    min-height: 8.5em;
+  }
+
+  .ui.form .field .ui.list {
+    margin-top: 0;
+  }
+
+  .deposit-sidebar .ui.card {
+    width: unset;
+  }
+
+  .sidebar-buttons {
+    display: flex;
+  }
+
+  .ui.form .invenio-accordion-field {
+    label.helptext {
+      margin-top: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .invenio-group-field.fields {
+      background-color: @arrayFieldColor;
+      margin: 0 0 1rem 0;
+      padding: 0.3rem 0 1rem 0;
+      border-radius: 0.5rem;
+    }
+    .invenio-group-field.fields {
+      .invenio-group-field.fields {
+        margin: 0;
+        padding: 0;
+        border-radius: 0.5rem;
+        background-color: transparent;
+      }
+    }
+    .accessibility.fields {
+      .invenio-group-field.fields {
+        padding: 0;
+        margin: 0;
+      }
+    }
+    .additional-titles {
+      .invenio-group-field.fields {
+        padding: 0.3rem 0 1rem 0;
+      }
+    }
+
+    .subjects.invenio-group-field {
+      .invenio-group-field.fields {
+        background-color: transparent;
+        margin-bottom: 1rem;
+        padding: 0.3rem;
+      }
+
+      .ui.icon.left.labeled.button {
+        margin-top: 0.75rem;
+      }
+    }
+    .accessibility {
+      padding: 0;
+      margin: 0;
+    }
+    .events {
+      display: block;
+      padding: 0.5rem;
+      margin: 0.5rem;
+      border-radius: 0.5rem;
+      .field {
+        margin-top: 0.3rem;
+        margin-bottom: 1rem;
+      }
+      label.helptext {
+        padding: 1 rem;
+        margin: 1rem;
+      }
+      .invenio-group-field.fields {
+        background-color: transparent;
+        margin: 0.5rem;
+        padding: 1rem;
+      }
+    }
+    .highlighted {
+      background-color: @highlightedfieldcolor !important;
+    }
+  }
+}
