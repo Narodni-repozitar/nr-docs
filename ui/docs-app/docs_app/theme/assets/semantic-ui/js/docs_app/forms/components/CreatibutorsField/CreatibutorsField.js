@@ -54,7 +54,6 @@ class CreatibutorsFieldForm extends Component {
       name: fieldPath,
       label,
       labelIcon,
-      roleOptions,
       schema,
       modal,
       autocompleteNames,
@@ -80,8 +79,8 @@ class CreatibutorsFieldForm extends Component {
             {creatibutorsList.map((value, index) => {
               const key = `${fieldPath}.${index}`;
               const identifiersError =
-                creatibutorsError &&
-                creatibutorsError[index]?.authorityIdentifiers;
+                creatibutorsError ?
+                creatibutorsError[index]?.authorityIdentifiers : [];
               console.log('error', creatibutorsError, identifiersError)
               const displayName = creatibutorNameDisplay(value);
 
@@ -92,7 +91,6 @@ class CreatibutorsFieldForm extends Component {
                   {...{
                     displayName,
                     index,
-                    roleOptions,
                     schema,
                     compKey: key,
                     initialCreatibutor: value,
@@ -111,7 +109,6 @@ class CreatibutorsFieldForm extends Component {
               initialAction="add"
               addLabel={modal.addLabel}
               editLabel={modal.editLabel}
-              roleOptions={roleOptions}
               schema={schema}
               autocompleteNames={autocompleteNames}
               trigger={
@@ -159,7 +156,6 @@ CreatibutorsFieldForm.propTypes = {
   autocompleteNames: PropTypes.oneOf(["search", "search_only", "off"]),
   label: PropTypes.string,
   labelIcon: PropTypes.string,
-  roleOptions: PropTypes.array.isRequired,
   form: PropTypes.object.isRequired,
   remove: PropTypes.func.isRequired,
   replace: PropTypes.func.isRequired,
@@ -190,14 +186,12 @@ CreatibutorsField.propTypes = {
   autocompleteNames: PropTypes.oneOf(["search", "search_only", "off"]),
   label: PropTypes.string,
   labelIcon: PropTypes.string,
-  roleOptions: PropTypes.array,
 };
 
 CreatibutorsField.defaultProps = {
   autocompleteNames: "search",
   label: undefined,
   labelIcon: undefined,
-  roleOptions: undefined,
   modal: {
     addLabel: i18next.t("Add creator"),
     editLabel: i18next.t("Edit creator"),

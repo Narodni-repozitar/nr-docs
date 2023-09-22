@@ -26,8 +26,7 @@ import {
   SaveButton,
   DeleteButtonComponent,
   PublishButtonComponent,
-  FormFeedback,
-  CreatibutorsField
+  CreatibutorsField,
 } from "../components/";
 import Overridable from "react-overridable";
 import { i18next } from "@translations/docs_app/i18next";
@@ -85,6 +84,7 @@ export const DepositForm = () => {
                     "metadata.resourceType",
                     "metadata.title",
                     "metadata.creators",
+                    "metadata.contributors",
                     "metadata.additionalTitles",
                     "metadata.dateModified",
                     "metadata.dateAvailable",
@@ -220,10 +220,26 @@ export const DepositForm = () => {
                       label={i18next.t("Creators")}
                       labelIcon="user"
                       fieldPath="metadata.creators"
-                      roleOptions={[]}
                       schema="creators"
                       autocompleteNames="off"
                       required
+                    />
+                  </Overridable>
+                  <Overridable
+                    id="NrDocs.Deposit.ContributorsField.container"
+                    fieldPath="metadata.contributors"
+                  >
+                    <CreatibutorsField
+                      label={i18next.t("Contributors")}
+                      addButtonLabel={i18next.t("Add contributor")}
+                      modal={{
+                        addLabel: i18next.t("Add contributor"),
+                        editLabel: i18next.t("Edit contributor"),
+                      }}
+                      labelIcon="user"
+                      fieldPath="metadata.contributors"
+                      schema="contributors"
+                      autocompleteNames="off"
                     />
                   </Overridable>
                   <Overridable

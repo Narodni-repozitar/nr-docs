@@ -25,7 +25,6 @@ export const CreatibutorsFieldItem = ({
   editLabel,
   initialCreatibutor,
   displayName,
-  roleOptions,
   schema,
   autocompleteNames,
 }) => {
@@ -58,13 +57,8 @@ export const CreatibutorsFieldItem = ({
     }),
   });
 
-  const renderRole = (role, roleOptions) => {
-    if (role) {
-      const friendlyRole =
-        roleOptions.find(({ value }) => value === role)?.text ?? role;
-
-      return <Label size="tiny">{friendlyRole}</Label>;
-    }
+  const renderRole = (role) => {
+      return role && <Label size="tiny">{role}</Label>;
   };
   const firstError =
     identifiersError &&
@@ -86,7 +80,6 @@ export const CreatibutorsFieldItem = ({
               replaceCreatibutor(index, selectedCreatibutor);
             }}
             initialCreatibutor={initialCreatibutor}
-            roleOptions={roleOptions}
             schema={schema}
             autocompleteNames={autocompleteNames}
             initialAction="edit"
@@ -141,7 +134,7 @@ export const CreatibutorsFieldItem = ({
                     height="16"
                   />
                 )} */}
-                {displayName} {renderRole(initialCreatibutor?.role, roleOptions)}
+                {displayName} {renderRole(initialCreatibutor?.role)}
               </span>
             </List.Description>
             {firstError && (
@@ -167,7 +160,6 @@ CreatibutorsFieldItem.propTypes = {
   editLabel: PropTypes.node,
   initialCreatibutor: PropTypes.object.isRequired,
   displayName: PropTypes.string,
-  roleOptions: PropTypes.array.isRequired,
   schema: PropTypes.string.isRequired,
   autocompleteNames: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
 };

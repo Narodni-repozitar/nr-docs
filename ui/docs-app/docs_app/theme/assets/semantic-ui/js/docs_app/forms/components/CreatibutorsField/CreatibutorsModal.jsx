@@ -76,12 +76,17 @@ const makeIdEntry = (identifier) => {
    * Function to transform formik creatibutor state
    * back to the external format.
    */
-const serializeCreatibutor = (initialCreatibutor, submittedCreatibutor) => {
+const serializeCreatibutor = (submittedCreatibutor, isCreator, isPerson) => {
+
   console.log('serializeCreatibutor:', submittedCreatibutor)
   const fullName = `${submittedCreatibutor.family_name}, ${submittedCreatibutor.given_name}`
+  const affiliations = _get(submittedCreatibutor, "affiliations", []).map(aff => ({id: aff}))
+  const role = _get(submittedCreatibutor, "role")
   return {
     ...submittedCreatibutor,
-    fullName,
+    affiliations,
+    ...(isPerson && {fullName}),
+    ...(!isCreator && role && { role: {id: role} } )
   };
 };
 
@@ -100,8 +105,8 @@ const deserializeCreatibutor = (initialCreatibutor, isCreator) => {
     given_name,
     ...initialCreatibutor,
     authorityIdentifiers: _get(initialCreatibutor, identifiersFieldPath, []),
-    affiliations: _get(initialCreatibutor, "affiliations", []),
-    ...(!isCreator && { role: _get(initialCreatibutor, "role", "") })
+    affiliations: _get(initialCreatibutor, "affiliations", [{id: ''}]).id,
+    ...(!isCreator && { role: _get(initialCreatibutor, "role", {id: ''}).id })
   };
   console.log('deserializeCreatibutor:', result)
   return result
@@ -166,18 +171,27 @@ const serializeSuggestions = (creatibutors, showPersonForm, autocompleteNames) =
 
 
 export const CreatibutorsModal = ({ autocompleteNames, initialCreatibutor, initialAction, addLabel, editLabel, schema, onCreatibutorChange, trigger }) => {
-  const [open, setOpen] = React.useState(false)
-  const [action, setAction] = React.useState(initialAction)
-  const [saveAndContinueLabel, setSaveAndContinueLabel] = React.useState(i18next.t('Save and add another'))
-  const [showPersonForm, setShowPersonForm] = React.useState(autocompleteNames !== NamesAutocompleteOptions.SEARCH_ONLY || !_isEmpty(initialCreatibutor))
-  const namesAutocompleteRef = createRef()
+  const [open, setOpen] = React.useState(false);
+  const [action, setAction] = React.useState(initialAction);
+  const [saveAndContinueLabel, setSaveAndContinueLabel] = React.useState(
+    i18next.t("Save and add another")
+  );
+  const [showPersonForm, setShowPersonForm] = React.useState(
+    autocompleteNames !== NamesAutocompleteOptions.SEARCH_ONLY ||
+      !_isEmpty(initialCreatibutor)
+  );
+  const namesAutocompleteRef = createRef();
 
-  const isCreator = schema === "creators"
-
+  const isCreator = schema === "creators";
+  // TODO: make this conditionally required based on nameType
+  // breaks organizational submit otherwise
+  // given_name: Yup.string().required(i18next.t("Given name is a required field.")),
+  // family_name: Yup.string().required(i18next.t("Family name is a required field.")),
   const CreatorSchema = Yup.object({
     nameType: Yup.string(),
-    given_name: Yup.string().required(i18next.t("Given name is a required field.")),
-    family_name: Yup.string().required(i18next.t("Family name is a required field.")),
+    given_name: Yup.string(),
+    family_name: Yup.string(),
+    fullName: Yup.string(),
     role: Yup.string().when("_", (_, schema) => {
       if (!isCreator) {
         return schema.required(i18next.t("Role is a required field."));
@@ -185,29 +199,30 @@ export const CreatibutorsModal = ({ autocompleteNames, initialCreatibutor, initi
     }),
   });
 
-  const focusInput = () => { };
-
   const openModal = () => {
-    setOpen(true)
+    setOpen(true);
   };
 
   const closeModal = () => {
-    setOpen(false)
+    setOpen(false);
   };
 
   const changeContent = () => {
-    setSaveAndContinueLabel(i18next.t("Added"))
+    setSaveAndContinueLabel(i18next.t("Added"));
     // change in 2 sec
     setTimeout(() => {
-      setSaveAndContinueLabel(i18next.t("Save and add another"))
+      setSaveAndContinueLabel(i18next.t("Save and add another"));
     }, 2000);
   };
 
   const displayActionLabel = action === ModalActions.ADD ? addLabel : editLabel;
 
   const onSubmit = (values, formikBag) => {
-    console.log('onSubmit', values)
-    onCreatibutorChange(serializeCreatibutor(initialCreatibutor, values));
+    console.log("onSubmit", values, isCreator);
+    const typeFieldPath = `${personOrOrgPath}nameType`;
+    const isPerson = _get(values, typeFieldPath) === CREATIBUTOR_TYPE.PERSON;
+
+    onCreatibutorChange(serializeCreatibutor(values, isCreator, isPerson));
     formikBag.setSubmitting(false);
     formikBag.resetForm();
     switch (action) {
@@ -231,11 +246,11 @@ export const CreatibutorsModal = ({ autocompleteNames, initialCreatibutor, initi
         suggestions: [],
         selectedSuggestions: [],
       });
-      setShowPersonForm(true)
+      setShowPersonForm(true);
       return;
     }
 
-    setShowPersonForm(true)
+    setShowPersonForm(true);
     const identifiers = selectedSuggestions[0].extra.authorityIdentifiers.map(
       (identifier) => {
         return identifier.identifier;
@@ -263,7 +278,7 @@ export const CreatibutorsModal = ({ autocompleteNames, initialCreatibutor, initi
       formikProps.form.setFieldValue(path, value);
     });
   };
-  console.log('render', initialCreatibutor)
+  console.log("render", initialCreatibutor);
 
   const ActionLabel = () => displayActionLabel;
   const personOrOrgPath = ``;
@@ -284,15 +299,15 @@ export const CreatibutorsModal = ({ autocompleteNames, initialCreatibutor, initi
       validateOnChange={false}
       validateOnBlur={false}
     >
-      {({ values, resetForm, handleSubmit }) => (
+      {({ values, resetForm, handleSubmit, errors }) => (
         <Modal
           centered={false}
           onOpen={() => openModal()}
           open={open}
           trigger={trigger}
           onClose={() => {
-            closeModal()
-            resetForm()
+            closeModal();
+            resetForm();
           }}
           closeIcon
           closeOnDimmerClick={false}
@@ -301,6 +316,7 @@ export const CreatibutorsModal = ({ autocompleteNames, initialCreatibutor, initi
             <Grid>
               <Grid.Column floated="left" width={4}>
                 <Header as="h2">
+                  {errors} a
                   <ActionLabel />
                 </Header>
               </Grid.Column>
@@ -312,7 +328,9 @@ export const CreatibutorsModal = ({ autocompleteNames, initialCreatibutor, initi
                 <RadioField
                   fieldPath={typeFieldPath}
                   label={i18next.t("Person")}
-                  checked={_get(values, typeFieldPath) === CREATIBUTOR_TYPE.PERSON}
+                  checked={
+                    _get(values, typeFieldPath) === CREATIBUTOR_TYPE.PERSON
+                  }
                   value={CREATIBUTOR_TYPE.PERSON}
                   onChange={({ formikProps }) => {
                     formikProps.form.setFieldValue(
@@ -326,7 +344,8 @@ export const CreatibutorsModal = ({ autocompleteNames, initialCreatibutor, initi
                   fieldPath={typeFieldPath}
                   label={i18next.t("Organization")}
                   checked={
-                    _get(values, typeFieldPath) === CREATIBUTOR_TYPE.ORGANIZATION
+                    _get(values, typeFieldPath) ===
+                    CREATIBUTOR_TYPE.ORGANIZATION
                   }
                   value={CREATIBUTOR_TYPE.ORGANIZATION}
                   onChange={({ formikProps }) => {
@@ -361,7 +380,13 @@ export const CreatibutorsModal = ({ autocompleteNames, initialCreatibutor, initi
                       // Disable UI-side filtering of search results
                       search={(options) => options}
                       suggestionAPIUrl="/api/names"
-                      serializeSuggestions={(suggestions) => serializeSuggestions(suggestions, showPersonForm, autocompleteNames)}
+                      serializeSuggestions={(suggestions) =>
+                        serializeSuggestions(
+                          suggestions,
+                          showPersonForm,
+                          autocompleteNames
+                        )
+                      }
                       onValueChange={onPersonSearchChange}
                       ref={namesAutocompleteRef}
                     />
@@ -373,13 +398,24 @@ export const CreatibutorsModal = ({ autocompleteNames, initialCreatibutor, initi
                           label={i18next.t("Family name")}
                           placeholder={i18next.t("Family name")}
                           fieldPath={familyNameFieldPath}
-                          required={isCreator}
+                          required={false}
+                          // TODO: make this work & reactive
+                          // required={
+                          //   isCreator &&
+                          //   _get(values, typeFieldPath) ===
+                          //     CREATIBUTOR_TYPE.PERSON
+                          // }
                         />
                         <TextField
                           label={i18next.t("Given names")}
                           placeholder={i18next.t("Given names")}
                           fieldPath={givenNameFieldPath}
-                          required={isCreator}
+                          // TODO: make this working & reactive
+                          // required={
+                          //   isCreator &&
+                          //   _get(values, typeFieldPath) ===
+                          //     CREATIBUTOR_TYPE.PERSON
+                          // }
                         />
                       </Form.Group>
                       <Form.Group widths="equal">
@@ -396,7 +432,6 @@ export const CreatibutorsModal = ({ autocompleteNames, initialCreatibutor, initi
                     label={i18next.t("Name")}
                     placeholder={i18next.t("Organization name")}
                     fieldPath={nameFieldPath}
-                    required={isCreator}
                   />
                   <CreatibutorsIdentifiers
                     fieldPath={identifiersFieldPath}
@@ -407,34 +442,33 @@ export const CreatibutorsModal = ({ autocompleteNames, initialCreatibutor, initi
               {(_get(values, typeFieldPath) === CREATIBUTOR_TYPE.ORGANIZATION ||
                 (showPersonForm &&
                   _get(values, typeFieldPath) === CREATIBUTOR_TYPE.PERSON)) && (
-                  <div>
+                <div>
+                  <VocabularySelectField
+                    label={i18next.t("Affiliations")}
+                    type="institutions"
+                    fieldPath={affiliationsFieldPath}
+                    placeholder={i18next.t("Select one or more affiliations")}
+                    multiple
+                  />
+                  {/* TODO: this should be LocalVocabularySelectField */}
+                  {!isCreator && (
                     <VocabularySelectField
-                      label={i18next.t('Affiliations')}
-                      type="institutions"
-                      fieldPath={affiliationsFieldPath}
-                      placeholder={i18next.t("Select one or more affiliations")}
-                      multiple
+                      type="contributor-roles"
+                      fieldPath={roleFieldPath}
+                      label={i18next.t("Role")}
+                      placeholder={i18next.t("Select role")}
                     />
-                    {/* TODO: this should be LocalVocabularySelectField */}
-                    {!isCreator && (
-                      <VocabularySelectField
-                        type='contributor-roles'
-                        fieldPath={roleFieldPath}
-                        label={i18next.t("Role")}
-                        placeholder={i18next.t("Select role")}
-                        required={true}
-                        scrolling
-                      />)}
-                  </div>
-                )}
+                  )}
+                </div>
+              )}
             </Form>
           </Modal.Content>
           <Modal.Actions>
             <Button
               name="cancel"
               onClick={() => {
-                resetForm()
-                closeModal()
+                resetForm();
+                closeModal();
               }}
               icon="remove"
               content={i18next.t("Cancel")}
@@ -445,9 +479,11 @@ export const CreatibutorsModal = ({ autocompleteNames, initialCreatibutor, initi
                 name="submit"
                 type="submit"
                 onClick={() => {
-                  setAction("saveAndContinue")
-                  setShowPersonForm(autocompleteNames !== NamesAutocompleteOptions.SEARCH_ONLY)
-                  handleSubmit()
+                  setAction("saveAndContinue");
+                  setShowPersonForm(
+                    autocompleteNames !== NamesAutocompleteOptions.SEARCH_ONLY
+                  );
+                  handleSubmit();
                 }}
                 primary
                 icon="checkmark"
@@ -458,9 +494,11 @@ export const CreatibutorsModal = ({ autocompleteNames, initialCreatibutor, initi
               name="submit"
               type="submit"
               onClick={() => {
-                setAction('saveAndClose')
-                setShowPersonForm(autocompleteNames !== NamesAutocompleteOptions.SEARCH_ONLY)
-                handleSubmit()
+                setAction("saveAndClose");
+                setShowPersonForm(
+                  autocompleteNames !== NamesAutocompleteOptions.SEARCH_ONLY
+                );
+                handleSubmit();
               }}
               primary
               icon="checkmark"
@@ -470,7 +508,7 @@ export const CreatibutorsModal = ({ autocompleteNames, initialCreatibutor, initi
         </Modal>
       )}
     </Formik>
-  )
+  );
 }
 
 
@@ -496,7 +534,6 @@ CreatibutorsModal.propTypes = {
   }),
   trigger: PropTypes.object.isRequired,
   onCreatibutorChange: PropTypes.func.isRequired,
-  roleOptions: PropTypes.array,
 };
 
 CreatibutorsModal.defaultProps = {
