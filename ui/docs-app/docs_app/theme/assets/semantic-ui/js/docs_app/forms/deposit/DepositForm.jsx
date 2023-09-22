@@ -11,7 +11,7 @@ import { Container, Grid, Ref, Sticky, Card } from "semantic-ui-react";
 import { NRDocumentValidationSchema } from "./NRDocumentValidationSchema";
 import {
   DateField,
-  LocalVocabularySelectField,
+  // LocalVocabularySelectField, TODO: use after BE-59 gets fixed
   StringArrayField,
   AdditionalTitlesField,
   GeoLocationsField,
@@ -28,6 +28,7 @@ import {
   PublishButtonComponent,
   CreatibutorsField,
 } from "../components/";
+import { VocabularySelectField } from "@js/oarepo_vocabularies";
 import Overridable from "react-overridable";
 import { i18next } from "@translations/docs_app/i18next";
 import _has from "lodash/has";
@@ -130,7 +131,9 @@ export const DepositForm = () => {
                     id="NrDocs.Deposit.AccessRightsField.container"
                     fieldPath="metadata.accessRights"
                   >
-                    <LocalVocabularySelectField
+                    {/* <LocalVocabularySelectField */}
+                    <VocabularySelectField
+                      type="access-rights"
                       //TODO: shouldn't access rights be required?
                       fieldPath="metadata.accessRights"
                       required
@@ -151,7 +154,9 @@ export const DepositForm = () => {
                     id="NrDocs.Deposit.ResourceTypeField.container"
                     fieldPath="metadata.resourceType"
                   >
-                    <LocalVocabularySelectField
+                    {/* <LocalVocabularySelectField */}
+                    <VocabularySelectField
+                      type='resource-types'
                       fieldPath="metadata.resourceType"
                       required
                       clearable
@@ -255,7 +260,7 @@ export const DepositForm = () => {
                       rich={true}
                       required
                       helpText={i18next.t(
-                        "Detailed description of the methodology and technical information should be specified in the 'Dataset Description' section"
+                        "Detailed description of the methodology and technical information should be specified in the 'Resource Description' section"
                       )}
                     />
                   </Overridable>
@@ -263,7 +268,9 @@ export const DepositForm = () => {
                     id="NrDocs.Deposit.LanguagesField.container"
                     fieldPath="metadata.languages"
                   >
-                    <LocalVocabularySelectField
+                    {/* <LocalVocabularySelectField */}
+                    <VocabularySelectField
+                      type='languages'
                       fieldPath="metadata.languages"
                       multiple={true}
                       required
@@ -283,7 +290,9 @@ export const DepositForm = () => {
                     id="NrDocs.Deposit.LicenseField.container"
                     fieldPath="metadata.rights"
                   >
-                    <LocalVocabularySelectField
+                    {/* <LocalVocabularySelectField */}
+                    <VocabularySelectField
+                      type='licenses'
                       fieldPath="metadata.rights"
                       multiple={true}
                       label={
@@ -297,7 +306,7 @@ export const DepositForm = () => {
                       clearable
                       optionsListName="licenses"
                       helpText={i18next.t(
-                        "If a Creative Commons license is associated with the dataset, select the appropriate license option from the menu. We recommend choosing the latest versions, namely 3.0 Czech and 4.0 International."
+                        "If a Creative Commons license is associated with the resource, select the appropriate license option from the menu. We recommend choosing the latest versions, namely 3.0 Czech and 4.0 International."
                       )}
                     />
                   </Overridable>
@@ -323,13 +332,15 @@ export const DepositForm = () => {
                     "metadata.subjectCategories",
                   ]}
                   active
-                  label={i18next.t("Dataset description")}
+                  label={i18next.t("Resource description")}
                 >
                   <Overridable
                     id="NrDocs.Deposit.SubjectCategoriesField.container"
                     fieldPath="metadata.subjectCategories"
                   >
-                    <LocalVocabularySelectField
+                    {/* <LocalVocabularySelectField */}
+                    <VocabularySelectField
+                      type='subject-categories'
                       fieldPath="metadata.subjectCategories"
                       multiple={true}
                       label={
@@ -343,7 +354,7 @@ export const DepositForm = () => {
                       clearable
                       optionsListName="subjectCategories"
                       helpText={i18next.t(
-                        "Select the subject field(s) to which the dataset belongs."
+                        "Select the subject field(s) to which the resource belongs."
                       )}
                     />
                   </Overridable>
@@ -467,7 +478,6 @@ export const DepositForm = () => {
                   </Overridable>
                 </AccordionField>
               </Overridable>
-
               <FormikStateLogger />
             </Grid.Column>
           </Ref>
