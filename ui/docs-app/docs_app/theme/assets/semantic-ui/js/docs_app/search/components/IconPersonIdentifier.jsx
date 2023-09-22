@@ -1,4 +1,6 @@
 import React from "react";
+import { i18next } from "@translations/docs_app/i18next";
+
 
 export const IconIdentifier = ({ link, linkTitle, icon, alt }) => {
   return (
@@ -7,7 +9,7 @@ export const IconIdentifier = ({ link, linkTitle, icon, alt }) => {
       href={link}
       aria-label={linkTitle}
       title={linkTitle}
-      key={scheme}
+      key={link}
     >
       <img className="inline-id-icon ml-5" src={icon} alt={alt} />
     </a>

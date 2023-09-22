@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2023-09-20T05:46:40.908Z\n"
-"PO-Revision-Date: 2023-09-20T05:46:40.908Z\n"
+"POT-Creation-Date: 2023-09-06T10:25:07.636Z\n"
+"PO-Revision-Date: 2023-09-06T10:25:07.636Z\n"
 "Language: de\n"
 
 msgid "We couldn't find any matches for "
@@ -399,4 +399,133 @@ msgid "Series titles must be unique"
 msgstr ""
 
 msgid "Object identifiers must be unique"
+msgstr ""
+
+msgid "Creators"
+msgstr ""
+
+msgid "Add creator"
+msgstr ""
+
+msgid "Edit creator"
+msgstr ""
+
+msgid "Edit"
+msgstr ""
+
+msgid "Remove"
+msgstr ""
+
+msgid "Type the value of an identifier..."
+msgstr ""
+
+msgid "e.g. ORCID, ISNI or GND."
+msgstr ""
+
+msgid "Save and add another"
+msgstr ""
+
+msgid "Name is a required field."
+msgstr ""
+
+msgid "Role is a required field."
+msgstr ""
+
+msgid "Added"
+msgstr ""
+
+msgid "Person"
+msgstr ""
+
+msgid "Organization"
+msgstr ""
+
+msgid "Search for persons by name, identifier, or affiliation..."
+msgstr ""
+
+msgid "Family name"
+msgstr ""
+
+msgid "Given names"
+msgstr ""
+
+msgid "Name"
+msgstr ""
+
+msgid "Organization name"
+msgstr ""
+
+msgid "e.g. ROR, ISNI or GND."
+msgstr ""
+
+msgid "Role"
+msgstr ""
+
+msgid "Select role"
+msgstr ""
+
+msgid "Cancel"
+msgstr ""
+
+msgid "Save"
+msgstr ""
+
+msgid "Couldn't find your person? You can <2>create a new entry</2>."
+msgstr "Couldn't find your person? You can <2>create a new entry</2>."
+
+msgid "Preview"
+msgstr ""
+
+msgid "Additional information"
+msgstr ""
+
+msgid "Visibility"
+msgstr ""
+
+msgid "Items must be unique"
+msgstr ""
+
+msgid "Additional titles must be unique"
+msgstr ""
+
+msgid "Invalid date format"
+msgstr ""
+
+msgid "Publishers must be unique"
+msgstr ""
+
+msgid "Notes must be unique"
+msgstr ""
+
+msgid "Locations must be unique"
+msgstr ""
+
+msgid "Please provide an URL in valid format"
+msgstr ""
+
+msgid "URL must be provided for this field if used"
+msgstr ""
+
+msgid "Project codes must be unique"
+msgstr ""
+
+msgid "Subjects must be unique"
+msgstr ""
+
+msgid "Series titles must be unique"
+msgstr ""
+
+msgid "Object identifiers must be unique"
+msgstr ""
+
+msgid "Identifier"
+msgstr ""
+
+msgid "Identifiers"
+msgstr ""
+
+msgid "Affiliations"
+msgstr ""
+
+msgid "Select one or more affiliations"
 msgstr ""
