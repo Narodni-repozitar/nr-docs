@@ -7,7 +7,7 @@
 // Invenio-RDM-Records is free software; you can redistribute it and/or modify it
 // under the terms of the MIT License; see LICENSE file for more details.
 
-import React, { Component, createRef } from "react";
+import React, { createRef } from "react";
 import PropTypes from "prop-types";
 import { Button, Form, Grid, Header, Modal } from "semantic-ui-react";
 import { Formik } from "formik";
@@ -19,9 +19,7 @@ import {
 } from "react-invenio-forms";
 import * as Yup from "yup";
 import _get from "lodash/get";
-import _find from "lodash/find";
 import _isEmpty from "lodash/isEmpty";
-import _map from "lodash/map";
 import { CreatibutorsIdentifiers } from "./CreatibutorsIdentifiers";
 import { CREATIBUTOR_TYPE } from "./type";
 import { i18next } from "@translations/docs_app/i18next";
@@ -37,14 +35,6 @@ const NamesAutocompleteOptions = {
   SEARCH: "search",
   SEARCH_ONLY: "search_only",
   OFF: "off",
-};
-
-
-const findField = (arrayField, key, value) => {
-  const knownField = _find(arrayField, {
-    [key]: value,
-  });
-  return knownField ? knownField : { [key]: value };
 };
 
 const makeIdEntry = (identifier) => {
@@ -89,23 +79,9 @@ const makeIdEntry = (identifier) => {
 const serializeCreatibutor = (initialCreatibutor, submittedCreatibutor) => {
   console.log('serializeCreatibutor:', submittedCreatibutor)
   const fullName = `${submittedCreatibutor.family_name}, ${submittedCreatibutor.given_name}`
-  const identifiersFieldPath = "authorityIdentifiers";
-  const affiliationsFieldPath = "affiliations";
-  // The modal is saving only identifiers values, thus
-  // identifiers with existing scheme are trimmed
-  // Here we merge back the known scheme for the submitted identifiers
-  const initialIdentifiers = _get(initialCreatibutor, identifiersFieldPath, []);
-  const submittedIdentifiers = _get(submittedCreatibutor, identifiersFieldPath, []);
-  const identifiers = submittedIdentifiers.map((identifier) => {
-    return findField(initialIdentifiers, "identifier", identifier);
-  });
-
-  const submittedAffiliations = _get(submittedCreatibutor, affiliationsFieldPath, []);
   return {
     ...submittedCreatibutor,
     fullName,
-    ...identifiers,
-    affiliations: submittedAffiliations,
   };
 };
 
@@ -123,10 +99,7 @@ const deserializeCreatibutor = (initialCreatibutor, isCreator) => {
     family_name,
     given_name,
     ...initialCreatibutor,
-    authorityIdentifiers: _map(
-      _get(initialCreatibutor, identifiersFieldPath, []),
-      "identifier"
-    ),
+    authorityIdentifiers: _get(initialCreatibutor, identifiersFieldPath, []),
     affiliations: _get(initialCreatibutor, "affiliations", []),
     ...(!isCreator && { role: _get(initialCreatibutor, "role", "") })
   };
@@ -134,7 +107,7 @@ const deserializeCreatibutor = (initialCreatibutor, isCreator) => {
   return result
 };
 
-const serializeSuggestions = (creatibutors) => {
+const serializeSuggestions = (creatibutors, showPersonForm, autocompleteNames) => {
   let results = creatibutors.map((creatibutor) => {
     let affNames = "";
     creatibutor.affiliations.forEach((affiliation, idx) => {
@@ -146,7 +119,7 @@ const serializeSuggestions = (creatibutors) => {
 
     let idString = [];
     creatibutor.identifiers.forEach((i) => {
-      idString.push(this.makeIdEntry(i));
+      idString.push(makeIdEntry(i));
     });
 
     return {
@@ -164,9 +137,6 @@ const serializeSuggestions = (creatibutors) => {
       ),
     };
   })
-
-  const { showPersonForm } = this.state;
-  const { autocompleteNames } = this.props;
 
   const showManualEntry =
     autocompleteNames === NamesAutocompleteOptions.SEARCH_ONLY && !showPersonForm;
@@ -280,7 +250,7 @@ export const CreatibutorsModal = ({ autocompleteNames, initialCreatibutor, initi
     const personOrOrgPath = ``;
     const familyNameFieldPath = `${personOrOrgPath}family_name`;
     const givenNameFieldPath = `${personOrOrgPath}given_name`;
-    const identifiersFieldPath = `${personOrOrgPath}identifiers`;
+    const identifiersFieldPath = `${personOrOrgPath}authorityIdentifiers`;
     const affiliationsFieldPath = "affiliations";
 
     let chosen = {
@@ -314,7 +284,7 @@ export const CreatibutorsModal = ({ autocompleteNames, initialCreatibutor, initi
       validateOnChange={false}
       validateOnBlur={false}
     >
-      {({ values, resetForm, handleSubmit, errors, isValidating, isSubmitting }) => (
+      {({ values, resetForm, handleSubmit }) => (
         <Modal
           centered={false}
           onOpen={() => openModal()}
@@ -331,7 +301,6 @@ export const CreatibutorsModal = ({ autocompleteNames, initialCreatibutor, initi
             <Grid>
               <Grid.Column floated="left" width={4}>
                 <Header as="h2">
-                  {JSON.stringify(errors)}
                   <ActionLabel />
                 </Header>
               </Grid.Column>
@@ -392,7 +361,7 @@ export const CreatibutorsModal = ({ autocompleteNames, initialCreatibutor, initi
                       // Disable UI-side filtering of search results
                       search={(options) => options}
                       suggestionAPIUrl="/api/names"
-                      serializeSuggestions={serializeSuggestions}
+                      serializeSuggestions={(suggestions) => serializeSuggestions(suggestions, showPersonForm, autocompleteNames)}
                       onValueChange={onPersonSearchChange}
                       ref={namesAutocompleteRef}
                     />
@@ -447,15 +416,15 @@ export const CreatibutorsModal = ({ autocompleteNames, initialCreatibutor, initi
                       multiple
                     />
                     {/* TODO: this should be LocalVocabularySelectField */}
-                    <VocabularySelectField
-                      type='contributor-roles'
-                      fieldPath={roleFieldPath}
-                      label={i18next.t("Role")}
-                      placeholder={i18next.t("Select role")}
-                      {...(isCreator && { clearable: true })}
-                      required={!isCreator}
-                      scrolling
-                    />
+                    {!isCreator && (
+                      <VocabularySelectField
+                        type='contributor-roles'
+                        fieldPath={roleFieldPath}
+                        label={i18next.t("Role")}
+                        placeholder={i18next.t("Select role")}
+                        required={true}
+                        scrolling
+                      />)}
                   </div>
                 )}
             </Form>
@@ -535,7 +504,7 @@ CreatibutorsModal.defaultProps = {
     nameType: CREATIBUTOR_TYPE.PERSON,
     fullName: '',
     affiliations: [],
-    identifiers: []
+    authorityIdentifiers: []
   },
   autocompleteNames: "search",
 };

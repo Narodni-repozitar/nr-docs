@@ -89,7 +89,7 @@ export const CreatibutorsFieldItem = ({
             roleOptions={roleOptions}
             schema={schema}
             autocompleteNames={autocompleteNames}
-            action="edit"
+            initialAction="edit"
             trigger={
               <Button size="mini" primary type="button">
                 {i18next.t("Edit")}
@@ -113,12 +113,13 @@ export const CreatibutorsFieldItem = ({
                   <img
                     alt="ORCID logo"
                     className="inline-id-icon mr-5"
-                    src="/static/images/orcid.svg"
+                    src="/static/images/identifiers/orcid-og-image.png"
                     width="16"
                     height="16"
                   />
                 )}
-                {_get(initialCreatibutor, "authorityIdentifiers", []).some(
+                {/* TODO: provide logo assets for this ID schemes */}
+                {/* {_get(initialCreatibutor, "authorityIdentifiers", []).some(
                   (identifier) => identifier.scheme === "ror"
                 ) && (
                   <img
@@ -139,7 +140,7 @@ export const CreatibutorsFieldItem = ({
                     width="16"
                     height="16"
                   />
-                )}
+                )} */}
                 {displayName} {renderRole(initialCreatibutor?.role, roleOptions)}
               </span>
             </List.Description>
