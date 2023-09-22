@@ -8,7 +8,7 @@ export const PreviewButton = ({ ...uiProps }) => {
   return (
     <Button
       name="preview"
-      disabled={isSubmitting}
+      disabled
       loading={isSubmitting}
       color="grey"
       onClick={handleSubmit}

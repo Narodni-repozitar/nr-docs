@@ -99,9 +99,6 @@ msgstr ""
 msgid "Title type"
 msgstr ""
 
-msgid "Remove field"
-msgstr ""
-
 msgid ""
 "In case your upload was already published elsewhere, please use the date of "
 "the first publication. Format: YYYY-MM-DD, YYYY-MM, or YYYY. For intervals "
@@ -323,9 +320,6 @@ msgid ""
 "number between -180 and 180 and latitude between -90 and 90."
 msgstr ""
 
-msgid "Resource accessibility"
-msgstr ""
-
 msgid "This field is required"
 msgstr ""
 
@@ -336,6 +330,75 @@ msgid "Must be between -180 and 180"
 msgstr ""
 
 msgid "Must be between -90 and 90"
+msgstr ""
+
+msgid "Delete"
+msgstr ""
+
+msgid "Cancel"
+msgstr ""
+
+msgid "Are you sure you wish delete this draft?"
+msgstr ""
+
+msgid "If you delete the draft, the work you have done on it will be lost."
+msgstr ""
+
+msgid "Preview"
+msgstr ""
+
+msgid "Publish"
+msgstr ""
+
+msgid "Are you sure you wish to publish this draft?"
+msgstr ""
+
+msgid "Save"
+msgstr ""
+
+msgid "Additional information"
+msgstr ""
+
+msgid "Accessibility"
+msgstr ""
+
+msgid "Explanation regarding restricted status of an item"
+msgstr ""
+
+msgid "Items must be unique"
+msgstr ""
+
+msgid "Additional titles must be unique"
+msgstr ""
+
+msgid "Invalid date format"
+msgstr ""
+
+msgid "Publishers must be unique"
+msgstr ""
+
+msgid "Notes must be unique"
+msgstr ""
+
+msgid "Locations must be unique"
+msgstr ""
+
+msgid "Please provide an URL in valid format"
+msgstr ""
+
+msgid "URL must be provided for this field if used"
+msgstr ""
+
+msgid "Project codes must be unique"
+msgstr ""
+
+msgid "Subjects must be unique"
+msgstr ""
+
+msgid "Series titles must be unique"
+msgstr ""
+
+msgid "Object identifiers must be unique"
 msgstr ""
 
 msgid "Creators"
