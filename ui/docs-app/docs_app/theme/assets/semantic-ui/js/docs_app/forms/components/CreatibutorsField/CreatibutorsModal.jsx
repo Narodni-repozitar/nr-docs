@@ -69,35 +69,40 @@ const makeIdEntry = (identifier) => {
         {identifier.identifier}
       </a>
     </span>
-  )
-}
+  );
+};
 
 /**
-   * Function to transform formik creatibutor state
-   * back to the external format.
-   */
+ * Function to transform formik creatibutor state
+ * back to the external format.
+ */
 const serializeCreatibutor = (submittedCreatibutor, isCreator, isPerson) => {
-
-  console.log('serializeCreatibutor:', submittedCreatibutor)
-  const fullName = `${submittedCreatibutor.family_name}, ${submittedCreatibutor.given_name}`
-  const affiliations = _get(submittedCreatibutor, "affiliations", []).map(aff => ({id: aff}))
-  const role = _get(submittedCreatibutor, "role")
+  const fullName = `${submittedCreatibutor.family_name}, ${submittedCreatibutor.given_name}`;
+  const affiliations = _get(submittedCreatibutor, "affiliations", []).map(
+    (aff) => ({ id: aff })
+  );
+  const role = _get(submittedCreatibutor, "role");
   return {
     ...submittedCreatibutor,
     affiliations,
-    ...(isPerson && {fullName}),
-    ...(!isCreator && role && { role: {id: role} } )
+    ...(isPerson && { fullName }),
+    ...(!isCreator && role && { role: { id: role } }),
   };
 };
 
-
 /**
-   * Function to transform creatibutor object
-   * to formik initialValues.
-   */
+ * Function to transform creatibutor object
+ * to formik initialValues.
+ */
 const deserializeCreatibutor = (initialCreatibutor, isCreator) => {
   const identifiersFieldPath = "authorityIdentifiers";
-  const [family_name = '', given_name = ''] = _get(initialCreatibutor, "fullName", "").trim().split(',', 1)
+  const [family_name = "", given_name = ""] = _get(
+    initialCreatibutor,
+    "fullName",
+    ""
+  )
+    .trim()
+    .split(",", 1);
   const result = {
     // default type to personal
     nameType: CREATIBUTOR_TYPE.PERSON,
@@ -105,14 +110,19 @@ const deserializeCreatibutor = (initialCreatibutor, isCreator) => {
     given_name,
     ...initialCreatibutor,
     authorityIdentifiers: _get(initialCreatibutor, identifiersFieldPath, []),
-    affiliations: _get(initialCreatibutor, "affiliations", [{id: ''}]).id,
-    ...(!isCreator && { role: _get(initialCreatibutor, "role", {id: ''}).id })
+    affiliations: _get(initialCreatibutor, "affiliations", [{ id: "" }]).id,
+    ...(!isCreator && {
+      role: _get(initialCreatibutor, "role", { id: "" }).id,
+    }),
   };
-  console.log('deserializeCreatibutor:', result)
-  return result
+  return result;
 };
 
-const serializeSuggestions = (creatibutors, showPersonForm, autocompleteNames) => {
+const serializeSuggestions = (
+  creatibutors,
+  showPersonForm,
+  autocompleteNames
+) => {
   let results = creatibutors.map((creatibutor) => {
     let affNames = "";
     creatibutor.affiliations.forEach((affiliation, idx) => {
@@ -141,10 +151,11 @@ const serializeSuggestions = (creatibutors, showPersonForm, autocompleteNames) =
         </Header>
       ),
     };
-  })
+  });
 
   const showManualEntry =
-    autocompleteNames === NamesAutocompleteOptions.SEARCH_ONLY && !showPersonForm;
+    autocompleteNames === NamesAutocompleteOptions.SEARCH_ONLY &&
+    !showPersonForm;
 
   if (showManualEntry) {
     results.push({
@@ -169,8 +180,16 @@ const serializeSuggestions = (creatibutors, showPersonForm, autocompleteNames) =
   return results;
 };
 
-
-export const CreatibutorsModal = ({ autocompleteNames, initialCreatibutor, initialAction, addLabel, editLabel, schema, onCreatibutorChange, trigger }) => {
+export const CreatibutorsModal = ({
+  autocompleteNames,
+  initialCreatibutor,
+  initialAction,
+  addLabel,
+  editLabel,
+  schema,
+  onCreatibutorChange,
+  trigger,
+}) => {
   const [open, setOpen] = React.useState(false);
   const [action, setAction] = React.useState(initialAction);
   const [saveAndContinueLabel, setSaveAndContinueLabel] = React.useState(
@@ -183,14 +202,18 @@ export const CreatibutorsModal = ({ autocompleteNames, initialCreatibutor, initi
   const namesAutocompleteRef = createRef();
 
   const isCreator = schema === "creators";
-  // TODO: make this conditionally required based on nameType
-  // breaks organizational submit otherwise
-  // given_name: Yup.string().required(i18next.t("Given name is a required field.")),
-  // family_name: Yup.string().required(i18next.t("Family name is a required field.")),
   const CreatorSchema = Yup.object({
     nameType: Yup.string(),
-    given_name: Yup.string(),
-    family_name: Yup.string(),
+    given_name: Yup.string().when("nameType", (nameType, schema) => {
+      if (nameType === CREATIBUTOR_TYPE.PERSON) {
+        return schema.required(i18next.t("Given name is a required field."));
+      }
+    }),
+    family_name: Yup.string().when("nameType", (nameType, schema) => {
+      if (nameType === CREATIBUTOR_TYPE.PERSON) {
+        return schema.required(i18next.t("Family name is a required field."));
+      }
+    }),
     fullName: Yup.string(),
     role: Yup.string().when("_", (_, schema) => {
       if (!isCreator) {
@@ -218,7 +241,6 @@ export const CreatibutorsModal = ({ autocompleteNames, initialCreatibutor, initi
   const displayActionLabel = action === ModalActions.ADD ? addLabel : editLabel;
 
   const onSubmit = (values, formikBag) => {
-    console.log("onSubmit", values, isCreator);
     const typeFieldPath = `${personOrOrgPath}nameType`;
     const isPerson = _get(values, typeFieldPath) === CREATIBUTOR_TYPE.PERSON;
 
@@ -278,7 +300,6 @@ export const CreatibutorsModal = ({ autocompleteNames, initialCreatibutor, initi
       formikProps.form.setFieldValue(path, value);
     });
   };
-  console.log("render", initialCreatibutor);
 
   const ActionLabel = () => displayActionLabel;
   const personOrOrgPath = ``;
@@ -316,7 +337,6 @@ export const CreatibutorsModal = ({ autocompleteNames, initialCreatibutor, initi
             <Grid>
               <Grid.Column floated="left" width={4}>
                 <Header as="h2">
-                  {errors} a
                   <ActionLabel />
                 </Header>
               </Grid.Column>
@@ -398,24 +418,21 @@ export const CreatibutorsModal = ({ autocompleteNames, initialCreatibutor, initi
                           label={i18next.t("Family name")}
                           placeholder={i18next.t("Family name")}
                           fieldPath={familyNameFieldPath}
-                          required={false}
-                          // TODO: make this work & reactive
-                          // required={
-                          //   isCreator &&
-                          //   _get(values, typeFieldPath) ===
-                          //     CREATIBUTOR_TYPE.PERSON
-                          // }
+                          required={
+                            isCreator &&
+                            _get(values, typeFieldPath) ===
+                              CREATIBUTOR_TYPE.PERSON
+                          }
                         />
                         <TextField
                           label={i18next.t("Given names")}
                           placeholder={i18next.t("Given names")}
                           fieldPath={givenNameFieldPath}
-                          // TODO: make this working & reactive
-                          // required={
-                          //   isCreator &&
-                          //   _get(values, typeFieldPath) ===
-                          //     CREATIBUTOR_TYPE.PERSON
-                          // }
+                          required={
+                            isCreator &&
+                            _get(values, typeFieldPath) ===
+                              CREATIBUTOR_TYPE.PERSON
+                          }
                         />
                       </Form.Group>
                       <Form.Group widths="equal">
@@ -509,39 +526,15 @@ export const CreatibutorsModal = ({ autocompleteNames, initialCreatibutor, initi
       )}
     </Formik>
   );
-}
-
-
-CreatibutorsModal.propTypes = {
-  schema: PropTypes.oneOf(["creators", "contributors"]).isRequired,
-  initialAction: PropTypes.oneOf(["add", "edit"]).isRequired,
-  addLabel: PropTypes.string.isRequired,
-  autocompleteNames: PropTypes.oneOf(["search", "search_only", "off"]),
-  editLabel: PropTypes.string.isRequired,
-  initialCreatibutor: PropTypes.shape({
-    id: PropTypes.string,
-    family_name: PropTypes.string,
-    given_name: PropTypes.string,
-    fullName: PropTypes.string,
-    authorityIdentifiers: PropTypes.arrayOf(
-      PropTypes.shape({
-        scheme: PropTypes.string,
-        identifier: PropTypes.string,
-      })
-    ),
-    affiliations: PropTypes.array,
-    role: PropTypes.string,
-  }),
-  trigger: PropTypes.object.isRequired,
-  onCreatibutorChange: PropTypes.func.isRequired,
 };
+
 
 CreatibutorsModal.defaultProps = {
   initialCreatibutor: {
     nameType: CREATIBUTOR_TYPE.PERSON,
-    fullName: '',
+    fullName: "",
     affiliations: [],
-    authorityIdentifiers: []
+    authorityIdentifiers: [],
   },
   autocompleteNames: "search",
 };

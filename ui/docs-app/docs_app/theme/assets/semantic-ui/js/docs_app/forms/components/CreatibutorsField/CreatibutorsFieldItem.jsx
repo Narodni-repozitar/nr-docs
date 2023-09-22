@@ -57,9 +57,8 @@ export const CreatibutorsFieldItem = ({
     }),
   });
 
-  const renderRole = (role) => {
-      return role && <Label size="tiny">{role}</Label>;
-  };
+  const renderRole = (role) => role && <Label size="tiny">{role.id}</Label>;
+
   const firstError =
     identifiersError &&
     identifiersError.find((elem) => ![undefined, null].includes(elem));
@@ -70,7 +69,9 @@ export const CreatibutorsFieldItem = ({
     <Ref innerRef={dropRef} key={compKey}>
       <List.Item
         key={compKey}
-        className={hidden ? "deposit-drag-listitem hidden" : "deposit-drag-listitem"}
+        className={
+          hidden ? "deposit-drag-listitem hidden" : "deposit-drag-listitem"
+        }
       >
         <List.Content floated="right">
           <CreatibutorsModal
@@ -89,7 +90,11 @@ export const CreatibutorsFieldItem = ({
               </Button>
             }
           />
-          <Button size="mini" type="button" onClick={() => removeCreatibutor(index)}>
+          <Button
+            size="mini"
+            type="button"
+            onClick={() => removeCreatibutor(index)}
+          >
             {i18next.t("Remove")}
           </Button>
         </List.Content>
