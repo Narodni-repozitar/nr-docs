@@ -99,3 +99,5 @@ package-lock.json
 
 #eslint
 .eslintrc.js
+
+.vite

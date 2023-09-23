@@ -12,6 +12,7 @@ from functools import partial
 # todo: do this better, edit this on the lvel of published service config
 class NrDocumentsPublishedServiceConfig(NrDocumentsServiceConfig):
     components = copy.deepcopy(NrDocumentsServiceConfig.components)
+
 def get_published_service():
     config = NrDocumentsPublishedServiceConfig()
     components = config.components
