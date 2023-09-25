@@ -1,5 +1,8 @@
 import marshmallow as ma
+import nr_metadata.common.services.records.schema_common
+import nr_metadata.common.services.records.schema_datatypes
 import nr_metadata.documents.services.records.schema
+import nr_metadata.schema.identifiers
 from invenio_drafts_resources.services.records.schema import (
     ParentSchema as InvenioParentSchema,
 )
@@ -61,11 +64,32 @@ class GeneratedParentSchema(InvenioParentSchema):
         return data
 
 
+class GeoLocationsItemSchema(
+    nr_metadata.common.services.records.schema_datatypes.NRGeoLocationSchema
+):
+    class Meta:
+        unknown = ma.RAISE
+
+    geoLocationPoint = ma.fields.Nested(lambda: GeoLocationPointSchema())
+
+
 class NrDocumentsMetadataSchema(
     nr_metadata.documents.services.records.schema.NRDocumentMetadataSchema
 ):
     class Meta:
         unknown = ma.RAISE
+
+    additionalTitles = ma.fields.List(
+        ma.fields.Nested(lambda: AdditionalTitlesItemSchema())
+    )
+
+    contributors = ma.fields.List(ma.fields.Nested(lambda: ContributorsItemSchema()))
+
+    creators = ma.fields.List(
+        ma.fields.Nested(lambda: CreatorsItemSchema()),
+        required=True,
+        validate=[ma.validate.Length(min=1)],
+    )
 
     thesis = ma.fields.Nested(lambda: ThesisSchema())
 
@@ -78,6 +102,88 @@ class NrDocumentsSchema(
 
     syntheticFields = ma.fields.Nested(lambda: SyntheticFieldsSchema())
     parent = ma.fields.Nested(GeneratedParentSchema)
+
+
+class RelatedItemsItemSchema(
+    nr_metadata.common.services.records.schema_datatypes.NRRelatedItemSchema
+):
+    class Meta:
+        unknown = ma.RAISE
+
+    itemContributors = ma.fields.List(
+        ma.fields.Nested(lambda: ItemContributorsItemSchema())
+    )
+
+    itemCreators = ma.fields.List(ma.fields.Nested(lambda: ItemCreatorsItemSchema()))
+
+
+class AccessRightsSchema(
+    nr_metadata.common.services.records.schema_datatypes.NRAccessRightsVocabularySchema
+):
+    class Meta:
+        unknown = ma.RAISE
+
+    _id = ma.fields.String(data_key="id", attribute="id")
+
+    _version = ma.fields.String(data_key="@v", attribute="@v")
+
+    title = i18n_strings
+
+
+class AdditionalTitlesItemSchema(
+    nr_metadata.common.services.records.schema_common.AdditionalTitlesSchema
+):
+    class Meta:
+        unknown = ma.RAISE
+
+
+class AffiliationsItemSchema(
+    nr_metadata.common.services.records.schema_datatypes.NRAffiliationVocabularySchema
+):
+    class Meta:
+        unknown = ma.RAISE
+
+    _id = ma.fields.String(data_key="id", attribute="id")
+
+    _version = ma.fields.String(data_key="@v", attribute="@v")
+
+    hierarchy = ma.fields.Nested(lambda: HierarchySchema())
+
+    title = i18n_strings
+
+
+class AuthorityIdentifiersItemSchema(
+    nr_metadata.schema.identifiers.NRAuthorityIdentifierSchema
+):
+    class Meta:
+        unknown = ma.RAISE
+
+
+class ContributorsItemSchema(
+    nr_metadata.common.services.records.schema_common.NRContributorSchema
+):
+    class Meta:
+        unknown = ma.RAISE
+
+
+class CountrySchema(
+    nr_metadata.common.services.records.schema_datatypes.NRCountryVocabularySchema
+):
+    class Meta:
+        unknown = ma.RAISE
+
+    _id = ma.fields.String(data_key="id", attribute="id")
+
+    _version = ma.fields.String(data_key="@v", attribute="@v")
+
+    title = i18n_strings
+
+
+class CreatorsItemSchema(
+    nr_metadata.common.services.records.schema_common.NRCreatorSchema
+):
+    class Meta:
+        unknown = ma.RAISE
 
 
 class DegreeGrantorsItemSchema(
@@ -95,7 +201,175 @@ class DegreeGrantorsItemSchema(
     title = i18n_strings
 
 
+class EventLocationSchema(
+    nr_metadata.common.services.records.schema_datatypes.NRLocationSchema
+):
+    class Meta:
+        unknown = ma.RAISE
+
+
+class EventsItemSchema(
+    nr_metadata.common.services.records.schema_datatypes.NREventSchema
+):
+    class Meta:
+        unknown = ma.RAISE
+
+
+class ExternalLocationSchema(
+    nr_metadata.common.services.records.schema_datatypes.NRExternalLocationSchema
+):
+    class Meta:
+        unknown = ma.RAISE
+
+
+class FunderSchema(
+    nr_metadata.common.services.records.schema_datatypes.NRFunderVocabularySchema
+):
+    class Meta:
+        unknown = ma.RAISE
+
+    _id = ma.fields.String(data_key="id", attribute="id")
+
+    _version = ma.fields.String(data_key="@v", attribute="@v")
+
+    title = i18n_strings
+
+
+class FundingReferencesItemSchema(
+    nr_metadata.common.services.records.schema_datatypes.NRFundingReferenceSchema
+):
+    class Meta:
+        unknown = ma.RAISE
+
+
+class GeoLocationPointSchema(
+    nr_metadata.common.services.records.schema_datatypes.NRGeoLocationPointSchema
+):
+    class Meta:
+        unknown = ma.RAISE
+
+
+class ItemContributorsItemSchema(
+    nr_metadata.common.services.records.schema_datatypes.NRRelatedItemContributorSchema
+):
+    class Meta:
+        unknown = ma.RAISE
+
+
+class ItemCreatorsItemSchema(
+    nr_metadata.common.services.records.schema_datatypes.NRRelatedItemCreatorSchema
+):
+    class Meta:
+        unknown = ma.RAISE
+
+
+class ItemRelationTypeSchema(
+    nr_metadata.common.services.records.schema_datatypes.NRItemRelationTypeVocabularySchema
+):
+    class Meta:
+        unknown = ma.RAISE
+
+    _id = ma.fields.String(data_key="id", attribute="id")
+
+    _version = ma.fields.String(data_key="@v", attribute="@v")
+
+    title = i18n_strings
+
+
+class ItemResourceTypeSchema(
+    nr_metadata.common.services.records.schema_datatypes.NRResourceTypeVocabularySchema
+):
+    class Meta:
+        unknown = ma.RAISE
+
+    _id = ma.fields.String(data_key="id", attribute="id")
+
+    _version = ma.fields.String(data_key="@v", attribute="@v")
+
+    title = i18n_strings
+
+
+class LanguagesItemSchema(
+    nr_metadata.common.services.records.schema_datatypes.NRLanguageVocabularySchema
+):
+    class Meta:
+        unknown = ma.RAISE
+
+    _id = ma.fields.String(data_key="id", attribute="id")
+
+    _version = ma.fields.String(data_key="@v", attribute="@v")
+
+    title = i18n_strings
+
+
+class ObjectIdentifiersItemSchema(
+    nr_metadata.schema.identifiers.NRObjectIdentifierSchema
+):
+    class Meta:
+        unknown = ma.RAISE
+
+
+class RightsItemSchema(
+    nr_metadata.common.services.records.schema_datatypes.NRLicenseVocabularySchema
+):
+    class Meta:
+        unknown = ma.RAISE
+
+    _id = ma.fields.String(data_key="id", attribute="id")
+
+    _version = ma.fields.String(data_key="@v", attribute="@v")
+
+    title = i18n_strings
+
+
+class RoleSchema(
+    nr_metadata.common.services.records.schema_datatypes.NRAuthorityRoleVocabularySchema
+):
+    class Meta:
+        unknown = ma.RAISE
+
+    _id = ma.fields.String(data_key="id", attribute="id")
+
+    _version = ma.fields.String(data_key="@v", attribute="@v")
+
+    title = i18n_strings
+
+
+class SeriesItemSchema(
+    nr_metadata.common.services.records.schema_datatypes.NRSeriesSchema
+):
+    class Meta:
+        unknown = ma.RAISE
+
+
+class SubjectCategoriesItemSchema(
+    nr_metadata.common.services.records.schema_datatypes.NRSubjectCategoryVocabularySchema
+):
+    class Meta:
+        unknown = ma.RAISE
+
+    _id = ma.fields.String(data_key="id", attribute="id")
+
+    _version = ma.fields.String(data_key="@v", attribute="@v")
+
+    title = i18n_strings
+
+
+class SubjectsItemSchema(
+    nr_metadata.common.services.records.schema_datatypes.NRSubjectSchema
+):
+    class Meta:
+        unknown = ma.RAISE
+
+
 class SyntheticFieldsSchema(ma.Schema):
+    class Meta:
+        unknown = ma.RAISE
+
+
+class SystemIdentifiersItemSchema(
+    nr_metadata.schema.identifiers.NRSystemIdentifierSchema
+):
     class Meta:
         unknown = ma.RAISE
 
