@@ -1,0 +1,872 @@
+{
+    "type": "object",
+    "properties": {
+        "$schema": {
+            "type": "string"
+        },
+        "created": {
+            "type": "string",
+            "format": "date-time"
+        },
+        "id": {
+            "type": "string"
+        },
+        "metadata": {
+            "type": "object",
+            "properties": {
+                "abstract": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "lang": {
+                                "type": "string"
+                            },
+                            "value": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                },
+                "accessRights": {
+                    "type": "object",
+                    "properties": {
+                        "id": {
+                            "type": "string"
+                        },
+                        "title": {
+                            "type": "object"
+                        },
+                        "@v": {
+                            "type": "string"
+                        }
+                    }
+                },
+                "accessibility": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "lang": {
+                                "type": "string"
+                            },
+                            "value": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                },
+                "additionalTitles": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "title": {
+                                "type": "object",
+                                "properties": {
+                                    "lang": {
+                                        "type": "string"
+                                    },
+                                    "value": {
+                                        "type": "string"
+                                    }
+                                }
+                            },
+                            "titleType": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                },
+                "collection": {
+                    "type": "string"
+                },
+                "contributors": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "affiliations": {
+                                "type": "array",
+                                "items": {
+                                    "type": "object",
+                                    "properties": {
+                                        "id": {
+                                            "type": "string"
+                                        },
+                                        "title": {
+                                            "type": "object"
+                                        },
+                                        "hierarchy": {
+                                            "type": "object",
+                                            "properties": {
+                                                "ancestors": {
+                                                    "type": "array",
+                                                    "items": {
+                                                        "type": "string"
+                                                    }
+                                                },
+                                                "ancestors_or_self": {
+                                                    "type": "array",
+                                                    "items": {
+                                                        "type": "string"
+                                                    }
+                                                },
+                                                "level": {
+                                                    "type": "integer"
+                                                },
+                                                "parent": {
+                                                    "type": "string"
+                                                },
+                                                "title": {
+                                                    "type": "array",
+                                                    "items": {
+                                                        "type": "object"
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "@v": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            },
+                            "authorityIdentifiers": {
+                                "type": "array",
+                                "items": {
+                                    "type": "object",
+                                    "properties": {
+                                        "identifier": {
+                                            "type": "string"
+                                        },
+                                        "scheme": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            },
+                            "fullName": {
+                                "type": "string"
+                            },
+                            "nameType": {
+                                "type": "string"
+                            },
+                            "role": {
+                                "type": "object",
+                                "properties": {
+                                    "id": {
+                                        "type": "string"
+                                    },
+                                    "title": {
+                                        "type": "object"
+                                    },
+                                    "@v": {
+                                        "type": "string"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "creators": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "affiliations": {
+                                "type": "array",
+                                "items": {
+                                    "type": "object",
+                                    "properties": {
+                                        "id": {
+                                            "type": "string"
+                                        },
+                                        "title": {
+                                            "type": "object"
+                                        },
+                                        "hierarchy": {
+                                            "type": "object",
+                                            "properties": {
+                                                "ancestors": {
+                                                    "type": "array",
+                                                    "items": {
+                                                        "type": "string"
+                                                    }
+                                                },
+                                                "ancestors_or_self": {
+                                                    "type": "array",
+                                                    "items": {
+                                                        "type": "string"
+                                                    }
+                                                },
+                                                "level": {
+                                                    "type": "integer"
+                                                },
+                                                "parent": {
+                                                    "type": "string"
+                                                },
+                                                "title": {
+                                                    "type": "array",
+                                                    "items": {
+                                                        "type": "object"
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "@v": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            },
+                            "authorityIdentifiers": {
+                                "type": "array",
+                                "items": {
+                                    "type": "object",
+                                    "properties": {
+                                        "identifier": {
+                                            "type": "string"
+                                        },
+                                        "scheme": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            },
+                            "fullName": {
+                                "type": "string"
+                            },
+                            "nameType": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                },
+                "dateAvailable": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "dateModified": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "events": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "eventDate": {
+                                "type": "string",
+                                "format": "date-time"
+                            },
+                            "eventLocation": {
+                                "type": "object",
+                                "properties": {
+                                    "country": {
+                                        "type": "object",
+                                        "properties": {
+                                            "id": {
+                                                "type": "string"
+                                            },
+                                            "title": {
+                                                "type": "object"
+                                            },
+                                            "@v": {
+                                                "type": "string"
+                                            }
+                                        }
+                                    },
+                                    "place": {
+                                        "type": "string"
+                                    }
+                                }
+                            },
+                            "eventNameAlternate": {
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                }
+                            },
+                            "eventNameOriginal": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                },
+                "externalLocation": {
+                    "type": "object",
+                    "properties": {
+                        "externalLocationNote": {
+                            "type": "string"
+                        },
+                        "externalLocationURL": {
+                            "type": "string"
+                        }
+                    }
+                },
+                "fundingReferences": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "funder": {
+                                "type": "object",
+                                "properties": {
+                                    "id": {
+                                        "type": "string"
+                                    },
+                                    "title": {
+                                        "type": "object"
+                                    },
+                                    "@v": {
+                                        "type": "string"
+                                    }
+                                }
+                            },
+                            "fundingProgram": {
+                                "type": "string"
+                            },
+                            "projectID": {
+                                "type": "string"
+                            },
+                            "projectName": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                },
+                "geoLocations": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "geoLocationPlace": {
+                                "type": "string"
+                            },
+                            "geoLocationPoint": {
+                                "type": "object",
+                                "properties": {
+                                    "pointLatitude": {
+                                        "type": "number"
+                                    },
+                                    "pointLongitude": {
+                                        "type": "number"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "languages": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "id": {
+                                "type": "string"
+                            },
+                            "title": {
+                                "type": "object"
+                            },
+                            "@v": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                },
+                "methods": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "lang": {
+                                "type": "string"
+                            },
+                            "value": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                },
+                "notes": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "objectIdentifiers": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "identifier": {
+                                "type": "string"
+                            },
+                            "scheme": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                },
+                "originalRecord": {
+                    "type": "string"
+                },
+                "publishers": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "relatedItems": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "itemContributors": {
+                                "type": "array",
+                                "items": {
+                                    "type": "object",
+                                    "properties": {
+                                        "affiliations": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "id": {
+                                                        "type": "string"
+                                                    },
+                                                    "title": {
+                                                        "type": "object"
+                                                    },
+                                                    "hierarchy": {
+                                                        "type": "object",
+                                                        "properties": {
+                                                            "ancestors": {
+                                                                "type": "array",
+                                                                "items": {
+                                                                    "type": "string"
+                                                                }
+                                                            },
+                                                            "ancestors_or_self": {
+                                                                "type": "array",
+                                                                "items": {
+                                                                    "type": "string"
+                                                                }
+                                                            },
+                                                            "level": {
+                                                                "type": "integer"
+                                                            },
+                                                            "parent": {
+                                                                "type": "string"
+                                                            },
+                                                            "title": {
+                                                                "type": "array",
+                                                                "items": {
+                                                                    "type": "object"
+                                                                }
+                                                            }
+                                                        }
+                                                    },
+                                                    "@v": {
+                                                        "type": "string"
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "authorityIdentifiers": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "identifier": {
+                                                        "type": "string"
+                                                    },
+                                                    "scheme": {
+                                                        "type": "string"
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "fullName": {
+                                            "type": "string"
+                                        },
+                                        "nameType": {
+                                            "type": "string"
+                                        },
+                                        "role": {
+                                            "type": "object",
+                                            "properties": {
+                                                "id": {
+                                                    "type": "string"
+                                                },
+                                                "title": {
+                                                    "type": "object"
+                                                },
+                                                "@v": {
+                                                    "type": "string"
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "itemCreators": {
+                                "type": "array",
+                                "items": {
+                                    "type": "object",
+                                    "properties": {
+                                        "affiliations": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "id": {
+                                                        "type": "string"
+                                                    },
+                                                    "title": {
+                                                        "type": "object"
+                                                    },
+                                                    "hierarchy": {
+                                                        "type": "object",
+                                                        "properties": {
+                                                            "ancestors": {
+                                                                "type": "array",
+                                                                "items": {
+                                                                    "type": "string"
+                                                                }
+                                                            },
+                                                            "ancestors_or_self": {
+                                                                "type": "array",
+                                                                "items": {
+                                                                    "type": "string"
+                                                                }
+                                                            },
+                                                            "level": {
+                                                                "type": "integer"
+                                                            },
+                                                            "parent": {
+                                                                "type": "string"
+                                                            },
+                                                            "title": {
+                                                                "type": "array",
+                                                                "items": {
+                                                                    "type": "object"
+                                                                }
+                                                            }
+                                                        }
+                                                    },
+                                                    "@v": {
+                                                        "type": "string"
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "authorityIdentifiers": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "identifier": {
+                                                        "type": "string"
+                                                    },
+                                                    "scheme": {
+                                                        "type": "string"
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "fullName": {
+                                            "type": "string"
+                                        },
+                                        "nameType": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            },
+                            "itemEndPage": {
+                                "type": "string"
+                            },
+                            "itemIssue": {
+                                "type": "string"
+                            },
+                            "itemPIDs": {
+                                "type": "array",
+                                "items": {
+                                    "type": "object",
+                                    "properties": {
+                                        "identifier": {
+                                            "type": "string"
+                                        },
+                                        "scheme": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            },
+                            "itemPublisher": {
+                                "type": "string"
+                            },
+                            "itemRelationType": {
+                                "type": "object",
+                                "properties": {
+                                    "id": {
+                                        "type": "string"
+                                    },
+                                    "title": {
+                                        "type": "object"
+                                    },
+                                    "@v": {
+                                        "type": "string"
+                                    }
+                                }
+                            },
+                            "itemResourceType": {
+                                "type": "object",
+                                "properties": {
+                                    "id": {
+                                        "type": "string"
+                                    },
+                                    "title": {
+                                        "type": "object"
+                                    },
+                                    "@v": {
+                                        "type": "string"
+                                    }
+                                }
+                            },
+                            "itemStartPage": {
+                                "type": "string"
+                            },
+                            "itemTitle": {
+                                "type": "string"
+                            },
+                            "itemURL": {
+                                "type": "string"
+                            },
+                            "itemVolume": {
+                                "type": "string"
+                            },
+                            "itemYear": {
+                                "type": "integer"
+                            }
+                        }
+                    }
+                },
+                "resourceType": {
+                    "type": "object",
+                    "properties": {
+                        "id": {
+                            "type": "string"
+                        },
+                        "title": {
+                            "type": "object"
+                        },
+                        "@v": {
+                            "type": "string"
+                        }
+                    }
+                },
+                "rights": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "id": {
+                                "type": "string"
+                            },
+                            "title": {
+                                "type": "object"
+                            },
+                            "@v": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                },
+                "series": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "seriesTitle": {
+                                "type": "string"
+                            },
+                            "seriesVolume": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                },
+                "subjectCategories": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "id": {
+                                "type": "string"
+                            },
+                            "title": {
+                                "type": "object"
+                            },
+                            "@v": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                },
+                "subjects": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "classificationCode": {
+                                "type": "string"
+                            },
+                            "subject": {
+                                "type": "array",
+                                "items": {
+                                    "type": "object",
+                                    "properties": {
+                                        "lang": {
+                                            "type": "string"
+                                        },
+                                        "value": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            },
+                            "subjectScheme": {
+                                "type": "string"
+                            },
+                            "valueURI": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                },
+                "systemIdentifiers": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "identifier": {
+                                "type": "string"
+                            },
+                            "scheme": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                },
+                "technicalInfo": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "lang": {
+                                "type": "string"
+                            },
+                            "value": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                },
+                "thesis": {
+                    "type": "object",
+                    "properties": {
+                        "dateDefended": {
+                            "type": "string",
+                            "format": "date"
+                        },
+                        "defended": {
+                            "type": "boolean"
+                        },
+                        "degreeGrantors": {
+                            "type": "array",
+                            "items": {
+                                "type": "object",
+                                "properties": {
+                                    "id": {
+                                        "type": "string"
+                                    },
+                                    "title": {
+                                        "type": "object"
+                                    },
+                                    "hierarchy": {
+                                        "type": "object",
+                                        "properties": {
+                                            "ancestors": {
+                                                "type": "array",
+                                                "items": {
+                                                    "type": "string"
+                                                }
+                                            },
+                                            "ancestors_or_self": {
+                                                "type": "array",
+                                                "items": {
+                                                    "type": "string"
+                                                }
+                                            },
+                                            "level": {
+                                                "type": "integer"
+                                            },
+                                            "parent": {
+                                                "type": "string"
+                                            },
+                                            "title": {
+                                                "type": "array",
+                                                "items": {
+                                                    "type": "object"
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "@v": {
+                                        "type": "string"
+                                    }
+                                }
+                            }
+                        },
+                        "studyFields": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                },
+                "title": {
+                    "type": "string"
+                },
+                "version": {
+                    "type": "string"
+                }
+            }
+        },
+        "syntheticFields": {
+            "type": "object",
+            "properties": {
+                "institutions": {
+                    "type": "string"
+                },
+                "keywords_cs": {
+                    "type": "string"
+                },
+                "keywords_en": {
+                    "type": "string"
+                },
+                "person": {
+                    "type": "string"
+                }
+            }
+        },
+        "updated": {
+            "type": "string",
+            "format": "date-time"
+        }
+    }
+}
