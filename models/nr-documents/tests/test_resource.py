@@ -53,17 +53,19 @@ def _assert_single_item_response(response):
 #
 
 
-def _create_and_publish(client, input_data):
+def _create_and_publish(client_with_credentials, input_data):
     """Create a draft and publish it."""
     # Create the draft
-    response = client.post(NrDocumentsResourceConfig.url_prefix, json=input_data)
+    response = client_with_credentials.post(
+        NrDocumentsResourceConfig.url_prefix, json=input_data
+    )
 
     assert response.status_code == 201
 
     recid = response.json["id"]
 
     # Publish it
-    response = client.post(
+    response = client_with_credentials.post(
         f"{ NrDocumentsResourceConfig.url_prefix}{recid}/draft/actions/publish"
     )
 
@@ -72,33 +74,39 @@ def _create_and_publish(client, input_data):
     return recid
 
 
-def test_publish_draft(client, input_data, search_clear):
+def test_publish_draft(client_with_credentials, input_data, search_clear):
     """Test draft publication of a non-existing record.
 
     It has to first create said draft.
     """
-    recid = _create_and_publish(client, input_data)
+    recid = _create_and_publish(client_with_credentials, input_data)
 
     # Check draft does not exists anymore
-    response = client.get(f"{ NrDocumentsResourceConfig.url_prefix}{recid}/draft")
+    response = client_with_credentials.get(
+        f"{ NrDocumentsResourceConfig.url_prefix}{recid}/draft"
+    )
 
     assert response.status_code == 404
 
     # Check record exists
-    response = client.get(f"{ NrDocumentsResourceConfig.url_prefix}{recid}")
+    response = client_with_credentials.get(
+        f"{ NrDocumentsResourceConfig.url_prefix}{recid}"
+    )
 
     assert response.status_code == 200
 
     _assert_single_item_response(response)
 
 
-def test_search_versions(client, input_data, search_clear):
+def test_search_versions(client_with_credentials, input_data, search_clear):
     """Test search for versions."""
-    recid = _create_and_publish(client, input_data)
+    recid = _create_and_publish(client_with_credentials, input_data)
     NrDocumentsDraft.index.refresh()
 
     # Check draft does not exists anymore
-    res = client.get(f"{ NrDocumentsResourceConfig.url_prefix}{recid}/versions")
+    res = client_with_credentials.get(
+        f"{ NrDocumentsResourceConfig.url_prefix}{recid}/versions"
+    )
     assert res.status_code == 200
 
 
@@ -109,10 +117,10 @@ def test_search_versions(client, input_data, search_clear):
 
 
 def test_create_publish_new_revision(
-    client, input_data, search_clear, sample_metadata_list
+    client_with_credentials, input_data, search_clear, sample_metadata_list
 ):
     """Test draft creation of an existing record and publish it."""
-    recid = _create_and_publish(client, input_data)
+    recid = _create_and_publish(client_with_credentials, input_data)
 
     # Create new draft of said record
 
@@ -121,28 +129,32 @@ def test_create_publish_new_revision(
     edited_metadata = edited_input_data["metadata"]
     orig_metadata = input_data["metadata"]
 
-    response = client.post(f"{ NrDocumentsResourceConfig.url_prefix}{recid}/draft")
+    response = client_with_credentials.post(
+        f"{ NrDocumentsResourceConfig.url_prefix}{recid}/draft"
+    )
 
     assert response.status_code == 201
     assert response.json["revision_id"] == 5
     _assert_single_item_response(response)
 
     # Update that new draft
-    response = client.put(
+    response = client_with_credentials.put(
         f"{ NrDocumentsResourceConfig.url_prefix}{recid}/draft", json=edited_input_data
     )
 
     assert response.status_code == 200
 
     # Check the actual record was not modified
-    response = client.get(f"{ NrDocumentsResourceConfig.url_prefix}{recid}")
+    response = client_with_credentials.get(
+        f"{ NrDocumentsResourceConfig.url_prefix}{recid}"
+    )
 
     assert response.status_code == 200
     _assert_single_item_response(response)
     assert response.json["metadata"] == orig_metadata
 
     # Publish it to check the increment in reversion
-    response = client.post(
+    response = client_with_credentials.post(
         f"{ NrDocumentsResourceConfig.url_prefix}{recid}/draft/actions/publish"
     )
 
@@ -154,69 +166,79 @@ def test_create_publish_new_revision(
     assert response.json["metadata"] == edited_metadata
 
     # Check it was actually edited
-    response = client.get(f"{ NrDocumentsResourceConfig.url_prefix}{recid}")
+    response = client_with_credentials.get(
+        f"{ NrDocumentsResourceConfig.url_prefix}{recid}"
+    )
 
     assert response.json["metadata"] == edited_metadata
 
 
-def test_mutiple_edit(client, input_data, search_clear):
+def test_mutiple_edit(client_with_credentials, input_data, search_clear):
     """Test the revision_id when editing record multiple times.
 
     This tests the `edit` service method.
     """
-    recid = _create_and_publish(client, input_data)
+    recid = _create_and_publish(client_with_credentials, input_data)
 
     # Create new draft of said record
-    response = client.post(f"{ NrDocumentsResourceConfig.url_prefix}{recid}/draft")
+    response = client_with_credentials.post(
+        f"{ NrDocumentsResourceConfig.url_prefix}{recid}/draft"
+    )
 
     assert response.status_code == 201
     assert response.json["revision_id"] == 5
 
     # Request a second edit. Get the same draft (revision_id)
-    response = client.post(f"{ NrDocumentsResourceConfig.url_prefix}{recid}/draft")
+    response = client_with_credentials.post(
+        f"{ NrDocumentsResourceConfig.url_prefix}{recid}/draft"
+    )
 
     assert response.status_code == 201
     assert response.json["revision_id"] == 5
 
     # Publish it to check the increment in version_id
-    response = client.post(
+    response = client_with_credentials.post(
         f"{ NrDocumentsResourceConfig.url_prefix}{recid}/draft/actions/publish"
     )
 
     assert response.status_code == 202
 
     # Edit again
-    response = client.post(f"{ NrDocumentsResourceConfig.url_prefix}{recid}/draft")
+    response = client_with_credentials.post(
+        f"{ NrDocumentsResourceConfig.url_prefix}{recid}/draft"
+    )
 
     assert response.status_code == 201
     assert response.json["revision_id"] == 8
 
 
-def test_redirect_to_latest_version(client, input_data, search_clear):
+def test_redirect_to_latest_version(client_with_credentials, input_data, search_clear):
     """Creates a new version of a record.
 
     Publishes the draft to obtain 2 versions of a record.
     """
-    recid = _create_and_publish(client, input_data)
+    recid = _create_and_publish(client_with_credentials, input_data)
 
     # Create new version of said record
-    response = client.post(f"{ NrDocumentsResourceConfig.url_prefix}{recid}/versions")
+    response = client_with_credentials.post(
+        f"{ NrDocumentsResourceConfig.url_prefix}{recid}/versions"
+    )
     recid_2 = response.json["id"]
 
     # NOTE: Assuming a new version should indeed have its files.enabled set to
     #       True automatically, we have to reset it to False for this test.
-    client.put(
+    client_with_credentials.put(
         f"{ NrDocumentsResourceConfig.url_prefix}{recid_2}/draft", json=input_data
     )
 
     # Publish it to check the increment in version
-    response = client.post(
+    response = client_with_credentials.post(
         f"{ NrDocumentsResourceConfig.url_prefix}{recid_2}/draft/actions/publish"
     )
     latest_version_self_link = response.json["links"]["self"]
 
     # Read a previous versions latest
-    response = client.get(
+    response = client_with_credentials.get(
         f"{ NrDocumentsResourceConfig.url_prefix}{recid}/versions/latest"
     )
 
@@ -224,20 +246,25 @@ def test_redirect_to_latest_version(client, input_data, search_clear):
     assert response.headers["location"] == latest_version_self_link
 
 
-def test_list_drafts(client, input_data, vocab_cf, search_clear):
+def test_list_drafts(client_with_credentials, input_data, vocab_cf, search_clear):
     assert (
-        len(client.get(NrDocumentsResourceConfig.url_prefix).json["hits"]["hits"]) == 0
+        len(
+            client_with_credentials.get(NrDocumentsResourceConfig.url_prefix).json[
+                "hits"
+            ]["hits"]
+        )
+        == 0
     )
     assert (
         len(
-            client.get(f"user{ NrDocumentsResourceConfig.url_prefix}").json["hits"][
-                "hits"
-            ]
+            client_with_credentials.get(
+                f"user{ NrDocumentsResourceConfig.url_prefix}"
+            ).json["hits"]["hits"]
         )
         == 0
     )
 
-    create_draft_response = client.post(
+    create_draft_response = client_with_credentials.post(
         ThesisResourceConfig.url_prefix, json=input_data
     )
     assert create_draft_response.status_code == 201
@@ -246,18 +273,23 @@ def test_list_drafts(client, input_data, vocab_cf, search_clear):
     NrDocumentsDraft.index.refresh()
     NrDocumentsRecord.index.refresh()
     assert (
-        len(client.get(NrDocumentsResourceConfig.url_prefix).json["hits"]["hits"]) == 0
+        len(
+            client_with_credentials.get(NrDocumentsResourceConfig.url_prefix).json[
+                "hits"
+            ]["hits"]
+        )
+        == 0
     )
     assert (
         len(
-            client.get(f"user{ NrDocumentsResourceConfig.url_prefix}").json["hits"][
-                "hits"
-            ]
+            client_with_credentials.get(
+                f"user{ NrDocumentsResourceConfig.url_prefix}"
+            ).json["hits"]["hits"]
         )
         == 1
     )
 
-    response_publish = client.post(
+    response_publish = client_with_credentials.post(
         f"{ThesisResourceConfig.url_prefix}{recid}/draft/actions/publish"
     )
     assert response_publish.status_code == 202
@@ -265,13 +297,18 @@ def test_list_drafts(client, input_data, vocab_cf, search_clear):
     NrDocumentsDraft.index.refresh()
     NrDocumentsRecord.index.refresh()
     assert (
-        len(client.get(NrDocumentsResourceConfig.url_prefix).json["hits"]["hits"]) == 1
+        len(
+            client_with_credentials.get(NrDocumentsResourceConfig.url_prefix).json[
+                "hits"
+            ]["hits"]
+        )
+        == 1
     )
     assert (
         len(
-            client.get(f"user{ NrDocumentsResourceConfig.url_prefix}").json["hits"][
-                "hits"
-            ]
+            client_with_credentials.get(
+                f"user{ NrDocumentsResourceConfig.url_prefix}"
+            ).json["hits"]["hits"]
         )
         == 0
     )

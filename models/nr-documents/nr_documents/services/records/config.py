@@ -2,11 +2,7 @@ from invenio_drafts_resources.services import (
     RecordServiceConfig as InvenioRecordDraftsServiceConfig,
 )
 from invenio_drafts_resources.services.records.config import is_record
-from invenio_records_resources.services import (
-    ConditionalLink,
-    RecordLink,
-    pagination_links,
-)
+from invenio_records_resources.services import ConditionalLink, RecordLink
 from invenio_records_resources.services.records.components import DataComponent
 from oarepo_requests.components.requests import PublishDraftComponent
 from oarepo_runtime.config.service import PermissionsPresetsConfigMixin
@@ -15,16 +11,6 @@ from nr_documents.records.api import NrDocumentsDraft, NrDocumentsRecord
 from nr_documents.services.records.permissions import NrDocumentsPermissionPolicy
 from nr_documents.services.records.schema import NrDocumentsSchema
 from nr_documents.services.records.search import NrDocumentsSearchOptions
-
-
-def is_draft(record, ctx):
-    """Shortcut for links to determine if record is a draft."""
-    return record.is_draft
-
-
-def is_record(record, ctx):
-    """Shortcut for links to determine if record is a record."""
-    return not record.is_draft
 
 
 class NrDocumentsServiceConfig(
@@ -51,10 +37,6 @@ class NrDocumentsServiceConfig(
         *InvenioRecordDraftsServiceConfig.components,
         PublishDraftComponent("publish_draft", "delete_record"),
         DataComponent,
-        *PermissionsPresetsConfigMixin.components,
-        *InvenioRecordDraftsServiceConfig.components,
-        *PermissionsPresetsConfigMixin.components,
-        *InvenioRecordDraftsServiceConfig.components,
     ]
 
     model = "nr_documents"
@@ -64,6 +46,11 @@ class NrDocumentsServiceConfig(
     @property
     def links_item(self):
         return {
+            "draft": RecordLink("{+api}/nr-documents/{id}/draft"),
+            "latest": RecordLink("{+api}/nr-documents/{id}/versions/latest"),
+            "latest_html": RecordLink("{+ui}/nr-documents/{id}/latest"),
+            "publish": RecordLink("{+api}/nr-documents/{id}/draft/actions/publish"),
+            "record": RecordLink("{+api}/nr-documents/{id}"),
             "self": ConditionalLink(
                 cond=is_record,
                 if_=RecordLink("{+api}/nr-documents/{id}"),
@@ -71,19 +58,8 @@ class NrDocumentsServiceConfig(
             ),
             "self_html": ConditionalLink(
                 cond=is_record,
-                if_=RecordLink("{+ui}/docs/{id}"),
-                else_=RecordLink("{+ui}/docs/{id}/edit"),
-            ),
-            "latest": RecordLink("{+api}/nr-documents/{id}/versions/latest"),
-            # TODO: "latest_html": RecordLink("{+ui}/docs/{id}/latest"),
-            "draft": RecordLink("{+api}/nr-documents/{id}/draft", when=is_record),
-            "record": RecordLink("{+api}/nr-documents/{id}", when=is_draft),
-            "publish": RecordLink(
-                "{+api}/nr-documents/{id}/draft/actions/publish", when=is_draft
+                if_=RecordLink("{+ui}/nr-documents/{id}"),
+                else_=RecordLink("{+ui}/uploads/{id}"),
             ),
             "versions": RecordLink("{+api}/nr-documents/{id}/versions"),
         }
-
-    @property
-    def links_search(self):
-        return pagination_links("{self.url_prefix}{?args*}")

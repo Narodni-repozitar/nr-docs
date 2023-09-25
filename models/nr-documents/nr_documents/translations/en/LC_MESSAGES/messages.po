@@ -2,300 +2,11 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
-"POT-Creation-Date: 2023-09-12T09:58:21.868814\n"
-"PO-Revision-Date: 2023-09-12T09:58:21.868816\n"
+"POT-Creation-Date: 2023-09-25T08:25:48.793988\n"
+"PO-Revision-Date: 2023-09-25T08:25:48.793989\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-
-msgid "metadata/abstract.label"
-msgstr "Abstract"
-
-msgid "metadata/accessRights.label"
-msgstr "Access rights"
-
-msgid "metadata/accessibility.label"
-msgstr "Resource accessibility"
-
-msgid "metadata/additionalTitles.label"
-msgstr "Additional titles"
-
-msgid "metadata/additionalTitles/titleType.label"
-msgstr "Title type"
-
-msgid "metadata/collection.label"
-msgstr "Collection"
-
-msgid "metadata/contributors.label"
-msgstr "Contributors"
-
-msgid "metadata/contributors/affiliations.label"
-msgstr "Affiliation"
-
-msgid "identifier.label"
-msgstr "Identifier"
-
-msgid "identifier_type.label"
-msgstr "Identifier type"
-
-msgid "identifier_type.hint"
-msgstr ""
-"We recommend providing at least one of the identifier types.\n"
-"If you need to expand the range of identifier types, contact us at support@narodni-repozitar.cz.\n"
-
-msgid "metadata/contributors/fullName.label"
-msgstr "Contributor name"
-
-msgid "metadata/contributors/nameType.label"
-msgstr "Type"
-
-msgid "metadata/contributors/nameType.hint"
-msgstr ""
-"It is possible to designate a person or an institution as the "
-"creator/contributor."
-
-msgid "metadata/contributors/role.label"
-msgstr "Contributor's role"
-
-msgid "metadata/creators.label"
-msgstr "Authors"
-
-msgid "metadata/creators/affiliations.label"
-msgstr "Affiliation"
-
-msgid "metadata/creators/fullName.label"
-msgstr "Author name"
-
-msgid "metadata/creators/nameType.label"
-msgstr "Type"
-
-msgid "metadata/creators/nameType.hint"
-msgstr ""
-"It is possible to designate a person or an institution as the "
-"creator/contributor."
-
-msgid "metadata/dateAvailable.label"
-msgstr "Date available"
-
-msgid "metadata/dateModified.label"
-msgstr "Date modified"
-
-msgid "metadata/events.label"
-msgstr "Events"
-
-msgid "metadata/events/eventDate.label"
-msgstr "Event date"
-
-msgid "metadata/events/eventLocation.label"
-msgstr "Location"
-
-msgid "metadata/events/eventLocation/country.label"
-msgstr "Country"
-
-msgid "metadata/events/eventLocation/place.label"
-msgstr "Place"
-
-msgid "metadata/events/eventNameAlternate.label"
-msgstr "Event alternate name"
-
-msgid "metadata/events/eventNameOriginal.label"
-msgstr "Event name"
-
-msgid "metadata/externalLocation.label"
-msgstr "External location"
-
-msgid "metadata/externalLocation/externalLocationNote.label"
-msgstr "Note"
-
-msgid "metadata/externalLocation/externalLocationURL.label"
-msgstr "Resource external location"
-
-msgid "metadata/fundingReferences.label"
-msgstr "Funding"
-
-msgid "metadata/fundingReferences/funder.label"
-msgstr "Funder"
-
-msgid "metadata/fundingReferences/fundingProgram.label"
-msgstr "Funding program"
-
-msgid "metadata/fundingReferences/projectID.label"
-msgstr "Project double"
-
-msgid "metadata/fundingReferences/projectName.label"
-msgstr "Project name"
-
-msgid "metadata/geoLocations.label"
-msgstr "Geolocation"
-
-msgid "metadata/geoLocations/geoLocationPoint/pointLatitude.label"
-msgstr "Latitude"
-
-msgid "metadata/geoLocations/geoLocationPoint/pointLongitude.label"
-msgstr "Longitude"
-
-msgid "metadata/languages.label"
-msgstr "Language"
-
-msgid "metadata/methods.label"
-msgstr "Methods"
-
-msgid "metadata/notes.label"
-msgstr "Notes"
-
-msgid "metadata/objectIdentifiers.label"
-msgstr "Object identifiers"
-
-msgid "metadata/objectIdentifiers/identifier.label"
-msgstr "Object identifier"
-
-msgid "metadata/objectIdentifiers/scheme.label"
-msgstr "Identifier type"
-
-msgid "metadata/originalRecord.label"
-msgstr "Original record URL"
-
-msgid "metadata/publishers.label"
-msgstr "Publishers"
-
-msgid "metadata/relatedItems.label"
-msgstr "Link to/from other resources:"
-
-msgid "metadata/relatedItems/itemContributors.label"
-msgstr "Contributors"
-
-msgid "metadata/relatedItems/itemContributors/affiliations.label"
-msgstr "Affiliation"
-
-msgid "metadata/relatedItems/itemContributors/fullName.label"
-msgstr "Author name"
-
-msgid "metadata/relatedItems/itemContributors/nameType.label"
-msgstr "Type"
-
-msgid "metadata/relatedItems/itemContributors/nameType.hint"
-msgstr ""
-"It is possible to designate a person or an institution as the "
-"creator/contributor."
-
-msgid "metadata/relatedItems/itemContributors/role.label"
-msgstr "Contributor's role"
-
-msgid "metadata/relatedItems/itemCreators.label"
-msgstr "Authors"
-
-msgid "metadata/relatedItems/itemCreators/affiliations.label"
-msgstr "Affiliation"
-
-msgid "metadata/relatedItems/itemCreators/fullName.label"
-msgstr "Author name"
-
-msgid "metadata/relatedItems/itemCreators/nameType.label"
-msgstr "Type"
-
-msgid "metadata/relatedItems/itemCreators/nameType.hint"
-msgstr ""
-"It is possible to designate a person or an institution as the "
-"creator/contributor."
-
-msgid "metadata/relatedItems/itemEndPage.label"
-msgstr "End page"
-
-msgid "metadata/relatedItems/itemIssue.label"
-msgstr "Issue"
-
-msgid "metadata/relatedItems/itemPIDs.label"
-msgstr "Object identifier"
-
-msgid "metadata/relatedItems/itemPIDs/identifier.label"
-msgstr "Object identifier"
-
-msgid "metadata/relatedItems/itemPIDs/scheme.label"
-msgstr "Identifier type"
-
-msgid "metadata/relatedItems/itemPublisher.label"
-msgstr "Publisher"
-
-msgid "metadata/relatedItems/itemRelationType.label"
-msgstr "Relation type"
-
-msgid "metadata/relatedItems/itemResourceType.label"
-msgstr "Resource type"
-
-msgid "metadata/relatedItems/itemStartPage.label"
-msgstr "Start page"
-
-msgid "metadata/relatedItems/itemTitle.label"
-msgstr "Title"
-
-msgid "metadata/relatedItems/itemURL.label"
-msgstr "URL"
-
-msgid "metadata/relatedItems/itemVolume.label"
-msgstr "Volume"
-
-msgid "metadata/relatedItems/itemYear.label"
-msgstr "Year"
-
-msgid "metadata/resourceType.label"
-msgstr "Resource type"
-
-msgid "metadata/rights.label"
-msgstr "License"
-
-msgid "metadata/series.label"
-msgstr "Series"
-
-msgid "metadata/series/seriesTitle.label"
-msgstr "Series title"
-
-msgid "metadata/series/seriesVolume.label"
-msgstr "Series volume"
-
-msgid "metadata/subjectCategories.label"
-msgstr "Subject categories"
-
-msgid "metadata/subjects.label"
-msgstr "Keywords"
-
-msgid "metadata/subjects/subject.label"
-msgstr "Keywords"
-
-msgid "metadata/subjects/subjectScheme.label"
-msgstr "Subject scheme"
-
-msgid "metadata/subjects/valueURI.label"
-msgstr "Subject definition URI"
-
-msgid "metadata/systemIdentifiers.label"
-msgstr "System identifiers"
-
-msgid "metadata/systemIdentifiers/identifier.label"
-msgstr "System Identifier"
-
-msgid "metadata/systemIdentifiers/scheme.label"
-msgstr "Identifier type"
-
-msgid "metadata/technicalInfo.label"
-msgstr "Technical information"
-
-msgid "metadata/thesis/dateDefended.label"
-msgstr "Date defended"
-
-msgid "metadata/thesis/defended.label"
-msgstr "Defended?"
-
-msgid "metadata/thesis/degreeGrantors.label"
-msgstr "Degree grantor"
-
-msgid "metadata/thesis/studyFields.label"
-msgstr "Study fields"
-
-msgid "metadata/title.label"
-msgstr "Title"
-
-msgid "metadata/version.label"
-msgstr "Resource version"
 
 msgid "$schema.help"
 msgstr ""
@@ -333,6 +44,9 @@ msgstr ""
 msgid "metadata.hint"
 msgstr ""
 
+msgid "metadata/collection.label"
+msgstr "Collection"
+
 msgid "metadata/collection.help"
 msgstr ""
 
@@ -348,17 +62,26 @@ msgstr ""
 msgid "metadata/thesis.hint"
 msgstr ""
 
+msgid "metadata/thesis/dateDefended.label"
+msgstr "Date defended"
+
 msgid "metadata/thesis/dateDefended.help"
 msgstr ""
 
 msgid "metadata/thesis/dateDefended.hint"
 msgstr ""
 
+msgid "metadata/thesis/defended.label"
+msgstr "Defended?"
+
 msgid "metadata/thesis/defended.help"
 msgstr ""
 
 msgid "metadata/thesis/defended.hint"
 msgstr ""
+
+msgid "metadata/thesis/degreeGrantors.label"
+msgstr "Degree grantor"
 
 msgid "metadata/thesis/degreeGrantors.help"
 msgstr ""
@@ -447,6 +170,9 @@ msgstr ""
 msgid "metadata/thesis/degreeGrantors/@v.hint"
 msgstr ""
 
+msgid "metadata/thesis/studyFields.label"
+msgstr "Study fields"
+
 msgid "metadata/thesis/studyFields.help"
 msgstr ""
 
@@ -454,6 +180,9 @@ msgid "metadata/thesis/studyFields.hint"
 msgstr ""
 
 msgid "metadata/title.help"
+msgstr ""
+
+msgid "metadata/title.label"
 msgstr ""
 
 msgid "metadata/title.hint"
