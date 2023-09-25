@@ -8,7 +8,6 @@ from invenio_drafts_resources.services.records.schema import (
 )
 from invenio_vocabularies.services.schema import i18n_strings
 from oarepo_requests.schemas.marshmallow import NoneReceiverGenericRequestSchema
-from oarepo_runtime.marshmallow import BaseRecordSchema
 from oarepo_vocabularies.services.schema import HierarchySchema
 
 
@@ -65,22 +64,17 @@ class GeneratedParentSchema(InvenioParentSchema):
         return data
 
 
-class NrDocumentsSchema(
-    nr_metadata.documents.services.records.schema.NRDocumentRecordSchema,
-    BaseRecordSchema,
+class GeoLocationsItemSchema(
+    nr_metadata.common.services.records.schema_datatypes.NRGeoLocationSchema
 ):
     class Meta:
         unknown = ma.RAISE
 
-    metadata = ma.fields.Nested(lambda: NrDocumentsMetadataSchema())
-
-    syntheticFields = ma.fields.Nested(lambda: SyntheticFieldsSchema())
-    parent = ma.fields.Nested(GeneratedParentSchema)
+    geoLocationPoint = ma.fields.Nested(lambda: GeoLocationPointSchema())
 
 
 class NrDocumentsMetadataSchema(
-    nr_metadata.documents.services.records.schema.NRDocumentMetadataSchema,
-    nr_metadata.common.services.records.schema_common.NRCommonMetadataSchema,
+    nr_metadata.documents.services.records.schema.NRDocumentMetadataSchema
 ):
     class Meta:
         unknown = ma.RAISE
@@ -97,31 +91,17 @@ class NrDocumentsMetadataSchema(
         validate=[ma.validate.Length(min=1)],
     )
 
-    events = ma.fields.List(ma.fields.Nested(lambda: EventsItemSchema()))
-
-    externalLocation = ma.fields.Nested(lambda: ExternalLocationSchema())
-
-    fundingReferences = ma.fields.List(
-        ma.fields.Nested(lambda: FundingReferencesItemSchema())
-    )
-
-    geoLocations = ma.fields.List(ma.fields.Nested(lambda: GeoLocationsItemSchema()))
-
-    objectIdentifiers = ma.fields.List(
-        ma.fields.Nested(lambda: ObjectIdentifiersItemSchema())
-    )
-
-    relatedItems = ma.fields.List(ma.fields.Nested(lambda: RelatedItemsItemSchema()))
-
-    series = ma.fields.List(ma.fields.Nested(lambda: SeriesItemSchema()))
-
-    subjects = ma.fields.List(ma.fields.Nested(lambda: SubjectsItemSchema()))
-
-    systemIdentifiers = ma.fields.List(
-        ma.fields.Nested(lambda: SystemIdentifiersItemSchema())
-    )
-
     thesis = ma.fields.Nested(lambda: ThesisSchema())
+
+
+class NrDocumentsSchema(
+    nr_metadata.documents.services.records.schema.NRDocumentRecordSchema
+):
+    class Meta:
+        unknown = ma.RAISE
+
+    syntheticFields = ma.fields.Nested(lambda: SyntheticFieldsSchema())
+    parent = ma.fields.Nested(GeneratedParentSchema)
 
 
 class RelatedItemsItemSchema(
@@ -135,70 +115,6 @@ class RelatedItemsItemSchema(
     )
 
     itemCreators = ma.fields.List(ma.fields.Nested(lambda: ItemCreatorsItemSchema()))
-
-    itemPIDs = ma.fields.List(ma.fields.Nested(lambda: ObjectIdentifiersItemSchema()))
-
-
-class ContributorsItemSchema(
-    nr_metadata.common.services.records.schema_common.NRContributorSchema
-):
-    class Meta:
-        unknown = ma.RAISE
-
-    authorityIdentifiers = ma.fields.List(
-        ma.fields.Nested(lambda: AuthorityIdentifiersItemSchema())
-    )
-
-
-class CreatorsItemSchema(
-    nr_metadata.common.services.records.schema_common.NRCreatorSchema
-):
-    class Meta:
-        unknown = ma.RAISE
-
-    authorityIdentifiers = ma.fields.List(
-        ma.fields.Nested(lambda: AuthorityIdentifiersItemSchema())
-    )
-
-
-class EventsItemSchema(
-    nr_metadata.common.services.records.schema_datatypes.NREventSchema
-):
-    class Meta:
-        unknown = ma.RAISE
-
-    eventLocation = ma.fields.Nested(lambda: EventLocationSchema(), required=True)
-
-
-class GeoLocationsItemSchema(
-    nr_metadata.common.services.records.schema_datatypes.NRGeoLocationSchema
-):
-    class Meta:
-        unknown = ma.RAISE
-
-    geoLocationPoint = ma.fields.Nested(lambda: GeoLocationPointSchema())
-
-
-class ItemContributorsItemSchema(
-    nr_metadata.common.services.records.schema_datatypes.NRRelatedItemContributorSchema
-):
-    class Meta:
-        unknown = ma.RAISE
-
-    authorityIdentifiers = ma.fields.List(
-        ma.fields.Nested(lambda: AuthorityIdentifiersItemSchema())
-    )
-
-
-class ItemCreatorsItemSchema(
-    nr_metadata.common.services.records.schema_datatypes.NRRelatedItemCreatorSchema
-):
-    class Meta:
-        unknown = ma.RAISE
-
-    authorityIdentifiers = ma.fields.List(
-        ma.fields.Nested(lambda: AuthorityIdentifiersItemSchema())
-    )
 
 
 class AccessRightsSchema(
@@ -243,6 +159,13 @@ class AuthorityIdentifiersItemSchema(
         unknown = ma.RAISE
 
 
+class ContributorsItemSchema(
+    nr_metadata.common.services.records.schema_common.NRContributorSchema
+):
+    class Meta:
+        unknown = ma.RAISE
+
+
 class CountrySchema(
     nr_metadata.common.services.records.schema_datatypes.NRCountryVocabularySchema
 ):
@@ -254,6 +177,13 @@ class CountrySchema(
     _version = ma.fields.String(data_key="@v", attribute="@v")
 
     title = i18n_strings
+
+
+class CreatorsItemSchema(
+    nr_metadata.common.services.records.schema_common.NRCreatorSchema
+):
+    class Meta:
+        unknown = ma.RAISE
 
 
 class DegreeGrantorsItemSchema(
@@ -273,6 +203,13 @@ class DegreeGrantorsItemSchema(
 
 class EventLocationSchema(
     nr_metadata.common.services.records.schema_datatypes.NRLocationSchema
+):
+    class Meta:
+        unknown = ma.RAISE
+
+
+class EventsItemSchema(
+    nr_metadata.common.services.records.schema_datatypes.NREventSchema
 ):
     class Meta:
         unknown = ma.RAISE
@@ -307,6 +244,20 @@ class FundingReferencesItemSchema(
 
 class GeoLocationPointSchema(
     nr_metadata.common.services.records.schema_datatypes.NRGeoLocationPointSchema
+):
+    class Meta:
+        unknown = ma.RAISE
+
+
+class ItemContributorsItemSchema(
+    nr_metadata.common.services.records.schema_datatypes.NRRelatedItemContributorSchema
+):
+    class Meta:
+        unknown = ma.RAISE
+
+
+class ItemCreatorsItemSchema(
+    nr_metadata.common.services.records.schema_datatypes.NRRelatedItemCreatorSchema
 ):
     class Meta:
         unknown = ma.RAISE
@@ -411,9 +362,7 @@ class SubjectsItemSchema(
         unknown = ma.RAISE
 
 
-class SyntheticFieldsSchema(
-    nr_metadata.documents.services.records.schema.NRDocumentSyntheticFieldsSchema
-):
+class SyntheticFieldsSchema(ma.Schema):
     class Meta:
         unknown = ma.RAISE
 

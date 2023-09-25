@@ -4,6 +4,12 @@ service-config:
     - PublishDraftComponent("publish_draft", "delete_record")
   imports:
     - import: oarepo_requests.components.requests.PublishDraftComponent
+
+published-service-config:
+  base-classes:
+     - NrDocumentsPublishedServiceConfig
+  imports:
+    - import: nr_docs_extensions.services.published_service.NrDocumentsPublishedServiceConfig
 draft:
   requests:
     publish-draft:

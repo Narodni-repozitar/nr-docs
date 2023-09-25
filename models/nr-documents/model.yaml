@@ -15,8 +15,7 @@ record:
     type: dcmnts
   properties:
     metadata:
-      properties:
-        use: ./metadata.yaml
+      properties: {}
   draft: {}
   use:
   - invenio

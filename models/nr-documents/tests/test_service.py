@@ -87,3 +87,22 @@ def test_delete(app, db, sample_draft, record_service, search_clear):
     record_service.delete_draft(system_identity, sample_draft["id"])
     with pytest.raises(PIDDoesNotExistError):
         record_service.read_draft(system_identity, sample_draft["id"])
+
+
+def test_create_published(app, db, sample_metadata_list, search_clear):
+    from nr_documents.proxies import current_published_service
+
+    created_records = []
+    for sample_metadata_point in sample_metadata_list:
+        created_records.append(
+            current_published_service.create(system_identity, sample_metadata_point)
+        )
+    for sample_metadata_point, created_record in zip(
+        sample_metadata_list, created_records
+    ):
+        created_record_reread = current_published_service.read(
+            system_identity, created_record["id"]
+        )
+        assert (
+            created_record_reread.data["metadata"] == sample_metadata_point["metadata"]
+        )
