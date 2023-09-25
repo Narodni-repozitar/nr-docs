@@ -2,16 +2,16 @@ import React, { useRef } from "react";
 import {
   useFormConfig,
   MultilingualTextInput,
-  I18nTextInputField,
   BaseForm,
   FormikStateLogger,
+  FormFeedback,
 } from "@js/oarepo_ui";
 import { AccordionField, FieldLabel, TextField } from "react-invenio-forms";
-import { Container, Grid, Ref, Sticky, Form, Card } from "semantic-ui-react";
+import { Container, Grid, Ref, Sticky, Card } from "semantic-ui-react";
 import { NRDocumentValidationSchema } from "./NRDocumentValidationSchema";
 import {
   DateField,
-  LocalVocabularySelectField,
+  // LocalVocabularySelectField, TODO: use after BE-59 gets fixed
   StringArrayField,
   AdditionalTitlesField,
   GeoLocationsField,
@@ -26,8 +26,9 @@ import {
   SaveButton,
   DeleteButtonComponent,
   PublishButtonComponent,
-  FormFeedback,
+  CreatibutorsField,
 } from "../components/";
+import { VocabularySelectField } from "@js/oarepo_vocabularies";
 import Overridable from "react-overridable";
 import { i18next } from "@translations/docs_app/i18next";
 import _has from "lodash/has";
@@ -78,18 +79,13 @@ export const DepositForm = () => {
                   <FormFeedback />
                 </Overridable>
               </Sticky>
-              <Overridable id="NrDocs.Deposit.AccordionFieldFiles.container">
-                <AccordionField
-                  includesPaths={["files.enabled"]}
-                  active
-                  label={i18next.t("Files")}
-                ></AccordionField>
-              </Overridable>
               <Overridable id="NrDocs.Deposit.AccordionFieldBasicInformation.container">
                 <AccordionField
                   includesPaths={[
                     "metadata.resourceType",
                     "metadata.title",
+                    "metadata.creators",
+                    "metadata.contributors",
                     "metadata.additionalTitles",
                     "metadata.dateModified",
                     "metadata.dateAvailable",
@@ -135,7 +131,9 @@ export const DepositForm = () => {
                     id="NrDocs.Deposit.AccessRightsField.container"
                     fieldPath="metadata.accessRights"
                   >
-                    <LocalVocabularySelectField
+                    {/* <LocalVocabularySelectField */}
+                    <VocabularySelectField
+                      type="access-rights"
                       //TODO: shouldn't access rights be required?
                       fieldPath="metadata.accessRights"
                       required
@@ -156,7 +154,9 @@ export const DepositForm = () => {
                     id="NrDocs.Deposit.ResourceTypeField.container"
                     fieldPath="metadata.resourceType"
                   >
-                    <LocalVocabularySelectField
+                    {/* <LocalVocabularySelectField */}
+                    <VocabularySelectField
+                      type='resource-types'
                       fieldPath="metadata.resourceType"
                       required
                       clearable
@@ -220,12 +220,39 @@ export const DepositForm = () => {
                   <Overridable
                     id="NrDocs.Deposit.CreatorsField.container"
                     fieldPath="metadata.creators"
-                  ></Overridable>
+                  >
+                    <CreatibutorsField
+                      label={i18next.t("Creators")}
+                      labelIcon="user"
+                      fieldPath="metadata.creators"
+                      schema="creators"
+                      autocompleteNames="off"
+                      required
+                    />
+                  </Overridable>
+                  <Overridable
+                    id="NrDocs.Deposit.ContributorsField.container"
+                    fieldPath="metadata.contributors"
+                  >
+                    <CreatibutorsField
+                      label={i18next.t("Contributors")}
+                      addButtonLabel={i18next.t("Add contributor")}
+                      modal={{
+                        addLabel: i18next.t("Add contributor"),
+                        editLabel: i18next.t("Edit contributor"),
+                      }}
+                      labelIcon="user"
+                      fieldPath="metadata.contributors"
+                      schema="contributors"
+                      autocompleteNames="off"
+                    />
+                  </Overridable>
                   <Overridable
                     id="NrDocs.Deposit.AbstractField.container"
                     fieldPath="metadata.abstract"
                   >
                     <MultilingualTextInput
+                      hasHighlighting
                       labelIcon="pencil"
                       label={i18next.t("Abstract")}
                       textFieldLabel={i18next.t("Description")}
@@ -233,7 +260,7 @@ export const DepositForm = () => {
                       rich={true}
                       required
                       helpText={i18next.t(
-                        "Detailed description of the methodology and technical information should be specified in the 'Dataset Description' section"
+                        "Detailed description of the methodology and technical information should be specified in the 'Resource Description' section"
                       )}
                     />
                   </Overridable>
@@ -241,7 +268,9 @@ export const DepositForm = () => {
                     id="NrDocs.Deposit.LanguagesField.container"
                     fieldPath="metadata.languages"
                   >
-                    <LocalVocabularySelectField
+                    {/* <LocalVocabularySelectField */}
+                    <VocabularySelectField
+                      type='languages'
                       fieldPath="metadata.languages"
                       multiple={true}
                       required
@@ -261,7 +290,9 @@ export const DepositForm = () => {
                     id="NrDocs.Deposit.LicenseField.container"
                     fieldPath="metadata.rights"
                   >
-                    <LocalVocabularySelectField
+                    {/* <LocalVocabularySelectField */}
+                    <VocabularySelectField
+                      type='licenses'
                       fieldPath="metadata.rights"
                       multiple={true}
                       label={
@@ -275,7 +306,7 @@ export const DepositForm = () => {
                       clearable
                       optionsListName="licenses"
                       helpText={i18next.t(
-                        "If a Creative Commons license is associated with the dataset, select the appropriate license option from the menu. We recommend choosing the latest versions, namely 3.0 Czech and 4.0 International."
+                        "If a Creative Commons license is associated with the resource, select the appropriate license option from the menu. We recommend choosing the latest versions, namely 3.0 Czech and 4.0 International."
                       )}
                     />
                   </Overridable>
@@ -301,13 +332,15 @@ export const DepositForm = () => {
                     "metadata.subjectCategories",
                   ]}
                   active
-                  label={i18next.t("Dataset description")}
+                  label={i18next.t("Resource description")}
                 >
                   <Overridable
                     id="NrDocs.Deposit.SubjectCategoriesField.container"
                     fieldPath="metadata.subjectCategories"
                   >
-                    <LocalVocabularySelectField
+                    {/* <LocalVocabularySelectField */}
+                    <VocabularySelectField
+                      type='subject-categories'
                       fieldPath="metadata.subjectCategories"
                       multiple={true}
                       label={
@@ -321,7 +354,7 @@ export const DepositForm = () => {
                       clearable
                       optionsListName="subjectCategories"
                       helpText={i18next.t(
-                        "Select the subject field(s) to which the dataset belongs."
+                        "Select the subject field(s) to which the resource belongs."
                       )}
                     />
                   </Overridable>
@@ -330,6 +363,7 @@ export const DepositForm = () => {
                     fieldPath="metadata.methods"
                   >
                     <MultilingualTextInput
+                      hasHighlighting
                       labelIcon="pencil"
                       label={i18next.t("Methods")}
                       fieldPath="metadata.methods"
@@ -343,6 +377,7 @@ export const DepositForm = () => {
                     fieldPath="metadata.technicalInfo"
                   >
                     <MultilingualTextInput
+                      hasHighlighting
                       textFieldLabel={i18next.t("Description")}
                       labelIcon="pencil"
                       label={i18next.t("Technical info")}
@@ -403,13 +438,18 @@ export const DepositForm = () => {
                     id="NrDocs.Deposit.AccessibilityField.container"
                     fieldPath="metadata.accessibility"
                   >
-                    <Form.Field>
-                      <label>{i18next.t("Resource accessibility")}</label>
-                      <I18nTextInputField
-                        label={i18next.t("Description")}
-                        fieldPath="metadata.accessibility"
-                      />
-                    </Form.Field>
+                    {/* TODO: not clear how this input is going to work i.e. our access is within metadata */}
+                    <MultilingualTextInput
+                      hasHighlighting
+                      className="invenio-group-field accessibility"
+                      labelIcon="pencil"
+                      label={i18next.t("Accessibility")}
+                      textFieldLabel={i18next.t("Description")}
+                      fieldPath="metadata.accessibility"
+                      helpText={i18next.t(
+                        "Explanation regarding restricted status of an item"
+                      )}
+                    />
                   </Overridable>
                   <Overridable
                     id="NrDocs.Deposit.FundersField.container"
@@ -438,7 +478,6 @@ export const DepositForm = () => {
                   </Overridable>
                 </AccordionField>
               </Overridable>
-
               <FormikStateLogger />
             </Grid.Column>
           </Ref>
@@ -482,29 +521,6 @@ export const DepositForm = () => {
                     </Card.Content>
                   </Card>
                 </Overridable>
-                {/* <Overridable
-                  id="NrDocs.Deposit.AccessRightField.container"
-                  fieldPath="access"
-                >
-                  <AccessRightField
-                    label={i18next.t("Visibility")}
-                    labelIcon="shield"
-                    fieldPath="access"
-                    showMetadataAccess={permissions?.can_manage_record_access}
-                  />
-                </Overridable> */}
-                {/* {permissions?.can_delete_draft && (
-                  <Overridable
-                    id="InvenioAppRdm.Deposit.CardDeleteButton.container"
-                    record={record}
-                  >
-                    <Card>
-                      <Card.Content>
-                        <DeleteButton fluid />
-                      </Card.Content>
-                    </Card>
-                  </Overridable>
-                )} */}
               </Sticky>
             </Grid.Column>
           </Ref>

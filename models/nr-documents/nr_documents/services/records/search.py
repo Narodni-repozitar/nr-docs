@@ -1,5 +1,5 @@
 from invenio_records_resources.services import SearchOptions as InvenioSearchOptions
-
+from flask_babelex import lazy_gettext as _
 from . import facets
 
 
@@ -344,4 +344,16 @@ class NrDocumentsSearchOptions(InvenioSearchOptions):
     }
     sort_options = {
         **InvenioSearchOptions.sort_options,
+        "bestmatch": dict(
+            title=_("Best match"),
+            fields=["_score"],  # ES defaults to desc on `_score` field
+        ),
+        "newest": dict(
+            title=_("Newest"),
+            fields=["-created"],
+        ),
+        "oldest": dict(
+            title=_("Oldest"),
+            fields=["created"],
+        ),
     }
