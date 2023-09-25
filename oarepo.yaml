@@ -12,6 +12,12 @@ local:
     branch: null
     github_clone_url: null
     local_dir: local/https://github.com/oarepo/oarepo-ui.git
+  nr-docs-extensions:
+    branch: null
+    github_clone_url: null
+    local_dir: local/nr-docs-extensions
+    sites:
+    - nr-docs
   oarepo-ui:
     branch: null
     github_clone_url: https://github.com/oarepo/oarepo-ui.git

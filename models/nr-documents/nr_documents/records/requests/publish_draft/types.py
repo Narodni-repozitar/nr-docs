@@ -9,6 +9,7 @@ class PublishDraftRequestType(PublishDraftRequestType):
     available_actions = {
         **PublishDraftRequestType.available_actions,
         "submit": PublishDraftSubmitAction,
+        **PublishDraftRequestType.available_actions,
     }
 
     allowed_topic_ref_types = [

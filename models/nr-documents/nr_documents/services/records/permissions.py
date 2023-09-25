@@ -8,6 +8,10 @@ class NrDocumentsPermissionPolicy(RecordPermissionPolicy):
     Values in this class will be merged with permission presets.
     """
 
+    """nr_documents.records.api.NrDocumentsRecord permissions.
+        Values in this class will be merged with permission presets.
+    """
+
     can_search = []
     can_read = []
     can_create = []
