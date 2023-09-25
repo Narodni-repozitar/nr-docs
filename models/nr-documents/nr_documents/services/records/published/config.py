@@ -1,3 +1,6 @@
+from nr_docs_extensions.services.published_service import (
+    NrDocumentsPublishedServiceConfig as PublishedServiceConfig,
+)
 from oarepo_published_service.services.config import (
     PublishedServiceConfig as PublishedServiceConfig,
 )

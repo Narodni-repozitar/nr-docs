@@ -46,6 +46,31 @@
                 }
             }
         },
+        "published-service-config": {
+            "base-classes": [
+                "NrDocumentsPublishedServiceConfig",
+                "PermissionsPresetsConfigMixin"
+            ],
+            "imports": [
+                {
+                    "import": "nr_docs_extensions.services.published_service.NrDocumentsPublishedServiceConfig",
+                    "alias": "PublishedServiceConfig"
+                },
+                {
+                    "import": "oarepo_published_service.services.config.PublishedServiceConfig",
+                    "alias": "PublishedServiceConfig"
+                },
+                {
+                    "import": "oarepo_runtime.config.service.PermissionsPresetsConfigMixin"
+                }
+            ],
+            "config-key": "NR_DOCUMENTS_RECORD_PUBLISHED_SERVICE_CONFIG",
+            "module": "nr_documents.services.records.published.config",
+            "class": "nr_documents.services.records.published.config.NrDocumentsPublishedServiceConfig",
+            "extra-code": "",
+            "service-id": "published_nr_documents",
+            "generate": true
+        },
         "searchable": true,
         "permissions": {
             "presets": [
@@ -503,27 +528,6 @@
             "module": "nr_documents.records.mappings",
             "index": "nr_documents-nr_documents-1.0.0",
             "file": "nr_documents/records/mappings/os-v2/nr_documents/nr_documents-1.0.0.json"
-        },
-        "published-service-config": {
-            "config-key": "NR_DOCUMENTS_RECORD_PUBLISHED_SERVICE_CONFIG",
-            "module": "nr_documents.services.records.published.config",
-            "class": "nr_documents.services.records.published.config.NrDocumentsPublishedServiceConfig",
-            "extra-code": "",
-            "service-id": "published_nr_documents",
-            "base-classes": [
-                "PublishedServiceConfig",
-                "PermissionsPresetsConfigMixin"
-            ],
-            "imports": [
-                {
-                    "import": "oarepo_published_service.services.config.PublishedServiceConfig",
-                    "alias": "PublishedServiceConfig"
-                },
-                {
-                    "import": "oarepo_runtime.config.service.PermissionsPresetsConfigMixin"
-                }
-            ],
-            "generate": true
         },
         "published-service": {
             "generate": true,

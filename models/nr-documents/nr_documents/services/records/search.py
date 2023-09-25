@@ -174,6 +174,7 @@ class NrDocumentsSearchOptions(InvenioSearchOptions):
         "syntheticFields_person": facets.syntheticFields_person,
         "updated": facets.updated,
         **getattr(InvenioSearchOptions, "facets", {}),
+        **getattr(InvenioSearchOptions, "facets", {}),
         "_schema": facets._schema,
         "created": facets.created,
         "_id": facets._id,

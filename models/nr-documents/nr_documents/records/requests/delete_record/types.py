@@ -10,6 +10,7 @@ class DeleteRecordRequestType(DeleteRecordRequestType):
         **DeleteRecordRequestType.available_actions,
         "submit": DeleteTopicSubmitAction,
         **DeleteRecordRequestType.available_actions,
+        **DeleteRecordRequestType.available_actions,
     }
 
     allowed_topic_ref_types = [

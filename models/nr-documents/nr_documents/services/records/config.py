@@ -53,6 +53,8 @@ class NrDocumentsServiceConfig(
         DataComponent,
         *PermissionsPresetsConfigMixin.components,
         *InvenioRecordDraftsServiceConfig.components,
+        *PermissionsPresetsConfigMixin.components,
+        *InvenioRecordDraftsServiceConfig.components,
     ]
 
     model = "nr_documents"
