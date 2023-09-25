@@ -87,9 +87,6 @@
                                 "ignore_above": 1024
                             }
                         }
-                    },
-                    "title": {
-                        "type": "text"
                     }
                 }
             },

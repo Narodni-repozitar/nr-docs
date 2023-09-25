@@ -69,8 +69,6 @@ class NrDocumentsMetadataSchema(
 
     thesis = ma.fields.Nested(lambda: ThesisSchema())
 
-    title = ma.fields.String()
-
 
 class NrDocumentsSchema(
     nr_metadata.documents.services.records.schema.NRDocumentRecordSchema

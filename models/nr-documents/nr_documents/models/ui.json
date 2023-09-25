@@ -190,13 +190,6 @@
                             }
                         }
                     }
-                },
-                "title": {
-                    "detail": "fulltext",
-                    "input": "fulltext",
-                    "help": "metadata/title.help",
-                    "label": "metadata/title.label",
-                    "hint": "metadata/title.hint"
                 }
             }
         },
