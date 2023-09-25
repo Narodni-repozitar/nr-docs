@@ -132,7 +132,7 @@ class NrDocumentsRecord(InvenioRecord):
         ),
         degreeGrantors=PIDRelation(
             "metadata.thesis.degreeGrantors",
-            keys=["id", "title", "hierarchy"],
+            keys=["id", "title", "hierarchy", "id", "title", "hierarchy"],
             pid_field=Vocabulary.pid.with_type_ctx("institutions"),
         ),
     )
@@ -140,6 +140,8 @@ class NrDocumentsRecord(InvenioRecord):
     versions_model_cls = NrDocumentsParentState
 
     parent_record_cls = NrDocumentsParentRecord
+
+    dumper_extensions = [MultilingualSearchDumper()]
 
 
 class NrDocumentsDraft(InvenioDraft):
@@ -237,7 +239,7 @@ class NrDocumentsDraft(InvenioDraft):
         ),
         degreeGrantors=PIDRelation(
             "metadata.thesis.degreeGrantors",
-            keys=["id", "title", "hierarchy"],
+            keys=["id", "title", "hierarchy", "id", "title", "hierarchy"],
             pid_field=Vocabulary.pid.with_type_ctx("institutions"),
         ),
     )
@@ -246,6 +248,8 @@ class NrDocumentsDraft(InvenioDraft):
 
     parent_record_cls = NrDocumentsParentRecord
     has_draft = HasDraftCheckField(config_key="HAS_DRAFT_CUSTOM_FIELD")
+
+    dumper_extensions = [MultilingualSearchDumper()]
 
 
 NrDocumentsRecord.has_draft = HasDraftCheckField(

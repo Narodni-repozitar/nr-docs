@@ -277,6 +277,30 @@ def test_list_drafts(client, input_data, vocab_cf, search_clear):
     )
 
 
+def assert_expected_links_record(pid_value, links, site_hostname="127.0.0.1:5000"):
+    """Compare generated links to expected links."""
+    expected_links = {
+        "draft": f"https://{site_hostname}/api{BASE_URL}{pid_value}/draft",
+        "latest": f"https://{site_hostname}/api{BASE_URL}{pid_value}/versions/latest",
+        "latest_html": f"https://{site_hostname}{BASE_URL}{pid_value}/latest",
+        "publish": (
+            f"https://{site_hostname}/api{BASE_URL}{pid_value}/draft/actions/publish"
+        ),
+        "record": f"https://{site_hostname}/api{BASE_URL}{pid_value}",
+        "self": f"https://{site_hostname}/api{BASE_URL}{pid_value}",
+        "self_html": f"https://{site_hostname}{BASE_URL}{pid_value}",
+        "versions": f"https://{site_hostname}/api{BASE_URL}{pid_value}/versions",
+    }
+    assert expected_links.items() <= links.items()
+
+
+def test_read_links_record(app, client_with_credentials, input_data):
+    pid_value = _create_and_publish(client_with_credentials, input_data)
+    res = client_with_credentials.get(f"{BASE_URL}{pid_value}")
+
+    assert_expected_links_record(pid_value, res.json["links"])
+
+
 BASE_URL = NrDocumentsResourceConfig.url_prefix
 """
 def check_allowed(action_name):
@@ -468,3 +492,45 @@ def test_delete_unauth(sample_record, search_clear, app):
         )
         assert response_code_ok("delete", False, unauth_delete_response, 204)
 """
+
+
+def assert_expected_links(pid_value, generated_links, site_hostname="127.0.0.1:5000"):
+    """Compare generated links to expected links."""
+    required_links = {
+        "draft": f"https://{site_hostname}/api{BASE_URL}{pid_value}/draft",
+        "latest": f"https://{site_hostname}/api{BASE_URL}{pid_value}/versions/latest",
+        "latest_html": f"https://{site_hostname}{BASE_URL}{pid_value}/latest",
+        "publish": (
+            f"https://{site_hostname}/api{BASE_URL}{pid_value}/draft/actions/publish"
+        ),
+        "record": f"https://{site_hostname}/api{BASE_URL}{pid_value}",
+        "self": f"https://{site_hostname}/api{BASE_URL}{pid_value}/draft",
+        "self_html": f"https://{site_hostname}/uploads/{pid_value}",
+        "versions": f"https://{site_hostname}/api{BASE_URL}{pid_value}/versions",
+    }
+    assert required_links.items() <= generated_links.items()
+
+
+def test_create_links(app, client_with_credentials, input_data):
+    res = client_with_credentials.post(BASE_URL, json=input_data)
+
+    pid_value = res.json["id"]
+    assert_expected_links(pid_value, res.json["links"])
+
+
+def test_read_links(app, client_with_credentials, sample_draft):
+    pid_value = sample_draft["id"]
+    res = client_with_credentials.get(f"{BASE_URL}{pid_value}/draft")
+
+    assert_expected_links(pid_value, res.json["links"])
+
+
+def test_update_links(app, client_with_credentials, sample_draft, sample_metadata_list):
+    pid_value = sample_draft["id"]
+    res = client_with_credentials.get(f"{BASE_URL}{pid_value}/draft")
+    res = client_with_credentials.put(
+        f"{BASE_URL}{pid_value}/draft", json=sample_metadata_list[1]
+    )
+
+    assert res.status_code == 200
+    assert_expected_links(pid_value, res.json["links"])

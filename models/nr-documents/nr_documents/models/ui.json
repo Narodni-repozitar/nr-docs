@@ -39,6 +39,166 @@
             "label": "metadata.label",
             "hint": "metadata.hint",
             "children": {
+                "collection": {
+                    "detail": "keyword",
+                    "input": "keyword",
+                    "help": "metadata/collection.help",
+                    "label": "metadata/collection.label",
+                    "hint": "metadata/collection.hint",
+                    "facet": "metadata_collection"
+                },
+                "thesis": {
+                    "detail": "thesis",
+                    "input": "thesi",
+                    "help": "metadata/thesis.help",
+                    "label": "metadata/thesis.label",
+                    "hint": "metadata/thesis.hint",
+                    "children": {
+                        "dateDefended": {
+                            "detail": "date",
+                            "input": "date",
+                            "help": "metadata/thesis/dateDefended.help",
+                            "label": "metadata/thesis/dateDefended.label",
+                            "hint": "metadata/thesis/dateDefended.hint",
+                            "facet": "metadata_thesis_dateDefended"
+                        },
+                        "defended": {
+                            "detail": "boolean",
+                            "input": "boolean",
+                            "help": "metadata/thesis/defended.help",
+                            "label": "metadata/thesis/defended.label",
+                            "hint": "metadata/thesis/defended.hint",
+                            "facet": "metadata_thesis_defended"
+                        },
+                        "degreeGrantors": {
+                            "detail": "array",
+                            "input": "array",
+                            "help": "metadata/thesis/degreeGrantors.help",
+                            "label": "metadata/thesis/degreeGrantors.label",
+                            "hint": "metadata/thesis/degreeGrantors.hint",
+                            "child": {
+                                "detail": "nr_degree_grantor",
+                                "edit": "taxonomy_item",
+                                "input": "taxonomy",
+                                "help": "metadata/thesis/degreeGrantors.help",
+                                "label": "metadata/thesis/degreeGrantors.label",
+                                "hint": "metadata/thesis/degreeGrantors.hint",
+                                "facet": "metadata_thesis_degreeGrantors",
+                                "children": {
+                                    "id": {
+                                        "detail": "keyword",
+                                        "input": "keyword",
+                                        "help": "metadata/thesis/degreeGrantors/id.help",
+                                        "label": "metadata/thesis/degreeGrantors/id.label",
+                                        "hint": "metadata/thesis/degreeGrantors/id.hint"
+                                    },
+                                    "title": {
+                                        "detail": false,
+                                        "input": false,
+                                        "help": "metadata/thesis/degreeGrantors/title.help",
+                                        "label": "metadata/thesis/degreeGrantors/title.label",
+                                        "hint": "metadata/thesis/degreeGrantors/title.hint"
+                                    },
+                                    "hierarchy": {
+                                        "detail": false,
+                                        "input": false,
+                                        "help": "metadata/thesis/degreeGrantors/hierarchy.help",
+                                        "label": "metadata/thesis/degreeGrantors/hierarchy.label",
+                                        "hint": "metadata/thesis/degreeGrantors/hierarchy.hint",
+                                        "children": {
+                                            "ancestors": {
+                                                "detail": "array",
+                                                "input": "array",
+                                                "help": "metadata/thesis/degreeGrantors/hierarchy/ancestors.help",
+                                                "label": "metadata/thesis/degreeGrantors/hierarchy/ancestors.label",
+                                                "hint": "metadata/thesis/degreeGrantors/hierarchy/ancestors.hint",
+                                                "child": {
+                                                    "detail": "keyword",
+                                                    "input": "keyword",
+                                                    "help": "metadata/thesis/degreeGrantors/hierarchy/ancestors.help",
+                                                    "label": "metadata/thesis/degreeGrantors/hierarchy/ancestors.label",
+                                                    "hint": "metadata/thesis/degreeGrantors/hierarchy/ancestors.hint"
+                                                }
+                                            },
+                                            "ancestors_or_self": {
+                                                "detail": "array",
+                                                "input": "array",
+                                                "help": "metadata/thesis/degreeGrantors/hierarchy/ancestors_or_self.help",
+                                                "label": "metadata/thesis/degreeGrantors/hierarchy/ancestors_or_self.label",
+                                                "hint": "metadata/thesis/degreeGrantors/hierarchy/ancestors_or_self.hint",
+                                                "child": {
+                                                    "detail": "keyword",
+                                                    "input": "keyword",
+                                                    "help": "metadata/thesis/degreeGrantors/hierarchy/ancestors_or_self.help",
+                                                    "label": "metadata/thesis/degreeGrantors/hierarchy/ancestors_or_self.label",
+                                                    "hint": "metadata/thesis/degreeGrantors/hierarchy/ancestors_or_self.hint"
+                                                }
+                                            },
+                                            "level": {
+                                                "detail": "integer",
+                                                "input": "integer",
+                                                "help": "metadata/thesis/degreeGrantors/hierarchy/level.help",
+                                                "label": "metadata/thesis/degreeGrantors/hierarchy/level.label",
+                                                "hint": "metadata/thesis/degreeGrantors/hierarchy/level.hint"
+                                            },
+                                            "parent": {
+                                                "detail": "keyword",
+                                                "input": "keyword",
+                                                "help": "metadata/thesis/degreeGrantors/hierarchy/parent.help",
+                                                "label": "metadata/thesis/degreeGrantors/hierarchy/parent.label",
+                                                "hint": "metadata/thesis/degreeGrantors/hierarchy/parent.hint"
+                                            },
+                                            "title": {
+                                                "detail": "array",
+                                                "input": "array",
+                                                "help": "metadata/thesis/degreeGrantors/hierarchy/title.help",
+                                                "label": "metadata/thesis/degreeGrantors/hierarchy/title.label",
+                                                "hint": "metadata/thesis/degreeGrantors/hierarchy/title.hint",
+                                                "child": {
+                                                    "detail": false,
+                                                    "input": false,
+                                                    "help": "metadata/thesis/degreeGrantors/hierarchy/title.help",
+                                                    "label": "metadata/thesis/degreeGrantors/hierarchy/title.label",
+                                                    "hint": "metadata/thesis/degreeGrantors/hierarchy/title.hint"
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "@v": {
+                                        "detail": "keyword",
+                                        "input": "keyword",
+                                        "help": "metadata/thesis/degreeGrantors/@v.help",
+                                        "label": "metadata/thesis/degreeGrantors/@v.label",
+                                        "hint": "metadata/thesis/degreeGrantors/@v.hint"
+                                    }
+                                }
+                            }
+                        },
+                        "studyFields": {
+                            "detail": "array",
+                            "input": "array",
+                            "help": "metadata/thesis/studyFields.help",
+                            "label": "metadata/thesis/studyFields.label",
+                            "hint": "metadata/thesis/studyFields.hint",
+                            "child": {
+                                "detail": "keyword",
+                                "input": "keyword",
+                                "help": "metadata/thesis/studyFields.help",
+                                "label": "metadata/thesis/studyFields.label",
+                                "hint": "metadata/thesis/studyFields.hint",
+                                "facet": "metadata_thesis_studyFields"
+                            }
+                        }
+                    }
+                },
+                "title": {
+                    "detail": "fulltext",
+                    "input": "fulltext",
+                    "help": "metadata/title.help",
+                    "label": "metadata/title.label",
+                    "hint": "metadata/title.hint",
+                    "facet": "metadata_title"
+                },
                 "abstract": {
                     "detail": "multilingual",
                     "input": "array",
@@ -187,14 +347,6 @@
                             }
                         }
                     }
-                },
-                "collection": {
-                    "detail": "keyword",
-                    "input": "keyword",
-                    "help": "metadata/collection.help",
-                    "label": "metadata/collection.label",
-                    "hint": "metadata/collection.hint",
-                    "facet": "metadata_collection"
                 },
                 "contributors": {
                     "detail": "array",
@@ -1789,158 +1941,6 @@
                             }
                         }
                     }
-                },
-                "thesis": {
-                    "detail": "thesis",
-                    "input": "thesi",
-                    "help": "metadata/thesis.help",
-                    "label": "metadata/thesis.label",
-                    "hint": "metadata/thesis.hint",
-                    "children": {
-                        "dateDefended": {
-                            "detail": "date",
-                            "input": "date",
-                            "help": "metadata/thesis/dateDefended.help",
-                            "label": "metadata/thesis/dateDefended.label",
-                            "hint": "metadata/thesis/dateDefended.hint",
-                            "facet": "metadata_thesis_dateDefended"
-                        },
-                        "defended": {
-                            "detail": "boolean",
-                            "input": "boolean",
-                            "help": "metadata/thesis/defended.help",
-                            "label": "metadata/thesis/defended.label",
-                            "hint": "metadata/thesis/defended.hint",
-                            "facet": "metadata_thesis_defended"
-                        },
-                        "degreeGrantors": {
-                            "detail": "array",
-                            "input": "array",
-                            "help": "metadata/thesis/degreeGrantors.help",
-                            "label": "metadata/thesis/degreeGrantors.label",
-                            "hint": "metadata/thesis/degreeGrantors.hint",
-                            "child": {
-                                "detail": "nr_degree_grantor",
-                                "edit": "taxonomy_item",
-                                "input": "taxonomy",
-                                "help": "metadata/thesis/degreeGrantors.help",
-                                "label": "metadata/thesis/degreeGrantors.label",
-                                "hint": "metadata/thesis/degreeGrantors.hint",
-                                "facet": "metadata_thesis_degreeGrantors",
-                                "children": {
-                                    "id": {
-                                        "detail": "keyword",
-                                        "input": "keyword",
-                                        "help": "metadata/thesis/degreeGrantors/id.help",
-                                        "label": "metadata/thesis/degreeGrantors/id.label",
-                                        "hint": "metadata/thesis/degreeGrantors/id.hint"
-                                    },
-                                    "title": {
-                                        "detail": false,
-                                        "input": false,
-                                        "help": "metadata/thesis/degreeGrantors/title.help",
-                                        "label": "metadata/thesis/degreeGrantors/title.label",
-                                        "hint": "metadata/thesis/degreeGrantors/title.hint"
-                                    },
-                                    "hierarchy": {
-                                        "detail": false,
-                                        "input": false,
-                                        "help": "metadata/thesis/degreeGrantors/hierarchy.help",
-                                        "label": "metadata/thesis/degreeGrantors/hierarchy.label",
-                                        "hint": "metadata/thesis/degreeGrantors/hierarchy.hint",
-                                        "children": {
-                                            "ancestors": {
-                                                "detail": "array",
-                                                "input": "array",
-                                                "help": "metadata/thesis/degreeGrantors/hierarchy/ancestors.help",
-                                                "label": "metadata/thesis/degreeGrantors/hierarchy/ancestors.label",
-                                                "hint": "metadata/thesis/degreeGrantors/hierarchy/ancestors.hint",
-                                                "child": {
-                                                    "detail": "keyword",
-                                                    "input": "keyword",
-                                                    "help": "metadata/thesis/degreeGrantors/hierarchy/ancestors.help",
-                                                    "label": "metadata/thesis/degreeGrantors/hierarchy/ancestors.label",
-                                                    "hint": "metadata/thesis/degreeGrantors/hierarchy/ancestors.hint"
-                                                }
-                                            },
-                                            "ancestors_or_self": {
-                                                "detail": "array",
-                                                "input": "array",
-                                                "help": "metadata/thesis/degreeGrantors/hierarchy/ancestors_or_self.help",
-                                                "label": "metadata/thesis/degreeGrantors/hierarchy/ancestors_or_self.label",
-                                                "hint": "metadata/thesis/degreeGrantors/hierarchy/ancestors_or_self.hint",
-                                                "child": {
-                                                    "detail": "keyword",
-                                                    "input": "keyword",
-                                                    "help": "metadata/thesis/degreeGrantors/hierarchy/ancestors_or_self.help",
-                                                    "label": "metadata/thesis/degreeGrantors/hierarchy/ancestors_or_self.label",
-                                                    "hint": "metadata/thesis/degreeGrantors/hierarchy/ancestors_or_self.hint"
-                                                }
-                                            },
-                                            "level": {
-                                                "detail": "integer",
-                                                "input": "integer",
-                                                "help": "metadata/thesis/degreeGrantors/hierarchy/level.help",
-                                                "label": "metadata/thesis/degreeGrantors/hierarchy/level.label",
-                                                "hint": "metadata/thesis/degreeGrantors/hierarchy/level.hint"
-                                            },
-                                            "parent": {
-                                                "detail": "keyword",
-                                                "input": "keyword",
-                                                "help": "metadata/thesis/degreeGrantors/hierarchy/parent.help",
-                                                "label": "metadata/thesis/degreeGrantors/hierarchy/parent.label",
-                                                "hint": "metadata/thesis/degreeGrantors/hierarchy/parent.hint"
-                                            },
-                                            "title": {
-                                                "detail": "array",
-                                                "input": "array",
-                                                "help": "metadata/thesis/degreeGrantors/hierarchy/title.help",
-                                                "label": "metadata/thesis/degreeGrantors/hierarchy/title.label",
-                                                "hint": "metadata/thesis/degreeGrantors/hierarchy/title.hint",
-                                                "child": {
-                                                    "detail": false,
-                                                    "input": false,
-                                                    "help": "metadata/thesis/degreeGrantors/hierarchy/title.help",
-                                                    "label": "metadata/thesis/degreeGrantors/hierarchy/title.label",
-                                                    "hint": "metadata/thesis/degreeGrantors/hierarchy/title.hint"
-                                                }
-                                            }
-                                        }
-                                    },
-                                    "@v": {
-                                        "detail": "keyword",
-                                        "input": "keyword",
-                                        "help": "metadata/thesis/degreeGrantors/@v.help",
-                                        "label": "metadata/thesis/degreeGrantors/@v.label",
-                                        "hint": "metadata/thesis/degreeGrantors/@v.hint"
-                                    }
-                                }
-                            }
-                        },
-                        "studyFields": {
-                            "detail": "array",
-                            "input": "array",
-                            "help": "metadata/thesis/studyFields.help",
-                            "label": "metadata/thesis/studyFields.label",
-                            "hint": "metadata/thesis/studyFields.hint",
-                            "child": {
-                                "detail": "keyword",
-                                "input": "keyword",
-                                "help": "metadata/thesis/studyFields.help",
-                                "label": "metadata/thesis/studyFields.label",
-                                "hint": "metadata/thesis/studyFields.hint",
-                                "facet": "metadata_thesis_studyFields"
-                            }
-                        }
-                    }
-                },
-                "title": {
-                    "detail": "fulltext+keyword",
-                    "input": "fulltext+keyword",
-                    "help": "metadata/title.help",
-                    "label": "metadata/title.label",
-                    "hint": "metadata/title.hint",
-                    "facet": "metadata_title"
                 },
                 "version": {
                     "detail": "keyword",

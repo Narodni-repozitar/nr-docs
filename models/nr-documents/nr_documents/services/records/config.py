@@ -1,9 +1,12 @@
 from invenio_drafts_resources.services import (
     RecordServiceConfig as InvenioRecordDraftsServiceConfig,
 )
-
-from invenio_records_resources.services import pagination_links
-from invenio_records_resources.services import RecordLink, ConditionalLink
+from invenio_drafts_resources.services.records.config import is_record
+from invenio_records_resources.services import (
+    ConditionalLink,
+    RecordLink,
+    pagination_links,
+)
 from invenio_records_resources.services.records.components import DataComponent
 from oarepo_requests.components.requests import PublishDraftComponent
 from oarepo_runtime.config.service import PermissionsPresetsConfigMixin
@@ -48,10 +51,13 @@ class NrDocumentsServiceConfig(
         *InvenioRecordDraftsServiceConfig.components,
         PublishDraftComponent("publish_draft", "delete_record"),
         DataComponent,
+        *PermissionsPresetsConfigMixin.components,
+        *InvenioRecordDraftsServiceConfig.components,
     ]
 
     model = "nr_documents"
     draft_cls = NrDocumentsDraft
+    search_drafts = NrDocumentsSearchOptions
 
     @property
     def links_item(self):

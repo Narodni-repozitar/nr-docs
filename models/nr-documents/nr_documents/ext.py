@@ -51,3 +51,18 @@ class Nr_documentsExt:
             service=self.service_records,
             config=config.NR_DOCUMENTS_RECORD_RESOURCE_CONFIG(),
         )
+
+    @cached_property
+    def published_service_records(self):
+        from nr_documents.services.records.published.config import (
+            NrDocumentsPublishedServiceConfig as PublishedServiceConfig,
+        )
+        from nr_documents.services.records.published.service import (
+            NrDocumentsPublishedService as PublishedService,
+        )
+
+        return PublishedService(
+            config=PublishedServiceConfig(
+                proxied_drafts_config=self.service_records.config,
+            ),
+        )
