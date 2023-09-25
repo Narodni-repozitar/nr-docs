@@ -1,6 +1,8 @@
+
 import pytest
 from invenio_access.permissions import system_identity
 from invenio_pidstore.errors import PIDDoesNotExistError
+
 
 
 def _get_paths(cur_path, cur_val):
