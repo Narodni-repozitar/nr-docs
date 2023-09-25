@@ -10,7 +10,7 @@ record:
   extend: nr-documents#DocumentModel
   permissions:
     presets:
-    - read_only
+    - authenticated
   pid:
     type: dcmnts
   properties:
