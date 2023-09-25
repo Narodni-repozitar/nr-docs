@@ -4,7 +4,7 @@ config:
   packaging: single
   primary_site_name: nr-documents
   project_package: nr_documents
-  python: python3
+  python: python3.9
   sites:
   - nr-docs
 local:
@@ -54,7 +54,7 @@ models:
     - nr-docs
     update_opensearch: run
     use_custom_fields: 'yes'
-    use_drafts: 'yes'
+    use_drafts: 'no'
     use_expandable_fields: 'no'
     use_files: 'no'
     use_relations: 'yes'

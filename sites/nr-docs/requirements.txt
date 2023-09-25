@@ -14,6 +14,7 @@ oarepo-oai-pmh-harvester==4.0.26
 oarepo-published-service==1.0.1
 oarepo-requests==1.0.2
 oarepo-runtime==1.4.6
+oarepo-ui==5.0.63
 oarepo-vocabularies==2.0.32
 openpyxl==3.1.2
 python-dotenv==1.0.0
