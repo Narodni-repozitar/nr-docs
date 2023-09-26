@@ -70,10 +70,9 @@
             "generate": true
         },
         "searchable": true,
-        "custom-fields": [],
         "permissions": {
             "presets": [
-                "read_only"
+                "authenticated"
             ],
             "generate": true,
             "extra-code": "",
@@ -103,6 +102,7 @@
             "class": "nr_documents.services.records.schema.NrDocumentsSchema",
             "extra-code": ""
         },
+        "custom-fields": [],
         "service-config": {
             "components": [
                 "PublishDraftComponent(\"publish_draft\", \"delete_record\")",
@@ -340,6 +340,7 @@
             ],
             "generate": true,
             "base-url": "/nr-documents/",
+            "base-html-url": "/nr-documents/",
             "config-key": "NR_DOCUMENTS_RECORD_RESOURCE_CONFIG",
             "module": "nr_documents.resources.records.config",
             "class": "nr_documents.resources.records.config.NrDocumentsResourceConfig",
@@ -392,10 +393,6 @@
             ],
             "extra-code": "",
             "generate": true
-        },
-        "translations": {
-            "module": "nr_documents.translations",
-            "alias": "nr_documents"
         },
         "files-field": {
             "generate": true,
@@ -454,6 +451,25 @@
             "extra-code": "",
             "base-classes": [
                 "InvenioRecordService"
+            ]
+        },
+        "translations": {
+            "module": "nr_documents.translations",
+            "alias": "nr_documents"
+        },
+        "multilingual-dumper": {
+            "generate": true,
+            "module": "nr_documents.records.multilingual_dumper",
+            "class": "nr_documents.records.multilingual_dumper.MultilingualSearchDumper",
+            "base-classes": [
+                "MultilingualDumper"
+            ],
+            "extra-code": "",
+            "extensions": [],
+            "imports": [
+                {
+                    "import": "oarepo_runtime.i18n.dumper.MultilingualDumper"
+                }
             ]
         },
         "draft-parent-record": {
@@ -531,21 +547,6 @@
                 {
                     "import": "oarepo_published_service.services.service.PublishedService",
                     "alias": "PublishedService"
-                }
-            ]
-        },
-        "multilingual-dumper": {
-            "generate": true,
-            "module": "nr_documents.records.multilingual_dumper",
-            "class": "nr_documents.records.multilingual_dumper.MultilingualSearchDumper",
-            "base-classes": [
-                "MultilingualDumper"
-            ],
-            "extra-code": "",
-            "extensions": [],
-            "imports": [
-                {
-                    "import": "oarepo_runtime.i18n.dumper.MultilingualDumper"
                 }
             ]
         },
@@ -997,18 +998,6 @@
                                 "title": {
                                     "type": "i18nStr",
                                     "required": true,
-                                    "marshmallow": {
-                                        "read": false,
-                                        "write": false,
-                                        "class": null,
-                                        "field-class": "I18nStrField",
-                                        "imports": [
-                                            {
-                                                "import": "oarepo_runtime.i18n.schema.I18nStrField"
-                                            }
-                                        ],
-                                        "generate": false
-                                    },
                                     "ui": {
                                         "marshmallow": {
                                             "read": false,
@@ -1022,6 +1011,18 @@
                                             ]
                                         },
                                         "detail": "multilingual"
+                                    },
+                                    "marshmallow": {
+                                        "read": false,
+                                        "write": false,
+                                        "class": null,
+                                        "field-class": "I18nStrField",
+                                        "imports": [
+                                            {
+                                                "import": "oarepo_runtime.i18n.schema.I18nStrField"
+                                            }
+                                        ],
+                                        "generate": false
                                     },
                                     "sample": {
                                         "skip": false

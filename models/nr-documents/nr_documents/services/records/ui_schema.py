@@ -7,11 +7,12 @@ from invenio_drafts_resources.services.records.schema import (
     ParentSchema as InvenioParentSchema,
 )
 from oarepo_requests.schemas.marshmallow import NoneReceiverGenericRequestSchema
-from oarepo_runtime.ui.marshmallow import InvenioUISchema
 from oarepo_vocabularies.services.ui_schema import (
     HierarchyUISchema,
     VocabularyI18nStrUIField,
 )
+
+from nr_documents.services.records.schema import GeneratedParentSchema
 
 
 class GeneratedParentSchema(InvenioParentSchema):
