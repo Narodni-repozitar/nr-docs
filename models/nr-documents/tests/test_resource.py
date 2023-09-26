@@ -542,7 +542,7 @@ def assert_expected_links(pid_value, generated_links, site_hostname="127.0.0.1:5
         ),
         "record": f"https://{site_hostname}/api{BASE_URL}{pid_value}",
         "self": f"https://{site_hostname}/api{BASE_URL}{pid_value}/draft",
-        "self_html": f"https://{site_hostname}/uploads/{pid_value}",
+        "self_html": f"https://{site_hostname}{BASE_URL}{pid_value}/edit",
         "versions": f"https://{site_hostname}/api{BASE_URL}{pid_value}/versions",
     }
     assert required_links.items() <= generated_links.items()
