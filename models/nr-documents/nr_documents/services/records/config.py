@@ -48,7 +48,7 @@ class NrDocumentsServiceConfig(
         return {
             "draft": RecordLink("{+api}/nr-documents/{id}/draft"),
             "latest": RecordLink("{+api}/nr-documents/{id}/versions/latest"),
-            "latest_html": RecordLink("{+ui}/nr-documents/{id}/latest"),
+            "latest_html": RecordLink("{+ui}/docs/{id}/latest"),
             "publish": RecordLink("{+api}/nr-documents/{id}/draft/actions/publish"),
             "record": RecordLink("{+api}/nr-documents/{id}"),
             "self": ConditionalLink(
@@ -58,8 +58,8 @@ class NrDocumentsServiceConfig(
             ),
             "self_html": ConditionalLink(
                 cond=is_record,
-                if_=RecordLink("{+ui}/nr-documents/{id}"),
-                else_=RecordLink("{+ui}/nr-documents/{id}/edit"),
+                if_=RecordLink("{+ui}/docs/{id}"),
+                else_=RecordLink("{+ui}/docs/{id}/edit"),
             ),
             "versions": RecordLink("{+api}/nr-documents/{id}/versions"),
         }
