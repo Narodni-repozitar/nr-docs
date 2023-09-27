@@ -11,7 +11,7 @@ import { Container, Grid, Ref, Sticky, Card } from "semantic-ui-react";
 import { NRDocumentValidationSchema } from "./NRDocumentValidationSchema";
 import {
   DateField,
-  // LocalVocabularySelectField, TODO: use after BE-59 gets fixed
+  LocalVocabularySelectField,
   StringArrayField,
   AdditionalTitlesField,
   GeoLocationsField,
@@ -156,7 +156,7 @@ export const DepositForm = () => {
                   >
                     {/* <LocalVocabularySelectField */}
                     <VocabularySelectField
-                      type='resource-types'
+                      type="resource-types"
                       fieldPath="metadata.resourceType"
                       required
                       clearable
@@ -269,8 +269,7 @@ export const DepositForm = () => {
                     fieldPath="metadata.languages"
                   >
                     {/* <LocalVocabularySelectField */}
-                    <VocabularySelectField
-                      type='languages'
+                    <LocalVocabularySelectField
                       fieldPath="metadata.languages"
                       multiple={true}
                       required
@@ -292,7 +291,7 @@ export const DepositForm = () => {
                   >
                     {/* <LocalVocabularySelectField */}
                     <VocabularySelectField
-                      type='licenses'
+                      type="licenses"
                       fieldPath="metadata.rights"
                       multiple={true}
                       label={
@@ -340,7 +339,7 @@ export const DepositForm = () => {
                   >
                     {/* <LocalVocabularySelectField */}
                     <VocabularySelectField
-                      type='subject-categories'
+                      type="subject-categories"
                       fieldPath="metadata.subjectCategories"
                       multiple={true}
                       label={
