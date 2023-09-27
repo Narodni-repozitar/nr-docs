@@ -20,7 +20,7 @@ export const LocalVocabularySelectField = ({
   const {
     formConfig: { vocabularies },
   } = useFormConfig();
-  let optionsList = vocabularies[optionsListName] || [];
+  let optionsList = vocabularies[optionsListName].all || [];
   if (optionsListName === "resourceTypes") {
     optionsList = [{ value: "book", text: "Book" }];
   }
