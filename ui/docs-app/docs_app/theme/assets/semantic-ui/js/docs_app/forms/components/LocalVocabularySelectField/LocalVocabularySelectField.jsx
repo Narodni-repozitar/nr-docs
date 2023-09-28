@@ -21,10 +21,7 @@ export const LocalVocabularySelectField = ({
     formConfig: { vocabularies },
   } = useFormConfig();
   let optionsList = [];
-  if (
-    vocabularies[optionsListName] &&
-    vocabularies[optionsListName].all !== undefined
-  ) {
+  if (vocabularies[optionsListName]?.all !== undefined) {
     optionsList = vocabularies[optionsListName].all;
   } else {
     console.error(
@@ -32,9 +29,7 @@ export const LocalVocabularySelectField = ({
       vocabularies
     );
   }
-  if (optionsListName === "resourceTypes") {
-    optionsList = [{ value: "book", text: "Book" }];
-  }
+
   const { values, setFieldTouched } = useFormikContext();
   return (
     <React.Fragment>

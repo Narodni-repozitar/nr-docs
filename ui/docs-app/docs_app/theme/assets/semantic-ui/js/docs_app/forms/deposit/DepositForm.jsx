@@ -28,7 +28,6 @@ import {
   PublishButtonComponent,
   CreatibutorsField,
 } from "../components/";
-import { VocabularySelectField } from "@js/oarepo_vocabularies";
 import Overridable from "react-overridable";
 import { i18next } from "@translations/docs_app/i18next";
 import _has from "lodash/has";
@@ -52,8 +51,6 @@ const systemIdentifiersSchema = [
 
 export const DepositForm = () => {
   const { record, formConfig } = useFormConfig();
-  console.log(formConfig, record);
-
   const editMode = _has(formConfig, "updateUrl");
 
   const sidebarRef = useRef(null);
