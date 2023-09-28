@@ -16,6 +16,8 @@ record:
   properties:
     metadata:
       properties: {}
+  resource-config:
+    base-html-url: /docs/
   draft: {}
   use:
   - invenio

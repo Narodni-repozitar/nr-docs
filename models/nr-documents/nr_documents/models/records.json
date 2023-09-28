@@ -183,6 +183,23 @@
             "file": "nr_documents/models/ui.json",
             "alias": "nr_documents"
         },
+        "resource-config": {
+            "base-html-url": "/docs/",
+            "imports": [
+                {
+                    "import": "invenio_drafts_resources.resources.RecordResourceConfig"
+                }
+            ],
+            "generate": true,
+            "base-url": "/nr-documents/",
+            "config-key": "NR_DOCUMENTS_RECORD_RESOURCE_CONFIG",
+            "module": "nr_documents.resources.records.config",
+            "class": "nr_documents.resources.records.config.NrDocumentsResourceConfig",
+            "extra-code": "",
+            "base-classes": [
+                "RecordResourceConfig"
+            ]
+        },
         "module": {
             "qualified": "nr_documents",
             "alias": "nr_documents",
@@ -330,23 +347,6 @@
             "extra-code": "",
             "base-classes": [
                 "RecordResource"
-            ]
-        },
-        "resource-config": {
-            "imports": [
-                {
-                    "import": "invenio_drafts_resources.resources.RecordResourceConfig"
-                }
-            ],
-            "generate": true,
-            "base-url": "/nr-documents/",
-            "base-html-url": "/nr-documents/",
-            "config-key": "NR_DOCUMENTS_RECORD_RESOURCE_CONFIG",
-            "module": "nr_documents.resources.records.config",
-            "class": "nr_documents.resources.records.config.NrDocumentsResourceConfig",
-            "extra-code": "",
-            "base-classes": [
-                "RecordResourceConfig"
             ]
         },
         "json-schema-settings": {
