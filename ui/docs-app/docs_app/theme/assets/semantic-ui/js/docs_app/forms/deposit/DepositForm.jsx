@@ -441,8 +441,12 @@ export const DepositForm = () => {
                     "metadata.objectIdentifiers",
                     "metadata.systemIdentifiers",
                   ]}
-                  active={false}
                   label={i18next.t("Identifiers information")}
+                  // if you don't put active to true, semantic UI throws error if I dont't set
+                  // defaultActiveIndex to some number, because in invenio's accordion field
+                  // they are setting it to null if active is not true and this throws error
+                  // in the console
+                  defaultActiveIndex={2}
                 >
                   <Overridable
                     id="NrDocs.Deposit.ObjectIdentifiersField.container"
