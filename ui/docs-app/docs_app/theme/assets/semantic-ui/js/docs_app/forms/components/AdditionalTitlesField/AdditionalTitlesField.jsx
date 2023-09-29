@@ -46,6 +46,7 @@ export const AdditionalTitlesField = ({ fieldPath }) => {
                 optimized
                 options={subtitleTypes}
                 required
+                clearable
               />
             </Form.Field>
           </ArrayFieldItem>

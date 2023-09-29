@@ -44,6 +44,7 @@ export const EventsField = ({ fieldPath, helpText }) => {
             />
             <GroupField>
               <TextField
+                style={{ marginTop: "0.28rem" }}
                 width={12}
                 fieldPath={`${fieldPathPrefix}.eventLocation.place`}
                 label={i18next.t("Place")}
@@ -56,7 +57,7 @@ export const EventsField = ({ fieldPath, helpText }) => {
                 label={i18next.t("Country")}
                 optionsListName="countries"
                 required
-                inline
+                clearable
               />
             </GroupField>
           </ArrayFieldItem>
