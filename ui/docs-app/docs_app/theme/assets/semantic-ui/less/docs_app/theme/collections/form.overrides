@@ -35,7 +35,6 @@
   .ui.form .invenio-accordion-field {
     label.helptext {
       margin-top: 0.5rem;
-      // margin-bottom: 1rem;
     }
 
     .invenio-group-field.fields {
