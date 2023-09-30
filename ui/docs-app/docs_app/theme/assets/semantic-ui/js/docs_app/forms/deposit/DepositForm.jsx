@@ -51,10 +51,7 @@ const systemIdentifiersSchema = [
 
 export const DepositForm = () => {
   const { record, formConfig } = useFormConfig();
-  console.log(formConfig, record);
-
   const editMode = _has(formConfig, "updateUrl");
-
   const sidebarRef = useRef(null);
   const formFeedbackRef = useRef(null);
 
