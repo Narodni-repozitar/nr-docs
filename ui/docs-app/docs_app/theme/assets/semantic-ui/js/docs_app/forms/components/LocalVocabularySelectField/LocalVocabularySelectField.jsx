@@ -7,7 +7,6 @@ import {
 } from "@js/oarepo_vocabularies";
 import { useFormikContext, getIn } from "formik";
 import PropTypes from "prop-types";
-import { serialize } from "v8";
 
 // the idea is for this component to be a simple searchable single or multiple selection drop down
 // that would handle things items that are going to be placed inside the formConfig (HTML). From what I see, all the vocabularies
