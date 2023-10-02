@@ -50,3 +50,16 @@ def init_addons_nr_documents_requests(state):
 
     for er in getattr(config, "REQUESTS_ENTITY_RESOLVERS", []):
         requests.entity_resolvers_registry.register_type(er)
+
+
+def init_addons_nr_documents_published_service(state):
+    """Init app."""
+    app = state.app
+    ext = app.extensions["nr_documents"]
+
+    # register service
+    sregistry = app.extensions["invenio-records-resources"].registry
+    sregistry.register(
+        ext.published_service_records,
+        service_id=ext.published_service_records.config.service_id,
+    )

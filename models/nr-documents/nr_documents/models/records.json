@@ -46,11 +46,33 @@
                 }
             }
         },
+        "published-service-config": {
+            "base-classes": [
+                "NrDocumentsPublishedServiceConfig"
+            ],
+            "imports": [
+                {
+                    "import": "nr_docs_extensions.services.published_service.NrDocumentsPublishedServiceConfig"
+                },
+                {
+                    "import": "oarepo_published_service.services.config.PublishedServiceConfig",
+                    "alias": "PublishedServiceConfig"
+                },
+                {
+                    "import": "oarepo_runtime.config.service.PermissionsPresetsConfigMixin"
+                }
+            ],
+            "config-key": "NR_DOCUMENTS_RECORD_PUBLISHED_SERVICE_CONFIG",
+            "module": "nr_documents.services.records.published.config",
+            "class": "nr_documents.services.records.published.config.NrDocumentsPublishedServiceConfig",
+            "extra-code": "",
+            "service-id": "published_nr_documents",
+            "generate": true
+        },
         "searchable": true,
-        "custom-fields": [],
         "permissions": {
             "presets": [
-                "read_only"
+                "authenticated"
             ],
             "generate": true,
             "extra-code": "",
@@ -68,22 +90,19 @@
         "marshmallow": {
             "imports": [
                 {
-                    "import": "oarepo_runtime.marshmallow.BaseRecordSchema"
-                },
-                {
                     "import": "nr_metadata.documents.services.records.schema",
                     "alias": "nr_metadata.documents.services.records.schema"
                 }
             ],
             "base-classes": [
-                "nr_metadata.documents.services.records.schema.NRDocumentRecordSchema",
-                "BaseRecordSchema"
+                "nr_metadata.documents.services.records.schema.NRDocumentRecordSchema"
             ],
             "generate": true,
             "module": "nr_documents.services.records.schema",
             "class": "nr_documents.services.records.schema.NrDocumentsSchema",
             "extra-code": ""
         },
+        "custom-fields": [],
         "service-config": {
             "components": [
                 "PublishDraftComponent(\"publish_draft\", \"delete_record\")",
@@ -148,16 +167,12 @@
             "marshmallow": {
                 "imports": [
                     {
-                        "import": "oarepo_runtime.ui.marshmallow.InvenioUISchema"
-                    },
-                    {
                         "import": "nr_metadata.documents.services.records.ui_schema",
                         "alias": "nr_metadata.documents.services.records.ui_schema"
                     }
                 ],
                 "base-classes": [
-                    "nr_metadata.documents.services.records.ui_schema.NRDocumentRecordUISchema",
-                    "InvenioUISchema"
+                    "nr_metadata.documents.services.records.ui_schema.NRDocumentRecordUISchema"
                 ],
                 "generate": true,
                 "module": "nr_documents.services.records.ui_schema",
@@ -167,6 +182,23 @@
             "module": "nr_documents.models",
             "file": "nr_documents/models/ui.json",
             "alias": "nr_documents"
+        },
+        "resource-config": {
+            "base-html-url": "/docs/",
+            "imports": [
+                {
+                    "import": "invenio_drafts_resources.resources.RecordResourceConfig"
+                }
+            ],
+            "generate": true,
+            "base-url": "/nr-documents/",
+            "config-key": "NR_DOCUMENTS_RECORD_RESOURCE_CONFIG",
+            "module": "nr_documents.resources.records.config",
+            "class": "nr_documents.resources.records.config.NrDocumentsResourceConfig",
+            "extra-code": "",
+            "base-classes": [
+                "RecordResourceConfig"
+            ]
         },
         "module": {
             "qualified": "nr_documents",
@@ -317,22 +349,6 @@
                 "RecordResource"
             ]
         },
-        "resource-config": {
-            "imports": [
-                {
-                    "import": "invenio_drafts_resources.resources.RecordResourceConfig"
-                }
-            ],
-            "generate": true,
-            "base-url": "/nr-documents/",
-            "config-key": "NR_DOCUMENTS_RECORD_RESOURCE_CONFIG",
-            "module": "nr_documents.resources.records.config",
-            "class": "nr_documents.resources.records.config.NrDocumentsResourceConfig",
-            "extra-code": "",
-            "base-classes": [
-                "RecordResourceConfig"
-            ]
-        },
         "json-schema-settings": {
             "generate": true,
             "alias": "nr_documents",
@@ -349,7 +365,9 @@
                 "SearchDumper"
             ],
             "extra-code": "",
-            "extensions": [],
+            "extensions": [
+                "MultilingualSearchDumper()"
+            ],
             "imports": [
                 {
                     "import": "invenio_records.dumpers.SearchDumper"
@@ -376,9 +394,21 @@
             "extra-code": "",
             "generate": true
         },
-        "translations": {
-            "module": "nr_documents.translations",
-            "alias": "nr_documents"
+        "files-field": {
+            "generate": true,
+            "field-class": "FilesField",
+            "file-class": "NrDocumentsRecord",
+            "field-args": [
+                "store=False"
+            ],
+            "imports": [
+                {
+                    "import": "invenio_records_resources.records.systemfields.FilesField"
+                },
+                {
+                    "import": "nr_documents.records.api.NrDocumentsRecord"
+                }
+            ]
         },
         "record-metadata": {
             "generate": true,
@@ -423,6 +453,10 @@
                 "InvenioRecordService"
             ]
         },
+        "translations": {
+            "module": "nr_documents.translations",
+            "alias": "nr_documents"
+        },
         "multilingual-dumper": {
             "generate": true,
             "module": "nr_documents.records.multilingual_dumper",
@@ -435,22 +469,6 @@
             "imports": [
                 {
                     "import": "oarepo_runtime.i18n.dumper.MultilingualDumper"
-                }
-            ]
-        },
-        "files-field": {
-            "generate": true,
-            "field-class": "FilesField",
-            "file-class": "NrDocumentsRecord",
-            "field-args": [
-                "store=False"
-            ],
-            "imports": [
-                {
-                    "import": "invenio_records_resources.records.systemfields.FilesField"
-                },
-                {
-                    "import": "nr_documents.records.api.NrDocumentsRecord"
                 }
             ]
         },
@@ -514,6 +532,23 @@
             "module": "nr_documents.records.mappings",
             "index": "nr_documents-nr_documents-1.0.0",
             "file": "nr_documents/records/mappings/os-v2/nr_documents/nr_documents-1.0.0.json"
+        },
+        "published-service": {
+            "generate": true,
+            "config-key": "NR_DOCUMENTS_RECORD_PUBLISHED_SERVICE_CLASS",
+            "proxy": "current_published_service",
+            "module": "nr_documents.services.records.published.service",
+            "class": "nr_documents.services.records.published.service.NrDocumentsPublishedService",
+            "extra-code": "",
+            "base-classes": [
+                "PublishedService"
+            ],
+            "imports": [
+                {
+                    "import": "oarepo_published_service.services.service.PublishedService",
+                    "alias": "PublishedService"
+                }
+            ]
         },
         "parent-record-marshmallow": {
             "module": "nr_documents.services.records.schema",
@@ -607,18 +642,15 @@
                     "marshmallow": {
                         "imports": [
                             {
-                                "import": "nr_metadata.common.services.records.ui_schema_common",
-                                "alias": "nr_metadata.common.services.records.ui_schema_common"
-                            },
-                            {
                                 "import": "nr_metadata.documents.services.records.ui_schema",
                                 "alias": "nr_metadata.documents.services.records.ui_schema"
                             }
                         ],
                         "base-classes": [
-                            "nr_metadata.documents.services.records.ui_schema.NRDocumentMetadataUISchema",
-                            "nr_metadata.common.services.records.ui_schema_common.NRCommonMetadataUISchema"
+                            "nr_metadata.documents.services.records.ui_schema.NRDocumentMetadataUISchema"
                         ],
+                        "read": false,
+                        "write": false,
                         "generate": true,
                         "module": "nr_documents.services.records.ui_schema",
                         "class": "nr_documents.services.records.ui_schema.NrDocumentsMetadataUISchema",
@@ -628,21 +660,19 @@
                 "marshmallow": {
                     "imports": [
                         {
-                            "import": "oarepo_runtime.marshmallow.BaseRecordSchema"
+                            "import": "nr_metadata.documents.services.records.schema",
+                            "alias": "nr_metadata.documents.services.records.schema"
                         },
                         {
                             "import": "nr_metadata.common.services.records.schema_common",
                             "alias": "nr_metadata.common.services.records.schema_common"
-                        },
-                        {
-                            "import": "nr_metadata.documents.services.records.schema",
-                            "alias": "nr_metadata.documents.services.records.schema"
                         }
                     ],
                     "base-classes": [
-                        "nr_metadata.documents.services.records.schema.NRDocumentMetadataSchema",
-                        "nr_metadata.common.services.records.schema_common.NRCommonMetadataSchema"
+                        "nr_metadata.documents.services.records.schema.NRDocumentMetadataSchema"
                     ],
+                    "read": false,
+                    "write": false,
                     "module": "nr_documents.services.records.schema",
                     "generate": true,
                     "class": "nr_documents.services.records.schema.NrDocumentsMetadataSchema",
@@ -968,18 +998,6 @@
                                 "title": {
                                     "type": "i18nStr",
                                     "required": true,
-                                    "marshmallow": {
-                                        "read": false,
-                                        "write": false,
-                                        "class": null,
-                                        "field-class": "I18nStrField",
-                                        "imports": [
-                                            {
-                                                "import": "oarepo_runtime.i18n.schema.I18nStrField"
-                                            }
-                                        ],
-                                        "generate": false
-                                    },
                                     "ui": {
                                         "marshmallow": {
                                             "read": false,
@@ -993,6 +1011,18 @@
                                             ]
                                         },
                                         "detail": "multilingual"
+                                    },
+                                    "marshmallow": {
+                                        "read": false,
+                                        "write": false,
+                                        "class": null,
+                                        "field-class": "I18nStrField",
+                                        "imports": [
+                                            {
+                                                "import": "oarepo_runtime.i18n.schema.I18nStrField"
+                                            }
+                                        ],
+                                        "generate": false
                                     },
                                     "sample": {
                                         "skip": false
@@ -1389,6 +1419,8 @@
                                                 "base-classes": [
                                                     "nr_metadata.ui_schema.identifiers.NRAuthorityIdentifierUISchema"
                                                 ],
+                                                "read": false,
+                                                "write": false,
                                                 "class": "nr_documents.services.records.ui_schema.AuthorityIdentifiersItemUISchema"
                                             },
                                             "detail": "nr_authority_identifier"
@@ -1404,6 +1436,8 @@
                                             "base-classes": [
                                                 "nr_metadata.schema.identifiers.NRAuthorityIdentifierSchema"
                                             ],
+                                            "read": false,
+                                            "write": false,
                                             "class": "nr_documents.services.records.schema.AuthorityIdentifiersItemSchema"
                                         },
                                         "properties": {
@@ -1992,6 +2026,8 @@
                                                 "base-classes": [
                                                     "nr_metadata.ui_schema.identifiers.NRAuthorityIdentifierUISchema"
                                                 ],
+                                                "read": false,
+                                                "write": false,
                                                 "class": "nr_documents.services.records.ui_schema.AuthorityIdentifiersItemUISchema"
                                             },
                                             "detail": "nr_authority_identifier"
@@ -2007,6 +2043,8 @@
                                             "base-classes": [
                                                 "nr_metadata.schema.identifiers.NRAuthorityIdentifierSchema"
                                             ],
+                                            "read": false,
+                                            "write": false,
                                             "class": "nr_documents.services.records.schema.AuthorityIdentifiersItemSchema"
                                         },
                                         "properties": {
@@ -2164,6 +2202,8 @@
                                     "base-classes": [
                                         "nr_metadata.common.services.records.ui_schema_datatypes.NREventUISchema"
                                     ],
+                                    "read": false,
+                                    "write": false,
                                     "generate": true,
                                     "class": "nr_documents.services.records.ui_schema.EventsItemUISchema"
                                 },
@@ -2179,11 +2219,11 @@
                                 "base-classes": [
                                     "nr_metadata.common.services.records.schema_datatypes.NREventSchema"
                                 ],
+                                "read": false,
+                                "write": false,
                                 "generate": true,
                                 "class": "nr_documents.services.records.schema.EventsItemSchema"
                             },
-                            "label.cs": "Událost",
-                            "label.en": "Event",
                             "properties": {
                                 "eventDate": {
                                     "type": "edtf-interval",
@@ -2215,6 +2255,8 @@
                                             "base-classes": [
                                                 "nr_metadata.common.services.records.ui_schema_datatypes.NRLocationUISchema"
                                             ],
+                                            "read": false,
+                                            "write": false,
                                             "generate": true,
                                             "class": "nr_documents.services.records.ui_schema.EventLocationUISchema"
                                         },
@@ -2230,11 +2272,11 @@
                                         "base-classes": [
                                             "nr_metadata.common.services.records.schema_datatypes.NRLocationSchema"
                                         ],
+                                        "read": false,
+                                        "write": false,
                                         "generate": true,
                                         "class": "nr_documents.services.records.schema.EventLocationSchema"
                                     },
-                                    "label.cs": "Umístění",
-                                    "label.en": "Location",
                                     "properties": {
                                         "country": {
                                             "type": "vocabulary",
@@ -2441,6 +2483,8 @@
                                 "base-classes": [
                                     "nr_metadata.common.services.records.ui_schema_datatypes.NRExternalLocationUISchema"
                                 ],
+                                "read": false,
+                                "write": false,
                                 "generate": true,
                                 "class": "nr_documents.services.records.ui_schema.ExternalLocationUISchema"
                             },
@@ -2456,11 +2500,11 @@
                             "base-classes": [
                                 "nr_metadata.common.services.records.schema_datatypes.NRExternalLocationSchema"
                             ],
+                            "read": false,
+                            "write": false,
                             "generate": true,
                             "class": "nr_documents.services.records.schema.ExternalLocationSchema"
                         },
-                        "label.cs": "Externí umístění",
-                        "label.en": "External location",
                         "properties": {
                             "externalLocationNote": {
                                 "type": "fulltext",
@@ -2515,6 +2559,8 @@
                                     "base-classes": [
                                         "nr_metadata.common.services.records.ui_schema_datatypes.NRFundingReferenceUISchema"
                                     ],
+                                    "read": false,
+                                    "write": false,
                                     "generate": true,
                                     "class": "nr_documents.services.records.ui_schema.FundingReferencesItemUISchema"
                                 },
@@ -2530,11 +2576,11 @@
                                 "base-classes": [
                                     "nr_metadata.common.services.records.schema_datatypes.NRFundingReferenceSchema"
                                 ],
+                                "read": false,
+                                "write": false,
                                 "generate": true,
                                 "class": "nr_documents.services.records.schema.FundingReferencesItemSchema"
                             },
-                            "label.cs": "Projekt nebo financování",
-                            "label.en": "Funding",
                             "properties": {
                                 "funder": {
                                     "type": "vocabulary",
@@ -2739,6 +2785,8 @@
                                     "base-classes": [
                                         "nr_metadata.common.services.records.ui_schema_datatypes.NRGeoLocationUISchema"
                                     ],
+                                    "read": false,
+                                    "write": false,
                                     "generate": true,
                                     "class": "nr_documents.services.records.ui_schema.GeoLocationsItemUISchema"
                                 },
@@ -2754,11 +2802,11 @@
                                 "base-classes": [
                                     "nr_metadata.common.services.records.schema_datatypes.NRGeoLocationSchema"
                                 ],
+                                "read": false,
+                                "write": false,
                                 "generate": true,
                                 "class": "nr_documents.services.records.schema.GeoLocationsItemSchema"
                             },
-                            "label.cs": "Geolokace",
-                            "label.en": "Geolocation",
                             "properties": {
                                 "geoLocationPlace": {
                                     "type": "keyword",
@@ -3113,6 +3161,8 @@
                                     "base-classes": [
                                         "nr_metadata.ui_schema.identifiers.NRObjectIdentifierUISchema"
                                     ],
+                                    "read": false,
+                                    "write": false,
                                     "class": "nr_documents.services.records.ui_schema.ObjectIdentifiersItemUISchema"
                                 },
                                 "detail": "nr_object_pid"
@@ -3128,10 +3178,10 @@
                                 "base-classes": [
                                     "nr_metadata.schema.identifiers.NRObjectIdentifierSchema"
                                 ],
+                                "read": false,
+                                "write": false,
                                 "class": "nr_documents.services.records.schema.ObjectIdentifiersItemSchema"
                             },
-                            "label.cs": "Identifikátor objektu",
-                            "label.en": "Object identifier",
                             "properties": {
                                 "identifier": {
                                     "type": "keyword",
@@ -3223,7 +3273,6 @@
                         "label.en": "Link to/from other resources:",
                         "items": {
                             "type": "object",
-                            "description": "linkdata, propojení přidružených dokumentů a datasetů.",
                             "ui": {
                                 "marshmallow": {
                                     "imports": [
@@ -3235,6 +3284,8 @@
                                     "base-classes": [
                                         "nr_metadata.common.services.records.ui_schema_datatypes.NRRelatedItemUISchema"
                                     ],
+                                    "read": false,
+                                    "write": false,
                                     "generate": true,
                                     "class": "nr_documents.services.records.ui_schema.RelatedItemsItemUISchema"
                                 },
@@ -3250,11 +3301,11 @@
                                 "base-classes": [
                                     "nr_metadata.common.services.records.schema_datatypes.NRRelatedItemSchema"
                                 ],
+                                "read": false,
+                                "write": false,
                                 "generate": true,
                                 "class": "nr_documents.services.records.schema.RelatedItemsItemSchema"
                             },
-                            "label.cs": "Vazba na/z dalších zdrojů:",
-                            "label.en": "Link to/from other resources:",
                             "properties": {
                                 "itemContributors": {
                                     "type": "array",
@@ -3598,6 +3649,8 @@
                                                             "base-classes": [
                                                                 "nr_metadata.ui_schema.identifiers.NRAuthorityIdentifierUISchema"
                                                             ],
+                                                            "read": false,
+                                                            "write": false,
                                                             "class": "nr_documents.services.records.ui_schema.AuthorityIdentifiersItemUISchema"
                                                         },
                                                         "detail": "nr_authority_identifier"
@@ -3613,6 +3666,8 @@
                                                         "base-classes": [
                                                             "nr_metadata.schema.identifiers.NRAuthorityIdentifierSchema"
                                                         ],
+                                                        "read": false,
+                                                        "write": false,
                                                         "class": "nr_documents.services.records.schema.AuthorityIdentifiersItemSchema"
                                                     },
                                                     "properties": {
@@ -4196,6 +4251,8 @@
                                                             "base-classes": [
                                                                 "nr_metadata.ui_schema.identifiers.NRAuthorityIdentifierUISchema"
                                                             ],
+                                                            "read": false,
+                                                            "write": false,
                                                             "class": "nr_documents.services.records.ui_schema.AuthorityIdentifiersItemUISchema"
                                                         },
                                                         "detail": "nr_authority_identifier"
@@ -4211,6 +4268,8 @@
                                                         "base-classes": [
                                                             "nr_metadata.schema.identifiers.NRAuthorityIdentifierSchema"
                                                         ],
+                                                        "read": false,
+                                                        "write": false,
                                                         "class": "nr_documents.services.records.schema.AuthorityIdentifiersItemSchema"
                                                     },
                                                     "properties": {
@@ -4361,6 +4420,8 @@
                                                 "base-classes": [
                                                     "nr_metadata.ui_schema.identifiers.NRObjectIdentifierUISchema"
                                                 ],
+                                                "read": false,
+                                                "write": false,
                                                 "class": "nr_documents.services.records.ui_schema.ObjectIdentifiersItemUISchema"
                                             },
                                             "detail": "nr_object_pid"
@@ -4376,10 +4437,10 @@
                                             "base-classes": [
                                                 "nr_metadata.schema.identifiers.NRObjectIdentifierSchema"
                                             ],
+                                            "read": false,
+                                            "write": false,
                                             "class": "nr_documents.services.records.schema.ObjectIdentifiersItemSchema"
                                         },
-                                        "label.cs": "Identifikátor objektu",
-                                        "label.en": "Object identifier",
                                         "properties": {
                                             "identifier": {
                                                 "type": "keyword",
@@ -5114,6 +5175,8 @@
                                     "base-classes": [
                                         "nr_metadata.common.services.records.ui_schema_datatypes.NRSeriesUISchema"
                                     ],
+                                    "read": false,
+                                    "write": false,
                                     "generate": true,
                                     "class": "nr_documents.services.records.ui_schema.SeriesItemUISchema"
                                 },
@@ -5129,11 +5192,11 @@
                                 "base-classes": [
                                     "nr_metadata.common.services.records.schema_datatypes.NRSeriesSchema"
                                 ],
+                                "read": false,
+                                "write": false,
                                 "generate": true,
                                 "class": "nr_documents.services.records.schema.SeriesItemSchema"
                             },
-                            "label.cs": "Série",
-                            "label.en": "Series",
                             "properties": {
                                 "seriesTitle": {
                                     "type": "keyword",
@@ -5349,6 +5412,8 @@
                                     "base-classes": [
                                         "nr_metadata.common.services.records.ui_schema_datatypes.NRSubjectUISchema"
                                     ],
+                                    "read": false,
+                                    "write": false,
                                     "generate": true,
                                     "class": "nr_documents.services.records.ui_schema.SubjectsItemUISchema"
                                 },
@@ -5364,11 +5429,11 @@
                                 "base-classes": [
                                     "nr_metadata.common.services.records.schema_datatypes.NRSubjectSchema"
                                 ],
+                                "read": false,
+                                "write": false,
                                 "generate": true,
                                 "class": "nr_documents.services.records.schema.SubjectsItemSchema"
                             },
-                            "label.cs": "Klíčové slovo",
-                            "label.en": "Keyword",
                             "properties": {
                                 "classificationCode": {
                                     "type": "keyword",
@@ -5514,6 +5579,8 @@
                                     "base-classes": [
                                         "nr_metadata.ui_schema.identifiers.NRSystemIdentifierUISchema"
                                     ],
+                                    "read": false,
+                                    "write": false,
                                     "class": "nr_documents.services.records.ui_schema.SystemIdentifiersItemUISchema"
                                 },
                                 "detail": "identifier"
@@ -5529,10 +5596,10 @@
                                 "base-classes": [
                                     "nr_metadata.schema.identifiers.NRSystemIdentifierSchema"
                                 ],
+                                "read": false,
+                                "write": false,
                                 "class": "nr_documents.services.records.schema.SystemIdentifiersItemSchema"
                             },
-                            "label.cs": "Systémový identifikátor",
-                            "label.en": "System identifier",
                             "properties": {
                                 "identifier": {
                                     "type": "keyword",
@@ -6051,33 +6118,15 @@
             },
             "syntheticFields": {
                 "type": "object",
+                "marshmallow": {
+                    "generate": true,
+                    "class": "nr_documents.services.records.schema.SyntheticFieldsSchema"
+                },
                 "ui": {
                     "marshmallow": {
-                        "imports": [
-                            {
-                                "import": "nr_metadata.documents.services.records.ui_schema",
-                                "alias": "nr_metadata.documents.services.records.ui_schema"
-                            }
-                        ],
-                        "base-classes": [
-                            "nr_metadata.documents.services.records.ui_schema.NRDocumentSyntheticFieldsUISchema"
-                        ],
                         "generate": true,
                         "class": "nr_documents.services.records.ui_schema.SyntheticFieldsUISchema"
                     }
-                },
-                "marshmallow": {
-                    "imports": [
-                        {
-                            "import": "nr_metadata.documents.services.records.schema",
-                            "alias": "nr_metadata.documents.services.records.schema"
-                        }
-                    ],
-                    "base-classes": [
-                        "nr_metadata.documents.services.records.schema.NRDocumentSyntheticFieldsSchema"
-                    ],
-                    "generate": true,
-                    "class": "nr_documents.services.records.schema.SyntheticFieldsSchema"
                 },
                 "properties": {
                     "institutions": {

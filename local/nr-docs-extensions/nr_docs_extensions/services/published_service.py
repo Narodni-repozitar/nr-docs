@@ -9,19 +9,14 @@ from oarepo_requests.components import PublishDraftComponent, OAICreateRequestsC
 from oarepo_requests.components.requests import PublishDraftComponentPrivate
 from functools import partial
 
-# todo: do this better, edit this on the lvel of published service config
-class NrDocumentsPublishedServiceConfig(NrDocumentsServiceConfig):
-    components = copy.deepcopy(NrDocumentsServiceConfig.components)
-def get_published_service():
-    config = NrDocumentsPublishedServiceConfig()
-    components = config.components
-    for idx, component in enumerate(components):
-        if isinstance(component, partial) and component.func == PublishDraftComponentPrivate:
-            components.remove(component)
-            break
+from oarepo_runtime.config.service import PermissionsPresetsConfigMixin
 
-    return PublishedService(
-        config=PublishedServiceConfig(
-            proxied_drafts_config=config
-        )
-    )
+
+# todo: do this better, edit this on the lvel of published service config
+class NrDocumentsPublishedServiceConfig(PublishedServiceConfig, PermissionsPresetsConfigMixin):
+    @property
+    def components(self):
+        return [
+            component for component in super().components
+            if not (isinstance(component, partial) and component.func == PublishDraftComponentPrivate)
+        ]

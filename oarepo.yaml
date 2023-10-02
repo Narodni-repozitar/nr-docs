@@ -4,26 +4,18 @@ config:
   packaging: single
   primary_site_name: nr-documents
   project_package: nr_documents
-  python: python3
+  python: python3.9
   sites:
   - nr-docs
 local:
+  https://github.com/oarepo/oarepo-ui.git:
+    branch: null
+    github_clone_url: null
+    local_dir: local/https://github.com/oarepo/oarepo-ui.git
   nr-docs-extensions:
     branch: null
     github_clone_url: null
     local_dir: local/nr-docs-extensions
-    sites:
-    - nr-docs
-  oarepo-oai-pmh-harvester:
-    branch: null
-    github_clone_url: https://github.com/oarepo/oarepo-oai-pmh-harvester.git
-    local_dir: local/oarepo-oai-pmh-harvester
-    sites:
-    - nr-docs
-  oarepo-published-service:
-    branch: setup
-    github_clone_url: git@github.com:oarepo/oarepo-published-service.git
-    local_dir: local/oarepo-published-service
     sites:
     - nr-docs
   oarepo-ui:
@@ -62,7 +54,7 @@ models:
     - nr-docs
     update_opensearch: run
     use_custom_fields: 'yes'
-    use_drafts: 'yes'
+    use_drafts: 'no'
     use_expandable_fields: 'no'
     use_files: 'no'
     use_relations: 'yes'

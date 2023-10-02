@@ -6,19 +6,19 @@ frozendict==2.3.8
 jinja2-simple-tags==0.5.0
 jinjax==0.25
 langcodes==3.3.0
-Levenshtein==0.21.1
-nr-metadata==1.0.41
+Levenshtein==0.22.0
+nr-metadata==2.0.0
 nr-oaipmh-harvesters==1.0.1
 nr-vocabularies==2.0.5
 oarepo-oai-pmh-harvester==4.0.26
 oarepo-published-service==1.0.1
-oarepo-runtime==1.4.5
-oarepo-ui==5.0.60
-oarepo-vocabularies==2.0.29
-oarepo-requests ==1.0.2
+oarepo-requests==1.0.2
+oarepo-runtime==1.4.8
+oarepo-ui==5.0.64
+oarepo-vocabularies==2.0.37
 openpyxl==3.1.2
 python-dotenv==1.0.0
-rapidfuzz==3.3.0
+rapidfuzz==3.3.1
 sickle==0.7.0
 tqdm==4.66.1
 whitenoise==6.5.0

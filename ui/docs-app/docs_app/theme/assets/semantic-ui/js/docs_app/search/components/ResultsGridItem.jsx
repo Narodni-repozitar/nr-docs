@@ -1,5 +1,8 @@
 import PropTypes from "prop-types";
 import { withState } from "react-searchkit";
+import { Card } from "semantic-ui-react";
+import _get from 'lodash/get'
+import _truncate from 'lodash/truncate'
 
 // TODO: Update this according to the full List item template?
 export const ResultsGridItem = ({ result }) => {

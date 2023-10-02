@@ -156,7 +156,7 @@ class NrDocumentsDraft(InvenioDraft):
         delete=False,
     )
 
-    dumper_extensions = []
+    dumper_extensions = [MultilingualSearchDumper()]
     dumper = NrDocumentsDraftDumper(extensions=dumper_extensions)
 
     relations = RelationsField(

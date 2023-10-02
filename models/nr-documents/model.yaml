@@ -10,13 +10,14 @@ record:
   extend: nr-documents#DocumentModel
   permissions:
     presets:
-    - read_only
+    - authenticated
   pid:
     type: dcmnts
   properties:
     metadata:
-      properties:
-        use: ./metadata.yaml
+      properties: {}
+  resource-config:
+    base-html-url: /docs/
   draft: {}
   use:
   - invenio

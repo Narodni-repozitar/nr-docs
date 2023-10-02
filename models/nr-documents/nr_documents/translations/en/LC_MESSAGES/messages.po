@@ -2,8 +2,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
-"POT-Creation-Date: 2023-09-12T09:58:21.868814\n"
-"PO-Revision-Date: 2023-09-12T09:58:21.868816\n"
+"POT-Creation-Date: 2023-09-27T10:20:15.412014\n"
+"PO-Revision-Date: 2023-09-27T10:20:15.412017\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -590,10 +590,10 @@ msgstr ""
 msgid "metadata/events/eventDate.hint"
 msgstr ""
 
-msgid "metadata/events/eventLocation.label"
-msgstr "Location"
-
 msgid "metadata/events/eventLocation.help"
+msgstr ""
+
+msgid "metadata/events/eventLocation.label"
 msgstr ""
 
 msgid "metadata/events/eventLocation.hint"
@@ -662,10 +662,10 @@ msgstr ""
 msgid "metadata/events/eventNameOriginal.hint"
 msgstr ""
 
-msgid "metadata/externalLocation.label"
-msgstr "External location"
-
 msgid "metadata/externalLocation.help"
+msgstr ""
+
+msgid "metadata/externalLocation.label"
 msgstr ""
 
 msgid "metadata/externalLocation.hint"
@@ -1294,7 +1294,7 @@ msgid "metadata/relatedItems/itemPIDs.help"
 msgstr ""
 
 msgid "metadata/relatedItems/itemPIDs.label"
-msgstr "Object identifier"
+msgstr ""
 
 msgid "metadata/relatedItems/itemPIDs.hint"
 msgstr ""
