@@ -78,15 +78,14 @@ const makeIdEntry = (identifier) => {
  */
 const serializeCreatibutor = (submittedCreatibutor, isCreator, isPerson) => {
   const fullName = `${submittedCreatibutor.family_name}, ${submittedCreatibutor.given_name}`;
-  const affiliations = _get(submittedCreatibutor, "affiliations", []).map(
-    (aff) => ({ id: aff })
-  );
+  const affiliations = _get(submittedCreatibutor, "affiliations", [])
   const role = _get(submittedCreatibutor, "role");
+  const {given_name, family_name, ...cleanedCreatibutor} = submittedCreatibutor
   return {
-    ...submittedCreatibutor,
+    ...cleanedCreatibutor,
     affiliations,
     ...(isPerson && { fullName }),
-    ...(!isCreator && role && { role: { id: role } }),
+    ...(!isCreator && role && { role }),
   };
 };
 
@@ -103,6 +102,7 @@ const deserializeCreatibutor = (initialCreatibutor, isCreator) => {
   )
     .trim()
     .split(",", 1);
+
   const result = {
     // default type to personal
     nameType: CREATIBUTOR_TYPE.PERSON,
@@ -110,9 +110,9 @@ const deserializeCreatibutor = (initialCreatibutor, isCreator) => {
     given_name,
     ...initialCreatibutor,
     authorityIdentifiers: _get(initialCreatibutor, identifiersFieldPath, []),
-    affiliations: _get(initialCreatibutor, "affiliations", [{ id: "" }]).id,
+    affiliations: _get(initialCreatibutor, "affiliations", []),
     ...(!isCreator && {
-      role: _get(initialCreatibutor, "role", { id: "" }).id,
+      role: _get(initialCreatibutor, "role"),
     }),
   };
   return result;
@@ -527,7 +527,6 @@ export const CreatibutorsModal = ({
     </Formik>
   );
 };
-
 
 CreatibutorsModal.defaultProps = {
   initialCreatibutor: {

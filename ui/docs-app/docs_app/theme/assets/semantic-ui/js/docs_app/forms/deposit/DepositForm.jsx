@@ -11,7 +11,7 @@ import { Container, Grid, Ref, Sticky, Card } from "semantic-ui-react";
 import { NRDocumentValidationSchema } from "./NRDocumentValidationSchema";
 import {
   DateField,
-  // LocalVocabularySelectField, TODO: use after BE-59 gets fixed
+  LocalVocabularySelectField, // TODO: use where applicable after BE-59 gets fixed
   StringArrayField,
   AdditionalTitlesField,
   GeoLocationsField,
@@ -268,8 +268,7 @@ export const DepositForm = () => {
                     id="NrDocs.Deposit.LanguagesField.container"
                     fieldPath="metadata.languages"
                   >
-                    {/* <LocalVocabularySelectField */}
-                    <VocabularySelectField
+                    <LocalVocabularySelectField
                       type='languages'
                       fieldPath="metadata.languages"
                       multiple={true}
