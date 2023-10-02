@@ -37,8 +37,6 @@ class NrDocumentsServiceConfig(
         *InvenioRecordDraftsServiceConfig.components,
         PublishDraftComponent("publish_draft", "delete_record"),
         DataComponent,
-        *PermissionsPresetsConfigMixin.components,
-        *InvenioRecordDraftsServiceConfig.components,
     ]
 
     model = "nr_documents"
@@ -61,7 +59,7 @@ class NrDocumentsServiceConfig(
             "self_html": ConditionalLink(
                 cond=is_record,
                 if_=RecordLink("{+ui}/docs/{id}"),
-                else_=RecordLink("{+ui}/uploads/{id}"),
+                else_=RecordLink("{+ui}/docs/{id}/edit"),
             ),
             "versions": RecordLink("{+api}/nr-documents/{id}/versions"),
         }

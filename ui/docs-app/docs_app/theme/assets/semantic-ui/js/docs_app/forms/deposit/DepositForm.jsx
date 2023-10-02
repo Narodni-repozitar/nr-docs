@@ -11,7 +11,7 @@ import { Container, Grid, Ref, Sticky, Card } from "semantic-ui-react";
 import { NRDocumentValidationSchema } from "./NRDocumentValidationSchema";
 import {
   DateField,
-  LocalVocabularySelectField, // TODO: use where applicable after BE-59 gets fixed
+  LocalVocabularySelectField,
   StringArrayField,
   AdditionalTitlesField,
   GeoLocationsField,
@@ -131,9 +131,7 @@ export const DepositForm = () => {
                     id="NrDocs.Deposit.AccessRightsField.container"
                     fieldPath="metadata.accessRights"
                   >
-                    {/* <LocalVocabularySelectField */}
-                    <VocabularySelectField
-                      type="access-rights"
+                    <LocalVocabularySelectField
                       //TODO: shouldn't access rights be required?
                       fieldPath="metadata.accessRights"
                       required
@@ -146,7 +144,7 @@ export const DepositForm = () => {
                         />
                       }
                       placeholder={i18next.t("Select access rights")}
-                      optionsListName="accessRights"
+                      optionsListName="access-rights"
                     />
                   </Overridable>
 
@@ -154,9 +152,7 @@ export const DepositForm = () => {
                     id="NrDocs.Deposit.ResourceTypeField.container"
                     fieldPath="metadata.resourceType"
                   >
-                    {/* <LocalVocabularySelectField */}
-                    <VocabularySelectField
-                      type='resource-types'
+                    <LocalVocabularySelectField
                       fieldPath="metadata.resourceType"
                       required
                       clearable
@@ -168,7 +164,7 @@ export const DepositForm = () => {
                         />
                       }
                       placeholder={i18next.t("Select resource type")}
-                      optionsListName="resourceTypes"
+                      optionsListName="resource-types"
                     />
                   </Overridable>
 
@@ -269,7 +265,6 @@ export const DepositForm = () => {
                     fieldPath="metadata.languages"
                   >
                     <LocalVocabularySelectField
-                      type='languages'
                       fieldPath="metadata.languages"
                       multiple={true}
                       required
@@ -289,9 +284,7 @@ export const DepositForm = () => {
                     id="NrDocs.Deposit.LicenseField.container"
                     fieldPath="metadata.rights"
                   >
-                    {/* <LocalVocabularySelectField */}
-                    <VocabularySelectField
-                      type='licenses'
+                    <LocalVocabularySelectField
                       fieldPath="metadata.rights"
                       multiple={true}
                       label={
@@ -337,9 +330,7 @@ export const DepositForm = () => {
                     id="NrDocs.Deposit.SubjectCategoriesField.container"
                     fieldPath="metadata.subjectCategories"
                   >
-                    {/* <LocalVocabularySelectField */}
-                    <VocabularySelectField
-                      type='subject-categories'
+                    <LocalVocabularySelectField
                       fieldPath="metadata.subjectCategories"
                       multiple={true}
                       label={
@@ -351,7 +342,7 @@ export const DepositForm = () => {
                       }
                       placeholder={i18next.t("Choose subject categories")}
                       clearable
-                      optionsListName="subjectCategories"
+                      optionsListName="subject-categories"
                       helpText={i18next.t(
                         "Select the subject field(s) to which the resource belongs."
                       )}

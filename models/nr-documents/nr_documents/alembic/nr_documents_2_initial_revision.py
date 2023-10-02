@@ -82,7 +82,6 @@ def upgrade():
     sa.ForeignKeyConstraint(['parent_id'], ['nr_documents_parent_record_metadata.id'], name=op.f('fk_nr_documents_parent_state_parent_id_nr_documents_parent_record_metadata'), ondelete='CASCADE'),
     sa.PrimaryKeyConstraint('parent_id', name=op.f('pk_nr_documents_parent_state'))
     )
-    op.drop_index('ix_uq_partial_files_object_is_head', table_name='files_object')
     op.alter_column('oaibatch_metadata_version', 'created',
                existing_type=postgresql.TIMESTAMP(),
                nullable=True,
