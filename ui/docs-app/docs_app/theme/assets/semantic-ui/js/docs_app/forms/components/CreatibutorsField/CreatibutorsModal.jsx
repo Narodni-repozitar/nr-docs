@@ -8,7 +8,6 @@
 // under the terms of the MIT License; see LICENSE file for more details.
 
 import React, { createRef } from "react";
-import PropTypes from "prop-types";
 import { Button, Form, Grid, Header, Modal } from "semantic-ui-react";
 import { Formik } from "formik";
 import {
@@ -21,6 +20,7 @@ import * as Yup from "yup";
 import _get from "lodash/get";
 import _isEmpty from "lodash/isEmpty";
 import { CreatibutorsIdentifiers } from "./CreatibutorsIdentifiers";
+import { LocalVocabularySelectField } from "../LocalVocabularySelectField";
 import { CREATIBUTOR_TYPE } from "./type";
 import { i18next } from "@translations/docs_app/i18next";
 import { Trans } from "react-i18next";
@@ -78,9 +78,10 @@ const makeIdEntry = (identifier) => {
  */
 const serializeCreatibutor = (submittedCreatibutor, isCreator, isPerson) => {
   const fullName = `${submittedCreatibutor.family_name}, ${submittedCreatibutor.given_name}`;
-  const affiliations = _get(submittedCreatibutor, "affiliations", [])
+  const affiliations = _get(submittedCreatibutor, "affiliations", []);
   const role = _get(submittedCreatibutor, "role");
-  const {given_name, family_name, ...cleanedCreatibutor} = submittedCreatibutor
+  const { given_name, family_name, ...cleanedCreatibutor } =
+    submittedCreatibutor;
   return {
     ...cleanedCreatibutor,
     affiliations,
@@ -101,7 +102,7 @@ const deserializeCreatibutor = (initialCreatibutor, isCreator) => {
     ""
   )
     .trim()
-    .split(",", 1);
+    .split(",", 2);
 
   const result = {
     // default type to personal
@@ -110,7 +111,7 @@ const deserializeCreatibutor = (initialCreatibutor, isCreator) => {
     given_name,
     ...initialCreatibutor,
     authorityIdentifiers: _get(initialCreatibutor, identifiersFieldPath, []),
-    affiliations: _get(initialCreatibutor, "affiliations", []),
+    affiliations: _get(initialCreatibutor, "affiliations", []).map(aff => ({ ...aff, text: aff.title.cs, value: aff.id })),
     ...(!isCreator && {
       role: _get(initialCreatibutor, "role"),
     }),
@@ -215,7 +216,7 @@ export const CreatibutorsModal = ({
       }
     }),
     fullName: Yup.string(),
-    role: Yup.string().when("_", (_, schema) => {
+    role: Yup.object().when("_", (_, schema) => {
       if (!isCreator) {
         return schema.required(i18next.t("Role is a required field."));
       }
@@ -461,19 +462,19 @@ export const CreatibutorsModal = ({
                   _get(values, typeFieldPath) === CREATIBUTOR_TYPE.PERSON)) && (
                 <div>
                   <VocabularySelectField
-                    label={i18next.t("Affiliations")}
                     type="institutions"
+                    label={i18next.t("Affiliations")}
                     fieldPath={affiliationsFieldPath}
                     placeholder={i18next.t("Select one or more affiliations")}
                     multiple
                   />
-                  {/* TODO: this should be LocalVocabularySelectField */}
                   {!isCreator && (
-                    <VocabularySelectField
-                      type="contributor-roles"
+                    <LocalVocabularySelectField
                       fieldPath={roleFieldPath}
                       label={i18next.t("Role")}
                       placeholder={i18next.t("Select role")}
+                      clearable
+                      optionsListName="contributor-roles"
                     />
                   )}
                 </div>

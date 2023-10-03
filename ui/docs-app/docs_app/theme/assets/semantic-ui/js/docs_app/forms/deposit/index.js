@@ -1,4 +1,4 @@
-import { createFormAppInit } from "@js/oarepo_ui/forms";
+import { createFormAppInit } from "@js/oarepo_ui";
 import { DepositForm } from "./DepositForm"
 
 export const overriddenComponents = {
