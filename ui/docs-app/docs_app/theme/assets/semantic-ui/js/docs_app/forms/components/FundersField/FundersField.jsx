@@ -40,6 +40,7 @@ export const FundersField = ({ fieldPath, helpText }) => {
               fieldPath={`${fieldPathPrefix}.funder`}
               label={i18next.t("Funder")}
               optionsListName="funders"
+              clearable
             />
           </ArrayFieldItem>
         );

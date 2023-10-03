@@ -85,8 +85,7 @@ export const NRDocumentValidationSchema = Yup.object().shape({
       edtfRegEx,
       i18next.t("Invalid date format")
     ),
-    // creators: "",
-    // contributors:"",
+    creators: Yup.array().required(requiredMessage),
     languages: Yup.array().required(requiredMessage),
     publishers: Yup.array()
       .of(Yup.string().required(requiredMessage))
