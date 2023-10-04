@@ -4,11 +4,11 @@ deepmerge==1.1.0
 et-xmlfile==1.1.0
 frozendict==2.3.8
 jinja2-simple-tags==0.5.0
-jinjax==0.25
+jinjax==0.26
 langcodes==3.3.0
 Levenshtein==0.22.0
-nr-metadata==2.0.0
-nr-oaipmh-harvesters==1.0.1
+nr-metadata==2.0.1
+nr-oaipmh-harvesters==1.0.2
 nr-vocabularies==2.0.5
 oarepo-oai-pmh-harvester==4.0.26
 oarepo-published-service==1.0.1
