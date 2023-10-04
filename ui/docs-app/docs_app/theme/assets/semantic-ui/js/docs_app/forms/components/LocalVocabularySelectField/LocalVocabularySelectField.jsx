@@ -1,6 +1,10 @@
 import React from "react";
 import { SelectField } from "react-invenio-forms";
-import { useFormConfig } from "@js/oarepo_ui/forms";
+import { useFormConfig } from "@js/oarepo_ui";
+import {
+  serializeVocabularyItem,
+  deserializeVocabularyItem,
+} from "@js/oarepo_vocabularies";
 import { useFormikContext, getIn } from "formik";
 import PropTypes from "prop-types";
 
@@ -41,25 +45,13 @@ export const LocalVocabularySelectField = ({
         fieldPath={fieldPath}
         multiple={multiple}
         options={optionsList}
-        onChange={
-          multiple
-            ? ({ e, data, formikProps }) => {
-                formikProps.form.setFieldValue(
-                  fieldPath,
-                  data.value.map((vocabItem) => ({ id: vocabItem }))
-                );
-              }
-            : ({ e, data, formikProps }) => {
-                formikProps.form.setFieldValue(fieldPath, { id: data.value });
-              }
-        }
-        value={
-          multiple
-            ? getIn(values, fieldPath, []).map((vocabItem) => vocabItem.id)
-            : getIn(values, fieldPath)?.id
-            ? getIn(values, fieldPath)?.id
-            : ""
-        }
+        onChange={({ e, data, formikProps }) => {
+          formikProps.form.setFieldValue(
+            fieldPath,
+            serializeVocabularyItem(data.value)
+          );
+        }}
+        value={deserializeVocabularyItem(getIn(values, fieldPath, multiple ? [] : {}))}
         {...uiProps}
       />
       <label style={{ fontWeight: "bold" }}>{helpText}</label>

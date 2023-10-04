@@ -17,26 +17,12 @@ import { DndProvider } from "react-dnd";
 
 import { CreatibutorsModal } from "./CreatibutorsModal";
 import { CreatibutorsFieldItem } from "./CreatibutorsFieldItem";
-import { CREATIBUTOR_TYPE } from "./type";
 import { i18next } from "@translations/docs_app/i18next";
 
 const creatibutorNameDisplay = (value) => {
-  const creatibutorType = _get(value, "nameType", CREATIBUTOR_TYPE.PERSON);
-  const isPerson = creatibutorType === CREATIBUTOR_TYPE.PERSON;
-
-  const familyName = _get(value, "family_name", "");
-  const givenName = _get(value, "given_name", "");
-  const affiliationName = _get(value, `affiliations[0].title.cs`, ""); // TODO: use I18NStr?
   const name = _get(value, `fullName`);
 
-  const affiliation = affiliationName ? ` (${affiliationName})` : "";
-
-  if (isPerson) {
-    const givenNameSuffix = givenName ? `, ${givenName}` : "";
-    return `${familyName}${givenNameSuffix}${affiliation}`;
-  }
-
-  return `${name}${affiliation}`;
+  return `${name}`;
 };
 
 class CreatibutorsFieldForm extends Component {
@@ -82,7 +68,6 @@ class CreatibutorsFieldForm extends Component {
                 creatibutorsError ?
                 creatibutorsError[index]?.authorityIdentifiers : [];
               const displayName = creatibutorNameDisplay(value);
-
               return (
                 <CreatibutorsFieldItem
                   key={key}
