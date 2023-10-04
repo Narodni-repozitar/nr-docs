@@ -20,7 +20,6 @@ import * as Yup from "yup";
 import _get from "lodash/get";
 import _isEmpty from "lodash/isEmpty";
 import { CreatibutorsIdentifiers } from "./CreatibutorsIdentifiers";
-import { LocalVocabularySelectField } from "../LocalVocabularySelectField";
 import { CREATIBUTOR_TYPE } from "./type";
 import { i18next } from "@translations/docs_app/i18next";
 import { Trans } from "react-i18next";
