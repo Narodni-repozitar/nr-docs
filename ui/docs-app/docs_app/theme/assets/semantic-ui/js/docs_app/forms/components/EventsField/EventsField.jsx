@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { ArrayField, TextField, GroupField } from "react-invenio-forms";
 import { i18next } from "@translations/docs_app/i18next";
-import { LocalVocabularySelectField } from "../LocalVocabularySelectField/LocalVocabularySelectField";
+import { LocalVocabularySelectField } from "@js/oarepo_vocabularies";
 import { StringArrayField } from "../StringArray/StringArrayField";
 import { DateField } from "../DateField/DateField";
 import { ArrayFieldItem } from "@js/oarepo_ui";

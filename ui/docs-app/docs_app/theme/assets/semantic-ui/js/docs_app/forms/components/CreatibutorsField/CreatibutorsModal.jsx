@@ -24,7 +24,10 @@ import { CreatibutorsIdentifiers } from "./CreatibutorsIdentifiers";
 import { CREATIBUTOR_TYPE } from "./type";
 import { i18next } from "@translations/docs_app/i18next";
 import { Trans } from "react-i18next";
-import { VocabularySelectField } from "@js/oarepo_vocabularies";
+import {
+  VocabularySelectField,
+  LocalVocabularySelectField,
+} from "@js/oarepo_vocabularies";
 
 const ModalActions = {
   ADD: "add",
@@ -469,11 +472,12 @@ export const CreatibutorsModal = ({
                   />
                   {/* TODO: this should be LocalVocabularySelectField */}
                   {!isCreator && (
-                    <VocabularySelectField
+                    <LocalVocabularySelectField
                       type="contributor-roles"
+                      placeholder={i18next.t("Select role")}
                       fieldPath={roleFieldPath}
                       label={i18next.t("Role")}
-                      placeholder={i18next.t("Select role")}
+                      optionsListName="contributor-roles"
                     />
                   )}
                 </div>
@@ -527,7 +531,6 @@ export const CreatibutorsModal = ({
     </Formik>
   );
 };
-
 
 CreatibutorsModal.defaultProps = {
   initialCreatibutor: {

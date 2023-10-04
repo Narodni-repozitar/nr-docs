@@ -6,12 +6,12 @@ import {
   FormikStateLogger,
   FormFeedback,
 } from "@js/oarepo_ui";
+import { LocalVocabularySelectField } from "@js/oarepo_vocabularies";
 import { AccordionField, FieldLabel, TextField } from "react-invenio-forms";
 import { Container, Grid, Ref, Sticky, Card } from "semantic-ui-react";
 import { NRDocumentValidationSchema } from "./NRDocumentValidationSchema";
 import {
   DateField,
-  LocalVocabularySelectField,
   StringArrayField,
   AdditionalTitlesField,
   GeoLocationsField,
@@ -208,7 +208,6 @@ export const DepositForm = () => {
                     fieldPath="metadata.accessRights"
                   >
                     <LocalVocabularySelectField
-                      //TODO: shouldn't access rights be required?
                       fieldPath="metadata.accessRights"
                       required
                       clearable
