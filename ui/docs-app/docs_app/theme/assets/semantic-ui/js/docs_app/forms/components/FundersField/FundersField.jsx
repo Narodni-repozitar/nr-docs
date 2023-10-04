@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { ArrayField, TextField } from "react-invenio-forms";
 import { i18next } from "@translations/docs_app/i18next";
-import { LocalVocabularySelectField } from "../LocalVocabularySelectField/LocalVocabularySelectField";
+import { LocalVocabularySelectField } from "@js/oarepo_vocabularies";
 import { ArrayFieldItem } from "@js/oarepo_ui";
 
 export const FundersField = ({ fieldPath, helpText }) => {
