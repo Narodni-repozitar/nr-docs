@@ -1,0 +1,19 @@
+{#def search_app_config #}
+{%- extends config.BASE_TEMPLATE %}
+
+{%- set search_config = search_app_config | to_dict %}
+{%- set title = _("Search results") ~ " | " ~ _("NR Document repository") %}
+
+{%- block javascript %}
+    {{ super() }}
+    {{ webpack['docs_app_components.css']}}
+    {{ webpack['docs_app_search.js'] }}
+{%- endblock %}
+
+{%- block page_body %}
+
+<div class="ui main container">
+ <div data-invenio-search-config='{{search_config}}'></div>
+</div>
+
+{%- endblock page_body %}

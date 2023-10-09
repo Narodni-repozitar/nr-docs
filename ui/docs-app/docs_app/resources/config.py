@@ -6,6 +6,7 @@ from oarepo_vocabularies.ui.resources.components import (
 
 
 class DocsAppResourceConfig(RecordsUIResourceConfig):
+
     template_folder = "../templates"
     url_prefix = "/docs/"
     blueprint_name = "docs-app"
@@ -28,7 +29,7 @@ class DocsAppResourceConfig(RecordsUIResourceConfig):
                 "record_sidebar": "Sidebar",
             },
         },
-        "search": {"layout": "docs_app/search.html"},
+        "search": {"layout": "docs_app/Search.html.jinja", "app_id": "DocsApp.Search" },
         "edit": {"layout": "docs_app/deposit.html"},
         "create": {"layout": "docs_app/deposit.html"},
     }
@@ -40,3 +41,4 @@ class DocsAppResourceConfig(RecordsUIResourceConfig):
             # TODO: replace with a more generic `item.filterable` attribute check
             if not k.startswith("metadata_abstract")
         ]
+

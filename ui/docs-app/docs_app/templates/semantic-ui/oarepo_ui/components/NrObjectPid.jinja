@@ -4,7 +4,7 @@
 
     <{{ 'a href={url} target="_blank"'.format(url=pid.url) if pid.url else 'span' }}  class="ui label green image">
         <i class="external alternate icon"></i>
-        {%- value "scheme" -%}
+        {{scheme}}
         <div class="detail">
             {{pid.identifier}}
 
