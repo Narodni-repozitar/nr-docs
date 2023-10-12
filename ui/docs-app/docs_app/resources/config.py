@@ -30,8 +30,8 @@ class DocsAppResourceConfig(RecordsUIResourceConfig):
             },
         },
         "search": {"layout": "docs_app/Search.html.jinja", "app_id": "DocsApp.Search" },
-        "edit": {"layout": "docs_app/deposit.html"},
-        "create": {"layout": "docs_app/deposit.html"},
+        "edit": {"layout": "docs_app/Deposit.html.jinja"},
+        "create": {"layout": "docs_app/Deposit.html.jinja"},
     }
 
     def search_active_facets(self, api_config, identity):
