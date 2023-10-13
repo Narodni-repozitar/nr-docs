@@ -7,11 +7,11 @@ export const ResultsItemLicense = ({ rights = [] }) => {
     badge: r.id === "3-BY-ND-CZ" ? "by-nd.png" : null,
   }));
   return licenseBadges.map(
-    ({ id, title, type, badge }) =>
+    ({ id, title, badge }) =>
       badge && (
         <Image
           as="a"
-          href={`/vocabularies/${type}/${id}`}
+          href={`/vocabularies/licenses/${id}`}
           key={id}
           centered
           fluid
