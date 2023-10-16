@@ -34,6 +34,7 @@
 
   .ui.form .invenio-accordion-field {
     label.helptext {
+      font-weight: normal;
       margin-top: 0.5rem;
     }
 
@@ -82,16 +83,25 @@
       display: block;
       border-radius: 0.5rem;
       padding: 1rem;
+
       .field {
-        margin-top: 0.3rem;
+        .field {
+          margin-top: 0rem;
+        }
+        margin-top: 2rem;
         margin-bottom: 1rem;
       }
       label.helptext {
-        padding: 1rem;
-        margin: 1rem;
+        margin-top: 0rem;
       }
       .invenio-group-field.fields {
         background-color: transparent;
+      }
+      // .field:first-child {
+      //   margin-top: 0 !important;
+      // }
+      .field:last-child {
+        margin-top: 0 !important;
       }
     }
     .highlighted {
