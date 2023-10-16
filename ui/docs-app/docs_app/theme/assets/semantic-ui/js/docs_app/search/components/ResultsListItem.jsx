@@ -111,8 +111,8 @@ const ItemExtraInfo = ({ createdDate, publishers }) => {
                 {i18next.t("Uploaded on")} <span>{createdDate}</span>
               </>
             )}
-            {createdDate && publishers && " | "}
-            {publishers && (
+            {createdDate && publishers.length > 0 && " | "}
+            {publishers.length > 0 && (
               <>
                 {i18next.t("Published in: ")}{" "}
                 <span>{_join(publishers, ", ")}</span>
