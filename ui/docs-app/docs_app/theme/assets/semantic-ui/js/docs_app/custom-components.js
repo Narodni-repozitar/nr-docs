@@ -12,7 +12,6 @@ import "./sample-component.js"
 */
 
 // This file will import the css templates for your custom components
-import $ from "jquery";
 import { MultipleOptionsSearchBar } from "@js/invenio_search_ui/components";
 import { i18next } from "@translations/invenio_app_rdm/i18next";
 import ReactDOM from "react-dom";
@@ -21,44 +20,44 @@ import React from "react";
 import "../../less/docs_app/custom-components.less";
 
 /* Expand and collapse navbar  */
-const toggleIcon = $("#invenio-burger-menu-icon");
-const menu = $("#invenio-nav");
-
-toggleIcon.on("click", function () {
-  menu.toggleClass("active");
+const toggleIcon = document.querySelector("#invenio-burger-menu-icon");
+const menu = document.querySelector("#invenio-nav");
+toggleIcon.addEventListener("click", function () {
+  menu.classList.toggle("active");
 });
 
-/* Burger menu */
-const $burgerIcon = $("#invenio-burger-menu-icon");
-const $closeBurgerIcon = $("#invenio-close-burger-menu-icon");
+// Burger menu
+const burgerIcon = document.querySelector("#invenio-burger-menu-icon");
+const closeBurgerIcon = document.querySelector(
+  "#invenio-close-burger-menu-icon"
+);
 
 const handleBurgerClick = () => {
-  $burgerIcon.attr("aria-expanded", true);
-  $("#invenio-nav").addClass("active");
-  $closeBurgerIcon.trigger("focus");
-  $burgerIcon.css("display", "none");
+  burgerIcon.setAttribute("aria-expanded", "true");
+  document.querySelector("#invenio-nav").classList.add("active");
+  closeBurgerIcon.focus();
+  burgerIcon.style.display = "none";
 };
 
 const handleBurgerCloseClick = () => {
-  $burgerIcon.css("display", "block");
-  $burgerIcon.attr("aria-expanded", false);
-  $("#invenio-nav").removeClass("active");
-  $burgerIcon.trigger("focus");
+  burgerIcon.style.display = "block";
+  burgerIcon.setAttribute("aria-expanded", "false");
+  document.querySelector("#invenio-nav").classList.remove("active");
+  burgerIcon.focus();
 };
 
-$burgerIcon.on({ click: handleBurgerClick });
-$closeBurgerIcon.on({ click: handleBurgerCloseClick });
+burgerIcon.addEventListener("click", handleBurgerClick);
+closeBurgerIcon.addEventListener("click", handleBurgerCloseClick);
 
-const $invenioMenu = $("#invenio-menu");
+const invenioMenu = document.querySelector("#invenio-menu");
 
-$invenioMenu.on("keydown", (event) => {
+invenioMenu.addEventListener("keydown", (event) => {
   if (event.key === "Escape") {
     handleBurgerCloseClick();
   }
 });
 
 const headerSearchbar = document.getElementById("header-search-bar");
-
 if (headerSearchbar) {
   const searchBarOptions = JSON.parse(headerSearchbar.dataset.options);
 
