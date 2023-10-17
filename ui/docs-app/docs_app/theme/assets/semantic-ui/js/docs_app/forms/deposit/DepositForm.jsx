@@ -69,7 +69,12 @@ export const DepositForm = () => {
       >
         <Grid>
           <Ref innerRef={formFeedbackRef}>
-            <Grid.Column mobile={16} tablet={16} computer={11}>
+            <Grid.Column
+              id="main-content"
+              mobile={16}
+              tablet={16}
+              computer={11}
+            >
               <Sticky context={formFeedbackRef} offset={20}>
                 <Overridable id="NrDocs.Deposit.FormFeedback.container">
                   <FormFeedback />
@@ -473,7 +478,12 @@ export const DepositForm = () => {
           </Ref>
 
           <Ref innerRef={sidebarRef}>
-            <Grid.Column mobile={16} tablet={16} computer={5}>
+            <Grid.Column
+              id="control-panel"
+              mobile={16}
+              tablet={16}
+              computer={5}
+            >
               <Sticky context={sidebarRef} offset={20}>
                 <Overridable id="NrDocs.Deposit.ControlPanel.container">
                   <Card fluid>
