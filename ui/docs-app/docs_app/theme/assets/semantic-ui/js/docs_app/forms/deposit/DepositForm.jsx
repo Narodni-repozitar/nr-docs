@@ -495,7 +495,7 @@ export const DepositForm = () => {
                         <Grid.Column
                           computer={8}
                           mobile={16}
-                          className="pb-0 left-btn-col"
+                          className="left-btn-col"
                         >
                           <SaveButton fluid />
                         </Grid.Column>
@@ -503,7 +503,7 @@ export const DepositForm = () => {
                         <Grid.Column
                           computer={8}
                           mobile={16}
-                          className="pb-0 right-btn-col"
+                          className="right-btn-col"
                         >
                           <PreviewButton fluid />
                         </Grid.Column>
@@ -512,7 +512,7 @@ export const DepositForm = () => {
                           <PublishButtonComponent />
                         </Grid.Column>
                         <Grid.Column width={16} className="pt-10">
-                          <ValidateButton fluid />
+                          <ValidateButton />
                         </Grid.Column>
                         <Grid.Column width={16} className="pt-10">
                           <DeleteButtonComponent redirectUrl="/docs/" />

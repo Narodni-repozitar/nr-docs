@@ -123,7 +123,7 @@
       background-color: #eee8a9;
     }
     .ui.icon.left.labeled.button:hover {
-      background-color: red;
+      background-color: #e5db70;
     }
   }
 }
