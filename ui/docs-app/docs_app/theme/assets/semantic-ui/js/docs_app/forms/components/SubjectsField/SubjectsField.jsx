@@ -34,7 +34,6 @@ export const SubjectsField = ({ fieldPath, helpText }) => {
             />
             <Form.Field style={{ marginTop: 0 }} width={12}>
               <MultilingualTextInput
-                hasHighlighting
                 fieldPath={`${fieldPathPrefix}.subject`}
                 label=""
                 lngFieldWidth={5}

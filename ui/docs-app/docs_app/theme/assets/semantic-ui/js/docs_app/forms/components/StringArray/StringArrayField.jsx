@@ -43,6 +43,7 @@ export const StringArrayField = ({
                 </ArrayFieldItem>
               );
             })}
+            <label className="helptext">{helpText}</label>
             <Form.Button
               type="button"
               icon
@@ -54,7 +55,6 @@ export const StringArrayField = ({
               <Icon name="add" />
               {addButtonLabel}
             </Form.Button>
-            <label className="helptext">{helpText}</label>
           </React.Fragment>
         )}
       />

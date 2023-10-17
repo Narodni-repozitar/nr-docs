@@ -191,7 +191,6 @@ export const DepositForm = () => {
                     fieldPath="metadata.abstract"
                   >
                     <MultilingualTextInput
-                      hasHighlighting
                       labelIcon="pencil"
                       label={i18next.t("Abstract")}
                       textFieldLabel={i18next.t("Description")}
@@ -316,7 +315,6 @@ export const DepositForm = () => {
                     fieldPath="metadata.methods"
                   >
                     <MultilingualTextInput
-                      hasHighlighting
                       labelIcon="pencil"
                       label={i18next.t("Methods")}
                       fieldPath="metadata.methods"
@@ -330,7 +328,6 @@ export const DepositForm = () => {
                     fieldPath="metadata.technicalInfo"
                   >
                     <MultilingualTextInput
-                      hasHighlighting
                       textFieldLabel={i18next.t("Description")}
                       labelIcon="pencil"
                       label={i18next.t("Technical info")}
@@ -393,7 +390,6 @@ export const DepositForm = () => {
                   >
                     {/* TODO: not clear how this input is going to work i.e. our access is within metadata */}
                     <MultilingualTextInput
-                      hasHighlighting
                       className="invenio-group-field accessibility"
                       labelIcon="pencil"
                       label={i18next.t("Accessibility")}

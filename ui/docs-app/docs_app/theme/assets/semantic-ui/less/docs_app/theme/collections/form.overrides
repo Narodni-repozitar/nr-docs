@@ -35,7 +35,6 @@
   .ui.form .invenio-accordion-field {
     label.helptext {
       font-weight: normal;
-      margin-top: 0.5rem;
     }
 
     .invenio-group-field.fields {
@@ -88,21 +87,25 @@
         .field {
           margin-top: 0rem;
         }
-        margin-top: 2rem;
+        margin-top: 2.25rem;
         margin-bottom: 1rem;
       }
-      label.helptext {
-        margin-top: 0rem;
-      }
+
       .invenio-group-field.fields {
         background-color: transparent;
       }
-      // .field:first-child {
-      //   margin-top: 0 !important;
-      // }
       .field:last-child {
         margin-top: 0 !important;
       }
+    }
+
+    .events.invenio-group-field.fields > .field:first-child {
+      margin-top: 0;
+    }
+
+    .events.invenio-group-field.fields > .helptext {
+      display: block;
+      margin-left: 0.5rem;
     }
     .highlighted {
       background-color: @highlightedfieldcolor !important;
@@ -112,6 +115,6 @@
     }
   }
   .ui.container > .field {
-    margin-top: 1.75rem;
+    margin-top: 2rem;
   }
 }
