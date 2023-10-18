@@ -202,9 +202,7 @@ export const DepositForm = () => {
                       fieldPath="metadata.abstract"
                       rich={true}
                       required
-                      helpText={i18next.t(
-                        "Detailed description of the methodology and technical information should be specified in the 'Resource Description' section"
-                      )}
+                      helpText={i18next.t("Detailed description")}
                     />
                   </Overridable>
                   <Overridable
@@ -243,9 +241,7 @@ export const DepositForm = () => {
                       placeholder={i18next.t("Choose licenses")}
                       clearable
                       optionsListName="licenses"
-                      helpText={i18next.t(
-                        "If a Creative Commons license is associated with the resource, select the appropriate license option from the menu. We recommend choosing the latest versions, namely 3.0 Czech and 4.0 International."
-                      )}
+                      helpText={i18next.t("Creative Commons license")}
                     />
                   </Overridable>
                   <Overridable
