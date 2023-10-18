@@ -8,7 +8,7 @@ export const ResultsItemAccessStatus = ({ status }) => {
     iconFile && (
       <Image
         as="a"
-        href={`/vocabularies/${type}/${id}`}
+        href={`/vocabularies/access-rights/${id}`}
         centered
         fluid
         title={title}

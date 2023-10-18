@@ -11,7 +11,7 @@ export const ResultsItemLicense = ({ rights = [] }) => {
       badge && (
         <Image
           as="a"
-          href={`/vocabularies/${type}/${id}`}
+          href={`/vocabularies/licenses/${id}`}
           key={id}
           centered
           fluid
