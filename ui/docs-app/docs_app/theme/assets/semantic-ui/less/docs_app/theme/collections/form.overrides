@@ -15,7 +15,9 @@
     content: "*";
     color: @red;
   }
-
+  label.field-label-class.invenio-field-label {
+    font-size: 16px;
+  }
   .ck-editor__editable {
     min-height: 8.5em;
   }
@@ -35,7 +37,7 @@
   .ui.form .invenio-accordion-field {
     label.helptext {
       font-weight: normal;
-      font-size: 13px;
+      font-size: 12px;
     }
 
     .invenio-group-field.fields {
