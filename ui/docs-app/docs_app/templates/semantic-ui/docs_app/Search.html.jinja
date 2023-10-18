@@ -1,7 +1,6 @@
 {#def search_app_config #}
 {%- extends config.BASE_TEMPLATE %}
 
-{%- set search_config = search_app_config | to_dict %}
 {%- set title = _("Search results") ~ " | " ~ _("NR Document repository") %}
 
 {%- block javascript %}
@@ -13,7 +12,7 @@
 {%- block page_body %}
 
 <div class="ui main container">
- <div data-invenio-search-config='{{search_config}}'></div>
+ <div data-invenio-search-config='{{search_app_config | tojson}}'></div>
 </div>
 
 {%- endblock page_body %}
