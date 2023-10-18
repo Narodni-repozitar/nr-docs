@@ -514,6 +514,7 @@ export const DepositForm = () => {
                         <Grid.Column width={16} className="pt-10">
                           <ValidateButton />
                         </Grid.Column>
+                        {/* TODO:see if there is a better way to provide URL here, seems that UI links are empty in the form */}
                         <Grid.Column width={16} className="pt-10">
                           <DeleteButtonComponent redirectUrl="/docs/" />
                         </Grid.Column>
