@@ -35,8 +35,8 @@ export const SubjectsField = ({ fieldPath, helpText }) => {
             <Form.Field style={{ marginTop: 0 }} width={12}>
               <MultilingualTextInput
                 fieldPath={`${fieldPathPrefix}.subject`}
-                label=""
                 lngFieldWidth={5}
+                textFieldLabel={i18next.t("Subject")}
               />
             </Form.Field>
           </ArrayFieldItem>

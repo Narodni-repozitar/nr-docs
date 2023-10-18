@@ -19,19 +19,19 @@ export const GeoLocationsField = ({ fieldPath, helpText }) => {
         return (
           <ArrayFieldItem indexPath={indexPath} arrayHelpers={arrayHelpers}>
             <TextField
-              width={10}
+              width={8}
               fieldPath={`${fieldPathPrefix}.geoLocationPlace`}
               label={i18next.t("Location")}
               required
             />
             <TextField
-              width={3}
+              width={4}
               fieldPath={`${fieldPathPrefix}.geoLocationPoint.pointLongitude`}
               label={i18next.t("Longitude")}
               required
             />
             <TextField
-              width={3}
+              width={4}
               fieldPath={`${fieldPathPrefix}.geoLocationPoint.pointLatitude`}
               label={i18next.t("Latitude")}
               required

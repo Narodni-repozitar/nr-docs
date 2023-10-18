@@ -391,7 +391,7 @@ export const DepositForm = () => {
                   >
                     {/* TODO: not clear how this input is going to work i.e. our access is within metadata */}
                     <MultilingualTextInput
-                      className="invenio-group-field accessibility"
+                      className="accessibility"
                       labelIcon="pencil"
                       label={i18next.t("Accessibility")}
                       textFieldLabel={i18next.t("Description")}

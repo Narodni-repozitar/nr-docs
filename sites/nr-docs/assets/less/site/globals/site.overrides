@@ -30,6 +30,10 @@
  * Global-wide CSS
  */
 
+:root {
+  font-size: @fontSize;
+}
+
 body {
   font-family: Roboto;
 
