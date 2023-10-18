@@ -18,6 +18,12 @@ record:
       properties: {}
   resource-config:
     base-html-url: /docs/
+  search-options:
+    base-classes:
+      - InvenioSearchOptions
+    imports:
+      - import: oarepo_runtime.services.search.SearchOptions
+        alias: InvenioSearchOptions
   draft: {}
   use:
   - invenio
