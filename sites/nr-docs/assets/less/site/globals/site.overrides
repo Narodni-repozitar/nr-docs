@@ -160,3 +160,14 @@ body {
 .cover-page.masthead {
   height: 80vh !important;
 }
+
+.ui.modal {
+  .modal-identifiers-field {
+    .ui.icon.left.labeled.button {
+      background-color: #eee8a9;
+    }
+    .ui.icon.left.labeled.button:hover {
+      background-color: #e5db70;
+    }
+  }
+}

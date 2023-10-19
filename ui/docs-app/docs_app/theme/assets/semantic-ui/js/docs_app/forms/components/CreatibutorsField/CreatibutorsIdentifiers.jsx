@@ -12,20 +12,19 @@ import { i18next } from "@translations/docs_app/i18next";
 import { IdentifiersField } from "../IdentifiersField";
 
 const authorityIdentifiersSchema = [
-  { "value": "orcid", "text": "ORCID" },
-  { "value": "scopusID", "text": "ScopusID" },
-  { "value": "researcherID", "text": "ResearcherID" },
-  { "value": "czenasAutID", "text": "CzenasAutID" },
-  { "value": "vedidk", "text": "vedIDK" },
-  { "value": "institutionalID", "text": "InstitutionalID" },
-  { "value": "ISNI", "text": "ISNI" },
-  { "value": "ROR", "text": "ROR" },
-  { "value": "ICO", "text": "ICO" },
-  { "value": "DOI", "text": "DOI" }
-]
+  { value: "orcid", text: "ORCID" },
+  { value: "scopusID", text: "ScopusID" },
+  { value: "researcherID", text: "ResearcherID" },
+  { value: "czenasAutID", text: "CzenasAutID" },
+  { value: "vedidk", text: "vedIDK" },
+  { value: "institutionalID", text: "InstitutionalID" },
+  { value: "ISNI", text: "ISNI" },
+  { value: "ROR", text: "ROR" },
+  { value: "ICO", text: "ICO" },
+  { value: "DOI", text: "DOI" },
+];
 
 export class CreatibutorsIdentifiers extends Component {
-
   valuesToOptions = (options) =>
     options.map((option) => ({
       text: option,
@@ -38,11 +37,12 @@ export class CreatibutorsIdentifiers extends Component {
     formikProps.form.setFieldValue(fieldPath, data.value);
   };
 
-  render () {
+  render() {
     const { fieldPath, label, placeholder } = this.props;
 
     return (
       <IdentifiersField
+        className="modal-identifiers-field"
         options={authorityIdentifiersSchema}
         fieldPath={fieldPath}
         identifierLabel={i18next.t("Identifier")}
