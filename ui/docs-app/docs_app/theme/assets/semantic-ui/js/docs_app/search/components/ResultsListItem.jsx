@@ -69,7 +69,7 @@ const ItemSubheader = ({
               >
                 {_join(
                   languages.map((l) => l.title),
-                  ","
+                  ", "
                 )}
               </span>
             </Grid.Row>
