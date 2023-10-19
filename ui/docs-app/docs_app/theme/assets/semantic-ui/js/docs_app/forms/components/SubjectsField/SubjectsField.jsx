@@ -26,7 +26,7 @@ export const SubjectsField = ({ fieldPath, helpText }) => {
           >
             <SelectField
               clearable
-              width={4}
+              width={5}
               fieldPath={`${fieldPathPrefix}.subjectScheme`}
               label={i18next.t("Subject scheme")}
               required
@@ -37,6 +37,7 @@ export const SubjectsField = ({ fieldPath, helpText }) => {
                 fieldPath={`${fieldPathPrefix}.subject`}
                 lngFieldWidth={5}
                 textFieldLabel={i18next.t("Subject")}
+                required
               />
             </Form.Field>
           </ArrayFieldItem>
