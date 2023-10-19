@@ -35,8 +35,7 @@
         <div class="ui grid">
           <div class="eight wide column left middle aligned">
             {%- block footer_bottom_left %}
-            {% trans invenio_rdm="http://inveniosoftware.org/products/rdm" %}Powered by <a
-              href="{{invenio_rdm}}">InvenioRDM</a>{% endtrans %}
+              {% trans link="http://inveniosoftware.org" %}Powered by <a href="{{ link }}">Invenio</a>{% endtrans %}
             {%- endblock footer_bottom_left %}
           </div>
           <div class="eight wide column right aligned">
