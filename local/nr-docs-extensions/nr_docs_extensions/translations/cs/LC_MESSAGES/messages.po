@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: invenio-records-resources 0.21.4\n"
 "Report-Msgid-Bugs-To: info@inveniosoftware.org\n"
 "POT-Creation-Date: 2022-10-12 11:37+0000\n"
-"PO-Revision-Date: 2023-10-18 16:25+0200\n"
+"PO-Revision-Date: 2023-10-19 13:06+0200\n"
 "Last-Translator: Ivan Masár <helix84@centrum.sk>, 2021\n"
 "Language-Team: Czech (https://www.transifex.com/inveniosoftware/teams/23537/cs/)\n"
 "Language: cs\n"
@@ -55,3 +55,8 @@ msgstr "Od nejstarších"
 #: invenio_records_resources/services/records/queryparser/transformer.py:40
 msgid "Invalid search field: {field_name}."
 msgstr "Špatné pole pro vyhledávání: {field_name}."
+
+#: invenio_theme/templates/invenio_theme/footer.html:22
+#, python-format
+msgid "Powered by <a href=\"%(link)s\">Invenio</a>"
+msgstr "Založeno na repozitářové platformě <a href=“%(link)s”>Invenio</a>"
