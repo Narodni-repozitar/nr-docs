@@ -136,10 +136,12 @@ export const NRDocumentValidationSchema = Yup.object().shape({
           i18next.t("Locations must be unique")
         )
       ),
-    accessibility: Yup.object().shape({
-      lang: Yup.string(),
-      value: Yup.string(),
-    }),
+    accessibility: Yup.array().of(
+      Yup.object().shape({
+        lang: Yup.string(),
+        value: Yup.string(),
+      })
+    ),
     externalLocation: Yup.object()
       .shape({
         externalLocationURL: Yup.string().url(
