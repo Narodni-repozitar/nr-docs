@@ -1,4 +1,4 @@
-from oarepo_runtime.services.search import SearchOptions as InvenioSearchOptions
+from oarepo_runtime.services.icu import SearchOptions as InvenioSearchOptions
 
 from . import facets
 

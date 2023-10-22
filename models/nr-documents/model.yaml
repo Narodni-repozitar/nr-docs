@@ -22,7 +22,7 @@ record:
     base-classes:
       - InvenioSearchOptions
     imports:
-      - import: oarepo_runtime.services.search.SearchOptions
+      - import: oarepo_runtime.services.icu.SearchOptions
         alias: InvenioSearchOptions
   draft: {}
   use:
