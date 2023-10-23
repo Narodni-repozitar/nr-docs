@@ -20,6 +20,7 @@ const unique = (value, context, path, errorString) => {
   if (
     _uniqBy(value, (item) => (path ? item[path] : item)).length !== value.length
   ) {
+    console.log(value[0]["title"]["value"]);
     const errors = value
       .map((value, index) => {
         return new Yup.ValidationError(
@@ -39,26 +40,18 @@ export const NRDocumentValidationSchema = Yup.object().shape({
     // not sure but I assume it would be good idea to ask for a minimum length of title
     title: Yup.string().required(requiredMessage).min(10, stringLengthMessage),
     resourceType: Yup.object().required(requiredMessage),
-    additionalTitles: Yup.array()
-      .of(
-        Yup.object().shape({
-          title: Yup.object().shape({
-            lang: Yup.string().required(requiredMessage),
-            value: Yup.string()
-              .required(requiredMessage)
-              .min(10, stringLengthMessage),
-          }),
-          titleType: Yup.string().required(requiredMessage),
-        })
-      )
-      .test("unique-additional-titles", returnGroupError, (value, context) =>
-        unique(
-          value,
-          context,
-          "title.value",
-          i18next.t("Additional titles must be unique")
-        )
-      ),
+    additionalTitles: Yup.array().of(
+      Yup.object().shape({
+        title: Yup.object().shape({
+          lang: Yup.string().required(requiredMessage),
+          value: Yup.string()
+            .required(requiredMessage)
+            .min(10, stringLengthMessage),
+        }),
+        titleType: Yup.string().required(requiredMessage),
+      })
+    ),
+
     abstract: Yup.array().of(
       Yup.object().shape({
         lang: Yup.string().required(requiredMessage),
