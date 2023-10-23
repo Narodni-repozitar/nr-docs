@@ -120,6 +120,9 @@
                     "import": "oarepo_runtime.config.service.PermissionsPresetsConfigMixin"
                 },
                 {
+                    "import": "oarepo_requests.components.requests.PublishDraftComponent"
+                },
+                {
                     "import": "invenio_drafts_resources.services.RecordServiceConfig",
                     "alias": "InvenioRecordDraftsServiceConfig"
                 },
