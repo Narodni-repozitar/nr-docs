@@ -27,6 +27,9 @@ record:
     base-classes: [ FilteredUIJSONSerializer ]
     imports:
       - import: nr_docs_extensions.services.filtered_json_ui_serializer.FilteredUIJSONSerializer
+      - import: flask_resources.serializers.JSONSerializer
+      - import: flask_resources.BaseListSchema
+      - import: flask_resources.MarshmallowSerializer
   resource-config:
     base-html-url: /docs/
   search-options:
