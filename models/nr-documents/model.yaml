@@ -16,6 +16,15 @@ record:
   properties:
     metadata:
       properties: {}
+  service-config:
+    base-classes: [ PermissionsPresetsConfigMixin, FilteredResultServiceConfig ]
+    imports:
+      - import: nr_docs_extensions.services.filtered_record_list.FilteredResultServiceConfig
+      - import: oarepo_runtime.config.service.PermissionsPresetsConfigMixin
+  json-serializer:
+    base-classes: [ FilteredUIJSONSerializer ]
+    imports:
+      - import: nr_docs_extensions.services.filtered_json_ui_serializer.FilteredUIJSONSerializer
   resource-config:
     base-html-url: /docs/
   search-options:
