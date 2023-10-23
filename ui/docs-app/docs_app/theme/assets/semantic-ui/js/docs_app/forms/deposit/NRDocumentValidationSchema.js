@@ -20,7 +20,6 @@ const unique = (value, context, path, errorString) => {
   if (
     _uniqBy(value, (item) => (path ? item[path] : item)).length !== value.length
   ) {
-    console.log(value[0]["title"]["value"]);
     const errors = value
       .map((value, index) => {
         return new Yup.ValidationError(
