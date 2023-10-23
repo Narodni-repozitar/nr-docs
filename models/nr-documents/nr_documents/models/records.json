@@ -161,7 +161,8 @@
             "context-class": "PIDFieldContext",
             "field-args": [
                 "create=True"
-            ]
+            ],
+            "extra-code": ""
         },
         "ui": {
             "marshmallow": {
@@ -200,6 +201,22 @@
                 "RecordResourceConfig"
             ]
         },
+        "search-options": {
+            "base-classes": [
+                "InvenioSearchOptions"
+            ],
+            "imports": [
+                {
+                    "import": "oarepo_runtime.services.search.SearchOptions",
+                    "alias": "InvenioSearchOptions"
+                }
+            ],
+            "generate": true,
+            "module": "nr_documents.services.records.search",
+            "extra-code": "",
+            "class": "nr_documents.services.records.search.NrDocumentsSearchOptions",
+            "sort-options-field": "sort_options"
+        },
         "module": {
             "qualified": "nr_documents",
             "alias": "nr_documents",
@@ -214,6 +231,11 @@
             "suffix": "nr_documents",
             "suffix-upper": "NR_DOCUMENTS",
             "suffix-snake": "nr_documents"
+        },
+        "tests": {
+            "extra-fixtures": [],
+            "extra-code": "",
+            "module": "tests"
         },
         "draft": {
             "type": "draft_record",
@@ -245,11 +267,6 @@
                 "module": "tests"
             }
         },
-        "tests": {
-            "extra-fixtures": [],
-            "extra-code": "",
-            "module": "tests"
-        },
         "sample": {
             "file": "data/sample_data.yaml"
         },
@@ -258,21 +275,6 @@
             "skip": false
         },
         "model-name": "Nr_Documents",
-        "search-options": {
-            "generate": true,
-            "module": "nr_documents.services.records.search",
-            "extra-code": "",
-            "class": "nr_documents.services.records.search.NrDocumentsSearchOptions",
-            "base-classes": [
-                "InvenioSearchOptions"
-            ],
-            "imports": [
-                {
-                    "import": "invenio_records_resources.services.SearchOptions",
-                    "alias": "InvenioSearchOptions"
-                }
-            ]
-        },
         "config": {
             "generate": true,
             "module": "nr_documents.config",
@@ -349,6 +351,22 @@
                 "RecordResource"
             ]
         },
+        "files-field": {
+            "generate": true,
+            "field-class": "FilesField",
+            "file-class": "NrDocumentsRecord",
+            "field-args": [
+                "store=False"
+            ],
+            "imports": [
+                {
+                    "import": "invenio_records_resources.records.systemfields.FilesField"
+                },
+                {
+                    "import": "nr_documents.records.api.NrDocumentsRecord"
+                }
+            ]
+        },
         "json-schema-settings": {
             "generate": true,
             "alias": "nr_documents",
@@ -394,21 +412,9 @@
             "extra-code": "",
             "generate": true
         },
-        "files-field": {
-            "generate": true,
-            "field-class": "FilesField",
-            "file-class": "NrDocumentsRecord",
-            "field-args": [
-                "store=False"
-            ],
-            "imports": [
-                {
-                    "import": "invenio_records_resources.records.systemfields.FilesField"
-                },
-                {
-                    "import": "nr_documents.records.api.NrDocumentsRecord"
-                }
-            ]
+        "translations": {
+            "module": "nr_documents.translations",
+            "alias": "nr_documents"
         },
         "record-metadata": {
             "generate": true,
@@ -452,10 +458,6 @@
             "base-classes": [
                 "InvenioRecordService"
             ]
-        },
-        "translations": {
-            "module": "nr_documents.translations",
-            "alias": "nr_documents"
         },
         "multilingual-dumper": {
             "generate": true,
@@ -762,6 +764,7 @@
                                 ],
                                 "read": false,
                                 "write": false,
+                                "unknown": "INCLUDE",
                                 "generate": true,
                                 "class": "nr_documents.services.records.ui_schema.AccessRightsUISchema"
                             },
@@ -780,6 +783,7 @@
                             ],
                             "read": false,
                             "write": false,
+                            "unknown": "INCLUDE",
                             "generate": true,
                             "class": "nr_documents.services.records.schema.AccessRightsSchema"
                         },
@@ -998,6 +1002,18 @@
                                 "title": {
                                     "type": "i18nStr",
                                     "required": true,
+                                    "marshmallow": {
+                                        "read": false,
+                                        "write": false,
+                                        "class": null,
+                                        "field-class": "I18nStrField",
+                                        "imports": [
+                                            {
+                                                "import": "oarepo_runtime.i18n.schema.I18nStrField"
+                                            }
+                                        ],
+                                        "generate": false
+                                    },
                                     "ui": {
                                         "marshmallow": {
                                             "read": false,
@@ -1011,18 +1027,6 @@
                                             ]
                                         },
                                         "detail": "multilingual"
-                                    },
-                                    "marshmallow": {
-                                        "read": false,
-                                        "write": false,
-                                        "class": null,
-                                        "field-class": "I18nStrField",
-                                        "imports": [
-                                            {
-                                                "import": "oarepo_runtime.i18n.schema.I18nStrField"
-                                            }
-                                        ],
-                                        "generate": false
                                     },
                                     "sample": {
                                         "skip": false
@@ -1133,6 +1137,7 @@
                                                 ],
                                                 "read": false,
                                                 "write": false,
+                                                "unknown": "INCLUDE",
                                                 "generate": true,
                                                 "class": "nr_documents.services.records.ui_schema.AffiliationsItemUISchema"
                                             },
@@ -1151,6 +1156,7 @@
                                             ],
                                             "read": false,
                                             "write": false,
+                                            "unknown": "INCLUDE",
                                             "generate": true,
                                             "class": "nr_documents.services.records.schema.AffiliationsItemSchema"
                                         },
@@ -1555,6 +1561,7 @@
                                             ],
                                             "read": false,
                                             "write": false,
+                                            "unknown": "INCLUDE",
                                             "generate": true,
                                             "class": "nr_documents.services.records.ui_schema.RoleUISchema"
                                         },
@@ -1573,6 +1580,7 @@
                                         ],
                                         "read": false,
                                         "write": false,
+                                        "unknown": "INCLUDE",
                                         "generate": true,
                                         "class": "nr_documents.services.records.schema.RoleSchema"
                                     },
@@ -1740,6 +1748,7 @@
                                                 ],
                                                 "read": false,
                                                 "write": false,
+                                                "unknown": "INCLUDE",
                                                 "generate": false,
                                                 "class": "nr_documents.services.records.ui_schema.AffiliationsItemUISchema"
                                             },
@@ -1758,6 +1767,7 @@
                                             ],
                                             "read": false,
                                             "write": false,
+                                            "unknown": "INCLUDE",
                                             "generate": false,
                                             "class": "nr_documents.services.records.schema.AffiliationsItemSchema"
                                         },
@@ -2294,6 +2304,7 @@
                                                     ],
                                                     "read": false,
                                                     "write": false,
+                                                    "unknown": "INCLUDE",
                                                     "generate": true,
                                                     "class": "nr_documents.services.records.ui_schema.CountryUISchema"
                                                 },
@@ -2312,6 +2323,7 @@
                                                 ],
                                                 "read": false,
                                                 "write": false,
+                                                "unknown": "INCLUDE",
                                                 "generate": true,
                                                 "class": "nr_documents.services.records.schema.CountrySchema"
                                             },
@@ -2598,6 +2610,7 @@
                                             ],
                                             "read": false,
                                             "write": false,
+                                            "unknown": "INCLUDE",
                                             "generate": true,
                                             "class": "nr_documents.services.records.ui_schema.FunderUISchema"
                                         },
@@ -2616,6 +2629,7 @@
                                         ],
                                         "read": false,
                                         "write": false,
+                                        "unknown": "INCLUDE",
                                         "generate": true,
                                         "class": "nr_documents.services.records.schema.FunderSchema"
                                     },
@@ -2929,6 +2943,7 @@
                                     ],
                                     "read": false,
                                     "write": false,
+                                    "unknown": "INCLUDE",
                                     "generate": true,
                                     "class": "nr_documents.services.records.ui_schema.LanguagesItemUISchema"
                                 },
@@ -2947,6 +2962,7 @@
                                 ],
                                 "read": false,
                                 "write": false,
+                                "unknown": "INCLUDE",
                                 "generate": true,
                                 "class": "nr_documents.services.records.schema.LanguagesItemSchema"
                             },
@@ -3363,6 +3379,7 @@
                                                             ],
                                                             "read": false,
                                                             "write": false,
+                                                            "unknown": "INCLUDE",
                                                             "generate": false,
                                                             "class": "nr_documents.services.records.ui_schema.AffiliationsItemUISchema"
                                                         },
@@ -3381,6 +3398,7 @@
                                                         ],
                                                         "read": false,
                                                         "write": false,
+                                                        "unknown": "INCLUDE",
                                                         "generate": false,
                                                         "class": "nr_documents.services.records.schema.AffiliationsItemSchema"
                                                     },
@@ -3785,6 +3803,7 @@
                                                         ],
                                                         "read": false,
                                                         "write": false,
+                                                        "unknown": "INCLUDE",
                                                         "generate": false,
                                                         "class": "nr_documents.services.records.ui_schema.RoleUISchema"
                                                     },
@@ -3803,6 +3822,7 @@
                                                     ],
                                                     "read": false,
                                                     "write": false,
+                                                    "unknown": "INCLUDE",
                                                     "generate": false,
                                                     "class": "nr_documents.services.records.schema.RoleSchema"
                                                 },
@@ -3965,6 +3985,7 @@
                                                             ],
                                                             "read": false,
                                                             "write": false,
+                                                            "unknown": "INCLUDE",
                                                             "generate": false,
                                                             "class": "nr_documents.services.records.ui_schema.AffiliationsItemUISchema"
                                                         },
@@ -3983,6 +4004,7 @@
                                                         ],
                                                         "read": false,
                                                         "write": false,
+                                                        "unknown": "INCLUDE",
                                                         "generate": false,
                                                         "class": "nr_documents.services.records.schema.AffiliationsItemSchema"
                                                     },
@@ -4519,6 +4541,7 @@
                                             ],
                                             "read": false,
                                             "write": false,
+                                            "unknown": "INCLUDE",
                                             "generate": true,
                                             "class": "nr_documents.services.records.ui_schema.ItemRelationTypeUISchema"
                                         },
@@ -4537,6 +4560,7 @@
                                         ],
                                         "read": false,
                                         "write": false,
+                                        "unknown": "INCLUDE",
                                         "generate": true,
                                         "class": "nr_documents.services.records.schema.ItemRelationTypeSchema"
                                     },
@@ -4656,6 +4680,7 @@
                                             ],
                                             "read": false,
                                             "write": false,
+                                            "unknown": "INCLUDE",
                                             "generate": true,
                                             "class": "nr_documents.services.records.ui_schema.ItemResourceTypeUISchema"
                                         },
@@ -4674,6 +4699,7 @@
                                         ],
                                         "read": false,
                                         "write": false,
+                                        "unknown": "INCLUDE",
                                         "generate": true,
                                         "class": "nr_documents.services.records.schema.ItemResourceTypeSchema"
                                     },
@@ -4882,6 +4908,7 @@
                                 ],
                                 "read": false,
                                 "write": false,
+                                "unknown": "INCLUDE",
                                 "generate": false,
                                 "class": "nr_documents.services.records.ui_schema.ItemResourceTypeUISchema"
                             },
@@ -4900,6 +4927,7 @@
                             ],
                             "read": false,
                             "write": false,
+                            "unknown": "INCLUDE",
                             "generate": false,
                             "class": "nr_documents.services.records.schema.ItemResourceTypeSchema"
                         },
@@ -5028,6 +5056,7 @@
                                     ],
                                     "read": false,
                                     "write": false,
+                                    "unknown": "INCLUDE",
                                     "generate": true,
                                     "class": "nr_documents.services.records.ui_schema.RightsItemUISchema"
                                 },
@@ -5046,6 +5075,7 @@
                                 ],
                                 "read": false,
                                 "write": false,
+                                "unknown": "INCLUDE",
                                 "generate": true,
                                 "class": "nr_documents.services.records.schema.RightsItemSchema"
                             },
@@ -5263,6 +5293,7 @@
                                     ],
                                     "read": false,
                                     "write": false,
+                                    "unknown": "INCLUDE",
                                     "generate": true,
                                     "class": "nr_documents.services.records.ui_schema.SubjectCategoriesItemUISchema"
                                 },
@@ -5281,6 +5312,7 @@
                                 ],
                                 "read": false,
                                 "write": false,
+                                "unknown": "INCLUDE",
                                 "generate": true,
                                 "class": "nr_documents.services.records.schema.SubjectCategoriesItemSchema"
                             },
@@ -5792,6 +5824,7 @@
                                             ],
                                             "read": false,
                                             "write": false,
+                                            "unknown": "INCLUDE",
                                             "generate": true,
                                             "class": "nr_documents.services.records.ui_schema.DegreeGrantorsItemUISchema"
                                         },
@@ -5810,6 +5843,7 @@
                                         ],
                                         "read": false,
                                         "write": false,
+                                        "unknown": "INCLUDE",
                                         "generate": true,
                                         "class": "nr_documents.services.records.schema.DegreeGrantorsItemSchema"
                                     },
