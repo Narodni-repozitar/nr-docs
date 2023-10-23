@@ -104,11 +104,21 @@
         },
         "custom-fields": [],
         "service-config": {
+            "base-classes": [
+                "PermissionsPresetsConfigMixin",
+                "FilteredResultServiceConfig"
+            ],
             "components": [
                 "PublishDraftComponent(\"publish_draft\", \"delete_record\")",
                 "DataComponent"
             ],
             "imports": [
+                {
+                    "import": "nr_docs_extensions.services.config.FilteredResultServiceConfig"
+                },
+                {
+                    "import": "oarepo_runtime.config.service.PermissionsPresetsConfigMixin"
+                },
                 {
                     "import": "oarepo_requests.components.requests.PublishDraftComponent"
                 },
@@ -121,15 +131,8 @@
                     "alias": "InvenioRecordServiceConfig"
                 },
                 {
-                    "import": "oarepo_runtime.config.service.PermissionsPresetsConfigMixin"
-                },
-                {
                     "import": "invenio_records_resources.services.records.components.DataComponent"
                 }
-            ],
-            "base-classes": [
-                "PermissionsPresetsConfigMixin",
-                "InvenioRecordDraftsServiceConfig"
             ],
             "generate": true,
             "config-key": "NR_DOCUMENTS_RECORD_SERVICE_CONFIG",
@@ -184,6 +187,29 @@
             "file": "nr_documents/models/ui.json",
             "alias": "nr_documents"
         },
+        "json-serializer": {
+            "base-classes": [
+                "FilteredUIJSONSerializer"
+            ],
+            "imports": [
+                {
+                    "import": "nr_docs_extensions.services.filtered_json_ui_serializer.FilteredUIJSONSerializer"
+                },
+                {
+                    "import": "flask_resources.serializers.JSONSerializer"
+                },
+                {
+                    "import": "flask_resources.BaseListSchema"
+                },
+                {
+                    "import": "flask_resources.MarshmallowSerializer"
+                }
+            ],
+            "module": "nr_documents.resources.records.ui",
+            "class": "nr_documents.resources.records.ui.NrDocumentsUIJSONSerializer",
+            "extra-code": "",
+            "generate": true
+        },
         "resource-config": {
             "base-html-url": "/docs/",
             "imports": [
@@ -207,7 +233,7 @@
             ],
             "imports": [
                 {
-                    "import": "oarepo_runtime.services.search.SearchOptions",
+                    "import": "oarepo_runtime.services.icu.SearchOptions",
                     "alias": "InvenioSearchOptions"
                 }
             ],
@@ -391,26 +417,6 @@
                     "import": "invenio_records.dumpers.SearchDumper"
                 }
             ]
-        },
-        "json-serializer": {
-            "module": "nr_documents.resources.records.ui",
-            "class": "nr_documents.resources.records.ui.NrDocumentsUIJSONSerializer",
-            "base-classes": [
-                "MarshmallowSerializer"
-            ],
-            "imports": [
-                {
-                    "import": "flask_resources.BaseListSchema"
-                },
-                {
-                    "import": "flask_resources.MarshmallowSerializer"
-                },
-                {
-                    "import": "flask_resources.serializers.JSONSerializer"
-                }
-            ],
-            "extra-code": "",
-            "generate": true
         },
         "translations": {
             "module": "nr_documents.translations",
