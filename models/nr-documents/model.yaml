@@ -19,7 +19,7 @@ record:
   service-config:
     base-classes: [ PermissionsPresetsConfigMixin, FilteredResultServiceConfig ]
     imports:
-      - import: nr_docs_extensions.services.filtered_record_list.FilteredResultServiceConfig
+      - import: nr_docs_extensions.services.config.FilteredResultServiceConfig
       - import: oarepo_runtime.config.service.PermissionsPresetsConfigMixin
   json-serializer:
     base-classes: [ FilteredUIJSONSerializer ]
