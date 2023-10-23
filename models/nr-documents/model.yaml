@@ -21,6 +21,8 @@ record:
     imports:
       - import: nr_docs_extensions.services.config.FilteredResultServiceConfig
       - import: oarepo_runtime.config.service.PermissionsPresetsConfigMixin
+      # this was not merged from requests/service-config. Why??
+      - import: oarepo_requests.components.requests.PublishDraftComponent
   json-serializer:
     base-classes: [ FilteredUIJSONSerializer ]
     imports:
