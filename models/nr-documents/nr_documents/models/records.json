@@ -267,20 +267,22 @@
             ]
         },
         "search-options": {
+            "extra-code": "    sort_options = ICUSortOptions(\"nr_documents\")",
             "base-classes": [
-                "InvenioSearchOptions"
+                "I18nSearchOptions"
             ],
             "imports": [
                 {
-                    "import": "oarepo_runtime.services.icu.SearchOptions",
-                    "alias": "InvenioSearchOptions"
+                    "import": "oarepo_runtime.services.icu.I18nSearchOptions"
+                },
+                {
+                    "import": "oarepo_runtime.services.icu.ICUSortOptions"
                 }
             ],
+            "sort-options-field": "extra_sort_options",
             "generate": true,
             "module": "nr_documents.services.records.search",
-            "extra-code": "",
-            "class": "nr_documents.services.records.search.NrDocumentsSearchOptions",
-            "sort-options-field": "sort_options"
+            "class": "nr_documents.services.records.search.NrDocumentsSearchOptions"
         },
         "module": {
             "qualified": "nr_documents",
