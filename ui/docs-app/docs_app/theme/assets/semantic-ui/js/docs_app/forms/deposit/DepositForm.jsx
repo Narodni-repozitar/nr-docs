@@ -242,7 +242,7 @@ export const DepositForm = () => {
                       clearable
                       optionsListName="licenses"
                       helpText={i18next.t(
-                        "If a Creative Commons license is associated with the dataset, select the appropriate license option from the menu. We recommend choosing the latest versions, namely 3.0 Czech and 4.0 International."
+                        "If a Creative Commons license is associated with the resource, select the appropriate license option from the menu. We recommend choosing the latest versions, namely 3.0 Czech and 4.0 International."
                       )}
                     />
                   </Overridable>
