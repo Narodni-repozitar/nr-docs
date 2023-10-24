@@ -6,7 +6,7 @@ class TitleICUSortField(ICUSortField):
 
     def get_values(self, data, language):
         ret = []
-        for l in lookup_key(data, f"{self.source_field}"):
+        for l in lookup_key(data, self.source_field):
             if l.value:
                 ret.append(l.value)
         return ret
