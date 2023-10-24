@@ -1,10 +1,12 @@
-from invenio_records_resources.services import SearchOptions as InvenioSearchOptions
+from oarepo_runtime.services.icu import SearchOptions as InvenioSearchOptions
 
 from . import facets
 
 
 class NrDocumentsSearchOptions(InvenioSearchOptions):
     """NrDocumentsRecord search options."""
+
+    facet_groups = {}
 
     facets = {
         "_schema": facets._schema,
@@ -174,7 +176,4 @@ class NrDocumentsSearchOptions(InvenioSearchOptions):
         "syntheticFields_person": facets.syntheticFields_person,
         "updated": facets.updated,
         **getattr(InvenioSearchOptions, "facets", {}),
-    }
-    sort_options = {
-        **InvenioSearchOptions.sort_options,
     }

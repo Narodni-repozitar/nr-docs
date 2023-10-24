@@ -2,6 +2,8 @@ include HISTORY.rst
 include LICENSE
 include README.rst
 include nr_docs_extensions/VERSION
+include nr_docs/extensions/**/*po
+include nr_docs/extensions/**/*mo
 
 recursive-exclude tests
 recursive-exclude * __pycache__

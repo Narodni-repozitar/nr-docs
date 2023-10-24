@@ -16,8 +16,28 @@ record:
   properties:
     metadata:
       properties: {}
+  service-config:
+    base-classes: [ PermissionsPresetsConfigMixin, FilteredResultServiceConfig ]
+    imports:
+      - import: nr_docs_extensions.services.config.FilteredResultServiceConfig
+      - import: oarepo_runtime.config.service.PermissionsPresetsConfigMixin
+      # this was not merged from requests/service-config. Why??
+      - import: oarepo_requests.components.requests.PublishDraftComponent
+  json-serializer:
+    base-classes: [ FilteredUIJSONSerializer ]
+    imports:
+      - import: nr_docs_extensions.services.filtered_json_ui_serializer.FilteredUIJSONSerializer
+      - import: flask_resources.serializers.JSONSerializer
+      - import: flask_resources.BaseListSchema
+      - import: flask_resources.MarshmallowSerializer
   resource-config:
     base-html-url: /docs/
+  search-options:
+    base-classes:
+      - InvenioSearchOptions
+    imports:
+      - import: oarepo_runtime.services.icu.SearchOptions
+        alias: InvenioSearchOptions
   draft: {}
   use:
   - invenio

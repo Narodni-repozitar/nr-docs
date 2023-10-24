@@ -1,10 +1,13 @@
-from flask_resources import BaseListSchema, MarshmallowSerializer
+from flask_resources import BaseListSchema
 from flask_resources.serializers import JSONSerializer
+from nr_docs_extensions.services.filtered_json_ui_serializer import (
+    FilteredUIJSONSerializer,
+)
 
 from nr_documents.services.records.ui_schema import NrDocumentsUISchema
 
 
-class NrDocumentsUIJSONSerializer(MarshmallowSerializer):
+class NrDocumentsUIJSONSerializer(FilteredUIJSONSerializer):
     """UI JSON serializer."""
 
     def __init__(self):
