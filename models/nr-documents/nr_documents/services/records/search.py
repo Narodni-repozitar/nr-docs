@@ -1,9 +1,9 @@
-from oarepo_runtime.services.icu import SearchOptions as InvenioSearchOptions
+from oarepo_runtime.services.icu import I18nSearchOptions, ICUSortOptions
 
 from . import facets
 
 
-class NrDocumentsSearchOptions(InvenioSearchOptions):
+class NrDocumentsSearchOptions(I18nSearchOptions):
     """NrDocumentsRecord search options."""
 
     facet_groups = {}
@@ -175,5 +175,7 @@ class NrDocumentsSearchOptions(InvenioSearchOptions):
         "syntheticFields_keywords_en": facets.syntheticFields_keywords_en,
         "syntheticFields_person": facets.syntheticFields_person,
         "updated": facets.updated,
-        **getattr(InvenioSearchOptions, "facets", {}),
+        **getattr(I18nSearchOptions, "facets", {}),
     }
+
+    sort_options = ICUSortOptions("nr_documents")

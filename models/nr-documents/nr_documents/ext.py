@@ -6,6 +6,7 @@ from nr_documents import config as config
 
 class Nr_documentsExt:
     def __init__(self, app=None):
+
         if app:
             self.init_app(app)
 
