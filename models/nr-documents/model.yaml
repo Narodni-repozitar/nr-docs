@@ -38,6 +38,8 @@ record:
     imports:
       - import: oarepo_runtime.services.icu.SearchOptions
         alias: InvenioSearchOptions
+
+  # sort by czech title
   record:
     imports:
       - import: oarepo_runtime.records.SystemFieldDumperExt
@@ -47,6 +49,9 @@ record:
     extra-code: |-2
           # extra custom fields for sorting by title
           sort = LangValueICUSortField(source_field="metadata.title")
+  record-dumper:
+    extensions:
+      - SystemFieldDumperExt()
 
   draft: {}
   use:
