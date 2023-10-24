@@ -7,7 +7,7 @@ from invenio_records_resources.records.systemfields.pid import PIDField, PIDFiel
 from invenio_requests.records import Request
 from invenio_requests.records.systemfields.relatedrecord import RelatedRecord
 from invenio_vocabularies.records.api import Vocabulary
-from nr_docs_extensions.services.sort import LangValueICUSortField
+from nr_docs_extensions.services.sort import TitleICUSortField
 from oarepo_runtime.drafts.systemfields.has_draftcheck import HasDraftCheckField
 from oarepo_runtime.records import SystemFieldDumperExt
 from oarepo_runtime.relations import PIDRelation, RelationsField
@@ -53,7 +53,7 @@ class NrDocumentsRecord(InvenioRecord):
     dumper = NrDocumentsDumper(extensions=dumper_extensions)
 
     # extra custom fields for sorting by title
-    sort = LangValueICUSortField(source_field="metadata.title")
+    sort = TitleICUSortField(source_field="metadata.title")
 
     relations = RelationsField(
         accessRights=PIDRelation(
