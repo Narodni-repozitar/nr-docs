@@ -210,6 +210,24 @@
             "extra-code": "",
             "generate": true
         },
+        "record-dumper": {
+            "extensions": [
+                "SystemFieldDumperExt()",
+                "MultilingualSearchDumper()"
+            ],
+            "generate": true,
+            "module": "nr_documents.records.dumper",
+            "class": "nr_documents.records.dumper.NrDocumentsDumper",
+            "base-classes": [
+                "SearchDumper"
+            ],
+            "extra-code": "",
+            "imports": [
+                {
+                    "import": "invenio_records.dumpers.SearchDumper"
+                }
+            ]
+        },
         "resource-config": {
             "base-html-url": "/docs/",
             "imports": [
@@ -390,23 +408,6 @@
             "module": "nr_documents.records.jsonschemas",
             "name": "nr_documents-1.0.0.json",
             "file": "nr_documents/records/jsonschemas/nr_documents-1.0.0.json"
-        },
-        "record-dumper": {
-            "generate": true,
-            "module": "nr_documents.records.dumper",
-            "class": "nr_documents.records.dumper.NrDocumentsDumper",
-            "base-classes": [
-                "SearchDumper"
-            ],
-            "extra-code": "",
-            "extensions": [
-                "MultilingualSearchDumper()"
-            ],
-            "imports": [
-                {
-                    "import": "invenio_records.dumpers.SearchDumper"
-                }
-            ]
         },
         "translations": {
             "module": "nr_documents.translations",
