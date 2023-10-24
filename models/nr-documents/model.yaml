@@ -38,14 +38,15 @@ record:
     imports:
       - import: oarepo_runtime.services.icu.SearchOptions
         alias: InvenioSearchOptions
-  imports:
-    - import: oarepo_runtime.records.SystemFieldDumperExt
-    - import: nr_docs_extensions.services.sort.LangValueICUSortField
-    - import: invenio_drafts_resources.records.api.Record
-      alias: InvenioRecord
-  extra-code: |-2
-        # extra custom fields for sorting by title
-        sort = LangValueICUSortField(source_field="metadata.title")
+  record:
+    imports:
+      - import: oarepo_runtime.records.SystemFieldDumperExt
+      - import: nr_docs_extensions.services.sort.LangValueICUSortField
+      - import: invenio_drafts_resources.records.api.Record
+        alias: InvenioRecord
+    extra-code: |-2
+          # extra custom fields for sorting by title
+          sort = LangValueICUSortField(source_field="metadata.title")
 
   draft: {}
   use:
