@@ -7,6 +7,6 @@ class LangValueICUSortField(ICUSortField):
     def get_values(self, data, language):
         ret = []
         for l in lookup_key(data, f"{self.source_field}"):
-            if l:
-                ret.append(l)
+            if l.value:
+                ret.append(l.value)
         return ret
