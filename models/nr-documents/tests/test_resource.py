@@ -33,6 +33,253 @@ def get_paths(prefix, data):
     return _get_paths(prefix, data)
 
 
+"""
+def check_allowed(action_name):
+    permission_cls = current_service.config.permission_policy_cls
+    permission = permission_cls(action_name)
+    identity = g.identity
+    auth = permission.allows(identity)
+    return auth
+"""
+
+
+def is_action_allowed(action_name, user_is_auth):
+    permission_cls = current_service.config.permission_policy_cls
+    permission = permission_cls(action_name)
+    action_name = f"can_{action_name}"
+    action_permissions = getattr(permission, action_name, [])
+    action_can_auth = False
+    action_can_any = False
+    for perm in action_permissions:
+        if type(perm) == AnyUser:
+            action_can_any = True
+            action_can_auth = True
+        if type(perm) == AuthenticatedUser or type(perm) == SystemProcess:
+            action_can_auth = True
+    if user_is_auth:
+        return action_can_auth or action_can_any
+    else:
+        return action_can_any
+
+
+def response_code_ok(action_name, user_is_auth, response, authorized_response_code):
+    action_allowed = is_action_allowed(action_name, user_is_auth)
+    if action_allowed and response.status_code == authorized_response_code:
+        return True
+    elif not action_allowed and response.status_code == 403:
+        return True
+    return False
+
+
+def test_read(client_with_credentials, sample_draft, search_clear, base_urls):
+    non_existing = client_with_credentials.get(f"{base_urls['base_url']}yjuykyukyuk")
+    assert non_existing.status_code == 404
+
+    get_response = client_with_credentials.get(
+        f"{base_urls['base_url']}{sample_draft['id']}/draft"
+    )
+    assert response_code_ok("read", True, get_response, 200)
+    if is_action_allowed("read", True):
+        assert get_response.json["metadata"] == sample_draft["metadata"]
+
+
+def test_create(
+    client_with_credentials, client, sample_metadata_list, app, search_clear, base_urls
+):
+    created_responses = []
+    for sample_metadata_point in sample_metadata_list:
+        created_responses.append(
+            client_with_credentials.post(
+                f"{base_urls['base_url']}", json=sample_metadata_point
+            )
+        )
+        with app.test_client() as unauth_client:
+            unauth_response = unauth_client.post(
+                f"{base_urls['base_url']}", json=sample_metadata_point
+            )
+            assert response_code_ok("create", False, unauth_response, 201)
+    assert all(
+        [
+            response_code_ok("create", True, new_response, 201)
+            for new_response in created_responses
+        ]
+    )
+
+    if is_action_allowed("create", True):
+        for sample_metadata_point, created_response in zip(
+            sample_metadata_list, created_responses
+        ):
+            created_response_reread = client_with_credentials.get(
+                f"{base_urls['base_url']}{created_response.json['id']}/draft"
+            )
+            assert response_code_ok("read", True, created_response_reread, 200)
+            assert (
+                created_response_reread.json["metadata"]
+                == sample_metadata_point["metadata"]
+            )
+
+
+"""
+def test_create(
+    client_with_credentials, client, sample_metadata_list, app, search_clear, base_urls
+):
+    created_responses = []
+    for sample_metadata_point in sample_metadata_list:
+        created_responses.append(
+            client_with_credentials.post(f"{base_urls['base_url']}", json=sample_metadata_point)
+        )
+        with app.test_client() as unauth_client:
+            unauth_response = unauth_client.post(
+                f"{base_urls['base_url']}", json=sample_metadata_point
+            )
+            assert response_code_ok("create", False, unauth_response, 201)
+    assert all([response_code_ok("create", True, new_response, 201) for new_response in created_responses])
+
+    if is_action_allowed("create", True):
+        for sample_metadata_point, created_response in zip(
+            sample_metadata_list, created_responses
+        ):
+            created_response_reread = client_with_credentials.get(
+                f"{base_urls['base_url']}{created_response.json['id']}"
+            )
+            assert response_code_ok("read", True, created_response_reread, 200)
+            assert (
+                created_response_reread.json["metadata"]
+                == sample_metadata_point["metadata"]
+            )
+"""
+
+"""
+def test_listing( client_with_credentials, sample_records, search_clear, base_urls):
+    listing_response = client_with_credentials.get(base_urls['base_url'])
+    hits = listing_response.json["hits"]["hits"]
+    assert len(hits) == 10
+"""
+
+
+def test_update(
+    client_with_credentials, sample_draft, sample_metadata_list, search_clear, base_urls
+):
+    non_existing = client_with_credentials.put(
+        f"{base_urls['base_url']}yjuykyukyuk/draft", json=sample_metadata_list[5]
+    )
+
+    old_record_read_response_json = client_with_credentials.get(
+        f"{base_urls['base_url']}{ sample_draft['id']}/draft"
+    ).json
+
+    update_response = client_with_credentials.put(
+        f"{base_urls['base_url']}{ sample_draft['id']}/draft",
+        json=sample_metadata_list[2],
+    )
+
+    updated_record_read_response = client_with_credentials.get(
+        f"{base_urls['base_url']}{ sample_draft['id']}/draft"
+    )
+
+    assert response_code_ok("read", True, updated_record_read_response, 200)
+    assert response_code_ok("update", True, non_existing, 404)
+    assert response_code_ok("update", True, update_response, 200)
+    if is_action_allowed("update", True):
+        assert old_record_read_response_json["metadata"] == sample_draft.metadata
+        assert (
+            update_response.json["metadata"]
+            == sample_metadata_list[2]["metadata"]
+            != old_record_read_response_json["metadata"]
+        )
+        assert (
+            updated_record_read_response.json["metadata"]
+            == sample_metadata_list[2]["metadata"]
+        )
+        assert (
+            updated_record_read_response.json["revision_id"]
+            == old_record_read_response_json["revision_id"] + 1
+        )
+
+    # test patch - 405 METHOD NOT ALLOWED
+    # to make it work change create_url_rules in resource and allow jsonpatch in request_body_parsers in resource config
+    # patch_response = client_with_credentials.patch(f"{base_urls['base_url']}{sample_record['id']}",
+    #                                                              json={"path": "/metadata/title",
+    #                                                              "op": "replace",
+    #                                                              "value": "UPDATED!"})
+
+
+def test_delete(client_with_credentials, sample_draft, app, search_clear, base_urls):
+    non_existing = client_with_credentials.delete(f"{base_urls['base_url']}yjuykyukyuk")
+    assert response_code_ok("delete", True, non_existing, 404)
+
+    delete_response = client_with_credentials.delete(
+        f"{base_urls['base_url']}{ sample_draft['id']}/draft"
+    )
+    assert response_code_ok("delete", True, delete_response, 204)
+
+    if is_action_allowed("delete", True):
+        deleted_get_response = client_with_credentials.delete(
+            f"{base_urls['base_url']}{ sample_draft['id']}/draft"
+        )
+        assert deleted_get_response.status_code == 404
+
+
+"""
+def test_delete_unauth(sample_record, search_clear, app, base_urls):
+    with app.test_client() as unauth_client:
+        unauth_delete_response = unauth_client.delete(
+            f"{base_urls['base_url']}{sample_record['id']}"
+        )
+        assert response_code_ok("delete", False, unauth_delete_response, 204)
+"""
+
+
+def assert_expected_links(
+    pid_value, generated_links, base_urls, site_hostname="127.0.0.1:5000"
+):
+    """Compare generated links to expected links."""
+    required_links = {
+        "draft": f"https://{site_hostname}/api{base_urls['base_url']}{pid_value}/draft",
+        "latest": f"https://{site_hostname}/api{base_urls['base_url']}{pid_value}/versions/latest",
+        "latest_html": (
+            f"https://{site_hostname}{base_urls['base_html_url']}{pid_value}/latest"
+        ),
+        "publish": f"https://{site_hostname}/api{base_urls['base_url']}{pid_value}/draft/actions/publish",
+        "record": f"https://{site_hostname}/api{base_urls['base_url']}{pid_value}",
+        "self": f"https://{site_hostname}/api{base_urls['base_url']}{pid_value}/draft",
+        "self_html": (
+            f"https://{site_hostname}{base_urls['base_html_url']}{pid_value}/edit"
+        ),
+        "versions": (
+            f"https://{site_hostname}/api{base_urls['base_url']}{pid_value}/versions"
+        ),
+    }
+    assert required_links.items() <= generated_links.items()
+
+
+def test_create_links(app, client_with_credentials, input_data, base_urls):
+    res = client_with_credentials.post(base_urls["base_url"], json=input_data)
+
+    pid_value = res.json["id"]
+    assert_expected_links(pid_value, res.json["links"], base_urls)
+
+
+def test_read_links(app, client_with_credentials, sample_draft, base_urls):
+    pid_value = sample_draft["id"]
+    res = client_with_credentials.get(f"{base_urls['base_url']}{pid_value}/draft")
+
+    assert_expected_links(pid_value, res.json["links"], base_urls)
+
+
+def test_update_links(
+    app, client_with_credentials, sample_draft, sample_metadata_list, base_urls
+):
+    pid_value = sample_draft["id"]
+    res = client_with_credentials.get(f"{base_urls['base_url']}{pid_value}/draft")
+    res = client_with_credentials.put(
+        f"{base_urls['base_url']}{pid_value}/draft", json=sample_metadata_list[1]
+    )
+
+    assert res.status_code == 200
+    assert_expected_links(pid_value, res.json["links"], base_urls)
+
+
 @pytest.fixture(scope="module")
 def app_config(app_config):
     app_config["HAS_DRAFT"] = [BooleanCF("has_draft")]
@@ -98,9 +345,11 @@ def test_publish_draft(client_with_credentials, input_data, search_clear):
     _assert_single_item_response(response)
 
 
-def test_search_versions(client_with_credentials, input_data, search_clear):
+def test_search_versions(
+    client_with_credentials, input_data, search_clear, sample_published_record
+):
     """Test search for versions."""
-    recid = _create_and_publish(client_with_credentials, input_data)
+    recid = sample_published_record["id"]
     NrDocumentsDraft.index.refresh()
 
     # Check draft does not exists anymore
@@ -117,10 +366,14 @@ def test_search_versions(client_with_credentials, input_data, search_clear):
 
 
 def test_create_publish_new_revision(
-    client_with_credentials, input_data, search_clear, sample_metadata_list
+    client_with_credentials,
+    input_data,
+    search_clear,
+    sample_metadata_list,
+    sample_published_record,
 ):
     """Test draft creation of an existing record and publish it."""
-    recid = _create_and_publish(client_with_credentials, input_data)
+    recid = sample_published_record["id"]
 
     # Create new draft of said record
 
@@ -173,12 +426,14 @@ def test_create_publish_new_revision(
     assert response.json["metadata"] == edited_metadata
 
 
-def test_mutiple_edit(client_with_credentials, input_data, search_clear):
+def test_mutiple_edit(
+    client_with_credentials, input_data, search_clear, sample_published_record
+):
     """Test the revision_id when editing record multiple times.
 
     This tests the `edit` service method.
     """
-    recid = _create_and_publish(client_with_credentials, input_data)
+    recid = sample_published_record["id"]
 
     # Create new draft of said record
     response = client_with_credentials.post(
@@ -212,12 +467,14 @@ def test_mutiple_edit(client_with_credentials, input_data, search_clear):
     assert response.json["revision_id"] == 8
 
 
-def test_redirect_to_latest_version(client_with_credentials, input_data, search_clear):
+def test_redirect_to_latest_version(
+    client_with_credentials, input_data, search_clear, sample_published_record
+):
     """Creates a new version of a record.
 
     Publishes the draft to obtain 2 versions of a record.
     """
-    recid = _create_and_publish(client_with_credentials, input_data)
+    recid = sample_published_record["id"]
 
     # Create new version of said record
     response = client_with_credentials.post(
@@ -314,261 +571,31 @@ def test_list_drafts(client_with_credentials, input_data, vocab_cf, search_clear
     )
 
 
-def assert_expected_links_record(pid_value, links, site_hostname="127.0.0.1:5000"):
+def assert_expected_links_record(
+    pid_value, links, base_urls, site_hostname="127.0.0.1:5000"
+):
     """Compare generated links to expected links."""
     expected_links = {
-        "draft": f"https://{site_hostname}/api{BASE_URL}{pid_value}/draft",
-        "latest": f"https://{site_hostname}/api{BASE_URL}{pid_value}/versions/latest",
-        "latest_html": f"https://{site_hostname}{BASE_HTML_URL}{pid_value}/latest",
-        "publish": (
-            f"https://{site_hostname}/api{BASE_URL}{pid_value}/draft/actions/publish"
+        "draft": f"https://{site_hostname}/api{base_urls['base_url']}{pid_value}/draft",
+        "latest": f"https://{site_hostname}/api{base_urls['base_url']}{pid_value}/versions/latest",
+        "latest_html": (
+            f"https://{site_hostname}{base_urls['base_html_url']}{pid_value}/latest"
         ),
-        "record": f"https://{site_hostname}/api{BASE_URL}{pid_value}",
-        "self": f"https://{site_hostname}/api{BASE_URL}{pid_value}",
-        "self_html": f"https://{site_hostname}{BASE_HTML_URL}{pid_value}",
-        "versions": f"https://{site_hostname}/api{BASE_URL}{pid_value}/versions",
+        "publish": f"https://{site_hostname}/api{base_urls['base_url']}{pid_value}/draft/actions/publish",
+        "record": f"https://{site_hostname}/api{base_urls['base_url']}{pid_value}",
+        "self": f"https://{site_hostname}/api{base_urls['base_url']}{pid_value}",
+        "self_html": f"https://{site_hostname}{base_urls['base_html_url']}{pid_value}",
+        "versions": (
+            f"https://{site_hostname}/api{base_urls['base_url']}{pid_value}/versions"
+        ),
     }
     assert expected_links.items() <= links.items()
 
 
-def test_read_links_record(app, client_with_credentials, input_data):
-    pid_value = _create_and_publish(client_with_credentials, input_data)
-    res = client_with_credentials.get(f"{BASE_URL}{pid_value}")
-
-    assert_expected_links_record(pid_value, res.json["links"])
-
-
-BASE_URL = NrDocumentsResourceConfig.url_prefix
-BASE_HTML_URL = "/docs/"
-"""
-def check_allowed(action_name):
-    permission_cls = current_service.config.permission_policy_cls
-    permission = permission_cls(action_name)
-    identity = g.identity
-    auth = permission.allows(identity)
-    return auth
-"""
-
-
-def is_action_allowed(action_name, user_is_auth):
-    permission_cls = current_service.config.permission_policy_cls
-    permission = permission_cls(action_name)
-    action_name = f"can_{action_name}"
-    action_permissions = getattr(permission, action_name, [])
-    action_can_auth = False
-    action_can_any = False
-    for perm in action_permissions:
-        if type(perm) == AnyUser:
-            action_can_any = True
-            action_can_auth = True
-        if type(perm) == AuthenticatedUser or type(perm) == SystemProcess:
-            action_can_auth = True
-    if user_is_auth:
-        return action_can_auth or action_can_any
-    else:
-        return action_can_any
-
-
-def response_code_ok(action_name, user_is_auth, response, authorized_response_code):
-    action_allowed = is_action_allowed(action_name, user_is_auth)
-    if action_allowed and response.status_code == authorized_response_code:
-        return True
-    elif not action_allowed and response.status_code == 403:
-        return True
-    return False
-
-
-def test_read(client_with_credentials, sample_draft, search_clear):
-    non_existing = client_with_credentials.get(f"{BASE_URL}yjuykyukyuk")
-    assert non_existing.status_code == 404
-
-    get_response = client_with_credentials.get(f"{BASE_URL}{sample_draft['id']}/draft")
-    assert response_code_ok("read", True, get_response, 200)
-    if is_action_allowed("read", True):
-        assert get_response.json["metadata"] == sample_draft["metadata"]
-
-
-def test_create(
-    client_with_credentials, client, sample_metadata_list, app, search_clear
+def test_read_links_record(
+    app, client_with_credentials, input_data, base_urls, sample_published_record
 ):
-    created_responses = []
-    for sample_metadata_point in sample_metadata_list:
-        created_responses.append(
-            client_with_credentials.post(f"{BASE_URL}", json=sample_metadata_point)
-        )
-        with app.test_client() as unauth_client:
-            unauth_response = unauth_client.post(
-                f"{BASE_URL}", json=sample_metadata_point
-            )
-            assert response_code_ok("create", False, unauth_response, 201)
-    assert all(
-        [
-            response_code_ok("create", True, new_response, 201)
-            for new_response in created_responses
-        ]
-    )
+    pid_value = sample_published_record["id"]
+    res = client_with_credentials.get(f"{base_urls['base_url']}{pid_value}")
 
-    if is_action_allowed("create", True):
-        for sample_metadata_point, created_response in zip(
-            sample_metadata_list, created_responses
-        ):
-            created_response_reread = client_with_credentials.get(
-                f"{BASE_URL}{created_response.json['id']}/draft"
-            )
-            assert response_code_ok("read", True, created_response_reread, 200)
-            assert (
-                created_response_reread.json["metadata"]
-                == sample_metadata_point["metadata"]
-            )
-
-
-"""
-def test_create(
-    client_with_credentials, client, sample_metadata_list, app, search_clear
-):
-    created_responses = []
-    for sample_metadata_point in sample_metadata_list:
-        created_responses.append(
-            client_with_credentials.post(f"{BASE_URL}", json=sample_metadata_point)
-        )
-        with app.test_client() as unauth_client:
-            unauth_response = unauth_client.post(
-                f"{BASE_URL}", json=sample_metadata_point
-            )
-            assert response_code_ok("create", False, unauth_response, 201)
-    assert all([response_code_ok("create", True, new_response, 201) for new_response in created_responses])
-
-    if is_action_allowed("create", True):
-        for sample_metadata_point, created_response in zip(
-            sample_metadata_list, created_responses
-        ):
-            created_response_reread = client_with_credentials.get(
-                f"{BASE_URL}{created_response.json['id']}"
-            )
-            assert response_code_ok("read", True, created_response_reread, 200)
-            assert (
-                created_response_reread.json["metadata"]
-                == sample_metadata_point["metadata"]
-            )
-"""
-
-"""
-def test_listing( client_with_credentials, sample_records, search_clear):
-    listing_response = client_with_credentials.get(BASE_URL)
-    hits = listing_response.json["hits"]["hits"]
-    assert len(hits) == 10
-"""
-
-
-def test_update(
-    client_with_credentials, sample_draft, sample_metadata_list, search_clear
-):
-    non_existing = client_with_credentials.put(
-        f"{BASE_URL}yjuykyukyuk/draft", json=sample_metadata_list[5]
-    )
-
-    old_record_read_response_json = client_with_credentials.get(
-        f"{BASE_URL}{ sample_draft['id']}/draft"
-    ).json
-
-    update_response = client_with_credentials.put(
-        f"{BASE_URL}{ sample_draft['id']}/draft", json=sample_metadata_list[2]
-    )
-
-    updated_record_read_response = client_with_credentials.get(
-        f"{BASE_URL}{ sample_draft['id']}/draft"
-    )
-
-    assert response_code_ok("read", True, updated_record_read_response, 200)
-    assert response_code_ok("update", True, non_existing, 404)
-    assert response_code_ok("update", True, update_response, 200)
-    if is_action_allowed("update", True):
-        assert old_record_read_response_json["metadata"] == sample_draft.metadata
-        assert (
-            update_response.json["metadata"]
-            == sample_metadata_list[2]["metadata"]
-            != old_record_read_response_json["metadata"]
-        )
-        assert (
-            updated_record_read_response.json["metadata"]
-            == sample_metadata_list[2]["metadata"]
-        )
-        assert (
-            updated_record_read_response.json["revision_id"]
-            == old_record_read_response_json["revision_id"] + 1
-        )
-
-    # test patch - 405 METHOD NOT ALLOWED
-    # to make it work change create_url_rules in resource and allow jsonpatch in request_body_parsers in resource config
-    # patch_response = client_with_credentials.patch(f"{BASE_URL}{sample_record['id']}",
-    #                                                              json={"path": "/metadata/title",
-    #                                                              "op": "replace",
-    #                                                              "value": "UPDATED!"})
-
-
-def test_delete(client_with_credentials, sample_draft, app, search_clear):
-    non_existing = client_with_credentials.delete(f"{BASE_URL}yjuykyukyuk")
-    assert response_code_ok("delete", True, non_existing, 404)
-
-    delete_response = client_with_credentials.delete(
-        f"{BASE_URL}{ sample_draft['id']}/draft"
-    )
-    assert response_code_ok("delete", True, delete_response, 204)
-
-    if is_action_allowed("delete", True):
-        deleted_get_response = client_with_credentials.delete(
-            f"{BASE_URL}{ sample_draft['id']}/draft"
-        )
-        assert deleted_get_response.status_code == 404
-
-
-"""
-def test_delete_unauth(sample_record, search_clear, app):
-    with app.test_client() as unauth_client:
-        unauth_delete_response = unauth_client.delete(
-            f"{BASE_URL}{sample_record['id']}"
-        )
-        assert response_code_ok("delete", False, unauth_delete_response, 204)
-"""
-
-
-def assert_expected_links(pid_value, generated_links, site_hostname="127.0.0.1:5000"):
-    """Compare generated links to expected links."""
-    required_links = {
-        "draft": f"https://{site_hostname}/api{BASE_URL}{pid_value}/draft",
-        "latest": f"https://{site_hostname}/api{BASE_URL}{pid_value}/versions/latest",
-        "latest_html": f"https://{site_hostname}{BASE_HTML_URL}{pid_value}/latest",
-        "publish": (
-            f"https://{site_hostname}/api{BASE_URL}{pid_value}/draft/actions/publish"
-        ),
-        "record": f"https://{site_hostname}/api{BASE_URL}{pid_value}",
-        "self": f"https://{site_hostname}/api{BASE_URL}{pid_value}/draft",
-        "self_html": f"https://{site_hostname}{BASE_HTML_URL}{pid_value}/edit",
-        "versions": f"https://{site_hostname}/api{BASE_URL}{pid_value}/versions",
-    }
-    assert required_links.items() <= generated_links.items()
-
-
-def test_create_links(app, client_with_credentials, input_data):
-    res = client_with_credentials.post(BASE_URL, json=input_data)
-
-    pid_value = res.json["id"]
-    assert_expected_links(pid_value, res.json["links"])
-
-
-def test_read_links(app, client_with_credentials, sample_draft):
-    pid_value = sample_draft["id"]
-    res = client_with_credentials.get(f"{BASE_URL}{pid_value}/draft")
-
-    assert_expected_links(pid_value, res.json["links"])
-
-
-def test_update_links(app, client_with_credentials, sample_draft, sample_metadata_list):
-    pid_value = sample_draft["id"]
-    res = client_with_credentials.get(f"{BASE_URL}{pid_value}/draft")
-    res = client_with_credentials.put(
-        f"{BASE_URL}{pid_value}/draft", json=sample_metadata_list[1]
-    )
-
-    assert res.status_code == 200
-    assert_expected_links(pid_value, res.json["links"])
+    assert_expected_links_record(pid_value, res.json["links"], base_urls)
