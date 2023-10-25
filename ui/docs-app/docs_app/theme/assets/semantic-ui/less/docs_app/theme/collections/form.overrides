@@ -34,7 +34,24 @@
 
   .ui.form .invenio-accordion-field {
     label.helptext {
-      margin-top: 0.5rem;
+      font-weight: normal;
+      font-size: 1rem;
+    }
+
+    .ui.container > .field > label.field-label-class.invenio-field-label {
+      font-size: 1.25rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .ui.container
+      > .field
+      > label
+      > label.field-label-class.invenio-field-label {
+      font-size: 1.25rem;
+    }
+
+    .ui.container > .field > label {
+      margin-bottom: 0.75rem;
     }
 
     .invenio-group-field.fields {
@@ -57,51 +74,87 @@
         margin: 0;
       }
     }
-    .additional-titles {
-      .invenio-group-field.fields {
-        padding: 0.3rem 0 1rem 0;
-      }
-    }
+    // @media (max-width: 768px) {
+    //   .additional-titles {
+    //     .invenio-group-field.fields {
+    //       .invenio-group-field.fields {
+    //         .field {
+    //           padding: 0rem;
+    //         }
+    //       }
+    //     }
+    //   }
+    // }
 
-    .subjects.invenio-group-field {
+    .subjects.invenio-group-field.fields {
       .invenio-group-field.fields {
         background-color: transparent;
         margin-bottom: 1rem;
-        padding: 0.3rem;
+
+        // .ui.icon.button.close-btn {
+        //   margin-top: 2rem !important;
+        // }
+        @media (max-width: 768px) {
+          .field {
+            padding: 0;
+            margin: 0;
+          }
+        }
       }
 
       .ui.icon.left.labeled.button {
-        margin-top: 1.25rem;
+        margin-top: 1.35rem;
       }
     }
-    .accessibility {
-      padding: 0;
-      margin: 0;
-    }
+
     .events.invenio-group-field.fields {
       display: block;
       border-radius: 0.5rem;
       padding: 1rem;
+
       .field {
-        margin-top: 0.3rem;
+        .field {
+          margin-top: 0rem;
+        }
+        margin-top: 2.25rem;
         margin-bottom: 1rem;
       }
-      label.helptext {
-        padding: 1rem;
-        margin: 1rem;
-      }
+
       .invenio-group-field.fields {
         background-color: transparent;
       }
+      .field:last-child {
+        margin-top: 0 !important;
+      }
+    }
+
+    .events.invenio-group-field.fields > .field:first-child {
+      margin-top: 0;
+    }
+
+    .events.invenio-group-field.fields > .helptext {
+      display: block;
+      margin-left: 0.5rem;
     }
     .highlighted {
       background-color: @highlightedfieldcolor !important;
     }
-    .field:first-child {
-      margin-top: 0;
-    }
   }
+
   .ui.container > .field {
-    margin-top: 1.75rem;
+    margin-top: 2.5rem;
+  }
+
+  .ui.container > .field:first-child {
+    margin-top: 0.5rem;
+  }
+
+  #main-content {
+    .ui.icon.left.labeled.button {
+      background-color: #eee8a9;
+    }
+    .ui.icon.left.labeled.button:hover {
+      background-color: #e5db70;
+    }
   }
 }

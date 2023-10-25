@@ -69,7 +69,12 @@ export const DepositForm = () => {
       >
         <Grid>
           <Ref innerRef={formFeedbackRef}>
-            <Grid.Column mobile={16} tablet={16} computer={11}>
+            <Grid.Column
+              id="main-content"
+              mobile={16}
+              tablet={16}
+              computer={11}
+            >
               <Sticky context={formFeedbackRef} offset={20}>
                 <Overridable id="NrDocs.Deposit.FormFeedback.container">
                   <FormFeedback />
@@ -191,16 +196,13 @@ export const DepositForm = () => {
                     fieldPath="metadata.abstract"
                   >
                     <MultilingualTextInput
-                      hasHighlighting
                       labelIcon="pencil"
                       label={i18next.t("Abstract")}
                       textFieldLabel={i18next.t("Description")}
                       fieldPath="metadata.abstract"
                       rich={true}
                       required
-                      helpText={i18next.t(
-                        "Detailed description of the methodology and technical information should be specified in the 'Resource Description' section"
-                      )}
+                      helpText={i18next.t("Detailed description")}
                     />
                   </Overridable>
                   <Overridable
@@ -316,7 +318,6 @@ export const DepositForm = () => {
                     fieldPath="metadata.methods"
                   >
                     <MultilingualTextInput
-                      hasHighlighting
                       labelIcon="pencil"
                       label={i18next.t("Methods")}
                       fieldPath="metadata.methods"
@@ -330,7 +331,6 @@ export const DepositForm = () => {
                     fieldPath="metadata.technicalInfo"
                   >
                     <MultilingualTextInput
-                      hasHighlighting
                       textFieldLabel={i18next.t("Description")}
                       labelIcon="pencil"
                       label={i18next.t("Technical info")}
@@ -393,8 +393,7 @@ export const DepositForm = () => {
                   >
                     {/* TODO: not clear how this input is going to work i.e. our access is within metadata */}
                     <MultilingualTextInput
-                      hasHighlighting
-                      className="invenio-group-field accessibility"
+                      className="accessibility"
                       labelIcon="pencil"
                       label={i18next.t("Accessibility")}
                       textFieldLabel={i18next.t("Description")}
@@ -477,7 +476,12 @@ export const DepositForm = () => {
           </Ref>
 
           <Ref innerRef={sidebarRef}>
-            <Grid.Column mobile={16} tablet={16} computer={5}>
+            <Grid.Column
+              id="control-panel"
+              mobile={16}
+              tablet={16}
+              computer={5}
+            >
               <Sticky context={sidebarRef} offset={20}>
                 <Overridable id="NrDocs.Deposit.ControlPanel.container">
                   <Card fluid>
@@ -489,7 +493,7 @@ export const DepositForm = () => {
                         <Grid.Column
                           computer={8}
                           mobile={16}
-                          className="pb-0 left-btn-col"
+                          className="left-btn-col"
                         >
                           <SaveButton fluid />
                         </Grid.Column>
@@ -497,7 +501,7 @@ export const DepositForm = () => {
                         <Grid.Column
                           computer={8}
                           mobile={16}
-                          className="pb-0 right-btn-col"
+                          className="right-btn-col"
                         >
                           <PreviewButton fluid />
                         </Grid.Column>
@@ -506,8 +510,9 @@ export const DepositForm = () => {
                           <PublishButtonComponent />
                         </Grid.Column>
                         <Grid.Column width={16} className="pt-10">
-                          <ValidateButton fluid />
+                          <ValidateButton />
                         </Grid.Column>
+                        {/* TODO:see if there is a better way to provide URL here, seems that UI links are empty in the form */}
                         <Grid.Column width={16} className="pt-10">
                           <DeleteButtonComponent redirectUrl="/docs/" />
                         </Grid.Column>

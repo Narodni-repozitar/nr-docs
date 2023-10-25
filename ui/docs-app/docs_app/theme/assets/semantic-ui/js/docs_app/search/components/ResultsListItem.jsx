@@ -69,7 +69,7 @@ const ItemSubheader = ({
               >
                 {_join(
                   languages.map((l) => l.title),
-                  ","
+                  ", "
                 )}
               </span>
             </Grid.Row>
@@ -111,8 +111,8 @@ const ItemExtraInfo = ({ createdDate, publishers }) => {
                 {i18next.t("Uploaded on")} <span>{createdDate}</span>
               </>
             )}
-            {createdDate && publishers && " | "}
-            {publishers && (
+            {createdDate && publishers.length > 0 && " | "}
+            {publishers.length > 0 && (
               <>
                 {i18next.t("Published in: ")}{" "}
                 <span>{_join(publishers, ", ")}</span>
@@ -162,7 +162,7 @@ export const ResultsListItemComponent = ({
   const descriptionStripped = _get(
     result,
     "metadata.abstract[0].value",
-    "No description"
+    i18next.t("No description")
   );
 
   const languages = _get(result, "metadata.languages", []);
@@ -170,7 +170,7 @@ export const ResultsListItemComponent = ({
   const publicationDate = _get(
     result,
     "metadata.dateAvailable",
-    "No publication date found."
+    i18next.t("No publication date found.")
   );
   const resourceType = _get(result, "metadata.resourceType");
   const subjects = _get(result, "metadata.subjects", []);

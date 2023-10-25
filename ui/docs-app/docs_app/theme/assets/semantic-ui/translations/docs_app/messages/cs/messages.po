@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2\n"
-"POT-Creation-Date: 2023-09-06T10:25:06.893Z\n"
-"PO-Revision-Date: 2023-09-06T10:25:06.893Z\n"
+"POT-Creation-Date: 2023-10-18T05:52:59.124Z\n"
+"PO-Revision-Date: 2023-10-18T05:52:59.124Z\n"
 "Language: cs\n"
 
 msgid "We couldn't find any matches for "
@@ -99,9 +99,6 @@ msgstr "Název"
 msgid "Title type"
 msgstr "Druh názvu"
 
-msgid "Remove field"
-msgstr "Odebrat pole"
-
 msgid ""
 "In case your upload was already published elsewhere, please use the date of "
 "the first publication. Format: YYYY-MM-DD, YYYY-MM, or YYYY. For intervals "
@@ -193,10 +190,10 @@ msgid "Object identifier"
 msgstr "Identifikátor objektu"
 
 msgid "Add series"
-msgstr "Přidat sérii"
+msgstr "Přidat edici"
 
 msgid "Series"
-msgstr "Série"
+msgstr "Edice"
 
 msgid "Series title"
 msgstr "Název edice"
@@ -223,7 +220,7 @@ msgid "Subject scheme"
 msgstr "Schema klíčového slova"
 
 msgid "Validate form"
-msgstr "Potvrďte formulář"
+msgstr "Zkontrolovat formulář"
 
 msgid "Basic information"
 msgstr "Základní informace"
@@ -247,10 +244,10 @@ msgid "Select access rights"
 msgstr "Vyberte přístupová práva"
 
 msgid "Resource type"
-msgstr "Typ zdroje"
+msgstr "Typ položky"
 
 msgid "Select resource type"
-msgstr "Vyberte typ zdroje"
+msgstr "Vyberte typ položky"
 
 msgid "Date available"
 msgstr "Datum zveřejnění"
@@ -264,9 +261,7 @@ msgstr "Abstrakt"
 msgid "Description"
 msgstr "Popis"
 
-msgid ""
-"Detailed description of the methodology and technical information should be "
-"specified in the 'Dataset Description' section"
+msgid "Detailed description"
 msgstr ""
 "Podrobný popis metodiky a technické informace by měly být uvedeny v části "
 "„Popis datové sady“."
@@ -283,10 +278,7 @@ msgstr "Licence"
 msgid "Choose licenses"
 msgstr "Vyberte licence"
 
-msgid ""
-"If a Creative Commons license is associated with the dataset, select the "
-"appropriate license option from the menu. We recommend choosing the latest "
-"versions, namely 3.0 Czech and 4.0 International."
+msgid "Creative Commons license"
 msgstr ""
 "Pokud se k datové sadě váže licence Creative Commons, vyberte příslušnou "
 "variantu licence z nabídky. Doporučujeme výběr nejnovějších verzí a to 3.0 "
@@ -298,17 +290,11 @@ msgstr "Přidat vydavatele"
 msgid "Publishers"
 msgstr "Vydavatelé"
 
-msgid "Dataset description"
-msgstr "Popis datové sady"
-
 msgid "Subject Categories"
 msgstr "Oborové třídění"
 
 msgid "Choose subject categories"
 msgstr "Vyberte kategorie předmětů"
-
-msgid "Select the subject field(s) to which the dataset belongs."
-msgstr "Vyberte obor/y, do kterého/kterých datová sada spadá"
 
 msgid "Methods"
 msgstr "Metodologie"
@@ -337,9 +323,6 @@ msgstr ""
 "Volný popis místa; npr. Atlantický oceán. Zeměpisná délka musí být číslo "
 "mezi -180 a 180 a zeměpisná šířka mezi -90 a 90."
 
-msgid "Resource accessibility"
-msgstr "Dostupnost zdroje"
-
 msgid "This field is required"
 msgstr "Toto pole je vyžadováno"
 
@@ -349,68 +332,26 @@ msgstr "Musí mít alespoň {{min}} znaků"
 msgid "Must be between -180 and 180"
 msgstr "Musí být mezi -180 a 180"
 
-msgid "Must be between -90 and 90"
-msgstr "Musí být mezi -90 a 90"
-
 msgid "Delete"
-msgstr ""
-
-msgid "Cancel"
-msgstr ""
+msgstr "Smazat"
 
 msgid "Are you sure you wish delete this draft?"
-msgstr ""
+msgstr "Jste si jistý, že chcete smazat tento koncept?"
 
 msgid "If you delete the draft, the work you have done on it will be lost."
-msgstr ""
-
-msgid "Preview"
-msgstr ""
+msgstr "Pokud koncept smažete, práce, kterou jste na něm vykonali, bude ztracena."
 
 msgid "Publish"
-msgstr ""
+msgstr "Publikovat"
 
 msgid "Are you sure you wish to publish this draft?"
-msgstr ""
-
-msgid "Save"
-msgstr ""
-
-msgid "Additional information"
-msgstr ""
+msgstr "Jste si jistý, že chcete tento koncept publikovat?"
 
 msgid "Accessibility"
-msgstr ""
+msgstr "Přístupnost"
 
 msgid "Explanation regarding restricted status of an item"
-msgstr ""
-
-msgid "Items must be unique"
-msgstr ""
-
-msgid "Additional titles must be unique"
-msgstr ""
-
-msgid "Invalid date format"
-msgstr ""
-
-msgid "Publishers must be unique"
-msgstr ""
-
-msgid "Notes must be unique"
-msgstr ""
-
-msgid "Locations must be unique"
-msgstr ""
-
-msgid "Please provide an URL in valid format"
-msgstr ""
-
-msgid "URL must be provided for this field if used"
-msgstr "Musí mít alespoň {{min}} znaků"
-
-msgid "Must be between -180 and 180"
-msgstr "Musí být mezi -180 a 180"
+msgstr "Vysvětlení týkající se omezeného stavu položky"
 
 msgid "Must be between -90 and 90"
 msgstr "Musí být mezi -90 a 90"
@@ -434,112 +375,136 @@ msgid "Type the value of an identifier..."
 msgstr "Zadejte hodnotu identifikátoru…"
 
 msgid "e.g. ORCID, ISNI or GND."
-msgstr ""
+msgstr "např. ORCID, ISNI or GND."
 
 msgid "Save and add another"
-msgstr ""
-
-msgid "Name is a required field."
-msgstr ""
+msgstr "Uložit a přidat další"
 
 msgid "Role is a required field."
-msgstr ""
+msgstr "Role je povinné pole."
 
 msgid "Added"
-msgstr ""
+msgstr "Přidáno"
 
 msgid "Person"
-msgstr ""
+msgstr "Osoba"
 
 msgid "Organization"
-msgstr ""
+msgstr "Organizace"
 
 msgid "Search for persons by name, identifier, or affiliation..."
-msgstr ""
+msgstr "Hledat osoby podle jména, identifikátoru nebo afiliace…"
 
 msgid "Family name"
-msgstr ""
+msgstr "Příjmení"
 
 msgid "Given names"
-msgstr ""
+msgstr "Jméno"
 
 msgid "Name"
-msgstr ""
+msgstr "Název"
 
 msgid "Organization name"
-msgstr ""
+msgstr "Název organizace"
 
 msgid "e.g. ROR, ISNI or GND."
-msgstr ""
+msgstr "např. ROR, ISNI or GND."
 
 msgid "Role"
-msgstr ""
+msgstr "Role"
 
 msgid "Select role"
-msgstr ""
+msgstr "Vyberte roli"
 
 msgid "Cancel"
-msgstr ""
+msgstr "Zrušit"
 
 msgid "Save"
-msgstr ""
+msgstr "Uložit"
 
 msgid "Couldn't find your person? You can <2>create a new entry</2>."
-msgstr "Couldn't find your person? You can <2>create a new entry</2>."
+msgstr "Nemůžete najít svou osobu? Můžete <2>vytvořit nový záznam</2>."
 
 msgid "Preview"
-msgstr ""
+msgstr "Náhled"
 
 msgid "Additional information"
-msgstr ""
-
-msgid "Visibility"
-msgstr ""
+msgstr "Doplňující informace"
 
 msgid "Items must be unique"
-msgstr ""
+msgstr "Položky musí se nesmí opakovat"
 
 msgid "Additional titles must be unique"
-msgstr ""
+msgstr "Další názvy se nesmí opakovat"
 
 msgid "Invalid date format"
-msgstr ""
+msgstr "Nesprávný formát data"
 
 msgid "Publishers must be unique"
-msgstr ""
+msgstr "Vydavatelé se nesmí opakovat"
 
 msgid "Notes must be unique"
-msgstr ""
+msgstr "Poznámky se nesmí opakovat"
 
 msgid "Locations must be unique"
-msgstr ""
+msgstr "Lokality se nesmí opakovat"
 
 msgid "Please provide an URL in valid format"
-msgstr ""
+msgstr "Uveďte prosím adresu URL v platném formátu"
 
 msgid "URL must be provided for this field if used"
-msgstr ""
+msgstr "Pro toto pole musí být uvedena platná adresa URL"
 
 msgid "Project codes must be unique"
-msgstr ""
+msgstr "Kódy projektů se nesmí opakovat"
 
 msgid "Subjects must be unique"
-msgstr ""
+msgstr "Předměty se nesmí opakovat"
 
 msgid "Series titles must be unique"
-msgstr ""
+msgstr "Názvy sérií se nesmí opakovat"
 
 msgid "Object identifiers must be unique"
+msgstr "Identifikátory objektů se nesmí opakovat"
+
+msgid "Identifier"
+msgstr "Identifikátor"
+
+msgid "Identifiers"
+msgstr "Identifikátory"
+
+msgid "Affiliations"
+msgstr "Afiliace"
+
+msgid "Select one or more affiliations"
+msgstr "Vyberte jednu nebo více afiliací"
+
+msgid "Given name is a required field."
 msgstr ""
 
-msgid "Titles must be unique"
+msgid "Family name is a required field."
 msgstr ""
 
-msgid "Items must be unique."
+msgid "Contributors"
 msgstr ""
 
-msgid "Must be between -180 and 180"
+msgid "Add contributor"
 msgstr ""
 
-msgid "Must be between -90 and 90"
+msgid "Edit contributor"
+msgstr ""
+
+msgid "Resource description"
+msgstr ""
+
+msgid "Select the subject field(s) to which the resource belongs."
+msgstr ""
+
+msgid "Identifiers information"
+msgstr ""
+
+msgid "No description"
+msgstr ""
+
+msgid "No publication date found."
 msgstr ""

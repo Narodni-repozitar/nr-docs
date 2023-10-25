@@ -43,7 +43,7 @@ export const StringArrayField = ({
                 </ArrayFieldItem>
               );
             })}
-            <label style={{ fontWeight: "bold" }}>{helpText}</label>
+            <label className="helptext">{helpText}</label>
             <Form.Button
               type="button"
               icon

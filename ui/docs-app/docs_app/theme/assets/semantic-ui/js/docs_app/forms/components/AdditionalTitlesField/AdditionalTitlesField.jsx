@@ -30,16 +30,16 @@ export const AdditionalTitlesField = ({ fieldPath }) => {
             array={array}
             arrayHelpers={arrayHelpers}
           >
-            <Form.Field width={13}>
+            <Form.Field width={12}>
               <I18nTextInputField
                 fieldPath={`${fieldPathPrefix}.title`}
                 label={i18next.t("Title")}
                 required
-                lngFieldWidth={4}
+                lngFieldWidth={5}
                 className=""
               />
             </Form.Field>
-            <Form.Field width={3}>
+            <Form.Field width={4}>
               <SelectField
                 fieldPath={`${fieldPathPrefix}.titleType`}
                 label={i18next.t("Title type")}
@@ -47,6 +47,7 @@ export const AdditionalTitlesField = ({ fieldPath }) => {
                 options={subtitleTypes}
                 required
                 clearable
+                width={16}
               />
             </Form.Field>
           </ArrayFieldItem>

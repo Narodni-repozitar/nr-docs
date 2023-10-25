@@ -1,7 +1,6 @@
 import React from "react";
 import { i18next } from "@translations/docs_app/i18next";
 
-
 export const IconIdentifier = ({ link, linkTitle, icon, alt }) => {
   return (
     <a
@@ -36,7 +35,7 @@ export const IconPersonIdentifier = ({ identifier, personName }) => {
         <IconIdentifier
           link={`https://orcid.org/${value}`}
           linkTitle={`${personName}: ${i18next.t("ORCID profile")}`}
-          icon="/static/images/orcid.png"
+          icon="/static/images/identifiers/orcid-og-image.png"
           alt="ORCID logo"
         />
       );

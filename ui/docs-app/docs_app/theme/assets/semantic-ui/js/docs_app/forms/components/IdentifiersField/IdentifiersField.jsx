@@ -10,6 +10,7 @@ export const IdentifiersField = ({
   options,
   label,
   identifierLabel,
+  className,
 }) => {
   return (
     <ArrayField
@@ -18,6 +19,7 @@ export const IdentifiersField = ({
       label={label}
       labelIcon="pencil"
       helpText={helpText}
+      className={className}
     >
       {({ arrayHelpers, indexPath }) => {
         const fieldPathPrefix = `${fieldPath}.${indexPath}`;

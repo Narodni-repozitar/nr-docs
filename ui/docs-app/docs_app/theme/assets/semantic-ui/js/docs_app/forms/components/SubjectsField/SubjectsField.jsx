@@ -26,7 +26,7 @@ export const SubjectsField = ({ fieldPath, helpText }) => {
           >
             <SelectField
               clearable
-              width={4}
+              width={5}
               fieldPath={`${fieldPathPrefix}.subjectScheme`}
               label={i18next.t("Subject scheme")}
               required
@@ -34,10 +34,10 @@ export const SubjectsField = ({ fieldPath, helpText }) => {
             />
             <Form.Field style={{ marginTop: 0 }} width={12}>
               <MultilingualTextInput
-                hasHighlighting
                 fieldPath={`${fieldPathPrefix}.subject`}
-                label=""
                 lngFieldWidth={5}
+                textFieldLabel={i18next.t("Subject")}
+                required
               />
             </Form.Field>
           </ArrayFieldItem>
