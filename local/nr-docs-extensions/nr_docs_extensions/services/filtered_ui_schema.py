@@ -22,10 +22,11 @@ class FilteredUIListSchema(BaseListSchema):
                 translated_params[k] = [{
                     'key': key
                 } for key in v]
-            labels = facet.value_labels(v)
-            translated_params[k] = [{
-                    'key': key,
-                    'label': labels.get(key, key)
-                } for key in v]
+            else:
+                labels = facet.value_labels(v)
+                translated_params[k] = [{
+                        'key': key,
+                        'label': labels.get(key, key)
+                    } for key in v]
         data['filters_l10n'] = translated_params
         return data
