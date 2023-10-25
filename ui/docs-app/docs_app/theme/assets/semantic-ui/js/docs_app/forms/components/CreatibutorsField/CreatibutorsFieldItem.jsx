@@ -64,7 +64,7 @@ export const CreatibutorsFieldItem = ({
     identifiersError.find((elem) => ![undefined, null].includes(elem));
 
   // Initialize the ref explicitely
-  // drop(dropRef);
+  drop(dropRef);
   return (
     <Ref innerRef={dropRef} key={compKey}>
       <List.Item
