@@ -6,6 +6,7 @@ import yaml
 from flask_security import login_user
 from flask_security.utils import hash_password
 from invenio_access import ActionUsers, current_access
+from invenio_access.permissions import system_identity
 from invenio_accounts.proxies import current_datastore
 from invenio_accounts.testutils import login_user_via_session
 from invenio_app.factory import create_api
@@ -13,6 +14,35 @@ from invenio_records_resources.services.uow import RecordCommitOp, UnitOfWork
 
 from nr_documents.proxies import current_service
 from nr_documents.records.api import NrDocumentsDraft, NrDocumentsRecord
+from nr_documents.resources.records.config import NrDocumentsResourceConfig
+
+BASE_URLS = {
+    "base_url": NrDocumentsResourceConfig.url_prefix,
+    "base_html_url": "/docs/",
+}
+
+APP_CONFIG = {
+    "JSONSCHEMAS_HOST": "localhost",
+    "RECORDS_REFRESOLVER_CLS": "invenio_records.resolver.InvenioRefResolver",
+    "RECORDS_REFRESOLVER_STORE": (
+        "invenio_jsonschemas.proxies.current_refresolver_store"
+    ),
+    "RATELIMIT_AUTHENTICATED_USER": "200 per second",
+    "SEARCH_HOSTS": [
+        {
+            "host": os.environ.get("OPENSEARCH_HOST", "localhost"),
+            "port": os.environ.get("OPENSEARCH_PORT", "9200"),
+        }
+    ],
+    # disable redis cache
+    "CACHE_TYPE": "SimpleCache",  # Flask-Caching related configs
+    "CACHE_DEFAULT_TIMEOUT": 300,
+}
+
+
+@pytest.fixture
+def base_urls():
+    return BASE_URLS
 
 
 @pytest.fixture
@@ -40,24 +70,8 @@ def create_app(instance_path, entry_points):
 
 @pytest.fixture(scope="module")
 def app_config(app_config):
-    """Mimic an instance's configuration."""
-    app_config["JSONSCHEMAS_HOST"] = "localhost"
-    app_config["RECORDS_REFRESOLVER_CLS"] = (
-        "invenio_records.resolver.InvenioRefResolver"
-    )
-    app_config["RECORDS_REFRESOLVER_STORE"] = (
-        "invenio_jsonschemas.proxies.current_refresolver_store"
-    )
-    app_config["RATELIMIT_AUTHENTICATED_USER"] = "200 per second"
-    app_config["SEARCH_HOSTS"] = [
-        {
-            "host": os.environ.get("OPENSEARCH_HOST", "localhost"),
-            "port": os.environ.get("OPENSEARCH_PORT", "9200"),
-        }
-    ]
-    # disable redis cache
-    app_config["CACHE_TYPE"] = "SimpleCache"  # Flask-Caching related configs
-    app_config["CACHE_DEFAULT_TIMEOUT"] = 300
+    for k, v in APP_CONFIG.items():
+        app_config[k] = v
     return app_config
 
 
@@ -139,3 +153,22 @@ def vocab_cf(app, db, cache):
     from oarepo_runtime.cf.mappings import prepare_cf_indices
 
     prepare_cf_indices()
+
+
+@pytest.fixture
+def published_record_factory(record_service):
+    """Create a draft and publish it."""
+
+    def create_record(input_data):
+        draft = record_service.create(system_identity, input_data)
+        published_record = record_service.publish(system_identity, draft.data["id"])
+        record = NrDocumentsRecord.pid.resolve(published_record["id"])
+        return record
+
+    return create_record
+
+
+@pytest.fixture
+def sample_published_record(record_service, published_record_factory, input_data):
+    """Create a draft and publish it."""
+    return published_record_factory(input_data)
