@@ -190,7 +190,7 @@ msgid "Object identifier"
 msgstr "Identifikátor objektu"
 
 msgid "Add series"
-msgstr "Přidat edice"
+msgstr "Přidat edici"
 
 msgid "Series"
 msgstr "Edice"
