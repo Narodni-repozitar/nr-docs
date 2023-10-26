@@ -190,7 +190,7 @@ msgid "Object identifier"
 msgstr "Identifikátor objektu"
 
 msgid "Add series"
-msgstr "Přidat edice"
+msgstr "Přidat edici"
 
 msgid "Series"
 msgstr "Edice"
@@ -438,7 +438,7 @@ msgid "Additional titles must be unique"
 msgstr "Další názvy se nesmí opakovat"
 
 msgid "Invalid date format"
-msgstr "esprávný formát data"
+msgstr "Nesprávný formát data"
 
 msgid "Publishers must be unique"
 msgstr "Vydavatelé se nesmí opakovat"
