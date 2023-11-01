@@ -46,7 +46,7 @@ from nr_metadata.schema.identifiers import (
     NRSystemIdentifierSchema,
 )
 from oarepo_vocabularies.services.schema import HierarchySchema
-
+from oarepo_requests.schemas.marshmallow import NoneReceiverGenericRequestSchema
 
 class GeneratedParentSchema(InvenioParentSchema):
     """"""

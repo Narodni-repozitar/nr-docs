@@ -28,10 +28,10 @@ record:
   # sort by czech title
   search-options:
     base-classes:
-      - oarepo_runtime.services.icu.I18nSearchOptions
+      - oarepo_runtime.services.search.I18nSearchOptions
     sort-options-field: extra_sort_options
     extra-code: |-2
-          sort_options = {{oarepo_runtime.services.icu.ICUSortOptions}}("nr_documents")
+          sort_options = {{oarepo_runtime.services.search.ICUSortOptions}}("nr_documents")
   record:
     extra-code: |-2
           # extra custom fields for sorting by title

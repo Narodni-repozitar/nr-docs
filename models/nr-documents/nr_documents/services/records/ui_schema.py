@@ -49,7 +49,7 @@ from oarepo_vocabularies.services.ui_schema import (
     VocabularyI18nStrUIField,
 )
 
-from nr_documents.services.records.schema import GeneratedParentSchema
+from oarepo_requests.schemas.marshmallow import NoneReceiverGenericRequestSchema
 
 
 class GeneratedParentSchema(InvenioParentSchema):
