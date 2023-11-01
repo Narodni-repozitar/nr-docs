@@ -1,23 +1,17 @@
 
 service-config:
   components:
-    - PublishDraftComponent("publish_draft", "delete_record")
-  imports:
-    - import: oarepo_requests.components.requests.PublishDraftComponent
+    - "{{oarepo_requests.components.requests.PublishDraftComponent}}(\"publish_draft\", \"delete_record\")"
 
 published-service-config:
   base-classes:
-     - NrDocumentsPublishedServiceConfig
-  imports:
-    - import: nr_docs_extensions.services.published_service.NrDocumentsPublishedServiceConfig
+     - nr_docs_extensions.services.published_service.NrDocumentsPublishedServiceConfig
 draft:
   requests:
     publish-draft:
       type:
         base-classes:
-          - PublishDraftRequestType
-        imports:
-          - import: oarepo_requests.types.publish_draft.PublishDraftRequestType
+          - oarepo_requests.types.publish_draft.PublishDraftRequestType
       actions:
         submit:
           class: oarepo_requests.actions.publish_draft.PublishDraftSubmitAction
@@ -26,9 +20,7 @@ requests:
   delete-record:
     type:
       base-classes:
-        - DeleteRecordRequestType
-      imports:
-        - import: oarepo_requests.types.delete_record.DeleteRecordRequestType
+        - oarepo_requests.types.delete_record.DeleteRecordRequestType
     actions:
       submit:
         class: oarepo_requests.actions.delete_topic.DeleteTopicSubmitAction
