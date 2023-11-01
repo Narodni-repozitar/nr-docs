@@ -25,7 +25,7 @@
                 },
                 "parent-marshmallow": {
                     "parent-field": "delete_record",
-                    "schema-class": "invenio_requests.services.schemas.NoneReceiverGenericRequestSchema",
+                    "schema-class": "oarepo_requests.schemas.marshmallow.NoneReceiverGenericRequestSchema",
                     "module": "nr_documents.services.records.schema",
                     "generate": true
                 }

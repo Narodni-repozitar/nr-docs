@@ -44,6 +44,7 @@ from nr_metadata.ui_schema.identifiers import (
     NRObjectIdentifierUISchema,
     NRSystemIdentifierUISchema,
 )
+from oarepo_requests.schemas.marshmallow import NoneReceiverGenericRequestSchema
 from oarepo_vocabularies.services.ui_schema import (
     HierarchyUISchema,
     VocabularyI18nStrUIField,
