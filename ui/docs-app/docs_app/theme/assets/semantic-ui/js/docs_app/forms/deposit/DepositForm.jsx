@@ -470,8 +470,8 @@ export const DepositForm = () => {
                   </Overridable>
                 </AccordionField>
               </Overridable>
-
-              <FormikStateLogger />
+              {/* Uncoment only when needed */}
+              {/* <FormikStateLogger /> */}
             </Grid.Column>
           </Ref>
 

@@ -9,7 +9,7 @@ theme = WebpackThemeBundle(
     themes={
         "semantic-ui": dict(
             entry={
-                # Add your webpack entrypoints
+                "base-theme-nr-docs": "./js/nr_docs/theme.js",
             },
         ),
     },
