@@ -74,26 +74,15 @@
         margin: 0;
       }
     }
-    // @media (max-width: 768px) {
-    //   .additional-titles {
-    //     .invenio-group-field.fields {
-    //       .invenio-group-field.fields {
-    //         .field {
-    //           padding: 0rem;
-    //         }
-    //       }
-    //     }
-    //   }
-    // }
 
     .subjects.invenio-group-field.fields {
+      label:first-of-type {
+        white-space: nowrap;
+      }
       .invenio-group-field.fields {
         background-color: transparent;
         margin-bottom: 1rem;
 
-        // .ui.icon.button.close-btn {
-        //   margin-top: 2rem !important;
-        // }
         @media (max-width: 768px) {
           .field {
             padding: 0;
@@ -104,6 +93,12 @@
 
       .ui.icon.left.labeled.button {
         margin-top: 1.35rem;
+      }
+    }
+
+    .subjects.invenio-group-field.fields > .field:first-child {
+      @media (min-width: 1200px) {
+        max-width: 20%;
       }
     }
 
