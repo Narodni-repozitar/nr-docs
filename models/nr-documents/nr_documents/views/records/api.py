@@ -43,7 +43,7 @@ def init_addons_nr_documents_requests(state):
     app = state.app
     requests = app.extensions["invenio-requests"]
 
-    from nr_documents import config as config
+    from nr_documents import config
 
     for rt in getattr(config, "REQUESTS_REGISTERED_TYPES", []):
         requests.request_type_registry.register_type(rt)

@@ -1,7 +1,7 @@
 from invenio_drafts_resources.records.api import Draft as InvenioDraft
 from invenio_drafts_resources.records.api import DraftRecordIdProviderV2, ParentRecord
 from invenio_drafts_resources.records.api import Record as InvenioRecord
-from invenio_records.systemfields import ConstantField, RelationsField
+from invenio_records.systemfields import ConstantField
 from invenio_records_resources.records.systemfields import IndexField
 from invenio_records_resources.records.systemfields.pid import PIDField, PIDFieldContext
 from invenio_requests.records import Request
@@ -9,17 +9,18 @@ from invenio_requests.records.systemfields.relatedrecord import RelatedRecord
 from invenio_vocabularies.records.api import Vocabulary
 from nr_docs_extensions.services.sort import TitleICUSortField
 from oarepo_runtime.drafts.systemfields.has_draftcheck import HasDraftCheckField
-from oarepo_runtime.records import SystemFieldDumperExt
 from oarepo_runtime.relations import PIDRelation, RelationsField
 
-from nr_documents.records.dumper import NrDocumentsDraftDumper, NrDocumentsDumper
+from nr_documents.records.dumpers.dumper import (
+    NrDocumentsDraftDumper,
+    NrDocumentsDumper,
+)
 from nr_documents.records.models import (
     NrDocumentsDraftMetadata,
     NrDocumentsMetadata,
     NrDocumentsParentMetadata,
     NrDocumentsParentState,
 )
-from nr_documents.records.multilingual_dumper import MultilingualSearchDumper
 
 
 class NrDocumentsParentRecord(ParentRecord):
@@ -49,8 +50,7 @@ class NrDocumentsRecord(InvenioRecord):
         provider=NrDocumentsIdProvider, context_cls=PIDFieldContext, create=True
     )
 
-    dumper_extensions = [SystemFieldDumperExt(), MultilingualSearchDumper()]
-    dumper = NrDocumentsDumper(extensions=dumper_extensions)
+    dumper = NrDocumentsDumper()
 
     # extra custom fields for sorting by title
     sort = TitleICUSortField(source_field="metadata.title")
@@ -157,8 +157,7 @@ class NrDocumentsDraft(InvenioDraft):
         delete=False,
     )
 
-    dumper_extensions = [MultilingualSearchDumper()]
-    dumper = NrDocumentsDraftDumper(extensions=dumper_extensions)
+    dumper = NrDocumentsDraftDumper()
 
     relations = RelationsField(
         accessRights=PIDRelation(
