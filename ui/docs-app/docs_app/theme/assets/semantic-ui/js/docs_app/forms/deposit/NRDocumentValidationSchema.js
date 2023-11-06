@@ -38,7 +38,11 @@ export const NRDocumentValidationSchema = Yup.object().shape({
   metadata: Yup.object().shape({
     // not sure but I assume it would be good idea to ask for a minimum length of title
     title: Yup.string().required(requiredMessage).min(10, stringLengthMessage),
-    resourceType: Yup.object().required(requiredMessage),
+    resourceType: Yup.object().test(
+      "is-non-empty",
+      requiredMessage,
+      (value) => value && Object.keys(value).length > 0 && value?.id
+    ),
     additionalTitles: Yup.array().of(
       Yup.object().shape({
         title: Yup.object().shape({
@@ -69,6 +73,11 @@ export const NRDocumentValidationSchema = Yup.object().shape({
         value: Yup.string().required(requiredMessage),
       })
     ),
+    accessRights: Yup.object().test(
+      "is-non-empty",
+      requiredMessage,
+      (value) => value && Object.keys(value).length > 0 && value?.id
+    ),
     dateModified: Yup.string().matches(
       edtfRegEx,
       i18next.t("Invalid date format")
@@ -78,7 +87,7 @@ export const NRDocumentValidationSchema = Yup.object().shape({
       i18next.t("Invalid date format")
     ),
     creators: Yup.array().required(requiredMessage),
-    languages: Yup.array().required(requiredMessage),
+    languages: Yup.array().min(1, requiredMessage),
     publishers: Yup.array()
       .of(Yup.string().required(requiredMessage))
       .test("unique-publishers", returnGroupError, (value, context) =>
