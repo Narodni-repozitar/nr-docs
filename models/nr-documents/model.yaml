@@ -17,45 +17,25 @@ record:
     metadata:
       properties: {}
   service-config:
-    base-classes: [ PermissionsPresetsConfigMixin, FilteredResultServiceConfig ]
-    imports:
-      - import: nr_docs_extensions.services.config.FilteredResultServiceConfig
-      - import: oarepo_runtime.config.service.PermissionsPresetsConfigMixin
-      # this was not merged from requests/service-config. Why??
-      - import: oarepo_requests.components.requests.PublishDraftComponent
+    base-classes:
+      - oarepo_runtime.config.service.PermissionsPresetsConfigMixin
+      - nr_docs_extensions.services.config.FilteredResultServiceConfig
   json-serializer:
-    base-classes: [ FilteredUIJSONSerializer ]
-    imports:
-      - import: nr_docs_extensions.services.filtered_json_ui_serializer.FilteredUIJSONSerializer
-      - import: flask_resources.serializers.JSONSerializer
-      - import: flask_resources.BaseListSchema
-      - import: flask_resources.MarshmallowSerializer
+    base-classes: [ nr_docs_extensions.services.filtered_json_ui_serializer.FilteredUIJSONSerializer ]
   resource-config:
     base-html-url: /docs/
 
   # sort by czech title
   search-options:
     base-classes:
-      - I18nSearchOptions
-    imports:
-      - import: oarepo_runtime.services.icu.I18nSearchOptions
-      - import: oarepo_runtime.services.icu.ICUSortOptions
+      - oarepo_runtime.services.search.I18nSearchOptions
     sort-options-field: extra_sort_options
     extra-code: |-2
-          sort_options = ICUSortOptions("nr_documents")
+          sort_options = {{oarepo_runtime.services.search.ICUSortOptions}}("nr_documents")
   record:
-    imports:
-      - import: oarepo_runtime.records.SystemFieldDumperExt
-      - import: nr_docs_extensions.services.sort.TitleICUSortField
-      - import: invenio_drafts_resources.records.api.Record
-        alias: InvenioRecord
     extra-code: |-2
           # extra custom fields for sorting by title
-          sort = TitleICUSortField(source_field="metadata.title")
-  record-dumper:
-    extensions:
-      - SystemFieldDumperExt()
-
+          sort = {{nr_docs_extensions.services.sort.TitleICUSortField}}(source_field="metadata.title")
   draft: {}
   use:
   - invenio

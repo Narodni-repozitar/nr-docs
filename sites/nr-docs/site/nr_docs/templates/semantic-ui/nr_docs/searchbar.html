@@ -25,12 +25,11 @@
     {% endif %}
     <div class="item p-0 search-bar rel-mr-1">
     <div id="header-search-bar" data-options='{{ options | tojson }}'>
-        <div class="ui fluid search">
-        <div class="ui icon input">
-            <input autocomplete="off" placeholder="{{_("Search")}}..."
-                    type="text" tabindex="0" class="prompt" value="">
-            <i aria-hidden="true" class="search icon"></i>
+       <form action="{{ url_for('docs-app.search') }}" class="ui form" role="search">
+        <div class="ui fluid action input">
+            <input type="text" name="q" class="form-control" placeholder="{{ _('Search') }}">
+            <button type="submit" class="ui icon search button" aria-label="{{ _('Search') }}"><i class="search icon"></i></button>
         </div>
-        </div>
+        </form>
     </div>
     </div>

@@ -1,7 +1,7 @@
 from oarepo_runtime.i18n.dumper import MultilingualDumper
 
 
-class MultilingualSearchDumper(MultilingualDumper):
+class MultilingualSearchDumperExt(MultilingualDumper):
     """Multilingual search dumper."""
 
     paths = [

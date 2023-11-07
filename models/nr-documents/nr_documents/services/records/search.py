@@ -1,4 +1,4 @@
-from oarepo_runtime.services.icu import I18nSearchOptions, ICUSortOptions
+from oarepo_runtime.services.search import I18nSearchOptions, ICUSortOptions
 
 from . import facets
 

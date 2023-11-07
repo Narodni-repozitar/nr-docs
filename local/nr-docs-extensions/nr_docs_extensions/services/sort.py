@@ -1,4 +1,4 @@
-from oarepo_runtime.records.icu import ICUSortField
+from oarepo_runtime.records.systemfields import ICUSortField
 from oarepo_runtime.relations.lookup import lookup_key
 
 

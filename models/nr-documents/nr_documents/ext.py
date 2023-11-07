@@ -1,7 +1,7 @@
 import re
 from functools import cached_property
 
-from nr_documents import config as config
+from nr_documents import config
 
 
 class Nr_documentsExt:
@@ -56,14 +56,14 @@ class Nr_documentsExt:
     @cached_property
     def published_service_records(self):
         from nr_documents.services.records.published.config import (
-            NrDocumentsPublishedServiceConfig as PublishedServiceConfig,
+            NrDocumentsPublishedServiceConfig,
         )
         from nr_documents.services.records.published.service import (
-            NrDocumentsPublishedService as PublishedService,
+            NrDocumentsPublishedService,
         )
 
-        return PublishedService(
-            config=PublishedServiceConfig(
+        return NrDocumentsPublishedService(
+            config=NrDocumentsPublishedServiceConfig(
                 proxied_drafts_config=self.service_records.config,
             ),
         )
