@@ -157,5 +157,7 @@
   "Select the subject field(s) to which the resource belongs.": "Vyberte obor(y), ke kterému zdroj patří.",
   "Identifiers information": "Informace o identifikátorech",
   "No description": "Žádný popis",
-  "No publication date found.": "Datum zveřejnění nenalezeno."
+  "No publication date found.": "Datum zveřejnění nenalezeno.",
+  "is a required field": "je povinné pole",
+  "Subject": "Klíčové slovo"
 }

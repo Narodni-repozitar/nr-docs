@@ -3,7 +3,6 @@ import {
   useFormConfig,
   MultilingualTextInput,
   BaseForm,
-  FormikStateLogger,
   FormFeedback,
 } from "@js/oarepo_ui";
 import { LocalVocabularySelectField } from "@js/oarepo_vocabularies";
@@ -31,6 +30,7 @@ import {
 import Overridable from "react-overridable";
 import { i18next } from "@translations/docs_app/i18next";
 import _has from "lodash/has";
+import { useFormikContext } from "formik";
 
 // not sure if these should come from formConfig better to not clutter the code
 const objectIdentifiersSchema = [
@@ -49,12 +49,16 @@ const systemIdentifiersSchema = [
   { value: "nrOAI", text: "nrOAI" },
 ];
 
+const FormikStateLogger = () => {
+  const state = useFormikContext();
+  return <pre>{JSON.stringify(state, null, 2)}</pre>;
+};
+
 export const DepositForm = () => {
   const { record, formConfig } = useFormConfig();
   const editMode = _has(formConfig, "updateUrl");
   const sidebarRef = useRef(null);
   const formFeedbackRef = useRef(null);
-
   return (
     <Container>
       <BaseForm
@@ -468,6 +472,7 @@ export const DepositForm = () => {
                       label={i18next.t("System identifiers")}
                     />
                   </Overridable>
+                  <FormikStateLogger />
                 </AccordionField>
               </Overridable>
               {/* Uncoment only when needed */}

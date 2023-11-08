@@ -157,5 +157,7 @@
   "Select the subject field(s) to which the resource belongs.": "Select the subject field(s) to which the resource belongs.",
   "Identifiers information": "Identifiers information",
   "No description": "No description",
-  "No publication date found.": "No publication date found."
+  "No publication date found.": "No publication date found.",
+  "is a required field": "is a required field",
+  "Subject": "Key word"
 }

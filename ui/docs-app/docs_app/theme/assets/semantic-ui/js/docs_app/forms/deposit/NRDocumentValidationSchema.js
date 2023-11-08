@@ -2,7 +2,8 @@ import * as Yup from "yup";
 import { i18next } from "@translations/docs_app/i18next";
 import _uniqBy from "lodash/uniqBy";
 
-const requiredMessage = i18next.t("This field is required");
+const requiredMessage = (value) =>
+  `${value?.label} ${i18next.t("is a required field")}`;
 
 const stringLengthMessage = ({ min }) =>
   i18next.t("Must have at least x characters", { min: min });
@@ -10,6 +11,7 @@ const stringLengthMessage = ({ min }) =>
 const returnGroupError = (value, context) => {
   return i18next.t("Items must be unique");
 };
+
 const edtfRegEx = /^(\d{4})(-(\d{2})(-(\d{2}))?)?(\/\d{4}(-\d{2}(-\d{2})?)?)?$/;
 
 const unique = (value, context, path, errorString) => {
@@ -37,57 +39,93 @@ const unique = (value, context, path, errorString) => {
 export const NRDocumentValidationSchema = Yup.object().shape({
   metadata: Yup.object().shape({
     // not sure but I assume it would be good idea to ask for a minimum length of title
-    title: Yup.string().required(requiredMessage).min(10, stringLengthMessage),
-    resourceType: Yup.object().test(
-      "is-non-empty",
-      requiredMessage,
-      (value) => value && Object.keys(value).length > 0 && value?.id
-    ),
-    additionalTitles: Yup.array().of(
-      Yup.object().shape({
-        title: Yup.object().shape({
-          lang: Yup.string().required(requiredMessage),
+    title: Yup.string()
+      .required(requiredMessage)
+      .min(10, stringLengthMessage)
+      .label(i18next.t("Title")),
+    resourceType: Yup.object()
+      .test(
+        "is-non-empty",
+        requiredMessage,
+        (value) => value && Object.keys(value).length > 0 && value?.id
+      )
+      .label(i18next.t("Resource type")),
+    additionalTitles: Yup.array()
+      .of(
+        Yup.object().shape({
+          title: Yup.object()
+            .shape({
+              lang: Yup.string()
+                .required(requiredMessage)
+                .label(i18next.t("Language")),
+              value: Yup.string()
+                .required(requiredMessage)
+                .min(10, stringLengthMessage),
+            })
+            .label(i18next.t("Title")),
+          titleType: Yup.string()
+            .required(requiredMessage)
+            .label(i18next.t("Title type")),
+        })
+      )
+      .label(i18next.t("Additional titles")),
+
+    abstract: Yup.array()
+      .of(
+        Yup.object().shape({
+          lang: Yup.string()
+            .required(requiredMessage)
+            .label(i18next.t("Language")),
           value: Yup.string()
             .required(requiredMessage)
-            .min(10, stringLengthMessage),
-        }),
-        titleType: Yup.string().required(requiredMessage),
-      })
-    ),
-
-    abstract: Yup.array().of(
-      Yup.object().shape({
-        lang: Yup.string().required(requiredMessage),
-        value: Yup.string().required(requiredMessage),
-      })
-    ),
-    methods: Yup.array().of(
-      Yup.object().shape({
-        lang: Yup.string().required(requiredMessage),
-        value: Yup.string().required(requiredMessage),
-      })
-    ),
-    technicalInfo: Yup.array().of(
-      Yup.object().shape({
-        lang: Yup.string().required(requiredMessage),
-        value: Yup.string().required(requiredMessage),
-      })
-    ),
-    accessRights: Yup.object().test(
-      "is-non-empty",
-      requiredMessage,
-      (value) => value && Object.keys(value).length > 0 && value?.id
-    ),
-    dateModified: Yup.string().matches(
-      edtfRegEx,
-      i18next.t("Invalid date format")
-    ),
-    dateAvailable: Yup.string().matches(
-      edtfRegEx,
-      i18next.t("Invalid date format")
-    ),
-    creators: Yup.array().required(requiredMessage),
-    languages: Yup.array().min(1, requiredMessage),
+            .label(i18next.t("Abstract")),
+        })
+      )
+      .label(i18next.t("Abstract")),
+    methods: Yup.array()
+      .of(
+        Yup.object().shape({
+          lang: Yup.string()
+            .required(requiredMessage)
+            .label(i18next.t("Language")),
+          value: Yup.string()
+            .required(requiredMessage)
+            .label(i18next.t("Methods")),
+        })
+      )
+      .label(i18next.t("Methods")),
+    technicalInfo: Yup.array()
+      .of(
+        Yup.object().shape({
+          lang: Yup.string()
+            .required(requiredMessage)
+            .label(i18next.t("Language")),
+          value: Yup.string()
+            .required(requiredMessage)
+            .label(i18next.t("Technical info")),
+        })
+      )
+      .label(i18next.t("Technical info")),
+    accessRights: Yup.object()
+      .test(
+        "is-non-empty",
+        requiredMessage,
+        (value) => value && Object.keys(value).length > 0 && value?.id
+      )
+      .label(i18next.t("Access rights")),
+    dateModified: Yup.string()
+      .matches(edtfRegEx, i18next.t("Invalid date format"))
+      .label(i18next.t("Date modified")),
+    dateAvailable: Yup.string()
+      .matches(edtfRegEx, i18next.t("Invalid date format"))
+      .label(i18next.t("Date available")),
+    creators: Yup.array()
+      .required(requiredMessage)
+      .label(i18next.t("Creators")),
+    languages: Yup.array()
+      .min(1, requiredMessage)
+      .required(requiredMessage)
+      .label(i18next.t("Language")),
     publishers: Yup.array()
       .of(Yup.string().required(requiredMessage))
       .test("unique-publishers", returnGroupError, (value, context) =>
@@ -97,16 +135,20 @@ export const NRDocumentValidationSchema = Yup.object().shape({
           undefined,
           i18next.t("Publishers must be unique")
         )
-      ),
+      )
+      .label(i18next.t("Publishers")),
     notes: Yup.array()
       .of(Yup.string().required(requiredMessage))
       .test("unique-notes", returnGroupError, (value, context) =>
         unique(value, context, undefined, i18next.t("Notes must be unique"))
-      ),
+      )
+      .label(i18next.t("Notes")),
     geoLocations: Yup.array()
       .of(
         Yup.object().shape({
-          geoLocationPlace: Yup.string().required(requiredMessage),
+          geoLocationPlace: Yup.string()
+            .required(requiredMessage)
+            .label(i18next.t("Location")),
           geoLocationPoint: Yup.object().shape({
             pointLongitude: Yup.number()
               .required(requiredMessage)
@@ -116,7 +158,8 @@ export const NRDocumentValidationSchema = Yup.object().shape({
                 (value) => {
                   return value >= -180 && value <= 180;
                 }
-              ),
+              )
+              .label(i18next.t("Longitude")),
             pointLatitude: Yup.number()
               .required(requiredMessage)
               .test(
@@ -125,7 +168,8 @@ export const NRDocumentValidationSchema = Yup.object().shape({
                 (value) => {
                   return value >= -90 && value <= 90;
                 }
-              ),
+              )
+              .label(i18next.t("Latitude")),
           }),
         })
       )
@@ -136,13 +180,16 @@ export const NRDocumentValidationSchema = Yup.object().shape({
           "geoLocationPlace",
           i18next.t("Locations must be unique")
         )
-      ),
-    accessibility: Yup.array().of(
-      Yup.object().shape({
-        lang: Yup.string(),
-        value: Yup.string(),
-      })
-    ),
+      )
+      .label(i18next.t("Geolocation")),
+    accessibility: Yup.array()
+      .of(
+        Yup.object().shape({
+          lang: Yup.string().label(i18next.t("Language")),
+          value: Yup.string().label(i18next.t("Accessibility")),
+        })
+      )
+      .label(i18next.t("Accessibility")),
     externalLocation: Yup.object()
       .shape({
         externalLocationURL: Yup.string().url(
@@ -169,11 +216,14 @@ export const NRDocumentValidationSchema = Yup.object().shape({
           }
           return true;
         }
-      ),
+      )
+      .label(i18next.t("External location")),
     fundingReferences: Yup.array()
       .of(
         Yup.object().shape({
-          projectID: Yup.string().required(requiredMessage),
+          projectID: Yup.string()
+            .required(requiredMessage)
+            .label(i18next.t("Project code")),
           projectName: Yup.string(),
           fundingProgram: Yup.string(),
           funder: Yup.object(),
@@ -186,36 +236,45 @@ export const NRDocumentValidationSchema = Yup.object().shape({
           "projectID",
           i18next.t("Project codes must be unique")
         )
-      ),
-    subjects: Yup.array().of(
-      Yup.object().shape({
-        subjectScheme: Yup.string().required(requiredMessage),
-        subject: Yup.array()
-          .of(
-            Yup.object().shape({
-              lang: Yup.string().required(requiredMessage),
-              value: Yup.string()
-                .required(requiredMessage)
-                .min(10, stringLengthMessage),
-            })
-          )
-          .test("unique-subjects", returnGroupError, (value, context) =>
-            unique(
-              value,
-              context,
-              "value",
-              i18next.t("Subjects must be unique")
+      )
+      .label(i18next.t("Funding")),
+    subjects: Yup.array()
+      .of(
+        Yup.object().shape({
+          subjectScheme: Yup.string()
+            .required(requiredMessage)
+            .label(i18next.t("Subject scheme")),
+          subject: Yup.array()
+            .of(
+              Yup.object().shape({
+                lang: Yup.string()
+                  .required(requiredMessage)
+                  .label(i18next.t("Language")),
+                value: Yup.string()
+                  .required(requiredMessage)
+                  .min(10, stringLengthMessage)
+                  .label(i18next.t("Subject")),
+              })
             )
-          ),
-      })
-    ),
+            .test("unique-subjects", returnGroupError, (value, context) =>
+              unique(
+                value,
+                context,
+                "value",
+                i18next.t("Subjects must be unique")
+              )
+            ),
+        })
+      )
+      .label(i18next.t("Subjects")),
     // relatedItems:"",
     // version:"",
-    // accessibility"",
     series: Yup.array()
       .of(
         Yup.object().shape({
-          seriesTitle: Yup.string().required(requiredMessage),
+          seriesTitle: Yup.string()
+            .required(requiredMessage)
+            .label(i18next.t("Series title")),
           seriesVolume: Yup.string(),
         })
       )
@@ -226,27 +285,41 @@ export const NRDocumentValidationSchema = Yup.object().shape({
           "seriesTitle",
           i18next.t("Series titles must be unique")
         )
-      ),
-    events: Yup.array().of(
-      Yup.object().shape({
-        eventNameOriginal: Yup.string().required(requiredMessage),
-        eventNameAlternate: Yup.array().of(Yup.string()),
-        eventDate: Yup.string()
-          .required(requiredMessage)
-          .matches(edtfRegEx, i18next.t("Invalid date format")),
-        eventLocation: Yup.object()
-          .shape({
-            place: Yup.string().required(requiredMessage),
-            country: Yup.object().required(requiredMessage),
-          })
-          .required(requiredMessage),
-      })
-    ),
+      )
+      .label(i18next.t("Series")),
+    events: Yup.array()
+      .of(
+        Yup.object().shape({
+          eventNameOriginal: Yup.string()
+            .required(requiredMessage)
+            .label(i18next.t("Event name")),
+          eventNameAlternate: Yup.array().of(Yup.string()),
+          eventDate: Yup.string()
+            .required(requiredMessage)
+            .matches(edtfRegEx, i18next.t("Invalid date format"))
+            .label(i18next.t("Event date")),
+          eventLocation: Yup.object()
+            .shape({
+              place: Yup.string()
+                .required(requiredMessage)
+                .label(i18next.t("Place")),
+              country: Yup.object()
+                .required(requiredMessage)
+                .label(i18next.t("Country")),
+            })
+            .required(requiredMessage),
+        })
+      )
+      .label(i18next.t("Events")),
     objectIdentifiers: Yup.array()
       .of(
         Yup.object().shape({
-          identifier: Yup.string().required(requiredMessage),
-          scheme: Yup.string().required(requiredMessage),
+          identifier: Yup.string()
+            .required(requiredMessage)
+            .label(i18next.t("Identifier type")),
+          scheme: Yup.string()
+            .required(requiredMessage)
+            .label(i18next.t("Object identifier")),
         })
       )
       .test("unique-objectIdentifiers", returnGroupError, (value, context) =>
@@ -256,13 +329,20 @@ export const NRDocumentValidationSchema = Yup.object().shape({
           "identifier",
           i18next.t("Object identifiers must be unique")
         )
-      ),
-    systemIdentifiers: Yup.array().of(
-      Yup.object().shape({
-        identifier: Yup.string().required(requiredMessage),
-        scheme: Yup.string().required(requiredMessage),
-      })
-    ),
+      )
+      .label(i18next.t("Object identifiers")),
+    systemIdentifiers: Yup.array()
+      .of(
+        Yup.object().shape({
+          identifier: Yup.string()
+            .required(requiredMessage)
+            .label(i18next.t("Identifier type")),
+          scheme: Yup.string()
+            .required(requiredMessage)
+            .label(i18next.t("System identifier")),
+        })
+      )
+      .label(i18next.t("System identifier")),
   }),
   // .nullable(),
 });
