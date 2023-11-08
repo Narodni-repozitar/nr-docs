@@ -159,5 +159,6 @@
   "No description": "No description",
   "No publication date found.": "No publication date found.",
   "is a required field": "is a required field",
-  "Subject": "Key word"
+  "Subject": "Key word",
+  "Should be an interval indicating start and end date of the event.": "Should be an interval indicating start and end date of the event. For example YYYY-MM-DD/YYYY-MM-DD."
 }

@@ -41,6 +41,9 @@ export const EventsField = ({ fieldPath, helpText }) => {
               width={16}
               fieldPath={`${fieldPathPrefix}.eventDate`}
               label={i18next.t("Event date")}
+              helpText={i18next.t(
+                "Should be an interval indicating start and end date of the event."
+              )}
             />
             <GroupField>
               <TextField

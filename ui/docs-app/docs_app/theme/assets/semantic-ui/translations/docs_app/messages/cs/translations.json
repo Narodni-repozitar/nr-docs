@@ -159,5 +159,6 @@
   "No description": "Žádný popis",
   "No publication date found.": "Datum zveřejnění nenalezeno.",
   "is a required field": "je povinné pole",
-  "Subject": "Klíčové slovo"
+  "Subject": "Klíčové slovo",
+  "Should be an interval indicating start and end date of the event.": "Měl by být interval udávající datum začátku a konce události. Například RRRR-MM-DD/RRRR-MM-DD."
 }
