@@ -31,7 +31,6 @@ import {
 import Overridable from "react-overridable";
 import { i18next } from "@translations/docs_app/i18next";
 import _has from "lodash/has";
-import { useFormikContext } from "formik";
 
 // not sure if these should come from formConfig better to not clutter the code
 const objectIdentifiersSchema = [
