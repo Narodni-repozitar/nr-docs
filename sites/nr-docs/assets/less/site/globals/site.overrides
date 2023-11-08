@@ -189,7 +189,3 @@ body {
   width: auto;
   vertical-align: text-bottom;
 }
-
-ui.container {
-  padding: 0;
-}
