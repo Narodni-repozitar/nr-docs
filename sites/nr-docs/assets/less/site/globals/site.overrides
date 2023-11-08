@@ -32,14 +32,10 @@
 
 :root {
   font-size: @fontSize;
-  margin: 0;
-  padding: 0;
-  height: 100vh;
 }
 
 body {
   font-family: Roboto;
-  width: 100%;
   height: 100vh;
   min-height: 100%;
   display: flex;
@@ -167,6 +163,9 @@ body {
 
 #nr-footer-container {
   background-color: #ffffffaa;
+  .ui.grid {
+    margin: 0;
+  }
 }
 
 .cover-page.masthead {
