@@ -2,11 +2,11 @@ import * as Yup from "yup";
 import { i18next } from "@translations/docs_app/i18next";
 import _uniqBy from "lodash/uniqBy";
 
-const requiredMessage = (value) =>
-  `${value?.label} ${i18next.t("is a required field")}`;
+const requiredMessage = ({ label }) =>
+  `${label} ${i18next.t("is a required field")}`;
 
-const stringLengthMessage = ({ min }) =>
-  i18next.t("Must have at least x characters", { min: min });
+const stringLengthMessage = ({ min, label }) =>
+  `${label} ${i18next.t("Must have at least x characters", { min: min })}`;
 
 const returnGroupError = (value, context) => {
   return i18next.t("Items must be unique");
@@ -154,7 +154,7 @@ export const NRDocumentValidationSchema = Yup.object().shape({
               .required(requiredMessage)
               .test(
                 "range",
-                i18next.t("Must be between -180 and 180"),
+                i18next.t("Longitude must be between -180 and 180"),
                 (value) => {
                   return value >= -180 && value <= 180;
                 }
@@ -164,7 +164,7 @@ export const NRDocumentValidationSchema = Yup.object().shape({
               .required(requiredMessage)
               .test(
                 "range",
-                i18next.t("Must be between -90 and 90"),
+                i18next.t("Latitude must be between -90 and 90"),
                 (value) => {
                   return value >= -90 && value <= 90;
                 }

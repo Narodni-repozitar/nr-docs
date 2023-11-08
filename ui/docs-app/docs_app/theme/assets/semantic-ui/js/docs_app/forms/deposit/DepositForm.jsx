@@ -4,6 +4,7 @@ import {
   MultilingualTextInput,
   BaseForm,
   FormFeedback,
+  FormikStateLogger,
 } from "@js/oarepo_ui";
 import { LocalVocabularySelectField } from "@js/oarepo_vocabularies";
 import { AccordionField, FieldLabel, TextField } from "react-invenio-forms";
@@ -48,11 +49,6 @@ const systemIdentifiersSchema = [
   { value: "catalogueSysNo", text: "catalogueSysNo" },
   { value: "nrOAI", text: "nrOAI" },
 ];
-
-const FormikStateLogger = () => {
-  const state = useFormikContext();
-  return <pre>{JSON.stringify(state, null, 2)}</pre>;
-};
 
 export const DepositForm = () => {
   const { record, formConfig } = useFormConfig();
@@ -472,11 +468,9 @@ export const DepositForm = () => {
                       label={i18next.t("System identifiers")}
                     />
                   </Overridable>
-                  <FormikStateLogger />
                 </AccordionField>
               </Overridable>
-              {/* Uncoment only when needed */}
-              {/* <FormikStateLogger /> */}
+              {process.env.NODE_ENV === "development" && <FormikStateLogger />}
             </Grid.Column>
           </Ref>
 

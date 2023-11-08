@@ -16,7 +16,7 @@ export const SubjectsField = ({ fieldPath, helpText }) => {
       labelIcon="pencil"
       helpText={helpText}
     >
-      {({ arrayHelpers, indexPath }) => {
+      {({ arrayHelpers, indexPath, array }) => {
         const fieldPathPrefix = `${fieldPath}.${indexPath}`;
         return (
           <ArrayFieldItem
@@ -32,13 +32,19 @@ export const SubjectsField = ({ fieldPath, helpText }) => {
               required
               options={options}
             />
+            {/* TODO: I don't see a reasonable way to set default value as keyword in the select field
+            even if you set it, it is not reflected in formik state, so it causes problems. I think this is a reasonable solution for now
+            until we determine from what other sources we should also be offering keywords and how the input should be */}
             <Form.Field style={{ marginTop: 0 }} width={12}>
-              <MultilingualTextInput
-                fieldPath={`${fieldPathPrefix}.subject`}
-                lngFieldWidth={5}
-                textFieldLabel={i18next.t("Subject")}
-                required
-              />
+              {array[indexPath].subjectScheme === "keyword" && (
+                <MultilingualTextInput
+                  fieldPath={`${fieldPathPrefix}.subject`}
+                  lngFieldWidth={5}
+                  textFieldLabel={i18next.t("Subject")}
+                  required
+                  showEmptyValue
+                />
+              )}
             </Form.Field>
           </ArrayFieldItem>
         );
