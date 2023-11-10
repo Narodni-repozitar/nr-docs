@@ -15,7 +15,7 @@ oarepo-published-service==1.0.1
 oarepo-requests==1.0.2
 oarepo-runtime==1.4.23
 oarepo-ui==5.0.79
-oarepo-vocabularies==2.0.63
+oarepo-vocabularies==2.0.64
 openpyxl==3.1.2
 python-dotenv==1.0.0
 rapidfuzz==3.5.2
