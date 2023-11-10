@@ -3,7 +3,12 @@ import PropTypes from "prop-types";
 import { Form } from "semantic-ui-react";
 import { ArrayField, SelectField } from "react-invenio-forms";
 import { i18next } from "@translations/docs_app/i18next";
-import { I18nTextInputField, ArrayFieldItem } from "@js/oarepo_ui";
+import {
+  I18nTextInputField,
+  ArrayFieldItem,
+  useDefaultLocale,
+  useFormFieldValue,
+} from "@js/oarepo_ui";
 
 const subtitleTypes = [
   { text: "Alternative title", value: "alternativeTitle" },
@@ -13,10 +18,23 @@ const subtitleTypes = [
 ];
 
 export const AdditionalTitlesField = ({ fieldPath }) => {
+  const { defaultLocale } = useDefaultLocale();
+  const initialValueObj = {
+    title: {
+      value: "",
+    },
+  };
+  const { defaultNewValue } = useFormFieldValue({
+    defaultValue: defaultLocale,
+    fieldPath,
+    subValuesPath: "title.lang",
+    subValuesUnique: false,
+  });
+
   return (
     <ArrayField
       addButtonLabel={i18next.t("Add additional title")}
-      defaultNewValue={{}}
+      defaultNewValue={defaultNewValue(initialValueObj)}
       fieldPath={fieldPath}
       label={i18next.t("Additional titles")}
       labelIcon="pencil"
