@@ -7,7 +7,7 @@ import { MultilingualTextInput, ArrayFieldItem } from "@js/oarepo_ui";
 
 const options = [{ value: "keyword", text: "Keyword" }];
 
-export const SubjectsField = ({ fieldPath, helpText }) => {
+export const SubjectsField = ({ fieldPath, helpText, defaultNewValue }) => {
   return (
     <ArrayField
       addButtonLabel={i18next.t("Add subject")}
@@ -15,6 +15,7 @@ export const SubjectsField = ({ fieldPath, helpText }) => {
       label={i18next.t("Subjects")}
       labelIcon="pencil"
       helpText={helpText}
+      defaultNewValue={defaultNewValue}
     >
       {({ arrayHelpers, indexPath, array }) => {
         const fieldPathPrefix = `${fieldPath}.${indexPath}`;
@@ -25,16 +26,12 @@ export const SubjectsField = ({ fieldPath, helpText }) => {
             className={"invenio-group-field subjects"}
           >
             <SelectField
-              clearable
               width={5}
               fieldPath={`${fieldPathPrefix}.subjectScheme`}
               label={i18next.t("Subject scheme")}
               required
               options={options}
             />
-            {/* TODO: I don't see a reasonable way to set default value as keyword in the select field
-            even if you set it, it is not reflected in formik state, so it causes problems. I think this is a reasonable solution for now
-            until we determine from what other sources we should also be offering keywords and how the input should be */}
             <Form.Field style={{ marginTop: 0 }} width={12}>
               {array[indexPath].subjectScheme === "keyword" && (
                 <MultilingualTextInput
@@ -56,4 +53,9 @@ export const SubjectsField = ({ fieldPath, helpText }) => {
 SubjectsField.propTypes = {
   fieldPath: PropTypes.string.isRequired,
   helpText: PropTypes.string,
+  defaultNewValue: PropTypes.object,
+};
+
+SubjectsField.defaultProps = {
+  defaultNewValue: { subjectScheme: "keyword" },
 };
