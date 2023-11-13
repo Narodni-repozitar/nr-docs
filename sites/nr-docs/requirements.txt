@@ -13,9 +13,9 @@ nr-vocabularies==2.0.6
 oarepo-oai-pmh-harvester==4.0.36
 oarepo-published-service==1.0.1
 oarepo-requests==1.0.2
-oarepo-runtime==1.4.23
-oarepo-ui==5.0.79
-oarepo-vocabularies==2.0.64
+oarepo-runtime==1.4.25
+oarepo-ui==5.0.80
+oarepo-vocabularies==2.0.65
 openpyxl==3.1.2
 python-dotenv==1.0.0
 rapidfuzz==3.5.2

@@ -15,7 +15,8 @@ record:
     type: dcmnts
   properties:
     metadata:
-      properties: {}
+      properties:
+        use: [ ./harvest.yaml ]
   service-config:
     base-classes:
       - oarepo_runtime.config.service.PermissionsPresetsConfigMixin

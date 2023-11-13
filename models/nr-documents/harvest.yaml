@@ -1,0 +1,12 @@
+oai:
+  properties:
+    harvest:
+      properties:
+        identifier:
+          type: keyword
+          label.cs: OAI identifikátor
+          label.en: OAI identifier
+        datestamp:
+            type: keyword
+            label.cs: Datum poslední změny
+            label.en: Datestamp
