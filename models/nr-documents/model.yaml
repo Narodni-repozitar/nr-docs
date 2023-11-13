@@ -14,7 +14,6 @@ record:
   pid:
     type: dcmnts
   properties:
-    use: [ ./harvest.yaml ]
     metadata:
       properties: {}
   service-config:
@@ -42,6 +41,7 @@ record:
   - invenio
   - ./custom_fields.yaml
   - ./requests.yaml
+  - ./harvest.yaml
 plugins:
   builder:
     disable:
