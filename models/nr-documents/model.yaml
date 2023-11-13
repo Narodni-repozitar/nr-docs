@@ -14,9 +14,9 @@ record:
   pid:
     type: dcmnts
   properties:
+    use: [ ./harvest.yaml ]
     metadata:
-      properties:
-        use: [ ./harvest.yaml ]
+      properties: {}
   service-config:
     base-classes:
       - oarepo_runtime.config.service.PermissionsPresetsConfigMixin
