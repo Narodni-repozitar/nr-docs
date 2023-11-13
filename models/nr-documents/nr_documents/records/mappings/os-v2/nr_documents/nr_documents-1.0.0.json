@@ -575,24 +575,6 @@
                     "notes": {
                         "type": "text"
                     },
-                    "oai": {
-                        "type": "object",
-                        "properties": {
-                            "harvest": {
-                                "type": "object",
-                                "properties": {
-                                    "datestamp": {
-                                        "type": "keyword",
-                                        "ignore_above": 1024
-                                    },
-                                    "identifier": {
-                                        "type": "keyword",
-                                        "ignore_above": 1024
-                                    }
-                                }
-                            }
-                        }
-                    },
                     "objectIdentifiers": {
                         "type": "object",
                         "properties": {
@@ -1163,6 +1145,24 @@
                     "version": {
                         "type": "keyword",
                         "ignore_above": 1024
+                    }
+                }
+            },
+            "oai": {
+                "type": "object",
+                "properties": {
+                    "harvest": {
+                        "type": "object",
+                        "properties": {
+                            "datestamp": {
+                                "type": "keyword",
+                                "ignore_above": 1024
+                            },
+                            "identifier": {
+                                "type": "keyword",
+                                "ignore_above": 1024
+                            }
+                        }
                     }
                 }
             },

@@ -395,22 +395,6 @@
                         "type": "string"
                     }
                 },
-                "oai": {
-                    "type": "object",
-                    "properties": {
-                        "harvest": {
-                            "type": "object",
-                            "properties": {
-                                "datestamp": {
-                                    "type": "string"
-                                },
-                                "identifier": {
-                                    "type": "string"
-                                }
-                            }
-                        }
-                    }
-                },
                 "objectIdentifiers": {
                     "type": "array",
                     "items": {
@@ -860,6 +844,22 @@
                 },
                 "version": {
                     "type": "string"
+                }
+            }
+        },
+        "oai": {
+            "type": "object",
+            "properties": {
+                "harvest": {
+                    "type": "object",
+                    "properties": {
+                        "datestamp": {
+                            "type": "string"
+                        },
+                        "identifier": {
+                            "type": "string"
+                        }
+                    }
                 }
             }
         },

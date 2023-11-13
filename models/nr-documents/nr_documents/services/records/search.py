@@ -81,8 +81,6 @@ class NrDocumentsSearchOptions(I18nSearchOptions):
         "metadata_methods_en": facets.metadata_methods_en,
         "metadata_methods_lang": facets.metadata_methods_lang,
         "metadata_methods_value": facets.metadata_methods_value,
-        "metadata_oai_harvest_datestamp": facets.metadata_oai_harvest_datestamp,
-        "metadata_oai_harvest_identifier": facets.metadata_oai_harvest_identifier,
         "metadata_objectIdentifiers_identifier": (
             facets.metadata_objectIdentifiers_identifier
         ),
@@ -172,6 +170,8 @@ class NrDocumentsSearchOptions(I18nSearchOptions):
         "metadata_thesis_studyFields": facets.metadata_thesis_studyFields,
         "metadata_title": facets.metadata_title,
         "metadata_version": facets.metadata_version,
+        "oai_harvest_datestamp": facets.oai_harvest_datestamp,
+        "oai_harvest_identifier": facets.oai_harvest_identifier,
         "syntheticFields_institutions": facets.syntheticFields_institutions,
         "syntheticFields_keywords_cs": facets.syntheticFields_keywords_cs,
         "syntheticFields_keywords_en": facets.syntheticFields_keywords_en,

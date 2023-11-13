@@ -102,6 +102,23 @@ class GeneratedParentSchema(InvenioParentSchema):
         return data
 
 
+class NrDocumentsSchema(NRDocumentRecordSchema):
+    class Meta:
+        unknown = ma.RAISE
+
+    oai = ma_fields.Nested(lambda: OaiSchema())
+
+    syntheticFields = ma_fields.Nested(lambda: SyntheticFieldsSchema())
+    parent = ma.fields.Nested(GeneratedParentSchema)
+
+
+class GeoLocationsItemSchema(NRGeoLocationSchema):
+    class Meta:
+        unknown = ma.RAISE
+
+    geoLocationPoint = ma_fields.Nested(lambda: GeoLocationPointSchema())
+
+
 class NrDocumentsMetadataSchema(NRDocumentMetadataSchema):
     class Meta:
         unknown = ma.RAISE
@@ -118,24 +135,7 @@ class NrDocumentsMetadataSchema(NRDocumentMetadataSchema):
         validate=[ma.validate.Length(min=1)],
     )
 
-    oai = ma_fields.Nested(lambda: OaiSchema())
-
     thesis = ma_fields.Nested(lambda: ThesisSchema())
-
-
-class GeoLocationsItemSchema(NRGeoLocationSchema):
-    class Meta:
-        unknown = ma.RAISE
-
-    geoLocationPoint = ma_fields.Nested(lambda: GeoLocationPointSchema())
-
-
-class NrDocumentsSchema(NRDocumentRecordSchema):
-    class Meta:
-        unknown = ma.RAISE
-
-    syntheticFields = ma_fields.Nested(lambda: SyntheticFieldsSchema())
-    parent = ma.fields.Nested(GeneratedParentSchema)
 
 
 class OaiSchema(Schema):

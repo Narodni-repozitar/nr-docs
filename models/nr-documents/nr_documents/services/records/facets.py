@@ -237,16 +237,6 @@ metadata_methods_value = NestedLabeledFacet(
     ),
 )
 
-metadata_oai_harvest_datestamp = TermsFacet(
-    field="metadata.oai.harvest.datestamp",
-    label=_("metadata/oai/harvest/datestamp.label"),
-)
-
-metadata_oai_harvest_identifier = TermsFacet(
-    field="metadata.oai.harvest.identifier",
-    label=_("metadata/oai/harvest/identifier.label"),
-)
-
 metadata_objectIdentifiers_identifier = TermsFacet(
     field="metadata.objectIdentifiers.identifier",
     label=_("metadata/objectIdentifiers/identifier.label"),
@@ -500,6 +490,14 @@ metadata_title = TermsFacet(
 
 metadata_version = TermsFacet(
     field="metadata.version", label=_("metadata/version.label")
+)
+
+oai_harvest_datestamp = TermsFacet(
+    field="oai.harvest.datestamp", label=_("oai/harvest/datestamp.label")
+)
+
+oai_harvest_identifier = TermsFacet(
+    field="oai.harvest.identifier", label=_("oai/harvest/identifier.label")
 )
 
 syntheticFields_institutions = TermsFacet(
