@@ -237,6 +237,16 @@ metadata_methods_value = NestedLabeledFacet(
     ),
 )
 
+metadata_oai_harvest_datestamp = TermsFacet(
+    field="metadata.oai.harvest.datestamp",
+    label=_("metadata/oai/harvest/datestamp.label"),
+)
+
+metadata_oai_harvest_identifier = TermsFacet(
+    field="metadata.oai.harvest.identifier",
+    label=_("metadata/oai/harvest/identifier.label"),
+)
+
 metadata_objectIdentifiers_identifier = TermsFacet(
     field="metadata.objectIdentifiers.identifier",
     label=_("metadata/objectIdentifiers/identifier.label"),

@@ -106,13 +106,6 @@ class GeneratedParentSchema(InvenioParentSchema):
         return data
 
 
-class GeoLocationsItemUISchema(NRGeoLocationUISchema):
-    class Meta:
-        unknown = ma.RAISE
-
-    geoLocationPoint = ma_fields.Nested(lambda: GeoLocationPointUISchema())
-
-
 class NrDocumentsMetadataUISchema(NRDocumentMetadataUISchema):
     class Meta:
         unknown = ma.RAISE
@@ -127,7 +120,16 @@ class NrDocumentsMetadataUISchema(NRDocumentMetadataUISchema):
         ma_fields.Nested(lambda: CreatorsItemUISchema()), required=True
     )
 
+    oai = ma_fields.Nested(lambda: OaiUISchema())
+
     thesis = ma_fields.Nested(lambda: ThesisUISchema())
+
+
+class GeoLocationsItemUISchema(NRGeoLocationUISchema):
+    class Meta:
+        unknown = ma.RAISE
+
+    geoLocationPoint = ma_fields.Nested(lambda: GeoLocationPointUISchema())
 
 
 class NrDocumentsUISchema(NRDocumentRecordUISchema):
@@ -136,6 +138,13 @@ class NrDocumentsUISchema(NRDocumentRecordUISchema):
 
     syntheticFields = ma_fields.Nested(lambda: SyntheticFieldsUISchema())
     parent = ma.fields.Nested(GeneratedParentSchema)
+
+
+class OaiUISchema(Schema):
+    class Meta:
+        unknown = ma.RAISE
+
+    harvest = ma_fields.Nested(lambda: HarvestUISchema())
 
 
 class RelatedItemsItemUISchema(NRRelatedItemUISchema):
@@ -251,6 +260,15 @@ class FundingReferencesItemUISchema(NRFundingReferenceUISchema):
 class GeoLocationPointUISchema(NRGeoLocationPointUISchema):
     class Meta:
         unknown = ma.RAISE
+
+
+class HarvestUISchema(Schema):
+    class Meta:
+        unknown = ma.RAISE
+
+    datestamp = ma_fields.String()
+
+    identifier = ma_fields.String()
 
 
 class ItemContributorsItemUISchema(NRRelatedItemContributorUISchema):

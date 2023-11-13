@@ -2,8 +2,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
-"POT-Creation-Date: 2023-11-02T09:17:40.420793\n"
-"PO-Revision-Date: 2023-11-02T09:17:40.420794\n"
+"POT-Creation-Date: 2023-11-13T08:29:47.016176\n"
+"PO-Revision-Date: 2023-11-13T08:29:47.016177\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -870,6 +870,42 @@ msgid "metadata/notes.help"
 msgstr ""
 
 msgid "metadata/notes.hint"
+msgstr ""
+
+msgid "metadata/oai.help"
+msgstr ""
+
+msgid "metadata/oai.label"
+msgstr ""
+
+msgid "metadata/oai.hint"
+msgstr ""
+
+msgid "metadata/oai/harvest.help"
+msgstr ""
+
+msgid "metadata/oai/harvest.label"
+msgstr ""
+
+msgid "metadata/oai/harvest.hint"
+msgstr ""
+
+msgid "metadata/oai/harvest/datestamp.label"
+msgstr ""
+
+msgid "metadata/oai/harvest/datestamp.help"
+msgstr ""
+
+msgid "metadata/oai/harvest/datestamp.hint"
+msgstr ""
+
+msgid "metadata/oai/harvest/identifier.label"
+msgstr ""
+
+msgid "metadata/oai/harvest/identifier.help"
+msgstr ""
+
+msgid "metadata/oai/harvest/identifier.hint"
 msgstr ""
 
 msgid "metadata/objectIdentifiers.label"

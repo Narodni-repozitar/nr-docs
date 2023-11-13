@@ -2877,6 +2877,46 @@
                             }
                         }
                     },
+                    "oai": {
+                        "type": "object",
+                        "marshmallow": {
+                            "generate": true,
+                            "class": "nr_documents.services.records.schema.OaiSchema"
+                        },
+                        "ui": {
+                            "marshmallow": {
+                                "generate": true,
+                                "class": "nr_documents.services.records.ui_schema.OaiUISchema"
+                            }
+                        },
+                        "properties": {
+                            "harvest": {
+                                "type": "object",
+                                "marshmallow": {
+                                    "generate": true,
+                                    "class": "nr_documents.services.records.schema.HarvestSchema"
+                                },
+                                "ui": {
+                                    "marshmallow": {
+                                        "generate": true,
+                                        "class": "nr_documents.services.records.ui_schema.HarvestUISchema"
+                                    }
+                                },
+                                "properties": {
+                                    "datestamp": {
+                                        "type": "keyword",
+                                        "label.cs": "Datum poslední změny",
+                                        "label.en": "Datestamp"
+                                    },
+                                    "identifier": {
+                                        "type": "keyword",
+                                        "label.cs": "OAI identifikátor",
+                                        "label.en": "OAI identifier"
+                                    }
+                                }
+                            }
+                        }
+                    },
                     "objectIdentifiers": {
                         "type": "array",
                         "label.cs": "Identifikátory objektu",
