@@ -4,8 +4,7 @@ import { ArrayField, TextField, GroupField } from "react-invenio-forms";
 import { i18next } from "@translations/docs_app/i18next";
 import { LocalVocabularySelectField } from "@js/oarepo_vocabularies";
 import { StringArrayField } from "../StringArray/StringArrayField";
-import { DateField } from "../DateField/DateField";
-import { ArrayFieldItem } from "@js/oarepo_ui";
+import { ArrayFieldItem, DaterangePicker } from "@js/oarepo_ui";
 
 export const EventsField = ({ fieldPath, helpText }) => {
   return (
@@ -36,11 +35,13 @@ export const EventsField = ({ fieldPath, helpText }) => {
               label={i18next.t("Event alternate name")}
               addButtonLabel={i18next.t("Add event alternate name")}
             />
-            <DateField
+            <DaterangePicker
               required
-              width={16}
               fieldPath={`${fieldPathPrefix}.eventDate`}
               label={i18next.t("Event date")}
+              helpText={i18next.t(
+                "Write down the time period in which the data collection took place/took place. If it is not a range, choose same date twice."
+              )}
             />
             <GroupField>
               <TextField

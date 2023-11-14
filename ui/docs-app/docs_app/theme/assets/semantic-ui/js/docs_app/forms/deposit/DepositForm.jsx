@@ -5,14 +5,13 @@ import {
   BaseForm,
   FormikStateLogger,
   FormFeedback,
-  DatepickerField,
+  SingleDatePicker,
 } from "@js/oarepo_ui";
 import { LocalVocabularySelectField } from "@js/oarepo_vocabularies";
 import { AccordionField, FieldLabel, TextField } from "react-invenio-forms";
 import { Container, Grid, Ref, Sticky, Card } from "semantic-ui-react";
 import { NRDocumentValidationSchema } from "./NRDocumentValidationSchema";
 import {
-  DateField,
   StringArrayField,
   AdditionalTitlesField,
   GeoLocationsField,
@@ -32,8 +31,6 @@ import {
 import Overridable from "react-overridable";
 import { i18next } from "@translations/docs_app/i18next";
 import _has from "lodash/has";
-
-console.log(DatepickerField);
 
 // not sure if these should come from formConfig better to not clutter the code
 const objectIdentifiersSchema = [
@@ -118,12 +115,11 @@ export const DepositForm = () => {
                       }
                     />
                   </Overridable>
-
                   <Overridable
                     id="NrDocs.Deposit.AdditionalTitlesField.container"
                     fieldPath="metadata.additionalTitles"
                   >
-                    {/* <AdditionalTitlesField fieldPath="metadata.additionalTitles" /> */}
+                    <AdditionalTitlesField fieldPath="metadata.additionalTitles" />
                   </Overridable>
                   <Overridable
                     id="NrDocs.Deposit.CreatorsField.container"
@@ -253,18 +249,20 @@ export const DepositForm = () => {
                     id="NrDocs.Deposit.DateAvailableField.container"
                     fieldPath="metadata.dateAvailable"
                   >
-                    <DateField
+                    <SingleDatePicker
                       fieldPath="metadata.dateAvailable"
                       label={i18next.t("Date available")}
+                      helpText={i18next.t(
+                        "If the dataset has been published elsewhere, use the date of first publication. You can also specify a future publication date (for embargo). If you do not enter a date, the system will automatically fill the date when the record is published. Format: YYYY-MM-DD, YYYYY-MM or YYYYY."
+                      )}
                     />
                   </Overridable>
-                  <DatepickerField />
                   <Overridable
                     id="NrDocs.Deposit.DateModifiedField.container"
                     fieldPath="metadata.dateModified"
                   >
                     {editMode && (
-                      <DateField
+                      <SingleDatePicker
                         fieldPath="metadata.dateModified"
                         label={i18next.t("Date modified")}
                         helpText=""
