@@ -5,6 +5,7 @@ const iconsObject = {
   c_abf2: "zamky_open_access.svg",
   c_16ec: "zamky_Partialy_closed_access.svg",
   c_f1cf: "zamky_Closed_access.svg",
+  c_14cb: "zamky_Partialy_closed_access.svg",
 };
 
 export const ResultsItemAccessStatus = ({ status }) => {
