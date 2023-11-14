@@ -5,6 +5,7 @@ import {
   BaseForm,
   FormikStateLogger,
   FormFeedback,
+  DatepickerField,
 } from "@js/oarepo_ui";
 import { LocalVocabularySelectField } from "@js/oarepo_vocabularies";
 import { AccordionField, FieldLabel, TextField } from "react-invenio-forms";
@@ -31,6 +32,8 @@ import {
 import Overridable from "react-overridable";
 import { i18next } from "@translations/docs_app/i18next";
 import _has from "lodash/has";
+
+console.log(DatepickerField);
 
 // not sure if these should come from formConfig better to not clutter the code
 const objectIdentifiersSchema = [
@@ -120,7 +123,7 @@ export const DepositForm = () => {
                     id="NrDocs.Deposit.AdditionalTitlesField.container"
                     fieldPath="metadata.additionalTitles"
                   >
-                    <AdditionalTitlesField fieldPath="metadata.additionalTitles" />
+                    {/* <AdditionalTitlesField fieldPath="metadata.additionalTitles" /> */}
                   </Overridable>
                   <Overridable
                     id="NrDocs.Deposit.CreatorsField.container"
@@ -255,6 +258,7 @@ export const DepositForm = () => {
                       label={i18next.t("Date available")}
                     />
                   </Overridable>
+                  <DatepickerField />
                   <Overridable
                     id="NrDocs.Deposit.DateModifiedField.container"
                     fieldPath="metadata.dateModified"
