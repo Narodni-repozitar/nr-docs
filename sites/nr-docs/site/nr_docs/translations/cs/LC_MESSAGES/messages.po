@@ -1,0 +1,2686 @@
+#
+msgid ""
+msgstr ""
+
+#: models/nr-documents/nr_documents/services/records/facets.py:12
+msgid "$schema.label"
+msgstr "Verze schematu"
+
+#: models/nr-documents/nr_documents/services/records/facets.py:14
+msgid "created.label"
+msgstr "Datum vytvoření záznamu"
+
+#: models/nr-documents/nr_documents/services/records/facets.py:16
+msgid "id.label"
+msgstr "Identifikátor záznamu"
+
+#: models/nr-documents/nr_documents/services/records/facets.py:19
+#: models/nr-documents/nr_documents/services/records/facets.py:23
+#: sites/nr-docs/site/nr_docs/translations/jinjax_messages.jinja:7
+msgid "metadata/abstract.label"
+msgstr "Abstrakt"
+
+#: models/nr-documents/nr_documents/services/records/facets.py:29
+msgid "metadata/abstract/lang.label"
+msgstr "Jazyk"
+
+#: models/nr-documents/nr_documents/services/records/facets.py:37
+msgid "metadata/abstract/value.label"
+msgstr "Abstrakt"
+
+#: models/nr-documents/nr_documents/services/records/facets.py:43
+#: sites/nr-docs/site/nr_docs/translations/jinjax_messages.jinja:11
+msgid "metadata/accessRights.label"
+msgstr "Přístupová práva"
+
+#: models/nr-documents/nr_documents/services/records/facets.py:48
+#: models/nr-documents/nr_documents/services/records/facets.py:52
+msgid "metadata/accessibility.label"
+msgstr "Dostupnost zdroje"
+
+#: models/nr-documents/nr_documents/services/records/facets.py:59
+msgid "metadata/accessibility/lang.label"
+msgstr "Jazyk"
+
+#: models/nr-documents/nr_documents/services/records/facets.py:67
+msgid "metadata/accessibility/value.label"
+msgstr "Dostupnost"
+
+#: models/nr-documents/nr_documents/services/records/facets.py:73
+#: models/nr-documents/nr_documents/services/records/facets.py:78
+msgid "metadata/additionalTitles/title.label"
+msgstr "Další název"
+
+#: models/nr-documents/nr_documents/services/records/facets.py:85
+msgid "metadata/additionalTitles/title/lang.label"
+msgstr "Jazyk"
+
+#: models/nr-documents/nr_documents/services/records/facets.py:93
+msgid "metadata/additionalTitles/title/value.label"
+msgstr "Název"
+
+#: models/nr-documents/nr_documents/services/records/facets.py:99
+msgid "metadata/additionalTitles/titleType.label"
+msgstr "Druh názvu"
+
+#: models/nr-documents/nr_documents/services/records/facets.py:103
+msgid "metadata/collection.label"
+msgstr "Kolekce"
+
+#: models/nr-documents/nr_documents/services/records/facets.py:108
+msgid "metadata/contributors/affiliations.label"
+msgstr "Afiliace"
+
+#: models/nr-documents/nr_documents/services/records/facets.py:114
+msgid "metadata/contributors/authorityIdentifiers/identifier.label"
+msgstr "Identifikátor"
+
+#: models/nr-documents/nr_documents/services/records/facets.py:119
+msgid "metadata/contributors/authorityIdentifiers/scheme.label"
+msgstr "Schema identifikátoru"
+
+#: models/nr-documents/nr_documents/services/records/facets.py:124
+msgid "metadata/contributors/fullName.label"
+msgstr "Jméno přispěvatele"
+
+#: models/nr-documents/nr_documents/services/records/facets.py:129
+msgid "metadata/contributors/nameType.label"
+msgstr "Typ"
+
+#: models/nr-documents/nr_documents/services/records/facets.py:134
+msgid "metadata/contributors/role.label"
+msgstr "Role přispěvatele"
+
+#: models/nr-documents/nr_documents/services/records/facets.py:140
+msgid "metadata/creators/affiliations.label"
+msgstr "Afiliace"
+
+#: models/nr-documents/nr_documents/services/records/facets.py:146
+msgid "metadata/creators/authorityIdentifiers/identifier.label"
+msgstr "Identifikátor"
+
+#: models/nr-documents/nr_documents/services/records/facets.py:151
+msgid "metadata/creators/authorityIdentifiers/scheme.label"
+msgstr "Schema identifikátoru"
+
+#: models/nr-documents/nr_documents/services/records/facets.py:155
+msgid "metadata/creators/fullName.label"
+msgstr "Jméno autora"
+
+#: models/nr-documents/nr_documents/services/records/facets.py:159
+msgid "metadata/creators/nameType.label"
+msgstr "Typ"
+
+#: models/nr-documents/nr_documents/services/records/facets.py:163
+#: sites/nr-docs/site/nr_docs/translations/jinjax_messages.jinja:1
+msgid "metadata/dateAvailable.label"
+msgstr "Datum zveřejnění"
+
+#: models/nr-documents/nr_documents/services/records/facets.py:167
+#: sites/nr-docs/site/nr_docs/translations/jinjax_messages.jinja:2
+msgid "metadata/dateModified.label"
+msgstr "Datum změny zdroje"
+
+#: models/nr-documents/nr_documents/services/records/facets.py:172
+msgid "metadata/events/eventLocation/country.label"
+msgstr "Země"
+
+#: models/nr-documents/nr_documents/services/records/facets.py:178
+msgid "metadata/events/eventLocation/place.label"
+msgstr "Místo"
+
+#: models/nr-documents/nr_documents/services/records/facets.py:183
+msgid "metadata/externalLocation/externalLocationURL.label"
+msgstr "Externí umístění zdroje"
+
+#: models/nr-documents/nr_documents/services/records/facets.py:188
+msgid "metadata/fundingReferences/funder.label"
+msgstr "Poskytovatel financí"
+
+#: models/nr-documents/nr_documents/services/records/facets.py:194
+msgid "metadata/fundingReferences/projectID.label"
+msgstr "Číslo projektu"
+
+#: models/nr-documents/nr_documents/services/records/facets.py:199
+msgid "metadata/geoLocations/geoLocationPlace.label"
+msgstr "Umístění"
+
+#: models/nr-documents/nr_documents/services/records/facets.py:204
+msgid "metadata/geoLocations/geoLocationPoint/pointLatitude.label"
+msgstr "Zeměpisná šířka"
+
+#: models/nr-documents/nr_documents/services/records/facets.py:209
+msgid "metadata/geoLocations/geoLocationPoint/pointLongitude.label"
+msgstr "Zeměpisná délka"
+
+#: models/nr-documents/nr_documents/services/records/facets.py:214
+#: sites/nr-docs/site/nr_docs/translations/jinjax_messages.jinja:3
+msgid "metadata/languages.label"
+msgstr "Jazyk"
+
+#: models/nr-documents/nr_documents/services/records/facets.py:219
+#: models/nr-documents/nr_documents/services/records/facets.py:223
+#: sites/nr-docs/site/nr_docs/translations/jinjax_messages.jinja:17
+msgid "metadata/methods.label"
+msgstr "Metodologie"
+
+#: models/nr-documents/nr_documents/services/records/facets.py:229
+msgid "metadata/methods/lang.label"
+msgstr "Jazyk"
+
+#: models/nr-documents/nr_documents/services/records/facets.py:236
+msgid "metadata/methods/value.label"
+msgstr "Název metodologie"
+
+#: models/nr-documents/nr_documents/services/records/facets.py:242
+msgid "metadata/objectIdentifiers/identifier.label"
+msgstr "Identifikátor objektu"
+
+#: models/nr-documents/nr_documents/services/records/facets.py:247
+msgid "metadata/objectIdentifiers/scheme.label"
+msgstr "Typ identifikátoru"
+
+#: models/nr-documents/nr_documents/services/records/facets.py:251
+#: ui/docs-app/docs_app/templates/semantic-ui/docs_app/Sidebar.html.jinja:14
+#: ui/docs-app/docs_app/templates/semantic-ui/docs_app/Sidebar.html.jinja:15
+msgid "metadata/originalRecord.label"
+msgstr "Odkaz na původní záznam"
+
+#: models/nr-documents/nr_documents/services/records/facets.py:256
+msgid "metadata/relatedItems/itemContributors/affiliations.label"
+msgstr "Afiliace"
+
+#: models/nr-documents/nr_documents/services/records/facets.py:262
+msgid ""
+"metadata/relatedItems/itemContributors/authorityIdentifiers/identifier.label"
+msgstr "Identifikátor"
+
+#: models/nr-documents/nr_documents/services/records/facets.py:269
+msgid ""
+"metadata/relatedItems/itemContributors/authorityIdentifiers/scheme.label"
+msgstr "Schema identifikátoru"
+
+#: models/nr-documents/nr_documents/services/records/facets.py:274
+msgid "metadata/relatedItems/itemContributors/fullName.label"
+msgstr "Jméno autora"
+
+#: models/nr-documents/nr_documents/services/records/facets.py:279
+msgid "metadata/relatedItems/itemContributors/nameType.label"
+msgstr "Typ"
+
+#: models/nr-documents/nr_documents/services/records/facets.py:284
+msgid "metadata/relatedItems/itemContributors/role.label"
+msgstr "Role přispěvatele"
+
+#: models/nr-documents/nr_documents/services/records/facets.py:290
+msgid "metadata/relatedItems/itemCreators/affiliations.label"
+msgstr "Afiliace"
+
+#: models/nr-documents/nr_documents/services/records/facets.py:296
+msgid ""
+"metadata/relatedItems/itemCreators/authorityIdentifiers/identifier.label"
+msgstr "Identifikátor"
+
+#: models/nr-documents/nr_documents/services/records/facets.py:301
+msgid "metadata/relatedItems/itemCreators/authorityIdentifiers/scheme.label"
+msgstr "Schema identifikátoru"
+
+#: models/nr-documents/nr_documents/services/records/facets.py:306
+msgid "metadata/relatedItems/itemCreators/fullName.label"
+msgstr "Jméno autora"
+
+#: models/nr-documents/nr_documents/services/records/facets.py:311
+msgid "metadata/relatedItems/itemCreators/nameType.label"
+msgstr "Typ"
+
+#: models/nr-documents/nr_documents/services/records/facets.py:316
+msgid "metadata/relatedItems/itemEndPage.label"
+msgstr "Poslední strana"
+
+#: models/nr-documents/nr_documents/services/records/facets.py:321
+msgid "metadata/relatedItems/itemIssue.label"
+msgstr "Číslo"
+
+#: models/nr-documents/nr_documents/services/records/facets.py:326
+msgid "metadata/relatedItems/itemPIDs/identifier.label"
+msgstr "Identifikátor objektu"
+
+#: models/nr-documents/nr_documents/services/records/facets.py:331
+msgid "metadata/relatedItems/itemPIDs/scheme.label"
+msgstr "Typ identifikátoru"
+
+#: models/nr-documents/nr_documents/services/records/facets.py:336
+msgid "metadata/relatedItems/itemPublisher.label"
+msgstr "Vydavatel"
+
+#: models/nr-documents/nr_documents/services/records/facets.py:341
+msgid "metadata/relatedItems/itemRelationType.label"
+msgstr "Typ vazby"
+
+#: models/nr-documents/nr_documents/services/records/facets.py:347
+msgid "metadata/relatedItems/itemResourceType.label"
+msgstr "Typ zdroje"
+
+#: models/nr-documents/nr_documents/services/records/facets.py:353
+msgid "metadata/relatedItems/itemStartPage.label"
+msgstr "Počáteční strana"
+
+#: models/nr-documents/nr_documents/services/records/facets.py:358
+msgid "metadata/relatedItems/itemURL.label"
+msgstr "URL"
+
+#: models/nr-documents/nr_documents/services/records/facets.py:363
+msgid "metadata/relatedItems/itemVolume.label"
+msgstr "Ročník"
+
+#: models/nr-documents/nr_documents/services/records/facets.py:368
+msgid "metadata/relatedItems/itemYear.label"
+msgstr "Rok"
+
+#: models/nr-documents/nr_documents/services/records/facets.py:373
+#: sites/nr-docs/site/nr_docs/translations/jinjax_messages.jinja:4
+msgid "metadata/resourceType.label"
+msgstr "Typ zdroje"
+
+#: models/nr-documents/nr_documents/services/records/facets.py:378
+#: sites/nr-docs/site/nr_docs/translations/jinjax_messages.jinja:12
+msgid "metadata/rights.label"
+msgstr "Licence"
+
+#: models/nr-documents/nr_documents/services/records/facets.py:382
+msgid "metadata/series/seriesTitle.label"
+msgstr "Název edice"
+
+#: models/nr-documents/nr_documents/services/records/facets.py:386
+msgid "metadata/series/seriesVolume.label"
+msgstr "Svazek edice"
+
+#: models/nr-documents/nr_documents/services/records/facets.py:391
+#: sites/nr-docs/site/nr_docs/translations/jinjax_messages.jinja:20
+msgid "metadata/subjectCategories.label"
+msgstr "Oborové třídění"
+
+#: models/nr-documents/nr_documents/services/records/facets.py:397
+msgid "metadata/subjects/classificationCode.label"
+msgstr "Kód oborového třídění"
+
+#: models/nr-documents/nr_documents/services/records/facets.py:402
+#: models/nr-documents/nr_documents/services/records/facets.py:407
+msgid "metadata/subjects/subject.label"
+msgstr "Klíčová slova"
+
+#: models/nr-documents/nr_documents/services/records/facets.py:414
+msgid "metadata/subjects/subject/lang.label"
+msgstr "Jazyk"
+
+#: models/nr-documents/nr_documents/services/records/facets.py:422
+msgid "metadata/subjects/subject/value.label"
+msgstr "Klíčové slovo"
+
+#: models/nr-documents/nr_documents/services/records/facets.py:428
+msgid "metadata/subjects/subjectScheme.label"
+msgstr "Schema klíčového slova"
+
+#: models/nr-documents/nr_documents/services/records/facets.py:432
+msgid "metadata/subjects/valueURI.label"
+msgstr "Definice klíčového slova"
+
+#: models/nr-documents/nr_documents/services/records/facets.py:437
+msgid "metadata/systemIdentifiers/identifier.label"
+msgstr "Systémový identifikátor"
+
+#: models/nr-documents/nr_documents/services/records/facets.py:442
+msgid "metadata/systemIdentifiers/scheme.label"
+msgstr "Typ identifikátoru"
+
+#: models/nr-documents/nr_documents/services/records/facets.py:446
+#: models/nr-documents/nr_documents/services/records/facets.py:450
+#: sites/nr-docs/site/nr_docs/translations/jinjax_messages.jinja:21
+msgid "metadata/technicalInfo.label"
+msgstr "Technické informace"
+
+#: models/nr-documents/nr_documents/services/records/facets.py:457
+msgid "metadata/technicalInfo/lang.label"
+msgstr "Jazyk"
+
+#: models/nr-documents/nr_documents/services/records/facets.py:465
+msgid "metadata/technicalInfo/value.label"
+msgstr "Technické informace"
+
+#: models/nr-documents/nr_documents/services/records/facets.py:470
+#: sites/nr-docs/site/nr_docs/translations/jinjax_messages.jinja:5
+msgid "metadata/thesis/dateDefended.label"
+msgstr "Datum obhajoby"
+
+#: models/nr-documents/nr_documents/services/records/facets.py:474
+msgid "metadata/thesis/defended.label"
+msgstr "Obhájeno?"
+
+#: models/nr-documents/nr_documents/services/records/facets.py:479
+#: sites/nr-docs/site/nr_docs/translations/jinjax_messages.jinja:8
+msgid "metadata/thesis/degreeGrantors.label"
+msgstr "Instituce / grantor"
+
+#: models/nr-documents/nr_documents/services/records/facets.py:484
+#: sites/nr-docs/site/nr_docs/translations/jinjax_messages.jinja:9
+msgid "metadata/thesis/studyFields.label"
+msgstr "Oblasti studia"
+
+#: models/nr-documents/nr_documents/services/records/facets.py:488
+msgid "metadata/title.label"
+msgstr "Název"
+
+#: models/nr-documents/nr_documents/services/records/facets.py:492
+#: sites/nr-docs/site/nr_docs/translations/jinjax_messages.jinja:22
+msgid "metadata/version.label"
+msgstr "Verze zdroje"
+
+#: models/nr-documents/nr_documents/services/records/facets.py:496
+msgid "syntheticFields/institutions.label"
+msgstr "Instituce"
+
+#: models/nr-documents/nr_documents/services/records/facets.py:500
+msgid "syntheticFields/keywords_cs.label"
+msgstr "Česká klíčová slova"
+
+#: models/nr-documents/nr_documents/services/records/facets.py:504
+msgid "syntheticFields/keywords_en.label"
+msgstr "Anglická klíčová slova"
+
+#: models/nr-documents/nr_documents/services/records/facets.py:508
+msgid "syntheticFields/person.label"
+msgstr "Osoby"
+
+#: models/nr-documents/nr_documents/services/records/facets.py:511
+msgid "updated.label"
+msgstr "Datum poslední změny"
+
+#: sites/nr-docs/site/nr_docs/views.py:23
+msgid "New upload"
+msgstr "Nový záznam"
+
+#: sites/nr-docs/site/nr_docs/templates/semantic-ui/nr_docs/searchbar.html:5
+#: sites/nr-docs/site/nr_docs/templates/semantic-ui/nr_docs/searchbar.html:11
+#: sites/nr-docs/site/nr_docs/templates/semantic-ui/nr_docs/searchbar.html:21
+msgid "in"
+msgstr "v"
+
+#: sites/nr-docs/site/nr_docs/templates/semantic-ui/nr_docs/searchbar.html:5
+#: sites/nr-docs/site/nr_docs/templates/semantic-ui/nr_docs/searchbar.html:6
+msgid "In this community"
+msgstr "V této komunitě"
+
+#: sites/nr-docs/site/nr_docs/templates/semantic-ui/nr_docs/searchbar.html:11
+#: sites/nr-docs/site/nr_docs/templates/semantic-ui/nr_docs/searchbar.html:12
+#: sites/nr-docs/site/nr_docs/templates/semantic-ui/nr_docs/searchbar.html:20
+#: sites/nr-docs/site/nr_docs/templates/semantic-ui/nr_docs/searchbar.html:21
+msgid "All document records"
+msgstr "Všechny záznamy"
+
+#: sites/nr-docs/site/nr_docs/templates/semantic-ui/nr_docs/searchbar.html:30
+#: sites/nr-docs/site/nr_docs/templates/semantic-ui/nr_docs/searchbar.html:31
+#: ui/docs-app/docs_app/templates/semantic-ui/docs_app/frontpage.html:52
+#: ui/docs-app/docs_app/templates/semantic-ui/docs_app/frontpage.html:53
+msgid "Search"
+msgstr "Hledat"
+
+#: sites/nr-docs/site/nr_docs/translations/jinjax_messages.jinja:6
+msgid "metadata/subjects.label"
+msgstr "Klíčová slova"
+
+#: sites/nr-docs/site/nr_docs/translations/jinjax_messages.jinja:10
+msgid "metadata/publishers.label"
+msgstr "Vydavatelé"
+
+#: sites/nr-docs/site/nr_docs/translations/jinjax_messages.jinja:13
+msgid "metadata/events.label"
+msgstr "Události"
+
+#: sites/nr-docs/site/nr_docs/translations/jinjax_messages.jinja:14
+msgid "metadata/externalLocation.label"
+msgstr "Externí umístění"
+
+#: sites/nr-docs/site/nr_docs/translations/jinjax_messages.jinja:15
+msgid "metadata/fundingReferences.label"
+msgstr "Projekt nebo financování"
+
+#: sites/nr-docs/site/nr_docs/translations/jinjax_messages.jinja:16
+msgid "metadata/geoLocations.label"
+msgstr "Geolokace"
+
+#: sites/nr-docs/site/nr_docs/translations/jinjax_messages.jinja:18
+msgid "metadata/notes.label"
+msgstr "Poznámky"
+
+#: sites/nr-docs/site/nr_docs/translations/jinjax_messages.jinja:19
+msgid "metadata/series.label"
+msgstr "Série"
+
+#: ui/docs-app/docs_app/templates/semantic-ui/docs_app/Detail.html.jinja:2
+#: ui/docs-app/docs_app/templates/semantic-ui/docs_app/Search.html.jinja:4
+#: ui/docs-app/docs_app/templates/semantic-ui/docs_app/detail.html:2
+#: ui/docs-app/docs_app/templates/semantic-ui/docs_app/search.html:2
+msgid "NR Document repository"
+msgstr "NR dokumentový repozitář"
+
+#: ui/docs-app/docs_app/templates/semantic-ui/docs_app/Main.html.jinja:9
+msgid "People"
+msgstr "Lidé"
+
+#: ui/docs-app/docs_app/templates/semantic-ui/docs_app/Search.html.jinja:4
+#: ui/docs-app/docs_app/templates/semantic-ui/docs_app/search.html:2
+msgid "Search results"
+msgstr "Výsledky vyhledávání"
+
+#: ui/docs-app/docs_app/templates/semantic-ui/docs_app/Sidebar.html.jinja:2
+#: ui/docs-app/docs_app/templates/semantic-ui/docs_app/Sidebar.html.jinja:3
+msgid "Collection"
+msgstr "Kolekce"
+
+#: ui/docs-app/docs_app/templates/semantic-ui/docs_app/Sidebar.html.jinja:6
+#: ui/docs-app/docs_app/templates/semantic-ui/docs_app/Sidebar.html.jinja:7
+msgid "metadata/objectIdentifiers.label"
+msgstr "Identifikátory objektu"
+
+#: ui/docs-app/docs_app/templates/semantic-ui/docs_app/Sidebar.html.jinja:22
+#: ui/docs-app/docs_app/templates/semantic-ui/docs_app/Sidebar.html.jinja:23
+msgid "Export"
+msgstr "Export"
+
+#: ui/docs-app/docs_app/templates/semantic-ui/docs_app/Sidebar.html.jinja:70
+msgid "API"
+msgstr "API"
+
+#: ui/docs-app/docs_app/templates/semantic-ui/docs_app/Sidebar.html.jinja:70
+msgid "Links"
+msgstr "Odkazy"
+
+#: ui/docs-app/docs_app/templates/semantic-ui/docs_app/footer.html:18
+msgid "Contact"
+msgstr "Kontakt"
+
+#: ui/docs-app/docs_app/templates/semantic-ui/docs_app/footer.html:38
+#, python-format
+msgid "Powered by <a href=\"%(link)s\">Invenio</a>"
+msgstr "Založeno na platformě <a href=\"%(link)s\">Invenio</a>"
+
+#: ui/docs-app/docs_app/templates/semantic-ui/docs_app/header_login.html:15
+msgid "Log in"
+msgstr "Přihlásit se"
+
+#: ui/docs-app/docs_app/templates/semantic-ui/docs_app/header_login.html:19
+msgid "Sign up"
+msgstr "Zaregistrovat se"
+
+#: ui/docs-app/docs_app/templates/semantic-ui/docs_app/header_login.html:36
+msgid "Quick create"
+msgstr "Rychle vytvořit"
+
+#: ui/docs-app/docs_app/templates/semantic-ui/docs_app/header_login.html:53
+msgid "Actions"
+msgstr "Akce"
+
+#: ui/docs-app/docs_app/templates/semantic-ui/docs_app/header_login.html:72
+#: ui/docs-app/docs_app/templates/semantic-ui/docs_app/header_login.html:113
+msgid "My account"
+msgstr "Můj účet"
+
+#: ui/docs-app/docs_app/templates/semantic-ui/docs_app/header_login.html:107
+#: ui/docs-app/docs_app/templates/semantic-ui/docs_app/header_login.html:136
+#: ui/docs-app/docs_app/templates/semantic-ui/docs_app/header_login.html:143
+msgid "Log out"
+msgstr "Odhlásit se"
+
+#: ui/docs-app/docs_app/templates/semantic-ui/oarepo_ui/components/Person.html.jinja:3
+msgid "Find more records by this person"
+msgstr "Vyhledat další záznamy této osoby"
+
+#: ui/docs-app/docs_app/templates/semantic-ui/oarepo_ui/components/Subjects.jinja:20
+msgid "Find more records with this subject"
+msgstr "Najít další záznamy s tímto heslem"
+
+msgid "Add additional title"
+msgstr "Přidat další název"
+
+msgid "Additional titles"
+msgstr "Další názvy"
+
+msgid "Title"
+msgstr "Název"
+
+msgid "Title type"
+msgstr "Druh názvu"
+
+msgid "Creators"
+msgstr "Autoři"
+
+msgid "Add creator"
+msgstr "Přidat autora"
+
+msgid "Edit creator"
+msgstr "Editovat autora"
+
+msgid "Edit"
+msgstr "Editovat"
+
+msgid "Remove"
+msgstr "Odebrat"
+
+msgid "Identifier"
+msgstr "Identifikátor"
+
+msgid "Type the value of an identifier..."
+msgstr "Zadejte hodnotu identifikátoru…"
+
+msgid "Identifiers"
+msgstr "Identifikátory"
+
+msgid "e.g. ORCID, ISNI or GND."
+msgstr "např. ORCID, ISNI or GND."
+
+msgid "Save and add another"
+msgstr "Uložit a přidat další"
+
+msgid "Given name is a required field."
+msgstr "Jméno je povinné pole."
+
+msgid "Family name is a required field."
+msgstr "Příjmení je povinné pole."
+
+msgid "Role is a required field."
+msgstr "Role je povinné pole."
+
+msgid "Added"
+msgstr "Přidáno"
+
+msgid "Person"
+msgstr "Osoba"
+
+msgid "Organization"
+msgstr "Organizace"
+
+msgid "Search for persons by name, identifier, or affiliation..."
+msgstr "Hledat osoby podle jména, identifikátoru nebo afiliace…"
+
+msgid "Family name"
+msgstr "Příjmení"
+
+msgid "Given names"
+msgstr "Jméno"
+
+msgid "Name"
+msgstr "Název"
+
+msgid "Organization name"
+msgstr "Název organizace"
+
+msgid "e.g. ROR, ISNI or GND."
+msgstr "např. ROR, ISNI nebo GND."
+
+msgid "Affiliations"
+msgstr "Afiliace"
+
+msgid "Select one or more affiliations"
+msgstr "Vyberte jednu nebo více afiliací"
+
+msgid "Select role"
+msgstr "Vyberte roli"
+
+msgid "Role"
+msgstr "Role"
+
+msgid "Cancel"
+msgstr "Zrušit"
+
+msgid "Save"
+msgstr "Uložit"
+
+msgid "Couldn't find your person? You can <2>create a new entry</2>."
+msgstr "Couldn't find your person? You can <2>create a new entry</2>."
+
+msgid ""
+"In case your upload was already published elsewhere, please use the date of "
+"the first publication. Format: YYYY-MM-DD, YYYY-MM, or YYYY. For intervals "
+"use DATE/DATE, e.g. 1939/1945."
+msgstr ""
+"V případě, že váš příspěvek již byl publikován jinde, použijte prosím datum "
+"prvního zveřejnění. Formát: RRRR-MM-DD, RRRR-MM nebo RRRR. Pro intervaly "
+"použijte DATUM/DATUM, např. 1939/1945."
+
+msgid "Publication date"
+msgstr "Datum zveřejnění"
+
+msgid ""
+"YYYY-MM-DD or YYYY-MM-DD/YYYY-MM-DD for intervals. MM and DD are optional."
+msgstr ""
+"RRRR-MM-DD nebo RRRR-MM-DD/RRRR-MM-DD pro intervaly. MM a DD jsou volitelné."
+
+msgid "Delete"
+msgstr "Smazat"
+
+msgid "Are you sure you wish delete this draft?"
+msgstr "Jste si jistý, že chcete smazat tento koncept?"
+
+msgid "If you delete the draft, the work you have done on it will be lost."
+msgstr ""
+"Pokud koncept smažete, práce, kterou jste na něm vykonali, bude ztracena."
+
+msgid "Add event"
+msgstr "Přidat událost"
+
+msgid "Events"
+msgstr "Události"
+
+msgid "Event name"
+msgstr "Název akce"
+
+msgid "Event alternate name"
+msgstr "Alternativní název akce"
+
+msgid "Add event alternate name"
+msgstr "Přidejte alternativní název akce"
+
+msgid "Event date"
+msgstr "Datum události"
+
+msgid "Place"
+msgstr "Místo"
+
+msgid "Country"
+msgstr "Země"
+
+msgid "External location"
+msgstr "Externí umístění"
+
+msgid "Resource external location"
+msgstr "Externí umístění zdroje"
+
+msgid "Note"
+msgstr "Poznámka"
+
+msgid "Add funder"
+msgstr "Přidat poskytovatele financí"
+
+msgid "Funding"
+msgstr "Projekt nebo financování"
+
+msgid "Project code"
+msgstr "Číslo projektu"
+
+msgid "Project name"
+msgstr "Název projektu"
+
+msgid "Funding program"
+msgstr "Výzkumný program"
+
+msgid "Funder"
+msgstr "Poskytovatel financí"
+
+msgid "Add location"
+msgstr "Přidat lokace"
+
+msgid "Geolocation"
+msgstr "Geolokace"
+
+msgid "Location"
+msgstr "Lokace"
+
+msgid "Longitude"
+msgstr "Zeměpisná délka"
+
+msgid "Latitude"
+msgstr "Zeměpisná šířka"
+
+msgid "Add identifier"
+msgstr "Přidat identifikátor"
+
+msgid "Identifier type"
+msgstr "Typ identifikátoru"
+
+msgid "Identifier field"
+msgstr "Pole identifikátoru"
+
+msgid "Object identifier"
+msgstr "Identifikátor objektu"
+
+msgid "Preview"
+msgstr "Náhled"
+
+msgid "Publish"
+msgstr "Publikovat"
+
+msgid "Are you sure you wish to publish this draft?"
+msgstr "Jste si jistý, že chcete tento koncept publikovat?"
+
+msgid "Add series"
+msgstr "Přidat edici"
+
+msgid "Series"
+msgstr "Edice"
+
+msgid "Series title"
+msgstr "Název edice"
+
+msgid "Series volume"
+msgstr "Svazek edice"
+
+msgid "Add note"
+msgstr "Přidat poznámku"
+
+msgid "Notes"
+msgstr "Poznámky"
+
+msgid "Items shall be unique"
+msgstr "Položky musí být jedinečné"
+
+msgid "Add subject"
+msgstr "Přidat předmět"
+
+msgid "Subjects"
+msgstr "Klíčová slova"
+
+msgid "Subject scheme"
+msgstr "Schema klíčového slova"
+
+msgid "Subject"
+msgstr "Klíčové slovo"
+
+msgid "Validate form"
+msgstr "Zkontrolovat formulář"
+
+msgid "Basic information"
+msgstr "Základní informace"
+
+msgid "Contributors"
+msgstr "Přispěvatelé"
+
+msgid "Add contributor"
+msgstr "Přidat přispěvatele"
+
+msgid "Edit contributor"
+msgstr "Upravit přispěvatele"
+
+msgid "Language"
+msgstr "Jazyk"
+
+msgid "Choose languages"
+msgstr "Vyberte jazyky"
+
+msgid "Resource type"
+msgstr "Typ položky"
+
+msgid "Select resource type"
+msgstr "Vyberte typ položky"
+
+msgid "Abstract"
+msgstr "Abstrakt"
+
+msgid "Description"
+msgstr "Popis"
+
+msgid "Detailed description"
+msgstr ""
+"Podrobný popis metodiky a technické informace by měly být uvedeny v části "
+"„Popis datové sady“."
+
+msgid "Access rights"
+msgstr "Přístupová práva"
+
+msgid "Select access rights"
+msgstr "Vyberte přístupová práva"
+
+msgid "Licenses"
+msgstr "Licence"
+
+msgid "Choose licenses"
+msgstr "Vyberte licence"
+
+msgid ""
+"If a Creative Commons license is associated with the resource, select the "
+"appropriate license option from the menu. We recommend choosing the latest "
+"versions, namely 3.0 Czech and 4.0 International."
+msgstr ""
+"Pokud se k datové sadě váže licence Creative Commons, vyberte příslušnou "
+"variantu licence z nabídky. Doporučujeme výběr nejnovějších verzí a to 3.0 "
+"Česko a 4.0 International."
+
+msgid "Date available"
+msgstr "Datum zveřejnění"
+
+msgid "Date modified"
+msgstr "Datum změny zdroje"
+
+msgid "Add publisher"
+msgstr "Přidat vydavatele"
+
+msgid "Publishers"
+msgstr "Vydavatelé"
+
+msgid "Resource description"
+msgstr "Popis zdroje"
+
+msgid "Subject Categories"
+msgstr "Oborové třídění"
+
+msgid "Choose subject categories"
+msgstr "Vyberte kategorie předmětů"
+
+msgid "Select the subject field(s) to which the resource belongs."
+msgstr "Vyberte obor(y), ke kterému zdroj patří."
+
+msgid "Methods"
+msgstr "Metodologie"
+
+msgid "Technical info"
+msgstr "Technické informace"
+
+msgid ""
+"Detailed information that may be associated with design, implementation, "
+"operation, use, and/or maintenance of a process or system"
+msgstr ""
+"Podrobné informace, které mohou být spojeny s návrhem, implementací, "
+"provozem, používáním a/nebo údržbou procesu nebo systému"
+
+msgid ""
+"Free-form note for any comment that couldn't be inserted in any other "
+"fields."
+msgstr ""
+"Volně tvarovaná poznámka pro jakýkoli komentář, který nebylo možné vložit do"
+" jiných polí."
+
+msgid "Additional information"
+msgstr "Doplňující informace"
+
+msgid ""
+"Free description of the location; ie. Atlantic Ocean. Longitude must be a "
+"number between -180 and 180 and latitude between -90 and 90."
+msgstr ""
+"Volný popis místa; npr. Atlantický oceán. Zeměpisná délka musí být číslo "
+"mezi -180 a 180 a zeměpisná šířka mezi -90 a 90."
+
+msgid "Accessibility"
+msgstr "Přístupnost"
+
+msgid "Explanation regarding restricted status of an item"
+msgstr "Vysvětlení týkající se omezeného stavu položky"
+
+msgid "Identifiers information"
+msgstr "Informace o identifikátorech"
+
+msgid "Object identifiers"
+msgstr "Identifikátory objektů"
+
+msgid "Persistent identifier/s of object as ISBN, DOI, etc."
+msgstr "Trvalé identifikátory objektu jako ISBN, DOI atd."
+
+msgid "System identifier"
+msgstr "Systémový identifikátor"
+
+msgid "System identifiers"
+msgstr "Identifikátory systému"
+
+msgid "This field is required"
+msgstr "Toto pole je vyžadováno"
+
+msgid "Must have at least x characters"
+msgstr "Musí mít alespoň {{min}} znaků"
+
+msgid "Items must be unique"
+msgstr "Položky musí se nesmí opakovat"
+
+msgid "Invalid date format"
+msgstr "Nesprávný formát data"
+
+msgid "Publishers must be unique"
+msgstr "Vydavatelé se nesmí opakovat"
+
+msgid "Notes must be unique"
+msgstr "Poznámky se nesmí opakovat"
+
+msgid "Must be between -180 and 180"
+msgstr "Musí být mezi -180 a 180"
+
+msgid "Must be between -90 and 90"
+msgstr "Musí být mezi -90 a 90"
+
+msgid "Locations must be unique"
+msgstr "Lokality se nesmí opakovat"
+
+msgid "Please provide an URL in valid format"
+msgstr "Uveďte prosím adresu URL v platném formátu"
+
+msgid "URL must be provided for this field if used"
+msgstr "Pro toto pole musí být uvedena platná adresa URL"
+
+msgid "Project codes must be unique"
+msgstr "Kódy projektů se nesmí opakovat"
+
+msgid "Subjects must be unique"
+msgstr "Předměty se nesmí opakovat"
+
+msgid "Series titles must be unique"
+msgstr "Názvy sérií se nesmí opakovat"
+
+msgid "Object identifiers must be unique"
+msgstr "Identifikátory objektů se nesmí opakovat"
+
+msgid "We couldn't find any matches for "
+msgstr "Nenašli jsme žádné shody pro "
+
+msgid "your search"
+msgstr "vaše vyhledávání"
+
+msgid "Start over"
+msgstr "Začít znovu"
+
+msgid "ProTip"
+msgstr "ProTip"
+
+msgid "will give you all the publications from 2017 until today."
+msgstr "vám poskytne všechny publikace od roku 2017 do současnosti."
+
+msgid "For more tips, check out our "
+msgstr "Další tipy naleznete v našem "
+
+msgid "Search guide"
+msgstr "Průvodce hledáním"
+
+msgid "search guide"
+msgstr "průvodci hledáním"
+
+msgid " for defining advanced search queries."
+msgstr "pro definování pokročilých vyhledávacích dotazů."
+
+msgid "ORCID profile"
+msgstr "ORCID profil"
+
+msgid "Scopus ID profile"
+msgstr "Scopus ID profil"
+
+msgid "ROR profile"
+msgstr "ROR profil"
+
+msgid "WOS Researcher ID"
+msgstr "WOS Researcher ID"
+
+msgid "DOI profile"
+msgstr "DOI profil"
+
+msgid "GND profile"
+msgstr "GND profil"
+
+msgid "Find all records"
+msgstr "Vyhledat všechny záznamy"
+
+msgid "by this document type"
+msgstr "s tímto typem dokumentu"
+
+msgid "Languages"
+msgstr "Jazyky"
+
+msgid "defended"
+msgstr "obhájeno"
+
+msgid "not defended"
+msgstr "neobhájeno"
+
+msgid "Uploaded on"
+msgstr "Nahráno dne"
+
+msgid "Published in: "
+msgstr "Zveřejněno v: "
+
+msgid "No description"
+msgstr "Žádný popis"
+
+msgid "No publication date found."
+msgstr "Datum zveřejnění nenalezeno."
+
+msgid "$schema.help"
+msgstr ""
+
+msgid "$schema.hint"
+msgstr ""
+
+msgid "created.help"
+msgstr ""
+
+msgid "created.hint"
+msgstr ""
+
+msgid "id.help"
+msgstr ""
+
+msgid "id.hint"
+msgstr ""
+
+msgid "metadata.help"
+msgstr ""
+
+msgid "metadata.label"
+msgstr "Metadata záznamu"
+
+msgid "metadata.hint"
+msgstr ""
+
+msgid "metadata/abstract.help"
+msgstr ""
+
+msgid "metadata/abstract.hint"
+msgstr ""
+
+msgid "metadata/abstract/lang.help"
+msgstr ""
+
+msgid "metadata/abstract/lang.hint"
+msgstr ""
+
+msgid "metadata/abstract/value.help"
+msgstr ""
+
+msgid "metadata/abstract/value.hint"
+msgstr ""
+
+msgid "metadata/accessRights.help"
+msgstr ""
+
+msgid "metadata/accessRights.hint"
+msgstr ""
+
+msgid "metadata/accessRights/id.help"
+msgstr ""
+
+msgid "metadata/accessRights/id.label"
+msgstr "Identifikátor"
+
+msgid "metadata/accessRights/id.hint"
+msgstr ""
+
+msgid "metadata/accessRights/title.help"
+msgstr ""
+
+msgid "metadata/accessRights/title.label"
+msgstr "Přístupová práva"
+
+msgid "metadata/accessRights/title.hint"
+msgstr ""
+
+msgid "metadata/accessRights/@v.help"
+msgstr ""
+
+msgid "metadata/accessRights/@v.label"
+msgstr "Verze odkazovaného záznamu"
+
+msgid "metadata/accessRights/@v.hint"
+msgstr ""
+
+msgid "metadata/accessibility.help"
+msgstr ""
+
+msgid "metadata/accessibility.hint"
+msgstr ""
+
+msgid "metadata/accessibility/lang.help"
+msgstr ""
+
+msgid "metadata/accessibility/lang.hint"
+msgstr ""
+
+msgid "metadata/accessibility/value.help"
+msgstr ""
+
+msgid "metadata/accessibility/value.hint"
+msgstr ""
+
+msgid "metadata/additionalTitles.label"
+msgstr "Další názvy"
+
+msgid "metadata/additionalTitles.help"
+msgstr "Další názvy"
+
+msgid "metadata/additionalTitles.hint"
+msgstr ""
+
+msgid "metadata/additionalTitles/title.help"
+msgstr ""
+
+msgid "metadata/additionalTitles/title.hint"
+msgstr ""
+
+msgid "metadata/additionalTitles/title/lang.help"
+msgstr ""
+
+msgid "metadata/additionalTitles/title/lang.hint"
+msgstr ""
+
+msgid "metadata/additionalTitles/title/value.help"
+msgstr ""
+
+msgid "metadata/additionalTitles/title/value.hint"
+msgstr ""
+
+msgid "metadata/additionalTitles/titleType.help"
+msgstr ""
+
+msgid "metadata/additionalTitles/titleType.hint"
+msgstr ""
+
+msgid "metadata/additionalTitles/titleType.enum.translatedTitle"
+msgstr "Přeložený název"
+
+msgid "metadata/additionalTitles/titleType.enum.alternativeTitle"
+msgstr "Alternativní název"
+
+msgid "metadata/additionalTitles/titleType.enum.subtitle"
+msgstr "Podnázev"
+
+msgid "metadata/additionalTitles/titleType.enum.other"
+msgstr "Jiný název"
+
+msgid "metadata/collection.help"
+msgstr ""
+
+msgid "metadata/collection.hint"
+msgstr ""
+
+msgid "metadata/contributors.label"
+msgstr "Přispěvatelé"
+
+msgid "metadata/contributors.help"
+msgstr ""
+
+msgid "metadata/contributors.hint"
+msgstr ""
+
+msgid "metadata/contributors/affiliations.help"
+msgstr ""
+
+msgid "metadata/contributors/affiliations.hint"
+msgstr ""
+"Uveďte instituci/instituce, pod jejíž záštitou jste se na tvorbě objektu "
+"podíleli."
+
+msgid "metadata/contributors/affiliations/id.help"
+msgstr ""
+
+msgid "metadata/contributors/affiliations/id.label"
+msgstr "Identifikátor"
+
+msgid "metadata/contributors/affiliations/id.hint"
+msgstr ""
+
+msgid "metadata/contributors/affiliations/title.help"
+msgstr ""
+
+msgid "metadata/contributors/affiliations/title.label"
+msgstr ""
+
+msgid "metadata/contributors/affiliations/title.hint"
+msgstr ""
+
+msgid "metadata/contributors/affiliations/hierarchy.help"
+msgstr ""
+
+msgid "metadata/contributors/affiliations/hierarchy.label"
+msgstr "Hierarchie"
+
+msgid "metadata/contributors/affiliations/hierarchy.hint"
+msgstr ""
+
+msgid "metadata/contributors/affiliations/hierarchy/ancestors.help"
+msgstr ""
+
+msgid "metadata/contributors/affiliations/hierarchy/ancestors.label"
+msgstr "Nadřazené termíny"
+
+msgid "metadata/contributors/affiliations/hierarchy/ancestors.hint"
+msgstr ""
+
+msgid "metadata/contributors/affiliations/hierarchy/ancestors_or_self.help"
+msgstr ""
+
+msgid "metadata/contributors/affiliations/hierarchy/ancestors_or_self.label"
+msgstr "Tento termín a nadřazené termíny"
+
+msgid "metadata/contributors/affiliations/hierarchy/ancestors_or_self.hint"
+msgstr ""
+
+msgid "metadata/contributors/affiliations/hierarchy/level.help"
+msgstr ""
+
+msgid "metadata/contributors/affiliations/hierarchy/level.label"
+msgstr "Úroveň zanoření"
+
+msgid "metadata/contributors/affiliations/hierarchy/level.hint"
+msgstr ""
+
+msgid "metadata/contributors/affiliations/hierarchy/parent.help"
+msgstr ""
+
+msgid "metadata/contributors/affiliations/hierarchy/parent.label"
+msgstr "Předek"
+
+msgid "metadata/contributors/affiliations/hierarchy/parent.hint"
+msgstr ""
+
+msgid "metadata/contributors/affiliations/hierarchy/title.help"
+msgstr ""
+
+msgid "metadata/contributors/affiliations/hierarchy/title.label"
+msgstr "Název termínu"
+
+msgid "metadata/contributors/affiliations/hierarchy/title.hint"
+msgstr ""
+
+msgid "metadata/contributors/affiliations/@v.help"
+msgstr ""
+
+msgid "metadata/contributors/affiliations/@v.label"
+msgstr "Verze odkazovaného termínu"
+
+msgid "metadata/contributors/affiliations/@v.hint"
+msgstr ""
+
+msgid "metadata/contributors/authorityIdentifiers.help"
+msgstr ""
+
+msgid "metadata/contributors/authorityIdentifiers.label"
+msgstr "Identifikátory"
+
+msgid "metadata/contributors/authorityIdentifiers.hint"
+msgstr ""
+
+msgid "identifier.label"
+msgstr "Identifikátor"
+
+msgid "identifier.help"
+msgstr ""
+
+msgid "identifier.hint"
+msgstr ""
+
+msgid "identifier_type.label"
+msgstr "Typ identifikátoru"
+
+msgid "identifier_type.hint"
+msgstr ""
+"Doporučujeme zadat alespoň jeden z typů identifikátorů.\n"
+"Pokud potřebujete rozšířit nabídku typů identifikátorů, kontaktujte nás na support@narodni-repozitar.cz.\n"
+
+msgid "identifier_type.help"
+msgstr ""
+
+msgid "identifier_type.enum.orcid"
+msgstr ""
+
+msgid "identifier_type.enum.scopusID"
+msgstr ""
+
+msgid "identifier_type.enum.researcherID"
+msgstr ""
+
+msgid "identifier_type.enum.czenasAutID"
+msgstr ""
+
+msgid "identifier_type.enum.vedidk"
+msgstr ""
+
+msgid "identifier_type.enum.institutionalID"
+msgstr ""
+
+msgid "identifier_type.enum.ISNI"
+msgstr ""
+
+msgid "identifier_type.enum.ROR"
+msgstr ""
+
+msgid "identifier_type.enum.ICO"
+msgstr ""
+
+msgid "identifier_type.enum.DOI"
+msgstr ""
+
+msgid "metadata/contributors/fullName.help"
+msgstr ""
+
+msgid "metadata/contributors/fullName.hint"
+msgstr ""
+
+msgid "metadata/contributors/nameType.hint"
+msgstr "Jako tvůrce je možné označit osobu nebo instituci."
+
+msgid "metadata/contributors/nameType.help"
+msgstr ""
+
+msgid "metadata/contributors/nameType.enum.Organizational"
+msgstr "Organizace"
+
+msgid "metadata/contributors/nameType.enum.Personal"
+msgstr "Osoba"
+
+msgid "metadata/contributors/role.help"
+msgstr ""
+
+msgid "metadata/contributors/role.hint"
+msgstr ""
+
+msgid "metadata/contributors/role/id.help"
+msgstr ""
+
+msgid "metadata/contributors/role/id.label"
+msgstr "Identifikátor"
+
+msgid "metadata/contributors/role/id.hint"
+msgstr ""
+
+msgid "metadata/contributors/role/title.help"
+msgstr ""
+
+msgid "metadata/contributors/role/title.label"
+msgstr "Role přispěvovatele"
+
+msgid "metadata/contributors/role/title.hint"
+msgstr ""
+
+msgid "metadata/contributors/role/@v.help"
+msgstr ""
+
+msgid "metadata/contributors/role/@v.label"
+msgstr "Verze odkazovaného záznamu"
+
+msgid "metadata/contributors/role/@v.hint"
+msgstr ""
+
+msgid "metadata/creators.label"
+msgstr "Autoři"
+
+msgid "metadata/creators.help"
+msgstr ""
+
+msgid "metadata/creators.hint"
+msgstr ""
+
+msgid "metadata/creators/affiliations.help"
+msgstr ""
+
+msgid "metadata/creators/affiliations.hint"
+msgstr ""
+"Uveďte instituci/instituce, pod jejíž záštitou jste se na tvorbě objektu "
+"podíleli."
+
+msgid "metadata/creators/affiliations/id.help"
+msgstr ""
+
+msgid "metadata/creators/affiliations/id.label"
+msgstr "Identifikátor"
+
+msgid "metadata/creators/affiliations/id.hint"
+msgstr ""
+
+msgid "metadata/creators/affiliations/title.help"
+msgstr ""
+
+msgid "metadata/creators/affiliations/title.label"
+msgstr "Název instituce"
+
+msgid "metadata/creators/affiliations/title.hint"
+msgstr ""
+
+msgid "metadata/creators/affiliations/hierarchy.help"
+msgstr ""
+
+msgid "metadata/creators/affiliations/hierarchy.label"
+msgstr "Hierarchie"
+
+msgid "metadata/creators/affiliations/hierarchy.hint"
+msgstr ""
+
+msgid "metadata/creators/affiliations/hierarchy/ancestors.help"
+msgstr ""
+
+msgid "metadata/creators/affiliations/hierarchy/ancestors.label"
+msgstr "Nadřazené termíny"
+
+msgid "metadata/creators/affiliations/hierarchy/ancestors.hint"
+msgstr ""
+
+msgid "metadata/creators/affiliations/hierarchy/ancestors_or_self.help"
+msgstr ""
+
+msgid "metadata/creators/affiliations/hierarchy/ancestors_or_self.label"
+msgstr "Tento termín a nadřazené termíny"
+
+msgid "metadata/creators/affiliations/hierarchy/ancestors_or_self.hint"
+msgstr ""
+
+msgid "metadata/creators/affiliations/hierarchy/level.help"
+msgstr ""
+
+msgid "metadata/creators/affiliations/hierarchy/level.label"
+msgstr "Úroveň zanoření"
+
+msgid "metadata/creators/affiliations/hierarchy/level.hint"
+msgstr ""
+
+msgid "metadata/creators/affiliations/hierarchy/parent.help"
+msgstr ""
+
+msgid "metadata/creators/affiliations/hierarchy/parent.label"
+msgstr "Nadřazený termín"
+
+msgid "metadata/creators/affiliations/hierarchy/parent.hint"
+msgstr ""
+
+msgid "metadata/creators/affiliations/hierarchy/title.help"
+msgstr ""
+
+msgid "metadata/creators/affiliations/hierarchy/title.label"
+msgstr "Název"
+
+msgid "metadata/creators/affiliations/hierarchy/title.hint"
+msgstr ""
+
+msgid "metadata/creators/affiliations/@v.help"
+msgstr ""
+
+msgid "metadata/creators/affiliations/@v.label"
+msgstr "Verze odkazovaného záznamu"
+
+msgid "metadata/creators/affiliations/@v.hint"
+msgstr ""
+
+msgid "metadata/creators/authorityIdentifiers.help"
+msgstr ""
+
+msgid "metadata/creators/authorityIdentifiers.label"
+msgstr "Identifikátory"
+
+msgid "metadata/creators/authorityIdentifiers.hint"
+msgstr ""
+
+msgid "metadata/creators/fullName.help"
+msgstr ""
+
+msgid "metadata/creators/fullName.hint"
+msgstr ""
+
+msgid "metadata/creators/nameType.hint"
+msgstr "Jako tvůrce je možné označit osobu nebo instituci."
+
+msgid "metadata/creators/nameType.help"
+msgstr ""
+
+msgid "metadata/creators/nameType.enum.Organizational"
+msgstr "Organizace"
+
+msgid "metadata/creators/nameType.enum.Personal"
+msgstr "Osoba"
+
+msgid "metadata/dateAvailable.help"
+msgstr ""
+
+msgid "metadata/dateAvailable.hint"
+msgstr ""
+
+msgid "metadata/dateModified.help"
+msgstr ""
+
+msgid "metadata/dateModified.hint"
+msgstr ""
+
+msgid "metadata/events.help"
+msgstr ""
+
+msgid "metadata/events.hint"
+msgstr ""
+
+msgid "metadata/events/eventDate.label"
+msgstr "Datum konání akce"
+
+msgid "metadata/events/eventDate.help"
+msgstr ""
+
+msgid "metadata/events/eventDate.hint"
+msgstr ""
+
+msgid "metadata/events/eventLocation.help"
+msgstr ""
+
+msgid "metadata/events/eventLocation.label"
+msgstr "Místo konání akce"
+
+msgid "metadata/events/eventLocation.hint"
+msgstr ""
+
+msgid "metadata/events/eventLocation/country.help"
+msgstr ""
+
+msgid "metadata/events/eventLocation/country.hint"
+msgstr ""
+
+msgid "metadata/events/eventLocation/country/id.help"
+msgstr ""
+
+msgid "metadata/events/eventLocation/country/id.label"
+msgstr "Identifikátor země"
+
+msgid "metadata/events/eventLocation/country/id.hint"
+msgstr ""
+
+msgid "metadata/events/eventLocation/country/title.help"
+msgstr ""
+
+msgid "metadata/events/eventLocation/country/title.label"
+msgstr "Název země"
+
+msgid "metadata/events/eventLocation/country/title.hint"
+msgstr ""
+
+msgid "metadata/events/eventLocation/country/@v.help"
+msgstr ""
+
+msgid "metadata/events/eventLocation/country/@v.label"
+msgstr "Verze odkazovaného záznamu"
+
+msgid "metadata/events/eventLocation/country/@v.hint"
+msgstr ""
+
+msgid "metadata/events/eventLocation/place.help"
+msgstr ""
+
+msgid "metadata/events/eventLocation/place.hint"
+msgstr ""
+
+msgid "metadata/events/eventNameAlternate.help"
+msgstr ""
+
+msgid "metadata/events/eventNameAlternate.label"
+msgstr "Alternativní název akce"
+
+msgid "metadata/events/eventNameAlternate.hint"
+msgstr ""
+
+msgid "metadata/events/eventNameOriginal.label"
+msgstr "Název akce"
+
+msgid "metadata/events/eventNameOriginal.help"
+msgstr ""
+
+msgid "metadata/events/eventNameOriginal.hint"
+msgstr ""
+
+msgid "metadata/externalLocation.help"
+msgstr ""
+
+msgid "metadata/externalLocation.hint"
+msgstr ""
+
+msgid "metadata/externalLocation/externalLocationNote.label"
+msgstr "Poznámka"
+
+msgid "metadata/externalLocation/externalLocationNote.help"
+msgstr ""
+
+msgid "metadata/externalLocation/externalLocationNote.hint"
+msgstr ""
+
+msgid "metadata/externalLocation/externalLocationURL.help"
+msgstr ""
+
+msgid "metadata/externalLocation/externalLocationURL.hint"
+msgstr ""
+
+msgid "metadata/fundingReferences.help"
+msgstr ""
+
+msgid "metadata/fundingReferences.hint"
+msgstr ""
+
+msgid "metadata/fundingReferences/funder.help"
+msgstr ""
+
+msgid "metadata/fundingReferences/funder.hint"
+msgstr ""
+
+msgid "metadata/fundingReferences/funder/id.help"
+msgstr ""
+
+msgid "metadata/fundingReferences/funder/id.label"
+msgstr "Identifikátor"
+
+msgid "metadata/fundingReferences/funder/id.hint"
+msgstr ""
+
+msgid "metadata/fundingReferences/funder/title.help"
+msgstr ""
+
+msgid "metadata/fundingReferences/funder/title.label"
+msgstr "Název zdroje financování"
+
+msgid "metadata/fundingReferences/funder/title.hint"
+msgstr ""
+
+msgid "metadata/fundingReferences/funder/@v.help"
+msgstr ""
+
+msgid "metadata/fundingReferences/funder/@v.label"
+msgstr "Verze odkazovaného záznamu"
+
+msgid "metadata/fundingReferences/funder/@v.hint"
+msgstr ""
+
+msgid "metadata/fundingReferences/fundingProgram.label"
+msgstr "Výzkumný program"
+
+msgid "metadata/fundingReferences/fundingProgram.help"
+msgstr ""
+
+msgid "metadata/fundingReferences/fundingProgram.hint"
+msgstr ""
+
+msgid "metadata/fundingReferences/projectID.help"
+msgstr ""
+
+msgid "metadata/fundingReferences/projectID.hint"
+msgstr ""
+
+msgid "metadata/fundingReferences/projectName.label"
+msgstr "Název projektu"
+
+msgid "metadata/fundingReferences/projectName.help"
+msgstr ""
+
+msgid "metadata/fundingReferences/projectName.hint"
+msgstr ""
+
+msgid "metadata/geoLocations.help"
+msgstr ""
+
+msgid "metadata/geoLocations.hint"
+msgstr ""
+
+msgid "metadata/geoLocations/geoLocationPlace.help"
+msgstr ""
+
+msgid "metadata/geoLocations/geoLocationPlace.hint"
+msgstr ""
+
+msgid "metadata/geoLocations/geoLocationPoint.help"
+msgstr ""
+
+msgid "metadata/geoLocations/geoLocationPoint.label"
+msgstr "Místo"
+
+msgid "metadata/geoLocations/geoLocationPoint.hint"
+msgstr ""
+
+msgid "metadata/geoLocations/geoLocationPoint/pointLatitude.help"
+msgstr ""
+
+msgid "metadata/geoLocations/geoLocationPoint/pointLatitude.hint"
+msgstr ""
+
+msgid "metadata/geoLocations/geoLocationPoint/pointLongitude.help"
+msgstr ""
+
+msgid "metadata/geoLocations/geoLocationPoint/pointLongitude.hint"
+msgstr ""
+
+msgid "metadata/languages.help"
+msgstr ""
+
+msgid "metadata/languages.hint"
+msgstr ""
+
+msgid "metadata/languages/id.help"
+msgstr ""
+
+msgid "metadata/languages/id.label"
+msgstr "Identifikátor jazyka"
+
+msgid "metadata/languages/id.hint"
+msgstr ""
+
+msgid "metadata/languages/title.help"
+msgstr ""
+
+msgid "metadata/languages/title.label"
+msgstr "Název jazyka"
+
+msgid "metadata/languages/title.hint"
+msgstr ""
+
+msgid "metadata/languages/@v.help"
+msgstr ""
+
+msgid "metadata/languages/@v.label"
+msgstr "Verze odkazovaného záznamu"
+
+msgid "metadata/languages/@v.hint"
+msgstr ""
+
+msgid "metadata/methods.help"
+msgstr ""
+
+msgid "metadata/methods.hint"
+msgstr ""
+
+msgid "metadata/methods/lang.help"
+msgstr ""
+
+msgid "metadata/methods/lang.hint"
+msgstr ""
+
+msgid "metadata/methods/value.help"
+msgstr ""
+
+msgid "metadata/methods/value.hint"
+msgstr ""
+
+msgid "metadata/notes.help"
+msgstr ""
+
+msgid "metadata/notes.hint"
+msgstr ""
+
+msgid "metadata/objectIdentifiers.help"
+msgstr ""
+
+msgid "metadata/objectIdentifiers.hint"
+msgstr ""
+
+msgid "metadata/objectIdentifiers/identifier.help"
+msgstr ""
+
+msgid "metadata/objectIdentifiers/identifier.hint"
+msgstr ""
+
+msgid "metadata/objectIdentifiers/scheme.help"
+msgstr ""
+
+msgid "metadata/objectIdentifiers/scheme.hint"
+msgstr ""
+
+msgid "metadata/objectIdentifiers/scheme.enum.DOI"
+msgstr ""
+
+msgid "metadata/objectIdentifiers/scheme.enum.Handle"
+msgstr ""
+
+msgid "metadata/objectIdentifiers/scheme.enum.ISBN"
+msgstr ""
+
+msgid "metadata/objectIdentifiers/scheme.enum.ISSN"
+msgstr ""
+
+msgid "metadata/objectIdentifiers/scheme.enum.RIV"
+msgstr ""
+
+msgid "metadata/originalRecord.help"
+msgstr ""
+
+msgid "metadata/originalRecord.hint"
+msgstr ""
+
+msgid "metadata/publishers.help"
+msgstr ""
+
+msgid "metadata/publishers.hint"
+msgstr ""
+
+msgid "metadata/relatedItems.label"
+msgstr "Vazba na/z dalších zdrojů:"
+
+msgid "metadata/relatedItems.help"
+msgstr ""
+
+msgid "metadata/relatedItems.hint"
+msgstr ""
+
+msgid "metadata/relatedItems/itemContributors.label"
+msgstr "Přispěvatelé"
+
+msgid "metadata/relatedItems/itemContributors.help"
+msgstr ""
+
+msgid "metadata/relatedItems/itemContributors.hint"
+msgstr ""
+
+msgid "metadata/relatedItems/itemContributors/affiliations.help"
+msgstr ""
+
+msgid "metadata/relatedItems/itemContributors/affiliations.hint"
+msgstr ""
+"Uveďte instituci/instituce, pod jejíž záštitou jste se na tvorbě objektu "
+"podíleli."
+
+msgid "metadata/relatedItems/itemContributors/affiliations/id.help"
+msgstr ""
+
+msgid "metadata/relatedItems/itemContributors/affiliations/id.label"
+msgstr "Instituce přispěvovatele"
+
+msgid "metadata/relatedItems/itemContributors/affiliations/id.hint"
+msgstr ""
+
+msgid "metadata/relatedItems/itemContributors/affiliations/title.help"
+msgstr ""
+
+msgid "metadata/relatedItems/itemContributors/affiliations/title.label"
+msgstr "Název instituce"
+
+msgid "metadata/relatedItems/itemContributors/affiliations/title.hint"
+msgstr ""
+
+msgid "metadata/relatedItems/itemContributors/affiliations/hierarchy.help"
+msgstr ""
+
+msgid "metadata/relatedItems/itemContributors/affiliations/hierarchy.label"
+msgstr "Hierarchie"
+
+msgid "metadata/relatedItems/itemContributors/affiliations/hierarchy.hint"
+msgstr ""
+
+msgid ""
+"metadata/relatedItems/itemContributors/affiliations/hierarchy/ancestors.help"
+msgstr ""
+
+msgid ""
+"metadata/relatedItems/itemContributors/affiliations/hierarchy/ancestors.label"
+msgstr "Nařazené termíny"
+
+msgid ""
+"metadata/relatedItems/itemContributors/affiliations/hierarchy/ancestors.hint"
+msgstr ""
+
+msgid ""
+"metadata/relatedItems/itemContributors/affiliations/hierarchy/ancestors_or_self.help"
+msgstr ""
+
+msgid ""
+"metadata/relatedItems/itemContributors/affiliations/hierarchy/ancestors_or_self.label"
+msgstr "Tento termín a nadřazené termíny"
+
+msgid ""
+"metadata/relatedItems/itemContributors/affiliations/hierarchy/ancestors_or_self.hint"
+msgstr ""
+
+msgid ""
+"metadata/relatedItems/itemContributors/affiliations/hierarchy/level.help"
+msgstr ""
+
+msgid ""
+"metadata/relatedItems/itemContributors/affiliations/hierarchy/level.label"
+msgstr "Úroveň zanoření"
+
+msgid ""
+"metadata/relatedItems/itemContributors/affiliations/hierarchy/level.hint"
+msgstr ""
+
+msgid ""
+"metadata/relatedItems/itemContributors/affiliations/hierarchy/parent.help"
+msgstr ""
+
+msgid ""
+"metadata/relatedItems/itemContributors/affiliations/hierarchy/parent.label"
+msgstr "Nadřazený termín"
+
+msgid ""
+"metadata/relatedItems/itemContributors/affiliations/hierarchy/parent.hint"
+msgstr ""
+
+msgid ""
+"metadata/relatedItems/itemContributors/affiliations/hierarchy/title.help"
+msgstr ""
+
+msgid ""
+"metadata/relatedItems/itemContributors/affiliations/hierarchy/title.label"
+msgstr "Název"
+
+msgid ""
+"metadata/relatedItems/itemContributors/affiliations/hierarchy/title.hint"
+msgstr ""
+
+msgid "metadata/relatedItems/itemContributors/affiliations/@v.help"
+msgstr ""
+
+msgid "metadata/relatedItems/itemContributors/affiliations/@v.label"
+msgstr "Verze odkazovaného záznamu"
+
+msgid "metadata/relatedItems/itemContributors/affiliations/@v.hint"
+msgstr ""
+
+msgid "metadata/relatedItems/itemContributors/authorityIdentifiers.help"
+msgstr ""
+
+msgid "metadata/relatedItems/itemContributors/authorityIdentifiers.label"
+msgstr "Identifikátory"
+
+msgid "metadata/relatedItems/itemContributors/authorityIdentifiers.hint"
+msgstr ""
+
+msgid "metadata/relatedItems/itemContributors/fullName.help"
+msgstr ""
+
+msgid "metadata/relatedItems/itemContributors/fullName.hint"
+msgstr ""
+
+msgid "metadata/relatedItems/itemContributors/nameType.hint"
+msgstr "Jako tvůrce je možné označit osobu nebo instituci."
+
+msgid "metadata/relatedItems/itemContributors/nameType.help"
+msgstr ""
+
+msgid "metadata/relatedItems/itemContributors/nameType.enum.Organizational"
+msgstr "Organizace"
+
+msgid "metadata/relatedItems/itemContributors/nameType.enum.Personal"
+msgstr "Osoba"
+
+msgid "metadata/relatedItems/itemContributors/role.help"
+msgstr ""
+
+msgid "metadata/relatedItems/itemContributors/role.hint"
+msgstr ""
+
+msgid "metadata/relatedItems/itemContributors/role/id.help"
+msgstr ""
+
+msgid "metadata/relatedItems/itemContributors/role/id.label"
+msgstr "Role přispěvovatele"
+
+msgid "metadata/relatedItems/itemContributors/role/id.hint"
+msgstr ""
+
+msgid "metadata/relatedItems/itemContributors/role/title.help"
+msgstr ""
+
+msgid "metadata/relatedItems/itemContributors/role/title.label"
+msgstr "Název role"
+
+msgid "metadata/relatedItems/itemContributors/role/title.hint"
+msgstr ""
+
+msgid "metadata/relatedItems/itemContributors/role/@v.help"
+msgstr ""
+
+msgid "metadata/relatedItems/itemContributors/role/@v.label"
+msgstr "Verze odkazovaného záznamu"
+
+msgid "metadata/relatedItems/itemContributors/role/@v.hint"
+msgstr ""
+
+msgid "metadata/relatedItems/itemCreators.label"
+msgstr "Autoři"
+
+msgid "metadata/relatedItems/itemCreators.help"
+msgstr ""
+
+msgid "metadata/relatedItems/itemCreators.hint"
+msgstr ""
+
+msgid "metadata/relatedItems/itemCreators/affiliations.help"
+msgstr ""
+
+msgid "metadata/relatedItems/itemCreators/affiliations.hint"
+msgstr ""
+"Uveďte instituci/instituce, pod jejíž záštitou jste se na tvorbě objektu "
+"podíleli."
+
+msgid "metadata/relatedItems/itemCreators/affiliations/id.help"
+msgstr ""
+
+msgid "metadata/relatedItems/itemCreators/affiliations/id.label"
+msgstr "Identifikátor"
+
+msgid "metadata/relatedItems/itemCreators/affiliations/id.hint"
+msgstr ""
+
+msgid "metadata/relatedItems/itemCreators/affiliations/title.help"
+msgstr ""
+
+msgid "metadata/relatedItems/itemCreators/affiliations/title.label"
+msgstr "Název"
+
+msgid "metadata/relatedItems/itemCreators/affiliations/title.hint"
+msgstr ""
+
+msgid "metadata/relatedItems/itemCreators/affiliations/hierarchy.help"
+msgstr ""
+
+msgid "metadata/relatedItems/itemCreators/affiliations/hierarchy.label"
+msgstr "Hierarchie"
+
+msgid "metadata/relatedItems/itemCreators/affiliations/hierarchy.hint"
+msgstr ""
+
+msgid ""
+"metadata/relatedItems/itemCreators/affiliations/hierarchy/ancestors.help"
+msgstr ""
+
+msgid ""
+"metadata/relatedItems/itemCreators/affiliations/hierarchy/ancestors.label"
+msgstr "Nadřazené termíny"
+
+msgid ""
+"metadata/relatedItems/itemCreators/affiliations/hierarchy/ancestors.hint"
+msgstr ""
+
+msgid ""
+"metadata/relatedItems/itemCreators/affiliations/hierarchy/ancestors_or_self.help"
+msgstr ""
+
+msgid ""
+"metadata/relatedItems/itemCreators/affiliations/hierarchy/ancestors_or_self.label"
+msgstr "Tento termín a nadřazené termíny"
+
+msgid ""
+"metadata/relatedItems/itemCreators/affiliations/hierarchy/ancestors_or_self.hint"
+msgstr ""
+
+msgid "metadata/relatedItems/itemCreators/affiliations/hierarchy/level.help"
+msgstr ""
+
+msgid "metadata/relatedItems/itemCreators/affiliations/hierarchy/level.label"
+msgstr "Úroveň zanoření"
+
+msgid "metadata/relatedItems/itemCreators/affiliations/hierarchy/level.hint"
+msgstr ""
+
+msgid "metadata/relatedItems/itemCreators/affiliations/hierarchy/parent.help"
+msgstr ""
+
+msgid "metadata/relatedItems/itemCreators/affiliations/hierarchy/parent.label"
+msgstr "Nadřazený termín"
+
+msgid "metadata/relatedItems/itemCreators/affiliations/hierarchy/parent.hint"
+msgstr ""
+
+msgid "metadata/relatedItems/itemCreators/affiliations/hierarchy/title.help"
+msgstr ""
+
+msgid "metadata/relatedItems/itemCreators/affiliations/hierarchy/title.label"
+msgstr "Název"
+
+msgid "metadata/relatedItems/itemCreators/affiliations/hierarchy/title.hint"
+msgstr ""
+
+msgid "metadata/relatedItems/itemCreators/affiliations/@v.help"
+msgstr ""
+
+msgid "metadata/relatedItems/itemCreators/affiliations/@v.label"
+msgstr "Verze odkazovaného záznamu"
+
+msgid "metadata/relatedItems/itemCreators/affiliations/@v.hint"
+msgstr ""
+
+msgid "metadata/relatedItems/itemCreators/authorityIdentifiers.help"
+msgstr ""
+
+msgid "metadata/relatedItems/itemCreators/authorityIdentifiers.label"
+msgstr "Identifikátory"
+
+msgid "metadata/relatedItems/itemCreators/authorityIdentifiers.hint"
+msgstr ""
+
+msgid "metadata/relatedItems/itemCreators/fullName.help"
+msgstr ""
+
+msgid "metadata/relatedItems/itemCreators/fullName.hint"
+msgstr ""
+
+msgid "metadata/relatedItems/itemCreators/nameType.hint"
+msgstr "Jako tvůrce je možné označit osobu nebo instituci."
+
+msgid "metadata/relatedItems/itemCreators/nameType.help"
+msgstr ""
+
+msgid "metadata/relatedItems/itemCreators/nameType.enum.Organizational"
+msgstr "Organizace"
+
+msgid "metadata/relatedItems/itemCreators/nameType.enum.Personal"
+msgstr "Osoba"
+
+msgid "metadata/relatedItems/itemEndPage.help"
+msgstr ""
+
+msgid "metadata/relatedItems/itemEndPage.hint"
+msgstr ""
+
+msgid "metadata/relatedItems/itemIssue.help"
+msgstr ""
+
+msgid "metadata/relatedItems/itemIssue.hint"
+msgstr ""
+
+msgid "metadata/relatedItems/itemPIDs.help"
+msgstr ""
+
+msgid "metadata/relatedItems/itemPIDs.label"
+msgstr "Persistentní identifikátory položky"
+
+msgid "metadata/relatedItems/itemPIDs.hint"
+msgstr ""
+
+msgid "metadata/relatedItems/itemPIDs/identifier.help"
+msgstr ""
+
+msgid "metadata/relatedItems/itemPIDs/identifier.hint"
+msgstr ""
+
+msgid "metadata/relatedItems/itemPIDs/scheme.help"
+msgstr ""
+
+msgid "metadata/relatedItems/itemPIDs/scheme.hint"
+msgstr ""
+
+msgid "metadata/relatedItems/itemPIDs/scheme.enum.DOI"
+msgstr ""
+
+msgid "metadata/relatedItems/itemPIDs/scheme.enum.Handle"
+msgstr ""
+
+msgid "metadata/relatedItems/itemPIDs/scheme.enum.ISBN"
+msgstr ""
+
+msgid "metadata/relatedItems/itemPIDs/scheme.enum.ISSN"
+msgstr ""
+
+msgid "metadata/relatedItems/itemPIDs/scheme.enum.RIV"
+msgstr ""
+
+msgid "metadata/relatedItems/itemPublisher.help"
+msgstr ""
+
+msgid "metadata/relatedItems/itemPublisher.hint"
+msgstr ""
+
+msgid "metadata/relatedItems/itemRelationType.help"
+msgstr ""
+
+msgid "metadata/relatedItems/itemRelationType.hint"
+msgstr ""
+
+msgid "metadata/relatedItems/itemRelationType/id.help"
+msgstr ""
+
+msgid "metadata/relatedItems/itemRelationType/id.label"
+msgstr "Identifikátor"
+
+msgid "metadata/relatedItems/itemRelationType/id.hint"
+msgstr ""
+
+msgid "metadata/relatedItems/itemRelationType/title.help"
+msgstr ""
+
+msgid "metadata/relatedItems/itemRelationType/title.label"
+msgstr "Název typu položky"
+
+msgid "metadata/relatedItems/itemRelationType/title.hint"
+msgstr ""
+
+msgid "metadata/relatedItems/itemRelationType/@v.help"
+msgstr ""
+
+msgid "metadata/relatedItems/itemRelationType/@v.label"
+msgstr "Verze odkazovaného záznamu"
+
+msgid "metadata/relatedItems/itemRelationType/@v.hint"
+msgstr ""
+
+msgid "metadata/relatedItems/itemResourceType.help"
+msgstr ""
+
+msgid "metadata/relatedItems/itemResourceType.hint"
+msgstr ""
+
+msgid "metadata/relatedItems/itemResourceType/id.help"
+msgstr ""
+
+msgid "metadata/relatedItems/itemResourceType/id.label"
+msgstr "Identifikátor"
+
+msgid "metadata/relatedItems/itemResourceType/id.hint"
+msgstr ""
+
+msgid "metadata/relatedItems/itemResourceType/title.help"
+msgstr ""
+
+msgid "metadata/relatedItems/itemResourceType/title.label"
+msgstr "Název typu zdroje"
+
+msgid "metadata/relatedItems/itemResourceType/title.hint"
+msgstr ""
+
+msgid "metadata/relatedItems/itemResourceType/@v.help"
+msgstr ""
+
+msgid "metadata/relatedItems/itemResourceType/@v.label"
+msgstr "Verze odkazovaného záznamu"
+
+msgid "metadata/relatedItems/itemResourceType/@v.hint"
+msgstr ""
+
+msgid "metadata/relatedItems/itemStartPage.help"
+msgstr ""
+
+msgid "metadata/relatedItems/itemStartPage.hint"
+msgstr ""
+
+msgid "metadata/relatedItems/itemTitle.label"
+msgstr "Název"
+
+msgid "metadata/relatedItems/itemTitle.help"
+msgstr ""
+
+msgid "metadata/relatedItems/itemTitle.hint"
+msgstr ""
+
+msgid "metadata/relatedItems/itemURL.help"
+msgstr ""
+
+msgid "metadata/relatedItems/itemURL.hint"
+msgstr ""
+
+msgid "metadata/relatedItems/itemVolume.help"
+msgstr ""
+
+msgid "metadata/relatedItems/itemVolume.hint"
+msgstr ""
+
+msgid "metadata/relatedItems/itemYear.help"
+msgstr ""
+
+msgid "metadata/relatedItems/itemYear.hint"
+msgstr ""
+
+msgid "metadata/resourceType.help"
+msgstr ""
+
+msgid "metadata/resourceType.hint"
+msgstr ""
+
+msgid "metadata/resourceType/id.help"
+msgstr ""
+
+msgid "metadata/resourceType/id.label"
+msgstr "Identifikátor"
+
+msgid "metadata/resourceType/id.hint"
+msgstr ""
+
+msgid "metadata/resourceType/title.help"
+msgstr ""
+
+msgid "metadata/resourceType/title.label"
+msgstr "Název typu zdroje"
+
+msgid "metadata/resourceType/title.hint"
+msgstr ""
+
+msgid "metadata/resourceType/@v.help"
+msgstr ""
+
+msgid "metadata/resourceType/@v.label"
+msgstr "Verze odkazovaného záznamu"
+
+msgid "metadata/resourceType/@v.hint"
+msgstr ""
+
+msgid "metadata/rights.help"
+msgstr ""
+
+msgid "metadata/rights.hint"
+msgstr ""
+
+msgid "metadata/rights/id.help"
+msgstr ""
+
+msgid "metadata/rights/id.label"
+msgstr "Identifikátor"
+
+msgid "metadata/rights/id.hint"
+msgstr ""
+
+msgid "metadata/rights/title.help"
+msgstr ""
+
+msgid "metadata/rights/title.label"
+msgstr "Název"
+
+msgid "metadata/rights/title.hint"
+msgstr ""
+
+msgid "metadata/rights/@v.help"
+msgstr ""
+
+msgid "metadata/rights/@v.label"
+msgstr "Verze odkazovaného záznamu"
+
+msgid "metadata/rights/@v.hint"
+msgstr ""
+
+msgid "metadata/series.help"
+msgstr ""
+
+msgid "metadata/series.hint"
+msgstr ""
+
+msgid "metadata/series/seriesTitle.help"
+msgstr ""
+
+msgid "metadata/series/seriesTitle.hint"
+msgstr ""
+
+msgid "metadata/series/seriesVolume.help"
+msgstr ""
+
+msgid "metadata/series/seriesVolume.hint"
+msgstr ""
+
+msgid "metadata/subjectCategories.help"
+msgstr ""
+
+msgid "metadata/subjectCategories.hint"
+msgstr ""
+
+msgid "metadata/subjectCategories/id.help"
+msgstr ""
+
+msgid "metadata/subjectCategories/id.label"
+msgstr "Identifikátor"
+
+msgid "metadata/subjectCategories/id.hint"
+msgstr ""
+
+msgid "metadata/subjectCategories/title.help"
+msgstr ""
+
+msgid "metadata/subjectCategories/title.label"
+msgstr "Název"
+
+msgid "metadata/subjectCategories/title.hint"
+msgstr ""
+
+msgid "metadata/subjectCategories/@v.help"
+msgstr ""
+
+msgid "metadata/subjectCategories/@v.label"
+msgstr "Verze odkazovaného záznamu"
+
+msgid "metadata/subjectCategories/@v.hint"
+msgstr ""
+
+msgid "metadata/subjects.help"
+msgstr ""
+
+msgid "metadata/subjects.hint"
+msgstr ""
+
+msgid "metadata/subjects/classificationCode.help"
+msgstr ""
+
+msgid "metadata/subjects/classificationCode.hint"
+msgstr ""
+
+msgid "metadata/subjects/subject.help"
+msgstr ""
+
+msgid "metadata/subjects/subject.hint"
+msgstr ""
+
+msgid "metadata/subjects/subject/lang.help"
+msgstr ""
+
+msgid "metadata/subjects/subject/lang.hint"
+msgstr ""
+
+msgid "metadata/subjects/subject/value.help"
+msgstr ""
+
+msgid "metadata/subjects/subject/value.hint"
+msgstr ""
+
+msgid "metadata/subjects/subjectScheme.help"
+msgstr ""
+
+msgid "metadata/subjects/subjectScheme.hint"
+msgstr ""
+
+msgid "metadata/subjects/valueURI.help"
+msgstr ""
+
+msgid "metadata/subjects/valueURI.hint"
+msgstr ""
+
+msgid "metadata/systemIdentifiers.label"
+msgstr "Systémové identifikátory"
+
+msgid "metadata/systemIdentifiers.help"
+msgstr ""
+
+msgid "metadata/systemIdentifiers.hint"
+msgstr ""
+
+msgid "metadata/systemIdentifiers/identifier.help"
+msgstr ""
+
+msgid "metadata/systemIdentifiers/identifier.hint"
+msgstr ""
+
+msgid "metadata/systemIdentifiers/scheme.help"
+msgstr ""
+
+msgid "metadata/systemIdentifiers/scheme.hint"
+msgstr ""
+
+msgid "metadata/systemIdentifiers/scheme.enum.nusl"
+msgstr ""
+
+msgid "metadata/systemIdentifiers/scheme.enum.nuslOAI"
+msgstr ""
+
+msgid "metadata/systemIdentifiers/scheme.enum.originalRecordOAI"
+msgstr ""
+
+msgid "metadata/systemIdentifiers/scheme.enum.catalogueSysNo"
+msgstr ""
+
+msgid "metadata/systemIdentifiers/scheme.enum.nrOAI"
+msgstr ""
+
+msgid "metadata/technicalInfo.help"
+msgstr ""
+
+msgid "metadata/technicalInfo.hint"
+msgstr ""
+
+msgid "metadata/technicalInfo/lang.help"
+msgstr ""
+
+msgid "metadata/technicalInfo/lang.hint"
+msgstr ""
+
+msgid "metadata/technicalInfo/value.help"
+msgstr ""
+
+msgid "metadata/technicalInfo/value.hint"
+msgstr ""
+
+msgid "metadata/thesis.help"
+msgstr ""
+
+msgid "metadata/thesis.label"
+msgstr "Závěrečná práce"
+
+msgid "metadata/thesis.hint"
+msgstr ""
+
+msgid "metadata/thesis/dateDefended.help"
+msgstr ""
+
+msgid "metadata/thesis/dateDefended.hint"
+msgstr ""
+
+msgid "metadata/thesis/defended.help"
+msgstr ""
+
+msgid "metadata/thesis/defended.hint"
+msgstr ""
+
+msgid "metadata/thesis/degreeGrantors.help"
+msgstr ""
+
+msgid "metadata/thesis/degreeGrantors.hint"
+msgstr ""
+
+msgid "metadata/thesis/degreeGrantors/id.help"
+msgstr ""
+
+msgid "metadata/thesis/degreeGrantors/id.label"
+msgstr "Identifikátor"
+
+msgid "metadata/thesis/degreeGrantors/id.hint"
+msgstr ""
+
+msgid "metadata/thesis/degreeGrantors/title.help"
+msgstr ""
+
+msgid "metadata/thesis/degreeGrantors/title.label"
+msgstr "Název"
+
+msgid "metadata/thesis/degreeGrantors/title.hint"
+msgstr ""
+
+msgid "metadata/thesis/degreeGrantors/hierarchy.help"
+msgstr ""
+
+msgid "metadata/thesis/degreeGrantors/hierarchy.label"
+msgstr "Hierarchie"
+
+msgid "metadata/thesis/degreeGrantors/hierarchy.hint"
+msgstr ""
+
+msgid "metadata/thesis/degreeGrantors/hierarchy/ancestors.help"
+msgstr ""
+
+msgid "metadata/thesis/degreeGrantors/hierarchy/ancestors.label"
+msgstr "Nadřazené termíny"
+
+msgid "metadata/thesis/degreeGrantors/hierarchy/ancestors.hint"
+msgstr ""
+
+msgid "metadata/thesis/degreeGrantors/hierarchy/ancestors_or_self.help"
+msgstr ""
+
+msgid "metadata/thesis/degreeGrantors/hierarchy/ancestors_or_self.label"
+msgstr "Tento termín a nadřazené termíny"
+
+msgid "metadata/thesis/degreeGrantors/hierarchy/ancestors_or_self.hint"
+msgstr ""
+
+msgid "metadata/thesis/degreeGrantors/hierarchy/level.help"
+msgstr ""
+
+msgid "metadata/thesis/degreeGrantors/hierarchy/level.label"
+msgstr "Úroveň zanoření"
+
+msgid "metadata/thesis/degreeGrantors/hierarchy/level.hint"
+msgstr ""
+
+msgid "metadata/thesis/degreeGrantors/hierarchy/parent.help"
+msgstr ""
+
+msgid "metadata/thesis/degreeGrantors/hierarchy/parent.label"
+msgstr "Nadřazený termín"
+
+msgid "metadata/thesis/degreeGrantors/hierarchy/parent.hint"
+msgstr ""
+
+msgid "metadata/thesis/degreeGrantors/hierarchy/title.help"
+msgstr ""
+
+msgid "metadata/thesis/degreeGrantors/hierarchy/title.label"
+msgstr "Název"
+
+msgid "metadata/thesis/degreeGrantors/hierarchy/title.hint"
+msgstr ""
+
+msgid "metadata/thesis/degreeGrantors/@v.help"
+msgstr ""
+
+msgid "metadata/thesis/degreeGrantors/@v.label"
+msgstr "Verze odkazovaného záznamu"
+
+msgid "metadata/thesis/degreeGrantors/@v.hint"
+msgstr ""
+
+msgid "metadata/thesis/studyFields.help"
+msgstr ""
+
+msgid "metadata/thesis/studyFields.hint"
+msgstr ""
+
+msgid "metadata/title.help"
+msgstr ""
+
+msgid "metadata/title.hint"
+msgstr ""
+
+msgid "metadata/version.help"
+msgstr ""
+
+msgid "metadata/version.hint"
+msgstr ""
+
+msgid "syntheticFields.help"
+msgstr ""
+
+msgid "syntheticFields.label"
+msgstr "Syntentická pole"
+
+msgid "syntheticFields.hint"
+msgstr ""
+
+msgid "syntheticFields/institutions.help"
+msgstr ""
+
+msgid "syntheticFields/institutions.hint"
+msgstr ""
+
+msgid "syntheticFields/keywords_cs.help"
+msgstr ""
+
+msgid "syntheticFields/keywords_cs.hint"
+msgstr ""
+
+msgid "syntheticFields/keywords_en.help"
+msgstr ""
+
+msgid "syntheticFields/keywords_en.hint"
+msgstr ""
+
+msgid "syntheticFields/person.help"
+msgstr ""
+
+msgid "syntheticFields/person.hint"
+msgstr ""
+
+msgid "updated.help"
+msgstr ""
+
+msgid "updated.hint"
+msgstr ""
+
+#: docs_app/templates/semantic-ui/docs_app/footer.html:38
+#, python-format
+msgid ""
+"Powered by <a\n"
+"              href=\"%(invenio_rdm)s\">InvenioRDM</a>"
+msgstr ""
+"Založeno na platformě <a\n"
+"              href=\"%(invenio_rdm)s\">InvenioRDM</a>"
+
+
+msgid "Additional titles must be unique"
+msgstr "Další názvy se nesmí opakovat"
