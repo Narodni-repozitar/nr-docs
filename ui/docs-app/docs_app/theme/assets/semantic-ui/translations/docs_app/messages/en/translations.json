@@ -158,6 +158,6 @@
   "Identifiers information": "Identifiers information",
   "No description": "No description",
   "No publication date found.": "No publication date found.",
-  "Write down the time period in which the data collection took place/took place. If it is not a range, choose same date twice.": "Write down the time period in which the data collection took place/took place. If it is not a range, choose same date twice.",
+  "Write down the time period in which the event took place. If it is not a range, choose same date twice.": "Write down the time period in which the event took place. If it is not a range, choose same date twice.",
   "If the dataset has been published elsewhere, use the date of first publication. You can also specify a future publication date (for embargo). If you do not enter a date, the system will automatically fill the date when the record is published. Format: YYYY-MM-DD, YYYYY-MM or YYYYY.": "If the dataset has been published elsewhere, use the date of first publication. You can also specify a future publication date (for embargo). If you do not enter a date, the system will automatically fill the date when the record is published. Format: YYYY-MM-DD, YYYYY-MM or YYYY."
 }

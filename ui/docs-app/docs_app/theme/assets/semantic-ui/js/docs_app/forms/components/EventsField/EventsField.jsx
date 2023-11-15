@@ -40,7 +40,7 @@ export const EventsField = ({ fieldPath, helpText }) => {
               fieldPath={`${fieldPathPrefix}.eventDate`}
               label={i18next.t("Event date")}
               helpText={i18next.t(
-                "Write down the time period in which the data collection took place/took place. If it is not a range, choose same date twice."
+                "Write down the time period in which the event took place. If it is not a range, choose same date twice."
               )}
             />
             <GroupField>
