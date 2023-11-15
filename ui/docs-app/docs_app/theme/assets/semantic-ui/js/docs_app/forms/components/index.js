@@ -1,5 +1,4 @@
 export * from "./StringArray";
-export * from "./DateField";
 export * from "./AdditionalTitlesField";
 export * from "./GeoLocationsField";
 export * from "./FundersField";

@@ -4,7 +4,7 @@ import { ArrayField, TextField, GroupField } from "react-invenio-forms";
 import { i18next } from "@translations/docs_app/i18next";
 import { LocalVocabularySelectField } from "@js/oarepo_vocabularies";
 import { StringArrayField } from "../StringArray/StringArrayField";
-import { ArrayFieldItem, DaterangePicker } from "@js/oarepo_ui";
+import { ArrayFieldItem, EDTFDaterangePicker } from "@js/oarepo_ui";
 
 export const EventsField = ({ fieldPath, helpText }) => {
   return (
@@ -35,7 +35,7 @@ export const EventsField = ({ fieldPath, helpText }) => {
               label={i18next.t("Event alternate name")}
               addButtonLabel={i18next.t("Add event alternate name")}
             />
-            <DaterangePicker
+            <EDTFDaterangePicker
               required
               fieldPath={`${fieldPathPrefix}.eventDate`}
               label={i18next.t("Event date")}

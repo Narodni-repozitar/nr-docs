@@ -5,7 +5,7 @@ import {
   BaseForm,
   FormikStateLogger,
   FormFeedback,
-  SingleDatePicker,
+  EDTFSingleDatePicker,
 } from "@js/oarepo_ui";
 import { LocalVocabularySelectField } from "@js/oarepo_vocabularies";
 import { AccordionField, FieldLabel, TextField } from "react-invenio-forms";
@@ -249,7 +249,7 @@ export const DepositForm = () => {
                     id="NrDocs.Deposit.DateAvailableField.container"
                     fieldPath="metadata.dateAvailable"
                   >
-                    <SingleDatePicker
+                    <EDTFSingleDatePicker
                       fieldPath="metadata.dateAvailable"
                       label={i18next.t("Date available")}
                       helpText={i18next.t(
@@ -262,7 +262,7 @@ export const DepositForm = () => {
                     fieldPath="metadata.dateModified"
                   >
                     {editMode && (
-                      <SingleDatePicker
+                      <EDTFSingleDatePicker
                         fieldPath="metadata.dateModified"
                         label={i18next.t("Date modified")}
                         helpText=""
