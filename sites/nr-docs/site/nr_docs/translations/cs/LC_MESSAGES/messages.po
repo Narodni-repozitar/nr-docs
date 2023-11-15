@@ -2681,6 +2681,5 @@ msgstr ""
 "Založeno na platformě <a\n"
 "              href=\"%(invenio_rdm)s\">InvenioRDM</a>"
 
-
 msgid "Additional titles must be unique"
 msgstr "Další názvy se nesmí opakovat"
