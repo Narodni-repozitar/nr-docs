@@ -17,7 +17,8 @@ theme = WebpackThemeBundle(
             },
             devDependencies={},
             aliases={
-                "@translations/docs_app": "translations/docs_app",
+                "@translations/docs_app": "translations/nr_docs",
+                # "@translations/docs_app": "translations/docs_app",
             },
         )
     },

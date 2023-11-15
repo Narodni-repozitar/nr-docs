@@ -10,12 +10,12 @@ Levenshtein==0.23.0
 nr-metadata==2.0.2
 nr-oaipmh-harvesters==1.0.4
 nr-vocabularies==2.0.6
-oarepo-oai-pmh-harvester==4.0.36
-oarepo-published-service==1.0.1
+oarepo-oai-pmh-harvester==4.0.37
+oarepo-published-service==1.0.2
 oarepo-requests==1.0.2
-oarepo-runtime==1.4.23
-oarepo-ui==5.0.79
-oarepo-vocabularies==2.0.64
+oarepo-runtime==1.4.31
+oarepo-ui==5.0.82
+oarepo-vocabularies==2.0.66
 openpyxl==3.1.2
 python-dotenv==1.0.0
 rapidfuzz==3.5.2

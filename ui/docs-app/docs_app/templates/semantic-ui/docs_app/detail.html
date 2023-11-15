@@ -1,8 +1,0 @@
-{% extends "oarepo_ui/detail.html" %}
-{%- set title = metadata.title ~ " | " ~ _("NR Document repository") %}
-
-{%- block head_links %}
-{{ super() }}
-{{ webpack['docs_app_components.js']}}
-{{ webpack['docs_app_components.css']}}
-{%- endblock %}
