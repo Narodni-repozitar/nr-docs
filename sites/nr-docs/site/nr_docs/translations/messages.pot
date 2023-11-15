@@ -1,0 +1,553 @@
+# Translations template for PROJECT.
+# Copyright (C) 2023 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2023-11-15 14:28+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.10.3\n"
+
+#: models/nr-documents/nr_documents/services/records/facets.py:12
+msgid "$schema.label"
+msgstr ""
+
+#: models/nr-documents/nr_documents/services/records/facets.py:14
+msgid "created.label"
+msgstr ""
+
+#: models/nr-documents/nr_documents/services/records/facets.py:16
+msgid "id.label"
+msgstr ""
+
+#: models/nr-documents/nr_documents/services/records/facets.py:19
+#: models/nr-documents/nr_documents/services/records/facets.py:23
+#: sites/nr-docs/site/nr_docs/translations/jinjax_messages.jinja:7
+msgid "metadata/abstract.label"
+msgstr ""
+
+#: models/nr-documents/nr_documents/services/records/facets.py:29
+msgid "metadata/abstract/lang.label"
+msgstr ""
+
+#: models/nr-documents/nr_documents/services/records/facets.py:37
+msgid "metadata/abstract/value.label"
+msgstr ""
+
+#: models/nr-documents/nr_documents/services/records/facets.py:43
+#: sites/nr-docs/site/nr_docs/translations/jinjax_messages.jinja:11
+msgid "metadata/accessRights.label"
+msgstr ""
+
+#: models/nr-documents/nr_documents/services/records/facets.py:48
+#: models/nr-documents/nr_documents/services/records/facets.py:52
+msgid "metadata/accessibility.label"
+msgstr ""
+
+#: models/nr-documents/nr_documents/services/records/facets.py:59
+msgid "metadata/accessibility/lang.label"
+msgstr ""
+
+#: models/nr-documents/nr_documents/services/records/facets.py:67
+msgid "metadata/accessibility/value.label"
+msgstr ""
+
+#: models/nr-documents/nr_documents/services/records/facets.py:73
+#: models/nr-documents/nr_documents/services/records/facets.py:78
+msgid "metadata/additionalTitles/title.label"
+msgstr ""
+
+#: models/nr-documents/nr_documents/services/records/facets.py:85
+msgid "metadata/additionalTitles/title/lang.label"
+msgstr ""
+
+#: models/nr-documents/nr_documents/services/records/facets.py:93
+msgid "metadata/additionalTitles/title/value.label"
+msgstr ""
+
+#: models/nr-documents/nr_documents/services/records/facets.py:99
+msgid "metadata/additionalTitles/titleType.label"
+msgstr ""
+
+#: models/nr-documents/nr_documents/services/records/facets.py:103
+msgid "metadata/collection.label"
+msgstr ""
+
+#: models/nr-documents/nr_documents/services/records/facets.py:108
+msgid "metadata/contributors/affiliations.label"
+msgstr ""
+
+#: models/nr-documents/nr_documents/services/records/facets.py:114
+msgid "metadata/contributors/authorityIdentifiers/identifier.label"
+msgstr ""
+
+#: models/nr-documents/nr_documents/services/records/facets.py:119
+msgid "metadata/contributors/authorityIdentifiers/scheme.label"
+msgstr ""
+
+#: models/nr-documents/nr_documents/services/records/facets.py:124
+msgid "metadata/contributors/fullName.label"
+msgstr ""
+
+#: models/nr-documents/nr_documents/services/records/facets.py:129
+msgid "metadata/contributors/nameType.label"
+msgstr ""
+
+#: models/nr-documents/nr_documents/services/records/facets.py:134
+msgid "metadata/contributors/role.label"
+msgstr ""
+
+#: models/nr-documents/nr_documents/services/records/facets.py:140
+msgid "metadata/creators/affiliations.label"
+msgstr ""
+
+#: models/nr-documents/nr_documents/services/records/facets.py:146
+msgid "metadata/creators/authorityIdentifiers/identifier.label"
+msgstr ""
+
+#: models/nr-documents/nr_documents/services/records/facets.py:151
+msgid "metadata/creators/authorityIdentifiers/scheme.label"
+msgstr ""
+
+#: models/nr-documents/nr_documents/services/records/facets.py:155
+msgid "metadata/creators/fullName.label"
+msgstr ""
+
+#: models/nr-documents/nr_documents/services/records/facets.py:159
+msgid "metadata/creators/nameType.label"
+msgstr ""
+
+#: models/nr-documents/nr_documents/services/records/facets.py:163
+#: sites/nr-docs/site/nr_docs/translations/jinjax_messages.jinja:1
+msgid "metadata/dateAvailable.label"
+msgstr ""
+
+#: models/nr-documents/nr_documents/services/records/facets.py:167
+#: sites/nr-docs/site/nr_docs/translations/jinjax_messages.jinja:2
+msgid "metadata/dateModified.label"
+msgstr ""
+
+#: models/nr-documents/nr_documents/services/records/facets.py:172
+msgid "metadata/events/eventLocation/country.label"
+msgstr ""
+
+#: models/nr-documents/nr_documents/services/records/facets.py:178
+msgid "metadata/events/eventLocation/place.label"
+msgstr ""
+
+#: models/nr-documents/nr_documents/services/records/facets.py:183
+msgid "metadata/externalLocation/externalLocationURL.label"
+msgstr ""
+
+#: models/nr-documents/nr_documents/services/records/facets.py:188
+msgid "metadata/fundingReferences/funder.label"
+msgstr ""
+
+#: models/nr-documents/nr_documents/services/records/facets.py:194
+msgid "metadata/fundingReferences/projectID.label"
+msgstr ""
+
+#: models/nr-documents/nr_documents/services/records/facets.py:199
+msgid "metadata/geoLocations/geoLocationPlace.label"
+msgstr ""
+
+#: models/nr-documents/nr_documents/services/records/facets.py:204
+msgid "metadata/geoLocations/geoLocationPoint/pointLatitude.label"
+msgstr ""
+
+#: models/nr-documents/nr_documents/services/records/facets.py:209
+msgid "metadata/geoLocations/geoLocationPoint/pointLongitude.label"
+msgstr ""
+
+#: models/nr-documents/nr_documents/services/records/facets.py:214
+#: sites/nr-docs/site/nr_docs/translations/jinjax_messages.jinja:3
+msgid "metadata/languages.label"
+msgstr ""
+
+#: models/nr-documents/nr_documents/services/records/facets.py:219
+#: models/nr-documents/nr_documents/services/records/facets.py:223
+#: sites/nr-docs/site/nr_docs/translations/jinjax_messages.jinja:17
+msgid "metadata/methods.label"
+msgstr ""
+
+#: models/nr-documents/nr_documents/services/records/facets.py:229
+msgid "metadata/methods/lang.label"
+msgstr ""
+
+#: models/nr-documents/nr_documents/services/records/facets.py:236
+msgid "metadata/methods/value.label"
+msgstr ""
+
+#: models/nr-documents/nr_documents/services/records/facets.py:242
+msgid "metadata/objectIdentifiers/identifier.label"
+msgstr ""
+
+#: models/nr-documents/nr_documents/services/records/facets.py:247
+msgid "metadata/objectIdentifiers/scheme.label"
+msgstr ""
+
+#: models/nr-documents/nr_documents/services/records/facets.py:251
+#: ui/docs-app/docs_app/templates/semantic-ui/docs_app/Sidebar.html.jinja:14
+#: ui/docs-app/docs_app/templates/semantic-ui/docs_app/Sidebar.html.jinja:15
+msgid "metadata/originalRecord.label"
+msgstr ""
+
+#: models/nr-documents/nr_documents/services/records/facets.py:256
+msgid "metadata/relatedItems/itemContributors/affiliations.label"
+msgstr ""
+
+#: models/nr-documents/nr_documents/services/records/facets.py:262
+msgid "metadata/relatedItems/itemContributors/authorityIdentifiers/identifier.label"
+msgstr ""
+
+#: models/nr-documents/nr_documents/services/records/facets.py:269
+msgid "metadata/relatedItems/itemContributors/authorityIdentifiers/scheme.label"
+msgstr ""
+
+#: models/nr-documents/nr_documents/services/records/facets.py:274
+msgid "metadata/relatedItems/itemContributors/fullName.label"
+msgstr ""
+
+#: models/nr-documents/nr_documents/services/records/facets.py:279
+msgid "metadata/relatedItems/itemContributors/nameType.label"
+msgstr ""
+
+#: models/nr-documents/nr_documents/services/records/facets.py:284
+msgid "metadata/relatedItems/itemContributors/role.label"
+msgstr ""
+
+#: models/nr-documents/nr_documents/services/records/facets.py:290
+msgid "metadata/relatedItems/itemCreators/affiliations.label"
+msgstr ""
+
+#: models/nr-documents/nr_documents/services/records/facets.py:296
+msgid "metadata/relatedItems/itemCreators/authorityIdentifiers/identifier.label"
+msgstr ""
+
+#: models/nr-documents/nr_documents/services/records/facets.py:301
+msgid "metadata/relatedItems/itemCreators/authorityIdentifiers/scheme.label"
+msgstr ""
+
+#: models/nr-documents/nr_documents/services/records/facets.py:306
+msgid "metadata/relatedItems/itemCreators/fullName.label"
+msgstr ""
+
+#: models/nr-documents/nr_documents/services/records/facets.py:311
+msgid "metadata/relatedItems/itemCreators/nameType.label"
+msgstr ""
+
+#: models/nr-documents/nr_documents/services/records/facets.py:316
+msgid "metadata/relatedItems/itemEndPage.label"
+msgstr ""
+
+#: models/nr-documents/nr_documents/services/records/facets.py:321
+msgid "metadata/relatedItems/itemIssue.label"
+msgstr ""
+
+#: models/nr-documents/nr_documents/services/records/facets.py:326
+msgid "metadata/relatedItems/itemPIDs/identifier.label"
+msgstr ""
+
+#: models/nr-documents/nr_documents/services/records/facets.py:331
+msgid "metadata/relatedItems/itemPIDs/scheme.label"
+msgstr ""
+
+#: models/nr-documents/nr_documents/services/records/facets.py:336
+msgid "metadata/relatedItems/itemPublisher.label"
+msgstr ""
+
+#: models/nr-documents/nr_documents/services/records/facets.py:341
+msgid "metadata/relatedItems/itemRelationType.label"
+msgstr ""
+
+#: models/nr-documents/nr_documents/services/records/facets.py:347
+msgid "metadata/relatedItems/itemResourceType.label"
+msgstr ""
+
+#: models/nr-documents/nr_documents/services/records/facets.py:353
+msgid "metadata/relatedItems/itemStartPage.label"
+msgstr ""
+
+#: models/nr-documents/nr_documents/services/records/facets.py:358
+msgid "metadata/relatedItems/itemURL.label"
+msgstr ""
+
+#: models/nr-documents/nr_documents/services/records/facets.py:363
+msgid "metadata/relatedItems/itemVolume.label"
+msgstr ""
+
+#: models/nr-documents/nr_documents/services/records/facets.py:368
+msgid "metadata/relatedItems/itemYear.label"
+msgstr ""
+
+#: models/nr-documents/nr_documents/services/records/facets.py:373
+#: sites/nr-docs/site/nr_docs/translations/jinjax_messages.jinja:4
+msgid "metadata/resourceType.label"
+msgstr ""
+
+#: models/nr-documents/nr_documents/services/records/facets.py:378
+#: sites/nr-docs/site/nr_docs/translations/jinjax_messages.jinja:12
+msgid "metadata/rights.label"
+msgstr ""
+
+#: models/nr-documents/nr_documents/services/records/facets.py:382
+msgid "metadata/series/seriesTitle.label"
+msgstr ""
+
+#: models/nr-documents/nr_documents/services/records/facets.py:386
+msgid "metadata/series/seriesVolume.label"
+msgstr ""
+
+#: models/nr-documents/nr_documents/services/records/facets.py:391
+#: sites/nr-docs/site/nr_docs/translations/jinjax_messages.jinja:20
+msgid "metadata/subjectCategories.label"
+msgstr ""
+
+#: models/nr-documents/nr_documents/services/records/facets.py:397
+msgid "metadata/subjects/classificationCode.label"
+msgstr ""
+
+#: models/nr-documents/nr_documents/services/records/facets.py:402
+#: models/nr-documents/nr_documents/services/records/facets.py:407
+msgid "metadata/subjects/subject.label"
+msgstr ""
+
+#: models/nr-documents/nr_documents/services/records/facets.py:414
+msgid "metadata/subjects/subject/lang.label"
+msgstr ""
+
+#: models/nr-documents/nr_documents/services/records/facets.py:422
+msgid "metadata/subjects/subject/value.label"
+msgstr ""
+
+#: models/nr-documents/nr_documents/services/records/facets.py:428
+msgid "metadata/subjects/subjectScheme.label"
+msgstr ""
+
+#: models/nr-documents/nr_documents/services/records/facets.py:432
+msgid "metadata/subjects/valueURI.label"
+msgstr ""
+
+#: models/nr-documents/nr_documents/services/records/facets.py:437
+msgid "metadata/systemIdentifiers/identifier.label"
+msgstr ""
+
+#: models/nr-documents/nr_documents/services/records/facets.py:442
+msgid "metadata/systemIdentifiers/scheme.label"
+msgstr ""
+
+#: models/nr-documents/nr_documents/services/records/facets.py:446
+#: models/nr-documents/nr_documents/services/records/facets.py:450
+#: sites/nr-docs/site/nr_docs/translations/jinjax_messages.jinja:21
+msgid "metadata/technicalInfo.label"
+msgstr ""
+
+#: models/nr-documents/nr_documents/services/records/facets.py:457
+msgid "metadata/technicalInfo/lang.label"
+msgstr ""
+
+#: models/nr-documents/nr_documents/services/records/facets.py:465
+msgid "metadata/technicalInfo/value.label"
+msgstr ""
+
+#: models/nr-documents/nr_documents/services/records/facets.py:470
+#: sites/nr-docs/site/nr_docs/translations/jinjax_messages.jinja:5
+msgid "metadata/thesis/dateDefended.label"
+msgstr ""
+
+#: models/nr-documents/nr_documents/services/records/facets.py:474
+msgid "metadata/thesis/defended.label"
+msgstr ""
+
+#: models/nr-documents/nr_documents/services/records/facets.py:479
+#: sites/nr-docs/site/nr_docs/translations/jinjax_messages.jinja:8
+msgid "metadata/thesis/degreeGrantors.label"
+msgstr ""
+
+#: models/nr-documents/nr_documents/services/records/facets.py:484
+#: sites/nr-docs/site/nr_docs/translations/jinjax_messages.jinja:9
+msgid "metadata/thesis/studyFields.label"
+msgstr ""
+
+#: models/nr-documents/nr_documents/services/records/facets.py:488
+msgid "metadata/title.label"
+msgstr ""
+
+#: models/nr-documents/nr_documents/services/records/facets.py:492
+#: sites/nr-docs/site/nr_docs/translations/jinjax_messages.jinja:22
+msgid "metadata/version.label"
+msgstr ""
+
+#: models/nr-documents/nr_documents/services/records/facets.py:496
+msgid "syntheticFields/institutions.label"
+msgstr ""
+
+#: models/nr-documents/nr_documents/services/records/facets.py:500
+msgid "syntheticFields/keywords_cs.label"
+msgstr ""
+
+#: models/nr-documents/nr_documents/services/records/facets.py:504
+msgid "syntheticFields/keywords_en.label"
+msgstr ""
+
+#: models/nr-documents/nr_documents/services/records/facets.py:508
+msgid "syntheticFields/person.label"
+msgstr ""
+
+#: models/nr-documents/nr_documents/services/records/facets.py:511
+msgid "updated.label"
+msgstr ""
+
+#: sites/nr-docs/site/nr_docs/views.py:23
+msgid "New upload"
+msgstr ""
+
+#: sites/nr-docs/site/nr_docs/templates/semantic-ui/nr_docs/searchbar.html:5
+#: sites/nr-docs/site/nr_docs/templates/semantic-ui/nr_docs/searchbar.html:11
+#: sites/nr-docs/site/nr_docs/templates/semantic-ui/nr_docs/searchbar.html:21
+msgid "in"
+msgstr ""
+
+#: sites/nr-docs/site/nr_docs/templates/semantic-ui/nr_docs/searchbar.html:5
+#: sites/nr-docs/site/nr_docs/templates/semantic-ui/nr_docs/searchbar.html:6
+msgid "In this community"
+msgstr ""
+
+#: sites/nr-docs/site/nr_docs/templates/semantic-ui/nr_docs/searchbar.html:11
+#: sites/nr-docs/site/nr_docs/templates/semantic-ui/nr_docs/searchbar.html:12
+#: sites/nr-docs/site/nr_docs/templates/semantic-ui/nr_docs/searchbar.html:20
+#: sites/nr-docs/site/nr_docs/templates/semantic-ui/nr_docs/searchbar.html:21
+msgid "All document records"
+msgstr ""
+
+#: sites/nr-docs/site/nr_docs/templates/semantic-ui/nr_docs/searchbar.html:30
+#: sites/nr-docs/site/nr_docs/templates/semantic-ui/nr_docs/searchbar.html:31
+#: ui/docs-app/docs_app/templates/semantic-ui/docs_app/frontpage.html:52
+#: ui/docs-app/docs_app/templates/semantic-ui/docs_app/frontpage.html:53
+msgid "Search"
+msgstr ""
+
+#: sites/nr-docs/site/nr_docs/translations/jinjax_messages.jinja:6
+msgid "metadata/subjects.label"
+msgstr ""
+
+#: sites/nr-docs/site/nr_docs/translations/jinjax_messages.jinja:10
+msgid "metadata/publishers.label"
+msgstr ""
+
+#: sites/nr-docs/site/nr_docs/translations/jinjax_messages.jinja:13
+msgid "metadata/events.label"
+msgstr ""
+
+#: sites/nr-docs/site/nr_docs/translations/jinjax_messages.jinja:14
+msgid "metadata/externalLocation.label"
+msgstr ""
+
+#: sites/nr-docs/site/nr_docs/translations/jinjax_messages.jinja:15
+msgid "metadata/fundingReferences.label"
+msgstr ""
+
+#: sites/nr-docs/site/nr_docs/translations/jinjax_messages.jinja:16
+msgid "metadata/geoLocations.label"
+msgstr ""
+
+#: sites/nr-docs/site/nr_docs/translations/jinjax_messages.jinja:18
+msgid "metadata/notes.label"
+msgstr ""
+
+#: sites/nr-docs/site/nr_docs/translations/jinjax_messages.jinja:19
+msgid "metadata/series.label"
+msgstr ""
+
+#: ui/docs-app/docs_app/templates/semantic-ui/docs_app/Detail.html.jinja:2
+#: ui/docs-app/docs_app/templates/semantic-ui/docs_app/Search.html.jinja:4
+#: ui/docs-app/docs_app/templates/semantic-ui/docs_app/detail.html:2
+#: ui/docs-app/docs_app/templates/semantic-ui/docs_app/search.html:2
+msgid "NR Document repository"
+msgstr ""
+
+#: ui/docs-app/docs_app/templates/semantic-ui/docs_app/Main.html.jinja:9
+msgid "People"
+msgstr ""
+
+#: ui/docs-app/docs_app/templates/semantic-ui/docs_app/Search.html.jinja:4
+#: ui/docs-app/docs_app/templates/semantic-ui/docs_app/search.html:2
+msgid "Search results"
+msgstr ""
+
+#: ui/docs-app/docs_app/templates/semantic-ui/docs_app/Sidebar.html.jinja:2
+#: ui/docs-app/docs_app/templates/semantic-ui/docs_app/Sidebar.html.jinja:3
+msgid "Collection"
+msgstr ""
+
+#: ui/docs-app/docs_app/templates/semantic-ui/docs_app/Sidebar.html.jinja:6
+#: ui/docs-app/docs_app/templates/semantic-ui/docs_app/Sidebar.html.jinja:7
+msgid "metadata/objectIdentifiers.label"
+msgstr ""
+
+#: ui/docs-app/docs_app/templates/semantic-ui/docs_app/Sidebar.html.jinja:22
+#: ui/docs-app/docs_app/templates/semantic-ui/docs_app/Sidebar.html.jinja:23
+msgid "Export"
+msgstr ""
+
+#: ui/docs-app/docs_app/templates/semantic-ui/docs_app/Sidebar.html.jinja:70
+msgid "API"
+msgstr ""
+
+#: ui/docs-app/docs_app/templates/semantic-ui/docs_app/Sidebar.html.jinja:70
+msgid "Links"
+msgstr ""
+
+#: ui/docs-app/docs_app/templates/semantic-ui/docs_app/footer.html:18
+msgid "Contact"
+msgstr ""
+
+#: ui/docs-app/docs_app/templates/semantic-ui/docs_app/footer.html:38
+#, python-format
+msgid "Powered by <a href=\"%(link)s\">Invenio</a>"
+msgstr ""
+
+#: ui/docs-app/docs_app/templates/semantic-ui/docs_app/header_login.html:15
+msgid "Log in"
+msgstr ""
+
+#: ui/docs-app/docs_app/templates/semantic-ui/docs_app/header_login.html:19
+msgid "Sign up"
+msgstr ""
+
+#: ui/docs-app/docs_app/templates/semantic-ui/docs_app/header_login.html:36
+msgid "Quick create"
+msgstr ""
+
+#: ui/docs-app/docs_app/templates/semantic-ui/docs_app/header_login.html:53
+msgid "Actions"
+msgstr ""
+
+#: ui/docs-app/docs_app/templates/semantic-ui/docs_app/header_login.html:72
+#: ui/docs-app/docs_app/templates/semantic-ui/docs_app/header_login.html:113
+msgid "My account"
+msgstr ""
+
+#: ui/docs-app/docs_app/templates/semantic-ui/docs_app/header_login.html:107
+#: ui/docs-app/docs_app/templates/semantic-ui/docs_app/header_login.html:136
+#: ui/docs-app/docs_app/templates/semantic-ui/docs_app/header_login.html:143
+msgid "Log out"
+msgstr ""
+
+#: ui/docs-app/docs_app/templates/semantic-ui/oarepo_ui/components/Person.html.jinja:3
+msgid "Find more records by this person"
+msgstr ""
+
+#: ui/docs-app/docs_app/templates/semantic-ui/oarepo_ui/components/Subjects.jinja:20
+msgid "Find more records with this subject"
+msgstr ""
+
