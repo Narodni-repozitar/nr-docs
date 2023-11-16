@@ -492,6 +492,14 @@ metadata_version = TermsFacet(
     field="metadata.version", label=_("metadata/version.label")
 )
 
+oai_harvest_datestamp = TermsFacet(
+    field="oai.harvest.datestamp", label=_("oai/harvest/datestamp.label")
+)
+
+oai_harvest_identifier = TermsFacet(
+    field="oai.harvest.identifier", label=_("oai/harvest/identifier.label")
+)
+
 syntheticFields_institutions = TermsFacet(
     field="syntheticFields.institutions", label=_("syntheticFields/institutions.label")
 )
