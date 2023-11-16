@@ -14,11 +14,15 @@ from invenio_records_resources.services.uow import RecordCommitOp, UnitOfWork
 
 from nr_documents.proxies import current_service
 from nr_documents.records.api import NrDocumentsDraft, NrDocumentsRecord
+from nr_documents.resources.community_records.config import (
+    NrDocumentsCommunityRecordResourceConfig,
+)
 from nr_documents.resources.records.config import NrDocumentsResourceConfig
 
 BASE_URLS = {
     "base_url": NrDocumentsResourceConfig.url_prefix,
     "base_html_url": "/docs/",
+    "base_community_records_url": NrDocumentsCommunityRecordResourceConfig.url_prefix,
 }
 
 APP_CONFIG = {
@@ -150,7 +154,7 @@ def sample_draft(app, db, input_data):
 
 @pytest.fixture()
 def vocab_cf(app, db, cache):
-    from oarepo_runtime.cf.mappings import prepare_cf_indices
+    from oarepo_runtime.services.custom_fields.mappings import prepare_cf_indices
 
     prepare_cf_indices()
 

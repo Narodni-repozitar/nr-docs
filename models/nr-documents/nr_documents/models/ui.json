@@ -13,24 +13,21 @@
             "input": "keyword",
             "help": "$schema.help",
             "label": "$schema.label",
-            "hint": "$schema.hint",
-            "facet": "_schema"
+            "hint": "$schema.hint"
         },
         "created": {
             "detail": "datetime",
             "input": "datetime",
             "help": "created.help",
             "label": "created.label",
-            "hint": "created.hint",
-            "facet": "created"
+            "hint": "created.hint"
         },
         "id": {
             "detail": "keyword",
             "input": "keyword",
             "help": "id.help",
             "label": "id.label",
-            "hint": "id.hint",
-            "facet": "_id"
+            "hint": "id.hint"
         },
         "metadata": {
             "detail": "metadatum",
@@ -66,8 +63,7 @@
                                 "input": "fulltext+keyword",
                                 "help": "metadata/abstract/value.help",
                                 "label": "metadata/abstract/value.label",
-                                "hint": "metadata/abstract/value.hint",
-                                "facet": "metadata_abstract_value"
+                                "hint": "metadata/abstract/value.hint"
                             }
                         }
                     }
@@ -131,8 +127,7 @@
                                 "input": "fulltext+keyword",
                                 "help": "metadata/accessibility/value.help",
                                 "label": "metadata/accessibility/value.label",
-                                "hint": "metadata/accessibility/value.hint",
-                                "facet": "metadata_accessibility_value"
+                                "hint": "metadata/accessibility/value.hint"
                             }
                         }
                     }
@@ -171,8 +166,7 @@
                                         "input": "fulltext+keyword",
                                         "help": "metadata/additionalTitles/title/value.help",
                                         "label": "metadata/additionalTitles/title/value.label",
-                                        "hint": "metadata/additionalTitles/title/value.hint",
-                                        "facet": "metadata_additionalTitles_title_value"
+                                        "hint": "metadata/additionalTitles/title/value.hint"
                                     }
                                 }
                             },
@@ -886,8 +880,7 @@
                                 "input": "fulltext+keyword",
                                 "help": "metadata/methods/value.help",
                                 "label": "metadata/methods/value.label",
-                                "hint": "metadata/methods/value.hint",
-                                "facet": "metadata_methods_value"
+                                "hint": "metadata/methods/value.hint"
                             }
                         }
                     }
@@ -1699,8 +1692,7 @@
                                             "input": "fulltext+keyword",
                                             "help": "metadata/subjects/subject/value.help",
                                             "label": "metadata/subjects/subject/value.label",
-                                            "hint": "metadata/subjects/subject/value.hint",
-                                            "facet": "metadata_subjects_subject_value"
+                                            "hint": "metadata/subjects/subject/value.hint"
                                         }
                                     }
                                 }
@@ -1784,8 +1776,7 @@
                                 "input": "fulltext+keyword",
                                 "help": "metadata/technicalInfo/value.help",
                                 "label": "metadata/technicalInfo/value.label",
-                                "hint": "metadata/technicalInfo/value.hint",
-                                "facet": "metadata_technicalInfo_value"
+                                "hint": "metadata/technicalInfo/value.hint"
                             }
                         }
                     }
@@ -1939,8 +1930,7 @@
                     "input": "fulltext+keyword",
                     "help": "metadata/title.help",
                     "label": "metadata/title.label",
-                    "hint": "metadata/title.hint",
-                    "facet": "metadata_title"
+                    "hint": "metadata/title.hint"
                 },
                 "version": {
                     "detail": "keyword",
@@ -1998,8 +1988,7 @@
             "input": "datetime",
             "help": "updated.help",
             "label": "updated.label",
-            "hint": "updated.hint",
-            "facet": "updated"
+            "hint": "updated.hint"
         }
     }
 }

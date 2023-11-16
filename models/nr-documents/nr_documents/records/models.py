@@ -1,3 +1,4 @@
+from invenio_communities.records.records.models import CommunityRelationMixin
 from invenio_db import db
 from invenio_drafts_resources.records import (
     DraftMetadataBase,
@@ -36,3 +37,17 @@ class NrDocumentsParentState(db.Model, ParentRecordStateMixin):
     __parent_record_model__ = NrDocumentsParentMetadata
     __record_model__ = NrDocumentsMetadata
     __draft_model__ = NrDocumentsDraftMetadata
+
+
+class NrDocumentsRecordCommunitiesMetadata(db.Model, CommunityRelationMixin):
+    """Model for NrDocumentsRecord metadata."""
+
+    __tablename__ = "nr_documents_record_communities_metadata"
+    __record_model__ = NrDocumentsParentMetadata
+
+
+class NrDocumentsCommunityRecordMetadata(db.Model, CommunityRelationMixin):
+    """Model for NrDocumentsRecord metadata."""
+
+    __tablename__ = "nr_documents_community_record_metadata"
+    __record_model__ = NrDocumentsParentMetadata

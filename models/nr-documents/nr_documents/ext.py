@@ -67,3 +67,31 @@ class Nr_documentsExt:
                 proxied_drafts_config=self.service_records.config,
             ),
         )
+
+    @cached_property
+    def service_record_communities(self):
+        return config.NR_DOCUMENTS_RECORD_COMMUNITIES_SERVICE_CLASS(
+            config=config.NR_DOCUMENTS_RECORD_COMMUNITIES_SERVICE_CONFIG(),
+            record_service=self.service_records,
+        )
+
+    @cached_property
+    def resource_record_communities(self):
+        return config.NR_DOCUMENTS_RECORD_COMMUNITIES_RESOURCE_CLASS(
+            service=self.service_record_communities,
+            config=config.NR_DOCUMENTS_RECORD_COMMUNITIES_RESOURCE_CONFIG(),
+        )
+
+    @cached_property
+    def service_community_records(self):
+        return config.NR_DOCUMENTS_COMMUNITY_RECORDS_SERVICE_CLASS(
+            config=config.NR_DOCUMENTS_COMMUNITY_RECORDS_SERVICE_CONFIG(),
+            record_communities_service=self.service_record_communities,
+        )
+
+    @cached_property
+    def resource_community_records(self):
+        return config.NR_DOCUMENTS_COMMUNITY_RECORDS_RESOURCE_CLASS(
+            service=self.service_community_records,
+            config=config.NR_DOCUMENTS_COMMUNITY_RECORDS_RESOURCE_CONFIG(),
+        )

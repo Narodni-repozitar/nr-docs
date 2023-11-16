@@ -1,3 +1,4 @@
+from invenio_communities.records.records.systemfields import CommunitiesField
 from invenio_drafts_resources.records.api import Draft as InvenioDraft
 from invenio_drafts_resources.records.api import DraftRecordIdProviderV2, ParentRecord
 from invenio_drafts_resources.records.api import Record as InvenioRecord
@@ -8,8 +9,8 @@ from invenio_requests.records import Request
 from invenio_requests.records.systemfields.relatedrecord import RelatedRecord
 from invenio_vocabularies.records.api import Vocabulary
 from nr_docs_extensions.services.sort import TitleICUSortField
-from oarepo_runtime.drafts.systemfields.has_draftcheck import HasDraftCheckField
-from oarepo_runtime.relations import PIDRelation, RelationsField
+from oarepo_runtime.records.relations import PIDRelation, RelationsField
+from oarepo_runtime.records.systemfields.has_draftcheck import HasDraftCheckField
 
 from nr_documents.records.dumpers.dumper import (
     NrDocumentsDraftDumper,
@@ -20,6 +21,7 @@ from nr_documents.records.models import (
     NrDocumentsMetadata,
     NrDocumentsParentMetadata,
     NrDocumentsParentState,
+    NrDocumentsRecordCommunitiesMetadata,
 )
 
 
@@ -33,6 +35,8 @@ class NrDocumentsParentRecord(ParentRecord):
         Request,
         keys=["type", "receiver", "status"],
     )
+
+    communities = CommunitiesField(NrDocumentsRecordCommunitiesMetadata)
 
 
 class NrDocumentsIdProvider(DraftRecordIdProviderV2):
