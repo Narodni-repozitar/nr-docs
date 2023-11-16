@@ -97,8 +97,8 @@
   "Free-form note for any comment that couldn't be inserted in any other fields.": "Volně tvarovaná poznámka pro jakýkoli komentář, který nebylo možné vložit do jiných polí.",
   "Free description of the location; ie. Atlantic Ocean. Longitude must be a number between -180 and 180 and latitude between -90 and 90.": "Volný popis místa; npr. Atlantický oceán. Zeměpisná délka musí být číslo mezi -180 a 180 a zeměpisná šířka mezi -90 a 90.",
   "This field is required": "Toto pole je vyžadováno",
-  "Must have at least x characters": "Musí mít alespoň {{min}} znaků",
-  "Must be between -180 and 180": "Musí být mezi -180 a 180",
+  "Must have at least x characters": "musí mít alespoň {{min}} znaků",
+  "Longitude must be between -180 and 180": "Zeměpisná délka musí být mezi -180 a 180",
   "Delete": "Smazat",
   "Are you sure you wish delete this draft?": "Jste si jistý, že chcete smazat tento koncept?",
   "If you delete the draft, the work you have done on it will be lost.": "Pokud koncept smažete, práce, kterou jste na něm vykonali, bude ztracena.",
@@ -106,7 +106,7 @@
   "Are you sure you wish to publish this draft?": "Jste si jistý, že chcete tento koncept publikovat?",
   "Accessibility": "Přístupnost",
   "Explanation regarding restricted status of an item": "Vysvětlení týkající se omezeného stavu položky",
-  "Must be between -90 and 90": "Musí být mezi -90 a 90",
+  "Latitude must be between -90 and 90": "Zeměpisná šířka musí být mezi -90 a 90",
   "Creators": "Autoři",
   "Add creator": "Přidat autora",
   "Edit creator": "Editovat autora",
@@ -161,4 +161,8 @@
   "Write down the time period in which the event took place. If it is not a range, choose same date twice.": "Zapište si časové období, ve kterém se událost odehrála. Pokud to není rozsah, vyberte stejné datum dvakrát.",
   "If the dataset has been published elsewhere, use the date of first publication. You can also specify a future publication date (for embargo). If you do not enter a date, the system will automatically fill the date when the record is published. Format: YYYY-MM-DD, YYYYY-MM or YYYYY.": "Pokud byl záznam již publikován jinde, použijte datum prvního zveřejnění. Můžete zadat rovněž datum budoucího zveřejnění (časové embargo). Pokud datum nevyplníte, systém automaticky doplní datum při vypublikování (zveřejnění) záznamu. Formát: RRRR-MM-DD, RRRRY-MM or RRRR.",
   "Random string": "nahoda"
+  "No publication date found.": "Datum zveřejnění nenalezeno.",
+  "is a required field": "je povinné pole",
+  "Subject": "Klíčové slovo",
+  "Should be an interval indicating start and end date of the event.": "Měl by být interval udávající datum začátku a konce události. Například RRRR-MM-DD/RRRR-MM-DD."
 }

@@ -7,7 +7,7 @@ import { MultilingualTextInput, ArrayFieldItem } from "@js/oarepo_ui";
 
 const options = [{ value: "keyword", text: "Keyword" }];
 
-export const SubjectsField = ({ fieldPath, helpText }) => {
+export const SubjectsField = ({ fieldPath, helpText, defaultNewValue }) => {
   return (
     <ArrayField
       addButtonLabel={i18next.t("Add subject")}
@@ -15,8 +15,9 @@ export const SubjectsField = ({ fieldPath, helpText }) => {
       label={i18next.t("Subjects")}
       labelIcon="pencil"
       helpText={helpText}
+      defaultNewValue={defaultNewValue}
     >
-      {({ arrayHelpers, indexPath }) => {
+      {({ arrayHelpers, indexPath, array }) => {
         const fieldPathPrefix = `${fieldPath}.${indexPath}`;
         return (
           <ArrayFieldItem
@@ -25,7 +26,6 @@ export const SubjectsField = ({ fieldPath, helpText }) => {
             className={"invenio-group-field subjects"}
           >
             <SelectField
-              clearable
               width={5}
               fieldPath={`${fieldPathPrefix}.subjectScheme`}
               label={i18next.t("Subject scheme")}
@@ -33,12 +33,15 @@ export const SubjectsField = ({ fieldPath, helpText }) => {
               options={options}
             />
             <Form.Field style={{ marginTop: 0 }} width={12}>
-              <MultilingualTextInput
-                fieldPath={`${fieldPathPrefix}.subject`}
-                lngFieldWidth={5}
-                textFieldLabel={i18next.t("Subject")}
-                required
-              />
+              {array[indexPath].subjectScheme === "keyword" && (
+                <MultilingualTextInput
+                  fieldPath={`${fieldPathPrefix}.subject`}
+                  lngFieldWidth={5}
+                  textFieldLabel={i18next.t("Subject")}
+                  required
+                  showEmptyValue
+                />
+              )}
             </Form.Field>
           </ArrayFieldItem>
         );
@@ -50,4 +53,9 @@ export const SubjectsField = ({ fieldPath, helpText }) => {
 SubjectsField.propTypes = {
   fieldPath: PropTypes.string.isRequired,
   helpText: PropTypes.string,
+  defaultNewValue: PropTypes.object,
+};
+
+SubjectsField.defaultProps = {
+  defaultNewValue: { subjectScheme: "keyword" },
 };

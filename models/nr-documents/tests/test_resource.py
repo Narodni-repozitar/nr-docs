@@ -98,12 +98,10 @@ def test_create(
                 f"{base_urls['base_url']}", json=sample_metadata_point
             )
             assert response_code_ok("create", False, unauth_response, 201)
-    assert all(
-        [
-            response_code_ok("create", True, new_response, 201)
-            for new_response in created_responses
-        ]
-    )
+    assert all([
+        response_code_ok("create", True, new_response, 201)
+        for new_response in created_responses
+    ])
 
     if is_action_allowed("create", True):
         for sample_metadata_point, created_response in zip(

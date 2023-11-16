@@ -41,6 +41,7 @@ record:
   - invenio
   - ./custom_fields.yaml
   - ./requests.yaml
+  - ./harvest.yaml
 plugins:
   builder:
     disable:

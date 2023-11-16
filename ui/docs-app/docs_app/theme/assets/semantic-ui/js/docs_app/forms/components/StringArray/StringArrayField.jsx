@@ -4,19 +4,21 @@ import { FieldLabel, TextField } from "react-invenio-forms";
 import { i18next } from "@translations/docs_app/i18next";
 import { useFormikContext, getIn, FieldArray } from "formik";
 import { Icon, Form } from "semantic-ui-react";
-import { ArrayFieldItem } from "@js/oarepo_ui";
+import { ArrayFieldItem, useShowEmptyValue } from "@js/oarepo_ui";
 
 export const StringArrayField = ({
   fieldPath,
   label,
   required,
-  newItemInitialValue,
+  defaultNewValue,
   addButtonLabel,
   helpText,
   labelIcon,
+  showEmptyValue,
   ...uiProps
 }) => {
   const { values } = useFormikContext();
+  useShowEmptyValue(fieldPath, defaultNewValue, showEmptyValue);
   return (
     <Form.Field>
       <FieldLabel label={label} icon={labelIcon} htmlFor={fieldPath} />
@@ -49,7 +51,7 @@ export const StringArrayField = ({
               icon
               labelPosition="left"
               onClick={() => {
-                arrayHelpers.push(newItemInitialValue);
+                arrayHelpers.push(defaultNewValue);
               }}
             >
               <Icon name="add" />
@@ -65,16 +67,19 @@ export const StringArrayField = ({
 StringArrayField.propTypes = {
   fieldPath: PropTypes.string.isRequired,
   label: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
-  newItemInitialValue: PropTypes.string,
+  defaultNewValue: PropTypes.string,
   addButtonLabel: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
   helpText: PropTypes.string,
   labelIcon: PropTypes.string,
+  required: PropTypes.bool,
+  showEmptyValue: PropTypes.bool,
 };
 
 StringArrayField.defaultProps = {
   addButtonLabel: i18next.t("Add note"),
-  newItemInitialValue: "",
+  defaultNewValue: "",
   labelIcon: "pencil",
   label: i18next.t("Notes"),
   helpText: i18next.t("Items shall be unique"),
+  showEmptyValue: false,
 };

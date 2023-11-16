@@ -2,8 +2,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
-"POT-Creation-Date: 2023-11-02T09:17:40.420744\n"
-"PO-Revision-Date: 2023-11-02T09:17:40.420755\n"
+"POT-Creation-Date: 2023-11-13T08:42:04.454823\n"
+"PO-Revision-Date: 2023-11-13T08:42:04.454834\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -1867,6 +1867,42 @@ msgid "metadata/version.help"
 msgstr ""
 
 msgid "metadata/version.hint"
+msgstr ""
+
+msgid "oai.help"
+msgstr ""
+
+msgid "oai.label"
+msgstr ""
+
+msgid "oai.hint"
+msgstr ""
+
+msgid "oai/harvest.help"
+msgstr ""
+
+msgid "oai/harvest.label"
+msgstr ""
+
+msgid "oai/harvest.hint"
+msgstr ""
+
+msgid "oai/harvest/datestamp.label"
+msgstr "Datum poslední změny"
+
+msgid "oai/harvest/datestamp.help"
+msgstr ""
+
+msgid "oai/harvest/datestamp.hint"
+msgstr ""
+
+msgid "oai/harvest/identifier.label"
+msgstr "OAI identifikátor"
+
+msgid "oai/harvest/identifier.help"
+msgstr ""
+
+msgid "oai/harvest/identifier.hint"
 msgstr ""
 
 msgid "syntheticFields.help"

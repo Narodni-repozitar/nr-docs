@@ -18,4 +18,3 @@ class PublishDraftRequestType(PublishDraftRequestType):
     # {"record": {pid}} as reference value. This reference is then by
     # setattr set on the Request record topic ReferencedEntityField, and the set
     # operation checks, whether this key is in allowed_topic_ref_types
-    # TODO would it make sense to customize the topic ref types?

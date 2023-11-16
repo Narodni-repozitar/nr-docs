@@ -36,7 +36,12 @@
 
 body {
   font-family: Roboto;
-
+  height: 100vh;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
   h1,
   h2,
   h3,
@@ -44,6 +49,9 @@ body {
   h5 {
     font-family: Roboto;
   }
+}
+#main {
+  flex: 1;
 }
 
 .frontpage-logo {
@@ -155,6 +163,9 @@ body {
 
 #nr-footer-container {
   background-color: #ffffffaa;
+  .ui.grid {
+    margin: 0;
+  }
 }
 
 .cover-page.masthead {
