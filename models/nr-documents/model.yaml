@@ -4,6 +4,8 @@ $defs:
 profiles:
 - record
 - draft
+- record_communities
+- community_records
 record:
   module:
     qualified: nr_documents
@@ -20,6 +22,10 @@ record:
     base-classes:
       - oarepo_runtime.config.service.PermissionsPresetsConfigMixin
       - nr_docs_extensions.services.config.FilteredResultServiceConfig
+    components:
+      - SetCommunityComponent
+    imports:
+      - import: oarepo_communities.components.inclusion.SetCommunityComponent
   json-serializer:
     base-classes: [ nr_docs_extensions.services.filtered_json_ui_serializer.FilteredUIJSONSerializer ]
   resource-config:
@@ -37,6 +43,12 @@ record:
           # extra custom fields for sorting by title
           sort = {{nr_docs_extensions.services.sort.TitleICUSortField}}(source_field="metadata.title")
   draft: {}
+  record-communities:
+    permissions:
+      presets: [ "community", "record-communities-community" ]
+  community-records:
+    permissions:
+      presets: [ "community", "community-records-community" ]
   use:
   - invenio
   - ./custom_fields.yaml
@@ -54,6 +66,7 @@ plugins:
   - oarepo-model-builder-relations==4.*
   - oarepo-model-builder-requests
   - oarepo-model-builder-drafts
+  - oarepo-model-builder-communities
 runtime-dependencies:
   nr-metadata: 1.0.0
   nr-oaipmh-harvesters: 1.0.0
