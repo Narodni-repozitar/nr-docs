@@ -12,7 +12,7 @@ import { getIn, FieldArray } from "formik";
 import { Button, Form, Label, List, Icon } from "semantic-ui-react";
 import _get from "lodash/get";
 import { FieldLabel } from "react-invenio-forms";
-import { TestBackend } from "react-dnd-test-backend";
+import { HTML5Backend } from "react-dnd-html5-backend";
 import { DndProvider } from "react-dnd";
 
 import { CreatibutorsModal } from "./CreatibutorsModal";
@@ -55,7 +55,7 @@ class CreatibutorsFieldForm extends Component {
       error || (creatibutorsList === formikInitialValues && initialError);
 
     return (
-      <DndProvider backend={TestBackend}>
+      <DndProvider backend={HTML5Backend}>
         <Form.Field
           required={schema === "creators"}
           className={creatibutorsError ? "error" : ""}

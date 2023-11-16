@@ -97,8 +97,8 @@
   "Free-form note for any comment that couldn't be inserted in any other fields.": "Free-form note for any comment that couldn't be inserted in any other fields.",
   "Free description of the location; ie. Atlantic Ocean. Longitude must be a number between -180 and 180 and latitude between -90 and 90.": "Free description of the location; ie. Atlantic Ocean. Longitude must be a number between -180 and 180 and latitude between -90 and 90.",
   "This field is required": "This field is required",
-  "Must have at least x characters": "Must have at least {{min}} characters",
-  "Must be between -180 and 180": "Must be between -180 and 180",
+  "Must have at least x characters": "must have at least {{min}} characters",
+  "Longitude must be between -180 and 180": "Longitude must be between -180 and 180",
   "Delete": "Delete",
   "Are you sure you wish delete this draft?": "Are you sure you wish delete this draft?",
   "If you delete the draft, the work you have done on it will be lost.": "If you delete the draft, the work you have done on it will be lost.",
@@ -106,7 +106,7 @@
   "Are you sure you wish to publish this draft?": "Are you sure you wish to publish this draft?",
   "Accessibility": "Accessibility",
   "Explanation regarding restricted status of an item": "Explanation regarding restricted status of an item",
-  "Must be between -90 and 90": "Must be between -90 and 90",
+  "Latitude must be between -90 and 90": "Latitude must be between -90 and 90",
   "Creators": "Creators",
   "Add creator": "Add creator",
   "Edit creator": "Edit creator",
@@ -157,5 +157,8 @@
   "Select the subject field(s) to which the resource belongs.": "Select the subject field(s) to which the resource belongs.",
   "Identifiers information": "Identifiers information",
   "No description": "No description",
-  "No publication date found.": "No publication date found."
+  "No publication date found.": "No publication date found.",
+  "is a required field": "is a required field",
+  "Subject": "Key word",
+  "Should be an interval indicating start and end date of the event.": "Should be an interval indicating start and end date of the event. For example YYYY-MM-DD/YYYY-MM-DD."
 }

@@ -13,6 +13,7 @@ import { useDrag, useDrop } from "react-dnd";
 import { Button, Label, List, Ref } from "semantic-ui-react";
 import { CreatibutorsModal } from "./CreatibutorsModal";
 import PropTypes from "prop-types";
+import { I18nString } from "@js/oarepo_ui";
 
 export const CreatibutorsFieldItem = ({
   compKey,
@@ -57,14 +58,22 @@ export const CreatibutorsFieldItem = ({
     }),
   });
 
-  const renderRole = (role) => role && <Label size="tiny">{role.id}</Label>;
+  const renderRole = (role) => {
+    return (
+      role && (
+        <Label size="tiny">
+          <I18nString value={role.title} />
+        </Label>
+      )
+    );
+  };
 
-  const firstError =
-    identifiersError &&
-    identifiersError.find((elem) => ![undefined, null].includes(elem));
+  const firstError = identifiersError?.find(
+    (elem) => ![undefined, null].includes(elem)
+  );
 
   // Initialize the ref explicitely
-  // drop(dropRef);
+  drop(dropRef);
   return (
     <Ref innerRef={dropRef} key={compKey}>
       <List.Item

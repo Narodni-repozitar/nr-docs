@@ -3,8 +3,8 @@ import {
   useFormConfig,
   MultilingualTextInput,
   BaseForm,
-  FormikStateLogger,
   FormFeedback,
+  FormikStateLogger,
 } from "@js/oarepo_ui";
 import { LocalVocabularySelectField } from "@js/oarepo_vocabularies";
 import { AccordionField, FieldLabel, TextField } from "react-invenio-forms";
@@ -54,7 +54,6 @@ export const DepositForm = () => {
   const editMode = _has(formConfig, "updateUrl");
   const sidebarRef = useRef(null);
   const formFeedbackRef = useRef(null);
-
   return (
     <Container>
       <BaseForm
@@ -470,8 +469,7 @@ export const DepositForm = () => {
                   </Overridable>
                 </AccordionField>
               </Overridable>
-              {/* Uncoment only when needed */}
-              {/* <FormikStateLogger /> */}
+              {process.env.NODE_ENV === "development" && <FormikStateLogger />}
             </Grid.Column>
           </Ref>
 
