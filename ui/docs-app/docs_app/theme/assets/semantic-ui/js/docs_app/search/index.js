@@ -1,3 +1,4 @@
+import * as React from 'react'
 import { createSearchAppInit } from '@js/invenio_search_ui'
 import {
   ActiveFiltersElement,
@@ -26,10 +27,18 @@ const SearchAppSearchbarContainerWithConfig = parametrize(SearchAppSearchbarCont
 const ResultsListItemWithConfig = parametrize(ResultsListItemWithState, { appName: appName })
 const ResultsGridItemWithConfig = parametrize(ResultsGridItemWithState, { appName: appName })
 
+const NoopCountElement = () => {
+  return (
+    <span className="rel-mr-1">
+    </span>
+  );
+};
+
 export const defaultComponents = {
   [`${appName}.ActiveFilters.element`]: ActiveFiltersElement,
   [`${appName}.BucketAggregation.element`]: BucketAggregationElement,
   [`${appName}.BucketAggregationValues.element`]: BucketAggregationValuesElement,
+  [`Count.element`]: NoopCountElement,
   [`${appName}.EmptyResults.element`]: EmptyResultsElement,
   [`${appName}.Error.element`]: ErrorElement,
   [`${appName}.ResultsGrid.item`]: ResultsGridItemWithConfig,
