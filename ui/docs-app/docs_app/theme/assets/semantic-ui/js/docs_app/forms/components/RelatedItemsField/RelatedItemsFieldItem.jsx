@@ -7,27 +7,22 @@
 // under the terms of the MIT License; see LICENSE file for more details.
 
 import { i18next } from "@translations/docs_app/i18next";
-import _get from "lodash/get";
 import React from "react";
 import { useDrag, useDrop } from "react-dnd";
 import { Button, Label, List, Ref } from "semantic-ui-react";
 import { RelatedItemsModal } from "./RelatedItemsModal";
 import PropTypes from "prop-types";
-import { I18nString } from "@js/oarepo_ui";
 
 export const RelatedItemsFieldItem = ({
   compKey,
-  identifiersError,
   index,
-  replaceCreatibutor,
-  removeCreatibutor,
-  moveCreatibutor,
+  replaceRelatedItem,
+  removeRelatedItem,
+  moveRelatedItem,
   addLabel,
   editLabel,
-  initialCreatibutor,
+  initialRelatedItem,
   displayName,
-  schema,
-  autocompleteNames,
 }) => {
   const dropRef = React.useRef(null);
   // eslint-disable-next-line no-unused-vars
@@ -49,7 +44,7 @@ export const RelatedItemsFieldItem = ({
       }
 
       if (monitor.isOver({ shallow: true })) {
-        moveCreatibutor(dragIndex, hoverIndex);
+        moveRelatedItem(dragIndex, hoverIndex);
         item.index = hoverIndex;
       }
     },
@@ -57,20 +52,6 @@ export const RelatedItemsFieldItem = ({
       hidden: monitor.isOver({ shallow: true }),
     }),
   });
-
-  const renderRole = (role) => {
-    return (
-      role && (
-        <Label size="tiny">
-          <I18nString value={role.title} />
-        </Label>
-      )
-    );
-  };
-
-  const firstError = identifiersError?.find(
-    (elem) => ![undefined, null].includes(elem)
-  );
 
   // Initialize the ref explicitely
   drop(dropRef);
@@ -86,12 +67,10 @@ export const RelatedItemsFieldItem = ({
           <RelatedItemsModal
             addLabel={addLabel}
             editLabel={editLabel}
-            onCreatibutorChange={(selectedCreatibutor) => {
-              replaceCreatibutor(index, selectedCreatibutor);
+            onRelatedItemChange={(selectedRelatedItem) => {
+              replaceRelatedItem(index, selectedRelatedItem);
             }}
-            initialCreatibutor={initialCreatibutor}
-            schema={schema}
-            autocompleteNames={autocompleteNames}
+            initialRelatedItem={initialRelatedItem}
             initialAction="edit"
             trigger={
               <Button size="mini" primary type="button">
@@ -102,7 +81,7 @@ export const RelatedItemsFieldItem = ({
           <Button
             size="mini"
             type="button"
-            onClick={() => removeCreatibutor(index)}
+            onClick={() => removeRelatedItem(index)}
           >
             {i18next.t("Remove")}
           </Button>
@@ -113,49 +92,8 @@ export const RelatedItemsFieldItem = ({
         <Ref innerRef={preview}>
           <List.Content>
             <List.Description>
-              <span className="creatibutor">
-                {_get(initialCreatibutor, "authorityIdentifiers", []).some(
-                  (identifier) => identifier.scheme === "orcid"
-                ) && (
-                  <img
-                    alt="ORCID logo"
-                    className="inline-id-icon mr-5"
-                    src="/static/images/identifiers/orcid-og-image.png"
-                    width="16"
-                    height="16"
-                  />
-                )}
-                {/* TODO: provide logo assets for this ID schemes */}
-                {/* {_get(initialCreatibutor, "authorityIdentifiers", []).some(
-                  (identifier) => identifier.scheme === "ror"
-                ) && (
-                  <img
-                    alt="ROR logo"
-                    className="inline-id-icon mr-5"
-                    src="/static/images/ror-icon.svg"
-                    width="16"
-                    height="16"
-                  />
-                )}
-                {_get(initialCreatibutor, "authorityIdentifiers", []).some(
-                  (identifier) => identifier.scheme === "gnd"
-                ) && (
-                  <img
-                    alt="GND logo"
-                    className="inline-id-icon mr-5"
-                    src="/static/images/gnd-icon.svg"
-                    width="16"
-                    height="16"
-                  />
-                )} */}
-                {displayName} {renderRole(initialCreatibutor?.role)}
-              </span>
+              <span>{displayName}</span>
             </List.Description>
-            {firstError && (
-              <Label pointing="left" prompt>
-                {firstError.scheme ? firstError.scheme : "Invalid identifiers"}
-              </Label>
-            )}
           </List.Content>
         </Ref>
       </List.Item>
@@ -165,23 +103,18 @@ export const RelatedItemsFieldItem = ({
 
 RelatedItemsFieldItem.propTypes = {
   compKey: PropTypes.string.isRequired,
-  identifiersError: PropTypes.array,
   index: PropTypes.number.isRequired,
-  replaceCreatibutor: PropTypes.func.isRequired,
-  removeCreatibutor: PropTypes.func.isRequired,
-  moveCreatibutor: PropTypes.func.isRequired,
+  replaceRelatedItem: PropTypes.func.isRequired,
+  removeRelatedItem: PropTypes.func.isRequired,
+  moveRelatedItem: PropTypes.func.isRequired,
   addLabel: PropTypes.node,
   editLabel: PropTypes.node,
-  initialCreatibutor: PropTypes.object.isRequired,
+  initialRelatedItem: PropTypes.object.isRequired,
   displayName: PropTypes.string,
-  schema: PropTypes.string.isRequired,
-  autocompleteNames: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
 };
 
 RelatedItemsFieldItem.defaultProps = {
-  identifiersError: undefined,
   addLabel: undefined,
   editLabel: undefined,
   displayName: undefined,
-  autocompleteNames: undefined,
 };

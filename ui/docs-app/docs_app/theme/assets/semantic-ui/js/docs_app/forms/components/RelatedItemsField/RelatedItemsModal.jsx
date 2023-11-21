@@ -24,13 +24,11 @@ const FormikStateLogger = () => {
 };
 
 export const RelatedItemsModal = ({
-  autocompleteNames,
-  initialCreatibutor,
+  initialRelatedItem,
   initialAction,
   addLabel,
   editLabel,
-  schema,
-  onCreatibutorChange,
+  onRelatedItemChange,
   trigger,
 }) => {
   const [open, setOpen] = React.useState(false);
@@ -56,6 +54,7 @@ export const RelatedItemsModal = ({
   };
 
   const onSubmit = (values, formikBag) => {
+    onRelatedItemChange(values);
     formikBag.setSubmitting(false);
     formikBag.resetForm();
     switch (action) {

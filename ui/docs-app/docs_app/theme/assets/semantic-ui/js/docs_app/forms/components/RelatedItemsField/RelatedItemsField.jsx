@@ -19,16 +19,16 @@ import { RelatedItemsModal } from "./RelatedItemsModal";
 import { RelatedItemsFieldItem } from "./RelatedItemsFieldItem";
 import { i18next } from "@translations/docs_app/i18next";
 
-const creatibutorNameDisplay = (value) => {
-  const name = _get(value, `fullName`);
-
-  return `${name}`;
+const relatedItemNameDisplay = (value) => {
+  const name = _get(value, `itemTitle`);
+  const URL = _get(value, `itemURL`);
+  return `${name} ${URL}`;
 };
 
 class RelatedItemsFieldForm extends Component {
-  handleOnContributorChange = (selectedCreatibutor) => {
+  handleRelatedItemChange = (selectedRelatedItem) => {
     const { push: formikArrayPush } = this.props;
-    formikArrayPush(selectedCreatibutor);
+    formikArrayPush(selectedRelatedItem);
   };
 
   render() {
@@ -37,64 +37,55 @@ class RelatedItemsFieldForm extends Component {
       remove: formikArrayRemove,
       replace: formikArrayReplace,
       move: formikArrayMove,
-      name: fieldPath,
+      fieldPath,
       label,
       labelIcon,
-      schema,
       modal,
-      autocompleteNames,
       addButtonLabel,
+      required,
     } = this.props;
 
-    const creatibutorsList = getIn(values, fieldPath, []);
+    const relatedItemsList = getIn(values, fieldPath, []);
     const formikInitialValues = getIn(initialValues, fieldPath, []);
 
     const error = getIn(errors, fieldPath, null);
     const initialError = getIn(initialErrors, fieldPath, null);
-    const creatibutorsError =
-      error || (creatibutorsList === formikInitialValues && initialError);
+    const relatedItemsError =
+      error || (relatedItemsList === formikInitialValues && initialError);
 
     return (
       <DndProvider backend={HTML5Backend}>
         <Form.Field
-          required={schema === "creators"}
-          className={creatibutorsError ? "error" : ""}
+          required={required}
+          className={relatedItemsError ? "error" : ""}
         >
           <FieldLabel htmlFor={fieldPath} icon={labelIcon} label={label} />
           <List>
-            {creatibutorsList.map((value, index) => {
+            {relatedItemsList.map((value, index) => {
               const key = `${fieldPath}.${index}`;
-              const identifiersError = creatibutorsError
-                ? creatibutorsError[index]?.authorityIdentifiers
-                : [];
-              const displayName = creatibutorNameDisplay(value);
+              const displayName = relatedItemNameDisplay(value);
               return (
                 <RelatedItemsFieldItem
                   key={key}
-                  identifiersError={identifiersError}
                   {...{
                     displayName,
                     index,
-                    schema,
                     compKey: key,
-                    initialCreatibutor: value,
-                    removeCreatibutor: formikArrayRemove,
-                    replaceCreatibutor: formikArrayReplace,
-                    moveCreatibutor: formikArrayMove,
+                    initialRelatedItem: value,
+                    removeRelatedItem: formikArrayRemove,
+                    replaceRelatedItem: formikArrayReplace,
+                    moveRelatedItem: formikArrayMove,
                     addLabel: modal.addLabel,
                     editLabel: modal.editLabel,
-                    autocompleteNames: autocompleteNames,
                   }}
                 />
               );
             })}
             <RelatedItemsModal
-              onCreatibutorChange={this.handleOnContributorChange}
+              onRelatedItemChange={this.handleRelatedItemChange}
               initialAction="add"
               addLabel={modal.addLabel}
               editLabel={modal.editLabel}
-              schema={schema}
-              autocompleteNames={autocompleteNames}
               trigger={
                 <Button type="button" icon labelPosition="left">
                   <Icon name="add" />
@@ -102,9 +93,9 @@ class RelatedItemsFieldForm extends Component {
                 </Button>
               }
             />
-            {creatibutorsError && typeof creatibutorsError == "string" && (
+            {relatedItemsError && typeof relatedItemsError == "string" && (
               <Label pointing="left" prompt>
-                {creatibutorsError}
+                {relatedItemsError}
               </Label>
             )}
           </List>
@@ -136,8 +127,6 @@ RelatedItemsFieldForm.propTypes = {
     addLabel: PropTypes.string.isRequired,
     editLabel: PropTypes.string.isRequired,
   }),
-  schema: PropTypes.oneOf(["creators", "contributors"]).isRequired,
-  autocompleteNames: PropTypes.oneOf(["search", "search_only", "off"]),
   label: PropTypes.string,
   labelIcon: PropTypes.string,
   form: PropTypes.object.isRequired,
@@ -145,15 +134,14 @@ RelatedItemsFieldForm.propTypes = {
   replace: PropTypes.func.isRequired,
   move: PropTypes.func.isRequired,
   push: PropTypes.func.isRequired,
-  name: PropTypes.string.isRequired,
+  required: PropTypes.bool,
 };
 
 RelatedItemsFieldForm.defaultProps = {
-  autocompleteNames: "search",
-  label: i18next.t("Creators"),
+  label: i18next.t("Related items"),
   modal: {
-    addLabel: i18next.t("Add creator"),
-    editLabel: i18next.t("Edit creator"),
+    addLabel: i18next.t("Add related item"),
+    editLabel: i18next.t("Edit related item"),
   },
   addButtonLabel: i18next.t("Add related item"),
 };
@@ -165,14 +153,13 @@ RelatedItemsField.propTypes = {
     addLabel: PropTypes.string.isRequired,
     editLabel: PropTypes.string.isRequired,
   }),
-  schema: PropTypes.oneOf(["creators", "contributors"]).isRequired,
-  autocompleteNames: PropTypes.oneOf(["search", "search_only", "off"]),
+
   label: PropTypes.string,
   labelIcon: PropTypes.string,
+  required: PropTypes.bool,
 };
 
 RelatedItemsField.defaultProps = {
-  autocompleteNames: "search",
   label: undefined,
   labelIcon: undefined,
   modal: {
