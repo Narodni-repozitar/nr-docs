@@ -5,7 +5,6 @@ import {
   BaseForm,
   FormFeedback,
   FormikStateLogger,
-  FormFeedback,
   EDTFSingleDatePicker,
 } from "@js/oarepo_ui";
 import { LocalVocabularySelectField } from "@js/oarepo_vocabularies";
