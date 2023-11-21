@@ -14,3 +14,4 @@ export * from "./SaveButton";
 export * from "./DeleteButton";
 export * from "./PublishButton";
 export * from "./CreatibutorsField";
+export * from "./RelatedItemsField";
