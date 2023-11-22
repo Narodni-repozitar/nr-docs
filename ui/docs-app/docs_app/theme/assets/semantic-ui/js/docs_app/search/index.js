@@ -1,3 +1,4 @@
+import * as React from 'react'
 import { createSearchAppInit } from '@js/invenio_search_ui'
 import {
   ActiveFiltersElement,
