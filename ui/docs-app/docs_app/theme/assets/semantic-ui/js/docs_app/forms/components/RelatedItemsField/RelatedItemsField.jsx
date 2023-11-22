@@ -150,8 +150,8 @@ RelatedItemsField.propTypes = {
   fieldPath: PropTypes.string.isRequired,
   addButtonLabel: PropTypes.string,
   modal: PropTypes.shape({
-    addLabel: PropTypes.string.isRequired,
-    editLabel: PropTypes.string.isRequired,
+    addLabel: PropTypes.string,
+    editLabel: PropTypes.string,
   }),
 
   label: PropTypes.string,

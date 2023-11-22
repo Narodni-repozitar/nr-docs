@@ -42,6 +42,7 @@ class CreatibutorsFieldForm extends Component {
       labelIcon,
       schema,
       modal,
+      required,
       autocompleteNames,
       addButtonLabel,
     } = this.props;
@@ -57,7 +58,7 @@ class CreatibutorsFieldForm extends Component {
     return (
       <DndProvider backend={HTML5Backend}>
         <Form.Field
-          required={schema === "creators"}
+          required={required}
           className={creatibutorsError ? "error" : ""}
         >
           <FieldLabel htmlFor={fieldPath} icon={labelIcon} label={label} />
@@ -146,6 +147,7 @@ CreatibutorsFieldForm.propTypes = {
   move: PropTypes.func.isRequired,
   push: PropTypes.func.isRequired,
   name: PropTypes.string.isRequired,
+  required: PropTypes.bool,
 };
 
 CreatibutorsFieldForm.defaultProps = {
@@ -170,6 +172,7 @@ CreatibutorsField.propTypes = {
   autocompleteNames: PropTypes.oneOf(["search", "search_only", "off"]),
   label: PropTypes.string,
   labelIcon: PropTypes.string,
+  required: PropTypes.bool,
 };
 
 CreatibutorsField.defaultProps = {

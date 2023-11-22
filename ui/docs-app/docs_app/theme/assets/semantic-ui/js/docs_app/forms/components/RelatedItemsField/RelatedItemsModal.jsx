@@ -9,20 +9,36 @@
 
 import React, { createRef } from "react";
 import { Button, Form, Grid, Header, Modal } from "semantic-ui-react";
-import { Formik } from "formik";
+import { Formik, useFormikContext } from "formik";
 import * as Yup from "yup";
 import { i18next } from "@translations/docs_app/i18next";
 import { TextField, FieldLabel, GroupField } from "react-invenio-forms";
 import { CreatibutorsField } from "../CreatibutorsField";
 import { IdentifiersField, objectIdentifiersSchema } from "../IdentifiersField";
 import { LocalVocabularySelectField } from "@js/oarepo_vocabularies";
-import { useFormikContext } from "formik";
+import PropTypes from "prop-types";
 
 const FormikStateLogger = () => {
   const state = useFormikContext();
   return <pre>{JSON.stringify(state, null, 2)}</pre>;
 };
+const RelatedItemsSchema = Yup.object({
+  itemTitle: Yup.string().required(i18next.t("Title is a required field.")),
+  itemURL: Yup.string(),
+  itemYear: Yup.string(),
+  itemVolume: Yup.string(),
+  itemIssue: Yup.string(),
+  itemStartPage: Yup.string(),
+  itemEndPage: Yup.string(),
+  itemPublisher: Yup.string(),
+  itemRelationType: Yup.string(),
+  itemResourceType: Yup.string(),
+});
 
+const modalActions = {
+  ADD: "add",
+  EDIT: "edit",
+};
 export const RelatedItemsModal = ({
   initialRelatedItem,
   initialAction,
@@ -36,11 +52,9 @@ export const RelatedItemsModal = ({
   const [saveAndContinueLabel, setSaveAndContinueLabel] = React.useState(
     i18next.t("Save and add another")
   );
-
   const openModal = () => {
     setOpen(true);
   };
-
   const closeModal = () => {
     setOpen(false);
   };
@@ -73,7 +87,7 @@ export const RelatedItemsModal = ({
 
   return (
     <Formik
-      initialValues={{}}
+      initialValues={initialRelatedItem || {}}
       onSubmit={onSubmit}
       enableReinitialize
       //   validationSchema={CreatorSchema}
@@ -82,6 +96,7 @@ export const RelatedItemsModal = ({
     >
       {({ values, resetForm, handleSubmit, errors }) => (
         <Modal
+          className="related-items-modal"
           size="large"
           centered={false}
           onOpen={() => openModal()}
@@ -97,7 +112,9 @@ export const RelatedItemsModal = ({
           <Modal.Header as="h6" className="pt-10 pb-10">
             <Grid>
               <Grid.Column floated="left" width={4}>
-                <Header as="h2"></Header>
+                <Header as="h2">
+                  {action === modalActions.ADD ? addLabel : editLabel}
+                </Header>
               </Grid.Column>
             </Grid>
           </Modal.Header>
@@ -224,20 +241,36 @@ export const RelatedItemsModal = ({
                   }
                 />
               </GroupField>
-              <LocalVocabularySelectField
-                fieldPath="itemRelationType"
-                required
-                label={
-                  <FieldLabel
-                    htmlFor={"itemRelationType"}
-                    icon=""
-                    label={i18next.t("Relation type")}
-                  />
-                }
-                placeholder={i18next.t("Choose relation type")}
-                clearable
-                optionsListName="item-relation-types"
-              />
+              <GroupField>
+                <LocalVocabularySelectField
+                  width={8}
+                  fieldPath="itemRelationType"
+                  label={
+                    <FieldLabel
+                      htmlFor={"itemRelationType"}
+                      icon="pencil"
+                      label={i18next.t("Relation type")}
+                    />
+                  }
+                  placeholder={i18next.t("Choose relation type")}
+                  clearable
+                  optionsListName="item-relation-types"
+                />
+                <LocalVocabularySelectField
+                  width={8}
+                  fieldPath="itemResourceType"
+                  clearable
+                  label={
+                    <FieldLabel
+                      htmlFor={"itemResourceType"}
+                      icon="tag"
+                      label={i18next.t("Resource type")}
+                    />
+                  }
+                  placeholder={i18next.t("Select resource type")}
+                  optionsListName="resource-types"
+                />
+              </GroupField>
             </Form>
             <FormikStateLogger />
           </Modal.Content>
@@ -282,4 +315,13 @@ export const RelatedItemsModal = ({
       )}
     </Formik>
   );
+};
+
+RelatedItemsModal.propTypes = {
+  initialRelatedItem: PropTypes.object.isRequired,
+  initialAction: PropTypes.string.isRequired,
+  addLabel: PropTypes.string,
+  editLabel: PropTypes.string,
+  onRelatedItemChange: PropTypes.func,
+  trigger: PropTypes.node,
 };
