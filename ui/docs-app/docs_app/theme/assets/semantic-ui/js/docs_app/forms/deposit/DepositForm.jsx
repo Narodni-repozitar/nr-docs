@@ -201,6 +201,7 @@ export const DepositForm = () => {
                       rich={true}
                       required
                       helpText={i18next.t("Detailed description")}
+                      lngFieldWidth={4}
                     />
                   </Overridable>
                   <Overridable
@@ -325,6 +326,7 @@ export const DepositForm = () => {
                       rich={true}
                       required
                       textFieldLabel={i18next.t("Description")}
+                      lngFieldWidth={4}
                     />
                   </Overridable>
                   <Overridable
@@ -341,6 +343,7 @@ export const DepositForm = () => {
                       helpText={i18next.t(
                         "Detailed information that may be associated with design, implementation, operation, use, and/or maintenance of a process or system"
                       )}
+                      lngFieldWidth={4}
                     />
                   </Overridable>
                   <Overridable
