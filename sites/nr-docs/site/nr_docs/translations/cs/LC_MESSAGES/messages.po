@@ -2683,3 +2683,55 @@ msgstr ""
 
 msgid "Additional titles must be unique"
 msgstr "Další názvy se nesmí opakovat"
+
+#: models/nr-documents/nr_documents/services/records/facets.py:496
+msgid "oai/harvest/datestamp.label"
+msgstr "Datum poslední změny"
+
+#: models/nr-documents/nr_documents/services/records/facets.py:500
+msgid "oai/harvest/identifier.label"
+msgstr "OAI identifikátor"
+
+msgid "oai.help"
+msgstr ""
+
+msgid "oai.label"
+msgstr ""
+
+msgid "oai.hint"
+msgstr ""
+
+msgid "oai/harvest.help"
+msgstr ""
+
+msgid "oai/harvest.label"
+msgstr ""
+
+msgid "oai/harvest.hint"
+msgstr ""
+
+msgid "oai/harvest/datestamp.help"
+msgstr ""
+
+msgid "oai/harvest/datestamp.hint"
+msgstr ""
+
+msgid "oai/harvest/identifier.help"
+msgstr ""
+
+msgid "oai/harvest/identifier.hint"
+msgstr ""
+
+msgid "Longitude must be between -180 and 180"
+msgstr "Zeměpisná délka musí být mezi -180 a 180"
+
+msgid "Latitude must be between -90 and 90"
+msgstr "Zeměpisná šířka musí být mezi -90 a 90"
+
+msgid "is a required field"
+msgstr "je povinné pole"
+
+msgid "Should be an interval indicating start and end date of the event."
+msgstr ""
+"Měl by být interval udávající datum začátku a konce události. Například "
+"RRRR-MM-DD/RRRR-MM-DD."
