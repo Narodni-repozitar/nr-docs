@@ -50,6 +50,13 @@
       font-size: 1.25rem;
     }
 
+    .ui.datepicker {
+      label:first-of-type {
+        font-size: 1.25rem;
+        margin-bottom: 0.75rem;
+      }
+    }
+
     .ui.container > .field > label {
       margin-bottom: 0.75rem;
     }
@@ -106,7 +113,11 @@
       display: block;
       border-radius: 0.5rem;
       padding: 1rem;
-
+      div.ui.datepicker.field {
+        label {
+          font-size: 0.925rem;
+        }
+      }
       .field {
         .field {
           margin-top: 0rem;
