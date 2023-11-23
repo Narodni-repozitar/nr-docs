@@ -97,7 +97,7 @@ ui:
     ui_dir: ui/docs-app
     url_prefix: /docs/
 
-oarepo.i18n:
+i18n:
   languages: [cs, en]
 
   # List of paths to scan for babel messages - python files and jinja templates are scanned

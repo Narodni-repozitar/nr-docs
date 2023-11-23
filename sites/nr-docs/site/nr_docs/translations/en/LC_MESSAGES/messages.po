@@ -782,7 +782,7 @@ msgid "Subject scheme"
 msgstr "Subject scheme"
 
 msgid "Subject"
-msgstr ""
+msgstr "Key word"
 
 msgid "Validate form"
 msgstr "Validate form"
@@ -922,7 +922,7 @@ msgid "This field is required"
 msgstr "This field is required"
 
 msgid "Must have at least x characters"
-msgstr "Must have at least {{min}} characters"
+msgstr "must have at least {{min}} characters"
 
 msgid "Items must be unique"
 msgstr "Items must be unique"
@@ -2680,3 +2680,55 @@ msgstr ""
 
 msgid "Additional titles must be unique"
 msgstr "Additional titles must be unique"
+
+#: models/nr-documents/nr_documents/services/records/facets.py:496
+msgid "oai/harvest/datestamp.label"
+msgstr "Datestamp"
+
+#: models/nr-documents/nr_documents/services/records/facets.py:500
+msgid "oai/harvest/identifier.label"
+msgstr "OAI identifier"
+
+msgid "oai.help"
+msgstr ""
+
+msgid "oai.label"
+msgstr ""
+
+msgid "oai.hint"
+msgstr ""
+
+msgid "oai/harvest.help"
+msgstr ""
+
+msgid "oai/harvest.label"
+msgstr ""
+
+msgid "oai/harvest.hint"
+msgstr ""
+
+msgid "oai/harvest/datestamp.help"
+msgstr ""
+
+msgid "oai/harvest/datestamp.hint"
+msgstr ""
+
+msgid "oai/harvest/identifier.help"
+msgstr ""
+
+msgid "oai/harvest/identifier.hint"
+msgstr ""
+
+msgid "Longitude must be between -180 and 180"
+msgstr "Longitude must be between -180 and 180"
+
+msgid "Latitude must be between -90 and 90"
+msgstr "Latitude must be between -90 and 90"
+
+msgid "is a required field"
+msgstr "is a required field"
+
+msgid "Should be an interval indicating start and end date of the event."
+msgstr ""
+"Should be an interval indicating start and end date of the event. For "
+"example YYYY-MM-DD/YYYY-MM-DD."

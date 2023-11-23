@@ -8,14 +8,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2023-11-15 14:28+0100\n"
+"POT-Creation-Date: 2023-11-23 10:31+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.10.3\n"
+"Generated-By: Babel 2.13.1\n"
 
 #: models/nr-documents/nr_documents/services/records/facets.py:12
 msgid "$schema.label"
@@ -388,22 +388,30 @@ msgid "metadata/version.label"
 msgstr ""
 
 #: models/nr-documents/nr_documents/services/records/facets.py:496
-msgid "syntheticFields/institutions.label"
+msgid "oai/harvest/datestamp.label"
 msgstr ""
 
 #: models/nr-documents/nr_documents/services/records/facets.py:500
-msgid "syntheticFields/keywords_cs.label"
+msgid "oai/harvest/identifier.label"
 msgstr ""
 
 #: models/nr-documents/nr_documents/services/records/facets.py:504
-msgid "syntheticFields/keywords_en.label"
+msgid "syntheticFields/institutions.label"
 msgstr ""
 
 #: models/nr-documents/nr_documents/services/records/facets.py:508
+msgid "syntheticFields/keywords_cs.label"
+msgstr ""
+
+#: models/nr-documents/nr_documents/services/records/facets.py:512
+msgid "syntheticFields/keywords_en.label"
+msgstr ""
+
+#: models/nr-documents/nr_documents/services/records/facets.py:516
 msgid "syntheticFields/person.label"
 msgstr ""
 
-#: models/nr-documents/nr_documents/services/records/facets.py:511
+#: models/nr-documents/nr_documents/services/records/facets.py:519
 msgid "updated.label"
 msgstr ""
 
@@ -470,8 +478,6 @@ msgstr ""
 
 #: ui/docs-app/docs_app/templates/semantic-ui/docs_app/Detail.html.jinja:2
 #: ui/docs-app/docs_app/templates/semantic-ui/docs_app/Search.html.jinja:4
-#: ui/docs-app/docs_app/templates/semantic-ui/docs_app/detail.html:2
-#: ui/docs-app/docs_app/templates/semantic-ui/docs_app/search.html:2
 msgid "NR Document repository"
 msgstr ""
 
@@ -480,7 +486,6 @@ msgid "People"
 msgstr ""
 
 #: ui/docs-app/docs_app/templates/semantic-ui/docs_app/Search.html.jinja:4
-#: ui/docs-app/docs_app/templates/semantic-ui/docs_app/search.html:2
 msgid "Search results"
 msgstr ""
 
@@ -507,11 +512,11 @@ msgstr ""
 msgid "Links"
 msgstr ""
 
-#: ui/docs-app/docs_app/templates/semantic-ui/docs_app/footer.html:18
+#: ui/docs-app/docs_app/templates/semantic-ui/docs_app/footer.html:20
 msgid "Contact"
 msgstr ""
 
-#: ui/docs-app/docs_app/templates/semantic-ui/docs_app/footer.html:38
+#: ui/docs-app/docs_app/templates/semantic-ui/docs_app/footer.html:42
 #, python-format
 msgid "Powered by <a href=\"%(link)s\">Invenio</a>"
 msgstr ""
