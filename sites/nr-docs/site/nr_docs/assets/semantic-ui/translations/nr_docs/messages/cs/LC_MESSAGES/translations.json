@@ -814,5 +814,21 @@
     "updated.help": "",
     "updated.hint": "",
     "Powered by <a\n              href=\"%(invenio_rdm)s\">InvenioRDM</a>": "Založeno na platformě <a\n              href=\"%(invenio_rdm)s\">InvenioRDM</a>",
-    "Additional titles must be unique": "Další názvy se nesmí opakovat"
+    "Additional titles must be unique": "Další názvy se nesmí opakovat",
+    "oai/harvest/datestamp.label": "Datum poslední změny",
+    "oai/harvest/identifier.label": "OAI identifikátor",
+    "oai.help": "",
+    "oai.label": "",
+    "oai.hint": "",
+    "oai/harvest.help": "",
+    "oai/harvest.label": "",
+    "oai/harvest.hint": "",
+    "oai/harvest/datestamp.help": "",
+    "oai/harvest/datestamp.hint": "",
+    "oai/harvest/identifier.help": "",
+    "oai/harvest/identifier.hint": "",
+    "Longitude must be between -180 and 180": "Zeměpisná délka musí být mezi -180 a 180",
+    "Latitude must be between -90 and 90": "Zeměpisná šířka musí být mezi -90 a 90",
+    "is a required field": "je povinné pole",
+    "Should be an interval indicating start and end date of the event.": "Měl by být interval udávající datum začátku a konce události. Například RRRR-MM-DD/RRRR-MM-DD."
 }
