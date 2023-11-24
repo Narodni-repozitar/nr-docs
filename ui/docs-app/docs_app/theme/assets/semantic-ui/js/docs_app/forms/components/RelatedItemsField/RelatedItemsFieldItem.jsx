@@ -9,7 +9,7 @@
 import { i18next } from "@translations/docs_app/i18next";
 import React from "react";
 import { useDrag, useDrop } from "react-dnd";
-import { Button, Label, List, Ref } from "semantic-ui-react";
+import { Button, List, Ref } from "semantic-ui-react";
 import { RelatedItemsModal } from "./RelatedItemsModal";
 import PropTypes from "prop-types";
 
@@ -91,9 +91,7 @@ export const RelatedItemsFieldItem = ({
         </Ref>
         <Ref innerRef={preview}>
           <List.Content>
-            <List.Description>
-              <span>{displayName}</span>
-            </List.Description>
+            <List.Description>{displayName}</List.Description>
           </List.Content>
         </Ref>
       </List.Item>
@@ -110,7 +108,7 @@ RelatedItemsFieldItem.propTypes = {
   addLabel: PropTypes.node,
   editLabel: PropTypes.node,
   initialRelatedItem: PropTypes.object.isRequired,
-  displayName: PropTypes.string,
+  displayName: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
 };
 
 RelatedItemsFieldItem.defaultProps = {

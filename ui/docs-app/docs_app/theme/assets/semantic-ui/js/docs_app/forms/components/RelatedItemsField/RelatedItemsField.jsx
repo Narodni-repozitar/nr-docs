@@ -11,10 +11,10 @@ import PropTypes from "prop-types";
 import { getIn, FieldArray } from "formik";
 import { Button, Form, Label, List, Icon } from "semantic-ui-react";
 import _get from "lodash/get";
+import _truncate from "lodash/truncate";
 import { FieldLabel } from "react-invenio-forms";
 import { HTML5Backend } from "react-dnd-html5-backend";
 import { DndProvider } from "react-dnd";
-
 import { RelatedItemsModal } from "./RelatedItemsModal";
 import { RelatedItemsFieldItem } from "./RelatedItemsFieldItem";
 import { i18next } from "@translations/docs_app/i18next";
@@ -22,7 +22,14 @@ import { i18next } from "@translations/docs_app/i18next";
 const relatedItemNameDisplay = (value) => {
   const name = _get(value, `itemTitle`);
   const URL = _get(value, `itemURL`);
-  return `${name} ${URL}`;
+  return (
+    <span>
+      {name}
+      <a style={{ paddingLeft: "3rem" }} href={URL}>
+        {URL && _truncate(URL, { length: 40, omission: "..." })}
+      </a>
+    </span>
+  );
 };
 
 class RelatedItemsFieldForm extends Component {
@@ -127,7 +134,7 @@ RelatedItemsFieldForm.propTypes = {
     addLabel: PropTypes.string.isRequired,
     editLabel: PropTypes.string.isRequired,
   }),
-  label: PropTypes.string,
+  label: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
   labelIcon: PropTypes.string,
   form: PropTypes.object.isRequired,
   remove: PropTypes.func.isRequired,
@@ -154,7 +161,7 @@ RelatedItemsField.propTypes = {
     editLabel: PropTypes.string,
   }),
 
-  label: PropTypes.string,
+  label: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
   labelIcon: PropTypes.string,
   required: PropTypes.bool,
 };

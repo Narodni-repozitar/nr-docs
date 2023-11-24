@@ -7,9 +7,9 @@
 // Invenio-RDM-Records is free software; you can redistribute it and/or modify it
 // under the terms of the MIT License; see LICENSE file for more details.
 
-import React, { createRef } from "react";
+import React from "react";
 import { Button, Form, Grid, Header, Modal } from "semantic-ui-react";
-import { Formik, useFormikContext } from "formik";
+import { Formik } from "formik";
 import * as Yup from "yup";
 import { i18next } from "@translations/docs_app/i18next";
 import { TextField, FieldLabel, GroupField } from "react-invenio-forms";
@@ -17,22 +17,46 @@ import { CreatibutorsField } from "../CreatibutorsField";
 import { IdentifiersField, objectIdentifiersSchema } from "../IdentifiersField";
 import { LocalVocabularySelectField } from "@js/oarepo_vocabularies";
 import PropTypes from "prop-types";
+import {
+  unique,
+  requiredMessage,
+} from "../../deposit/NRDocumentValidationSchema";
 
-const FormikStateLogger = () => {
-  const state = useFormikContext();
-  return <pre>{JSON.stringify(state, null, 2)}</pre>;
-};
 const RelatedItemsSchema = Yup.object({
-  itemTitle: Yup.string().required(i18next.t("Title is a required field.")),
-  itemURL: Yup.string(),
-  itemYear: Yup.string(),
+  itemTitle: Yup.string().required(requiredMessage).label(i18next.t("Title")),
+  itemURL: Yup.string().url(i18next.t("Please provide an URL in valid format")),
+  itemYear: Yup.number().typeError(i18next.t("Year must be in format YYYY")),
+  itemPIDs: Yup.array()
+    .of(
+      Yup.object().shape({
+        identifier: Yup.string()
+          .required(requiredMessage)
+          .label(i18next.t("Identifier type")),
+        scheme: Yup.string()
+          .required(requiredMessage)
+          .label(i18next.t("Object identifier")),
+      })
+    )
+    .test(
+      "unique-objectIdentifiers",
+      () => {},
+      (value, context) =>
+        unique(
+          value,
+          context,
+          "identifier",
+          i18next.t("Object identifiers must be unique")
+        )
+    )
+    .label(i18next.t("Object identifiers")),
+
   itemVolume: Yup.string(),
   itemIssue: Yup.string(),
   itemStartPage: Yup.string(),
   itemEndPage: Yup.string(),
   itemPublisher: Yup.string(),
-  itemRelationType: Yup.string(),
-  itemResourceType: Yup.string(),
+  itemRelationType: Yup.object(),
+  itemResourceType: Yup.object(),
 });
 
 const modalActions = {
@@ -61,10 +85,9 @@ export const RelatedItemsModal = ({
 
   const changeContent = () => {
     setSaveAndContinueLabel(i18next.t("Added"));
-    // change in 2 sec
     setTimeout(() => {
       setSaveAndContinueLabel(i18next.t("Save and add another"));
-    }, 2000);
+    }, 1000);
   };
 
   const onSubmit = (values, formikBag) => {
@@ -90,7 +113,7 @@ export const RelatedItemsModal = ({
       initialValues={initialRelatedItem || {}}
       onSubmit={onSubmit}
       enableReinitialize
-      //   validationSchema={CreatorSchema}
+      validationSchema={RelatedItemsSchema}
       validateOnChange={false}
       validateOnBlur={false}
     >
@@ -109,10 +132,10 @@ export const RelatedItemsModal = ({
           closeIcon
           closeOnDimmerClick={false}
         >
-          <Modal.Header as="h6" className="pt-10 pb-10">
+          <Modal.Header as="h6">
             <Grid>
               <Grid.Column floated="left" width={4}>
-                <Header as="h2">
+                <Header className="rel-pt-1 rel-pb-1" as="h2">
                   {action === modalActions.ADD ? addLabel : editLabel}
                 </Header>
               </Grid.Column>
@@ -121,6 +144,7 @@ export const RelatedItemsModal = ({
           <Modal.Content>
             <Form>
               <TextField
+                autoComplete="off"
                 fieldPath="itemTitle"
                 required
                 label={
@@ -130,7 +154,6 @@ export const RelatedItemsModal = ({
                     label={i18next.t("Title")}
                   />
                 }
-                helpText={i18next.t("Title of the related item")}
               />
               <CreatibutorsField
                 label={i18next.t("Creators")}
@@ -155,6 +178,7 @@ export const RelatedItemsModal = ({
               />
 
               <IdentifiersField
+                className="related-items-identifiers"
                 options={objectIdentifiersSchema}
                 fieldPath="itemPIDs"
                 identifierLabel={i18next.t("Object identifier")}
@@ -164,6 +188,7 @@ export const RelatedItemsModal = ({
                 )}
               />
               <TextField
+                autoComplete="off"
                 fieldPath="itemURL"
                 label={
                   <FieldLabel
@@ -173,9 +198,8 @@ export const RelatedItemsModal = ({
                   />
                 }
               />
-              <GroupField>
+              <GroupField widths="equal">
                 <TextField
-                  width={2}
                   fieldPath="itemYear"
                   label={
                     <FieldLabel
@@ -186,7 +210,6 @@ export const RelatedItemsModal = ({
                   }
                 />
                 <TextField
-                  width={2}
                   fieldPath="itemVolume"
                   label={
                     <FieldLabel
@@ -197,7 +220,6 @@ export const RelatedItemsModal = ({
                   }
                 />
                 <TextField
-                  width={2}
                   fieldPath="itemIssue"
                   label={
                     <FieldLabel
@@ -208,7 +230,6 @@ export const RelatedItemsModal = ({
                   }
                 />
                 <TextField
-                  width={2}
                   fieldPath="itemStartPage"
                   label={
                     <FieldLabel
@@ -219,7 +240,6 @@ export const RelatedItemsModal = ({
                   }
                 />
                 <TextField
-                  width={2}
                   fieldPath="itemEndPage"
                   label={
                     <FieldLabel
@@ -229,18 +249,18 @@ export const RelatedItemsModal = ({
                     />
                   }
                 />
-                <TextField
-                  width={6}
-                  fieldPath="itemPublisher"
-                  label={
-                    <FieldLabel
-                      htmlFor={"itemPublisher"}
-                      icon="pencil"
-                      label={i18next.t("Publisher")}
-                    />
-                  }
-                />
               </GroupField>
+              <TextField
+                width={16}
+                fieldPath="itemPublisher"
+                label={
+                  <FieldLabel
+                    htmlFor={"itemPublisher"}
+                    icon="pencil"
+                    label={i18next.t("Publisher")}
+                  />
+                }
+              />
               <GroupField>
                 <LocalVocabularySelectField
                   width={8}
@@ -272,7 +292,6 @@ export const RelatedItemsModal = ({
                 />
               </GroupField>
             </Form>
-            <FormikStateLogger />
           </Modal.Content>
           <Modal.Actions>
             <Button
@@ -291,7 +310,6 @@ export const RelatedItemsModal = ({
               type="submit"
               onClick={() => {
                 setAction("saveAndContinue");
-
                 handleSubmit();
               }}
               primary
@@ -303,7 +321,6 @@ export const RelatedItemsModal = ({
               type="submit"
               onClick={() => {
                 setAction("saveAndClose");
-
                 handleSubmit();
               }}
               primary
@@ -318,10 +335,14 @@ export const RelatedItemsModal = ({
 };
 
 RelatedItemsModal.propTypes = {
-  initialRelatedItem: PropTypes.object.isRequired,
+  initialRelatedItem: PropTypes.object,
   initialAction: PropTypes.string.isRequired,
   addLabel: PropTypes.string,
   editLabel: PropTypes.string,
   onRelatedItemChange: PropTypes.func,
   trigger: PropTypes.node,
+};
+
+RelatedItemsModal.defaultProps = {
+  initialRelatedItem: {},
 };

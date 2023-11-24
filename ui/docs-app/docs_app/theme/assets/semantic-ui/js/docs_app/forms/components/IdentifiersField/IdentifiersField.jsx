@@ -68,6 +68,7 @@ IdentifiersField.propTypes = {
   options: PropTypes.array.isRequired,
   label: PropTypes.string,
   identifierLabel: PropTypes.string,
+  className: PropTypes.string,
 };
 
 IdentifiersField.defaultProps = {
