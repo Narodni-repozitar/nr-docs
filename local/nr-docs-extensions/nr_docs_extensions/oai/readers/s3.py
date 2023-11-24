@@ -11,7 +11,7 @@ from sickle import Sickle
 from sickle.oaiexceptions import NoRecordsMatch
 
 
-class SickleReader(BaseReader):
+class S3Reader(BaseReader):
     def __init__(
         self,
         *,
