@@ -1,5 +1,6 @@
 import boto3
 import datetime
+from dotenv import load_dotenv
 from lxml import etree
 from typing import Iterator
 import os
@@ -10,6 +11,7 @@ from oarepo_runtime.datastreams import BaseReader, StreamEntry
 from sickle import Sickle
 from sickle.oaiexceptions import NoRecordsMatch
 
+load_dotenv()
 
 class S3Reader(BaseReader):
     def __init__(
@@ -73,10 +75,10 @@ class S3Reader(BaseReader):
                     context={
                         "oai": {
                             "metadata": record["metadata"] or {},
-                            "datestamp": expand_datestamp(datestamp[0]),
+                            "datestamp": expand_datestamp(datestamp[0].text),
                             "deleted": deleted,
-                            "identifier": identifier[0],
-                            "setSpecs": setSpecs,
+                            "identifier": identifier[0].text,
+                            "setSpecs": [setSpec.text for setSpec in setSpecs],
                         },
                         "oai_run": self.oai_run,
                         "oai_harvester_id": self.oai_harvester_id,
