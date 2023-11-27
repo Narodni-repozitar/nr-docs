@@ -2732,3 +2732,45 @@ msgid "Should be an interval indicating start and end date of the event."
 msgstr ""
 "Should be an interval indicating start and end date of the event. For "
 "example YYYY-MM-DD/YYYY-MM-DD."
+
+msgid "Related items"
+msgstr "Related items"
+
+msgid "Add related item"
+msgstr "Add related item"
+
+msgid "Edit related item"
+msgstr "Edit related item"
+
+msgid "Year must be in format YYYY"
+msgstr "Year must be in format YYYY"
+
+msgid "URL"
+msgstr "URL"
+
+msgid "Year"
+msgstr "Year"
+
+msgid "Volume"
+msgstr "Volume"
+
+msgid "Issue"
+msgstr "Issue"
+
+msgid "Start page"
+msgstr "Start page"
+
+msgid "End page"
+msgstr "End page"
+
+msgid "Publisher"
+msgstr "Publisher"
+
+msgid "Relation type"
+msgstr "Relation type"
+
+msgid "Choose relation type"
+msgstr "Choose relation type"
+
+msgid "Link to/from other resources"
+msgstr "Link to/from other resources"

@@ -134,7 +134,7 @@ export const RelatedItemsModal = ({
         >
           <Modal.Header as="h6">
             <Grid>
-              <Grid.Column floated="left" width={4}>
+              <Grid.Column floated="left" width={8}>
                 <Header className="rel-pt-1 rel-pb-1" as="h2">
                   {action === modalActions.ADD ? addLabel : editLabel}
                 </Header>
