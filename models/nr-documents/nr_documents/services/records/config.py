@@ -4,6 +4,7 @@ from invenio_records_resources.services.records.components import DataComponent
 from nr_docs_extensions.services.config import FilteredResultServiceConfig
 from oarepo_communities.components.inclusion import SetCommunityComponent
 from oarepo_runtime.config.service import PermissionsPresetsConfigMixin
+from oarepo_requests.components.requests import PublishDraftComponent
 
 from nr_documents.records.api import NrDocumentsDraft, NrDocumentsRecord
 from nr_documents.services.records.permissions import NrDocumentsPermissionPolicy
@@ -16,7 +17,7 @@ class NrDocumentsServiceConfig(
 ):
     """NrDocumentsRecord service config."""
 
-    PERMISSIONS_PRESETS = ["authenticated"]
+    PERMISSIONS_PRESETS = ["community"]
 
     url_prefix = "/nr-documents/"
 
@@ -33,6 +34,7 @@ class NrDocumentsServiceConfig(
     components = [
         *PermissionsPresetsConfigMixin.components,
         *FilteredResultServiceConfig.components,
+        PublishDraftComponent("publish_draft", "delete_record"),
         SetCommunityComponent,
         DataComponent,
     ]

@@ -125,14 +125,13 @@ class NrDocumentsMetadataSchema(NRDocumentMetadataSchema):
         validate=[ma.validate.Length(min=1)],
     )
 
-    thesis = ma_fields.Nested(lambda: ThesisSchema())
-
 
 class NrDocumentsSchema(NRDocumentRecordSchema):
     class Meta:
         unknown = ma.RAISE
 
     syntheticFields = ma_fields.Nested(lambda: SyntheticFieldsSchema())
+    community_id = ma_fields.String()
     parent = ma.fields.Nested(GeneratedParentSchema)
 
 

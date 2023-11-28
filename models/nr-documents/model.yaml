@@ -24,8 +24,10 @@ record:
       - nr_docs_extensions.services.config.FilteredResultServiceConfig
     components:
       - SetCommunityComponent
+      - PublishDraftComponent("publish_draft", "delete_record")
     imports:
       - import: oarepo_communities.components.inclusion.SetCommunityComponent
+      - import: oarepo_requests.components.requests.PublishDraftComponent
   json-serializer:
     base-classes: [ nr_docs_extensions.services.filtered_json_ui_serializer.FilteredUIJSONSerializer ]
   resource-config:
