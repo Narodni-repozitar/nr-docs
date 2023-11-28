@@ -179,5 +179,11 @@
         margin-bottom: 0 !important;
       }
     }
+    .fields.invenio-group-field {
+      margin-bottom: 0 !important;
+      @media (max-width: 1200px) {
+        flex-wrap: wrap;
+      }
+    }
   }
 }

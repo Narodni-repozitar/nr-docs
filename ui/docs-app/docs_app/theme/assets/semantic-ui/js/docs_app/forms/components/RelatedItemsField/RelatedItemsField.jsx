@@ -74,17 +74,15 @@ class RelatedItemsFieldForm extends Component {
               return (
                 <RelatedItemsFieldItem
                   key={key}
-                  {...{
-                    displayName,
-                    index,
-                    compKey: key,
-                    initialRelatedItem: value,
-                    removeRelatedItem: formikArrayRemove,
-                    replaceRelatedItem: formikArrayReplace,
-                    moveRelatedItem: formikArrayMove,
-                    addLabel: modal.addLabel,
-                    editLabel: modal.editLabel,
-                  }}
+                  displayName={displayName}
+                  index={index}
+                  compKey={key}
+                  initialRelatedItem={value}
+                  removeRelatedItem={formikArrayRemove}
+                  replaceRelatedItem={formikArrayReplace}
+                  moveRelatedItem={formikArrayMove}
+                  addLabel={modal.addLabel}
+                  editLabel={modal.editLabel}
                 />
               );
             })}

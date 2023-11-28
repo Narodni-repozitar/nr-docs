@@ -97,11 +97,13 @@ export const RelatedItemsModal = ({
     switch (action) {
       case "saveAndContinue":
         closeModal();
+        setAction(initialAction);
         openModal();
         changeContent();
         break;
       case "saveAndClose":
         closeModal();
+        setAction(initialAction);
         break;
       default:
         break;
@@ -263,7 +265,7 @@ export const RelatedItemsModal = ({
               />
               <GroupField>
                 <LocalVocabularySelectField
-                  width={8}
+                  width={16}
                   fieldPath="itemRelationType"
                   label={
                     <FieldLabel
@@ -277,7 +279,7 @@ export const RelatedItemsModal = ({
                   optionsListName="item-relation-types"
                 />
                 <LocalVocabularySelectField
-                  width={8}
+                  width={16}
                   fieldPath="itemResourceType"
                   clearable
                   label={
@@ -305,17 +307,19 @@ export const RelatedItemsModal = ({
               floated="left"
             />
 
-            <Button
-              name="submit"
-              type="submit"
-              onClick={() => {
-                setAction("saveAndContinue");
-                handleSubmit();
-              }}
-              primary
-              icon="checkmark"
-              content={saveAndContinueLabel}
-            />
+            {action === modalActions.ADD && (
+              <Button
+                name="submit"
+                type="submit"
+                onClick={() => {
+                  setAction("saveAndContinue");
+                  handleSubmit();
+                }}
+                primary
+                icon="checkmark"
+                content={saveAndContinueLabel}
+              />
+            )}
             <Button
               name="submit"
               type="submit"
