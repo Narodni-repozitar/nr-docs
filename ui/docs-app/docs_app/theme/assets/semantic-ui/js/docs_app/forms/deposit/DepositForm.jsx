@@ -27,6 +27,7 @@ import {
   DeleteButtonComponent,
   PublishButtonComponent,
   CreatibutorsField,
+  ExternalSubjectsField,
 } from "../components/";
 import Overridable from "react-overridable";
 import { i18next } from "@translations/docs_app/i18next";
@@ -357,6 +358,16 @@ export const DepositForm = () => {
                     fieldPath="metadata.subjects"
                   >
                     <SubjectsField fieldPath="metadata.subjects" />
+                  </Overridable>
+                  <Overridable
+                    id="NrDocs.Deposit.SubjectsField.container"
+                    fieldPath="metadata.subjects"
+                  >
+                    <ExternalSubjectsField
+                      fieldPath="metadata.subjects"
+                      label={i18next.t("Subject keywords")}
+                      labelIcon="pencil"
+                    />
                   </Overridable>
                 </AccordionField>
               </Overridable>
