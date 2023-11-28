@@ -13,7 +13,7 @@ theme = WebpackThemeBundle(
             },
             dependencies={
                 "react-searchkit": "^2.0.0",
-                "react-dnd-test-backend": "^16.0.1"
+                "react-dnd-test-backend": "^16.0.1",
             },
             devDependencies={},
             aliases={
