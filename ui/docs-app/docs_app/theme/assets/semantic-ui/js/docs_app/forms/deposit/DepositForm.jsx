@@ -27,27 +27,13 @@ import {
   DeleteButtonComponent,
   PublishButtonComponent,
   CreatibutorsField,
+  RelatedItemsField,
+  objectIdentifiersSchema,
+  systemIdentifiersSchema,
 } from "../components/";
 import Overridable from "react-overridable";
 import { i18next } from "@translations/docs_app/i18next";
 import _has from "lodash/has";
-
-// not sure if these should come from formConfig better to not clutter the code
-const objectIdentifiersSchema = [
-  { value: "DOI", text: "DOI" },
-  { value: "Handle", text: "Handle" },
-  { value: "ISBN", text: "ISBN" },
-  { value: "ISSN", text: "ISSN" },
-  { value: "RIV", text: "RIV" },
-];
-
-const systemIdentifiersSchema = [
-  { value: "nusl", text: "nusl" },
-  { value: "nuslOAI", text: "nuslOAI" },
-  { value: "originalRecordOAI", text: "originalRecordOAI" },
-  { value: "catalogueSysNo", text: "catalogueSysNo" },
-  { value: "nrOAI", text: "nrOAI" },
-];
 
 export const DepositForm = () => {
   const { record, formConfig } = useFormConfig();
@@ -86,6 +72,7 @@ export const DepositForm = () => {
                     "metadata.additionalTitles",
                     "metadata.creators",
                     "metadata.contributors",
+                    "metadata.relatedItems",
                     "metadata.languages",
                     "metadata.resourceType",
                     "metadata.abstract",
@@ -148,6 +135,21 @@ export const DepositForm = () => {
                       fieldPath="metadata.contributors"
                       schema="contributors"
                       autocompleteNames="off"
+                    />
+                  </Overridable>
+                  <Overridable
+                    id="NrDocs.Deposit.RelatedItemsField.container"
+                    fieldPath="metadata.relatedItems"
+                  >
+                    <RelatedItemsField
+                      fieldPath="metadata.relatedItems"
+                      label={
+                        <FieldLabel
+                          htmlFor={"metadata.relatedItems"}
+                          icon="pencil"
+                          label={i18next.t("Link to/from other resources")}
+                        />
+                      }
                     />
                   </Overridable>
                   <Overridable

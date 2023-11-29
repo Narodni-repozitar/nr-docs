@@ -4,6 +4,35 @@ import { ArrayField, SelectField, TextField } from "react-invenio-forms";
 import { i18next } from "@translations/docs_app/i18next";
 import { ArrayFieldItem } from "@js/oarepo_ui";
 
+export const objectIdentifiersSchema = [
+  { value: "DOI", text: "DOI" },
+  { value: "Handle", text: "Handle" },
+  { value: "ISBN", text: "ISBN" },
+  { value: "ISSN", text: "ISSN" },
+  { value: "RIV", text: "RIV" },
+];
+
+export const authorityIdentifiersSchema = [
+  { value: "orcid", text: "ORCID" },
+  { value: "scopusID", text: "ScopusID" },
+  { value: "researcherID", text: "ResearcherID" },
+  { value: "czenasAutID", text: "CzenasAutID" },
+  { value: "vedidk", text: "vedIDK" },
+  { value: "institutionalID", text: "InstitutionalID" },
+  { value: "ISNI", text: "ISNI" },
+  { value: "ROR", text: "ROR" },
+  { value: "ICO", text: "ICO" },
+  { value: "DOI", text: "DOI" },
+];
+
+export const systemIdentifiersSchema = [
+  { value: "nusl", text: "nusl" },
+  { value: "nuslOAI", text: "nuslOAI" },
+  { value: "originalRecordOAI", text: "originalRecordOAI" },
+  { value: "catalogueSysNo", text: "catalogueSysNo" },
+  { value: "nrOAI", text: "nrOAI" },
+];
+
 export const IdentifiersField = ({
   fieldPath,
   helpText,
@@ -52,6 +81,7 @@ IdentifiersField.propTypes = {
   options: PropTypes.array.isRequired,
   label: PropTypes.string,
   identifierLabel: PropTypes.string,
+  className: PropTypes.string,
 };
 
 IdentifiersField.defaultProps = {

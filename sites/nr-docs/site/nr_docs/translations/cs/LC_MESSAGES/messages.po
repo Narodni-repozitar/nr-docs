@@ -923,7 +923,7 @@ msgid "This field is required"
 msgstr "Toto pole je vyžadováno"
 
 msgid "Must have at least x characters"
-msgstr "Musí mít alespoň {{min}} znaků"
+msgstr "musí mít alespoň {{min}} znaků"
 
 msgid "Items must be unique"
 msgstr "Položky musí se nesmí opakovat"
@@ -2735,3 +2735,45 @@ msgid "Should be an interval indicating start and end date of the event."
 msgstr ""
 "Měl by být interval udávající datum začátku a konce události. Například "
 "RRRR-MM-DD/RRRR-MM-DD."
+
+msgid "Related items"
+msgstr "Související položky"
+
+msgid "Add related item"
+msgstr "Přidat související položku"
+
+msgid "Edit related item"
+msgstr "Upravit související položku"
+
+msgid "Year must be in format YYYY"
+msgstr "Rok musí být ve formátu RRRR"
+
+msgid "URL"
+msgstr "URL"
+
+msgid "Year"
+msgstr "Rok"
+
+msgid "Volume"
+msgstr "Ročník"
+
+msgid "Issue"
+msgstr "Číslo"
+
+msgid "Start page"
+msgstr "Počáteční strana"
+
+msgid "End page"
+msgstr "Poslední strana"
+
+msgid "Publisher"
+msgstr "Vydavatel"
+
+msgid "Relation type"
+msgstr "Typ vazby"
+
+msgid "Choose relation type"
+msgstr "Vyberte typ vazby"
+
+msgid "Link to/from other resources"
+msgstr "Vazba na/z dalších zdrojů"
