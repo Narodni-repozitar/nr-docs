@@ -4,7 +4,7 @@
     {% for event in data %}
     <div class="item">
         <div class="content">
-            {{event.eventNameOriginal}} {% if event.eventNameAlternate %} ({{ event.eventNameAlternate[0] }}) {% endif -%} @ {{event.eventLocation.place}} ({{event.eventLocation.country.title}}) {{ _('on') }} {{event.eventDate}} {{event}}
+            {{event.eventNameOriginal}} {% if event.eventNameAlternate %} ({{ event.eventNameAlternate[0] }}) {% endif -%} @ {{event.eventLocation.place}} ({{event.eventLocation.country.title}}) {{ _('on') }} {{event.eventDate}}
         </div>
     </div>
     {% endfor %}
