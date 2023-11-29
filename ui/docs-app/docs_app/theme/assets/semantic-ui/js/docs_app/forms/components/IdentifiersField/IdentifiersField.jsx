@@ -12,6 +12,19 @@ export const objectIdentifiersSchema = [
   { value: "RIV", text: "RIV" },
 ];
 
+export const authorityIdentifiersSchema = [
+  { value: "orcid", text: "ORCID" },
+  { value: "scopusID", text: "ScopusID" },
+  { value: "researcherID", text: "ResearcherID" },
+  { value: "czenasAutID", text: "CzenasAutID" },
+  { value: "vedidk", text: "vedIDK" },
+  { value: "institutionalID", text: "InstitutionalID" },
+  { value: "ISNI", text: "ISNI" },
+  { value: "ROR", text: "ROR" },
+  { value: "ICO", text: "ICO" },
+  { value: "DOI", text: "DOI" },
+];
+
 export const systemIdentifiersSchema = [
   { value: "nusl", text: "nusl" },
   { value: "nuslOAI", text: "nuslOAI" },
