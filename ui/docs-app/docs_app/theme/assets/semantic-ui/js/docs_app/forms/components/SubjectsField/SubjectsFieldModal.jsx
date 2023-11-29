@@ -7,12 +7,12 @@
 // Invenio-RDM-Records is free software; you can redistribute it and/or modify it
 // under the terms of the MIT License; see LICENSE file for more details.
 
-import React from "react";
+import React, { Component } from "react";
 import { Button, Form, Grid, Header, Modal, Dropdown } from "semantic-ui-react";
 import { Formik } from "formik";
 import * as Yup from "yup";
 import { i18next } from "@translations/docs_app/i18next";
-import { SelectField } from "react-invenio-forms";
+import { SelectField, RemoteSelectField } from "react-invenio-forms";
 
 import PropTypes from "prop-types";
 
@@ -26,7 +26,28 @@ import {
   InvenioSearchApi,
   Pagination,
   ResultsPerPage,
+  ResultsList,
+  withState,
 } from "react-searchkit";
+
+class BStateLogger extends Component {
+  render() {
+    return (
+      <>
+        <div>
+          Current query state{" "}
+          <pre>{JSON.stringify(this.props.currentQueryState, null, 2)}</pre>
+        </div>
+        <div>
+          Current results state{" "}
+          <pre>{JSON.stringify(this.props.currentResultsState, null, 2)}</pre>
+        </div>
+      </>
+    );
+  }
+}
+
+const StateLogger = withState(BStateLogger);
 
 const schemeOptions = [
   //   { value: "psh", text: "PSH" },
@@ -35,12 +56,9 @@ const schemeOptions = [
   { value: "resource-types", text: "resource-types" },
 ];
 
-const overriddenComponents = {};
+const MyResultsListItem = ({ result, index }) => <div>{result.title.cs}</div>;
+const overriddenComponents = { "ResultsList.item": MyResultsListItem };
 
-const modalActions = {
-  ADD: "add",
-  EDIT: "edit",
-};
 export const SubjectsFieldModal = ({
   initialRelatedItem,
   initialAction,
@@ -51,24 +69,18 @@ export const SubjectsFieldModal = ({
   fieldPath,
   suggestionAPIHeaders,
   //   searchAppConfig,
+  open,
+  closeModal,
+  openModal,
+  subjectScheme,
+  schemeOptions,
 }) => {
-  const [open, setOpen] = React.useState(false);
+  // const [open, setOpen] = React.useState(false);
   const [action, setAction] = React.useState(initialAction);
   const [saveAndContinueLabel, setSaveAndContinueLabel] = React.useState(
     i18next.t("Save and add another")
   );
-  const [subjectScheme, setSubjectScheme] = React.useState("institutions");
 
-  const handleChange = ({ e, data }) => {
-    setSubjectScheme(data.value);
-  };
-
-  const openModal = () => {
-    setOpen(true);
-  };
-  const closeModal = () => {
-    setOpen(false);
-  };
   const searchConfig = {
     searchApi: {
       axios: {
@@ -101,7 +113,8 @@ export const SubjectsFieldModal = ({
     }, 1000);
   };
   const searchApi = new InvenioSearchApi(searchConfig.searchApi);
-
+  console.log(searchApi);
+  console.log("entire modal rerender");
   return (
     <Modal
       className="related-items-modal"
@@ -119,8 +132,8 @@ export const SubjectsFieldModal = ({
       <Modal.Header as="h6">
         <Grid>
           <Grid.Column floated="left" width={8}>
-            <Header className="rel-pt-1 rel-pb-1" as="h2">
-              {action === modalActions.ADD ? addLabel : editLabel}
+            <Header as="h2">
+              {schemeOptions.find((o) => o.value === subjectScheme)?.text}
             </Header>
           </Grid.Column>
         </Grid>
@@ -130,23 +143,12 @@ export const SubjectsFieldModal = ({
           <ReactSearchKit
             searchApi={searchApi}
             searchOnInit={false}
-            // initialQueryState={searchAppConfig.initialQueryState}
+            initialQueryState={searchConfig.initialQueryState}
             urlHandlerApi={{ enabled: false }}
           >
             <Grid>
               <Grid.Row>
-                <Grid.Column width={4}>
-                  <Form.Field>
-                    <SelectField
-                      //   label={i18next.t("Subject scheme")}
-                      //   required
-                      options={schemeOptions}
-                      value={subjectScheme}
-                      onChange={handleChange}
-                    />
-                  </Form.Field>
-                </Grid.Column>
-                <Grid.Column width={12} floated="left" verticalAlign="middle">
+                <Grid.Column width={16} floated="left" verticalAlign="middle">
                   <SearchBar
                     placeholder={i18next.t("search")}
                     autofocus
@@ -161,6 +163,7 @@ export const SubjectsFieldModal = ({
               <Grid.Row verticalAlign="middle">
                 <Grid.Column>
                   <ResultsLoader>
+                    <ResultsList />
                     <EmptyResults />
                     <Error />
                   </ResultsLoader>
@@ -177,6 +180,9 @@ export const SubjectsFieldModal = ({
                     // label={ResultsPerPageLabel}
                   />
                 </Grid.Column>
+              </Grid.Row>
+              <Grid.Row>
+                <StateLogger />
               </Grid.Row>
             </Grid>
           </ReactSearchKit>

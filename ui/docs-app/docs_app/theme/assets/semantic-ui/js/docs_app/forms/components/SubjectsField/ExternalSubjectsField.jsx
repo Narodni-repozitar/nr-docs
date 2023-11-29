@@ -1,9 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 import { SubjectsFieldModal } from "./SubjectsFieldModal";
-import { Button, Icon, Form } from "semantic-ui-react";
+import { Button, Icon, Form, Dropdown } from "semantic-ui-react";
 import { i18next } from "@translations/docs_app/i18next";
 import { FieldLabel } from "react-invenio-forms";
+
+const schemeOptions = [
+  //   { value: "psh", text: "PSH" },
+  //   { value: "czenas", text: "Czenas" },
+  { value: "institutions", text: "institutions" },
+  { value: "resource-types", text: "resource-types" },
+];
 
 export const ExternalSubjectsField = ({
   fieldPath,
@@ -18,9 +25,33 @@ export const ExternalSubjectsField = ({
   searchAppUrl,
   suggestionAPIHeaders,
 }) => {
+  const [subjectScheme, setSubjectScheme] = React.useState("");
+
+  const [open, setOpen] = React.useState(false);
+  const openModal = () => {
+    setOpen(true);
+  };
+  const closeModal = () => {
+    setOpen(false);
+    setSubjectScheme("");
+  };
   return (
     <Form.Field>
       <FieldLabel label={label} icon={labelIcon} hmtlFor={fieldPath} />
+      <Dropdown
+        button
+        text={addButtonLabel}
+        options={schemeOptions}
+        icon="add"
+        labeled
+        className="icon"
+        selectOnBlur={false}
+        value={subjectScheme}
+        onChange={(e, { value }) => {
+          setSubjectScheme(value);
+          openModal();
+        }}
+      />
       <SubjectsFieldModal
         suggestionAPIHeaders={suggestionAPIHeaders}
         searchAppConfig={searchAppConfig}
@@ -28,12 +59,11 @@ export const ExternalSubjectsField = ({
         addLabel={addLabel}
         editLabel={editLabel}
         fieldPath={fieldPath}
-        trigger={
-          <Button type="button" icon labelPosition="left">
-            <Icon name="add" />
-            {addButtonLabel}
-          </Button>
-        }
+        open={open}
+        closeModal={closeModal}
+        openModal={openModal}
+        subjectScheme={subjectScheme}
+        schemeOptions={schemeOptions}
       />
     </Form.Field>
   );
@@ -42,7 +72,7 @@ export const ExternalSubjectsField = ({
 ExternalSubjectsField.defaultProps = {
   addButtonLabel: i18next.t("Add keyword"),
   suggestionAPIHeaders: {
-    Accept: "application/vnd.inveniordm.v1+json",
+    Accept: "application/json",
   },
   searchAppConfig: {
     searchApi: {
