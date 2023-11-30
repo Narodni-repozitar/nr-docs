@@ -1,82 +1,25 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 import { SubjectsFieldModal } from "./SubjectsFieldModal";
-import { Button, Icon, Form, Dropdown } from "semantic-ui-react";
+import { Form, Dropdown } from "semantic-ui-react";
 import { i18next } from "@translations/docs_app/i18next";
 import { FieldLabel } from "react-invenio-forms";
 import { useFormikContext, getIn } from "formik";
 import _flatMap from "lodash/flatMap";
 import _groupBy from "lodash/groupBy";
+
 const schemeOptions = [
-  //   { value: "psh", text: "PSH" },
-  //   { value: "czenas", text: "Czenas" },
+  { value: "psh", text: "PSH" },
+  { value: "czenas", text: "Czenas" },
   { value: "institutions", text: "institutions" },
   { value: "resource-types", text: "resource-types" },
 ];
 
-const serverData = [
-  {
-    classificationCode: "uk-1-lekarska-fakulta",
-    subject: [
-      {
-        lang: "cs",
-        value: "1. lékařská fakulta",
-      },
-      {
-        lang: "en",
-        value: "First Faculty of Medicine",
-      },
-    ],
-    subjectScheme: "institutions",
-    valueURI:
-      "https://0.0.0.0:5000/vocabularies/institutions/uk-1-lekarska-fakulta",
-  },
-  {
-    classificationCode: "uk-2-lekarska-fakulta",
-    subject: [
-      {
-        lang: "cs",
-        value: "2. lékařská fakulta",
-      },
-      {
-        lang: "en",
-        value: "Second Faculty of Medicine",
-      },
-    ],
-    subjectScheme: "institutions",
-    valueURI:
-      "https://0.0.0.0:5000/vocabularies/institutions/uk-2-lekarska-fakulta",
-  },
-  {
-    classificationCode: "uk-3-lekarska-fakulta",
-    subject: [
-      {
-        lang: "cs",
-        value: "3. lékařská fakulta",
-      },
-      {
-        lang: "en",
-        value: "Third Faculty of Medicine",
-      },
-    ],
-    subjectScheme: "institutions",
-    valueURI:
-      "https://0.0.0.0:5000/vocabularies/institutions/uk-3-lekarska-fakulta",
-  },
-];
-console.log(_groupBy(serverData, "subjectScheme"));
-
 export const ExternalSubjectsField = ({
   fieldPath,
-  helpText,
-  defaultNewValue,
-  editLabel,
-  addLabel,
   addButtonLabel,
   labelIcon,
   label,
-  searchAppConfig,
-  searchAppUrl,
   suggestionAPIHeaders,
 }) => {
   const [subjectScheme, setSubjectScheme] = React.useState("");
@@ -91,7 +34,6 @@ export const ExternalSubjectsField = ({
   const [externalSubjects, setExternalSubjects] = useState(
     initialExternalSubjects
   );
-  console.log(externalSubjects);
   const [open, setOpen] = React.useState(false);
   const openModal = () => {
     setOpen(true);
@@ -125,7 +67,6 @@ export const ExternalSubjectsField = ({
 
   const handleAddSubjects = () => {
     const subjectsArray = _flatMap(externalSubjects, (array) => array);
-    console.log(subjectsArray);
     setFieldValue(fieldPath, subjectsArray);
   };
 
@@ -152,10 +93,6 @@ export const ExternalSubjectsField = ({
       />
       <SubjectsFieldModal
         suggestionAPIHeaders={suggestionAPIHeaders}
-        searchAppConfig={searchAppConfig}
-        initialAction="add"
-        addLabel={addLabel}
-        editLabel={editLabel}
         fieldPath={fieldPath}
         open={open}
         closeModal={closeModal}
@@ -171,26 +108,17 @@ export const ExternalSubjectsField = ({
     </Form.Field>
   );
 };
+ExternalSubjectsField.propTypes = {
+  fieldPath: PropTypes.string.isRequired,
+  addButtonLabel: PropTypes.string,
+  labelIcon: PropTypes.string,
+  label: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
+  suggestionAPIHeaders: PropTypes.object,
+};
 
 ExternalSubjectsField.defaultProps = {
   addButtonLabel: i18next.t("Add keyword"),
   suggestionAPIHeaders: {
     Accept: "application/json",
-  },
-  searchAppConfig: {
-    searchApi: {
-      url: "",
-      withCredentials: false,
-      headers: {},
-    },
-    initialQueryState: {},
-    aggs: [],
-    sortOptions: [],
-    paginationOptions: {},
-    layoutOptions: {
-      listView: true,
-      gridView: false,
-    },
-    defaultSortingOnEmptyQueryString: {},
   },
 };

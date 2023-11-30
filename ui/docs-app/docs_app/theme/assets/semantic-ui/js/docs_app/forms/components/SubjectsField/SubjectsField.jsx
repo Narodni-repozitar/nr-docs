@@ -20,20 +20,20 @@ export const SubjectsField = ({ fieldPath, helpText, defaultNewValue }) => {
       {({ arrayHelpers, indexPath, array }) => {
         const fieldPathPrefix = `${fieldPath}.${indexPath}`;
         return (
-          <ArrayFieldItem
-            indexPath={indexPath}
-            arrayHelpers={arrayHelpers}
-            className={"invenio-group-field subjects"}
-          >
-            <SelectField
-              width={5}
-              fieldPath={`${fieldPathPrefix}.subjectScheme`}
-              label={i18next.t("Subject scheme")}
-              required
-              options={options}
-            />
-            <Form.Field style={{ marginTop: 0 }} width={12}>
-              {/* {array[indexPath].subjectScheme === "keyword" && (
+          array[indexPath].subjectScheme === "keyword" && (
+            <ArrayFieldItem
+              indexPath={indexPath}
+              arrayHelpers={arrayHelpers}
+              className={"invenio-group-field subjects"}
+            >
+              <SelectField
+                width={5}
+                fieldPath={`${fieldPathPrefix}.subjectScheme`}
+                label={i18next.t("Subject scheme")}
+                required
+                options={options}
+              />
+              <Form.Field style={{ marginTop: 0 }} width={12}>
                 <MultilingualTextInput
                   fieldPath={`${fieldPathPrefix}.subject`}
                   lngFieldWidth={5}
@@ -41,16 +41,9 @@ export const SubjectsField = ({ fieldPath, helpText, defaultNewValue }) => {
                   required
                   showEmptyValue
                 />
-              )} */}
-              <MultilingualTextInput
-                fieldPath={`${fieldPathPrefix}.subject`}
-                lngFieldWidth={5}
-                textFieldLabel={i18next.t("Subject")}
-                required
-                showEmptyValue
-              />
-            </Form.Field>
-          </ArrayFieldItem>
+              </Form.Field>
+            </ArrayFieldItem>
+          )
         );
       }}
     </ArrayField>

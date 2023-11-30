@@ -1,21 +1,10 @@
-import React, { useMemo } from "react";
-import {
-  Header,
-  Grid,
-  Icon,
-  Label,
-  List,
-  Container,
-  Checkbox,
-} from "semantic-ui-react";
+import React from "react";
+import { List, Container, Checkbox } from "semantic-ui-react";
 import { withState } from "react-searchkit";
 import PropTypes from "prop-types";
 import Overridable from "react-overridable";
-import { i18next } from "@translations/oarepo_ui/i18next";
-import { useFormikContext } from "formik";
 import _truncate from "lodash/truncate";
 import { object2array } from "@js/oarepo_ui";
-console.log(object2array);
 
 export const ResultsList = withState(
   ({
@@ -27,8 +16,6 @@ export const ResultsList = withState(
     externalSubjects,
     handleCheckboxChange,
   }) => {
-    const { setFieldValue } = useFormikContext();
-    console.log(results?.data?.hits);
     return (
       <Overridable id="ExternalApiSuggestions.container" results={results}>
         <Container>

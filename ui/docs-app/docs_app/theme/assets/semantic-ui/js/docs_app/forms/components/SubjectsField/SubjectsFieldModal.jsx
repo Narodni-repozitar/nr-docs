@@ -7,21 +7,9 @@
 // Invenio-RDM-Records is free software; you can redistribute it and/or modify it
 // under the terms of the MIT License; see LICENSE file for more details.
 
-import React, { Component } from "react";
-import {
-  Button,
-  Form,
-  Grid,
-  Header,
-  Modal,
-  Dropdown,
-  Label,
-} from "semantic-ui-react";
-import { Formik } from "formik";
-import * as Yup from "yup";
+import React from "react";
+import { Button, Grid, Header, Modal, Label } from "semantic-ui-react";
 import { i18next } from "@translations/docs_app/i18next";
-import { SelectField, RemoteSelectField } from "react-invenio-forms";
-
 import PropTypes from "prop-types";
 import { EmptyResultsElement } from "@js/oarepo_ui/search";
 import { OverridableContext } from "react-overridable";
@@ -34,50 +22,15 @@ import {
   InvenioSearchApi,
   Pagination,
   ResultsPerPage,
-  withState,
 } from "react-searchkit";
 import { ResultsList } from "./ResultsList";
 
-console.log(EmptyResultsElement);
-
-class BStateLogger extends Component {
-  render() {
-    return (
-      <>
-        <div>
-          Current query state{" "}
-          <pre>{JSON.stringify(this.props.currentQueryState, null, 2)}</pre>
-        </div>
-        <div>
-          Current results state{" "}
-          <pre>{JSON.stringify(this.props.currentResultsState, null, 2)}</pre>
-        </div>
-      </>
-    );
-  }
-}
-
-const StateLogger = withState(BStateLogger);
-
-const schemeOptions = [
-  //   { value: "psh", text: "PSH" },
-  //   { value: "czenas", text: "Czenas" },
-  { value: "institutions", text: "institutions" },
-  { value: "resource-types", text: "resource-types" },
-];
-
-const MyResultsListItem = ({ result, index }) => <div>{result.title.cs}</div>;
 const overriddenComponents = {
-  "ResultsList.item": MyResultsListItem,
   "EmptyResults.element": EmptyResultsElement,
 };
 
 export const SubjectsFieldModal = ({
-  initialAction,
-  trigger,
-  fieldPath,
   suggestionAPIHeaders,
-  //   searchAppConfig,
   open,
   closeModal,
   openModal,
@@ -122,7 +75,6 @@ export const SubjectsFieldModal = ({
       centered={false}
       onOpen={() => openModal()}
       open={open}
-      trigger={trigger}
       onClose={() => {
         closeModal();
       }}
@@ -230,14 +182,14 @@ export const SubjectsFieldModal = ({
 };
 
 SubjectsFieldModal.propTypes = {
-  initialRelatedItem: PropTypes.object,
-  initialAction: PropTypes.string.isRequired,
-  addLabel: PropTypes.string,
-  editLabel: PropTypes.string,
-  onRelatedItemChange: PropTypes.func,
-  trigger: PropTypes.node,
-};
-
-SubjectsFieldModal.defaultProps = {
-  initialRelatedItem: {},
+  suggestionAPIHeaders: PropTypes.object.isRequired,
+  open: PropTypes.bool.isRequired,
+  closeModal: PropTypes.func.isRequired,
+  openModal: PropTypes.func.isRequired,
+  subjectScheme: PropTypes.string.isRequired,
+  schemeOptions: PropTypes.array,
+  externalSubjects: PropTypes.object,
+  handleCheckboxChange: PropTypes.func.isRequired,
+  handleRemove: PropTypes.func.isRequired,
+  handleAddSubjects: PropTypes.func.isRequired,
 };
