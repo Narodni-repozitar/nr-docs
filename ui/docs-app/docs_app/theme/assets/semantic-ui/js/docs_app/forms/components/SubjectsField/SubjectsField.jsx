@@ -33,7 +33,7 @@ export const SubjectsField = ({ fieldPath, helpText, defaultNewValue }) => {
               options={options}
             />
             <Form.Field style={{ marginTop: 0 }} width={12}>
-              {array[indexPath].subjectScheme === "keyword" && (
+              {/* {array[indexPath].subjectScheme === "keyword" && (
                 <MultilingualTextInput
                   fieldPath={`${fieldPathPrefix}.subject`}
                   lngFieldWidth={5}
@@ -41,7 +41,14 @@ export const SubjectsField = ({ fieldPath, helpText, defaultNewValue }) => {
                   required
                   showEmptyValue
                 />
-              )}
+              )} */}
+              <MultilingualTextInput
+                fieldPath={`${fieldPathPrefix}.subject`}
+                lngFieldWidth={5}
+                textFieldLabel={i18next.t("Subject")}
+                required
+                showEmptyValue
+              />
             </Form.Field>
           </ArrayFieldItem>
         );

@@ -8,14 +8,22 @@
 // under the terms of the MIT License; see LICENSE file for more details.
 
 import React, { Component } from "react";
-import { Button, Form, Grid, Header, Modal, Dropdown } from "semantic-ui-react";
+import {
+  Button,
+  Form,
+  Grid,
+  Header,
+  Modal,
+  Dropdown,
+  Label,
+} from "semantic-ui-react";
 import { Formik } from "formik";
 import * as Yup from "yup";
 import { i18next } from "@translations/docs_app/i18next";
 import { SelectField, RemoteSelectField } from "react-invenio-forms";
 
 import PropTypes from "prop-types";
-
+import { EmptyResultsElement } from "@js/oarepo_ui/search";
 import { OverridableContext } from "react-overridable";
 import {
   EmptyResults,
@@ -26,9 +34,11 @@ import {
   InvenioSearchApi,
   Pagination,
   ResultsPerPage,
-  ResultsList,
   withState,
 } from "react-searchkit";
+import { ResultsList } from "./ResultsList";
+
+console.log(EmptyResultsElement);
 
 class BStateLogger extends Component {
   render() {
@@ -57,14 +67,13 @@ const schemeOptions = [
 ];
 
 const MyResultsListItem = ({ result, index }) => <div>{result.title.cs}</div>;
-const overriddenComponents = { "ResultsList.item": MyResultsListItem };
+const overriddenComponents = {
+  "ResultsList.item": MyResultsListItem,
+  "EmptyResults.element": EmptyResultsElement,
+};
 
 export const SubjectsFieldModal = ({
-  initialRelatedItem,
   initialAction,
-  addLabel,
-  editLabel,
-  onRelatedItemChange,
   trigger,
   fieldPath,
   suggestionAPIHeaders,
@@ -74,13 +83,11 @@ export const SubjectsFieldModal = ({
   openModal,
   subjectScheme,
   schemeOptions,
+  externalSubjects,
+  handleCheckboxChange,
+  handleRemove,
+  handleAddSubjects,
 }) => {
-  // const [open, setOpen] = React.useState(false);
-  const [action, setAction] = React.useState(initialAction);
-  const [saveAndContinueLabel, setSaveAndContinueLabel] = React.useState(
-    i18next.t("Save and add another")
-  );
-
   const searchConfig = {
     searchApi: {
       axios: {
@@ -106,15 +113,8 @@ export const SubjectsFieldModal = ({
       gridView: false,
     },
   };
-  const changeContent = () => {
-    setSaveAndContinueLabel(i18next.t("Added"));
-    setTimeout(() => {
-      setSaveAndContinueLabel(i18next.t("Save and add another"));
-    }, 1000);
-  };
+
   const searchApi = new InvenioSearchApi(searchConfig.searchApi);
-  console.log(searchApi);
-  console.log("entire modal rerender");
   return (
     <Modal
       className="related-items-modal"
@@ -161,17 +161,21 @@ export const SubjectsFieldModal = ({
                 </Grid.Column>
               </Grid.Row>
               <Grid.Row verticalAlign="middle">
-                <Grid.Column>
+                <Grid.Column textAlign="left">
                   <ResultsLoader>
-                    <ResultsList />
+                    <ResultsList
+                      subjectScheme={subjectScheme}
+                      externalSubjects={externalSubjects}
+                      handleCheckboxChange={handleCheckboxChange}
+                    />
                     <EmptyResults />
                     <Error />
                   </ResultsLoader>
                 </Grid.Column>
               </Grid.Row>
               <Grid.Row verticalAlign="middle">
-                <Grid.Column>
-                  <Pagination options={{ size: "tiny" }} />
+                <Grid.Column textAlign="center" width={13}>
+                  <Pagination options={{ size: "mini" }} />
                 </Grid.Column>
 
                 <Grid.Column floated="right" width={3}>
@@ -181,12 +185,23 @@ export const SubjectsFieldModal = ({
                   />
                 </Grid.Column>
               </Grid.Row>
-              <Grid.Row>
+              {/* <Grid.Row>
                 <StateLogger />
-              </Grid.Row>
+              </Grid.Row> */}
             </Grid>
           </ReactSearchKit>
         </OverridableContext.Provider>
+        <Header as="h3" content={i18next.t("Selected subjects")} />
+        <Label.Group>
+          {externalSubjects[subjectScheme]?.map((externalSubject) => (
+            <Label
+              key={externalSubject.classificationCode}
+              icon="close"
+              onClick={() => handleRemove(externalSubject)}
+              content={externalSubject?.subject[0]?.value}
+            />
+          ))}
+        </Label.Group>
       </Modal.Content>
       <Modal.Actions>
         <Button
@@ -198,20 +213,12 @@ export const SubjectsFieldModal = ({
           content={i18next.t("Cancel")}
           floated="left"
         />
-
-        <Button
-          onClick={() => {
-            setAction("saveAndContinue");
-          }}
-          primary
-          icon="checkmark"
-          content={saveAndContinueLabel}
-        />
         <Button
           name="submit"
           type="submit"
           onClick={() => {
-            setAction("saveAndClose");
+            handleAddSubjects();
+            closeModal();
           }}
           primary
           icon="checkmark"
