@@ -9,20 +9,10 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { i18next } from "@translations/docs_app/i18next";
-import { IdentifiersField } from "../IdentifiersField";
-
-const authorityIdentifiersSchema = [
-  { value: "orcid", text: "ORCID" },
-  { value: "scopusID", text: "ScopusID" },
-  { value: "researcherID", text: "ResearcherID" },
-  { value: "czenasAutID", text: "CzenasAutID" },
-  { value: "vedidk", text: "vedIDK" },
-  { value: "institutionalID", text: "InstitutionalID" },
-  { value: "ISNI", text: "ISNI" },
-  { value: "ROR", text: "ROR" },
-  { value: "ICO", text: "ICO" },
-  { value: "DOI", text: "DOI" },
-];
+import {
+  IdentifiersField,
+  authorityIdentifiersSchema,
+} from "../IdentifiersField";
 
 export class CreatibutorsIdentifiers extends Component {
   valuesToOptions = (options) =>

@@ -13,7 +13,7 @@ import { useDrag, useDrop } from "react-dnd";
 import { Button, Label, List, Ref } from "semantic-ui-react";
 import { CreatibutorsModal } from "./CreatibutorsModal";
 import PropTypes from "prop-types";
-import { I18nString } from "@js/oarepo_ui";
+import { useFormConfig } from "@js/oarepo_ui";
 
 export const CreatibutorsFieldItem = ({
   compKey,
@@ -58,11 +58,19 @@ export const CreatibutorsFieldItem = ({
     }),
   });
 
+  const {
+    formConfig: { vocabularies },
+  } = useFormConfig();
+
   const renderRole = (role) => {
     return (
       role && (
         <Label size="tiny">
-          <I18nString value={role.title} />
+          {
+            vocabularies["contributor-roles"].all.find(
+              (item) => item.value === role.id
+            ).text
+          }
         </Label>
       )
     );

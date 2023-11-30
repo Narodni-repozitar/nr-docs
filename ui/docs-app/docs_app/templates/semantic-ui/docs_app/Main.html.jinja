@@ -51,7 +51,9 @@
         <VocabularyArray vocabulary={metadata.rights} search_link={record.extra_links.search_link} searchFacet="metadata_rights" vocabulary_type="licenses"></VocabularyArray>
     </Field>
 
-    <Field label={ _('metadata/events.label') }>{{metadata.events}}</Field>
+    <Field label={ _('metadata/events.label') }>
+        <NrEvents data={metadata.events}></NrEvents>
+    </Field>
     <Field label={ _('metadata/externalLocation.label') }>
         <NrExternalLocation data={metadata.externalLocation}></NrExternalLocation>
     </Field>
@@ -61,7 +63,7 @@
     </Field>
     {% endif %}
     {% if metadata.relatedItems %}
-    <Field label= {_('metadata/relatedItems.label')}><RelatedItems relatedItems={metadata.relatedItems}></RelatedItems></Field>
+    <Field label= {_('metadata/relatedItems.label')}><RelatedItems relatedItems={metadata.relatedItems} search_link={record.extra_links.search_link}></RelatedItems></Field>
     {% endif %}
     <Field label={ _('metadata/geoLocations.label') }>
         <NrGeolocation data={metadata.geoLocations}></NrGeolocation>
