@@ -5,13 +5,13 @@ import {
   BaseForm,
   FormFeedback,
   FormikStateLogger,
+  EDTFSingleDatePicker,
 } from "@js/oarepo_ui";
 import { LocalVocabularySelectField } from "@js/oarepo_vocabularies";
 import { AccordionField, FieldLabel, TextField } from "react-invenio-forms";
 import { Container, Grid, Ref, Sticky, Card } from "semantic-ui-react";
 import { NRDocumentValidationSchema } from "./NRDocumentValidationSchema";
 import {
-  DateField,
   StringArrayField,
   AdditionalTitlesField,
   GeoLocationsField,
@@ -27,27 +27,13 @@ import {
   DeleteButtonComponent,
   PublishButtonComponent,
   CreatibutorsField,
+  RelatedItemsField,
+  objectIdentifiersSchema,
+  systemIdentifiersSchema,
 } from "../components/";
 import Overridable from "react-overridable";
 import { i18next } from "@translations/docs_app/i18next";
 import _has from "lodash/has";
-
-// not sure if these should come from formConfig better to not clutter the code
-const objectIdentifiersSchema = [
-  { value: "DOI", text: "DOI" },
-  { value: "Handle", text: "Handle" },
-  { value: "ISBN", text: "ISBN" },
-  { value: "ISSN", text: "ISSN" },
-  { value: "RIV", text: "RIV" },
-];
-
-const systemIdentifiersSchema = [
-  { value: "nusl", text: "nusl" },
-  { value: "nuslOAI", text: "nuslOAI" },
-  { value: "originalRecordOAI", text: "originalRecordOAI" },
-  { value: "catalogueSysNo", text: "catalogueSysNo" },
-  { value: "nrOAI", text: "nrOAI" },
-];
 
 export const DepositForm = () => {
   const { record, formConfig } = useFormConfig();
@@ -86,6 +72,7 @@ export const DepositForm = () => {
                     "metadata.additionalTitles",
                     "metadata.creators",
                     "metadata.contributors",
+                    "metadata.relatedItems",
                     "metadata.languages",
                     "metadata.resourceType",
                     "metadata.abstract",
@@ -114,7 +101,6 @@ export const DepositForm = () => {
                       }
                     />
                   </Overridable>
-
                   <Overridable
                     id="NrDocs.Deposit.AdditionalTitlesField.container"
                     fieldPath="metadata.additionalTitles"
@@ -149,6 +135,21 @@ export const DepositForm = () => {
                       fieldPath="metadata.contributors"
                       schema="contributors"
                       autocompleteNames="off"
+                    />
+                  </Overridable>
+                  <Overridable
+                    id="NrDocs.Deposit.RelatedItemsField.container"
+                    fieldPath="metadata.relatedItems"
+                  >
+                    <RelatedItemsField
+                      fieldPath="metadata.relatedItems"
+                      label={
+                        <FieldLabel
+                          htmlFor={"metadata.relatedItems"}
+                          icon="pencil"
+                          label={i18next.t("Link to/from other resources")}
+                        />
+                      }
                     />
                   </Overridable>
                   <Overridable
@@ -202,6 +203,7 @@ export const DepositForm = () => {
                       rich={true}
                       required
                       helpText={i18next.t("Detailed description")}
+                      lngFieldWidth={4}
                     />
                   </Overridable>
                   <Overridable
@@ -249,9 +251,12 @@ export const DepositForm = () => {
                     id="NrDocs.Deposit.DateAvailableField.container"
                     fieldPath="metadata.dateAvailable"
                   >
-                    <DateField
+                    <EDTFSingleDatePicker
                       fieldPath="metadata.dateAvailable"
                       label={i18next.t("Date available")}
+                      helpText={i18next.t(
+                        "If the dataset has been published elsewhere, use the date of first publication. You can also specify a future publication date (for embargo). If you do not enter a date, the system will automatically fill the date when the record is published. Format: YYYY-MM-DD, YYYYY-MM or YYYYY."
+                      )}
                     />
                   </Overridable>
                   <Overridable
@@ -259,7 +264,7 @@ export const DepositForm = () => {
                     fieldPath="metadata.dateModified"
                   >
                     {editMode && (
-                      <DateField
+                      <EDTFSingleDatePicker
                         fieldPath="metadata.dateModified"
                         label={i18next.t("Date modified")}
                         helpText=""
@@ -323,6 +328,7 @@ export const DepositForm = () => {
                       rich={true}
                       required
                       textFieldLabel={i18next.t("Description")}
+                      lngFieldWidth={4}
                     />
                   </Overridable>
                   <Overridable
@@ -339,6 +345,7 @@ export const DepositForm = () => {
                       helpText={i18next.t(
                         "Detailed information that may be associated with design, implementation, operation, use, and/or maintenance of a process or system"
                       )}
+                      lngFieldWidth={4}
                     />
                   </Overridable>
                   <Overridable

@@ -1,5 +1,4 @@
 export * from "./StringArray";
-export * from "./DateField";
 export * from "./AdditionalTitlesField";
 export * from "./GeoLocationsField";
 export * from "./FundersField";
@@ -14,3 +13,4 @@ export * from "./SaveButton";
 export * from "./DeleteButton";
 export * from "./PublishButton";
 export * from "./CreatibutorsField";
+export * from "./RelatedItemsField";

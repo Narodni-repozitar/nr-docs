@@ -2,7 +2,7 @@ import * as Yup from "yup";
 import { i18next } from "@translations/docs_app/i18next";
 import _uniqBy from "lodash/uniqBy";
 
-const requiredMessage = ({ label }) =>
+export const requiredMessage = ({ label }) =>
   `${label} ${i18next.t("is a required field")}`;
 
 const stringLengthMessage = ({ min, label }) =>
@@ -14,7 +14,7 @@ const returnGroupError = (value, context) => {
 
 const edtfRegEx = /^(\d{4})(-(\d{2})(-(\d{2}))?)?(\/\d{4}(-\d{2}(-\d{2})?)?)?$/;
 
-const unique = (value, context, path, errorString) => {
+export const unique = (value, context, path, errorString) => {
   if (!value || value.length < 2) {
     return true;
   }

@@ -11,24 +11,31 @@ import PropTypes from "prop-types";
 import { getIn, FieldArray } from "formik";
 import { Button, Form, Label, List, Icon } from "semantic-ui-react";
 import _get from "lodash/get";
+import _truncate from "lodash/truncate";
 import { FieldLabel } from "react-invenio-forms";
 import { HTML5Backend } from "react-dnd-html5-backend";
 import { DndProvider } from "react-dnd";
-
-import { CreatibutorsModal } from "./CreatibutorsModal";
-import { CreatibutorsFieldItem } from "./CreatibutorsFieldItem";
+import { RelatedItemsModal } from "./RelatedItemsModal";
+import { RelatedItemsFieldItem } from "./RelatedItemsFieldItem";
 import { i18next } from "@translations/docs_app/i18next";
 
-const creatibutorNameDisplay = (value) => {
-  const name = _get(value, `fullName`);
-
-  return `${name}`;
+const relatedItemNameDisplay = (value) => {
+  const name = _get(value, `itemTitle`);
+  const URL = _get(value, `itemURL`);
+  return (
+    <span>
+      {name}
+      <a style={{ paddingLeft: "3rem" }} href={URL}>
+        {URL && _truncate(URL, { length: 40, omission: "..." })}
+      </a>
+    </span>
+  );
 };
 
-class CreatibutorsFieldForm extends Component {
-  handleOnContributorChange = (selectedCreatibutor) => {
+class RelatedItemsFieldForm extends Component {
+  handleRelatedItemChange = (selectedRelatedItem) => {
     const { push: formikArrayPush } = this.props;
-    formikArrayPush(selectedCreatibutor);
+    formikArrayPush(selectedRelatedItem);
   };
 
   render() {
@@ -37,65 +44,53 @@ class CreatibutorsFieldForm extends Component {
       remove: formikArrayRemove,
       replace: formikArrayReplace,
       move: formikArrayMove,
-      name: fieldPath,
+      fieldPath,
       label,
       labelIcon,
-      schema,
       modal,
-      required,
-      autocompleteNames,
       addButtonLabel,
+      required,
     } = this.props;
 
-    const creatibutorsList = getIn(values, fieldPath, []);
+    const relatedItemsList = getIn(values, fieldPath, []);
     const formikInitialValues = getIn(initialValues, fieldPath, []);
 
     const error = getIn(errors, fieldPath, null);
     const initialError = getIn(initialErrors, fieldPath, null);
-    const creatibutorsError =
-      error || (creatibutorsList === formikInitialValues && initialError);
+    const relatedItemsError =
+      error || (relatedItemsList === formikInitialValues && initialError);
 
     return (
       <DndProvider backend={HTML5Backend}>
         <Form.Field
           required={required}
-          className={creatibutorsError ? "error" : ""}
+          className={relatedItemsError ? "error" : ""}
         >
           <FieldLabel htmlFor={fieldPath} icon={labelIcon} label={label} />
           <List>
-            {creatibutorsList.map((value, index) => {
+            {relatedItemsList.map((value, index) => {
               const key = `${fieldPath}.${index}`;
-              const identifiersError = creatibutorsError
-                ? creatibutorsError[index]?.authorityIdentifiers
-                : [];
-              const displayName = creatibutorNameDisplay(value);
+              const displayName = relatedItemNameDisplay(value);
               return (
-                <CreatibutorsFieldItem
+                <RelatedItemsFieldItem
                   key={key}
-                  identifiersError={identifiersError}
-                  {...{
-                    displayName,
-                    index,
-                    schema,
-                    compKey: key,
-                    initialCreatibutor: value,
-                    removeCreatibutor: formikArrayRemove,
-                    replaceCreatibutor: formikArrayReplace,
-                    moveCreatibutor: formikArrayMove,
-                    addLabel: modal.addLabel,
-                    editLabel: modal.editLabel,
-                    autocompleteNames: autocompleteNames,
-                  }}
+                  displayName={displayName}
+                  index={index}
+                  compKey={key}
+                  initialRelatedItem={value}
+                  removeRelatedItem={formikArrayRemove}
+                  replaceRelatedItem={formikArrayReplace}
+                  moveRelatedItem={formikArrayMove}
+                  addLabel={modal.addLabel}
+                  editLabel={modal.editLabel}
                 />
               );
             })}
-            <CreatibutorsModal
-              onCreatibutorChange={this.handleOnContributorChange}
+            <RelatedItemsModal
+              onRelatedItemChange={this.handleRelatedItemChange}
               initialAction="add"
               addLabel={modal.addLabel}
               editLabel={modal.editLabel}
-              schema={schema}
-              autocompleteNames={autocompleteNames}
               trigger={
                 <Button type="button" icon labelPosition="left">
                   <Icon name="add" />
@@ -103,9 +98,9 @@ class CreatibutorsFieldForm extends Component {
                 </Button>
               }
             />
-            {creatibutorsError && typeof creatibutorsError == "string" && (
+            {relatedItemsError && typeof relatedItemsError == "string" && (
               <Label pointing="left" prompt>
-                {creatibutorsError}
+                {relatedItemsError}
               </Label>
             )}
           </List>
@@ -115,7 +110,7 @@ class CreatibutorsFieldForm extends Component {
   }
 }
 
-export class CreatibutorsField extends Component {
+export class RelatedItemsField extends Component {
   render() {
     const { fieldPath } = this.props;
 
@@ -123,65 +118,58 @@ export class CreatibutorsField extends Component {
       <FieldArray
         name={fieldPath}
         component={(formikProps) => (
-          <CreatibutorsFieldForm {...formikProps} {...this.props} />
+          <RelatedItemsFieldForm {...formikProps} {...this.props} />
         )}
       />
     );
   }
 }
 
-CreatibutorsFieldForm.propTypes = {
+RelatedItemsFieldForm.propTypes = {
   fieldPath: PropTypes.string.isRequired,
   addButtonLabel: PropTypes.string,
   modal: PropTypes.shape({
     addLabel: PropTypes.string.isRequired,
     editLabel: PropTypes.string.isRequired,
   }),
-  schema: PropTypes.oneOf(["creators", "contributors"]).isRequired,
-  autocompleteNames: PropTypes.oneOf(["search", "search_only", "off"]),
-  label: PropTypes.string,
+  label: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
   labelIcon: PropTypes.string,
   form: PropTypes.object.isRequired,
   remove: PropTypes.func.isRequired,
   replace: PropTypes.func.isRequired,
   move: PropTypes.func.isRequired,
   push: PropTypes.func.isRequired,
-  name: PropTypes.string.isRequired,
   required: PropTypes.bool,
 };
 
-CreatibutorsFieldForm.defaultProps = {
-  autocompleteNames: "search",
-  label: i18next.t("Creators"),
-  labelIcon: "user",
+RelatedItemsFieldForm.defaultProps = {
+  label: i18next.t("Related items"),
   modal: {
-    addLabel: i18next.t("Add creator"),
-    editLabel: i18next.t("Edit creator"),
+    addLabel: i18next.t("Add related item"),
+    editLabel: i18next.t("Edit related item"),
   },
-  addButtonLabel: i18next.t("Add creator"),
+  addButtonLabel: i18next.t("Add related item"),
 };
 
-CreatibutorsField.propTypes = {
+RelatedItemsField.propTypes = {
   fieldPath: PropTypes.string.isRequired,
   addButtonLabel: PropTypes.string,
   modal: PropTypes.shape({
-    addLabel: PropTypes.string.isRequired,
-    editLabel: PropTypes.string.isRequired,
+    addLabel: PropTypes.string,
+    editLabel: PropTypes.string,
   }),
-  schema: PropTypes.oneOf(["creators", "contributors"]).isRequired,
-  autocompleteNames: PropTypes.oneOf(["search", "search_only", "off"]),
-  label: PropTypes.string,
+
+  label: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
   labelIcon: PropTypes.string,
   required: PropTypes.bool,
 };
 
-CreatibutorsField.defaultProps = {
-  autocompleteNames: "search",
+RelatedItemsField.defaultProps = {
   label: undefined,
   labelIcon: undefined,
   modal: {
-    addLabel: i18next.t("Add creator"),
-    editLabel: i18next.t("Edit creator"),
+    addLabel: i18next.t("Add related item"),
+    editLabel: i18next.t("Edit related item"),
   },
-  addButtonLabel: i18next.t("Add creator"),
+  addButtonLabel: i18next.t("Add related item"),
 };
