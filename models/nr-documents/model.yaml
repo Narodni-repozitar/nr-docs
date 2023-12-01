@@ -4,6 +4,7 @@ $defs:
 profiles:
 - record
 - draft
+- files
 record:
   module:
     qualified: nr_documents
@@ -42,6 +43,10 @@ record:
   - ./custom_fields.yaml
   - ./requests.yaml
   - ./harvest.yaml
+  files:
+    properties:
+      caption: keyword
+
 plugins:
   builder:
     disable:
