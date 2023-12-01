@@ -30,6 +30,7 @@ import {
   RelatedItemsField,
   objectIdentifiersSchema,
   systemIdentifiersSchema,
+  ReactWrapperFile,
 } from "../components/";
 import Overridable from "react-overridable";
 import { i18next } from "@translations/docs_app/i18next";
@@ -40,6 +41,11 @@ export const DepositForm = () => {
   const editMode = _has(formConfig, "updateUrl");
   const sidebarRef = useRef(null);
   const formFeedbackRef = useRef(null);
+
+  record.links = record.links || {};
+  record.links.files =
+    "https://localhost:5000/api/nr-documents/4z30f-2bt23/draft/files";
+  record.files = { enabled: true };
   return (
     <Container>
       <BaseForm
@@ -65,6 +71,17 @@ export const DepositForm = () => {
                   <FormFeedback />
                 </Overridable>
               </Sticky>
+              <Overridable id="NrDocs.Deposit.AccordionFieldFiles.container">
+                <AccordionField
+                  includesPaths={["files.enabled"]}
+                  active
+                  label={i18next.t("Files")}
+                >
+                  <Overridable id="NrDocs.Deposit.FileUploader.container">
+                    <ReactWrapperFile record={record} />
+                  </Overridable>
+                </AccordionField>
+              </Overridable>
               <Overridable id="NrDocs.Deposit.AccordionFieldBasicInformation.container">
                 <AccordionField
                   includesPaths={[
