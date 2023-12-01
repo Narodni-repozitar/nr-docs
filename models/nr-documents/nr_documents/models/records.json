@@ -1,48 +1,7 @@
 {
     "model": {
         "type": "model",
-        "requests": {
-            "delete-record": {
-                "type": {
-                    "base-classes": [
-                        "oarepo_requests.types.delete_record.DeleteRecordRequestType"
-                    ],
-                    "module": "nr_documents.records.requests.delete_record.types",
-                    "class": "nr_documents.records.requests.delete_record.types.DeleteRecordRequestType",
-                    "generate": true,
-                    "id": "delete_record"
-                },
-                "actions": {
-                    "submit": {
-                        "class": "oarepo_requests.actions.delete_topic.DeleteTopicSubmitAction",
-                        "generate": false,
-                        "module": "nr_documents.records.requests.delete_record.actions",
-                        "base-classes": [
-                            "invenio_requests.customizations.AcceptAction"
-                        ],
-                        "imports": []
-                    }
-                },
-                "parent-marshmallow": {
-                    "parent-field": "delete_record",
-                    "schema-class": "oarepo_requests.schemas.marshmallow.NoneReceiverGenericRequestSchema",
-                    "module": "nr_documents.services.records.schema",
-                    "generate": true
-                }
-            }
-        },
         "custom-fields": [],
-        "published-service-config": {
-            "base-classes": [
-                "nr_docs_extensions.services.published_service.NrDocumentsPublishedServiceConfig"
-            ],
-            "config-key": "NR_DOCUMENTS_RECORD_PUBLISHED_SERVICE_CONFIG",
-            "module": "nr_documents.services.records.published.config",
-            "class": "nr_documents.services.records.published.config.NrDocumentsPublishedServiceConfig",
-            "extra-code": "",
-            "service-id": "published_nr_documents",
-            "generate": true
-        },
         "searchable": true,
         "permissions": {
             "presets": [
@@ -78,9 +37,8 @@
                 "nr_docs_extensions.services.config.FilteredResultServiceConfig"
             ],
             "components": [
-                "{{oarepo_requests.components.requests.PublishDraftComponent}}(\"publish_draft\", \"delete_record\")",
-                "{{invenio_records_resources.services.records.components.FilesOptionsComponent}}",
-                "{{invenio_records_resources.services.records.components.DataComponent}}"
+                "{{invenio_records_resources.services.records.components.DataComponent}}",
+                "{{invenio_records_resources.services.records.components.FilesOptionsComponent}}"
             ],
             "generate": true,
             "config-key": "NR_DOCUMENTS_RECORD_SERVICE_CONFIG",
@@ -291,21 +249,6 @@
         "draft": {
             "type": "draft_record",
             "properties": {},
-            "requests": {
-                "publish-draft": {
-                    "type": {
-                        "base-classes": [
-                            "oarepo_requests.types.publish_draft.PublishDraftRequestType"
-                        ]
-                    },
-                    "actions": {
-                        "submit": {
-                            "class": "oarepo_requests.actions.publish_draft.PublishDraftSubmitAction",
-                            "generate": false
-                        }
-                    }
-                }
-            },
             "searchable": true,
             "tests": {
                 "extra-fixtures": [],
@@ -497,6 +440,18 @@
             "index": "nr_documents-nr_documents-1.0.0",
             "file": "nr_documents/records/mappings/os-v2/nr_documents/nr_documents-1.0.0.json"
         },
+        "published-service-config": {
+            "config-key": "NR_DOCUMENTS_RECORD_PUBLISHED_SERVICE_CONFIG",
+            "module": "nr_documents.services.records.published.config",
+            "class": "nr_documents.services.records.published.config.NrDocumentsPublishedServiceConfig",
+            "extra-code": "",
+            "service-id": "published_nr_documents",
+            "base-classes": [
+                "oarepo_published_service.services.config.PublishedServiceConfig",
+                "oarepo_runtime.services.config.service.PermissionsPresetsConfigMixin"
+            ],
+            "generate": true
+        },
         "published-service": {
             "generate": true,
             "config-key": "NR_DOCUMENTS_RECORD_PUBLISHED_SERVICE_CLASS",
@@ -518,23 +473,6 @@
             ],
             "extra-code": "",
             "extensions": [],
-            "imports": []
-        },
-        "parent-record-marshmallow": {
-            "module": "nr_documents.services.records.schema",
-            "class": "nr_documents.services.records.schema.GeneratedParentSchema",
-            "generate": true,
-            "base-classes": [
-                "invenio_drafts_resources.services.records.schema.ParentSchema{InvenioParentSchema}"
-            ]
-        },
-        "record-resolver": {
-            "generate": true,
-            "module": "nr_documents.records.requests.resolvers",
-            "class": "nr_documents.records.requests.resolvers.NrDocumentsResolver",
-            "base-classes": [
-                "invenio_records_resources.references.RecordResolver"
-            ],
             "imports": []
         },
         "sortable": [],

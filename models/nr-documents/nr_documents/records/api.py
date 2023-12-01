@@ -4,8 +4,6 @@ from invenio_drafts_resources.records.api import Record as InvenioRecord
 from invenio_records.systemfields import ConstantField
 from invenio_records_resources.records.systemfields import IndexField
 from invenio_records_resources.records.systemfields.pid import PIDField, PIDFieldContext
-from invenio_requests.records import Request
-from invenio_requests.records.systemfields.relatedrecord import RelatedRecord
 from invenio_vocabularies.records.api import Vocabulary
 from nr_docs_extensions.services.sort import TitleICUSortField
 from oarepo_runtime.records.relations import PIDRelation, RelationsField
@@ -26,14 +24,6 @@ from nr_documents.records.models import (
 
 class NrDocumentsParentRecord(ParentRecord):
     model_cls = NrDocumentsParentMetadata
-    delete_record = RelatedRecord(
-        Request,
-        keys=["type", "receiver", "status"],
-    )
-    publish_draft = RelatedRecord(
-        Request,
-        keys=["type", "receiver", "status"],
-    )
 
 
 class NrDocumentsIdProvider(DraftRecordIdProviderV2):
