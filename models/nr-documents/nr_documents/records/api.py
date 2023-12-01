@@ -258,6 +258,7 @@ class NrDocumentsDraft(InvenioDraft):
 
     parent_record_cls = NrDocumentsParentRecord
     record_status = RecordStatusSystemField()
+
     has_draft = HasDraftCheckField(config_key="HAS_DRAFT_CUSTOM_FIELD")
 
 

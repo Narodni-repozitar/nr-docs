@@ -6,7 +6,27 @@ from . import facets
 class NrDocumentsSearchOptions(I18nSearchOptions):
     """NrDocumentsRecord search options."""
 
-    facet_groups = {}
+    facet_groups = {
+        "default": {
+            "metadata_abstract_cs": facets.metadata_abstract_cs,
+            "metadata_abstract_en": facets.metadata_abstract_en,
+            "metadata_accessibility_cs": facets.metadata_accessibility_cs,
+            "metadata_accessibility_en": facets.metadata_accessibility_en,
+            "metadata_additionalTitles_title_cs": (
+                facets.metadata_additionalTitles_title_cs
+            ),
+            "metadata_additionalTitles_title_en": (
+                facets.metadata_additionalTitles_title_en
+            ),
+            "metadata_methods_cs": facets.metadata_methods_cs,
+            "metadata_methods_en": facets.metadata_methods_en,
+            "metadata_subjects_subject_cs": facets.metadata_subjects_subject_cs,
+            "metadata_subjects_subject_en": facets.metadata_subjects_subject_en,
+            "metadata_technicalInfo_cs": facets.metadata_technicalInfo_cs,
+            "metadata_technicalInfo_en": facets.metadata_technicalInfo_en,
+            **getattr(I18nSearchOptions, "facet_groups", {}).get("default", {}),
+        },
+    }
 
     facets = {
         "metadata_abstract_cs": facets.metadata_abstract_cs,

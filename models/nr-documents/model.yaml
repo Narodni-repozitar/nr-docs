@@ -41,7 +41,7 @@ record:
   use:
   - invenio
   - ./custom_fields.yaml
-  - ./requests.yaml
+#  - ./requests.yaml
   - ./harvest.yaml
   files:
     use:
@@ -60,7 +60,7 @@ plugins:
   - oarepo-model-builder-cf==4.*
   - oarepo-model-builder-vocabularies==4.*
   - oarepo-model-builder-relations==4.*
-  - oarepo-model-builder-requests
+#  - oarepo-model-builder-requests
   - oarepo-model-builder-drafts
 runtime-dependencies:
   nr-metadata: 1.0.0
