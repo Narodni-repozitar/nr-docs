@@ -8,8 +8,9 @@ from invenio_requests.records import Request
 from invenio_requests.records.systemfields.relatedrecord import RelatedRecord
 from invenio_vocabularies.records.api import Vocabulary
 from nr_docs_extensions.services.sort import TitleICUSortField
-from oarepo_runtime.drafts.systemfields.has_draftcheck import HasDraftCheckField
-from oarepo_runtime.relations import PIDRelation, RelationsField
+from oarepo_runtime.records.relations import PIDRelation, RelationsField
+from oarepo_runtime.records.systemfields.has_draftcheck import HasDraftCheckField
+from oarepo_runtime.records.systemfields.record_status import RecordStatusSystemField
 
 from nr_documents.records.dumpers.dumper import (
     NrDocumentsDraftDumper,
@@ -136,11 +137,17 @@ class NrDocumentsRecord(InvenioRecord):
             keys=["id", "title", "hierarchy"],
             pid_field=Vocabulary.pid.with_type_ctx("institutions"),
         ),
+        institutions=PIDRelation(
+            "syntheticFields.institutions",
+            keys=["id", "title", "hierarchy"],
+            pid_field=Vocabulary.pid.with_type_ctx("institutions"),
+        ),
     )
 
     versions_model_cls = NrDocumentsParentState
 
     parent_record_cls = NrDocumentsParentRecord
+    record_status = RecordStatusSystemField()
 
 
 class NrDocumentsDraft(InvenioDraft):
@@ -240,11 +247,17 @@ class NrDocumentsDraft(InvenioDraft):
             keys=["id", "title", "hierarchy"],
             pid_field=Vocabulary.pid.with_type_ctx("institutions"),
         ),
+        institutions=PIDRelation(
+            "syntheticFields.institutions",
+            keys=["id", "title", "hierarchy"],
+            pid_field=Vocabulary.pid.with_type_ctx("institutions"),
+        ),
     )
 
     versions_model_cls = NrDocumentsParentState
 
     parent_record_cls = NrDocumentsParentRecord
+    record_status = RecordStatusSystemField()
     has_draft = HasDraftCheckField(config_key="HAS_DRAFT_CUSTOM_FIELD")
 
 

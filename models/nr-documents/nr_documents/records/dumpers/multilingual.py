@@ -1,4 +1,4 @@
-from oarepo_runtime.i18n.dumper import MultilingualDumper
+from oarepo_runtime.records.dumpers.multilingual_dumper import MultilingualDumper
 
 
 class MultilingualSearchDumperExt(MultilingualDumper):

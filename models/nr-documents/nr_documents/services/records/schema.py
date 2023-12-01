@@ -3,7 +3,6 @@ from invenio_drafts_resources.services.records.schema import (
     ParentSchema as InvenioParentSchema,
 )
 from invenio_vocabularies.services.schema import i18n_strings
-from marshmallow import Schema
 from marshmallow import fields as ma_fields
 from marshmallow.fields import String
 from nr_metadata.common.services.records.schema_common import (
@@ -38,6 +37,7 @@ from nr_metadata.documents.services.records.schema import (
     NRDegreeGrantorSchema,
     NRDocumentMetadataSchema,
     NRDocumentRecordSchema,
+    NRDocumentSyntheticFieldsSchema,
     NRThesisSchema,
 )
 from nr_metadata.schema.identifiers import (
@@ -46,6 +46,7 @@ from nr_metadata.schema.identifiers import (
     NRSystemIdentifierSchema,
 )
 from oarepo_requests.schemas.marshmallow import NoneReceiverGenericRequestSchema
+from oarepo_runtime.services.schema.marshmallow import DictOnlySchema
 from oarepo_vocabularies.services.schema import HierarchySchema
 
 
@@ -138,7 +139,7 @@ class NrDocumentsMetadataSchema(NRDocumentMetadataSchema):
     thesis = ma_fields.Nested(lambda: ThesisSchema())
 
 
-class OaiSchema(Schema):
+class OaiSchema(DictOnlySchema):
     class Meta:
         unknown = ma.RAISE
 
@@ -260,13 +261,26 @@ class GeoLocationPointSchema(NRGeoLocationPointSchema):
         unknown = ma.RAISE
 
 
-class HarvestSchema(Schema):
+class HarvestSchema(DictOnlySchema):
     class Meta:
         unknown = ma.RAISE
 
     datestamp = ma_fields.String()
 
     identifier = ma_fields.String()
+
+
+class InstitutionsSchema(DictOnlySchema):
+    class Meta:
+        unknown = ma.INCLUDE
+
+    _id = String(data_key="id", attribute="id")
+
+    _version = String(data_key="@v", attribute="@v")
+
+    hierarchy = ma_fields.Nested(lambda: HierarchySchema())
+
+    title = i18n_strings
 
 
 class ItemContributorsItemSchema(NRRelatedItemContributorSchema):
@@ -360,7 +374,7 @@ class SubjectsItemSchema(NRSubjectSchema):
         unknown = ma.RAISE
 
 
-class SyntheticFieldsSchema(Schema):
+class SyntheticFieldsSchema(NRDocumentSyntheticFieldsSchema):
     class Meta:
         unknown = ma.RAISE
 

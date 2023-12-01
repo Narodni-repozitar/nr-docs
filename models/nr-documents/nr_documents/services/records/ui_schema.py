@@ -2,7 +2,6 @@ import marshmallow as ma
 from invenio_drafts_resources.services.records.schema import (
     ParentSchema as InvenioParentSchema,
 )
-from marshmallow import Schema
 from marshmallow import fields as ma_fields
 from marshmallow.fields import String
 from nr_metadata.common.services.records.ui_schema_common import (
@@ -37,6 +36,7 @@ from nr_metadata.documents.services.records.ui_schema import (
     NRDegreeGrantorUISchema,
     NRDocumentMetadataUISchema,
     NRDocumentRecordUISchema,
+    NRDocumentSyntheticFieldsUISchema,
     NRThesisUISchema,
 )
 from nr_metadata.ui_schema.identifiers import (
@@ -45,6 +45,7 @@ from nr_metadata.ui_schema.identifiers import (
     NRSystemIdentifierUISchema,
 )
 from oarepo_requests.schemas.marshmallow import NoneReceiverGenericRequestSchema
+from oarepo_runtime.services.schema.marshmallow import DictOnlySchema
 from oarepo_vocabularies.services.ui_schema import (
     HierarchyUISchema,
     VocabularyI18nStrUIField,
@@ -140,7 +141,7 @@ class NrDocumentsMetadataUISchema(NRDocumentMetadataUISchema):
     thesis = ma_fields.Nested(lambda: ThesisUISchema())
 
 
-class OaiUISchema(Schema):
+class OaiUISchema(DictOnlySchema):
     class Meta:
         unknown = ma.RAISE
 
@@ -262,13 +263,26 @@ class GeoLocationPointUISchema(NRGeoLocationPointUISchema):
         unknown = ma.RAISE
 
 
-class HarvestUISchema(Schema):
+class HarvestUISchema(DictOnlySchema):
     class Meta:
         unknown = ma.RAISE
 
     datestamp = ma_fields.String()
 
     identifier = ma_fields.String()
+
+
+class InstitutionsUISchema(DictOnlySchema):
+    class Meta:
+        unknown = ma.INCLUDE
+
+    _id = String(data_key="id", attribute="id")
+
+    _version = String(data_key="@v", attribute="@v")
+
+    hierarchy = ma_fields.Nested(lambda: HierarchyUISchema())
+
+    title = VocabularyI18nStrUIField()
 
 
 class ItemContributorsItemUISchema(NRRelatedItemContributorUISchema):
@@ -362,7 +376,7 @@ class SubjectsItemUISchema(NRSubjectUISchema):
         unknown = ma.RAISE
 
 
-class SyntheticFieldsUISchema(Schema):
+class SyntheticFieldsUISchema(NRDocumentSyntheticFieldsUISchema):
     class Meta:
         unknown = ma.RAISE
 

@@ -44,6 +44,8 @@ record:
   - ./requests.yaml
   - ./harvest.yaml
   files:
+    use:
+      - invenio_files
     properties:
       caption: keyword
 

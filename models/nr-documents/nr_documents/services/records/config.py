@@ -1,9 +1,13 @@
 from invenio_drafts_resources.services.records.config import is_record
 from invenio_records_resources.services import ConditionalLink, RecordLink
-from invenio_records_resources.services.records.components import DataComponent
+from invenio_records_resources.services.records.components import (
+    DataComponent,
+    FilesOptionsComponent,
+)
 from nr_docs_extensions.services.config import FilteredResultServiceConfig
 from oarepo_requests.components.requests import PublishDraftComponent
 from oarepo_runtime.config.service import PermissionsPresetsConfigMixin
+from oarepo_runtime.services.results import RecordList
 
 from nr_documents.records.api import NrDocumentsDraft, NrDocumentsRecord
 from nr_documents.services.records.permissions import NrDocumentsPermissionPolicy
@@ -15,6 +19,8 @@ class NrDocumentsServiceConfig(
     PermissionsPresetsConfigMixin, FilteredResultServiceConfig
 ):
     """NrDocumentsRecord service config."""
+
+    result_list_cls = RecordList
 
     PERMISSIONS_PRESETS = ["authenticated"]
 
@@ -34,6 +40,7 @@ class NrDocumentsServiceConfig(
         *PermissionsPresetsConfigMixin.components,
         *FilteredResultServiceConfig.components,
         PublishDraftComponent("publish_draft", "delete_record"),
+        FilesOptionsComponent,
         DataComponent,
     ]
 
@@ -45,6 +52,7 @@ class NrDocumentsServiceConfig(
     def links_item(self):
         return {
             "draft": RecordLink("{+api}/nr-documents/{id}/draft"),
+            "files": RecordLink("{+api}/nr-documents/{id}/files"),
             "latest": RecordLink("{+api}/nr-documents/{id}/versions/latest"),
             "latest_html": RecordLink("{+ui}/docs/{id}/latest"),
             "publish": RecordLink("{+api}/nr-documents/{id}/draft/actions/publish"),
