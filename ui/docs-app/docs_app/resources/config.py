@@ -1,5 +1,6 @@
 from oarepo_ui.resources.config import RecordsUIResourceConfig
 from oarepo_ui.resources import BabelComponent, PermissionsComponent
+from oarepo_ui.resources.components import FilesComponent
 from oarepo_vocabularies.ui.resources.components import (
     DepositVocabularyOptionsComponent,
 )
@@ -19,6 +20,7 @@ class DocsAppResourceConfig(RecordsUIResourceConfig):
         BabelComponent,
         DepositVocabularyOptionsComponent,
         PermissionsComponent,
+        FilesComponent
     ]
 
     templates = {
