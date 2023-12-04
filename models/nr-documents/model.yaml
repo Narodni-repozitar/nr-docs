@@ -5,6 +5,7 @@ profiles:
 - record
 - draft
 - files
+- draft_files
 record:
   module:
     qualified: nr_documents
@@ -38,10 +39,11 @@ record:
           # extra custom fields for sorting by title
           sort = {{nr_docs_extensions.services.sort.TitleICUSortField}}(source_field="metadata.title")
   draft: {}
+  draft-files: {}
   use:
   - invenio
   - ./custom_fields.yaml
-#  - ./requests.yaml
+  - ./requests.yaml
   - ./harvest.yaml
   files:
     use:
@@ -60,8 +62,9 @@ plugins:
   - oarepo-model-builder-cf==4.*
   - oarepo-model-builder-vocabularies==4.*
   - oarepo-model-builder-relations==4.*
-#  - oarepo-model-builder-requests
+  - oarepo-model-builder-requests
   - oarepo-model-builder-drafts
+  - oarepo-model-builder-drafts-files
 runtime-dependencies:
   nr-metadata: 1.0.0
   nr-oaipmh-harvesters: 1.0.0
