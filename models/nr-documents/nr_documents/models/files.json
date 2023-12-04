@@ -1,0 +1,431 @@
+{
+    "model": {
+        "type": "file",
+        "searchable": true,
+        "marshmallow": {
+            "imports": [
+                {
+                    "import": "invenio_records_resources.services.files.schema.FileSchema",
+                    "alias": "InvenioFileSchema"
+                }
+            ],
+            "base-classes": [
+                "InvenioFileSchema"
+            ],
+            "generate": true,
+            "module": "nr_documents.services.files.schema",
+            "class": "nr_documents.services.files.schema.NrDocumentsFileSchema",
+            "extra-code": ""
+        },
+        "tests": {
+            "extra-fixtures": [],
+            "extra-code": "",
+            "module": "tests"
+        },
+        "sample": {
+            "file": "data/sample_data.yaml"
+        },
+        "search-options": {
+            "skip": true,
+            "generate": true,
+            "module": "nr_documents.services.files.search",
+            "extra-code": "",
+            "class": "nr_documents.services.files.search.NrDocumentsFileSearchOptions",
+            "base-classes": [
+                "invenio_records_resources.services.SearchOptions{InvenioSearchOptions}"
+            ],
+            "imports": [],
+            "sort-options-field": "sort_options"
+        },
+        "facets": {
+            "skip": true,
+            "generate": true,
+            "module": "nr_documents.services.files.facets",
+            "extra-code": ""
+        },
+        "json-schema-settings": {
+            "skip": true,
+            "generate": true,
+            "alias": "nr_documents_file",
+            "version": "1.0.0",
+            "module": "nr_documents.files.jsonschemas",
+            "name": "nr_documents_file-1.0.0.json",
+            "file": "nr_documents/files/jsonschemas/nr_documents_file-1.0.0.json"
+        },
+        "mapping-settings": {
+            "skip": true
+        },
+        "record-dumper": {
+            "skip": true,
+            "generate": true,
+            "module": "nr_documents.files.dumpers.dumper",
+            "class": "nr_documents.files.dumpers.dumper.NrDocumentsFileDumper",
+            "base-classes": [
+                "oarepo_runtime.records.dumpers.SearchDumper"
+            ],
+            "extra-code": "",
+            "extensions": [
+                "{{nr_metadata.services.records.facets.dumper.SyntheticFieldsDumperExtension}}()",
+                "{{nr_documents.files.dumpers.edtf.NrDocumentsFileEDTFIntervalDumperExt}}()",
+                "{{nr_documents.files.dumpers.multilingual.MultilingualSearchDumperExt}}()"
+            ],
+            "imports": []
+        },
+        "module": {
+            "qualified": "nr_documents",
+            "prefix": "NrDocumentsFile",
+            "alias": "nr_documents_file",
+            "path": "nr_documents",
+            "base": "nr_documents",
+            "base-upper": "NR_DOCUMENTS",
+            "base-title": "Nr_documents",
+            "kebab-module": "nr-documents",
+            "prefix-upper": "NRDOCUMENTSFILE",
+            "prefix-snake": "nr_documents_file",
+            "suffix": "nr_documents_file",
+            "suffix-upper": "NR_DOCUMENTS_FILE",
+            "suffix-snake": "nr_documents_file"
+        },
+        "model-name": "Nr_Documents",
+        "config": {
+            "generate": true,
+            "module": "nr_documents.config",
+            "extra_code": "",
+            "imports": []
+        },
+        "ext": {
+            "generate": true,
+            "module": "nr_documents.ext",
+            "class": "nr_documents.ext.Nr_documentsExt",
+            "base-classes": [],
+            "extra_code": "",
+            "alias": "nr_documents",
+            "imports": []
+        },
+        "api-blueprint": {
+            "generate": true,
+            "alias": "nr_documents_file",
+            "extra_code": "",
+            "module": "nr_documents.views.files.api",
+            "function": "nr_documents.views.files.api.create_api_blueprint",
+            "imports": []
+        },
+        "app-blueprint": {
+            "generate": true,
+            "alias": "nr_documents_file",
+            "extra_code": "",
+            "module": "nr_documents.views.files.app",
+            "function": "nr_documents.views.files.app.create_app_blueprint",
+            "imports": []
+        },
+        "saved-model": {
+            "file": "nr_documents/models/files.json",
+            "module": "nr_documents.models",
+            "alias": "nr_documents_file"
+        },
+        "proxy": {
+            "module": "nr_documents.proxies",
+            "generate": true
+        },
+        "record": {
+            "class": "nr_documents.files.api.NrDocumentsFile",
+            "base-classes": [
+                "invenio_records_resources.records.api.FileRecord"
+            ],
+            "imports": [],
+            "generate": true,
+            "module": "nr_documents.files.api",
+            "extra-code": ""
+        },
+        "resource-config": {
+            "base-url": "/nr-documents/<pid_value>",
+            "base-classes": [
+                "invenio_records_resources.resources.FileResourceConfig"
+            ],
+            "imports": [],
+            "generate": true,
+            "base-html-url": "/nr-documents/",
+            "config-key": "NR_DOCUMENTS_FILES_RESOURCE_CONFIG",
+            "module": "nr_documents.resources.files.config",
+            "class": "nr_documents.resources.files.config.NrDocumentsFileResourceConfig",
+            "extra-code": ""
+        },
+        "resource": {
+            "base-classes": [
+                "invenio_records_resources.resources.files.resource.FileResource"
+            ],
+            "imports": [],
+            "generate": true,
+            "config-key": "NR_DOCUMENTS_FILES_RESOURCE_CLASS",
+            "module": "nr_documents.resources.files.resource",
+            "class": "nr_documents.resources.files.resource.NrDocumentsFileResource",
+            "proxy": "current_resource",
+            "extra-code": ""
+        },
+        "ext-resource": {
+            "generate": true,
+            "skip": false
+        },
+        "ui": {
+            "module": "nr_documents.models",
+            "file": "nr_documents/models/ui.json",
+            "alias": "nr_documents_file",
+            "marshmallow": {
+                "generate": true,
+                "module": "nr_documents.services.files.ui_schema",
+                "class": "nr_documents.services.files.ui_schema.NrDocumentsFileUISchema",
+                "extra-code": "",
+                "base-classes": [
+                    "oarepo_runtime.services.schema.ui.InvenioUISchema"
+                ],
+                "imports": []
+            }
+        },
+        "json-serializer": {
+            "module": "nr_documents.resources.files.ui",
+            "class": "nr_documents.resources.files.ui.NrDocumentsFileUIJSONSerializer",
+            "base-classes": [
+                "oarepo_runtime.resources.LocalizedUIJSONSerializer"
+            ],
+            "imports": [],
+            "extra-code": "",
+            "generate": true,
+            "list_schema_cls": "flask_resources.BaseListSchema",
+            "format_serializer_cls": "flask_resources.serializers.JSONSerializer"
+        },
+        "record-metadata": {
+            "use-versioning": false,
+            "generate": true,
+            "module": "nr_documents.files.models",
+            "class": "nr_documents.files.models.NrDocumentsFileMetadata",
+            "base-classes": [
+                "invenio_db.db{db.Model}",
+                "invenio_records.models.RecordMetadataBase",
+                "invenio_records_resources.records.FileRecordModelMixin"
+            ],
+            "extra-code": "",
+            "imports": [],
+            "table": "nr_documents_file_metadata",
+            "alias": "nr_documents_file"
+        },
+        "service-config": {
+            "base-classes": [
+                "oarepo_runtime.services.config.service.PermissionsPresetsConfigMixin",
+                "invenio_records_resources.services.FileServiceConfig"
+            ],
+            "imports": [],
+            "generate": true,
+            "config-key": "NR_DOCUMENTS_FILES_SERVICE_CONFIG",
+            "module": "nr_documents.services.files.config",
+            "class": "nr_documents.services.files.config.NrDocumentsFileServiceConfig",
+            "extra-code": "",
+            "service-id": "nr_documents_file",
+            "components": [
+                "{{invenio_records_resources.services.records.components.DataComponent}}"
+            ],
+            "result-list-class": "oarepo_runtime.services.results.RecordList"
+        },
+        "service": {
+            "base-classes": [
+                "invenio_records_resources.services.FileService"
+            ],
+            "imports": [],
+            "generate": true,
+            "config-key": "NR_DOCUMENTS_FILES_SERVICE_CLASS",
+            "proxy": "current_service",
+            "module": "nr_documents.services.files.service",
+            "class": "nr_documents.services.files.service.NrDocumentsFileService",
+            "extra-code": ""
+        },
+        "pid": {
+            "type": "dcmsfl",
+            "generate": true,
+            "module": "nr_documents.files.api",
+            "provider-class": "nr_documents.files.api.NrDocumentsFileIdProvider",
+            "provider-base-classes": [
+                "invenio_pidstore.providers.recordid_v2.RecordIdProviderV2"
+            ],
+            "field-class": "invenio_records_resources.records.systemfields.pid.PIDField",
+            "context-class": "invenio_records_resources.records.systemfields.pid.PIDFieldContext",
+            "field-args": [
+                "create=True"
+            ],
+            "imports": [],
+            "extra-code": ""
+        },
+        "files-field": {
+            "field-args": [
+                "store=False",
+                "create=False",
+                "delete=False"
+            ],
+            "generate": true,
+            "field-class": "invenio_records_resources.records.systemfields.FilesField",
+            "file-class": "nr_documents.files.api.NrDocumentsFile",
+            "imports": []
+        },
+        "translations": {
+            "module": "nr_documents.translations",
+            "alias": "nr_documents_file"
+        },
+        "edtf-interval-dumper": {
+            "generate": true,
+            "module": "nr_documents.files.dumpers.edtf",
+            "class": "nr_documents.files.dumpers.edtf.NrDocumentsFileEDTFIntervalDumperExt",
+            "base-classes": [
+                "oarepo_runtime.records.dumpers.edtf_interval.EDTFIntervalDumperExt"
+            ],
+            "extra-code": "",
+            "extensions": [],
+            "imports": []
+        },
+        "multilingual-dumper": {
+            "generate": true,
+            "module": "nr_documents.files.dumpers.multilingual",
+            "class": "nr_documents.files.dumpers.multilingual.MultilingualSearchDumperExt",
+            "base-classes": [
+                "oarepo_runtime.records.dumpers.multilingual_dumper.MultilingualDumper"
+            ],
+            "extra-code": "",
+            "extensions": [],
+            "imports": []
+        },
+        "permissions": {
+            "class": "nr_documents.services.records.permissions.NrDocumentsPermissionPolicy",
+            "generate": false,
+            "presets": [
+                "everyone"
+            ],
+            "extra-code": "",
+            "module": "nr_documents.services.files.permissions",
+            "base-classes": [
+                "invenio_records_permissions.RecordPermissionPolicy"
+            ],
+            "imports": []
+        },
+        "draft-parent-record": {
+            "generate": false,
+            "skip": true
+        },
+        "draft-parent-record-metadata": {
+            "skip": true
+        },
+        "draft-parent-record-state": {
+            "skip": true
+        },
+        "mapping": {
+            "generate": true,
+            "alias": "nr_documents_file",
+            "module": "nr_documents.files.mappings",
+            "index": "nr_documents_file-nr_documents_file-1.0.0",
+            "file": "nr_documents/files/mappings/os-v2/nr_documents_file/nr_documents_file-1.0.0.json"
+        },
+        "published-service-config": {
+            "config-key": "NR_DOCUMENTS_FILES_PUBLISHED_SERVICE_CONFIG",
+            "module": "nr_documents.services.files.published.config",
+            "class": "nr_documents.services.files.published.config.NrDocumentsFilePublishedServiceConfig",
+            "extra-code": "",
+            "service-id": "published_nr_documents_file",
+            "base-classes": [
+                "oarepo_published_service.services.config.PublishedServiceConfig",
+                "oarepo_runtime.services.config.service.PermissionsPresetsConfigMixin"
+            ],
+            "generate": true
+        },
+        "published-service": {
+            "generate": true,
+            "config-key": "NR_DOCUMENTS_FILES_PUBLISHED_SERVICE_CLASS",
+            "proxy": "current_published_service",
+            "module": "nr_documents.services.files.published.service",
+            "class": "nr_documents.services.files.published.service.NrDocumentsFilePublishedService",
+            "extra-code": "",
+            "base-classes": [
+                "oarepo_published_service.services.service.PublishedService"
+            ],
+            "imports": []
+        },
+        "requests": {},
+        "parent-record-marshmallow": {
+            "module": "nr_documents.services.files.schema",
+            "class": "nr_documents.services.files.schema.GeneratedParentSchema",
+            "generate": true,
+            "base-classes": [
+                "invenio_drafts_resources.services.records.schema.ParentSchema{InvenioParentSchema}"
+            ]
+        },
+        "record-resolver": {
+            "generate": false,
+            "skip": true
+        },
+        "sortable": [],
+        "properties": {
+            "$schema": {
+                "type": "keyword",
+                "marshmallow": {
+                    "read": false,
+                    "write": false
+                },
+                "ui": {
+                    "marshmallow": {
+                        "read": false,
+                        "write": false
+                    }
+                },
+                "sample": {
+                    "skip": true
+                }
+            },
+            "caption": {
+                "type": "keyword"
+            },
+            "created": {
+                "type": "date",
+                "ui": {
+                    "marshmallow": {
+                        "read": false,
+                        "write": false
+                    }
+                },
+                "marshmallow": {
+                    "read": true,
+                    "write": false
+                },
+                "sample": {
+                    "skip": true
+                }
+            },
+            "id": {
+                "type": "keyword",
+                "marshmallow": {
+                    "read": false,
+                    "write": false
+                },
+                "ui": {
+                    "marshmallow": {
+                        "read": false,
+                        "write": false
+                    }
+                },
+                "sample": {
+                    "skip": true
+                }
+            },
+            "updated": {
+                "type": "date",
+                "ui": {
+                    "marshmallow": {
+                        "read": false,
+                        "write": false
+                    }
+                },
+                "marshmallow": {
+                    "read": true,
+                    "write": false
+                },
+                "sample": {
+                    "skip": true
+                }
+            }
+        }
+    }
+}

@@ -1,9 +1,9 @@
 {
     "module": "nr_documents.models",
     "file": "nr_documents/models/ui.json",
-    "alias": "nr_documents",
-    "detail": "model",
-    "input": "model",
+    "alias": "nr_documents_file",
+    "detail": "file",
+    "input": "file",
     "help": ".help",
     "label": ".label",
     "hint": ".hint",
@@ -16,9 +16,17 @@
             "hint": "$schema.hint",
             "facet": "_schema"
         },
+        "caption": {
+            "detail": "keyword",
+            "input": "keyword",
+            "help": "caption.help",
+            "label": "caption.label",
+            "hint": "caption.hint",
+            "facet": "caption"
+        },
         "created": {
-            "detail": "datetime",
-            "input": "datetime",
+            "detail": "date",
+            "input": "date",
             "help": "created.help",
             "label": "created.label",
             "hint": "created.hint",
@@ -31,6 +39,14 @@
             "label": "id.label",
             "hint": "id.hint",
             "facet": "_id"
+        },
+        "updated": {
+            "detail": "date",
+            "input": "date",
+            "help": "updated.help",
+            "label": "updated.label",
+            "hint": "updated.hint",
+            "facet": "updated"
         },
         "metadata": {
             "detail": "metadatum",
@@ -66,8 +82,7 @@
                                 "input": "fulltext+keyword",
                                 "help": "metadata/abstract/value.help",
                                 "label": "metadata/abstract/value.label",
-                                "hint": "metadata/abstract/value.hint",
-                                "facet": "metadata_abstract_value"
+                                "hint": "metadata/abstract/value.hint"
                             }
                         }
                     }
@@ -131,8 +146,7 @@
                                 "input": "fulltext+keyword",
                                 "help": "metadata/accessibility/value.help",
                                 "label": "metadata/accessibility/value.label",
-                                "hint": "metadata/accessibility/value.hint",
-                                "facet": "metadata_accessibility_value"
+                                "hint": "metadata/accessibility/value.hint"
                             }
                         }
                     }
@@ -171,8 +185,7 @@
                                         "input": "fulltext+keyword",
                                         "help": "metadata/additionalTitles/title/value.help",
                                         "label": "metadata/additionalTitles/title/value.label",
-                                        "hint": "metadata/additionalTitles/title/value.hint",
-                                        "facet": "metadata_additionalTitles_title_value"
+                                        "hint": "metadata/additionalTitles/title/value.hint"
                                     }
                                 }
                             },
@@ -886,8 +899,7 @@
                                 "input": "fulltext+keyword",
                                 "help": "metadata/methods/value.help",
                                 "label": "metadata/methods/value.label",
-                                "hint": "metadata/methods/value.hint",
-                                "facet": "metadata_methods_value"
+                                "hint": "metadata/methods/value.hint"
                             }
                         }
                     }
@@ -1699,8 +1711,7 @@
                                             "input": "fulltext+keyword",
                                             "help": "metadata/subjects/subject/value.help",
                                             "label": "metadata/subjects/subject/value.label",
-                                            "hint": "metadata/subjects/subject/value.hint",
-                                            "facet": "metadata_subjects_subject_value"
+                                            "hint": "metadata/subjects/subject/value.hint"
                                         }
                                     }
                                 }
@@ -1784,8 +1795,7 @@
                                 "input": "fulltext+keyword",
                                 "help": "metadata/technicalInfo/value.help",
                                 "label": "metadata/technicalInfo/value.label",
-                                "hint": "metadata/technicalInfo/value.hint",
-                                "facet": "metadata_technicalInfo_value"
+                                "hint": "metadata/technicalInfo/value.hint"
                             }
                         }
                     }
@@ -1939,8 +1949,7 @@
                     "input": "fulltext+keyword",
                     "help": "metadata/title.help",
                     "label": "metadata/title.label",
-                    "hint": "metadata/title.hint",
-                    "facet": "metadata_title"
+                    "hint": "metadata/title.hint"
                 },
                 "version": {
                     "detail": "keyword",
@@ -1994,12 +2003,101 @@
             "hint": "syntheticFields.hint",
             "children": {
                 "institutions": {
-                    "detail": "keyword",
-                    "input": "keyword",
+                    "detail": "taxonomy_item",
+                    "edit": "taxonomy_item",
+                    "input": "taxonomy",
                     "help": "syntheticFields/institutions.help",
                     "label": "syntheticFields/institutions.label",
                     "hint": "syntheticFields/institutions.hint",
-                    "facet": "syntheticFields_institutions"
+                    "facet": "syntheticFields_institutions",
+                    "children": {
+                        "id": {
+                            "detail": "keyword",
+                            "input": "keyword",
+                            "help": "syntheticFields/institutions/id.help",
+                            "label": "syntheticFields/institutions/id.label",
+                            "hint": "syntheticFields/institutions/id.hint"
+                        },
+                        "title": {
+                            "detail": false,
+                            "input": false,
+                            "help": "syntheticFields/institutions/title.help",
+                            "label": "syntheticFields/institutions/title.label",
+                            "hint": "syntheticFields/institutions/title.hint"
+                        },
+                        "hierarchy": {
+                            "detail": false,
+                            "input": false,
+                            "help": "syntheticFields/institutions/hierarchy.help",
+                            "label": "syntheticFields/institutions/hierarchy.label",
+                            "hint": "syntheticFields/institutions/hierarchy.hint",
+                            "children": {
+                                "ancestors": {
+                                    "detail": "array",
+                                    "input": "array",
+                                    "help": "syntheticFields/institutions/hierarchy/ancestors.help",
+                                    "label": "syntheticFields/institutions/hierarchy/ancestors.label",
+                                    "hint": "syntheticFields/institutions/hierarchy/ancestors.hint",
+                                    "child": {
+                                        "detail": "keyword",
+                                        "input": "keyword",
+                                        "help": "syntheticFields/institutions/hierarchy/ancestors.help",
+                                        "label": "syntheticFields/institutions/hierarchy/ancestors.label",
+                                        "hint": "syntheticFields/institutions/hierarchy/ancestors.hint"
+                                    }
+                                },
+                                "ancestors_or_self": {
+                                    "detail": "array",
+                                    "input": "array",
+                                    "help": "syntheticFields/institutions/hierarchy/ancestors_or_self.help",
+                                    "label": "syntheticFields/institutions/hierarchy/ancestors_or_self.label",
+                                    "hint": "syntheticFields/institutions/hierarchy/ancestors_or_self.hint",
+                                    "child": {
+                                        "detail": "keyword",
+                                        "input": "keyword",
+                                        "help": "syntheticFields/institutions/hierarchy/ancestors_or_self.help",
+                                        "label": "syntheticFields/institutions/hierarchy/ancestors_or_self.label",
+                                        "hint": "syntheticFields/institutions/hierarchy/ancestors_or_self.hint"
+                                    }
+                                },
+                                "level": {
+                                    "detail": "integer",
+                                    "input": "integer",
+                                    "help": "syntheticFields/institutions/hierarchy/level.help",
+                                    "label": "syntheticFields/institutions/hierarchy/level.label",
+                                    "hint": "syntheticFields/institutions/hierarchy/level.hint"
+                                },
+                                "parent": {
+                                    "detail": "keyword",
+                                    "input": "keyword",
+                                    "help": "syntheticFields/institutions/hierarchy/parent.help",
+                                    "label": "syntheticFields/institutions/hierarchy/parent.label",
+                                    "hint": "syntheticFields/institutions/hierarchy/parent.hint"
+                                },
+                                "title": {
+                                    "detail": "array",
+                                    "input": "array",
+                                    "help": "syntheticFields/institutions/hierarchy/title.help",
+                                    "label": "syntheticFields/institutions/hierarchy/title.label",
+                                    "hint": "syntheticFields/institutions/hierarchy/title.hint",
+                                    "child": {
+                                        "detail": false,
+                                        "input": false,
+                                        "help": "syntheticFields/institutions/hierarchy/title.help",
+                                        "label": "syntheticFields/institutions/hierarchy/title.label",
+                                        "hint": "syntheticFields/institutions/hierarchy/title.hint"
+                                    }
+                                }
+                            }
+                        },
+                        "@v": {
+                            "detail": "keyword",
+                            "input": "keyword",
+                            "help": "syntheticFields/institutions/@v.help",
+                            "label": "syntheticFields/institutions/@v.label",
+                            "hint": "syntheticFields/institutions/@v.hint"
+                        }
+                    }
                 },
                 "keywords_cs": {
                     "detail": "keyword",
@@ -2026,14 +2124,6 @@
                     "facet": "syntheticFields_person"
                 }
             }
-        },
-        "updated": {
-            "detail": "datetime",
-            "input": "datetime",
-            "help": "updated.help",
-            "label": "updated.label",
-            "hint": "updated.hint",
-            "facet": "updated"
         }
     }
 }
