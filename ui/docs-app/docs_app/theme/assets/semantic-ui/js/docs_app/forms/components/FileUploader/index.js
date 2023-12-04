@@ -1,1 +1,1 @@
-export * from "./FIleUploaderWrapper";
+export * from "./FileUploader";

@@ -30,3 +30,4 @@
 @celledBorderColor: @green;
 
 @linkHoverUnderline: underline;
+@focusedFormBorderColor: #2185d0;

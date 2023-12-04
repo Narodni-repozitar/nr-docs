@@ -30,7 +30,7 @@ import {
   RelatedItemsField,
   objectIdentifiersSchema,
   systemIdentifiersSchema,
-  ReactWrapperFile,
+  FileUploader,
 } from "../components/";
 import Overridable from "react-overridable";
 import { i18next } from "@translations/docs_app/i18next";
@@ -78,7 +78,7 @@ export const DepositForm = () => {
                   label={i18next.t("Files")}
                 >
                   <Overridable id="NrDocs.Deposit.FileUploader.container">
-                    <ReactWrapperFile record={record} />
+                    <FileUploader record={record} />
                   </Overridable>
                 </AccordionField>
               </Overridable>
