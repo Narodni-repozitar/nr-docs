@@ -14,11 +14,21 @@ from invenio_records_resources.services.uow import RecordCommitOp, UnitOfWork
 
 from nr_documents.proxies import current_service
 from nr_documents.records.api import NrDocumentsDraft, NrDocumentsRecord
+from nr_documents.resources.files.config import (
+    NrDocumentsFileDraftResourceConfig,
+    NrDocumentsFileResourceConfig,
+)
 from nr_documents.resources.records.config import NrDocumentsResourceConfig
 
 BASE_URLS = {
     "base_url": NrDocumentsResourceConfig.url_prefix,
     "base_html_url": "/docs/",
+    "base_files_url": NrDocumentsFileResourceConfig.url_prefix.replace(
+        "<pid_value>", "{id}"
+    ),
+    "base_draft_files_url": NrDocumentsFileDraftResourceConfig.url_prefix.replace(
+        "<pid_value>", "{id}"
+    ),
 }
 
 APP_CONFIG = {
@@ -37,6 +47,12 @@ APP_CONFIG = {
     # disable redis cache
     "CACHE_TYPE": "SimpleCache",  # Flask-Caching related configs
     "CACHE_DEFAULT_TIMEOUT": 300,
+    "FILES_REST_STORAGE_CLASS_LIST": {
+        "L": "Local",
+        "F": "Fetch",
+        "R": "Remote",
+    },
+    "FILES_REST_DEFAULT_STORAGE_CLASS": "L",
 }
 
 
@@ -172,3 +188,17 @@ def published_record_factory(record_service):
 def sample_published_record(record_service, published_record_factory, input_data):
     """Create a draft and publish it."""
     return published_record_factory(input_data)
+
+
+@pytest.fixture(scope="module", autouse=True)
+def location(location):
+    return location
+
+
+@pytest.fixture(scope="module")
+def headers():
+    """Default headers for making requests."""
+    return {
+        "content-type": "application/json",
+        "accept": "application/json",
+    }

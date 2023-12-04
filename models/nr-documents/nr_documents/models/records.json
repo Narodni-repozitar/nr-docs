@@ -31,7 +31,6 @@
                 }
             }
         },
-        "custom-fields": [],
         "published-service-config": {
             "base-classes": [
                 "nr_docs_extensions.services.published_service.NrDocumentsPublishedServiceConfig"
@@ -44,6 +43,7 @@
             "generate": true
         },
         "searchable": true,
+        "custom-fields": [],
         "permissions": {
             "presets": [
                 "authenticated"
@@ -80,7 +80,8 @@
             "components": [
                 "{{oarepo_requests.components.requests.PublishDraftComponent}}(\"publish_draft\", \"delete_record\")",
                 "{{invenio_records_resources.services.records.components.FilesOptionsComponent}}",
-                "{{invenio_records_resources.services.records.components.DataComponent}}"
+                "{{invenio_records_resources.services.records.components.DataComponent}}",
+                "{{invenio_drafts_resources.services.records.components.DraftFilesComponent}}"
             ],
             "generate": true,
             "config-key": "NR_DOCUMENTS_RECORD_SERVICE_CONFIG",
@@ -199,6 +200,41 @@
             "extra-code": "",
             "module": "tests"
         },
+        "draft": {
+            "type": "draft_record",
+            "properties": {},
+            "requests": {
+                "publish-draft": {
+                    "type": {
+                        "base-classes": [
+                            "oarepo_requests.types.publish_draft.PublishDraftRequestType"
+                        ]
+                    },
+                    "actions": {
+                        "submit": {
+                            "class": "oarepo_requests.actions.publish_draft.PublishDraftSubmitAction",
+                            "generate": false
+                        }
+                    }
+                }
+            },
+            "searchable": true,
+            "tests": {
+                "extra-fixtures": [],
+                "extra-code": "",
+                "module": "tests"
+            }
+        },
+        "draft-files": {
+            "type": "draft-file",
+            "properties": {},
+            "searchable": true,
+            "tests": {
+                "extra-fixtures": [],
+                "extra-code": "",
+                "module": "tests"
+            }
+        },
         "files": {
             "type": "file",
             "properties": {
@@ -288,31 +324,6 @@
                 "module": "tests"
             }
         },
-        "draft": {
-            "type": "draft_record",
-            "properties": {},
-            "requests": {
-                "publish-draft": {
-                    "type": {
-                        "base-classes": [
-                            "oarepo_requests.types.publish_draft.PublishDraftRequestType"
-                        ]
-                    },
-                    "actions": {
-                        "submit": {
-                            "class": "oarepo_requests.actions.publish_draft.PublishDraftSubmitAction",
-                            "generate": false
-                        }
-                    }
-                }
-            },
-            "searchable": true,
-            "tests": {
-                "extra-fixtures": [],
-                "extra-code": "",
-                "module": "tests"
-            }
-        },
         "sample": {
             "file": "data/sample_data.yaml"
         },
@@ -386,6 +397,19 @@
             "name": "nr_documents-1.0.0.json",
             "file": "nr_documents/records/jsonschemas/nr_documents-1.0.0.json"
         },
+        "files-field": {
+            "generate": true,
+            "field-class": "invenio_records_resources.records.systemfields.FilesField",
+            "file-class": "nr_documents.records.api.NrDocumentsRecord",
+            "field-args": [
+                "store=False"
+            ],
+            "imports": []
+        },
+        "translations": {
+            "module": "nr_documents.translations",
+            "alias": "nr_documents"
+        },
         "record-metadata": {
             "generate": true,
             "module": "nr_documents.records.models",
@@ -412,7 +436,11 @@
             "proxy": "current_service",
             "module": "nr_documents.services.records.service",
             "class": "nr_documents.services.records.service.NrDocumentsService",
-            "extra-code": ""
+            "extra-code": "",
+            "additional-args": [
+                "files_service=self.service_files",
+                "draft_files_service=self.service_draft_files"
+            ]
         },
         "record-dumper": {
             "generate": true,
@@ -430,25 +458,23 @@
             ],
             "imports": []
         },
-        "files-field": {
-            "generate": true,
-            "field-class": "invenio_records_resources.records.systemfields.FilesField",
-            "file-class": "nr_documents.records.api.NrDocumentsRecord",
-            "field-args": [
-                "store=False"
-            ],
-            "imports": []
-        },
-        "translations": {
-            "module": "nr_documents.translations",
-            "alias": "nr_documents"
-        },
         "edtf-interval-dumper": {
             "generate": true,
             "module": "nr_documents.records.dumpers.edtf",
             "class": "nr_documents.records.dumpers.edtf.NrDocumentsEDTFIntervalDumperExt",
             "base-classes": [
                 "oarepo_runtime.records.dumpers.edtf_interval.EDTFIntervalDumperExt"
+            ],
+            "extra-code": "",
+            "extensions": [],
+            "imports": []
+        },
+        "multilingual-dumper": {
+            "generate": true,
+            "module": "nr_documents.records.dumpers.multilingual",
+            "class": "nr_documents.records.dumpers.multilingual.MultilingualSearchDumperExt",
+            "base-classes": [
+                "oarepo_runtime.records.dumpers.multilingual_dumper.MultilingualDumper"
             ],
             "extra-code": "",
             "extensions": [],
@@ -507,17 +533,6 @@
             "base-classes": [
                 "oarepo_published_service.services.service.PublishedService"
             ],
-            "imports": []
-        },
-        "multilingual-dumper": {
-            "generate": true,
-            "module": "nr_documents.records.dumpers.multilingual",
-            "class": "nr_documents.records.dumpers.multilingual.MultilingualSearchDumperExt",
-            "base-classes": [
-                "oarepo_runtime.records.dumpers.multilingual_dumper.MultilingualDumper"
-            ],
-            "extra-code": "",
-            "extensions": [],
             "imports": []
         },
         "parent-record-marshmallow": {

@@ -1,3 +1,4 @@
+from invenio_drafts_resources.services.records.components import DraftFilesComponent
 from invenio_drafts_resources.services.records.config import is_record
 from invenio_records_resources.services import ConditionalLink, RecordLink
 from invenio_records_resources.services.records.components import (
@@ -42,6 +43,7 @@ class NrDocumentsServiceConfig(
         PublishDraftComponent("publish_draft", "delete_record"),
         FilesOptionsComponent,
         DataComponent,
+        DraftFilesComponent,
     ]
 
     model = "nr_documents"
@@ -52,7 +54,11 @@ class NrDocumentsServiceConfig(
     def links_item(self):
         return {
             "draft": RecordLink("{+api}/nr-documents/{id}/draft"),
-            "files": RecordLink("{+api}/nr-documents/{id}/files"),
+            "files": ConditionalLink(
+                cond=is_record,
+                if_=RecordLink("{+api}/nr-documents/{id}/files"),
+                else_=RecordLink("{+api}/nr-documents/{id}/draft/files"),
+            ),
             "latest": RecordLink("{+api}/nr-documents/{id}/versions/latest"),
             "latest_html": RecordLink("{+ui}/docs/{id}/latest"),
             "publish": RecordLink("{+api}/nr-documents/{id}/draft/actions/publish"),
