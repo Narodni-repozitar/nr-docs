@@ -39,6 +39,19 @@ def init_create_api_blueprint(state):
         )
 
 
+def init_addons_nr_documents_requests(state):
+    app = state.app
+    requests = app.extensions["invenio-requests"]
+
+    from nr_documents import config
+
+    for rt in getattr(config, "REQUESTS_REGISTERED_TYPES", []):
+        requests.request_type_registry.register_type(rt)
+
+    for er in getattr(config, "REQUESTS_ENTITY_RESOLVERS", []):
+        requests.entity_resolvers_registry.register_type(er)
+
+
 def init_addons_nr_documents_published_service(state):
     """Init app."""
     app = state.app

@@ -5,6 +5,7 @@ from invenio_records_resources.services.records.components import (
     FilesOptionsComponent,
 )
 from nr_docs_extensions.services.config import FilteredResultServiceConfig
+from oarepo_requests.components.requests import PublishDraftComponent
 from oarepo_runtime.config.service import PermissionsPresetsConfigMixin
 from oarepo_runtime.services.results import RecordList
 
@@ -38,8 +39,9 @@ class NrDocumentsServiceConfig(
     components = [
         *PermissionsPresetsConfigMixin.components,
         *FilteredResultServiceConfig.components,
-        DataComponent,
+        PublishDraftComponent("publish_draft", "delete_record"),
         FilesOptionsComponent,
+        DataComponent,
     ]
 
     model = "nr_documents"
