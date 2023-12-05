@@ -160,7 +160,7 @@
             "imports": []
         },
         "record": {
-            "extra-code": "    # extra custom fields for sorting by title\n    sort = {{nr_docs_extensions.services.sort.TitleICUSortField}}(source_field=\"metadata.title\")",
+            "extra-code": "    # extra custom fields for sorting by title\n    sort = {{nr_docs_extensions.services.sort.TitleICUSortField}}(source_field=\"metadata.title\")\n\n    title_search = {{oarepo_runtime.records.systemfields.icu.ICUSearchField}}(source_field=\"metadata.title\")\n    creator_search = {{oarepo_runtime.records.systemfields.icu.ICUSearchField}}(source_field=\"metadata.creators.fullName\")\n    contributor_search = {{oarepo_runtime.records.systemfields.icu.ICUSearchField}}(source_field=\"metadata.contributors.fullName\")\n    abstract_search = {{oarepo_runtime.records.systemfields.icu.ICUSearchField}}(source_field=\"metadata.abstract.value\")",
             "base-classes": [
                 "invenio_drafts_resources.records.api.Record{InvenioRecord}"
             ],
