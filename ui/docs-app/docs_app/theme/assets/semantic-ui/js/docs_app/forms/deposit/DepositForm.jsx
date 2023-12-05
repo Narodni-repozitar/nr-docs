@@ -37,14 +37,13 @@ import { i18next } from "@translations/docs_app/i18next";
 import _has from "lodash/has";
 
 export const DepositForm = () => {
-  const { record, formConfig } = useFormConfig();
+  const { record, formConfig, files } = useFormConfig();
   const editMode = _has(formConfig, "updateUrl");
   const sidebarRef = useRef(null);
   const formFeedbackRef = useRef(null);
 
   record.links = record.links || {};
-  record.links.files =
-    "https://localhost:5000/api/nr-documents/4z30f-2bt23/draft/files";
+  record.links.files = "/api/nr-documents/4z30f-2bt23/draft/files";
   record.files = { enabled: true };
   return (
     <Container>
@@ -78,7 +77,7 @@ export const DepositForm = () => {
                   label={i18next.t("Files")}
                 >
                   <Overridable id="NrDocs.Deposit.FileUploader.container">
-                    <FileUploader record={record} />
+                    <FileUploader record={record} files={files} />
                   </Overridable>
                 </AccordionField>
               </Overridable>
@@ -262,6 +261,7 @@ export const DepositForm = () => {
                       helpText={i18next.t(
                         "If a Creative Commons license is associated with the resource, select the appropriate license option from the menu. We recommend choosing the latest versions, namely 3.0 Czech and 4.0 International."
                       )}
+                      showLeafsOnly
                     />
                   </Overridable>
                   <Overridable

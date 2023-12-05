@@ -5,12 +5,9 @@ import { dummyFiles } from "./dummyfiles";
 import { i18next } from "@translations/docs_app/i18next";
 import { humanReadableBytes } from "./humanReadableBytes";
 import { EditFileButton, DeleteFileButton } from "./FileUploaderButtons";
+import _truncate from "lodash/truncate";
 
-export const FileUploaderTable = ({
-  files = dummyFiles,
-  removeFile,
-  record,
-}) => {
+export const FileUploaderTable = ({ files = dummyFiles, record }) => {
   return (
     <Table>
       <Table.Header>
@@ -24,13 +21,18 @@ export const FileUploaderTable = ({
 
       <Table.Body>
         {files?.entries?.map((file) => {
-          const { key, size } = file;
+          const { key: fileName, size, file_id: fileId } = file;
           return (
-            <Table.Row key={key}>
-              <Table.Cell>{key}</Table.Cell>
+            <Table.Row key={fileId}>
+              <Table.Cell>
+                <a href={file?.links?.content}>
+                  {fileName &&
+                    _truncate(fileName, { length: 40, omission: "..." })}
+                </a>
+              </Table.Cell>
               <Table.Cell>{humanReadableBytes(size)}</Table.Cell>
               <Table.Cell>
-                <EditFileButton key={key} record={record} />
+                <EditFileButton fileName={fileName} record={record} />
               </Table.Cell>
               <Table.Cell>
                 <DeleteFileButton file={file} />
@@ -41,4 +43,9 @@ export const FileUploaderTable = ({
       </Table.Body>
     </Table>
   );
+};
+
+FileUploaderTable.propTypes = {
+  files: PropTypes.object,
+  record: PropTypes.object,
 };
