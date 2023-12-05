@@ -10,6 +10,7 @@ from invenio_vocabularies.records.api import Vocabulary
 from nr_docs_extensions.services.sort import TitleICUSortField
 from oarepo_runtime.records.relations import PIDRelation, RelationsField
 from oarepo_runtime.records.systemfields.has_draftcheck import HasDraftCheckField
+from oarepo_runtime.records.systemfields.icu import ICUSearchField
 from oarepo_runtime.records.systemfields.record_status import RecordStatusSystemField
 
 from nr_documents.files.api import NrDocumentsFile, NrDocumentsFileDraft
@@ -56,6 +57,11 @@ class NrDocumentsRecord(InvenioRecord):
 
     # extra custom fields for sorting by title
     sort = TitleICUSortField(source_field="metadata.title")
+
+    title_search = ICUSearchField(source_field="metadata.title")
+    creator_search = ICUSearchField(source_field="metadata.creators.fullName")
+    contributor_search = ICUSearchField(source_field="metadata.contributors.fullName")
+    abstract_search = ICUSearchField(source_field="metadata.abstract.value")
 
     relations = RelationsField(
         accessRights=PIDRelation(
