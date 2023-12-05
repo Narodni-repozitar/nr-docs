@@ -385,7 +385,7 @@ def test_create_publish_new_revision(
     )
 
     assert response.status_code == 201
-    assert response.json["revision_id"] == 5
+    assert response.json["revision_id"] == 8
     _assert_single_item_response(response)
 
     # Update that new draft
@@ -413,7 +413,7 @@ def test_create_publish_new_revision(
     _assert_single_item_response(response)
 
     assert response.json["id"] == recid
-    assert response.json["revision_id"] == 2
+    assert response.json["revision_id"] == 3
     assert response.json["metadata"] == edited_metadata
 
     # Check it was actually edited
@@ -439,7 +439,7 @@ def test_mutiple_edit(
     )
 
     assert response.status_code == 201
-    assert response.json["revision_id"] == 5
+    assert response.json["revision_id"] == 8
 
     # Request a second edit. Get the same draft (revision_id)
     response = client_with_credentials.post(
@@ -447,7 +447,7 @@ def test_mutiple_edit(
     )
 
     assert response.status_code == 201
-    assert response.json["revision_id"] == 5
+    assert response.json["revision_id"] == 8
 
     # Publish it to check the increment in version_id
     response = client_with_credentials.post(
@@ -462,7 +462,7 @@ def test_mutiple_edit(
     )
 
     assert response.status_code == 201
-    assert response.json["revision_id"] == 8
+    assert response.json["revision_id"] == 13
 
 
 def test_redirect_to_latest_version(
@@ -597,3 +597,16 @@ def test_read_links_record(
     res = client_with_credentials.get(f"{base_urls['base_url']}{pid_value}")
 
     assert_expected_links_record(pid_value, res.json["links"], base_urls)
+
+
+def test_draft_listing_links(app, client_with_credentials, base_urls, sample_draft):
+    res = client_with_credentials.get(f"/user{base_urls['base_url']}")
+    assert_expected_links(
+        sample_draft["id"], res.json["hits"]["hits"][0]["links"], base_urls
+    )
+
+
+@pytest.fixture()
+def input_data(input_data):
+    input_data["files"] = {"enabled": False}
+    return input_data
