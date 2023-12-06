@@ -25,7 +25,7 @@ EditFileButton.propTypes = {
   record: PropTypes.object.isRequired,
 };
 
-export const UploadFileButton = ({ record }) => {
+export const UploadFileButton = ({ record, handleFilesUpload }) => {
   return (
     <FileUploadWrapper
       preactComponent={FileManagementDialog}
@@ -34,20 +34,29 @@ export const UploadFileButton = ({ record }) => {
         autoExtractImagesFromPDFs: false,
         locale: i18next.language,
         startEvent: { event: "upload-file-without-edit" },
+        onSuccessfulUpload: (files) => {
+          console.log("SUCESSSSSSSSSSSSSSSSSSSSSSSSSSSSSS");
+          handleFilesUpload(files);
+        },
       }}
     />
   );
 };
 
-UploadFileButton.propTypes = { record: PropTypes.object.isRequired };
+UploadFileButton.propTypes = {
+  record: PropTypes.object.isRequired,
+  handleFilesUpload: PropTypes.func.isRequired,
+};
 
-export const DeleteFileButton = ({ file }) => {
+export const DeleteFileButton = ({ file, handleFileDeletion }) => {
   const { _delete } = useDepositFileApiClient();
   return (
     <Button
       style={{ backgroundColor: "transparent" }}
       type="button"
-      onClick={() => _delete(file.links.self)}
+      onClick={() => {
+        _delete(file, (file) => handleFileDeletion(file));
+      }}
     >
       <Icon
         aria-hidden="true"
@@ -58,4 +67,7 @@ export const DeleteFileButton = ({ file }) => {
   );
 };
 
-DeleteFileButton.propTypes = { file: PropTypes.object.isRequired };
+DeleteFileButton.propTypes = {
+  file: PropTypes.object.isRequired,
+  handleFileDeletion: PropTypes.func.isRequired,
+};

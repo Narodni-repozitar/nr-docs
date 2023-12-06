@@ -7,45 +7,55 @@ import { humanReadableBytes } from "./humanReadableBytes";
 import { EditFileButton, DeleteFileButton } from "./FileUploaderButtons";
 import _truncate from "lodash/truncate";
 
-export const FileUploaderTable = ({ files = dummyFiles, record }) => {
+export const FileUploaderTable = ({
+  files = dummyFiles,
+  record,
+  handleFileDeletion,
+}) => {
   return (
-    <Table>
-      <Table.Header>
-        <Table.Row>
-          <Table.HeaderCell>{i18next.t("File name")}</Table.HeaderCell>
-          <Table.HeaderCell>{i18next.t("File size")}</Table.HeaderCell>
-          <Table.HeaderCell>{i18next.t("Update file")}</Table.HeaderCell>
-          <Table.HeaderCell>{i18next.t("Delete file")}</Table.HeaderCell>
-        </Table.Row>
-      </Table.Header>
+    files?.length > 0 && (
+      <Table>
+        <Table.Header>
+          <Table.Row>
+            <Table.HeaderCell>{i18next.t("File name")}</Table.HeaderCell>
+            <Table.HeaderCell>{i18next.t("File size")}</Table.HeaderCell>
+            <Table.HeaderCell>{i18next.t("Update file")}</Table.HeaderCell>
+            <Table.HeaderCell>{i18next.t("Delete file")}</Table.HeaderCell>
+          </Table.Row>
+        </Table.Header>
 
-      <Table.Body>
-        {files?.entries?.map((file) => {
-          const { key: fileName, size, file_id: fileId } = file;
-          return (
-            <Table.Row key={fileId}>
-              <Table.Cell>
-                <a href={file?.links?.content}>
-                  {fileName &&
-                    _truncate(fileName, { length: 40, omission: "..." })}
-                </a>
-              </Table.Cell>
-              <Table.Cell>{humanReadableBytes(size)}</Table.Cell>
-              <Table.Cell>
-                <EditFileButton fileName={fileName} record={record} />
-              </Table.Cell>
-              <Table.Cell>
-                <DeleteFileButton file={file} />
-              </Table.Cell>
-            </Table.Row>
-          );
-        })}
-      </Table.Body>
-    </Table>
+        <Table.Body>
+          {files?.map((file) => {
+            const { key: fileName, size, file_id: fileId } = file;
+            return (
+              <Table.Row key={fileId}>
+                <Table.Cell>
+                  <a href={file?.links?.content}>
+                    {fileName &&
+                      _truncate(fileName, { length: 40, omission: "..." })}
+                  </a>
+                </Table.Cell>
+                <Table.Cell>{humanReadableBytes(size)}</Table.Cell>
+                <Table.Cell>
+                  <EditFileButton fileName={fileName} record={record} />
+                </Table.Cell>
+                <Table.Cell>
+                  <DeleteFileButton
+                    file={file}
+                    handleFileDeletion={handleFileDeletion}
+                  />
+                </Table.Cell>
+              </Table.Row>
+            );
+          })}
+        </Table.Body>
+      </Table>
+    )
   );
 };
 
 FileUploaderTable.propTypes = {
-  files: PropTypes.object,
+  files: PropTypes.array,
   record: PropTypes.object,
+  handleFileDeletion: PropTypes.func,
 };

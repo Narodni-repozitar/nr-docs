@@ -6,6 +6,7 @@ import {
   FormFeedback,
   FormikStateLogger,
   EDTFSingleDatePicker,
+  relativeUrl,
 } from "@js/oarepo_ui";
 import { LocalVocabularySelectField } from "@js/oarepo_vocabularies";
 import { AccordionField, FieldLabel, TextField } from "react-invenio-forms";
@@ -37,14 +38,11 @@ import { i18next } from "@translations/docs_app/i18next";
 import _has from "lodash/has";
 
 export const DepositForm = () => {
-  const { record, formConfig, files } = useFormConfig();
+  const { record, formConfig, files: recordFiles } = useFormConfig();
   const editMode = _has(formConfig, "updateUrl");
   const sidebarRef = useRef(null);
   const formFeedbackRef = useRef(null);
 
-  record.links = record.links || {};
-  record.links.files = "/api/nr-documents/4z30f-2bt23/draft/files";
-  record.files = { enabled: true };
   return (
     <Container>
       <BaseForm
@@ -77,7 +75,7 @@ export const DepositForm = () => {
                   label={i18next.t("Files")}
                 >
                   <Overridable id="NrDocs.Deposit.FileUploader.container">
-                    <FileUploader record={record} files={files} />
+                    <FileUploader recordFiles={recordFiles} />
                   </Overridable>
                 </AccordionField>
               </Overridable>

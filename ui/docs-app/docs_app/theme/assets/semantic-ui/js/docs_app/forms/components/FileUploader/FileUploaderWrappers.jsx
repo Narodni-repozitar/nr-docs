@@ -1,6 +1,5 @@
 import React, { useEffect, useRef } from "react";
 import { h, render } from "preact";
-import { useDepositApiClient } from "@js/oarepo_ui";
 import PropTypes from "prop-types";
 import { i18next } from "@translations/docs_app/i18next";
 
@@ -10,23 +9,16 @@ export const FileUploadWrapper = ({
   uploadButtonClassName,
   props,
 }) => {
-  const { save } = useDepositApiClient();
-
   const preactCompRef = useRef();
   useEffect(() => {
     render(
       h(preactComponent, {
         TriggerComponent: ({ onClick, ...props }) => {
-          const handleOnClick = async () => {
-            await save(true);
-            onClick?.();
-          };
-
           return h(
             "button",
             {
               className: uploadButtonClassName,
-              onClick: handleOnClick,
+              onClick: onClick,
               ...props,
             },
             i18next.t("Upload files"),
@@ -37,7 +29,7 @@ export const FileUploadWrapper = ({
       }),
       preactCompRef.current
     );
-  });
+  }, []);
 
   return <div ref={preactCompRef} className={uploadWrapperClassName} />;
 };

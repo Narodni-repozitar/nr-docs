@@ -1,46 +1,72 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 import { i18next } from "@translations/docs_app/i18next";
-import { Message, Icon } from "semantic-ui-react";
+import { Message, Icon, Button } from "semantic-ui-react";
 import { FileUploaderTable } from "./FileUploaderTable";
 import { UploadFileButton } from "./FileUploaderButtons";
-import { useDepositFileApiClient } from "@js/oarepo_ui";
+import { useDepositApiClient } from "@js/oarepo_ui";
+import { Trans } from "react-i18next";
 
-export const FileUploader = ({
-  messageContent,
-  record,
-  files: recordFiles,
-}) => {
-  const [files, setFiles] = useState(recordFiles);
-  const { read, formik, setFieldValue } = useDepositFileApiClient();
+export const FileUploader = ({ messageContent, record, recordFiles }) => {
+  const [filesState, setFilesState] = useState(recordFiles?.entries || []);
+  console.log(filesState);
+  const { formik, isSubmitting, save } = useDepositApiClient();
   const { values } = formik;
   const recordObject = record || values;
-  // const { data, isLoading, error, refetch } = useQuery({
-  //   retry: false,
-  //   queryKey: ["files"],
-  //   queryFn: () => read(recordObject),
-  //   onError: (error) =>
-  //     setFieldValue(
-  //       "httpErrors",
-  //       error?.response?.data?.message ?? error.message
-  //     ),
-  // });
-  return (
+  const handleFilesUpload = (uploadedFiles) => {
+    console.log(filesState);
+    const deserializedFiles = uploadedFiles.map((file) => file.response.body);
+    console.log(deserializedFiles);
+    setFilesState((prevFiles) => [...prevFiles, ...deserializedFiles]);
+  };
+
+  const handleFileDeletion = (fileObject) => {
+    const newFiles = filesState.filter(
+      (file) => file.file_id !== fileObject.file_id
+    );
+    setFilesState(newFiles);
+  };
+
+  return values.id ? (
     <React.Fragment>
-      <FileUploaderTable record={recordObject} files={files} />
-      <UploadFileButton record={recordObject} />
+      <FileUploaderTable
+        files={filesState}
+        handleFileDeletion={handleFileDeletion}
+        record={recordObject}
+      />
+      <UploadFileButton
+        record={recordObject}
+        handleFilesUpload={handleFilesUpload}
+      />
       <Message icon size="small">
         <Icon name="warning sign" size="mini" style={{ fontSize: "1rem" }} />
         <Message.Content>{messageContent}</Message.Content>
       </Message>
     </React.Fragment>
+  ) : (
+    <Message>
+      <Icon name="info circle" size="mini" style={{ fontSize: "1rem" }} />
+      <Trans>
+        If you wish to upload files, you must
+        <Button
+          className="ml-5 mr-5"
+          primary
+          onClick={() => save(true)}
+          loading={isSubmitting}
+          size="mini"
+        >
+          save
+        </Button>
+        your draft first.
+      </Trans>
+    </Message>
   );
 };
 
 FileUploader.propTypes = {
   messageContent: PropTypes.string,
   record: PropTypes.object,
-  files: PropTypes.object,
+  recordFiles: PropTypes.object,
 };
 
 FileUploader.defaultProps = {
