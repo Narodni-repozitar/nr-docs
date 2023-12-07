@@ -7,7 +7,7 @@ import PropTypes from "prop-types";
 export const PublishButtonComponent = ({ modalMessage, modalHeader }) => {
   const { isModalOpen, handleCloseModal, handleOpenModal } =
     useConfirmationModal();
-  const { isSubmitting, publish } = useDepositApiClient();
+  const { isSubmitting, publish, isPublishing } = useDepositApiClient();
 
   return (
     <React.Fragment>
@@ -20,7 +20,7 @@ export const PublishButtonComponent = ({ modalMessage, modalHeader }) => {
         content={i18next.t("Publish")}
         type="button"
         disabled={isSubmitting}
-        loading={isSubmitting}
+        loading={isPublishing}
         fluid
       />
       <Modal
@@ -47,7 +47,7 @@ export const PublishButtonComponent = ({ modalMessage, modalHeader }) => {
           <Button
             name="publish"
             disabled={isSubmitting}
-            loading={isSubmitting}
+            loading={isPublishing}
             color="green"
             onClick={() => {
               publish();

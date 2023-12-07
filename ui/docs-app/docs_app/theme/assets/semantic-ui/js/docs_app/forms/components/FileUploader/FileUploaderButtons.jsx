@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 import { Button, Icon } from "semantic-ui-react";
 import FileManagementDialog from "@oarepo/file-manager";
@@ -35,7 +35,6 @@ export const UploadFileButton = ({ record, handleFilesUpload }) => {
         locale: i18next.language,
         startEvent: { event: "upload-file-without-edit" },
         onSuccessfulUpload: (files) => {
-          console.log("SUCESSSSSSSSSSSSSSSSSSSSSSSSSSSSSS");
           handleFilesUpload(files);
         },
       }}
@@ -50,13 +49,20 @@ UploadFileButton.propTypes = {
 
 export const DeleteFileButton = ({ file, handleFileDeletion }) => {
   const { _delete } = useDepositFileApiClient();
-  return (
+  const [isDeleting, setIsDeleting] = useState(false);
+  const handleDelete = async () => {
+    setIsDeleting(true);
+    await _delete(file, (file) => handleFileDeletion(file));
+    setIsDeleting(false);
+  };
+  return isDeleting ? (
+    <Icon loading name="spinner" />
+  ) : (
     <Button
+      disabled={isDeleting}
       style={{ backgroundColor: "transparent" }}
       type="button"
-      onClick={() => {
-        _delete(file, (file) => handleFileDeletion(file));
-      }}
+      onClick={handleDelete}
     >
       <Icon
         aria-hidden="true"

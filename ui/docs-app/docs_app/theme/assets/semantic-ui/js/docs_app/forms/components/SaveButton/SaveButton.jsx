@@ -4,12 +4,12 @@ import { i18next } from "@translations/docs_app/i18next";
 import { useDepositApiClient } from "@js/oarepo_ui";
 
 export const SaveButton = ({ ...uiProps }) => {
-  const { isSubmitting, save } = useDepositApiClient();
+  const { isSubmitting, save, isSaving } = useDepositApiClient();
   return (
     <Button
       name="save"
       disabled={isSubmitting}
-      loading={isSubmitting}
+      loading={isSaving}
       color="grey"
       onClick={() => save()}
       icon="save"

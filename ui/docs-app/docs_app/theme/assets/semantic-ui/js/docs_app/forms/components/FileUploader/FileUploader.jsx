@@ -9,14 +9,11 @@ import { Trans } from "react-i18next";
 
 export const FileUploader = ({ messageContent, record, recordFiles }) => {
   const [filesState, setFilesState] = useState(recordFiles?.entries || []);
-  console.log(filesState);
   const { formik, isSubmitting, save } = useDepositApiClient();
   const { values } = formik;
   const recordObject = record || values;
   const handleFilesUpload = (uploadedFiles) => {
-    console.log(filesState);
     const deserializedFiles = uploadedFiles.map((file) => file.response.body);
-    console.log(deserializedFiles);
     setFilesState((prevFiles) => [...prevFiles, ...deserializedFiles]);
   };
 

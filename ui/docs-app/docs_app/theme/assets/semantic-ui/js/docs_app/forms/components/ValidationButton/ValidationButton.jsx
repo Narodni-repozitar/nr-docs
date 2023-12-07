@@ -9,7 +9,6 @@ export const ValidateButton = () => {
     <Button
       fluid
       disabled={isSubmitting}
-      loading={isSubmitting}
       color="green"
       onClick={() => validateForm()}
       icon="check"

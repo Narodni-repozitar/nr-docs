@@ -18,9 +18,15 @@ export const FileUploaderTable = ({
         <Table.Header>
           <Table.Row>
             <Table.HeaderCell>{i18next.t("File name")}</Table.HeaderCell>
-            <Table.HeaderCell>{i18next.t("File size")}</Table.HeaderCell>
-            <Table.HeaderCell>{i18next.t("Update file")}</Table.HeaderCell>
-            <Table.HeaderCell>{i18next.t("Delete file")}</Table.HeaderCell>
+            <Table.HeaderCell textAlign="center">
+              {i18next.t("File size")}
+            </Table.HeaderCell>
+            <Table.HeaderCell textAlign="center">
+              {i18next.t("Update file")}
+            </Table.HeaderCell>
+            <Table.HeaderCell textAlign="center">
+              {i18next.t("Delete file")}
+            </Table.HeaderCell>
           </Table.Row>
         </Table.Header>
 
@@ -29,17 +35,23 @@ export const FileUploaderTable = ({
             const { key: fileName, size, file_id: fileId } = file;
             return (
               <Table.Row key={fileId}>
-                <Table.Cell>
-                  <a href={file?.links?.content}>
+                <Table.Cell width={7}>
+                  <a
+                    href={file?.links?.content}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     {fileName &&
                       _truncate(fileName, { length: 40, omission: "..." })}
                   </a>
                 </Table.Cell>
-                <Table.Cell>{humanReadableBytes(size)}</Table.Cell>
-                <Table.Cell>
+                <Table.Cell textAlign="center">
+                  {humanReadableBytes(size)}
+                </Table.Cell>
+                <Table.Cell textAlign="center">
                   <EditFileButton fileName={fileName} record={record} />
                 </Table.Cell>
-                <Table.Cell>
+                <Table.Cell textAlign="center">
                   <DeleteFileButton
                     file={file}
                     handleFileDeletion={handleFileDeletion}

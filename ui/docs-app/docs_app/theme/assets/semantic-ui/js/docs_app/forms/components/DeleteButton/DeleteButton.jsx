@@ -18,7 +18,7 @@ export const DeleteButtonComponent = ({
   const {
     formConfig: { permissions },
   } = useFormConfig();
-  const { values, isSubmitting, _delete } = useDepositApiClient();
+  const { values, isSubmitting, _delete, isDeleting } = useDepositApiClient();
 
   return (
     <React.Fragment>
@@ -32,7 +32,7 @@ export const DeleteButtonComponent = ({
           content={i18next.t("Delete")}
           type="button"
           disabled={isSubmitting}
-          loading={isSubmitting}
+          loading={isDeleting}
           fluid
         />
       )}
@@ -60,7 +60,7 @@ export const DeleteButtonComponent = ({
           <Button
             name="delete"
             disabled={isSubmitting}
-            loading={isSubmitting}
+            loading={isDeleting}
             color="red"
             onClick={() => {
               _delete(redirectUrl);
@@ -80,6 +80,7 @@ export const DeleteButtonComponent = ({
 DeleteButtonComponent.propTypes = {
   modalMessage: PropTypes.string,
   modalHeader: PropTypes.string,
+  redirectUrl: PropTypes.string,
 };
 
 DeleteButtonComponent.defaultProps = {
