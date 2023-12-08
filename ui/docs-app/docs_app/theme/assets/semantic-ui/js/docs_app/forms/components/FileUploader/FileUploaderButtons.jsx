@@ -15,6 +15,7 @@ export const EditFileButton = ({ fileName, record }) => {
         autoExtractImagesFromPDFs: false,
         locale: i18next.language,
         startEvent: { event: "edit-file", data: { file_key: fileName } },
+        modifyExistingFiles: true,
       }}
     />
   );
@@ -37,6 +38,13 @@ export const UploadFileButton = ({ record, handleFilesUpload }) => {
         onSuccessfulUpload: (files) => {
           handleFilesUpload(files);
         },
+        allowedMetaFields: [
+          {
+            id: "fileNote",
+            defaultValue: "",
+            isUserInput: true,
+          },
+        ],
       }}
     />
   );

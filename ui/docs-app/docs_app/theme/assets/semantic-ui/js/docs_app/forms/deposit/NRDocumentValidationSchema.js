@@ -5,9 +5,6 @@ import _uniqBy from "lodash/uniqBy";
 export const requiredMessage = ({ label }) =>
   `${label} ${i18next.t("is a required field")}`;
 
-const stringLengthMessage = ({ min, label }) =>
-  `${label} ${i18next.t("Must have at least x characters", { min: min })}`;
-
 const returnGroupError = (value, context) => {
   return i18next.t("Items must be unique");
 };
@@ -39,10 +36,7 @@ export const unique = (value, context, path, errorString) => {
 export const NRDocumentValidationSchema = Yup.object().shape({
   metadata: Yup.object().shape({
     // not sure but I assume it would be good idea to ask for a minimum length of title
-    title: Yup.string()
-      .required(requiredMessage)
-      .min(10, stringLengthMessage)
-      .label(i18next.t("Title")),
+    title: Yup.string().required(requiredMessage).label(i18next.t("Title")),
     resourceType: Yup.object()
       .test(
         "is-non-empty",
@@ -58,9 +52,7 @@ export const NRDocumentValidationSchema = Yup.object().shape({
               lang: Yup.string()
                 .required(requiredMessage)
                 .label(i18next.t("Language")),
-              value: Yup.string()
-                .required(requiredMessage)
-                .min(10, stringLengthMessage),
+              value: Yup.string().required(requiredMessage),
             })
             .label(i18next.t("Title")),
           titleType: Yup.string()
@@ -252,7 +244,6 @@ export const NRDocumentValidationSchema = Yup.object().shape({
                   .label(i18next.t("Language")),
                 value: Yup.string()
                   .required(requiredMessage)
-                  .min(10, stringLengthMessage)
                   .label(i18next.t("Subject")),
               })
             )
