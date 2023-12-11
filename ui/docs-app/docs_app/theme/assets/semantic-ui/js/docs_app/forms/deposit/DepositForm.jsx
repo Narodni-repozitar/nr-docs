@@ -6,7 +6,6 @@ import {
   FormFeedback,
   FormikStateLogger,
   EDTFSingleDatePicker,
-  relativeUrl,
 } from "@js/oarepo_ui";
 import { LocalVocabularySelectField } from "@js/oarepo_vocabularies";
 import { AccordionField, FieldLabel, TextField } from "react-invenio-forms";
