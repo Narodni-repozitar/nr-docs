@@ -1,17 +1,12 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Table } from "semantic-ui-react";
-import { dummyFiles } from "./dummyfiles";
 import { i18next } from "@translations/docs_app/i18next";
 import { humanReadableBytes } from "./humanReadableBytes";
 import { EditFileButton, DeleteFileButton } from "./FileUploaderButtons";
 import _truncate from "lodash/truncate";
 
-export const FileUploaderTable = ({
-  files = dummyFiles,
-  record,
-  handleFileDeletion,
-}) => {
+export const FileUploaderTable = ({ files, record, handleFileDeletion }) => {
   return (
     files?.length > 0 && (
       <Table>
