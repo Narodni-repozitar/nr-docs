@@ -1,4 +1,4 @@
-from invenio_users_resources.resolvers import UserResolver
+from oarepo_runtime.records.entity_resolvers import UserResolver
 
 from nr_documents.records.api import NrDocumentsDraft, NrDocumentsRecord
 from nr_documents.records.requests.delete_record.types import DeleteRecordRequestType
@@ -41,9 +41,10 @@ NR_DOCUMENTS_RECORD_SERVICE_CLASS = NrDocumentsService
 
 
 REQUESTS_REGISTERED_TYPES = [
-    DeleteRecordRequestType,
-    PublishDraftRequestType,
+    DeleteRecordRequestType(),
+    PublishDraftRequestType(),
 ]
+
 
 REQUESTS_ENTITY_RESOLVERS = [
     UserResolver(),

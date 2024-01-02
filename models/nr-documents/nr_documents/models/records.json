@@ -25,7 +25,7 @@
                 },
                 "parent-marshmallow": {
                     "parent-field": "delete_record",
-                    "schema-class": "oarepo_requests.schemas.marshmallow.NoneReceiverGenericRequestSchema",
+                    "schema-class": "oarepo_requests.services.schemas.NoneReceiverGenericRequestSchema",
                     "module": "nr_documents.services.records.schema",
                     "generate": true
                 }
@@ -74,12 +74,12 @@
         },
         "service-config": {
             "base-classes": [
-                "oarepo_runtime.config.service.PermissionsPresetsConfigMixin",
+                "oarepo_runtime.services.config.service.PermissionsPresetsConfigMixin",
                 "nr_docs_extensions.services.config.FilteredResultServiceConfig"
             ],
             "components": [
-                "{{oarepo_requests.components.requests.PublishDraftComponent}}(\"publish_draft\", \"delete_record\")",
-                "{{invenio_records_resources.services.records.components.FilesOptionsComponent}}",
+                "{{oarepo_requests.services.components.PublishDraftComponent}}(\"publish_draft\", \"delete_record\")",
+                "{{oarepo_runtime.services.files.FilesComponent}}",
                 "{{invenio_records_resources.services.records.components.DataComponent}}",
                 "{{invenio_drafts_resources.services.records.components.DraftFilesComponent}}"
             ],
@@ -160,7 +160,7 @@
             "imports": []
         },
         "record": {
-            "extra-code": "    # extra custom fields for sorting by title\n    sort = {{nr_docs_extensions.services.sort.TitleICUSortField}}(source_field=\"metadata.title\")",
+            "extra-code": "    # extra custom fields for sorting by title\n    sort = {{nr_docs_extensions.services.sort.TitleICUSortField}}(source_field=\"metadata.title\")\n\n    title_search = {{oarepo_runtime.records.systemfields.icu.ICUSearchField}}(source_field=\"metadata.title\")\n    creator_search = {{oarepo_runtime.records.systemfields.icu.ICUSearchField}}(source_field=\"metadata.creators.fullName\")\n    contributor_search = {{oarepo_runtime.records.systemfields.icu.ICUSearchField}}(source_field=\"metadata.contributors.fullName\")\n    abstract_search = {{oarepo_runtime.records.systemfields.icu.ICUSearchField}}(source_field=\"metadata.abstract.value\")",
             "base-classes": [
                 "invenio_drafts_resources.records.api.Record{InvenioRecord}"
             ],
@@ -194,11 +194,6 @@
             "suffix": "nr_documents",
             "suffix-upper": "NR_DOCUMENTS",
             "suffix-snake": "nr_documents"
-        },
-        "tests": {
-            "extra-fixtures": [],
-            "extra-code": "",
-            "module": "tests"
         },
         "draft": {
             "type": "draft_record",
@@ -234,6 +229,11 @@
                 "extra-code": "",
                 "module": "tests"
             }
+        },
+        "tests": {
+            "extra-fixtures": [],
+            "extra-code": "",
+            "module": "tests"
         },
         "files": {
             "type": "file",
@@ -452,9 +452,9 @@
             "extra-code": "",
             "extensions": [
                 "{{oarepo_runtime.records.systemfields.mapping.SystemFieldDumperExt}}()",
-                "{{nr_metadata.services.records.facets.dumper.SyntheticFieldsDumperExtension}}()",
                 "{{nr_documents.records.dumpers.edtf.NrDocumentsEDTFIntervalDumperExt}}()",
-                "{{nr_documents.records.dumpers.multilingual.MultilingualSearchDumperExt}}()"
+                "{{nr_documents.records.dumpers.multilingual.MultilingualSearchDumperExt}}()",
+                "{{nr_metadata.services.records.facets.dumper.SyntheticFieldsDumperExtension}}()"
             ],
             "imports": []
         },
@@ -548,7 +548,7 @@
             "module": "nr_documents.records.requests.resolvers",
             "class": "nr_documents.records.requests.resolvers.NrDocumentsResolver",
             "base-classes": [
-                "invenio_records_resources.references.RecordResolver"
+                "oarepo_runtime.records.entity_resolvers.RecordResolver"
             ],
             "imports": []
         },

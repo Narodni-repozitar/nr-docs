@@ -20,7 +20,7 @@ record:
       properties: {}
   service-config:
     base-classes:
-      - oarepo_runtime.config.service.PermissionsPresetsConfigMixin
+      - oarepo_runtime.services.config.service.PermissionsPresetsConfigMixin
       - nr_docs_extensions.services.config.FilteredResultServiceConfig
   json-serializer:
     base-classes: [ nr_docs_extensions.services.filtered_json_ui_serializer.FilteredUIJSONSerializer ]
@@ -38,6 +38,11 @@ record:
     extra-code: |-2
           # extra custom fields for sorting by title
           sort = {{nr_docs_extensions.services.sort.TitleICUSortField}}(source_field="metadata.title")
+      
+          title_search = {{oarepo_runtime.records.systemfields.icu.ICUSearchField}}(source_field="metadata.title")
+          creator_search = {{oarepo_runtime.records.systemfields.icu.ICUSearchField}}(source_field="metadata.creators.fullName")
+          contributor_search = {{oarepo_runtime.records.systemfields.icu.ICUSearchField}}(source_field="metadata.contributors.fullName")
+          abstract_search = {{oarepo_runtime.records.systemfields.icu.ICUSearchField}}(source_field="metadata.abstract.value")
   draft: {}
   draft-files: {}
   use:

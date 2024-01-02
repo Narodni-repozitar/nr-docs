@@ -22,18 +22,13 @@ class DocsAppResourceConfig(RecordsUIResourceConfig):
         PermissionsComponent,
         FilesComponent
     ]
+    search_app_id = "DocsApp.Search"
 
     templates = {
-        "detail": {
-            "layout": "docs_app/Detail.html.jinja",
-            "blocks": {
-                "record_main_content": "Main",
-                "record_sidebar": "Sidebar",
-            },
-        },
-        "search": {"layout": "docs_app/Search.html.jinja", "app_id": "DocsApp.Search" },
-        "edit": {"layout": "docs_app/Deposit.html.jinja"},
-        "create": {"layout": "docs_app/Deposit.html.jinja"},
+        "detail": "docs_app.Detail",
+        "search": "docs_app.Search",
+        "edit": "docs_app.Deposit",
+        "create": "docs_app.Deposit",
     }
 
     def search_active_facets(self, api_config, identity):

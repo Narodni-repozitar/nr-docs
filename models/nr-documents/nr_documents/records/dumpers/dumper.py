@@ -14,9 +14,9 @@ class NrDocumentsDumper(SearchDumper):
 
     extensions = [
         SystemFieldDumperExt(),
-        SyntheticFieldsDumperExtension(),
         NrDocumentsEDTFIntervalDumperExt(),
         MultilingualSearchDumperExt(),
+        SyntheticFieldsDumperExtension(),
     ]
 
 
@@ -25,7 +25,7 @@ class NrDocumentsDraftDumper(SearchDumper):
 
     extensions = [
         SystemFieldDumperExt(),
-        SyntheticFieldsDumperExtension(),
         NrDocumentsDraftEDTFIntervalDumperExt(),
         MultilingualSearchDumperExt(),
+        SyntheticFieldsDumperExtension(),
     ]

@@ -2,6 +2,7 @@ from oarepo_published_service.services import (
     PublishedServiceConfig
 )
 from oarepo_requests.services.components import PublishDraftComponentPrivate
+
 from functools import partial
 
 from oarepo_runtime.services.config.service import PermissionsPresetsConfigMixin
