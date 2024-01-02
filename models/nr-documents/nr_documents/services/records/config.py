@@ -3,7 +3,7 @@ from invenio_drafts_resources.services.records.config import is_record
 from invenio_records_resources.services import ConditionalLink, RecordLink
 from invenio_records_resources.services.records.components import DataComponent
 from nr_docs_extensions.services.config import FilteredResultServiceConfig
-from oarepo_requests.components.requests import PublishDraftComponent
+from oarepo_requests.services.components import PublishDraftComponent
 from oarepo_runtime.config.service import PermissionsPresetsConfigMixin
 from oarepo_runtime.services.files import FilesComponent
 from oarepo_runtime.services.results import RecordList

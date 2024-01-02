@@ -78,7 +78,7 @@
                 "nr_docs_extensions.services.config.FilteredResultServiceConfig"
             ],
             "components": [
-                "{{oarepo_requests.components.requests.PublishDraftComponent}}(\"publish_draft\", \"delete_record\")",
+                "{{oarepo_requests.services.components.PublishDraftComponent}}(\"publish_draft\", \"delete_record\")",
                 "{{oarepo_runtime.services.files.FilesComponent}}",
                 "{{invenio_records_resources.services.records.components.DataComponent}}",
                 "{{invenio_drafts_resources.services.records.components.DraftFilesComponent}}"
