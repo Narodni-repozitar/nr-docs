@@ -9,3 +9,12 @@
 {{ webpack['docs_app_components.css']}}
 
 {% endblock %}
+
+
+{% block record_main_content %}
+    <Main metadata={metadata} ui={ui} extra_context={extra_context} record={record}/>
+{% endblock %}
+
+{% block record_sidebar %}
+    <Sidebar metadata={metadata} ui={ui} extra_context={extra_context} record={record}/>
+{% endblock record_sidebar %}
