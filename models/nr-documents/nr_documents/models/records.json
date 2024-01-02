@@ -25,7 +25,7 @@
                 },
                 "parent-marshmallow": {
                     "parent-field": "delete_record",
-                    "schema-class": "oarepo_requests.schemas.marshmallow.NoneReceiverGenericRequestSchema",
+                    "schema-class": "oarepo_requests.services.schemas.NoneReceiverGenericRequestSchema",
                     "module": "nr_documents.services.records.schema",
                     "generate": true
                 }
@@ -79,7 +79,7 @@
             ],
             "components": [
                 "{{oarepo_requests.components.requests.PublishDraftComponent}}(\"publish_draft\", \"delete_record\")",
-                "{{invenio_records_resources.services.records.components.FilesOptionsComponent}}",
+                "{{oarepo_runtime.services.files.FilesComponent}}",
                 "{{invenio_records_resources.services.records.components.DataComponent}}",
                 "{{invenio_drafts_resources.services.records.components.DraftFilesComponent}}"
             ],
@@ -195,11 +195,6 @@
             "suffix-upper": "NR_DOCUMENTS",
             "suffix-snake": "nr_documents"
         },
-        "tests": {
-            "extra-fixtures": [],
-            "extra-code": "",
-            "module": "tests"
-        },
         "draft": {
             "type": "draft_record",
             "properties": {},
@@ -234,6 +229,11 @@
                 "extra-code": "",
                 "module": "tests"
             }
+        },
+        "tests": {
+            "extra-fixtures": [],
+            "extra-code": "",
+            "module": "tests"
         },
         "files": {
             "type": "file",
@@ -452,9 +452,9 @@
             "extra-code": "",
             "extensions": [
                 "{{oarepo_runtime.records.systemfields.mapping.SystemFieldDumperExt}}()",
-                "{{nr_metadata.services.records.facets.dumper.SyntheticFieldsDumperExtension}}()",
                 "{{nr_documents.records.dumpers.edtf.NrDocumentsEDTFIntervalDumperExt}}()",
-                "{{nr_documents.records.dumpers.multilingual.MultilingualSearchDumperExt}}()"
+                "{{nr_documents.records.dumpers.multilingual.MultilingualSearchDumperExt}}()",
+                "{{nr_metadata.services.records.facets.dumper.SyntheticFieldsDumperExtension}}()"
             ],
             "imports": []
         },
@@ -548,7 +548,7 @@
             "module": "nr_documents.records.requests.resolvers",
             "class": "nr_documents.records.requests.resolvers.NrDocumentsResolver",
             "base-classes": [
-                "invenio_records_resources.references.RecordResolver"
+                "oarepo_runtime.records.entity_resolvers.RecordResolver"
             ],
             "imports": []
         },

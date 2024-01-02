@@ -65,9 +65,9 @@
             ],
             "extra-code": "",
             "extensions": [
-                "{{nr_metadata.services.records.facets.dumper.SyntheticFieldsDumperExtension}}()",
                 "{{nr_documents.files.dumpers.edtf.NrDocumentsFileEDTFIntervalDumperExt}}()",
-                "{{nr_documents.files.dumpers.multilingual.MultilingualSearchDumperExt}}()"
+                "{{nr_documents.files.dumpers.multilingual.MultilingualSearchDumperExt}}()",
+                "{{nr_metadata.services.records.facets.dumper.SyntheticFieldsDumperExtension}}()"
             ],
             "imports": []
         },
@@ -279,17 +279,6 @@
             "extensions": [],
             "imports": []
         },
-        "multilingual-dumper": {
-            "generate": true,
-            "module": "nr_documents.files.dumpers.multilingual",
-            "class": "nr_documents.files.dumpers.multilingual.MultilingualSearchDumperExt",
-            "base-classes": [
-                "oarepo_runtime.records.dumpers.multilingual_dumper.MultilingualDumper"
-            ],
-            "extra-code": "",
-            "extensions": [],
-            "imports": []
-        },
         "permissions": {
             "class": "nr_documents.services.records.permissions.NrDocumentsPermissionPolicy",
             "generate": false,
@@ -301,6 +290,17 @@
             "base-classes": [
                 "invenio_records_permissions.RecordPermissionPolicy"
             ],
+            "imports": []
+        },
+        "multilingual-dumper": {
+            "generate": true,
+            "module": "nr_documents.files.dumpers.multilingual",
+            "class": "nr_documents.files.dumpers.multilingual.MultilingualSearchDumperExt",
+            "base-classes": [
+                "oarepo_runtime.records.dumpers.multilingual_dumper.MultilingualDumper"
+            ],
+            "extra-code": "",
+            "extensions": [],
             "imports": []
         },
         "draft-parent-record": {

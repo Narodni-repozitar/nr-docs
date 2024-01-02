@@ -1,5 +1,4 @@
-from invenio_records_resources.references import RecordResolver
-from oarepo_runtime.records.resolvers import DraftProxy
+from oarepo_runtime.records.entity_resolvers import DraftProxy, RecordResolver
 
 
 class NrDocumentsResolver(RecordResolver):

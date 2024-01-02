@@ -1,13 +1,11 @@
 from invenio_drafts_resources.services.records.components import DraftFilesComponent
 from invenio_drafts_resources.services.records.config import is_record
 from invenio_records_resources.services import ConditionalLink, RecordLink
-from invenio_records_resources.services.records.components import (
-    DataComponent,
-    FilesOptionsComponent,
-)
+from invenio_records_resources.services.records.components import DataComponent
 from nr_docs_extensions.services.config import FilteredResultServiceConfig
 from oarepo_requests.components.requests import PublishDraftComponent
 from oarepo_runtime.config.service import PermissionsPresetsConfigMixin
+from oarepo_runtime.services.files import FilesComponent
 from oarepo_runtime.services.results import RecordList
 
 from nr_documents.records.api import NrDocumentsDraft, NrDocumentsRecord
@@ -41,7 +39,7 @@ class NrDocumentsServiceConfig(
         *PermissionsPresetsConfigMixin.components,
         *FilteredResultServiceConfig.components,
         PublishDraftComponent("publish_draft", "delete_record"),
-        FilesOptionsComponent,
+        FilesComponent,
         DataComponent,
         DraftFilesComponent,
     ]

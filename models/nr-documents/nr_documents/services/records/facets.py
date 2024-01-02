@@ -1,7 +1,7 @@
 """Facet definitions."""
 
-from flask_babelex import lazy_gettext as _
 from invenio_records_resources.services.records.facets import TermsFacet
+from oarepo_runtime.i18n import lazy_gettext as _
 from oarepo_runtime.services.facets.date import DateTimeFacet
 from oarepo_runtime.services.facets.nested_facet import NestedLabeledFacet
 from oarepo_vocabularies.services.facets import (
