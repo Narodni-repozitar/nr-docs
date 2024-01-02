@@ -74,7 +74,7 @@
         },
         "service-config": {
             "base-classes": [
-                "oarepo_runtime.config.service.PermissionsPresetsConfigMixin",
+                "oarepo_runtime.services.config.service.PermissionsPresetsConfigMixin",
                 "nr_docs_extensions.services.config.FilteredResultServiceConfig"
             ],
             "components": [
