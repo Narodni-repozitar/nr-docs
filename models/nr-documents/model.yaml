@@ -20,7 +20,7 @@ record:
       properties: {}
   service-config:
     base-classes:
-      - oarepo_runtime.config.service.PermissionsPresetsConfigMixin
+      - oarepo_runtime.services.config.service.PermissionsPresetsConfigMixin
       - nr_docs_extensions.services.config.FilteredResultServiceConfig
   json-serializer:
     base-classes: [ nr_docs_extensions.services.filtered_json_ui_serializer.FilteredUIJSONSerializer ]
