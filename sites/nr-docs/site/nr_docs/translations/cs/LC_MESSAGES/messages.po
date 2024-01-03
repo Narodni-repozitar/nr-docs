@@ -2837,6 +2837,9 @@ msgstr "Upravit soubor"
 msgid "Files"
 msgstr "Soubory"
 
+msgid "Edit file metadata"
+msgstr "Upravit metadata souboru"
+
 msgid "Random string"
 msgstr "nahoda"
 

@@ -859,5 +859,6 @@
     "Upload files": "Upload files",
     "Edit file": "Edit file",
     "Files": "Files",
-    "If you wish to upload files, you must<1>save</1>your draft first.": "If you wish to upload files, you must<1>save</1>your draft first."
+    "If you wish to upload files, you must<1>save</1>your draft first.": "If you wish to upload files, you must<1>save</1>your draft first.",
+    "Edit file metadata": "Edit file metadata"
 }

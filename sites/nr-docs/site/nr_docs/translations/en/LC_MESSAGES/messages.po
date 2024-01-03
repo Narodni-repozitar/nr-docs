@@ -2836,3 +2836,6 @@ msgstr "Files"
 
 msgid "If you wish to upload files, you must<1>save</1>your draft first."
 msgstr "If you wish to upload files, you must<1>save</1>your draft first."
+
+msgid "Edit file metadata"
+msgstr "Edit file metadata"

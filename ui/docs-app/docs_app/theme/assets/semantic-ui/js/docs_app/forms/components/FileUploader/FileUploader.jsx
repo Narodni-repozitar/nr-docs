@@ -9,7 +9,7 @@ import { Trans } from "react-i18next";
 
 export const FileUploader = ({ messageContent, record, recordFiles }) => {
   const [filesState, setFilesState] = useState(recordFiles?.entries || []);
-  const { formik, isSubmitting, save } = useDepositApiClient();
+  const { formik, isSubmitting, save, isSaving } = useDepositApiClient();
   const { values } = formik;
   const recordObject = record || values;
   const handleFilesUpload = (uploadedFiles) => {
@@ -49,7 +49,8 @@ export const FileUploader = ({ messageContent, record, recordFiles }) => {
           className="ml-5 mr-5"
           primary
           onClick={() => save(true)}
-          loading={isSubmitting}
+          loading={isSaving}
+          disabled={isSubmitting}
           size="mini"
         >
           save

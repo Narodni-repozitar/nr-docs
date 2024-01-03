@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Table } from "semantic-ui-react";
+import { Table, Popup } from "semantic-ui-react";
 import { i18next } from "@translations/docs_app/i18next";
 import { humanReadableBytes } from "./humanReadableBytes";
 import { EditFileButton, DeleteFileButton } from "./FileUploaderButtons";
@@ -9,19 +9,15 @@ import _truncate from "lodash/truncate";
 export const FileUploaderTable = ({ files, record, handleFileDeletion }) => {
   return (
     files?.length > 0 && (
-      <Table>
+      <Table compact>
         <Table.Header>
           <Table.Row>
             <Table.HeaderCell>{i18next.t("File name")}</Table.HeaderCell>
             <Table.HeaderCell textAlign="center">
               {i18next.t("File size")}
             </Table.HeaderCell>
-            <Table.HeaderCell textAlign="center">
-              {i18next.t("Update file")}
-            </Table.HeaderCell>
-            <Table.HeaderCell textAlign="center">
-              {i18next.t("Delete file")}
-            </Table.HeaderCell>
+            <Table.HeaderCell></Table.HeaderCell>
+            <Table.HeaderCell></Table.HeaderCell>
           </Table.Row>
         </Table.Header>
 
@@ -43,13 +39,27 @@ export const FileUploaderTable = ({ files, record, handleFileDeletion }) => {
                 <Table.Cell textAlign="center">
                   {humanReadableBytes(size)}
                 </Table.Cell>
-                <Table.Cell textAlign="center">
-                  <EditFileButton fileName={fileName} record={record} />
+                <Table.Cell collapsing textAlign="center">
+                  <Popup
+                    content={i18next.t("Edit file metadata")}
+                    trigger={
+                      <div>
+                        <EditFileButton fileName={fileName} record={record} />
+                      </div>
+                    }
+                  />
                 </Table.Cell>
-                <Table.Cell textAlign="center">
-                  <DeleteFileButton
-                    file={file}
-                    handleFileDeletion={handleFileDeletion}
+                <Table.Cell collapsing textAlign="center">
+                  <Popup
+                    content={i18next.t("Delete file")}
+                    trigger={
+                      <div>
+                        <DeleteFileButton
+                          file={file}
+                          handleFileDeletion={handleFileDeletion}
+                        />
+                      </div>
+                    }
                   />
                 </Table.Cell>
               </Table.Row>
