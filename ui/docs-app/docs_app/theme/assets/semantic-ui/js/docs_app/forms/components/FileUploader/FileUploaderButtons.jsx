@@ -62,9 +62,9 @@ export const DeleteFileButton = ({ file, handleFileDeletion }) => {
   const handleDelete = async () => {
     setIsDeleting(true);
     _delete(file)
-      .then(() => {
+      .then((response) => {
         setIsDeleting(false);
-        handleFileDeletion(file);
+        if (response.status === 204) handleFileDeletion(file);
       })
       .catch(() => {
         setIsDeleting(false);
