@@ -1,17 +1,44 @@
-import boto3
 import datetime
+import gzip
+import os
+import traceback
+from typing import Iterator
+
+import boto3
+import pytz
+import yaml
+from botocore.exceptions import ClientError
 from dotenv import load_dotenv
 from lxml import etree
-from typing import Iterator
-import os
-import yaml
-
-import pytz
 from oarepo_runtime.datastreams import BaseReader, StreamEntry
-from sickle import Sickle
-from sickle.oaiexceptions import NoRecordsMatch
+from oarepo_runtime.datastreams.types import StreamEntryFile
 
 load_dotenv()
+
+TWO_WEEKS = 14 * 24 * 3600
+
+
+def create_presigned_url(s3_client, bucket_name, object_name):
+    """Generate a presigned URL to share an S3 object
+
+    :param bucket_name: string
+    :param object_name: string
+    :param expiration: Time in seconds for the presigned URL to remain valid
+    :return: Presigned URL as string. If error, returns None.
+    """
+
+    try:
+        response = s3_client.generate_presigned_url(
+            "get_object",
+            Params={"Bucket": bucket_name, "Key": object_name},
+            ExpiresIn=TWO_WEEKS,
+        )
+    except ClientError:
+        print(traceback.format_exc())
+        return None
+
+    return response
+
 
 class S3Reader(BaseReader):
     def __init__(
@@ -38,55 +65,118 @@ class S3Reader(BaseReader):
         self.manual = manual
 
     def __iter__(self) -> Iterator[StreamEntry]:
-        s3_client = boto3.client('s3', endpoint_url=os.environ['NUSL_S3_ENDPOINT_URL'],
-                         aws_access_key_id=os.environ['NUSL_S3_ACCESS_KEY'],
-                         aws_secret_access_key=os.environ['NUSL_S3_SECRET_KEY'])
+        s3_client = boto3.client(
+            "s3",
+            endpoint_url=os.environ["NUSL_S3_ENDPOINT_URL"],
+            aws_access_key_id=os.environ["NUSL_S3_ACCESS_KEY"],
+            aws_secret_access_key=os.environ["NUSL_S3_SECRET_KEY"],
+        )
         s3_bucket_name = os.environ.get("NUSL_S3_BUCKET", "nr-repo-docs-harvest")
-        harvest_name = os.environ.get("NUSL_S3_HARVEST_NAME", 'nusl-harvest-01')
+        harvest_name = os.environ.get("NUSL_S3_HARVEST_NAME", "nusl-harvest-02")
 
-        objects = s3_client.list_objects_v2(Bucket=s3_bucket_name, Prefix=harvest_name)
-        object_keys = [obj['Key'] for obj in objects['Contents'] if obj['Size'] > 0]
-        for obj_key in sorted(object_keys):
-            _, datestamp, fileno = obj_key.split('/')
-            content = list(yaml.safe_load_all(s3_client.get_object(Bucket=s3_bucket_name, Key=obj_key)['Body']))
-        
-            for record in content:
-                header_xml_element = etree.fromstring(record["header"])
-                namespaces = { "oai": header_xml_element.nsmap[None] }
-                
-                status = header_xml_element.xpath("./@status")
-                deleted = False if not status else status[0]
-                
-                identifier = header_xml_element.xpath("//oai:identifier", namespaces=namespaces)                
-                if self.identifiers and identifier not in self.identifiers:
-                    # skip not requested record
-                    continue
-                
-                datestamp = header_xml_element.xpath("//oai:datestamp", namespaces=namespaces)
-                if (self.datestamp_from and self.datestamp_until and self.datestamp_until > datestamp < self.datestamp_from) \
-                    or (self.datestamp_from and not self.datestamp_until and datestamp < self.datestamp_from) \
-                    or (not self.datestamp_from and self.datestamp_until and self.datestamp_until < datestamp):
-                    # skip record out of given time period
-                    continue
-                setSpecs = header_xml_element.xpath("//oai:setSpec", namespaces=namespaces)
-                
-                yield StreamEntry(
-                    entry=record["raw"],
-                    context={
-                        "oai": {
-                            "metadata": record["metadata"] or {},
-                            "datestamp": expand_datestamp(datestamp[0].text),
-                            "deleted": deleted,
-                            "identifier": identifier[0].text,
-                            "setSpecs": [setSpec.text for setSpec in setSpecs],
+        paginator = s3_client.get_paginator("list_objects_v2")
+        pages = paginator.paginate(Bucket=s3_bucket_name, Prefix=harvest_name)
+        size = 0
+        for page in pages:
+            for obj in page["Contents"]:
+                size += obj["Size"]
+
+                yaml_data = s3_client.get_object(Bucket=s3_bucket_name, Key=obj["Key"])[
+                    "Body"
+                ]
+                yaml_data = gzip.GzipFile(fileobj=yaml_data).read().decode("utf-8")
+                _, datestamp, _ = obj["Key"].split("/")
+                content = list(yaml.safe_load_all(yaml_data))
+
+                for record in content:
+                    header_xml_element = etree.fromstring(record["header"])
+                    namespaces = {"oai": header_xml_element.nsmap[None]}
+                    status = header_xml_element.xpath("./@status")
+                    deleted = False if not status else status[0]
+                    identifier = header_xml_element.xpath(
+                        "//oai:identifier", namespaces=namespaces
+                    )
+
+                    not_requested_record = (
+                        self.identifiers and identifier not in self.identifiers
+                    )
+                    if not_requested_record:
+                        continue
+
+                    datestamp = header_xml_element.xpath(
+                        "//oai:datestamp", namespaces=namespaces
+                    )
+                    datestamp_is_in_period = (
+                        self.datestamp_from
+                        and self.datestamp_until
+                        and self.datestamp_until > datestamp < self.datestamp_from
+                    )
+                    datestamp_is_before_period = (
+                        self.datestamp_from
+                        and not self.datestamp_until
+                        and datestamp < self.datestamp_from
+                    )
+                    datestamp_is_after_period = (
+                        not self.datestamp_from
+                        and self.datestamp_until
+                        and self.datestamp_until < datestamp
+                    )
+                    record_out_of_period = (
+                        datestamp_is_in_period
+                        or datestamp_is_before_period
+                        or datestamp_is_after_period
+                    )
+                    if record_out_of_period:
+                        continue
+
+                    setSpecs = header_xml_element.xpath(
+                        "//oai:setSpec", namespaces=namespaces
+                    )
+
+                    record_stream_entries = []
+                    for file in record["files"]:
+                        file_presigned_url = create_presigned_url(
+                            s3_client, s3_bucket_name, obj["Key"]
+                        )
+                        if not file_presigned_url:
+                            # TODO: backoff
+                            pass
+
+                        metadata = file
+                        metadata.pop("location")
+                        metadata.pop("s3_location")
+
+                        location = file.get("location", None) or file.get(
+                            "s3_location", None
+                        )
+                        if not location:
+                            # This should not happen.
+                            pass
+
+                        metadata["key"] = location.split("/")[-1]
+
+                        record_stream_entries.append(
+                            StreamEntryFile(metadata, file_presigned_url)
+                        )
+
+                    yield StreamEntry(
+                        entry=record["raw"],
+                        context={
+                            "oai": {
+                                "metadata": record["metadata"] or {},
+                                "datestamp": expand_datestamp(datestamp[0].text),
+                                "deleted": deleted,
+                                "identifier": identifier[0].text,
+                                "setSpecs": [setSpec.text for setSpec in setSpecs],
+                            },
+                            "oai_run": self.oai_run,
+                            "oai_harvester_id": self.oai_harvester_id,
+                            "manual": self.manual,
                         },
-                        "oai_run": self.oai_run,
-                        "oai_harvester_id": self.oai_harvester_id,
-                        "manual": self.manual,
-                    },
-                    deleted=deleted,
-                )
-        
+                        deleted=deleted,
+                        files=record_stream_entries,
+                    )
+
 
 def expand_datestamp(datestamp):
     if "T" not in datestamp:
