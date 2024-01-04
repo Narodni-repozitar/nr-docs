@@ -860,5 +860,7 @@
     "Edit file": "Edit file",
     "Files": "Files",
     "If you wish to upload files, you must<1>save</1>your draft first.": "If you wish to upload files, you must<1>save</1>your draft first.",
-    "Edit file metadata": "Edit file metadata"
+    "Edit file metadata": "Edit file metadata",
+    "Metadata only record": "Metadata only record",
+    "Disable files for this record. If files are already uploaded, you have to delete them first.": "Disable files for this record. If files are already uploaded, you have to delete them first."
 }

@@ -2845,3 +2845,13 @@ msgstr "nahoda"
 
 msgid "If you wish to upload files, you must<1>save</1>your draft first."
 msgstr "If you wish to upload files, you must<1>save</1>your draft first."
+
+msgid "Metadata only record"
+msgstr "Metadatový záznam"
+
+msgid ""
+"Disable files for this record. If files are already uploaded, you have to "
+"delete them first."
+msgstr ""
+"Vypnout soubory pro tento záznam. Pokud jsou soubory již nahrány, musíte je "
+"nejprve smazat."

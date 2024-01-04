@@ -26,30 +26,29 @@ export const FileUploader = ({ messageContent, record, recordFiles }) => {
 
   return (
     <React.Fragment>
-      <span>
-        <Checkbox
-          label={i18next.t("Metadata only record")}
-          disabled={filesState.length > 0}
-          checked={!recordObject?.files?.enabled}
-          onChange={() => {
-            setFieldValue("files.enabled", !recordObject?.files?.enabled);
-          }}
-        />
-        <Popup
-          content={i18next.t(
-            "Disable files for this record. If files are already uploaded, you have to delete them first."
-          )}
-          trigger={
-            <Icon
-              name="question circle outline"
-              style={{ fontSize: "1rem", paddingLeft: "0.5rem" }}
-            ></Icon>
-          }
-        />
-      </span>
-
       {values.id ? (
         <React.Fragment>
+          <span>
+            <Checkbox
+              label={i18next.t("Metadata only record")}
+              disabled={filesState.length > 0}
+              checked={!recordObject?.files?.enabled}
+              onChange={() => {
+                setFieldValue("files.enabled", !recordObject?.files?.enabled);
+              }}
+            />
+            <Popup
+              content={i18next.t(
+                "Disable files for this record. If files are already uploaded, you have to delete them first."
+              )}
+              trigger={
+                <Icon
+                  name="question circle outline"
+                  style={{ fontSize: "1rem", paddingLeft: "0.5rem" }}
+                ></Icon>
+              }
+            />
+          </span>
           {recordObject?.files?.enabled && (
             <React.Fragment>
               <FileUploaderTable

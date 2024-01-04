@@ -2839,3 +2839,13 @@ msgstr "If you wish to upload files, you must<1>save</1>your draft first."
 
 msgid "Edit file metadata"
 msgstr "Edit file metadata"
+
+msgid "Metadata only record"
+msgstr "Metadata only record"
+
+msgid ""
+"Disable files for this record. If files are already uploaded, you have to "
+"delete them first."
+msgstr ""
+"Disable files for this record. If files are already uploaded, you have to "
+"delete them first."

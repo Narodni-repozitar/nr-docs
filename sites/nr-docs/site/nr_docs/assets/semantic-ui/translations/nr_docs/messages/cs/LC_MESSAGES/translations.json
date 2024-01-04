@@ -861,5 +861,7 @@
     "Files": "Soubory",
     "Edit file metadata": "Upravit metadata souboru",
     "Random string": "nahoda",
-    "If you wish to upload files, you must<1>save</1>your draft first.": "If you wish to upload files, you must<1>save</1>your draft first."
+    "If you wish to upload files, you must<1>save</1>your draft first.": "If you wish to upload files, you must<1>save</1>your draft first.",
+    "Metadata only record": "Metadatový záznam",
+    "Disable files for this record. If files are already uploaded, you have to delete them first.": "Vypnout soubory pro tento záznam. Pokud jsou soubory již nahrány, musíte je nejprve smazat."
 }

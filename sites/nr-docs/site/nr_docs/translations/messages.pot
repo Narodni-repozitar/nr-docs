@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2024-01-02 14:54+0100\n"
+"POT-Creation-Date: 2024-01-04 13:41+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -508,7 +508,7 @@ msgstr ""
 msgid "on"
 msgstr ""
 
-#: ui/docs-app/docs_app/templates/semantic-ui/oarepo_ui/components/Person.html.jinja:3
+#: ui/docs-app/docs_app/templates/semantic-ui/oarepo_ui/components/Person.jinja:3
 msgid "Find more records by this person"
 msgstr ""
 
