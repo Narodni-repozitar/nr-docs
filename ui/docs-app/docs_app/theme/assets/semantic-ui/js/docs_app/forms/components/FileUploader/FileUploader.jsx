@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 import { i18next } from "@translations/docs_app/i18next";
-import { Message, Icon, Button } from "semantic-ui-react";
+import { Message, Icon, Button, Checkbox, Popup } from "semantic-ui-react";
 import { FileUploaderTable } from "./FileUploaderTable";
 import { UploadFileButton } from "./FileUploaderButtons";
 import { useDepositApiClient } from "@js/oarepo_ui";
@@ -10,13 +10,13 @@ import { Trans } from "react-i18next";
 export const FileUploader = ({ messageContent, record, recordFiles }) => {
   const [filesState, setFilesState] = useState(recordFiles?.entries || []);
   const { formik, isSubmitting, save, isSaving } = useDepositApiClient();
-  const { values } = formik;
+  const { values, setFieldValue } = formik;
   const recordObject = record || values;
+
   const handleFilesUpload = (uploadedFiles) => {
     const deserializedFiles = uploadedFiles.map((file) => file.response.body);
     setFilesState((prevFiles) => [...prevFiles, ...deserializedFiles]);
   };
-
   const handleFileDeletion = (fileObject) => {
     const newFiles = filesState.filter(
       (file) => file.file_id !== fileObject.file_id
@@ -24,40 +24,74 @@ export const FileUploader = ({ messageContent, record, recordFiles }) => {
     setFilesState(newFiles);
   };
 
-  return values.id ? (
+  return (
     <React.Fragment>
-      <FileUploaderTable
-        files={filesState}
-        handleFileDeletion={handleFileDeletion}
-        record={recordObject}
-      />
-      <UploadFileButton
-        record={recordObject}
-        handleFilesUpload={handleFilesUpload}
-      />
-      <Message icon size="small">
-        <Icon name="warning sign" size="mini" style={{ fontSize: "1rem" }} />
-        <Message.Content>{messageContent}</Message.Content>
-      </Message>
+      <span>
+        <Checkbox
+          label={i18next.t("Metadata only record")}
+          disabled={filesState.length > 0}
+          checked={!recordObject?.files?.enabled}
+          onChange={() => {
+            setFieldValue("files.enabled", !recordObject?.files?.enabled);
+          }}
+        />
+        <Popup
+          content={i18next.t(
+            "Disable files for this record. If files are already uploaded, you have to delete them first."
+          )}
+          trigger={
+            <Icon
+              name="question circle outline"
+              style={{ fontSize: "1rem", paddingLeft: "0.5rem" }}
+            ></Icon>
+          }
+        />
+      </span>
+
+      {values.id ? (
+        <React.Fragment>
+          {recordObject?.files?.enabled && (
+            <React.Fragment>
+              <FileUploaderTable
+                files={filesState}
+                handleFileDeletion={handleFileDeletion}
+                record={recordObject}
+              />
+              <UploadFileButton
+                record={recordObject}
+                handleFilesUpload={handleFilesUpload}
+              />
+            </React.Fragment>
+          )}
+          <Message icon size="small">
+            <Icon
+              name="warning sign"
+              size="mini"
+              style={{ fontSize: "1rem" }}
+            />
+            <Message.Content>{messageContent}</Message.Content>
+          </Message>
+        </React.Fragment>
+      ) : (
+        <Message>
+          <Icon name="info circle" size="mini" style={{ fontSize: "1rem" }} />
+          <Trans>
+            If you wish to upload files, you must
+            <Button
+              className="ml-5 mr-5"
+              primary
+              onClick={() => save(true)}
+              loading={isSaving}
+              disabled={isSubmitting}
+              size="mini"
+            >
+              save
+            </Button>
+            your draft first.
+          </Trans>
+        </Message>
+      )}
     </React.Fragment>
-  ) : (
-    <Message>
-      <Icon name="info circle" size="mini" style={{ fontSize: "1rem" }} />
-      <Trans>
-        If you wish to upload files, you must
-        <Button
-          className="ml-5 mr-5"
-          primary
-          onClick={() => save(true)}
-          loading={isSaving}
-          disabled={isSubmitting}
-          size="mini"
-        >
-          save
-        </Button>
-        your draft first.
-      </Trans>
-    </Message>
   );
 };
 

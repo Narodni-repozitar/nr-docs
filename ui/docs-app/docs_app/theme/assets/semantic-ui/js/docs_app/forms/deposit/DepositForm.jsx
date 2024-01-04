@@ -41,7 +41,6 @@ export const DepositForm = () => {
   const editMode = _has(formConfig, "updateUrl");
   const sidebarRef = useRef(null);
   const formFeedbackRef = useRef(null);
-
   return (
     <Container>
       <BaseForm
