@@ -39,7 +39,7 @@ export const FileUploaderTable = ({ files, record, handleFileDeletion }) => {
                 <Table.Cell textAlign="center">
                   {humanReadableBytes(size)}
                 </Table.Cell>
-                <Table.Cell collapsing textAlign="center">
+                <Table.Cell width={1} textAlign="center">
                   <Popup
                     content={i18next.t("Edit file metadata")}
                     trigger={
@@ -49,7 +49,7 @@ export const FileUploaderTable = ({ files, record, handleFileDeletion }) => {
                     }
                   />
                 </Table.Cell>
-                <Table.Cell collapsing textAlign="center">
+                <Table.Cell width={1} textAlign="center">
                   <Popup
                     content={i18next.t("Delete file")}
                     trigger={

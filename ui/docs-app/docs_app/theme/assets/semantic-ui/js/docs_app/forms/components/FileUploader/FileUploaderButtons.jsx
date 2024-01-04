@@ -57,12 +57,23 @@ UploadFileButton.propTypes = {
 };
 
 export const DeleteFileButton = ({ file, handleFileDeletion }) => {
-  const { _delete, isDeleting } = useDepositFileApiClient();
+  const { _delete } = useDepositFileApiClient();
+  const [isDeleting, setIsDeleting] = useState(false);
   const handleDelete = async () => {
-    await _delete(file, (file) => handleFileDeletion(file));
+    setIsDeleting(true);
+    _delete(file)
+      .then(() => {
+        setIsDeleting(false);
+        handleFileDeletion(file);
+      })
+      .catch(() => {
+        setIsDeleting(false);
+      });
   };
   return isDeleting ? (
-    <Icon loading name="spinner" />
+    <Button disabled style={{ backgroundColor: "transparent" }} type="button">
+      <Icon loading name="spinner" />
+    </Button>
   ) : (
     <Button
       disabled={isDeleting}
