@@ -35,7 +35,7 @@ export const UploadFileButton = ({ record, handleFilesUpload }) => {
         autoExtractImagesFromPDFs: false,
         locale: i18next.language,
         allowedFileTypes: ["*/*"],
-        startEvent: { event: "upload-file" },
+        startEvent: null,
         onSuccessfulUpload: (files) => {
           handleFilesUpload(files);
         },
