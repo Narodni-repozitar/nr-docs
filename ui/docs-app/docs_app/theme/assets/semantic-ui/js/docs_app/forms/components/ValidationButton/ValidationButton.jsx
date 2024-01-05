@@ -1,9 +1,9 @@
-import React from "react";
+import React, { memo } from "react";
 import { useFormikContext } from "formik";
 import { Button } from "semantic-ui-react";
 import { i18next } from "@translations/docs_app/i18next";
 
-export const ValidateButton = () => {
+export const ValidateButton = memo(() => {
   const { isSubmitting, validateForm } = useFormikContext();
   return (
     <Button
@@ -17,4 +17,4 @@ export const ValidateButton = () => {
       type="button"
     />
   );
-};
+});

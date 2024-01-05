@@ -194,3 +194,8 @@ button:focus-visible,
 a:focus-visible {
   outline: 3px solid @focusedFormBorderColor !important;
 }
+// fix style clashing from SUI with input in uppy
+.uppy-Dashboard-FileCard-info input {
+  margin-top: 1rem !important;
+  font-size: 1rem !important;
+}

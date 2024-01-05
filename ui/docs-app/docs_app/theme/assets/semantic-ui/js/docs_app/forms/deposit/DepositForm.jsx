@@ -102,6 +102,7 @@ export const DepositForm = () => {
                     fieldPath="metadata.title"
                   >
                     <TextField
+                      optimized
                       fieldPath="metadata.title"
                       required
                       label={
@@ -169,6 +170,7 @@ export const DepositForm = () => {
                     fieldPath="metadata.languages"
                   >
                     <LocalVocabularySelectField
+                      optimized
                       fieldPath="metadata.languages"
                       multiple={true}
                       required
@@ -189,6 +191,7 @@ export const DepositForm = () => {
                     fieldPath="metadata.resourceType"
                   >
                     <LocalVocabularySelectField
+                      optimized
                       fieldPath="metadata.resourceType"
                       required
                       clearable
@@ -223,6 +226,7 @@ export const DepositForm = () => {
                     fieldPath="metadata.accessRights"
                   >
                     <LocalVocabularySelectField
+                      optimized
                       fieldPath="metadata.accessRights"
                       required
                       clearable
@@ -242,6 +246,7 @@ export const DepositForm = () => {
                     fieldPath="metadata.rights"
                   >
                     <LocalVocabularySelectField
+                      optimized
                       fieldPath="metadata.rights"
                       multiple={true}
                       label={
@@ -313,6 +318,7 @@ export const DepositForm = () => {
                     fieldPath="metadata.subjectCategories"
                   >
                     <LocalVocabularySelectField
+                      optimized
                       fieldPath="metadata.subjectCategories"
                       multiple={true}
                       label={

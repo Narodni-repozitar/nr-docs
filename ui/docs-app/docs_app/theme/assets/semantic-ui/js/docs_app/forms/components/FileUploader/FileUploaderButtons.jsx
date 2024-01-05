@@ -16,6 +16,7 @@ export const EditFileButton = ({ fileName, record }) => {
         locale: i18next.language,
         startEvent: { event: "edit-file", data: { file_key: fileName } },
         modifyExistingFiles: true,
+        allowedFileTypes: ["*/*"],
       }}
     />
   );

@@ -1,10 +1,10 @@
-import React from "react";
+import React, { memo } from "react";
 import { Button, Modal, Message, Icon } from "semantic-ui-react";
 import { i18next } from "@translations/docs_app/i18next";
 import { useConfirmationModal, useDepositApiClient } from "@js/oarepo_ui";
 import PropTypes from "prop-types";
 
-export const PublishButtonComponent = ({ modalMessage, modalHeader }) => {
+export const PublishButtonComponent = memo(({ modalMessage, modalHeader }) => {
   const { isModalOpen, handleCloseModal, handleOpenModal } =
     useConfirmationModal();
   const { isSubmitting, publish, isPublishing } = useDepositApiClient();
@@ -62,7 +62,7 @@ export const PublishButtonComponent = ({ modalMessage, modalHeader }) => {
       </Modal>
     </React.Fragment>
   );
-};
+});
 
 PublishButtonComponent.propTypes = {
   modalMessage: PropTypes.string,
