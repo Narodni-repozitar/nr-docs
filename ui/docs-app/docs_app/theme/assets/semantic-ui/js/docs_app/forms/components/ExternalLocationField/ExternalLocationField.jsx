@@ -13,7 +13,6 @@ export const ExternalLocationField = ({ fieldPath, helpText }) => {
           width={8}
           fieldPath={`${fieldPath}.externalLocationURL`}
           label={i18next.t("Resource external location")}
-          required
         />
         <TextField
           width={8}

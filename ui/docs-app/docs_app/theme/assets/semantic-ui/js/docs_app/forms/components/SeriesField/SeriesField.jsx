@@ -21,7 +21,6 @@ export const SeriesField = ({ fieldPath, helpText }) => {
               width={8}
               fieldPath={`${fieldPathPrefix}.seriesTitle`}
               label={i18next.t("Series title")}
-              required
             />
             <TextField
               width={8}

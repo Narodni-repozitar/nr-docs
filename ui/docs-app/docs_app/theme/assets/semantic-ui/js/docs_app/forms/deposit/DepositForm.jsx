@@ -262,6 +262,15 @@ export const DepositForm = () => {
                       schema="creators"
                       autocompleteNames="off"
                       required
+                      nameFieldPlaceholder={i18next.t(
+                        "Write contributor's name."
+                      )}
+                      lastNameFieldPlaceholder={i18next.t(
+                        "Write contributor's last name."
+                      )}
+                      nameTypeHelpText={i18next.t(
+                        "Choose if the contributor is a person or an organization."
+                      )}
                     />
                   </Overridable>
                   <Overridable

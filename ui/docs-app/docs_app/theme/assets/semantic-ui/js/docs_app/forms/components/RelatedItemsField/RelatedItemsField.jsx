@@ -68,6 +68,7 @@ class RelatedItemsFieldForm extends Component {
           className={relatedItemsError ? "error" : ""}
         >
           <FieldLabel htmlFor={fieldPath} icon={labelIcon} label={label} />
+          <label className="helptext">{helpText}</label>
           <List>
             {relatedItemsList.map((value, index) => {
               const key = `${fieldPath}.${index}`;
@@ -87,23 +88,18 @@ class RelatedItemsFieldForm extends Component {
                 />
               );
             })}
-            <div>
-              <label className="helptext">{helpText}</label>
-            </div>
-            <div>
-              <RelatedItemsModal
-                onRelatedItemChange={this.handleRelatedItemChange}
-                initialAction="add"
-                addLabel={modal.addLabel}
-                editLabel={modal.editLabel}
-                trigger={
-                  <Button type="button" icon labelPosition="left">
-                    <Icon name="add" />
-                    {addButtonLabel}
-                  </Button>
-                }
-              />
-            </div>
+            <RelatedItemsModal
+              onRelatedItemChange={this.handleRelatedItemChange}
+              initialAction="add"
+              addLabel={modal.addLabel}
+              editLabel={modal.editLabel}
+              trigger={
+                <Button type="button" icon labelPosition="left">
+                  <Icon name="add" />
+                  {addButtonLabel}
+                </Button>
+              }
+            />
 
             {relatedItemsError && typeof relatedItemsError == "string" && (
               <Label pointing="left" prompt>
