@@ -11,13 +11,13 @@ import {
 } from "@js/oarepo_ui";
 
 const subtitleTypes = [
-  { text: "Alternative title", value: "alternativeTitle" },
-  { text: "Translated title", value: "translatedTitle" },
-  { text: "Subtitle", value: "subtitle" },
-  { text: "Other", value: "other" },
+  { text: i18next.t("Alternative title"), value: "alternativeTitle" },
+  { text: i18next.t("Translated title"), value: "translatedTitle" },
+  { text: i18next.t("Subtitle"), value: "subtitle" },
+  { text: i18next.t("Other"), value: "other" },
 ];
 
-export const AdditionalTitlesField = ({ fieldPath }) => {
+export const AdditionalTitlesField = ({ fieldPath, helpText }) => {
   const { defaultLocale } = useDefaultLocale();
   const initialValueObj = {
     title: {
@@ -39,6 +39,7 @@ export const AdditionalTitlesField = ({ fieldPath }) => {
       label={i18next.t("Additional titles")}
       labelIcon="pencil"
       className="additional-titles"
+      helpText={helpText}
     >
       {({ arrayHelpers, indexPath, array }) => {
         const fieldPathPrefix = `${fieldPath}.${indexPath}`;
@@ -77,4 +78,11 @@ export const AdditionalTitlesField = ({ fieldPath }) => {
 
 AdditionalTitlesField.propTypes = {
   fieldPath: PropTypes.string.isRequired,
+  helpText: PropTypes.string,
+};
+
+AdditionalTitlesField.defaultProps = {
+  helpText: i18next.t(
+    "If the title is given in other languages, choose the type of title and corresponding language."
+  ),
 };
