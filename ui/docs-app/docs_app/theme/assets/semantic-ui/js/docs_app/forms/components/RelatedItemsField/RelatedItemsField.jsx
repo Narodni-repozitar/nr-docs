@@ -50,6 +50,7 @@ class RelatedItemsFieldForm extends Component {
       modal,
       addButtonLabel,
       required,
+      helpText,
     } = this.props;
 
     const relatedItemsList = getIn(values, fieldPath, []);
@@ -86,18 +87,24 @@ class RelatedItemsFieldForm extends Component {
                 />
               );
             })}
-            <RelatedItemsModal
-              onRelatedItemChange={this.handleRelatedItemChange}
-              initialAction="add"
-              addLabel={modal.addLabel}
-              editLabel={modal.editLabel}
-              trigger={
-                <Button type="button" icon labelPosition="left">
-                  <Icon name="add" />
-                  {addButtonLabel}
-                </Button>
-              }
-            />
+            <div>
+              <label className="helptext">{helpText}</label>
+            </div>
+            <div>
+              <RelatedItemsModal
+                onRelatedItemChange={this.handleRelatedItemChange}
+                initialAction="add"
+                addLabel={modal.addLabel}
+                editLabel={modal.editLabel}
+                trigger={
+                  <Button type="button" icon labelPosition="left">
+                    <Icon name="add" />
+                    {addButtonLabel}
+                  </Button>
+                }
+              />
+            </div>
+
             {relatedItemsError && typeof relatedItemsError == "string" && (
               <Label pointing="left" prompt>
                 {relatedItemsError}
@@ -140,6 +147,7 @@ RelatedItemsFieldForm.propTypes = {
   move: PropTypes.func.isRequired,
   push: PropTypes.func.isRequired,
   required: PropTypes.bool,
+  helpText: PropTypes.string,
 };
 
 RelatedItemsFieldForm.defaultProps = {
@@ -149,6 +157,9 @@ RelatedItemsFieldForm.defaultProps = {
     editLabel: i18next.t("Edit related item"),
   },
   addButtonLabel: i18next.t("Add related item"),
+  helpText: i18next.t(
+    "Write down information about a resource related to the resource being described (i.e. if you are describing an article, here you can identify a magazine in which the article was published)."
+  ),
 };
 
 RelatedItemsField.propTypes = {

@@ -28,6 +28,7 @@ import {
   CreatibutorsField,
   RelatedItemsField,
   objectIdentifiersSchema,
+  // FileUploader,
 } from "../components/";
 import Overridable from "react-overridable";
 import { i18next } from "@translations/docs_app/i18next";
@@ -88,7 +89,7 @@ export const DepositForm = () => {
                     <TextField
                       fieldPath="metadata.title"
                       required
-                      helpText={i18next.t(
+                      placeholder={i18next.t(
                         "Fill in the main title of the resource."
                       )}
                       label={
@@ -124,7 +125,6 @@ export const DepositForm = () => {
                       }
                       placeholder={i18next.t("Select resource type")}
                       optionsListName="resource-types"
-                      helpText={i18next.t("Select resource type")}
                     />
                   </Overridable>
                   <Overridable
@@ -156,14 +156,26 @@ export const DepositForm = () => {
                           label={i18next.t("Language")}
                         />
                       }
-                      placeholder={i18next.t("Choose languages")}
                       clearable
                       optionsListName="languages"
-                      helpText={i18next.t(
+                      placeholder={i18next.t(
                         "Select the language(s) in which the resource is written."
                       )}
                     />
                   </Overridable>
+                  {/* TODO: model needs to change to accomodate new field dateIssued */}
+                  {/* <Overridable
+                    id="NrDocs.Deposit.DateIssuedField.container"
+                    fieldPath="metadata.dateIssued"
+                  >
+                    <EDTFSingleDatePicker
+                      fieldPath="metadata.dateIssued"
+                      label={i18next.t("Date available")}
+                      helpText={i18next.t(
+                        "If the dataset has been published elsewhere, use the date of first publication. You can also specify a future publication date (for embargo). If you do not enter a date, the system will automatically fill the date when the record is published. Format: YYYY-MM-DD, YYYYY-MM or YYYYY."
+                      )}
+                    />
+                  </Overridable> */}
                   <Overridable
                     id="NrDocs.Deposit.PublishersField.container"
                     fieldPath="metadata.publishers"
@@ -192,9 +204,8 @@ export const DepositForm = () => {
                           label={i18next.t("Access rights")}
                         />
                       }
-                      placeholder={i18next.t("Select access rights")}
                       optionsListName="access-rights"
-                      helpText={i18next.t(
+                      placeholder={i18next.t(
                         "Choose access type - if the resource is open or has some restrictions."
                       )}
                     />
@@ -217,18 +228,6 @@ export const DepositForm = () => {
                       optionsListName="licenses"
                       helpText={i18next.t(
                         "If a Creative Commons license is associated with the resource, select the appropriate license option from the menu. We recommend choosing the latest versions, namely 3.0 Czech and 4.0 International."
-                      )}
-                    />
-                  </Overridable>
-                  <Overridable
-                    id="NrDocs.Deposit.DateAvailableField.container"
-                    fieldPath="metadata.dateAvailable"
-                  >
-                    <EDTFSingleDatePicker
-                      fieldPath="metadata.dateAvailable"
-                      label={i18next.t("Date available")}
-                      helpText={i18next.t(
-                        "If the dataset has been published elsewhere, use the date of first publication. You can also specify a future publication date (for embargo). If you do not enter a date, the system will automatically fill the date when the record is published. Format: YYYY-MM-DD, YYYYY-MM or YYYYY."
                       )}
                     />
                   </Overridable>
@@ -293,8 +292,6 @@ export const DepositForm = () => {
                     "metadata.series",
                     "metadata.externalLocation",
                     "metadata.notes",
-                    "metadata.technicalInfo",
-                    "metadata.methods",
                   ]}
                   active
                   label={i18next.t("Resource description")}
@@ -303,7 +300,12 @@ export const DepositForm = () => {
                     id="NrDocs.Deposit.SubjectsField.container"
                     fieldPath="metadata.subjects"
                   >
-                    <SubjectsField fieldPath="metadata.subjects" />
+                    <SubjectsField
+                      fieldPath="metadata.subjects"
+                      helpText={i18next.t(
+                        "Write keywords describing the resource, always choose a language."
+                      )}
+                    />
                   </Overridable>
                   <Overridable
                     id="NrDocs.Deposit.SubjectCategoriesField.container"
@@ -319,11 +321,10 @@ export const DepositForm = () => {
                           label={i18next.t("Subject Categories")}
                         />
                       }
-                      placeholder={i18next.t("Choose subject categories")}
                       clearable
                       optionsListName="subject-categories"
-                      helpText={i18next.t(
-                        "Select the subject field(s) to which the resource belongs."
+                      placeholder={i18next.t(
+                        "Start writing name of the discipline and then choose from provided options."
                       )}
                     />
                   </Overridable>
@@ -338,7 +339,9 @@ export const DepositForm = () => {
                       fieldPath="metadata.abstract"
                       rich={true}
                       required
-                      helpText={i18next.t("Detailed description")}
+                      helpText={i18next.t(
+                        "Choose abstract language and write down the text.Abstract can be provided in multiple languages."
+                      )}
                       lngFieldWidth={4}
                     />
                   </Overridable>
@@ -361,39 +364,8 @@ export const DepositForm = () => {
                     <StringArrayField
                       fieldPath="metadata.notes"
                       helpText={i18next.t(
-                        "Free-form note for any comment that couldn't be inserted in any other fields."
+                        "Space for additional information related to the resource."
                       )}
-                    />
-                  </Overridable>
-                  <Overridable
-                    id="NrDocs.Deposit.MethodsField.container"
-                    fieldPath="metadata.methods"
-                  >
-                    <MultilingualTextInput
-                      labelIcon="pencil"
-                      label={i18next.t("Methods")}
-                      fieldPath="metadata.methods"
-                      rich={true}
-                      required
-                      textFieldLabel={i18next.t("Description")}
-                      lngFieldWidth={4}
-                    />
-                  </Overridable>
-                  <Overridable
-                    id="NrDocs.Deposit.TechnicalInfoField.container"
-                    fieldPath="metadata.technicalInfo"
-                  >
-                    <MultilingualTextInput
-                      textFieldLabel={i18next.t("Description")}
-                      labelIcon="pencil"
-                      label={i18next.t("Technical info")}
-                      fieldPath="metadata.technicalInfo"
-                      rich={true}
-                      required
-                      helpText={i18next.t(
-                        "Detailed information that may be associated with design, implementation, operation, use, and/or maintenance of a process or system"
-                      )}
-                      lngFieldWidth={4}
                     />
                   </Overridable>
                 </AccordionField>
@@ -449,36 +421,7 @@ export const DepositForm = () => {
                   </Overridable>
                 </AccordionField>
               </Overridable>
-              <Overridable id="NrDocs.Deposit.AccordionAdditionalInformation.container">
-                <AccordionField
-                  includesPaths={[
-                    "metadata.accessibility",
-                    "metadata.fundingReferences",
-                  ]}
-                  defaultActiveIndex={5}
-                  label={i18next.t("Additional information")}
-                >
-                  {/* as I understand shoul exist only for items with restricted access as additional explanation why it is restricted? */}
-                  {/* still not clear what this field does exactly */}
-                  <Overridable
-                    id="NrDocs.Deposit.AccessibilityField.container"
-                    fieldPath="metadata.accessibility"
-                  >
-                    {/* TODO: not clear how this input is going to work i.e. our access is within metadata */}
-                    <MultilingualTextInput
-                      className="accessibility"
-                      labelIcon="pencil"
-                      label={i18next.t("Accessibility")}
-                      textFieldLabel={i18next.t("Description")}
-                      fieldPath="metadata.accessibility"
-                      helpText={i18next.t(
-                        "Explanation regarding restricted status of an item"
-                      )}
-                    />
-                  </Overridable>
-                </AccordionField>
-              </Overridable>
-              <Overridable id="NrDocs.Deposit.AccordionFieldFiles.container">
+              {/* <Overridable id="NrDocs.Deposit.AccordionFieldFiles.container">
                 <AccordionField
                   includesPaths={["files.enabled"]}
                   label={i18next.t("Files")}
@@ -487,7 +430,7 @@ export const DepositForm = () => {
                     <FileUploader recordFiles={recordFiles} />
                   </Overridable>
                 </AccordionField>
-              </Overridable>
+              </Overridable> */}
               {process.env.NODE_ENV === "development" && <FormikStateLogger />}
             </Grid.Column>
           </Ref>

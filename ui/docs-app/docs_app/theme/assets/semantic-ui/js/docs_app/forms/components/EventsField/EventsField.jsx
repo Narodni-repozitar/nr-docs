@@ -28,12 +28,16 @@ export const EventsField = ({ fieldPath, helpText }) => {
               fieldPath={`${fieldPathPrefix}.eventNameOriginal`}
               label={i18next.t("Event name")}
               required
+              placeholder={i18next.t("Write down the main name of the event.")}
             />
             <StringArrayField
               width={16}
               fieldPath={`${fieldPathPrefix}.eventNameAlternate`}
               label={i18next.t("Event alternate name")}
               addButtonLabel={i18next.t("Add event alternate name")}
+              helpText={i18next.t(
+                "If event has other known names, write them here."
+              )}
             />
             <EDTFDaterangePicker
               required
@@ -46,19 +50,21 @@ export const EventsField = ({ fieldPath, helpText }) => {
             <GroupField>
               <TextField
                 style={{ marginTop: "0.28rem" }}
-                width={12}
+                width={10}
                 fieldPath={`${fieldPathPrefix}.eventLocation.place`}
                 label={i18next.t("Place")}
                 required
                 inline
+                placeholder={i18next.t("Write down the place of the event.")}
               />
               <LocalVocabularySelectField
-                width={4}
+                width={6}
                 fieldPath={`${fieldPathPrefix}.eventLocation.country`}
                 label={i18next.t("Country")}
                 optionsListName="countries"
                 required
                 clearable
+                placeholder={i18next.t("Choose country from the list.")}
               />
             </GroupField>
           </ArrayFieldItem>

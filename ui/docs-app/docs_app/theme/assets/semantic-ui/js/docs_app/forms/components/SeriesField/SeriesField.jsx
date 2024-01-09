@@ -39,3 +39,9 @@ SeriesField.propTypes = {
   fieldPath: PropTypes.string.isRequired,
   helpText: PropTypes.string,
 };
+
+SeriesField.defaultProps = {
+  helpText: i18next.t(
+    "Write down the name of the edition and write down the volume if name is provided."
+  ),
+};
