@@ -135,7 +135,7 @@ export const DepositForm = () => {
                       options={objectIdentifiersSchema}
                       fieldPath="metadata.objectIdentifiers"
                       identifierLabel={i18next.t("Object identifier")}
-                      label={i18next.t("Object identifiers")}
+                      label={i18next.t("Identifier")}
                       helpText={i18next.t(
                         "Choose identifier type and write the identifier. You can add more identifiers."
                       )}
@@ -159,7 +159,7 @@ export const DepositForm = () => {
                       clearable
                       optionsListName="languages"
                       placeholder={i18next.t(
-                        "Select the language(s) in which the resource is written."
+                        "Select the language(s) of the resource"
                       )}
                     />
                   </Overridable>
@@ -170,7 +170,7 @@ export const DepositForm = () => {
                   >
                     <EDTFSingleDatePicker
                       fieldPath="metadata.dateIssued"
-                      label={i18next.t("Date available")}
+                      label={i18next.t("Date issued")}
                       helpText={i18next.t(
                         "If the dataset has been published elsewhere, use the date of first publication. You can also specify a future publication date (for embargo). If you do not enter a date, the system will automatically fill the date when the record is published. Format: YYYY-MM-DD, YYYYY-MM or YYYYY."
                       )}
@@ -262,15 +262,6 @@ export const DepositForm = () => {
                       schema="creators"
                       autocompleteNames="off"
                       required
-                      nameFieldPlaceholder={i18next.t(
-                        "Write contributor's name."
-                      )}
-                      lastNameFieldPlaceholder={i18next.t(
-                        "Write contributor's last name."
-                      )}
-                      nameTypeHelpText={i18next.t(
-                        "Choose if the contributor is a person or an organization."
-                      )}
                     />
                   </Overridable>
                   <Overridable
@@ -288,6 +279,15 @@ export const DepositForm = () => {
                       fieldPath="metadata.contributors"
                       schema="contributors"
                       autocompleteNames="off"
+                      nameFieldPlaceholder={i18next.t(
+                        "Write contributor's name."
+                      )}
+                      lastNameFieldPlaceholder={i18next.t(
+                        "Write contributor's last name."
+                      )}
+                      nameTypeHelpText={i18next.t(
+                        "Choose if the contributor is a person or an organization."
+                      )}
                     />
                   </Overridable>
                 </AccordionField>

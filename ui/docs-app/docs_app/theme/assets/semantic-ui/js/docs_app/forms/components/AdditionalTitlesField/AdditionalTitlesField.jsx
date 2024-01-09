@@ -60,6 +60,7 @@ export const AdditionalTitlesField = ({ fieldPath, helpText }) => {
             </Form.Field>
             <Form.Field width={4}>
               <SelectField
+                selectOnBlur={false}
                 fieldPath={`${fieldPathPrefix}.titleType`}
                 label={i18next.t("Title type")}
                 optimized

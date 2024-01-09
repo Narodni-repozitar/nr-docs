@@ -2774,3 +2774,145 @@ msgstr "Choose relation type"
 
 msgid "Link to/from other resources"
 msgstr "Link to/from other resources"
+
+#: ui/docs-app/docs_app/templates/semantic-ui/docs_app/components/NrEvents.jinja:7
+msgid "on"
+msgstr ""
+
+msgid "caption.help"
+msgstr ""
+
+msgid "caption.label"
+msgstr ""
+
+msgid "caption.hint"
+msgstr ""
+
+msgid ""
+"Write down the time period in which the event took place. If it is not a "
+"range, choose same date twice."
+msgstr ""
+"Write down the time period in which the event took place. If it is not a "
+"range, choose same date twice."
+
+msgid ""
+"If the dataset has been published elsewhere, use the date of first "
+"publication. You can also specify a future publication date (for embargo). "
+"If you do not enter a date, the system will automatically fill the date when"
+" the record is published. Format: YYYY-MM-DD, YYYYY-MM or YYYYY."
+msgstr ""
+"If the dataset has been published elsewhere, use the date of first "
+"publication. You can also specify a future publication date (for embargo). "
+"If you do not enter a date, the system will automatically fill the date when"
+" the record is published. Format: YYYY-MM-DD, YYYYY-MM or YYYY."
+
+msgid "Alternative title"
+msgstr "Alternative title"
+
+msgid "Translated title"
+msgstr "Translated title"
+
+msgid "Subtitle"
+msgstr "Subtitle"
+
+msgid "Other"
+msgstr "Other"
+
+msgid ""
+"If the title is given in other languages, choose the type of title and "
+"corresponding language."
+msgstr ""
+
+msgid "Write down the main name of the event."
+msgstr "Write down the main name of the event."
+
+msgid "If the event has other known names, write them here."
+msgstr "If the event has other known names, write them here."
+
+msgid "Write down the place of the event."
+msgstr "Write down the place of the event."
+
+msgid "Choose country from the list."
+msgstr "Choose country from the list."
+
+msgid ""
+"Provide other URL where this resource is available (i.e. other repository, "
+"database, webpage). In the note field you can provide for example name of "
+"website or database or specify another external source for the resource. "
+msgstr ""
+
+msgid "Write down project number."
+msgstr "Write down project number."
+
+msgid "Write down the name of the project."
+msgstr "Write down the name of the project."
+
+msgid "Write the name of the research program in which the project was funded."
+msgstr "Write the name of the research program in which the project was funded."
+
+msgid "Start writing the name of the provider and then choose from the list."
+msgstr "Start writing the name of the provider and then choose from the list."
+
+msgid ""
+"Write down information about a resource related to the resource being "
+"described (i.e. if you are describing an article, here you can identify a "
+"magazine in which the article was published)."
+msgstr ""
+
+msgid ""
+"Write down the name of the edition and write down the volume if name is "
+"provided."
+msgstr ""
+
+msgid "Fill in the main title of the resource."
+msgstr "Fill in the main title of the resource."
+
+msgid ""
+"Choose identifier type and write the identifier. You can add more "
+"identifiers."
+msgstr ""
+
+msgid "Select the language(s) in which the resource is written."
+msgstr "Select the language(s) in which the resource is written."
+
+msgid "Write the name of the publisher. You can write more publishers"
+msgstr "Write the name of the publisher. You can write more publishers"
+
+msgid "Choose access type - if the resource is open or has some restrictions."
+msgstr "Choose access type - if the resource is open or has some restrictions."
+
+msgid "Write contributor's name."
+msgstr "Write contributor's name."
+
+msgid "Write contributor's last name."
+msgstr "Write contributor's last name."
+
+msgid "Choose if the contributor is a person or an organization."
+msgstr "Choose if the contributor is a person or an organization."
+
+msgid "Write keywords describing the resource, always choose a language."
+msgstr "Write keywords describing the resource, always choose a language."
+
+msgid ""
+"Start writing the name of the discipline and then choose from provided options."
+msgstr ""
+"Start writing the name of the discipline and then choose from provided options."
+
+msgid ""
+"Choose abstract language and write down the text. Abstract can be provided in"
+" multiple languages."
+msgstr ""
+"Choose abstract language and write down the text. Abstract can be provided in"
+" multiple languages."
+
+msgid "Space for additional information related to the resource."
+msgstr "Space for additional information related to the resource."
+
+msgid "Financing information"
+msgstr "Financing information"
+
+msgid "Files"
+msgstr "Files"
+
+msgid "Select the language(s) of the resource"
+msgstr "Select the language(s) of the resource"
