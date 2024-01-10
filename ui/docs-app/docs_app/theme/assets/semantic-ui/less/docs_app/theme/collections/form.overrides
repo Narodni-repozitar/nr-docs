@@ -165,7 +165,7 @@
   }
 }
 
-.related-items-modal {
+.form-modal {
   label.field-label-class.invenio-field-label {
     font-size: 1.25rem !important;
   }
