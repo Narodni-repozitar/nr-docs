@@ -1,6 +1,7 @@
 import datetime
 import gzip
 import os
+import time
 import traceback
 from typing import Iterator
 
@@ -16,6 +17,8 @@ from oarepo_runtime.datastreams.types import StreamEntryFile
 load_dotenv()
 
 TWO_WEEKS = 14 * 24 * 3600
+BACKOFF_FACTOR = 2
+CREATE_PRESIGNED_URL_MAX_ATTEMPTS = 10
 
 
 def create_presigned_url(s3_client, bucket_name, object_name):
@@ -135,12 +138,22 @@ class S3Reader(BaseReader):
 
                     record_stream_entries = []
                     for file in record["files"]:
-                        file_presigned_url = create_presigned_url(
-                            s3_client, s3_bucket_name, obj["Key"]
-                        )
+                        backoff_time = 1
+                        for _ in range(CREATE_PRESIGNED_URL_MAX_ATTEMPTS):
+                            file_presigned_url = create_presigned_url(
+                                s3_client, s3_bucket_name, obj["Key"]
+                            )
+
+                            if file_presigned_url:
+                                break
+
+                            time.sleep(backoff_time)
+
+                            backoff_time *= BACKOFF_FACTOR
+
                         if not file_presigned_url:
-                            # TODO: backoff
-                            pass
+                            print(f"Failed to create the presigned url for {file}.")
+                            continue
 
                         metadata = file
                         metadata.pop("location")
