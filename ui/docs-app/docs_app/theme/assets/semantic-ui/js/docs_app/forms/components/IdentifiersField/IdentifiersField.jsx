@@ -86,5 +86,5 @@ IdentifiersField.propTypes = {
 
 IdentifiersField.defaultProps = {
   label: i18next.t("Identifier field"),
-  identifierLabel: i18next.t("Object identifier"),
+  identifierLabel: i18next.t("Identifier"),
 };

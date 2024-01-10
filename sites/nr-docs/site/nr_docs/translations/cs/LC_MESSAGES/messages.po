@@ -2899,7 +2899,8 @@ msgid "Write the name of the publisher. You can write more publishers"
 msgstr "Zapište vydavatele. Můžete zapsat i více vydavatelů."
 
 msgid "Choose access type - if the resource is open or has some restrictions."
-msgstr "Vyberte typ přístupu, zda bude zdroj dostupný otevřeně nebo s omezením."
+msgstr ""
+"Vyberte typ přístupu, zda bude zdroj dostupný otevřeně nebo s omezením."
 
 msgid "Write contributor's name."
 msgstr "Zapište jméno přispěvatele."
@@ -2920,7 +2921,9 @@ msgstr "Začněte zapisovat název oboru, následně zvolte z nabídky našeptav
 msgid ""
 "Choose abstract language and write down the text.Abstract can be provided in"
 " multiple languages."
-msgstr "Vyberte jazyk abstraktu a zapište nebo vložte text. Abstrakt můžete vložit ve více jazycích."
+msgstr ""
+"Vyberte jazyk abstraktu a zapište nebo vložte text. Abstrakt můžete vložit "
+"ve více jazycích."
 
 msgid "Space for additional information related to the resource."
 msgstr "Prostor pro další informace ke zdroji."
@@ -2933,3 +2936,6 @@ msgstr "Nahrání souboru"
 
 msgid "Select the language(s) of the resource"
 msgstr "Vyberte jazyk/jazyky zdroje."
+
+msgid "Date issued"
+msgstr ""

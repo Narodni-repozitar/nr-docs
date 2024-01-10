@@ -2847,8 +2847,10 @@ msgstr "Write down project number."
 msgid "Write down the name of the project."
 msgstr "Write down the name of the project."
 
-msgid "Write the name of the research program in which the project was funded."
-msgstr "Write the name of the research program in which the project was funded."
+msgid ""
+"Write the name of the research program in which the project was funded."
+msgstr ""
+"Write the name of the research program in which the project was funded."
 
 msgid "Start writing the name of the provider and then choose from the list."
 msgstr "Start writing the name of the provider and then choose from the list."
@@ -2879,7 +2881,8 @@ msgid "Write the name of the publisher. You can write more publishers"
 msgstr "Write the name of the publisher. You can write more publishers"
 
 msgid "Choose access type - if the resource is open or has some restrictions."
-msgstr "Choose access type - if the resource is open or has some restrictions."
+msgstr ""
+"Choose access type - if the resource is open or has some restrictions."
 
 msgid "Write contributor's name."
 msgstr "Write contributor's name."
@@ -2894,16 +2897,18 @@ msgid "Write keywords describing the resource, always choose a language."
 msgstr "Write keywords describing the resource, always choose a language."
 
 msgid ""
-"Start writing the name of the discipline and then choose from provided options."
+"Start writing the name of the discipline and then choose from provided "
+"options."
 msgstr ""
-"Start writing the name of the discipline and then choose from provided options."
+"Start writing the name of the discipline and then choose from provided "
+"options."
 
 msgid ""
-"Choose abstract language and write down the text. Abstract can be provided in"
-" multiple languages."
+"Choose abstract language and write down the text. Abstract can be provided "
+"in multiple languages."
 msgstr ""
-"Choose abstract language and write down the text. Abstract can be provided in"
-" multiple languages."
+"Choose abstract language and write down the text. Abstract can be provided "
+"in multiple languages."
 
 msgid "Space for additional information related to the resource."
 msgstr "Space for additional information related to the resource."
@@ -2916,3 +2921,24 @@ msgstr "Files"
 
 msgid "Select the language(s) of the resource"
 msgstr "Select the language(s) of the resource"
+
+msgid "If event has other known names, write them here."
+msgstr ""
+
+msgid "Write down name of project."
+msgstr ""
+
+msgid "Write the name of research program in which the project was funded."
+msgstr ""
+
+msgid "Date issued"
+msgstr ""
+
+msgid ""
+"Start writing name of the discipline and then choose from provided options."
+msgstr ""
+
+msgid ""
+"Choose abstract language and write down the text.Abstract can be provided in"
+" multiple languages."
+msgstr ""
