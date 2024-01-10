@@ -42,18 +42,7 @@ export const PublishButtonComponent = ({ modalMessage, modalHeader }) => {
                 <FieldLabel
                   htmlFor={"metadata.version"}
                   icon="pencil"
-                  label={
-                    // <span
-                    //   style={{
-                    //     fontSize: "1.25rem",
-                    //     display: "inline-block",
-                    //     marginBottom: "0.75rem",
-                    //     fontWeight: "bold",
-                    //   }}
-                    // >
-                    i18next.t("Version")
-                    // </span>
-                  }
+                  label={i18next.t("Version")}
                 />
               }
             />
