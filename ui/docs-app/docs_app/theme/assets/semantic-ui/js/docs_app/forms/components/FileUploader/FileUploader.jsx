@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 import { i18next } from "@translations/docs_app/i18next";
-import { Message, Icon, Button, Checkbox, Popup } from "semantic-ui-react";
+import { Message, Icon, Button } from "semantic-ui-react";
 import { FileUploaderTable } from "./FileUploaderTable";
 import { UploadFileButton } from "./FileUploaderButtons";
 import { useDepositApiClient } from "@js/oarepo_ui";
@@ -10,7 +10,7 @@ import { Trans } from "react-i18next";
 export const FileUploader = ({ messageContent, record, recordFiles }) => {
   const [filesState, setFilesState] = useState(recordFiles?.entries || []);
   const { formik, isSubmitting, save, isSaving } = useDepositApiClient();
-  const { values, setFieldValue } = formik;
+  const { values } = formik;
   const recordObject = record || values;
 
   const handleFilesUpload = (uploadedFiles) => {
@@ -28,27 +28,6 @@ export const FileUploader = ({ messageContent, record, recordFiles }) => {
     <React.Fragment>
       {values.id ? (
         <React.Fragment>
-          <span>
-            <Checkbox
-              label={i18next.t("Metadata only record")}
-              disabled={filesState.length > 0}
-              checked={!recordObject?.files?.enabled}
-              onChange={() => {
-                setFieldValue("files.enabled", !recordObject?.files?.enabled);
-              }}
-            />
-            <Popup
-              content={i18next.t(
-                "Disable files for this record. If files are already uploaded, you have to delete them first."
-              )}
-              trigger={
-                <Icon
-                  name="question circle outline"
-                  style={{ fontSize: "1rem", paddingLeft: "0.5rem" }}
-                ></Icon>
-              }
-            />
-          </span>
           {recordObject?.files?.enabled && (
             <React.Fragment>
               <FileUploaderTable
