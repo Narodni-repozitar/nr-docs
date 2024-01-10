@@ -163,8 +163,7 @@ export const DepositForm = () => {
                       )}
                     />
                   </Overridable>
-                  {/* TODO: model needs to change to accomodate new field dateIssued */}
-                  {/* <Overridable
+                  <Overridable
                     id="NrDocs.Deposit.DateIssuedField.container"
                     fieldPath="metadata.dateIssued"
                   >
@@ -175,7 +174,7 @@ export const DepositForm = () => {
                         "If the dataset has been published elsewhere, use the date of first publication. You can also specify a future publication date (for embargo). If you do not enter a date, the system will automatically fill the date when the record is published. Format: YYYY-MM-DD, YYYYY-MM or YYYYY."
                       )}
                     />
-                  </Overridable> */}
+                  </Overridable>
                   <Overridable
                     id="NrDocs.Deposit.PublishersField.container"
                     fieldPath="metadata.publishers"
