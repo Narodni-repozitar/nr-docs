@@ -35,7 +35,6 @@ export const unique = (value, context, path, errorString) => {
 
 export const NRDocumentValidationSchema = Yup.object().shape({
   metadata: Yup.object().shape({
-    // not sure but I assume it would be good idea to ask for a minimum length of title
     title: Yup.string().required(requiredMessage).label(i18next.t("Title")),
     resourceType: Yup.object()
       .test(
