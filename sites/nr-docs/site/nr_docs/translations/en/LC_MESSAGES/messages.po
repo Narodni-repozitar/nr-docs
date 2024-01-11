@@ -543,7 +543,7 @@ msgid "Add additional title"
 msgstr "Add additional title"
 
 msgid "Additional titles"
-msgstr "Additional titles"
+msgstr "Document additional titles"
 
 msgid "Title"
 msgstr "Title"
@@ -2941,4 +2941,28 @@ msgstr ""
 msgid ""
 "Choose abstract language and write down the text.Abstract can be provided in"
 " multiple languages."
+msgstr ""
+
+msgid "Zapište verzi (první, druhá…)."
+msgstr ""
+
+msgid "Version"
+msgstr ""
+
+msgid ""
+"Once the record is published you will no longer be able to change the files "
+"in the upload! However, you will still be able to update the record's "
+"metadata later."
+msgstr ""
+
+msgid "Write or choose the date when the document was issued."
+msgstr ""
+
+msgid "Authors"
+msgstr ""
+
+msgid "TESTKEY"
+msgstr ""
+
+msgid "Write the version (first, second ... "
 msgstr ""

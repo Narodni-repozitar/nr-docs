@@ -543,7 +543,7 @@ msgid "Add additional title"
 msgstr "Přidat další název"
 
 msgid "Additional titles"
-msgstr "Další názvy"
+msgstr "Další názvy dokumentu"
 
 msgid "Title"
 msgstr "Název"
@@ -552,7 +552,7 @@ msgid "Title type"
 msgstr "Druh názvu"
 
 msgid "Creators"
-msgstr "Autoři"
+msgstr "Tvůrci"
 
 msgid "Add creator"
 msgstr "Přidat autora"
@@ -807,10 +807,10 @@ msgid "Choose languages"
 msgstr "Vyberte jazyky"
 
 msgid "Resource type"
-msgstr "Typ položky"
+msgstr "Typ zdroje"
 
 msgid "Select resource type"
-msgstr "Vyberte typ položky"
+msgstr "Vyberte typ zdroje."
 
 msgid "Abstract"
 msgstr "Abstrakt"
@@ -833,15 +833,15 @@ msgid "Licenses"
 msgstr "Licence"
 
 msgid "Choose licenses"
-msgstr "Vyberte licence"
+msgstr "Vyberte licence."
 
 msgid ""
 "If a Creative Commons license is associated with the resource, select the "
 "appropriate license option from the menu. We recommend choosing the latest "
 "versions, namely 3.0 Czech and 4.0 International."
 msgstr ""
-"Pokud se k datové sadě váže licence Creative Commons, vyberte příslušnou "
-"variantu licence z nabídky. Doporučujeme výběr nejnovějších verzí a to 3.0 "
+"Pokud se ke zdroji váže licence Creative Commons, vyberte příslušnou "
+"variantu licence z nabídky. Doporučujeme výběr nejnovějších verzí a to 3.0 "
 "Česko a 4.0 International."
 
 msgid "Date available"
@@ -2938,4 +2938,28 @@ msgid "Select the language(s) of the resource"
 msgstr "Vyberte jazyk/jazyky zdroje."
 
 msgid "Date issued"
+msgstr ""
+
+msgid "Zapište verzi (první, druhá…)."
+msgstr ""
+
+msgid "Version"
+msgstr ""
+
+msgid ""
+"Once the record is published you will no longer be able to change the files "
+"in the upload! However, you will still be able to update the record's "
+"metadata later."
+msgstr ""
+
+msgid "Write or choose the date when the document was issued."
+msgstr ""
+
+msgid "Authors"
+msgstr ""
+
+msgid "TESTKEY"
+msgstr ""
+
+msgid "Write the version (first, second ... "
 msgstr ""

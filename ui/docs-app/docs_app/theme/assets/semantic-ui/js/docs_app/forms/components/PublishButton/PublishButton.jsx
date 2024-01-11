@@ -37,7 +37,7 @@ export const PublishButtonComponent = ({ modalMessage, modalHeader }) => {
           <Form>
             <TextField
               fieldPath="metadata.version"
-              placeholder={i18next.t("Zapište verzi (první, druhá…).")}
+              placeholder={i18next.t("Write the version (first, second ... ")}
               label={
                 <FieldLabel
                   htmlFor={"metadata.version"}

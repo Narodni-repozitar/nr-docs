@@ -134,7 +134,7 @@ export const DepositForm = () => {
                     <IdentifiersField
                       options={objectIdentifiersSchema}
                       fieldPath="metadata.objectIdentifiers"
-                      identifierLabel={i18next.t("Object identifier")}
+                      identifierLabel={i18next.t("Identifier")}
                       label={i18next.t("Identifier")}
                       helpText={i18next.t(
                         "Choose identifier type and write the identifier. You can add more identifiers."
@@ -172,6 +172,9 @@ export const DepositForm = () => {
                       label={i18next.t("Date issued")}
                       helpText={i18next.t(
                         "If the dataset has been published elsewhere, use the date of first publication. You can also specify a future publication date (for embargo). If you do not enter a date, the system will automatically fill the date when the record is published. Format: YYYY-MM-DD, YYYYY-MM or YYYYY."
+                      )}
+                      placeholder={i18next.t(
+                        "Write or choose the date when the document was issued."
                       )}
                     />
                   </Overridable>
@@ -255,7 +258,7 @@ export const DepositForm = () => {
                     fieldPath="metadata.creators"
                   >
                     <CreatibutorsField
-                      label={i18next.t("Creators")}
+                      label={i18next.t("Authors")}
                       labelIcon="user"
                       fieldPath="metadata.creators"
                       schema="creators"

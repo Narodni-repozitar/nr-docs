@@ -123,7 +123,7 @@
     "Find more records by this person": "Find more records by this person",
     "Find more records with this subject": "Find more records with this subject",
     "Add additional title": "Add additional title",
-    "Additional titles": "Additional titles",
+    "Additional titles": "Document additional titles",
     "Title": "Title",
     "Title type": "Title type",
     "Creators": "Creators",
@@ -887,5 +887,12 @@
     "Write the name of research program in which the project was funded.": "",
     "Date issued": "",
     "Start writing name of the discipline and then choose from provided options.": "",
-    "Choose abstract language and write down the text.Abstract can be provided in multiple languages.": ""
+    "Choose abstract language and write down the text.Abstract can be provided in multiple languages.": "",
+    "Zapište verzi (první, druhá…).": "",
+    "Version": "",
+    "Once the record is published you will no longer be able to change the files in the upload! However, you will still be able to update the record's metadata later.": "",
+    "Write or choose the date when the document was issued.": "",
+    "Authors": "",
+    "TESTKEY": "",
+    "Write the version (first, second ... ": ""
 }

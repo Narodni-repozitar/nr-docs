@@ -8,7 +8,15 @@
 // under the terms of the MIT License; see LICENSE file for more details.
 
 import React, { createRef } from "react";
-import { Button, Form, Grid, Header, Modal } from "semantic-ui-react";
+import {
+  Button,
+  Form,
+  Grid,
+  Header,
+  Modal,
+  Popup,
+  Icon,
+} from "semantic-ui-react";
 import { Formik } from "formik";
 import {
   Image,
@@ -113,7 +121,11 @@ const deserializeCreatibutor = (initialCreatibutor, isCreator) => {
     given_name,
     ...initialCreatibutor,
     authorityIdentifiers: _get(initialCreatibutor, identifiersFieldPath, []),
-    affiliations: _get(initialCreatibutor, "affiliations", []).map(aff => ({ ...aff, text: aff.title.cs, value: aff.id })),
+    affiliations: _get(initialCreatibutor, "affiliations", []).map((aff) => ({
+      ...aff,
+      text: aff.title.cs,
+      value: aff.id,
+    })),
     ...(!isCreator && {
       role: _get(initialCreatibutor, "role"),
     }),
@@ -192,6 +204,9 @@ export const CreatibutorsModal = ({
   schema,
   onCreatibutorChange,
   trigger,
+  nameFieldPlaceholder,
+  lastNameFieldPlaceholder,
+  nameTypeHelpText,
 }) => {
   const [open, setOpen] = React.useState(false);
   const [action, setAction] = React.useState(initialAction);
@@ -379,6 +394,15 @@ export const CreatibutorsModal = ({
                   }}
                   optimized
                 />
+                <Popup
+                  content={nameTypeHelpText}
+                  trigger={
+                    <Icon
+                      name="question circle outline"
+                      style={{ fontSize: "1rem", paddingLeft: "0.5rem" }}
+                    ></Icon>
+                  }
+                />
               </Form.Group>
               {_get(values, typeFieldPath, "") === CREATIBUTOR_TYPE.PERSON ? (
                 <div>
@@ -419,7 +443,7 @@ export const CreatibutorsModal = ({
                       <Form.Group widths="equal">
                         <TextField
                           label={i18next.t("Family name")}
-                          placeholder={i18next.t("Family name")}
+                          placeholder={i18next.tlastNameFieldPlaceholder}
                           fieldPath={familyNameFieldPath}
                           required={
                             isCreator &&
@@ -429,7 +453,7 @@ export const CreatibutorsModal = ({
                         />
                         <TextField
                           label={i18next.t("Given names")}
-                          placeholder={i18next.t("Given names")}
+                          placeholder={nameFieldPlaceholder}
                           fieldPath={givenNameFieldPath}
                           required={
                             isCreator &&
