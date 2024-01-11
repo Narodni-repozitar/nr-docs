@@ -2953,13 +2953,32 @@ msgid ""
 msgstr ""
 
 msgid "Write or choose the date when the document was issued."
-msgstr ""
+msgstr "Zapište či zvolte z kalendáře datum, kdy byl zdroj vydan."
 
 msgid "Authors"
-msgstr ""
+msgstr "Autoři"
 
-msgid "TESTKEY"
-msgstr ""
+msgid "Write author's name."
+msgstr "Zapište jméno autora."
 
-msgid "Write the version (first, second ... "
+msgid "Write author's last name."
+msgstr "Zapište příjmení autora."
+
+msgid "Choose if the author is a person or an organization."
+msgstr "Vyberte, zda je autorem osoba nebo instituce."
+
+msgid "Start writing name of the institution, then choose from the options."
 msgstr ""
+"Začněte zapisovat název instituce, následně zvolte instituci z nabídky "
+"našeptavače."
+
+msgid "Choose contributor's role from the list (editor, illustrator...)"
+msgstr "Vyberte z rolety roli přispěvatele (editor, ilustrátor…)."
+
+msgid "Write the version (first, second ...)."
+msgstr "Zapište verzi (první, druhá…)."
+
+msgid ""
+"Choose from the menu identifier type. Write the identifier without prefix "
+"(i.e. https://orcid.org/0009-0004-8646-7185 or jk01051816)."
+msgstr "Vyberte z rolety, jaký identifikátor chcete zapsat. Zapište identifikátor bez prefixu (např.https://orcid.org/0009-0004-8646-7185 nebo jk01051816)."

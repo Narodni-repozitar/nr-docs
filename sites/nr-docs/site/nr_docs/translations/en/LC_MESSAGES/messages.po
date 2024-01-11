@@ -2966,3 +2966,26 @@ msgstr ""
 
 msgid "Write the version (first, second ... "
 msgstr ""
+
+msgid "Write author's name."
+msgstr ""
+
+msgid "Write author's last name."
+msgstr ""
+
+msgid "Choose if the author is a person or an organization."
+msgstr ""
+
+msgid "Start writing name of the institution, then choose from the options."
+msgstr ""
+
+msgid "Choose contributor's role from the list (editor, illustrator...)"
+msgstr ""
+
+msgid "Write the version (first, second ...)."
+msgstr ""
+
+msgid ""
+"Choose from the menu identifier type. Write the identifier without prefix "
+"(i.e. https://orcid.org/0009-0004-8646-7185 or jk01051816)."
+msgstr ""

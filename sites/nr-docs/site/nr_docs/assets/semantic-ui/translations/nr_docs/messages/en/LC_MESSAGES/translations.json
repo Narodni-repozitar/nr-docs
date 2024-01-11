@@ -894,5 +894,12 @@
     "Write or choose the date when the document was issued.": "",
     "Authors": "",
     "TESTKEY": "",
-    "Write the version (first, second ... ": ""
+    "Write the version (first, second ... ": "",
+    "Write author's name.": "",
+    "Write author's last name.": "",
+    "Choose if the author is a person or an organization.": "",
+    "Start writing name of the institution, then choose from the options.": "",
+    "Choose contributor's role from the list (editor, illustrator...)": "",
+    "Write the version (first, second ...).": "",
+    "Choose from the menu identifier type. Write the identifier without prefix (i.e. https://orcid.org/0009-0004-8646-7185 or jk01051816).": ""
 }

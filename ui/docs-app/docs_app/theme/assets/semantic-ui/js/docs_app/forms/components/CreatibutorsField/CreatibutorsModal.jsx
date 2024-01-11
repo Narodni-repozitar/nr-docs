@@ -23,6 +23,7 @@ import {
   TextField,
   RadioField,
   RemoteSelectField,
+  FieldLabel,
 } from "react-invenio-forms";
 import * as Yup from "yup";
 import _get from "lodash/get";
@@ -350,6 +351,8 @@ export const CreatibutorsModal = ({
           }}
           closeIcon
           closeOnDimmerClick={false}
+          className="form-modal"
+          size="large"
         >
           <Modal.Header as="h6" className="pt-10 pb-10">
             <Grid>
@@ -442,8 +445,14 @@ export const CreatibutorsModal = ({
                     <div>
                       <Form.Group widths="equal">
                         <TextField
-                          label={i18next.t("Family name")}
-                          placeholder={i18next.tlastNameFieldPlaceholder}
+                          label={
+                            <FieldLabel
+                              htmlFor={familyNameFieldPath}
+                              icon="pencil"
+                              label={i18next.t("Family name")}
+                            />
+                          }
+                          placeholder={lastNameFieldPlaceholder}
                           fieldPath={familyNameFieldPath}
                           required={
                             isCreator &&
@@ -452,7 +461,13 @@ export const CreatibutorsModal = ({
                           }
                         />
                         <TextField
-                          label={i18next.t("Given names")}
+                          label={
+                            <FieldLabel
+                              htmlFor={givenNameFieldPath}
+                              icon="pencil"
+                              label={i18next.t("Given names")}
+                            />
+                          }
                           placeholder={nameFieldPlaceholder}
                           fieldPath={givenNameFieldPath}
                           required={
@@ -489,17 +504,33 @@ export const CreatibutorsModal = ({
                 <div>
                   <VocabularySelectField
                     type="institutions"
-                    label={i18next.t("Affiliations")}
+                    label={
+                      <FieldLabel
+                        htmlFor={affiliationsFieldPath}
+                        icon=""
+                        label={i18next.t("Affiliations")}
+                      />
+                    }
                     fieldPath={affiliationsFieldPath}
-                    placeholder={i18next.t("Select one or more affiliations")}
+                    placeholder={i18next.t(
+                      "Start writing name of the institution, then choose from the options."
+                    )}
                     multiple
                   />
                   {!isCreator && (
                     <LocalVocabularySelectField
                       type="contributor-roles"
-                      placeholder={i18next.t("Select role")}
+                      placeholder={i18next.t(
+                        "Choose contributor's role from the list (editor, illustrator...)"
+                      )}
                       fieldPath={roleFieldPath}
-                      label={i18next.t("Role")}
+                      label={
+                        <FieldLabel
+                          htmlFor={roleFieldPath}
+                          icon=""
+                          label={i18next.t("Role")}
+                        />
+                      }
                       clearable
                       optionsListName="contributor-roles"
                     />
