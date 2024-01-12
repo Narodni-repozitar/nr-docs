@@ -844,9 +844,6 @@
     "Publisher": "Vydavatel",
     "Relation type": "Typ vazby",
     "Choose relation type": "Vyberte typ vazby",
-<<<<<<< HEAD
-    "Link to/from other resources": "Vazba na/z dalších zdrojů"
-=======
     "Link to/from other resources": "Vazba na/z dalších zdrojů",
     "on": "",
     "caption.help": "",
@@ -867,5 +864,4 @@
     "If you wish to upload files, you must<1>save</1>your draft first.": "If you wish to upload files, you must<1>save</1>your draft first.",
     "Metadata only record": "Metadatový záznam",
     "Disable files for this record. If files are already uploaded, you have to delete them first.": "Vypnout soubory pro tento záznam. Pokud jsou soubory již nahrány, musíte je nejprve smazat."
->>>>>>> e06a23305989b6b22f42c860f46852f9bf5e0e26
 }
