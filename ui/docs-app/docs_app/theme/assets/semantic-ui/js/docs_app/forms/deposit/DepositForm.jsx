@@ -28,14 +28,15 @@ import {
   CreatibutorsField,
   RelatedItemsField,
   objectIdentifiersSchema,
-  // FileUploader,
+  systemIdentifiersSchema,
+  FileUploader,
 } from "../components/";
 import Overridable from "react-overridable";
 import { i18next } from "@translations/docs_app/i18next";
 import _has from "lodash/has";
 
 export const DepositForm = () => {
-  const { record, formConfig } = useFormConfig();
+  const { record, formConfig, files: recordFiles } = useFormConfig();
   const editMode = _has(formConfig, "updateUrl");
   const sidebarRef = useRef(null);
   const formFeedbackRef = useRef(null);
@@ -64,7 +65,17 @@ export const DepositForm = () => {
                   <FormFeedback />
                 </Overridable>
               </Sticky>
-
+              <Overridable id="NrDocs.Deposit.AccordionFieldFiles.container">
+                <AccordionField
+                  includesPaths={["files.enabled"]}
+                  active
+                  label={i18next.t("Files")}
+                >
+                  <Overridable id="NrDocs.Deposit.FileUploader.container">
+                    <FileUploader recordFiles={recordFiles} />
+                  </Overridable>
+                </AccordionField>
+              </Overridable>
               <Overridable id="NrDocs.Deposit.AccordionFieldBasicInformation.container">
                 <AccordionField
                   includesPaths={[
@@ -87,6 +98,7 @@ export const DepositForm = () => {
                     fieldPath="metadata.title"
                   >
                     <TextField
+                      optimized
                       fieldPath="metadata.title"
                       required
                       placeholder={i18next.t(
@@ -146,6 +158,7 @@ export const DepositForm = () => {
                     fieldPath="metadata.languages"
                   >
                     <LocalVocabularySelectField
+                      optimized
                       fieldPath="metadata.languages"
                       multiple={true}
                       required
@@ -196,6 +209,7 @@ export const DepositForm = () => {
                     fieldPath="metadata.accessRights"
                   >
                     <LocalVocabularySelectField
+                      optimized
                       fieldPath="metadata.accessRights"
                       required
                       clearable
@@ -217,6 +231,7 @@ export const DepositForm = () => {
                     fieldPath="metadata.rights"
                   >
                     <LocalVocabularySelectField
+                      optimized
                       fieldPath="metadata.rights"
                       label={
                         <FieldLabel
@@ -323,6 +338,7 @@ export const DepositForm = () => {
                     fieldPath="metadata.subjectCategories"
                   >
                     <LocalVocabularySelectField
+                      optimized
                       fieldPath="metadata.subjectCategories"
                       multiple={true}
                       label={

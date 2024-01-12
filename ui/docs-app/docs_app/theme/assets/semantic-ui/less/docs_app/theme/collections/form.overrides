@@ -141,6 +141,7 @@
   #main-content {
     .ui.icon.left.labeled.button {
       background-color: @arrayAddButtonFieldColor;
+      color: black;
     }
     .ui.icon.left.labeled.button:hover {
       background-color: @arrayAddButtonFieldHoverColor;
