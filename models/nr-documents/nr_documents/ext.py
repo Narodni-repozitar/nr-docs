@@ -44,6 +44,8 @@ class Nr_documentsExt:
     def service_records(self):
         return config.NR_DOCUMENTS_RECORD_SERVICE_CLASS(
             config=config.NR_DOCUMENTS_RECORD_SERVICE_CONFIG(),
+            files_service=self.service_files,
+            draft_files_service=self.service_draft_files,
         )
 
     @cached_property
@@ -66,4 +68,45 @@ class Nr_documentsExt:
             config=NrDocumentsPublishedServiceConfig(
                 proxied_drafts_config=self.service_records.config,
             ),
+        )
+
+    @cached_property
+    def service_files(self):
+        return config.NR_DOCUMENTS_FILES_SERVICE_CLASS(
+            config=config.NR_DOCUMENTS_FILES_SERVICE_CONFIG(),
+        )
+
+    @cached_property
+    def resource_files(self):
+        return config.NR_DOCUMENTS_FILES_RESOURCE_CLASS(
+            service=self.service_files,
+            config=config.NR_DOCUMENTS_FILES_RESOURCE_CONFIG(),
+        )
+
+    @cached_property
+    def published_service_files(self):
+        from nr_documents.services.files.published.config import (
+            NrDocumentsFilePublishedServiceConfig,
+        )
+        from nr_documents.services.files.published.service import (
+            NrDocumentsFilePublishedService,
+        )
+
+        return NrDocumentsFilePublishedService(
+            config=NrDocumentsFilePublishedServiceConfig(
+                proxied_drafts_config=self.service_files.config,
+            ),
+        )
+
+    @cached_property
+    def service_draft_files(self):
+        return config.NR_DOCUMENTS_DRAFT_FILES_SERVICE_CLASS(
+            config=config.NR_DOCUMENTS_DRAFT_FILES_SERVICE_CONFIG(),
+        )
+
+    @cached_property
+    def resource_draft_files(self):
+        return config.NR_DOCUMENTS_DRAFT_FILES_RESOURCE_CLASS(
+            service=self.service_draft_files,
+            config=config.NR_DOCUMENTS_DRAFT_FILES_RESOURCE_CONFIG(),
         )

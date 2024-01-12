@@ -1,9 +1,12 @@
+from invenio_drafts_resources.services.records.components import DraftFilesComponent
 from invenio_drafts_resources.services.records.config import is_record
 from invenio_records_resources.services import ConditionalLink, RecordLink
 from invenio_records_resources.services.records.components import DataComponent
 from nr_docs_extensions.services.config import FilteredResultServiceConfig
-from oarepo_requests.components.requests import PublishDraftComponent
-from oarepo_runtime.config.service import PermissionsPresetsConfigMixin
+from oarepo_requests.services.components import PublishDraftComponent
+from oarepo_runtime.services.config.service import PermissionsPresetsConfigMixin
+from oarepo_runtime.services.files import FilesComponent
+from oarepo_runtime.services.results import RecordList
 
 from nr_documents.records.api import NrDocumentsDraft, NrDocumentsRecord
 from nr_documents.services.records.permissions import NrDocumentsPermissionPolicy
@@ -15,6 +18,8 @@ class NrDocumentsServiceConfig(
     PermissionsPresetsConfigMixin, FilteredResultServiceConfig
 ):
     """NrDocumentsRecord service config."""
+
+    result_list_cls = RecordList
 
     PERMISSIONS_PRESETS = ["authenticated"]
 
@@ -34,7 +39,9 @@ class NrDocumentsServiceConfig(
         *PermissionsPresetsConfigMixin.components,
         *FilteredResultServiceConfig.components,
         PublishDraftComponent("publish_draft", "delete_record"),
+        FilesComponent,
         DataComponent,
+        DraftFilesComponent,
     ]
 
     model = "nr_documents"
@@ -45,6 +52,11 @@ class NrDocumentsServiceConfig(
     def links_item(self):
         return {
             "draft": RecordLink("{+api}/nr-documents/{id}/draft"),
+            "files": ConditionalLink(
+                cond=is_record,
+                if_=RecordLink("{+api}/nr-documents/{id}/files"),
+                else_=RecordLink("{+api}/nr-documents/{id}/draft/files"),
+            ),
             "latest": RecordLink("{+api}/nr-documents/{id}/versions/latest"),
             "latest_html": RecordLink("{+ui}/docs/{id}/latest"),
             "publish": RecordLink("{+api}/nr-documents/{id}/draft/actions/publish"),
