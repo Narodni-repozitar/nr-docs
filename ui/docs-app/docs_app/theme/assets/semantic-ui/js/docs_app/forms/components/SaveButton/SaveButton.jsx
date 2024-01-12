@@ -1,15 +1,15 @@
-import React from "react";
+import React, { memo } from "react";
 import { Button } from "semantic-ui-react";
 import { i18next } from "@translations/docs_app/i18next";
 import { useDepositApiClient } from "@js/oarepo_ui";
 
-export const SaveButton = ({ ...uiProps }) => {
-  const { isSubmitting, save } = useDepositApiClient();
+export const SaveButton = memo(({ ...uiProps }) => {
+  const { isSubmitting, save, isSaving } = useDepositApiClient();
   return (
     <Button
       name="save"
       disabled={isSubmitting}
-      loading={isSubmitting}
+      loading={isSaving}
       color="grey"
       onClick={() => save()}
       icon="save"
@@ -19,4 +19,4 @@ export const SaveButton = ({ ...uiProps }) => {
       {...uiProps}
     />
   );
-};
+});
