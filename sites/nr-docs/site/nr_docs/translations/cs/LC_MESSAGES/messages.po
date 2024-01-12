@@ -543,7 +543,7 @@ msgid "Add additional title"
 msgstr "Přidat další název"
 
 msgid "Additional titles"
-msgstr "Další názvy"
+msgstr "Další názvy dokumentu"
 
 msgid "Title"
 msgstr "Název"
@@ -552,7 +552,7 @@ msgid "Title type"
 msgstr "Druh názvu"
 
 msgid "Creators"
-msgstr "Autoři"
+msgstr "Tvůrci"
 
 msgid "Add creator"
 msgstr "Přidat autora"
@@ -807,10 +807,10 @@ msgid "Choose languages"
 msgstr "Vyberte jazyky"
 
 msgid "Resource type"
-msgstr "Typ položky"
+msgstr "Typ zdroje"
 
 msgid "Select resource type"
-msgstr "Vyberte typ položky"
+msgstr "Vyberte typ zdroje."
 
 msgid "Abstract"
 msgstr "Abstrakt"
@@ -833,15 +833,15 @@ msgid "Licenses"
 msgstr "Licence"
 
 msgid "Choose licenses"
-msgstr "Vyberte licence"
+msgstr "Vyberte licence."
 
 msgid ""
 "If a Creative Commons license is associated with the resource, select the "
 "appropriate license option from the menu. We recommend choosing the latest "
 "versions, namely 3.0 Czech and 4.0 International."
 msgstr ""
-"Pokud se k datové sadě váže licence Creative Commons, vyberte příslušnou "
-"variantu licence z nabídky. Doporučujeme výběr nejnovějších verzí a to 3.0 "
+"Pokud se ke zdroji váže licence Creative Commons, vyberte příslušnou "
+"variantu licence z nabídky. Doporučujeme výběr nejnovějších verzí a to 3.0 "
 "Česko a 4.0 International."
 
 msgid "Date available"
@@ -2855,3 +2855,243 @@ msgid ""
 msgstr ""
 "Vypnout soubory pro tento záznam. Pokud jsou soubory již nahrány, musíte je "
 "nejprve smazat."
+
+#: ui/docs-app/docs_app/templates/semantic-ui/docs_app/components/NrEvents.jinja:7
+msgid "on"
+msgstr ""
+
+msgid "caption.help"
+msgstr ""
+
+msgid "caption.label"
+msgstr ""
+
+msgid "caption.hint"
+msgstr ""
+
+msgid ""
+"Write down the time period in which the event took place. If it is not a "
+"range, choose same date twice."
+msgstr ""
+"Zapište si časové období, ve kterém se událost odehrála. Pokud to není "
+"rozsah, vyberte stejné datum dvakrát."
+
+msgid ""
+"If the dataset has been published elsewhere, use the date of first "
+"publication. You can also specify a future publication date (for embargo). "
+"If you do not enter a date, the system will automatically fill the date when"
+" the record is published. Format: YYYY-MM-DD, YYYYY-MM or YYYYY."
+msgstr ""
+"Pokud byl záznam již publikován jinde, použijte datum prvního zveřejnění. "
+"Můžete zadat rovněž datum budoucího zveřejnění (časové embargo). Pokud datum"
+" nevyplníte, systém automaticky doplní datum při vypublikování (zveřejnění) "
+"záznamu. Formát: RRRR-MM-DD, RRRRY-MM or RRRR."
+
+msgid "Random string"
+msgstr "nahoda"
+
+msgid "Alternative title"
+msgstr "Alternativní název"
+
+msgid "Translated title"
+msgstr "Přeložený název"
+
+msgid "Subtitle"
+msgstr "Podnázev"
+
+msgid "Other"
+msgstr "Další"
+
+msgid ""
+"If the title is given in other languages, choose the type of title and "
+"corresponding language."
+msgstr ""
+"Pokud má název další jazykovou variantu, vyplňte ji, zvolte typ názvu a "
+"příslušný jazyk, ve kterém je název zapsán."
+
+msgid "Write down the main name of the event."
+msgstr "Zapište hlavní název akce."
+
+msgid "If event has other known names, write them here."
+msgstr "Pokud má akce další známe názvy, uveďte je zde."
+
+msgid "Write down the place of the event."
+msgstr "Zapište místo konání akce (město)."
+
+msgid "Choose country from the list."
+msgstr "Zvolte stát z nabídky"
+
+msgid ""
+"Provide other URL where this resource is available (i.e. other repository, "
+"database, webpage). In the note field you can provide for example name of "
+"website or database or specify another external source for the resource. "
+msgstr ""
+"Vložte URL odkaz dalšího umístění zdroje (př. jiný repozitář, databáze, "
+"webová stránka). Do poznámky můžete uvést např. název webu nebo databáze "
+"nebo jinak externí zdroj specifikovat."
+
+msgid "Write down project number."
+msgstr "Zapište kód projektu. "
+
+msgid "Write down name of project."
+msgstr "Zapište název projektu."
+
+msgid "Write the name of research program in which the project was funded."
+msgstr ""
+"Zapište název výzkumného programu, v rámci kterého byl projekt financován."
+
+msgid "Start writing the name of the provider and then choose from the list."
+msgstr ""
+"Začněte zapisovat název poskytovatele, následně vyberte z nabídky "
+"našeptavače"
+
+msgid ""
+"Write down information about a resource related to the resource being "
+"described (i.e. if you are describing an article, here you can identify a "
+"magazine in which the article was published)."
+msgstr ""
+"Zapište informace o zdroji, který souvisí se zdrojem, který zde popisujete "
+"(např. pokud popisujete článek, sem můžete identifikovat časopis, ve kterém "
+"článek vyšel)."
+
+msgid ""
+"Write down the name of the edition and write down the volume if name is "
+"provided."
+msgstr ""
+"Zapište název edice/série. Zapište svazek edice/série, pokud je název "
+"uveden."
+
+msgid "Fill in the main title of the resource."
+msgstr "Vyplňte hlavní název zdroje."
+
+msgid ""
+"Choose identifier type and write the identifier. You can add more "
+"identifiers."
+msgstr ""
+"Vyberte typ identifikátoru a zapište jej. Můžete zapsat více identifikátorů."
+
+msgid "Select the language(s) in which the resource is written."
+msgstr "Vyberte jazyk/jazyky zdroje."
+
+msgid "Write the name of the publisher. You can write more publishers"
+msgstr "Zapište vydavatele. Můžete zapsat i více vydavatelů."
+
+msgid "Choose access type - if the resource is open or has some restrictions."
+msgstr ""
+"Vyberte typ přístupu, zda bude zdroj dostupný otevřeně nebo s omezením."
+
+msgid "Write contributor's name."
+msgstr "Zapište jméno přispěvatele."
+
+msgid "Write contributor's last name."
+msgstr "Zapište příjmení přispěvatele."
+
+msgid "Choose if the contributor is a person or an organization."
+msgstr "Vyberte, zda je přispěvatelem osoba nebo instituce."
+
+msgid "Write keywords describing the resource, always choose a language."
+msgstr "Zapisujte slova popisující zdroj, zvolte vždy jazyk."
+
+msgid ""
+"Start writing name of the discipline and then choose from provided options."
+msgstr "Začněte zapisovat název oboru, následně zvolte z nabídky našeptavače."
+
+msgid ""
+"Choose abstract language and write down the text.Abstract can be provided in"
+" multiple languages."
+msgstr ""
+"Vyberte jazyk abstraktu a zapište nebo vložte text. Abstrakt můžete vložit "
+"ve více jazycích."
+
+msgid "Space for additional information related to the resource."
+msgstr "Prostor pro další informace ke zdroji."
+
+msgid "Financing information"
+msgstr "Informace o financování"
+
+msgid "Files"
+msgstr "Nahrání souboru"
+
+msgid "Select the language(s) of the resource"
+msgstr "Vyberte jazyk/jazyky zdroje."
+
+msgid "Date issued"
+msgstr "Datum vydani"
+
+msgid "Zapište verzi (první, druhá…)."
+msgstr "Zapište verzi (první, druhá…)."
+
+msgid "Version"
+msgstr "Verze"
+
+msgid ""
+"Once the record is published you will no longer be able to change the files "
+"in the upload! However, you will still be able to update the record's "
+"metadata later."
+msgstr ""
+
+msgid "Write or choose the date when the document was issued."
+msgstr "Zapište či zvolte z kalendáře datum, kdy byl zdroj vydan."
+
+msgid "Authors"
+msgstr "Autoři"
+
+msgid "Write author's name."
+msgstr "Zapište jméno autora."
+
+msgid "Write author's last name."
+msgstr "Zapište příjmení autora."
+
+msgid "Choose if the author is a person or an organization."
+msgstr "Vyberte, zda je autorem osoba nebo instituce."
+
+msgid "Start writing name of the institution, then choose from the options."
+msgstr ""
+"Začněte zapisovat název instituce, následně zvolte instituci z nabídky "
+"našeptavače."
+
+msgid "Choose contributor's role from the list (editor, illustrator...)"
+msgstr "Vyberte z rolety roli přispěvatele (editor, ilustrátor…)."
+
+msgid "Write the version (first, second ...)."
+msgstr "Zapište verzi (první, druhá…)."
+
+msgid ""
+"Choose from the menu identifier type. Write the identifier without prefix "
+"(i.e. https://orcid.org/0009-0004-8646-7185 or jk01051816)."
+msgstr ""
+"Vyberte z rolety, jaký identifikátor chcete zapsat. Zapište identifikátor "
+"bez prefixu (např.https://orcid.org/0009-0004-8646-7185 nebo jk01051816)."
+
+msgid "Personal identifier"
+msgstr "Identifikátor osoby"
+
+msgid "ORCID"
+msgstr "ORCID"
+
+msgid "ScopusID"
+msgstr "Scopus Author ID"
+
+msgid "ResearcherID"
+msgstr "ResearcherID (Web of Science)"
+
+msgid "CzenasAutID"
+msgstr "Národní autorita (czenasAutID)"
+
+msgid "vedIDK"
+msgstr "Vedidk (IS VaVaI)"
+
+msgid "InstitutionalID"
+msgstr "Institucionální ID (institutionalID)"
+
+msgid "ISNI"
+msgstr "ISNI"
+
+msgid "ROR"
+msgstr "ROR"
+
+msgid "ICO"
+msgstr "ICO"
+
+msgid "DOI"
+msgstr "DOI"

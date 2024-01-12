@@ -35,12 +35,16 @@ export class CreatibutorsIdentifiers extends Component {
         className="modal-identifiers-field"
         options={authorityIdentifiersSchema}
         fieldPath={fieldPath}
+        helpText={i18next.t(
+          "Choose from the menu identifier type. Write the identifier without prefix (i.e. https://orcid.org/0009-0004-8646-7185 or jk01051816)."
+        )}
         identifierLabel={i18next.t("Identifier")}
         noResultsMessage={i18next.t("Type the value of an identifier...")}
         label={label}
         placeholder={placeholder}
         multiple
         onChange={this.handleChange}
+        selectOnBlur={false}
       />
     );
   }
@@ -53,6 +57,6 @@ CreatibutorsIdentifiers.propTypes = {
 };
 
 CreatibutorsIdentifiers.defaultProps = {
-  label: i18next.t("Identifiers"),
+  label: i18next.t("Personal identifier"),
   placeholder: i18next.t("e.g. ORCID, ISNI or GND."),
 };

@@ -6,29 +6,29 @@ config:
   project_package: nr_documents
   python: python3.9
   sites:
-  - nr-docs
+    - nr-docs
 i18n:
   babel_input_translations:
-  - models/nr-documents/nr_documents/translations
-  - sites/nr-docs/translations
-  - ui/docs-app/docs_app/translations
+    - models/nr-documents/nr_documents/translations
+    - sites/nr-docs/translations
+    - ui/docs-app/docs_app/translations
   babel_output_translations:
-  - sites/nr-docs/site/nr_docs/translations
+    - sites/nr-docs/site/nr_docs/translations
   babel_source_paths:
-  - models/nr-documents/nr_documents
-  - sites/nr-docs/site
-  - sites/nr-docs/templates
-  - ui/docs-app/docs_app
-  i18next_input_translations:
-  - ui/docs-app/docs_app/theme/assets/semantic-ui/translations/docs_app/messages
+    - models/nr-documents/nr_documents
+    - sites/nr-docs/site
+    - sites/nr-docs/templates
+    - ui/docs-app/docs_app
+  # i18next_input_translations:
+  # - ui/docs-app/docs_app/theme/assets/semantic-ui/translations/docs_app/messages
   i18next_output_translations:
-  - sites/nr-docs/site/nr_docs/assets/semantic-ui/translations/nr_docs
+    - sites/nr-docs/site/nr_docs/assets/semantic-ui/translations/nr_docs
   i18next_source_paths:
-  - ui/docs-app/docs_app/theme/assets/semantic-ui/js
-  - sites/nr-docs/site/nr_docs/assets/semantic-ui/js
+    - ui/docs-app/docs_app/theme/assets/semantic-ui/js
+    - sites/nr-docs/site/nr_docs/assets/semantic-ui/js
   languages:
-  - cs
-  - en
+    - cs
+    - en
 local:
   https://github.com/oarepo/oarepo-ui.git:
     branch: null
@@ -39,27 +39,27 @@ local:
     github_clone_url: null
     local_dir: local/nr-docs-extensions
     sites:
-    - nr-docs
+      - nr-docs
   oarepo-ui:
     branch: null
     github_clone_url: https://github.com/oarepo/oarepo-ui.git
     local_dir: local/oarepo-ui
     sites:
-    - nr-docs
+      - nr-docs
   oarepo-vocabularies:
     branch: null
     github_clone_url: https://github.com/oarepo/oarepo-vocabularies.git
     local_dir: local/oarepo-vocabularies
     sites:
-    - nr-docs
-    - nr-docs
-    - nr-docs
+      - nr-docs
+      - nr-docs
+      - nr-docs
   oarepo-vocacbularies:
     branch: null
     github_clone_url: null
     local_dir: local/oarepo-vocacbularies
     sites:
-    - nr-docs
+      - nr-docs
 models:
   nr-documents:
     author_email: miroslav.simek@techlib.cz
@@ -73,30 +73,30 @@ models:
     pid_type: dcmnts
     run_tests: skip
     sites:
-    - nr-docs
+      - nr-docs
     update_opensearch: run
-    use_custom_fields: 'yes'
-    use_drafts: 'no'
-    use_expandable_fields: 'no'
-    use_files: 'no'
-    use_relations: 'yes'
-    use_requests: 'yes'
-    use_vocabularies: 'yes'
+    use_custom_fields: "yes"
+    use_drafts: "no"
+    use_expandable_fields: "no"
+    use_files: "no"
+    use_relations: "yes"
+    use_requests: "yes"
+    use_vocabularies: "yes"
 sites:
   nr-docs:
     author_email: miroslav.simek@techlib.cz
     author_name: Miroslav Simek
     copyright_holder: "N\xE1rodn\xED technick\xE1 knihovna"
-    create_pipenv_in_site: 'yes'
-    init_database: 'yes'
+    create_pipenv_in_site: "yes"
+    init_database: "yes"
     repository_name: Document part of the Czech National Repository
     site_dir: sites/nr-docs
     site_package: nr_docs
     site_pipenv_dir: sites/nr-docs/.venv
     transifex_project: nr_docs
-    use_oarepo_vocabularies: 'yes'
+    use_oarepo_vocabularies: "yes"
     www: https://docs.narodni-repozitar.cz/
-    year: '2023'
+    year: "2023"
 type: monorepo
 ui:
   docs-app:
@@ -108,13 +108,13 @@ ui:
     cookiecutter_ext_name: DocsAppExtension
     cookiecutter_local_model_path: ../../models/nr-documents
     cookiecutter_model_package: nr_documents
-    cookiecutter_repository_url: ''
+    cookiecutter_repository_url: ""
     cookiecutter_resource: DocsAppResource
     cookiecutter_resource_config: DocsAppResourceConfig
     cookiecutter_ui_record_serializer_class: nr_documents.resources.records.ui.NrDocumentsUIJSONSerializer
     installation_site: nr-docs
     model_name: nr-documents
     sites:
-    - nr-docs
+      - nr-docs
     ui_dir: ui/docs-app
     url_prefix: /docs/
