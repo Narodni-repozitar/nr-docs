@@ -1,16 +1,19 @@
 from invenio_drafts_resources.records.api import Draft as InvenioDraft
 from invenio_drafts_resources.records.api import DraftRecordIdProviderV2, ParentRecord
 from invenio_drafts_resources.records.api import Record as InvenioRecord
-from invenio_records.systemfields import ConstantField
-from invenio_records_resources.records.systemfields import IndexField
+from invenio_records.systemfields import ConstantField, ModelField
+from invenio_records_resources.records.systemfields import FilesField, IndexField
 from invenio_records_resources.records.systemfields.pid import PIDField, PIDFieldContext
 from invenio_requests.records import Request
 from invenio_requests.records.systemfields.relatedrecord import RelatedRecord
 from invenio_vocabularies.records.api import Vocabulary
 from nr_docs_extensions.services.sort import TitleICUSortField
-from oarepo_runtime.drafts.systemfields.has_draftcheck import HasDraftCheckField
-from oarepo_runtime.relations import PIDRelation, RelationsField
+from oarepo_runtime.records.relations import PIDRelation, RelationsField
+from oarepo_runtime.records.systemfields.has_draftcheck import HasDraftCheckField
+from oarepo_runtime.records.systemfields.icu import ICUSearchField
+from oarepo_runtime.records.systemfields.record_status import RecordStatusSystemField
 
+from nr_documents.files.api import NrDocumentsFile, NrDocumentsFileDraft
 from nr_documents.records.dumpers.dumper import (
     NrDocumentsDraftDumper,
     NrDocumentsDumper,
@@ -54,6 +57,11 @@ class NrDocumentsRecord(InvenioRecord):
 
     # extra custom fields for sorting by title
     sort = TitleICUSortField(source_field="metadata.title")
+
+    title_search = ICUSearchField(source_field="metadata.title")
+    creator_search = ICUSearchField(source_field="metadata.creators.fullName")
+    contributor_search = ICUSearchField(source_field="metadata.contributors.fullName")
+    abstract_search = ICUSearchField(source_field="metadata.abstract.value")
 
     relations = RelationsField(
         accessRights=PIDRelation(
@@ -136,11 +144,24 @@ class NrDocumentsRecord(InvenioRecord):
             keys=["id", "title", "hierarchy"],
             pid_field=Vocabulary.pid.with_type_ctx("institutions"),
         ),
+        institutions=PIDRelation(
+            "syntheticFields.institutions",
+            keys=["id", "title", "hierarchy"],
+            pid_field=Vocabulary.pid.with_type_ctx("institutions"),
+        ),
     )
 
     versions_model_cls = NrDocumentsParentState
 
     parent_record_cls = NrDocumentsParentRecord
+    record_status = RecordStatusSystemField()
+
+    files = FilesField(
+        file_cls=NrDocumentsFile, store=False, create=False, delete=False
+    )
+
+    bucket_id = ModelField(dump=False)
+    bucket = ModelField(dump=False)
 
 
 class NrDocumentsDraft(InvenioDraft):
@@ -240,14 +261,30 @@ class NrDocumentsDraft(InvenioDraft):
             keys=["id", "title", "hierarchy"],
             pid_field=Vocabulary.pid.with_type_ctx("institutions"),
         ),
+        institutions=PIDRelation(
+            "syntheticFields.institutions",
+            keys=["id", "title", "hierarchy"],
+            pid_field=Vocabulary.pid.with_type_ctx("institutions"),
+        ),
     )
 
     versions_model_cls = NrDocumentsParentState
 
     parent_record_cls = NrDocumentsParentRecord
+    record_status = RecordStatusSystemField()
+
     has_draft = HasDraftCheckField(config_key="HAS_DRAFT_CUSTOM_FIELD")
+
+    files = FilesField(file_cls=NrDocumentsFileDraft, store=False)
+
+    bucket_id = ModelField(dump=False)
+    bucket = ModelField(dump=False)
 
 
 NrDocumentsRecord.has_draft = HasDraftCheckField(
     draft_cls=NrDocumentsDraft, config_key="HAS_DRAFT_CUSTOM_FIELD"
 )
+
+NrDocumentsFile.record_cls = NrDocumentsRecord
+
+NrDocumentsFileDraft.record_cls = NrDocumentsDraft

@@ -1,8 +1,4 @@
 import marshmallow as ma
-from invenio_drafts_resources.services.records.schema import (
-    ParentSchema as InvenioParentSchema,
-)
-from marshmallow import Schema
 from marshmallow import fields as ma_fields
 from marshmallow.fields import String
 from nr_metadata.common.services.records.ui_schema_common import (
@@ -37,6 +33,7 @@ from nr_metadata.documents.services.records.ui_schema import (
     NRDegreeGrantorUISchema,
     NRDocumentMetadataUISchema,
     NRDocumentRecordUISchema,
+    NRDocumentSyntheticFieldsUISchema,
     NRThesisUISchema,
 )
 from nr_metadata.ui_schema.identifiers import (
@@ -44,66 +41,11 @@ from nr_metadata.ui_schema.identifiers import (
     NRObjectIdentifierUISchema,
     NRSystemIdentifierUISchema,
 )
-from oarepo_requests.schemas.marshmallow import NoneReceiverGenericRequestSchema
+from oarepo_runtime.services.schema.marshmallow import DictOnlySchema
 from oarepo_vocabularies.services.ui_schema import (
     HierarchyUISchema,
     VocabularyI18nStrUIField,
 )
-
-from nr_documents.services.records.schema import GeneratedParentSchema
-
-
-class GeneratedParentSchema(InvenioParentSchema):
-    """"""
-
-    delete_record = ma.fields.Nested(NoneReceiverGenericRequestSchema)
-    publish_draft = ma.fields.Nested(NoneReceiverGenericRequestSchema)
-
-    @ma.pre_load
-    def clean(self, data, **kwargs):
-        """Removes dump_only fields.
-
-        Why: We want to allow the output of a Schema dump, to be a valid input
-             to a Schema load without causing strange issues.
-        """
-        for name, field in self.fields.items():
-            if field.dump_only:
-                data.pop(name, None)
-        return data
-
-    @ma.pre_load
-    def clean_delete_record(self, data, **kwargs):
-        """Clear review if None."""
-        # draft.parent.review returns None when not set, causing the serializer
-        # to dump {'review': None}. As a workaround we pop it if it's none
-        # here.
-        if data.get("delete_record", None) is None:
-            data.pop("delete_record", None)
-        return data
-
-    @ma.post_dump()
-    def pop_delete_record_if_none(self, data, many, **kwargs):
-        """Clear review if None."""
-        if data.get("delete_record", None) is None:
-            data.pop("delete_record", None)
-        return data
-
-    @ma.pre_load
-    def clean_publish_draft(self, data, **kwargs):
-        """Clear review if None."""
-        # draft.parent.review returns None when not set, causing the serializer
-        # to dump {'review': None}. As a workaround we pop it if it's none
-        # here.
-        if data.get("publish_draft", None) is None:
-            data.pop("publish_draft", None)
-        return data
-
-    @ma.post_dump()
-    def pop_publish_draft_if_none(self, data, many, **kwargs):
-        """Clear review if None."""
-        if data.get("publish_draft", None) is None:
-            data.pop("publish_draft", None)
-        return data
 
 
 class NrDocumentsUISchema(NRDocumentRecordUISchema):
@@ -113,7 +55,6 @@ class NrDocumentsUISchema(NRDocumentRecordUISchema):
     oai = ma_fields.Nested(lambda: OaiUISchema())
 
     syntheticFields = ma_fields.Nested(lambda: SyntheticFieldsUISchema())
-    parent = ma.fields.Nested(GeneratedParentSchema)
 
 
 class GeoLocationsItemUISchema(NRGeoLocationUISchema):
@@ -140,7 +81,7 @@ class NrDocumentsMetadataUISchema(NRDocumentMetadataUISchema):
     thesis = ma_fields.Nested(lambda: ThesisUISchema())
 
 
-class OaiUISchema(Schema):
+class OaiUISchema(DictOnlySchema):
     class Meta:
         unknown = ma.RAISE
 
@@ -262,13 +203,26 @@ class GeoLocationPointUISchema(NRGeoLocationPointUISchema):
         unknown = ma.RAISE
 
 
-class HarvestUISchema(Schema):
+class HarvestUISchema(DictOnlySchema):
     class Meta:
         unknown = ma.RAISE
 
     datestamp = ma_fields.String()
 
     identifier = ma_fields.String()
+
+
+class InstitutionsUISchema(DictOnlySchema):
+    class Meta:
+        unknown = ma.INCLUDE
+
+    _id = String(data_key="id", attribute="id")
+
+    _version = String(data_key="@v", attribute="@v")
+
+    hierarchy = ma_fields.Nested(lambda: HierarchyUISchema())
+
+    title = VocabularyI18nStrUIField()
 
 
 class ItemContributorsItemUISchema(NRRelatedItemContributorUISchema):
@@ -362,7 +316,7 @@ class SubjectsItemUISchema(NRSubjectUISchema):
         unknown = ma.RAISE
 
 
-class SyntheticFieldsUISchema(Schema):
+class SyntheticFieldsUISchema(NRDocumentSyntheticFieldsUISchema):
     class Meta:
         unknown = ma.RAISE
 

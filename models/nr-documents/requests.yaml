@@ -1,7 +1,7 @@
 
 service-config:
   components:
-    - "{{oarepo_requests.components.requests.PublishDraftComponent}}(\"publish_draft\", \"delete_record\")"
+    - "{{oarepo_requests.services.components.PublishDraftComponent}}(\"publish_draft\", \"delete_record\")"
 
 published-service-config:
   base-classes:

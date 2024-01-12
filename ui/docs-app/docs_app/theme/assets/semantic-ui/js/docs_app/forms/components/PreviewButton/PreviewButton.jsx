@@ -4,12 +4,11 @@ import { i18next } from "@translations/docs_app/i18next";
 import { useFormikContext } from "formik";
 
 export const PreviewButton = ({ ...uiProps }) => {
-  const { handleSubmit, isSubmitting } = useFormikContext();
+  const { handleSubmit } = useFormikContext();
   return (
     <Button
       name="preview"
       disabled
-      loading={isSubmitting}
       color="grey"
       onClick={handleSubmit}
       icon="eye"
