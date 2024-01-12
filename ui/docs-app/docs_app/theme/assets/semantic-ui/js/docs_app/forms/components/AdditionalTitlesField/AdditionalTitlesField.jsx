@@ -17,14 +17,19 @@ const subtitleTypes = [
   { text: i18next.t("Other"), value: "other" },
 ];
 
-export const AdditionalTitlesField = ({ fieldPath, helpText }) => {
+export const AdditionalTitlesField = ({
+  fieldPath,
+  helpText,
+  prefillLanguageWithDefaultLocale,
+  defaultNewValue,
+}) => {
   const { defaultLocale } = useDefaultLocale();
   const initialValueObj = {
     title: {
       value: "",
     },
   };
-  const { defaultNewValue } = useFormFieldValue({
+  const { defaultNewValue: getNewValue } = useFormFieldValue({
     defaultValue: defaultLocale,
     fieldPath,
     subValuesPath: "title.lang",
@@ -34,7 +39,11 @@ export const AdditionalTitlesField = ({ fieldPath, helpText }) => {
   return (
     <ArrayField
       addButtonLabel={i18next.t("Add additional title")}
-      defaultNewValue={defaultNewValue(initialValueObj)}
+      defaultNewValue={
+        prefillLanguageWithDefaultLocale
+          ? getNewValue(initialValueObj)
+          : defaultNewValue
+      }
       fieldPath={fieldPath}
       label={i18next.t("Additional titles")}
       labelIcon="pencil"
@@ -80,10 +89,20 @@ export const AdditionalTitlesField = ({ fieldPath, helpText }) => {
 AdditionalTitlesField.propTypes = {
   fieldPath: PropTypes.string.isRequired,
   helpText: PropTypes.string,
+  prefillLanguageWithDefaultLocale: PropTypes.bool,
+  defaultNewValue: PropTypes.object,
 };
 
 AdditionalTitlesField.defaultProps = {
   helpText: i18next.t(
     "If the title is given in other languages, choose the type of title and corresponding language."
   ),
+  prefillLanguageWithDefaultLocale: false,
+  defaultNewValue: {
+    title: {
+      value: "",
+      lang: "",
+    },
+    titleType: "",
+  },
 };

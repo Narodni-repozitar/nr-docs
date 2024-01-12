@@ -63,7 +63,6 @@ export const EventsField = ({ fieldPath, helpText }) => {
                 fieldPath={`${fieldPathPrefix}.eventLocation.country`}
                 label={i18next.t("Country")}
                 optionsListName="countries"
-                required
                 clearable
                 placeholder={i18next.t("Choose country from the list.")}
               />

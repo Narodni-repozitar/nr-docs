@@ -2938,13 +2938,13 @@ msgid "Select the language(s) of the resource"
 msgstr "Vyberte jazyk/jazyky zdroje."
 
 msgid "Date issued"
-msgstr ""
+msgstr "Datum vydani"
 
 msgid "Zapište verzi (první, druhá…)."
-msgstr ""
+msgstr "Zapište verzi (první, druhá…)."
 
 msgid "Version"
-msgstr ""
+msgstr "Verze"
 
 msgid ""
 "Once the record is published you will no longer be able to change the files "
@@ -2981,4 +2981,39 @@ msgstr "Zapište verzi (první, druhá…)."
 msgid ""
 "Choose from the menu identifier type. Write the identifier without prefix "
 "(i.e. https://orcid.org/0009-0004-8646-7185 or jk01051816)."
-msgstr "Vyberte z rolety, jaký identifikátor chcete zapsat. Zapište identifikátor bez prefixu (např.https://orcid.org/0009-0004-8646-7185 nebo jk01051816)."
+msgstr ""
+"Vyberte z rolety, jaký identifikátor chcete zapsat. Zapište identifikátor "
+"bez prefixu (např.https://orcid.org/0009-0004-8646-7185 nebo jk01051816)."
+
+msgid "Personal identifier"
+msgstr "Identifikátor osoby"
+
+msgid "ORCID"
+msgstr "ORCID"
+
+msgid "ScopusID"
+msgstr "Scopus Author ID"
+
+msgid "ResearcherID"
+msgstr "ResearcherID (Web of Science)"
+
+msgid "CzenasAutID"
+msgstr "Národní autorita (czenasAutID)"
+
+msgid "vedIDK"
+msgstr "Vedidk (IS VaVaI)"
+
+msgid "InstitutionalID"
+msgstr "Institucionální ID (institutionalID)"
+
+msgid "ISNI"
+msgstr "ISNI"
+
+msgid "ROR"
+msgstr "ROR"
+
+msgid "ICO"
+msgstr "ICO"
+
+msgid "DOI"
+msgstr "DOI"

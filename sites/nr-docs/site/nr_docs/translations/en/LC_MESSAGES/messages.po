@@ -2989,3 +2989,36 @@ msgid ""
 "Choose from the menu identifier type. Write the identifier without prefix "
 "(i.e. https://orcid.org/0009-0004-8646-7185 or jk01051816)."
 msgstr ""
+
+msgid "Personal identifier"
+msgstr ""
+
+msgid "ORCID"
+msgstr ""
+
+msgid "ScopusID"
+msgstr ""
+
+msgid "ResearcherID"
+msgstr ""
+
+msgid "CzenasAutID"
+msgstr ""
+
+msgid "vedIDK"
+msgstr ""
+
+msgid "InstitutionalID"
+msgstr ""
+
+msgid "ISNI"
+msgstr ""
+
+msgid "ROR"
+msgstr ""
+
+msgid "ICO"
+msgstr ""
+
+msgid "DOI"
+msgstr ""

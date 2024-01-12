@@ -901,5 +901,16 @@
     "Start writing name of the institution, then choose from the options.": "",
     "Choose contributor's role from the list (editor, illustrator...)": "",
     "Write the version (first, second ...).": "",
-    "Choose from the menu identifier type. Write the identifier without prefix (i.e. https://orcid.org/0009-0004-8646-7185 or jk01051816).": ""
+    "Choose from the menu identifier type. Write the identifier without prefix (i.e. https://orcid.org/0009-0004-8646-7185 or jk01051816).": "",
+    "Personal identifier": "",
+    "ORCID": "",
+    "ScopusID": "",
+    "ResearcherID": "",
+    "CzenasAutID": "",
+    "vedIDK": "",
+    "InstitutionalID": "",
+    "ISNI": "",
+    "ROR": "",
+    "ICO": "",
+    "DOI": ""
 }

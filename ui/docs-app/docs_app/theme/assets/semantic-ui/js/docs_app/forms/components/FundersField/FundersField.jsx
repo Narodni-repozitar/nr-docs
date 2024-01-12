@@ -27,7 +27,6 @@ export const FundersField = ({ fieldPath, helpText }) => {
               width={16}
               fieldPath={`${fieldPathPrefix}.projectID`}
               label={i18next.t("Project code")}
-              required
               placeholder={i18next.t("Write down project number.")}
             />
             <TextField
