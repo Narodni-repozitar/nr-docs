@@ -8,13 +8,22 @@
 // under the terms of the MIT License; see LICENSE file for more details.
 
 import React, { createRef } from "react";
-import { Button, Form, Grid, Header, Modal } from "semantic-ui-react";
+import {
+  Button,
+  Form,
+  Grid,
+  Header,
+  Modal,
+  Popup,
+  Icon,
+} from "semantic-ui-react";
 import { Formik } from "formik";
 import {
   Image,
   TextField,
   RadioField,
   RemoteSelectField,
+  FieldLabel,
 } from "react-invenio-forms";
 import * as Yup from "yup";
 import _get from "lodash/get";
@@ -113,7 +122,11 @@ const deserializeCreatibutor = (initialCreatibutor, isCreator) => {
     given_name,
     ...initialCreatibutor,
     authorityIdentifiers: _get(initialCreatibutor, identifiersFieldPath, []),
-    affiliations: _get(initialCreatibutor, "affiliations", []).map(aff => ({ ...aff, text: aff.title.cs, value: aff.id })),
+    affiliations: _get(initialCreatibutor, "affiliations", []).map((aff) => ({
+      ...aff,
+      text: aff.title.cs,
+      value: aff.id,
+    })),
     ...(!isCreator && {
       role: _get(initialCreatibutor, "role"),
     }),
@@ -192,6 +205,9 @@ export const CreatibutorsModal = ({
   schema,
   onCreatibutorChange,
   trigger,
+  nameFieldPlaceholder,
+  lastNameFieldPlaceholder,
+  nameTypeHelpText,
 }) => {
   const [open, setOpen] = React.useState(false);
   const [action, setAction] = React.useState(initialAction);
@@ -335,6 +351,8 @@ export const CreatibutorsModal = ({
           }}
           closeIcon
           closeOnDimmerClick={false}
+          className="form-modal"
+          size="large"
         >
           <Modal.Header as="h6" className="pt-10 pb-10">
             <Grid>
@@ -379,6 +397,15 @@ export const CreatibutorsModal = ({
                   }}
                   optimized
                 />
+                <Popup
+                  content={nameTypeHelpText}
+                  trigger={
+                    <Icon
+                      name="question circle outline"
+                      style={{ fontSize: "1rem", paddingLeft: "0.5rem" }}
+                    ></Icon>
+                  }
+                />
               </Form.Group>
               {_get(values, typeFieldPath, "") === CREATIBUTOR_TYPE.PERSON ? (
                 <div>
@@ -418,8 +445,14 @@ export const CreatibutorsModal = ({
                     <div>
                       <Form.Group widths="equal">
                         <TextField
-                          label={i18next.t("Family name")}
-                          placeholder={i18next.t("Family name")}
+                          label={
+                            <FieldLabel
+                              htmlFor={familyNameFieldPath}
+                              icon="pencil"
+                              label={i18next.t("Family name")}
+                            />
+                          }
+                          placeholder={lastNameFieldPlaceholder}
                           fieldPath={familyNameFieldPath}
                           required={
                             isCreator &&
@@ -428,8 +461,14 @@ export const CreatibutorsModal = ({
                           }
                         />
                         <TextField
-                          label={i18next.t("Given names")}
-                          placeholder={i18next.t("Given names")}
+                          label={
+                            <FieldLabel
+                              htmlFor={givenNameFieldPath}
+                              icon="pencil"
+                              label={i18next.t("Given names")}
+                            />
+                          }
+                          placeholder={nameFieldPlaceholder}
                           fieldPath={givenNameFieldPath}
                           required={
                             isCreator &&
@@ -465,17 +504,33 @@ export const CreatibutorsModal = ({
                 <div>
                   <VocabularySelectField
                     type="institutions"
-                    label={i18next.t("Affiliations")}
+                    label={
+                      <FieldLabel
+                        htmlFor={affiliationsFieldPath}
+                        icon=""
+                        label={i18next.t("Affiliations")}
+                      />
+                    }
                     fieldPath={affiliationsFieldPath}
-                    placeholder={i18next.t("Select one or more affiliations")}
+                    placeholder={i18next.t(
+                      "Start writing name of the institution, then choose from the options."
+                    )}
                     multiple
                   />
                   {!isCreator && (
                     <LocalVocabularySelectField
                       type="contributor-roles"
-                      placeholder={i18next.t("Select role")}
+                      placeholder={i18next.t(
+                        "Choose contributor's role from the list (editor, illustrator...)"
+                      )}
                       fieldPath={roleFieldPath}
-                      label={i18next.t("Role")}
+                      label={
+                        <FieldLabel
+                          htmlFor={roleFieldPath}
+                          icon=""
+                          label={i18next.t("Role")}
+                        />
+                      }
                       clearable
                       optionsListName="contributor-roles"
                     />

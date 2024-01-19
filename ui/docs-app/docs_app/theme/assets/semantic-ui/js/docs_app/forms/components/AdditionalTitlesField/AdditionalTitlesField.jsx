@@ -11,20 +11,25 @@ import {
 } from "@js/oarepo_ui";
 
 const subtitleTypes = [
-  { text: "Alternative title", value: "alternativeTitle" },
-  { text: "Translated title", value: "translatedTitle" },
-  { text: "Subtitle", value: "subtitle" },
-  { text: "Other", value: "other" },
+  { text: i18next.t("Alternative title"), value: "alternativeTitle" },
+  { text: i18next.t("Translated title"), value: "translatedTitle" },
+  { text: i18next.t("Subtitle"), value: "subtitle" },
+  { text: i18next.t("Other"), value: "other" },
 ];
 
-export const AdditionalTitlesField = ({ fieldPath }) => {
+export const AdditionalTitlesField = ({
+  fieldPath,
+  helpText,
+  prefillLanguageWithDefaultLocale,
+  defaultNewValue,
+}) => {
   const { defaultLocale } = useDefaultLocale();
   const initialValueObj = {
     title: {
       value: "",
     },
   };
-  const { defaultNewValue } = useFormFieldValue({
+  const { defaultNewValue: getNewValue } = useFormFieldValue({
     defaultValue: defaultLocale,
     fieldPath,
     subValuesPath: "title.lang",
@@ -34,11 +39,16 @@ export const AdditionalTitlesField = ({ fieldPath }) => {
   return (
     <ArrayField
       addButtonLabel={i18next.t("Add additional title")}
-      defaultNewValue={defaultNewValue(initialValueObj)}
+      defaultNewValue={
+        prefillLanguageWithDefaultLocale
+          ? getNewValue(initialValueObj)
+          : defaultNewValue
+      }
       fieldPath={fieldPath}
       label={i18next.t("Additional titles")}
       labelIcon="pencil"
       className="additional-titles"
+      helpText={helpText}
     >
       {({ arrayHelpers, indexPath, array }) => {
         const fieldPathPrefix = `${fieldPath}.${indexPath}`;
@@ -59,6 +69,7 @@ export const AdditionalTitlesField = ({ fieldPath }) => {
             </Form.Field>
             <Form.Field width={4}>
               <SelectField
+                selectOnBlur={false}
                 fieldPath={`${fieldPathPrefix}.titleType`}
                 label={i18next.t("Title type")}
                 optimized
@@ -77,4 +88,21 @@ export const AdditionalTitlesField = ({ fieldPath }) => {
 
 AdditionalTitlesField.propTypes = {
   fieldPath: PropTypes.string.isRequired,
+  helpText: PropTypes.string,
+  prefillLanguageWithDefaultLocale: PropTypes.bool,
+  defaultNewValue: PropTypes.object,
+};
+
+AdditionalTitlesField.defaultProps = {
+  helpText: i18next.t(
+    "If the title is given in other languages, choose the type of title and corresponding language."
+  ),
+  prefillLanguageWithDefaultLocale: false,
+  defaultNewValue: {
+    title: {
+      value: "",
+      lang: "",
+    },
+    titleType: "",
+  },
 };

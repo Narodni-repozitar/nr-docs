@@ -121,7 +121,7 @@ export const RelatedItemsModal = ({
     >
       {({ values, resetForm, handleSubmit, errors }) => (
         <Modal
-          className="related-items-modal"
+          className="form-modal"
           size="large"
           centered={false}
           onOpen={() => openModal()}

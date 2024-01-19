@@ -21,7 +21,6 @@ export const SeriesField = ({ fieldPath, helpText }) => {
               width={8}
               fieldPath={`${fieldPathPrefix}.seriesTitle`}
               label={i18next.t("Series title")}
-              required
             />
             <TextField
               width={8}
@@ -38,4 +37,10 @@ export const SeriesField = ({ fieldPath, helpText }) => {
 SeriesField.propTypes = {
   fieldPath: PropTypes.string.isRequired,
   helpText: PropTypes.string,
+};
+
+SeriesField.defaultProps = {
+  helpText: i18next.t(
+    "Write down the name of the edition and write down the volume if name is provided."
+  ),
 };

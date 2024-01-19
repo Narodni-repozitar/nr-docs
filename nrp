@@ -4,6 +4,13 @@ set -e
 
 PYTHON="${PYTHON:-python3}"
 
+# to find dynamic libraries (such as cairo, useful for MX Macs)
+# export DYLD_FALLBACK_LIBRARY_PATH=/opt/homebrew/lib
+#
+if [ -f ~/.envrc.local ] ; then
+  source ~/.envrc.local
+fi
+
 cli_directory=$(dirname "$0")/.venv/nrp
 
 test -d "$cli_directory" || {
