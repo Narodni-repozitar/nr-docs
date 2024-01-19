@@ -1,0 +1,2809 @@
+#
+msgid ""
+msgstr ""
+
+#: models/nr-documents/nr_documents/services/records/facets.py:12
+msgid "$schema.label"
+msgstr ""
+
+#: models/nr-documents/nr_documents/services/records/facets.py:14
+msgid "created.label"
+msgstr ""
+
+#: models/nr-documents/nr_documents/services/records/facets.py:16
+msgid "id.label"
+msgstr ""
+
+#: models/nr-documents/nr_documents/services/records/facets.py:19
+#: models/nr-documents/nr_documents/services/records/facets.py:23
+#: sites/nr-docs/site/nr_docs/translations/jinjax_messages.jinja:7
+msgid "metadata/abstract.label"
+msgstr "Abstract"
+
+#: models/nr-documents/nr_documents/services/records/facets.py:29
+msgid "metadata/abstract/lang.label"
+msgstr ""
+
+#: models/nr-documents/nr_documents/services/records/facets.py:37
+msgid "metadata/abstract/value.label"
+msgstr ""
+
+#: models/nr-documents/nr_documents/services/records/facets.py:43
+#: sites/nr-docs/site/nr_docs/translations/jinjax_messages.jinja:11
+msgid "metadata/accessRights.label"
+msgstr "Access rights"
+
+#: models/nr-documents/nr_documents/services/records/facets.py:48
+#: models/nr-documents/nr_documents/services/records/facets.py:52
+msgid "metadata/accessibility.label"
+msgstr "Resource accessibility"
+
+#: models/nr-documents/nr_documents/services/records/facets.py:59
+msgid "metadata/accessibility/lang.label"
+msgstr ""
+
+#: models/nr-documents/nr_documents/services/records/facets.py:67
+msgid "metadata/accessibility/value.label"
+msgstr ""
+
+#: models/nr-documents/nr_documents/services/records/facets.py:73
+#: models/nr-documents/nr_documents/services/records/facets.py:78
+msgid "metadata/additionalTitles/title.label"
+msgstr ""
+
+#: models/nr-documents/nr_documents/services/records/facets.py:85
+msgid "metadata/additionalTitles/title/lang.label"
+msgstr ""
+
+#: models/nr-documents/nr_documents/services/records/facets.py:93
+msgid "metadata/additionalTitles/title/value.label"
+msgstr ""
+
+#: models/nr-documents/nr_documents/services/records/facets.py:99
+msgid "metadata/additionalTitles/titleType.label"
+msgstr "Title type"
+
+#: models/nr-documents/nr_documents/services/records/facets.py:103
+msgid "metadata/collection.label"
+msgstr "Collection"
+
+#: models/nr-documents/nr_documents/services/records/facets.py:108
+msgid "metadata/contributors/affiliations.label"
+msgstr "Affiliation"
+
+#: models/nr-documents/nr_documents/services/records/facets.py:114
+msgid "metadata/contributors/authorityIdentifiers/identifier.label"
+msgstr ""
+
+#: models/nr-documents/nr_documents/services/records/facets.py:119
+msgid "metadata/contributors/authorityIdentifiers/scheme.label"
+msgstr ""
+
+#: models/nr-documents/nr_documents/services/records/facets.py:124
+msgid "metadata/contributors/fullName.label"
+msgstr "Contributor name"
+
+#: models/nr-documents/nr_documents/services/records/facets.py:129
+msgid "metadata/contributors/nameType.label"
+msgstr "Type"
+
+#: models/nr-documents/nr_documents/services/records/facets.py:134
+msgid "metadata/contributors/role.label"
+msgstr "Contributor's role"
+
+#: models/nr-documents/nr_documents/services/records/facets.py:140
+msgid "metadata/creators/affiliations.label"
+msgstr "Affiliation"
+
+#: models/nr-documents/nr_documents/services/records/facets.py:146
+msgid "metadata/creators/authorityIdentifiers/identifier.label"
+msgstr ""
+
+#: models/nr-documents/nr_documents/services/records/facets.py:151
+msgid "metadata/creators/authorityIdentifiers/scheme.label"
+msgstr ""
+
+#: models/nr-documents/nr_documents/services/records/facets.py:155
+msgid "metadata/creators/fullName.label"
+msgstr "Author name"
+
+#: models/nr-documents/nr_documents/services/records/facets.py:159
+msgid "metadata/creators/nameType.label"
+msgstr "Type"
+
+#: models/nr-documents/nr_documents/services/records/facets.py:163
+#: sites/nr-docs/site/nr_docs/translations/jinjax_messages.jinja:1
+msgid "metadata/dateAvailable.label"
+msgstr "Date available"
+
+#: models/nr-documents/nr_documents/services/records/facets.py:167
+#: sites/nr-docs/site/nr_docs/translations/jinjax_messages.jinja:2
+msgid "metadata/dateModified.label"
+msgstr "Date modified"
+
+#: models/nr-documents/nr_documents/services/records/facets.py:172
+msgid "metadata/events/eventLocation/country.label"
+msgstr "Country"
+
+#: models/nr-documents/nr_documents/services/records/facets.py:178
+msgid "metadata/events/eventLocation/place.label"
+msgstr "Place"
+
+#: models/nr-documents/nr_documents/services/records/facets.py:183
+msgid "metadata/externalLocation/externalLocationURL.label"
+msgstr "Resource external location"
+
+#: models/nr-documents/nr_documents/services/records/facets.py:188
+msgid "metadata/fundingReferences/funder.label"
+msgstr "Funder"
+
+#: models/nr-documents/nr_documents/services/records/facets.py:194
+msgid "metadata/fundingReferences/projectID.label"
+msgstr "Project double"
+
+#: models/nr-documents/nr_documents/services/records/facets.py:199
+msgid "metadata/geoLocations/geoLocationPlace.label"
+msgstr ""
+
+#: models/nr-documents/nr_documents/services/records/facets.py:204
+msgid "metadata/geoLocations/geoLocationPoint/pointLatitude.label"
+msgstr "Latitude"
+
+#: models/nr-documents/nr_documents/services/records/facets.py:209
+msgid "metadata/geoLocations/geoLocationPoint/pointLongitude.label"
+msgstr "Longitude"
+
+#: models/nr-documents/nr_documents/services/records/facets.py:214
+#: sites/nr-docs/site/nr_docs/translations/jinjax_messages.jinja:3
+msgid "metadata/languages.label"
+msgstr "Language"
+
+#: models/nr-documents/nr_documents/services/records/facets.py:219
+#: models/nr-documents/nr_documents/services/records/facets.py:223
+#: sites/nr-docs/site/nr_docs/translations/jinjax_messages.jinja:17
+msgid "metadata/methods.label"
+msgstr "Methods"
+
+#: models/nr-documents/nr_documents/services/records/facets.py:229
+msgid "metadata/methods/lang.label"
+msgstr ""
+
+#: models/nr-documents/nr_documents/services/records/facets.py:236
+msgid "metadata/methods/value.label"
+msgstr ""
+
+#: models/nr-documents/nr_documents/services/records/facets.py:242
+msgid "metadata/objectIdentifiers/identifier.label"
+msgstr "Object identifier"
+
+#: models/nr-documents/nr_documents/services/records/facets.py:247
+msgid "metadata/objectIdentifiers/scheme.label"
+msgstr "Identifier type"
+
+#: models/nr-documents/nr_documents/services/records/facets.py:251
+#: ui/docs-app/docs_app/templates/semantic-ui/docs_app/Sidebar.html.jinja:14
+#: ui/docs-app/docs_app/templates/semantic-ui/docs_app/Sidebar.html.jinja:15
+msgid "metadata/originalRecord.label"
+msgstr "Original record URL"
+
+#: models/nr-documents/nr_documents/services/records/facets.py:256
+msgid "metadata/relatedItems/itemContributors/affiliations.label"
+msgstr "Affiliation"
+
+#: models/nr-documents/nr_documents/services/records/facets.py:262
+msgid ""
+"metadata/relatedItems/itemContributors/authorityIdentifiers/identifier.label"
+msgstr ""
+
+#: models/nr-documents/nr_documents/services/records/facets.py:269
+msgid ""
+"metadata/relatedItems/itemContributors/authorityIdentifiers/scheme.label"
+msgstr ""
+
+#: models/nr-documents/nr_documents/services/records/facets.py:274
+msgid "metadata/relatedItems/itemContributors/fullName.label"
+msgstr "Author name"
+
+#: models/nr-documents/nr_documents/services/records/facets.py:279
+msgid "metadata/relatedItems/itemContributors/nameType.label"
+msgstr "Type"
+
+#: models/nr-documents/nr_documents/services/records/facets.py:284
+msgid "metadata/relatedItems/itemContributors/role.label"
+msgstr "Contributor's role"
+
+#: models/nr-documents/nr_documents/services/records/facets.py:290
+msgid "metadata/relatedItems/itemCreators/affiliations.label"
+msgstr "Affiliation"
+
+#: models/nr-documents/nr_documents/services/records/facets.py:296
+msgid ""
+"metadata/relatedItems/itemCreators/authorityIdentifiers/identifier.label"
+msgstr ""
+
+#: models/nr-documents/nr_documents/services/records/facets.py:301
+msgid "metadata/relatedItems/itemCreators/authorityIdentifiers/scheme.label"
+msgstr ""
+
+#: models/nr-documents/nr_documents/services/records/facets.py:306
+msgid "metadata/relatedItems/itemCreators/fullName.label"
+msgstr "Author name"
+
+#: models/nr-documents/nr_documents/services/records/facets.py:311
+msgid "metadata/relatedItems/itemCreators/nameType.label"
+msgstr "Type"
+
+#: models/nr-documents/nr_documents/services/records/facets.py:316
+msgid "metadata/relatedItems/itemEndPage.label"
+msgstr "End page"
+
+#: models/nr-documents/nr_documents/services/records/facets.py:321
+msgid "metadata/relatedItems/itemIssue.label"
+msgstr "Issue"
+
+#: models/nr-documents/nr_documents/services/records/facets.py:326
+msgid "metadata/relatedItems/itemPIDs/identifier.label"
+msgstr "Object identifier"
+
+#: models/nr-documents/nr_documents/services/records/facets.py:331
+msgid "metadata/relatedItems/itemPIDs/scheme.label"
+msgstr "Identifier type"
+
+#: models/nr-documents/nr_documents/services/records/facets.py:336
+msgid "metadata/relatedItems/itemPublisher.label"
+msgstr "Publisher"
+
+#: models/nr-documents/nr_documents/services/records/facets.py:341
+msgid "metadata/relatedItems/itemRelationType.label"
+msgstr "Relation type"
+
+#: models/nr-documents/nr_documents/services/records/facets.py:347
+msgid "metadata/relatedItems/itemResourceType.label"
+msgstr "Resource type"
+
+#: models/nr-documents/nr_documents/services/records/facets.py:353
+msgid "metadata/relatedItems/itemStartPage.label"
+msgstr "Start page"
+
+#: models/nr-documents/nr_documents/services/records/facets.py:358
+msgid "metadata/relatedItems/itemURL.label"
+msgstr "URL"
+
+#: models/nr-documents/nr_documents/services/records/facets.py:363
+msgid "metadata/relatedItems/itemVolume.label"
+msgstr "Volume"
+
+#: models/nr-documents/nr_documents/services/records/facets.py:368
+msgid "metadata/relatedItems/itemYear.label"
+msgstr "Year"
+
+#: models/nr-documents/nr_documents/services/records/facets.py:373
+#: sites/nr-docs/site/nr_docs/translations/jinjax_messages.jinja:4
+msgid "metadata/resourceType.label"
+msgstr "Resource type"
+
+#: models/nr-documents/nr_documents/services/records/facets.py:378
+#: sites/nr-docs/site/nr_docs/translations/jinjax_messages.jinja:12
+msgid "metadata/rights.label"
+msgstr "License"
+
+#: models/nr-documents/nr_documents/services/records/facets.py:382
+msgid "metadata/series/seriesTitle.label"
+msgstr "Series title"
+
+#: models/nr-documents/nr_documents/services/records/facets.py:386
+msgid "metadata/series/seriesVolume.label"
+msgstr "Series volume"
+
+#: models/nr-documents/nr_documents/services/records/facets.py:391
+#: sites/nr-docs/site/nr_docs/translations/jinjax_messages.jinja:20
+msgid "metadata/subjectCategories.label"
+msgstr "Subject categories"
+
+#: models/nr-documents/nr_documents/services/records/facets.py:397
+msgid "metadata/subjects/classificationCode.label"
+msgstr ""
+
+#: models/nr-documents/nr_documents/services/records/facets.py:402
+#: models/nr-documents/nr_documents/services/records/facets.py:407
+msgid "metadata/subjects/subject.label"
+msgstr "Keywords"
+
+#: models/nr-documents/nr_documents/services/records/facets.py:414
+msgid "metadata/subjects/subject/lang.label"
+msgstr ""
+
+#: models/nr-documents/nr_documents/services/records/facets.py:422
+msgid "metadata/subjects/subject/value.label"
+msgstr ""
+
+#: models/nr-documents/nr_documents/services/records/facets.py:428
+msgid "metadata/subjects/subjectScheme.label"
+msgstr "Subject scheme"
+
+#: models/nr-documents/nr_documents/services/records/facets.py:432
+msgid "metadata/subjects/valueURI.label"
+msgstr "Subject definition URI"
+
+#: models/nr-documents/nr_documents/services/records/facets.py:437
+msgid "metadata/systemIdentifiers/identifier.label"
+msgstr "System Identifier"
+
+#: models/nr-documents/nr_documents/services/records/facets.py:442
+msgid "metadata/systemIdentifiers/scheme.label"
+msgstr "Identifier type"
+
+#: models/nr-documents/nr_documents/services/records/facets.py:446
+#: models/nr-documents/nr_documents/services/records/facets.py:450
+#: sites/nr-docs/site/nr_docs/translations/jinjax_messages.jinja:21
+msgid "metadata/technicalInfo.label"
+msgstr "Technical information"
+
+#: models/nr-documents/nr_documents/services/records/facets.py:457
+msgid "metadata/technicalInfo/lang.label"
+msgstr ""
+
+#: models/nr-documents/nr_documents/services/records/facets.py:465
+msgid "metadata/technicalInfo/value.label"
+msgstr ""
+
+#: models/nr-documents/nr_documents/services/records/facets.py:470
+#: sites/nr-docs/site/nr_docs/translations/jinjax_messages.jinja:5
+msgid "metadata/thesis/dateDefended.label"
+msgstr "Date defended"
+
+#: models/nr-documents/nr_documents/services/records/facets.py:474
+msgid "metadata/thesis/defended.label"
+msgstr "Defended?"
+
+#: models/nr-documents/nr_documents/services/records/facets.py:479
+#: sites/nr-docs/site/nr_docs/translations/jinjax_messages.jinja:8
+msgid "metadata/thesis/degreeGrantors.label"
+msgstr "Degree grantor"
+
+#: models/nr-documents/nr_documents/services/records/facets.py:484
+#: sites/nr-docs/site/nr_docs/translations/jinjax_messages.jinja:9
+msgid "metadata/thesis/studyFields.label"
+msgstr "Study fields"
+
+#: models/nr-documents/nr_documents/services/records/facets.py:488
+msgid "metadata/title.label"
+msgstr "Title"
+
+#: models/nr-documents/nr_documents/services/records/facets.py:492
+#: sites/nr-docs/site/nr_docs/translations/jinjax_messages.jinja:22
+msgid "metadata/version.label"
+msgstr "Resource version"
+
+#: models/nr-documents/nr_documents/services/records/facets.py:496
+msgid "syntheticFields/institutions.label"
+msgstr ""
+
+#: models/nr-documents/nr_documents/services/records/facets.py:500
+msgid "syntheticFields/keywords_cs.label"
+msgstr ""
+
+#: models/nr-documents/nr_documents/services/records/facets.py:504
+msgid "syntheticFields/keywords_en.label"
+msgstr ""
+
+#: models/nr-documents/nr_documents/services/records/facets.py:508
+msgid "syntheticFields/person.label"
+msgstr ""
+
+#: models/nr-documents/nr_documents/services/records/facets.py:511
+msgid "updated.label"
+msgstr ""
+
+#: sites/nr-docs/site/nr_docs/views.py:23
+msgid "New upload"
+msgstr ""
+
+#: sites/nr-docs/site/nr_docs/templates/semantic-ui/nr_docs/searchbar.html:5
+#: sites/nr-docs/site/nr_docs/templates/semantic-ui/nr_docs/searchbar.html:11
+#: sites/nr-docs/site/nr_docs/templates/semantic-ui/nr_docs/searchbar.html:21
+msgid "in"
+msgstr ""
+
+#: sites/nr-docs/site/nr_docs/templates/semantic-ui/nr_docs/searchbar.html:5
+#: sites/nr-docs/site/nr_docs/templates/semantic-ui/nr_docs/searchbar.html:6
+msgid "In this community"
+msgstr ""
+
+#: sites/nr-docs/site/nr_docs/templates/semantic-ui/nr_docs/searchbar.html:11
+#: sites/nr-docs/site/nr_docs/templates/semantic-ui/nr_docs/searchbar.html:12
+#: sites/nr-docs/site/nr_docs/templates/semantic-ui/nr_docs/searchbar.html:20
+#: sites/nr-docs/site/nr_docs/templates/semantic-ui/nr_docs/searchbar.html:21
+msgid "All document records"
+msgstr ""
+
+#: sites/nr-docs/site/nr_docs/templates/semantic-ui/nr_docs/searchbar.html:30
+#: sites/nr-docs/site/nr_docs/templates/semantic-ui/nr_docs/searchbar.html:31
+#: ui/docs-app/docs_app/templates/semantic-ui/docs_app/frontpage.html:52
+#: ui/docs-app/docs_app/templates/semantic-ui/docs_app/frontpage.html:53
+msgid "Search"
+msgstr "Search"
+
+#: sites/nr-docs/site/nr_docs/translations/jinjax_messages.jinja:6
+msgid "metadata/subjects.label"
+msgstr "Keywords"
+
+#: sites/nr-docs/site/nr_docs/translations/jinjax_messages.jinja:10
+msgid "metadata/publishers.label"
+msgstr "Publishers"
+
+#: sites/nr-docs/site/nr_docs/translations/jinjax_messages.jinja:13
+msgid "metadata/events.label"
+msgstr "Events"
+
+#: sites/nr-docs/site/nr_docs/translations/jinjax_messages.jinja:14
+msgid "metadata/externalLocation.label"
+msgstr ""
+
+#: sites/nr-docs/site/nr_docs/translations/jinjax_messages.jinja:15
+msgid "metadata/fundingReferences.label"
+msgstr "Funding"
+
+#: sites/nr-docs/site/nr_docs/translations/jinjax_messages.jinja:16
+msgid "metadata/geoLocations.label"
+msgstr "Geolocation"
+
+#: sites/nr-docs/site/nr_docs/translations/jinjax_messages.jinja:18
+msgid "metadata/notes.label"
+msgstr "Notes"
+
+#: sites/nr-docs/site/nr_docs/translations/jinjax_messages.jinja:19
+msgid "metadata/series.label"
+msgstr "Series"
+
+#: ui/docs-app/docs_app/templates/semantic-ui/docs_app/Detail.html.jinja:2
+#: ui/docs-app/docs_app/templates/semantic-ui/docs_app/Search.html.jinja:4
+#: ui/docs-app/docs_app/templates/semantic-ui/docs_app/detail.html:2
+#: ui/docs-app/docs_app/templates/semantic-ui/docs_app/search.html:2
+msgid "NR Document repository"
+msgstr ""
+
+#: ui/docs-app/docs_app/templates/semantic-ui/docs_app/Main.html.jinja:9
+msgid "People"
+msgstr ""
+
+#: ui/docs-app/docs_app/templates/semantic-ui/docs_app/Search.html.jinja:4
+#: ui/docs-app/docs_app/templates/semantic-ui/docs_app/search.html:2
+msgid "Search results"
+msgstr ""
+
+#: ui/docs-app/docs_app/templates/semantic-ui/docs_app/Sidebar.html.jinja:2
+#: ui/docs-app/docs_app/templates/semantic-ui/docs_app/Sidebar.html.jinja:3
+msgid "Collection"
+msgstr ""
+
+#: ui/docs-app/docs_app/templates/semantic-ui/docs_app/Sidebar.html.jinja:6
+#: ui/docs-app/docs_app/templates/semantic-ui/docs_app/Sidebar.html.jinja:7
+msgid "metadata/objectIdentifiers.label"
+msgstr "Object identifiers"
+
+#: ui/docs-app/docs_app/templates/semantic-ui/docs_app/Sidebar.html.jinja:22
+#: ui/docs-app/docs_app/templates/semantic-ui/docs_app/Sidebar.html.jinja:23
+msgid "Export"
+msgstr ""
+
+#: ui/docs-app/docs_app/templates/semantic-ui/docs_app/Sidebar.html.jinja:70
+msgid "API"
+msgstr ""
+
+#: ui/docs-app/docs_app/templates/semantic-ui/docs_app/Sidebar.html.jinja:70
+msgid "Links"
+msgstr ""
+
+#: ui/docs-app/docs_app/templates/semantic-ui/docs_app/footer.html:18
+msgid "Contact"
+msgstr ""
+
+#: ui/docs-app/docs_app/templates/semantic-ui/docs_app/footer.html:38
+#, python-format
+msgid "Powered by <a href=\"%(link)s\">Invenio</a>"
+msgstr ""
+
+#: ui/docs-app/docs_app/templates/semantic-ui/docs_app/header_login.html:15
+msgid "Log in"
+msgstr ""
+
+#: ui/docs-app/docs_app/templates/semantic-ui/docs_app/header_login.html:19
+msgid "Sign up"
+msgstr ""
+
+#: ui/docs-app/docs_app/templates/semantic-ui/docs_app/header_login.html:36
+msgid "Quick create"
+msgstr ""
+
+#: ui/docs-app/docs_app/templates/semantic-ui/docs_app/header_login.html:53
+msgid "Actions"
+msgstr ""
+
+#: ui/docs-app/docs_app/templates/semantic-ui/docs_app/header_login.html:72
+#: ui/docs-app/docs_app/templates/semantic-ui/docs_app/header_login.html:113
+msgid "My account"
+msgstr ""
+
+#: ui/docs-app/docs_app/templates/semantic-ui/docs_app/header_login.html:107
+#: ui/docs-app/docs_app/templates/semantic-ui/docs_app/header_login.html:136
+#: ui/docs-app/docs_app/templates/semantic-ui/docs_app/header_login.html:143
+msgid "Log out"
+msgstr ""
+
+#: ui/docs-app/docs_app/templates/semantic-ui/oarepo_ui/components/Person.html.jinja:3
+msgid "Find more records by this person"
+msgstr "Find more records by this person"
+
+#: ui/docs-app/docs_app/templates/semantic-ui/oarepo_ui/components/Subjects.jinja:20
+msgid "Find more records with this subject"
+msgstr "Find more records with this subject"
+
+msgid "Add additional title"
+msgstr "Add additional title"
+
+msgid "Additional titles"
+msgstr "Additional titles"
+
+msgid "Title"
+msgstr "Title"
+
+msgid "Title type"
+msgstr "Title type"
+
+msgid "Creators"
+msgstr "Creators"
+
+msgid "Add creator"
+msgstr "Add creator"
+
+msgid "Edit creator"
+msgstr "Edit creator"
+
+msgid "Edit"
+msgstr "Edit"
+
+msgid "Remove"
+msgstr "Remove"
+
+msgid "Identifier"
+msgstr "Identifier"
+
+msgid "Type the value of an identifier..."
+msgstr "Type the value of an identifier..."
+
+msgid "Identifiers"
+msgstr "Identifiers"
+
+msgid "e.g. ORCID, ISNI or GND."
+msgstr "e.g. ORCID, ISNI or GND."
+
+msgid "Save and add another"
+msgstr "Save and add another"
+
+msgid "Given name is a required field."
+msgstr "Given name is a required field."
+
+msgid "Family name is a required field."
+msgstr "Family name is a required field."
+
+msgid "Role is a required field."
+msgstr "Role is a required field."
+
+msgid "Added"
+msgstr "Added"
+
+msgid "Person"
+msgstr "Person"
+
+msgid "Organization"
+msgstr "Organization"
+
+msgid "Search for persons by name, identifier, or affiliation..."
+msgstr "Search for persons by name, identifier, or affiliation..."
+
+msgid "Family name"
+msgstr "Family name"
+
+msgid "Given names"
+msgstr "Given names"
+
+msgid "Name"
+msgstr "Name"
+
+msgid "Organization name"
+msgstr "Organization name"
+
+msgid "e.g. ROR, ISNI or GND."
+msgstr "e.g. ROR, ISNI or GND."
+
+msgid "Affiliations"
+msgstr "Affiliations"
+
+msgid "Select one or more affiliations"
+msgstr "Select one or more affiliations"
+
+msgid "Select role"
+msgstr "Select role"
+
+msgid "Role"
+msgstr "Role"
+
+msgid "Cancel"
+msgstr "Cancel"
+
+msgid "Save"
+msgstr "Save"
+
+msgid "Couldn't find your person? You can <2>create a new entry</2>."
+msgstr "Couldn't find your person? You can <2>create a new entry</2>."
+
+msgid ""
+"In case your upload was already published elsewhere, please use the date of "
+"the first publication. Format: YYYY-MM-DD, YYYY-MM, or YYYY. For intervals "
+"use DATE/DATE, e.g. 1939/1945."
+msgstr ""
+"In case your upload was already published elsewhere, please use the date of "
+"the first publication. Format: YYYY-MM-DD, YYYY-MM, or YYYY. For intervals "
+"use DATE/DATE, e.g. 1939/1945."
+
+msgid "Publication date"
+msgstr "Publication date"
+
+msgid ""
+"YYYY-MM-DD or YYYY-MM-DD/YYYY-MM-DD for intervals. MM and DD are optional."
+msgstr ""
+"YYYY-MM-DD or YYYY-MM-DD/YYYY-MM-DD for intervals. MM and DD are optional."
+
+msgid "Delete"
+msgstr "Delete"
+
+msgid "Are you sure you wish delete this draft?"
+msgstr "Are you sure you wish delete this draft?"
+
+msgid "If you delete the draft, the work you have done on it will be lost."
+msgstr "If you delete the draft, the work you have done on it will be lost."
+
+msgid "Add event"
+msgstr "Add event"
+
+msgid "Events"
+msgstr "Events"
+
+msgid "Event name"
+msgstr "Event name"
+
+msgid "Event alternate name"
+msgstr "Event alternate name"
+
+msgid "Add event alternate name"
+msgstr "Add event alternate name"
+
+msgid "Event date"
+msgstr "Event date"
+
+msgid "Place"
+msgstr "Place"
+
+msgid "Country"
+msgstr "Country"
+
+msgid "External location"
+msgstr "External location"
+
+msgid "Resource external location"
+msgstr "Resource external location"
+
+msgid "Note"
+msgstr "Note"
+
+msgid "Add funder"
+msgstr "Add funder"
+
+msgid "Funding"
+msgstr "Funding"
+
+msgid "Project code"
+msgstr "Project code"
+
+msgid "Project name"
+msgstr "Project name"
+
+msgid "Funding program"
+msgstr "Funding program"
+
+msgid "Funder"
+msgstr "Funder"
+
+msgid "Add location"
+msgstr "Add location"
+
+msgid "Geolocation"
+msgstr "Geolocation"
+
+msgid "Location"
+msgstr "Location"
+
+msgid "Longitude"
+msgstr "Longitude"
+
+msgid "Latitude"
+msgstr "Latitude"
+
+msgid "Add identifier"
+msgstr "Add identifier"
+
+msgid "Identifier type"
+msgstr "Identifier type"
+
+msgid "Identifier field"
+msgstr "Identifier field"
+
+msgid "Object identifier"
+msgstr "Object identifier"
+
+msgid "Preview"
+msgstr "Preview"
+
+msgid "Publish"
+msgstr "Publish"
+
+msgid "Are you sure you wish to publish this draft?"
+msgstr "Are you sure you wish to publish this draft?"
+
+msgid "Add series"
+msgstr "Add series"
+
+msgid "Series"
+msgstr "Series"
+
+msgid "Series title"
+msgstr "Series title"
+
+msgid "Series volume"
+msgstr "Series volume"
+
+msgid "Add note"
+msgstr "Add note"
+
+msgid "Notes"
+msgstr "Notes"
+
+msgid "Items shall be unique"
+msgstr "Items shall be unique"
+
+msgid "Add subject"
+msgstr "Add subject"
+
+msgid "Subjects"
+msgstr "Subjects"
+
+msgid "Subject scheme"
+msgstr "Subject scheme"
+
+msgid "Subject"
+msgstr "Key word"
+
+msgid "Validate form"
+msgstr "Validate form"
+
+msgid "Basic information"
+msgstr "Basic information"
+
+msgid "Contributors"
+msgstr "Contributors"
+
+msgid "Add contributor"
+msgstr "Add contributor"
+
+msgid "Edit contributor"
+msgstr "Edit contributor"
+
+msgid "Language"
+msgstr "Language"
+
+msgid "Choose languages"
+msgstr "Choose languages"
+
+msgid "Resource type"
+msgstr "Resource type"
+
+msgid "Select resource type"
+msgstr "Select resource type"
+
+msgid "Abstract"
+msgstr "Abstract"
+
+msgid "Description"
+msgstr "Description"
+
+msgid "Detailed description"
+msgstr ""
+"Detailed description of the methodology and technical information should be "
+"specified in the 'Dataset Description' section"
+
+msgid "Access rights"
+msgstr "Access rights"
+
+msgid "Select access rights"
+msgstr "Select access rights"
+
+msgid "Licenses"
+msgstr "Licenses"
+
+msgid "Choose licenses"
+msgstr "Choose licenses"
+
+msgid ""
+"If a Creative Commons license is associated with the resource, select the "
+"appropriate license option from the menu. We recommend choosing the latest "
+"versions, namely 3.0 Czech and 4.0 International."
+msgstr ""
+"If a Creative Commons license is associated with the resource, select the "
+"appropriate license option from the menu. We recommend choosing the latest "
+"versions, namely 3.0 Czech and 4.0 International."
+
+msgid "Date available"
+msgstr "Date available"
+
+msgid "Date modified"
+msgstr "Date modified"
+
+msgid "Add publisher"
+msgstr "Add publisher"
+
+msgid "Publishers"
+msgstr "Publishers"
+
+msgid "Resource description"
+msgstr "Resource description"
+
+msgid "Subject Categories"
+msgstr "Subject Categories"
+
+msgid "Choose subject categories"
+msgstr "Choose subject categories"
+
+msgid "Select the subject field(s) to which the resource belongs."
+msgstr "Select the subject field(s) to which the resource belongs."
+
+msgid "Methods"
+msgstr "Methods"
+
+msgid "Technical info"
+msgstr "Technical info"
+
+msgid ""
+"Detailed information that may be associated with design, implementation, "
+"operation, use, and/or maintenance of a process or system"
+msgstr ""
+"Detailed information that may be associated with design, implementation, "
+"operation, use, and/or maintenance of a process or system"
+
+msgid ""
+"Free-form note for any comment that couldn't be inserted in any other "
+"fields."
+msgstr ""
+"Free-form note for any comment that couldn't be inserted in any other "
+"fields."
+
+msgid "Additional information"
+msgstr "Additional information"
+
+msgid ""
+"Free description of the location; ie. Atlantic Ocean. Longitude must be a "
+"number between -180 and 180 and latitude between -90 and 90."
+msgstr ""
+"Free description of the location; ie. Atlantic Ocean. Longitude must be a "
+"number between -180 and 180 and latitude between -90 and 90."
+
+msgid "Accessibility"
+msgstr "Accessibility"
+
+msgid "Explanation regarding restricted status of an item"
+msgstr "Explanation regarding restricted status of an item"
+
+msgid "Identifiers information"
+msgstr "Identifiers information"
+
+msgid "Object identifiers"
+msgstr "Object identifiers"
+
+msgid "Persistent identifier/s of object as ISBN, DOI, etc."
+msgstr "Persistent identifier/s of object as ISBN, DOI, etc."
+
+msgid "System identifier"
+msgstr "System identifier"
+
+msgid "System identifiers"
+msgstr "System identifiers"
+
+msgid "This field is required"
+msgstr "This field is required"
+
+msgid "Must have at least x characters"
+msgstr "must have at least {{min}} characters"
+
+msgid "Items must be unique"
+msgstr "Items must be unique"
+
+msgid "Invalid date format"
+msgstr "Invalid date format"
+
+msgid "Publishers must be unique"
+msgstr "Publishers must be unique"
+
+msgid "Notes must be unique"
+msgstr "Notes must be unique"
+
+msgid "Must be between -180 and 180"
+msgstr "Must be between -180 and 180"
+
+msgid "Must be between -90 and 90"
+msgstr "Must be between -90 and 90"
+
+msgid "Locations must be unique"
+msgstr "Locations must be unique"
+
+msgid "Please provide an URL in valid format"
+msgstr "Please provide an URL in valid format"
+
+msgid "URL must be provided for this field if used"
+msgstr "URL must be provided for this field if used"
+
+msgid "Project codes must be unique"
+msgstr "Project codes must be unique"
+
+msgid "Subjects must be unique"
+msgstr "Subjects must be unique"
+
+msgid "Series titles must be unique"
+msgstr "Series titles must be unique"
+
+msgid "Object identifiers must be unique"
+msgstr "Object identifiers must be unique"
+
+msgid "We couldn't find any matches for "
+msgstr "We couldn't find any matches for "
+
+msgid "your search"
+msgstr "your search"
+
+msgid "Start over"
+msgstr "Start over"
+
+msgid "ProTip"
+msgstr "ProTip"
+
+msgid "will give you all the publications from 2017 until today."
+msgstr "will give you all the publications from 2017 until today."
+
+msgid "For more tips, check out our "
+msgstr "For more tips, check out our "
+
+msgid "Search guide"
+msgstr "Search guide"
+
+msgid "search guide"
+msgstr "search guide"
+
+msgid " for defining advanced search queries."
+msgstr " for defining advanced search queries."
+
+msgid "ORCID profile"
+msgstr "ORCID profile"
+
+msgid "Scopus ID profile"
+msgstr "Scopus ID profile"
+
+msgid "ROR profile"
+msgstr "ROR profile"
+
+msgid "WOS Researcher ID"
+msgstr "WOS Researcher ID"
+
+msgid "DOI profile"
+msgstr "DOI profile"
+
+msgid "GND profile"
+msgstr "GND profile"
+
+msgid "Find all records"
+msgstr "Find all records"
+
+msgid "by this document type"
+msgstr "by this document type"
+
+msgid "Languages"
+msgstr "Languages"
+
+msgid "defended"
+msgstr "defended"
+
+msgid "not defended"
+msgstr "not defended"
+
+msgid "Uploaded on"
+msgstr "Uploaded on"
+
+msgid "Published in: "
+msgstr "Published in: "
+
+msgid "No description"
+msgstr "No description"
+
+msgid "No publication date found."
+msgstr "No publication date found."
+
+msgid "$schema.help"
+msgstr ""
+
+msgid "$schema.hint"
+msgstr ""
+
+msgid "created.help"
+msgstr ""
+
+msgid "created.hint"
+msgstr ""
+
+msgid "id.help"
+msgstr ""
+
+msgid "id.hint"
+msgstr ""
+
+msgid "metadata.help"
+msgstr ""
+
+msgid "metadata.label"
+msgstr ""
+
+msgid "metadata.hint"
+msgstr ""
+
+msgid "metadata/abstract.help"
+msgstr ""
+
+msgid "metadata/abstract.hint"
+msgstr ""
+
+msgid "metadata/abstract/lang.help"
+msgstr ""
+
+msgid "metadata/abstract/lang.hint"
+msgstr ""
+
+msgid "metadata/abstract/value.help"
+msgstr ""
+
+msgid "metadata/abstract/value.hint"
+msgstr ""
+
+msgid "metadata/accessRights.help"
+msgstr ""
+
+msgid "metadata/accessRights.hint"
+msgstr ""
+
+msgid "metadata/accessRights/id.help"
+msgstr ""
+
+msgid "metadata/accessRights/id.label"
+msgstr ""
+
+msgid "metadata/accessRights/id.hint"
+msgstr ""
+
+msgid "metadata/accessRights/title.help"
+msgstr ""
+
+msgid "metadata/accessRights/title.label"
+msgstr ""
+
+msgid "metadata/accessRights/title.hint"
+msgstr ""
+
+msgid "metadata/accessRights/@v.help"
+msgstr ""
+
+msgid "metadata/accessRights/@v.label"
+msgstr ""
+
+msgid "metadata/accessRights/@v.hint"
+msgstr ""
+
+msgid "metadata/accessibility.help"
+msgstr ""
+
+msgid "metadata/accessibility.hint"
+msgstr ""
+
+msgid "metadata/accessibility/lang.help"
+msgstr ""
+
+msgid "metadata/accessibility/lang.hint"
+msgstr ""
+
+msgid "metadata/accessibility/value.help"
+msgstr ""
+
+msgid "metadata/accessibility/value.hint"
+msgstr ""
+
+msgid "metadata/additionalTitles.label"
+msgstr "Additional titles"
+
+msgid "metadata/additionalTitles.help"
+msgstr ""
+
+msgid "metadata/additionalTitles.hint"
+msgstr ""
+
+msgid "metadata/additionalTitles/title.help"
+msgstr ""
+
+msgid "metadata/additionalTitles/title.hint"
+msgstr ""
+
+msgid "metadata/additionalTitles/title/lang.help"
+msgstr ""
+
+msgid "metadata/additionalTitles/title/lang.hint"
+msgstr ""
+
+msgid "metadata/additionalTitles/title/value.help"
+msgstr ""
+
+msgid "metadata/additionalTitles/title/value.hint"
+msgstr ""
+
+msgid "metadata/additionalTitles/titleType.help"
+msgstr ""
+
+msgid "metadata/additionalTitles/titleType.hint"
+msgstr ""
+
+msgid "metadata/additionalTitles/titleType.enum.translatedTitle"
+msgstr ""
+
+msgid "metadata/additionalTitles/titleType.enum.alternativeTitle"
+msgstr ""
+
+msgid "metadata/additionalTitles/titleType.enum.subtitle"
+msgstr ""
+
+msgid "metadata/additionalTitles/titleType.enum.other"
+msgstr ""
+
+msgid "metadata/collection.help"
+msgstr ""
+
+msgid "metadata/collection.hint"
+msgstr ""
+
+msgid "metadata/contributors.label"
+msgstr "Contributors"
+
+msgid "metadata/contributors.help"
+msgstr ""
+
+msgid "metadata/contributors.hint"
+msgstr ""
+
+msgid "metadata/contributors/affiliations.help"
+msgstr ""
+
+msgid "metadata/contributors/affiliations.hint"
+msgstr ""
+
+msgid "metadata/contributors/affiliations/id.help"
+msgstr ""
+
+msgid "metadata/contributors/affiliations/id.label"
+msgstr ""
+
+msgid "metadata/contributors/affiliations/id.hint"
+msgstr ""
+
+msgid "metadata/contributors/affiliations/title.help"
+msgstr ""
+
+msgid "metadata/contributors/affiliations/title.label"
+msgstr ""
+
+msgid "metadata/contributors/affiliations/title.hint"
+msgstr ""
+
+msgid "metadata/contributors/affiliations/hierarchy.help"
+msgstr ""
+
+msgid "metadata/contributors/affiliations/hierarchy.label"
+msgstr ""
+
+msgid "metadata/contributors/affiliations/hierarchy.hint"
+msgstr ""
+
+msgid "metadata/contributors/affiliations/hierarchy/ancestors.help"
+msgstr ""
+
+msgid "metadata/contributors/affiliations/hierarchy/ancestors.label"
+msgstr ""
+
+msgid "metadata/contributors/affiliations/hierarchy/ancestors.hint"
+msgstr ""
+
+msgid "metadata/contributors/affiliations/hierarchy/ancestors_or_self.help"
+msgstr ""
+
+msgid "metadata/contributors/affiliations/hierarchy/ancestors_or_self.label"
+msgstr ""
+
+msgid "metadata/contributors/affiliations/hierarchy/ancestors_or_self.hint"
+msgstr ""
+
+msgid "metadata/contributors/affiliations/hierarchy/level.help"
+msgstr ""
+
+msgid "metadata/contributors/affiliations/hierarchy/level.label"
+msgstr ""
+
+msgid "metadata/contributors/affiliations/hierarchy/level.hint"
+msgstr ""
+
+msgid "metadata/contributors/affiliations/hierarchy/parent.help"
+msgstr ""
+
+msgid "metadata/contributors/affiliations/hierarchy/parent.label"
+msgstr ""
+
+msgid "metadata/contributors/affiliations/hierarchy/parent.hint"
+msgstr ""
+
+msgid "metadata/contributors/affiliations/hierarchy/title.help"
+msgstr ""
+
+msgid "metadata/contributors/affiliations/hierarchy/title.label"
+msgstr ""
+
+msgid "metadata/contributors/affiliations/hierarchy/title.hint"
+msgstr ""
+
+msgid "metadata/contributors/affiliations/@v.help"
+msgstr ""
+
+msgid "metadata/contributors/affiliations/@v.label"
+msgstr ""
+
+msgid "metadata/contributors/affiliations/@v.hint"
+msgstr ""
+
+msgid "metadata/contributors/authorityIdentifiers.help"
+msgstr ""
+
+msgid "metadata/contributors/authorityIdentifiers.label"
+msgstr ""
+
+msgid "metadata/contributors/authorityIdentifiers.hint"
+msgstr ""
+
+msgid "identifier.label"
+msgstr "Identifier"
+
+msgid "identifier.help"
+msgstr ""
+
+msgid "identifier.hint"
+msgstr ""
+
+msgid "identifier_type.label"
+msgstr "Identifier type"
+
+msgid "identifier_type.hint"
+msgstr ""
+"We recommend providing at least one of the identifier types.\n"
+"If you need to expand the range of identifier types, contact us at support@narodni-repozitar.cz.\n"
+
+msgid "identifier_type.help"
+msgstr ""
+
+msgid "identifier_type.enum.orcid"
+msgstr ""
+
+msgid "identifier_type.enum.scopusID"
+msgstr ""
+
+msgid "identifier_type.enum.researcherID"
+msgstr ""
+
+msgid "identifier_type.enum.czenasAutID"
+msgstr ""
+
+msgid "identifier_type.enum.vedidk"
+msgstr ""
+
+msgid "identifier_type.enum.institutionalID"
+msgstr ""
+
+msgid "identifier_type.enum.ISNI"
+msgstr ""
+
+msgid "identifier_type.enum.ROR"
+msgstr ""
+
+msgid "identifier_type.enum.ICO"
+msgstr ""
+
+msgid "identifier_type.enum.DOI"
+msgstr ""
+
+msgid "metadata/contributors/fullName.help"
+msgstr ""
+
+msgid "metadata/contributors/fullName.hint"
+msgstr ""
+
+msgid "metadata/contributors/nameType.hint"
+msgstr ""
+"It is possible to designate a person or an institution as the "
+"creator/contributor."
+
+msgid "metadata/contributors/nameType.help"
+msgstr ""
+
+msgid "metadata/contributors/nameType.enum.Organizational"
+msgstr ""
+
+msgid "metadata/contributors/nameType.enum.Personal"
+msgstr ""
+
+msgid "metadata/contributors/role.help"
+msgstr ""
+
+msgid "metadata/contributors/role.hint"
+msgstr ""
+
+msgid "metadata/contributors/role/id.help"
+msgstr ""
+
+msgid "metadata/contributors/role/id.label"
+msgstr ""
+
+msgid "metadata/contributors/role/id.hint"
+msgstr ""
+
+msgid "metadata/contributors/role/title.help"
+msgstr ""
+
+msgid "metadata/contributors/role/title.label"
+msgstr ""
+
+msgid "metadata/contributors/role/title.hint"
+msgstr ""
+
+msgid "metadata/contributors/role/@v.help"
+msgstr ""
+
+msgid "metadata/contributors/role/@v.label"
+msgstr ""
+
+msgid "metadata/contributors/role/@v.hint"
+msgstr ""
+
+msgid "metadata/creators.label"
+msgstr "Authors"
+
+msgid "metadata/creators.help"
+msgstr ""
+
+msgid "metadata/creators.hint"
+msgstr ""
+
+msgid "metadata/creators/affiliations.help"
+msgstr ""
+
+msgid "metadata/creators/affiliations.hint"
+msgstr ""
+
+msgid "metadata/creators/affiliations/id.help"
+msgstr ""
+
+msgid "metadata/creators/affiliations/id.label"
+msgstr ""
+
+msgid "metadata/creators/affiliations/id.hint"
+msgstr ""
+
+msgid "metadata/creators/affiliations/title.help"
+msgstr ""
+
+msgid "metadata/creators/affiliations/title.label"
+msgstr ""
+
+msgid "metadata/creators/affiliations/title.hint"
+msgstr ""
+
+msgid "metadata/creators/affiliations/hierarchy.help"
+msgstr ""
+
+msgid "metadata/creators/affiliations/hierarchy.label"
+msgstr ""
+
+msgid "metadata/creators/affiliations/hierarchy.hint"
+msgstr ""
+
+msgid "metadata/creators/affiliations/hierarchy/ancestors.help"
+msgstr ""
+
+msgid "metadata/creators/affiliations/hierarchy/ancestors.label"
+msgstr ""
+
+msgid "metadata/creators/affiliations/hierarchy/ancestors.hint"
+msgstr ""
+
+msgid "metadata/creators/affiliations/hierarchy/ancestors_or_self.help"
+msgstr ""
+
+msgid "metadata/creators/affiliations/hierarchy/ancestors_or_self.label"
+msgstr ""
+
+msgid "metadata/creators/affiliations/hierarchy/ancestors_or_self.hint"
+msgstr ""
+
+msgid "metadata/creators/affiliations/hierarchy/level.help"
+msgstr ""
+
+msgid "metadata/creators/affiliations/hierarchy/level.label"
+msgstr ""
+
+msgid "metadata/creators/affiliations/hierarchy/level.hint"
+msgstr ""
+
+msgid "metadata/creators/affiliations/hierarchy/parent.help"
+msgstr ""
+
+msgid "metadata/creators/affiliations/hierarchy/parent.label"
+msgstr ""
+
+msgid "metadata/creators/affiliations/hierarchy/parent.hint"
+msgstr ""
+
+msgid "metadata/creators/affiliations/hierarchy/title.help"
+msgstr ""
+
+msgid "metadata/creators/affiliations/hierarchy/title.label"
+msgstr ""
+
+msgid "metadata/creators/affiliations/hierarchy/title.hint"
+msgstr ""
+
+msgid "metadata/creators/affiliations/@v.help"
+msgstr ""
+
+msgid "metadata/creators/affiliations/@v.label"
+msgstr ""
+
+msgid "metadata/creators/affiliations/@v.hint"
+msgstr ""
+
+msgid "metadata/creators/authorityIdentifiers.help"
+msgstr ""
+
+msgid "metadata/creators/authorityIdentifiers.label"
+msgstr ""
+
+msgid "metadata/creators/authorityIdentifiers.hint"
+msgstr ""
+
+msgid "metadata/creators/fullName.help"
+msgstr ""
+
+msgid "metadata/creators/fullName.hint"
+msgstr ""
+
+msgid "metadata/creators/nameType.hint"
+msgstr ""
+"It is possible to designate a person or an institution as the "
+"creator/contributor."
+
+msgid "metadata/creators/nameType.help"
+msgstr ""
+
+msgid "metadata/creators/nameType.enum.Organizational"
+msgstr ""
+
+msgid "metadata/creators/nameType.enum.Personal"
+msgstr ""
+
+msgid "metadata/dateAvailable.help"
+msgstr ""
+
+msgid "metadata/dateAvailable.hint"
+msgstr ""
+
+msgid "metadata/dateModified.help"
+msgstr ""
+
+msgid "metadata/dateModified.hint"
+msgstr ""
+
+msgid "metadata/events.help"
+msgstr ""
+
+msgid "metadata/events.hint"
+msgstr ""
+
+msgid "metadata/events/eventDate.label"
+msgstr "Event date"
+
+msgid "metadata/events/eventDate.help"
+msgstr ""
+
+msgid "metadata/events/eventDate.hint"
+msgstr ""
+
+msgid "metadata/events/eventLocation.help"
+msgstr ""
+
+msgid "metadata/events/eventLocation.label"
+msgstr ""
+
+msgid "metadata/events/eventLocation.hint"
+msgstr ""
+
+msgid "metadata/events/eventLocation/country.help"
+msgstr ""
+
+msgid "metadata/events/eventLocation/country.hint"
+msgstr ""
+
+msgid "metadata/events/eventLocation/country/id.help"
+msgstr ""
+
+msgid "metadata/events/eventLocation/country/id.label"
+msgstr ""
+
+msgid "metadata/events/eventLocation/country/id.hint"
+msgstr ""
+
+msgid "metadata/events/eventLocation/country/title.help"
+msgstr ""
+
+msgid "metadata/events/eventLocation/country/title.label"
+msgstr ""
+
+msgid "metadata/events/eventLocation/country/title.hint"
+msgstr ""
+
+msgid "metadata/events/eventLocation/country/@v.help"
+msgstr ""
+
+msgid "metadata/events/eventLocation/country/@v.label"
+msgstr ""
+
+msgid "metadata/events/eventLocation/country/@v.hint"
+msgstr ""
+
+msgid "metadata/events/eventLocation/place.help"
+msgstr ""
+
+msgid "metadata/events/eventLocation/place.hint"
+msgstr ""
+
+msgid "metadata/events/eventNameAlternate.help"
+msgstr ""
+
+msgid "metadata/events/eventNameAlternate.label"
+msgstr "Event alternate name"
+
+msgid "metadata/events/eventNameAlternate.hint"
+msgstr ""
+
+msgid "metadata/events/eventNameOriginal.label"
+msgstr "Event name"
+
+msgid "metadata/events/eventNameOriginal.help"
+msgstr ""
+
+msgid "metadata/events/eventNameOriginal.hint"
+msgstr ""
+
+msgid "metadata/externalLocation.help"
+msgstr ""
+
+msgid "metadata/externalLocation.hint"
+msgstr ""
+
+msgid "metadata/externalLocation/externalLocationNote.label"
+msgstr "Note"
+
+msgid "metadata/externalLocation/externalLocationNote.help"
+msgstr ""
+
+msgid "metadata/externalLocation/externalLocationNote.hint"
+msgstr ""
+
+msgid "metadata/externalLocation/externalLocationURL.help"
+msgstr ""
+
+msgid "metadata/externalLocation/externalLocationURL.hint"
+msgstr ""
+
+msgid "metadata/fundingReferences.help"
+msgstr ""
+
+msgid "metadata/fundingReferences.hint"
+msgstr ""
+
+msgid "metadata/fundingReferences/funder.help"
+msgstr ""
+
+msgid "metadata/fundingReferences/funder.hint"
+msgstr ""
+
+msgid "metadata/fundingReferences/funder/id.help"
+msgstr ""
+
+msgid "metadata/fundingReferences/funder/id.label"
+msgstr ""
+
+msgid "metadata/fundingReferences/funder/id.hint"
+msgstr ""
+
+msgid "metadata/fundingReferences/funder/title.help"
+msgstr ""
+
+msgid "metadata/fundingReferences/funder/title.label"
+msgstr ""
+
+msgid "metadata/fundingReferences/funder/title.hint"
+msgstr ""
+
+msgid "metadata/fundingReferences/funder/@v.help"
+msgstr ""
+
+msgid "metadata/fundingReferences/funder/@v.label"
+msgstr ""
+
+msgid "metadata/fundingReferences/funder/@v.hint"
+msgstr ""
+
+msgid "metadata/fundingReferences/fundingProgram.label"
+msgstr "Funding program"
+
+msgid "metadata/fundingReferences/fundingProgram.help"
+msgstr ""
+
+msgid "metadata/fundingReferences/fundingProgram.hint"
+msgstr ""
+
+msgid "metadata/fundingReferences/projectID.help"
+msgstr ""
+
+msgid "metadata/fundingReferences/projectID.hint"
+msgstr ""
+
+msgid "metadata/fundingReferences/projectName.label"
+msgstr "Project name"
+
+msgid "metadata/fundingReferences/projectName.help"
+msgstr ""
+
+msgid "metadata/fundingReferences/projectName.hint"
+msgstr ""
+
+msgid "metadata/geoLocations.help"
+msgstr ""
+
+msgid "metadata/geoLocations.hint"
+msgstr ""
+
+msgid "metadata/geoLocations/geoLocationPlace.help"
+msgstr ""
+
+msgid "metadata/geoLocations/geoLocationPlace.hint"
+msgstr ""
+
+msgid "metadata/geoLocations/geoLocationPoint.help"
+msgstr ""
+
+msgid "metadata/geoLocations/geoLocationPoint.label"
+msgstr ""
+
+msgid "metadata/geoLocations/geoLocationPoint.hint"
+msgstr ""
+
+msgid "metadata/geoLocations/geoLocationPoint/pointLatitude.help"
+msgstr ""
+
+msgid "metadata/geoLocations/geoLocationPoint/pointLatitude.hint"
+msgstr ""
+
+msgid "metadata/geoLocations/geoLocationPoint/pointLongitude.help"
+msgstr ""
+
+msgid "metadata/geoLocations/geoLocationPoint/pointLongitude.hint"
+msgstr ""
+
+msgid "metadata/languages.help"
+msgstr ""
+
+msgid "metadata/languages.hint"
+msgstr ""
+
+msgid "metadata/languages/id.help"
+msgstr ""
+
+msgid "metadata/languages/id.label"
+msgstr ""
+
+msgid "metadata/languages/id.hint"
+msgstr ""
+
+msgid "metadata/languages/title.help"
+msgstr ""
+
+msgid "metadata/languages/title.label"
+msgstr ""
+
+msgid "metadata/languages/title.hint"
+msgstr ""
+
+msgid "metadata/languages/@v.help"
+msgstr ""
+
+msgid "metadata/languages/@v.label"
+msgstr ""
+
+msgid "metadata/languages/@v.hint"
+msgstr ""
+
+msgid "metadata/methods.help"
+msgstr ""
+
+msgid "metadata/methods.hint"
+msgstr ""
+
+msgid "metadata/methods/lang.help"
+msgstr ""
+
+msgid "metadata/methods/lang.hint"
+msgstr ""
+
+msgid "metadata/methods/value.help"
+msgstr ""
+
+msgid "metadata/methods/value.hint"
+msgstr ""
+
+msgid "metadata/notes.help"
+msgstr ""
+
+msgid "metadata/notes.hint"
+msgstr ""
+
+msgid "metadata/objectIdentifiers.help"
+msgstr ""
+
+msgid "metadata/objectIdentifiers.hint"
+msgstr ""
+
+msgid "metadata/objectIdentifiers/identifier.help"
+msgstr ""
+
+msgid "metadata/objectIdentifiers/identifier.hint"
+msgstr ""
+
+msgid "metadata/objectIdentifiers/scheme.help"
+msgstr ""
+
+msgid "metadata/objectIdentifiers/scheme.hint"
+msgstr ""
+
+msgid "metadata/objectIdentifiers/scheme.enum.DOI"
+msgstr ""
+
+msgid "metadata/objectIdentifiers/scheme.enum.Handle"
+msgstr ""
+
+msgid "metadata/objectIdentifiers/scheme.enum.ISBN"
+msgstr ""
+
+msgid "metadata/objectIdentifiers/scheme.enum.ISSN"
+msgstr ""
+
+msgid "metadata/objectIdentifiers/scheme.enum.RIV"
+msgstr ""
+
+msgid "metadata/originalRecord.help"
+msgstr ""
+
+msgid "metadata/originalRecord.hint"
+msgstr ""
+
+msgid "metadata/publishers.help"
+msgstr ""
+
+msgid "metadata/publishers.hint"
+msgstr ""
+
+msgid "metadata/relatedItems.label"
+msgstr "Link to/from other resources:"
+
+msgid "metadata/relatedItems.help"
+msgstr ""
+
+msgid "metadata/relatedItems.hint"
+msgstr ""
+
+msgid "metadata/relatedItems/itemContributors.label"
+msgstr "Contributors"
+
+msgid "metadata/relatedItems/itemContributors.help"
+msgstr ""
+
+msgid "metadata/relatedItems/itemContributors.hint"
+msgstr ""
+
+msgid "metadata/relatedItems/itemContributors/affiliations.help"
+msgstr ""
+
+msgid "metadata/relatedItems/itemContributors/affiliations.hint"
+msgstr ""
+
+msgid "metadata/relatedItems/itemContributors/affiliations/id.help"
+msgstr ""
+
+msgid "metadata/relatedItems/itemContributors/affiliations/id.label"
+msgstr ""
+
+msgid "metadata/relatedItems/itemContributors/affiliations/id.hint"
+msgstr ""
+
+msgid "metadata/relatedItems/itemContributors/affiliations/title.help"
+msgstr ""
+
+msgid "metadata/relatedItems/itemContributors/affiliations/title.label"
+msgstr ""
+
+msgid "metadata/relatedItems/itemContributors/affiliations/title.hint"
+msgstr ""
+
+msgid "metadata/relatedItems/itemContributors/affiliations/hierarchy.help"
+msgstr ""
+
+msgid "metadata/relatedItems/itemContributors/affiliations/hierarchy.label"
+msgstr ""
+
+msgid "metadata/relatedItems/itemContributors/affiliations/hierarchy.hint"
+msgstr ""
+
+msgid ""
+"metadata/relatedItems/itemContributors/affiliations/hierarchy/ancestors.help"
+msgstr ""
+
+msgid ""
+"metadata/relatedItems/itemContributors/affiliations/hierarchy/ancestors.label"
+msgstr ""
+
+msgid ""
+"metadata/relatedItems/itemContributors/affiliations/hierarchy/ancestors.hint"
+msgstr ""
+
+msgid ""
+"metadata/relatedItems/itemContributors/affiliations/hierarchy/ancestors_or_self.help"
+msgstr ""
+
+msgid ""
+"metadata/relatedItems/itemContributors/affiliations/hierarchy/ancestors_or_self.label"
+msgstr ""
+
+msgid ""
+"metadata/relatedItems/itemContributors/affiliations/hierarchy/ancestors_or_self.hint"
+msgstr ""
+
+msgid ""
+"metadata/relatedItems/itemContributors/affiliations/hierarchy/level.help"
+msgstr ""
+
+msgid ""
+"metadata/relatedItems/itemContributors/affiliations/hierarchy/level.label"
+msgstr ""
+
+msgid ""
+"metadata/relatedItems/itemContributors/affiliations/hierarchy/level.hint"
+msgstr ""
+
+msgid ""
+"metadata/relatedItems/itemContributors/affiliations/hierarchy/parent.help"
+msgstr ""
+
+msgid ""
+"metadata/relatedItems/itemContributors/affiliations/hierarchy/parent.label"
+msgstr ""
+
+msgid ""
+"metadata/relatedItems/itemContributors/affiliations/hierarchy/parent.hint"
+msgstr ""
+
+msgid ""
+"metadata/relatedItems/itemContributors/affiliations/hierarchy/title.help"
+msgstr ""
+
+msgid ""
+"metadata/relatedItems/itemContributors/affiliations/hierarchy/title.label"
+msgstr ""
+
+msgid ""
+"metadata/relatedItems/itemContributors/affiliations/hierarchy/title.hint"
+msgstr ""
+
+msgid "metadata/relatedItems/itemContributors/affiliations/@v.help"
+msgstr ""
+
+msgid "metadata/relatedItems/itemContributors/affiliations/@v.label"
+msgstr ""
+
+msgid "metadata/relatedItems/itemContributors/affiliations/@v.hint"
+msgstr ""
+
+msgid "metadata/relatedItems/itemContributors/authorityIdentifiers.help"
+msgstr ""
+
+msgid "metadata/relatedItems/itemContributors/authorityIdentifiers.label"
+msgstr ""
+
+msgid "metadata/relatedItems/itemContributors/authorityIdentifiers.hint"
+msgstr ""
+
+msgid "metadata/relatedItems/itemContributors/fullName.help"
+msgstr ""
+
+msgid "metadata/relatedItems/itemContributors/fullName.hint"
+msgstr ""
+
+msgid "metadata/relatedItems/itemContributors/nameType.hint"
+msgstr ""
+"It is possible to designate a person or an institution as the "
+"creator/contributor."
+
+msgid "metadata/relatedItems/itemContributors/nameType.help"
+msgstr ""
+
+msgid "metadata/relatedItems/itemContributors/nameType.enum.Organizational"
+msgstr ""
+
+msgid "metadata/relatedItems/itemContributors/nameType.enum.Personal"
+msgstr ""
+
+msgid "metadata/relatedItems/itemContributors/role.help"
+msgstr ""
+
+msgid "metadata/relatedItems/itemContributors/role.hint"
+msgstr ""
+
+msgid "metadata/relatedItems/itemContributors/role/id.help"
+msgstr ""
+
+msgid "metadata/relatedItems/itemContributors/role/id.label"
+msgstr ""
+
+msgid "metadata/relatedItems/itemContributors/role/id.hint"
+msgstr ""
+
+msgid "metadata/relatedItems/itemContributors/role/title.help"
+msgstr ""
+
+msgid "metadata/relatedItems/itemContributors/role/title.label"
+msgstr ""
+
+msgid "metadata/relatedItems/itemContributors/role/title.hint"
+msgstr ""
+
+msgid "metadata/relatedItems/itemContributors/role/@v.help"
+msgstr ""
+
+msgid "metadata/relatedItems/itemContributors/role/@v.label"
+msgstr ""
+
+msgid "metadata/relatedItems/itemContributors/role/@v.hint"
+msgstr ""
+
+msgid "metadata/relatedItems/itemCreators.label"
+msgstr "Authors"
+
+msgid "metadata/relatedItems/itemCreators.help"
+msgstr ""
+
+msgid "metadata/relatedItems/itemCreators.hint"
+msgstr ""
+
+msgid "metadata/relatedItems/itemCreators/affiliations.help"
+msgstr ""
+
+msgid "metadata/relatedItems/itemCreators/affiliations.hint"
+msgstr ""
+
+msgid "metadata/relatedItems/itemCreators/affiliations/id.help"
+msgstr ""
+
+msgid "metadata/relatedItems/itemCreators/affiliations/id.label"
+msgstr ""
+
+msgid "metadata/relatedItems/itemCreators/affiliations/id.hint"
+msgstr ""
+
+msgid "metadata/relatedItems/itemCreators/affiliations/title.help"
+msgstr ""
+
+msgid "metadata/relatedItems/itemCreators/affiliations/title.label"
+msgstr ""
+
+msgid "metadata/relatedItems/itemCreators/affiliations/title.hint"
+msgstr ""
+
+msgid "metadata/relatedItems/itemCreators/affiliations/hierarchy.help"
+msgstr ""
+
+msgid "metadata/relatedItems/itemCreators/affiliations/hierarchy.label"
+msgstr ""
+
+msgid "metadata/relatedItems/itemCreators/affiliations/hierarchy.hint"
+msgstr ""
+
+msgid ""
+"metadata/relatedItems/itemCreators/affiliations/hierarchy/ancestors.help"
+msgstr ""
+
+msgid ""
+"metadata/relatedItems/itemCreators/affiliations/hierarchy/ancestors.label"
+msgstr ""
+
+msgid ""
+"metadata/relatedItems/itemCreators/affiliations/hierarchy/ancestors.hint"
+msgstr ""
+
+msgid ""
+"metadata/relatedItems/itemCreators/affiliations/hierarchy/ancestors_or_self.help"
+msgstr ""
+
+msgid ""
+"metadata/relatedItems/itemCreators/affiliations/hierarchy/ancestors_or_self.label"
+msgstr ""
+
+msgid ""
+"metadata/relatedItems/itemCreators/affiliations/hierarchy/ancestors_or_self.hint"
+msgstr ""
+
+msgid "metadata/relatedItems/itemCreators/affiliations/hierarchy/level.help"
+msgstr ""
+
+msgid "metadata/relatedItems/itemCreators/affiliations/hierarchy/level.label"
+msgstr ""
+
+msgid "metadata/relatedItems/itemCreators/affiliations/hierarchy/level.hint"
+msgstr ""
+
+msgid "metadata/relatedItems/itemCreators/affiliations/hierarchy/parent.help"
+msgstr ""
+
+msgid "metadata/relatedItems/itemCreators/affiliations/hierarchy/parent.label"
+msgstr ""
+
+msgid "metadata/relatedItems/itemCreators/affiliations/hierarchy/parent.hint"
+msgstr ""
+
+msgid "metadata/relatedItems/itemCreators/affiliations/hierarchy/title.help"
+msgstr ""
+
+msgid "metadata/relatedItems/itemCreators/affiliations/hierarchy/title.label"
+msgstr ""
+
+msgid "metadata/relatedItems/itemCreators/affiliations/hierarchy/title.hint"
+msgstr ""
+
+msgid "metadata/relatedItems/itemCreators/affiliations/@v.help"
+msgstr ""
+
+msgid "metadata/relatedItems/itemCreators/affiliations/@v.label"
+msgstr ""
+
+msgid "metadata/relatedItems/itemCreators/affiliations/@v.hint"
+msgstr ""
+
+msgid "metadata/relatedItems/itemCreators/authorityIdentifiers.help"
+msgstr ""
+
+msgid "metadata/relatedItems/itemCreators/authorityIdentifiers.label"
+msgstr ""
+
+msgid "metadata/relatedItems/itemCreators/authorityIdentifiers.hint"
+msgstr ""
+
+msgid "metadata/relatedItems/itemCreators/fullName.help"
+msgstr ""
+
+msgid "metadata/relatedItems/itemCreators/fullName.hint"
+msgstr ""
+
+msgid "metadata/relatedItems/itemCreators/nameType.hint"
+msgstr ""
+"It is possible to designate a person or an institution as the "
+"creator/contributor."
+
+msgid "metadata/relatedItems/itemCreators/nameType.help"
+msgstr ""
+
+msgid "metadata/relatedItems/itemCreators/nameType.enum.Organizational"
+msgstr ""
+
+msgid "metadata/relatedItems/itemCreators/nameType.enum.Personal"
+msgstr ""
+
+msgid "metadata/relatedItems/itemEndPage.help"
+msgstr ""
+
+msgid "metadata/relatedItems/itemEndPage.hint"
+msgstr ""
+
+msgid "metadata/relatedItems/itemIssue.help"
+msgstr ""
+
+msgid "metadata/relatedItems/itemIssue.hint"
+msgstr ""
+
+msgid "metadata/relatedItems/itemPIDs.help"
+msgstr ""
+
+msgid "metadata/relatedItems/itemPIDs.label"
+msgstr ""
+
+msgid "metadata/relatedItems/itemPIDs.hint"
+msgstr ""
+
+msgid "metadata/relatedItems/itemPIDs/identifier.help"
+msgstr ""
+
+msgid "metadata/relatedItems/itemPIDs/identifier.hint"
+msgstr ""
+
+msgid "metadata/relatedItems/itemPIDs/scheme.help"
+msgstr ""
+
+msgid "metadata/relatedItems/itemPIDs/scheme.hint"
+msgstr ""
+
+msgid "metadata/relatedItems/itemPIDs/scheme.enum.DOI"
+msgstr ""
+
+msgid "metadata/relatedItems/itemPIDs/scheme.enum.Handle"
+msgstr ""
+
+msgid "metadata/relatedItems/itemPIDs/scheme.enum.ISBN"
+msgstr ""
+
+msgid "metadata/relatedItems/itemPIDs/scheme.enum.ISSN"
+msgstr ""
+
+msgid "metadata/relatedItems/itemPIDs/scheme.enum.RIV"
+msgstr ""
+
+msgid "metadata/relatedItems/itemPublisher.help"
+msgstr ""
+
+msgid "metadata/relatedItems/itemPublisher.hint"
+msgstr ""
+
+msgid "metadata/relatedItems/itemRelationType.help"
+msgstr ""
+
+msgid "metadata/relatedItems/itemRelationType.hint"
+msgstr ""
+
+msgid "metadata/relatedItems/itemRelationType/id.help"
+msgstr ""
+
+msgid "metadata/relatedItems/itemRelationType/id.label"
+msgstr ""
+
+msgid "metadata/relatedItems/itemRelationType/id.hint"
+msgstr ""
+
+msgid "metadata/relatedItems/itemRelationType/title.help"
+msgstr ""
+
+msgid "metadata/relatedItems/itemRelationType/title.label"
+msgstr ""
+
+msgid "metadata/relatedItems/itemRelationType/title.hint"
+msgstr ""
+
+msgid "metadata/relatedItems/itemRelationType/@v.help"
+msgstr ""
+
+msgid "metadata/relatedItems/itemRelationType/@v.label"
+msgstr ""
+
+msgid "metadata/relatedItems/itemRelationType/@v.hint"
+msgstr ""
+
+msgid "metadata/relatedItems/itemResourceType.help"
+msgstr ""
+
+msgid "metadata/relatedItems/itemResourceType.hint"
+msgstr ""
+
+msgid "metadata/relatedItems/itemResourceType/id.help"
+msgstr ""
+
+msgid "metadata/relatedItems/itemResourceType/id.label"
+msgstr ""
+
+msgid "metadata/relatedItems/itemResourceType/id.hint"
+msgstr ""
+
+msgid "metadata/relatedItems/itemResourceType/title.help"
+msgstr ""
+
+msgid "metadata/relatedItems/itemResourceType/title.label"
+msgstr ""
+
+msgid "metadata/relatedItems/itemResourceType/title.hint"
+msgstr ""
+
+msgid "metadata/relatedItems/itemResourceType/@v.help"
+msgstr ""
+
+msgid "metadata/relatedItems/itemResourceType/@v.label"
+msgstr ""
+
+msgid "metadata/relatedItems/itemResourceType/@v.hint"
+msgstr ""
+
+msgid "metadata/relatedItems/itemStartPage.help"
+msgstr ""
+
+msgid "metadata/relatedItems/itemStartPage.hint"
+msgstr ""
+
+msgid "metadata/relatedItems/itemTitle.label"
+msgstr "Title"
+
+msgid "metadata/relatedItems/itemTitle.help"
+msgstr ""
+
+msgid "metadata/relatedItems/itemTitle.hint"
+msgstr ""
+
+msgid "metadata/relatedItems/itemURL.help"
+msgstr ""
+
+msgid "metadata/relatedItems/itemURL.hint"
+msgstr ""
+
+msgid "metadata/relatedItems/itemVolume.help"
+msgstr ""
+
+msgid "metadata/relatedItems/itemVolume.hint"
+msgstr ""
+
+msgid "metadata/relatedItems/itemYear.help"
+msgstr ""
+
+msgid "metadata/relatedItems/itemYear.hint"
+msgstr ""
+
+msgid "metadata/resourceType.help"
+msgstr ""
+
+msgid "metadata/resourceType.hint"
+msgstr ""
+
+msgid "metadata/resourceType/id.help"
+msgstr ""
+
+msgid "metadata/resourceType/id.label"
+msgstr ""
+
+msgid "metadata/resourceType/id.hint"
+msgstr ""
+
+msgid "metadata/resourceType/title.help"
+msgstr ""
+
+msgid "metadata/resourceType/title.label"
+msgstr ""
+
+msgid "metadata/resourceType/title.hint"
+msgstr ""
+
+msgid "metadata/resourceType/@v.help"
+msgstr ""
+
+msgid "metadata/resourceType/@v.label"
+msgstr ""
+
+msgid "metadata/resourceType/@v.hint"
+msgstr ""
+
+msgid "metadata/rights.help"
+msgstr ""
+
+msgid "metadata/rights.hint"
+msgstr ""
+
+msgid "metadata/rights/id.help"
+msgstr ""
+
+msgid "metadata/rights/id.label"
+msgstr ""
+
+msgid "metadata/rights/id.hint"
+msgstr ""
+
+msgid "metadata/rights/title.help"
+msgstr ""
+
+msgid "metadata/rights/title.label"
+msgstr ""
+
+msgid "metadata/rights/title.hint"
+msgstr ""
+
+msgid "metadata/rights/@v.help"
+msgstr ""
+
+msgid "metadata/rights/@v.label"
+msgstr ""
+
+msgid "metadata/rights/@v.hint"
+msgstr ""
+
+msgid "metadata/series.help"
+msgstr ""
+
+msgid "metadata/series.hint"
+msgstr ""
+
+msgid "metadata/series/seriesTitle.help"
+msgstr ""
+
+msgid "metadata/series/seriesTitle.hint"
+msgstr ""
+
+msgid "metadata/series/seriesVolume.help"
+msgstr ""
+
+msgid "metadata/series/seriesVolume.hint"
+msgstr ""
+
+msgid "metadata/subjectCategories.help"
+msgstr ""
+
+msgid "metadata/subjectCategories.hint"
+msgstr ""
+
+msgid "metadata/subjectCategories/id.help"
+msgstr ""
+
+msgid "metadata/subjectCategories/id.label"
+msgstr ""
+
+msgid "metadata/subjectCategories/id.hint"
+msgstr ""
+
+msgid "metadata/subjectCategories/title.help"
+msgstr ""
+
+msgid "metadata/subjectCategories/title.label"
+msgstr ""
+
+msgid "metadata/subjectCategories/title.hint"
+msgstr ""
+
+msgid "metadata/subjectCategories/@v.help"
+msgstr ""
+
+msgid "metadata/subjectCategories/@v.label"
+msgstr ""
+
+msgid "metadata/subjectCategories/@v.hint"
+msgstr ""
+
+msgid "metadata/subjects.help"
+msgstr ""
+
+msgid "metadata/subjects.hint"
+msgstr ""
+
+msgid "metadata/subjects/classificationCode.help"
+msgstr ""
+
+msgid "metadata/subjects/classificationCode.hint"
+msgstr ""
+
+msgid "metadata/subjects/subject.help"
+msgstr ""
+
+msgid "metadata/subjects/subject.hint"
+msgstr ""
+
+msgid "metadata/subjects/subject/lang.help"
+msgstr ""
+
+msgid "metadata/subjects/subject/lang.hint"
+msgstr ""
+
+msgid "metadata/subjects/subject/value.help"
+msgstr ""
+
+msgid "metadata/subjects/subject/value.hint"
+msgstr ""
+
+msgid "metadata/subjects/subjectScheme.help"
+msgstr ""
+
+msgid "metadata/subjects/subjectScheme.hint"
+msgstr ""
+
+msgid "metadata/subjects/valueURI.help"
+msgstr ""
+
+msgid "metadata/subjects/valueURI.hint"
+msgstr ""
+
+msgid "metadata/systemIdentifiers.label"
+msgstr "System identifiers"
+
+msgid "metadata/systemIdentifiers.help"
+msgstr ""
+
+msgid "metadata/systemIdentifiers.hint"
+msgstr ""
+
+msgid "metadata/systemIdentifiers/identifier.help"
+msgstr ""
+
+msgid "metadata/systemIdentifiers/identifier.hint"
+msgstr ""
+
+msgid "metadata/systemIdentifiers/scheme.help"
+msgstr ""
+
+msgid "metadata/systemIdentifiers/scheme.hint"
+msgstr ""
+
+msgid "metadata/systemIdentifiers/scheme.enum.nusl"
+msgstr ""
+
+msgid "metadata/systemIdentifiers/scheme.enum.nuslOAI"
+msgstr ""
+
+msgid "metadata/systemIdentifiers/scheme.enum.originalRecordOAI"
+msgstr ""
+
+msgid "metadata/systemIdentifiers/scheme.enum.catalogueSysNo"
+msgstr ""
+
+msgid "metadata/systemIdentifiers/scheme.enum.nrOAI"
+msgstr ""
+
+msgid "metadata/technicalInfo.help"
+msgstr ""
+
+msgid "metadata/technicalInfo.hint"
+msgstr ""
+
+msgid "metadata/technicalInfo/lang.help"
+msgstr ""
+
+msgid "metadata/technicalInfo/lang.hint"
+msgstr ""
+
+msgid "metadata/technicalInfo/value.help"
+msgstr ""
+
+msgid "metadata/technicalInfo/value.hint"
+msgstr ""
+
+msgid "metadata/thesis.help"
+msgstr ""
+
+msgid "metadata/thesis.label"
+msgstr ""
+
+msgid "metadata/thesis.hint"
+msgstr ""
+
+msgid "metadata/thesis/dateDefended.help"
+msgstr ""
+
+msgid "metadata/thesis/dateDefended.hint"
+msgstr ""
+
+msgid "metadata/thesis/defended.help"
+msgstr ""
+
+msgid "metadata/thesis/defended.hint"
+msgstr ""
+
+msgid "metadata/thesis/degreeGrantors.help"
+msgstr ""
+
+msgid "metadata/thesis/degreeGrantors.hint"
+msgstr ""
+
+msgid "metadata/thesis/degreeGrantors/id.help"
+msgstr ""
+
+msgid "metadata/thesis/degreeGrantors/id.label"
+msgstr ""
+
+msgid "metadata/thesis/degreeGrantors/id.hint"
+msgstr ""
+
+msgid "metadata/thesis/degreeGrantors/title.help"
+msgstr ""
+
+msgid "metadata/thesis/degreeGrantors/title.label"
+msgstr ""
+
+msgid "metadata/thesis/degreeGrantors/title.hint"
+msgstr ""
+
+msgid "metadata/thesis/degreeGrantors/hierarchy.help"
+msgstr ""
+
+msgid "metadata/thesis/degreeGrantors/hierarchy.label"
+msgstr ""
+
+msgid "metadata/thesis/degreeGrantors/hierarchy.hint"
+msgstr ""
+
+msgid "metadata/thesis/degreeGrantors/hierarchy/ancestors.help"
+msgstr ""
+
+msgid "metadata/thesis/degreeGrantors/hierarchy/ancestors.label"
+msgstr ""
+
+msgid "metadata/thesis/degreeGrantors/hierarchy/ancestors.hint"
+msgstr ""
+
+msgid "metadata/thesis/degreeGrantors/hierarchy/ancestors_or_self.help"
+msgstr ""
+
+msgid "metadata/thesis/degreeGrantors/hierarchy/ancestors_or_self.label"
+msgstr ""
+
+msgid "metadata/thesis/degreeGrantors/hierarchy/ancestors_or_self.hint"
+msgstr ""
+
+msgid "metadata/thesis/degreeGrantors/hierarchy/level.help"
+msgstr ""
+
+msgid "metadata/thesis/degreeGrantors/hierarchy/level.label"
+msgstr ""
+
+msgid "metadata/thesis/degreeGrantors/hierarchy/level.hint"
+msgstr ""
+
+msgid "metadata/thesis/degreeGrantors/hierarchy/parent.help"
+msgstr ""
+
+msgid "metadata/thesis/degreeGrantors/hierarchy/parent.label"
+msgstr ""
+
+msgid "metadata/thesis/degreeGrantors/hierarchy/parent.hint"
+msgstr ""
+
+msgid "metadata/thesis/degreeGrantors/hierarchy/title.help"
+msgstr ""
+
+msgid "metadata/thesis/degreeGrantors/hierarchy/title.label"
+msgstr ""
+
+msgid "metadata/thesis/degreeGrantors/hierarchy/title.hint"
+msgstr ""
+
+msgid "metadata/thesis/degreeGrantors/@v.help"
+msgstr ""
+
+msgid "metadata/thesis/degreeGrantors/@v.label"
+msgstr ""
+
+msgid "metadata/thesis/degreeGrantors/@v.hint"
+msgstr ""
+
+msgid "metadata/thesis/studyFields.help"
+msgstr ""
+
+msgid "metadata/thesis/studyFields.hint"
+msgstr ""
+
+msgid "metadata/title.help"
+msgstr ""
+
+msgid "metadata/title.hint"
+msgstr ""
+
+msgid "metadata/version.help"
+msgstr ""
+
+msgid "metadata/version.hint"
+msgstr ""
+
+msgid "syntheticFields.help"
+msgstr ""
+
+msgid "syntheticFields.label"
+msgstr ""
+
+msgid "syntheticFields.hint"
+msgstr ""
+
+msgid "syntheticFields/institutions.help"
+msgstr ""
+
+msgid "syntheticFields/institutions.hint"
+msgstr ""
+
+msgid "syntheticFields/keywords_cs.help"
+msgstr ""
+
+msgid "syntheticFields/keywords_cs.hint"
+msgstr ""
+
+msgid "syntheticFields/keywords_en.help"
+msgstr ""
+
+msgid "syntheticFields/keywords_en.hint"
+msgstr ""
+
+msgid "syntheticFields/person.help"
+msgstr ""
+
+msgid "syntheticFields/person.hint"
+msgstr ""
+
+msgid "updated.help"
+msgstr ""
+
+msgid "updated.hint"
+msgstr ""
+
+#: docs_app/templates/semantic-ui/docs_app/footer.html:38
+#, python-format
+msgid ""
+"Powered by <a\n"
+"              href=\"%(invenio_rdm)s\">InvenioRDM</a>"
+msgstr ""
+
+msgid "Additional titles must be unique"
+msgstr "Additional titles must be unique"
+
+#: models/nr-documents/nr_documents/services/records/facets.py:496
+msgid "oai/harvest/datestamp.label"
+msgstr "Datestamp"
+
+#: models/nr-documents/nr_documents/services/records/facets.py:500
+msgid "oai/harvest/identifier.label"
+msgstr "OAI identifier"
+
+msgid "oai.help"
+msgstr ""
+
+msgid "oai.label"
+msgstr ""
+
+msgid "oai.hint"
+msgstr ""
+
+msgid "oai/harvest.help"
+msgstr ""
+
+msgid "oai/harvest.label"
+msgstr ""
+
+msgid "oai/harvest.hint"
+msgstr ""
+
+msgid "oai/harvest/datestamp.help"
+msgstr ""
+
+msgid "oai/harvest/datestamp.hint"
+msgstr ""
+
+msgid "oai/harvest/identifier.help"
+msgstr ""
+
+msgid "oai/harvest/identifier.hint"
+msgstr ""
+
+msgid "Longitude must be between -180 and 180"
+msgstr "Longitude must be between -180 and 180"
+
+msgid "Latitude must be between -90 and 90"
+msgstr "Latitude must be between -90 and 90"
+
+msgid "is a required field"
+msgstr "is a required field"
+
+msgid "Should be an interval indicating start and end date of the event."
+msgstr ""
+"Should be an interval indicating start and end date of the event. For "
+"example YYYY-MM-DD/YYYY-MM-DD."
+
+msgid "Related items"
+msgstr "Related items"
+
+msgid "Add related item"
+msgstr "Add related item"
+
+msgid "Edit related item"
+msgstr "Edit related item"
+
+msgid "Year must be in format YYYY"
+msgstr "Year must be in format YYYY"
+
+msgid "URL"
+msgstr "URL"
+
+msgid "Year"
+msgstr "Year"
+
+msgid "Volume"
+msgstr "Volume"
+
+msgid "Issue"
+msgstr "Issue"
+
+msgid "Start page"
+msgstr "Start page"
+
+msgid "End page"
+msgstr "End page"
+
+msgid "Publisher"
+msgstr "Publisher"
+
+msgid "Relation type"
+msgstr "Relation type"
+
+msgid "Choose relation type"
+msgstr "Choose relation type"
+
+msgid "Link to/from other resources"
+msgstr "Link to/from other resources"
+
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:137
+msgid "metadata/dateIssued.label"
+msgstr "Date issued"
+
+#: /Users/m/w/nrp/nr-docs/ui/components/templates/NrEvents.jinja:7
+msgid "on"
+msgstr ""
+
+#: /Users/m/w/nrp/nr-docs/ui/documents/templates/semantic-ui/documents/Search.jinja:3
+msgid "documents"
+msgstr ""
+
+msgid ""
+"Write down the time period in which the event took place. If it is not a "
+"range, choose same date twice."
+msgstr ""
+
+msgid ""
+"If the dataset has been published elsewhere, use the date of first "
+"publication. You can also specify a future publication date (for embargo). "
+"If you do not enter a date, the system will automatically fill the date when"
+" the record is published. Format: YYYY-MM-DD, YYYYY-MM or YYYYY."
+msgstr ""
+
+msgid "caption.help"
+msgstr ""
+
+msgid "caption.label"
+msgstr ""
+
+msgid "caption.hint"
+msgstr ""

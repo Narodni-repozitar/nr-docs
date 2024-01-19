@@ -1,0 +1,87 @@
+[project]
+name = "repo"
+version = "1.0.0"
+description = ""
+packages = []
+authors = []
+dependencies = [
+    "deepmerge>=1.1.0",
+    "invenio-drafts-resources>=1.0.4",
+    "json5",
+    "nr-metadata>=2.0.0",
+    "nr-oaipmh-harvesters>=1.0.0",
+    "nr-vocabularies>=2.0.8",
+    "oarepo-published-service>=1.0.0",
+    "oarepo-published-service>=1.0.2",
+    "oarepo-requests>=1.0.2",
+    "oarepo-runtime",
+    "oarepo-ui",
+    "oarepo-vocabularies",
+    "oarepo==12.*",
+    "python-dotenv",
+]
+requires-python = ">=3.9,<3.11"
+
+[project.entry-points."invenio_assets.webpack"]
+branding = "ui.branding.webpack:theme"
+i18n = "i18n.webpack:theme"
+components = "ui.components.webpack:theme"
+ui_documents = "ui.documents.webpack:theme"
+
+[project.entry-points."invenio_base.blueprints"]
+branding = "ui.branding:create_blueprint"
+titlepage = "ui.titlepage:create_blueprint"
+components = "ui.components:create_blueprint"
+documents = "documents.views.records.app:create_app_blueprint"
+documents_file = "documents.views.files.app:create_app_blueprint"
+documents_file_draft = "documents.views.draft_files.app:create_app_blueprint"
+ui_documents = "ui.documents:create_blueprint"
+
+[project.entry-points."invenio_i18n.translations"]
+translations = "i18n"
+documents = "documents"
+documents_file = "documents"
+
+[project.entry-points."invenio_base.api_apps"]
+documents = "documents.ext:DocumentsExt"
+
+[project.entry-points."invenio_base.apps"]
+documents = "documents.ext:DocumentsExt"
+
+[project.entry-points."invenio_db.alembic"]
+documents = "documents:alembic"
+
+[project.entry-points."invenio_db.models"]
+documents = "documents.records.models"
+documents_file = "documents.files.models"
+
+[project.entry-points."invenio_base.api_blueprints"]
+documents = "documents.views.records.api:create_api_blueprint"
+documents_file = "documents.views.files.api:create_api_blueprint"
+documents_file_draft = "documents.views.draft_files.api:create_api_blueprint"
+
+[project.entry-points."invenio_search.mappings"]
+documents = "documents.records.mappings"
+documents_file = "documents.files.mappings"
+
+[project.entry-points."invenio_jsonschemas.schemas"]
+documents = "documents.records.jsonschemas"
+
+[project.entry-points."oarepo.models"]
+documents = "documents.models:records.json"
+documents_file = "documents.models:files.json"
+
+[project.entry-points."oarepo.ui"]
+documents = "documents.models:ui.json"
+documents_file = "documents.models:ui.json"
+
+[project.optional-dependencies]
+tests = [
+    "pytest-invenio>=1.4.11",
+]
+
+[build-system]
+requires = [
+    "pdm-backend",
+]
+build-backend = "pdm.backend"
