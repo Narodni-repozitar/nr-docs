@@ -13,6 +13,8 @@ theme = WebpackThemeBundle(
             dependencies={
                 "react-searchkit": "^2.0.0",
                 "react-dnd-test-backend": "^16.0.1",
+                "@oarepo/file-manager": "^1.0.10",
+                "preact": "^10.5.13",
             },
             devDependencies={},
             aliases={},

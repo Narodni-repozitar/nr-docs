@@ -1,11 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Form } from "semantic-ui-react";
-import { ArrayField, SelectField } from "react-invenio-forms";
+import { ArrayField } from "react-invenio-forms";
 import { i18next } from "@translations/i18next";
 import { MultilingualTextInput, ArrayFieldItem } from "@js/oarepo_ui";
-
-const options = [{ value: "keyword", text: "Keyword" }];
 
 export const SubjectsField = ({ fieldPath, helpText, defaultNewValue }) => {
   return (
@@ -25,23 +23,14 @@ export const SubjectsField = ({ fieldPath, helpText, defaultNewValue }) => {
             arrayHelpers={arrayHelpers}
             className={"invenio-group-field subjects"}
           >
-            <SelectField
-              width={5}
-              fieldPath={`${fieldPathPrefix}.subjectScheme`}
-              label={i18next.t("Subject scheme")}
-              required
-              options={options}
-            />
-            <Form.Field style={{ marginTop: 0 }} width={12}>
-              {array[indexPath].subjectScheme === "keyword" && (
-                <MultilingualTextInput
-                  fieldPath={`${fieldPathPrefix}.subject`}
-                  lngFieldWidth={5}
-                  textFieldLabel={i18next.t("Subject")}
-                  required
-                  showEmptyValue
-                />
-              )}
+            <Form.Field style={{ marginTop: 0 }} width={16}>
+              <MultilingualTextInput
+                fieldPath={`${fieldPathPrefix}.subject`}
+                lngFieldWidth={5}
+                textFieldLabel={i18next.t("Subject")}
+                required
+                showEmptyValue
+              />
             </Form.Field>
           </ArrayFieldItem>
         );
@@ -57,5 +46,5 @@ SubjectsField.propTypes = {
 };
 
 SubjectsField.defaultProps = {
-  defaultNewValue: { subjectScheme: "keyword" },
+  defaultNewValue: { value: "", lang: "" },
 };

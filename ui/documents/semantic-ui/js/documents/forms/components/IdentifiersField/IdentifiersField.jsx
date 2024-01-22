@@ -13,16 +13,16 @@ export const objectIdentifiersSchema = [
 ];
 
 export const authorityIdentifiersSchema = [
-  { value: "orcid", text: "ORCID" },
-  { value: "scopusID", text: "ScopusID" },
-  { value: "researcherID", text: "ResearcherID" },
-  { value: "czenasAutID", text: "CzenasAutID" },
-  { value: "vedidk", text: "vedIDK" },
-  { value: "institutionalID", text: "InstitutionalID" },
-  { value: "ISNI", text: "ISNI" },
-  { value: "ROR", text: "ROR" },
-  { value: "ICO", text: "ICO" },
-  { value: "DOI", text: "DOI" },
+  { value: "orcid", text: i18next.t("ORCID") },
+  { value: "scopusID", text: i18next.t("ScopusID") },
+  { value: "researcherID", text: i18next.t("ResearcherID") },
+  { value: "czenasAutID", text: i18next.t("CzenasAutID") },
+  { value: "vedidk", text: i18next.t("vedIDK") },
+  { value: "institutionalID", text: i18next.t("InstitutionalID") },
+  { value: "ISNI", text: i18next.t("ISNI") },
+  { value: "ROR", text: i18next.t("ROR") },
+  { value: "ICO", text: i18next.t("ICO") },
+  { value: "DOI", text: i18next.t("DOI") },
 ];
 
 export const systemIdentifiersSchema = [
@@ -40,6 +40,7 @@ export const IdentifiersField = ({
   label,
   identifierLabel,
   className,
+  ...uiProps
 }) => {
   return (
     <ArrayField
@@ -61,6 +62,7 @@ export const IdentifiersField = ({
               label={i18next.t("Identifier type")}
               required
               options={options}
+              {...uiProps}
             />
             <TextField
               required
@@ -86,5 +88,5 @@ IdentifiersField.propTypes = {
 
 IdentifiersField.defaultProps = {
   label: i18next.t("Identifier field"),
-  identifierLabel: i18next.t("Object identifier"),
+  identifierLabel: i18next.t("Identifier"),
 };

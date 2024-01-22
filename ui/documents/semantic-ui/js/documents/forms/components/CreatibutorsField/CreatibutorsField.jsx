@@ -45,6 +45,9 @@ class CreatibutorsFieldForm extends Component {
       required,
       autocompleteNames,
       addButtonLabel,
+      nameFieldPlaceholder,
+      lastNameFieldPlaceholder,
+      nameTypeHelpText,
     } = this.props;
 
     const creatibutorsList = getIn(values, fieldPath, []);
@@ -95,6 +98,9 @@ class CreatibutorsFieldForm extends Component {
               addLabel={modal.addLabel}
               editLabel={modal.editLabel}
               schema={schema}
+              nameFieldPlaceholder={nameFieldPlaceholder}
+              lastNameFieldPlaceholder={lastNameFieldPlaceholder}
+              nameTypeHelpText={nameTypeHelpText}
               autocompleteNames={autocompleteNames}
               trigger={
                 <Button type="button" icon labelPosition="left">
@@ -173,6 +179,9 @@ CreatibutorsField.propTypes = {
   label: PropTypes.string,
   labelIcon: PropTypes.string,
   required: PropTypes.bool,
+  nameFieldPlaceholder: PropTypes.string,
+  lastNameFieldPlaceholder: PropTypes.string,
+  nameTypeHelpText: PropTypes.string,
 };
 
 CreatibutorsField.defaultProps = {
@@ -184,4 +193,9 @@ CreatibutorsField.defaultProps = {
     editLabel: i18next.t("Edit creator"),
   },
   addButtonLabel: i18next.t("Add creator"),
+  nameFieldPlaceholder: i18next.t("Write author's name."),
+  lastNameFieldPlaceholder: i18next.t("Write author's last name."),
+  nameTypeHelpText: i18next.t(
+    "Choose if the author is a person or an organization."
+  ),
 };

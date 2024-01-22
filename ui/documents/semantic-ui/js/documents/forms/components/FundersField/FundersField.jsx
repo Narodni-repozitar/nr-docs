@@ -18,29 +18,44 @@ export const FundersField = ({ fieldPath, helpText }) => {
       {({ arrayHelpers, indexPath }) => {
         const fieldPathPrefix = `${fieldPath}.${indexPath}`;
         return (
-          <ArrayFieldItem indexPath={indexPath} arrayHelpers={arrayHelpers}>
+          <ArrayFieldItem
+            indexPath={indexPath}
+            arrayHelpers={arrayHelpers}
+            style={{ display: "block" }}
+          >
             <TextField
               width={16}
               fieldPath={`${fieldPathPrefix}.projectID`}
               label={i18next.t("Project code")}
-              required
+              placeholder={i18next.t("Write down project number.")}
             />
             <TextField
+              className="rel-mt-1"
               width={16}
               fieldPath={`${fieldPathPrefix}.projectName`}
               label={i18next.t("Project name")}
+              placeholder={i18next.t("Write down name of project.")}
             />
             <TextField
+              className="rel-mt-1"
               width={16}
               fieldPath={`${fieldPathPrefix}.fundingProgram`}
               label={i18next.t("Funding program")}
+              placeholder={i18next.t(
+                "Write the name of research program in which the project was funded."
+              )}
             />
             <LocalVocabularySelectField
+              className="rel-mt-1"
               width={16}
               fieldPath={`${fieldPathPrefix}.funder`}
               label={i18next.t("Funder")}
               optionsListName="funders"
               clearable
+              required
+              placeholder={i18next.t(
+                "Start writing the name of the provider and then choose from the list."
+              )}
             />
           </ArrayFieldItem>
         );
