@@ -1,0 +1,196 @@
+//
+// overrides for css styles. To reference a font/image from the assets directory, use:
+// url("~@less/fonts/your-font-name") or url("~@less/images/your-image-name")
+//
+
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../../../fonts/Roboto-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Roboto";
+  font-style: italic;
+  font-weight: 400;
+  src: url("../../../fonts/Roboto-Italic.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  src: url("../../../fonts/Roboto-Medium.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  src: url("../../../fonts/Roboto-Bold.ttf") format("truetype");
+}
+
+/*
+ * Global-wide CSS
+ */
+
+:root {
+  font-size: @fontSize;
+}
+
+body {
+  font-family: Roboto;
+  height: 100vh;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    font-family: Roboto;
+  }
+}
+#main {
+  flex: 1;
+}
+
+.frontpage-logo {
+  width: auto !important;
+  height: 126px !important;
+}
+
+.backdrop {
+  background: rgb(224, 248, 255);
+  background: linear-gradient(
+    60deg,
+    #ebf4ff 0%,
+    rgba(240, 253, 255, 1) 30%,
+    rgba(240, 253, 255, 1) 60%,
+    #ecffe4
+  );
+
+  &.frontpage-header {
+    background: none;
+  }
+}
+
+.invenio-header-container {
+  background-color: #ffffffaa;
+}
+
+.nr-documents.theme.header {
+  .nr-logo {
+    margin-inline-start: -2rem;
+    padding: 1rem 2rem;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0px 1px 0px 0px rgba(0, 0, 0, 0.2);
+  }
+
+  .outer-navbar {
+    background-image: url("../../../../static/images/background.png");
+    background-color: white;
+    background-size: 1024px;
+    background-repeat-x: repeat;
+    background-repeat-y: no-repeat;
+    border: 0;
+  }
+}
+
+.borderless {
+  border: none !important;
+}
+
+.shadowless,
+.ui.borderless.facet.card {
+  box-shadow: none !important;
+}
+
+.facet-wrapper.content:not(.parent) {
+  padding: 0.5em 0;
+  padding-left: 20px !important;
+  display: flex;
+  align-items: start;
+
+  .ui.checkbox > label {
+    padding-inline-end: 0.5rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+  }
+
+  .facet-count {
+    min-width: unset;
+  }
+}
+
+.facet > .content > .header {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  text-transform: initial;
+}
+
+.facet-list {
+  margin: 0 -1rem;
+}
+
+#skip-to-main {
+  display: none;
+}
+
+#invenio-nav {
+  background: none;
+}
+
+#nr-footer-element {
+  border-top: 1px solid @green;
+}
+
+#frontpage-search-bar {
+  background: none;
+}
+
+.frontpage-logo {
+  margin-right: 0 !important;
+}
+
+#nr-footer-element {
+  background-image: url("../../../../static/images/background.png");
+  background-color: white;
+  margin-top: 0;
+}
+
+#nr-footer-container {
+  background-color: #ffffffaa;
+  .ui.grid {
+    margin: 0;
+  }
+}
+
+.cover-page.masthead {
+  height: 80vh !important;
+}
+
+.ui.modal {
+  .modal-identifiers-field {
+    .ui.icon.left.labeled.button {
+      background-color: #eee8a9;
+    }
+    .ui.icon.left.labeled.button:hover {
+      background-color: #e5db70;
+    }
+  }
+}
+
+.inline-id-icon {
+  height: 1rem;
+  min-height: 16px;
+  width: auto;
+  vertical-align: text-bottom;
+}

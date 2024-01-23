@@ -1,0 +1,15 @@
+{%- set title = metadata.title ~ " | " ~ _("NR Document repository") %}
+
+{% extends "oarepo_ui/detail.html" %}
+
+{%- block head_links %}
+{{ super() }}
+{%- endblock %}
+
+{% block record_main_content %}
+    <Main metadata={metadata} ui={ui} extra_context={extra_context} record={record}/>
+{% endblock %}
+
+{% block record_sidebar %}
+    <Sidebar metadata={metadata} ui={ui} extra_context={extra_context} record={record}/>
+{% endblock record_sidebar %}

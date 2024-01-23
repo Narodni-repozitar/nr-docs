@@ -1,0 +1,98 @@
+plugins:
+  builder:
+    disable:
+    - script_sample_data
+  packages:
+  - oarepo-model-builder-requests
+  - oarepo-model-builder-drafts
+  - oarepo-model-builder-multilingual
+  - oarepo-model-builder-nr
+  - oarepo-model-builder-relations
+  - oarepo-model-builder-vocabularies
+  - oarepo-model-builder-drafts-files
+  - oarepo-model-builder-ui
+  - oarepo-model-builder-files
+  - oarepo-model-builder-cf
+profiles:
+- record
+- draft
+- files
+- draft_files
+record:
+  use:
+  - invenio
+  - ./documents-requests.yaml
+  - ./documents-custom_fields.yaml
+  - ./documents-harvest.yaml
+
+  draft: {}
+  draft-files: {}
+  extend: nr-documents#DocumentModel
+  permissions:
+    presets:
+#    - communities
+    - authenticated
+  files:
+    properties:
+      use:
+      - ./documents-files.yaml
+    use:
+    - invenio_files
+  module:
+    qualified: documents
+  pid:
+    type: dcmnts
+  properties:
+    metadata:
+      properties: {}
+  resource-config:
+    base-html-url: /docs/
+    base-url: /docs/
+
+  service-config:
+    base-classes:
+      - oarepo_runtime.services.config.service.PermissionsPresetsConfigMixin
+      - common.services.config.FilteredResultServiceConfig
+
+
+  published-service-config:
+    base-classes:
+      - common.services.published_service.NrDocumentsPublishedServiceConfig
+
+  json-serializer:
+    base-classes: [ common.services.filtered_json_ui_serializer.FilteredUIJSONSerializer ]
+
+  search-options:
+    base-classes:
+      - oarepo_runtime.services.search.I18nSearchOptions
+    sort-options-field: extra_sort_options
+    extra-code: |-2
+          sort_options = {{oarepo_runtime.services.search.ICUSortOptions}}("documents")
+  record:
+    extra-code: |-2
+          # extra custom fields for sorting by title
+          sort = {{common.services.sort.TitleICUSortField}}(source_field="metadata.title")
+      
+          title_search = {{oarepo_runtime.records.systemfields.icu.ICUSearchField}}(source_field="metadata.title")
+          creator_search = {{oarepo_runtime.records.systemfields.icu.ICUSearchField}}(source_field="metadata.creators.fullName")
+          contributor_search = {{oarepo_runtime.records.systemfields.icu.ICUSearchField}}(source_field="metadata.contributors.fullName")
+          abstract_search = {{oarepo_runtime.records.systemfields.icu.ICUSearchField}}(source_field="metadata.abstract.value")
+
+runtime-dependencies:
+  nr-metadata: 2.0.0
+  nr-oaipmh-harvesters: 1.0.0
+  nr-vocabularies: 2.0.8
+  oarepo-published-service: 1.0.2
+
+settings:
+  i18n-languages:
+  - cs
+  - en
+  supported-langs:
+    cs:
+      keyword:
+        type: keyword
+      text:
+        analyzer: czech
+    en:
+      text: {}
