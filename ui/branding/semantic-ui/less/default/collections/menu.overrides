@@ -6,7 +6,7 @@
   &.pagination {
     box-shadow: none;
   }
-  
+
   &.compact {
     .item.active {
       background-color: @primaryColor;
@@ -19,8 +19,8 @@
     }
 
     &.text > .item {
-        background: none;
-        border: none;
+      background: none;
+      border: none;
     }
   }
 
@@ -31,7 +31,6 @@
         flex-direction: column;
 
         > .item {
-
           &:first-child {
             border-radius: @borderRadius @borderRadius 0px 0px;
           }
@@ -43,7 +42,6 @@
           &:only-child {
             border-radius: @borderRadius;
           }
-
         }
       }
     }
@@ -141,7 +139,7 @@
     .item {
       padding: 0;
 
-      a:not(.ui.button){
+      a:not(.ui.button) {
         padding: 2rem 1rem;
 
         &:hover {
@@ -154,7 +152,6 @@
   }
 
   .item {
-
     &.logo {
       padding-right: 1rem;
     }
@@ -193,196 +190,7 @@
 
     #user-profile-menu.ui.menu {
       width: inherit;
-      background-color: rgb(255,255,255);
-    }
-  }
-}
-
-#header-search-bar {
-  width: 100%;
-
-  .ui.input {
-    width: auto !important;
-
-    & > input {
-      width: auto !important;
-    }
-
-  }
-}
-
-@media all and (max-width: @largestTabletScreen) {
-  #invenio-nav.ui.menu {
-
-    &.active #invenio-menu.ui.menu {
-      flex-direction: column;
-      position: fixed;
-      right: 0;
-      max-width: 25rem;
-      box-shadow: 0px 0px 7px rgba(0,0,0,0.2);
-      background-color: rgb(255,255,255);
-      height: 100vh;
-      z-index: 3;
-      padding: 2rem 1.5rem 1.5rem 1.5rem;
-      overflow-y: scroll;
-
-      .item {
-        width: 100%;
-        padding: .5rem 0;
-
-        &.search-bar {
-          margin-bottom: 1.5rem;
-        }
-
-        a:not(.ui.button) {
-          color: @textColor;
-          padding: 0;
-        }
-
-        &.search-bar {
-          width: 100%;
-
-          .ui.input {
-            width: 99% !important;
-          }
-        }
-
-        .icon.inverted {
-          color: @textColor;
-        }
-
-        &.right.menu {
-          padding: 0;
-          margin-left: unset !important;
-          flex-direction: column;
-          align-items: flex-start;
-
-          .sub-menu {
-            width: 100%;
-            margin: 2rem 0 0 0;
-
-            .ui.heading {
-              color: @textColor;
-            }
-
-            .item {
-              padding: .5rem 1rem;
-            }
-          }
-
-          form {
-            margin-top: 1rem;
-          }
-        }
-      }
-
-      #invenio-close-burger-menu-icon {
-        margin-left: auto;
-        margin-bottom: 2rem;
-
-        .navicon {
-          background: transparent;
-
-          &:before {
-            transform: rotate(-45deg);
-          }
-
-          &:after {
-            transform: rotate(45deg);
-          }
-        }
-      }
-    }
-
-
-    &:not(.active) {
-      .mobile-hidden {
-        display: none;
-      }
-    }
-  }
-}
-
-#additional-details {
-  .ui.top.attached.menu {
-
-    @media screen and (max-width: @largestTabletScreen) {
-      flex-wrap: wrap;
-    }
-
-    &:not(.tabular) {
-      @media screen and (max-width: @largestTabletScreen) {
-        border-bottom: 0;
-      }
-    }
-
-    .item {
-      flex: 1 0 auto;
-
-      @media screen and (max-width: @largestTabletScreen) {
-        border-bottom: 1px solid #D4D4D5;
-        font-weight: bold;
-      }
-    }
-  }
-}
-
-@media all and (min-width: @computerBreakpoint) {
-  #invenio-nav #invenio-burger-toggle,
-  #invenio-menu #invenio-close-burger-menu-icon {
-    display: none;
-  }
-}
-
-/* menu icon (Hamburger icon) */
-
-#invenio-burger-menu-icon,
-#invenio-close-burger-menu-icon {
-  .navicon {
-    background: @darkGray;
-    display: block;
-    height: 2px;
-    position: relative;
-    transition: background 0.2s ease-out;
-    width: 18px;
-
-    &:before,
-    &:after {
-      display: block;
-      background: @darkGray;
-      content: "";
-      height: 100%;
-      position: absolute;
-      transition: all 0.2s ease-out;
-      width: 100%;
-    }
-  }
-}
-
-#invenio-burger-toggle {
-  font-size: 20px;
-  position: absolute;
-  right: -1.5rem;
-  top: 50%;
-  transform: translateY(-50%);
-
-  #invenio-burger-menu-icon {
-    cursor: pointer;
-    display: inline-block;
-    float: right;
-    padding: 2rem 1.5rem;
-    position: relative;
-    user-select: none;
-
-    .navicon {
-
-      &::before {
-        top: 5px;
-      }
-
-      &:after {
-        top: -5px;
-      }
+      background-color: rgb(255, 255, 255);
     }
   }
 }
