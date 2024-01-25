@@ -3,33 +3,33 @@
 // url("~@less/fonts/your-font-name") or url("~@less/images/your-image-name")
 //
 
-// @font-face {
-//   font-family: "Roboto";
-//   font-style: normal;
-//   font-weight: 400;
-//   src: url("../../../fonts/Roboto-Regular.ttf") format("truetype");
-// }
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/Roboto-Regular.ttf") format("truetype");
+}
 
-// @font-face {
-//   font-family: "Roboto";
-//   font-style: italic;
-//   font-weight: 400;
-//   src: url("../../../fonts/Roboto-Italic.ttf") format("truetype");
-// }
+@font-face {
+  font-family: "Roboto";
+  font-style: italic;
+  font-weight: 400;
+  src: url("../fonts/Roboto-Italic.ttf") format("truetype");
+}
 
-// @font-face {
-//   font-family: "Roboto";
-//   font-style: normal;
-//   font-weight: 500;
-//   src: url("../../../fonts/Roboto-Medium.ttf") format("truetype");
-// }
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  src: url("../fonts/Roboto-Medium.ttf") format("truetype");
+}
 
-// @font-face {
-//   font-family: "Roboto";
-//   font-style: normal;
-//   font-weight: 700;
-//   src: url("../../../fonts/Roboto-Bold.ttf") format("truetype");
-// }
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  src: url("../fonts/Roboto-Bold.ttf") format("truetype");
+}
 
 /*
  * Global-wide CSS
@@ -93,13 +93,10 @@ body {
     box-shadow: 0px 1px 0px 0px rgba(0, 0, 0, 0.2);
   }
 
-  .outer-navbar,
-  #invenio-nav {
+  .outer-navbar {
     background-image: url("../../../static/images/background.png");
     background-color: white;
     background-size: 1024px;
-    background-repeat-x: repeat;
-    background-repeat-y: no-repeat;
     border: 0;
   }
 }
@@ -195,4 +192,9 @@ body {
   min-height: 16px;
   width: auto;
   vertical-align: text-bottom;
+}
+
+button:focus-visible,
+a:focus-visible {
+  outline: 3px solid @focusedFormBorderColor !important;
 }
