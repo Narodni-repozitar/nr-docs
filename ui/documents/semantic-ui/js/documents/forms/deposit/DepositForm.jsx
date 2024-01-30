@@ -401,7 +401,6 @@ export const DepositForm = () => {
                 <AccordionField
                   includesPaths={["metadata.fundingReferences"]}
                   label={i18next.t("Financing information")}
-                  defaultActiveIndex={2}
                 >
                   <Overridable
                     id="NrDocs.Deposit.FundersField.container"
@@ -415,7 +414,6 @@ export const DepositForm = () => {
                 <AccordionField
                   includesPaths={["metadata.relatedItems"]}
                   label={i18next.t("Related items")}
-                  defaultActiveIndex={3}
                 >
                   <Overridable
                     id="NrDocs.Deposit.RelatedItemsField.container"
@@ -438,7 +436,7 @@ export const DepositForm = () => {
                 <AccordionField
                   includesPaths={["metadata.events"]}
                   label={i18next.t("Events")}
-                  defaultActiveIndex={4}
+                  activeIndex={-1}
                 >
                   <Overridable
                     id="NrDocs.Deposit.EventsField.container"

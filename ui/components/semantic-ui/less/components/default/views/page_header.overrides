@@ -1,0 +1,9 @@
+.ui.header-component {
+  // background-image: url("../../../../../static/images/background.png");
+
+  .outer-navbar {
+    background-color: #ffffffaa;
+    background-size: 1024px;
+    border: 0;
+  }
+}
