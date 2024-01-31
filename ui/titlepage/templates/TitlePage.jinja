@@ -29,6 +29,15 @@
                         {%- block frontpage_search %}
                                 {%- block frontpage_title %}
                                     <div class="ui text container centered">
+                                        <div class="ui header">
+                                            {%- if config.THEME_FRONTPAGE_LOGO %}
+                                                <img class="ui medium image frontpage-logo"
+                                                    src="{{ url_for('static', filename=config.THEME_FRONTPAGE_LOGO) }}"
+                                                    alt="{{ _(config.THEME_SITENAME) }}"/>
+                                            {%- else %}
+                                                <a class="logo" href="/">{{ _(config.THEME_SITENAME) }}</a>
+                                            {%- endif %}
+                                        </div>
                                         <div class="ui label purple">
                                             <h1 class="ui header  medium">{{ _(config.THEME_FRONTPAGE_TITLE) }}</h1>
                                         </div>
