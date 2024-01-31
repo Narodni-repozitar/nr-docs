@@ -64,17 +64,6 @@ export const DepositForm = () => {
                   <FormFeedback />
                 </Overridable>
               </Sticky>
-              <Overridable id="NrDocs.Deposit.AccordionFieldFiles.container">
-                <AccordionField
-                  includesPaths={["files.enabled"]}
-                  active
-                  label={i18next.t("Files")}
-                >
-                  <Overridable id="NrDocs.Deposit.FileUploader.container">
-                    <FileUploader recordFiles={recordFiles} />
-                  </Overridable>
-                </AccordionField>
-              </Overridable>
               <Overridable id="NrDocs.Deposit.AccordionFieldBasicInformation.container">
                 <AccordionField
                   includesPaths={[
@@ -435,7 +424,6 @@ export const DepositForm = () => {
                 <AccordionField
                   includesPaths={["metadata.events"]}
                   label={i18next.t("Events")}
-                  activeIndex={-1}
                 >
                   <Overridable
                     id="NrDocs.Deposit.EventsField.container"
@@ -445,16 +433,17 @@ export const DepositForm = () => {
                   </Overridable>
                 </AccordionField>
               </Overridable>
-              {/* <Overridable id="NrDocs.Deposit.AccordionFieldFiles.container">
+              <Overridable id="NrDocs.Deposit.AccordionFieldFiles.container">
                 <AccordionField
                   includesPaths={["files.enabled"]}
+                  active
                   label={i18next.t("Files")}
                 >
                   <Overridable id="NrDocs.Deposit.FileUploader.container">
                     <FileUploader recordFiles={recordFiles} />
                   </Overridable>
                 </AccordionField>
-              </Overridable> */}
+              </Overridable>
               {process.env.NODE_ENV === "development" && <FormikStateLogger />}
             </Grid.Column>
           </Ref>
