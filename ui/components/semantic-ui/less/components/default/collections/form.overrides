@@ -158,6 +158,7 @@
   #main-content {
     .ui.icon.left.labeled.button {
       background-color: @arrayAddButtonFieldColor;
+      color: black;
     }
     .ui.icon.left.labeled.button:hover {
       background-color: @arrayAddButtonFieldHoverColor;
@@ -166,6 +167,40 @@
 }
 
 .related-items-modal {
+  label.field-label-class.invenio-field-label {
+    font-size: 1.25rem !important;
+  }
+  .field {
+    margin-bottom: 2rem !important;
+  }
+
+  .content {
+    .ui.icon.left.labeled.button {
+      background-color: @arrayAddButtonFieldColor;
+    }
+    .ui.icon.left.labeled.button:hover {
+      background-color: @arrayAddButtonFieldHoverColor;
+    }
+    label.helptext {
+      font-weight: normal;
+      font-size: 1rem;
+      padding-left: 3px;
+    }
+    .related-items-identifiers {
+      .field {
+        margin-bottom: 0 !important;
+      }
+    }
+    .fields.invenio-group-field {
+      margin-bottom: 0 !important;
+      @media (max-width: 1200px) {
+        flex-wrap: wrap;
+      }
+    }
+  }
+}
+
+.form-modal {
   label.field-label-class.invenio-field-label {
     font-size: 1.25rem !important;
   }
