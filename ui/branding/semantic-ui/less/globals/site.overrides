@@ -66,38 +66,32 @@ body {
 }
 
 .backdrop {
+  background: rgba(255, 255, 255, 0.5);
+  background-image: url("~@less/images/background.png");
+  background-repeat: no-repeat;
   height: 100%;
-  background: rgb(224, 248, 255);
-  background: linear-gradient(
-    60deg,
-    #ebf4ff 0%,
-    rgba(240, 253, 255, 1) 30%,
-    rgba(240, 253, 255, 1) 60%,
-    #ecffe4
-  );
 
   &.frontpage-header {
     background: none;
   }
+  .ui.grid {
+    margin: 0;
+  }
 }
-
-// .ui.header-component {
-//   background-image: url("../../../static/images/background.png");
-
-//   .nr-logo {
-//     margin-inline-start: -2rem;
-//     padding: 1rem 2rem;
-//     background: white;
-//     border-radius: 10px;
-//     box-shadow: 0px 1px 0px 0px rgba(0, 0, 0, 0.2);
-//   }
-
-//   .outer-navbar {
-//     background-color: #ffffffaa;
-//     background-size: 1024px;
-//     border: 0;
-//   }
-// }
+.backdrop-filter {
+  height: 100%;
+  width: 100%;
+  background: #ffffffaa;
+  display: flex;
+  justify-content: center;
+}
+.content-container {
+  max-width: calc(11 / 16 * 100%);
+  margin-top: 6rem;
+}
+.invenio-page-body {
+  height: 100%;
+}
 
 .borderless {
   border: none !important;
@@ -149,10 +143,6 @@ body {
   border-top: 1px solid @green;
 }
 
-#frontpage-search-bar {
-  background: none;
-}
-
 .frontpage-logo {
   margin-right: 0 !important;
 }
@@ -169,8 +159,8 @@ body {
   }
 }
 
-.cover-page.masthead {
-  height: 80vh !important;
+#frontpage-search-bar {
+  background: transparent;
 }
 
 .ui.modal {
