@@ -90,7 +90,7 @@ body {
   margin-top: 6rem;
 }
 .invenio-page-body {
-  // height: 100%;
+  height: 100%;
 }
 
 .borderless {

@@ -6,6 +6,10 @@ import {
   FormFeedback,
   FormikStateLogger,
   EDTFSingleDatePicker,
+  PreviewButton,
+  SaveButton,
+  DeleteButton,
+  ValidateButton,
 } from "@js/oarepo_ui";
 import { LocalVocabularySelectField } from "@js/oarepo_vocabularies";
 import { AccordionField, FieldLabel, TextField } from "react-invenio-forms";
@@ -16,20 +20,15 @@ import {
   AdditionalTitlesField,
   FundersField,
   ExternalLocationField,
-  ValidateButton,
   SubjectsField,
   SeriesField,
   EventsField,
   IdentifiersField,
-  PreviewButton,
-  SaveButton,
-  DeleteButtonComponent,
-  PublishButtonComponent,
   CreatibutorsField,
   RelatedItemsField,
   objectIdentifiersSchema,
-  systemIdentifiersSchema,
   FileUploader,
+  PublishButtonComponent,
 } from "../components/";
 import Overridable from "react-overridable";
 import { i18next } from "@translations/i18next";
@@ -499,7 +498,7 @@ export const DepositForm = () => {
                         </Grid.Column>
                         {/* TODO:see if there is a better way to provide URL here, seems that UI links are empty in the form */}
                         <Grid.Column width={16} className="pt-10">
-                          <DeleteButtonComponent redirectUrl="/docs/" />
+                          <DeleteButton redirectUrl="/docs/" />
                         </Grid.Column>
                       </Grid>
                     </Card.Content>
