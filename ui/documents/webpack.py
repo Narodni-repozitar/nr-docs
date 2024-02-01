@@ -9,8 +9,6 @@ theme = WebpackThemeBundle(
             entry={
                 "documents_search": "./js/documents/search/index.js",
                 "documents_deposit_form": "./js/documents/forms/deposit/index.js",
-                "test-css": "./js/documents/test.css",
-
             },
             dependencies={
                 "react-searchkit": "^2.0.0",
