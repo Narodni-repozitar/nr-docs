@@ -69,6 +69,7 @@ body {
   background: rgba(255, 255, 255, 0.5);
   background-image: url("~@less/images/background.png");
   background-repeat: no-repeat;
+  background-size: cover;
   height: 100%;
 
   &.frontpage-header {
