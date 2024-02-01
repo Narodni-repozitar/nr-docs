@@ -46,7 +46,7 @@ from nr_metadata.schema.identifiers import (
     NRObjectIdentifierSchema,
     NRSystemIdentifierSchema,
 )
-from oarepo_requests.services.schemas import NoneReceiverGenericRequestSchema
+from oarepo_requests.services.schema import NoneReceiverGenericRequestSchema
 from oarepo_runtime.services.schema.marshmallow import BaseRecordSchema, DictOnlySchema
 from oarepo_vocabularies.services.schema import HierarchySchema
 
