@@ -56,6 +56,7 @@ class DocumentsUISchema(InvenioUISchema):
 
     syntheticFields = ma_fields.Nested(lambda: SyntheticFieldsUISchema())
 
+    metadata = ma_fields.Nested(lambda: DocumentsMetadataUISchema())
 
 class DocumentsMetadataUISchema(NRDocumentMetadataUISchema):
     class Meta:

@@ -30,6 +30,7 @@ import {
   objectIdentifiersSchema,
   systemIdentifiersSchema,
   FileUploader,
+  testData,
 } from "../components/";
 import Overridable from "react-overridable";
 import { i18next } from "@translations/i18next";
@@ -40,6 +41,7 @@ export const DepositForm = () => {
   const editMode = _has(formConfig, "updateUrl");
   const sidebarRef = useRef(null);
   const formFeedbackRef = useRef(null);
+  record.metadata.subjects = testData;
   return (
     <Container>
       <BaseForm
