@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useMemo, useCallback } from "react";
 import PropTypes from "prop-types";
 import { Form, Icon, Divider, Button } from "semantic-ui-react";
 import { i18next } from "@translations/i18next";
@@ -10,33 +10,47 @@ import { FieldLabel } from "react-invenio-forms";
 export const SubjectsField = ({ fieldPath }) => {
   const { values, setFieldValue } = useFormikContext();
   const subjects = getIn(values, fieldPath, []);
-  const externalSubjects = subjects.filter(
-    (subject) => subject?.subjectScheme !== "keyword"
+  const externalSubjects = useMemo(
+    () => subjects.filter((subject) => subject?.subjectScheme !== "keyword"),
+    [subjects]
   );
-  const regularSubjects = _difference(subjects, externalSubjects).map(
-    (subject) => ({ ...subject, id: crypto.randomUUID() })
+
+  const regularSubjects = useMemo(
+    () =>
+      _difference(subjects, externalSubjects).map((subject) => ({
+        ...subject,
+        id: crypto.randomUUID(),
+      })),
+    [subjects, externalSubjects]
   );
-  const handleSubjectRemoval = (id, lang) => {
-    const newRegularSubjects = regularSubjects.map((subject) => {
-      if (subject.id === id) {
-        subject.subject = subject.subject.filter((s) => s.lang !== lang);
+  const handleSubjectRemoval = useCallback(
+    (id, lang) => {
+      const newRegularSubjects = regularSubjects.map((subject) => {
+        if (subject.id === id) {
+          subject.subject = subject.subject.filter((s) => s.lang !== lang);
+          return subject;
+        }
         return subject;
-      }
-      return subject;
-    });
-    setFieldValue(fieldPath, [
-      ...externalSubjects,
-      ...newRegularSubjects
-        .filter((subject) => subject?.subject?.length > 0)
-        .map((subject) => {
-          const { id, ...subjectWithoutId } = subject;
-          return subjectWithoutId;
-        }),
-    ]);
-  };
-  const handleSubjectAdd = (newSubject) => {
-    setFieldValue(fieldPath, [...subjects, newSubject]);
-  };
+      });
+      setFieldValue(fieldPath, [
+        ...externalSubjects,
+        ...newRegularSubjects
+          .filter((subject) => subject?.subject?.length > 0)
+          .map((subject) => {
+            const { id, ...subjectWithoutId } = subject;
+            return subjectWithoutId;
+          }),
+      ]);
+    },
+    [fieldPath, externalSubjects, regularSubjects, setFieldValue]
+  );
+
+  const handleSubjectAdd = useCallback(
+    (newSubject) => {
+      setFieldValue(fieldPath, [...subjects, newSubject]);
+    },
+    [fieldPath, subjects, setFieldValue]
+  );
   return (
     <Form.Field className="ui subjects-field">
       <FieldLabel

@@ -58,7 +58,7 @@ export const SubjectsModal = ({ trigger, handleSubjectAdd }) => {
 
   return (
     <Formik
-      initialValues={{}}
+      initialValues={{ keywords: [] }}
       onSubmit={onSubmit}
       enableReinitialize
       validationSchema={SubjectsValidationSchema}
