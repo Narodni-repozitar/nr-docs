@@ -1,12 +1,22 @@
 import React from "react";
-import { Button, Form, Grid, Header, Modal } from "semantic-ui-react";
+import { Button, Form, Grid, Modal, Popup, Icon } from "semantic-ui-react";
 import { Formik } from "formik";
 import * as Yup from "yup";
 import { i18next } from "@translations/i18next";
 import PropTypes from "prop-types";
-import { MultilingualTextInput, ArrayFieldItem } from "@js/oarepo_ui";
+import { MultilingualTextInput } from "@js/oarepo_ui";
+import { requiredMessage } from "../../deposit/NRDocumentValidationSchema";
 
-export const SubjectsModal = ({ trigger, handleSubjectAdd, fieldPath }) => {
+const SubjectsValidationSchema = Yup.object({
+  keywords: Yup.array().of(
+    Yup.object().shape({
+      lang: Yup.string().required(requiredMessage).label(i18next.t("Language")),
+      value: Yup.string().required(requiredMessage).label(i18next.t("Keyword")),
+    })
+  ),
+});
+
+export const SubjectsModal = ({ trigger, handleSubjectAdd }) => {
   const [open, setOpen] = React.useState(false);
   const [saveAndContinueLabel, setSaveAndContinueLabel] = React.useState(
     i18next.t("Save and add another")
@@ -29,7 +39,6 @@ export const SubjectsModal = ({ trigger, handleSubjectAdd, fieldPath }) => {
 
   const onSubmit = (values, formikBag) => {
     const newSubject = { subjectScheme: "keyword", subject: values.keywords };
-    console.log(values);
     handleSubjectAdd(newSubject);
     formikBag.setSubmitting(false);
     formikBag.resetForm();
@@ -52,7 +61,7 @@ export const SubjectsModal = ({ trigger, handleSubjectAdd, fieldPath }) => {
       initialValues={{}}
       onSubmit={onSubmit}
       enableReinitialize
-      //   validationSchema={}
+      validationSchema={SubjectsValidationSchema}
       validateOnChange={false}
       validateOnBlur={false}
     >
@@ -74,9 +83,18 @@ export const SubjectsModal = ({ trigger, handleSubjectAdd, fieldPath }) => {
           <Modal.Header as="h6">
             <Grid>
               <Grid.Column floated="left" width={8}>
-                <Header className="rel-pt-1 rel-pb-1" as="h2">
-                  {i18next.t("Add related item")}
-                </Header>
+                <span>{i18next.t("Add keywords")}</span>
+                <Popup
+                  content={i18next.t(
+                    "Write keywords describing the resource, always choose a language."
+                  )}
+                  trigger={
+                    <Icon
+                      name="question circle outline"
+                      style={{ fontSize: "1rem", paddingLeft: "0.5rem" }}
+                    ></Icon>
+                  }
+                />
               </Grid.Column>
             </Grid>
           </Modal.Header>
@@ -84,7 +102,7 @@ export const SubjectsModal = ({ trigger, handleSubjectAdd, fieldPath }) => {
             <Form>
               <Form.Field style={{ marginTop: 0 }} width={16}>
                 <MultilingualTextInput
-                  fieldPath={`keywords`}
+                  fieldPath="keywords"
                   lngFieldWidth={5}
                   textFieldLabel={i18next.t("Subject")}
                   required
@@ -136,8 +154,5 @@ export const SubjectsModal = ({ trigger, handleSubjectAdd, fieldPath }) => {
 
 SubjectsModal.propTypes = {
   trigger: PropTypes.node,
-};
-
-SubjectsModal.defaultProps = {
-  initialRelatedItem: {},
+  handleSubjectAdd: PropTypes.func.isRequired,
 };
