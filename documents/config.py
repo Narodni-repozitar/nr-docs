@@ -1,3 +1,5 @@
+from oarepo_runtime.records.entity_resolvers import UserResolver
+
 from documents.records.api import DocumentsDraft, DocumentsRecord
 from documents.records.requests.delete_record.types import DeleteRecordRequestType
 from documents.records.requests.publish_draft.types import PublishDraftRequestType
@@ -25,7 +27,6 @@ from documents.services.files.service import (
 )
 from documents.services.records.config import DocumentsServiceConfig
 from documents.services.records.service import DocumentsService
-from oarepo_runtime.records.entity_resolvers import UserResolver
 
 DOCUMENTS_RECORD_RESOURCE_CONFIG = DocumentsResourceConfig
 
