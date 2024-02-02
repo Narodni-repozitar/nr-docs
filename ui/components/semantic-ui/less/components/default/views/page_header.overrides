@@ -1,4 +1,4 @@
-.ui.header-component {
+.ui.page-header {
   // background-image: url("~@less/images/background.png");
 
   .outer-navbar {

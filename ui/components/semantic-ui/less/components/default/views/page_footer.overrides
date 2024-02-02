@@ -1,4 +1,4 @@
-.ui.footer-component {
+.ui.page-footer {
   border-top: 1px solid @green;
   a {
     color: white;
