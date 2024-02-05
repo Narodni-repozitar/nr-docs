@@ -33,45 +33,49 @@ Sample output:
 /* the variables defined later in this file take precedence over the ones defined earlier */
 
 /* Default site.variables */
-@import '@{themesFolder}/default/globals/site.variables';
+@import "@{themesFolder}/default/globals/site.variables";
 
 /* Component's site.variables */
-@import (optional) '@{themesFolder}/@{theme}/globals/site.variables';
+@import (optional) "@{themesFolder}/@{theme}/globals/site.variables";
 
 /* invenio-theme site.variables */
-@import (optional) 'themes/invenio/globals/site.variables';
+@import (optional) "themes/invenio/globals/site.variables";
 
 /* Site's global site.variables override just global variables */
-@import (optional) '@{siteFolder}/globals/site.variables';
-
+@import (optional) "@{siteFolder}/globals/site.variables";
 
 /*-------------------
  Component Variables
 ---------------------*/
 
 /* Default theme for a component */
-@import (optional) '@{themesFolder}/default/@{type}s/@{element}.variables';
+@import (optional) "@{themesFolder}/default/@{type}s/@{element}.variables";
 
 /* Packaged Theme for a component */
 @import (optional, multiple)
-  '@{themesFolder}/@{theme}/@{type}s/@{element}.variables';
+  "@{themesFolder}/@{theme}/@{type}s/@{element}.variables";
 
 /* Invenio-theme Theme for a component */
-@import (optional, multiple) 'themes/invenio/@{type}s/@{element}.variables';
+@import (optional, multiple) "themes/invenio/@{type}s/@{element}.variables";
+
+@import (optional, multiple)
+  "@{siteFolder}/oarepo_ui/themes/@{theme}/@{type}s/@{element}.variables";
 
 /* Components folder inside ui */
-@import (optional, multiple) '@{siteFolder}/components/default/@{type}s/@{element}.variables';
+@import (optional, multiple)
+  "@{siteFolder}/components/default/@{type}s/@{element}.variables";
 
 /* Components folder inside ui */
-@import (optional, multiple) '@{siteFolder}/components/@{theme}/@{type}s/@{element}.variables';
+@import (optional, multiple)
+  "@{siteFolder}/components/@{theme}/@{type}s/@{element}.variables";
 
 /* Site default theme for a component */
-@import (optional, multiple) '@{siteFolder}/default/@{type}s/@{element}.variables';
+@import (optional, multiple)
+  "@{siteFolder}/default/@{type}s/@{element}.variables";
 
 /* Site packaged theme for a component */
-@import (optional, multiple) '@{siteFolder}/@{theme}/@{type}s/@{element}.variables';
-
-
+@import (optional, multiple)
+  "@{siteFolder}/@{theme}/@{type}s/@{element}.variables";
 
 /*******************************
              Mix-ins
@@ -83,7 +87,7 @@ Sample output:
 
 .loadFonts() when (@importGoogleFonts) {
   @import (css)
-    url('@{googleProtocol}fonts.googleapis.com/css?family=@{googleFontRequest}');
+    url("@{googleProtocol}fonts.googleapis.com/css?family=@{googleFontRequest}");
 }
 
 /*------------------
@@ -93,14 +97,23 @@ Sample output:
 .loadUIOverrides() {
   /* semantic-ui-less css styles for component */
   @import (optional, multiple)
-    '@{themesFolder}/@{theme}/@{type}s/@{element}.overrides';
+    "@{themesFolder}/@{theme}/@{type}s/@{element}.overrides";
 
   /* invenio global css styles */
-  @import (optional, multiple) 'themes/invenio/@{type}s/@{element}.overrides';
+  @import (optional, multiple) "themes/invenio/@{type}s/@{element}.overrides";
+
+  @import (optional, multiple)
+    "@{siteFolder}/oarepo_ui/themes/default/globals/site.overrides";
+  @import (optional, multiple) "@{siteFolder}/globals/site.overrides";
+
+  @import (optional, multiple)
+    "@{siteFolder}/oarepo_ui/themes/@{theme}/@{type}s/@{element}.overrides";
 
   /* components overrides theme css style */
-  @import (optional, multiple) '@{siteFolder}/components/@{theme}/@{type}s/@{element}.overrides';
+  @import (optional, multiple)
+    "@{siteFolder}/components/@{theme}/@{type}s/@{element}.overrides";
 
   /* site theme css style */
-  @import (optional, multiple) '@{siteFolder}/@{theme}/@{type}s/@{element}.overrides';
+  @import (optional, multiple)
+    "@{siteFolder}/@{theme}/@{type}s/@{element}.overrides";
 }

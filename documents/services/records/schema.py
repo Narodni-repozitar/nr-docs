@@ -116,6 +116,8 @@ class DocumentsSchema(NRDocumentRecordSchema):
     files = ma.fields.Nested(
         lambda: FilesOptionsSchema(), load_default={"enabled": True}
     )
+    metadata = ma_fields.Nested(lambda: DocumentsMetadataSchema())
+
 
     # todo this needs to be generated for [default preview] to work
     def get_attribute(self, obj, attr, default):
