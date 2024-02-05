@@ -16,8 +16,8 @@ i18n:
 models:
 - api_prefix: documents
   base_model: documents
-  features: [drafts, vocabularies, nr_vocabularies, communities, multilingual, requests,
-    relations, files, custom_fields, tests]
+  features: [files, custom_fields, requests, relations, vocabularies, drafts, communities,
+    multilingual, tests, nr_vocabularies]
   model_description: Text documents of any kind
   model_name: documents
   model_package: documents
@@ -35,3 +35,8 @@ uis:
   model: documents
   name: documents
   ui_serializer_class: documents.resources.records.ui.DocumentsUIJSONSerializer
+- api_service: null
+  endpoint: /dashboard
+  model: null
+  name: dashboard
+  ui_serializer_class: null
