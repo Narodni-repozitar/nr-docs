@@ -1,6 +1,6 @@
 import React, { useCallback } from "react";
 import PropTypes from "prop-types";
-import { Form, Icon } from "semantic-ui-react";
+import { Form, Icon, Button } from "semantic-ui-react";
 import { i18next } from "@translations/i18next";
 import { SubjectsModal } from "./SubjectsModal";
 import { useFormikContext, getIn } from "formik";
@@ -63,21 +63,23 @@ export const SubjectsField = ({ fieldPath }) => {
         externalSubjects={externalSubjects}
         handleSubjectRemoval={handleSubjectRemoval}
       />
-      <SubjectsModal
-        handleSubjectAdd={handleSubjectAdd}
-        fieldPath={fieldPath}
-        trigger={
-          <Form.Button
-            className="add-keywords-btn"
-            type="button"
-            icon
-            labelPosition="left"
-          >
-            <Icon name="add" />
-            {i18next.t("Add keywords")}
-          </Form.Button>
-        }
-      />
+      <div>
+        <SubjectsModal
+          handleSubjectAdd={handleSubjectAdd}
+          fieldPath={fieldPath}
+          trigger={
+            <Button
+              className="add-keywords-btn"
+              type="button"
+              icon
+              labelPosition="left"
+            >
+              <Icon name="add" />
+              {i18next.t("Add keywords")}
+            </Button>
+          }
+        />
+      </div>
     </Form.Field>
   );
 };

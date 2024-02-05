@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Divider, Icon, Button } from "semantic-ui-react";
+import { Divider, Icon, Button, Label } from "semantic-ui-react";
 import { i18next } from "@translations/i18next";
 
 export const KeywordSubjects = ({
@@ -18,20 +18,18 @@ export const KeywordSubjects = ({
         )}
         {keywordSubjects.map(({ subject, id }, index) => (
           <React.Fragment key={id}>
-            <span>
-              {subject.map((s, i) => (
-                <span className="keyword-subjects label" key={i}>
-                  {s.lang}: {s.value}
-                  <Button
-                    className="keyword-subjects-remove-btn"
-                    onClick={() => handleSubjectRemoval(id, s.lang)}
-                    type="button"
-                  >
-                    <Icon name="close" />
-                  </Button>
-                </span>
-              ))}
-            </span>
+            {subject.map((s, i) => (
+              <Label className="keyword-subjects label" key={i}>
+                {s.lang}: {s.value}
+                <Button
+                  className="keyword-subjects-remove-btn"
+                  onClick={() => handleSubjectRemoval(id, s.lang)}
+                  type="button"
+                >
+                  <Icon name="close" />
+                </Button>
+              </Label>
+            ))}
             <span className="keyword-subject-divider">{"|"}</span>
           </React.Fragment>
         ))}
