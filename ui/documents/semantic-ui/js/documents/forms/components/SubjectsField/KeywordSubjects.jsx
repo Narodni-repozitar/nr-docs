@@ -30,7 +30,9 @@ export const KeywordSubjects = ({
                 </Button>
               </Label>
             ))}
-            <span className="keyword-subject-divider">{"|"}</span>
+            {index + 1 !== keywordSubjects.length && (
+              <Label className="keyword-subject-divider">|</Label>
+            )}
           </React.Fragment>
         ))}
       </React.Fragment>

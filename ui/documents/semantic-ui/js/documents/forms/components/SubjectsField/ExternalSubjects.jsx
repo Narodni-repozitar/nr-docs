@@ -1,6 +1,6 @@
 import React from "react";
 import { i18next } from "@translations/i18next";
-import { Divider } from "semantic-ui-react";
+import { Divider, Label } from "semantic-ui-react";
 import PropTypes from "prop-types";
 
 export const ExternalSubjects = ({ externalSubjects }) => {
@@ -11,13 +11,11 @@ export const ExternalSubjects = ({ externalSubjects }) => {
           {i18next.t("External subjects (psh, czenas ...)")}
         </Divider>
         {externalSubjects.map(({ subject, valueURI }, i) => (
-          <React.Fragment key={i}>
+          <Label key={i} className="external-subjects label">
             <a href={valueURI}>
-              <span className="external-subjects label">
-                {subject.map((s) => `${s.lang}: ${s.value}  `)}
-              </span>
+              {subject.map((s) => `${s.lang}: ${s.value}  `)}
             </a>
-          </React.Fragment>
+          </Label>
         ))}
       </React.Fragment>
     )
