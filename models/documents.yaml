@@ -19,15 +19,14 @@ profiles:
 - files
 - draft_files
 record:
+  extend: nr-documents#DocumentModel
   use:
-  - invenio
   - ./documents-requests.yaml
   - ./documents-custom_fields.yaml
   - ./documents-harvest.yaml
 
   draft: {}
   draft-files: {}
-  extend: nr-documents#DocumentModel
   permissions:
     presets:
 #    - communities

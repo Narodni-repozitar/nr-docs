@@ -65,7 +65,7 @@
                 }
             ],
             "base-classes": [
-                "oarepo_runtime.services.schema.marshmallow.BaseRecordSchema"
+                "nr_metadata.documents.services.records.schema.NRDocumentRecordSchema"
             ],
             "generate": true,
             "module": "documents.services.records.schema",
@@ -123,7 +123,7 @@
                     }
                 ],
                 "base-classes": [
-                    "oarepo_runtime.services.schema.ui.InvenioUISchema"
+                    "nr_metadata.documents.services.records.ui_schema.NRDocumentRecordUISchema"
                 ],
                 "generate": true,
                 "module": "documents.services.records.ui_schema",

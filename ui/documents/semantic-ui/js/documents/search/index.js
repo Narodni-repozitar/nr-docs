@@ -12,10 +12,10 @@ import {
   SearchAppSearchbarContainer,
   SearchFiltersToggleElement,
   SearchAppSort,
+  SearchappSearchbarElement,
 } from "@js/oarepo_ui/search";
 import {
   EmptyResultsElement,
-  MultipleSearchBarElement,
   ResultsGridItemWithState,
   ResultsListItemWithState,
 } from "./components";
@@ -51,7 +51,7 @@ export const defaultComponents = {
   [`${appName}.SearchApp.resultOptions`]: SearchAppResultOptions,
   [`${appName}.SearchApp.results`]: SearchAppResults,
   [`${appName}.SearchFilters.Toggle.element`]: SearchFiltersToggleElement,
-  [`${appName}.SearchBar.element`]: MultipleSearchBarElement,
+  [`${appName}.SearchBar.element`]: SearchappSearchbarElement,
 };
 
 createSearchAppInit(

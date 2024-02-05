@@ -6,8 +6,11 @@ import { TextField, FieldLabel } from "react-invenio-forms";
 import PropTypes from "prop-types";
 
 export const PublishButtonComponent = memo(({ modalMessage, modalHeader }) => {
-  const { isModalOpen, handleCloseModal, handleOpenModal } =
-    useConfirmationModal();
+  const {
+    isOpen: isModalOpen,
+    close: closeModal,
+    open: openModal,
+  } = useConfirmationModal();
   const { isSubmitting, publish, isPublishing } = useDepositApiClient();
 
   return (
@@ -15,7 +18,7 @@ export const PublishButtonComponent = memo(({ modalMessage, modalHeader }) => {
       <Button
         name="publish"
         color="green"
-        onClick={handleOpenModal}
+        onClick={openModal}
         icon="upload"
         labelPosition="left"
         content={i18next.t("Publish")}
@@ -27,7 +30,7 @@ export const PublishButtonComponent = memo(({ modalMessage, modalHeader }) => {
       <Modal
         className="form-modal"
         open={isModalOpen}
-        onClose={handleCloseModal}
+        onClose={closeModal}
         size="small"
         closeIcon
         closeOnDimmerClick={false}
@@ -58,7 +61,7 @@ export const PublishButtonComponent = memo(({ modalMessage, modalHeader }) => {
           </Message>
         </Modal.Content>
         <Modal.Actions>
-          <Button onClick={handleCloseModal} floated="left">
+          <Button onClick={closeModal} floated="left">
             {i18next.t("Cancel")}
           </Button>
           <Button
@@ -68,7 +71,7 @@ export const PublishButtonComponent = memo(({ modalMessage, modalHeader }) => {
             color="green"
             onClick={() => {
               publish();
-              handleCloseModal();
+              closeModal();
             }}
             icon="upload"
             labelPosition="left"

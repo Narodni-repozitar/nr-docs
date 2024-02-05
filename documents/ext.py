@@ -5,6 +5,7 @@ from documents import config
 
 
 class DocumentsExt:
+
     def __init__(self, app=None):
 
         if app:

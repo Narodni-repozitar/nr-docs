@@ -5,7 +5,6 @@ import { i18next } from "@translations/i18next";
 export const MultipleSearchBarElement = ({ queryString, onInputChange }) => {
   const headerSearchbar = document.getElementById("header-search-bar");
   const searchbarOptions = JSON.parse(headerSearchbar.dataset.options);
-
   return (
     <MultipleOptionsSearchBarRSK
       options={searchbarOptions}
