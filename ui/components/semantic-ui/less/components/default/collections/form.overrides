@@ -82,30 +82,32 @@
       }
     }
 
-    .subjects.invenio-group-field.fields {
-      label:first-of-type {
-        white-space: nowrap;
+    .ui.subjects-field {
+      .label {
+        font-size: 1.1rem;
+        margin-right: 1rem;
       }
-      .invenio-group-field.fields {
+      .label.keyword-subjects {
+        text-wrap: nowrap;
+        border: 1px solid blue;
+        border-radius: 5px;
+        padding: 0.2rem;
+        line-height: 2.5rem;
+      }
+      .keyword-subjects-remove-btn {
         background-color: transparent;
-        margin-bottom: 1rem;
-
-        @media (max-width: 768px) {
-          .field {
-            padding: 0;
-            margin: 0;
-          }
-        }
+        padding: 0;
+        padding-left: inherit;
       }
-
-      .ui.icon.left.labeled.button {
-        margin-top: 1.35rem;
+      .keyword-subject-divider {
+        margin-right: 1rem;
       }
-    }
-
-    .subjects.invenio-group-field.fields > .field:first-child {
-      @media (min-width: 1200px) {
-        max-width: 20%;
+      .add-keywords-btn {
+        margin-top: 1rem;
+      }
+      .subjects-help-icon {
+        font-size: 1rem;
+        padding-left: 0.5rem;
       }
     }
 

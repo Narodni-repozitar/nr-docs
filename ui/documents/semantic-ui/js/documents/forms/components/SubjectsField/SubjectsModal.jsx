@@ -90,6 +90,7 @@ export const SubjectsModal = ({ trigger, handleSubjectAdd }) => {
                   )}
                   trigger={
                     <Icon
+                      className="subjects-help-icon"
                       name="question circle outline"
                       style={{ fontSize: "1rem", paddingLeft: "0.5rem" }}
                     ></Icon>
@@ -100,7 +101,7 @@ export const SubjectsModal = ({ trigger, handleSubjectAdd }) => {
           </Modal.Header>
           <Modal.Content>
             <Form>
-              <Form.Field style={{ marginTop: 0 }} width={16}>
+              <Form.Field width={16}>
                 <MultilingualTextInput
                   fieldPath="keywords"
                   lngFieldWidth={3}
