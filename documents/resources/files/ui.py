@@ -1,10 +1,11 @@
+from flask_resources import BaseListSchema
+from flask_resources.serializers import JSONSerializer
+from oarepo_runtime.resources import LocalizedUIJSONSerializer
+
 from documents.services.files.ui_schema import (
     DocumentsFileDraftUISchema,
     DocumentsFileUISchema,
 )
-from flask_resources import BaseListSchema
-from flask_resources.serializers import JSONSerializer
-from oarepo_runtime.resources import LocalizedUIJSONSerializer
 
 
 class DocumentsFileUIJSONSerializer(LocalizedUIJSONSerializer):
