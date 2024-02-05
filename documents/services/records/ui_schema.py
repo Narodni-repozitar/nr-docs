@@ -32,6 +32,7 @@ from nr_metadata.common.services.records.ui_schema_datatypes import (
 from nr_metadata.documents.services.records.ui_schema import (
     NRDegreeGrantorUISchema,
     NRDocumentMetadataUISchema,
+    NRDocumentRecordUISchema,
     NRDocumentSyntheticFieldsUISchema,
     NRThesisUISchema,
 )
@@ -41,14 +42,13 @@ from nr_metadata.ui_schema.identifiers import (
     NRSystemIdentifierUISchema,
 )
 from oarepo_runtime.services.schema.marshmallow import DictOnlySchema
-from oarepo_runtime.services.schema.ui import InvenioUISchema
 from oarepo_vocabularies.services.ui_schema import (
     HierarchyUISchema,
     VocabularyI18nStrUIField,
 )
 
 
-class DocumentsUISchema(InvenioUISchema):
+class DocumentsUISchema(NRDocumentRecordUISchema):
     class Meta:
         unknown = ma.RAISE
 

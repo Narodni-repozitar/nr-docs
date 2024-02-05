@@ -1,7 +1,8 @@
 import importlib_metadata
-from documents.resources.records.ui import DocumentsUIJSONSerializer
 from flask_resources import ResponseHandler
 from invenio_drafts_resources.resources import RecordResourceConfig
+
+from documents.resources.records.ui import DocumentsUIJSONSerializer
 
 
 class DocumentsResourceConfig(RecordResourceConfig):

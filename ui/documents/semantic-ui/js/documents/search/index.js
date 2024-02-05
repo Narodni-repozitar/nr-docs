@@ -21,7 +21,7 @@ import {
 } from './components'
 import { parametrize } from 'react-overridable'
 
-const appName = 'DocsApp.Search'
+const appName = 'documents'
 
 const SearchAppSearchbarContainerWithConfig = parametrize(SearchAppSearchbarContainer, { appName: appName })
 const ResultsListItemWithConfig = parametrize(ResultsListItemWithState, { appName: appName })
