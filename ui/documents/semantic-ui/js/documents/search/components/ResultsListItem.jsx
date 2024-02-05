@@ -154,7 +154,7 @@ export const ResultsListItemComponent = ({
 
   const accessRights = _get(result, "metadata.accessRights");
   const createdDate = _get(result, "created", "No creation date found.");
-  const creators = result.metadata.creators;
+  const creators = result.metadata?.creators;
   const contributors = _get(result, "metadata.contributors", []);
 
   const rights = _get(result, "metadata.rights");

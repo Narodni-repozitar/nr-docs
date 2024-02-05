@@ -8,4 +8,5 @@ node_modules
 .pdm-build
 .vscode
 .env
+.eslintrc.js
 .pdm-python
