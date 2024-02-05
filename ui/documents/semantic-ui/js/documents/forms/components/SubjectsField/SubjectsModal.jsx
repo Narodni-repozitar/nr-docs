@@ -58,7 +58,7 @@ export const SubjectsModal = ({ trigger, handleSubjectAdd }) => {
 
   return (
     <Formik
-      initialValues={{ keywords: [] }}
+      initialValues={{}}
       onSubmit={onSubmit}
       enableReinitialize
       validationSchema={SubjectsValidationSchema}
@@ -103,7 +103,7 @@ export const SubjectsModal = ({ trigger, handleSubjectAdd }) => {
               <Form.Field style={{ marginTop: 0 }} width={16}>
                 <MultilingualTextInput
                   fieldPath="keywords"
-                  lngFieldWidth={5}
+                  lngFieldWidth={3}
                   textFieldLabel={i18next.t("Subject")}
                   required
                   showEmptyValue

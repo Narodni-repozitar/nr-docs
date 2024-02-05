@@ -81,10 +81,12 @@ export const SubjectsField = ({ fieldPath }) => {
       )}
       {regularSubjects?.length > 0 && (
         <React.Fragment>
-          <Divider horizontal section>
-            {i18next.t("Free text keywords")}
-          </Divider>
-          {regularSubjects.map(({ subject, id }) => (
+          {externalSubjects.length > 0 && (
+            <Divider horizontal section>
+              {i18next.t("Free text keywords")}
+            </Divider>
+          )}
+          {regularSubjects.map(({ subject, id }, index) => (
             <React.Fragment key={id}>
               <span
                 style={{
@@ -99,7 +101,7 @@ export const SubjectsField = ({ fieldPath }) => {
                       border: "1px solid blue",
                       borderRadius: "5px",
                       padding: "0.2rem",
-                      lineHeight: "2rem",
+                      lineHeight: "2.5rem",
                     }}
                     key={i}
                   >
@@ -118,6 +120,7 @@ export const SubjectsField = ({ fieldPath }) => {
                   </span>
                 ))}
               </span>
+              <span style={{ marginRight: "1rem" }}>{"|"}</span>
             </React.Fragment>
           ))}
         </React.Fragment>
