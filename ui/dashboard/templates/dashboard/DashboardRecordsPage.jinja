@@ -1,5 +1,16 @@
+{#def search_app_config#}
+
+
+
+
 {%- extends config.BASE_TEMPLATE %}
 
+{%- block javascript %}
+{{super()}}
+{{webpack["dashboard_records.js"]}}
+{%- endblock javascript %}
+
 {%- block page_body %}
-    Hello world, this is jinjax template!
+    Hello world, this is jinjax template! 
+    <div>{{search_app_config}}</div>
 {%- endblock page_body %}

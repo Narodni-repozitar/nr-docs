@@ -5,8 +5,8 @@ description = ""
 packages = []
 authors = []
 dependencies = [
+    "oarepo[s3]==12.*",
     "deepmerge>=1.1.0",
-    "invenio-drafts-resources>=1.0.4",
     "json5",
     "nr-metadata>=2.0.0",
     "nr-oaipmh-harvesters>=1.0.0",
@@ -17,7 +17,6 @@ dependencies = [
     "oarepo-runtime",
     "oarepo-ui",
     "oarepo-vocabularies",
-    "oarepo[s3]==12.*",
     "python-dotenv",
 ]
 requires-python = ">=3.9,<3.11"
@@ -27,6 +26,7 @@ branding = "ui.branding.webpack:theme"
 i18n = "i18n.webpack:theme"
 components = "ui.components.webpack:theme"
 ui_documents = "ui.documents.webpack:theme"
+ui_dashboard = "ui.dashboard.webpack:theme"
 
 [project.entry-points."invenio_base.blueprints"]
 branding = "ui.branding:create_blueprint"
