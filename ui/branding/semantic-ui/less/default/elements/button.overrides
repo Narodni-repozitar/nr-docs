@@ -1,9 +1,5 @@
-.ui.button.keyword-subjects-remove-btn {
-  background-color: transparent;
-  padding: 0;
-  padding-left: 1rem;
-}
-
-.ui.add-keywords-btn {
-  margin-top: 2rem;
+.ui.button {
+  &.keyword-subjects-remove-btn {
+    background-color: transparent;
+  }
 }

@@ -1,28 +1,18 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Divider, Icon, Button, Label } from "semantic-ui-react";
-import { i18next } from "@translations/i18next";
+import { Icon, Button, Label } from "semantic-ui-react";
 
-export const KeywordSubjects = ({
-  keywordSubjects,
-  externalSubjects,
-  handleSubjectRemoval,
-}) => {
+export const KeywordSubjects = ({ keywordSubjects, handleSubjectRemoval }) => {
   return (
     keywordSubjects?.length > 0 && (
       <React.Fragment>
-        {externalSubjects.length > 0 && (
-          <Divider horizontal section>
-            {i18next.t("Free text keywords")}
-          </Divider>
-        )}
         {keywordSubjects.map(({ subject, id }, index) => (
           <React.Fragment key={id}>
             {subject.map((s, i) => (
               <Label className="keyword-subjects label" key={i}>
                 {s.lang}: {s.value}
                 <Button
-                  className="keyword-subjects-remove-btn"
+                  className="keyword-subjects-remove-btn p-0 rel-pl-1"
                   onClick={() => handleSubjectRemoval(id, s.lang)}
                   type="button"
                 >
@@ -42,6 +32,5 @@ export const KeywordSubjects = ({
 
 KeywordSubjects.propTypes = {
   keywordSubjects: PropTypes.array.isRequired,
-  externalSubjects: PropTypes.array.isRequired,
   handleSubjectRemoval: PropTypes.func.isRequired,
 };

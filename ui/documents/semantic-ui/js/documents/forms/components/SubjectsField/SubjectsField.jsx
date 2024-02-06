@@ -1,6 +1,6 @@
 import React, { useCallback } from "react";
 import PropTypes from "prop-types";
-import { Form, Icon, Button } from "semantic-ui-react";
+import { Form, Icon, Button, Divider } from "semantic-ui-react";
 import { i18next } from "@translations/i18next";
 import { SubjectsModal } from "./SubjectsModal";
 import { useFormikContext, getIn } from "formik";
@@ -58,6 +58,11 @@ export const SubjectsField = ({ fieldPath }) => {
         icon="pencil"
       />
       <ExternalSubjects externalSubjects={externalSubjects} />
+      {externalSubjects.length > 0 && (
+        <Divider horizontal section>
+          {i18next.t("Free text keywords")}
+        </Divider>
+      )}
       <KeywordSubjects
         keywordSubjects={keywordSubjects}
         externalSubjects={externalSubjects}
@@ -69,7 +74,7 @@ export const SubjectsField = ({ fieldPath }) => {
           fieldPath={fieldPath}
           trigger={
             <Button
-              className="add-keywords-btn"
+              className="rel-mt-1"
               type="button"
               icon
               labelPosition="left"

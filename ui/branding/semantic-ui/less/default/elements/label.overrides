@@ -1,33 +1,33 @@
-.ui.label.language {
-  padding: @languageVerticalPadding @languageHorizontalPadding;
-  color: @green;
-  font-weight: @languageFontWeight;
-  margin-right: @languageMarginRight;
-
-  position: relative;
-  bottom: @languageLift;
-}
-
-.ui.label.keyword-subjects {
-  font-size: 1.1rem;
-  text-wrap: nowrap;
-  border: 1px solid blue;
-  border-radius: 5px;
-  padding: 0.2rem;
-  background-color: transparent;
-  margin-top: 1rem;
-}
-
-.ui.label.external-subjects {
-  font-size: 1.1rem;
-  margin-right: 1rem;
-  background-color: transparent;
-  a {
-    color: blue;
+.ui.label {
+  &.language {
+    padding: @languageVerticalPadding @languageHorizontalPadding;
+    color: @green;
+    font-weight: @languageFontWeight;
+    margin-right: @languageMarginRight;
+    position: relative;
+    bottom: @languageLift;
   }
-}
 
-.ui.label.keyword-subject-divider {
-  //   margin-right: 1rem;
-  background-color: transparent;
+  &.keyword-subjects {
+    font-size: 1.1rem;
+    text-wrap: nowrap;
+    border: 1px solid blue;
+    border-radius: 5px;
+    padding: 0.2rem;
+    background-color: transparent;
+    margin-top: 1rem;
+  }
+
+  &.external-subjects {
+    font-size: 1.1rem;
+    margin-right: 1rem;
+    background-color: transparent;
+    a {
+      color: blue;
+    }
+  }
+
+  &.keyword-subject-divider {
+    background-color: transparent;
+  }
 }

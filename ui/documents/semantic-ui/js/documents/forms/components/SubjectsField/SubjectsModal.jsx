@@ -90,7 +90,7 @@ export const SubjectsModal = ({ trigger, handleSubjectAdd }) => {
                   )}
                   trigger={
                     <Icon
-                      className="subjects-help-icon"
+                      className="rel-ml-1"
                       name="question circle outline"
                       style={{ fontSize: "1rem", paddingLeft: "0.5rem" }}
                     ></Icon>
