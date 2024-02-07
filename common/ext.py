@@ -67,6 +67,9 @@ class OaiS3HarvesterExt(object):
         app.config.setdefault("DATASTREAMS_READERS", {}).update(
             config.DATASTREAMS_READERS
         )
+        app.config.setdefault("DATASTREAMS_WRITERS", {}).update(
+            config.DATASTREAMS_WRITERS
+        )
 
 
 def split_processor_name(processor):
