@@ -11,6 +11,10 @@
 {%- endblock javascript %}
 
 {%- block page_body %}
-    Hello world, this is jinjax template! 
-    <div>{{search_app_config}}</div>
+    <div
+    id="invenio-search-config"
+    data-invenio-search-config='{{ search_app_config | tojson }}'
+    >
+
+    </div>
 {%- endblock page_body %}
