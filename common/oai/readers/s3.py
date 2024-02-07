@@ -70,7 +70,7 @@ class S3Reader(BaseReader):
     def __iter__(self) -> Iterator[StreamEntry]:
         s3_client = boto3.client(
             "s3",
-            endpoint_url=os.environ["NUSL_S3_ENDPOINT_URL"],
+            endpoint_url=self.source,
             aws_access_key_id=os.environ["NUSL_S3_ACCESS_KEY"],
             aws_secret_access_key=os.environ["NUSL_S3_SECRET_KEY"],
         )
