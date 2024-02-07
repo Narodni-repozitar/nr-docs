@@ -1,8 +1,8 @@
-from documents.services.records.ui_schema import DocumentsUISchema
 from flask_resources import BaseListSchema
 from flask_resources.serializers import JSONSerializer
 
 from common.services.filtered_json_ui_serializer import FilteredUIJSONSerializer
+from documents.services.records.ui_schema import DocumentsUISchema
 
 
 class DocumentsUIJSONSerializer(FilteredUIJSONSerializer):

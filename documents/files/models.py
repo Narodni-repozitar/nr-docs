@@ -1,7 +1,8 @@
-from documents.records.models import DocumentsDraftMetadata, DocumentsMetadata
 from invenio_db import db
 from invenio_records.models import RecordMetadataBase
 from invenio_records_resources.records import FileRecordModelMixin
+
+from documents.records.models import DocumentsDraftMetadata, DocumentsMetadata
 
 
 class DocumentsFileMetadata(db.Model, RecordMetadataBase, FileRecordModelMixin):

@@ -25,14 +25,6 @@ export const authorityIdentifiersSchema = [
   { value: "DOI", text: i18next.t("DOI") },
 ];
 
-export const systemIdentifiersSchema = [
-  { value: "nusl", text: "nusl" },
-  { value: "nuslOAI", text: "nuslOAI" },
-  { value: "originalRecordOAI", text: "originalRecordOAI" },
-  { value: "catalogueSysNo", text: "catalogueSysNo" },
-  { value: "nrOAI", text: "nrOAI" },
-];
-
 export const IdentifiersField = ({
   fieldPath,
   helpText,
