@@ -1,54 +1,59 @@
 import _get from "lodash/get";
+import _truncate from "lodash/truncate";
 import React from "react";
-import { Button } from "semantic-ui-react";
+import { Grid, Dropdown } from "semantic-ui-react";
 import { parametrize, overrideStore } from "react-overridable";
 import { createSearchAppInit } from "@js/invenio_search_ui";
 import {
   ActiveFiltersElement,
   BucketAggregationElement,
   BucketAggregationValuesElement,
-  ErrorElement,
-  SearchAppFacets,
-  SearchAppLayout,
-  SearchAppResults,
   SearchAppResultOptions,
-  SearchAppSearchbarContainer,
-  SearchFiltersToggleElement,
   SearchAppSort,
   SearchappSearchbarElement,
+  EmptyResultsElement,
+  ResultCountWithState,
 } from "@js/oarepo_ui/search";
-
 import { UserDashboardSearchAppLayoutHOC } from "../components/UserDashboardSearchAppLayout";
 import { UserDashboardSearchAppResultView } from "../components/UserDashboardSearchAppResultView";
 import { i18next } from "@translations/i18next";
-// import { ComputerTabletUploadsItem } from "../components/resultitems/uploads/ComputerTabletUploadsItem";
-// import { MobileUploadsItem } from "../components/resultitems/uploads/MobileUploadsItem";
+import { ComputerTabletUploadsItem } from "./ComputerTabletUploadsItem";
+import { MobileUploadsItem } from "./MobileUploadsItem";
 const appName = "UserDashboard.records";
 
-const ResultListItem = ({ result }) => {
-  return <div>{result?.metadata?.title}</div>;
+const languageOptions = [
+  { key: "docs", text: <a href="/docs/_new">New doc</a>, value: "docs" },
+  {
+    key: "communities",
+    text: <a href="/communities/new">New comm</a>,
+    value: "communities",
+  },
+];
+
+const extractAbstract = (abstract) => {
+  if (!abstract) return i18next.t("No description");
+  let abstractText =
+    abstract?.find((a) => a.lang === i18next.language)?.value ||
+    abstract[0]?.value;
+  return _truncate(abstractText, { length: 350 });
 };
+export const UserDashboardRecordsListItem = ({ result }) => {
+  const uiMetadata = {
+    title: _get(result, "metadata.title", i18next.t("No title")),
+    abstract: extractAbstract(_get(result, "metadata.abstract", undefined)),
+    resourceType: _get(result, "metadata.resourceType", ""),
+    accessRights: _get(result, "metadata.accessRights", ""),
+    createdDate: _get(result, "created"),
+    viewLink: _get(result, "links.self_html"),
+  };
 
-// export const UserDashboardResultListItem = ({ result }) => {
-//   const uiMetadata = {
-//     title: _get(result, "metadata.title", i18next.t("No title")),
-//     // abstract: _get(result, "metadata.abstract", i18next.t("No abstract")),
-//     resourceType: _get(
-//       result,
-//       "metadata.resourceType",
-//       i18next.t("No resource type")
-//     ),
-//     createdDate: _get(result, "created"),
-//     viewLink: _get(result, "links.self_html"),
-//   };
-
-//   return (
-//     <React.Fragment>
-//       <MobileUploadsItem result={result} uiMetadata={uiMetadata} />
-//       <ComputerTabletUploadsItem result={result} uiMetadata={uiMetadata} />
-//     </React.Fragment>
-//   );
-// };
+  return (
+    <React.Fragment>
+      <MobileUploadsItem result={result} uiMetadata={uiMetadata} />
+      <ComputerTabletUploadsItem result={result} uiMetadata={uiMetadata} />
+    </React.Fragment>
+  );
+};
 
 const UserDashboardSearchAppResultViewWAppName = parametrize(
   UserDashboardSearchAppResultView,
@@ -57,17 +62,28 @@ const UserDashboardSearchAppResultViewWAppName = parametrize(
   }
 );
 
+const ExtraContent = () => (
+  <React.Fragment>
+    <Grid.Column>
+      <Dropdown
+        button
+        className="icon"
+        floating
+        labeled
+        icon="plus"
+        options={languageOptions}
+        text={i18next.t("Create new...")}
+      />
+    </Grid.Column>
+    <Grid.Column textAlign="right">
+      <ResultCountWithState />
+    </Grid.Column>
+  </React.Fragment>
+);
+
 export const DashboardUploadsSearchLayout = UserDashboardSearchAppLayoutHOC({
-  searchBarPlaceholder: i18next.t("Search in my uploads..."),
-  newBtn: (
-    <Button
-      positive
-      icon="upload"
-      href="/docs/_new"
-      content={i18next.t("New upload")}
-      floated="right"
-    />
-  ),
+  placeholder: i18next.t("Search in my uploads..."),
+  extraContent: ExtraContent,
   appName: appName,
 });
 export const defaultComponents = {
@@ -77,8 +93,8 @@ export const defaultComponents = {
   [`${appName}.BucketAggregationValues.element`]:
     BucketAggregationValuesElement,
   [`${appName}.SearchApp.resultOptions`]: SearchAppResultOptions,
-  // [`${appName}.EmptyResults.element`]: RDMEmptyResults,
-  [`${appName}.ResultsList.item`]: ResultListItem,
+  [`${appName}.EmptyResults.element`]: EmptyResultsElement,
+  [`${appName}.ResultsList.item`]: UserDashboardRecordsListItem,
   // [`${appName}.SearchApp.facets`]: ContribSearchAppFacetsWithConfig,
   [`${appName}.SearchApp.results`]: UserDashboardSearchAppResultViewWAppName,
   [`${appName}.SearchBar.element`]: SearchappSearchbarElement,
@@ -86,11 +102,8 @@ export const defaultComponents = {
   [`${appName}.SearchApp.sort`]: SearchAppSort,
 };
 
-// TODO: can provide overrides here before calling createSearchAppInit
 const overriddenComponents = overrideStore.getAll();
 
-// TODO: search app has inbuilt mechanism to look for overrides in @templates simikar
-// to how it looks for custom fields im templates/custom_fields
 createSearchAppInit(
   { ...defaultComponents, ...overriddenComponents },
   true,

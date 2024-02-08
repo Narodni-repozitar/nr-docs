@@ -1,4 +1,3 @@
-import _get from "lodash/get";
 import React from "react";
 import { Button } from "semantic-ui-react";
 import { parametrize, overrideStore } from "react-overridable";
@@ -6,16 +5,10 @@ import { createSearchAppInit } from "@js/invenio_search_ui";
 import {
   ActiveFiltersElement,
   BucketAggregationElement,
-  BucketAggregationValuesElement,
-  ErrorElement,
-  SearchAppFacets,
-  SearchAppLayout,
-  SearchAppResults,
   SearchAppResultOptions,
-  SearchAppSearchbarContainer,
-  SearchFiltersToggleElement,
   SearchAppSort,
   SearchappSearchbarElement,
+  BucketAggregationValuesElement,
 } from "@js/oarepo_ui/search";
 
 import { UserDashboardSearchAppLayoutHOC } from "../components/UserDashboardSearchAppLayout";
@@ -86,11 +79,8 @@ export const defaultComponents = {
   [`${appName}.SearchApp.sort`]: SearchAppSort,
 };
 
-// TODO: can provide overrides here before calling createSearchAppInit
 const overriddenComponents = overrideStore.getAll();
 
-// TODO: search app has inbuilt mechanism to look for overrides in @templates simikar
-// to how it looks for custom fields im templates/custom_fields
 createSearchAppInit(
   { ...defaultComponents, ...overriddenComponents },
   true,

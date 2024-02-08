@@ -16,6 +16,7 @@ import {
   SearchFiltersToggleElement,
   SearchAppSort,
   SearchappSearchbarElement,
+  EmptyResultsElement,
 } from "@js/oarepo_ui/search";
 
 import { UserDashboardSearchAppLayoutHOC } from "../components/UserDashboardSearchAppLayout";
@@ -77,7 +78,7 @@ export const defaultComponents = {
   [`${appName}.BucketAggregationValues.element`]:
     BucketAggregationValuesElement,
   [`${appName}.SearchApp.resultOptions`]: SearchAppResultOptions,
-  // [`${appName}.EmptyResults.element`]: RDMEmptyResults,
+  [`${appName}.EmptyResults.element`]: EmptyResultsElement,
   [`${appName}.ResultsList.item`]: ResultListItem,
   // [`${appName}.SearchApp.facets`]: ContribSearchAppFacetsWithConfig,
   [`${appName}.SearchApp.results`]: UserDashboardSearchAppResultViewWAppName,

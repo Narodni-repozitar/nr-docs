@@ -1,3 +1,9 @@
-.items > .item {
+.ui.items > .item {
   cursor: auto !important;
+  &.result-list-item {
+    border: 1px solid @green;
+  }
+}
+.ui.divided.items > .item.result-list-item:first-child {
+  border: 1px solid @green;
 }

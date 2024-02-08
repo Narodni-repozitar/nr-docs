@@ -2,9 +2,8 @@ import React, { useState, useEffect } from "react";
 import { Grid, Menu, MenuItem } from "semantic-ui-react";
 import { i18next } from "@translations/i18next";
 
-export const UserDashboardMobileTabletNav = () => {
+export const UserDashboardNav = () => {
   const [currentLocation, setCurrentLocation] = useState(null);
-  console.log(currentLocation);
 
   useEffect(() => {
     const updateLocation = () => {
@@ -20,8 +19,8 @@ export const UserDashboardMobileTabletNav = () => {
     };
   }, []);
   return (
-    <Grid.Row width={16} only="tablet mobile">
-      <Grid.Column textAlign="left">
+    <Grid.Row width={16}>
+      <Grid.Column textAlign="center">
         <Menu
           as="nav"
           borderless

@@ -7,36 +7,21 @@
 // Invenio App RDM is free software; you can redistribute it and/or modify it
 // under the terms of the MIT License; see LICENSE file for more details.
 
-import {
-  SearchAppResultsPane,
-  InvenioSearchPagination,
-} from "@js/invenio_search_ui/components";
-import { i18next } from "@translations/i18next";
 import React from "react";
 import {
-  Count,
   ResultsList,
-  SearchBar,
-  Sort,
   buildUID,
   Pagination,
   ResultsPerPage,
 } from "react-searchkit";
-import { GridResponsiveSidebarColumn } from "react-invenio-forms";
-import { Grid, Segment, Button } from "semantic-ui-react";
+import { Grid } from "semantic-ui-react";
 import PropTypes from "prop-types";
 import Overridable from "react-overridable";
-import {
-  SearchAppFacets,
-  ResultCount,
-  SearchAppSort,
-  ResultsPerPageLabel,
-} from "@js/oarepo_ui";
+import { ResultsPerPageLabel } from "@js/oarepo_ui";
 
 export function UserDashboardSearchAppResultView(props) {
   const { sortOptions, paginationOptions, currentResultsState, appName } =
     props;
-  console.log(sortOptions);
   const { total } = currentResultsState.data;
   const { resultsPerPage } = paginationOptions;
   return (
@@ -51,25 +36,7 @@ export function UserDashboardSearchAppResultView(props) {
                 paginationOptions={paginationOptions}
                 currentResultsState={currentResultsState}
                 appName={appName}
-              >
-                <Grid.Row
-                  verticalAlign="middle"
-                  className="small pt-5 pb-5 highlight-background"
-                >
-                  <Grid.Column width={4}>
-                    <ResultCount currentResultsState={currentResultsState} />
-                  </Grid.Column>
-                  <Grid.Column
-                    width={12}
-                    textAlign="right"
-                    className="padding-r-5"
-                  >
-                    {/* {sortOptions.length > 0 && (
-                      <SearchAppSort options={sortOptions} />
-                    )} */}
-                  </Grid.Column>
-                </Grid.Row>
-              </Overridable>
+              ></Overridable>
               <Overridable
                 id={buildUID("ResultView.resultList", "", appName)}
                 sortOptions={sortOptions}
