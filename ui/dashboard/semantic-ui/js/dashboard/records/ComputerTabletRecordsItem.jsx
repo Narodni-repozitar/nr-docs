@@ -9,14 +9,14 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Button, Item, Label } from "semantic-ui-react";
 
-export const ComputerTabletUploadsItem = ({ result, uiMetadata }) => {
+export const ComputerTabletRecordsItem = ({ result, uiMetadata }) => {
   const { abstract, title, resourceType, createdDate, viewLink, accessRights } =
     uiMetadata;
 
   return (
     <Item
       key={result.id}
-      className="computer tablet only rel-p-1 rel-mb-1 result-list-item"
+      className="computer tablet only rel-p-1 rel-mb-1 result-list-item record"
     >
       <Item.Content>
         <Item.Extra className="labels-actions">
@@ -67,7 +67,7 @@ export const ComputerTabletUploadsItem = ({ result, uiMetadata }) => {
   );
 };
 
-ComputerTabletUploadsItem.propTypes = {
+ComputerTabletRecordsItem.propTypes = {
   result: PropTypes.object.isRequired,
   uiMetadata: PropTypes.object.isRequired,
 };

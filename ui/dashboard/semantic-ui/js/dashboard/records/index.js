@@ -17,8 +17,8 @@ import {
 import { UserDashboardSearchAppLayoutHOC } from "../components/UserDashboardSearchAppLayout";
 import { UserDashboardSearchAppResultView } from "../components/UserDashboardSearchAppResultView";
 import { i18next } from "@translations/i18next";
-import { ComputerTabletUploadsItem } from "./ComputerTabletUploadsItem";
-import { MobileUploadsItem } from "./MobileUploadsItem";
+import { ComputerTabletRecordsItem } from "./ComputerTabletRecordsItem";
+import { MobileRecordsItem } from "./MobileRecordsItem";
 const appName = "UserDashboard.records";
 
 const languageOptions = [
@@ -49,8 +49,8 @@ export const UserDashboardRecordsListItem = ({ result }) => {
 
   return (
     <React.Fragment>
-      <MobileUploadsItem result={result} uiMetadata={uiMetadata} />
-      <ComputerTabletUploadsItem result={result} uiMetadata={uiMetadata} />
+      <MobileRecordsItem result={result} uiMetadata={uiMetadata} />
+      <ComputerTabletRecordsItem result={result} uiMetadata={uiMetadata} />
     </React.Fragment>
   );
 };
