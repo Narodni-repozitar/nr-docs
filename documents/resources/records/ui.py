@@ -1,8 +1,9 @@
-from documents.services.records.ui_schema import DocumentsUISchema
+from flask import g
 from flask_resources import BaseListSchema
 from flask_resources.serializers import JSONSerializer
 
 from common.services.filtered_json_ui_serializer import FilteredUIJSONSerializer
+from documents.services.records.ui_schema import DocumentsUISchema
 
 
 class DocumentsUIJSONSerializer(FilteredUIJSONSerializer):
@@ -14,5 +15,5 @@ class DocumentsUIJSONSerializer(FilteredUIJSONSerializer):
             format_serializer_cls=JSONSerializer,
             object_schema_cls=DocumentsUISchema,
             list_schema_cls=BaseListSchema,
-            schema_context={"object_key": "ui"},
+            schema_context={"object_key": "ui", "identity": g.identity},
         )

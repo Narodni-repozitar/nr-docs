@@ -6,6 +6,7 @@ from invenio_records_resources.services.files.schema import (
     FileSchema as InvenioFileSchema,
 )
 from marshmallow import fields as ma_fields
+from oarepo_requests.services.schema import RequestsSchemaMixin
 from oarepo_runtime.services.schema.validation import validate_date
 
 
@@ -13,7 +14,7 @@ class GeneratedParentSchema(InvenioParentSchema):
     """"""
 
 
-class DocumentsFileSchema(InvenioFileSchema):
+class DocumentsFileSchema(InvenioFileSchema, RequestsSchemaMixin):
     class Meta:
         unknown = ma.RAISE
 

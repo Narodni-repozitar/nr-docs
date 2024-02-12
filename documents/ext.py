@@ -1,10 +1,13 @@
 import re
 from functools import cached_property
 
+from oarepo_requests.resources.draft.config import DraftRecordRequestsResourceConfig
+
 from documents import config
 
 
 class DocumentsExt:
+
     def __init__(self, app=None):
 
         if app:
@@ -54,6 +57,20 @@ class DocumentsExt:
         return config.DOCUMENTS_RECORD_RESOURCE_CLASS(
             service=self.service_records,
             config=config.DOCUMENTS_RECORD_RESOURCE_CONFIG(),
+        )
+
+    @cached_property
+    def service_requests(self):
+        return config.DOCUMENTS_REQUESTS_SERVICE_CLASS(
+            record_service=self.service_records
+        )
+
+    @cached_property
+    def resource_requests(self):
+        return config.DOCUMENTS_REQUESTS_RESOURCE_CLASS(
+            service=self.service_requests,
+            config=config.DOCUMENTS_RECORD_RESOURCE_CONFIG(),
+            record_requests_config=DraftRecordRequestsResourceConfig(),
         )
 
     @cached_property

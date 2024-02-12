@@ -1,7 +1,6 @@
 {
     "model": {
         "type": "file",
-        "searchable": true,
         "marshmallow": {
             "imports": [
                 {
@@ -10,20 +9,19 @@
                 }
             ],
             "base-classes": [
-                "InvenioFileSchema"
+                "InvenioFileSchema",
+                "oarepo_requests.services.schema.RequestsSchemaMixin"
             ],
             "generate": true,
             "module": "documents.services.files.schema",
             "class": "documents.services.files.schema.DocumentsFileSchema",
             "extra-code": ""
         },
+        "searchable": true,
         "tests": {
             "extra-fixtures": [],
             "extra-code": "",
             "module": "tests"
-        },
-        "sample": {
-            "file": "data/sample_data.yaml"
         },
         "search-options": {
             "skip": true,
@@ -65,11 +63,32 @@
             ],
             "extra-code": "",
             "extensions": [
-                "{{documents.files.dumpers.edtf.DocumentsFileEDTFIntervalDumperExt}}()",
                 "{{nr_metadata.services.records.facets.dumper.SyntheticFieldsDumperExtension}}()",
-                "{{documents.files.dumpers.multilingual.MultilingualSearchDumperExt}}()"
+                "{{documents.files.dumpers.multilingual.MultilingualSearchDumperExt}}()",
+                "{{documents.files.dumpers.edtf.DocumentsFileEDTFIntervalDumperExt}}()"
             ],
             "imports": []
+        },
+        "sample": {
+            "file": "data/sample_data.yaml"
+        },
+        "service-config": {
+            "base-classes": [
+                "oarepo_runtime.services.config.service.PermissionsPresetsConfigMixin",
+                "invenio_records_resources.services.FileServiceConfig"
+            ],
+            "imports": [],
+            "generate": true,
+            "config-key": "DOCUMENTS_FILES_SERVICE_CONFIG",
+            "module": "documents.services.files.config",
+            "class": "documents.services.files.config.DocumentsFileServiceConfig",
+            "extra-code": "",
+            "service-id": "documents_file",
+            "components": [
+                "{{invenio_records_resources.services.records.components.DataComponent}}"
+            ],
+            "result-list-class": "oarepo_runtime.services.results.RecordList",
+            "result-item-class": "oarepo_requests.services.results.RequestsAwareResultItem"
         },
         "module": {
             "qualified": "documents",
@@ -87,6 +106,45 @@
             "suffix-snake": "documents_file"
         },
         "model-name": "Documents",
+        "record": {
+            "class": "documents.files.api.DocumentsFile",
+            "base-classes": [
+                "invenio_records_resources.records.api.FileRecord"
+            ],
+            "imports": [],
+            "generate": true,
+            "module": "documents.files.api",
+            "extra-code": ""
+        },
+        "resource-config": {
+            "base-url": "/docs/<pid_value>",
+            "base-classes": [
+                "invenio_records_resources.resources.FileResourceConfig"
+            ],
+            "imports": [],
+            "generate": true,
+            "base-html-url": "/documents/",
+            "config-key": "DOCUMENTS_FILES_RESOURCE_CONFIG",
+            "module": "documents.resources.files.config",
+            "class": "documents.resources.files.config.DocumentsFileResourceConfig",
+            "extra-code": ""
+        },
+        "resource": {
+            "base-classes": [
+                "invenio_records_resources.resources.files.resource.FileResource"
+            ],
+            "imports": [],
+            "generate": true,
+            "config-key": "DOCUMENTS_FILES_RESOURCE_CLASS",
+            "module": "documents.resources.files.resource",
+            "class": "documents.resources.files.resource.DocumentsFileResource",
+            "proxy": "current_resource",
+            "extra-code": ""
+        },
+        "ext-resource": {
+            "generate": true,
+            "skip": false
+        },
         "config": {
             "generate": true,
             "module": "documents.config",
@@ -127,71 +185,68 @@
             "module": "documents.proxies",
             "generate": true
         },
-        "record": {
-            "class": "documents.files.api.DocumentsFile",
-            "base-classes": [
-                "invenio_records_resources.records.api.FileRecord"
-            ],
-            "imports": [],
+        "api-requests-blueprint": {
             "generate": true,
-            "module": "documents.files.api",
-            "extra-code": ""
+            "alias": "documents_file_requests",
+            "module": "documents.views.requests.api",
+            "function": "documents.views.requests.api.create_api_blueprint",
+            "imports": []
         },
-        "resource-config": {
-            "base-url": "/docs/<pid_value>",
-            "base-classes": [
-                "invenio_records_resources.resources.FileResourceConfig"
-            ],
-            "imports": [],
+        "app-requests-blueprint": {
             "generate": true,
-            "base-html-url": "/documents/",
-            "config-key": "DOCUMENTS_FILES_RESOURCE_CONFIG",
-            "module": "documents.resources.files.config",
-            "class": "documents.resources.files.config.DocumentsFileResourceConfig",
-            "extra-code": ""
+            "alias": "documents_file_requests",
+            "extra_code": "",
+            "module": "documents.views.requests.app",
+            "function": "documents.views.requests.app.create_app_blueprint",
+            "imports": []
         },
-        "resource": {
-            "base-classes": [
-                "invenio_records_resources.resources.files.resource.FileResource"
+        "requests-record-resource": {
+            "generate": true,
+            "config-key": "DOCUMENTS_REQUESTS_RESOURCE_CLASS",
+            "class": "oarepo_requests.resources.draft.resource.DraftRecordRequestsResource",
+            "additional-args": [
+                "record_requests_config={{oarepo_requests.resources.draft.config.DraftRecordRequestsResourceConfig}}()"
             ],
-            "imports": [],
-            "generate": true,
-            "config-key": "DOCUMENTS_FILES_RESOURCE_CLASS",
-            "module": "documents.resources.files.resource",
-            "class": "documents.resources.files.resource.DocumentsFileResource",
-            "proxy": "current_resource",
-            "extra-code": ""
-        },
-        "ext-resource": {
-            "generate": true,
             "skip": false
+        },
+        "requests-record-service": {
+            "generate": true,
+            "config-key": "DOCUMENTS_REQUESTS_SERVICE_CLASS",
+            "class": "oarepo_requests.services.draft.service.DraftRecordRequestsService",
+            "additional-args": [
+                "record_service=self.service_records"
+            ],
+            "skip": false
+        },
+        "files-field": {
+            "field-args": [
+                "store=False",
+                "create=False",
+                "delete=False"
+            ],
+            "generate": true,
+            "field-class": "invenio_records_resources.records.systemfields.FilesField",
+            "file-class": "documents.files.api.DocumentsFile",
+            "imports": []
+        },
+        "translations": {
+            "module": "documents.translations",
+            "alias": "documents_file"
         },
         "ui": {
             "module": "documents.models",
             "file": "documents/models/ui.json",
             "alias": "documents_file",
             "marshmallow": {
+                "base-classes": [
+                    "oarepo_requests.services.ui_schema.RequestsUISchema"
+                ],
                 "generate": true,
                 "module": "documents.services.files.ui_schema",
                 "class": "documents.services.files.ui_schema.DocumentsFileUISchema",
                 "extra-code": "",
-                "base-classes": [
-                    "oarepo_runtime.services.schema.ui.InvenioUISchema"
-                ],
                 "imports": []
             }
-        },
-        "json-serializer": {
-            "module": "documents.resources.files.ui",
-            "class": "documents.resources.files.ui.DocumentsFileUIJSONSerializer",
-            "base-classes": [
-                "oarepo_runtime.resources.LocalizedUIJSONSerializer"
-            ],
-            "imports": [],
-            "extra-code": "",
-            "generate": true,
-            "list_schema_cls": "flask_resources.BaseListSchema",
-            "format_serializer_cls": "flask_resources.serializers.JSONSerializer"
         },
         "record-metadata": {
             "use-versioning": false,
@@ -207,23 +262,6 @@
             "imports": [],
             "table": "documents_file_metadata",
             "alias": "documents_file"
-        },
-        "service-config": {
-            "base-classes": [
-                "oarepo_runtime.services.config.service.PermissionsPresetsConfigMixin",
-                "invenio_records_resources.services.FileServiceConfig"
-            ],
-            "imports": [],
-            "generate": true,
-            "config-key": "DOCUMENTS_FILES_SERVICE_CONFIG",
-            "module": "documents.services.files.config",
-            "class": "documents.services.files.config.DocumentsFileServiceConfig",
-            "extra-code": "",
-            "service-id": "documents_file",
-            "components": [
-                "{{invenio_records_resources.services.records.components.DataComponent}}"
-            ],
-            "result-list-class": "oarepo_runtime.services.results.RecordList"
         },
         "service": {
             "base-classes": [
@@ -253,44 +291,21 @@
             "imports": [],
             "extra-code": ""
         },
-        "files-field": {
-            "field-args": [
-                "store=False",
-                "create=False",
-                "delete=False"
-            ],
-            "generate": true,
-            "field-class": "invenio_records_resources.records.systemfields.FilesField",
-            "file-class": "documents.files.api.DocumentsFile",
-            "imports": []
-        },
-        "translations": {
-            "module": "documents.translations",
-            "alias": "documents_file"
-        },
-        "edtf-interval-dumper": {
-            "generate": true,
-            "module": "documents.files.dumpers.edtf",
-            "class": "documents.files.dumpers.edtf.DocumentsFileEDTFIntervalDumperExt",
+        "json-serializer": {
+            "module": "documents.resources.files.ui",
+            "class": "documents.resources.files.ui.DocumentsFileUIJSONSerializer",
             "base-classes": [
-                "oarepo_runtime.records.dumpers.edtf_interval.EDTFIntervalDumperExt"
+                "oarepo_runtime.resources.LocalizedUIJSONSerializer"
             ],
+            "imports": [],
             "extra-code": "",
-            "extensions": [],
-            "imports": []
-        },
-        "permissions": {
-            "class": "documents.services.records.permissions.DocumentsPermissionPolicy",
-            "generate": false,
-            "presets": [
-                "everyone"
-            ],
-            "extra-code": "",
-            "module": "documents.services.files.permissions",
-            "base-classes": [
-                "invenio_records_permissions.RecordPermissionPolicy"
-            ],
-            "imports": []
+            "generate": true,
+            "list_schema_cls": "flask_resources.BaseListSchema",
+            "format_serializer_cls": "flask_resources.serializers.JSONSerializer",
+            "schema-context-args": {
+                "\"object_key\"": "\"ui\"",
+                "\"identity\"": "{{ flask.g{g.identity} }}"
+            }
         },
         "draft-parent-record": {
             "generate": false,
@@ -301,17 +316,6 @@
         },
         "draft-parent-record-state": {
             "skip": true
-        },
-        "multilingual-dumper": {
-            "generate": true,
-            "module": "documents.files.dumpers.multilingual",
-            "class": "documents.files.dumpers.multilingual.MultilingualSearchDumperExt",
-            "base-classes": [
-                "oarepo_runtime.records.dumpers.multilingual_dumper.MultilingualDumper"
-            ],
-            "extra-code": "",
-            "extensions": [],
-            "imports": []
         },
         "mapping": {
             "generate": true,
@@ -344,7 +348,41 @@
             ],
             "imports": []
         },
-        "requests": {},
+        "multilingual-dumper": {
+            "generate": true,
+            "module": "documents.files.dumpers.multilingual",
+            "class": "documents.files.dumpers.multilingual.MultilingualSearchDumperExt",
+            "base-classes": [
+                "oarepo_runtime.records.dumpers.multilingual_dumper.MultilingualDumper"
+            ],
+            "extra-code": "",
+            "extensions": [],
+            "imports": []
+        },
+        "permissions": {
+            "class": "documents.services.records.permissions.DocumentsPermissionPolicy",
+            "generate": false,
+            "presets": [
+                "everyone"
+            ],
+            "extra-code": "",
+            "module": "documents.services.files.permissions",
+            "base-classes": [
+                "invenio_records_permissions.RecordPermissionPolicy"
+            ],
+            "imports": []
+        },
+        "edtf-interval-dumper": {
+            "generate": true,
+            "module": "documents.files.dumpers.edtf",
+            "class": "documents.files.dumpers.edtf.DocumentsFileEDTFIntervalDumperExt",
+            "base-classes": [
+                "oarepo_runtime.records.dumpers.edtf_interval.EDTFIntervalDumperExt"
+            ],
+            "extra-code": "",
+            "extensions": [],
+            "imports": []
+        },
         "parent-record-marshmallow": {
             "module": "documents.services.files.schema",
             "class": "documents.services.files.schema.GeneratedParentSchema",
@@ -353,6 +391,7 @@
                 "invenio_drafts_resources.services.records.schema.ParentSchema{InvenioParentSchema}"
             ]
         },
+        "requests": {},
         "record-resolver": {
             "generate": false,
             "skip": true

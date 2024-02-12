@@ -1,3 +1,16 @@
+from invenio_drafts_resources.records.api import Draft as InvenioDraft
+from invenio_drafts_resources.records.api import DraftRecordIdProviderV2, ParentRecord
+from invenio_drafts_resources.records.api import Record as InvenioRecord
+from invenio_records.systemfields import ConstantField, ModelField
+from invenio_records_resources.records.systemfields import FilesField, IndexField
+from invenio_records_resources.records.systemfields.pid import PIDField, PIDFieldContext
+from invenio_vocabularies.records.api import Vocabulary
+from oarepo_runtime.records.relations import PIDRelation, RelationsField
+from oarepo_runtime.records.systemfields.has_draftcheck import HasDraftCheckField
+from oarepo_runtime.records.systemfields.icu import ICUSearchField
+from oarepo_runtime.records.systemfields.record_status import RecordStatusSystemField
+
+from common.services.sort import TitleICUSortField
 from documents.files.api import DocumentsFile, DocumentsFileDraft
 from documents.records.dumpers.dumper import DocumentsDraftDumper, DocumentsDumper
 from documents.records.models import (
@@ -6,33 +19,10 @@ from documents.records.models import (
     DocumentsParentMetadata,
     DocumentsParentState,
 )
-from invenio_drafts_resources.records.api import Draft as InvenioDraft
-from invenio_drafts_resources.records.api import DraftRecordIdProviderV2, ParentRecord
-from invenio_drafts_resources.records.api import Record as InvenioRecord
-from invenio_records.systemfields import ConstantField, ModelField
-from invenio_records_resources.records.systemfields import FilesField, IndexField
-from invenio_records_resources.records.systemfields.pid import PIDField, PIDFieldContext
-from invenio_requests.records import Request
-from invenio_requests.records.systemfields.relatedrecord import RelatedRecord
-from invenio_vocabularies.records.api import Vocabulary
-from oarepo_runtime.records.relations import PIDRelation, RelationsField
-from oarepo_runtime.records.systemfields.has_draftcheck import HasDraftCheckField
-from oarepo_runtime.records.systemfields.icu import ICUSearchField
-from oarepo_runtime.records.systemfields.record_status import RecordStatusSystemField
-
-from common.services.sort import TitleICUSortField
 
 
 class DocumentsParentRecord(ParentRecord):
     model_cls = DocumentsParentMetadata
-    delete_record = RelatedRecord(
-        Request,
-        keys=["type", "receiver", "status"],
-    )
-    publish_draft = RelatedRecord(
-        Request,
-        keys=["type", "receiver", "status"],
-    )
 
 
 class DocumentsIdProvider(DraftRecordIdProviderV2):

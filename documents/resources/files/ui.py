@@ -1,10 +1,12 @@
+from flask import g
+from flask_resources import BaseListSchema
+from flask_resources.serializers import JSONSerializer
+from oarepo_runtime.resources import LocalizedUIJSONSerializer
+
 from documents.services.files.ui_schema import (
     DocumentsFileDraftUISchema,
     DocumentsFileUISchema,
 )
-from flask_resources import BaseListSchema
-from flask_resources.serializers import JSONSerializer
-from oarepo_runtime.resources import LocalizedUIJSONSerializer
 
 
 class DocumentsFileUIJSONSerializer(LocalizedUIJSONSerializer):
@@ -16,7 +18,7 @@ class DocumentsFileUIJSONSerializer(LocalizedUIJSONSerializer):
             format_serializer_cls=JSONSerializer,
             object_schema_cls=DocumentsFileUISchema,
             list_schema_cls=BaseListSchema,
-            schema_context={"object_key": "ui"},
+            schema_context={"object_key": "ui", "identity": g.identity},
         )
 
 
@@ -29,5 +31,5 @@ class DocumentsFileDraftUIJSONSerializer(LocalizedUIJSONSerializer):
             format_serializer_cls=JSONSerializer,
             object_schema_cls=DocumentsFileDraftUISchema,
             list_schema_cls=BaseListSchema,
-            schema_context={"object_key": "ui"},
+            schema_context={"object_key": "ui", "identity": g.identity},
         )
