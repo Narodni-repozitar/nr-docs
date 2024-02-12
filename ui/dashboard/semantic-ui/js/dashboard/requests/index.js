@@ -1,5 +1,5 @@
 import React from "react";
-import { Button } from "semantic-ui-react";
+import { Button, Grid } from "semantic-ui-react";
 import { parametrize, overrideStore } from "react-overridable";
 import { createSearchAppInit } from "@js/invenio_search_ui";
 import {
@@ -10,10 +10,19 @@ import {
   SearchappSearchbarElement,
   BucketAggregationValuesElement,
 } from "@js/oarepo_ui/search";
+import { withState } from "react-searchkit";
+import {
+  MobileRequestItem,
+  ComputerTabletRequestItem,
+  RequestsSearchLayout,
+  RequestsEmptyResultsWithState,
+  RequestsResults,
+} from "@js/invenio_requests/search";
 
 import { UserDashboardSearchAppLayoutHOC } from "../components/UserDashboardSearchAppLayout";
 import { UserDashboardSearchAppResultView } from "../components/UserDashboardSearchAppResultView";
 import { i18next } from "@translations/i18next";
+import { FacetsButtonGroup } from "./FacetsButtonGroup";
 // import { ComputerTabletUploadsItem } from "../components/resultitems/uploads/ComputerTabletUploadsItem";
 // import { MobileUploadsItem } from "../components/resultitems/uploads/MobileUploadsItem";
 const appName = "UserDashboard.requests";
@@ -21,6 +30,46 @@ const appName = "UserDashboard.requests";
 const ResultListItem = ({ result }) => {
   return <div>{result?.id}</div>;
 };
+
+export function RequestsResultsItemTemplateDashboard({ result }) {
+  const ComputerTabletRequestsItemWithState = withState(
+    ComputerTabletRequestItem
+  );
+  const MobileRequestsItemWithState = withState(MobileRequestItem);
+  const detailsURL = `/me/requests/${result.id}`;
+  return (
+    <>
+      <ComputerTabletRequestsItemWithState
+        result={result}
+        detailsURL={detailsURL}
+      />
+      <MobileRequestsItemWithState result={result} detailsURL={detailsURL} />
+    </>
+  );
+}
+export const ExtraContent = ({
+  currentResultsState,
+  currentQueryState,
+  updateQueryState,
+}) => {
+  console.log(currentQueryState);
+  return (
+    <Grid.Column>
+      <FacetsButtonGroup keyName="is_open" />
+      <span className="rel-ml-2"></span>
+      <div className="mobile only rel-mb-1"></div>
+      <Button.Group size="mini">
+        <Button active size="mini">
+          {i18next.t("My")}
+        </Button>
+        <Button size="mini">{i18next.t("Others")}</Button>
+      </Button.Group>
+    </Grid.Column>
+  );
+};
+console.log(typeof ExtraContent);
+const ExtraContentWithState = withState(ExtraContent);
+const test = () => <ExtraContentWithState />;
 
 // export const UserDashboardResultListItem = ({ result }) => {
 //   const uiMetadata = {
@@ -51,16 +100,8 @@ const UserDashboardSearchAppResultViewWAppName = parametrize(
 );
 
 export const DashboardUploadsSearchLayout = UserDashboardSearchAppLayoutHOC({
-  searchBarPlaceholder: i18next.t("Search in my uploads..."),
-  newBtn: (
-    <Button
-      positive
-      icon="upload"
-      href="/docs/_new"
-      content={i18next.t("New upload")}
-      floated="right"
-    />
-  ),
+  placeholder: i18next.t("Search in my requests..."),
+  extraContent: test,
   appName: appName,
 });
 export const defaultComponents = {
@@ -71,7 +112,7 @@ export const defaultComponents = {
     BucketAggregationValuesElement,
   [`${appName}.SearchApp.resultOptions`]: SearchAppResultOptions,
   // [`${appName}.EmptyResults.element`]: RDMEmptyResults,
-  [`${appName}.ResultsList.item`]: ResultListItem,
+  [`${appName}.ResultsList.item`]: RequestsResultsItemTemplateDashboard,
   // [`${appName}.SearchApp.facets`]: ContribSearchAppFacetsWithConfig,
   [`${appName}.SearchApp.results`]: UserDashboardSearchAppResultViewWAppName,
   [`${appName}.SearchBar.element`]: SearchappSearchbarElement,

@@ -72,11 +72,16 @@ class DashboardPageResourceConfig(TemplatePageUIResourceConfig):
         return SearchAppConfig.generate(opts, **overrides)
 
     def requests_search_app_config(self, overrides={}, **kwargs):
+        requests_service = current_service_registry.get("requests")
+        requests_config = requests_service.config
+        search_facets = requests_config.search.facets
+        facets = self.search_facets_config(search_facets, search_facets.keys())
         opts = dict(
             app_id="UserDashboard.requests",
             endpoint="/api/requests",
             headers={"Accept": "application/json"},
-            grid_view=False,
+            # initial_filters=[["status", "created"], ["type", "publish_draft"]],
+            initial_filters=[["is_open", "true"]],
             sort=SortConfig(
                 {
                     "title": dict(
@@ -121,7 +126,7 @@ class DashboardPageResourceConfig(TemplatePageUIResourceConfig):
                 "newest",
                 "newest",
             ),
-            facets={},
+            facets=facets,
         )
         opts.update(kwargs)
         return SearchAppConfig.generate(opts, **overrides)
@@ -141,8 +146,8 @@ class DashboardPageResourceConfig(TemplatePageUIResourceConfig):
     def communities_search_app_config(self, overrides={}, **kwargs):
         community_service = current_service_registry.get("communities")
         community_config = community_service.config
-        serach_facets = community_config.search.facets
-        facets = self.search_facets_config(serach_facets, serach_facets.keys())
+        search_facets = community_config.search.facets
+        facets = self.search_facets_config(search_facets, search_facets.keys())
         opts = dict(
             app_id="UserDashboard.communities",
             endpoint="/api/user/communities",
