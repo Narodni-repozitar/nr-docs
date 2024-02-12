@@ -1,3 +1,5 @@
+from oarepo_requests.resolvers.ui import user_entity_reference_ui_resolver, draft_record_entity_reference_ui_resolver, \
+    record_entity_reference_ui_resolver
 from oarepo_requests.resources.draft.resource import DraftRecordRequestsResource
 from oarepo_requests.services.draft.service import DraftRecordRequestsService
 from oarepo_runtime.records.entity_resolvers import UserResolver
@@ -63,6 +65,12 @@ REQUESTS_ENTITY_RESOLVERS = [
         record_cls=DocumentsDraft, service_id="documents", type_key="documents_draft"
     ),
 ]
+
+ENTITY_REFERENCE_UI_RESOLVERS = {
+        "user": user_entity_reference_ui_resolver,
+        "thesis": record_entity_reference_ui_resolver,
+        "thesis_draft": draft_record_entity_reference_ui_resolver,
+    }
 
 
 DOCUMENTS_FILES_RESOURCE_CONFIG = DocumentsFileResourceConfig
