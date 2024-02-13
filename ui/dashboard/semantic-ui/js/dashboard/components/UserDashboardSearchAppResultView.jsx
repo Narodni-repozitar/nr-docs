@@ -14,10 +14,14 @@ import {
   Pagination,
   ResultsPerPage,
 } from "react-searchkit";
-import { Grid } from "semantic-ui-react";
+import { Grid, Segment } from "semantic-ui-react";
 import PropTypes from "prop-types";
 import Overridable from "react-overridable";
-import { ResultsPerPageLabel } from "@js/oarepo_ui";
+import {
+  ResultsPerPageLabel,
+  ResultCountWithState,
+  SearchAppSort,
+} from "@js/oarepo_ui";
 
 export function UserDashboardSearchAppResultView(props) {
   const { sortOptions, paginationOptions, currentResultsState, appName } =
@@ -29,28 +33,43 @@ export function UserDashboardSearchAppResultView(props) {
       <Grid className="rel-mb-2">
         <Grid.Row>
           <Grid.Column width={16}>
-            <Grid>
-              <Overridable
-                id={buildUID("ResultView.resultHeader", "", appName)}
-                sortOptions={sortOptions}
-                paginationOptions={paginationOptions}
-                currentResultsState={currentResultsState}
-                appName={appName}
-              ></Overridable>
-              <Overridable
-                id={buildUID("ResultView.resultList", "", appName)}
-                sortOptions={sortOptions}
-                paginationOptions={paginationOptions}
-                currentResultsState={currentResultsState}
-                appName={appName}
-              >
-                <Grid.Row>
-                  <Grid.Column>
-                    <ResultsList />
-                  </Grid.Column>
-                </Grid.Row>
-              </Overridable>
-            </Grid>
+            <Segment>
+              <Grid>
+                <Overridable
+                  id={buildUID("ResultView.resultHeader", "", appName)}
+                  sortOptions={sortOptions}
+                  paginationOptions={paginationOptions}
+                  currentResultsState={currentResultsState}
+                  appName={appName}
+                >
+                  <Grid.Row verticalAlign="middle" width={16} className="user-dashboard-sort-count">
+                    <Grid.Column textAlign="left" width={8}>
+                      <ResultCountWithState />
+                    </Grid.Column>
+                    <Grid.Column
+                      textAlign="right"
+                      className="search-app-sort-container"
+                      width={8}
+                    >
+                      <SearchAppSort options={sortOptions} />
+                    </Grid.Column>
+                  </Grid.Row>
+                </Overridable>
+                <Overridable
+                  id={buildUID("ResultView.resultList", "", appName)}
+                  sortOptions={sortOptions}
+                  paginationOptions={paginationOptions}
+                  currentResultsState={currentResultsState}
+                  appName={appName}
+                >
+                  <Grid.Row>
+                    <Grid.Column>
+                      <ResultsList />
+                    </Grid.Column>
+                  </Grid.Row>
+                </Overridable>
+              </Grid>
+            </Segment>
           </Grid.Column>
         </Grid.Row>
         <Overridable

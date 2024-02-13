@@ -1,8 +1,13 @@
 .column.results-list.item-main {
-    flex: 1;
+  flex: 1;
 }
-    
+
 .column.results-list.item-side {
-    flex: 0 0 8rem;
+  flex: 0 0 8rem;
 }
- 
+
+.row {
+  &.user-dashboard-sort-count {
+    background-color: @dashboardSortCountBackgroundColor;
+  }
+}

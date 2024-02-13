@@ -48,7 +48,7 @@ export const UserDashboardSearchAppLayoutHOC = ({
                   </Grid.Column>
                   {extraContent()}
                 </Grid.Row>
-                <Grid.Row
+                {/* <Grid.Row
                   verticalAlign="middle"
                   only="computer"
                   className="pb-0"
@@ -63,7 +63,7 @@ export const UserDashboardSearchAppLayoutHOC = ({
                   >
                     <SearchAppSort options={config.sortOptions} />
                   </Grid.Column>
-                </Grid.Row>
+                </Grid.Row> */}
                 <Grid.Column only="mobile tablet" mobile={2} tablet={2}>
                   <Button
                     basic
@@ -84,7 +84,7 @@ export const UserDashboardSearchAppLayoutHOC = ({
                 <Grid.Row only="tablet mobile" verticalAlign="middle">
                   {extraContent()}
                 </Grid.Row>
-                <Grid.Row
+                {/* <Grid.Row
                   only="mobile tablet"
                   verticalAlign="middle"
                   className="pb-0"
@@ -99,7 +99,7 @@ export const UserDashboardSearchAppLayoutHOC = ({
                   >
                     <SearchAppSort options={config.sortOptions} />
                   </Grid.Column>
-                </Grid.Row>
+                </Grid.Row> */}
 
                 {extraRow && (
                   <Grid.Row verticalAlign="middle" only="mobile">

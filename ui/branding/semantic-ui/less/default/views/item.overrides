@@ -1,9 +1,12 @@
 .ui.items > .item {
   cursor: auto !important;
-  &.result-list-item {
-    border: 1px solid @green;
-  }
+  // &.result-list-item {
+  //   border: 1px solid @green;
+  // }
 }
-.ui.divided.items > .item.result-list-item:first-child {
-  border: 1px solid @green;
+.ui.divided.items {
+  .item.mobile:first-of-type {
+    border-top: none !important;
+  }
+  // border: 1px solid @green;
 }
