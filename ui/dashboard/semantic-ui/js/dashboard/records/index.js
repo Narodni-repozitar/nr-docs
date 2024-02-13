@@ -63,22 +63,17 @@ const UserDashboardSearchAppResultViewWAppName = parametrize(
 );
 
 const ExtraContent = () => (
-  <React.Fragment>
-    <Grid.Column>
-      <Dropdown
-        button
-        className="icon"
-        floating
-        labeled
-        icon="plus"
-        options={languageOptions}
-        text={i18next.t("Create new...")}
-      />
-    </Grid.Column>
-    <Grid.Column textAlign="right">
-      <ResultCountWithState />
-    </Grid.Column>
-  </React.Fragment>
+  <Grid.Column textAlign="right">
+    <Dropdown
+      button
+      className="icon"
+      floating
+      labeled
+      icon="plus"
+      options={languageOptions}
+      text={i18next.t("Create new...")}
+    />
+  </Grid.Column>
 );
 
 export const DashboardUploadsSearchLayout = UserDashboardSearchAppLayoutHOC({

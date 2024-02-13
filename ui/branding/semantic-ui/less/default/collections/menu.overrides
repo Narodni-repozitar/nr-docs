@@ -195,10 +195,8 @@
   }
 }
 
-.search-app-sort-container {
-  @media all and (max-width: @tabletBreakpoint) {
-    .ui.dropdown {
-      min-width: 0 !important;
-    }
+@media all and (max-width: @tabletBreakpoint) {
+  .ui.dropdown {
+    min-width: 0 !important;
   }
 }

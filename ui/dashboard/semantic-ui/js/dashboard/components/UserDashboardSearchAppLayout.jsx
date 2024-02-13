@@ -16,15 +16,15 @@ import { Grid, Button, Container } from "semantic-ui-react";
 import PropTypes from "prop-types";
 import { SearchAppFacets, SearchAppSort } from "@js/oarepo_ui";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { UserDashboardNav } from "./UserDashboardNav";
+import { ResultCountWithState } from "@js/oarepo_ui/search";
 
 const queryClient = new QueryClient();
 
 export const UserDashboardSearchAppLayoutHOC = ({
-  placeholder = "",
-  extraContent = () => <Grid.Column>Extra content</Grid.Column>,
-  extraRow = () => null,
-  appName = undefined,
+  placeholder,
+  extraContent,
+  extraRow,
+  appName,
 }) => {
   const DashboardUploadsSearchLayout = (props) => {
     const [sidebarVisible, setSidebarVisible] = React.useState(false);
@@ -33,7 +33,6 @@ export const UserDashboardSearchAppLayoutHOC = ({
       <QueryClientProvider client={queryClient}>
         <Container className="rel-mt-4 rel-mb-4">
           <Grid>
-            {/* <UserDashboardNav /> */}
             <GridResponsiveSidebarColumn
               width={3}
               open={sidebarVisible}
@@ -44,10 +43,19 @@ export const UserDashboardSearchAppLayoutHOC = ({
             <Grid.Column computer={13} mobile={16} tablet={16}>
               <Grid columns="equal">
                 <Grid.Row only="computer" verticalAlign="middle">
-                  <Grid.Column width={5}>
+                  <Grid.Column>
                     <SearchBar placeholder={placeholder} className="rel-pl-1" />
                   </Grid.Column>
                   {extraContent()}
+                </Grid.Row>
+                <Grid.Row
+                  verticalAlign="middle"
+                  only="computer"
+                  className="pb-0"
+                >
+                  <Grid.Column>
+                    <ResultCountWithState />
+                  </Grid.Column>
                   <Grid.Column
                     floated="right"
                     textAlign="right"
@@ -75,26 +83,29 @@ export const UserDashboardSearchAppLayoutHOC = ({
                 </Grid.Column>
                 <Grid.Row only="tablet mobile" verticalAlign="middle">
                   {extraContent()}
+                </Grid.Row>
+                <Grid.Row
+                  only="mobile tablet"
+                  verticalAlign="middle"
+                  className="pb-0"
+                >
+                  <Grid.Column>
+                    <ResultCountWithState />
+                  </Grid.Column>
                   <Grid.Column
+                    floated="right"
                     textAlign="right"
                     className="search-app-sort-container"
                   >
                     <SearchAppSort options={config.sortOptions} />
                   </Grid.Column>
                 </Grid.Row>
-                {/* <Grid.Row only="mobile">
-                  <Grid.Column width={10}></Grid.Column>
-                  <Grid.Column
-                    width={6}
-                    textAlign="right"
-                    className="search-app-sort-container"
-                  >
-                    <SearchAppSort options={config.sortOptions} />
-                  </Grid.Column>
-                </Grid.Row> */}
-                <Grid.Row verticalAlign="middle" only="mobile">
-                  {extraRow()}
-                </Grid.Row>
+
+                {extraRow && (
+                  <Grid.Row verticalAlign="middle" only="mobile">
+                    {extraRow()}
+                  </Grid.Row>
+                )}
                 <Grid.Row>
                   <Grid.Column mobile={16} tablet={16} computer={16}>
                     <SearchAppResultsPane
@@ -116,4 +127,18 @@ export const UserDashboardSearchAppLayoutHOC = ({
   };
 
   return DashboardUploadsSearchLayout;
+};
+
+UserDashboardSearchAppLayoutHOC.propTypes = {
+  placeholder: PropTypes.string,
+  extraContent: PropTypes.func,
+  extraRow: PropTypes.func,
+  appName: PropTypes.string,
+};
+
+UserDashboardSearchAppLayoutHOC.defaultProps = {
+  extraContent: () => null,
+  extraRow: null,
+  appName: undefined,
+  placeholder: "",
 };

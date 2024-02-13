@@ -7,7 +7,7 @@
 import { i18next } from "@translations/invenio_app_rdm/i18next";
 import React from "react";
 import { Image } from "react-invenio-forms";
-import { Button, Grid, Icon, Header } from "semantic-ui-react";
+import { Grid, Icon, Header } from "semantic-ui-react";
 import PropTypes from "prop-types";
 import { CommunityTypeLabel } from "./CommunityTypeLabel";
 import { RestrictedLabel } from "./RestrictedLabel";
@@ -18,26 +18,22 @@ export const ComputerTabledCommunitiesListItem = ({
   isRestricted,
 }) => {
   const communityType = result.ui?.type?.title_l10n;
-  const canUpdate = result.ui?.permissions?.can_update;
 
   return (
     <Grid className="computer tablet only item result-list-item community rel-mb-1 rel-p-1">
-      <Grid.Column
-        tablet={(canUpdate && 13) || 16}
-        computer={13}
-        verticalAlign="middle"
-        className="pl-0"
-      >
+      <Grid.Column width={16} verticalAlign="middle" className="pl-0">
         <div className="flex align-items-center">
           <Image
             wrapped
-            src={result.links.logo}
+            // src={result.links.logo}
+            src="/static/icons/locks/zamky_open_access.svg"
             size="small"
             className="community-image rel-mr-2"
             alt=""
           />
-          <div>
-            {result.access.visibility === "restricted" && (
+          {/* TODO: where to put this style? */}
+          <div style={{ flexShrink: 100 }}>
+            {isRestricted && (
               <div className="rel-mb-1">
                 <RestrictedLabel access={result.access.visibility} />
               </div>
@@ -48,7 +44,7 @@ export const ComputerTabledCommunitiesListItem = ({
               </a>
             </Header>
             {result.metadata.description && (
-              <p className="truncate-lines-1 text size small text-muted mt-5">
+              <p className="truncate-lines-2 text size small text-muted mt-5">
                 {result.metadata.description}
               </p>
             )}
@@ -117,22 +113,6 @@ export const ComputerTabledCommunitiesListItem = ({
           </div>
         </div>
       </Grid.Column>
-
-      {canUpdate && (
-        <Grid.Column width={3} textAlign="right" className="pr-0">
-          <div>
-            <Button
-              compact
-              size="small"
-              href={result.links.settings_html}
-              className="mt-0 mr-0"
-              labelPosition="left"
-              icon="edit"
-              content={i18next.t("Edit")}
-            />
-          </div>
-        </Grid.Column>
-      )}
     </Grid>
   );
 };

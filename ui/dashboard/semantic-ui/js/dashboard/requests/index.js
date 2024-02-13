@@ -13,7 +13,7 @@ import {
 import { withState } from "react-searchkit";
 import { RequestsEmptyResultsWithState } from "@js/invenio_requests/search";
 import { defaultContribComponents } from "@js/invenio_requests/contrib";
-
+import { PropTypes } from "prop-types";
 import { UserDashboardSearchAppLayoutHOC } from "../components/UserDashboardSearchAppLayout";
 import { UserDashboardSearchAppResultView } from "../components/UserDashboardSearchAppResultView";
 import { i18next } from "@translations/i18next";
@@ -39,28 +39,41 @@ export function RequestsResultsItemTemplateDashboard({ result }) {
     </>
   );
 }
-export const ExtraContent = ({
-  currentResultsState,
-  currentQueryState,
-  updateQueryState,
-}) => {
-  console.log(currentQueryState);
-  return (
-    <Grid.Column>
-      <FacetsButtonGroup keyName="is_open" />
-      <span className="rel-ml-2"></span>
-      <div className="mobile only rel-mb-1"></div>
-      <Button.Group size="mini">
-        <Button active size="mini">
-          {i18next.t("My")}
-        </Button>
-        <Button size="mini">{i18next.t("Others")}</Button>
-      </Button.Group>
-    </Grid.Column>
-  );
+
+RequestsResultsItemTemplateDashboard.propTypes = {
+  result: PropTypes.object.isRequired,
 };
-const ExtraContentWithState = withState(ExtraContent);
-const test = () => <ExtraContentWithState />;
+
+export const FacetButtons = withState(
+  ({ currentResultsState, currentQueryState, updateQueryState }) => {
+    return (
+      <React.Fragment>
+        <Grid.Column only="computer" textAlign="right">
+          <FacetsButtonGroup keyName="is_open" />
+          <span className="rel-ml-2"></span>
+          <Button.Group size="mini">
+            <Button active size="mini">
+              {i18next.t("My")}
+            </Button>
+            <Button size="mini">{i18next.t("Others")}</Button>
+          </Button.Group>
+        </Grid.Column>
+        <Grid.Column only="mobile tablet" textAlign="left">
+          <FacetsButtonGroup keyName="is_open" />
+        </Grid.Column>
+        <Grid.Column only="mobile tablet" textAlign="right">
+          <Button.Group size="mini">
+            <Button active size="mini">
+              {i18next.t("My")}
+            </Button>
+            <Button size="mini">{i18next.t("Others")}</Button>
+          </Button.Group>
+        </Grid.Column>
+      </React.Fragment>
+    );
+  }
+);
+const ExtraContentWithState = () => <FacetButtons />;
 
 const UserDashboardSearchAppResultViewWAppName = parametrize(
   UserDashboardSearchAppResultView,
@@ -71,7 +84,7 @@ const UserDashboardSearchAppResultViewWAppName = parametrize(
 
 export const DashboardUploadsSearchLayout = UserDashboardSearchAppLayoutHOC({
   placeholder: i18next.t("Search in my requests..."),
-  extraContent: test,
+  extraContent: ExtraContentWithState,
   appName: appName,
 });
 export const defaultComponents = {

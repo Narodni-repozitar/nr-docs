@@ -7,7 +7,7 @@
 import { i18next } from "@translations/invenio_app_rdm/i18next";
 import React from "react";
 import { Image } from "react-invenio-forms";
-import { Button, Grid, Icon, Header } from "semantic-ui-react";
+import { Grid, Icon, Header } from "semantic-ui-react";
 import PropTypes from "prop-types";
 import { CommunityTypeLabel } from "./CommunityTypeLabel";
 import { RestrictedLabel } from "./RestrictedLabel";
@@ -18,7 +18,6 @@ export const MobileCommunitiesListItem = ({
   isRestricted,
 }) => {
   const communityType = result.ui?.type?.title_l10n;
-  const canUpdate = result.ui?.permissions?.can_update;
   return (
     <Grid className="mobile only item result-list-item community rel-mb-1 rel-p-1">
       {isRestricted && (
@@ -30,16 +29,13 @@ export const MobileCommunitiesListItem = ({
       )}
 
       <Grid.Row verticalAlign="middle">
-        <Grid.Column
-          width={(canUpdate && 11) || 16}
-          verticalAlign="middle"
-          className="pl-0 pr-0"
-        >
+        <Grid.Column width={16} verticalAlign="middle" className="pl-0 pr-0">
           <div className="flex align-items-center">
             <div>
               <Image
                 wrapped
-                src={result.links.logo}
+                // src={result.links.logo}
+                src="/static/icons/locks/zamky_open_access.svg"
                 size="mini"
                 className="community-image rel-mr-1"
                 alt=""
@@ -54,25 +50,6 @@ export const MobileCommunitiesListItem = ({
             </div>
           </div>
         </Grid.Column>
-
-        {canUpdate && (
-          <Grid.Column
-            width={5}
-            verticalAlign="middle"
-            textAlign="right"
-            className="pr-0"
-          >
-            <Button
-              compact
-              size="tiny"
-              href={result.links.settings_html}
-              className="mt-0 mr-0"
-              labelPosition="left"
-              icon="edit"
-              content={i18next.t("Edit")}
-            />
-          </Grid.Column>
-        )}
       </Grid.Row>
 
       {result.metadata.description && (
