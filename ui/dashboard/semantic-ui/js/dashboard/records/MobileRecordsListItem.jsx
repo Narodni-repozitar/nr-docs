@@ -9,7 +9,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Item, Label } from "semantic-ui-react";
 
-export const MobileRecordsItem = ({ result, uiMetadata }) => {
+export const MobileRecordsListItem = ({ result, uiMetadata }) => {
   const { abstract, title, resourceType, createdDate, viewLink, accessRights } =
     uiMetadata;
 
@@ -49,7 +49,7 @@ export const MobileRecordsItem = ({ result, uiMetadata }) => {
   );
 };
 
-MobileRecordsItem.propTypes = {
+MobileRecordsListItem.propTypes = {
   result: PropTypes.object.isRequired,
   uiMetadata: PropTypes.object.isRequired,
 };

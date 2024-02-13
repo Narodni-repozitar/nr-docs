@@ -31,9 +31,9 @@ export const UserDashboardSearchAppLayoutHOC = ({
     const { config } = props;
     return (
       <QueryClientProvider client={queryClient}>
-        <Container className="rel-mt-2 rel-mb-2">
+        <Container className="rel-mt-4 rel-mb-4">
           <Grid>
-            <UserDashboardNav />
+            {/* <UserDashboardNav /> */}
             <GridResponsiveSidebarColumn
               width={3}
               open={sidebarVisible}

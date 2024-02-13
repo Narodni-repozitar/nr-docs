@@ -13,7 +13,7 @@ const FacetsButtonGroupComponent = ({
     (f) => f[0] === keyName
   );
   if (!currentFilter)
-    console.error("FacetsButtonGroup: No current filter found");
+    console.error("FacetsButtonGroup: Facet name not provided");
   const currentStatus = JSON.parse(currentFilter?.[1]);
   const handleFilterChange = (status) => {
     if (currentStatus === status) return;

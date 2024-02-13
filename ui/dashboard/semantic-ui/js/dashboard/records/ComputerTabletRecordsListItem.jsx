@@ -9,7 +9,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Button, Item, Label } from "semantic-ui-react";
 
-export const ComputerTabletRecordsItem = ({ result, uiMetadata }) => {
+export const ComputerTabletRecordsListItem = ({ result, uiMetadata }) => {
   const { abstract, title, resourceType, createdDate, viewLink, accessRights } =
     uiMetadata;
 
@@ -67,7 +67,7 @@ export const ComputerTabletRecordsItem = ({ result, uiMetadata }) => {
   );
 };
 
-ComputerTabletRecordsItem.propTypes = {
+ComputerTabletRecordsListItem.propTypes = {
   result: PropTypes.object.isRequired,
   uiMetadata: PropTypes.object.isRequired,
 };

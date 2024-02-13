@@ -2,6 +2,8 @@ from oarepo_ui.resources.config import TemplatePageUIResourceConfig
 from oarepo_ui.resources.resource import TemplatePageUIResource
 from invenio_search_ui.searchconfig import FacetsConfig, SearchAppConfig, SortConfig
 from invenio_records_resources.proxies import current_service_registry
+from flask_menu import current_menu
+from flask_babelex import lazy_gettext as _
 
 
 class DashboardPageResourceConfig(TemplatePageUIResourceConfig):
@@ -219,4 +221,27 @@ class DashboardPageResource(TemplatePageUIResource):
 
 def create_blueprint(app):
     """Register blueprint for this resource."""
-    return DashboardPageResource(DashboardPageResourceConfig()).as_blueprint()
+    app_blueprint = DashboardPageResource(DashboardPageResourceConfig()).as_blueprint()
+
+    @app_blueprint.before_app_first_request
+    def init_menu():
+        user_dashboard = current_menu.submenu("user_dashboard")
+        user_dashboard.submenu("records").register(
+            "dashboard.render_DashboardRecordsPage",
+            text="Records",
+            order=1,
+        )
+
+        user_dashboard.submenu("communities").register(
+            "dashboard.render_DashboardCommunitiesPage",
+            text="Communities",
+            order=2,
+        )
+
+        user_dashboard.submenu("requests").register(
+            "dashboard.render_DashboardRequestsPage",
+            text="Requests",
+            order=3,
+        )
+
+    return app_blueprint

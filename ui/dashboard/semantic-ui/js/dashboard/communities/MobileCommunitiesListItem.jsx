@@ -12,7 +12,7 @@ import PropTypes from "prop-types";
 import { CommunityTypeLabel } from "./CommunityTypeLabel";
 import { RestrictedLabel } from "./RestrictedLabel";
 
-export const MobileCommunitiesResultItem = ({
+export const MobileCommunitiesListItem = ({
   result,
   communityTypeLabelTransparent,
   isRestricted,
@@ -154,12 +154,12 @@ export const MobileCommunitiesResultItem = ({
   );
 };
 
-MobileCommunitiesResultItem.propTypes = {
+MobileCommunitiesListItem.propTypes = {
   result: PropTypes.object.isRequired,
   communityTypeLabelTransparent: PropTypes.bool,
   isRestricted: PropTypes.bool,
 };
 
-MobileCommunitiesResultItem.defaultProps = {
+MobileCommunitiesListItem.defaultProps = {
   communityTypeLabelTransparent: false,
 };

@@ -11,31 +11,23 @@ import {
   BucketAggregationValuesElement,
 } from "@js/oarepo_ui/search";
 import { withState } from "react-searchkit";
-import {
-  MobileRequestItem,
-  ComputerTabletRequestItem,
-  RequestsSearchLayout,
-  RequestsEmptyResultsWithState,
-  RequestsResults,
-} from "@js/invenio_requests/search";
+import { RequestsEmptyResultsWithState } from "@js/invenio_requests/search";
+import { defaultContribComponents } from "@js/invenio_requests/contrib";
 
 import { UserDashboardSearchAppLayoutHOC } from "../components/UserDashboardSearchAppLayout";
 import { UserDashboardSearchAppResultView } from "../components/UserDashboardSearchAppResultView";
 import { i18next } from "@translations/i18next";
 import { FacetsButtonGroup } from "./FacetsButtonGroup";
-// import { ComputerTabletUploadsItem } from "../components/resultitems/uploads/ComputerTabletUploadsItem";
-// import { MobileUploadsItem } from "../components/resultitems/uploads/MobileUploadsItem";
-const appName = "UserDashboard.requests";
+import { ComputerTabletRequestsListItem } from "./ComputerTabletRequestsListItem";
+import { MobileRequestsListItem } from "./MobileRequestsListItem";
 
-const ResultListItem = ({ result }) => {
-  return <div>{result?.id}</div>;
-};
+const appName = "UserDashboard.requests";
 
 export function RequestsResultsItemTemplateDashboard({ result }) {
   const ComputerTabletRequestsItemWithState = withState(
-    ComputerTabletRequestItem
+    ComputerTabletRequestsListItem
   );
-  const MobileRequestsItemWithState = withState(MobileRequestItem);
+  const MobileRequestsItemWithState = withState(MobileRequestsListItem);
   const detailsURL = `/me/requests/${result.id}`;
   return (
     <>
@@ -67,30 +59,8 @@ export const ExtraContent = ({
     </Grid.Column>
   );
 };
-console.log(typeof ExtraContent);
 const ExtraContentWithState = withState(ExtraContent);
 const test = () => <ExtraContentWithState />;
-
-// export const UserDashboardResultListItem = ({ result }) => {
-//   const uiMetadata = {
-//     title: _get(result, "metadata.title", i18next.t("No title")),
-//     // abstract: _get(result, "metadata.abstract", i18next.t("No abstract")),
-//     resourceType: _get(
-//       result,
-//       "metadata.resourceType",
-//       i18next.t("No resource type")
-//     ),
-//     createdDate: _get(result, "created"),
-//     viewLink: _get(result, "links.self_html"),
-//   };
-
-//   return (
-//     <React.Fragment>
-//       <MobileUploadsItem result={result} uiMetadata={uiMetadata} />
-//       <ComputerTabletUploadsItem result={result} uiMetadata={uiMetadata} />
-//     </React.Fragment>
-//   );
-// };
 
 const UserDashboardSearchAppResultViewWAppName = parametrize(
   UserDashboardSearchAppResultView,
@@ -111,13 +81,14 @@ export const defaultComponents = {
   [`${appName}.BucketAggregationValues.element`]:
     BucketAggregationValuesElement,
   [`${appName}.SearchApp.resultOptions`]: SearchAppResultOptions,
-  // [`${appName}.EmptyResults.element`]: RDMEmptyResults,
+  [`${appName}.EmptyResults.element`]: RequestsEmptyResultsWithState,
   [`${appName}.ResultsList.item`]: RequestsResultsItemTemplateDashboard,
   // [`${appName}.SearchApp.facets`]: ContribSearchAppFacetsWithConfig,
   [`${appName}.SearchApp.results`]: UserDashboardSearchAppResultViewWAppName,
   [`${appName}.SearchBar.element`]: SearchappSearchbarElement,
   [`${appName}.SearchApp.layout`]: DashboardUploadsSearchLayout,
   [`${appName}.SearchApp.sort`]: SearchAppSort,
+  ...defaultContribComponents,
 };
 
 const overriddenComponents = overrideStore.getAll();

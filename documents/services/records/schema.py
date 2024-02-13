@@ -47,7 +47,7 @@ from nr_metadata.schema.identifiers import (
     NRObjectIdentifierSchema,
     NRSystemIdentifierSchema,
 )
-from oarepo_requests.services.schemas import NoneReceiverGenericRequestSchema
+from oarepo_requests.services.schema import NoneReceiverGenericRequestSchema
 from oarepo_runtime.services.schema.marshmallow import DictOnlySchema
 from oarepo_vocabularies.services.schema import HierarchySchema
 
@@ -117,7 +117,6 @@ class DocumentsSchema(NRDocumentRecordSchema):
         lambda: FilesOptionsSchema(), load_default={"enabled": True}
     )
     metadata = ma_fields.Nested(lambda: DocumentsMetadataSchema())
-
 
     # todo this needs to be generated for [default preview] to work
     def get_attribute(self, obj, attr, default):

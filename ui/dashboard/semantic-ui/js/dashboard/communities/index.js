@@ -14,8 +14,8 @@ import {
 // in their system
 import { CommunitiesEmptySearchResults } from "@js/invenio_communities/community";
 import PropTypes from "prop-types";
-import { ComputerTabletCommunitiesResultItem } from "./ComputerTabletCommunitiesResultItem";
-import { MobileCommunitiesResultItem } from "./MobileCommunitiesResultItem";
+import { ComputerTabledCommunitiesListItem } from "./ComputerTabletCommunitiesListItem";
+import { MobileCommunitiesListItem } from "./MobileCommunitiesListItem";
 import { UserDashboardSearchAppLayoutHOC } from "../components/UserDashboardSearchAppLayout";
 import { UserDashboardSearchAppResultView } from "../components/UserDashboardSearchAppResultView";
 import { i18next } from "@translations/i18next";
@@ -28,12 +28,12 @@ export const UserDashboardCommunitiesListItem = ({
   const isRestricted = result?.access?.visibility === "restricted";
   return (
     <React.Fragment>
-      <ComputerTabletCommunitiesResultItem
+      <ComputerTabledCommunitiesListItem
         result={result}
         communityTypeLabelTransparent={communityTypeLabelTransparent}
         isRestricted={isRestricted}
       />
-      <MobileCommunitiesResultItem
+      <MobileCommunitiesListItem
         result={result}
         communityTypeLabelTransparent={communityTypeLabelTransparent}
         isRestricted={isRestricted}

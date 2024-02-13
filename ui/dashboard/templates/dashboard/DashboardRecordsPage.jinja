@@ -8,9 +8,12 @@
 {%- block javascript %}
 {{super()}}
 {{webpack["dashboard_records.js"]}}
+{{webpack["components.js"]}}
+{{webpack["components.css"]}}
 {%- endblock javascript %}
 
 {%- block page_body %}
+    <Header />
     <div
     id="invenio-search-config"
     data-invenio-search-config='{{ search_app_config | tojson }}'
