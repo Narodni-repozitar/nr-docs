@@ -1,5 +1,5 @@
 .ui.button {
-  &.keyword-subjects-remove-btn {
+  &.transparent {
     background-color: transparent;
   }
 }

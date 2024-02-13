@@ -26,8 +26,4 @@
       color: blue;
     }
   }
-
-  &.keyword-subject-divider {
-    background-color: transparent;
-  }
 }
