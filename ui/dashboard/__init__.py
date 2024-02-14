@@ -83,7 +83,7 @@ class DashboardPageResourceConfig(TemplatePageUIResourceConfig):
             endpoint="/api/requests",
             headers={"Accept": "application/json"},
             # initial_filters=[["status", "created"], ["type", "publish_draft"]],
-            initial_filters=[["is_open", "true"]],
+            initial_filters=[["is_open", "true"], ["is_mine", "true"]],
             sort=SortConfig(
                 {
                     "title": dict(

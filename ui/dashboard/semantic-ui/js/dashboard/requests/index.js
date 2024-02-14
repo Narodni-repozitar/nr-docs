@@ -54,12 +54,11 @@ export const FacetButtons = (
       </Button>
       <FacetsButtonGroup keyName="is_open" />
       <span className="rel-ml-2"></span>
-      <Button.Group size="mini">
-        <Button active size="mini">
-          {i18next.t("My")}
-        </Button>
-        <Button size="mini">{i18next.t("Others")}</Button>
-      </Button.Group>
+      <FacetsButtonGroup
+        keyName="is_mine"
+        trueButtonText={i18next.t("My")}
+        falseButtonText={i18next.t("Others")}
+      />
     </Grid.Column>
     <Grid.Column only="tablet" textAlign="left">
       <Button size="mini" primary>
@@ -71,12 +70,11 @@ export const FacetButtons = (
       <FacetsButtonGroup keyName="is_open" />
     </Grid.Column>
     <Grid.Column only="mobile tablet" textAlign="right">
-      <Button.Group size="mini">
-        <Button active size="mini">
-          {i18next.t("My")}
-        </Button>
-        <Button size="mini">{i18next.t("Others")}</Button>
-      </Button.Group>
+      <FacetsButtonGroup
+        keyName="is_mine"
+        trueButtonText={i18next.t("My")}
+        falseButtonText={i18next.t("Others")}
+      />
     </Grid.Column>
   </React.Fragment>
 );
