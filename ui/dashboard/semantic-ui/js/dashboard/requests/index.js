@@ -44,7 +44,7 @@ RequestsResultsItemTemplateDashboard.propTypes = {
   result: PropTypes.object.isRequired,
 };
 
-export const FacetButtons = (
+export const FacetButtons = () => (
   <React.Fragment>
     <Grid.Column only="computer" textAlign="right">
       <Button size="mini" primary className="rel-mr-2">
@@ -52,10 +52,10 @@ export const FacetButtons = (
 
         {i18next.t("New request")}
       </Button>
-      <FacetsButtonGroup keyName="is_open" />
+      <FacetsButtonGroup facetName="is_open" />
       <span className="rel-ml-2"></span>
       <FacetsButtonGroup
-        keyName="is_mine"
+        facetName="is_mine"
         trueButtonText={i18next.t("My")}
         falseButtonText={i18next.t("Others")}
       />
@@ -67,11 +67,11 @@ export const FacetButtons = (
       </Button>
     </Grid.Column>
     <Grid.Column only="mobile tablet" textAlign="left">
-      <FacetsButtonGroup keyName="is_open" />
+      <FacetsButtonGroup facetName="is_open" />
     </Grid.Column>
     <Grid.Column only="mobile tablet" textAlign="right">
       <FacetsButtonGroup
-        keyName="is_mine"
+        facetName="is_mine"
         trueButtonText={i18next.t("My")}
         falseButtonText={i18next.t("Others")}
       />

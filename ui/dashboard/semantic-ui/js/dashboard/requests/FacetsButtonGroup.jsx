@@ -9,24 +9,37 @@ const FacetsButtonGroupComponent = ({
   currentResultsState,
   currentQueryState,
   updateQueryState,
-  keyName,
+  facetName,
   trueButtonText,
   falseButtonText,
+  keepFiltersOnUpdate,
   ...uiProps
 }) => {
   const { initialQueryState } = useContext(SearchConfigurationContext);
   const currentFilter = currentQueryState.filters?.find(
-    (f) => f[0] === keyName
+    (f) => f[0] === facetName
   );
+  const initialQueryFacets = initialQueryState.filters?.map((f) => f[0]);
   if (!currentFilter)
     console.error("FacetsButtonGroup: Facet name not provided");
   const currentStatus = JSON.parse(currentFilter?.[1]);
   const handleFilterChange = (status) => {
     if (currentStatus === status) return;
-    currentQueryState.filters = currentQueryState?.filters?.filter(
-      (f) => f[0] !== keyName 
+
+    currentQueryState.filters = keepFiltersOnUpdate
+      ? currentQueryState.filters.filter((element) => element[0] !== facetName)
+      : [
+          ...(currentQueryState?.filters
+            ? currentQueryState.filters.filter((element) =>
+                initialQueryFacets.includes(element[0])
+              )
+            : []),
+        ];
+    currentQueryState.filters = currentQueryState.filters.filter(
+      (f) => f[0] !== facetName
     );
-    currentQueryState.filters.push([keyName, status]);
+
+    currentQueryState.filters.push([facetName, status]);
     updateQueryState(currentQueryState);
   };
   return (
@@ -53,12 +66,14 @@ FacetsButtonGroupComponent.propTypes = {
   currentQueryState: PropTypes.object.isRequired,
   updateQueryState: PropTypes.func.isRequired,
   currentResultsState: PropTypes.object.isRequired,
-  keyName: PropTypes.string.isRequired,
+  facetName: PropTypes.string.isRequired,
   trueButtonText: PropTypes.string,
   falseButtonText: PropTypes.string,
+  keepFiltersOnUpdate: PropTypes.bool,
 };
 FacetsButtonGroupComponent.defaultProps = {
   trueButtonText: i18next.t("Open"),
   falseButtonText: i18next.t("Closed"),
+  keepFiltersOnUpdate: true,
 };
 export const FacetsButtonGroup = withState(FacetsButtonGroupComponent);

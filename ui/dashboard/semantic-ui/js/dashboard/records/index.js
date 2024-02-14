@@ -12,7 +12,6 @@ import {
   SearchAppSort,
   SearchappSearchbarElement,
   EmptyResultsElement,
-  ResultCountWithState,
 } from "@js/oarepo_ui/search";
 import { UserDashboardSearchAppLayoutHOC } from "../components/UserDashboardSearchAppLayout";
 import { UserDashboardSearchAppResultView } from "../components/UserDashboardSearchAppResultView";
@@ -21,8 +20,15 @@ import { ComputerTabletRecordsListItem } from "./ComputerTabletRecordsListItem";
 import { MobileRecordsListItem } from "./MobileRecordsListItem";
 const appName = "UserDashboard.records";
 
-const languageOptions = [
-  { key: "docs", text: <a href="/docs/_new">New doc</a>, value: "docs" },
+const schemesList = [
+  {
+    key: "docs",
+    text: <a href="/docs/_new">New doc</a>,
+    value: "docs",
+    // major hack for first item in dropdown being automatically highlighted :0
+    selected: false,
+    active: false,
+  },
   {
     key: "communities",
     text: <a href="/communities/new">New comm</a>,
@@ -62,15 +68,15 @@ const UserDashboardSearchAppResultViewWAppName = parametrize(
   }
 );
 
-const ExtraContent = (
+const ExtraContent = () => (
   <Grid.Column textAlign="right">
     <Dropdown
       button
-      className="icon"
-      floating
+      className="icon primary tiny"
+      placeholder="Choose an option"
       labeled
       icon="plus"
-      options={languageOptions}
+      options={schemesList}
       text={i18next.t("Create new...")}
     />
   </Grid.Column>
@@ -83,7 +89,6 @@ export const DashboardUploadsSearchLayout = UserDashboardSearchAppLayoutHOC({
 });
 export const defaultComponents = {
   [`${appName}.ActiveFilters.element`]: ActiveFiltersElement,
-
   [`${appName}.BucketAggregation.element`]: BucketAggregationElement,
   [`${appName}.BucketAggregationValues.element`]:
     BucketAggregationValuesElement,

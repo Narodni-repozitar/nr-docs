@@ -25,8 +25,7 @@ export const ComputerTabledCommunitiesListItem = ({
         <div className="flex align-items-center">
           <Image
             wrapped
-            // src={result.links.logo}
-            src="/static/icons/locks/zamky_open_access.svg"
+            src={result.links.logo}
             size="small"
             className="community-image rel-mr-2"
             alt=""
@@ -52,7 +51,7 @@ export const ComputerTabledCommunitiesListItem = ({
             {(communityType ||
               result.metadata.website ||
               result.metadata.organizations) && (
-              <div className="flex align-items-center wrap mt-5 text size small text-muted">
+              <div className="wrap mt-5 text size small text-muted">
                 {communityType && (
                   <CommunityTypeLabel
                     transparent={communityTypeLabelTransparent}
@@ -61,7 +60,7 @@ export const ComputerTabledCommunitiesListItem = ({
                 )}
 
                 {result.metadata.website && (
-                  <div className="rel-mr-1">
+                  <div className="rel-mt-1">
                     <Icon name="linkify" />
                     <a
                       href={result.metadata.website}

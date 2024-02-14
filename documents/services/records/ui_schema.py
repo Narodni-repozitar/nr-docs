@@ -58,6 +58,8 @@ class DocumentsUISchema(NRDocumentRecordUISchema):
 
     metadata = ma_fields.Nested(lambda: DocumentsMetadataUISchema())
 
+    schema = ma_fields.String()
+
 
 class DocumentsMetadataUISchema(NRDocumentMetadataUISchema):
     class Meta:
@@ -74,8 +76,6 @@ class DocumentsMetadataUISchema(NRDocumentMetadataUISchema):
     )
 
     thesis = ma_fields.Nested(lambda: ThesisUISchema())
-    
-    
 
 
 class GeoLocationsItemUISchema(NRGeoLocationUISchema):

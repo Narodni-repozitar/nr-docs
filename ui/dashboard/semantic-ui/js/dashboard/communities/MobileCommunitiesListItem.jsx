@@ -34,8 +34,7 @@ export const MobileCommunitiesListItem = ({
             <div>
               <Image
                 wrapped
-                // src={result.links.logo}
-                src="/static/icons/locks/zamky_open_access.svg"
+                src={result.links.logo}
                 size="mini"
                 className="community-image rel-mr-1"
                 alt=""

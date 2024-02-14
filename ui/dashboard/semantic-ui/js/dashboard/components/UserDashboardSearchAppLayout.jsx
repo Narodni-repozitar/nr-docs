@@ -45,7 +45,7 @@ export const UserDashboardSearchAppLayoutHOC = ({
                   <Grid.Column>
                     <SearchBar placeholder={placeholder} className="rel-pl-1" />
                   </Grid.Column>
-                  {extraContent}
+                  {extraContent()}
                 </Grid.Row>
                 <Grid.Column only="mobile tablet" mobile={2} tablet={2}>
                   <Button
@@ -65,7 +65,7 @@ export const UserDashboardSearchAppLayoutHOC = ({
                   <SearchBar placeholder={placeholder} />
                 </Grid.Column>
                 <Grid.Row only="tablet mobile" verticalAlign="middle">
-                  {extraContent}
+                  {extraContent()}
                 </Grid.Row>
                 {extraRow && (
                   <Grid.Row verticalAlign="middle" only="mobile">
@@ -97,13 +97,13 @@ export const UserDashboardSearchAppLayoutHOC = ({
 
 UserDashboardSearchAppLayoutHOC.propTypes = {
   placeholder: PropTypes.string,
-  extraContent: PropTypes.node,
-  extraRow: PropTypes.node,
+  extraContent: PropTypes.func,
+  extraRow: PropTypes.func,
   appName: PropTypes.string,
 };
 
 UserDashboardSearchAppLayoutHOC.defaultProps = {
-  extraContent: null,
+  extraContent: () => null,
   extraRow: null,
   appName: undefined,
   placeholder: "",
