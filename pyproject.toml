@@ -6,7 +6,6 @@ packages = []
 authors = []
 dependencies = [
     "deepmerge>=1.1.0",
-    "invenio-drafts-resources>=1.0.4",
     "json5",
     "nr-metadata>=2.0.0",
     "nr-oaipmh-harvesters>=1.0.0",

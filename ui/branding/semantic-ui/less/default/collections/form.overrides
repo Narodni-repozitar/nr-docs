@@ -82,16 +82,6 @@
       }
     }
 
-    .subjects.invenio-group-field.fields {
-      .invenio-group-field.fields {
-        margin-bottom: 1rem;
-      }
-      .ui.icon.left.labeled.button {
-        margin-top: 1.35rem;
-        margin-left: 1rem;
-      }
-    }
-
     .events.invenio-group-field.fields {
       display: block;
       border-radius: 0.5rem;
@@ -141,6 +131,7 @@
   #main-content {
     .ui.icon.left.labeled.button {
       background-color: @arrayAddButtonFieldColor;
+      color: black;
     }
     .ui.icon.left.labeled.button:hover {
       background-color: @arrayAddButtonFieldHoverColor;
