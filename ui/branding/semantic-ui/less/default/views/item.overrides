@@ -5,7 +5,10 @@
   // }
 }
 .ui.divided.items {
-  .item.mobile:first-of-type {
+  .item.mobile:nth-child(2) {
+    border-top: none !important;
+  }
+  .item.computer.tablet:first-of-type {
     border-top: none !important;
   }
   // border: 1px solid @green;

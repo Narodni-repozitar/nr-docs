@@ -49,8 +49,8 @@ export const UserDashboardRecordsListItem = ({ result }) => {
 
   return (
     <React.Fragment>
-      <MobileRecordsListItem result={result} uiMetadata={uiMetadata} />
       <ComputerTabletRecordsListItem result={result} uiMetadata={uiMetadata} />
+      <MobileRecordsListItem result={result} uiMetadata={uiMetadata} />
     </React.Fragment>
   );
 };
@@ -62,7 +62,7 @@ const UserDashboardSearchAppResultViewWAppName = parametrize(
   }
 );
 
-const ExtraContent = () => (
+const ExtraContent = (
   <Grid.Column textAlign="right">
     <Dropdown
       button

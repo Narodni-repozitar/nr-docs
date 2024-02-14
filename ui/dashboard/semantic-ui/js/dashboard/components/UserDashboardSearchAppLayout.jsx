@@ -14,9 +14,8 @@ import { SearchBar } from "react-searchkit";
 import { GridResponsiveSidebarColumn } from "react-invenio-forms";
 import { Grid, Button, Container } from "semantic-ui-react";
 import PropTypes from "prop-types";
-import { SearchAppFacets, SearchAppSort } from "@js/oarepo_ui";
+import { SearchAppFacets } from "@js/oarepo_ui";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { ResultCountWithState } from "@js/oarepo_ui/search";
 
 const queryClient = new QueryClient();
 
@@ -46,24 +45,8 @@ export const UserDashboardSearchAppLayoutHOC = ({
                   <Grid.Column>
                     <SearchBar placeholder={placeholder} className="rel-pl-1" />
                   </Grid.Column>
-                  {extraContent()}
+                  {extraContent}
                 </Grid.Row>
-                {/* <Grid.Row
-                  verticalAlign="middle"
-                  only="computer"
-                  className="pb-0"
-                >
-                  <Grid.Column>
-                    <ResultCountWithState />
-                  </Grid.Column>
-                  <Grid.Column
-                    floated="right"
-                    textAlign="right"
-                    className="search-app-sort-container"
-                  >
-                    <SearchAppSort options={config.sortOptions} />
-                  </Grid.Column>
-                </Grid.Row> */}
                 <Grid.Column only="mobile tablet" mobile={2} tablet={2}>
                   <Button
                     basic
@@ -82,28 +65,11 @@ export const UserDashboardSearchAppLayoutHOC = ({
                   <SearchBar placeholder={placeholder} />
                 </Grid.Column>
                 <Grid.Row only="tablet mobile" verticalAlign="middle">
-                  {extraContent()}
+                  {extraContent}
                 </Grid.Row>
-                {/* <Grid.Row
-                  only="mobile tablet"
-                  verticalAlign="middle"
-                  className="pb-0"
-                >
-                  <Grid.Column>
-                    <ResultCountWithState />
-                  </Grid.Column>
-                  <Grid.Column
-                    floated="right"
-                    textAlign="right"
-                    className="search-app-sort-container"
-                  >
-                    <SearchAppSort options={config.sortOptions} />
-                  </Grid.Column>
-                </Grid.Row> */}
-
                 {extraRow && (
                   <Grid.Row verticalAlign="middle" only="mobile">
-                    {extraRow()}
+                    {extraRow}
                   </Grid.Row>
                 )}
                 <Grid.Row>
@@ -131,13 +97,13 @@ export const UserDashboardSearchAppLayoutHOC = ({
 
 UserDashboardSearchAppLayoutHOC.propTypes = {
   placeholder: PropTypes.string,
-  extraContent: PropTypes.func,
-  extraRow: PropTypes.func,
+  extraContent: PropTypes.node,
+  extraRow: PropTypes.node,
   appName: PropTypes.string,
 };
 
 UserDashboardSearchAppLayoutHOC.defaultProps = {
-  extraContent: () => null,
+  extraContent: null,
   extraRow: null,
   appName: undefined,
   placeholder: "",

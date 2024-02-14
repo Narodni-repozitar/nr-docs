@@ -80,7 +80,7 @@ export const MobileRequestsListItem = ({
             {creatorName}
           </small>
           <small className="block rel-mt-1">
-            {result.receiver.community &&
+            {result.receiver?.community &&
               result.expanded?.receiver.metadata.title && (
                 <>
                   <Icon

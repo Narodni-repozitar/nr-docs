@@ -83,7 +83,7 @@ export const ComputerTabletRequestsListItem = ({
             {creatorName}
           </small>
           <small className="right floated">
-            {result.receiver.community &&
+            {result.receiver?.community &&
               result.expanded?.receiver.metadata.title && (
                 <>
                   <Icon

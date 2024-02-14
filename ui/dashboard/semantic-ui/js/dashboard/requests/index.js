@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Grid } from "semantic-ui-react";
+import { Button, Grid, Icon } from "semantic-ui-react";
 import { parametrize, overrideStore } from "react-overridable";
 import { createSearchAppInit } from "@js/invenio_search_ui";
 import {
@@ -44,36 +44,42 @@ RequestsResultsItemTemplateDashboard.propTypes = {
   result: PropTypes.object.isRequired,
 };
 
-export const FacetButtons = withState(
-  ({ currentResultsState, currentQueryState, updateQueryState }) => {
-    return (
-      <React.Fragment>
-        <Grid.Column only="computer" textAlign="right">
-          <FacetsButtonGroup keyName="is_open" />
-          <span className="rel-ml-2"></span>
-          <Button.Group size="mini">
-            <Button active size="mini">
-              {i18next.t("My")}
-            </Button>
-            <Button size="mini">{i18next.t("Others")}</Button>
-          </Button.Group>
-        </Grid.Column>
-        <Grid.Column only="mobile tablet" textAlign="left">
-          <FacetsButtonGroup keyName="is_open" />
-        </Grid.Column>
-        <Grid.Column only="mobile tablet" textAlign="right">
-          <Button.Group size="mini">
-            <Button active size="mini">
-              {i18next.t("My")}
-            </Button>
-            <Button size="mini">{i18next.t("Others")}</Button>
-          </Button.Group>
-        </Grid.Column>
-      </React.Fragment>
-    );
-  }
+export const FacetButtons = (
+  <React.Fragment>
+    <Grid.Column only="computer" textAlign="right">
+      <Button size="mini" primary className="rel-mr-2">
+        <Icon name="plus" />
+
+        {i18next.t("New request")}
+      </Button>
+      <FacetsButtonGroup keyName="is_open" />
+      <span className="rel-ml-2"></span>
+      <Button.Group size="mini">
+        <Button active size="mini">
+          {i18next.t("My")}
+        </Button>
+        <Button size="mini">{i18next.t("Others")}</Button>
+      </Button.Group>
+    </Grid.Column>
+    <Grid.Column only="tablet" textAlign="left">
+      <Button size="mini" primary>
+        <Icon name="plus" />
+        {i18next.t("New request")}
+      </Button>
+    </Grid.Column>
+    <Grid.Column only="mobile tablet" textAlign="left">
+      <FacetsButtonGroup keyName="is_open" />
+    </Grid.Column>
+    <Grid.Column only="mobile tablet" textAlign="right">
+      <Button.Group size="mini">
+        <Button active size="mini">
+          {i18next.t("My")}
+        </Button>
+        <Button size="mini">{i18next.t("Others")}</Button>
+      </Button.Group>
+    </Grid.Column>
+  </React.Fragment>
 );
-const ExtraContentWithState = () => <FacetButtons />;
 
 const UserDashboardSearchAppResultViewWAppName = parametrize(
   UserDashboardSearchAppResultView,
@@ -84,8 +90,16 @@ const UserDashboardSearchAppResultViewWAppName = parametrize(
 
 export const DashboardUploadsSearchLayout = UserDashboardSearchAppLayoutHOC({
   placeholder: i18next.t("Search in my requests..."),
-  extraContent: ExtraContentWithState,
+  extraContent: FacetButtons,
   appName: appName,
+  extraRow: (
+    <Grid.Column>
+      <Button fluid size="mini" primary>
+        <Icon name="plus" />
+        {i18next.t("New request")}
+      </Button>
+    </Grid.Column>
+  ),
 });
 export const defaultComponents = {
   [`${appName}.ActiveFilters.element`]: ActiveFiltersElement,
