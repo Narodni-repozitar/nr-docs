@@ -1,18 +1,14 @@
 from invenio_records_resources.services import FileLink, FileServiceConfig, RecordLink
 from invenio_records_resources.services.records.components import DataComponent
 from oarepo_runtime.services.config.service import PermissionsPresetsConfigMixin
-from oarepo_runtime.services.results import RecordList
 
 from documents.records.api import DocumentsDraft, DocumentsRecord
-from documents.services.files.permissions import DocumentsFileDraftPermissionPolicy
 from documents.services.files.schema import DocumentsFileSchema
 from documents.services.records.permissions import DocumentsPermissionPolicy
 
 
 class DocumentsFileServiceConfig(PermissionsPresetsConfigMixin, FileServiceConfig):
     """DocumentsRecord service config."""
-
-    result_list_cls = RecordList
 
     PERMISSIONS_PRESETS = ["everyone"]
 
@@ -53,13 +49,9 @@ class DocumentsFileServiceConfig(PermissionsPresetsConfigMixin, FileServiceConfi
 class DocumentsFileDraftServiceConfig(PermissionsPresetsConfigMixin, FileServiceConfig):
     """DocumentsDraft service config."""
 
-    result_list_cls = RecordList
-
     PERMISSIONS_PRESETS = ["everyone"]
 
     url_prefix = "/docs/<pid_value>/draft"
-
-    base_permission_policy_cls = DocumentsFileDraftPermissionPolicy
 
     schema = DocumentsFileSchema
 
