@@ -40,7 +40,7 @@ from nr_metadata.ui_schema.identifiers import (
     NRObjectIdentifierUISchema,
     NRSystemIdentifierUISchema,
 )
-from oarepo_requests.services.ui_schema import RequestsUISchema, UIRequestsSerializationMixin
+from oarepo_requests.services.ui_schema import UIRequestsSerializationMixin
 from oarepo_runtime.services.schema.marshmallow import DictOnlySchema
 from oarepo_vocabularies.services.ui_schema import (
     HierarchyUISchema,
