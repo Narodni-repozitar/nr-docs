@@ -1,3 +1,4 @@
+import copy
 import datetime
 import gzip
 import os
@@ -155,16 +156,13 @@ class S3Reader(BaseReader):
                             print(f"Failed to create the presigned url for {file}.")
                             continue
 
-                        metadata = file
+                        metadata = copy.deepcopy(file)
                         metadata.pop("location")
                         metadata.pop("s3_location")
 
                         location = file.get("location", None) or file.get(
                             "s3_location", None
                         )
-                        if not location:
-                            # This should not happen.
-                            pass
 
                         metadata["key"] = location.split("/")[-1]
 
