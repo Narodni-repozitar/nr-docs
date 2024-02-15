@@ -16,8 +16,8 @@ i18n:
 models:
 - api_prefix: documents
   base_model: documents
-  features: [drafts, multilingual, vocabularies, nr_vocabularies, relations, requests,
-    tests, communities, files, custom_fields]
+  features: [vocabularies, multilingual, relations, tests, files, drafts, custom_fields,
+    nr_vocabularies, requests, communities]
   model_description: Text documents of any kind
   model_name: documents
   model_package: documents

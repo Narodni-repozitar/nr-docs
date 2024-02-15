@@ -2,7 +2,7 @@ from invenio_drafts_resources.services.records.components import DraftFilesCompo
 from invenio_drafts_resources.services.records.config import is_record
 from invenio_records_resources.services import ConditionalLink, RecordLink
 from invenio_records_resources.services.records.components import DataComponent
-from oarepo_requests.services.components import PublishDraftComponent
+from oarepo_requests.services.results import RequestsAwareResultItem
 from oarepo_runtime.services.config.service import PermissionsPresetsConfigMixin
 from oarepo_runtime.services.files import FilesComponent
 from oarepo_runtime.services.results import RecordList
@@ -19,6 +19,7 @@ class DocumentsServiceConfig(
 ):
     """DocumentsRecord service config."""
 
+    result_item_cls = RequestsAwareResultItem
     result_list_cls = RecordList
 
     PERMISSIONS_PRESETS = ["authenticated"]
@@ -38,10 +39,9 @@ class DocumentsServiceConfig(
     components = [
         *PermissionsPresetsConfigMixin.components,
         *FilteredResultServiceConfig.components,
-        PublishDraftComponent("publish_draft", "delete_record"),
-        FilesComponent,
         DataComponent,
         DraftFilesComponent,
+        FilesComponent,
     ]
 
     model = "documents"
@@ -61,6 +61,7 @@ class DocumentsServiceConfig(
             "latest_html": RecordLink("{+ui}/docs/{id}/latest"),
             "publish": RecordLink("{+api}/docs/{id}/draft/actions/publish"),
             "record": RecordLink("{+api}/docs/{id}"),
+            "requests": RecordLink("{+api}/docs/{id}/requests"),
             "self": ConditionalLink(
                 cond=is_record,
                 if_=RecordLink("{+api}/docs/{id}"),

@@ -1,3 +1,7 @@
+from oarepo_requests.resolvers.ui import user_entity_reference_ui_resolver, draft_record_entity_reference_ui_resolver, \
+    record_entity_reference_ui_resolver
+from oarepo_requests.resources.draft.resource import DraftRecordRequestsResource
+from oarepo_requests.services.draft.service import DraftRecordRequestsService
 from oarepo_runtime.records.entity_resolvers import UserResolver
 
 from documents.records.api import DocumentsDraft, DocumentsRecord
@@ -40,6 +44,12 @@ DOCUMENTS_RECORD_SERVICE_CONFIG = DocumentsServiceConfig
 DOCUMENTS_RECORD_SERVICE_CLASS = DocumentsService
 
 
+DOCUMENTS_REQUESTS_RESOURCE_CLASS = DraftRecordRequestsResource
+
+
+DOCUMENTS_REQUESTS_SERVICE_CLASS = DraftRecordRequestsService
+
+
 REQUESTS_REGISTERED_TYPES = [
     DeleteRecordRequestType(),
     PublishDraftRequestType(),
@@ -55,6 +65,12 @@ REQUESTS_ENTITY_RESOLVERS = [
         record_cls=DocumentsDraft, service_id="documents", type_key="documents_draft"
     ),
 ]
+
+ENTITY_REFERENCE_UI_RESOLVERS = {
+        "user": user_entity_reference_ui_resolver,
+        "thesis": record_entity_reference_ui_resolver,
+        "thesis_draft": draft_record_entity_reference_ui_resolver,
+    }
 
 
 DOCUMENTS_FILES_RESOURCE_CONFIG = DocumentsFileResourceConfig

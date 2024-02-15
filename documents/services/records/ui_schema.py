@@ -34,13 +34,14 @@ from nr_metadata.documents.services.records.ui_schema import (
     NRDocumentMetadataUISchema,
     NRDocumentRecordUISchema,
     NRDocumentSyntheticFieldsUISchema,
-    NRThesisUISchema,
+    NRThesisUISchema, NRDocumentRecordUISchema,
 )
 from nr_metadata.ui_schema.identifiers import (
     NRAuthorityIdentifierUISchema,
     NRObjectIdentifierUISchema,
     NRSystemIdentifierUISchema,
 )
+from oarepo_requests.services.ui_schema import UIRequestsSerializationMixin
 from oarepo_runtime.services.schema.marshmallow import DictOnlySchema
 from oarepo_vocabularies.services.ui_schema import (
     HierarchyUISchema,
@@ -48,7 +49,7 @@ from oarepo_vocabularies.services.ui_schema import (
 )
 
 
-class DocumentsUISchema(NRDocumentRecordUISchema):
+class DocumentsUISchema(NRDocumentRecordUISchema, UIRequestsSerializationMixin):
     class Meta:
         unknown = ma.RAISE
 
