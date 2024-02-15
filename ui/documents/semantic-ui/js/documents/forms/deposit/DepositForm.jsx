@@ -39,6 +39,7 @@ export const DepositForm = () => {
   const editMode = _has(formConfig, "updateUrl");
   const sidebarRef = useRef(null);
   const formFeedbackRef = useRef(null);
+
   return (
     <Container>
       <BaseForm
@@ -314,12 +315,7 @@ export const DepositForm = () => {
                     id="NrDocs.Deposit.SubjectsField.container"
                     fieldPath="metadata.subjects"
                   >
-                    <SubjectsField
-                      fieldPath="metadata.subjects"
-                      helpText={i18next.t(
-                        "Write keywords describing the resource, always choose a language."
-                      )}
-                    />
+                    <SubjectsField fieldPath="metadata.subjects" />
                   </Overridable>
                   <Overridable
                     id="NrDocs.Deposit.SubjectCategoriesField.container"
