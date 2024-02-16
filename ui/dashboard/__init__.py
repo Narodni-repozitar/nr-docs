@@ -231,7 +231,7 @@ def create_blueprint(app):
             text="Records",
             order=1,
         )
-
+        
         user_dashboard.submenu("communities").register(
             "dashboard.render_DashboardCommunitiesPage",
             text="Communities",
@@ -245,3 +245,4 @@ def create_blueprint(app):
         )
 
     return app_blueprint
+
