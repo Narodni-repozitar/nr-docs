@@ -26,7 +26,6 @@ branding = "ui.branding.webpack:theme"
 i18n = "i18n.webpack:theme"
 components = "ui.components.webpack:theme"
 ui_documents = "ui.documents.webpack:theme"
-ui_dashboard = "ui.dashboard.webpack:theme"
 
 [project.entry-points."invenio_base.blueprints"]
 branding = "ui.branding:create_blueprint"
@@ -36,7 +35,6 @@ documents = "documents.views.records.app:create_app_blueprint"
 documents_file = "documents.views.files.app:create_app_blueprint"
 documents_file_draft = "documents.views.draft_files.app:create_app_blueprint"
 ui_documents = "ui.documents:create_blueprint"
-ui_dashboard = "ui.dashboard:create_blueprint"
 
 [project.entry-points."invenio_i18n.translations"]
 translations = "i18n"
