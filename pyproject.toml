@@ -35,6 +35,7 @@ documents = "documents.views.records.app:create_app_blueprint"
 documents_file = "documents.views.files.app:create_app_blueprint"
 documents_file_draft = "documents.views.draft_files.app:create_app_blueprint"
 ui_documents = "ui.documents:create_blueprint"
+documents_requests = "documents.views.requests.api:create_api_blueprint"
 
 [project.entry-points."invenio_i18n.translations"]
 translations = "i18n"
@@ -53,22 +54,22 @@ documents = "documents:alembic"
 [project.entry-points."invenio_db.models"]
 documents = "documents.records.models"
 documents_file = "documents.files.models"
+documents_file_draft = "documents.files.models"
 
 [project.entry-points."invenio_base.api_blueprints"]
 documents = "documents.views.records.api:create_api_blueprint"
 documents_file = "documents.views.files.api:create_api_blueprint"
 documents_file_draft = "documents.views.draft_files.api:create_api_blueprint"
+documents_requests = "documents.views.requests.api:create_api_blueprint"
 
 [project.entry-points."invenio_search.mappings"]
 documents = "documents.records.mappings"
-documents_file = "documents.files.mappings"
 
 [project.entry-points."invenio_jsonschemas.schemas"]
 documents = "documents.records.jsonschemas"
 
 [project.entry-points."oarepo.models"]
 documents = "documents.models:records.json"
-documents_file = "documents.models:files.json"
 
 [project.entry-points."oarepo.ui"]
 documents = "documents.models:ui.json"

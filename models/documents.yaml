@@ -56,7 +56,8 @@ record:
 
   published-service-config:
     base-classes:
-      - common.services.published_service.NrDocumentsPublishedServiceConfig
+      - oarepo_published_service.services.PublishedServiceConfig
+      - oarepo_runtime.services.config.service.PermissionsPresetsConfigMixin
 
   json-serializer:
     base-classes: [ common.services.filtered_json_ui_serializer.FilteredUIJSONSerializer ]
