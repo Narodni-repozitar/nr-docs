@@ -1,9 +1,9 @@
 {
     "module": "documents.models",
     "file": "documents/models/ui.json",
-    "alias": "documents_file",
-    "detail": "file",
-    "input": "file",
+    "alias": "documents",
+    "detail": "model",
+    "input": "model",
     "help": ".help",
     "label": ".label",
     "hint": ".hint",
@@ -13,40 +13,21 @@
             "input": "keyword",
             "help": "$schema.help",
             "label": "$schema.label",
-            "hint": "$schema.hint",
-            "facet": "_schema"
-        },
-        "caption": {
-            "detail": "keyword",
-            "input": "keyword",
-            "help": "caption.help",
-            "label": "caption.label",
-            "hint": "caption.hint",
-            "facet": "caption"
+            "hint": "$schema.hint"
         },
         "created": {
-            "detail": "date",
-            "input": "date",
+            "detail": "datetime",
+            "input": "datetime",
             "help": "created.help",
             "label": "created.label",
-            "hint": "created.hint",
-            "facet": "created"
+            "hint": "created.hint"
         },
         "id": {
             "detail": "keyword",
             "input": "keyword",
             "help": "id.help",
             "label": "id.label",
-            "hint": "id.hint",
-            "facet": "_id"
-        },
-        "updated": {
-            "detail": "date",
-            "input": "date",
-            "help": "updated.help",
-            "label": "updated.label",
-            "hint": "updated.hint",
-            "facet": "updated"
+            "hint": "id.hint"
         },
         "metadata": {
             "detail": "metadatum",
@@ -2125,6 +2106,13 @@
                     "facet": "syntheticFields_person"
                 }
             }
+        },
+        "updated": {
+            "detail": "datetime",
+            "input": "datetime",
+            "help": "updated.help",
+            "label": "updated.label",
+            "hint": "updated.hint"
         }
     }
 }

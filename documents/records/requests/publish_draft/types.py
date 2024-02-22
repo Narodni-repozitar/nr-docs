@@ -1,15 +1,13 @@
-from oarepo_requests.actions.publish_draft import PublishDraftSubmitAction
 from oarepo_requests.types.publish_draft import PublishDraftRequestType
 
 
 class PublishDraftRequestType(PublishDraftRequestType):
 
-    type_id = "publish_draft"
+    type_id = "documents_draft_publish_draft"
     name = "Publish-draft"
 
     available_actions = {
         **PublishDraftRequestType.available_actions,
-        "submit": PublishDraftSubmitAction,
     }
 
     allowed_topic_ref_types = [
