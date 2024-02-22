@@ -56,7 +56,7 @@ export const IdentifiersField = ({
               label={i18next.t("Identifier type")}
               required
               options={options}
-              onBlur={() => setFieldTouched(fieldPath)}
+              onBlur={() => setFieldTouched(`${fieldPathPrefix}.scheme`)}
               {...uiProps}
             />
             <TextField
