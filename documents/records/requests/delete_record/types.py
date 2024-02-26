@@ -1,14 +1,14 @@
-from oarepo_requests.actions.delete_topic import DeleteTopicAcceptAction
 from oarepo_requests.types.delete_record import DeleteRecordRequestType
 
 
 class DeleteRecordRequestType(DeleteRecordRequestType):
     type_id = "delete_record"
+
+    type_id = "documents_delete_record"
     name = "Delete-record"
 
     available_actions = {
         **DeleteRecordRequestType.available_actions,
-        "submit": DeleteTopicAcceptAction,
     }
 
     allowed_topic_ref_types = [

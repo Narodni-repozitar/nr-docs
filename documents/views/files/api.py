@@ -36,29 +36,3 @@ def init_create_api_blueprint(state):
         iregistry.register(
             ext.service_files.indexer, indexer_id=ext.service_files.config.service_id
         )
-
-
-def init_addons_documents_file_requests(state):
-    app = state.app
-    requests = app.extensions["invenio-requests"]
-
-    from documents import config
-
-    for rt in getattr(config, "REQUESTS_REGISTERED_TYPES", []):
-        requests.request_type_registry.register_type(rt)
-
-    for er in getattr(config, "REQUESTS_ENTITY_RESOLVERS", []):
-        requests.entity_resolvers_registry.register_type(er)
-
-
-def init_addons_documents_file_published_service(state):
-    """Init app."""
-    app = state.app
-    ext = app.extensions["documents"]
-
-    # register service
-    sregistry = app.extensions["invenio-records-resources"].registry
-    sregistry.register(
-        ext.published_service_files,
-        service_id=ext.published_service_files.config.service_id,
-    )

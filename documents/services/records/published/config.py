@@ -1,5 +1,8 @@
-from common.services.published_service import NrDocumentsPublishedServiceConfig
+from oarepo_published_service.services import PublishedServiceConfig
+from oarepo_runtime.services.config.service import PermissionsPresetsConfigMixin
 
 
-class DocumentsPublishedServiceConfig(NrDocumentsPublishedServiceConfig):
+class DocumentsPublishedServiceConfig(
+    PublishedServiceConfig, PermissionsPresetsConfigMixin
+):
     service_id = "published_documents"
