@@ -137,7 +137,6 @@ export class CreatibutorsField extends Component {
 }
 
 CreatibutorsFieldForm.propTypes = {
-  fieldPath: PropTypes.string.isRequired,
   addButtonLabel: PropTypes.string,
   modal: PropTypes.shape({
     addLabel: PropTypes.string.isRequired,
@@ -154,6 +153,9 @@ CreatibutorsFieldForm.propTypes = {
   push: PropTypes.func.isRequired,
   name: PropTypes.string.isRequired,
   required: PropTypes.bool,
+  nameFieldPlaceholder: PropTypes.string,
+  lastNameFieldPlaceholder: PropTypes.string,
+  nameTypeHelpText: PropTypes.string,
 };
 
 CreatibutorsFieldForm.defaultProps = {

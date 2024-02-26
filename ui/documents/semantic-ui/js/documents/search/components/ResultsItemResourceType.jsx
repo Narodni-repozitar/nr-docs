@@ -1,6 +1,7 @@
 import React from "react";
 import { SearchFacetLink } from "./SearchFacetLink";
 import { i18next } from "@translations/i18next";
+import PropTypes from "prop-types";
 
 export const ResultsItemResourceType = ({
   resourceType = {},
@@ -17,3 +18,8 @@ export const ResultsItemResourceType = ({
     className="resource-type-link"
   />
 );
+
+ResultsItemResourceType.propTypes = {
+  resourceType: PropTypes.object,
+  searchUrl: PropTypes.string,
+};
