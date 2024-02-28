@@ -23,6 +23,7 @@ record:
   use:
   - ./documents-requests.yaml
   - ./documents-custom_fields.yaml
+  - ./documents-facets.yaml
   - ./documents-harvest.yaml
 
   draft: {}

@@ -1,0 +1,13 @@
+facets:
+  facet-groups:
+    default:
+      metadata.syntheticFields.people: 1
+      metadata.syntheticFields.institutions: 8
+      metadata.syntheticFields.keywords: 5
+      metadata.syntheticFields.date: 2
+      metadata.resourceType: 5
+      metadata.languages: 7
+      metadata.rights: 4
+      metadata.accessRights: 3
+      metadata.fundingReferences.funder: 9
+      metadata.fundingReferences.projectID: 10
