@@ -13,6 +13,7 @@ plugins:
   - oarepo-model-builder-ui
   - oarepo-model-builder-files
   - oarepo-model-builder-cf
+  - oarepo-model-builder-polymorphic
 profiles:
 - record
 - draft
@@ -67,17 +68,14 @@ record:
     base-classes:
       - oarepo_runtime.services.search.I18nSearchOptions
     sort-options-field: extra_sort_options
-    extra-code: |-2
-          sort_options = {{oarepo_runtime.services.search.ICUSortOptions}}("documents")
+    fields:
+      sort_options: "{{oarepo_runtime.services.search.ICUSortOptions}}('documents')"
   record:
-    extra-code: |-2
-          # extra custom fields for sorting by title
-          sort = {{common.services.sort.TitleICUSortField}}(source_field="metadata.title")
-      
-          title_search = {{oarepo_runtime.records.systemfields.icu.ICUSearchField}}(source_field="metadata.title")
-          creator_search = {{oarepo_runtime.records.systemfields.icu.ICUSearchField}}(source_field="metadata.creators.fullName")
-          contributor_search = {{oarepo_runtime.records.systemfields.icu.ICUSearchField}}(source_field="metadata.contributors.fullName")
-          abstract_search = {{oarepo_runtime.records.systemfields.icu.ICUSearchField}}(source_field="metadata.abstract.value")
+    fields:
+      sort: "{{common.services.sort.TitleICUSortField}}(source_field='metadata.title')"
+      title_search: "{{oarepo_runtime.records.systemfields.icu.ICUSearchField}}(source_field='metadata.title')"
+      creator_search: "{{oarepo_runtime.records.systemfields.icu.ICUSearchField}}(source_field='metadata.creators.fullName')"
+      abstract_search: "{{oarepo_runtime.records.systemfields.icu.ICUSearchField}}(source_field='metadata.abstract.value')"
 
 runtime-dependencies:
   nr-metadata: 2.0.0
