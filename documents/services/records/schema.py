@@ -1,8 +1,33 @@
+import marshmallow as ma
+from invenio_drafts_resources.services.records.schema import (
+    ParentSchema as InvenioParentSchema,
+)
+from marshmallow import fields as ma_fields
 from marshmallow.utils import get_value
 from marshmallow_utils.fields import SanitizedUnicode
+from nr_metadata.documents.services.records.schema import (
+    NRDocumentMetadataSchema,
+    NRDocumentRecordSchema,
+    NRDocumentSyntheticFieldsSchema,
+)
+from oarepo_requests.services.schema import RequestsSchemaMixin
+from oarepo_runtime.services.schema.marshmallow import DictOnlySchema
 
 
-class NRDocumentRecordSchema(RequestsSchemaMixin, Schema):
+class GeneratedParentSchema(InvenioParentSchema):
+    """"""
+
+
+class DocumentsSchema(RequestsSchemaMixin, NRDocumentRecordSchema):
+    class Meta:
+        unknown = ma.RAISE
+
+    metadata = ma_fields.Nested(lambda: NRDocumentMetadataSchema())
+
+    oai = ma_fields.Nested(lambda: OaiSchema())
+
+    syntheticFields = ma_fields.Nested(lambda: NRDocumentSyntheticFieldsSchema())
+    parent = ma.fields.Nested(GeneratedParentSchema)
     files = ma.fields.Nested(
         lambda: FilesOptionsSchema(), load_default={"enabled": True}
     )
@@ -21,6 +46,22 @@ class NRDocumentRecordSchema(RequestsSchemaMixin, Schema):
             return getattr(obj, attr, default)
         else:
             return get_value(obj, attr, default)
+
+
+class OaiSchema(DictOnlySchema):
+    class Meta:
+        unknown = ma.RAISE
+
+    harvest = ma_fields.Nested(lambda: HarvestSchema())
+
+
+class HarvestSchema(DictOnlySchema):
+    class Meta:
+        unknown = ma.RAISE
+
+    datestamp = ma_fields.String()
+
+    identifier = ma_fields.String()
 
 
 class FilesOptionsSchema(ma.Schema):
