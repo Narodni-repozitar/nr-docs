@@ -3026,7 +3026,7 @@ files = [
 
 [[package]]
 name = "nr-oaipmh-harvesters"
-version = "1.0.5"
+version = "1.0.6"
 summary = "OAIPMH harvesters for National repository"
 groups = ["default"]
 dependencies = [
@@ -3036,8 +3036,8 @@ dependencies = [
     "oarepo-oai-pmh-harvester>=4.0.0",
 ]
 files = [
-    {file = "nr-oaipmh-harvesters-1.0.5.tar.gz", hash = "sha256:8c92bcff4754e9f7237d9156432888b9e0df6b1fabd065f836607b207aa5e153"},
-    {file = "nr_oaipmh_harvesters-1.0.5-py3-none-any.whl", hash = "sha256:b35ff00fc5280aad7bbd5f4197d1725a173d8697e6ca7b4e631a58ba85ca390b"},
+    {file = "nr-oaipmh-harvesters-1.0.6.tar.gz", hash = "sha256:0fa664413df1f07e487d9d3531b15fa9a5f3699b2524717eca68df4423a8fa77"},
+    {file = "nr_oaipmh_harvesters-1.0.6-py3-none-any.whl", hash = "sha256:f8899b42e3ec48a42680db2344b97d306c6574a56410197c5b7a26cb87c65dd2"},
 ]
 
 [[package]]

@@ -1,3 +1,4 @@
+from common.records.synthetic_fields import keyword_mapper
 from invenio_drafts_resources.records.api import Draft as InvenioDraft
 from invenio_drafts_resources.records.api import DraftRecordIdProviderV2, ParentRecord
 from invenio_drafts_resources.records.api import Record as InvenioRecord
@@ -6,6 +7,11 @@ from invenio_records_resources.records.systemfields import FilesField, IndexFiel
 from invenio_records_resources.records.systemfields.pid import PIDField, PIDFieldContext
 from invenio_vocabularies.records.api import Vocabulary
 from oarepo_runtime.records.relations import PIDRelation, RelationsField
+from oarepo_runtime.records.systemfields import (
+    FirstItemSelector,
+    PathSelector,
+    SyntheticSystemField,
+)
 from oarepo_runtime.records.systemfields.has_draftcheck import HasDraftCheckField
 from oarepo_runtime.records.systemfields.icu import ICUSearchField
 from oarepo_runtime.records.systemfields.record_status import RecordStatusSystemField
@@ -50,6 +56,34 @@ class DocumentsRecord(InvenioRecord):
     creator_search = ICUSearchField(source_field="metadata.creators.fullName")
 
     abstract_search = ICUSearchField(source_field="metadata.abstract.value")
+
+    people = SyntheticSystemField(
+        PathSelector("metadata.creators", "metadata.contributors"),
+        filter=lambda x: x.get("nameType") == "Personal",
+        map=lambda x: x.get("fullName"),
+        key="syntheticFields.people",
+    )
+
+    institutions = SyntheticSystemField(
+        PathSelector(
+            "metadata.creators.affiliations",
+            "metadata.contributors.affiliations",
+            "metadata.thesis.degreeGrantors",
+        ),
+        key="syntheticFields.institutions",
+    )
+
+    keywords = SyntheticSystemField(
+        PathSelector("metadata.subjects"),
+        map=keyword_mapper,
+        key="syntheticFields.keywords",
+    )
+
+    date = SyntheticSystemField(
+        selector=FirstItemSelector("metadata.dateModified", "metadata.dateIssued"),
+        key="syntheticFields.date",
+        filter=lambda x: len(x) == 10
+    )
 
     relations = RelationsField(
         accessRights=PIDRelation(

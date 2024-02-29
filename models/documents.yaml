@@ -71,11 +71,45 @@ record:
     fields:
       sort_options: "{{oarepo_runtime.services.search.ICUSortOptions}}('documents')"
   record:
+    # TODO: find out why these are not included from nr-model
+    imports:
+      - import: oarepo_runtime.records.systemfields.SyntheticSystemField
+      - import: oarepo_runtime.records.systemfields.PathSelector
+      - import: oarepo_runtime.records.systemfields.FirstItemSelector
+      - import: nr_metadata.records.systemfields.keyword_mapper
     fields:
       sort: "{{common.services.sort.TitleICUSortField}}(source_field='metadata.title')"
       title_search: "{{oarepo_runtime.records.systemfields.icu.ICUSearchField}}(source_field='metadata.title')"
       creator_search: "{{oarepo_runtime.records.systemfields.icu.ICUSearchField}}(source_field='metadata.creators.fullName')"
       abstract_search: "{{oarepo_runtime.records.systemfields.icu.ICUSearchField}}(source_field='metadata.abstract.value')"
+      # for the time being put here
+      people: |
+        SyntheticSystemField(
+            PathSelector("metadata.creators", "metadata.contributors"),
+            filter=lambda x: x.get("nameType") == "Personal",
+            map=lambda x: x.get("fullName"),
+            key="syntheticFields.people",
+        )
+      institutions: |
+        SyntheticSystemField(
+            PathSelector(
+                  "metadata.creators.affiliations", 
+                  "metadata.contributors.affiliations", 
+                  "metadata.thesis.degreeGrantors"),
+            key="syntheticFields.institutions",
+        )
+      keywords: |
+        SyntheticSystemField(
+            PathSelector("metadata.subjects"),
+            map=lambda x: keyword_mapper,
+            key="syntheticFields.keywords",
+        )
+      date: |
+        SyntheticSystemField(
+            selector=FirstItemSelector("metadata.dateModified", "metadata.dateIssued"),
+            key="syntheticFields.date",
+            filter=lambda x: len(x) == 10
+        )
 
 runtime-dependencies:
   nr-metadata: 2.0.0

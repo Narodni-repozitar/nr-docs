@@ -10,3 +10,4 @@ node_modules
 .env
 .eslintrc.js
 .pdm-python
+.DS_Store
