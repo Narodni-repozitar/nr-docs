@@ -8,19 +8,27 @@ class DocumentsSearchOptions(I18nSearchOptions):
 
     facet_groups = {
         "curator": {
+            "syntheticFields_people": facets.syntheticFields_people,
+            "syntheticFields_date": facets.syntheticFields_date,
             "metadata_accessRights": facets.metadata_accessRights,
             "metadata_rights": facets.metadata_rights,
             "metadata_resourceType": facets.metadata_resourceType,
+            "syntheticFields_keywords": facets.syntheticFields_keywords,
             "metadata_languages": facets.metadata_languages,
+            "syntheticFields_institutions": facets.syntheticFields_institutions,
             "metadata_fundingReferences_funder": facets.metadata_fundingReferences_funder,
             "metadata_fundingReferences_projectID": facets.metadata_fundingReferences_projectID,
             **getattr(I18nSearchOptions, "facet_groups", {}).get("curator", {}),
         },
         "default": {
+            "syntheticFields_people": facets.syntheticFields_people,
+            "syntheticFields_date": facets.syntheticFields_date,
             "metadata_accessRights": facets.metadata_accessRights,
             "metadata_rights": facets.metadata_rights,
             "metadata_resourceType": facets.metadata_resourceType,
+            "syntheticFields_keywords": facets.syntheticFields_keywords,
             "metadata_languages": facets.metadata_languages,
+            "syntheticFields_institutions": facets.syntheticFields_institutions,
             "metadata_fundingReferences_funder": facets.metadata_fundingReferences_funder,
             "metadata_fundingReferences_projectID": facets.metadata_fundingReferences_projectID,
             **getattr(I18nSearchOptions, "facet_groups", {}).get("default", {}),

@@ -1,4 +1,3 @@
-from common.records.synthetic_fields import keyword_mapper
 from invenio_drafts_resources.records.api import Draft as InvenioDraft
 from invenio_drafts_resources.records.api import DraftRecordIdProviderV2, ParentRecord
 from invenio_drafts_resources.records.api import Record as InvenioRecord
@@ -74,15 +73,14 @@ class DocumentsRecord(InvenioRecord):
     )
 
     keywords = SyntheticSystemField(
-        PathSelector("metadata.subjects"),
-        map=keyword_mapper,
+        PathSelector("metadata.subjects.subject.value"),
         key="syntheticFields.keywords",
     )
 
     date = SyntheticSystemField(
         selector=FirstItemSelector("metadata.dateModified", "metadata.dateIssued"),
         key="syntheticFields.date",
-        filter=lambda x: len(x) == 10
+        filter=lambda x: len(x) == 10,
     )
 
     relations = RelationsField(

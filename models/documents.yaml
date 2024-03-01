@@ -100,8 +100,7 @@ record:
         )
       keywords: |
         SyntheticSystemField(
-            PathSelector("metadata.subjects"),
-            map=lambda x: keyword_mapper,
+            PathSelector("metadata.subjects.subject.value"),
             key="syntheticFields.keywords",
         )
       date: |
