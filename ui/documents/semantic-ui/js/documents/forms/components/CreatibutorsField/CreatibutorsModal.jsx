@@ -36,6 +36,7 @@ import {
   VocabularySelectField,
   LocalVocabularySelectField,
 } from "@js/oarepo_vocabularies";
+import PropTypes from "prop-types";
 
 const ModalActions = {
   ADD: "add",
@@ -587,6 +588,24 @@ export const CreatibutorsModal = ({
   );
 };
 
+CreatibutorsModal.propTypes = {
+  autocompleteNames: PropTypes.string,
+  initialCreatibutor: PropTypes.object,
+  initialAction: PropTypes.oneOf([
+    "add",
+    "edit",
+    "saveAndContinue",
+    "saveAndClose",
+  ]),
+  addLabel: PropTypes.string,
+  editLabel: PropTypes.string,
+  schema: PropTypes.string,
+  onCreatibutorChange: PropTypes.func.isRequired,
+  trigger: PropTypes.node,
+  nameFieldPlaceholder: PropTypes.string,
+  lastNameFieldPlaceholder: PropTypes.string,
+  nameTypeHelpText: PropTypes.string,
+};
 CreatibutorsModal.defaultProps = {
   initialCreatibutor: {
     nameType: CREATIBUTOR_TYPE.PERSON,

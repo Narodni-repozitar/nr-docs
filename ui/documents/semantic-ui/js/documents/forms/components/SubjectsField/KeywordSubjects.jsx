@@ -12,7 +12,7 @@ export const KeywordSubjects = ({ keywordSubjects, handleSubjectRemoval }) => {
               <Label className="keyword-subjects label" key={i}>
                 {s.lang}: {s.value}
                 <Button
-                  className="keyword-subjects-remove-btn p-0 rel-pl-1"
+                  className="transparent p-0 rel-pl-1"
                   onClick={() => handleSubjectRemoval(id, s.lang)}
                   type="button"
                 >
@@ -21,7 +21,7 @@ export const KeywordSubjects = ({ keywordSubjects, handleSubjectRemoval }) => {
               </Label>
             ))}
             {index + 1 !== keywordSubjects.length && (
-              <Label className="keyword-subject-divider">|</Label>
+              <span className="rel-mr-1 rel-ml-1">|</span>
             )}
           </React.Fragment>
         ))}

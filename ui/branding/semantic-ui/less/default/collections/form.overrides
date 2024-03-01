@@ -139,7 +139,7 @@
   }
 }
 
-.related-items-modal {
+.form-modal {
   label.field-label-class.invenio-field-label {
     font-size: 1.25rem !important;
   }
@@ -150,6 +150,7 @@
   .content {
     .ui.icon.left.labeled.button {
       background-color: @arrayAddButtonFieldColor;
+      color: black;
     }
     .ui.icon.left.labeled.button:hover {
       background-color: @arrayAddButtonFieldHoverColor;

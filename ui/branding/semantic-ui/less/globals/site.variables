@@ -30,3 +30,4 @@
 @celledBorderColor: @green;
 
 @linkHoverUnderline: underline;
+@highlightHeaderColor: #ededed;

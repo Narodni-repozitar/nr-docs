@@ -2,8 +2,8 @@ from oarepo_requests.types.delete_record import DeleteRecordRequestType
 
 
 class DeleteRecordRequestType(DeleteRecordRequestType):
+    type_id = "delete_record"
 
-    type_id = "documents_delete_record"
     name = "Delete-record"
 
     available_actions = {

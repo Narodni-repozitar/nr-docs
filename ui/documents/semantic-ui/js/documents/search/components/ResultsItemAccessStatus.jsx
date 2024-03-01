@@ -1,5 +1,6 @@
 import React from "react";
 import { Image } from "semantic-ui-react";
+import PropTypes from "prop-types";
 
 const iconsObject = {
   c_abf2: "zamky_open_access.svg",
@@ -25,4 +26,11 @@ export const ResultsItemAccessStatus = ({ status }) => {
       />
     )
   );
+};
+
+ResultsItemAccessStatus.propTypes = {
+  status: PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+  }),
 };

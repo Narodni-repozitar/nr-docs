@@ -1,17 +1,13 @@
 import React, { useContext } from "react";
 import PropTypes from "prop-types";
 import Overridable from "react-overridable";
-
 import _get from "lodash/get";
 import _join from "lodash/join";
 import _truncate from "lodash/truncate";
-
 import { Grid, Item, Label, List, Icon } from "semantic-ui-react";
 import { withState, buildUID } from "react-searchkit";
 import { SearchConfigurationContext } from "@js/invenio_search_ui/components";
-
 import { i18next } from "@translations/i18next";
-
 import { ResultsItemAccessStatus } from "./ResultsItemAccessStatus";
 import { ResultsItemCreatibutors } from "./ResultsItemCreatibutors";
 import { ResultsItemSubjects } from "./ResultsItemSubjects";
@@ -30,6 +26,13 @@ const ItemHeader = ({ title, searchUrl, selfLink }) => {
     </Item.Header>
   );
 };
+
+ItemHeader.propTypes = {
+  title: PropTypes.string.isRequired,
+  searchUrl: PropTypes.string.isRequired,
+  selfLink: PropTypes.string.isRequired,
+};
+
 const ItemSubheader = ({
   creators,
   contributors,
@@ -44,60 +47,70 @@ const ItemSubheader = ({
   const isThesisDefended = thesis?.dateDefended;
 
   return (
-    <>
-      <Item.Meta>
-        <Grid columns={1}>
-          <Grid.Column>
-            <Grid.Row className="ui double separated creatibutors">
-              <ResultsItemCreatibutors
-                creators={creators}
-                contributors={contributors}
-                searchUrl={searchUrl}
-              />
-            </Grid.Row>
-            <Grid.Row className="ui separated">
-              <span
-                aria-label={i18next.t("Publication date")}
-                title={i18next.t("Publication date")}
-              >
-                {publicationDate} (v{version})
-              </span>
-              <DoubleSeparator />
-              <span
-                aria-label={i18next.t("Languages")}
-                title={i18next.t("Languages")}
-              >
-                {_join(
-                  languages.map((l) => l.title),
-                  ", "
-                )}
-              </span>
-            </Grid.Row>
-            <Grid.Row>
-              <ResultsItemResourceType
-                searchUrl={searchUrl}
-                resourceType={resourceType}
-              />
-              {thesis && (
-                <Label pointing="left" size="mini" basic>
-                  <Icon
-                    name={isThesisDefended ? "check circle" : "remove circle"}
-                    color={isThesisDefended ? "green" : "red"}
-                  />{" "}
-                  {isThesisDefended
-                    ? i18next.t("defended")
-                    : i18next.t("not defended")}
-                </Label>
+    <Item.Meta>
+      <Grid columns={1}>
+        <Grid.Column>
+          <Grid.Row className="ui double separated creatibutors">
+            <ResultsItemCreatibutors
+              creators={creators}
+              contributors={contributors}
+              searchUrl={searchUrl}
+            />
+          </Grid.Row>
+          <Grid.Row className="ui separated">
+            <span
+              aria-label={i18next.t("Publication date")}
+              title={i18next.t("Publication date")}
+            >
+              {publicationDate} (v{version})
+            </span>
+            <DoubleSeparator />
+            <span
+              aria-label={i18next.t("Languages")}
+              title={i18next.t("Languages")}
+            >
+              {_join(
+                languages.map((l) => l.title),
+                ", "
               )}
-            </Grid.Row>
-            <Grid.Row>
-              <ResultsItemSubjects searchUrl={searchUrl} subjects={subjects} />
-            </Grid.Row>
-          </Grid.Column>
-        </Grid>
-      </Item.Meta>
-    </>
+            </span>
+          </Grid.Row>
+          <Grid.Row>
+            <ResultsItemResourceType
+              searchUrl={searchUrl}
+              resourceType={resourceType}
+            />
+            {thesis && (
+              <Label pointing="left" size="mini" basic>
+                <Icon
+                  name={isThesisDefended ? "check circle" : "remove circle"}
+                  color={isThesisDefended ? "green" : "red"}
+                />{" "}
+                {isThesisDefended
+                  ? i18next.t("defended")
+                  : i18next.t("not defended")}
+              </Label>
+            )}
+          </Grid.Row>
+          <Grid.Row>
+            <ResultsItemSubjects searchUrl={searchUrl} subjects={subjects} />
+          </Grid.Row>
+        </Grid.Column>
+      </Grid>
+    </Item.Meta>
   );
+};
+
+ItemSubheader.propTypes = {
+  creators: PropTypes.array,
+  contributors: PropTypes.array,
+  publicationDate: PropTypes.string,
+  languages: PropTypes.array,
+  version: PropTypes.number,
+  resourceType: PropTypes.object,
+  thesis: PropTypes.object,
+  subjects: PropTypes.array,
+  searchUrl: PropTypes.string,
 };
 
 const ItemExtraInfo = ({ createdDate, publishers }) => {
@@ -125,6 +138,11 @@ const ItemExtraInfo = ({ createdDate, publishers }) => {
   );
 };
 
+ItemExtraInfo.propTypes = {
+  createdDate: PropTypes.string,
+  publishers: PropTypes.array,
+};
+
 const ItemSidebarIcons = ({ accessStatus, rights }) => {
   return (
     <Item.Extra className="labels-actions">
@@ -142,6 +160,11 @@ const ItemSidebarIcons = ({ accessStatus, rights }) => {
       </List>
     </Item.Extra>
   );
+};
+
+ItemSidebarIcons.propTypes = {
+  accessStatus: PropTypes.object,
+  rights: PropTypes.object,
 };
 
 export const ResultsListItemComponent = ({

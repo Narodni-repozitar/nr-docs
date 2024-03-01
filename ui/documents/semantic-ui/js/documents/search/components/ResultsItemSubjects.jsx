@@ -1,6 +1,5 @@
 import React from "react";
 import PropTypes from "prop-types";
-
 import _groupBy from "lodash/groupBy";
 import { Label, List } from "semantic-ui-react";
 import { i18next } from "@translations/i18next";
@@ -18,6 +17,7 @@ const SubjectElement = ({ searchUrl, subject }) => (
 
 SubjectElement.propTypes = {
   subject: PropTypes.object.isRequired,
+  searchUrl: PropTypes.string,
 };
 
 export function ResultsItemSubjects({
@@ -48,6 +48,7 @@ export function ResultsItemSubjects({
 }
 
 ResultsItemSubjects.propTypes = {
+  searchUrl: PropTypes.string,
   subjects: PropTypes.array.isRequired,
   maxCount: PropTypes.number,
 };
