@@ -1,17 +1,13 @@
 import React from "react";
-
 import { List } from "semantic-ui-react";
-
 import { DoubleSeparator } from "./DoubleSeparator";
 import { IconPersonIdentifier } from "./IconPersonIdentifier";
 import { SearchFacetLink } from "./SearchFacetLink";
-
-import _get from "lodash/get";
 import _groupBy from "lodash/groupBy";
 import _toPairs from "lodash/toPairs";
 import _join from "lodash/join";
-
 import { i18next } from "@translations/i18next";
+import PropTypes from "prop-types";
 
 const CreatibutorSearchLink = ({
   personName = "No name",
@@ -28,6 +24,12 @@ const CreatibutorSearchLink = ({
   />
 );
 
+CreatibutorSearchLink.propTypes = {
+  personName: PropTypes.string,
+  searchField: PropTypes.string,
+  searchUrl: PropTypes.string,
+};
+
 const CreatibutorIcons = ({ personName = "No name", identifiers = [] }) =>
   identifiers.map((i) => (
     <IconPersonIdentifier
@@ -36,6 +38,11 @@ const CreatibutorIcons = ({ personName = "No name", identifiers = [] }) =>
       personName={personName}
     />
   ));
+
+CreatibutorIcons.propTypes = {
+  personName: PropTypes.string,
+  identifiers: PropTypes.array,
+};
 
 export function ResultsItemCreatibutors({
   creators = [],
@@ -109,3 +116,12 @@ export function ResultsItemCreatibutors({
     </>
   );
 }
+
+ResultsItemCreatibutors.propTypes = {
+  creators: PropTypes.array,
+  contributors: PropTypes.array,
+  maxCreators: PropTypes.number,
+  maxContributors: PropTypes.number,
+  searchUrl: PropTypes.string,
+  className: PropTypes.string,
+};

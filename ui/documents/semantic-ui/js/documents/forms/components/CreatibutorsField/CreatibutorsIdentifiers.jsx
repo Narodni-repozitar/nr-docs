@@ -15,18 +15,6 @@ import {
 } from "../IdentifiersField";
 
 export class CreatibutorsIdentifiers extends Component {
-  valuesToOptions = (options) =>
-    options.map((option) => ({
-      text: option,
-      value: option,
-      key: option,
-    }));
-
-  handleChange = ({ data, formikProps }) => {
-    const { fieldPath } = this.props;
-    formikProps.form.setFieldValue(fieldPath, data.value);
-  };
-
   render() {
     const { fieldPath, label, placeholder } = this.props;
 
@@ -35,16 +23,13 @@ export class CreatibutorsIdentifiers extends Component {
         className="modal-identifiers-field"
         options={authorityIdentifiersSchema}
         fieldPath={fieldPath}
+        identifierLabel={i18next.t("Identifier")}
+        label={label}
         helpText={i18next.t(
           "Choose from the menu identifier type. Write the identifier without prefix (i.e. https://orcid.org/0009-0004-8646-7185 or jk01051816)."
         )}
-        identifierLabel={i18next.t("Identifier")}
-        noResultsMessage={i18next.t("Type the value of an identifier...")}
-        label={label}
-        placeholder={placeholder}
-        multiple
-        onChange={this.handleChange}
         selectOnBlur={false}
+        placeholder={placeholder}
       />
     );
   }

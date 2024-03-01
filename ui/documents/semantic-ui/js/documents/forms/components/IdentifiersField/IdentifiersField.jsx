@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { ArrayField, SelectField, TextField } from "react-invenio-forms";
 import { i18next } from "@translations/i18next";
 import { ArrayFieldItem } from "@js/oarepo_ui";
+import { useFormikContext } from "formik";
 
 export const objectIdentifiersSchema = [
   { value: "DOI", text: "DOI" },
@@ -34,6 +35,7 @@ export const IdentifiersField = ({
   className,
   ...uiProps
 }) => {
+  const { setFieldTouched } = useFormikContext();
   return (
     <ArrayField
       addButtonLabel={i18next.t("Add identifier")}
@@ -54,6 +56,7 @@ export const IdentifiersField = ({
               label={i18next.t("Identifier type")}
               required
               options={options}
+              onBlur={() => setFieldTouched(`${fieldPathPrefix}.scheme`)}
               {...uiProps}
             />
             <TextField

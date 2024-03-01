@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Table, Popup } from "semantic-ui-react";
 import { i18next } from "@translations/i18next";
-import { humanReadableBytes } from "./humanReadableBytes";
+import { humanReadableBytes } from "react-invenio-forms";
 import { EditFileButton, DeleteFileButton } from "./FileUploaderButtons";
 import _truncate from "lodash/truncate";
 

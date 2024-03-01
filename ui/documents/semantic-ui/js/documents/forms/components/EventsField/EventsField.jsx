@@ -43,9 +43,6 @@ export const EventsField = ({ fieldPath, helpText }) => {
               required
               fieldPath={`${fieldPathPrefix}.eventDate`}
               label={i18next.t("Event date")}
-              helpText={i18next.t(
-                "Write down the time period in which the event took place. If it is not a range, choose same date twice."
-              )}
             />
             <GroupField>
               <TextField
@@ -53,7 +50,6 @@ export const EventsField = ({ fieldPath, helpText }) => {
                 width={10}
                 fieldPath={`${fieldPathPrefix}.eventLocation.place`}
                 label={i18next.t("Place")}
-                required
                 inline
                 placeholder={i18next.t("Write down the place of the event.")}
               />
