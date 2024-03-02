@@ -2,8 +2,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
-"POT-Creation-Date: 2024-02-21T13:21:01.165166\n"
-"PO-Revision-Date: 2024-02-21T13:21:01.165169\n"
+"POT-Creation-Date: 2024-03-01T11:08:59.735662\n"
+"PO-Revision-Date: 2024-03-01T11:08:59.735663\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -191,15 +191,6 @@ msgstr ""
 msgid "metadata/additionalTitles/titleType.enum.other"
 msgstr ""
 
-msgid "metadata/collection.label"
-msgstr "Collection"
-
-msgid "metadata/collection.help"
-msgstr ""
-
-msgid "metadata/collection.hint"
-msgstr ""
-
 msgid "metadata/contributors.label"
 msgstr "Contributors"
 
@@ -208,6 +199,8 @@ msgstr ""
 
 msgid "metadata/contributors.hint"
 msgstr ""
+"It is possible to designate a person or an institution as the "
+"creator/contributor."
 
 msgid "metadata/contributors/affiliations.help"
 msgstr ""
@@ -234,6 +227,15 @@ msgid "metadata/contributors/affiliations/title.label"
 msgstr ""
 
 msgid "metadata/contributors/affiliations/title.hint"
+msgstr ""
+
+msgid "metadata/contributors/affiliations/ror.help"
+msgstr ""
+
+msgid "metadata/contributors/affiliations/ror.label"
+msgstr ""
+
+msgid "metadata/contributors/affiliations/ror.hint"
 msgstr ""
 
 msgid "metadata/contributors/affiliations/hierarchy.help"
@@ -349,13 +351,49 @@ msgstr ""
 msgid "identifier_type.enum.ISNI"
 msgstr ""
 
-msgid "identifier_type.enum.ROR"
+msgid "metadata/contributors/contributorType.label"
+msgstr "Contributor's type"
+
+msgid "metadata/contributors/contributorType.help"
 msgstr ""
 
-msgid "identifier_type.enum.ICO"
+msgid "metadata/contributors/contributorType.hint"
 msgstr ""
 
-msgid "identifier_type.enum.DOI"
+msgid "metadata/contributors/contributorType/id.help"
+msgstr ""
+
+msgid "metadata/contributors/contributorType/id.label"
+msgstr ""
+
+msgid "metadata/contributors/contributorType/id.hint"
+msgstr ""
+
+msgid "metadata/contributors/contributorType/title.help"
+msgstr ""
+
+msgid "metadata/contributors/contributorType/title.label"
+msgstr ""
+
+msgid "metadata/contributors/contributorType/title.hint"
+msgstr ""
+
+msgid "metadata/contributors/contributorType/@v.help"
+msgstr ""
+
+msgid "metadata/contributors/contributorType/@v.label"
+msgstr ""
+
+msgid "metadata/contributors/contributorType/@v.hint"
+msgstr ""
+
+msgid "metadata/contributors/familyName.help"
+msgstr ""
+
+msgid "metadata/contributors/familyName.label"
+msgstr ""
+
+msgid "metadata/contributors/familyName.hint"
 msgstr ""
 
 msgid "metadata/contributors/fullName.label"
@@ -367,57 +405,37 @@ msgstr ""
 msgid "metadata/contributors/fullName.hint"
 msgstr ""
 
+msgid "metadata/contributors/givenName.help"
+msgstr ""
+
+msgid "metadata/contributors/givenName.label"
+msgstr ""
+
+msgid "metadata/contributors/givenName.hint"
+msgstr ""
+
 msgid "metadata/contributors/nameType.label"
 msgstr "Type"
-
-msgid "metadata/contributors/nameType.hint"
-msgstr ""
-"It is possible to designate a person or an institution as the "
-"creator/contributor."
 
 msgid "metadata/contributors/nameType.help"
 msgstr ""
 
-msgid "metadata/contributors/nameType.enum.Organizational"
+msgid "metadata/contributors/nameType.hint"
 msgstr ""
 
 msgid "metadata/contributors/nameType.enum.Personal"
 msgstr ""
 
-msgid "metadata/contributors/role.label"
-msgstr "Contributor's role"
-
-msgid "metadata/contributors/role.help"
+msgid "identifier_type.enum.ROR"
 msgstr ""
 
-msgid "metadata/contributors/role.hint"
+msgid "identifier_type.enum.ICO"
 msgstr ""
 
-msgid "metadata/contributors/role/id.help"
+msgid "identifier_type.enum.DOI"
 msgstr ""
 
-msgid "metadata/contributors/role/id.label"
-msgstr ""
-
-msgid "metadata/contributors/role/id.hint"
-msgstr ""
-
-msgid "metadata/contributors/role/title.help"
-msgstr ""
-
-msgid "metadata/contributors/role/title.label"
-msgstr ""
-
-msgid "metadata/contributors/role/title.hint"
-msgstr ""
-
-msgid "metadata/contributors/role/@v.help"
-msgstr ""
-
-msgid "metadata/contributors/role/@v.label"
-msgstr ""
-
-msgid "metadata/contributors/role/@v.hint"
+msgid "metadata/contributors/nameType.enum.Organizational"
 msgstr ""
 
 msgid "metadata/creators.label"
@@ -428,6 +446,8 @@ msgstr ""
 
 msgid "metadata/creators.hint"
 msgstr ""
+"It is possible to designate a person or an institution as the "
+"creator/contributor."
 
 msgid "metadata/creators/affiliations.help"
 msgstr ""
@@ -454,6 +474,15 @@ msgid "metadata/creators/affiliations/title.label"
 msgstr ""
 
 msgid "metadata/creators/affiliations/title.hint"
+msgstr ""
+
+msgid "metadata/creators/affiliations/ror.help"
+msgstr ""
+
+msgid "metadata/creators/affiliations/ror.label"
+msgstr ""
+
+msgid "metadata/creators/affiliations/ror.hint"
 msgstr ""
 
 msgid "metadata/creators/affiliations/hierarchy.help"
@@ -528,6 +557,15 @@ msgstr ""
 msgid "metadata/creators/authorityIdentifiers.hint"
 msgstr ""
 
+msgid "metadata/creators/familyName.help"
+msgstr ""
+
+msgid "metadata/creators/familyName.label"
+msgstr ""
+
+msgid "metadata/creators/familyName.hint"
+msgstr ""
+
 msgid "metadata/creators/fullName.label"
 msgstr "Author name"
 
@@ -537,21 +575,28 @@ msgstr ""
 msgid "metadata/creators/fullName.hint"
 msgstr ""
 
+msgid "metadata/creators/givenName.help"
+msgstr ""
+
+msgid "metadata/creators/givenName.label"
+msgstr ""
+
+msgid "metadata/creators/givenName.hint"
+msgstr ""
+
 msgid "metadata/creators/nameType.label"
 msgstr "Type"
-
-msgid "metadata/creators/nameType.hint"
-msgstr ""
-"It is possible to designate a person or an institution as the "
-"creator/contributor."
 
 msgid "metadata/creators/nameType.help"
 msgstr ""
 
-msgid "metadata/creators/nameType.enum.Organizational"
+msgid "metadata/creators/nameType.hint"
 msgstr ""
 
 msgid "metadata/creators/nameType.enum.Personal"
+msgstr ""
+
+msgid "metadata/creators/nameType.enum.Organizational"
 msgstr ""
 
 msgid "metadata/dateAvailable.label"
@@ -929,6 +974,9 @@ msgstr ""
 msgid "metadata/objectIdentifiers/scheme.enum.RIV"
 msgstr ""
 
+msgid "metadata/objectIdentifiers/scheme.enum.IGSN"
+msgstr ""
+
 msgid "metadata/originalRecord.label"
 msgstr "Original record URL"
 
@@ -964,12 +1012,14 @@ msgstr ""
 
 msgid "metadata/relatedItems/itemContributors.hint"
 msgstr ""
-
-msgid "metadata/relatedItems/itemContributors/affiliations.label"
-msgstr "Affiliation"
+"It is possible to designate a person or an institution as the "
+"creator/contributor."
 
 msgid "metadata/relatedItems/itemContributors/affiliations.help"
 msgstr ""
+
+msgid "metadata/relatedItems/itemContributors/affiliations.label"
+msgstr "Affiliation"
 
 msgid "metadata/relatedItems/itemContributors/affiliations.hint"
 msgstr ""
@@ -990,6 +1040,15 @@ msgid "metadata/relatedItems/itemContributors/affiliations/title.label"
 msgstr ""
 
 msgid "metadata/relatedItems/itemContributors/affiliations/title.hint"
+msgstr ""
+
+msgid "metadata/relatedItems/itemContributors/affiliations/ror.help"
+msgstr ""
+
+msgid "metadata/relatedItems/itemContributors/affiliations/ror.label"
+msgstr ""
+
+msgid "metadata/relatedItems/itemContributors/affiliations/ror.hint"
 msgstr ""
 
 msgid "metadata/relatedItems/itemContributors/affiliations/hierarchy.help"
@@ -1079,6 +1138,51 @@ msgstr ""
 msgid "metadata/relatedItems/itemContributors/authorityIdentifiers.hint"
 msgstr ""
 
+msgid "metadata/relatedItems/itemContributors/contributorType.label"
+msgstr "Contributor's type"
+
+msgid "metadata/relatedItems/itemContributors/contributorType.help"
+msgstr ""
+
+msgid "metadata/relatedItems/itemContributors/contributorType.hint"
+msgstr ""
+
+msgid "metadata/relatedItems/itemContributors/contributorType/id.help"
+msgstr ""
+
+msgid "metadata/relatedItems/itemContributors/contributorType/id.label"
+msgstr ""
+
+msgid "metadata/relatedItems/itemContributors/contributorType/id.hint"
+msgstr ""
+
+msgid "metadata/relatedItems/itemContributors/contributorType/title.help"
+msgstr ""
+
+msgid "metadata/relatedItems/itemContributors/contributorType/title.label"
+msgstr ""
+
+msgid "metadata/relatedItems/itemContributors/contributorType/title.hint"
+msgstr ""
+
+msgid "metadata/relatedItems/itemContributors/contributorType/@v.help"
+msgstr ""
+
+msgid "metadata/relatedItems/itemContributors/contributorType/@v.label"
+msgstr ""
+
+msgid "metadata/relatedItems/itemContributors/contributorType/@v.hint"
+msgstr ""
+
+msgid "metadata/relatedItems/itemContributors/familyName.help"
+msgstr ""
+
+msgid "metadata/relatedItems/itemContributors/familyName.label"
+msgstr ""
+
+msgid "metadata/relatedItems/itemContributors/familyName.hint"
+msgstr ""
+
 msgid "metadata/relatedItems/itemContributors/fullName.label"
 msgstr "Author name"
 
@@ -1088,57 +1192,28 @@ msgstr ""
 msgid "metadata/relatedItems/itemContributors/fullName.hint"
 msgstr ""
 
+msgid "metadata/relatedItems/itemContributors/givenName.help"
+msgstr ""
+
+msgid "metadata/relatedItems/itemContributors/givenName.label"
+msgstr ""
+
+msgid "metadata/relatedItems/itemContributors/givenName.hint"
+msgstr ""
+
 msgid "metadata/relatedItems/itemContributors/nameType.label"
 msgstr "Type"
-
-msgid "metadata/relatedItems/itemContributors/nameType.hint"
-msgstr ""
-"It is possible to designate a person or an institution as the "
-"creator/contributor."
 
 msgid "metadata/relatedItems/itemContributors/nameType.help"
 msgstr ""
 
-msgid "metadata/relatedItems/itemContributors/nameType.enum.Organizational"
+msgid "metadata/relatedItems/itemContributors/nameType.hint"
 msgstr ""
 
 msgid "metadata/relatedItems/itemContributors/nameType.enum.Personal"
 msgstr ""
 
-msgid "metadata/relatedItems/itemContributors/role.label"
-msgstr "Contributor's role"
-
-msgid "metadata/relatedItems/itemContributors/role.help"
-msgstr ""
-
-msgid "metadata/relatedItems/itemContributors/role.hint"
-msgstr ""
-
-msgid "metadata/relatedItems/itemContributors/role/id.help"
-msgstr ""
-
-msgid "metadata/relatedItems/itemContributors/role/id.label"
-msgstr ""
-
-msgid "metadata/relatedItems/itemContributors/role/id.hint"
-msgstr ""
-
-msgid "metadata/relatedItems/itemContributors/role/title.help"
-msgstr ""
-
-msgid "metadata/relatedItems/itemContributors/role/title.label"
-msgstr ""
-
-msgid "metadata/relatedItems/itemContributors/role/title.hint"
-msgstr ""
-
-msgid "metadata/relatedItems/itemContributors/role/@v.help"
-msgstr ""
-
-msgid "metadata/relatedItems/itemContributors/role/@v.label"
-msgstr ""
-
-msgid "metadata/relatedItems/itemContributors/role/@v.hint"
+msgid "metadata/relatedItems/itemContributors/nameType.enum.Organizational"
 msgstr ""
 
 msgid "metadata/relatedItems/itemCreators.label"
@@ -1149,12 +1224,14 @@ msgstr ""
 
 msgid "metadata/relatedItems/itemCreators.hint"
 msgstr ""
-
-msgid "metadata/relatedItems/itemCreators/affiliations.label"
-msgstr "Affiliation"
+"It is possible to designate a person or an institution as the "
+"creator/contributor."
 
 msgid "metadata/relatedItems/itemCreators/affiliations.help"
 msgstr ""
+
+msgid "metadata/relatedItems/itemCreators/affiliations.label"
+msgstr "Affiliation"
 
 msgid "metadata/relatedItems/itemCreators/affiliations.hint"
 msgstr ""
@@ -1175,6 +1252,15 @@ msgid "metadata/relatedItems/itemCreators/affiliations/title.label"
 msgstr ""
 
 msgid "metadata/relatedItems/itemCreators/affiliations/title.hint"
+msgstr ""
+
+msgid "metadata/relatedItems/itemCreators/affiliations/ror.help"
+msgstr ""
+
+msgid "metadata/relatedItems/itemCreators/affiliations/ror.label"
+msgstr ""
+
+msgid "metadata/relatedItems/itemCreators/affiliations/ror.hint"
 msgstr ""
 
 msgid "metadata/relatedItems/itemCreators/affiliations/hierarchy.help"
@@ -1255,6 +1341,15 @@ msgstr ""
 msgid "metadata/relatedItems/itemCreators/authorityIdentifiers.hint"
 msgstr ""
 
+msgid "metadata/relatedItems/itemCreators/familyName.help"
+msgstr ""
+
+msgid "metadata/relatedItems/itemCreators/familyName.label"
+msgstr ""
+
+msgid "metadata/relatedItems/itemCreators/familyName.hint"
+msgstr ""
+
 msgid "metadata/relatedItems/itemCreators/fullName.label"
 msgstr "Author name"
 
@@ -1264,21 +1359,28 @@ msgstr ""
 msgid "metadata/relatedItems/itemCreators/fullName.hint"
 msgstr ""
 
+msgid "metadata/relatedItems/itemCreators/givenName.help"
+msgstr ""
+
+msgid "metadata/relatedItems/itemCreators/givenName.label"
+msgstr ""
+
+msgid "metadata/relatedItems/itemCreators/givenName.hint"
+msgstr ""
+
 msgid "metadata/relatedItems/itemCreators/nameType.label"
 msgstr "Type"
-
-msgid "metadata/relatedItems/itemCreators/nameType.hint"
-msgstr ""
-"It is possible to designate a person or an institution as the "
-"creator/contributor."
 
 msgid "metadata/relatedItems/itemCreators/nameType.help"
 msgstr ""
 
-msgid "metadata/relatedItems/itemCreators/nameType.enum.Organizational"
+msgid "metadata/relatedItems/itemCreators/nameType.hint"
 msgstr ""
 
 msgid "metadata/relatedItems/itemCreators/nameType.enum.Personal"
+msgstr ""
+
+msgid "metadata/relatedItems/itemCreators/nameType.enum.Organizational"
 msgstr ""
 
 msgid "metadata/relatedItems/itemEndPage.label"
@@ -1339,6 +1441,9 @@ msgid "metadata/relatedItems/itemPIDs/scheme.enum.ISSN"
 msgstr ""
 
 msgid "metadata/relatedItems/itemPIDs/scheme.enum.RIV"
+msgstr ""
+
+msgid "metadata/relatedItems/itemPIDs/scheme.enum.IGSN"
 msgstr ""
 
 msgid "metadata/relatedItems/itemPublisher.label"
@@ -1504,7 +1609,7 @@ msgid "metadata/resourceType/@v.hint"
 msgstr ""
 
 msgid "metadata/rights.label"
-msgstr "License"
+msgstr "Rights/Licenses"
 
 msgid "metadata/rights.help"
 msgstr ""
@@ -1923,10 +2028,19 @@ msgstr ""
 msgid "syntheticFields.hint"
 msgstr ""
 
-msgid "syntheticFields/institutions.help"
+msgid "syntheticFields/date.label"
+msgstr "Updated date"
+
+msgid "syntheticFields/date.help"
+msgstr ""
+
+msgid "syntheticFields/date.hint"
 msgstr ""
 
 msgid "syntheticFields/institutions.label"
+msgstr "Institutions"
+
+msgid "syntheticFields/institutions.help"
 msgstr ""
 
 msgid "syntheticFields/institutions.hint"
@@ -2013,31 +2127,22 @@ msgstr ""
 msgid "syntheticFields/institutions/@v.hint"
 msgstr ""
 
-msgid "syntheticFields/keywords_cs.help"
+msgid "syntheticFields/keywords.label"
+msgstr "Keywords"
+
+msgid "syntheticFields/keywords.help"
 msgstr ""
 
-msgid "syntheticFields/keywords_cs.label"
+msgid "syntheticFields/keywords.hint"
 msgstr ""
 
-msgid "syntheticFields/keywords_cs.hint"
+msgid "syntheticFields/people.label"
+msgstr "People"
+
+msgid "syntheticFields/people.help"
 msgstr ""
 
-msgid "syntheticFields/keywords_en.help"
-msgstr ""
-
-msgid "syntheticFields/keywords_en.label"
-msgstr ""
-
-msgid "syntheticFields/keywords_en.hint"
-msgstr ""
-
-msgid "syntheticFields/person.help"
-msgstr ""
-
-msgid "syntheticFields/person.label"
-msgstr ""
-
-msgid "syntheticFields/person.hint"
+msgid "syntheticFields/people.hint"
 msgstr ""
 
 msgid "updated.help"

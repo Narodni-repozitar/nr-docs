@@ -1,4 +1,3 @@
-from nr_metadata.services.records.facets.dumper import SyntheticFieldsDumperExtension
 from oarepo_runtime.records.dumpers import SearchDumper
 from oarepo_runtime.records.systemfields.mapping import SystemFieldDumperExt
 
@@ -14,9 +13,8 @@ class DocumentsDumper(SearchDumper):
 
     extensions = [
         SystemFieldDumperExt(),
-        SyntheticFieldsDumperExtension(),
-        MultilingualSearchDumperExt(),
         DocumentsEDTFIntervalDumperExt(),
+        MultilingualSearchDumperExt(),
     ]
 
 
@@ -25,7 +23,6 @@ class DocumentsDraftDumper(SearchDumper):
 
     extensions = [
         SystemFieldDumperExt(),
-        SyntheticFieldsDumperExtension(),
-        MultilingualSearchDumperExt(),
         DocumentsDraftEDTFIntervalDumperExt(),
+        MultilingualSearchDumperExt(),
     ]

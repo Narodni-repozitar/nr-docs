@@ -6,6 +6,11 @@ from invenio_records_resources.records.systemfields import FilesField, IndexFiel
 from invenio_records_resources.records.systemfields.pid import PIDField, PIDFieldContext
 from invenio_vocabularies.records.api import Vocabulary
 from oarepo_runtime.records.relations import PIDRelation, RelationsField
+from oarepo_runtime.records.systemfields import (
+    FirstItemSelector,
+    PathSelector,
+    SyntheticSystemField,
+)
 from oarepo_runtime.records.systemfields.has_draftcheck import HasDraftCheckField
 from oarepo_runtime.records.systemfields.icu import ICUSearchField
 from oarepo_runtime.records.systemfields.record_status import RecordStatusSystemField
@@ -43,13 +48,40 @@ class DocumentsRecord(InvenioRecord):
 
     dumper = DocumentsDumper()
 
-    # extra custom fields for sorting by title
     sort = TitleICUSortField(source_field="metadata.title")
 
     title_search = ICUSearchField(source_field="metadata.title")
+
     creator_search = ICUSearchField(source_field="metadata.creators.fullName")
-    contributor_search = ICUSearchField(source_field="metadata.contributors.fullName")
+
     abstract_search = ICUSearchField(source_field="metadata.abstract.value")
+
+    people = SyntheticSystemField(
+        PathSelector("metadata.creators", "metadata.contributors"),
+        filter=lambda x: x.get("nameType") == "Personal",
+        map=lambda x: x.get("fullName"),
+        key="syntheticFields.people",
+    )
+
+    institutions = SyntheticSystemField(
+        PathSelector(
+            "metadata.creators.affiliations",
+            "metadata.contributors.affiliations",
+            "metadata.thesis.degreeGrantors",
+        ),
+        key="syntheticFields.institutions",
+    )
+
+    keywords = SyntheticSystemField(
+        PathSelector("metadata.subjects.subject.value"),
+        key="syntheticFields.keywords",
+    )
+
+    date = SyntheticSystemField(
+        selector=FirstItemSelector("metadata.dateModified", "metadata.dateIssued"),
+        key="syntheticFields.date",
+        filter=lambda x: len(x) == 10,
+    )
 
     relations = RelationsField(
         accessRights=PIDRelation(
@@ -59,17 +91,22 @@ class DocumentsRecord(InvenioRecord):
         ),
         affiliations=PIDRelation(
             "metadata.contributors.affiliations",
-            keys=["id", "title", "hierarchy"],
+            keys=["id", "title", {"key": "props.ror", "target": "ror"}, "hierarchy"],
             pid_field=Vocabulary.pid.with_type_ctx("institutions"),
         ),
-        role=PIDRelation(
-            "metadata.contributors.role",
+        contributorType=PIDRelation(
+            "metadata.contributors.contributorType",
             keys=["id", "title"],
-            pid_field=Vocabulary.pid.with_type_ctx("contributor-roles"),
+            pid_field=Vocabulary.pid.with_type_ctx("contributor-types"),
         ),
-        creators_affiliations=PIDRelation(
+        Organizational_contributorType=PIDRelation(
+            "metadata.contributors.contributorType",
+            keys=["id", "title"],
+            pid_field=Vocabulary.pid.with_type_ctx("contributor-types"),
+        ),
+        Personal_affiliations=PIDRelation(
             "metadata.creators.affiliations",
-            keys=["id", "title", "hierarchy"],
+            keys=["id", "title", {"key": "props.ror", "target": "ror"}, "hierarchy"],
             pid_field=Vocabulary.pid.with_type_ctx("institutions"),
         ),
         country=PIDRelation(
@@ -87,19 +124,24 @@ class DocumentsRecord(InvenioRecord):
             keys=["id", "title"],
             pid_field=Vocabulary.pid.with_type_ctx("languages"),
         ),
-        itemContributors_affiliations=PIDRelation(
+        itemContributors_Personal_affiliations=PIDRelation(
             "metadata.relatedItems.itemContributors.affiliations",
-            keys=["id", "title", "hierarchy"],
+            keys=["id", "title", {"key": "props.ror", "target": "ror"}, "hierarchy"],
             pid_field=Vocabulary.pid.with_type_ctx("institutions"),
         ),
-        itemContributors_role=PIDRelation(
-            "metadata.relatedItems.itemContributors.role",
+        Personal_contributorType=PIDRelation(
+            "metadata.relatedItems.itemContributors.contributorType",
             keys=["id", "title"],
-            pid_field=Vocabulary.pid.with_type_ctx("contributor-roles"),
+            pid_field=Vocabulary.pid.with_type_ctx("contributor-types"),
         ),
-        itemCreators_affiliations=PIDRelation(
+        itemContributors_Organizational_contributorType=PIDRelation(
+            "metadata.relatedItems.itemContributors.contributorType",
+            keys=["id", "title"],
+            pid_field=Vocabulary.pid.with_type_ctx("contributor-types"),
+        ),
+        itemCreators_Personal_affiliations=PIDRelation(
             "metadata.relatedItems.itemCreators.affiliations",
-            keys=["id", "title", "hierarchy"],
+            keys=["id", "title", {"key": "props.ror", "target": "ror"}, "hierarchy"],
             pid_field=Vocabulary.pid.with_type_ctx("institutions"),
         ),
         itemRelationType=PIDRelation(
@@ -120,7 +162,7 @@ class DocumentsRecord(InvenioRecord):
         rights=PIDRelation(
             "metadata.rights",
             keys=["id", "title"],
-            pid_field=Vocabulary.pid.with_type_ctx("licenses"),
+            pid_field=Vocabulary.pid.with_type_ctx("rights"),
         ),
         subjectCategories=PIDRelation(
             "metadata.subjectCategories",
@@ -175,17 +217,22 @@ class DocumentsDraft(InvenioDraft):
         ),
         affiliations=PIDRelation(
             "metadata.contributors.affiliations",
-            keys=["id", "title", "hierarchy"],
+            keys=["id", "title", {"key": "props.ror", "target": "ror"}, "hierarchy"],
             pid_field=Vocabulary.pid.with_type_ctx("institutions"),
         ),
-        role=PIDRelation(
-            "metadata.contributors.role",
+        contributorType=PIDRelation(
+            "metadata.contributors.contributorType",
             keys=["id", "title"],
-            pid_field=Vocabulary.pid.with_type_ctx("contributor-roles"),
+            pid_field=Vocabulary.pid.with_type_ctx("contributor-types"),
         ),
-        creators_affiliations=PIDRelation(
+        Organizational_contributorType=PIDRelation(
+            "metadata.contributors.contributorType",
+            keys=["id", "title"],
+            pid_field=Vocabulary.pid.with_type_ctx("contributor-types"),
+        ),
+        Personal_affiliations=PIDRelation(
             "metadata.creators.affiliations",
-            keys=["id", "title", "hierarchy"],
+            keys=["id", "title", {"key": "props.ror", "target": "ror"}, "hierarchy"],
             pid_field=Vocabulary.pid.with_type_ctx("institutions"),
         ),
         country=PIDRelation(
@@ -203,19 +250,24 @@ class DocumentsDraft(InvenioDraft):
             keys=["id", "title"],
             pid_field=Vocabulary.pid.with_type_ctx("languages"),
         ),
-        itemContributors_affiliations=PIDRelation(
+        itemContributors_Personal_affiliations=PIDRelation(
             "metadata.relatedItems.itemContributors.affiliations",
-            keys=["id", "title", "hierarchy"],
+            keys=["id", "title", {"key": "props.ror", "target": "ror"}, "hierarchy"],
             pid_field=Vocabulary.pid.with_type_ctx("institutions"),
         ),
-        itemContributors_role=PIDRelation(
-            "metadata.relatedItems.itemContributors.role",
+        Personal_contributorType=PIDRelation(
+            "metadata.relatedItems.itemContributors.contributorType",
             keys=["id", "title"],
-            pid_field=Vocabulary.pid.with_type_ctx("contributor-roles"),
+            pid_field=Vocabulary.pid.with_type_ctx("contributor-types"),
         ),
-        itemCreators_affiliations=PIDRelation(
+        itemContributors_Organizational_contributorType=PIDRelation(
+            "metadata.relatedItems.itemContributors.contributorType",
+            keys=["id", "title"],
+            pid_field=Vocabulary.pid.with_type_ctx("contributor-types"),
+        ),
+        itemCreators_Personal_affiliations=PIDRelation(
             "metadata.relatedItems.itemCreators.affiliations",
-            keys=["id", "title", "hierarchy"],
+            keys=["id", "title", {"key": "props.ror", "target": "ror"}, "hierarchy"],
             pid_field=Vocabulary.pid.with_type_ctx("institutions"),
         ),
         itemRelationType=PIDRelation(
@@ -236,7 +288,7 @@ class DocumentsDraft(InvenioDraft):
         rights=PIDRelation(
             "metadata.rights",
             keys=["id", "title"],
-            pid_field=Vocabulary.pid.with_type_ctx("licenses"),
+            pid_field=Vocabulary.pid.with_type_ctx("rights"),
         ),
         subjectCategories=PIDRelation(
             "metadata.subjectCategories",
