@@ -14,7 +14,6 @@ import {
 import { LocalVocabularySelectField } from "@js/oarepo_vocabularies";
 import { AccordionField, FieldLabel, TextField } from "react-invenio-forms";
 import { Container, Grid, Ref, Sticky, Card } from "semantic-ui-react";
-import { NRDocumentValidationSchema } from "./NRDocumentValidationSchema";
 import {
   StringArrayField,
   AdditionalTitlesField,
@@ -29,7 +28,8 @@ import {
   objectIdentifiersSchema,
   FileUploader,
   PublishButtonComponent,
-} from "../components/";
+  NRDocumentValidationSchema,
+} from "@nr";
 import Overridable from "react-overridable";
 import { i18next } from "@translations/i18next";
 import _has from "lodash/has";
@@ -231,7 +231,7 @@ export const DepositForm = () => {
                       }
                       placeholder={i18next.t("Choose licenses")}
                       clearable
-                      optionsListName="licenses"
+                      optionsListName="rights"
                       helpText={i18next.t(
                         "If a Creative Commons license is associated with the resource, select the appropriate license option from the menu. We recommend choosing the latest versions, namely 3.0 Czech and 4.0 International."
                       )}

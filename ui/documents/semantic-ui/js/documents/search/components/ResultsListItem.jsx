@@ -8,12 +8,14 @@ import { Grid, Item, Label, List, Icon } from "semantic-ui-react";
 import { withState, buildUID } from "react-searchkit";
 import { SearchConfigurationContext } from "@js/invenio_search_ui/components";
 import { i18next } from "@translations/i18next";
-import { ResultsItemAccessStatus } from "./ResultsItemAccessStatus";
-import { ResultsItemCreatibutors } from "./ResultsItemCreatibutors";
-import { ResultsItemSubjects } from "./ResultsItemSubjects";
-import { ResultsItemLicense } from "./ResultsItemLicense";
-import { DoubleSeparator } from "./DoubleSeparator";
-import { ResultsItemResourceType } from "./ResultsItemResourceType";
+import {
+  ResultsItemAccessStatus,
+  ResultsItemSubjects,
+  ResultsItemCreatibutors,
+  ResultsItemLicense,
+  DoubleSeparator,
+  ResultsItemResourceType,
+} from "@nr";
 
 const ItemHeader = ({ title, searchUrl, selfLink }) => {
   const viewLink = new URL(

@@ -1,6 +1,3 @@
-export { EmptyResultsElement } from './EmptyResultsElement'
-export { MultipleSearchBarElement } from './MultipleSearchBarElement'
-export { ResultsItemCreatibutors } from './ResultsItemCreatibutors'
-export { ResultsItemSubjects } from './ResultsItemSubjects'
+export { EmptyResultsElement } from "./EmptyResultsElement";
 export { ResultsGridItem, ResultsGridItemWithState } from "./ResultsGridItem";
 export { ResultsListItem, ResultsListItemWithState } from "./ResultsListItem";
