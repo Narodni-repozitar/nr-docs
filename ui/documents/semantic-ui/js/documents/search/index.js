@@ -5,10 +5,10 @@ import {
   SearchappSearchbarElement,
 } from "@js/oarepo_ui";
 import {
-  EmptyResultsElement,
   ResultsGridItemWithState,
   ResultsListItemWithState,
 } from "./components";
+import { EmptyResultsElement } from "@nr";
 import { parametrize } from "react-overridable";
 const [searchAppConfig, ...otherSearchAppConfigs] = parseSearchAppConfigs();
 const { overridableIdPrefix } = searchAppConfig;
