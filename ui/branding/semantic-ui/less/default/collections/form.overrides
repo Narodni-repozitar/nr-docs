@@ -15,6 +15,8 @@
     content: "*";
     color: @red;
   }
+  .ui.form {
+  }
 
   .ck-editor__editable {
     min-height: 8.5em;
@@ -135,6 +137,18 @@
     }
     .ui.icon.left.labeled.button:hover {
       background-color: @arrayAddButtonFieldHoverColor;
+    }
+  }
+  #main-content > .field {
+    margin-bottom: 2rem;
+  }
+  #main-content > .field > .invenio-field-label {
+    font-size: 1.25rem !important;
+    margin-bottom: 0.75rem;
+  }
+  #main-content > .field.invenio-select-field {
+    .invenio-field-label {
+      font-size: 1.25rem !important;
     }
   }
 }

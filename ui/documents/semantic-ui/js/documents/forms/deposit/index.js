@@ -1,8 +1,8 @@
 import { createFormAppInit } from "@js/oarepo_ui";
-import { DepositForm } from "./DepositForm"
+import { DepositForm } from "./DepositForm";
 
-export const overriddenComponents = {
-    "FormApp.layout": DepositForm,
+export const componentOverrides = {
+  "Default.Form.FormApp.layout": DepositForm,
 };
 
-createFormAppInit(overriddenComponents);
+createFormAppInit({ componentOverrides: componentOverrides });

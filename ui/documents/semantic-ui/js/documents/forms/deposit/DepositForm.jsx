@@ -176,7 +176,7 @@ export const DepositForm = () => {
                         "If the dataset has been published elsewhere, use the date of first publication. You can also specify a future publication date (for embargo). If you do not enter a date, the system will automatically fill the date when the record is published. Format: YYYY-MM-DD, YYYYY-MM or YYYYY."
                       )}
                       placeholder={i18next.t(
-                        "Write or choose the date when the document was issued."
+                        "Choose the date when the document was issued."
                       )}
                     />
                   </Overridable>
