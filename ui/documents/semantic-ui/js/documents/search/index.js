@@ -21,7 +21,7 @@ const ResultsGridItemWithConfig = parametrize(ResultsGridItemWithState, {
 });
 
 export const componentOverrides = {
-  [`${overridableIdPrefix}.EmptyResults.element`]: EmptyResultsElement,
+  // [`${overridableIdPrefix}.EmptyResults.element`]: EmptyResultsElement,
   [`${overridableIdPrefix}.ResultsGrid.item`]: ResultsGridItemWithConfig,
   [`${overridableIdPrefix}.ResultsList.item`]: ResultsListItemWithConfig,
   [`${overridableIdPrefix}.SearchBar.element`]: SearchappSearchbarElement,
