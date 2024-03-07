@@ -1,7 +1,7 @@
 import React from "react";
 import { Container } from "semantic-ui-react";
 import { BaseFormLayout } from "@js/oarepo_ui";
-import { NRDocumentValidationSchema } from "@nr";
+import { NRDocumentValidationSchema } from "./NRDocumentValidationSchema";
 
 export const FormAppLayout = () => {
   const formikProps = {

@@ -11,4 +11,4 @@ export const componentOverrides = {
   [`${overridableIdPrefix}.FormActions.container`]: DepositFormControlPanel,
 };
 
-createFormAppInit({ componentOverrides: componentOverrides });
+createFormAppInit({ componentOverrides });

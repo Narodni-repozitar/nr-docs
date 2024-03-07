@@ -27,4 +27,4 @@ export const componentOverrides = {
   [`${overridableIdPrefix}.SearchBar.element`]: SearchappSearchbarElement,
 };
 
-createSearchAppsInit({ componentOverrides: componentOverrides });
+createSearchAppsInit({ componentOverrides });
