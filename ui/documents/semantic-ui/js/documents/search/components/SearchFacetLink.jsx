@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 export const SearchFacetLink = ({
   searchUrl = "/",
@@ -19,3 +20,12 @@ export const SearchFacetLink = ({
     <span className={`${className} label`}>{label || value}</span>
   </a>
 );
+
+SearchFacetLink.propTypes = {
+  searchUrl: PropTypes.string,
+  searchFacet: PropTypes.string.isRequired,
+  value: PropTypes.string.isRequired,
+  title: PropTypes.string,
+  label: PropTypes.string,
+  className: PropTypes.string,
+};

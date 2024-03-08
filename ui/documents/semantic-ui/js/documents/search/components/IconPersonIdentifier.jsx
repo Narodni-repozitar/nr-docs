@@ -1,5 +1,6 @@
 import React from "react";
 import { i18next } from "@translations/i18next";
+import PropTypes from "prop-types";
 
 export const IconIdentifier = ({ link, linkTitle, icon, alt }) => {
   return (
@@ -13,6 +14,13 @@ export const IconIdentifier = ({ link, linkTitle, icon, alt }) => {
       <img className="inline-id-icon ml-5" src={icon} alt={alt} />
     </a>
   );
+};
+
+IconIdentifier.propTypes = {
+  link: PropTypes.string,
+  linkTitle: PropTypes.string,
+  icon: PropTypes.string,
+  alt: PropTypes.string,
 };
 
 export const IconPersonIdentifier = ({ identifier, personName }) => {
@@ -91,4 +99,12 @@ export const IconPersonIdentifier = ({ identifier, personName }) => {
     default:
       return null;
   }
+};
+
+IconPersonIdentifier.propTypes = {
+  identifier: PropTypes.shape({
+    scheme: PropTypes.string,
+    identifier: PropTypes.string,
+  }),
+  personName: PropTypes.string,
 };

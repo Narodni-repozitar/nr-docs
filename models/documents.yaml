@@ -13,6 +13,7 @@ plugins:
   - oarepo-model-builder-ui
   - oarepo-model-builder-files
   - oarepo-model-builder-cf
+  - oarepo-model-builder-polymorphic
 profiles:
 - record
 - draft
@@ -23,6 +24,7 @@ record:
   use:
   - ./documents-requests.yaml
   - ./documents-custom_fields.yaml
+  - ./documents-facets.yaml
   - ./documents-harvest.yaml
 
   draft: {}
@@ -56,7 +58,8 @@ record:
 
   published-service-config:
     base-classes:
-      - common.services.published_service.NrDocumentsPublishedServiceConfig
+      - oarepo_published_service.services.PublishedServiceConfig
+      - oarepo_runtime.services.config.service.PermissionsPresetsConfigMixin
 
   json-serializer:
     base-classes: [ common.services.filtered_json_ui_serializer.FilteredUIJSONSerializer ]
@@ -65,17 +68,47 @@ record:
     base-classes:
       - oarepo_runtime.services.search.I18nSearchOptions
     sort-options-field: extra_sort_options
-    extra-code: |-2
-          sort_options = {{oarepo_runtime.services.search.ICUSortOptions}}("documents")
+    fields:
+      sort_options: "{{oarepo_runtime.services.search.ICUSortOptions}}('documents')"
   record:
-    extra-code: |-2
-          # extra custom fields for sorting by title
-          sort = {{common.services.sort.TitleICUSortField}}(source_field="metadata.title")
-      
-          title_search = {{oarepo_runtime.records.systemfields.icu.ICUSearchField}}(source_field="metadata.title")
-          creator_search = {{oarepo_runtime.records.systemfields.icu.ICUSearchField}}(source_field="metadata.creators.fullName")
-          contributor_search = {{oarepo_runtime.records.systemfields.icu.ICUSearchField}}(source_field="metadata.contributors.fullName")
-          abstract_search = {{oarepo_runtime.records.systemfields.icu.ICUSearchField}}(source_field="metadata.abstract.value")
+    # TODO: find out why these are not included from nr-model
+    imports:
+      - import: oarepo_runtime.records.systemfields.SyntheticSystemField
+      - import: oarepo_runtime.records.systemfields.PathSelector
+      - import: oarepo_runtime.records.systemfields.FirstItemSelector
+      - import: nr_metadata.records.systemfields.keyword_mapper
+    fields:
+      sort: "{{common.services.sort.TitleICUSortField}}(source_field='metadata.title')"
+      title_search: "{{oarepo_runtime.records.systemfields.icu.ICUSearchField}}(source_field='metadata.title')"
+      creator_search: "{{oarepo_runtime.records.systemfields.icu.ICUSearchField}}(source_field='metadata.creators.fullName')"
+      abstract_search: "{{oarepo_runtime.records.systemfields.icu.ICUSearchField}}(source_field='metadata.abstract.value')"
+      # for the time being put here
+      people: |
+        SyntheticSystemField(
+            PathSelector("metadata.creators", "metadata.contributors"),
+            filter=lambda x: x.get("nameType") == "Personal",
+            map=lambda x: x.get("fullName"),
+            key="syntheticFields.people",
+        )
+      institutions: |
+        SyntheticSystemField(
+            PathSelector(
+                  "metadata.creators.affiliations", 
+                  "metadata.contributors.affiliations", 
+                  "metadata.thesis.degreeGrantors"),
+            key="syntheticFields.institutions",
+        )
+      keywords: |
+        SyntheticSystemField(
+            PathSelector("metadata.subjects.subject.value"),
+            key="syntheticFields.keywords",
+        )
+      date: |
+        SyntheticSystemField(
+            selector=FirstItemSelector("metadata.dateModified", "metadata.dateIssued"),
+            key="syntheticFields.date",
+            filter=lambda x: len(x) == 10
+        )
 
 runtime-dependencies:
   nr-metadata: 2.0.0

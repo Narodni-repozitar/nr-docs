@@ -1,7 +1,4 @@
 import marshmallow as ma
-from invenio_drafts_resources.services.records.schema import (
-    ParentSchema as InvenioParentSchema,
-)
 from invenio_records_resources.services.files.schema import (
     FileSchema as InvenioFileSchema,
 )
@@ -10,11 +7,7 @@ from oarepo_requests.services.schema import RequestsSchemaMixin
 from oarepo_runtime.services.schema.validation import validate_date
 
 
-class GeneratedParentSchema(InvenioParentSchema):
-    """"""
-
-
-class DocumentsFileSchema(InvenioFileSchema, RequestsSchemaMixin):
+class DocumentsFileSchema(RequestsSchemaMixin, InvenioFileSchema):
     class Meta:
         unknown = ma.RAISE
 
@@ -23,4 +16,3 @@ class DocumentsFileSchema(InvenioFileSchema, RequestsSchemaMixin):
     created = ma_fields.String(dump_only=True, validate=[validate_date("%Y-%m-%d")])
 
     updated = ma_fields.String(dump_only=True, validate=[validate_date("%Y-%m-%d")])
-    parent = ma.fields.Nested(GeneratedParentSchema)

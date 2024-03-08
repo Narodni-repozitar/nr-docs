@@ -35,7 +35,7 @@ import { i18next } from "@translations/i18next";
 import _has from "lodash/has";
 
 export const DepositForm = () => {
-  const { record, formConfig, files: recordFiles } = useFormConfig();
+  const { record, formConfig, files: recordFiles, links } = useFormConfig();
   const editMode = _has(formConfig, "updateUrl");
   const sidebarRef = useRef(null);
   const formFeedbackRef = useRef(null);
@@ -481,9 +481,8 @@ export const DepositForm = () => {
                         <Grid.Column width={16} className="pt-10">
                           <ValidateButton />
                         </Grid.Column>
-                        {/* TODO:see if there is a better way to provide URL here, seems that UI links are empty in the form */}
                         <Grid.Column width={16} className="pt-10">
-                          <DeleteButton redirectUrl="/docs/" />
+                          <DeleteButton redirectUrl={links.search} />
                         </Grid.Column>
                       </Grid>
                     </Card.Content>

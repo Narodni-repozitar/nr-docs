@@ -102,21 +102,6 @@ class DocumentsExt:
         )
 
     @cached_property
-    def published_service_files(self):
-        from documents.services.files.published.config import (
-            DocumentsFilePublishedServiceConfig,
-        )
-        from documents.services.files.published.service import (
-            DocumentsFilePublishedService,
-        )
-
-        return DocumentsFilePublishedService(
-            config=DocumentsFilePublishedServiceConfig(
-                proxied_drafts_config=self.service_files.config,
-            ),
-        )
-
-    @cached_property
     def service_draft_files(self):
         return config.DOCUMENTS_DRAFT_FILES_SERVICE_CLASS(
             config=config.DOCUMENTS_DRAFT_FILES_SERVICE_CONFIG(),

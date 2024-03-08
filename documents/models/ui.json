@@ -1,9 +1,9 @@
 {
     "module": "documents.models",
     "file": "documents/models/ui.json",
-    "alias": "documents_file",
-    "detail": "file",
-    "input": "file",
+    "alias": "documents",
+    "detail": "model",
+    "input": "model",
     "help": ".help",
     "label": ".label",
     "hint": ".hint",
@@ -13,40 +13,21 @@
             "input": "keyword",
             "help": "$schema.help",
             "label": "$schema.label",
-            "hint": "$schema.hint",
-            "facet": "_schema"
-        },
-        "caption": {
-            "detail": "keyword",
-            "input": "keyword",
-            "help": "caption.help",
-            "label": "caption.label",
-            "hint": "caption.hint",
-            "facet": "caption"
+            "hint": "$schema.hint"
         },
         "created": {
-            "detail": "date",
-            "input": "date",
+            "detail": "datetime",
+            "input": "datetime",
             "help": "created.help",
             "label": "created.label",
-            "hint": "created.hint",
-            "facet": "created"
+            "hint": "created.hint"
         },
         "id": {
             "detail": "keyword",
             "input": "keyword",
             "help": "id.help",
             "label": "id.label",
-            "hint": "id.hint",
-            "facet": "_id"
-        },
-        "updated": {
-            "detail": "date",
-            "input": "date",
-            "help": "updated.help",
-            "label": "updated.label",
-            "hint": "updated.hint",
-            "facet": "updated"
+            "hint": "id.hint"
         },
         "metadata": {
             "detail": "metadatum",
@@ -201,14 +182,6 @@
                         }
                     }
                 },
-                "collection": {
-                    "detail": "keyword",
-                    "input": "keyword",
-                    "help": "metadata/collection.help",
-                    "label": "metadata/collection.label",
-                    "hint": "metadata/collection.hint",
-                    "facet": "metadata_collection"
-                },
                 "contributors": {
                     "detail": "array",
                     "input": "array",
@@ -217,7 +190,7 @@
                     "hint": "metadata/contributors.hint",
                     "child": {
                         "detail": "contributor",
-                        "input": "contributor",
+                        "input": "polymorphic",
                         "help": "metadata/contributors.help",
                         "label": "metadata/contributors.label",
                         "hint": "metadata/contributors.hint",
@@ -250,6 +223,13 @@
                                             "help": "metadata/contributors/affiliations/title.help",
                                             "label": "metadata/contributors/affiliations/title.label",
                                             "hint": "metadata/contributors/affiliations/title.hint"
+                                        },
+                                        "ror": {
+                                            "detail": "keyword",
+                                            "input": "keyword",
+                                            "help": "metadata/contributors/affiliations/ror.help",
+                                            "label": "metadata/contributors/affiliations/ror.label",
+                                            "hint": "metadata/contributors/affiliations/ror.hint"
                                         },
                                         "hierarchy": {
                                             "detail": false,
@@ -333,7 +313,7 @@
                                 "label": "metadata/contributors/authorityIdentifiers.label",
                                 "hint": "metadata/contributors/authorityIdentifiers.hint",
                                 "child": {
-                                    "detail": "nr_authority_identifier",
+                                    "detail": "nr_organization_identifier",
                                     "input": "authorityidentifier",
                                     "help": "metadata/contributors/authorityIdentifiers.help",
                                     "label": "metadata/contributors/authorityIdentifiers.label",
@@ -359,6 +339,46 @@
                                     }
                                 }
                             },
+                            "contributorType": {
+                                "detail": "vocabulary_item",
+                                "edit": "vocabulary_item",
+                                "input": "vocabulary",
+                                "help": "metadata/contributors/contributorType.help",
+                                "label": "metadata/contributors/contributorType.label",
+                                "hint": "metadata/contributors/contributorType.hint",
+                                "facet": "metadata_contributors_contributorType",
+                                "children": {
+                                    "id": {
+                                        "detail": "keyword",
+                                        "input": "keyword",
+                                        "help": "metadata/contributors/contributorType/id.help",
+                                        "label": "metadata/contributors/contributorType/id.label",
+                                        "hint": "metadata/contributors/contributorType/id.hint"
+                                    },
+                                    "title": {
+                                        "detail": false,
+                                        "input": false,
+                                        "help": "metadata/contributors/contributorType/title.help",
+                                        "label": "metadata/contributors/contributorType/title.label",
+                                        "hint": "metadata/contributors/contributorType/title.hint"
+                                    },
+                                    "@v": {
+                                        "detail": "keyword",
+                                        "input": "keyword",
+                                        "help": "metadata/contributors/contributorType/@v.help",
+                                        "label": "metadata/contributors/contributorType/@v.label",
+                                        "hint": "metadata/contributors/contributorType/@v.hint"
+                                    }
+                                }
+                            },
+                            "familyName": {
+                                "detail": "keyword",
+                                "input": "keyword",
+                                "help": "metadata/contributors/familyName.help",
+                                "label": "metadata/contributors/familyName.label",
+                                "hint": "metadata/contributors/familyName.hint",
+                                "facet": "metadata_contributors_familyName"
+                            },
                             "fullName": {
                                 "detail": "keyword",
                                 "input": "keyword",
@@ -366,6 +386,14 @@
                                 "label": "metadata/contributors/fullName.label",
                                 "hint": "metadata/contributors/fullName.hint",
                                 "facet": "metadata_contributors_fullName"
+                            },
+                            "givenName": {
+                                "detail": "keyword",
+                                "input": "keyword",
+                                "help": "metadata/contributors/givenName.help",
+                                "label": "metadata/contributors/givenName.label",
+                                "hint": "metadata/contributors/givenName.hint",
+                                "facet": "metadata_contributors_givenName"
                             },
                             "nameType": {
                                 "detail": "keyword",
@@ -375,38 +403,6 @@
                                 "hint": "metadata/contributors/nameType.hint",
                                 "enum": "metadata/contributors/nameType.enum",
                                 "facet": "metadata_contributors_nameType"
-                            },
-                            "role": {
-                                "detail": "vocabulary_item",
-                                "edit": "vocabulary_item",
-                                "input": "vocabulary",
-                                "help": "metadata/contributors/role.help",
-                                "label": "metadata/contributors/role.label",
-                                "hint": "metadata/contributors/role.hint",
-                                "facet": "metadata_contributors_role",
-                                "children": {
-                                    "id": {
-                                        "detail": "keyword",
-                                        "input": "keyword",
-                                        "help": "metadata/contributors/role/id.help",
-                                        "label": "metadata/contributors/role/id.label",
-                                        "hint": "metadata/contributors/role/id.hint"
-                                    },
-                                    "title": {
-                                        "detail": false,
-                                        "input": false,
-                                        "help": "metadata/contributors/role/title.help",
-                                        "label": "metadata/contributors/role/title.label",
-                                        "hint": "metadata/contributors/role/title.hint"
-                                    },
-                                    "@v": {
-                                        "detail": "keyword",
-                                        "input": "keyword",
-                                        "help": "metadata/contributors/role/@v.help",
-                                        "label": "metadata/contributors/role/@v.label",
-                                        "hint": "metadata/contributors/role/@v.hint"
-                                    }
-                                }
                             }
                         }
                     }
@@ -419,7 +415,7 @@
                     "hint": "metadata/creators.hint",
                     "child": {
                         "detail": "creator",
-                        "input": "creator",
+                        "input": "polymorphic",
                         "help": "metadata/creators.help",
                         "label": "metadata/creators.label",
                         "hint": "metadata/creators.hint",
@@ -452,6 +448,13 @@
                                             "help": "metadata/creators/affiliations/title.help",
                                             "label": "metadata/creators/affiliations/title.label",
                                             "hint": "metadata/creators/affiliations/title.hint"
+                                        },
+                                        "ror": {
+                                            "detail": "keyword",
+                                            "input": "keyword",
+                                            "help": "metadata/creators/affiliations/ror.help",
+                                            "label": "metadata/creators/affiliations/ror.label",
+                                            "hint": "metadata/creators/affiliations/ror.hint"
                                         },
                                         "hierarchy": {
                                             "detail": false,
@@ -535,7 +538,7 @@
                                 "label": "metadata/creators/authorityIdentifiers.label",
                                 "hint": "metadata/creators/authorityIdentifiers.hint",
                                 "child": {
-                                    "detail": "nr_authority_identifier",
+                                    "detail": "nr_organization_identifier",
                                     "input": "authorityidentifier",
                                     "help": "metadata/creators/authorityIdentifiers.help",
                                     "label": "metadata/creators/authorityIdentifiers.label",
@@ -561,6 +564,14 @@
                                     }
                                 }
                             },
+                            "familyName": {
+                                "detail": "keyword",
+                                "input": "keyword",
+                                "help": "metadata/creators/familyName.help",
+                                "label": "metadata/creators/familyName.label",
+                                "hint": "metadata/creators/familyName.hint",
+                                "facet": "metadata_creators_familyName"
+                            },
                             "fullName": {
                                 "detail": "keyword",
                                 "input": "keyword",
@@ -568,6 +579,14 @@
                                 "label": "metadata/creators/fullName.label",
                                 "hint": "metadata/creators/fullName.hint",
                                 "facet": "metadata_creators_fullName"
+                            },
+                            "givenName": {
+                                "detail": "keyword",
+                                "input": "keyword",
+                                "help": "metadata/creators/givenName.help",
+                                "label": "metadata/creators/givenName.label",
+                                "hint": "metadata/creators/givenName.hint",
+                                "facet": "metadata_creators_givenName"
                             },
                             "nameType": {
                                 "detail": "keyword",
@@ -582,8 +601,8 @@
                     }
                 },
                 "dateAvailable": {
-                    "detail": "edtf",
-                    "input": "edtf",
+                    "detail": "date",
+                    "input": "date",
                     "help": "metadata/dateAvailable.help",
                     "label": "metadata/dateAvailable.label",
                     "hint": "metadata/dateAvailable.hint",
@@ -1002,7 +1021,7 @@
                                 "hint": "metadata/relatedItems/itemContributors.hint",
                                 "child": {
                                     "detail": "contributor",
-                                    "input": "itemcontributor",
+                                    "input": "polymorphic",
                                     "help": "metadata/relatedItems/itemContributors.help",
                                     "label": "metadata/relatedItems/itemContributors.label",
                                     "hint": "metadata/relatedItems/itemContributors.hint",
@@ -1035,6 +1054,13 @@
                                                         "help": "metadata/relatedItems/itemContributors/affiliations/title.help",
                                                         "label": "metadata/relatedItems/itemContributors/affiliations/title.label",
                                                         "hint": "metadata/relatedItems/itemContributors/affiliations/title.hint"
+                                                    },
+                                                    "ror": {
+                                                        "detail": "keyword",
+                                                        "input": "keyword",
+                                                        "help": "metadata/relatedItems/itemContributors/affiliations/ror.help",
+                                                        "label": "metadata/relatedItems/itemContributors/affiliations/ror.label",
+                                                        "hint": "metadata/relatedItems/itemContributors/affiliations/ror.hint"
                                                     },
                                                     "hierarchy": {
                                                         "detail": false,
@@ -1118,7 +1144,7 @@
                                             "label": "metadata/relatedItems/itemContributors/authorityIdentifiers.label",
                                             "hint": "metadata/relatedItems/itemContributors/authorityIdentifiers.hint",
                                             "child": {
-                                                "detail": "nr_authority_identifier",
+                                                "detail": "nr_organization_identifier",
                                                 "input": "authorityidentifier",
                                                 "help": "metadata/relatedItems/itemContributors/authorityIdentifiers.help",
                                                 "label": "metadata/relatedItems/itemContributors/authorityIdentifiers.label",
@@ -1144,6 +1170,46 @@
                                                 }
                                             }
                                         },
+                                        "contributorType": {
+                                            "detail": "vocabulary_item",
+                                            "edit": "vocabulary_item",
+                                            "input": "vocabulary",
+                                            "help": "metadata/relatedItems/itemContributors/contributorType.help",
+                                            "label": "metadata/relatedItems/itemContributors/contributorType.label",
+                                            "hint": "metadata/relatedItems/itemContributors/contributorType.hint",
+                                            "facet": "metadata_relatedItems_itemContributors_contributorType",
+                                            "children": {
+                                                "id": {
+                                                    "detail": "keyword",
+                                                    "input": "keyword",
+                                                    "help": "metadata/relatedItems/itemContributors/contributorType/id.help",
+                                                    "label": "metadata/relatedItems/itemContributors/contributorType/id.label",
+                                                    "hint": "metadata/relatedItems/itemContributors/contributorType/id.hint"
+                                                },
+                                                "title": {
+                                                    "detail": false,
+                                                    "input": false,
+                                                    "help": "metadata/relatedItems/itemContributors/contributorType/title.help",
+                                                    "label": "metadata/relatedItems/itemContributors/contributorType/title.label",
+                                                    "hint": "metadata/relatedItems/itemContributors/contributorType/title.hint"
+                                                },
+                                                "@v": {
+                                                    "detail": "keyword",
+                                                    "input": "keyword",
+                                                    "help": "metadata/relatedItems/itemContributors/contributorType/@v.help",
+                                                    "label": "metadata/relatedItems/itemContributors/contributorType/@v.label",
+                                                    "hint": "metadata/relatedItems/itemContributors/contributorType/@v.hint"
+                                                }
+                                            }
+                                        },
+                                        "familyName": {
+                                            "detail": "keyword",
+                                            "input": "keyword",
+                                            "help": "metadata/relatedItems/itemContributors/familyName.help",
+                                            "label": "metadata/relatedItems/itemContributors/familyName.label",
+                                            "hint": "metadata/relatedItems/itemContributors/familyName.hint",
+                                            "facet": "metadata_relatedItems_itemContributors_familyName"
+                                        },
                                         "fullName": {
                                             "detail": "keyword",
                                             "input": "keyword",
@@ -1151,6 +1217,14 @@
                                             "label": "metadata/relatedItems/itemContributors/fullName.label",
                                             "hint": "metadata/relatedItems/itemContributors/fullName.hint",
                                             "facet": "metadata_relatedItems_itemContributors_fullName"
+                                        },
+                                        "givenName": {
+                                            "detail": "keyword",
+                                            "input": "keyword",
+                                            "help": "metadata/relatedItems/itemContributors/givenName.help",
+                                            "label": "metadata/relatedItems/itemContributors/givenName.label",
+                                            "hint": "metadata/relatedItems/itemContributors/givenName.hint",
+                                            "facet": "metadata_relatedItems_itemContributors_givenName"
                                         },
                                         "nameType": {
                                             "detail": "keyword",
@@ -1160,38 +1234,6 @@
                                             "hint": "metadata/relatedItems/itemContributors/nameType.hint",
                                             "enum": "metadata/relatedItems/itemContributors/nameType.enum",
                                             "facet": "metadata_relatedItems_itemContributors_nameType"
-                                        },
-                                        "role": {
-                                            "detail": "vocabulary_item",
-                                            "edit": "vocabulary_item",
-                                            "input": "vocabulary",
-                                            "help": "metadata/relatedItems/itemContributors/role.help",
-                                            "label": "metadata/relatedItems/itemContributors/role.label",
-                                            "hint": "metadata/relatedItems/itemContributors/role.hint",
-                                            "facet": "metadata_relatedItems_itemContributors_role",
-                                            "children": {
-                                                "id": {
-                                                    "detail": "keyword",
-                                                    "input": "keyword",
-                                                    "help": "metadata/relatedItems/itemContributors/role/id.help",
-                                                    "label": "metadata/relatedItems/itemContributors/role/id.label",
-                                                    "hint": "metadata/relatedItems/itemContributors/role/id.hint"
-                                                },
-                                                "title": {
-                                                    "detail": false,
-                                                    "input": false,
-                                                    "help": "metadata/relatedItems/itemContributors/role/title.help",
-                                                    "label": "metadata/relatedItems/itemContributors/role/title.label",
-                                                    "hint": "metadata/relatedItems/itemContributors/role/title.hint"
-                                                },
-                                                "@v": {
-                                                    "detail": "keyword",
-                                                    "input": "keyword",
-                                                    "help": "metadata/relatedItems/itemContributors/role/@v.help",
-                                                    "label": "metadata/relatedItems/itemContributors/role/@v.label",
-                                                    "hint": "metadata/relatedItems/itemContributors/role/@v.hint"
-                                                }
-                                            }
                                         }
                                     }
                                 }
@@ -1204,7 +1246,7 @@
                                 "hint": "metadata/relatedItems/itemCreators.hint",
                                 "child": {
                                     "detail": "creator",
-                                    "input": "itemcreator",
+                                    "input": "polymorphic",
                                     "help": "metadata/relatedItems/itemCreators.help",
                                     "label": "metadata/relatedItems/itemCreators.label",
                                     "hint": "metadata/relatedItems/itemCreators.hint",
@@ -1237,6 +1279,13 @@
                                                         "help": "metadata/relatedItems/itemCreators/affiliations/title.help",
                                                         "label": "metadata/relatedItems/itemCreators/affiliations/title.label",
                                                         "hint": "metadata/relatedItems/itemCreators/affiliations/title.hint"
+                                                    },
+                                                    "ror": {
+                                                        "detail": "keyword",
+                                                        "input": "keyword",
+                                                        "help": "metadata/relatedItems/itemCreators/affiliations/ror.help",
+                                                        "label": "metadata/relatedItems/itemCreators/affiliations/ror.label",
+                                                        "hint": "metadata/relatedItems/itemCreators/affiliations/ror.hint"
                                                     },
                                                     "hierarchy": {
                                                         "detail": false,
@@ -1320,7 +1369,7 @@
                                             "label": "metadata/relatedItems/itemCreators/authorityIdentifiers.label",
                                             "hint": "metadata/relatedItems/itemCreators/authorityIdentifiers.hint",
                                             "child": {
-                                                "detail": "nr_authority_identifier",
+                                                "detail": "nr_organization_identifier",
                                                 "input": "authorityidentifier",
                                                 "help": "metadata/relatedItems/itemCreators/authorityIdentifiers.help",
                                                 "label": "metadata/relatedItems/itemCreators/authorityIdentifiers.label",
@@ -1346,6 +1395,14 @@
                                                 }
                                             }
                                         },
+                                        "familyName": {
+                                            "detail": "keyword",
+                                            "input": "keyword",
+                                            "help": "metadata/relatedItems/itemCreators/familyName.help",
+                                            "label": "metadata/relatedItems/itemCreators/familyName.label",
+                                            "hint": "metadata/relatedItems/itemCreators/familyName.hint",
+                                            "facet": "metadata_relatedItems_itemCreators_familyName"
+                                        },
                                         "fullName": {
                                             "detail": "keyword",
                                             "input": "keyword",
@@ -1353,6 +1410,14 @@
                                             "label": "metadata/relatedItems/itemCreators/fullName.label",
                                             "hint": "metadata/relatedItems/itemCreators/fullName.hint",
                                             "facet": "metadata_relatedItems_itemCreators_fullName"
+                                        },
+                                        "givenName": {
+                                            "detail": "keyword",
+                                            "input": "keyword",
+                                            "help": "metadata/relatedItems/itemCreators/givenName.help",
+                                            "label": "metadata/relatedItems/itemCreators/givenName.label",
+                                            "hint": "metadata/relatedItems/itemCreators/givenName.hint",
+                                            "facet": "metadata_relatedItems_itemCreators_givenName"
                                         },
                                         "nameType": {
                                             "detail": "keyword",
@@ -2003,6 +2068,14 @@
             "label": "syntheticFields.label",
             "hint": "syntheticFields.hint",
             "children": {
+                "date": {
+                    "detail": "date",
+                    "input": "date",
+                    "help": "syntheticFields/date.help",
+                    "label": "syntheticFields/date.label",
+                    "hint": "syntheticFields/date.hint",
+                    "facet": "syntheticFields_date"
+                },
                 "institutions": {
                     "detail": "taxonomy_item",
                     "edit": "taxonomy_item",
@@ -2100,31 +2173,30 @@
                         }
                     }
                 },
-                "keywords_cs": {
+                "keywords": {
                     "detail": "keyword",
                     "input": "keyword",
-                    "help": "syntheticFields/keywords_cs.help",
-                    "label": "syntheticFields/keywords_cs.label",
-                    "hint": "syntheticFields/keywords_cs.hint",
-                    "facet": "syntheticFields_keywords_cs"
+                    "help": "syntheticFields/keywords.help",
+                    "label": "syntheticFields/keywords.label",
+                    "hint": "syntheticFields/keywords.hint",
+                    "facet": "syntheticFields_keywords"
                 },
-                "keywords_en": {
+                "people": {
                     "detail": "keyword",
                     "input": "keyword",
-                    "help": "syntheticFields/keywords_en.help",
-                    "label": "syntheticFields/keywords_en.label",
-                    "hint": "syntheticFields/keywords_en.hint",
-                    "facet": "syntheticFields_keywords_en"
-                },
-                "person": {
-                    "detail": "keyword",
-                    "input": "keyword",
-                    "help": "syntheticFields/person.help",
-                    "label": "syntheticFields/person.label",
-                    "hint": "syntheticFields/person.hint",
-                    "facet": "syntheticFields_person"
+                    "help": "syntheticFields/people.help",
+                    "label": "syntheticFields/people.label",
+                    "hint": "syntheticFields/people.hint",
+                    "facet": "syntheticFields_people"
                 }
             }
+        },
+        "updated": {
+            "detail": "datetime",
+            "input": "datetime",
+            "help": "updated.help",
+            "label": "updated.label",
+            "hint": "updated.hint"
         }
     }
 }

@@ -1,11 +1,11 @@
 draft:
   requests:
-    publish-draft:
-      type:
+    types:
+      publish-draft:
         base-classes:
         - oarepo_requests.types.publish_draft.PublishDraftRequestType
 requests:
-  delete-record:
-    type:
+  types:
+    delete-record:
       base-classes:
       - oarepo_requests.types.delete_record.DeleteRecordRequestType
