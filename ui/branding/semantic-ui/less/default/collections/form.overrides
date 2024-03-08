@@ -15,7 +15,12 @@
     content: "*";
     color: @red;
   }
-  .ui.form {
+
+  .invenio-group-field.fields {
+    background-color: @arrayFieldColor;
+    margin: 0 0 1rem 0;
+    padding: 0.3rem 0 1rem 0;
+    border-radius: 0.5rem;
   }
 
   .ck-editor__editable {
@@ -63,12 +68,6 @@
       margin-bottom: 0.75rem;
     }
 
-    .invenio-group-field.fields {
-      background-color: @arrayFieldColor;
-      margin: 0 0 1rem 0;
-      padding: 0.3rem 0 1rem 0;
-      border-radius: 0.5rem;
-    }
     .invenio-group-field.fields {
       .invenio-group-field.fields {
         margin: 0;
