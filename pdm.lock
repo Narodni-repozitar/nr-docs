@@ -3458,7 +3458,7 @@ files = [
 
 [[package]]
 name = "oarepo-global-search"
-version = "1.0.1"
+version = "1.0.2"
 requires_python = ">=3.9"
 summary = "\"A model builder plugin for global search\""
 groups = ["default"]
@@ -3467,8 +3467,8 @@ dependencies = [
     "oarepo-model-builder>=4.0.0",
 ]
 files = [
-    {file = "oarepo-global-search-1.0.1.tar.gz", hash = "sha256:fa6b5322292c25957244c025317c0b3caa4b055713624727be65a387608e9b40"},
-    {file = "oarepo_global_search-1.0.1-py2.py3-none-any.whl", hash = "sha256:314997eb5d3fc5f0064e075b82655102b91b45a8bded03eebaa24c63ae71874f"},
+    {file = "oarepo-global-search-1.0.2.tar.gz", hash = "sha256:056597d963469d18f4546ae1604fcac1a6f5db6f7369f926baed8263b31d2d86"},
+    {file = "oarepo_global_search-1.0.2-py2.py3-none-any.whl", hash = "sha256:1d6c9b292efb2926b213178e49f53eba59249166ba40451de801a22439ac4615"},
 ]
 
 [[package]]
