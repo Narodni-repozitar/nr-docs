@@ -9,13 +9,13 @@ jinjax==0.31
 json5==0.9.22
 langcodes==3.3.0
 levenshtein==0.25.0
-nr-metadata==2.0.14
+nr-metadata==2.0.15
 nr-oaipmh-harvesters==1.0.6
 nr-vocabularies==2.0.11
 oarepo-oai-pmh-harvester==4.0.44
 oarepo-published-service==1.0.3
 oarepo-requests==1.1.2
-oarepo-runtime==1.5.16
+oarepo-runtime==1.5.17
 oarepo-ui==5.1.5
 oarepo-vocabularies==2.0.79
 openpyxl==3.1.2

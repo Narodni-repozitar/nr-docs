@@ -3010,7 +3010,7 @@ files = [
 
 [[package]]
 name = "nr-metadata"
-version = "2.0.14"
+version = "2.0.15"
 requires_python = ">=3.9"
 summary = "\"Generated metadata files for the Czech National Repository\""
 groups = ["default"]
@@ -3020,8 +3020,8 @@ dependencies = [
     "oarepo-vocabularies>=2.0.0",
 ]
 files = [
-    {file = "nr-metadata-2.0.14.tar.gz", hash = "sha256:ed477e0ddc2c6f8ab7ee3e910728a9ea5d6f8581ec228455fb77d12662dfaad3"},
-    {file = "nr_metadata-2.0.14-py2.py3-none-any.whl", hash = "sha256:500c093cfa499dde8f14bfe6f4f156438d5f3fb6b6eb5112e4ae86e595191394"},
+    {file = "nr-metadata-2.0.15.tar.gz", hash = "sha256:7e989b0adaacb19648f4909829e71f900bbd69b4d0eb526cbd74b876e7779602"},
+    {file = "nr_metadata-2.0.15-py2.py3-none-any.whl", hash = "sha256:f6cb1c1cc76cfa36033b345be11ef15dfa4871859ed7f08aa9e8d62155444f1d"},
 ]
 
 [[package]]
@@ -3345,7 +3345,7 @@ files = [
 
 [[package]]
 name = "oarepo-runtime"
-version = "1.5.16"
+version = "1.5.17"
 summary = "A set of runtime extensions of Invenio repository"
 groups = ["default"]
 dependencies = [
@@ -3358,8 +3358,8 @@ dependencies = [
     "tqdm",
 ]
 files = [
-    {file = "oarepo-runtime-1.5.16.tar.gz", hash = "sha256:c6753784a2a4f71dd964f733ad2af2884d0dad7060c7374e4769560d6f8c10dc"},
-    {file = "oarepo_runtime-1.5.16-py3-none-any.whl", hash = "sha256:4843783ea282356314de556b8d0a64dfa81a2ec3ddcff20e2afcf7607634cc27"},
+    {file = "oarepo-runtime-1.5.17.tar.gz", hash = "sha256:25176065391ae247ad5aa35cc19f1e6fa766fecb0ba6abd079b811ea7bbfeec5"},
+    {file = "oarepo_runtime-1.5.17-py3-none-any.whl", hash = "sha256:f5306bb839e3102d7810e589f25d5e7fdbd350b92617cf40b4ec90c2933922a6"},
 ]
 
 [[package]]
