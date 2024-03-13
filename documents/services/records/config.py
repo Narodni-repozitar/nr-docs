@@ -12,6 +12,8 @@ from documents.services.records.results import DocumentsRecordItem, DocumentsRec
 from documents.services.records.schema import DocumentsSchema
 from documents.services.records.search import DocumentsSearchOptions
 
+from invenio_records_resources.services import pagination_links
+
 
 class DocumentsServiceConfig(
     PermissionsPresetsConfigMixin, FilteredResultServiceConfig
@@ -74,3 +76,9 @@ class DocumentsServiceConfig(
             ),
             "versions": RecordLink("{+api}/docs/{id}/versions"),
         }
+
+    links_search = pagination_links("{+api}/docs{?args*}")
+
+    links_search_drafts = pagination_links("{+api}/user/docs{?args*}")
+
+    links_search_versions = pagination_links("{+api}/docs/{id}/versions{?args*}")
