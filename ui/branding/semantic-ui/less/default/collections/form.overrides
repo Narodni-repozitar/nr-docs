@@ -16,6 +16,13 @@
     color: @red;
   }
 
+  .invenio-group-field.fields {
+    background-color: @arrayFieldColor;
+    margin: 0 0 1rem 0;
+    padding: 0.3rem 0 1rem 0;
+    border-radius: 0.5rem;
+  }
+
   .ck-editor__editable {
     min-height: 8.5em;
   }
@@ -61,12 +68,6 @@
       margin-bottom: 0.75rem;
     }
 
-    .invenio-group-field.fields {
-      background-color: @arrayFieldColor;
-      margin: 0 0 1rem 0;
-      padding: 0.3rem 0 1rem 0;
-      border-radius: 0.5rem;
-    }
     .invenio-group-field.fields {
       .invenio-group-field.fields {
         margin: 0;
@@ -132,9 +133,22 @@
     .ui.icon.left.labeled.button {
       background-color: @arrayAddButtonFieldColor;
       color: black;
+      margin-top: 0;
     }
     .ui.icon.left.labeled.button:hover {
       background-color: @arrayAddButtonFieldHoverColor;
+    }
+  }
+  #main-content > .field {
+    margin-bottom: 2rem;
+  }
+  #main-content > .field > .invenio-field-label {
+    font-size: 1.25rem !important;
+    margin-bottom: 0.75rem;
+  }
+  #main-content > .field.invenio-select-field {
+    .invenio-field-label {
+      font-size: 1.25rem !important;
     }
   }
 }
