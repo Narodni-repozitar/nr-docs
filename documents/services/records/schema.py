@@ -17,6 +17,8 @@ from oarepo_runtime.services.schema.marshmallow import DictOnlySchema
 class GeneratedParentSchema(InvenioParentSchema):
     """"""
 
+    owners = ma.fields.List(ma.fields.Dict(), load_only=True)
+
 
 class DocumentsSchema(RequestsSchemaMixin, NRDocumentRecordSchema):
     class Meta:
