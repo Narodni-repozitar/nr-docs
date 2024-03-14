@@ -84,7 +84,7 @@ class DocumentsExt:
 
         return DocumentsPublishedService(
             config=DocumentsPublishedServiceConfig(
-                proxied_drafts_config=self.service_records.config,
+                proxied_drafts_config=self.service_records.config
             ),
         )
 
@@ -99,6 +99,19 @@ class DocumentsExt:
         return config.DOCUMENTS_FILES_RESOURCE_CLASS(
             service=self.service_files,
             config=config.DOCUMENTS_FILES_RESOURCE_CONFIG(),
+        )
+
+    @cached_property
+    def published_service_files(self):
+        from documents.services.files.published.config import (
+            DocumentsFilePublishedServiceConfig,
+        )
+        from documents.services.files.published.service import (
+            DocumentsFilePublishedService,
+        )
+
+        return DocumentsFilePublishedService(
+            config=DocumentsFilePublishedServiceConfig(),
         )
 
     @cached_property

@@ -416,18 +416,18 @@
                     },
                     "dateIssued": {
                         "type": "date",
-                        "format": "strict_date_time||strict_date_time_no_millis||strict_date||yyyy-MM||yyyy"
+                        "format": "strict_date||yyyy-MM||yyyy"
                     },
                     "dateModified": {
                         "type": "date",
-                        "format": "strict_date_time||strict_date_time_no_millis||strict_date||yyyy-MM||yyyy"
+                        "format": "strict_date||yyyy-MM||yyyy"
                     },
                     "events": {
                         "type": "object",
                         "properties": {
                             "eventDate": {
                                 "type": "date_range",
-                                "format": "strict_date_time||strict_date_time_no_millis||strict_date||yyyy-MM||yyyy",
+                                "format": "strict_date||yyyy-MM||yyyy",
                                 "index": false
                             },
                             "eventLocation": {

@@ -13,6 +13,7 @@ from oarepo_runtime.records.systemfields import (
 )
 from oarepo_runtime.records.systemfields.has_draftcheck import HasDraftCheckField
 from oarepo_runtime.records.systemfields.icu import ICUSearchField
+from oarepo_runtime.records.systemfields.owner import OwnersField
 from oarepo_runtime.records.systemfields.record_status import RecordStatusSystemField
 
 from common.services.sort import TitleICUSortField
@@ -28,6 +29,8 @@ from documents.records.models import (
 
 class DocumentsParentRecord(ParentRecord):
     model_cls = DocumentsParentMetadata
+
+    owners = OwnersField()
 
 
 class DocumentsIdProvider(DraftRecordIdProviderV2):

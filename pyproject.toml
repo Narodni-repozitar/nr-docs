@@ -11,6 +11,7 @@ dependencies = [
     "nr-metadata>=2.0.0",
     "nr-oaipmh-harvesters>=1.0.0",
     "nr-vocabularies>=2.0.8",
+    "oarepo-global-search>=1.0.1",
     "oarepo-published-service>=1.0.0",
     "oarepo-published-service>=1.0.2",
     "oarepo-requests>=1.0.2",
@@ -19,7 +20,6 @@ dependencies = [
     "oarepo-vocabularies",
     "oarepo[s3]==12.*",
     "python-dotenv",
-    "oarepo-global-search>=1.0.1",
 ]
 requires-python = ">=3.9,<3.11"
 
