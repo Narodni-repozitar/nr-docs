@@ -110,7 +110,7 @@ files = [
 
 [[package]]
 name = "autoflake"
-version = "2.3.0"
+version = "2.3.1"
 requires_python = ">=3.8"
 summary = "Removes unused imports and unused variables"
 groups = ["default"]
@@ -119,8 +119,8 @@ dependencies = [
     "tomli>=2.0.1; python_version < \"3.11\"",
 ]
 files = [
-    {file = "autoflake-2.3.0-py3-none-any.whl", hash = "sha256:79a51eb8c0744759d2efe052455ab20aa6a314763510c3fd897499a402126327"},
-    {file = "autoflake-2.3.0.tar.gz", hash = "sha256:8c2011fa34701b9d7dcf05b9873bc4859d4fce4e62dfea90dffefd1576f5f01d"},
+    {file = "autoflake-2.3.1-py3-none-any.whl", hash = "sha256:3ae7495db9084b7b32818b4140e6dc4fc280b712fb414f5b8fe57b0a8e85a840"},
+    {file = "autoflake-2.3.1.tar.gz", hash = "sha256:c98b75dc5b0a86459c4f01a1d32ac7eb4338ec4317a4469515ff1e687ecd909e"},
 ]
 
 [[package]]
@@ -3165,7 +3165,7 @@ files = [
 
 [[package]]
 name = "nr-metadata"
-version = "2.0.15"
+version = "2.0.16"
 requires_python = ">=3.9"
 summary = "\"Generated metadata files for the Czech National Repository\""
 groups = ["default"]
@@ -3175,8 +3175,8 @@ dependencies = [
     "oarepo-vocabularies>=2.0.0",
 ]
 files = [
-    {file = "nr-metadata-2.0.15.tar.gz", hash = "sha256:7e989b0adaacb19648f4909829e71f900bbd69b4d0eb526cbd74b876e7779602"},
-    {file = "nr_metadata-2.0.15-py2.py3-none-any.whl", hash = "sha256:f6cb1c1cc76cfa36033b345be11ef15dfa4871859ed7f08aa9e8d62155444f1d"},
+    {file = "nr-metadata-2.0.16.tar.gz", hash = "sha256:81be27202703bf9f387b50fffd1a80a2dd346c97e600f7f3177d2fd11fd933cd"},
+    {file = "nr_metadata-2.0.16-py2.py3-none-any.whl", hash = "sha256:f260e115261c7d3e2dcb4d2cb459174822ab6a45ce613836219bd1201ba911a9"},
 ]
 
 [[package]]
@@ -3473,7 +3473,7 @@ files = [
 
 [[package]]
 name = "oarepo-model-builder"
-version = "4.0.80"
+version = "4.0.81"
 summary = "A utility library that generates OARepo required data model files from a JSON specification file"
 groups = ["default"]
 dependencies = [
@@ -3498,8 +3498,8 @@ dependencies = [
     "tomlkit>=0.7.2",
 ]
 files = [
-    {file = "oarepo-model-builder-4.0.80.tar.gz", hash = "sha256:c75837c37b026a90d1c2854bcb6a7414d3ca2dc21d459bf14ab87c2d5745c4ab"},
-    {file = "oarepo_model_builder-4.0.80-py3-none-any.whl", hash = "sha256:589b59a873f9233192ba70d9dedb5d557cf44ed2a0481d3f35ceec3729c63c5c"},
+    {file = "oarepo-model-builder-4.0.81.tar.gz", hash = "sha256:5a0cb7a6dfbc29c7eafb6da0db432ee64d22232a2101e882fa3412c031381889"},
+    {file = "oarepo_model_builder-4.0.81-py3-none-any.whl", hash = "sha256:930da1de1dd9de467f6e1bcce13bcd30a5f0398d46a7f4c4601ba82090d1b641"},
 ]
 
 [[package]]
@@ -3546,7 +3546,7 @@ files = [
 
 [[package]]
 name = "oarepo-runtime"
-version = "1.5.17"
+version = "1.5.18"
 summary = "A set of runtime extensions of Invenio repository"
 groups = ["default"]
 dependencies = [
@@ -3559,8 +3559,8 @@ dependencies = [
     "tqdm",
 ]
 files = [
-    {file = "oarepo-runtime-1.5.17.tar.gz", hash = "sha256:25176065391ae247ad5aa35cc19f1e6fa766fecb0ba6abd079b811ea7bbfeec5"},
-    {file = "oarepo_runtime-1.5.17-py3-none-any.whl", hash = "sha256:f5306bb839e3102d7810e589f25d5e7fdbd350b92617cf40b4ec90c2933922a6"},
+    {file = "oarepo-runtime-1.5.18.tar.gz", hash = "sha256:4043c73f2ca3da5b5878e256ace1dd3d6a76dd4a5700154bbe45d9101291d65c"},
+    {file = "oarepo_runtime-1.5.18-py3-none-any.whl", hash = "sha256:9fd63bbfc26b91fedcd6636e5e21939077ee428dfe08c7a0990584f590511deb"},
 ]
 
 [[package]]
@@ -4428,13 +4428,13 @@ files = [
 
 [[package]]
 name = "setuptools"
-version = "69.1.1"
+version = "69.2.0"
 requires_python = ">=3.8"
 summary = "Easily download, build, install, upgrade, and uninstall Python packages"
 groups = ["default"]
 files = [
-    {file = "setuptools-69.1.1-py3-none-any.whl", hash = "sha256:02fa291a0471b3a18b2b2481ed902af520c69e8ae0919c13da936542754b4c56"},
-    {file = "setuptools-69.1.1.tar.gz", hash = "sha256:5c0806c7d9af348e6dd3777b4f4dbb42c7ad85b190104837488eab9a7c945cf8"},
+    {file = "setuptools-69.2.0-py3-none-any.whl", hash = "sha256:c21c49fb1042386df081cb5d86759792ab89efca84cf114889191cd09aacc80c"},
+    {file = "setuptools-69.2.0.tar.gz", hash = "sha256:0ff4183f8f42cd8fa3acea16c45205521a4ef28f73c6391d8a25e92893134f2e"},
 ]
 
 [[package]]

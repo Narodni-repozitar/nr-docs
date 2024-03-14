@@ -1,5 +1,5 @@
 oarepo==12.0.14
-autoflake==2.3.0
+autoflake==2.3.1
 black==24.2.0
 cachetools==5.3.3
 configupdater==3.2
@@ -18,15 +18,15 @@ levenshtein==0.25.0
 libcst==1.2.0
 marshmallow-union==0.1.15.post1
 mypy-extensions==1.0.0
-nr-metadata==2.0.15
+nr-metadata==2.0.16
 nr-oaipmh-harvesters==1.0.6
 nr-vocabularies==2.0.11
 oarepo-global-search==1.0.2
-oarepo-model-builder==4.0.80
+oarepo-model-builder==4.0.81
 oarepo-oai-pmh-harvester==4.0.44
 oarepo-published-service==1.0.3
 oarepo-requests==1.1.2
-oarepo-runtime==1.5.17
+oarepo-runtime==1.5.18
 oarepo-ui==5.1.5
 oarepo-vocabularies==2.0.79
 openpyxl==3.1.2
