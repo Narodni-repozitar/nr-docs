@@ -9,3 +9,6 @@ requests:
     delete-record:
       base-classes:
       - oarepo_requests.types.delete_record.DeleteRecordRequestType
+    edit-record:
+      base-classes:
+      - oarepo_requests.types.edit_record.EditRecordRequestType

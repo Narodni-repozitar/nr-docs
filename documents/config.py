@@ -11,6 +11,7 @@ from documents.files.api import DocumentsFileDraft
 from documents.files.requests.resolvers import DocumentsFileDraftResolver
 from documents.records.api import DocumentsDraft, DocumentsRecord
 from documents.records.requests.delete_record.types import DeleteRecordRequestType
+from documents.records.requests.edit_record.types import EditRecordRequestType
 from documents.records.requests.publish_draft.types import PublishDraftRequestType
 from documents.records.requests.resolvers import (
     DocumentsDraftResolver,
@@ -58,6 +59,7 @@ DOCUMENTS_REQUESTS_SERVICE_CLASS = DraftRecordRequestsService
 REQUESTS_REGISTERED_TYPES = [
     DeleteRecordRequestType(),
     PublishDraftRequestType(),
+    EditRecordRequestType(),
 ]
 
 
