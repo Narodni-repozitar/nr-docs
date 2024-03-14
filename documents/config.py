@@ -58,8 +58,8 @@ DOCUMENTS_REQUESTS_SERVICE_CLASS = DraftRecordRequestsService
 
 REQUESTS_REGISTERED_TYPES = [
     DeleteRecordRequestType(),
-    PublishDraftRequestType(),
     EditRecordRequestType(),
+    PublishDraftRequestType(),
 ]
 
 

@@ -1,20 +1,18 @@
-from common.requests.edit import EditRecordRequestType as BaseEditRecordRequestType
+from oarepo_requests.types.edit_record import EditRecordRequestType
 
 
-class EditRecordRequestType(BaseEditRecordRequestType):
-    type_id = "edit-record"
+class EditRecordRequestType(EditRecordRequestType):
 
+    type_id = "documents_edit_record"
     name = "Edit-record"
 
     available_actions = {
-        **BaseEditRecordRequestType.available_actions,
+        **EditRecordRequestType.available_actions,
     }
 
     allowed_topic_ref_types = [
         "documents"
-    ]
-
-    # On the Request record object, the topic is referenced by pid. This pid is
+    ]  # On the Request record object, the topic is referenced by pid. This pid is
     # extracted by Resolver subclassed from RecordResolver, which has hardcoded
     # {"record": {pid}} as reference value. This reference is then by
     # setattr set on the Request record topic ReferencedEntityField, and the set
@@ -35,5 +33,4 @@ class EditRecordRequestType(BaseEditRecordRequestType):
         original context values.
         """
         # FIXME/TODO this should be reworked into a service feature
-
         return {}
