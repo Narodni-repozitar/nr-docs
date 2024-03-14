@@ -91,7 +91,7 @@ const FormFieldsContainer = () => {
               placeholder={i18next.t("Select resource type")}
               optionsListName="resource-types"
               filterFunction={(options) =>
-                options.filter((option) => option.props.submission)
+                options.filter((option) => option.props?.submission)
               }
             />
           </Overridable>
