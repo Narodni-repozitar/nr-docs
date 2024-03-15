@@ -1,4 +1,4 @@
-from common.requests.edit import EditRecordRequestType as BaseEditRecordRequestType
+from oarepo_requests.types.edit_record import EditRecordRequestType as BaseEditRecordRequestType
 
 
 class EditRecordRequestType(BaseEditRecordRequestType):
