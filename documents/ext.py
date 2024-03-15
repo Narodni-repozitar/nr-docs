@@ -1,6 +1,7 @@
 import re
 from functools import cached_property
 
+from oarepo_requests.proxies import current_oarepo_requests_service
 from oarepo_requests.resources.draft.config import DraftRecordRequestsResourceConfig
 
 from documents import config
@@ -62,7 +63,8 @@ class DocumentsExt:
     @cached_property
     def service_requests(self):
         return config.DOCUMENTS_REQUESTS_SERVICE_CLASS(
-            record_service=self.service_records
+            record_service=self.service_records,
+            oarepo_requests_service=current_oarepo_requests_service,
         )
 
     @cached_property

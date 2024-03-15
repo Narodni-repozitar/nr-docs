@@ -1,3 +1,4 @@
+from invenio_records_resources.resources.files.resource import FileResource
 from oarepo_ui.resources.file_resource import S3RedirectFileResource
 
 
