@@ -8,6 +8,7 @@ def _ext_proxy(attr):
 
 current_service = _ext_proxy("service_records")
 current_published_service = _ext_proxy("published_service_records")
+current_files_published_service = _ext_proxy("published_service_files")
 """Proxy to the instantiated service."""
 """Proxy to the instantiated vocabulary service."""
 

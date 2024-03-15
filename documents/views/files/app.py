@@ -38,3 +38,16 @@ def init_create_app_blueprint(state):
         iregistry.register(
             ext.service_files.indexer, indexer_id=ext.service_files.config.service_id
         )
+
+
+def init_addons_documents_file_published_service(state):
+    """Init app."""
+    app = state.app
+    ext = app.extensions["documents"]
+
+    # register service
+    sregistry = app.extensions["invenio-records-resources"].registry
+    sregistry.register(
+        ext.published_service_files,
+        service_id=ext.published_service_files.config.service_id,
+    )
