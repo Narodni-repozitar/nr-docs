@@ -25,7 +25,7 @@ import Overridable from "react-overridable";
 import { i18next } from "@translations/i18next";
 import _has from "lodash/has";
 
-export const DepositFormFields = () => {
+const FormFieldsContainer = () => {
   const { formConfig, files: recordFiles } = useFormConfig();
   const editMode = _has(formConfig, "updateUrl");
 
@@ -90,6 +90,9 @@ export const DepositFormFields = () => {
               }
               placeholder={i18next.t("Select resource type")}
               optionsListName="resource-types"
+              filterFunction={(options) =>
+                options.filter((option) => option.props?.submission)
+              }
             />
           </Overridable>
           <Overridable
@@ -404,3 +407,5 @@ export const DepositFormFields = () => {
     </React.Fragment>
   );
 };
+
+export default FormFieldsContainer;

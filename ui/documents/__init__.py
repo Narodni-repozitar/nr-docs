@@ -18,16 +18,16 @@ class DocumentsResourceConfig(RecordsUIResourceConfig):
         BabelComponent,
         DepositVocabularyOptionsComponent,
         PermissionsComponent,
-        FilesComponent
+        FilesComponent,
     ]
 
-    search_app_id="documents"
+    application_id = "documents"
 
     templates = {
         "detail": "documents.Detail",
         "search": "documents.Search",
         "edit": "documents.Deposit",
-        "create":"documents.Deposit",
+        "create": "documents.Deposit",
     }
 
     def search_active_facets(self, api_config, identity):
