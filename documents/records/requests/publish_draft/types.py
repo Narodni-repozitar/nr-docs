@@ -10,6 +10,10 @@ class PublishDraftRequestType(PublishDraftRequestType):
         **PublishDraftRequestType.available_actions,
     }
 
+    allowed_receiver_ref_types = [
+        "user", "group"
+    ]
+
     allowed_topic_ref_types = [
         "documents_draft"
     ]  # On the Request record object, the topic is referenced by pid. This pid is
