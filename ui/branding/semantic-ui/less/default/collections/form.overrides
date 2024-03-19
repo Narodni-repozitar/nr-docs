@@ -161,6 +161,10 @@
     margin-bottom: 2rem !important;
   }
 
+  .modal-identifiers-field {
+    margin-bottom: 0 !important;
+  }
+
   .content {
     .ui.icon.left.labeled.button {
       background-color: @arrayAddButtonFieldColor;
