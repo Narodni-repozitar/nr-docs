@@ -1,8 +1,7 @@
 {#def metadata, ui, record, extra_context #}
-<h1 style="margin-bottom: 1em">{{ metadata.title }}</h1>
+<h1 class="ui header">{{ metadata.title }}</h1>
 
 <dl class="ui very basic table">
-
     <Field label={_('metadata/additionalTitles.label')}>
        <AdditionalTitles data={metadata.additionalTitles}></AdditionalTitles>
     </Field>
