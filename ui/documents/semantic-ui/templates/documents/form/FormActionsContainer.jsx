@@ -9,7 +9,7 @@ import {
 } from "@js/oarepo_ui";
 import { PublishButtonComponent } from "@nr";
 
-export const DepositFormControlPanel = () => {
+const FormActionsContainer = () => {
   const { links } = useFormConfig();
   return (
     <Card fluid>
@@ -40,3 +40,5 @@ export const DepositFormControlPanel = () => {
     </Card>
   );
 };
+
+export default FormActionsContainer;

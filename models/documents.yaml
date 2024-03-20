@@ -28,12 +28,16 @@ record:
   - ./documents-harvest.yaml
 
   draft: {}
-  draft-files: {}
+  draft-files:
+    resource:
+      base-classes: [ oarepo_ui.resources.file_resource.S3RedirectFileResource ]
   permissions:
     presets:
 #    - communities
     - authenticated
   files:
+    resource:
+      base-classes: [ oarepo_ui.resources.file_resource.S3RedirectFileResource ]
     properties:
       use:
       - ./documents-files.yaml

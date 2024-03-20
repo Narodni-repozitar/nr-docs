@@ -8,7 +8,7 @@ theme = WebpackThemeBundle(
         "semantic-ui": dict(
             entry={
                 "documents_search": "./js/documents/search/index.js",
-                "documents_deposit_form": "./js/documents/forms/deposit/index.js",
+                "documents_deposit_form": "./js/documents/forms/index.js",
             },
             dependencies={
                 "react-searchkit": "^2.0.0",
