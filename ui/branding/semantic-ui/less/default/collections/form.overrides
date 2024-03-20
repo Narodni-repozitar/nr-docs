@@ -190,4 +190,9 @@
       }
     }
   }
+  .subjects-modal-fields {
+    .field {
+      margin-bottom: 1rem !important;
+    }
+  }
 }
