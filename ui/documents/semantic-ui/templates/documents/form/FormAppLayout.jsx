@@ -1,5 +1,4 @@
 import React from "react";
-import { Container } from "semantic-ui-react";
 import { BaseFormLayout } from "@js/oarepo_ui";
 import { NRDocumentValidationSchema } from "@nr";
 
@@ -7,10 +6,6 @@ export const FormAppLayout = () => {
   const formikProps = {
     validationSchema: NRDocumentValidationSchema,
   };
-  return (
-    <Container fluid>
-      <BaseFormLayout formikProps={formikProps} />
-    </Container>
-  );
+  return <BaseFormLayout formikProps={formikProps} />;
 };
 export default FormAppLayout;
