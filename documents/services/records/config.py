@@ -65,7 +65,11 @@ class DocumentsServiceConfig(
             "latest_html": RecordLink("{+ui}/docs/{id}/latest"),
             "publish": RecordLink("{+api}/docs/{id}/draft/actions/publish"),
             "record": RecordLink("{+api}/docs/{id}"),
-            "requests": RecordLink("{+api}/docs/{id}/requests"),
+            "requests": ConditionalLink(
+                cond=is_record,
+                if_=RecordLink("{+api}/docs/{id}/requests"),
+                else_=RecordLink("{+api}/docs/{id}/draft/requests"),
+            ),
             "self": ConditionalLink(
                 cond=is_record,
                 if_=RecordLink("{+api}/docs/{id}"),

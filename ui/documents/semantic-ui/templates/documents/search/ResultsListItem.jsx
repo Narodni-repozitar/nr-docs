@@ -302,7 +302,7 @@ ResultsListItem.defaultProps = {
   appName: "",
 };
 
-export const ResultsListItemWithState = withState(
+const ResultsListItemWithState = withState(
   ({ currentQueryState, updateQueryState, result, appName }) => (
     <ResultsListItem
       currentQueryState={currentQueryState}
@@ -312,6 +312,8 @@ export const ResultsListItemWithState = withState(
     />
   )
 );
+
+export default ResultsListItemWithState;
 
 ResultsListItemWithState.propTypes = {
   currentQueryState: PropTypes.object,

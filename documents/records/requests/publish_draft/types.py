@@ -3,12 +3,16 @@ from oarepo_requests.types.publish_draft import PublishDraftRequestType
 
 class PublishDraftRequestType(PublishDraftRequestType):
 
-    type_id = "documents_draft_publish_draft"
+    type_id = "documents_publish_draft"
     name = "Publish-draft"
 
     available_actions = {
         **PublishDraftRequestType.available_actions,
     }
+
+    allowed_receiver_ref_types = [
+        "user", "group"
+    ]
 
     allowed_topic_ref_types = [
         "documents_draft"

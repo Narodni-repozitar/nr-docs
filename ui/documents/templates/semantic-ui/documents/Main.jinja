@@ -48,7 +48,7 @@
         <VocabularyItem vocabulary={metadata.accessRights} search_link={record.links.search_link} searchFacet="metadata_accessRights" vocabulary_type="access-rights"></VocabularyItem>
        </Field>
     <Field label={ _('metadata/rights.label') }>
-        <VocabularyArray vocabulary={metadata.rights} search_link={record.links.search_link} searchFacet="metadata_rights" vocabulary_type="licenses"></VocabularyArray>
+        <VocabularyItem vocabulary={metadata.rights} search_link={record.links.search_link} searchFacet="metadata_rights" vocabulary_type="rights"></VocabularyItem>
     </Field>
 
     <Field label={ _('metadata/events.label') }>

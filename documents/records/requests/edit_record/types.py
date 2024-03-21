@@ -9,6 +9,9 @@ class EditRecordRequestType(EditRecordRequestType):
     available_actions = {
         **EditRecordRequestType.available_actions,
     }
+    allowed_receiver_ref_types = [
+        "user", "group"
+    ]
 
     allowed_topic_ref_types = [
         "documents"

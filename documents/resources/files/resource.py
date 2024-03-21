@@ -1,14 +1,15 @@
 from invenio_records_resources.resources.files.resource import FileResource
+from oarepo_ui.resources.file_resource import S3RedirectFileResource
 
 
-class DocumentsFileResource(FileResource):
+class DocumentsFileResource(S3RedirectFileResource):
     """DocumentsFile resource."""
 
     # here you can for example redefine
     # create_url_rules function to add your own rules
 
 
-class DocumentsFileDraftResource(FileResource):
+class DocumentsFileDraftResource(S3RedirectFileResource):
     """DocumentsFileDraft resource."""
 
     # here you can for example redefine
