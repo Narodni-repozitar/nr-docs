@@ -18,6 +18,8 @@ class DocumentsSearchOptions(I18nSearchOptions):
             "syntheticFields_institutions": facets.syntheticFields_institutions,
             "metadata_fundingReferences_funder": facets.metadata_fundingReferences_funder,
             "metadata_fundingReferences_projectID": facets.metadata_fundingReferences_projectID,
+            "metadata_subjectCategories": facets.metadata_subjectCategories,
+            "metadata_relatedItems_itemRelationType": facets.metadata_relatedItems_itemRelationType,
             **getattr(I18nSearchOptions, "facet_groups", {}).get("curator", {}),
         },
         "default": {
@@ -31,6 +33,8 @@ class DocumentsSearchOptions(I18nSearchOptions):
             "syntheticFields_institutions": facets.syntheticFields_institutions,
             "metadata_fundingReferences_funder": facets.metadata_fundingReferences_funder,
             "metadata_fundingReferences_projectID": facets.metadata_fundingReferences_projectID,
+            "metadata_subjectCategories": facets.metadata_subjectCategories,
+            "metadata_relatedItems_itemRelationType": facets.metadata_relatedItems_itemRelationType,
             **getattr(I18nSearchOptions, "facet_groups", {}).get("default", {}),
         },
     }
