@@ -22,11 +22,11 @@ nr-metadata==2.0.16
 nr-oaipmh-harvesters==1.0.8
 nr-vocabularies==2.0.11
 oarepo-global-search==1.0.2
-oarepo-model-builder==4.0.81
+oarepo-model-builder==4.0.82
 oarepo-oai-pmh-harvester==4.0.45
 oarepo-published-service==1.0.3
-oarepo-requests==1.1.4
-oarepo-runtime==1.5.21
+oarepo-requests==1.1.5
+oarepo-runtime==1.5.22
 oarepo-ui==5.1.7
 oarepo-vocabularies==2.0.80
 openpyxl==3.1.2

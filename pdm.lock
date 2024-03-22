@@ -3473,7 +3473,7 @@ files = [
 
 [[package]]
 name = "oarepo-model-builder"
-version = "4.0.81"
+version = "4.0.82"
 summary = "A utility library that generates OARepo required data model files from a JSON specification file"
 groups = ["default"]
 dependencies = [
@@ -3498,8 +3498,8 @@ dependencies = [
     "tomlkit>=0.7.2",
 ]
 files = [
-    {file = "oarepo-model-builder-4.0.81.tar.gz", hash = "sha256:5a0cb7a6dfbc29c7eafb6da0db432ee64d22232a2101e882fa3412c031381889"},
-    {file = "oarepo_model_builder-4.0.81-py3-none-any.whl", hash = "sha256:930da1de1dd9de467f6e1bcce13bcd30a5f0398d46a7f4c4601ba82090d1b641"},
+    {file = "oarepo-model-builder-4.0.82.tar.gz", hash = "sha256:202f96c61a9eeaa25e5e1c426398af08a70b5be90843f5dc11c06558ef766fdd"},
+    {file = "oarepo_model_builder-4.0.82-py3-none-any.whl", hash = "sha256:8f3265473fd01541adbde3248c7db884d8743729771ea75eeb3989098af18963"},
 ]
 
 [[package]]
@@ -3533,20 +3533,20 @@ files = [
 
 [[package]]
 name = "oarepo-requests"
-version = "1.1.4"
+version = "1.1.5"
 summary = ""
 groups = ["default"]
 dependencies = [
     "invenio-requests",
 ]
 files = [
-    {file = "oarepo-requests-1.1.4.tar.gz", hash = "sha256:625d3cd59375a2beb0e915042086c51254ab36cd867baa89a4f6cc49c3edad07"},
-    {file = "oarepo_requests-1.1.4-py3-none-any.whl", hash = "sha256:3bf62bb436cd91368bbda17569a19a354ba871262409fd3114bf31ec0de89962"},
+    {file = "oarepo-requests-1.1.5.tar.gz", hash = "sha256:e93a1a8d7bca607588410e38ebb07cc14832b9a3dd09937f588f4d8c6d5cf5fa"},
+    {file = "oarepo_requests-1.1.5-py3-none-any.whl", hash = "sha256:0c619f51403acf3e8096999f87a1d3ed918c07aadb044ad22d2fb412280345b5"},
 ]
 
 [[package]]
 name = "oarepo-runtime"
-version = "1.5.21"
+version = "1.5.22"
 summary = "A set of runtime extensions of Invenio repository"
 groups = ["default"]
 dependencies = [
@@ -3559,8 +3559,8 @@ dependencies = [
     "tqdm",
 ]
 files = [
-    {file = "oarepo-runtime-1.5.21.tar.gz", hash = "sha256:75c57539f39041390f2bbc534ac950f68f16ca0341c7f9813c217ca54d5b1b0a"},
-    {file = "oarepo_runtime-1.5.21-py3-none-any.whl", hash = "sha256:35d36f1979ffc36d99d2b0b8f7ee3d0e1d3a10f9feeba2e1ece892efc746d76e"},
+    {file = "oarepo-runtime-1.5.22.tar.gz", hash = "sha256:edfc25e43672318a5ff2ce4319b3e85d6e6d2d94e034974770e40d1427f141d1"},
+    {file = "oarepo_runtime-1.5.22-py3-none-any.whl", hash = "sha256:7e975f2ffe14b815fc6ff7fc8093a197677b56bf0e534c9f61a792e5f377ae78"},
 ]
 
 [[package]]
