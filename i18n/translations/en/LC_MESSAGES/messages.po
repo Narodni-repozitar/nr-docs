@@ -3117,6 +3117,3 @@ msgstr ""
 
 msgid "DOI"
 msgstr ""
->>>>>>> main
-=======
->>>>>>> main:i18n/translations/en/LC_MESSAGES/messages.po
