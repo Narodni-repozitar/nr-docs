@@ -46,9 +46,11 @@ documents_file = "documents"
 
 [project.entry-points."invenio_base.api_apps"]
 documents = "documents.ext:DocumentsExt"
+oai_s3_harvester = "common.ext:OaiS3HarvesterExt"
 
 [project.entry-points."invenio_base.apps"]
 documents = "documents.ext:DocumentsExt"
+oai_s3_harvester = "common.ext:OaiS3HarvesterExt"
 
 [project.entry-points."invenio_db.alembic"]
 documents = "documents:alembic"
@@ -87,3 +89,11 @@ requires = [
     "pdm-backend",
 ]
 build-backend = "pdm.backend"
+
+[build_system]
+requires = [
+    "setuptools",
+    "wheel",
+    "babel>2.8",
+]
+build-backend = "setuptools.build_meta"

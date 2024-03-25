@@ -43,7 +43,9 @@ class DocumentsRecord(InvenioRecord):
 
     schema = ConstantField("$schema", "local://documents-1.0.0.json")
 
-    index = IndexField("documents-documents-1.0.0")
+    index = IndexField(
+        "documents-documents-1.0.0",
+    )
 
     pid = PIDField(
         provider=DocumentsIdProvider, context_cls=PIDFieldContext, create=True
@@ -188,6 +190,9 @@ class DocumentsRecord(InvenioRecord):
 
     parent_record_cls = DocumentsParentRecord
     record_status = RecordStatusSystemField()
+    has_draft = HasDraftCheckField(
+        draft_cls=lambda: DocumentsDraft, config_key="HAS_DRAFT_CUSTOM_FIELD"
+    )
 
     files = FilesField(file_cls=DocumentsFile, store=False, create=False, delete=False)
 
@@ -201,7 +206,7 @@ class DocumentsDraft(InvenioDraft):
 
     schema = ConstantField("$schema", "local://documents-1.0.0.json")
 
-    index = IndexField("documents-documents_draft-1.0.0")
+    index = IndexField("documents-documents_draft-1.0.0", search_alias="documents")
 
     pid = PIDField(
         provider=DocumentsIdProvider,
@@ -322,10 +327,6 @@ class DocumentsDraft(InvenioDraft):
     bucket_id = ModelField(dump=False)
     bucket = ModelField(dump=False)
 
-
-DocumentsRecord.has_draft = HasDraftCheckField(
-    draft_cls=DocumentsDraft, config_key="HAS_DRAFT_CUSTOM_FIELD"
-)
 
 DocumentsFile.record_cls = DocumentsRecord
 
