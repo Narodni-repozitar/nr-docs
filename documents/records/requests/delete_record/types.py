@@ -9,9 +9,6 @@ class DeleteRecordRequestType(DeleteRecordRequestType):
     available_actions = {
         **DeleteRecordRequestType.available_actions,
     }
-    allowed_receiver_ref_types = [
-        "user", "group"
-    ]
 
     allowed_topic_ref_types = [
         "documents"
@@ -20,6 +17,8 @@ class DeleteRecordRequestType(DeleteRecordRequestType):
     # {"record": {pid}} as reference value. This reference is then by
     # setattr set on the Request record topic ReferencedEntityField, and the set
     # operation checks, whether this key is in allowed_topic_ref_types
+
+    allowed_receiver_ref_types = ["user", "group"]
 
     # Invenio fails on this method as it is not marked as classmethod in invenio sources.
     # It will be removed in future versions, till the removal (or fix) we need to provide
