@@ -78,12 +78,6 @@ REQUESTS_ENTITY_RESOLVERS = [
     ),
 ]
 
-ENTITY_REFERENCE_UI_RESOLVERS = {
-        "user": user_entity_reference_ui_resolver,
-        "thesis": record_entity_reference_ui_resolver,
-        "thesis_draft": draft_record_entity_reference_ui_resolver,
-    }
-
 
 ENTITY_REFERENCE_UI_RESOLVERS = {
     "user": user_entity_reference_ui_resolver,

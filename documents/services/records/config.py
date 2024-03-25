@@ -1,7 +1,12 @@
 from invenio_drafts_resources.services.records.components import DraftFilesComponent
 from invenio_drafts_resources.services.records.config import is_record
-from invenio_records_resources.services import ConditionalLink, RecordLink
+from invenio_records_resources.services import (
+    ConditionalLink,
+    RecordLink,
+    pagination_links,
+)
 from invenio_records_resources.services.records.components import DataComponent
+from oarepo_requests.utils import is_record
 from oarepo_runtime.services.components import OwnersComponent
 from oarepo_runtime.services.config.service import PermissionsPresetsConfigMixin
 from oarepo_runtime.services.files import FilesComponent
@@ -12,8 +17,6 @@ from documents.services.records.permissions import DocumentsPermissionPolicy
 from documents.services.records.results import DocumentsRecordItem, DocumentsRecordList
 from documents.services.records.schema import DocumentsSchema
 from documents.services.records.search import DocumentsSearchOptions
-
-from invenio_records_resources.services import pagination_links
 
 
 class DocumentsServiceConfig(
@@ -44,8 +47,8 @@ class DocumentsServiceConfig(
         *FilteredResultServiceConfig.components,
         DataComponent,
         OwnersComponent,
-        FilesComponent,
         DraftFilesComponent,
+        FilesComponent,
     ]
 
     model = "documents"
@@ -83,8 +86,20 @@ class DocumentsServiceConfig(
             "versions": RecordLink("{+api}/docs/{id}/versions"),
         }
 
-    links_search = pagination_links("{+api}/docs{?args*}")
+    @property
+    def links_search(self):
+        return {
+            **pagination_links("{+api}/docs/{?args*}"),
+        }
 
-    links_search_drafts = pagination_links("{+api}/user/docs{?args*}")
+    @property
+    def links_search_drafts(self):
+        return {
+            **pagination_links("{+api}/user/docs/{?args*}"),
+        }
 
-    links_search_versions = pagination_links("{+api}/docs/{id}/versions{?args*}")
+    @property
+    def links_search_versions(self):
+        return {
+            **pagination_links("{+api}/docs/{id}/versions{?args*}"),
+        }

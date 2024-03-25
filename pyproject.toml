@@ -91,5 +91,9 @@ requires = [
 build-backend = "pdm.backend"
 
 [build_system]
-requires = ["setuptools", "wheel", "babel>2.8"]
+requires = [
+    "setuptools",
+    "wheel",
+    "babel>2.8",
+]
 build-backend = "setuptools.build_meta"

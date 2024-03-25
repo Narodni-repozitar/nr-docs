@@ -1,3 +1,5 @@
+from typing import Union, Optional
+
 from invenio_access.permissions import system_identity
 from oarepo_runtime.datastreams.types import StreamBatch
 from oarepo_runtime.datastreams.writers import BaseWriter
@@ -11,6 +13,7 @@ class CompositeWriter(BaseWriter):
         self.service = ServiceWriter(service=service, identity=identity)
         self.attachment_service = AttachmentsServiceWriter(service=service, identity=identity)
         
-    def write(self, batch: StreamBatch) -> StreamBatch | None:
+    def write(self, batch: StreamBatch) -> StreamBatch:
         self.service.write(batch)
         self.attachment_service.write(batch)
+        return batch
