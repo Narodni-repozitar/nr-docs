@@ -2774,8 +2774,6 @@ msgstr "Choose relation type"
 
 msgid "Link to/from other resources"
 msgstr "Link to/from other resources"
-<<<<<<< HEAD
-=======
 
 #: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:137
 msgid "metadata/dateIssued.label"
@@ -2809,7 +2807,6 @@ msgstr ""
 
 msgid "caption.hint"
 msgstr ""
-<<<<<<< HEAD:sites/nr-docs/site/nr_docs/translations/en/LC_MESSAGES/messages.po
 
 msgid ""
 "Write down the time period in which the event took place. If it is not a "
@@ -2872,9 +2869,6 @@ msgid ""
 msgstr ""
 "Disable files for this record. If files are already uploaded, you have to "
 "delete them first."
-<<<<<<< HEAD
->>>>>>> e06a23305989b6b22f42c860f46852f9bf5e0e26
-=======
 
 #: ui/docs-app/docs_app/templates/semantic-ui/docs_app/components/NrEvents.jinja:7
 msgid "on"
