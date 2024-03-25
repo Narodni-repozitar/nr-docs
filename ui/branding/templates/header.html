@@ -17,7 +17,7 @@ have communities/dashboard#}
             aria-expanded="false"
             href="{{ item.url }}"
           >
-            {{ item.text|safe }}
+            {{ item.text }}
             <b class="caret"></b>
           </a>
           <ul class="dropdown-menu">{{ loop(item.children|sort(attribute='order')) }}</ul>
@@ -25,14 +25,14 @@ have communities/dashboard#}
       </div>
     {%- else %}
       <div class="{{' item main-nav-links active' if item.active and loop.depth == 0 else ' item main-nav-links' }}">
-        <a role="menuitem" href="{{ item.url }}">{{ item.text|safe }}</a>
+        <a role="menuitem" href="{{ item.url }}">{{ item.text }}</a>
       </div>
     {%- endif %}
   {%- endfor %}
 
   {% for item in current_menu.submenu('actions').children|sort(attribute='order') if item.visible recursive %}
     <div class="item">
-      <a role="menuitem" href="{{ item.url }}">{{ item.text|safe }}</a>
+      <a role="menuitem" href="{{ item.url }}">{{ item.text }}</a>
     </div>
   {% endfor %}
 {%- endblock navbar_nav %}
