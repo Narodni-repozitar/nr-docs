@@ -3165,7 +3165,7 @@ files = [
 
 [[package]]
 name = "nr-metadata"
-version = "2.0.17"
+version = "2.0.18"
 requires_python = ">=3.9"
 summary = "\"Generated metadata files for the Czech National Repository\""
 groups = ["default"]
@@ -3175,8 +3175,8 @@ dependencies = [
     "oarepo-vocabularies>=2.0.0",
 ]
 files = [
-    {file = "nr-metadata-2.0.17.tar.gz", hash = "sha256:616dff6de34236409e11742ed4b9d93f83bd9019bd79538f9290297c68a16d74"},
-    {file = "nr_metadata-2.0.17-py2.py3-none-any.whl", hash = "sha256:3cd69e982c7440d7a4b9c576c07a655ff0fd9384ff4d87e120388c89fbc6de8c"},
+    {file = "nr-metadata-2.0.18.tar.gz", hash = "sha256:10388cc589920e93dc7f908fea9a1ea80485dd5f66e8d5906de3d5107d375c25"},
+    {file = "nr_metadata-2.0.18-py2.py3-none-any.whl", hash = "sha256:67f9fc98f2997e3bc3e142c3c7cc72209108da37d955f6ea056c80079320460a"},
 ]
 
 [[package]]
@@ -3546,7 +3546,7 @@ files = [
 
 [[package]]
 name = "oarepo-runtime"
-version = "1.5.22"
+version = "1.5.23"
 summary = "A set of runtime extensions of Invenio repository"
 groups = ["default"]
 dependencies = [
@@ -3559,13 +3559,13 @@ dependencies = [
     "tqdm",
 ]
 files = [
-    {file = "oarepo-runtime-1.5.22.tar.gz", hash = "sha256:edfc25e43672318a5ff2ce4319b3e85d6e6d2d94e034974770e40d1427f141d1"},
-    {file = "oarepo_runtime-1.5.22-py3-none-any.whl", hash = "sha256:7e975f2ffe14b815fc6ff7fc8093a197677b56bf0e534c9f61a792e5f377ae78"},
+    {file = "oarepo-runtime-1.5.23.tar.gz", hash = "sha256:99a0645c36426292d04311c52f99516d5f0cf540eb2f0c027f353b5729a8b74d"},
+    {file = "oarepo_runtime-1.5.23-py3-none-any.whl", hash = "sha256:8dbd29d13d1b66c8edf9c9bb377f369b510598f6613eaf2abb4f78680ebf1ff2"},
 ]
 
 [[package]]
 name = "oarepo-ui"
-version = "5.1.10"
+version = "5.1.11"
 requires_python = ">=3.6"
 summary = "UI module for invenio 3.5+"
 groups = ["default"]
@@ -3577,8 +3577,8 @@ dependencies = [
     "oarepo-runtime",
 ]
 files = [
-    {file = "oarepo-ui-5.1.10.tar.gz", hash = "sha256:f3ddc0b17ae5f2f65ae5f9038e1f6ef1c417c2118eb190b8e33c5c6fffd3c9ba"},
-    {file = "oarepo_ui-5.1.10-py2.py3-none-any.whl", hash = "sha256:00c7b0221eec3df1996842550a1f693493edc078f9d8a2307b905367c3e5b96a"},
+    {file = "oarepo-ui-5.1.11.tar.gz", hash = "sha256:35bf7e07d84ceeaef358cf33385ee9f9c2a2e50bec4c6255dd023120dd1ce857"},
+    {file = "oarepo_ui-5.1.11-py2.py3-none-any.whl", hash = "sha256:12440e76c02fb3db7a3ba046d41df491593a1dbd8a243a4c480f2e9bc757c37b"},
 ]
 
 [[package]]

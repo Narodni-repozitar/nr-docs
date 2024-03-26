@@ -65,6 +65,13 @@
                     "oarepo_requests_service={{oarepo_requests.proxies.current_oarepo_requests_service}}"
                 ],
                 "skip": false
+            },
+            "additional-resolvers": [
+                "{{oarepo_runtime.records.entity_resolvers.UserResolver}}()",
+                "{{oarepo_runtime.records.entity_resolvers.GroupResolver}}()"
+            ],
+            "additional-ui-resolvers": {
+                "\"user\"": "{{oarepo_requests.resolvers.ui.user_entity_reference_ui_resolver}}"
             }
         },
         "custom-fields": [],
