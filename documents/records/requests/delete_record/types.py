@@ -1,10 +1,11 @@
 from oarepo_requests.types.delete_record import DeleteRecordRequestType
+from oarepo_runtime.i18n import lazy_gettext as _
 
 
 class DeleteRecordRequestType(DeleteRecordRequestType):
 
     type_id = "documents_delete_record"
-    name = "Delete-record"
+    name = _("Delete record")
 
     available_actions = {
         **DeleteRecordRequestType.available_actions,
