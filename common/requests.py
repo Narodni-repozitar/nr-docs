@@ -5,7 +5,7 @@ def documents_publish_draft_approver(identity, request_type, topic, creator):
     return Role.query.filter_by(name="curators").first()
 
 def default_receiver(*args, **kwargs):
-    return {"user": "2"}
+    return {"group": "curators"}
 
 
 request_receivers = {
