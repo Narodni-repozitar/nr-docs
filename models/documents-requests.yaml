@@ -4,16 +4,16 @@ draft:
       publish-draft:
         base-classes:
         - oarepo_requests.types.publish_draft.PublishDraftRequestType
-        allowed_receiver_ref_types: [ "user", "group" ]
+        allowed-receiver-ref-types: [ "user", "group" ]
 
 requests:
   types:
     delete-record:
       base-classes:
       - oarepo_requests.types.delete_record.DeleteRecordRequestType
-      allowed_receiver_ref_types: [ "user", "group" ]
+      allowed-receiver-ref-types: [ "user", "group" ]
 
     edit-record:
       base-classes:
       - oarepo_requests.types.edit_record.EditRecordRequestType
-      allowed_receiver_ref_types: [ "user", "group" ]
+      allowed-receiver-ref-types: [ "user", "group" ]

@@ -5,7 +5,7 @@ from oarepo_requests.resolvers.ui import (
 )
 from oarepo_requests.resources.draft.resource import DraftRecordRequestsResource
 from oarepo_requests.services.draft.service import DraftRecordRequestsService
-from oarepo_runtime.records.entity_resolvers import UserResolver
+from oarepo_runtime.records.entity_resolvers import GroupResolver, UserResolver
 
 from documents.files.api import DocumentsFileDraft
 from documents.files.requests.resolvers import DocumentsFileDraftResolver
@@ -65,6 +65,7 @@ REQUESTS_REGISTERED_TYPES = [
 
 REQUESTS_ENTITY_RESOLVERS = [
     UserResolver(),
+    GroupResolver(),
     DocumentsResolver(
         record_cls=DocumentsRecord, service_id="documents", type_key="documents"
     ),
