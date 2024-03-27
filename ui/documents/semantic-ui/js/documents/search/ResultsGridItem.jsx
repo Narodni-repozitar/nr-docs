@@ -12,7 +12,7 @@ export const ResultsGridItem = ({ result }) => {
     "No description"
   );
   return (
-    <Card fluid href={`/docs/${result.links.self}`}>
+    <Card fluid href={`/docs/${result.links.self_html}`}>
       <Card.Content>
         <Card.Header>{result.metadata.title}</Card.Header>
         <Card.Description>
