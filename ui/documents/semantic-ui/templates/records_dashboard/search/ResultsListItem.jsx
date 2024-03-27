@@ -1,2 +1,2 @@
-import NRDocsResultsListItem from "../../documents/search/ResultsListItem";
+import NRDocsResultsListItem from "@js/documents/search/ResultsListItem";
 export default NRDocsResultsListItem;

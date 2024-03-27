@@ -7,6 +7,11 @@
   justify-content: center;
 }
 
-.ui.container.page-subheader-outer {
-  background-color: @highlightHeaderColor;
+.ui.container {
+  &.page-subheader-outer {
+    background-color: @highlightHeaderColor;
+  }
+  &.page-subheader {
+    margin-top: 0;
+  }
 }
