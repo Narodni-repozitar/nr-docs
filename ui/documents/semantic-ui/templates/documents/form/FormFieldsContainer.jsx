@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useCallback } from "react";
 import {
   useFormConfig,
   MultilingualTextInput,
@@ -28,7 +28,10 @@ import _has from "lodash/has";
 const FormFieldsContainer = () => {
   const { formConfig, files: recordFiles } = useFormConfig();
   const editMode = _has(formConfig, "updateUrl");
-
+  const filterResourceTypes = useCallback(
+    (options) => options.filter((option) => option.props?.submission),
+    []
+  );
   return (
     <React.Fragment>
       <Overridable id="NrDocs.Deposit.AccordionFieldBasicInformation.container">
@@ -90,9 +93,7 @@ const FormFieldsContainer = () => {
               }
               placeholder={i18next.t("Select resource type")}
               optionsListName="resource-types"
-              filterFunction={(options) =>
-                options.filter((option) => option.props?.submission)
-              }
+              filterFunction={filterResourceTypes}
             />
           </Overridable>
           <Overridable
