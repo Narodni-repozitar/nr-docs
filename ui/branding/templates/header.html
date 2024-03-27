@@ -12,36 +12,3 @@
   </div>
 </div>
 {% endblock navbar_search %}
-{#Not sure if this should be uncommented in oarepo UI as probably not all repos will
-have communities/dashboard#}
-{%- block navbar_nav %}
-  {%- for item in current_menu.submenu('main').children|sort(attribute='order') if item.visible recursive %}
-    {%- if item.children %}
-      <div class="item">
-        <div class="dropdown {{ ' active' if item.active else '' }}">
-          <a role="menuitem"
-            class="dropdown-toggle"
-            data-toggle="dropdown"
-            aria-haspopup="true"
-            aria-expanded="false"
-            href="{{ item.url }}"
-          >
-            {{ item.text }}
-            <b class="caret"></b>
-          </a>
-          <ul class="dropdown-menu">{{ loop(item.children|sort(attribute='order')) }}</ul>
-        </div>
-      </div>
-    {%- else %}
-      <div class="{{' item main-nav-links active' if item.active and loop.depth == 0 else ' item main-nav-links' }}">
-        <a role="menuitem" href="{{ item.url }}">{{ item.text }}</a>
-      </div>
-    {%- endif %}
-  {%- endfor %}
-
-  {% for item in current_menu.submenu('actions').children|sort(attribute='order') if item.visible recursive %}
-    <div class="item">
-      <a role="menuitem" href="{{ item.url }}">{{ item.text }}</a>
-    </div>
-  {% endfor %}
-{%- endblock navbar_nav %}
