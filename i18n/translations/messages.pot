@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2024-03-21 22:04+0100\n"
+"POT-Creation-Date: 2024-03-27 14:00+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -192,8 +192,8 @@ msgid "metadata/objectIdentifiers/scheme.label"
 msgstr ""
 
 #: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:232
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/documents/templates/semantic-ui/documents/Sidebar.jinja:11
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/documents/templates/semantic-ui/documents/Sidebar.jinja:12
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/documents/templates/semantic-ui/documents/Sidebar.jinja:17
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/documents/templates/semantic-ui/documents/Sidebar.jinja:18
 msgid "metadata/originalRecord.label"
 msgstr ""
 
@@ -430,6 +430,15 @@ msgstr ""
 msgid "Contact"
 msgstr ""
 
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/branding/templates/header.html:8
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/branding/templates/header.html:9
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/branding/templates/searchbar.html:30
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/branding/templates/searchbar.html:31
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/titlepage/templates/TitlePage.jinja:49
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/titlepage/templates/TitlePage.jinja:51
+msgid "Search"
+msgstr ""
+
 #: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/branding/templates/header_login.html:15
 msgid "Log in"
 msgstr ""
@@ -473,13 +482,6 @@ msgstr ""
 #: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/branding/templates/searchbar.html:20
 #: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/branding/templates/searchbar.html:21
 msgid "All document records"
-msgstr ""
-
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/branding/templates/searchbar.html:30
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/branding/templates/searchbar.html:31
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/titlepage/templates/TitlePage.jinja:49
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/titlepage/templates/TitlePage.jinja:51
-msgid "Search"
 msgstr ""
 
 #: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/documents/templates/semantic-ui/documents/Detail.jinja:2
@@ -548,22 +550,50 @@ msgstr ""
 msgid "documents"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/documents/templates/semantic-ui/documents/Sidebar.jinja:3
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/documents/templates/semantic-ui/documents/Sidebar.jinja:4
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/documents/templates/semantic-ui/documents/Sidebar.jinja:5
+msgid "Edit"
+msgstr ""
+
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/documents/templates/semantic-ui/documents/Sidebar.jinja:9
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/documents/templates/semantic-ui/documents/Sidebar.jinja:10
 msgid "metadata/objectIdentifiers.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/documents/templates/semantic-ui/documents/Sidebar.jinja:19
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/documents/templates/semantic-ui/documents/Sidebar.jinja:20
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/documents/templates/semantic-ui/documents/Sidebar.jinja:25
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/documents/templates/semantic-ui/documents/Sidebar.jinja:26
 msgid "Export"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/documents/templates/semantic-ui/documents/Sidebar.jinja:67
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/documents/templates/semantic-ui/documents/Sidebar.jinja:73
 msgid "API"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/documents/templates/semantic-ui/documents/Sidebar.jinja:67
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/documents/templates/semantic-ui/documents/Sidebar.jinja:73
 msgid "Links"
+msgstr ""
+
+msgid "Publication date"
+msgstr ""
+
+msgid "Languages"
+msgstr ""
+
+msgid "defended"
+msgstr ""
+
+msgid "not defended"
+msgstr ""
+
+msgid "Uploaded on"
+msgstr ""
+
+msgid "Published in: "
+msgstr ""
+
+msgid "No description"
+msgstr ""
+
+msgid "No publication date found."
 msgstr ""
 
 msgid "Basic information"
@@ -695,28 +725,4 @@ msgid "Events"
 msgstr ""
 
 msgid "Files"
-msgstr ""
-
-msgid "Publication date"
-msgstr ""
-
-msgid "Languages"
-msgstr ""
-
-msgid "defended"
-msgstr ""
-
-msgid "not defended"
-msgstr ""
-
-msgid "Uploaded on"
-msgstr ""
-
-msgid "Published in: "
-msgstr ""
-
-msgid "No description"
-msgstr ""
-
-msgid "No publication date found."
 msgstr ""

@@ -810,7 +810,7 @@ msgid "Resource type"
 msgstr "Typ položky"
 
 msgid "Select resource type"
-msgstr "Vyberte typ položky"
+msgstr "Vyberte typ zdroje."
 
 msgid "Abstract"
 msgstr "Abstrakt"
