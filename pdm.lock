@@ -3181,7 +3181,7 @@ files = [
 
 [[package]]
 name = "nr-oaipmh-harvesters"
-version = "1.0.8"
+version = "1.0.10"
 summary = "OAIPMH harvesters for National repository"
 groups = ["default"]
 dependencies = [
@@ -3191,8 +3191,8 @@ dependencies = [
     "oarepo-oai-pmh-harvester>=4.0.0",
 ]
 files = [
-    {file = "nr-oaipmh-harvesters-1.0.8.tar.gz", hash = "sha256:ea0f170a2b160476efc34a6ce1447a661fc012d3cf843e45e30e586b80c07307"},
-    {file = "nr_oaipmh_harvesters-1.0.8-py3-none-any.whl", hash = "sha256:401da1de3610406c9b61f8693a7959e84d48183e8f80bc8fd7c15ae70860022f"},
+    {file = "nr-oaipmh-harvesters-1.0.10.tar.gz", hash = "sha256:d028d3b877638ebc55a0565350df4cada1e6d42a1fcf5643121ed1dd1883c7f2"},
+    {file = "nr_oaipmh_harvesters-1.0.10-py3-none-any.whl", hash = "sha256:c6e0ed075955c05ac8fec7639e21fc7059e3f30e87021bbd964803eda04e0591"},
 ]
 
 [[package]]
@@ -3458,7 +3458,7 @@ files = [
 
 [[package]]
 name = "oarepo-dashboard"
-version = "1.0.0"
+version = "1.0.1"
 summary = "Support for user dashboard (records, communities, requests)"
 groups = ["default"]
 dependencies = [
@@ -3468,8 +3468,8 @@ dependencies = [
     "openpyxl",
 ]
 files = [
-    {file = "oarepo-dashboard-1.0.0.tar.gz", hash = "sha256:a5e049c692fd9daaafdcb883459863abd3808e3ff8ee47b17c921183f83af0fb"},
-    {file = "oarepo_dashboard-1.0.0-py3-none-any.whl", hash = "sha256:117233154986a9904fff64811683df7c761917c42f5a41a6351aa48672d81bee"},
+    {file = "oarepo-dashboard-1.0.1.tar.gz", hash = "sha256:5a8cb46870bdcbd630c1c3eab11f315060b531c5941c1c413a34b9b400b73760"},
+    {file = "oarepo_dashboard-1.0.1-py3-none-any.whl", hash = "sha256:7912c872f797c4bf605d1e35b32a36f37f4dd0bd38163dd5853c5efe5f5694ee"},
 ]
 
 [[package]]
