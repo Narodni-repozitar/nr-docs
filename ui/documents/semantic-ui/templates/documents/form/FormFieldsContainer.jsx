@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useCallback } from "react";
 import {
   useFormConfig,
   MultilingualTextInput,
@@ -28,7 +28,10 @@ import _has from "lodash/has";
 const FormFieldsContainer = () => {
   const { formConfig, files: recordFiles } = useFormConfig();
   const editMode = _has(formConfig, "updateUrl");
-
+  const filterResourceTypes = useCallback(
+    (options) => options.filter((option) => option.props?.submission),
+    []
+  );
   return (
     <React.Fragment>
       <Overridable id="NrDocs.Deposit.AccordionFieldBasicInformation.container">
@@ -90,9 +93,7 @@ const FormFieldsContainer = () => {
               }
               placeholder={i18next.t("Select resource type")}
               optionsListName="resource-types"
-              filterFunction={(options) =>
-                options.filter((option) => option.props?.submission)
-              }
+              filterFunction={filterResourceTypes}
             />
           </Overridable>
           <Overridable
@@ -138,7 +139,7 @@ const FormFieldsContainer = () => {
               fieldPath="metadata.dateIssued"
               label={i18next.t("Date issued")}
               helpText={i18next.t(
-                "If the dataset has been published elsewhere, use the date of first publication. You can also specify a future publication date (for embargo). If you do not enter a date, the system will automatically fill the date when the record is published. Format: YYYY-MM-DD, YYYYY-MM or YYYYY."
+                "The date can be a year, year and month or a full date."
               )}
               placeholder={i18next.t(
                 "Choose the date when the document was issued."
@@ -396,7 +397,7 @@ const FormFieldsContainer = () => {
         <AccordionField
           includesPaths={["files.enabled"]}
           active
-          label={i18next.t("Files")}
+          label={<label htmlFor="files.enabled">{i18next.t("Files")}</label>}
         >
           <Overridable id="NrDocs.Deposit.FileUploader.container">
             <FileUploader recordFiles={recordFiles} />
