@@ -2813,6 +2813,18 @@ msgstr ""
 msgid "caption.hint"
 msgstr ""
 
+#: /Users/m/w/nrp/nr-docs/documents/records/requests/delete_record/types.py:8
+msgid "Delete record"
+msgstr "Smazat záznam"
+
+#: /Users/m/w/nrp/nr-docs/documents/records/requests/edit_record/types.py:8
+msgid "Edit record"
+msgstr "Upravit záznam"
+
+#: /Users/m/w/nrp/nr-docs/documents/records/requests/publish_draft/types.py:8
+msgid "Publish draft"
+msgstr "Publikovat draft"
+
 #: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:90
 msgid "metadata/contributors/contributorType.label"
 msgstr "Typ přispěvatele"
@@ -3185,3 +3197,7 @@ msgstr ""
 
 msgid "The date can be a year, year and month or a full date."
 msgstr "Datum může být rok, rok a měsíc nebo celé datum."
+
+#: /Users/m/w/nrp/nr-docs/ui/documents/templates/semantic-ui/documents/Sidebar.jinja:10
+msgid "Record request list"
+msgstr ""

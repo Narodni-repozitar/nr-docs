@@ -14,3 +14,8 @@
 {% block record_sidebar %}
     <Sidebar metadata={metadata} ui={ui} extra_context={extra_context} record={record}/>
 {% endblock record_sidebar %}
+
+{%- block javascript %}
+{{ super() }}
+{{ webpack['oarepo_requests_ui_record_requests.js']}}
+{%- endblock %}
