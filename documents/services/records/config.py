@@ -29,7 +29,7 @@ class DocumentsServiceConfig(
 
     result_list_cls = DocumentsRecordList
 
-    PERMISSIONS_PRESETS = ["read_only"]
+    PERMISSIONS_PRESETS = []
 
     url_prefix = "/docs/"
 
