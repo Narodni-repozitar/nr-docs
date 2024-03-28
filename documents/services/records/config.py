@@ -6,7 +6,7 @@ from invenio_records_resources.services import (
     pagination_links,
 )
 from invenio_records_resources.services.records.components import DataComponent
-from oarepo_requests.utils import is_record
+from oarepo_runtime.records import is_published_record
 from oarepo_runtime.services.components import OwnersComponent
 from oarepo_runtime.services.config.service import PermissionsPresetsConfigMixin
 from oarepo_runtime.services.files import FilesComponent
@@ -17,6 +17,7 @@ from documents.services.records.permissions import DocumentsPermissionPolicy
 from documents.services.records.results import DocumentsRecordItem, DocumentsRecordList
 from documents.services.records.schema import DocumentsSchema
 from documents.services.records.search import DocumentsSearchOptions
+from common.permissions import NRDocsPermissionPolicy
 
 
 class DocumentsServiceConfig(
@@ -28,11 +29,11 @@ class DocumentsServiceConfig(
 
     result_list_cls = DocumentsRecordList
 
-    PERMISSIONS_PRESETS = ["authenticated"]
+    PERMISSIONS_PRESETS = ["read_only"]
 
     url_prefix = "/docs/"
 
-    base_permission_policy_cls = DocumentsPermissionPolicy
+    base_permission_policy_cls = NRDocsPermissionPolicy
 
     schema = DocumentsSchema
 
@@ -47,8 +48,8 @@ class DocumentsServiceConfig(
         *FilteredResultServiceConfig.components,
         DataComponent,
         OwnersComponent,
-        DraftFilesComponent,
         FilesComponent,
+        DraftFilesComponent,
     ]
 
     model = "documents"
@@ -69,17 +70,17 @@ class DocumentsServiceConfig(
             "publish": RecordLink("{+api}/docs/{id}/draft/actions/publish"),
             "record": RecordLink("{+api}/docs/{id}"),
             "requests": ConditionalLink(
-                cond=is_record,
+                cond=is_published_record,
                 if_=RecordLink("{+api}/docs/{id}/requests"),
                 else_=RecordLink("{+api}/docs/{id}/draft/requests"),
             ),
             "self": ConditionalLink(
-                cond=is_record,
+                cond=is_published_record,
                 if_=RecordLink("{+api}/docs/{id}"),
                 else_=RecordLink("{+api}/docs/{id}/draft"),
             ),
             "self_html": ConditionalLink(
-                cond=is_record,
+                cond=is_published_record,
                 if_=RecordLink("{+ui}/docs/{id}"),
                 else_=RecordLink("{+ui}/docs/{id}/edit"),
             ),

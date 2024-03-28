@@ -1,10 +1,11 @@
 from oarepo_requests.types.edit_record import EditRecordRequestType
+from oarepo_runtime.i18n import lazy_gettext as _
 
 
 class EditRecordRequestType(EditRecordRequestType):
 
     type_id = "documents_edit_record"
-    name = "Edit-record"
+    name = _("Edit record")
 
     available_actions = {
         **EditRecordRequestType.available_actions,
