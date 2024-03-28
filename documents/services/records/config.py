@@ -6,7 +6,7 @@ from invenio_records_resources.services import (
     pagination_links,
 )
 from invenio_records_resources.services.records.components import DataComponent
-from oarepo_runtime.records import is_published_record
+from oarepo_runtime.records import is_published_record, has_draft
 from oarepo_runtime.services.components import OwnersComponent
 from oarepo_runtime.services.config.service import PermissionsPresetsConfigMixin
 from oarepo_runtime.services.files import FilesComponent
