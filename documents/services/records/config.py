@@ -1,4 +1,5 @@
 from invenio_drafts_resources.services.records.components import DraftFilesComponent
+from invenio_drafts_resources.services.records.config import is_record
 from invenio_records_resources.services import (
     ConditionalLink,
     RecordLink,
@@ -16,6 +17,7 @@ from documents.services.records.permissions import DocumentsPermissionPolicy
 from documents.services.records.results import DocumentsRecordItem, DocumentsRecordList
 from documents.services.records.schema import DocumentsSchema
 from documents.services.records.search import DocumentsSearchOptions
+from common.permissions import NRDocsPermissionPolicy
 
 
 class DocumentsServiceConfig(
@@ -27,11 +29,11 @@ class DocumentsServiceConfig(
 
     result_list_cls = DocumentsRecordList
 
-    PERMISSIONS_PRESETS = ["authenticated"]
+    PERMISSIONS_PRESETS = []
 
     url_prefix = "/docs/"
 
-    base_permission_policy_cls = DocumentsPermissionPolicy
+    base_permission_policy_cls = NRDocsPermissionPolicy
 
     schema = DocumentsSchema
 
@@ -53,7 +55,11 @@ class DocumentsServiceConfig(
     model = "documents"
     draft_cls = DocumentsDraft
     search_drafts = DocumentsSearchOptions
-
+    # manual
+    # is_published_record on files
+    # commented latest_html
+    # edit html missing
+    # has draft condition for draft
     @property
     def links_item(self):
         return {
