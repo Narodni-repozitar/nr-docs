@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2024-03-26 22:11+0100\n"
+"POT-Creation-Date: 2024-03-28 14:51+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -31,7 +31,7 @@ msgstr ""
 
 #: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:13
 #: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:17
-#: /Users/m/w/nrp/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:30
+#: /Users/m/w/nrp/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:29
 #: i18n/translations/jinjax_messages.jinja:8
 msgid "metadata/abstract.label"
 msgstr ""
@@ -41,14 +41,14 @@ msgid "metadata/abstract/lang.label"
 msgstr ""
 
 #: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:29
-#: /Users/m/w/nrp/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:47
+#: /Users/m/w/nrp/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:46
 #: i18n/translations/jinjax_messages.jinja:13
 msgid "metadata/accessRights.label"
 msgstr ""
 
 #: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:34
 #: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:38
-#: /Users/m/w/nrp/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:43
+#: /Users/m/w/nrp/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:42
 #: i18n/translations/jinjax_messages.jinja:11
 msgid "metadata/accessibility.label"
 msgstr ""
@@ -131,7 +131,7 @@ msgid "metadata/creators/nameType.label"
 msgstr ""
 
 #: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:147
-#: /Users/m/w/nrp/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:13
+#: /Users/m/w/nrp/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:12
 #: i18n/translations/jinjax_messages.jinja:2
 msgid "metadata/dateAvailable.label"
 msgstr ""
@@ -141,7 +141,7 @@ msgid "metadata/dateIssued.label"
 msgstr ""
 
 #: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:155
-#: /Users/m/w/nrp/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:14
+#: /Users/m/w/nrp/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:13
 #: i18n/translations/jinjax_messages.jinja:3
 msgid "metadata/dateModified.label"
 msgstr ""
@@ -179,14 +179,14 @@ msgid "metadata/geoLocations/geoLocationPoint/pointLongitude.label"
 msgstr ""
 
 #: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:202
-#: /Users/m/w/nrp/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:16
+#: /Users/m/w/nrp/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:15
 #: i18n/translations/jinjax_messages.jinja:4
 msgid "metadata/languages.label"
 msgstr ""
 
 #: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:207
 #: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:211
-#: /Users/m/w/nrp/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:71
+#: /Users/m/w/nrp/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:70
 #: i18n/translations/jinjax_messages.jinja:20
 msgid "metadata/methods.label"
 msgstr ""
@@ -204,8 +204,8 @@ msgid "metadata/objectIdentifiers/scheme.label"
 msgstr ""
 
 #: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:232
-#: /Users/m/w/nrp/nr-docs/ui/documents/templates/semantic-ui/documents/Sidebar.jinja:13
-#: /Users/m/w/nrp/nr-docs/ui/documents/templates/semantic-ui/documents/Sidebar.jinja:14
+#: /Users/m/w/nrp/nr-docs/ui/documents/templates/semantic-ui/documents/Sidebar.jinja:22
+#: /Users/m/w/nrp/nr-docs/ui/documents/templates/semantic-ui/documents/Sidebar.jinja:23
 msgid "metadata/originalRecord.label"
 msgstr ""
 
@@ -317,13 +317,13 @@ msgid "metadata/relatedItems/itemYear.label"
 msgstr ""
 
 #: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:374
-#: /Users/m/w/nrp/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:19
+#: /Users/m/w/nrp/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:18
 #: i18n/translations/jinjax_messages.jinja:5
 msgid "metadata/resourceType.label"
 msgstr ""
 
 #: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:379
-#: /Users/m/w/nrp/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:50
+#: /Users/m/w/nrp/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:49
 #: i18n/translations/jinjax_messages.jinja:14
 msgid "metadata/rights.label"
 msgstr ""
@@ -337,7 +337,7 @@ msgid "metadata/series/seriesVolume.label"
 msgstr ""
 
 #: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:392
-#: /Users/m/w/nrp/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:80
+#: /Users/m/w/nrp/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:79
 #: i18n/translations/jinjax_messages.jinja:23
 msgid "metadata/subjectCategories.label"
 msgstr ""
@@ -373,7 +373,7 @@ msgstr ""
 
 #: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:439
 #: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:443
-#: /Users/m/w/nrp/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:83
+#: /Users/m/w/nrp/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:82
 #: i18n/translations/jinjax_messages.jinja:24
 msgid "metadata/technicalInfo.label"
 msgstr ""
@@ -383,7 +383,7 @@ msgid "metadata/technicalInfo/lang.label"
 msgstr ""
 
 #: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:455
-#: /Users/m/w/nrp/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:23
+#: /Users/m/w/nrp/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:22
 #: i18n/translations/jinjax_messages.jinja:6
 msgid "metadata/thesis/dateDefended.label"
 msgstr ""
@@ -393,19 +393,19 @@ msgid "metadata/thesis/defended.label"
 msgstr ""
 
 #: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:464
-#: /Users/m/w/nrp/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:35
+#: /Users/m/w/nrp/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:34
 #: i18n/translations/jinjax_messages.jinja:9
 msgid "metadata/thesis/degreeGrantors.label"
 msgstr ""
 
 #: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:469
-#: /Users/m/w/nrp/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:38
+#: /Users/m/w/nrp/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:37
 #: i18n/translations/jinjax_messages.jinja:10
 msgid "metadata/thesis/studyFields.label"
 msgstr ""
 
 #: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:473
-#: /Users/m/w/nrp/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:87
+#: /Users/m/w/nrp/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:86
 #: i18n/translations/jinjax_messages.jinja:25
 msgid "metadata/version.label"
 msgstr ""
@@ -440,6 +440,15 @@ msgstr ""
 
 #: /Users/m/w/nrp/nr-docs/ui/branding/templates/footer.html:12
 msgid "Contact"
+msgstr ""
+
+#: /Users/m/w/nrp/nr-docs/ui/branding/templates/header.html:8
+#: /Users/m/w/nrp/nr-docs/ui/branding/templates/header.html:9
+#: /Users/m/w/nrp/nr-docs/ui/branding/templates/searchbar.html:30
+#: /Users/m/w/nrp/nr-docs/ui/branding/templates/searchbar.html:31
+#: /Users/m/w/nrp/nr-docs/ui/titlepage/templates/TitlePage.jinja:49
+#: /Users/m/w/nrp/nr-docs/ui/titlepage/templates/TitlePage.jinja:51
+msgid "Search"
 msgstr ""
 
 #: /Users/m/w/nrp/nr-docs/ui/branding/templates/header_login.html:15
@@ -487,67 +496,60 @@ msgstr ""
 msgid "All document records"
 msgstr ""
 
-#: /Users/m/w/nrp/nr-docs/ui/branding/templates/searchbar.html:30
-#: /Users/m/w/nrp/nr-docs/ui/branding/templates/searchbar.html:31
-#: /Users/m/w/nrp/nr-docs/ui/titlepage/templates/TitlePage.jinja:49
-#: /Users/m/w/nrp/nr-docs/ui/titlepage/templates/TitlePage.jinja:51
-msgid "Search"
-msgstr ""
-
 #: /Users/m/w/nrp/nr-docs/ui/documents/templates/semantic-ui/documents/Detail.jinja:2
 msgid "NR Document repository"
 msgstr ""
 
-#: /Users/m/w/nrp/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:6
+#: /Users/m/w/nrp/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:5
 #: i18n/translations/jinjax_messages.jinja:1
 msgid "metadata/additionalTitles.label"
 msgstr ""
 
-#: /Users/m/w/nrp/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:9
+#: /Users/m/w/nrp/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:8
 msgid "People"
 msgstr ""
 
-#: /Users/m/w/nrp/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:26
+#: /Users/m/w/nrp/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:25
 #: i18n/translations/jinjax_messages.jinja:7
 msgid "metadata/subjects.label"
 msgstr ""
 
-#: /Users/m/w/nrp/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:44
+#: /Users/m/w/nrp/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:43
 #: i18n/translations/jinjax_messages.jinja:12
 msgid "metadata/publishers.label"
 msgstr ""
 
-#: /Users/m/w/nrp/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:54
+#: /Users/m/w/nrp/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:53
 #: i18n/translations/jinjax_messages.jinja:15
 msgid "metadata/events.label"
 msgstr ""
 
-#: /Users/m/w/nrp/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:57
+#: /Users/m/w/nrp/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:56
 #: i18n/translations/jinjax_messages.jinja:16
 msgid "metadata/externalLocation.label"
 msgstr ""
 
-#: /Users/m/w/nrp/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:61
+#: /Users/m/w/nrp/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:60
 #: i18n/translations/jinjax_messages.jinja:17
 msgid "metadata/fundingReferences.label"
 msgstr ""
 
-#: /Users/m/w/nrp/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:66
+#: /Users/m/w/nrp/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:65
 #: i18n/translations/jinjax_messages.jinja:18
 msgid "metadata/relatedItems.label"
 msgstr ""
 
-#: /Users/m/w/nrp/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:68
+#: /Users/m/w/nrp/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:67
 #: i18n/translations/jinjax_messages.jinja:19
 msgid "metadata/geoLocations.label"
 msgstr ""
 
-#: /Users/m/w/nrp/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:74
+#: /Users/m/w/nrp/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:73
 #: i18n/translations/jinjax_messages.jinja:21
 msgid "metadata/notes.label"
 msgstr ""
 
-#: /Users/m/w/nrp/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:77
+#: /Users/m/w/nrp/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:76
 #: i18n/translations/jinjax_messages.jinja:22
 msgid "metadata/series.label"
 msgstr ""
@@ -560,26 +562,54 @@ msgstr ""
 msgid "documents"
 msgstr ""
 
-#: /Users/m/w/nrp/nr-docs/ui/documents/templates/semantic-ui/documents/Sidebar.jinja:2
+#: /Users/m/w/nrp/nr-docs/ui/documents/templates/semantic-ui/documents/Sidebar.jinja:5
+msgid "Edit"
+msgstr ""
+
+#: /Users/m/w/nrp/nr-docs/ui/documents/templates/semantic-ui/documents/Sidebar.jinja:10
 msgid "Record request list"
 msgstr ""
 
-#: /Users/m/w/nrp/nr-docs/ui/documents/templates/semantic-ui/documents/Sidebar.jinja:5
-#: /Users/m/w/nrp/nr-docs/ui/documents/templates/semantic-ui/documents/Sidebar.jinja:6
+#: /Users/m/w/nrp/nr-docs/ui/documents/templates/semantic-ui/documents/Sidebar.jinja:14
+#: /Users/m/w/nrp/nr-docs/ui/documents/templates/semantic-ui/documents/Sidebar.jinja:15
 msgid "metadata/objectIdentifiers.label"
 msgstr ""
 
-#: /Users/m/w/nrp/nr-docs/ui/documents/templates/semantic-ui/documents/Sidebar.jinja:21
-#: /Users/m/w/nrp/nr-docs/ui/documents/templates/semantic-ui/documents/Sidebar.jinja:22
+#: /Users/m/w/nrp/nr-docs/ui/documents/templates/semantic-ui/documents/Sidebar.jinja:30
+#: /Users/m/w/nrp/nr-docs/ui/documents/templates/semantic-ui/documents/Sidebar.jinja:31
 msgid "Export"
 msgstr ""
 
-#: /Users/m/w/nrp/nr-docs/ui/documents/templates/semantic-ui/documents/Sidebar.jinja:69
+#: /Users/m/w/nrp/nr-docs/ui/documents/templates/semantic-ui/documents/Sidebar.jinja:78
 msgid "API"
 msgstr ""
 
-#: /Users/m/w/nrp/nr-docs/ui/documents/templates/semantic-ui/documents/Sidebar.jinja:69
+#: /Users/m/w/nrp/nr-docs/ui/documents/templates/semantic-ui/documents/Sidebar.jinja:78
 msgid "Links"
+msgstr ""
+
+msgid "Publication date"
+msgstr ""
+
+msgid "Languages"
+msgstr ""
+
+msgid "defended"
+msgstr ""
+
+msgid "not defended"
+msgstr ""
+
+msgid "Uploaded on"
+msgstr ""
+
+msgid "Published in: "
+msgstr ""
+
+msgid "No description"
+msgstr ""
+
+msgid "No publication date found."
 msgstr ""
 
 msgid "Basic information"
@@ -614,11 +644,7 @@ msgstr ""
 msgid "Date issued"
 msgstr ""
 
-msgid ""
-"If the dataset has been published elsewhere, use the date of first "
-"publication. You can also specify a future publication date (for embargo). "
-"If you do not enter a date, the system will automatically fill the date when"
-" the record is published. Format: YYYY-MM-DD, YYYYY-MM or YYYYY."
+msgid "The date can be a year, year and month or a full date."
 msgstr ""
 
 msgid "Choose the date when the document was issued."
@@ -715,28 +741,4 @@ msgid "Events"
 msgstr ""
 
 msgid "Files"
-msgstr ""
-
-msgid "Publication date"
-msgstr ""
-
-msgid "Languages"
-msgstr ""
-
-msgid "defended"
-msgstr ""
-
-msgid "not defended"
-msgstr ""
-
-msgid "Uploaded on"
-msgstr ""
-
-msgid "Published in: "
-msgstr ""
-
-msgid "No description"
-msgstr ""
-
-msgid "No publication date found."
 msgstr ""

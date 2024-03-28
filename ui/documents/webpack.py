@@ -17,7 +17,7 @@ theme = WebpackThemeBundle(
                 "preact": "^10.5.13",
             },
             devDependencies={},
-            aliases={},
+            aliases={"@js/documents": "./js/documents"},
         )
     },
 )

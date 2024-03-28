@@ -2816,6 +2816,375 @@ msgstr ""
 msgid "caption.hint"
 msgstr ""
 
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:90
+msgid "metadata/contributors/contributorType.label"
+msgstr "Contributor's type"
+
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:96
+msgid "metadata/contributors/familyName.label"
+msgstr ""
+
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:106
+msgid "metadata/contributors/givenName.label"
+msgstr ""
+
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:131
+msgid "metadata/creators/familyName.label"
+msgstr ""
+
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:139
+msgid "metadata/creators/givenName.label"
+msgstr ""
+
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:255
+msgid "metadata/relatedItems/itemContributors/contributorType.label"
+msgstr "Contributor's type"
+
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:261
+msgid "metadata/relatedItems/itemContributors/familyName.label"
+msgstr ""
+
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:271
+msgid "metadata/relatedItems/itemContributors/givenName.label"
+msgstr ""
+
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:297
+msgid "metadata/relatedItems/itemCreators/familyName.label"
+msgstr ""
+
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:307
+msgid "metadata/relatedItems/itemCreators/givenName.label"
+msgstr ""
+
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:485
+msgid "syntheticFields/date.label"
+msgstr "Updated date"
+
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:495
+msgid "syntheticFields/keywords.label"
+msgstr "Keywords"
+
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:499
+msgid "syntheticFields/people.label"
+msgstr "People"
+
+msgid "Fill in the main title of the resource."
+msgstr ""
+
+msgid ""
+"Choose identifier type and write the identifier. You can add more "
+"identifiers."
+msgstr ""
+
+msgid "Select the language(s) of the resource"
+msgstr ""
+
+msgid "Date issued"
+msgstr ""
+
+msgid "Choose the date when the document was issued."
+msgstr ""
+
+msgid "Write the name of the publisher. You can write more publishers"
+msgstr ""
+
+msgid "Choose access type - if the resource is open or has some restrictions."
+msgstr ""
+
+msgid "Authors"
+msgstr ""
+
+msgid "Write contributor's name."
+msgstr ""
+
+msgid "Write contributor's last name."
+msgstr ""
+
+msgid "Choose if the contributor is a person or an organization."
+msgstr ""
+
+msgid ""
+"Start writing name of the discipline and then choose from provided options."
+msgstr ""
+
+msgid ""
+"Choose abstract language and write down the text.Abstract can be provided in"
+" multiple languages."
+msgstr ""
+
+msgid "Space for additional information related to the resource."
+msgstr ""
+
+msgid "Financing information"
+msgstr ""
+
+msgid "Files"
+msgstr ""
+
+msgid "metadata/contributors/affiliations/ror.help"
+msgstr ""
+
+msgid "metadata/contributors/affiliations/ror.label"
+msgstr ""
+
+msgid "metadata/contributors/affiliations/ror.hint"
+msgstr ""
+
+msgid "metadata/contributors/contributorType.help"
+msgstr ""
+
+msgid "metadata/contributors/contributorType.hint"
+msgstr ""
+
+msgid "metadata/contributors/contributorType/id.help"
+msgstr ""
+
+msgid "metadata/contributors/contributorType/id.label"
+msgstr ""
+
+msgid "metadata/contributors/contributorType/id.hint"
+msgstr ""
+
+msgid "metadata/contributors/contributorType/title.help"
+msgstr ""
+
+msgid "metadata/contributors/contributorType/title.label"
+msgstr ""
+
+msgid "metadata/contributors/contributorType/title.hint"
+msgstr ""
+
+msgid "metadata/contributors/contributorType/@v.help"
+msgstr ""
+
+msgid "metadata/contributors/contributorType/@v.label"
+msgstr ""
+
+msgid "metadata/contributors/contributorType/@v.hint"
+msgstr ""
+
+msgid "metadata/contributors/familyName.help"
+msgstr ""
+
+msgid "metadata/contributors/familyName.hint"
+msgstr ""
+
+msgid "metadata/contributors/givenName.help"
+msgstr ""
+
+msgid "metadata/contributors/givenName.hint"
+msgstr ""
+
+msgid "metadata/creators/affiliations/ror.help"
+msgstr ""
+
+msgid "metadata/creators/affiliations/ror.label"
+msgstr ""
+
+msgid "metadata/creators/affiliations/ror.hint"
+msgstr ""
+
+msgid "metadata/creators/familyName.help"
+msgstr ""
+
+msgid "metadata/creators/familyName.hint"
+msgstr ""
+
+msgid "metadata/creators/givenName.help"
+msgstr ""
+
+msgid "metadata/creators/givenName.hint"
+msgstr ""
+
+msgid "metadata/dateIssued.help"
+msgstr ""
+
+msgid "metadata/dateIssued.hint"
+msgstr ""
+
+msgid "metadata/objectIdentifiers/scheme.enum.IGSN"
+msgstr ""
+
+msgid "metadata/relatedItems/itemContributors/affiliations/ror.help"
+msgstr ""
+
+msgid "metadata/relatedItems/itemContributors/affiliations/ror.label"
+msgstr ""
+
+msgid "metadata/relatedItems/itemContributors/affiliations/ror.hint"
+msgstr ""
+
+msgid "metadata/relatedItems/itemContributors/contributorType.help"
+msgstr ""
+
+msgid "metadata/relatedItems/itemContributors/contributorType.hint"
+msgstr ""
+
+msgid "metadata/relatedItems/itemContributors/contributorType/id.help"
+msgstr ""
+
+msgid "metadata/relatedItems/itemContributors/contributorType/id.label"
+msgstr ""
+
+msgid "metadata/relatedItems/itemContributors/contributorType/id.hint"
+msgstr ""
+
+msgid "metadata/relatedItems/itemContributors/contributorType/title.help"
+msgstr ""
+
+msgid "metadata/relatedItems/itemContributors/contributorType/title.label"
+msgstr ""
+
+msgid "metadata/relatedItems/itemContributors/contributorType/title.hint"
+msgstr ""
+
+msgid "metadata/relatedItems/itemContributors/contributorType/@v.help"
+msgstr ""
+
+msgid "metadata/relatedItems/itemContributors/contributorType/@v.label"
+msgstr ""
+
+msgid "metadata/relatedItems/itemContributors/contributorType/@v.hint"
+msgstr ""
+
+msgid "metadata/relatedItems/itemContributors/familyName.help"
+msgstr ""
+
+msgid "metadata/relatedItems/itemContributors/familyName.hint"
+msgstr ""
+
+msgid "metadata/relatedItems/itemContributors/givenName.help"
+msgstr ""
+
+msgid "metadata/relatedItems/itemContributors/givenName.hint"
+msgstr ""
+
+msgid "metadata/relatedItems/itemCreators/affiliations/ror.help"
+msgstr ""
+
+msgid "metadata/relatedItems/itemCreators/affiliations/ror.label"
+msgstr ""
+
+msgid "metadata/relatedItems/itemCreators/affiliations/ror.hint"
+msgstr ""
+
+msgid "metadata/relatedItems/itemCreators/familyName.help"
+msgstr ""
+
+msgid "metadata/relatedItems/itemCreators/familyName.hint"
+msgstr ""
+
+msgid "metadata/relatedItems/itemCreators/givenName.help"
+msgstr ""
+
+msgid "metadata/relatedItems/itemCreators/givenName.hint"
+msgstr ""
+
+msgid "metadata/relatedItems/itemPIDs/scheme.enum.IGSN"
+msgstr ""
+
+msgid "syntheticFields/date.help"
+msgstr ""
+
+msgid "syntheticFields/date.hint"
+msgstr ""
+
+msgid "syntheticFields/institutions/id.help"
+msgstr ""
+
+msgid "syntheticFields/institutions/id.label"
+msgstr ""
+
+msgid "syntheticFields/institutions/id.hint"
+msgstr ""
+
+msgid "syntheticFields/institutions/title.help"
+msgstr ""
+
+msgid "syntheticFields/institutions/title.label"
+msgstr ""
+
+msgid "syntheticFields/institutions/title.hint"
+msgstr ""
+
+msgid "syntheticFields/institutions/hierarchy.help"
+msgstr ""
+
+msgid "syntheticFields/institutions/hierarchy.label"
+msgstr ""
+
+msgid "syntheticFields/institutions/hierarchy.hint"
+msgstr ""
+
+msgid "syntheticFields/institutions/hierarchy/ancestors.help"
+msgstr ""
+
+msgid "syntheticFields/institutions/hierarchy/ancestors.label"
+msgstr ""
+
+msgid "syntheticFields/institutions/hierarchy/ancestors.hint"
+msgstr ""
+
+msgid "syntheticFields/institutions/hierarchy/ancestors_or_self.help"
+msgstr ""
+
+msgid "syntheticFields/institutions/hierarchy/ancestors_or_self.label"
+msgstr ""
+
+msgid "syntheticFields/institutions/hierarchy/ancestors_or_self.hint"
+msgstr ""
+
+msgid "syntheticFields/institutions/hierarchy/level.help"
+msgstr ""
+
+msgid "syntheticFields/institutions/hierarchy/level.label"
+msgstr ""
+
+msgid "syntheticFields/institutions/hierarchy/level.hint"
+msgstr ""
+
+msgid "syntheticFields/institutions/hierarchy/parent.help"
+msgstr ""
+
+msgid "syntheticFields/institutions/hierarchy/parent.label"
+msgstr ""
+
+msgid "syntheticFields/institutions/hierarchy/parent.hint"
+msgstr ""
+
+msgid "syntheticFields/institutions/hierarchy/title.help"
+msgstr ""
+
+msgid "syntheticFields/institutions/hierarchy/title.label"
+msgstr ""
+
+msgid "syntheticFields/institutions/hierarchy/title.hint"
+msgstr ""
+
+msgid "syntheticFields/institutions/@v.help"
+msgstr ""
+
+msgid "syntheticFields/institutions/@v.label"
+msgstr ""
+
+msgid "syntheticFields/institutions/@v.hint"
+msgstr ""
+
+msgid "syntheticFields/keywords.help"
+msgstr ""
+
+msgid "syntheticFields/keywords.hint"
+msgstr ""
+
+msgid "syntheticFields/people.help"
+msgstr ""
+
+msgid "syntheticFields/people.hint"
+msgstr ""
+
+msgid "The date can be a year, year and month or a full date."
+msgstr ""
+
 msgid ""
 "Write down the time period in which the event took place. If it is not a "
 "range, choose same date twice."

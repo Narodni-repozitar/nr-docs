@@ -1,8 +1,7 @@
 {#def metadata, ui, record, extra_context #}
-<h1 style="margin-bottom: 1em">{{ metadata.title }}</h1>
+<h1 class="ui header">{{ metadata.title }}</h1>
 
 <dl class="ui very basic table">
-
     <Field label={_('metadata/additionalTitles.label')}>
        <AdditionalTitles data={metadata.additionalTitles}></AdditionalTitles>
     </Field>
@@ -78,7 +77,7 @@
         <NrSeries data={metadata.series}></NrSeries>
     </Field>
     <Field label={ _('metadata/subjectCategories.label') }>
-        <VocabularyArray vocabulary={metadata.subjectCategories} search_link={record.links.search_link} searchFacet="metadata_subjectCategories" vocabulary_type="subject-categories"></VocabularyArray>
+        <VocabularyArray vocabulary={metadata.subjectCategories}  vocabulary_type="subject-categories"></VocabularyArray>
     </Field>
     <Field label={ _('metadata/technicalInfo.label') }>
         <Multilingual data={metadata.technicalInfo}></Multilingual>

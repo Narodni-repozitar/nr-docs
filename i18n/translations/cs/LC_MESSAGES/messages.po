@@ -810,7 +810,7 @@ msgid "Resource type"
 msgstr "Typ položky"
 
 msgid "Select resource type"
-msgstr "Vyberte typ položky"
+msgstr "Vyberte typ zdroje."
 
 msgid "Abstract"
 msgstr "Abstrakt"
@@ -2788,12 +2788,14 @@ msgstr ""
 
 #: /Users/m/w/nrp/nr-docs/ui/documents/templates/semantic-ui/documents/Search.jinja:3
 msgid "documents"
-msgstr ""
+msgstr "dokumenty"
 
 msgid ""
 "Write down the time period in which the event took place. If it is not a "
 "range, choose same date twice."
 msgstr ""
+"Zapište časové období, ve kterém k události došlo. Pokud se nejedná o "
+"rozsah, vyberte stejné datum dvakrát."
 
 msgid ""
 "If the dataset has been published elsewhere, use the date of first "
@@ -2823,114 +2825,114 @@ msgstr "Upravit záznam"
 msgid "Publish draft"
 msgstr "Publikovat draft"
 
-#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:90
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:90
 msgid "metadata/contributors/contributorType.label"
 msgstr "Typ přispěvatele"
 
-#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:96
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:96
 msgid "metadata/contributors/familyName.label"
 msgstr ""
 
-#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:106
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:106
 msgid "metadata/contributors/givenName.label"
 msgstr ""
 
-#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:131
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:131
 msgid "metadata/creators/familyName.label"
 msgstr ""
 
-#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:139
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:139
 msgid "metadata/creators/givenName.label"
 msgstr ""
 
-#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:255
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:255
 msgid "metadata/relatedItems/itemContributors/contributorType.label"
 msgstr "Typ přispěvatele"
 
-#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:261
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:261
 msgid "metadata/relatedItems/itemContributors/familyName.label"
 msgstr ""
 
-#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:271
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:271
 msgid "metadata/relatedItems/itemContributors/givenName.label"
 msgstr ""
 
-#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:297
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:297
 msgid "metadata/relatedItems/itemCreators/familyName.label"
 msgstr ""
 
-#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:307
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:307
 msgid "metadata/relatedItems/itemCreators/givenName.label"
 msgstr ""
 
-#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:485
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:485
 msgid "syntheticFields/date.label"
 msgstr "Datum poslední změny"
 
-#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:495
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:495
 msgid "syntheticFields/keywords.label"
 msgstr "Klíčová slova"
 
-#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:499
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:499
 msgid "syntheticFields/people.label"
 msgstr "Lidé"
 
-#: /Users/m/w/nrp/nr-docs/ui/documents/templates/semantic-ui/documents/Sidebar.jinja:2
-msgid "Record request list"
-msgstr ""
-
 msgid "Fill in the main title of the resource."
-msgstr ""
+msgstr "Vyplňte hlavní název zdroje."
 
 msgid ""
 "Choose identifier type and write the identifier. You can add more "
 "identifiers."
 msgstr ""
+"Vyberte typ identifikátoru a zapište jej. Můžete zapsat více identifikátorů."
 
 msgid "Select the language(s) of the resource"
-msgstr ""
+msgstr "Vyberte jazyk/jazyky zdroje."
 
 msgid "Date issued"
-msgstr ""
+msgstr "Datum vydání"
 
 msgid "Choose the date when the document was issued."
-msgstr ""
+msgstr "Zvolte z kalendáře datum, kdy byl zdroj vydan. "
 
 msgid "Write the name of the publisher. You can write more publishers"
-msgstr ""
+msgstr "Zapište vydavatele. Můžete zapsat i více vydavatelů."
 
 msgid "Choose access type - if the resource is open or has some restrictions."
 msgstr ""
+"Vyberte typ přístupu, zda bude zdroj dostupný otevřeně nebo s omezením."
 
 msgid "Authors"
-msgstr ""
+msgstr "Autoři"
 
 msgid "Write contributor's name."
-msgstr ""
+msgstr "Napište jméno přispěvatele."
 
 msgid "Write contributor's last name."
-msgstr ""
+msgstr "Napište příjmení přispěvatele."
 
 msgid "Choose if the contributor is a person or an organization."
-msgstr ""
+msgstr "Vyberte, zda je přispěvatelem osoba nebo instituce."
 
 msgid ""
 "Start writing name of the discipline and then choose from provided options."
-msgstr ""
+msgstr "Začněte zapisovat název oboru, následně zvolte z nabídky našeptavače."
 
 msgid ""
 "Choose abstract language and write down the text.Abstract can be provided in"
 " multiple languages."
 msgstr ""
+"Vyberte jazyk abstraktu a zapište nebo vložte text. Abstrakt můžete vložit "
+"ve více jazycích."
 
 msgid "Space for additional information related to the resource."
-msgstr ""
+msgstr "Prostor pro další informace ke zdroji."
 
 msgid "Financing information"
-msgstr ""
+msgstr "Informace o financování"
 
 msgid "Files"
-msgstr ""
+msgstr "Nahrání souboru"
 
 msgid "metadata/contributors/affiliations/ror.help"
 msgstr ""
@@ -3191,4 +3193,11 @@ msgid "syntheticFields/people.help"
 msgstr ""
 
 msgid "syntheticFields/people.hint"
+msgstr ""
+
+msgid "The date can be a year, year and month or a full date."
+msgstr "Datum může být rok, rok a měsíc nebo celé datum."
+
+#: /Users/m/w/nrp/nr-docs/ui/documents/templates/semantic-ui/documents/Sidebar.jinja:10
+msgid "Record request list"
 msgstr ""

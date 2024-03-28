@@ -21,13 +21,14 @@ mypy-extensions==1.0.0
 nr-metadata==2.0.19
 nr-oaipmh-harvesters==1.0.8
 nr-vocabularies==2.0.11
+oarepo-dashboard==1.0.0
 oarepo-global-search==1.0.3
 oarepo-model-builder==4.0.83
 oarepo-oai-pmh-harvester==4.0.45
 oarepo-published-service==1.0.3
-oarepo-requests==1.1.5
+oarepo-requests==1.1.11
 oarepo-runtime==1.5.25
-oarepo-ui==5.1.12
+oarepo-ui==5.1.15
 oarepo-vocabularies==2.0.81
 openpyxl==3.1.2
 ordered-set==4.1.0
