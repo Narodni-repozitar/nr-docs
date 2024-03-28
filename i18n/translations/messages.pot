@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2024-01-18 22:18+0100\n"
+"POT-Creation-Date: 2024-03-28 14:51+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,9 +17,22 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.14.0\n"
 
+#: /Users/m/w/nrp/nr-docs/documents/records/requests/delete_record/types.py:8
+msgid "Delete record"
+msgstr ""
+
+#: /Users/m/w/nrp/nr-docs/documents/records/requests/edit_record/types.py:8
+msgid "Edit record"
+msgstr ""
+
+#: /Users/m/w/nrp/nr-docs/documents/records/requests/publish_draft/types.py:8
+msgid "Publish draft"
+msgstr ""
+
 #: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:13
 #: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:17
-#: i18n/translations/jinjax_messages.jinja:25
+#: /Users/m/w/nrp/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:29
+#: i18n/translations/jinjax_messages.jinja:8
 msgid "metadata/abstract.label"
 msgstr ""
 
@@ -28,13 +41,15 @@ msgid "metadata/abstract/lang.label"
 msgstr ""
 
 #: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:29
-#: i18n/translations/jinjax_messages.jinja:30
+#: /Users/m/w/nrp/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:46
+#: i18n/translations/jinjax_messages.jinja:13
 msgid "metadata/accessRights.label"
 msgstr ""
 
 #: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:34
 #: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:38
-#: i18n/translations/jinjax_messages.jinja:28
+#: /Users/m/w/nrp/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:42
+#: i18n/translations/jinjax_messages.jinja:11
 msgid "metadata/accessibility.label"
 msgstr ""
 
@@ -55,354 +70,412 @@ msgstr ""
 msgid "metadata/additionalTitles/titleType.label"
 msgstr ""
 
-#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:73
-msgid "metadata/collection.label"
-msgstr ""
-
-#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:78
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:74
 msgid "metadata/contributors/affiliations.label"
 msgstr ""
 
-#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:84
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:80
 msgid "metadata/contributors/authorityIdentifiers/identifier.label"
 msgstr ""
 
-#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:89
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:85
 msgid "metadata/contributors/authorityIdentifiers/scheme.label"
 msgstr ""
 
-#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:94
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:90
+msgid "metadata/contributors/contributorType.label"
+msgstr ""
+
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:96
+msgid "metadata/contributors/familyName.label"
+msgstr ""
+
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:101
 msgid "metadata/contributors/fullName.label"
 msgstr ""
 
-#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:99
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:106
+msgid "metadata/contributors/givenName.label"
+msgstr ""
+
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:111
 msgid "metadata/contributors/nameType.label"
 msgstr ""
 
-#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:104
-msgid "metadata/contributors/role.label"
-msgstr ""
-
-#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:110
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:116
 msgid "metadata/creators/affiliations.label"
 msgstr ""
 
-#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:116
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:122
 msgid "metadata/creators/authorityIdentifiers/identifier.label"
 msgstr ""
 
-#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:121
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:127
 msgid "metadata/creators/authorityIdentifiers/scheme.label"
 msgstr ""
 
-#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:125
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:131
+msgid "metadata/creators/familyName.label"
+msgstr ""
+
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:135
 msgid "metadata/creators/fullName.label"
 msgstr ""
 
-#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:129
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:139
+msgid "metadata/creators/givenName.label"
+msgstr ""
+
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:143
 msgid "metadata/creators/nameType.label"
 msgstr ""
 
-#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:133
-#: i18n/translations/jinjax_messages.jinja:19
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:147
+#: /Users/m/w/nrp/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:12
+#: i18n/translations/jinjax_messages.jinja:2
 msgid "metadata/dateAvailable.label"
 msgstr ""
 
-#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:137
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:151
 msgid "metadata/dateIssued.label"
 msgstr ""
 
-#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:141
-#: i18n/translations/jinjax_messages.jinja:20
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:155
+#: /Users/m/w/nrp/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:13
+#: i18n/translations/jinjax_messages.jinja:3
 msgid "metadata/dateModified.label"
 msgstr ""
 
-#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:146
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:160
 msgid "metadata/events/eventLocation/country.label"
 msgstr ""
 
-#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:152
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:166
 msgid "metadata/events/eventLocation/place.label"
 msgstr ""
 
-#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:157
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:171
 msgid "metadata/externalLocation/externalLocationURL.label"
 msgstr ""
 
-#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:162
-#: i18n/translations/jinjax_messages.jinja:17
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:176
 msgid "metadata/fundingReferences/funder.label"
 msgstr ""
 
-#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:168
-#: i18n/translations/jinjax_messages.jinja:14
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:182
 msgid "metadata/fundingReferences/projectID.label"
 msgstr ""
 
-#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:173
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:187
 msgid "metadata/geoLocations/geoLocationPlace.label"
 msgstr ""
 
-#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:178
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:192
 msgid "metadata/geoLocations/geoLocationPoint/pointLatitude.label"
 msgstr ""
 
-#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:183
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:197
 msgid "metadata/geoLocations/geoLocationPoint/pointLongitude.label"
 msgstr ""
 
-#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:188
-#: i18n/translations/jinjax_messages.jinja:21
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:202
+#: /Users/m/w/nrp/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:15
+#: i18n/translations/jinjax_messages.jinja:4
 msgid "metadata/languages.label"
 msgstr ""
 
-#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:193
-#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:197
-#: i18n/translations/jinjax_messages.jinja:37
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:207
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:211
+#: /Users/m/w/nrp/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:70
+#: i18n/translations/jinjax_messages.jinja:20
 msgid "metadata/methods.label"
 msgstr ""
 
-#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:203
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:217
 msgid "metadata/methods/lang.label"
 msgstr ""
 
-#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:209
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:223
 msgid "metadata/objectIdentifiers/identifier.label"
 msgstr ""
 
-#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:214
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:228
 msgid "metadata/objectIdentifiers/scheme.label"
 msgstr ""
 
-#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:218
-#: /Users/m/w/nrp/nr-docs/ui/documents/templates/semantic-ui/documents/Sidebar.jinja:14
-#: /Users/m/w/nrp/nr-docs/ui/documents/templates/semantic-ui/documents/Sidebar.jinja:15
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:232
+#: /Users/m/w/nrp/nr-docs/ui/documents/templates/semantic-ui/documents/Sidebar.jinja:22
+#: /Users/m/w/nrp/nr-docs/ui/documents/templates/semantic-ui/documents/Sidebar.jinja:23
 msgid "metadata/originalRecord.label"
 msgstr ""
 
-#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:223
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:237
 msgid "metadata/relatedItems/itemContributors/affiliations.label"
 msgstr ""
 
-#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:229
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:243
 msgid ""
 "metadata/relatedItems/itemContributors/authorityIdentifiers/identifier.label"
 msgstr ""
 
-#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:236
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:250
 msgid ""
 "metadata/relatedItems/itemContributors/authorityIdentifiers/scheme.label"
 msgstr ""
 
-#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:241
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:255
+msgid "metadata/relatedItems/itemContributors/contributorType.label"
+msgstr ""
+
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:261
+msgid "metadata/relatedItems/itemContributors/familyName.label"
+msgstr ""
+
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:266
 msgid "metadata/relatedItems/itemContributors/fullName.label"
 msgstr ""
 
-#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:246
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:271
+msgid "metadata/relatedItems/itemContributors/givenName.label"
+msgstr ""
+
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:276
 msgid "metadata/relatedItems/itemContributors/nameType.label"
 msgstr ""
 
-#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:251
-msgid "metadata/relatedItems/itemContributors/role.label"
-msgstr ""
-
-#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:257
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:281
 msgid "metadata/relatedItems/itemCreators/affiliations.label"
 msgstr ""
 
-#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:263
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:287
 msgid ""
 "metadata/relatedItems/itemCreators/authorityIdentifiers/identifier.label"
 msgstr ""
 
-#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:268
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:292
 msgid "metadata/relatedItems/itemCreators/authorityIdentifiers/scheme.label"
 msgstr ""
 
-#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:273
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:297
+msgid "metadata/relatedItems/itemCreators/familyName.label"
+msgstr ""
+
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:302
 msgid "metadata/relatedItems/itemCreators/fullName.label"
 msgstr ""
 
-#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:278
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:307
+msgid "metadata/relatedItems/itemCreators/givenName.label"
+msgstr ""
+
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:312
 msgid "metadata/relatedItems/itemCreators/nameType.label"
 msgstr ""
 
-#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:283
-#: i18n/translations/jinjax_messages.jinja:8
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:317
 msgid "metadata/relatedItems/itemEndPage.label"
 msgstr ""
 
-#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:288
-#: i18n/translations/jinjax_messages.jinja:5
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:322
 msgid "metadata/relatedItems/itemIssue.label"
 msgstr ""
 
-#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:293
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:327
 msgid "metadata/relatedItems/itemPIDs/identifier.label"
 msgstr ""
 
-#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:298
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:332
 msgid "metadata/relatedItems/itemPIDs/scheme.label"
 msgstr ""
 
-#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:303
-#: i18n/translations/jinjax_messages.jinja:9
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:337
 msgid "metadata/relatedItems/itemPublisher.label"
 msgstr ""
 
-#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:308
-#: i18n/translations/jinjax_messages.jinja:10
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:342
 msgid "metadata/relatedItems/itemRelationType.label"
 msgstr ""
 
-#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:314
-#: i18n/translations/jinjax_messages.jinja:11
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:348
 msgid "metadata/relatedItems/itemResourceType.label"
 msgstr ""
 
-#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:320
-#: i18n/translations/jinjax_messages.jinja:7
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:354
 msgid "metadata/relatedItems/itemStartPage.label"
 msgstr ""
 
-#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:325
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:359
 msgid "metadata/relatedItems/itemURL.label"
 msgstr ""
 
-#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:330
-#: i18n/translations/jinjax_messages.jinja:4
-#: i18n/translations/jinjax_messages.jinja:6
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:364
 msgid "metadata/relatedItems/itemVolume.label"
 msgstr ""
 
-#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:335
-#: i18n/translations/jinjax_messages.jinja:3
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:369
 msgid "metadata/relatedItems/itemYear.label"
 msgstr ""
 
-#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:340
-#: i18n/translations/jinjax_messages.jinja:22
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:374
+#: /Users/m/w/nrp/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:18
+#: i18n/translations/jinjax_messages.jinja:5
 msgid "metadata/resourceType.label"
 msgstr ""
 
-#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:345
-#: i18n/translations/jinjax_messages.jinja:31
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:379
+#: /Users/m/w/nrp/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:49
+#: i18n/translations/jinjax_messages.jinja:14
 msgid "metadata/rights.label"
 msgstr ""
 
-#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:349
-#: i18n/translations/jinjax_messages.jinja:12
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:383
 msgid "metadata/series/seriesTitle.label"
 msgstr ""
 
-#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:353
-#: i18n/translations/jinjax_messages.jinja:13
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:387
 msgid "metadata/series/seriesVolume.label"
 msgstr ""
 
-#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:358
-#: i18n/translations/jinjax_messages.jinja:40
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:392
+#: /Users/m/w/nrp/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:79
+#: i18n/translations/jinjax_messages.jinja:23
 msgid "metadata/subjectCategories.label"
 msgstr ""
 
-#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:364
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:398
 msgid "metadata/subjects/classificationCode.label"
 msgstr ""
 
-#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:369
-#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:374
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:403
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:408
 msgid "metadata/subjects/subject.label"
 msgstr ""
 
-#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:381
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:415
 msgid "metadata/subjects/subject/lang.label"
 msgstr ""
 
-#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:387
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:421
 msgid "metadata/subjects/subjectScheme.label"
 msgstr ""
 
-#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:391
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:425
 msgid "metadata/subjects/valueURI.label"
 msgstr ""
 
-#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:396
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:430
 msgid "metadata/systemIdentifiers/identifier.label"
 msgstr ""
 
-#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:401
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:435
 msgid "metadata/systemIdentifiers/scheme.label"
 msgstr ""
 
-#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:405
-#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:409
-#: i18n/translations/jinjax_messages.jinja:41
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:439
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:443
+#: /Users/m/w/nrp/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:82
+#: i18n/translations/jinjax_messages.jinja:24
 msgid "metadata/technicalInfo.label"
 msgstr ""
 
-#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:416
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:450
 msgid "metadata/technicalInfo/lang.label"
 msgstr ""
 
-#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:421
-#: i18n/translations/jinjax_messages.jinja:23
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:455
+#: /Users/m/w/nrp/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:22
+#: i18n/translations/jinjax_messages.jinja:6
 msgid "metadata/thesis/dateDefended.label"
 msgstr ""
 
-#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:425
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:459
 msgid "metadata/thesis/defended.label"
 msgstr ""
 
-#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:430
-#: i18n/translations/jinjax_messages.jinja:26
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:464
+#: /Users/m/w/nrp/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:34
+#: i18n/translations/jinjax_messages.jinja:9
 msgid "metadata/thesis/degreeGrantors.label"
 msgstr ""
 
-#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:435
-#: i18n/translations/jinjax_messages.jinja:27
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:469
+#: /Users/m/w/nrp/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:37
+#: i18n/translations/jinjax_messages.jinja:10
 msgid "metadata/thesis/studyFields.label"
 msgstr ""
 
-#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:439
-#: i18n/translations/jinjax_messages.jinja:42
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:473
+#: /Users/m/w/nrp/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:86
+#: i18n/translations/jinjax_messages.jinja:25
 msgid "metadata/version.label"
 msgstr ""
 
-#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:443
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:477
 msgid "oai/harvest/datestamp.label"
 msgstr ""
 
-#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:447
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:481
 msgid "oai/harvest/identifier.label"
 msgstr ""
 
-#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:452
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:485
+msgid "syntheticFields/date.label"
+msgstr ""
+
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:490
 msgid "syntheticFields/institutions.label"
 msgstr ""
 
-#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:457
-msgid "syntheticFields/keywords_cs.label"
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:495
+msgid "syntheticFields/keywords.label"
 msgstr ""
 
-#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:461
-msgid "syntheticFields/keywords_en.label"
-msgstr ""
-
-#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:465
-msgid "syntheticFields/person.label"
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:499
+msgid "syntheticFields/people.label"
 msgstr ""
 
 #: /Users/m/w/nrp/nr-docs/ui/branding/__init__.py:23
 msgid "New upload"
 msgstr ""
 
-#: /Users/m/w/nrp/nr-docs/ui/branding/templates/footer.html:20
+#: /Users/m/w/nrp/nr-docs/ui/branding/templates/footer.html:12
 msgid "Contact"
 msgstr ""
 
-#: /Users/m/w/nrp/nr-docs/ui/branding/templates/footer.html:42
-#, python-format
-msgid "Powered by <a href=\"%(link)s\">Invenio</a>"
+#: /Users/m/w/nrp/nr-docs/ui/branding/templates/header.html:8
+#: /Users/m/w/nrp/nr-docs/ui/branding/templates/header.html:9
+#: /Users/m/w/nrp/nr-docs/ui/branding/templates/searchbar.html:30
+#: /Users/m/w/nrp/nr-docs/ui/branding/templates/searchbar.html:31
+#: /Users/m/w/nrp/nr-docs/ui/titlepage/templates/TitlePage.jinja:49
+#: /Users/m/w/nrp/nr-docs/ui/titlepage/templates/TitlePage.jinja:51
+msgid "Search"
+msgstr ""
+
+#: /Users/m/w/nrp/nr-docs/ui/branding/templates/header_login.html:15
+msgid "Log in"
+msgstr ""
+
+#: /Users/m/w/nrp/nr-docs/ui/branding/templates/header_login.html:19
+msgid "Sign up"
+msgstr ""
+
+#: /Users/m/w/nrp/nr-docs/ui/branding/templates/header_login.html:36
+msgid "Quick create"
+msgstr ""
+
+#: /Users/m/w/nrp/nr-docs/ui/branding/templates/header_login.html:53
+msgid "Actions"
+msgstr ""
+
+#: /Users/m/w/nrp/nr-docs/ui/branding/templates/header_login.html:72
+#: /Users/m/w/nrp/nr-docs/ui/branding/templates/header_login.html:113
+msgid "My account"
+msgstr ""
+
+#: /Users/m/w/nrp/nr-docs/ui/branding/templates/header_login.html:107
+#: /Users/m/w/nrp/nr-docs/ui/branding/templates/header_login.html:136
+#: /Users/m/w/nrp/nr-docs/ui/branding/templates/header_login.html:143
+msgid "Log out"
 msgstr ""
 
 #: /Users/m/w/nrp/nr-docs/ui/branding/templates/searchbar.html:5
@@ -423,31 +496,62 @@ msgstr ""
 msgid "All document records"
 msgstr ""
 
-#: /Users/m/w/nrp/nr-docs/ui/branding/templates/searchbar.html:30
-#: /Users/m/w/nrp/nr-docs/ui/branding/templates/searchbar.html:31
-#: /Users/m/w/nrp/nr-docs/ui/titlepage/templates/TitlePage.jinja:56
-#: /Users/m/w/nrp/nr-docs/ui/titlepage/templates/TitlePage.jinja:58
-msgid "Search"
-msgstr ""
-
-#: /Users/m/w/nrp/nr-docs/ui/components/templates/NrEvents.jinja:7
-msgid "on"
-msgstr ""
-
-#: /Users/m/w/nrp/nr-docs/ui/components/templates/Person.jinja:3
-msgid "Find more records by this person"
-msgstr ""
-
-#: /Users/m/w/nrp/nr-docs/ui/components/templates/Subjects.jinja:20
-msgid "Find more records with this subject"
-msgstr ""
-
-#: /Users/m/w/nrp/nr-docs/ui/documents/templates/semantic-ui/documents/Detail.jinja:1
+#: /Users/m/w/nrp/nr-docs/ui/documents/templates/semantic-ui/documents/Detail.jinja:2
 msgid "NR Document repository"
 msgstr ""
 
-#: /Users/m/w/nrp/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:9
+#: /Users/m/w/nrp/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:5
+#: i18n/translations/jinjax_messages.jinja:1
+msgid "metadata/additionalTitles.label"
+msgstr ""
+
+#: /Users/m/w/nrp/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:8
 msgid "People"
+msgstr ""
+
+#: /Users/m/w/nrp/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:25
+#: i18n/translations/jinjax_messages.jinja:7
+msgid "metadata/subjects.label"
+msgstr ""
+
+#: /Users/m/w/nrp/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:43
+#: i18n/translations/jinjax_messages.jinja:12
+msgid "metadata/publishers.label"
+msgstr ""
+
+#: /Users/m/w/nrp/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:53
+#: i18n/translations/jinjax_messages.jinja:15
+msgid "metadata/events.label"
+msgstr ""
+
+#: /Users/m/w/nrp/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:56
+#: i18n/translations/jinjax_messages.jinja:16
+msgid "metadata/externalLocation.label"
+msgstr ""
+
+#: /Users/m/w/nrp/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:60
+#: i18n/translations/jinjax_messages.jinja:17
+msgid "metadata/fundingReferences.label"
+msgstr ""
+
+#: /Users/m/w/nrp/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:65
+#: i18n/translations/jinjax_messages.jinja:18
+msgid "metadata/relatedItems.label"
+msgstr ""
+
+#: /Users/m/w/nrp/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:67
+#: i18n/translations/jinjax_messages.jinja:19
+msgid "metadata/geoLocations.label"
+msgstr ""
+
+#: /Users/m/w/nrp/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:73
+#: i18n/translations/jinjax_messages.jinja:21
+msgid "metadata/notes.label"
+msgstr ""
+
+#: /Users/m/w/nrp/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:76
+#: i18n/translations/jinjax_messages.jinja:22
+msgid "metadata/series.label"
 msgstr ""
 
 #: /Users/m/w/nrp/nr-docs/ui/documents/templates/semantic-ui/documents/Search.jinja:3
@@ -458,584 +562,30 @@ msgstr ""
 msgid "documents"
 msgstr ""
 
-#: /Users/m/w/nrp/nr-docs/ui/documents/templates/semantic-ui/documents/Sidebar.jinja:2
-#: /Users/m/w/nrp/nr-docs/ui/documents/templates/semantic-ui/documents/Sidebar.jinja:3
-msgid "Collection"
-msgstr ""
-
-#: /Users/m/w/nrp/nr-docs/ui/documents/templates/semantic-ui/documents/Sidebar.jinja:6
-#: /Users/m/w/nrp/nr-docs/ui/documents/templates/semantic-ui/documents/Sidebar.jinja:7
-msgid "metadata/objectIdentifiers.label"
-msgstr ""
-
-#: /Users/m/w/nrp/nr-docs/ui/documents/templates/semantic-ui/documents/Sidebar.jinja:22
-#: /Users/m/w/nrp/nr-docs/ui/documents/templates/semantic-ui/documents/Sidebar.jinja:23
-msgid "Export"
-msgstr ""
-
-#: /Users/m/w/nrp/nr-docs/ui/documents/templates/semantic-ui/documents/Sidebar.jinja:70
-msgid "API"
-msgstr ""
-
-#: /Users/m/w/nrp/nr-docs/ui/documents/templates/semantic-ui/documents/Sidebar.jinja:70
-msgid "Links"
-msgstr ""
-
-#: i18n/translations/jinjax_messages.jinja:1
-msgid "metadata/relatedItems/itemTitle.label"
-msgstr ""
-
-#: i18n/translations/jinjax_messages.jinja:2
-msgid "metadata/relatedItems/itemPIDs.label"
-msgstr ""
-
-#: i18n/translations/jinjax_messages.jinja:15
-msgid "metadata/fundingReferences/projectName.label"
-msgstr ""
-
-#: i18n/translations/jinjax_messages.jinja:16
-msgid "metadata/fundingReferences/fundingProgram.label"
-msgstr ""
-
-#: i18n/translations/jinjax_messages.jinja:18
-msgid "metadata/additionalTitles.label"
-msgstr ""
-
-#: i18n/translations/jinjax_messages.jinja:24
-msgid "metadata/subjects.label"
-msgstr ""
-
-#: i18n/translations/jinjax_messages.jinja:29
-msgid "metadata/publishers.label"
-msgstr ""
-
-#: i18n/translations/jinjax_messages.jinja:32
-msgid "metadata/events.label"
-msgstr ""
-
-#: i18n/translations/jinjax_messages.jinja:33
-msgid "metadata/externalLocation.label"
-msgstr ""
-
-#: i18n/translations/jinjax_messages.jinja:34
-msgid "metadata/fundingReferences.label"
-msgstr ""
-
-#: i18n/translations/jinjax_messages.jinja:35
-msgid "metadata/relatedItems.label"
-msgstr ""
-
-#: i18n/translations/jinjax_messages.jinja:36
-msgid "metadata/geoLocations.label"
-msgstr ""
-
-#: i18n/translations/jinjax_messages.jinja:38
-msgid "metadata/notes.label"
-msgstr ""
-
-#: i18n/translations/jinjax_messages.jinja:39
-msgid "metadata/series.label"
-msgstr ""
-
-msgid "Add additional title"
-msgstr ""
-
-msgid "Additional titles"
-msgstr ""
-
-msgid "Title"
-msgstr ""
-
-msgid "Title type"
-msgstr ""
-
-msgid "Creators"
-msgstr ""
-
-msgid "Add creator"
-msgstr ""
-
-msgid "Edit creator"
-msgstr ""
-
+#: /Users/m/w/nrp/nr-docs/ui/documents/templates/semantic-ui/documents/Sidebar.jinja:5
 msgid "Edit"
 msgstr ""
 
-msgid "Remove"
+#: /Users/m/w/nrp/nr-docs/ui/documents/templates/semantic-ui/documents/Sidebar.jinja:10
+msgid "Record request list"
 msgstr ""
 
-msgid "Identifier"
+#: /Users/m/w/nrp/nr-docs/ui/documents/templates/semantic-ui/documents/Sidebar.jinja:14
+#: /Users/m/w/nrp/nr-docs/ui/documents/templates/semantic-ui/documents/Sidebar.jinja:15
+msgid "metadata/objectIdentifiers.label"
 msgstr ""
 
-msgid "Type the value of an identifier..."
+#: /Users/m/w/nrp/nr-docs/ui/documents/templates/semantic-ui/documents/Sidebar.jinja:30
+#: /Users/m/w/nrp/nr-docs/ui/documents/templates/semantic-ui/documents/Sidebar.jinja:31
+msgid "Export"
 msgstr ""
 
-msgid "Identifiers"
+#: /Users/m/w/nrp/nr-docs/ui/documents/templates/semantic-ui/documents/Sidebar.jinja:78
+msgid "API"
 msgstr ""
 
-msgid "e.g. ORCID, ISNI or GND."
-msgstr ""
-
-msgid "Save and add another"
-msgstr ""
-
-msgid "Given name is a required field."
-msgstr ""
-
-msgid "Family name is a required field."
-msgstr ""
-
-msgid "Role is a required field."
-msgstr ""
-
-msgid "Added"
-msgstr ""
-
-msgid "Person"
-msgstr ""
-
-msgid "Organization"
-msgstr ""
-
-msgid "Search for persons by name, identifier, or affiliation..."
-msgstr ""
-
-msgid "Family name"
-msgstr ""
-
-msgid "Given names"
-msgstr ""
-
-msgid "Name"
-msgstr ""
-
-msgid "Organization name"
-msgstr ""
-
-msgid "e.g. ROR, ISNI or GND."
-msgstr ""
-
-msgid "Affiliations"
-msgstr ""
-
-msgid "Select one or more affiliations"
-msgstr ""
-
-msgid "Select role"
-msgstr ""
-
-msgid "Role"
-msgstr ""
-
-msgid "Cancel"
-msgstr ""
-
-msgid "Save"
-msgstr ""
-
-msgid "Couldn't find your person? You can <2>create a new entry</2>."
-msgstr ""
-
-msgid "Delete"
-msgstr ""
-
-msgid "Are you sure you wish delete this draft?"
-msgstr ""
-
-msgid "If you delete the draft, the work you have done on it will be lost."
-msgstr ""
-
-msgid "Add event"
-msgstr ""
-
-msgid "Events"
-msgstr ""
-
-msgid "Event name"
-msgstr ""
-
-msgid "Event alternate name"
-msgstr ""
-
-msgid "Add event alternate name"
-msgstr ""
-
-msgid "Event date"
-msgstr ""
-
-msgid ""
-"Write down the time period in which the event took place. If it is not a "
-"range, choose same date twice."
-msgstr ""
-
-msgid "Place"
-msgstr ""
-
-msgid "Country"
-msgstr ""
-
-msgid "External location"
-msgstr ""
-
-msgid "Resource external location"
-msgstr ""
-
-msgid "Note"
-msgstr ""
-
-msgid "Add funder"
-msgstr ""
-
-msgid "Funding"
-msgstr ""
-
-msgid "Project code"
-msgstr ""
-
-msgid "Project name"
-msgstr ""
-
-msgid "Funding program"
-msgstr ""
-
-msgid "Funder"
-msgstr ""
-
-msgid "Add location"
-msgstr ""
-
-msgid "Geolocation"
-msgstr ""
-
-msgid "Location"
-msgstr ""
-
-msgid "Longitude"
-msgstr ""
-
-msgid "Latitude"
-msgstr ""
-
-msgid "Add identifier"
-msgstr ""
-
-msgid "Identifier type"
-msgstr ""
-
-msgid "Identifier field"
-msgstr ""
-
-msgid "Object identifier"
-msgstr ""
-
-msgid "Preview"
-msgstr ""
-
-msgid "Publish"
-msgstr ""
-
-msgid "Are you sure you wish to publish this draft?"
-msgstr ""
-
-msgid "Related items"
-msgstr ""
-
-msgid "Add related item"
-msgstr ""
-
-msgid "Edit related item"
-msgstr ""
-
-msgid "Please provide an URL in valid format"
-msgstr ""
-
-msgid "Year must be in format YYYY"
-msgstr ""
-
-msgid "Object identifiers must be unique"
-msgstr ""
-
-msgid "Object identifiers"
-msgstr ""
-
-msgid "Contributors"
-msgstr ""
-
-msgid "Add contributor"
-msgstr ""
-
-msgid "Edit contributor"
-msgstr ""
-
-msgid "Persistent identifier/s of object as ISBN, DOI, etc."
-msgstr ""
-
-msgid "URL"
-msgstr ""
-
-msgid "Year"
-msgstr ""
-
-msgid "Volume"
-msgstr ""
-
-msgid "Issue"
-msgstr ""
-
-msgid "Start page"
-msgstr ""
-
-msgid "End page"
-msgstr ""
-
-msgid "Publisher"
-msgstr ""
-
-msgid "Relation type"
-msgstr ""
-
-msgid "Choose relation type"
-msgstr ""
-
-msgid "Resource type"
-msgstr ""
-
-msgid "Select resource type"
-msgstr ""
-
-msgid "Add series"
-msgstr ""
-
-msgid "Series"
-msgstr ""
-
-msgid "Series title"
-msgstr ""
-
-msgid "Series volume"
-msgstr ""
-
-msgid "Add note"
-msgstr ""
-
-msgid "Notes"
-msgstr ""
-
-msgid "Items shall be unique"
-msgstr ""
-
-msgid "Add subject"
-msgstr ""
-
-msgid "Subjects"
-msgstr ""
-
-msgid "Subject scheme"
-msgstr ""
-
-msgid "Subject"
-msgstr ""
-
-msgid "Validate form"
-msgstr ""
-
-msgid "Basic information"
-msgstr ""
-
-msgid "Link to/from other resources"
-msgstr ""
-
-msgid "Language"
-msgstr ""
-
-msgid "Choose languages"
-msgstr ""
-
-msgid "Abstract"
-msgstr ""
-
-msgid "Description"
-msgstr ""
-
-msgid "Detailed description"
-msgstr ""
-
-msgid "Access rights"
-msgstr ""
-
-msgid "Select access rights"
-msgstr ""
-
-msgid "Licenses"
-msgstr ""
-
-msgid "Choose licenses"
-msgstr ""
-
-msgid ""
-"If a Creative Commons license is associated with the resource, select the "
-"appropriate license option from the menu. We recommend choosing the latest "
-"versions, namely 3.0 Czech and 4.0 International."
-msgstr ""
-
-msgid "Date available"
-msgstr ""
-
-msgid ""
-"If the dataset has been published elsewhere, use the date of first "
-"publication. You can also specify a future publication date (for embargo). "
-"If you do not enter a date, the system will automatically fill the date when"
-" the record is published. Format: YYYY-MM-DD, YYYYY-MM or YYYYY."
-msgstr ""
-
-msgid "Date modified"
-msgstr ""
-
-msgid "Add publisher"
-msgstr ""
-
-msgid "Publishers"
-msgstr ""
-
-msgid "Resource description"
-msgstr ""
-
-msgid "Subject Categories"
-msgstr ""
-
-msgid "Choose subject categories"
-msgstr ""
-
-msgid "Select the subject field(s) to which the resource belongs."
-msgstr ""
-
-msgid "Methods"
-msgstr ""
-
-msgid "Technical info"
-msgstr ""
-
-msgid ""
-"Detailed information that may be associated with design, implementation, "
-"operation, use, and/or maintenance of a process or system"
-msgstr ""
-
-msgid ""
-"Free-form note for any comment that couldn't be inserted in any other "
-"fields."
-msgstr ""
-
-msgid "Additional information"
-msgstr ""
-
-msgid ""
-"Free description of the location; ie. Atlantic Ocean. Longitude must be a "
-"number between -180 and 180 and latitude between -90 and 90."
-msgstr ""
-
-msgid "Accessibility"
-msgstr ""
-
-msgid "Explanation regarding restricted status of an item"
-msgstr ""
-
-msgid "Identifiers information"
-msgstr ""
-
-msgid "System identifier"
-msgstr ""
-
-msgid "System identifiers"
-msgstr ""
-
-msgid "is a required field"
-msgstr ""
-
-msgid "Must have at least x characters"
-msgstr ""
-
-msgid "Items must be unique"
-msgstr ""
-
-msgid "Invalid date format"
-msgstr ""
-
-msgid "Publishers must be unique"
-msgstr ""
-
-msgid "Notes must be unique"
-msgstr ""
-
-msgid "Longitude must be between -180 and 180"
-msgstr ""
-
-msgid "Latitude must be between -90 and 90"
-msgstr ""
-
-msgid "Locations must be unique"
-msgstr ""
-
-msgid "URL must be provided for this field if used"
-msgstr ""
-
-msgid "Project codes must be unique"
-msgstr ""
-
-msgid "Subjects must be unique"
-msgstr ""
-
-msgid "Series titles must be unique"
-msgstr ""
-
-msgid "We couldn't find any matches for "
-msgstr ""
-
-msgid "your search"
-msgstr ""
-
-msgid "Start over"
-msgstr ""
-
-msgid "ProTip"
-msgstr ""
-
-msgid "will give you all the publications from 2017 until today."
-msgstr ""
-
-msgid "For more tips, check out our "
-msgstr ""
-
-msgid "Search guide"
-msgstr ""
-
-msgid "search guide"
-msgstr ""
-
-msgid " for defining advanced search queries."
-msgstr ""
-
-msgid "ORCID profile"
-msgstr ""
-
-msgid "Scopus ID profile"
-msgstr ""
-
-msgid "ROR profile"
-msgstr ""
-
-msgid "WOS Researcher ID"
-msgstr ""
-
-msgid "DOI profile"
-msgstr ""
-
-msgid "GND profile"
-msgstr ""
-
-msgid "Find all records"
-msgstr ""
-
-msgid "by this document type"
+#: /Users/m/w/nrp/nr-docs/ui/documents/templates/semantic-ui/documents/Sidebar.jinja:78
+msgid "Links"
 msgstr ""
 
 msgid "Publication date"
@@ -1060,4 +610,135 @@ msgid "No description"
 msgstr ""
 
 msgid "No publication date found."
+msgstr ""
+
+msgid "Basic information"
+msgstr ""
+
+msgid "Fill in the main title of the resource."
+msgstr ""
+
+msgid "Title"
+msgstr ""
+
+msgid "Resource type"
+msgstr ""
+
+msgid "Select resource type"
+msgstr ""
+
+msgid "Identifier"
+msgstr ""
+
+msgid ""
+"Choose identifier type and write the identifier. You can add more "
+"identifiers."
+msgstr ""
+
+msgid "Language"
+msgstr ""
+
+msgid "Select the language(s) of the resource"
+msgstr ""
+
+msgid "Date issued"
+msgstr ""
+
+msgid "The date can be a year, year and month or a full date."
+msgstr ""
+
+msgid "Choose the date when the document was issued."
+msgstr ""
+
+msgid "Add publisher"
+msgstr ""
+
+msgid "Publishers"
+msgstr ""
+
+msgid "Write the name of the publisher. You can write more publishers"
+msgstr ""
+
+msgid "Access rights"
+msgstr ""
+
+msgid "Choose access type - if the resource is open or has some restrictions."
+msgstr ""
+
+msgid "Licenses"
+msgstr ""
+
+msgid "Choose licenses"
+msgstr ""
+
+msgid ""
+"If a Creative Commons license is associated with the resource, select the "
+"appropriate license option from the menu. We recommend choosing the latest "
+"versions, namely 3.0 Czech and 4.0 International."
+msgstr ""
+
+msgid "Date modified"
+msgstr ""
+
+msgid "Creators"
+msgstr ""
+
+msgid "Authors"
+msgstr ""
+
+msgid "Contributors"
+msgstr ""
+
+msgid "Add contributor"
+msgstr ""
+
+msgid "Edit contributor"
+msgstr ""
+
+msgid "Write contributor's name."
+msgstr ""
+
+msgid "Write contributor's last name."
+msgstr ""
+
+msgid "Choose if the contributor is a person or an organization."
+msgstr ""
+
+msgid "Resource description"
+msgstr ""
+
+msgid "Subject Categories"
+msgstr ""
+
+msgid ""
+"Start writing name of the discipline and then choose from provided options."
+msgstr ""
+
+msgid "Abstract"
+msgstr ""
+
+msgid "Description"
+msgstr ""
+
+msgid ""
+"Choose abstract language and write down the text.Abstract can be provided in"
+" multiple languages."
+msgstr ""
+
+msgid "Space for additional information related to the resource."
+msgstr ""
+
+msgid "Financing information"
+msgstr ""
+
+msgid "Related items"
+msgstr ""
+
+msgid "Link to/from other resources"
+msgstr ""
+
+msgid "Events"
+msgstr ""
+
+msgid "Files"
 msgstr ""
