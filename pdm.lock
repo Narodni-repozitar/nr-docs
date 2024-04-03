@@ -3549,7 +3549,7 @@ files = [
 
 [[package]]
 name = "oarepo-requests"
-version = "1.1.12"
+version = "1.1.13"
 summary = ""
 groups = ["default"]
 dependencies = [
@@ -3557,8 +3557,8 @@ dependencies = [
     "oarepo-runtime",
 ]
 files = [
-    {file = "oarepo-requests-1.1.12.tar.gz", hash = "sha256:f6c19e4799de81e68aefa38dd660fdc129e76a62f47285e5e2400fa336978d01"},
-    {file = "oarepo_requests-1.1.12-py3-none-any.whl", hash = "sha256:eefea095f0856fb0daf9d15abf665596e7e42203351ba59dd5ea0946d9b8e150"},
+    {file = "oarepo-requests-1.1.13.tar.gz", hash = "sha256:98055fa81377786ba83f267bcc61aeecd04eabb23c990beb9ae1f0492381e6f9"},
+    {file = "oarepo_requests-1.1.13-py3-none-any.whl", hash = "sha256:c6428a449e1e2a52553a96700bcb638ee9563690225481806de40d2f16f88bfa"},
 ]
 
 [[package]]
