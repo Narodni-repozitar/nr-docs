@@ -5,7 +5,9 @@ from oarepo_runtime.services.results import RecordItem, RecordList
 class DocumentsRecordItem(RecordItem):
     """DocumentsRecord record item."""
 
-    components = [*RecordItem.components, RequestsComponent(), RequestTypesComponent()]
+    components = [*RecordItem.components,
+                  # RequestsComponent(),
+                  RequestTypesComponent()]
 
 
 class DocumentsRecordList(RecordList):
