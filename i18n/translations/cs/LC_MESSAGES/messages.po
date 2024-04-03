@@ -3200,4 +3200,24 @@ msgstr "Datum může být rok, rok a měsíc nebo celé datum."
 
 #: /Users/m/w/nrp/nr-docs/ui/documents/templates/semantic-ui/documents/Sidebar.jinja:10
 msgid "Record request list"
-msgstr ""
+msgstr "Seznam žádostí záznamu"
+
+#: /Users/m/w/nrp/nr-docs/common/just_for_translations.py:5
+msgid "Submitted"
+msgstr "Odeslána"
+
+#: /Users/m/w/nrp/nr-docs/common/just_for_translations.py:6
+msgid "Expired"
+msgstr "Expirována"
+
+#: /Users/m/w/nrp/nr-docs/common/just_for_translations.py:7
+msgid "Accepted"
+msgstr "Přijata"
+
+#: /Users/m/w/nrp/nr-docs/common/just_for_translations.py:8
+msgid "Declined"
+msgstr "Zamítnuta"
+
+#: /Users/m/w/nrp/nr-docs/common/just_for_translations.py:9
+msgid "Cancelled"
+msgstr "Zrušena"
