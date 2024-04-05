@@ -2756,29 +2756,27 @@ files = [
 
 [[package]]
 name = "libcst"
-version = "1.2.0"
+version = "1.3.1"
 requires_python = ">=3.9"
 summary = "A concrete syntax tree with AST-like properties for Python 3.0 through 3.12 programs."
 groups = ["default"]
 dependencies = [
     "pyyaml>=5.2",
-    "typing-extensions>=3.7.4.2",
-    "typing-inspect>=0.4.0",
 ]
 files = [
-    {file = "libcst-1.2.0-cp310-cp310-macosx_10_9_x86_64.whl", hash = "sha256:c0149d24a455536ff2e41b3a48b16d3ebb245e28035013c91bd868def16592a0"},
-    {file = "libcst-1.2.0-cp310-cp310-macosx_11_0_arm64.whl", hash = "sha256:ba24b8cf789db6b87c6e23a6c6365f5f73cb7306d929397581d5680149e9990c"},
-    {file = "libcst-1.2.0-cp310-cp310-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:2bbb4e442224da46b59a248d7d632ed335eae023a921dea1f5c72d2a059f6be9"},
-    {file = "libcst-1.2.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:7f4919978c2b395079b64d8a654357854767adbabab13998b39c1f0bc67da8a7"},
-    {file = "libcst-1.2.0-cp310-cp310-manylinux_2_5_i686.manylinux1_i686.manylinux_2_17_i686.manylinux2014_i686.whl", hash = "sha256:5e54389abdea995b39ee96ad736ed1b0b8402ed30a7956b7a279c10baf0c0294"},
-    {file = "libcst-1.2.0-cp310-cp310-win_amd64.whl", hash = "sha256:1d45718f7e7a1405a16fd8e7fc75c365120001b6928bfa3c4112f7e533990b9a"},
-    {file = "libcst-1.2.0-cp39-cp39-macosx_10_9_x86_64.whl", hash = "sha256:c80f36f4a02d530e28eac7073aabdea7c6795fc820773a02224021d79d164e8b"},
-    {file = "libcst-1.2.0-cp39-cp39-macosx_11_0_arm64.whl", hash = "sha256:8b56130f18aca9a98b3bcaf5962b2b26c2dcdd6d5132decf3f0b0b635f4403ba"},
-    {file = "libcst-1.2.0-cp39-cp39-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:4973a9d509cf1a59e07fac55a98f70bc4fd35e09781dffb3ec93ee32fc0de7af"},
-    {file = "libcst-1.2.0-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:6dd388c74c04434b41e3b25fc4a0fafa3e6abf91f97181df55e8f8327fd903cc"},
-    {file = "libcst-1.2.0-cp39-cp39-manylinux_2_5_i686.manylinux1_i686.manylinux_2_17_i686.manylinux2014_i686.whl", hash = "sha256:38fbd56f885e1f77383a6d1d798a917ffbc6d28dc6b1271eddbf8511c194213e"},
-    {file = "libcst-1.2.0-cp39-cp39-win_amd64.whl", hash = "sha256:f2342634f6c61fc9076dc0baf21e9cf5ef0195a06e1e95c0c9dc583ba3a30d00"},
-    {file = "libcst-1.2.0.tar.gz", hash = "sha256:71dd69fff76e7edaf8fae0f63ffcdbf5016e8cd83165b1d0688d6856aa48186a"},
+    {file = "libcst-1.3.1-cp310-cp310-macosx_10_9_x86_64.whl", hash = "sha256:de93193cba6d54f2a4419e94ba2de642b111f52e4fa01bb6e2c655914585f65b"},
+    {file = "libcst-1.3.1-cp310-cp310-macosx_11_0_arm64.whl", hash = "sha256:a2d64d86dcd6c80a5dac2e243c5ed7a7a193242209ac33bad4b0639b24f6d131"},
+    {file = "libcst-1.3.1-cp310-cp310-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:db084f7bbf825c7bd5ed256290066d0336df6a7dc3a029c9870a64cd2298b87f"},
+    {file = "libcst-1.3.1-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:16880711be03a1f5da7028fe791ba5b482a50d830225a70272dc332dfd927652"},
+    {file = "libcst-1.3.1-cp310-cp310-manylinux_2_5_i686.manylinux1_i686.manylinux_2_17_i686.manylinux2014_i686.whl", hash = "sha256:189bb28c19c5dd3c64583f969b72f7732dbdb1dee9eca3acc85099e4cef9148b"},
+    {file = "libcst-1.3.1-cp310-cp310-win_amd64.whl", hash = "sha256:181372386c986e3de07d7a93f269214cd825adc714f1f9da8252b44f05e181c4"},
+    {file = "libcst-1.3.1-cp39-cp39-macosx_10_9_x86_64.whl", hash = "sha256:701f5335e4fd566871497b9af1e871c98e1ef10c30b3b244f39343d709213401"},
+    {file = "libcst-1.3.1-cp39-cp39-macosx_11_0_arm64.whl", hash = "sha256:7c6e709623b68ca9148e8ecbdc145f7b83befb26032e4bf6a8122500ba558b17"},
+    {file = "libcst-1.3.1-cp39-cp39-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:ede0f026a82b03b33a559ec566860085ece2e76d8f9bc21cb053eedf9cde8c79"},
+    {file = "libcst-1.3.1-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:c12b7b01d8745f82dd86a82acd2a9f8e8e7d6c94ddcfda996896e83d1a8d5c42"},
+    {file = "libcst-1.3.1-cp39-cp39-manylinux_2_5_i686.manylinux1_i686.manylinux_2_17_i686.manylinux2014_i686.whl", hash = "sha256:f2995ca687118a9d3d41876f7270bc29305a2d402f4b8c81a3cff0aeee6d4c81"},
+    {file = "libcst-1.3.1-cp39-cp39-win_amd64.whl", hash = "sha256:2dbac1ac0a9d59ea7bbc3f87cdcca5bfe98835e31c668e95cb6f3d907ffc53fc"},
+    {file = "libcst-1.3.1.tar.gz", hash = "sha256:03b1df1ae02456f1d465fcd5ead1d0d454bb483caefd8c8e6bde515ffdb53d1b"},
 ]
 
 [[package]]
@@ -3181,7 +3179,7 @@ files = [
 
 [[package]]
 name = "nr-oaipmh-harvesters"
-version = "1.0.10"
+version = "1.0.11"
 summary = "OAIPMH harvesters for National repository"
 groups = ["default"]
 dependencies = [
@@ -3191,8 +3189,8 @@ dependencies = [
     "oarepo-oai-pmh-harvester>=4.0.0",
 ]
 files = [
-    {file = "nr-oaipmh-harvesters-1.0.10.tar.gz", hash = "sha256:d028d3b877638ebc55a0565350df4cada1e6d42a1fcf5643121ed1dd1883c7f2"},
-    {file = "nr_oaipmh_harvesters-1.0.10-py3-none-any.whl", hash = "sha256:c6e0ed075955c05ac8fec7639e21fc7059e3f30e87021bbd964803eda04e0591"},
+    {file = "nr-oaipmh-harvesters-1.0.11.tar.gz", hash = "sha256:47a7b76559d3f24d18c906767f7c5c44385b24b4cbcd58c406598b8074e2556c"},
+    {file = "nr_oaipmh_harvesters-1.0.11-py3-none-any.whl", hash = "sha256:bff0d3b57ed85d7d7da3b2f2ec6b529b0f34e253b5edd7738ebea9b1fb14c014"},
 ]
 
 [[package]]
@@ -3458,7 +3456,7 @@ files = [
 
 [[package]]
 name = "oarepo-dashboard"
-version = "1.0.2"
+version = "1.0.3"
 summary = "Support for user dashboard (records, communities, requests)"
 groups = ["default"]
 dependencies = [
@@ -3468,8 +3466,8 @@ dependencies = [
     "openpyxl",
 ]
 files = [
-    {file = "oarepo-dashboard-1.0.2.tar.gz", hash = "sha256:4bee7c2329c5605a9b062450e56e9a32e32fc1a99022318287630e3b9da05a50"},
-    {file = "oarepo_dashboard-1.0.2-py3-none-any.whl", hash = "sha256:0c9f9eaa5fcd51ab8a57aa95177e2d1dab77b38940abb219b0a74170c250e6de"},
+    {file = "oarepo-dashboard-1.0.3.tar.gz", hash = "sha256:e241533cf5ea785befcf3bf20b9ba9246f64c739bd6517c7e16300bbea348ce8"},
+    {file = "oarepo_dashboard-1.0.3-py3-none-any.whl", hash = "sha256:2d1a4fffc8e244a1b2f761bbd4b94cba4b33190a90b11f0fc214128f87d077ee"},
 ]
 
 [[package]]
@@ -3563,7 +3561,7 @@ files = [
 
 [[package]]
 name = "oarepo-runtime"
-version = "1.5.27"
+version = "1.5.29"
 summary = "A set of runtime extensions of Invenio repository"
 groups = ["default"]
 dependencies = [
@@ -3576,13 +3574,13 @@ dependencies = [
     "tqdm",
 ]
 files = [
-    {file = "oarepo-runtime-1.5.27.tar.gz", hash = "sha256:3fc8ebf7daa2c26f76abf0d37c28924c180ba093fa9675d4e25364f82721f9ac"},
-    {file = "oarepo_runtime-1.5.27-py3-none-any.whl", hash = "sha256:595c83508b6096d9fe6a1b5ebf5437242c69c19b19e106b247494bb6c1566e0e"},
+    {file = "oarepo-runtime-1.5.29.tar.gz", hash = "sha256:ea7bbf354586984abe31023bba8aeaeb6298c7c3e78db58e634cd0f5b2dcc7f9"},
+    {file = "oarepo_runtime-1.5.29-py3-none-any.whl", hash = "sha256:8024727a38ae11ee05c415ed3263f63644330070c7e7c5a622c26a45eadb6fa9"},
 ]
 
 [[package]]
 name = "oarepo-ui"
-version = "5.1.16"
+version = "5.1.18"
 requires_python = ">=3.6"
 summary = "UI module for invenio 3.5+"
 groups = ["default"]
@@ -3594,13 +3592,13 @@ dependencies = [
     "oarepo-runtime",
 ]
 files = [
-    {file = "oarepo-ui-5.1.16.tar.gz", hash = "sha256:6d5e05b260819ed8a587af75a5de83d8f270c8af95b00bc3446ebd7265e52b41"},
-    {file = "oarepo_ui-5.1.16-py2.py3-none-any.whl", hash = "sha256:2abc79846f486b130b418009fc890dfe882b0a2bda109c845c6842df044734b3"},
+    {file = "oarepo-ui-5.1.18.tar.gz", hash = "sha256:ba929d739a1bcd8fbe2358ad189e525071b4d9c8460fa39fc81a4b45f8cf7177"},
+    {file = "oarepo_ui-5.1.18-py2.py3-none-any.whl", hash = "sha256:59bb308a62170b622d0e78978874cc7cf06bc16c5089d6b9b99a2a7605445686"},
 ]
 
 [[package]]
 name = "oarepo-vocabularies"
-version = "2.0.82"
+version = "2.0.83"
 summary = "Support for custom fields and hierarchy on Invenio vocabularies"
 groups = ["default"]
 dependencies = [
@@ -3611,8 +3609,8 @@ dependencies = [
     "openpyxl",
 ]
 files = [
-    {file = "oarepo-vocabularies-2.0.82.tar.gz", hash = "sha256:14bbbc8b3b2535a41ede1a88f99da328d0752952f901aa77f4af1a87d0eff736"},
-    {file = "oarepo_vocabularies-2.0.82-py3-none-any.whl", hash = "sha256:dc6ccdbcc3b5cea5234e722519c8b494ce23f26d047f7e3d2420ac4bd57892f0"},
+    {file = "oarepo-vocabularies-2.0.83.tar.gz", hash = "sha256:d0cf60b87c4615bda4d7291a2ba892734b5c306cd9416484261424f55b7294c3"},
+    {file = "oarepo_vocabularies-2.0.83-py3-none-any.whl", hash = "sha256:02aadd5b69566258b0a14cca133952da09864274cf80d0c7eeb7b810441cd5f6"},
 ]
 
 [[package]]
@@ -4781,20 +4779,6 @@ groups = ["default"]
 files = [
     {file = "typing_extensions-4.9.0-py3-none-any.whl", hash = "sha256:af72aea155e91adfc61c3ae9e0e342dbc0cba726d6cba4b6c72c1f34e47291cd"},
     {file = "typing_extensions-4.9.0.tar.gz", hash = "sha256:23478f88c37f27d76ac8aee6c905017a143b0b1b886c3c9f66bc2fd94f9f5783"},
-]
-
-[[package]]
-name = "typing-inspect"
-version = "0.9.0"
-summary = "Runtime inspection utilities for typing module."
-groups = ["default"]
-dependencies = [
-    "mypy-extensions>=0.3.0",
-    "typing-extensions>=3.7.4",
-]
-files = [
-    {file = "typing_inspect-0.9.0-py3-none-any.whl", hash = "sha256:9ee6fc59062311ef8547596ab6b955e1b8aa46242d854bfc78f4f6b0eff35f9f"},
-    {file = "typing_inspect-0.9.0.tar.gz", hash = "sha256:b23fc42ff6f6ef6954e4852c1fb512cdd18dbea03134f91f856a95ccc9461f78"},
 ]
 
 [[package]]
