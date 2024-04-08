@@ -7,7 +7,7 @@ import {
   ValidateButton,
   useFormConfig,
 } from "@js/oarepo_ui";
-import { PublishButtonComponent } from "@nr";
+import { PublishButtonComponent } from "@nr/forms";
 
 const FormActionsContainer = () => {
   const { links } = useFormConfig();
