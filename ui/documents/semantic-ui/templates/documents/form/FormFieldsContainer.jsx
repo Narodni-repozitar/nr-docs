@@ -191,7 +191,7 @@ const FormFieldsContainer = () => {
                 searchApi: {
                   axios: {
                     headers: {
-                      Accept: "application/vnd.inveniordm.v1+json",
+                      Accept: "application/json",
                     },
                     url: "/api/vocabularies/rights",
                     withCredentials: false,
@@ -201,11 +201,6 @@ const FormFieldsContainer = () => {
                   filters: [["tags", "featured"]],
                 },
               }}
-              // serializeLicenses={(result) => ({
-              //   title: result.title,
-              //   id: result.id,
-              //   icon: result.icon,
-              // })}
               fieldPath="metadata.rights"
               label={i18next.t("Licenses")}
               labelIcon="drivers license"
