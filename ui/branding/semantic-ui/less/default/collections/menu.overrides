@@ -124,6 +124,10 @@
   }
 }
 
+#invenio-menu {
+  width: auto !important;
+}
+
 #invenio-nav.ui.menu {
   height: @relative75px;
   position: relative;

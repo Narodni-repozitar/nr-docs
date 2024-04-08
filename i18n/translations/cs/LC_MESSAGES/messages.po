@@ -461,7 +461,7 @@ msgstr "Edice"
 #: ui/docs-app/docs_app/templates/semantic-ui/docs_app/detail.html:2
 #: ui/docs-app/docs_app/templates/semantic-ui/docs_app/search.html:2
 msgid "NR Document repository"
-msgstr "NR dokumentový repozitář"
+msgstr "Národní dokumentový repozitář"
 
 #: ui/docs-app/docs_app/templates/semantic-ui/docs_app/Main.html.jinja:9
 msgid "People"

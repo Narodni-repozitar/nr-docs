@@ -3179,7 +3179,7 @@ files = [
 
 [[package]]
 name = "nr-oaipmh-harvesters"
-version = "1.0.11"
+version = "1.0.12"
 summary = "OAIPMH harvesters for National repository"
 groups = ["default"]
 dependencies = [
@@ -3189,8 +3189,8 @@ dependencies = [
     "oarepo-oai-pmh-harvester>=4.0.0",
 ]
 files = [
-    {file = "nr-oaipmh-harvesters-1.0.11.tar.gz", hash = "sha256:47a7b76559d3f24d18c906767f7c5c44385b24b4cbcd58c406598b8074e2556c"},
-    {file = "nr_oaipmh_harvesters-1.0.11-py3-none-any.whl", hash = "sha256:bff0d3b57ed85d7d7da3b2f2ec6b529b0f34e253b5edd7738ebea9b1fb14c014"},
+    {file = "nr-oaipmh-harvesters-1.0.12.tar.gz", hash = "sha256:a25fb275d45d62820545a4fc2559968c283b6da78e195beb741196656e438990"},
+    {file = "nr_oaipmh_harvesters-1.0.12-py3-none-any.whl", hash = "sha256:b241e4d70aa3e120479d928a22a7de16e95a5f8aa70397bd0ea4b35ee0d25f85"},
 ]
 
 [[package]]
@@ -3456,7 +3456,7 @@ files = [
 
 [[package]]
 name = "oarepo-dashboard"
-version = "1.0.3"
+version = "1.0.4"
 summary = "Support for user dashboard (records, communities, requests)"
 groups = ["default"]
 dependencies = [
@@ -3466,8 +3466,8 @@ dependencies = [
     "openpyxl",
 ]
 files = [
-    {file = "oarepo-dashboard-1.0.3.tar.gz", hash = "sha256:e241533cf5ea785befcf3bf20b9ba9246f64c739bd6517c7e16300bbea348ce8"},
-    {file = "oarepo_dashboard-1.0.3-py3-none-any.whl", hash = "sha256:2d1a4fffc8e244a1b2f761bbd4b94cba4b33190a90b11f0fc214128f87d077ee"},
+    {file = "oarepo-dashboard-1.0.4.tar.gz", hash = "sha256:35467336f4b99c16998c645dce846f05bd8eb491e528d9b70fa7eb47357a9355"},
+    {file = "oarepo_dashboard-1.0.4-py3-none-any.whl", hash = "sha256:4ff871d939ff99f319c089f4a2cb394f68c8bb6ae4a83d49ed2992df330731f4"},
 ]
 
 [[package]]
@@ -3580,7 +3580,7 @@ files = [
 
 [[package]]
 name = "oarepo-ui"
-version = "5.1.16"
+version = "5.1.19"
 requires_python = ">=3.6"
 summary = "UI module for invenio 3.5+"
 groups = ["default"]
@@ -3592,13 +3592,13 @@ dependencies = [
     "oarepo-runtime",
 ]
 files = [
-    {file = "oarepo-ui-5.1.16.tar.gz", hash = "sha256:6d5e05b260819ed8a587af75a5de83d8f270c8af95b00bc3446ebd7265e52b41"},
-    {file = "oarepo_ui-5.1.16-py2.py3-none-any.whl", hash = "sha256:2abc79846f486b130b418009fc890dfe882b0a2bda109c845c6842df044734b3"},
+    {file = "oarepo-ui-5.1.19.tar.gz", hash = "sha256:e312390ec6f56e16159dac04d7c5b5e52b2e6c154fd03f19efa9f6aa9c8006c2"},
+    {file = "oarepo_ui-5.1.19-py2.py3-none-any.whl", hash = "sha256:5bc67332d98aa2d5443fc11e576ead68b111a8363cadf0401c8b0b6584c7d9f8"},
 ]
 
 [[package]]
 name = "oarepo-vocabularies"
-version = "2.0.82"
+version = "2.0.83"
 summary = "Support for custom fields and hierarchy on Invenio vocabularies"
 groups = ["default"]
 dependencies = [
@@ -3609,8 +3609,8 @@ dependencies = [
     "openpyxl",
 ]
 files = [
-    {file = "oarepo-vocabularies-2.0.82.tar.gz", hash = "sha256:14bbbc8b3b2535a41ede1a88f99da328d0752952f901aa77f4af1a87d0eff736"},
-    {file = "oarepo_vocabularies-2.0.82-py3-none-any.whl", hash = "sha256:dc6ccdbcc3b5cea5234e722519c8b494ce23f26d047f7e3d2420ac4bd57892f0"},
+    {file = "oarepo-vocabularies-2.0.83.tar.gz", hash = "sha256:d0cf60b87c4615bda4d7291a2ba892734b5c306cd9416484261424f55b7294c3"},
+    {file = "oarepo_vocabularies-2.0.83-py3-none-any.whl", hash = "sha256:02aadd5b69566258b0a14cca133952da09864274cf80d0c7eeb7b810441cd5f6"},
 ]
 
 [[package]]
