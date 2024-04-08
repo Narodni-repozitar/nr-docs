@@ -1,5 +1,17 @@
 {% extends "oarepo_ui/header.html" %}
 
+{%- block brand %}
+  {%- if config.THEME_LOGO %}
+    <a class="logo-link" href="/">
+      <img class="ui image"
+            src="{{ url_for('static', filename=config.THEME_LOGO.replace('<language>', current_i18n.language)) }}"
+            alt="{{ _(config.THEME_SITENAME) }}"/>
+    </a>
+  {%- else %}
+    <a class="logo" href="/">{{ _(config.THEME_SITENAME) }}</a>
+  {%- endif %}
+{%- endblock brand %}
+
 {% block navbar_search %}
   <div class="item p-0 search-bar">
   <div id="header-search-bar">

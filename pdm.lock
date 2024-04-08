@@ -3179,7 +3179,7 @@ files = [
 
 [[package]]
 name = "nr-oaipmh-harvesters"
-version = "1.0.11"
+version = "1.0.12"
 summary = "OAIPMH harvesters for National repository"
 groups = ["default"]
 dependencies = [
@@ -3189,8 +3189,8 @@ dependencies = [
     "oarepo-oai-pmh-harvester>=4.0.0",
 ]
 files = [
-    {file = "nr-oaipmh-harvesters-1.0.11.tar.gz", hash = "sha256:47a7b76559d3f24d18c906767f7c5c44385b24b4cbcd58c406598b8074e2556c"},
-    {file = "nr_oaipmh_harvesters-1.0.11-py3-none-any.whl", hash = "sha256:bff0d3b57ed85d7d7da3b2f2ec6b529b0f34e253b5edd7738ebea9b1fb14c014"},
+    {file = "nr-oaipmh-harvesters-1.0.12.tar.gz", hash = "sha256:a25fb275d45d62820545a4fc2559968c283b6da78e195beb741196656e438990"},
+    {file = "nr_oaipmh_harvesters-1.0.12-py3-none-any.whl", hash = "sha256:b241e4d70aa3e120479d928a22a7de16e95a5f8aa70397bd0ea4b35ee0d25f85"},
 ]
 
 [[package]]
@@ -3456,7 +3456,7 @@ files = [
 
 [[package]]
 name = "oarepo-dashboard"
-version = "1.0.3"
+version = "1.0.4"
 summary = "Support for user dashboard (records, communities, requests)"
 groups = ["default"]
 dependencies = [
@@ -3466,8 +3466,8 @@ dependencies = [
     "openpyxl",
 ]
 files = [
-    {file = "oarepo-dashboard-1.0.3.tar.gz", hash = "sha256:e241533cf5ea785befcf3bf20b9ba9246f64c739bd6517c7e16300bbea348ce8"},
-    {file = "oarepo_dashboard-1.0.3-py3-none-any.whl", hash = "sha256:2d1a4fffc8e244a1b2f761bbd4b94cba4b33190a90b11f0fc214128f87d077ee"},
+    {file = "oarepo-dashboard-1.0.4.tar.gz", hash = "sha256:35467336f4b99c16998c645dce846f05bd8eb491e528d9b70fa7eb47357a9355"},
+    {file = "oarepo_dashboard-1.0.4-py3-none-any.whl", hash = "sha256:4ff871d939ff99f319c089f4a2cb394f68c8bb6ae4a83d49ed2992df330731f4"},
 ]
 
 [[package]]
@@ -3580,7 +3580,7 @@ files = [
 
 [[package]]
 name = "oarepo-ui"
-version = "5.1.18"
+version = "5.1.19"
 requires_python = ">=3.6"
 summary = "UI module for invenio 3.5+"
 groups = ["default"]
@@ -3592,8 +3592,8 @@ dependencies = [
     "oarepo-runtime",
 ]
 files = [
-    {file = "oarepo-ui-5.1.18.tar.gz", hash = "sha256:ba929d739a1bcd8fbe2358ad189e525071b4d9c8460fa39fc81a4b45f8cf7177"},
-    {file = "oarepo_ui-5.1.18-py2.py3-none-any.whl", hash = "sha256:59bb308a62170b622d0e78978874cc7cf06bc16c5089d6b9b99a2a7605445686"},
+    {file = "oarepo-ui-5.1.19.tar.gz", hash = "sha256:e312390ec6f56e16159dac04d7c5b5e52b2e6c154fd03f19efa9f6aa9c8006c2"},
+    {file = "oarepo_ui-5.1.19-py2.py3-none-any.whl", hash = "sha256:5bc67332d98aa2d5443fc11e576ead68b111a8363cadf0401c8b0b6584c7d9f8"},
 ]
 
 [[package]]

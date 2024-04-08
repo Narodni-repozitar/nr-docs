@@ -1,0 +1,13 @@
+.ui.frontpage.header {
+
+    h1 {
+        font-size: 3.5rem;
+        font-weight: 700;
+    }
+
+    &.subtitle {
+        color: white;
+        font-weight: 400;
+        font-size: 1rem;
+    }
+}
