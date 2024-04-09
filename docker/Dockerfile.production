@@ -4,23 +4,16 @@ ARG BUILDPLATFORM=linux/amd64
 
 FROM --platform=$BUILDPLATFORM $OAREPO_DEVELOPMENT_IMAGE as production-build
 
-ARG REPOSITORY_SITE_NAME
-ARG SITE_DIR=/repository/sites/${REPOSITORY_SITE_NAME}
-
-ENV SITE_DIR=$SITE_DIR
-ENV REPOSITORY_SITE_NAME=${REPOSITORY_SITE_NAME}
-ENV PATH=/pdm/bin:${PATH}
-
-RUN echo "Site dir is ${SITE_DIR}, repository site name is ${REPOSITORY_SITE_NAME}"
-
 COPY . /repository
 
-# DEBUG only
-#COPY nrp-sources /nrp-sources
-#RUN PYTHONPATH=/nrp-sources DOCKER_AROUND=1 /nrp/bin/nrp build --production --site $REPOSITORY_SITE_NAME --project-dir /repository
+# build the repository
+WORKDIR /repository
+RUN rm -rf .nrp .pdm-build .venv
+RUN PYTHON=`which python3` ./nrp build --override-config venv_dir=/invenio/venv --override-config invenio_instance_path=/invenio/instance
 
-# production
-RUN DOCKER_AROUND=1  /nrp/bin/nrp build --production --site $REPOSITORY_SITE_NAME --project-dir /repository
+# cleanup
+RUN rm -rf .nrp .pdm-build .venv
+RUN find . -name "__pycache__" -type d -exec rm -rf {} +
 
 
 FROM --platform=$BUILDPLATFORM ${OAREPO_PRODUCTION_IMAGE} as production
@@ -33,30 +26,34 @@ ARG REPOSITORY_GITHUB_URL
 ARG REPOSITORY_URL
 ARG REPOSITORY_DOCUMENTATION
 
-ARG SITE_DIR=/repository/sites/${REPOSITORY_SITE_NAME}
-
 LABEL maintainer="${REPOSITORY_SITE_ORGANIZATION}" \
     org.opencontainers.image.authors="${REPOSITORY_AUTHOR}" \
-    org.opencontainers.image.title="MBDB production image for ${REPOSITORY_SITE_NAME}" \
+    org.opencontainers.image.title="NR Docs production image" \
     org.opencontainers.image.url="${REPOSITORY_IMAGE_URL}" \
     org.opencontainers.image.source="${REPOSITORY_GITHUB_URL}" \
     org.opencontainers.image.documentation="${REPOSITORY_DOCUMENTATION}"
 
 
-# copy build
-RUN mkdir -p /invenio/instance
-COPY --from=production-build /invenio/instance/invenio.cfg /invenio/instance/invenio.cfg
-COPY --from=production-build /invenio/instance/variables /invenio/instance/variables
-COPY --from=production-build /invenio/instance/static /invenio/instance/static
-COPY --from=production-build /invenio/venv /invenio/venv
+# copy build from production build - just the final directories, not the whole build
 
-# copy sources (just for sure, should not be needed for production run)
+COPY --from=production-build /invenio /invenio
 COPY --from=production-build /repository /repository
 
 # copy uwsgi.ini - keep the path the same as in invenio
 RUN mkdir -p /opt/invenio/src/uwsgi/
-COPY sites/${REPOSITORY_SITE_NAME}/docker/uwsgi/uwsgi.ini /opt/invenio/src/uwsgi/uwsgi.ini
 
-ENV PATH=${INVENIO_VENV}/bin:${PATH}
+COPY ./docker/development.crt /development.crt
+COPY ./docker/development.key /development.key
+
+COPY ./docker/uwsgi.ini /opt/invenio/src/uwsgi/uwsgi.ini
+
+ENV PATH=/invenio/venv/bin:${PATH}
+
+
+RUN /invenio/venv/bin/pip install --no-cache-dir uwsgi uwsgi-tools
+
+
+RUN ( echo "Contents of /repository"; ls -lR /repository )
+RUN ( echo "Contents of /invenio"; ls -lR /invenio )
 
 ENTRYPOINT [ "sh", "-c" ]
