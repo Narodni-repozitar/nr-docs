@@ -3,6 +3,7 @@ import datetime
 import gzip
 import logging
 import os
+import re
 import time
 import traceback
 from typing import Iterator
@@ -67,6 +68,9 @@ class S3Reader(BaseReader):
         size = 0
         for page in pages:
             for obj in page["Contents"]:
+                if re.match(r"^.*harvest-\d{2}/\d{4}-\d{2}-\d{2}-to-\d{4}-\d{2}-\d{2}/data/oai.*", obj["Key"]):
+                    continue
+                
                 size += obj["Size"]
 
                 yaml_data = s3_client.get_object(Bucket=s3_bucket_name, Key=obj["Key"])[
