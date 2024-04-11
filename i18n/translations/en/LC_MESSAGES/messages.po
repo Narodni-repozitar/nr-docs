@@ -3826,3 +3826,23 @@ msgstr ""
 
 msgid "syntheticFields/people.hint"
 msgstr ""
+
+#: /Users/m/w/nrp/nr-docs/common/just_for_translations.py:5
+msgid "Submitted"
+msgstr ""
+
+#: /Users/m/w/nrp/nr-docs/common/just_for_translations.py:6
+msgid "Expired"
+msgstr ""
+
+#: /Users/m/w/nrp/nr-docs/common/just_for_translations.py:7
+msgid "Accepted"
+msgstr ""
+
+#: /Users/m/w/nrp/nr-docs/common/just_for_translations.py:8
+msgid "Declined"
+msgstr ""
+
+#: /Users/m/w/nrp/nr-docs/common/just_for_translations.py:9
+msgid "Cancelled"
+msgstr ""

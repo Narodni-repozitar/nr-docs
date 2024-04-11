@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2024-03-28 14:51+0100\n"
+"POT-Creation-Date: 2024-04-03 12:15+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,6 +16,26 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.14.0\n"
+
+#: /Users/m/w/nrp/nr-docs/common/just_for_translations.py:5
+msgid "Submitted"
+msgstr ""
+
+#: /Users/m/w/nrp/nr-docs/common/just_for_translations.py:6
+msgid "Expired"
+msgstr ""
+
+#: /Users/m/w/nrp/nr-docs/common/just_for_translations.py:7
+msgid "Accepted"
+msgstr ""
+
+#: /Users/m/w/nrp/nr-docs/common/just_for_translations.py:8
+msgid "Declined"
+msgstr ""
+
+#: /Users/m/w/nrp/nr-docs/common/just_for_translations.py:9
+msgid "Cancelled"
+msgstr ""
 
 #: /Users/m/w/nrp/nr-docs/documents/records/requests/delete_record/types.py:8
 msgid "Delete record"

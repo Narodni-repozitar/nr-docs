@@ -39,6 +39,7 @@ documents_file = "documents.views.files.app:create_app_blueprint"
 documents_file_draft = "documents.views.draft_files.app:create_app_blueprint"
 ui_documents = "ui.documents:create_blueprint"
 documents_requests = "documents.views.requests.api:create_api_blueprint"
+ui_community_records = "ui.community_records:create_blueprint"
 
 [project.entry-points."invenio_i18n.translations"]
 translations = "i18n"
@@ -79,6 +80,11 @@ documents = "documents.models:records.json"
 [project.entry-points."oarepo.ui"]
 documents = "documents.models:ui.json"
 documents_file = "documents.models:ui.json"
+
+[project.entry-points."invenio_requests.types"]
+delete_record = "oarepo_requests.types.delete_record:DeleteRecordRequestType"
+edit_record = "oarepo_requests.types.edit_record:EditRecordRequestType"
+publish_draft = "oarepo_requests.types.publish_draft:PublishDraftRequestType"
 
 [project.optional-dependencies]
 tests = [
