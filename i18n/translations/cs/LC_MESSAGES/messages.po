@@ -3221,3 +3221,22 @@ msgstr "Zamítnuta"
 #: /Users/m/w/nrp/nr-docs/common/just_for_translations.py:9
 msgid "Cancelled"
 msgstr "Zrušena"
+
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/community_records/templates/CommunityRecordPage.jinja:2
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/community_records/templates/CommunityRecordPage.jinja:12
+msgid "Community"
+msgstr ""
+
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/community_records/templates/CommunityRecordPage.jinja:17
+msgid "Community pages are a planned feature for 0.7.0 release."
+msgstr ""
+
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/community_records/templates/CommunityRecordPage.jinja:19
+msgid "Back"
+msgstr ""
+
+msgid "Write the version (first, second ...)."
+msgstr "Zapište verzi (první, druhá…)."
+
+msgid "Version"
+msgstr "Verze"
