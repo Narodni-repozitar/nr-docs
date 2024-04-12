@@ -3225,15 +3225,15 @@ msgstr "Zrušena"
 #: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/community_records/templates/CommunityRecordPage.jinja:2
 #: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/community_records/templates/CommunityRecordPage.jinja:12
 msgid "Community"
-msgstr ""
+msgstr "Komunita"
 
 #: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/community_records/templates/CommunityRecordPage.jinja:17
 msgid "Community pages are a planned feature for 0.7.0 release."
-msgstr ""
+msgstr "Stránky komunity jsou plánovanou funkcí pro vydání 0.7.0."
 
 #: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/community_records/templates/CommunityRecordPage.jinja:19
 msgid "Back"
-msgstr ""
+msgstr "Zpět"
 
 msgid "Write the version (first, second ...)."
 msgstr "Zapište verzi (první, druhá…)."
