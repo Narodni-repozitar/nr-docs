@@ -20,7 +20,7 @@ import {
   RelatedItemsField,
   objectIdentifiersSchema,
   FileUploader,
-} from "@nr";
+} from "@nr/forms";
 import Overridable from "react-overridable";
 import { i18next } from "@translations/i18next";
 import _has from "lodash/has";

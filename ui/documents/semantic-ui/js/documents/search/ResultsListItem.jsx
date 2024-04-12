@@ -15,7 +15,7 @@ import {
   ResultsItemLicense,
   DoubleSeparator,
   ResultsItemResourceType,
-} from "@nr";
+} from "@nr/search";
 
 const ItemHeader = ({ title, searchUrl, selfLink }) => {
   const viewLink = new URL(
