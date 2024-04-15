@@ -1,6 +1,6 @@
 import React from "react";
 import { BaseFormLayout } from "@js/oarepo_ui";
-import { NRDocumentValidationSchema } from "@nr";
+import { NRDocumentValidationSchema } from "@nr/validationschemas";
 
 export const FormAppLayout = () => {
   const formikProps = {
