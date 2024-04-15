@@ -3,8 +3,10 @@ import datetime
 import gzip
 import logging
 import os
+import re
 import time
 import traceback
+from io import BytesIO
 from typing import Iterator
 
 import boto3
@@ -67,12 +69,25 @@ class S3Reader(BaseReader):
         size = 0
         for page in pages:
             for obj in page["Contents"]:
+                if re.match(r"^.*harvest-\d{2}/\d{4}-\d{2}-\d{2}-to-\d{4}-\d{2}-\d{2}/data/oai.*", obj["Key"]):
+                    continue
+                
                 size += obj["Size"]
 
-                yaml_data = s3_client.get_object(Bucket=s3_bucket_name, Key=obj["Key"])[
-                    "Body"
-                ]
-                yaml_data = gzip.GzipFile(fileobj=yaml_data).read().decode("utf-8")
+                for i in range(7):
+                    try:
+                        yaml_data = s3_client.get_object(Bucket=s3_bucket_name, Key=obj["Key"])[
+                            "Body"
+                        ]
+                        yaml_data = yaml_data.read()
+                        break
+                    except:
+                        time.sleep(2 ** i)
+                else:
+                    raise Exception(f"Failed to download the file {obj['Key']} from S3")
+
+                yaml_data = gzip.GzipFile(fileobj=BytesIO(yaml_data)).read().decode("utf-8")
+
                 _, datestamp, _ = obj["Key"].split("/")
                 content = list(yaml.safe_load_all(yaml_data))
 

@@ -125,13 +125,14 @@
 }
 
 #invenio-menu {
+  flex-grow: 1;
   width: auto !important;
 }
 
 #invenio-nav.ui.menu {
   height: @relative75px;
   position: relative;
-
+  
   .ui.menu {
     background-color: transparent;
     box-shadow: none;
