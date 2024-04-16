@@ -198,7 +198,7 @@ const FormFieldsContainer = () => {
                   },
                 },
                 initialQueryState: {
-                  filters: [["tags", "featured"]],
+                  filters: [["tags", ""]],
                 },
               }}
               fieldPath="metadata.rights"
