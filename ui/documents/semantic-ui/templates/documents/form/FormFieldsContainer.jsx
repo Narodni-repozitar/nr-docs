@@ -194,7 +194,6 @@ const FormFieldsContainer = () => {
                       Accept: "application/json",
                     },
                     url: "/api/vocabularies/rights",
-                    withCredentials: false,
                   },
                 },
                 initialQueryState: {
