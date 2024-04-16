@@ -191,7 +191,7 @@ const FormFieldsContainer = () => {
                 searchApi: {
                   axios: {
                     headers: {
-                      Accept: "application/json",
+                      Accept: "application/vnd.inveniordm.v1+json",
                     },
                     url: "/api/vocabularies/rights",
                   },
