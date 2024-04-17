@@ -113,8 +113,6 @@ Sample output:
 
   @import (optional, multiple)
     "@{siteFolder}/oarepo_ui/themes/default/globals/site.overrides";
-  @import (optional, multiple) "@{siteFolder}/globals/site.overrides";
-
   @import (optional, multiple)
     "@{siteFolder}/oarepo_ui/themes/@{theme}/@{type}s/@{element}.overrides";
 
@@ -134,4 +132,5 @@ Sample output:
   /* site theme css style */
   @import (optional, multiple)
     "@{siteFolder}/@{theme}/@{type}s/@{element}.overrides";
+  @import (optional, multiple) "@{siteFolder}/@{type}s/@{element}.overrides";
 }
