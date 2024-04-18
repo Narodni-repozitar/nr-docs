@@ -6,8 +6,8 @@ import {
   DeleteButton,
   ValidateButton,
   useFormConfig,
+  PublishButton,
 } from "@js/oarepo_ui";
-import { PublishButtonComponent } from "@nr";
 
 const FormActionsContainer = () => {
   const { links } = useFormConfig();
@@ -27,7 +27,7 @@ const FormActionsContainer = () => {
           </Grid.Column>
 
           <Grid.Column width={16} className="pt-10">
-            <PublishButtonComponent />
+            <PublishButton />
           </Grid.Column>
           <Grid.Column width={16} className="pt-10">
             <ValidateButton />
