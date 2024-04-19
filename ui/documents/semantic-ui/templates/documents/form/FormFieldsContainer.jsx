@@ -197,6 +197,9 @@ const FormFieldsContainer = () => {
                   },
                 },
                 initialQueryState: {
+                  size: 25,
+                  page: 1,
+                  sortBy: "bestmatch",
                   filters: [["tags", ""]],
                 },
               }}
