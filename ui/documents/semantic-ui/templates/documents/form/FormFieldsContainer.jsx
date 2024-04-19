@@ -5,7 +5,7 @@ import {
   FormikStateLogger,
   EDTFSingleDatePicker,
 } from "@js/oarepo_ui";
-import { LocalVocabularySelectField } from "@js/oarepo_vocabularies";
+import { LocalVocabularySelectField, VocabularyTreeSelectField } from "@js/oarepo_vocabularies";
 import { AccordionField, FieldLabel, TextField } from "react-invenio-forms";
 import {
   StringArrayField,
@@ -32,6 +32,7 @@ const FormFieldsContainer = () => {
     (options) => options.filter((option) => option.props?.submission),
     []
   );
+  console.log(formConfig)
   return (
     <React.Fragment>
       <Overridable id="NrDocs.Deposit.AccordionFieldBasicInformation.container">
@@ -185,23 +186,22 @@ const FormFieldsContainer = () => {
             id="NrDocs.Deposit.LicenseField.container"
             fieldPath="metadata.rights"
           >
-            <LocalVocabularySelectField
-              optimized
-              fieldPath="metadata.rights"
-              label={
-                <FieldLabel
-                  htmlFor={"metadata.rights"}
-                  icon="drivers license"
-                  label={i18next.t("Licenses")}
-                />
-              }
-              placeholder={i18next.t("Choose licenses")}
-              clearable
-              optionsListName="rights"
-              helpText={i18next.t(
-                "If a Creative Commons license is associated with the resource, select the appropriate license option from the menu. We recommend choosing the latest versions, namely 3.0 Czech and 4.0 International."
-              )}
-            />
+            <VocabularyTreeSelectField 
+            optimized
+            fieldPath="metadata.rights"
+            label={
+              <FieldLabel
+                htmlFor={"metadata.rights"}
+                icon="drivers license"
+                label={i18next.t("Licenses")}
+              />
+            }
+            placeholder={i18next.t("Choose licenses")}
+            clearable
+            optionsListName="rights"
+            helpText={i18next.t(
+              "If a Creative Commons license is associated with the resource, select the appropriate license option from the menu. We recommend choosing the latest versions, namely 3.0 Czech and 4.0 International."
+            )}/>
           </Overridable>
           <Overridable
             id="NrDocs.Deposit.DateModifiedField.container"
@@ -285,7 +285,7 @@ const FormFieldsContainer = () => {
             id="NrDocs.Deposit.SubjectCategoriesField.container"
             fieldPath="metadata.subjectCategories"
           >
-            <LocalVocabularySelectField
+            <VocabularyTreeSelectField
               optimized
               fieldPath="metadata.subjectCategories"
               multiple={true}
@@ -299,7 +299,7 @@ const FormFieldsContainer = () => {
               clearable
               optionsListName="subject-categories"
               placeholder={i18next.t(
-                "Start writing name of the discipline and then choose from provided options."
+                "Select the discipline."
               )}
             />
           </Overridable>
@@ -313,6 +313,7 @@ const FormFieldsContainer = () => {
               textFieldLabel={i18next.t("Description")}
               fieldPath="metadata.abstract"
               rich={true}
+            
               required
               helpText={i18next.t(
                 "Choose abstract language and write down the text.Abstract can be provided in multiple languages."

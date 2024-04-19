@@ -1,0 +1,7 @@
+.tree-field .ui.input {
+  width: 100%;
+  & input {
+    height: 3rem;
+    font-size: 1rem;
+  }
+}

@@ -5,6 +5,8 @@
 {%- block javascript %}
     {{ super() }}
     {{ webpack['documents_deposit_form.js'] }}
+    {{ webpack['oarepo_vocabularies_ui_components.js'] }}
+    {{ webpack['oarepo_vocabularies_ui_components.css'] }}
 {%- endblock %}
 
 {%- block page_body %}
