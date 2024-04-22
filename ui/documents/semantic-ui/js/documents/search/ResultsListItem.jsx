@@ -15,7 +15,7 @@ import {
   ResultsItemLicense,
   DoubleSeparator,
   ResultsItemResourceType,
-} from "@nr";
+} from "@nr/search";
 
 const ItemHeader = ({ title, searchUrl, selfLink }) => {
   const viewLink = new URL(
@@ -40,7 +40,6 @@ const ItemSubheader = ({
   contributors,
   publicationDate,
   languages,
-  version,
   resourceType,
   thesis,
   subjects,
@@ -64,7 +63,7 @@ const ItemSubheader = ({
               aria-label={i18next.t("Publication date")}
               title={i18next.t("Publication date")}
             >
-              {publicationDate} (v{version})
+              {publicationDate}
             </span>
             <DoubleSeparator />
             <span
@@ -108,7 +107,6 @@ ItemSubheader.propTypes = {
   contributors: PropTypes.array,
   publicationDate: PropTypes.string,
   languages: PropTypes.array,
-  version: PropTypes.number,
   resourceType: PropTypes.object,
   thesis: PropTypes.object,
   subjects: PropTypes.array,
@@ -200,7 +198,6 @@ export const ResultsListItemComponent = ({
   const resourceType = _get(result, "metadata.resourceType");
   const subjects = _get(result, "metadata.subjects", []);
   const title = _get(result, "metadata.title", "No title");
-  const version = _get(result, "revision_id", null);
   const versions = _get(result, "versions");
 
   const thesis = _get(result, "metadata.thesis");
@@ -209,7 +206,6 @@ export const ResultsListItemComponent = ({
   const filters =
     currentQueryState && Object.fromEntries(currentQueryState.filters);
   const allVersionsVisible = filters?.allversions;
-  const numOtherVersions = version - 1;
 
   return (
     <Overridable
@@ -225,12 +221,10 @@ export const ResultsListItemComponent = ({
       subjects={subjects}
       languages={languages}
       title={title}
-      version={version}
       versions={versions}
       rights={rights}
       thesis={thesis}
       allVersionsVisible={allVersionsVisible}
-      numOtherVersions={numOtherVersions}
     >
       <Item key={result.id}>
         <Item.Content>
@@ -250,7 +244,6 @@ export const ResultsListItemComponent = ({
                   contributors={contributors}
                   publicationDate={publicationDate}
                   languages={languages}
-                  version={version}
                   resourceType={resourceType}
                   thesis={thesis}
                   subjects={subjects}
