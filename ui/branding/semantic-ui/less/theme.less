@@ -112,10 +112,6 @@ Sample output:
   @import (optional, multiple) "themes/invenio/@{type}s/@{element}.overrides";
 
   @import (optional, multiple)
-    "@{siteFolder}/oarepo_ui/themes/default/globals/site.overrides";
-  @import (optional, multiple) "@{siteFolder}/globals/site.overrides";
-
-  @import (optional, multiple)
     "@{siteFolder}/oarepo_ui/themes/@{theme}/@{type}s/@{element}.overrides";
 
   @import (optional, multiple)
@@ -132,6 +128,10 @@ Sample output:
     "@{siteFolder}/components/@{theme}/@{type}s/@{element}.overrides";
 
   /* site theme css style */
+  /* this one imports overrides for components located in the site itself i.e. button, 
+  container etc. */
   @import (optional, multiple)
     "@{siteFolder}/@{theme}/@{type}s/@{element}.overrides";
+  /* this one imports overrides for global folder i.e. site.overrides. */
+  @import (optional, multiple) "@{siteFolder}/@{type}s/@{element}.overrides";
 }
