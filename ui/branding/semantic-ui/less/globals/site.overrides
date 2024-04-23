@@ -36,7 +36,7 @@
  */
 
 :root {
-  font-size: @fontSize;
+  font-size: @baseFontSize;
 }
 
 body {

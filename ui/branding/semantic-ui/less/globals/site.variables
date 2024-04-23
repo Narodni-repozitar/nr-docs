@@ -1,6 +1,6 @@
 @fontName: "Roboto";
 @importGoogleFonts: false;
-@fontSize: 16px;
+@baseFontSize: 16px;
 
 /*-------------------
       Site Colors

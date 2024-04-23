@@ -7,7 +7,6 @@ import {
   DeleteButton,
   ValidateButton,
   useFormConfig,
-  PublishButton,
 } from "@js/oarepo_ui";
 
 const FormActionsContainer = () => {
