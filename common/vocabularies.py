@@ -11,6 +11,6 @@ class NRDocsVocabulariesPermissionPolicy(VocabulariesPermissionPolicy):
     can_list_vocabularies = [SystemProcess(), AnyUser()]
 
     can_create = [SystemProcess(), UserWithRole("curator")]
-    can_update = [SystemProcess()]
+    can_update = [SystemProcess(), UserWithRole("curator")]
     can_delete = [SystemProcess()]
-    can_manage = [SystemProcess()]
+    can_manage = [SystemProcess(), UserWithRole("curator")]
