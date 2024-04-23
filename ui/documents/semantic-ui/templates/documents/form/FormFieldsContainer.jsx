@@ -32,6 +32,14 @@ const FormFieldsContainer = () => {
     (options) => options.filter((option) => option.props?.submission),
     []
   );
+  const convertHTMLToTags = (htmlString) => {
+    const regex = /<(?!\/?(strong|b|div|br|p|i|li)\b)[^>]*>[^<]*<\/.*?>/gi;
+    const decodedString = decode(htmlString);
+    const cleanedContent = decodedString.replace(regex, "");
+    const noTags = cleanedContent.replace(/<[^>]*>?/gm, "");
+    return noTags;
+  };
+  
   return (
     <React.Fragment>
       <Overridable id="NrDocs.Deposit.AccordionFieldBasicInformation.container">
@@ -313,6 +321,10 @@ const FormFieldsContainer = () => {
               textFieldLabel={i18next.t("Description")}
               fieldPath="metadata.abstract"
               rich={true}
+              editorConfig={{
+                valid_elements: "strong,b,div,br,p,i,li",
+                invalid_elements: "style,script",
+              }}
               required
               helpText={i18next.t(
                 "Choose abstract language and write down the text.Abstract can be provided in multiple languages."
