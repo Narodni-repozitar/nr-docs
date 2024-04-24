@@ -31,6 +31,7 @@ class DocumentsSearchOptions(I18nSearchOptions):
             "syntheticFields_institutions": facets.syntheticFields_institutions,
             "metadata_fundingReferences_funder": facets.metadata_fundingReferences_funder,
             "metadata_fundingReferences_projectID": facets.metadata_fundingReferences_projectID,
+            "metadata_histogram": facets.date_histogram,
             **getattr(I18nSearchOptions, "facet_groups", {}).get("default", {}),
         },
     }

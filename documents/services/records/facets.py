@@ -1,6 +1,10 @@
 """Facet definitions."""
 
-from invenio_records_resources.services.records.facets import TermsFacet
+from invenio_records_resources.services.records.facets import (
+    TermsFacet,
+    DateHistogramFacet,
+    RangeFacet,
+)
 from oarepo_runtime.i18n import lazy_gettext as _
 from oarepo_runtime.services.facets.date import DateTimeFacet
 from oarepo_runtime.services.facets.nested_facet import NestedLabeledFacet
@@ -8,6 +12,7 @@ from oarepo_vocabularies.services.facets import (
     HierarchyVocabularyFacet,
     VocabularyFacet,
 )
+from invenio_search.engine import dsl
 
 metadata_abstract_cs = TermsFacet(
     field="metadata.abstract.cs.keyword", label=_("metadata/abstract.label")
@@ -498,3 +503,21 @@ syntheticFields_keywords = TermsFacet(
 syntheticFields_people = TermsFacet(
     field="syntheticFields.people", label=_("syntheticFields/people.label")
 )
+
+
+date_histogram = DateHistogramFacet(
+    field="metadata.dateIssued",
+    label=_("syntheticFields/date.histogram"),
+    calendar_interval="year",
+    min_doc_count=0,
+)
+from datetime import datetime
+
+min_date = "1970-01-01T00:00:00"  # Example: Minimum date
+max_date = datetime.now().isoformat()
+
+# date_range = RangeFacet(
+#     field="metadata.dateIssued",
+#     label=_("syntheticFields/date.range"),
+#     ranges=[("2022-01", "2023-01")],
+# )
