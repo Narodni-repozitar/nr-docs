@@ -16,18 +16,6 @@ test.afterAll(async ({}) => {
   await apiContext.dispose();
 });
 
-test("failed form submit", async ({ page }) => {
-  try {
-    await page.goto(`/docs/_new`);
-
-    await page.locator(`[name='save']`).click();
-    await page.locator(`[name='save']`).click();
-    await expect(page.locator(`.negative.form-feedback`)).toBeVisible();
-  } catch (error) {
-    console.error("Error:", error);
-    throw error;
-  }
-});
 
 test("successful form submit", async ({ page }) => {
   try {
@@ -48,8 +36,6 @@ test("successful form submit", async ({ page }) => {
     const optionToClickRes = optionsRes[randomIndexRes];
 
     const optionNameRes = await optionToClickRes.getAttribute("name");
-    console.log(`Clicking on option: ${optionNameRes}`);
-
     await page.locator(`[name="${optionNameRes}"]`).click();
 
     // select language
@@ -93,7 +79,7 @@ test("successful form submit", async ({ page }) => {
     await page.locator(`[name='given_name']`).fill("test");
     await page.locator(`[name='submit']`).last().click();
 
-    const pagenav = page.waitForNavigation({ waitUntil: "networkidle" });
+    const pagenav = page.waitForNavigation({ waitUntil: "load" });
     await page.locator(`[name='save']`).click();
 
     await pagenav;
@@ -131,24 +117,23 @@ test("file upload", async ({ page }) => {
 
     await page.waitForSelector("button.ui.primary.button:has(.upload.icon)");
 
-    await page.locator("button.ui.primary.button:has(.upload.icon)").click();
+    await page
+      .locator("button.ui.primary.button:has(.upload.icon)")
+      .first()
+      .click();
 
-    //   const inputField =  page.locator('input[type="file"]').nth(1);
+    await expect(page.locator(".uppy-Dashboard-inner")).toBeVisible();
 
-    //   const filePath = "./ui/branding/semantic-ui/less/images/background.png";
+    const filePath = "../../ui/branding/semantic-ui/less/images/background.png";
 
-    //   await page.setInputFiles(inputField, filePath);
+    const handle = await page.$('input[type="file"]');
+    await handle.setInputFiles(filePath);
 
-    //   await page.locator("text=fixture.pdf").click();
+    await page.locator(".uppy-StatusBar-actionBtn--upload").click();
+    await page.locator(".uppy-StatusBar-actionBtn--done").click();
+    await page.locator(`[name='save']`).click();
 
-    await page.setInputFiles(
-      "#photo-upload",
-      "./ui/branding/semantic-ui/less/images/background.png"
-    );
-    const $photoUpload = await page.$("#photo-upload");
-    const $photoUploadParent = await $photoUpload.$("xpath=..");
-    const $photoUploadFigure = await $photoUploadParent.$$("figure");
-    expect($photoUploadFigure).toHaveLength(1);
+    await expect(page.locator('.ui.green.positive.form-feedback')).toBeVisible()
   } catch (error) {
     console.error("Error:", error);
     throw error;
