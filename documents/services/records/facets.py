@@ -2,8 +2,6 @@
 
 from invenio_records_resources.services.records.facets import (
     TermsFacet,
-    DateHistogramFacet,
-    RangeFacet,
 )
 from oarepo_runtime.i18n import lazy_gettext as _
 from oarepo_runtime.services.facets.date import DateTimeFacet
@@ -13,6 +11,8 @@ from oarepo_vocabularies.services.facets import (
     VocabularyFacet,
 )
 from invenio_search.engine import dsl
+from invenio_records_resources.services.records.facets.facets import LabelledFacetMixin
+
 
 metadata_abstract_cs = TermsFacet(
     field="metadata.abstract.cs.keyword", label=_("metadata/abstract.label")
@@ -503,6 +503,26 @@ syntheticFields_keywords = TermsFacet(
 syntheticFields_people = TermsFacet(
     field="syntheticFields.people", label=_("syntheticFields/people.label")
 )
+
+
+class DateHistogramFacet(LabelledFacetMixin, dsl.DateHistogramFacet):
+    """Terms facet.
+
+    .. code-block:: python
+
+        facets = {
+            'is_published': TermsFacet(
+                field='is_published',
+                label=_('Status'),
+                value_labels={0: _('Unpublished'), 1: _('Published')}
+            ),
+            'languages': TermsFacet(
+                field='metadata.languages.id',
+                label=_('Languages'),
+                value_labels=lambda keys: {k: k} }
+            )
+        }
+    """
 
 
 date_histogram = DateHistogramFacet(
