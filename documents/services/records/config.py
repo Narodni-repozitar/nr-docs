@@ -80,7 +80,7 @@ class DocumentsServiceConfig(
             "self_html": ConditionalLink(
                 cond=is_published_record,
                 if_=RecordLink("{+ui}/docs/{id}"),
-                else_=RecordLink("{+ui}/docs/{id}/edit"),
+                else_=RecordLink("{+ui}/docs/{id}/preview"),
             ),
             "edit_html": RecordLink("{+ui}/docs/{id}/edit", when=has_draft),
             "versions": RecordLink("{+api}/docs/{id}/versions"),
