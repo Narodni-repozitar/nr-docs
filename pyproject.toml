@@ -22,7 +22,7 @@ dependencies = [
     "python-dotenv",
     "oarepo-dashboard>=1.0.0",
 ]
-requires-python = ">=3.9,<3.11"
+requires-python = ">=3.10,<3.11"
 
 [project.entry-points."invenio_assets.webpack"]
 branding = "ui.branding.webpack:theme"

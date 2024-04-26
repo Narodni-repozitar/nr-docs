@@ -8,6 +8,8 @@ import {
   useFormConfig,
   PublishButton,
 } from "@js/oarepo_ui";
+import { TextField, FieldLabel } from "react-invenio-forms";
+import { i18next } from "@translations/i18next";
 
 const FormActionsContainer = () => {
   const { links } = useFormConfig();
@@ -27,7 +29,23 @@ const FormActionsContainer = () => {
           </Grid.Column>
 
           <Grid.Column width={16} className="pt-10">
-            <PublishButton />
+            <PublishButton
+              additionalInputs={
+                <TextField
+                  fieldPath="metadata.version"
+                  placeholder={i18next.t(
+                    "Write the version (first, second ...)."
+                  )}
+                  label={
+                    <FieldLabel
+                      htmlFor={"metadata.version"}
+                      icon="pencil"
+                      label={i18next.t("Version")}
+                    />
+                  }
+                />
+              }
+            />
           </Grid.Column>
           <Grid.Column width={16} className="pt-10">
             <ValidateButton />
