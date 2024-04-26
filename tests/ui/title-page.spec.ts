@@ -25,9 +25,15 @@ test("search and check URL", async ({ page, baseURL }) => {
   );
 });
 
-test("search and check URL", async ({ page, baseURL }) => {
+test("redirection to title page", async ({ page, baseURL }) => {
+  await page.goto("/docs/_new");
+  await page.locator(".logo-link").click();
+  await expect(page).toHaveURL(`${baseURL}`);
+});
+
+test("sign out", async ({ page, baseURL }) => {
   await page.goto("/");
-  await page.getByLabel("Menu", { exact: true }).click();
-  await page.locator(".ui.menu .item:has(.sign-out.icon)").click();
+  await page.locator('#invenio-burger-menu-icon').click();
+  await page.locator(".tablet .item:has(.sign-out.icon)").click();
   await expect(page).toHaveURL(`${baseURL}`);
 });

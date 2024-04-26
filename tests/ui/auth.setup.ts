@@ -4,7 +4,7 @@ const authFile = "playwright/.auth/user.json";
 
 setup("authenticate", async ({ page, baseURL }) => {
   await page.goto(`/login`);
-  await page.locator(`[name='email']`).fill("makisheva@cesnet.cz");
+  await page.locator(`[name='email']`).fill("makisheva@cesnet.cz"); //put here required login data
   await page.locator(`[name='password']`).fill("cesnet1");
   await page.locator('.submit.primary.button').click();
 
