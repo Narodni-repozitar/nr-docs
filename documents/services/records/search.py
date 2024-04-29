@@ -8,6 +8,7 @@ class DocumentsSearchOptions(I18nSearchOptions):
 
     facet_groups = {
         "curator": {
+            "date_issued_histogram": facets.date_histogram,
             "syntheticFields_people": facets.syntheticFields_people,
             "syntheticFields_date": facets.syntheticFields_date,
             "metadata_accessRights": facets.metadata_accessRights,
@@ -21,6 +22,7 @@ class DocumentsSearchOptions(I18nSearchOptions):
             **getattr(I18nSearchOptions, "facet_groups", {}).get("curator", {}),
         },
         "default": {
+            "date_issued_histogram": facets.date_histogram,
             "syntheticFields_people": facets.syntheticFields_people,
             "syntheticFields_date": facets.syntheticFields_date,
             "metadata_accessRights": facets.metadata_accessRights,
@@ -31,12 +33,12 @@ class DocumentsSearchOptions(I18nSearchOptions):
             "syntheticFields_institutions": facets.syntheticFields_institutions,
             "metadata_fundingReferences_funder": facets.metadata_fundingReferences_funder,
             "metadata_fundingReferences_projectID": facets.metadata_fundingReferences_projectID,
-            "metadata_histogram": facets.date_histogram,
             **getattr(I18nSearchOptions, "facet_groups", {}).get("default", {}),
         },
     }
 
     facets = {
+        "date_issued_histogram": facets.date_histogram,
         "metadata_abstract_cs": facets.metadata_abstract_cs,
         "metadata_abstract_en": facets.metadata_abstract_en,
         "metadata_abstract_lang": facets.metadata_abstract_lang,

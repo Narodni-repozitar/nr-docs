@@ -10,9 +10,7 @@ from oarepo_vocabularies.services.facets import (
     HierarchyVocabularyFacet,
     VocabularyFacet,
 )
-from invenio_search.engine import dsl
-from invenio_records_resources.services.records.facets.facets import LabelledFacetMixin
-
+from .date_histogram import DateRangeHistogram
 
 metadata_abstract_cs = TermsFacet(
     field="metadata.abstract.cs.keyword", label=_("metadata/abstract.label")
@@ -505,39 +503,10 @@ syntheticFields_people = TermsFacet(
 )
 
 
-class DateHistogramFacet(LabelledFacetMixin, dsl.DateHistogramFacet):
-    """Terms facet.
-
-    .. code-block:: python
-
-        facets = {
-            'is_published': TermsFacet(
-                field='is_published',
-                label=_('Status'),
-                value_labels={0: _('Unpublished'), 1: _('Published')}
-            ),
-            'languages': TermsFacet(
-                field='metadata.languages.id',
-                label=_('Languages'),
-                value_labels=lambda keys: {k: k} }
-            )
-        }
-    """
-
-
-date_histogram = DateHistogramFacet(
+date_histogram = DateRangeHistogram(
     field="metadata.dateIssued",
     label=_("syntheticFields/date.histogram"),
     calendar_interval="year",
     min_doc_count=0,
+    format="yyyy",
 )
-from datetime import datetime
-
-min_date = "1970-01-01T00:00:00"  # Example: Minimum date
-max_date = datetime.now().isoformat()
-
-# date_range = RangeFacet(
-#     field="metadata.dateIssued",
-#     label=_("syntheticFields/date.range"),
-#     ranges=[("2022-01", "2023-01")],
-# )
