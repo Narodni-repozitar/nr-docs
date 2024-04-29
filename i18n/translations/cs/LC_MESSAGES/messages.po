@@ -2931,9 +2931,6 @@ msgstr "Prostor pro další informace ke zdroji."
 msgid "Financing information"
 msgstr "Informace o financování"
 
-msgid "Files"
-msgstr "Nahrání souboru"
-
 msgid "metadata/contributors/affiliations/ror.help"
 msgstr ""
 
@@ -3221,3 +3218,25 @@ msgstr "Zamítnuta"
 #: /Users/m/w/nrp/nr-docs/common/just_for_translations.py:9
 msgid "Cancelled"
 msgstr "Zrušena"
+
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/community_records/templates/CommunityRecordPage.jinja:2
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/community_records/templates/CommunityRecordPage.jinja:12
+msgid "Community"
+msgstr "Komunita"
+
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/community_records/templates/CommunityRecordPage.jinja:17
+msgid "Community pages are a planned feature for 0.7.0 release."
+msgstr "Stránky komunity jsou plánovanou funkcí pro vydání 0.7.0."
+
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/community_records/templates/CommunityRecordPage.jinja:19
+msgid "Back"
+msgstr "Zpět"
+
+msgid "Write the version (first, second ...)."
+msgstr "Zapište verzi (první, druhá…)."
+
+msgid "Version"
+msgstr "Verze"
+
+msgid "Files upload"
+msgstr "Nahrání souboru"

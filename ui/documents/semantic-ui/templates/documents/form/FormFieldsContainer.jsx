@@ -404,7 +404,9 @@ const FormFieldsContainer = () => {
         <AccordionField
           includesPaths={["files.enabled"]}
           active
-          label={<label htmlFor="files.enabled">{i18next.t("Files")}</label>}
+          label={
+            <label htmlFor="files.enabled">{i18next.t("Files upload")}</label>
+          }
         >
           <Overridable id="NrDocs.Deposit.FileUploader.container">
             <FileUploader recordFiles={recordFiles} />
