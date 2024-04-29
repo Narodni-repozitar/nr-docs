@@ -506,7 +506,8 @@ syntheticFields_people = TermsFacet(
 date_histogram = DateRangeHistogram(
     field="metadata.dateIssued",
     label=_("syntheticFields/date.histogram"),
-    calendar_interval="year",
-    min_doc_count=0,
-    format="yyyy",
+    buckets=100,
+    # calendar_interval="year",
+    # min_doc_count=0,
+    # format="yyyy",
 )

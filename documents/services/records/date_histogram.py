@@ -3,6 +3,8 @@ from invenio_records_resources.services.records.facets.facets import LabelledFac
 
 
 class DateRangeHistogram(LabelledFacetMixin, dsl.DateHistogramFacet):
+    agg_type = "auto_date_histogram"
+
     def get_value_filter(self, filter_value):
         if "/" in filter_value:
             start, end = filter_value.split("/")
