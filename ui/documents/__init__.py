@@ -21,7 +21,7 @@ class DocumentsResourceConfig(RecordsUIResourceConfig):
         FilesComponent,
     ]
     
-    search_component = "ResultsListItem.jsx"
+    search_component = "documents/search/ResultsListItem.jsx"
     application_id = "documents"
 
     templates = {
