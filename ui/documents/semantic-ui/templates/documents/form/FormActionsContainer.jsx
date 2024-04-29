@@ -1,12 +1,12 @@
 import React from "react";
 import { Card, Grid } from "semantic-ui-react";
 import {
+  PublishButton,
   PreviewButton,
   SaveButton,
   DeleteButton,
   ValidateButton,
   useFormConfig,
-  PublishButton,
 } from "@js/oarepo_ui";
 import { TextField, FieldLabel } from "react-invenio-forms";
 import { i18next } from "@translations/i18next";

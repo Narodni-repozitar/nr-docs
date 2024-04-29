@@ -20,6 +20,7 @@ import {
   RelatedItemsField,
   objectIdentifiersSchema,
   FileUploader,
+  LicenseField,
 } from "@nr/forms";
 import Overridable from "react-overridable";
 import { i18next } from "@translations/i18next";
@@ -166,7 +167,6 @@ const FormFieldsContainer = () => {
             <LocalVocabularySelectField
               optimized
               fieldPath="metadata.accessRights"
-              required
               clearable
               label={
                 <FieldLabel
@@ -185,19 +185,26 @@ const FormFieldsContainer = () => {
             id="NrDocs.Deposit.LicenseField.container"
             fieldPath="metadata.rights"
           >
-            <LocalVocabularySelectField
-              optimized
+            <LicenseField
+              searchConfig={{
+                searchApi: {
+                  axios: {
+                    headers: {
+                      Accept: "application/vnd.inveniordm.v1+json",
+                    },
+                    url: "/api/vocabularies/rights",
+                  },
+                },
+                initialQueryState: {
+                  size: 25,
+                  page: 1,
+                  sortBy: "bestmatch",
+                  filters: [["tags", ""]],
+                },
+              }}
               fieldPath="metadata.rights"
-              label={
-                <FieldLabel
-                  htmlFor={"metadata.rights"}
-                  icon="drivers license"
-                  label={i18next.t("Licenses")}
-                />
-              }
-              placeholder={i18next.t("Choose licenses")}
-              clearable
-              optionsListName="rights"
+              label={i18next.t("Licenses")}
+              labelIcon="drivers license"
               helpText={i18next.t(
                 "If a Creative Commons license is associated with the resource, select the appropriate license option from the menu. We recommend choosing the latest versions, namely 3.0 Czech and 4.0 International."
               )}
