@@ -10,7 +10,7 @@ flask-babelex==0.9.4
 frozendict==2.4.2
 isort==5.13.2
 jinja2-simple-tags==0.6.1
-jinjax==0.34
+jinjax==0.35
 json5==0.9.25
 langcodes==3.4.0
 language-data==1.2.0
@@ -20,7 +20,7 @@ libcst==1.3.1
 marisa-trie==1.1.0
 marshmallow-union==0.1.15.post1
 mypy-extensions==1.0.0
-nr-metadata==2.0.21
+nr-metadata==2.0.22
 nr-oaipmh-harvesters==1.0.13
 nr-vocabularies==2.0.12
 oarepo-dashboard==1.0.5
@@ -28,17 +28,17 @@ oarepo-global-search==1.0.4
 oarepo-model-builder==4.0.84
 oarepo-oai-pmh-harvester==4.0.45
 oarepo-published-service==1.0.3
-oarepo-requests==1.1.15
+oarepo-requests==1.1.16
 oarepo-runtime==1.5.30
-oarepo-ui==5.1.26
-oarepo-vocabularies==2.0.86
+oarepo-ui==5.1.27
+oarepo-vocabularies==2.0.87
 openpyxl==3.1.2
 pathspec==0.12.1
 pyflakes==3.2.0
 python-dotenv==1.0.1
-rapidfuzz==3.8.1
+rapidfuzz==3.9.0
 sickle==0.7.0
 tomli==2.0.1; python_version < "3.11"
 tomlkit==0.12.4
-tqdm==4.66.2
+tqdm==4.66.4
 whitenoise==6.6.0

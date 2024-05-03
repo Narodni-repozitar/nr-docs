@@ -1,7 +1,7 @@
 from oarepo_requests.resolvers.ui import (
-    draft_record_entity_reference_ui_resolver,
-    record_entity_reference_ui_resolver,
-    user_entity_reference_ui_resolver,
+    RecordEntityDraftReferenceUIResolver,
+    UserEntityReferenceUIResolver,
+    OARepoUIResolver,
 )
 from oarepo_requests.resources.draft.resource import DraftRecordRequestsResource
 from oarepo_requests.services.draft.service import DraftRecordRequestsService
@@ -81,9 +81,9 @@ REQUESTS_ENTITY_RESOLVERS = [
 
 
 ENTITY_REFERENCE_UI_RESOLVERS = {
-    "user": user_entity_reference_ui_resolver,
-    "documents": record_entity_reference_ui_resolver,
-    "documents_draft": draft_record_entity_reference_ui_resolver,
+    "user": OARepoUIResolver,
+    "documents": UserEntityReferenceUIResolver,
+    "documents_draft": RecordEntityDraftReferenceUIResolver,
 }
 
 
