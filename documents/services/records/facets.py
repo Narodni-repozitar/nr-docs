@@ -10,7 +10,10 @@ from oarepo_vocabularies.services.facets import (
     HierarchyVocabularyFacet,
     VocabularyFacet,
 )
-from .date_histogram import DateRangeHistogram
+from oarepo_runtime.services.facets.max_facet import MaxFacet
+from oarepo_runtime.services.facets.min_facet import MinFacet
+from oarepo_runtime.services.facets.date_range_histogram import DateRangeHistogram
+
 
 metadata_abstract_cs = TermsFacet(
     field="metadata.abstract.cs.keyword", label=_("metadata/abstract.label")
@@ -507,9 +510,12 @@ date_histogram = DateRangeHistogram(
     field="metadata.dateIssued",
     label=_("metadata/dateIssued.label"),
     buckets=100,
-    # calendar_interval="year",
+    minimum_interval="day",
     # TODO: Resolve min doc count issue in dsl histogram (auto_date_histogram)
     # does not take this variable
-    # min_doc_count=0,
-    # format="yyyy",
 )
+
+
+date_issued_min = MinFacet(label=_("Date issued minimum"), field="metadata.dateIssued")
+
+date_issued_max = MaxFacet(label=_("Date issued maximum"), field="metadata.dateIssued")

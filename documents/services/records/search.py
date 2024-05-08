@@ -8,6 +8,8 @@ class DocumentsSearchOptions(I18nSearchOptions):
 
     facet_groups = {
         "curator": {
+            "date_issued_min": facets.date_issued_min,
+            "date_issued_max": facets.date_issued_max,
             "date_issued_histogram": facets.date_histogram,
             "syntheticFields_people": facets.syntheticFields_people,
             "syntheticFields_date": facets.syntheticFields_date,
@@ -22,6 +24,8 @@ class DocumentsSearchOptions(I18nSearchOptions):
             **getattr(I18nSearchOptions, "facet_groups", {}).get("curator", {}),
         },
         "default": {
+            "date_issued_min": facets.date_issued_min,
+            "date_issued_max": facets.date_issued_max,
             "date_issued_histogram": facets.date_histogram,
             "syntheticFields_people": facets.syntheticFields_people,
             "syntheticFields_date": facets.syntheticFields_date,
