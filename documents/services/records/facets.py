@@ -498,3 +498,8 @@ syntheticFields_keywords = TermsFacet(
 syntheticFields_people = TermsFacet(
     field="syntheticFields.people", label=_("syntheticFields/people.label")
 )
+
+
+record_status = TermsFacet(field="record_status", label=_("record_status"))
+
+has_draft = TermsFacet(field="has_draft", label=_("has_draft"))

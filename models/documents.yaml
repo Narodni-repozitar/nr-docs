@@ -114,6 +114,17 @@ record:
             filter=lambda x: len(x) == 10
         )
 
+
+  mapping:
+    template:
+      settings:
+        index:
+          query:
+            default_field:
+            - "title_search.*"
+            - "creator_search.*"
+            - "abstract_search.*"
+
 runtime-dependencies:
   nr-metadata: 2.0.0
   nr-oaipmh-harvesters: 1.0.0
