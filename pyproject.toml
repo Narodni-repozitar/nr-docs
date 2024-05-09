@@ -45,6 +45,7 @@ ui_community_records = "ui.community_records:create_blueprint"
 translations = "i18n"
 documents = "documents"
 documents_file = "documents"
+transifex = "common.transifex"
 
 [project.entry-points."invenio_base.api_apps"]
 documents = "documents.ext:DocumentsExt"
