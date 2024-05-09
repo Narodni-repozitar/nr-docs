@@ -56,7 +56,7 @@ def init_addons_documents_published_service(state):
     """Init app."""
     app = state.app
     ext = app.extensions["documents"]
-
+    
     # register service
     sregistry = app.extensions["invenio-records-resources"].registry
     sregistry.register(

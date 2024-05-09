@@ -192,7 +192,7 @@ export const ResultsListItemComponent = ({
 
   const publicationDate = _get(
     result,
-    "metadata.dateAvailable",
+    "metadata.dateIssued",
     i18next.t("No publication date found.")
   );
   const resourceType = _get(result, "metadata.resourceType");

@@ -1,6 +1,8 @@
 """Facet definitions."""
 
-from invenio_records_resources.services.records.facets import TermsFacet
+from invenio_records_resources.services.records.facets import (
+    TermsFacet,
+)
 from oarepo_runtime.i18n import lazy_gettext as _
 from oarepo_runtime.services.facets.date import DateTimeFacet
 from oarepo_runtime.services.facets.nested_facet import NestedLabeledFacet
@@ -8,6 +10,10 @@ from oarepo_vocabularies.services.facets import (
     HierarchyVocabularyFacet,
     VocabularyFacet,
 )
+from oarepo_runtime.services.facets.max_facet import MaxFacet
+from oarepo_runtime.services.facets.min_facet import MinFacet
+from oarepo_runtime.services.facets.date_range_histogram import DateRangeHistogram
+
 
 metadata_abstract_cs = TermsFacet(
     field="metadata.abstract.cs.keyword", label=_("metadata/abstract.label")
@@ -498,3 +504,18 @@ syntheticFields_keywords = TermsFacet(
 syntheticFields_people = TermsFacet(
     field="syntheticFields.people", label=_("syntheticFields/people.label")
 )
+
+
+date_histogram = DateRangeHistogram(
+    field="metadata.dateIssued",
+    label=_("metadata/dateIssued.label"),
+    buckets=100,
+    minimum_interval="day",
+    # TODO: Resolve min doc count issue in dsl histogram (auto_date_histogram)
+    # does not take this variable
+)
+
+
+date_issued_min = MinFacet(label=_("Date issued minimum"), field="metadata.dateIssued")
+
+date_issued_max = MaxFacet(label=_("Date issued maximum"), field="metadata.dateIssued")
