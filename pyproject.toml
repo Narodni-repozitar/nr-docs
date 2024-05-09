@@ -11,6 +11,7 @@ dependencies = [
     "nr-metadata>=2.0.0",
     "nr-oaipmh-harvesters>=1.0.0",
     "nr-vocabularies>=2.0.8",
+    "oarepo-dashboard>=1.0.0",
     "oarepo-global-search>=1.0.1",
     "oarepo-published-service>=1.0.0",
     "oarepo-published-service>=1.0.2",
@@ -20,7 +21,6 @@ dependencies = [
     "oarepo-vocabularies",
     "oarepo[s3]==12.*",
     "python-dotenv",
-    "oarepo-dashboard>=1.0.0",
 ]
 requires-python = ">=3.10,<3.11"
 
@@ -85,6 +85,8 @@ documents_file = "documents.models:ui.json"
 delete_record = "oarepo_requests.types.delete_record:DeleteRecordRequestType"
 edit_record = "oarepo_requests.types.edit_record:EditRecordRequestType"
 publish_draft = "oarepo_requests.types.publish_draft:PublishDraftRequestType"
+documents_delete_record = "documents.records.requests.delete_record.types:DeleteRecordRequestType"
+documents_edit_record = "documents.records.requests.edit_record.types:EditRecordRequestType"
 
 [project.optional-dependencies]
 tests = [
