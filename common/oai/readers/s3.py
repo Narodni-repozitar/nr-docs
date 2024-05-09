@@ -62,7 +62,7 @@ class S3Reader(BaseReader):
             aws_secret_access_key=os.environ["NUSL_S3_SECRET_KEY"],
         )
         s3_bucket_name = os.environ.get("NUSL_S3_BUCKET", "nr-repo-docs-harvest")
-        harvest_name = os.environ.get("NUSL_S3_HARVEST_NAME", "nusl-harvest-02")
+        harvest_name = os.environ.get("NUSL_S3_HARVEST_NAME", "nusl-harvest-03")
 
         paginator = s3_client.get_paginator("list_objects_v2")
         pages = paginator.paginate(Bucket=s3_bucket_name, Prefix=harvest_name)
