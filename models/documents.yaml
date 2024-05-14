@@ -14,11 +14,13 @@ plugins:
   - oarepo-model-builder-files
   - oarepo-model-builder-cf
   - oarepo-model-builder-polymorphic
+  - oarepo-model-builder-communities
 profiles:
 - record
 - draft
 - files
 - draft_files
+- record_communities
 record:
   extend: nr-documents#DocumentModel
   use:
@@ -33,8 +35,8 @@ record:
       base-classes: [ oarepo_ui.resources.file_resource.S3RedirectFileResource ]
   permissions:
     presets:
-#    - communities
-    - authenticated
+    - community
+#    - authenticated
   files:
     resource:
       base-classes: [ oarepo_ui.resources.file_resource.S3RedirectFileResource ]
@@ -124,6 +126,10 @@ record:
             - "title_search.*"
             - "creator_search.*"
             - "abstract_search.*"
+
+  record-communities:
+    permissions:
+      presets: [ "community" ]
 
 runtime-dependencies:
   nr-metadata: 2.0.0

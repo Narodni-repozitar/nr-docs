@@ -4,16 +4,40 @@ draft:
       publish-draft:
         base-classes:
         - oarepo_requests.types.publish_draft.PublishDraftRequestType
-        allowed-receiver-ref-types: [ "user", "group" ]
+        allowed-receiver-ref-types: [ "user", "group", "oarepo_community" ]
+
+      secondary-community-submission:
+        base-classes:
+          - oarepo_communities.requests.submission_secondary.SecondaryCommunitySubmissionRequestType
+
+      community-migration:
+        base-classes:
+          - oarepo_communities.requests.migration.CommunityMigrationRequestType
+
+      remove_secondary_community:
+        base-classes:
+          - oarepo_communities.requests.remove_secondary.RemoveSecondaryRequestType
 
 requests:
   types:
-    delete-record:
-      base-classes:
-      - oarepo_requests.types.delete_record.DeleteRecordRequestType
-      allowed-receiver-ref-types: [ "user", "group" ]
-
     edit-record:
       base-classes:
       - oarepo_requests.types.edit_record.EditRecordRequestType
-      allowed-receiver-ref-types: [ "user", "group" ]
+      allowed-receiver-ref-types: [ "user", "group", "oarepo_community" ]
+
+    delete-record:
+      base-classes:
+        - oarepo_communities.requests.community_delete.CommunityDeleteRecordRequestType
+    allowed-receiver-ref-types: [ "user", "group", "oarepo_community" ]
+
+    secondary-community-submission:
+      base-classes:
+      - oarepo_communities.requests.submission_secondary.SecondaryCommunitySubmissionRequestType
+
+    community-migration:
+      base-classes:
+      - oarepo_communities.requests.migration.CommunityMigrationRequestType
+
+    remove_secondary_community:
+      base-classes:
+      - oarepo_communities.requests.remove_secondary.RemoveSecondaryRequestType
