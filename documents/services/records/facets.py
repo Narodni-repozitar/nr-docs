@@ -509,10 +509,10 @@ syntheticFields_people = TermsFacet(
 date_histogram = DateRangeHistogram(
     field="metadata.dateIssued",
     label=_("metadata/dateIssued.label"),
-    buckets=100,
+    buckets=15,
     minimum_interval="day",
-    # TODO: Resolve min doc count issue in dsl histogram (auto_date_histogram)
-    # does not take this variable
+    format="yyyy-MM-dd",
+    min_doc_count=1,
 )
 
 
