@@ -5,7 +5,7 @@
 groups = ["default"]
 strategy = ["cross_platform", "inherit_metadata"]
 lock_version = "4.4.1"
-content_hash = "sha256:56043516f3f57507494161be5d2164ac5211395c3b4afd3f88cbfdca41166a47"
+content_hash = "sha256:7d232b47d10d9eb8f92d5731511ca2409acf04da8a343d6954faa7bfdb3ae730"
 
 [[package]]
 name = "alembic"
@@ -3148,7 +3148,7 @@ files = [
 
 [[package]]
 name = "nr-metadata"
-version = "2.0.22"
+version = "2.0.23"
 requires_python = ">=3.9"
 summary = "\"Generated metadata files for the Czech National Repository\""
 groups = ["default"]
@@ -3158,8 +3158,8 @@ dependencies = [
     "oarepo-vocabularies>=2.0.0",
 ]
 files = [
-    {file = "nr_metadata-2.0.22-py2.py3-none-any.whl", hash = "sha256:67021ce33b4693ee05d97f65c99e7d36c71741e99d3ee1c653d8e3187b42a8cc"},
-    {file = "nr_metadata-2.0.22.tar.gz", hash = "sha256:d8b34579b2252170555fb833251d5a731af2d26bee4ffdbfb5dfdead5a727be3"},
+    {file = "nr_metadata-2.0.23-py2.py3-none-any.whl", hash = "sha256:22aa428e68cae44ef0d69738fb1275a20f162d0c68ec51e57bdcc249aacf205d"},
+    {file = "nr_metadata-2.0.23.tar.gz", hash = "sha256:141a30f604f1a088085965602a225d58cc4adbac9ab208659bcb1661ea8da60e"},
 ]
 
 [[package]]
@@ -3461,7 +3461,7 @@ files = [
 
 [[package]]
 name = "oarepo-global-search"
-version = "1.0.5"
+version = "1.0.7"
 requires_python = ">=3.10"
 summary = "\"A model builder plugin for global search\""
 groups = ["default"]
@@ -3471,8 +3471,8 @@ dependencies = [
     "oarepo-ui",
 ]
 files = [
-    {file = "oarepo_global_search-1.0.5-py2.py3-none-any.whl", hash = "sha256:43722e19ce292f9cd4403e383a348d0ee720b7c083086528fe8b7cf15c8ed60f"},
-    {file = "oarepo_global_search-1.0.5.tar.gz", hash = "sha256:5697a19ff0f799b4a41cf232de5a86e594de5fd1e0b19bb419121e4a0b739e64"},
+    {file = "oarepo_global_search-1.0.7-py2.py3-none-any.whl", hash = "sha256:6ee023355595fc34d38d6aafcf9eb11a6ffdffaf3a9ef2d49014eb025adcf6b3"},
+    {file = "oarepo_global_search-1.0.7.tar.gz", hash = "sha256:fc9fb3f54cd6c6c35e4dc54db95de0fee1e6768798cb1db5ecd9ad2a103e25d5"},
 ]
 
 [[package]]
@@ -3570,7 +3570,7 @@ files = [
 
 [[package]]
 name = "oarepo-ui"
-version = "5.1.28"
+version = "5.1.29"
 requires_python = ">=3.10"
 summary = "UI module for invenio 3.5+"
 groups = ["default"]
@@ -3582,8 +3582,8 @@ dependencies = [
     "oarepo-runtime",
 ]
 files = [
-    {file = "oarepo_ui-5.1.28-py2.py3-none-any.whl", hash = "sha256:a89f2536f9e3efbaf724827360718cc2bae0fa12db94328b3b1fb4eae0616a21"},
-    {file = "oarepo_ui-5.1.28.tar.gz", hash = "sha256:32ae0aa6e3bb955d8e1da8225b18e3f44b8b1b511b3d332f1fd0a39885c37aed"},
+    {file = "oarepo_ui-5.1.29-py2.py3-none-any.whl", hash = "sha256:4178226baf7ff0038f325702df683645bbd296bab40dd58928fcf38234a168ed"},
+    {file = "oarepo_ui-5.1.29.tar.gz", hash = "sha256:1c99d304ece6f4dfab871b5ee87b78e303bc703dd7450c2abfb9646353915eb8"},
 ]
 
 [[package]]
