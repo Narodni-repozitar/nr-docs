@@ -134,6 +134,8 @@ class DocumentsSearchOptions(I18nSearchOptions):
         "syntheticFields_keywords": facets.syntheticFields_keywords,
         "syntheticFields_people": facets.syntheticFields_people,
         **getattr(I18nSearchOptions, "facets", {}),
+        "record_status": facets.record_status,
+        "has_draft": facets.has_draft,
     }
 
     sort_options = ICUSortOptions("documents")
