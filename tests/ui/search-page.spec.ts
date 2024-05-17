@@ -13,9 +13,9 @@ test.beforeAll(async ({ playwright }) => {
   });
 });
 
-test.afterAll(async ({}) => {
-  await apiContext.dispose();
-});
+test.afterAll(async () => {
+    await apiContext.dispose();
+  });
 
 test("search published", async ({ page, baseURL }) => {
   await page.goto("/docs");

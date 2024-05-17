@@ -12,7 +12,7 @@ test.beforeAll(async ({ playwright }) => {
   });
 });
 
-test.afterAll(async ({}) => {
+test.afterAll(async () => {
   await apiContext.dispose();
 });
 
@@ -33,7 +33,7 @@ test("redirection to title page", async ({ page, baseURL }) => {
 
 test("sign out", async ({ page, baseURL }) => {
   await page.goto("/");
-  await page.locator('#invenio-burger-menu-icon').click();
+  await page.locator("#invenio-burger-menu-icon").click();
   await page.locator(".tablet .item:has(.sign-out.icon)").click();
   await expect(page).toHaveURL(`${baseURL}`);
 });

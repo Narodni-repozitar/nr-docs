@@ -13,7 +13,7 @@ test.beforeAll(async ({ playwright }) => {
   });
 });
 
-test.afterAll(async ({}) => {
+test.afterAll(async () => {
   await apiContext.dispose();
 });
 
@@ -21,7 +21,7 @@ test("successful form submit", async ({ page, baseURL, request }) => {
   try {
     await page.goto(`/communities/new`);
 
-    const rand = Math.random().toString().substr(2, 6);
+    const rand = Math.random().toString().substring(2, 8);
     // title fill
     await page.locator(`[name='metadata.title']`).fill(rand);
 
@@ -44,7 +44,6 @@ test("successful form submit", async ({ page, baseURL, request }) => {
     await expect(page.locator(".content .negative.message")).toBeVisible();
 
     await page.locator(".actions button:has(.cancel.icon)").click();
-
 
     await page.goto(`/communities`);
     await page

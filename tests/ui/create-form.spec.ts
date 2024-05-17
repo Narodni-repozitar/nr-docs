@@ -12,10 +12,9 @@ test.beforeAll(async ({ playwright }) => {
   });
 });
 
-test.afterAll(async ({}) => {
+test.afterAll(async () => {
   await apiContext.dispose();
 });
-
 
 test("successful form submit", async ({ page }) => {
   try {
@@ -133,7 +132,9 @@ test("file upload", async ({ page }) => {
     await page.locator(".uppy-StatusBar-actionBtn--done").click();
     await page.locator(`[name='save']`).click();
 
-    await expect(page.locator('.ui.green.positive.form-feedback')).toBeVisible()
+    await expect(
+      page.locator(".ui.green.positive.form-feedback")
+    ).toBeVisible();
   } catch (error) {
     console.error("Error:", error);
     throw error;

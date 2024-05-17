@@ -13,10 +13,9 @@ test.beforeAll(async ({ playwright }) => {
   });
 });
 
-test.afterAll(async ({}) => {
+test.afterAll(async () => {
   await apiContext.dispose();
 });
-
 test("search draft", async ({ page, baseURL }) => {
   await page.goto("/me/records/");
   await page.locator(`input[type='text']`).last().fill("test");
