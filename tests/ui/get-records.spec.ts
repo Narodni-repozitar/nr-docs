@@ -14,16 +14,17 @@ test.beforeAll(async ({ playwright }) => {
 });
 
 test.afterAll(async () => {
-    await apiContext.dispose();
-  });
+  await apiContext.dispose();
+});
 
-test("search published", async ({ page, baseURL }) => {
-  await page.goto("/docs");
-  await page.locator("#invenio-burger-menu-icon").click();
-  await page.locator(`.menu input[type='text']`).last().fill("test");
-  await page.locator(`.menu input[type='text']`).last().press("Enter");
+test("get records", async ({ page, baseURL }) => {
+  await page.goto("/");
+  const pagenav = page.waitForNavigation({ waitUntil: "load" });
+
+  await page.locator(`button:has(.search.icon)`).click();
+  await pagenav;
   await expect(page).toHaveURL(
-    `${baseURL}docs/?q=test&l=list&p=1&s=10&sort=bestmatch`
+    `${baseURL}docs/?q=&l=list&p=1&s=10&sort=newest`
   );
 
   const response = await page.evaluate(() =>
@@ -31,6 +32,5 @@ test("search published", async ({ page, baseURL }) => {
       (res) => res.json()
     )
   );
-  expect(response.hits.total).toBe(1);
+  expect(response.hits.total).toBe(1); // put here required testing amount
 });
-

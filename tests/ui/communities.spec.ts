@@ -1,5 +1,5 @@
 import { test, expect } from "playwright/test";
-const callAPI = require("./api-call.spec.ts");
+import { callAPI } from "./api-call.js";
 
 let apiContext;
 
@@ -63,6 +63,7 @@ test("successful form submit", async ({ page, baseURL, request }) => {
     const checkbox = await page.locator(
       '.left.sidebar input[type="checkbox"][value="public"]'
     );
+    await checkbox.scrollIntoViewIfNeeded();
     await checkbox.click({ force: true });
 
     // check if is checked
@@ -80,6 +81,7 @@ test("successful form submit", async ({ page, baseURL, request }) => {
     await expect(page).toHaveURL(/visibility%3Apublic/);
 
     await page.locator(".tablet.community-item  a:has(.edit.icon)").click();
+    await pagenav;
     expect(page.url().includes(`/communities/${rand}/settings`)).toBeTruthy();
 
     const response = await callAPI(baseURL, request, false, url);

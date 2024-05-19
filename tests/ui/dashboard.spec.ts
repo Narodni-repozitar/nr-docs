@@ -1,5 +1,5 @@
 import { test, expect } from "playwright/test";
-const callAPI = require("./api-call.spec.ts");
+import { callAPI } from "./api-call.js";
 
 let apiContext;
 

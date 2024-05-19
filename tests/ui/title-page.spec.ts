@@ -19,7 +19,11 @@ test.afterAll(async () => {
 test("search and check URL", async ({ page, baseURL }) => {
   await page.goto("/");
   await page.locator(`input[name='q']`).fill("test");
+  const pagenav = page.waitForNavigation({ waitUntil: "load" });
+
   await page.locator(`input[name='q']`).press("Enter");
+  await pagenav;
+ 
   await expect(page).toHaveURL(
     `${baseURL}docs/?q=test&l=list&p=1&s=10&sort=bestmatch`
   );
