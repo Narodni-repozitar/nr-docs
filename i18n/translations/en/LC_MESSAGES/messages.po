@@ -438,7 +438,7 @@ msgstr "Events"
 
 #: sites/nr-docs/site/nr_docs/translations/jinjax_messages.jinja:14
 msgid "metadata/externalLocation.label"
-msgstr ""
+msgstr "External location"
 
 #: sites/nr-docs/site/nr_docs/translations/jinjax_messages.jinja:15
 msgid "metadata/fundingReferences.label"

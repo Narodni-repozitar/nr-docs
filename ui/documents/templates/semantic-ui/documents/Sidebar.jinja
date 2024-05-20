@@ -1,4 +1,5 @@
 {#def metadata, record #}
+
 {% if record.links.edit_html%}
   <section class="ui segment">
     <SidebarLink icon="pencil" href={record.links.edit_html}>
@@ -6,27 +7,11 @@
     </SidebarLink>
   </section>
 {% endif %}
-
 <section aria-label='{{ _("Record request list") }}'>
   <RecordRequests record={record} />
 </section>
+<IdentifiersAndLinks originalRecordUrl={metadata.originalRecord} objectIdentifiers={metadata.objectIdentifiers}/>
 
-<section aria-label="{{_('metadata/objectIdentifiers.label')}}" class="ui segment">
-  <h2 class="ui small header detail-sidebar-header">{{_('metadata/objectIdentifiers.label')}}</h2>
-  <div class="ui link list">
-    <div class="item">
-      <i class="external alternate icon"></i>
-      <div class="content">
-      {% set _data = {
-           "href": metadata.originalRecord,
-          "title": _('metadata/originalRecord.label'),
-          "label": _('metadata/originalRecord.label')
-} %}
-        <URL className="link" data = {_data}></URL>
-    </div>
-    </div>
-  </div>
-</section>
 <section id="export-record" aria-label="{{_('Export')}}" class="ui segment exports">
   <h2 class="ui small header detail-sidebar-header">{{_('Export')}}</h2>
   <div id="recordExportDownload">
@@ -73,9 +58,4 @@
     </div>
   </div>
 </section>
-
-<section aria-label="API Links" class="ui segment">
-  <h2 class="ui small header detail-sidebar-header">{{_('API')}} {{_('Links')}}</h2>
-    <SidebarApiLinks links={record.links}></SidebarApiLinks>
-
-</section>
+<SidebarApiLinks links={record.links}></SidebarApiLinks>
