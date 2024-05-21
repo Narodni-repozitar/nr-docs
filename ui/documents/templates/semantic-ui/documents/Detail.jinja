@@ -18,9 +18,9 @@
 {%- block javascript %}
 {{ super() }}
 {{ webpack['oarepo_requests_ui_record_requests.js']}}
-<script>
-    $('.ui.accordion').accordion()
-</script>
-
+{{ webpack['copy_to_clipboard.js']}}
+<script> 
+    $(".vocabulary-definition-link").popup(); 
+</script> 
 
 {%- endblock %}
