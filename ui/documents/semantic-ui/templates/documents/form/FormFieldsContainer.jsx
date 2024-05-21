@@ -9,8 +9,7 @@ import { LocalVocabularySelectField } from "@js/oarepo_vocabularies";
 import {
   AccordionField,
   FieldLabel,
-  TextField,
-  RichEditor,
+  TextField
 } from "react-invenio-forms";
 import {
   StringArrayField,
@@ -339,29 +338,12 @@ const FormFieldsContainer = () => {
               fieldPath="metadata.abstract"
               rich={true}
               editorConfig={{
+                toolbar:
+                "bold italic | bullist numlist | outdent indent | undo redo",
                 valid_elements: "strong,b,div,br,p,i,li",
                 invalid_elements: "style,script",
               }}
-              editor={
-                <RichEditor
-                  value={values.metadata.abstract[0]}
-                  optimized
-                  editorConfig={{
-                    toolbar:
-                      "bold italic | bullist numlist | outdent indent | undo redo",
-                  }}
-                  onBlur={async (event, editor) => {
-                    const cleanedContent = await convertHTMLToTags(
-                      editor.getContent()
-                    );
-                    const updatedAbstracts = [...values.metadata.abstract];
-                    updatedAbstracts[0] = cleanedContent;
-
-                    setFieldValue("metadata.abstract", updatedAbstracts);
-                    setFieldTouched("metadata.abstract", true);
-                  }}
-                />
-              }
+              
               required
               helpText={i18next.t(
                 "Choose abstract language and write down the text.Abstract can be provided in multiple languages."
