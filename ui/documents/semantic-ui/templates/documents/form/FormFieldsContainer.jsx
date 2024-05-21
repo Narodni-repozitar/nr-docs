@@ -6,7 +6,12 @@ import {
   EDTFSingleDatePicker,
 } from "@js/oarepo_ui";
 import { LocalVocabularySelectField } from "@js/oarepo_vocabularies";
-import { AccordionField, FieldLabel, TextField } from "react-invenio-forms";
+import {
+  AccordionField,
+  FieldLabel,
+  TextField,
+  RichEditor,
+} from "react-invenio-forms";
 import {
   StringArrayField,
   AdditionalTitlesField,
@@ -24,6 +29,8 @@ import {
 import Overridable from "react-overridable";
 import { i18next } from "@translations/i18next";
 import _has from "lodash/has";
+import { useFormikContext } from "formik";
+import { decode } from "html-entities";
 
 const FormFieldsContainer = () => {
   const { formConfig, files: recordFiles } = useFormConfig();
@@ -32,6 +39,9 @@ const FormFieldsContainer = () => {
     (options) => options.filter((option) => option.props?.submission),
     []
   );
+
+  const { values, setFieldValue, setFieldTouched } = useFormikContext();
+
   const convertHTMLToTags = (htmlString) => {
     const regex = /<(?!\/?(strong|b|div|br|p|i|li)\b)[^>]*>[^<]*<\/.*?>/gi;
     const decodedString = decode(htmlString);
@@ -39,7 +49,7 @@ const FormFieldsContainer = () => {
     const noTags = cleanedContent.replace(/<[^>]*>?/gm, "");
     return noTags;
   };
-  
+
   return (
     <React.Fragment>
       <Overridable id="NrDocs.Deposit.AccordionFieldBasicInformation.container">
@@ -325,6 +335,26 @@ const FormFieldsContainer = () => {
                 valid_elements: "strong,b,div,br,p,i,li",
                 invalid_elements: "style,script",
               }}
+              editor={
+                <RichEditor
+                  value={values.metadata.abstract[0]}
+                  optimized
+                  editorConfig={{
+                    toolbar:
+                      "bold italic | bullist numlist | outdent indent | undo redo",
+                  }}
+                  onBlur={async (event, editor) => {
+                    const cleanedContent = await convertHTMLToTags(
+                      editor.getContent()
+                    );
+                    const updatedAbstracts = [...values.metadata.abstract];
+                    updatedAbstracts[0] = cleanedContent;
+
+                    setFieldValue("metadata.abstract", updatedAbstracts);
+                    setFieldTouched("metadata.abstract", true);
+                  }}
+                />
+              }
               required
               helpText={i18next.t(
                 "Choose abstract language and write down the text.Abstract can be provided in multiple languages."
