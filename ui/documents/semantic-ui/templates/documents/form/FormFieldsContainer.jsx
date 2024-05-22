@@ -6,11 +6,7 @@ import {
   EDTFSingleDatePicker,
 } from "@js/oarepo_ui";
 import { LocalVocabularySelectField } from "@js/oarepo_vocabularies";
-import {
-  AccordionField,
-  FieldLabel,
-  TextField
-} from "react-invenio-forms";
+import { AccordionField, FieldLabel, TextField } from "react-invenio-forms";
 import {
   StringArrayField,
   AdditionalTitlesField,
@@ -29,8 +25,8 @@ import {
 import Overridable from "react-overridable";
 import { i18next } from "@translations/i18next";
 import _has from "lodash/has";
-import { useFormikContext } from "formik";
-import { decode } from "html-entities";
+import { useFormikContext, getIn } from "formik";
+import { sanitizeInput } from "@js/oarepo_ui";
 
 const FormFieldsContainer = () => {
   const { formConfig, files: recordFiles } = useFormConfig();
@@ -41,14 +37,6 @@ const FormFieldsContainer = () => {
   );
 
   const { values, setFieldValue, setFieldTouched } = useFormikContext();
-
-  const convertHTMLToTags = (htmlString) => {
-    const regex = /<(?!\/?(strong|b|div|br|p|i|li)\b)[^>]*>[^<]*<\/.*?>/gi;
-    const decodedString = decode(htmlString);
-    const cleanedContent = decodedString.replace(regex, "");
-    const noTags = cleanedContent.replace(/<[^>]*>?/gm, "");
-    return noTags;
-  };
 
   return (
     <React.Fragment>
@@ -85,6 +73,13 @@ const FormFieldsContainer = () => {
                   label={i18next.t("Title")}
                 />
               }
+              onBlur={() => {
+                const cleanedContent = sanitizeInput(
+                  getIn(values, "metadata.title")
+                );
+                setFieldValue("metadata.title", cleanedContent);
+                setFieldTouched("metadata.title", true);
+              }}
             />
           </Overridable>
           <Overridable
@@ -339,11 +334,9 @@ const FormFieldsContainer = () => {
               rich={true}
               editorConfig={{
                 toolbar:
-                "bold italic | bullist numlist | outdent indent | undo redo",
+                  "bold italic | bullist numlist | outdent indent | undo redo",
                 valid_elements: "strong,b,div,br,p,i,li",
-                invalid_elements: "style,script",
               }}
-              
               required
               helpText={i18next.t(
                 "Choose abstract language and write down the text.Abstract can be provided in multiple languages."
@@ -367,11 +360,22 @@ const FormFieldsContainer = () => {
             id="NrDocs.Deposit.NotesField.container"
             fieldPath="metadata.notes"
           >
-            <StringArrayField
+            <MultilingualTextInput
+              labelIcon="pencil"
+              label={i18next.t("Notes")}
+              textFieldLabel={i18next.t("Note")}
               fieldPath="metadata.notes"
+              rich={true}
+              editorConfig={{
+                toolbar:
+                  "bold italic | bullist numlist | outdent indent | undo redo",
+                valid_elements: "strong,b,div,br,p,i,li",
+              }}
+              required
               helpText={i18next.t(
                 "Space for additional information related to the resource."
               )}
+              lngFieldWidth={4}
             />
           </Overridable>
         </AccordionField>
