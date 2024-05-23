@@ -15,7 +15,9 @@
     content: "*";
     color: @red;
   }
-
+  label.helptext::after {
+    content: "" !important;
+  }
   .invenio-group-field.fields {
     background-color: @arrayFieldColor;
     margin: 0 0 1rem 0;

@@ -25,6 +25,7 @@ import {
 import Overridable from "react-overridable";
 import { i18next } from "@translations/i18next";
 import _has from "lodash/has";
+import { add } from "lodash";
 
 const FormFieldsContainer = () => {
   const { formConfig, files: recordFiles } = useFormConfig();
@@ -33,6 +34,8 @@ const FormFieldsContainer = () => {
     (options) => options.filter((option) => option.props?.submission),
     []
   );
+  const getFieldData = formConfig.getFieldData;
+  
   return (
     <React.Fragment>
       <Overridable id="NrDocs.Deposit.AccordionFieldBasicInformation.container">
@@ -59,15 +62,16 @@ const FormFieldsContainer = () => {
             <TextField
               optimized
               fieldPath="metadata.title"
-              required
-              placeholder={i18next.t("Fill in the main title of the resource.")}
-              label={
-                <FieldLabel
-                  htmlFor={"metadata.title"}
-                  icon="pencil"
-                  label={i18next.t("Title")}
-                />
-              }
+              // required
+              // placeholder={i18next.t("Fill in the main title of the resource.")}
+              // label={
+              //   <FieldLabel
+              //     htmlFor={"metadata.title"}
+              //     icon="pencil"
+              //     label={i18next.t("Title")}
+              //   />
+              // }
+              {...getFieldData("metadata.title")}
             />
           </Overridable>
           <Overridable
@@ -95,6 +99,7 @@ const FormFieldsContainer = () => {
               placeholder={i18next.t("Select resource type")}
               optionsListName="resource-types"
               filterFunction={filterResourceTypes}
+              {...getFieldData("metadata.resourceType")}
             />
           </Overridable>
           <Overridable
@@ -130,6 +135,7 @@ const FormFieldsContainer = () => {
               clearable
               optionsListName="languages"
               placeholder={i18next.t("Select the language(s) of the resource")}
+              {...getFieldData("metadata.languages")}
             />
           </Overridable>
           <Overridable
@@ -145,6 +151,7 @@ const FormFieldsContainer = () => {
               placeholder={i18next.t(
                 "Choose the date when the document was issued."
               )}
+              {...getFieldData("metadata.dateIssued")}
             />
           </Overridable>
           <Overridable
@@ -158,6 +165,7 @@ const FormFieldsContainer = () => {
               helpText={i18next.t(
                 "Write the name of the publisher. You can write more publishers"
               )}
+              {...getFieldData("metadata.publishers")}
             />
           </Overridable>
           <Overridable
@@ -179,6 +187,7 @@ const FormFieldsContainer = () => {
               placeholder={i18next.t(
                 "Choose access type - if the resource is open or has some restrictions."
               )}
+              {...getFieldData("metadata.accessRights")}
             />
           </Overridable>
           <Overridable
@@ -208,6 +217,7 @@ const FormFieldsContainer = () => {
               helpText={i18next.t(
                 "If a Creative Commons license is associated with the resource, select the appropriate license option from the menu. We recommend choosing the latest versions, namely 3.0 Czech and 4.0 International."
               )}
+              {...getFieldData("metadata.rights")}
             />
           </Overridable>
           <Overridable
@@ -219,6 +229,7 @@ const FormFieldsContainer = () => {
                 fieldPath="metadata.dateModified"
                 label={i18next.t("Date modified")}
                 helpText=""
+                {...getFieldData("metadata.dateModified")}
               />
             )}
           </Overridable>
@@ -308,6 +319,7 @@ const FormFieldsContainer = () => {
               placeholder={i18next.t(
                 "Start writing name of the discipline and then choose from provided options."
               )}
+              {...getFieldData("metadata.subjectCategories")}
             />
           </Overridable>
           <Overridable
@@ -325,6 +337,7 @@ const FormFieldsContainer = () => {
                 "Choose abstract language and write down the text.Abstract can be provided in multiple languages."
               )}
               lngFieldWidth={4}
+              {...getFieldData("metadata.abstract")}
             />
           </Overridable>
           <Overridable
@@ -348,6 +361,7 @@ const FormFieldsContainer = () => {
               helpText={i18next.t(
                 "Space for additional information related to the resource."
               )}
+              {...getFieldData("metadata.notes")}
             />
           </Overridable>
         </AccordionField>
@@ -383,6 +397,7 @@ const FormFieldsContainer = () => {
                   label={i18next.t("Link to/from other resources")}
                 />
               }
+              {...getFieldData("metadata.relatedItems")}
             />
           </Overridable>
         </AccordionField>
