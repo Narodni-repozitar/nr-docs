@@ -4,6 +4,7 @@ import {
   MultilingualTextInput,
   FormikStateLogger,
   EDTFSingleDatePicker,
+  sanitizeInput 
 } from "@js/oarepo_ui";
 import { LocalVocabularySelectField } from "@js/oarepo_vocabularies";
 import { AccordionField, FieldLabel, TextField } from "react-invenio-forms";
@@ -26,7 +27,6 @@ import Overridable from "react-overridable";
 import { i18next } from "@translations/i18next";
 import _has from "lodash/has";
 import { useFormikContext, getIn } from "formik";
-import { sanitizeInput } from "@js/oarepo_ui";
 
 const FormFieldsContainer = () => {
   const { formConfig, files: recordFiles } = useFormConfig();
