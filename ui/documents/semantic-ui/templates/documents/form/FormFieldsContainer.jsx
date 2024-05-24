@@ -25,7 +25,6 @@ import {
 import Overridable from "react-overridable";
 import { i18next } from "@translations/i18next";
 import _has from "lodash/has";
-import { add } from "lodash";
 
 const FormFieldsContainer = () => {
   const { formConfig, files: recordFiles } = useFormConfig();
@@ -35,7 +34,6 @@ const FormFieldsContainer = () => {
     []
   );
   const getFieldData = formConfig.getFieldData;
-  
   return (
     <React.Fragment>
       <Overridable id="NrDocs.Deposit.AccordionFieldBasicInformation.container">
@@ -62,16 +60,7 @@ const FormFieldsContainer = () => {
             <TextField
               optimized
               fieldPath="metadata.title"
-              // required
-              // placeholder={i18next.t("Fill in the main title of the resource.")}
-              // label={
-              //   <FieldLabel
-              //     htmlFor={"metadata.title"}
-              //     icon="pencil"
-              //     label={i18next.t("Title")}
-              //   />
-              // }
-              {...getFieldData("metadata.title")}
+              {...getFieldData("metadata.title").fullRepresentation}
             />
           </Overridable>
           <Overridable
@@ -87,19 +76,11 @@ const FormFieldsContainer = () => {
             <LocalVocabularySelectField
               optimized
               fieldPath="metadata.resourceType"
-              required
               clearable
-              label={
-                <FieldLabel
-                  htmlFor={"metadata.resourceType"}
-                  icon="tag"
-                  label={i18next.t("Resource type")}
-                />
-              }
-              placeholder={i18next.t("Select resource type")}
               optionsListName="resource-types"
               filterFunction={filterResourceTypes}
-              {...getFieldData("metadata.resourceType")}
+              {...getFieldData("metadata.resourceType", "tag")
+                .fullRepresentation}
             />
           </Overridable>
           <Overridable
@@ -124,18 +105,10 @@ const FormFieldsContainer = () => {
               optimized
               fieldPath="metadata.languages"
               multiple={true}
-              required
-              label={
-                <FieldLabel
-                  htmlFor={"metadata.languages"}
-                  icon="language"
-                  label={i18next.t("Language")}
-                />
-              }
               clearable
               optionsListName="languages"
-              placeholder={i18next.t("Select the language(s) of the resource")}
-              {...getFieldData("metadata.languages")}
+              {...getFieldData("metadata.languages", "language")
+                .fullRepresentation}
             />
           </Overridable>
           <Overridable
@@ -144,14 +117,8 @@ const FormFieldsContainer = () => {
           >
             <EDTFSingleDatePicker
               fieldPath="metadata.dateIssued"
-              label={i18next.t("Date issued")}
-              helpText={i18next.t(
-                "The date can be a year, year and month or a full date."
-              )}
-              placeholder={i18next.t(
-                "Choose the date when the document was issued."
-              )}
-              {...getFieldData("metadata.dateIssued")}
+              {...getFieldData("metadata.dateIssued", "calendar")
+                .fullRepresentation}
             />
           </Overridable>
           <Overridable
@@ -161,11 +128,7 @@ const FormFieldsContainer = () => {
             <StringArrayField
               fieldPath="metadata.publishers"
               addButtonLabel={i18next.t("Add publisher")}
-              label={i18next.t("Publishers")}
-              helpText={i18next.t(
-                "Write the name of the publisher. You can write more publishers"
-              )}
-              {...getFieldData("metadata.publishers")}
+              {...getFieldData("metadata.publishers").fullRepresentation}
             />
           </Overridable>
           <Overridable
@@ -176,18 +139,9 @@ const FormFieldsContainer = () => {
               optimized
               fieldPath="metadata.accessRights"
               clearable
-              label={
-                <FieldLabel
-                  htmlFor={"metadata.accessRights"}
-                  icon="tag"
-                  label={i18next.t("Access rights")}
-                />
-              }
               optionsListName="access-rights"
-              placeholder={i18next.t(
-                "Choose access type - if the resource is open or has some restrictions."
-              )}
-              {...getFieldData("metadata.accessRights")}
+              {...getFieldData("metadata.accessRights", "tag")
+                .fullRepresentation}
             />
           </Overridable>
           <Overridable
@@ -212,12 +166,8 @@ const FormFieldsContainer = () => {
                 },
               }}
               fieldPath="metadata.rights"
-              label={i18next.t("Licenses")}
-              labelIcon="drivers license"
-              helpText={i18next.t(
-                "If a Creative Commons license is associated with the resource, select the appropriate license option from the menu. We recommend choosing the latest versions, namely 3.0 Czech and 4.0 International."
-              )}
-              {...getFieldData("metadata.rights")}
+              {...getFieldData("metadata.rights", "drivers license")
+                .fullRepresentation}
             />
           </Overridable>
           <Overridable
@@ -227,9 +177,7 @@ const FormFieldsContainer = () => {
             {editMode && (
               <EDTFSingleDatePicker
                 fieldPath="metadata.dateModified"
-                label={i18next.t("Date modified")}
-                helpText=""
-                {...getFieldData("metadata.dateModified")}
+                {...getFieldData("metadata.dateModified").fullRepresentation}
               />
             )}
           </Overridable>
@@ -307,19 +255,10 @@ const FormFieldsContainer = () => {
               optimized
               fieldPath="metadata.subjectCategories"
               multiple={true}
-              label={
-                <FieldLabel
-                  htmlFor={"metadata.subjectCategories"}
-                  icon="tag"
-                  label={i18next.t("Subject Categories")}
-                />
-              }
               clearable
               optionsListName="subject-categories"
-              placeholder={i18next.t(
-                "Start writing name of the discipline and then choose from provided options."
-              )}
-              {...getFieldData("metadata.subjectCategories")}
+              {...getFieldData("metadata.subjectCategories", "tag")
+                .fullRepresentation}
             />
           </Overridable>
           <Overridable
@@ -327,17 +266,12 @@ const FormFieldsContainer = () => {
             fieldPath="metadata.abstract"
           >
             <MultilingualTextInput
-              labelIcon="pencil"
-              label={i18next.t("Abstract")}
               textFieldLabel={i18next.t("Description")}
               fieldPath="metadata.abstract"
               rich={true}
               required
-              helpText={i18next.t(
-                "Choose abstract language and write down the text.Abstract can be provided in multiple languages."
-              )}
               lngFieldWidth={4}
-              {...getFieldData("metadata.abstract")}
+              {...getFieldData("metadata.abstract").fullRepresentation}
             />
           </Overridable>
           <Overridable
@@ -358,10 +292,7 @@ const FormFieldsContainer = () => {
           >
             <StringArrayField
               fieldPath="metadata.notes"
-              helpText={i18next.t(
-                "Space for additional information related to the resource."
-              )}
-              {...getFieldData("metadata.notes")}
+              {...getFieldData("metadata.notes").fullRepresentation}
             />
           </Overridable>
         </AccordionField>
