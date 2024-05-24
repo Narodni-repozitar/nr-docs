@@ -11,18 +11,19 @@ dependencies = [
     "nr-metadata>=2.0.0",
     "nr-oaipmh-harvesters>=1.0.0",
     "nr-vocabularies>=2.0.8",
-    "oarepo-global-search>=1.0.1",
+    "oarepo-dashboard>=1.0.0",
+    "oarepo-global-search>=1.0.7",
     "oarepo-published-service>=1.0.0",
     "oarepo-published-service>=1.0.2",
     "oarepo-requests>=1.0.2",
+    "marshmallow-i18n-messages",
     "oarepo-runtime",
     "oarepo-ui",
     "oarepo-vocabularies",
     "oarepo[s3]==12.*",
     "python-dotenv",
-    "oarepo-dashboard>=1.0.0",
 ]
-requires-python = ">=3.9,<3.11"
+requires-python = ">=3.10,<3.11"
 
 [project.entry-points."invenio_assets.webpack"]
 branding = "ui.branding.webpack:theme"
@@ -45,6 +46,7 @@ ui_community_records = "ui.community_records:create_blueprint"
 translations = "i18n"
 documents = "documents"
 documents_file = "documents"
+transifex = "common.transifex"
 
 [project.entry-points."invenio_base.api_apps"]
 documents = "documents.ext:DocumentsExt"
@@ -85,6 +87,8 @@ documents_file = "documents.models:ui.json"
 delete_record = "oarepo_requests.types.delete_record:DeleteRecordRequestType"
 edit_record = "oarepo_requests.types.edit_record:EditRecordRequestType"
 publish_draft = "oarepo_requests.types.publish_draft:PublishDraftRequestType"
+documents_delete_record = "documents.records.requests.delete_record.types:DeleteRecordRequestType"
+documents_edit_record = "documents.records.requests.edit_record.types:EditRecordRequestType"
 
 [project.optional-dependencies]
 tests = [

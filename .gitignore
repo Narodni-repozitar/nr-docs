@@ -11,3 +11,4 @@ node_modules
 .eslintrc.js
 .pdm-python
 .DS_Store
+.tx
