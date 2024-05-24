@@ -4,8 +4,7 @@ import {
   SearchappSearchbarElement,
 } from "@js/oarepo_ui";
 
-const [searchAppConfig, ..._] = parseSearchAppConfigs();
-const { overridableIdPrefix } = searchAppConfig;
+const [{ overridableIdPrefix }] = parseSearchAppConfigs();
 
 export const componentOverrides = {
   [`${overridableIdPrefix}.SearchBar.element`]: SearchappSearchbarElement,

@@ -36,7 +36,7 @@
  */
 
 :root {
-  font-size: @fontSize;
+  font-size: @baseFontSize;
 }
 
 body {
@@ -153,17 +153,6 @@ body {
 
 #frontpage-search-bar {
   background: transparent;
-}
-
-.ui.modal {
-  .modal-identifiers-field {
-    .ui.icon.left.labeled.button {
-      background-color: #eee8a9;
-    }
-    .ui.icon.left.labeled.button:hover {
-      background-color: #e5db70;
-    }
-  }
 }
 
 .inline-id-icon {

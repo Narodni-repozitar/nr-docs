@@ -1295,5 +1295,16 @@
                 "type": "integer"
             }
         }
+    },
+    "settings": {
+        "index": {
+            "query": {
+                "default_field": [
+                    "title_search.*",
+                    "creator_search.*",
+                    "abstract_search.*"
+                ]
+            }
+        }
     }
 }

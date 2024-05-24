@@ -1,7 +1,9 @@
 from oarepo_requests.resolvers.ui import (
-    draft_record_entity_reference_ui_resolver,
-    record_entity_reference_ui_resolver,
-    user_entity_reference_ui_resolver,
+    FallbackEntityReferenceUIResolver,
+    GroupEntityReferenceUIResolver,
+    RecordEntityDraftReferenceUIResolver,
+    RecordEntityReferenceUIResolver,
+    UserEntityReferenceUIResolver,
 )
 from oarepo_requests.resources.draft.resource import DraftRecordRequestsResource
 from oarepo_requests.services.draft.service import DraftRecordRequestsService
@@ -81,10 +83,13 @@ REQUESTS_ENTITY_RESOLVERS = [
 
 
 ENTITY_REFERENCE_UI_RESOLVERS = {
-    "user": user_entity_reference_ui_resolver,
-    "documents": record_entity_reference_ui_resolver,
-    "documents_draft": draft_record_entity_reference_ui_resolver,
+    "user": UserEntityReferenceUIResolver("user"),
+    "fallback": FallbackEntityReferenceUIResolver("fallback"),
+    "group": GroupEntityReferenceUIResolver("group"),
+    "documents": RecordEntityReferenceUIResolver("documents"),
+    "documents_draft": RecordEntityDraftReferenceUIResolver("documents_draft"),
 }
+REQUESTS_UI_SERIALIZATION_REFERENCED_FIELDS = ["created_by", "receiver", "topic"]
 
 
 DOCUMENTS_FILES_RESOURCE_CONFIG = DocumentsFileResourceConfig

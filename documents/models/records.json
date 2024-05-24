@@ -1,6 +1,27 @@
 {
     "model": {
         "type": "model",
+        "mapping": {
+            "template": {
+                "settings": {
+                    "index": {
+                        "query": {
+                            "default_field": [
+                                "title_search.*",
+                                "creator_search.*",
+                                "abstract_search.*"
+                            ]
+                        }
+                    }
+                }
+            },
+            "generate": true,
+            "alias": "documents",
+            "module": "documents.records.mappings",
+            "index": "documents-documents-1.0.0",
+            "file": "documents/records/mappings/os-v2/documents/documents-1.0.0.json",
+            "index-field-args": []
+        },
         "requests": {
             "types": {
                 "delete-record": {
@@ -71,8 +92,15 @@
                 "{{oarepo_runtime.records.entity_resolvers.GroupResolver}}()"
             ],
             "additional-ui-resolvers": {
-                "\"user\"": "{{oarepo_requests.resolvers.ui.user_entity_reference_ui_resolver}}"
-            }
+                "\"user\"": "{{oarepo_requests.resolvers.ui.UserEntityReferenceUIResolver}}(\"user\")",
+                "\"fallback\"": "{{oarepo_requests.resolvers.ui.FallbackEntityReferenceUIResolver}}(\"fallback\")",
+                "\"group\"": "{{oarepo_requests.resolvers.ui.GroupEntityReferenceUIResolver}}(\"group\")"
+            },
+            "ui-serialization-referenced-fields": [
+                "\"created_by\"",
+                "\"receiver\"",
+                "\"topic\""
+            ]
         },
         "custom-fields": [],
         "permissions": {
@@ -303,29 +331,6 @@
             "extra-code": "",
             "module": "tests"
         },
-        "draft": {
-            "type": "draft_record",
-            "properties": {},
-            "requests": {
-                "types": {
-                    "publish-draft": {
-                        "base-classes": [
-                            "oarepo_requests.types.publish_draft.PublishDraftRequestType"
-                        ],
-                        "allowed-receiver-ref-types": [
-                            "user",
-                            "group"
-                        ]
-                    }
-                }
-            },
-            "searchable": true,
-            "tests": {
-                "extra-fixtures": [],
-                "extra-code": "",
-                "module": "tests"
-            }
-        },
         "files": {
             "type": "file",
             "properties": {
@@ -420,6 +425,29 @@
                 "module": "tests"
             }
         },
+        "draft": {
+            "type": "draft_record",
+            "properties": {},
+            "requests": {
+                "types": {
+                    "publish-draft": {
+                        "base-classes": [
+                            "oarepo_requests.types.publish_draft.PublishDraftRequestType"
+                        ],
+                        "allowed-receiver-ref-types": [
+                            "user",
+                            "group"
+                        ]
+                    }
+                }
+            },
+            "searchable": true,
+            "tests": {
+                "extra-fixtures": [],
+                "extra-code": "",
+                "module": "tests"
+            }
+        },
         "draft-files": {
             "type": "draft-file",
             "properties": {},
@@ -496,15 +524,6 @@
             "module": "documents.proxies",
             "generate": true
         },
-        "files-field": {
-            "generate": true,
-            "field-class": "invenio_records_resources.records.systemfields.FilesField",
-            "file-class": "documents.records.api.DocumentsRecord",
-            "field-args": [
-                "store=False"
-            ],
-            "imports": []
-        },
         "record-metadata": {
             "generate": true,
             "module": "documents.records.models",
@@ -552,9 +571,14 @@
             ],
             "imports": []
         },
-        "translations": {
-            "module": "documents.translations",
-            "alias": "documents"
+        "files-field": {
+            "generate": true,
+            "field-class": "invenio_records_resources.records.systemfields.FilesField",
+            "file-class": "documents.records.api.DocumentsRecord",
+            "field-args": [
+                "store=False"
+            ],
+            "imports": []
         },
         "json-schema-settings": {
             "generate": true,
@@ -563,6 +587,10 @@
             "module": "documents.records.jsonschemas",
             "name": "documents-1.0.0.json",
             "file": "documents/records/jsonschemas/documents-1.0.0.json"
+        },
+        "translations": {
+            "module": "documents.translations",
+            "alias": "documents"
         },
         "multilingual-dumper": {
             "generate": true,
@@ -610,14 +638,6 @@
             "name": "parent-v1.0.0.json",
             "file": "documents/records/jsonschemas/parent-v1.0.0.json",
             "generate": true
-        },
-        "mapping": {
-            "generate": true,
-            "alias": "documents",
-            "module": "documents.records.mappings",
-            "index": "documents-documents-1.0.0",
-            "file": "documents/records/mappings/os-v2/documents/documents-1.0.0.json",
-            "index-field-args": []
         },
         "published-service": {
             "generate": true,
@@ -686,7 +706,7 @@
         },
         "ui-record-resolver": {
             "generate": true,
-            "function": "oarepo_requests.resolvers.ui.record_entity_reference_ui_resolver"
+            "class": "oarepo_requests.resolvers.ui.RecordEntityReferenceUIResolver"
         },
         "sortable": [],
         "properties": {
@@ -1378,7 +1398,7 @@
                                     "ui": {
                                         "marshmallow": {
                                             "generate": true,
-                                            "class": "nr_metadata.common.services.records.ui_schema_common.NRContributorPersonUISchema",
+                                            "class": "nr_metadata.common.services.records.ui_schema_datatypes.NRContributorPersonUISchema",
                                             "base-classes": [
                                                 "nr_metadata.common.services.records.ui_schema_datatypes.NRPersonUISchema"
                                             ]
@@ -1387,7 +1407,7 @@
                                     },
                                     "marshmallow": {
                                         "generate": true,
-                                        "class": "nr_metadata.common.services.records.schema_common.NRContributorPersonSchema",
+                                        "class": "nr_metadata.common.services.records.schema_datatypes.NRContributorPersonSchema",
                                         "base-classes": [
                                             "nr_metadata.common.services.records.schema_datatypes.NRPersonSchema"
                                         ]
@@ -1545,7 +1565,7 @@
                                     "ui": {
                                         "marshmallow": {
                                             "generate": true,
-                                            "class": "nr_metadata.common.services.records.ui_schema_common.NRContributorOrganizationUISchema",
+                                            "class": "nr_metadata.common.services.records.ui_schema_datatypes.NRContributorOrganizationUISchema",
                                             "base-classes": [
                                                 "nr_metadata.common.services.records.ui_schema_datatypes.NROrganizationUISchema"
                                             ]
@@ -1554,7 +1574,7 @@
                                     },
                                     "marshmallow": {
                                         "generate": true,
-                                        "class": "nr_metadata.common.services.records.schema_common.NRContributorOrganizationSchema",
+                                        "class": "nr_metadata.common.services.records.schema_datatypes.NRContributorOrganizationSchema",
                                         "base-classes": [
                                             "nr_metadata.common.services.records.schema_datatypes.NROrganizationSchema"
                                         ]
@@ -1564,7 +1584,7 @@
                             "discriminator": "nameType",
                             "ui": {
                                 "marshmallow": {
-                                    "class": "nr_metadata.common.services.records.ui_schema_common.NRContributorUISchema",
+                                    "class": "nr_metadata.common.services.records.ui_schema_datatypes.NRContributorUISchema",
                                     "read": false,
                                     "write": false,
                                     "generate": true
@@ -1572,7 +1592,7 @@
                                 "detail": "contributor"
                             },
                             "marshmallow": {
-                                "class": "nr_metadata.common.services.records.schema_common.NRContributorSchema",
+                                "class": "nr_metadata.common.services.records.schema_datatypes.NRContributorSchema",
                                 "read": false,
                                 "write": false,
                                 "generate": true
@@ -2515,7 +2535,7 @@
                             "discriminator": "nameType",
                             "ui": {
                                 "marshmallow": {
-                                    "class": "nr_metadata.common.services.records.ui_schema_common.NRCreatorUISchema",
+                                    "class": "nr_metadata.common.services.records.ui_schema_datatypes.NRCreatorUISchema",
                                     "read": false,
                                     "write": false,
                                     "generate": true
@@ -2523,7 +2543,7 @@
                                 "detail": "creator"
                             },
                             "marshmallow": {
-                                "class": "nr_metadata.common.services.records.schema_common.NRCreatorSchema",
+                                "class": "nr_metadata.common.services.records.schema_datatypes.NRCreatorSchema",
                                 "read": false,
                                 "write": false,
                                 "generate": true
@@ -3422,7 +3442,7 @@
                                         }
                                     },
                                     "label.cs": "Číslo projektu",
-                                    "label.en": "Project double"
+                                    "label.en": "Project identifier"
                                 },
                                 "projectName": {
                                     "type": "fulltext",
@@ -3462,6 +3482,7 @@
                             "properties": {
                                 "geoLocationPlace": {
                                     "type": "keyword",
+                                    "description": "Free description of the location; ie. Atlantic Ocean",
                                     "marshmallow": {
                                         "read": false,
                                         "write": false
@@ -3471,8 +3492,7 @@
                                             "read": false,
                                             "write": false
                                         }
-                                    },
-                                    "description": "Free description of the location; ie. Atlantic Ocean"
+                                    }
                                 },
                                 "geoLocationPoint": {
                                     "type": "object",
@@ -5832,6 +5852,7 @@
                                 "itemRelationType": {
                                     "type": "vocabulary",
                                     "vocabulary-type": "item-relation-types",
+                                    "description": "typ vztahu k původnímu popisovanému dok.",
                                     "ui": {
                                         "marshmallow": {
                                             "class": "nr_metadata.common.services.records.ui_schema_datatypes.NRItemRelationTypeVocabularyUISchema",
@@ -5850,7 +5871,6 @@
                                         "unknown": "INCLUDE",
                                         "generate": true
                                     },
-                                    "description": "typ vztahu k původnímu popisovanému dok.",
                                     "label.cs": "Typ vazby",
                                     "label.en": "Relation type",
                                     "imports": [
@@ -6081,6 +6101,7 @@
                                 "itemTitle": {
                                     "type": "fulltext",
                                     "required": true,
+                                    "description": "název propojeného dokumentu",
                                     "marshmallow": {
                                         "read": false,
                                         "write": false
@@ -6091,7 +6112,6 @@
                                             "write": false
                                         }
                                     },
-                                    "description": "název propojeného dokumentu",
                                     "label.cs": "Název",
                                     "label.en": "Title"
                                 },
