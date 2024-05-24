@@ -142,7 +142,7 @@ const FormFieldsContainer = () => {
           >
             <EDTFSingleDatePicker
               fieldPath="metadata.dateIssued"
-              label={i18next.t("Date issued")}
+              label={i18next.t("Publication date")}
               helpText={i18next.t(
                 "The date can be a year, year and month or a full date."
               )}
@@ -284,7 +284,7 @@ const FormFieldsContainer = () => {
             "metadata.notes",
           ]}
           active
-          label={i18next.t("Resource description")}
+          label={i18next.t("Document description")}
         >
           <Overridable
             id="NrDocs.Deposit.SubjectsField.container"
