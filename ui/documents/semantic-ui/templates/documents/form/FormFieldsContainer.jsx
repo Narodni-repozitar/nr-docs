@@ -5,7 +5,10 @@ import {
   FormikStateLogger,
   EDTFSingleDatePicker,
 } from "@js/oarepo_ui";
-import { LocalVocabularySelectField, VocabularyTreeSelectField } from "@js/oarepo_vocabularies";
+import {
+  LocalVocabularySelectField,
+  VocabularyTreeSelectField,
+} from "@js/oarepo_vocabularies";
 import { AccordionField, FieldLabel, TextField } from "react-invenio-forms";
 import {
   StringArrayField,
@@ -33,7 +36,7 @@ const FormFieldsContainer = () => {
     (options) => options.filter((option) => option.props?.submission),
     []
   );
-  console.log(formConfig)
+
   return (
     <React.Fragment>
       <Overridable id="NrDocs.Deposit.AccordionFieldBasicInformation.container">
@@ -81,7 +84,7 @@ const FormFieldsContainer = () => {
             id="NrDocs.Deposit.ResourceTypeField.container"
             fieldPath="metadata.resourceType"
           >
-            <LocalVocabularySelectField
+            <VocabularyTreeSelectField
               optimized
               fieldPath="metadata.resourceType"
               required
@@ -306,9 +309,7 @@ const FormFieldsContainer = () => {
               }
               clearable
               optionsListName="subject-categories"
-              placeholder={i18next.t(
-                "Select the discipline."
-              )}
+              placeholder={i18next.t("Select the discipline.")}
             />
           </Overridable>
           <Overridable
@@ -321,7 +322,6 @@ const FormFieldsContainer = () => {
               textFieldLabel={i18next.t("Description")}
               fieldPath="metadata.abstract"
               rich={true}
-            
               required
               helpText={i18next.t(
                 "Choose abstract language and write down the text.Abstract can be provided in multiple languages."
