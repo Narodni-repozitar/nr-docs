@@ -1,0 +1,3 @@
+@checkboxBorder: 1px solid black;
+@checkboxFocusBorderColor: black;
+@checkboxActiveBorderColor: black;
