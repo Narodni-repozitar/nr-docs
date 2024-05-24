@@ -5,7 +5,10 @@ import {
   FormikStateLogger,
   EDTFSingleDatePicker,
 } from "@js/oarepo_ui";
-import { LocalVocabularySelectField } from "@js/oarepo_vocabularies";
+import {
+  LocalVocabularySelectField,
+  VocabularyTreeSelectField,
+} from "@js/oarepo_vocabularies";
 import { AccordionField, FieldLabel, TextField } from "react-invenio-forms";
 import {
   StringArrayField,
@@ -33,6 +36,7 @@ const FormFieldsContainer = () => {
     (options) => options.filter((option) => option.props?.submission),
     []
   );
+
   return (
     <React.Fragment>
       <Overridable id="NrDocs.Deposit.AccordionFieldBasicInformation.container">
@@ -80,7 +84,7 @@ const FormFieldsContainer = () => {
             id="NrDocs.Deposit.ResourceTypeField.container"
             fieldPath="metadata.resourceType"
           >
-            <LocalVocabularySelectField
+            <VocabularyTreeSelectField
               optimized
               fieldPath="metadata.resourceType"
               required
@@ -292,7 +296,7 @@ const FormFieldsContainer = () => {
             id="NrDocs.Deposit.SubjectCategoriesField.container"
             fieldPath="metadata.subjectCategories"
           >
-            <LocalVocabularySelectField
+            <VocabularyTreeSelectField
               optimized
               fieldPath="metadata.subjectCategories"
               multiple={true}
@@ -305,9 +309,7 @@ const FormFieldsContainer = () => {
               }
               clearable
               optionsListName="subject-categories"
-              placeholder={i18next.t(
-                "Start writing name of the discipline and then choose from provided options."
-              )}
+              placeholder={i18next.t("Select the discipline.")}
             />
           </Overridable>
           <Overridable
