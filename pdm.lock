@@ -5,7 +5,7 @@
 groups = ["default"]
 strategy = ["cross_platform", "inherit_metadata"]
 lock_version = "4.4.1"
-content_hash = "sha256:7d232b47d10d9eb8f92d5731511ca2409acf04da8a343d6954faa7bfdb3ae730"
+content_hash = "sha256:d31d372f9594ebf1fc47c97a8b13f40032b4fa6a57313a55d1b0250200998971"
 
 [[package]]
 name = "alembic"
@@ -2915,6 +2915,23 @@ files = [
 ]
 
 [[package]]
+name = "marshmallow-i18n-messages"
+version = "0.1.0"
+requires_python = ">=3.10"
+summary = "A patch to marshmallow to allow to translate marshmallow messages via GNU gettext"
+groups = ["default"]
+dependencies = [
+    "babel",
+    "marshmallow",
+    "marshmallow-utils",
+    "speaklater",
+]
+files = [
+    {file = "marshmallow_i18n_messages-0.1.0-py3-none-any.whl", hash = "sha256:cf2900284a6656114154dc134383f8a5291d5316663ded3e626fc7aa3bf850c8"},
+    {file = "marshmallow_i18n_messages-0.1.0.tar.gz", hash = "sha256:c0d4263e76dfd437c45560dfa486ee49bc11d704caf061b3ab81656bc2b4b29a"},
+]
+
+[[package]]
 name = "marshmallow-oneofschema"
 version = "3.1.1"
 requires_python = ">=3.8"
@@ -3570,7 +3587,7 @@ files = [
 
 [[package]]
 name = "oarepo-ui"
-version = "5.1.29"
+version = "5.1.31"
 requires_python = ">=3.10"
 summary = "UI module for invenio 3.5+"
 groups = ["default"]
@@ -3582,8 +3599,8 @@ dependencies = [
     "oarepo-runtime",
 ]
 files = [
-    {file = "oarepo_ui-5.1.29-py2.py3-none-any.whl", hash = "sha256:4178226baf7ff0038f325702df683645bbd296bab40dd58928fcf38234a168ed"},
-    {file = "oarepo_ui-5.1.29.tar.gz", hash = "sha256:1c99d304ece6f4dfab871b5ee87b78e303bc703dd7450c2abfb9646353915eb8"},
+    {file = "oarepo_ui-5.1.31-py2.py3-none-any.whl", hash = "sha256:69de8f7063a28bbd3ab54f193ada8d65106ffa9aaf85f95c574e303ded8463f9"},
+    {file = "oarepo_ui-5.1.31.tar.gz", hash = "sha256:0aa90d4be60fe4d5f9ed5f8a44d352fe653704252f48f973d6a26f8c34b5cf98"},
 ]
 
 [[package]]

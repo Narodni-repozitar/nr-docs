@@ -6,3 +6,6 @@
     flex: 0 0 8rem;
 }
  
+.tree-field .row {
+    display: flex;
+}
