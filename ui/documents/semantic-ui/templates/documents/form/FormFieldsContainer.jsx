@@ -4,6 +4,7 @@ import {
   MultilingualTextInput,
   FormikStateLogger,
   EDTFSingleDatePicker,
+  useFieldData,
 } from "@js/oarepo_ui";
 import { LocalVocabularySelectField } from "@js/oarepo_vocabularies";
 import { AccordionField, FieldLabel, TextField } from "react-invenio-forms";
@@ -33,7 +34,7 @@ const FormFieldsContainer = () => {
     (options) => options.filter((option) => option.props?.submission),
     []
   );
-  const getFieldData = formConfig.getFieldData;
+  const { getFieldData } = useFieldData();
   return (
     <React.Fragment>
       <Overridable id="NrDocs.Deposit.AccordionFieldBasicInformation.container">
