@@ -38,6 +38,6 @@ test("redirection to title page", async ({ page, baseURL }) => {
 test("sign out", async ({ page, baseURL }) => {
   await page.goto("/");
   await page.locator("#invenio-burger-menu-icon").click();
-  await page.locator(".tablet .item:has(.sign-out.icon)").click();
+  await page.locator('[data-test-id="signout-button"]').click();
   await expect(page).toHaveURL(`${baseURL}`);
 });

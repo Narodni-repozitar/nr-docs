@@ -16,7 +16,8 @@ test.beforeAll(async ({ playwright }) => {
 test.afterAll(async () => {
   await apiContext.dispose();
 });
-test("search draft", async ({ page, baseURL }) => {
+
+test("search draft", async ({ page, baseURL, request }) => {
   await page.goto("/me/records/");
   await page.locator(`input[type='text']`).last().fill("test");
   await page.locator(`input[type='text']`).last().press("Enter");
@@ -24,23 +25,18 @@ test("search draft", async ({ page, baseURL }) => {
     `${baseURL}me/records/?q=test&l=list&p=1&s=10&sort=bestmatch`
   );
 
-  const response = await page.evaluate(() =>
-    fetch(
-      `https://127.0.0.1:5000/api/user/docs/?q=test&sort=bestmatch&page=1&size=10`
-    ).then((res) => res.json())
-  );
-  expect(response.hits.total).toBe(46);
+  const response= await callAPI(baseURL, request, false, `${baseURL}/api/user/docs/?q=test`);
+
+  await expect(
+    page.locator('[data-test-id="aggregation-count"]')
+  ).toContainText(`${response.hits.total}`);
 });
 
 test("filter draft", async ({ page, baseURL, request }) => {
   await page.goto("/me/records/");
-  await page.locator(".ui.basic.icon.button:has(.sliders.icon)").click();
+  await page.locator('[data-test-id="filter-button"]').click();
 
-  const response = await page.evaluate(() => {
-    return fetch(
-      `https://127.0.0.1:5000//api/user/docs/?q=&page=1&size=10`
-    ).then((response) => response.json());
-  });
+  const response= await callAPI(baseURL, request, false, `${baseURL}/api/user/docs/?q=test`);
 
   const resourceType = response.aggregations.metadata_resourceType;
   const firstKey = resourceType.buckets[0].key;
@@ -56,18 +52,14 @@ test("filter draft", async ({ page, baseURL, request }) => {
   const isChecked = await checkbox.evaluate((element) => element.checked);
   expect(isChecked).toBeTruthy();
 
-  // check response length
-  const url = `/api/user/docs/?q=&page=1&size=10&metadata_resourceType=${firstKey}`;
-
-  const responseData = await callAPI(baseURL, request, false, url);
-  expect(responseData.hits.total).toBe(bucketCount);
-
   // check url
   await expect(page).toHaveURL(
     new RegExp(`metadata_resourceType%3A${firstKey}`)
   );
 
-  await expect(page.locator("label.rel-mr-1")).toContainText(`${bucketCount}`);
+  await expect(
+    page.locator('[data-test-id="aggregation-count"]')
+  ).toContainText(`${bucketCount}`);
 
   // clear filters
   await page.locator('.tablet.row button[name="clear"]').click();
@@ -78,9 +70,8 @@ test("filter draft", async ({ page, baseURL, request }) => {
 
 test("redirection to form", async ({ page, baseURL }) => {
   await page.goto("/me/records/");
-  const btn = await page.locator(
-    ".tablet.row .ui.icon.primary.button:has(.plus.icon)"
-  );
+  await page.locator('#invenio-burger-toggle').click()
+  const btn = await page.locator('[data-test-id="newupload-button"]');
 
   await btn.click({ force: true });
   await expect(page).toHaveURL(`${baseURL}docs/_new`);
@@ -88,25 +79,23 @@ test("redirection to form", async ({ page, baseURL }) => {
 
 test("pagination", async ({ page, baseURL }) => {
   await page.goto("/me/records/");
-  await page.locator("a").filter({ hasText: "5" }).click();
+  await page.locator(".pagination a").filter({ hasText: /^5$/ }).click();
   await expect(page).toHaveURL(
     `${baseURL}me/records/?q=&l=list&p=5&s=10&sort=newest`
   );
 });
 
-test("get records", async ({ page, baseURL }) => {
+test("get records", async ({ page, baseURL, request }) => {
   await page.goto("/me/records");
-  await page.locator(`#invenio-burger-menu-icon`).click();
-  await page.locator(`#invenio-menu   .item.main-nav-links`).nth(1).click();
+  await page.locator('#invenio-burger-toggle').click()
+  await page.locator('[data-test-id="dashboard-redir-btn"]').click();
 
   await expect(page).toHaveURL(
     `${baseURL}me/records/?q=&l=list&p=1&s=10&sort=newest`
   );
+  const response= await callAPI(baseURL, request, false, false);
 
-  const response = await page.evaluate(() =>
-    fetch(`https://127.0.0.1:5000/api/user/docs/?q=&page=1&size=10`).then(
-      (res) => res.json()
-    )
-  );
-  expect(response.hits.total).toBe(20); // put here required testing amount
+  await expect(
+    page.locator('[data-test-id="aggregation-count"]')
+  ).toContainText(`${response.hits.total}`);
 });

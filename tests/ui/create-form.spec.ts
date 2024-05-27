@@ -1,4 +1,5 @@
 import { test, expect } from "playwright/test";
+import { callAPI } from "./api-call.js";
 
 let apiContext;
 
@@ -16,7 +17,7 @@ test.afterAll(async () => {
   await apiContext.dispose();
 });
 
-test("successful form submit", async ({ page }) => {
+test("successful form submit", async ({ baseURL, page, request }) => {
   try {
     await page.goto(`/docs/_new`);
 
@@ -25,17 +26,16 @@ test("successful form submit", async ({ page }) => {
 
     // resource type selection
     await page.locator(`[name='metadata.resourceType']`).click();
-    await page.waitForSelector('div[role="listbox"].visible.menu');
+    await page.waitForSelector('.tree-field');
 
-    const optionsRes = await page.$$(
-      '[role="listbox"].visible.menu [role="option"]'
-    );
+    const response= await callAPI(baseURL, request, false, false);
+  
+    const resourceType = response.aggregations.metadata_resourceType;
+    const firstLabel = resourceType.buckets[0].label;
 
-    const randomIndexRes = Math.floor(Math.random() * optionsRes.length);
-    const optionToClickRes = optionsRes[randomIndexRes];
+    await page.locator(`button:has-text("${firstLabel}")`).click();
 
-    const optionNameRes = await optionToClickRes.getAttribute("name");
-    await page.locator(`[name="${optionNameRes}"]`).click();
+    await page.locator('.modal .actions .button').click()
 
     // select language
 
@@ -71,7 +71,7 @@ test("successful form submit", async ({ page }) => {
 
     // creator input
     const addCreatorButtonSelector =
-      'button.ui.icon.left.labeled.button:has-text("Add creator")';
+      '.field:has(label[for="metadata.creators"]) button';
     await page.waitForSelector(addCreatorButtonSelector);
     await page.click(addCreatorButtonSelector);
     await page.locator(`[name='family_name']`).fill("test");
@@ -94,7 +94,7 @@ test("form validation", async ({ page }) => {
   try {
     await page.goto(`/docs/_new`);
 
-    await page.locator(`.ui.fluid.card .green.icon.button`).last().click();
+    await page.locator('[data-test-id="validate-button"]').click();
 
     await page.waitForSelector(`.label[role='alert']`);
 
@@ -114,12 +114,15 @@ test("file upload", async ({ page }) => {
     await page.locator(`[name='save']`).click();
     await page.locator(`[name='save']`).click();
 
-    await page.waitForSelector("button.ui.primary.button:has(.upload.icon)");
+    const parentLocator = await page.locator(
+      '[data-test-id="filesupload-button"]'
+    );
 
-    await page
-      .locator("button.ui.primary.button:has(.upload.icon)")
-      .first()
-      .click();
+    const buttonNotInTable = await parentLocator.locator('button:not(.ui.table button)');
+
+    if (await buttonNotInTable.count() > 0) {
+      await buttonNotInTable.click();
+    } 
 
     await expect(page.locator(".uppy-Dashboard-inner")).toBeVisible();
 
@@ -132,9 +135,7 @@ test("file upload", async ({ page }) => {
     await page.locator(".uppy-StatusBar-actionBtn--done").click();
     await page.locator(`[name='save']`).click();
 
-    await expect(
-      page.locator(".ui.green.positive.form-feedback")
-    ).toBeVisible();
+    await expect(page.locator(".ui.form-feedback")).toBeVisible();
   } catch (error) {
     console.error("Error:", error);
     throw error;

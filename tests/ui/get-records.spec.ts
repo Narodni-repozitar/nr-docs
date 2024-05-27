@@ -17,20 +17,22 @@ test.afterAll(async () => {
   await apiContext.dispose();
 });
 
-test("get records", async ({ page, baseURL }) => {
+test("get records", async ({ page, baseURL, request }) => {
   await page.goto("/");
   const pagenav = page.waitForNavigation({ waitUntil: "load" });
 
-  await page.locator(`button:has(.search.icon)`).click();
+  const form = await page.locator('.ui.form[role="search"]');
+  await form.locator('button[type="submit"]').click();
+
   await pagenav;
   await expect(page).toHaveURL(
     `${baseURL}docs/?q=&l=list&p=1&s=10&sort=newest`
   );
 
-  const response = await page.evaluate(() =>
-    fetch(`https://127.0.0.1:5000/api/docs/?q=test&page=1&size=10`).then(
-      (res) => res.json()
-    )
-  );
-  expect(response.hits.total).toBe(1); // put here required testing amount
+  const response= await callAPI(baseURL, request, false, false);
+
+  await expect(
+    page.locator('[data-test-id="aggregation-count"]')
+  ).toContainText(`${response.hits.total}`);
 });
+

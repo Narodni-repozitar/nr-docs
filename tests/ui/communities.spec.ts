@@ -1,6 +1,8 @@
 import { test, expect } from "playwright/test";
 import { callAPI } from "./api-call.js";
 
+// Community pages are a planned feature for 0.7.0 release.
+
 let apiContext;
 
 test.beforeAll(async ({ playwright }) => {
@@ -29,7 +31,7 @@ test("successful form submit", async ({ page, baseURL, request }) => {
     await page.locator(`[name='slug']`).fill(rand);
 
     const pagenav = page.waitForNavigation({ waitUntil: "load" });
-    await page.locator(`button.positive[type='button']`).click();
+    await page.locator(`.communities-creation button`).click();
 
     await pagenav;
 

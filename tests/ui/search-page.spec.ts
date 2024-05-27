@@ -17,7 +17,7 @@ test.afterAll(async () => {
     await apiContext.dispose();
   });
 
-test("search published", async ({ page, baseURL }) => {
+test("search published", async ({ page, baseURL, request }) => {
   await page.goto("/docs");
   await page.locator("#invenio-burger-menu-icon").click();
   await page.locator(`.menu input[type='text']`).last().fill("test");
@@ -26,11 +26,10 @@ test("search published", async ({ page, baseURL }) => {
     `${baseURL}docs/?q=test&l=list&p=1&s=10&sort=bestmatch`
   );
 
-  const response = await page.evaluate(() =>
-    fetch(`https://127.0.0.1:5000/api/docs/?q=test&page=1&size=10`).then(
-      (res) => res.json()
-    )
-  );
-  expect(response.hits.total).toBe(1);
+  const response= await callAPI(false, request, false, `${baseURL}api/docs/?q=test&page=1&size=10`);
+
+  await expect(
+    page.locator('[data-test-id="aggregation-count"]')
+  ).toContainText(`${response.hits.total}`);
 });
 
