@@ -5,7 +5,10 @@ import {
   FormikStateLogger,
   EDTFSingleDatePicker,
 } from "@js/oarepo_ui";
-import { LocalVocabularySelectField, VocabularyTreeSelectField } from "@js/oarepo_vocabularies";
+import {
+  LocalVocabularySelectField,
+  VocabularyTreeSelectField,
+} from "@js/oarepo_vocabularies";
 import { AccordionField, FieldLabel, TextField } from "react-invenio-forms";
 import {
   StringArrayField,
@@ -32,7 +35,7 @@ const FormFieldsContainer = () => {
     (options) => options.filter((option) => option.props?.submission),
     []
   );
-  
+
   return (
     <React.Fragment>
       <Overridable id="NrDocs.Deposit.AccordionFieldBasicInformation.container">
@@ -80,7 +83,7 @@ const FormFieldsContainer = () => {
             id="NrDocs.Deposit.ResourceTypeField.container"
             fieldPath="metadata.resourceType"
           >
-            <LocalVocabularySelectField
+            <VocabularyTreeSelectField
               optimized
               fieldPath="metadata.resourceType"
               required
@@ -138,7 +141,7 @@ const FormFieldsContainer = () => {
           >
             <EDTFSingleDatePicker
               fieldPath="metadata.dateIssued"
-              label={i18next.t("Date issued")}
+              label={i18next.t("Publication date")}
               helpText={i18next.t(
                 "The date can be a year, year and month or a full date."
               )}
@@ -186,22 +189,30 @@ const FormFieldsContainer = () => {
             id="NrDocs.Deposit.LicenseField.container"
             fieldPath="metadata.rights"
           >
-            <VocabularyTreeSelectField 
-            optimized
-            fieldPath="metadata.rights"
-            label={
-              <FieldLabel
-                htmlFor={"metadata.rights"}
-                icon="drivers license"
-                label={i18next.t("Licenses")}
-              />
-            }
-            placeholder={i18next.t("Choose licenses")}
-            clearable
-            optionsListName="rights"
-            helpText={i18next.t(
-              "If a Creative Commons license is associated with the resource, select the appropriate license option from the menu. We recommend choosing the latest versions, namely 3.0 Czech and 4.0 International."
-            )}/>
+            <LicenseField
+              searchConfig={{
+                searchApi: {
+                  axios: {
+                    headers: {
+                      Accept: "application/vnd.inveniordm.v1+json",
+                    },
+                    url: "/api/vocabularies/rights",
+                  },
+                },
+                initialQueryState: {
+                  size: 25,
+                  page: 1,
+                  sortBy: "bestmatch",
+                  filters: [["tags", ""]],
+                },
+              }}
+              fieldPath="metadata.rights"
+              label={i18next.t("Licenses")}
+              labelIcon="drivers license"
+              helpText={i18next.t(
+                "If a Creative Commons license is associated with the resource, select the appropriate license option from the menu. We recommend choosing the latest versions, namely 3.0 Czech and 4.0 International."
+              )}
+            />
           </Overridable>
           <Overridable
             id="NrDocs.Deposit.DateModifiedField.container"
@@ -273,7 +284,7 @@ const FormFieldsContainer = () => {
             "metadata.notes",
           ]}
           active
-          label={i18next.t("Resource description")}
+          label={i18next.t("Document description")}
         >
           <Overridable
             id="NrDocs.Deposit.SubjectsField.container"
@@ -298,9 +309,7 @@ const FormFieldsContainer = () => {
               }
               clearable
               optionsListName="subject-categories"
-              placeholder={i18next.t(
-                "Select the discipline."
-              )}
+              placeholder={i18next.t("Select the discipline.")}
             />
           </Overridable>
           <Overridable

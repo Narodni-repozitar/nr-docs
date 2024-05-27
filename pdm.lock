@@ -5,7 +5,7 @@
 groups = ["default"]
 strategy = ["cross_platform", "inherit_metadata"]
 lock_version = "4.4.1"
-content_hash = "sha256:324c8bb2385d024bfacd785117f7c9f8fef74d04dba22ddb60be9a616dd5ca9d"
+content_hash = "sha256:d31d372f9594ebf1fc47c97a8b13f40032b4fa6a57313a55d1b0250200998971"
 
 [[package]]
 name = "alembic"
@@ -3587,7 +3587,7 @@ files = [
 
 [[package]]
 name = "oarepo-ui"
-version = "5.1.29"
+version = "5.1.31"
 requires_python = ">=3.10"
 summary = "UI module for invenio 3.5+"
 groups = ["default"]
@@ -3599,8 +3599,8 @@ dependencies = [
     "oarepo-runtime",
 ]
 files = [
-    {file = "oarepo_ui-5.1.29-py2.py3-none-any.whl", hash = "sha256:4178226baf7ff0038f325702df683645bbd296bab40dd58928fcf38234a168ed"},
-    {file = "oarepo_ui-5.1.29.tar.gz", hash = "sha256:1c99d304ece6f4dfab871b5ee87b78e303bc703dd7450c2abfb9646353915eb8"},
+    {file = "oarepo_ui-5.1.31-py2.py3-none-any.whl", hash = "sha256:69de8f7063a28bbd3ab54f193ada8d65106ffa9aaf85f95c574e303ded8463f9"},
+    {file = "oarepo_ui-5.1.31.tar.gz", hash = "sha256:0aa90d4be60fe4d5f9ed5f8a44d352fe653704252f48f973d6a26f8c34b5cf98"},
 ]
 
 [[package]]
