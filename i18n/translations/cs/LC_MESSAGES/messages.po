@@ -552,7 +552,7 @@ msgid "Title type"
 msgstr "Druh názvu"
 
 msgid "Creators"
-msgstr "Autoři"
+msgstr "Tvůrci"
 
 msgid "Add creator"
 msgstr "Přidat autora"
@@ -669,7 +669,7 @@ msgid "Add event"
 msgstr "Přidat událost"
 
 msgid "Events"
-msgstr "Události"
+msgstr "Související akce"
 
 msgid "Event name"
 msgstr "Název akce"
@@ -681,10 +681,10 @@ msgid "Add event alternate name"
 msgstr "Přidejte alternativní název akce"
 
 msgid "Event date"
-msgstr "Datum události"
+msgstr "Datum akce"
 
 msgid "Place"
-msgstr "Místo"
+msgstr "Místo konání akce"
 
 msgid "Country"
 msgstr "Země"
@@ -807,7 +807,7 @@ msgid "Choose languages"
 msgstr "Vyberte jazyky"
 
 msgid "Resource type"
-msgstr "Typ položky"
+msgstr "Typ zdroje"
 
 msgid "Select resource type"
 msgstr "Vyberte typ zdroje."
@@ -854,7 +854,7 @@ msgid "Add publisher"
 msgstr "Přidat vydavatele"
 
 msgid "Publishers"
-msgstr "Vydavatelé"
+msgstr "Vydavatel/é"
 
 msgid "Resource description"
 msgstr "Popis zdroje"
@@ -2737,7 +2737,7 @@ msgstr ""
 "RRRR-MM-DD/RRRR-MM-DD."
 
 msgid "Related items"
-msgstr "Související položky"
+msgstr "Propojený zdroj"
 
 msgid "Add related item"
 msgstr "Přidat související položku"
@@ -3240,3 +3240,14 @@ msgstr "Verze"
 
 msgid "Files upload"
 msgstr "Nahrání souboru"
+
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:503
+msgid "record_status"
+msgstr ""
+
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:505
+msgid "has_draft"
+msgstr ""
+
+msgid "Document description"
+msgstr "Popis dokumentu"
