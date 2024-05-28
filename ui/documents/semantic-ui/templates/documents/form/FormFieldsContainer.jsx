@@ -5,8 +5,13 @@ import {
   FormikStateLogger,
   EDTFSingleDatePicker,
   useFieldData,
+  FieldDataProvider,
+  getFieldData as getFieldDataUtil,
 } from "@js/oarepo_ui";
-import { LocalVocabularySelectField } from "@js/oarepo_vocabularies";
+import {
+  LocalVocabularySelectField,
+  VocabularyTreeSelectField,
+} from "@js/oarepo_vocabularies";
 import { AccordionField, FieldLabel, TextField } from "react-invenio-forms";
 import {
   StringArrayField,
@@ -74,7 +79,7 @@ const FormFieldsContainer = () => {
             id="NrDocs.Deposit.ResourceTypeField.container"
             fieldPath="metadata.resourceType"
           >
-            <LocalVocabularySelectField
+            <VocabularyTreeSelectField
               optimized
               fieldPath="metadata.resourceType"
               clearable
@@ -190,43 +195,62 @@ const FormFieldsContainer = () => {
           includesPaths={["metadata.creators", "metadata.contributors"]}
           label={i18next.t("Creators")}
         >
-          <Overridable
-            id="NrDocs.Deposit.CreatorsField.container"
-            fieldPath="metadata.creators"
+          <FieldDataProvider
+            value={{
+              getFieldData: getFieldDataUtil(
+                formConfig.ui_model,
+                "metadata.creators.0"
+              ),
+            }}
           >
-            <CreatibutorsField
-              label={i18next.t("Authors")}
-              labelIcon="user"
+            {/* TODO: make a hoc to wrap each component that needs a specific provider (with specific prefix) */}
+            <Overridable
+              id="NrDocs.Deposit.CreatorsField.container"
               fieldPath="metadata.creators"
-              schema="creators"
-              autocompleteNames="off"
-              required
-            />
-          </Overridable>
-          <Overridable
-            id="NrDocs.Deposit.ContributorsField.container"
-            fieldPath="metadata.contributors"
+            >
+              <CreatibutorsField
+                label={i18next.t("Authors")}
+                labelIcon="user"
+                fieldPath="metadata.creators"
+                schema="creators"
+                autocompleteNames="off"
+                required
+              />
+            </Overridable>
+          </FieldDataProvider>
+          <FieldDataProvider
+            value={{
+              getFieldData: getFieldDataUtil(
+                formConfig.ui_model,
+                "metadata.contributors.0"
+              ),
+            }}
           >
-            <CreatibutorsField
-              label={i18next.t("Contributors")}
-              addButtonLabel={i18next.t("Add contributor")}
-              modal={{
-                addLabel: i18next.t("Add contributor"),
-                editLabel: i18next.t("Edit contributor"),
-              }}
-              labelIcon="user"
+            <Overridable
+              id="NrDocs.Deposit.ContributorsField.container"
               fieldPath="metadata.contributors"
-              schema="contributors"
-              autocompleteNames="off"
-              nameFieldPlaceholder={i18next.t("Write contributor's name.")}
-              lastNameFieldPlaceholder={i18next.t(
-                "Write contributor's last name."
-              )}
-              nameTypeHelpText={i18next.t(
-                "Choose if the contributor is a person or an organization."
-              )}
-            />
-          </Overridable>
+            >
+              <CreatibutorsField
+                label={i18next.t("Contributors")}
+                addButtonLabel={i18next.t("Add contributor")}
+                modal={{
+                  addLabel: i18next.t("Add contributor"),
+                  editLabel: i18next.t("Edit contributor"),
+                }}
+                labelIcon="user"
+                fieldPath="metadata.contributors"
+                schema="contributors"
+                autocompleteNames="off"
+                nameFieldPlaceholder={i18next.t("Write contributor's name.")}
+                lastNameFieldPlaceholder={i18next.t(
+                  "Write contributor's last name."
+                )}
+                nameTypeHelpText={i18next.t(
+                  "Choose if the contributor is a person or an organization."
+                )}
+              />
+            </Overridable>
+          </FieldDataProvider>
         </AccordionField>
       </Overridable>
       <Overridable id="NrDocs.Deposit.AccordionFieldDescription.container">
@@ -240,7 +264,7 @@ const FormFieldsContainer = () => {
             "metadata.notes",
           ]}
           active
-          label={i18next.t("Resource description")}
+          label={i18next.t("Document description")}
         >
           <Overridable
             id="NrDocs.Deposit.SubjectsField.container"
@@ -252,7 +276,7 @@ const FormFieldsContainer = () => {
             id="NrDocs.Deposit.SubjectCategoriesField.container"
             fieldPath="metadata.subjectCategories"
           >
-            <LocalVocabularySelectField
+            <VocabularyTreeSelectField
               optimized
               fieldPath="metadata.subjectCategories"
               multiple={true}
