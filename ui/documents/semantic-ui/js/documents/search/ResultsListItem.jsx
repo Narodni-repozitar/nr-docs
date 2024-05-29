@@ -242,7 +242,7 @@ export const ResultsListItemComponent = ({
       thesis={thesis}
       allVersionsVisible={allVersionsVisible}
     >
-      <Item key={result.id}>
+      <Item key={result.id} data-testid="result-item">
         <Item.Content>
           <Grid>
             <Grid.Row columns={2}>

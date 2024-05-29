@@ -1,5 +1,4 @@
 import { test, expect } from "playwright/test";
-import { callAPI } from "./api-call.js";
 
 let apiContext;
 
@@ -17,7 +16,7 @@ test.afterAll(async () => {
   await apiContext.dispose();
 });
 
-test("successful form submit", async ({ baseURL, page, request }) => {
+test("successful form submit", async ({ page }) => {
   try {
     await page.goto(`/docs/_new`);
 
@@ -26,16 +25,21 @@ test("successful form submit", async ({ baseURL, page, request }) => {
 
     // resource type selection
     await page.locator(`[name='metadata.resourceType']`).click();
-    await page.waitForSelector('.tree-field');
+    await page.waitForSelector(".tree-field");
 
-    const response= await callAPI(baseURL, request, false, false);
-  
-    const resourceType = response.aggregations.metadata_resourceType;
-    const firstLabel = resourceType.buckets[0].label;
+    const numberOfOptions = await page
+      .locator(".tree-column.column .row")
+      .locator("visible=true")
+      .count();
+    const randomIndex = Math.floor(Math.random() * numberOfOptions);
 
-    await page.locator(`button:has-text("${firstLabel}")`).click();
+    await page
+      .locator(".tree-column .row.spaced")
+      .locator("visible=true")
+      .nth(randomIndex)
+      .dblclick();
 
-    await page.locator('.modal .actions .button').click()
+    await page.locator(".modal .actions .button").click();
 
     // select language
 
@@ -94,7 +98,7 @@ test("form validation", async ({ page }) => {
   try {
     await page.goto(`/docs/_new`);
 
-    await page.locator('[data-test-id="validate-button"]').click();
+    await page.getByTestId("validate-button").click();
 
     await page.waitForSelector(`.label[role='alert']`);
 
@@ -114,15 +118,15 @@ test("file upload", async ({ page }) => {
     await page.locator(`[name='save']`).click();
     await page.locator(`[name='save']`).click();
 
-    const parentLocator = await page.locator(
-      '[data-test-id="filesupload-button"]'
+    const parentLocator = await page.getByTestId("filesupload-button");
+
+    const buttonNotInTable = await parentLocator.locator(
+      "button:not(.ui.table button)"
     );
 
-    const buttonNotInTable = await parentLocator.locator('button:not(.ui.table button)');
-
-    if (await buttonNotInTable.count() > 0) {
+    if ((await buttonNotInTable.count()) > 0) {
       await buttonNotInTable.click();
-    } 
+    }
 
     await expect(page.locator(".uppy-Dashboard-inner")).toBeVisible();
 
@@ -140,4 +144,43 @@ test("file upload", async ({ page }) => {
     console.error("Error:", error);
     throw error;
   }
+});
+
+test("tree-field manipulation and selected result check", async ({ page }) => {
+  await page.goto("/docs/_new");
+
+  await page.locator(`[name='metadata.resourceType']`).click();
+  await page.waitForSelector(".tree-field");
+
+  const numberOfOptions = await page
+    .locator(".tree-column.column .row")
+    .locator("visible=true")
+    .count();
+  const randomIndex = Math.floor(Math.random() * numberOfOptions);
+
+  await page
+    .locator(".tree-column .row.spaced")
+    .locator("visible=true")
+    .nth(randomIndex)
+    .dblclick();
+
+  const checkedButtonText = await page
+    .locator(".tree-column .row.spaced")
+    .locator("visible=true")
+    .nth(randomIndex)
+    .innerText();
+
+  const lastLabelBreadcrumbText = await page
+    .locator(".ui.label .ui.breadcrumb")
+    .last()
+    .innerText();
+
+  expect(lastLabelBreadcrumbText).toContain(checkedButtonText);
+  const submitButton = page.locator(".actions button:not(.ui.label button)");
+  await submitButton.click();
+
+  await expect(page.locator(".tree-field").first()).toBeHidden();
+  await expect(
+    page.locator("a").filter({ hasText: checkedButtonText })
+  ).toHaveCount(1);
 });

@@ -47,7 +47,7 @@ const FormActionsContainer = () => {
               }
             />
           </Grid.Column>
-          <Grid.Column width={16} className="pt-10" data-test-id="validate-button">
+          <Grid.Column width={16} className="pt-10" data-testid="validate-button">
             <ValidateButton />
           </Grid.Column>
           <Grid.Column width={16} className="pt-10">

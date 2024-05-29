@@ -409,7 +409,7 @@ const FormFieldsContainer = () => {
           label={
             <label htmlFor="files.enabled">{i18next.t("Files upload")}</label>
           }
-          data-test-id="filesupload-button"
+          data-testid="filesupload-button"
         >
           <Overridable id="NrDocs.Deposit.FileUploader.container">
             <FileUploader recordFiles={recordFiles}/>
