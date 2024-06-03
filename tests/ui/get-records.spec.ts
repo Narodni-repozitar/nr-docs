@@ -41,8 +41,9 @@ test("get records", async ({ page, baseURL }) => {
   await expect(page.getByTestId("result-item")).toHaveCount(20);
 
   await page.locator("#invenio-burger-menu-icon").click();
-  await page.locator(`.menu input[type='text']`).last().fill("Test");
-  await page.locator(`.menu input[type='text']`).last().press("Enter");
+  await page.getByTestId("searchbar").locator("input").locator("visible=true").fill("test");
+  await page.getByTestId("searchbar").locator("input").locator("visible=true").press("Enter");
+
   await expect(page).toHaveURL(
     `${baseURL}docs/?q=test&l=list&p=1&s=10&sort=bestmatch`
   );

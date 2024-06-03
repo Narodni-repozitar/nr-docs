@@ -1,4 +1,5 @@
 import { test, expect } from "playwright/test";
+import { getRandomInt } from "./util";
 
 let apiContext;
 
@@ -24,13 +25,14 @@ test("successful form submit", async ({ page }) => {
 
     // resource type selection
     await page.locator(`[name='metadata.resourceType']`).click();
-    await page.waitForSelector(".tree-field");
+    await page.waitForSelector(".tree-field", { state: "visible" });
 
     const numberOfOptions = await page
       .locator(".tree-column .row")
       .locator("visible=true")
       .count();
-    const randomIndex = Math.floor(Math.random() * numberOfOptions);
+
+    const randomIndex = await getRandomInt(numberOfOptions);
 
     await page
       .locator(".tree-column .row")
@@ -43,13 +45,15 @@ test("successful form submit", async ({ page }) => {
     // select language
 
     await page.locator(`[name='metadata.languages']`).click();
-    await page.waitForSelector('.visible.menu[role="listbox"]');
+    await page.waitForSelector('.visible.menu[role="listbox"]', {
+      state: "visible",
+    });
 
     const optionsLang = await page.$$(
       '.visible.menu[role="listbox"] [role="option"]'
     );
 
-    const randomIndexLang = Math.floor(Math.random() * optionsLang.length);
+    const randomIndexLang = await getRandomInt(optionsLang.length);
     const optionToClickLang = optionsLang[randomIndexLang];
 
     const optionNameLang = await optionToClickLang.getAttribute("name");
@@ -59,13 +63,16 @@ test("successful form submit", async ({ page }) => {
     // select access rights
 
     await page.locator(`[name='metadata.accessRights']`).click();
-    await page.waitForSelector('.visible.menu[role="listbox"]');
+    await page.waitForSelector('.visible.menu[role="listbox"]', {
+      state: "visible",
+    });
 
     const optionsRights = await page.$$(
       '.visible.menu[role="listbox"] [role="option"]'
     );
 
-    const randomIndexRights = Math.floor(Math.random() * optionsRights.length);
+    const randomIndexRights = await getRandomInt(optionsRights.length);
+
     const optionToClickRights = optionsRights[randomIndexRights];
 
     const optionNameRights = await optionToClickRights.getAttribute("name");
@@ -75,7 +82,7 @@ test("successful form submit", async ({ page }) => {
     // creator input
     const addCreatorButtonSelector =
       '.field:has(label[for="metadata.creators"]) button';
-    await page.waitForSelector(addCreatorButtonSelector);
+    await page.waitForSelector(addCreatorButtonSelector, { state: "visible" });
     await page.click(addCreatorButtonSelector);
     await page.locator(`[name='family_name']`).fill("test");
     await page.locator(`[name='given_name']`).fill("test");
@@ -99,7 +106,7 @@ test("form validation", async ({ page }) => {
 
     await page.getByTestId("validate-button").click();
 
-    await page.waitForSelector(`.label[role='alert']`);
+    await page.waitForSelector(`.label[role='alert']`, { state: "visible" });
 
     const alertLabels = await page.$$('.label[role="alert"]');
 
@@ -151,6 +158,8 @@ test("tree-field manipulation and selected result check", async ({ page }) => {
   const singleTreeField = page.locator(`[name='metadata.resourceType']`);
   singleTreeField.click();
 
+  await page.waitForSelector(".tree-field", { state: "visible" });
+
   const singleTreeFieldSubmitButton = page.locator(
     ".actions button:not(.ui.label button)"
   );
@@ -158,13 +167,14 @@ test("tree-field manipulation and selected result check", async ({ page }) => {
   const numberOfOptionsSingle = await page
     .locator(".tree-column .row:visible")
     .count();
-  const randomIndexSingle = Math.floor(Math.random() * numberOfOptionsSingle);
+
+  const randomIndexSingle = await getRandomInt(numberOfOptionsSingle);
 
   await page
     .locator(".tree-column .row:visible")
     .nth(randomIndexSingle)
     .dblclick();
-
+  await page.waitForSelector(".ui.label .ui.breadcrumb", { state: "visible" });
   const breadcrumbText = await page
     .locator(".ui.label .ui.breadcrumb")
     .last()
@@ -178,15 +188,13 @@ test("tree-field manipulation and selected result check", async ({ page }) => {
   // multiple
   const multipleTreeField = page.locator(`[name='metadata.subjectCategories']`);
   await multipleTreeField.click();
-  await page.waitForSelector(".tree-field");
+  await page.waitForSelector(".tree-field", { state: "visible" });
 
   const numberOfOptionsMultiple = await page
     .locator(".tree-column .row")
     .locator("visible=true")
     .count();
-  const randomIndexMultiple = Math.floor(
-    Math.random() * numberOfOptionsMultiple
-  );
+  const randomIndexMultiple = await getRandomInt(numberOfOptionsMultiple);
 
   await page
     .locator(".tree-column .row.spaced")
@@ -213,7 +221,7 @@ test("tree-field manipulation and selected result check", async ({ page }) => {
   );
   await multipleTreeFieldSubmitButton.click();
 
-  await expect(page.locator(".tree-field").first()).toBeHidden();
+  await expect(page.locator(".tree-field")).toBeHidden();
   await expect(
     page.locator("a").filter({ hasText: checkedButtonText })
   ).toHaveCount(1);

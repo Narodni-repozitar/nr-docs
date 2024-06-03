@@ -1,4 +1,5 @@
 import { test, expect } from "playwright/test";
+import { getRandomInt } from "./util";
 
 let apiContext;
 
@@ -18,8 +19,9 @@ test.afterAll(async () => {
 
 test("search draft", async ({ page, baseURL }) => {
   await page.goto("/me/records/");
-  await page.locator(`input[type='text']`).last().fill("test");
-  await page.locator(`input[type='text']`).last().press("Enter");
+  await page.getByTestId("searchbar").locator("input").locator("visible=true").fill("test");
+  await page.getByTestId("searchbar").locator("input").locator("visible=true").press("Enter");
+
   await expect(page).toHaveURL(
     `${baseURL}me/records/?q=test&l=list&p=1&s=10&sort=bestmatch`
   );
@@ -29,8 +31,7 @@ test("search draft", async ({ page, baseURL }) => {
 
 test("filter draft", async ({ page, baseURL }) => {
   await page.goto("/me/records/");
-  // await page.getByTestId("filter-button").click();
-  await page.locator(".button:has(.sliders)").click();
+  await page.getByTestId("filter-button").click();
 
   await expect(page.locator(".sidebar .facet-list")).toBeVisible();
   // get all aggregation buckets
@@ -39,7 +40,7 @@ test("filter draft", async ({ page, baseURL }) => {
     .locator("visible=true")
     .count();
 
-  const randomAggIndex = Math.floor(Math.random() * numberOfAggs);
+  const randomAggIndex = await getRandomInt(numberOfAggs);
 
   const selectedAgg = page
     .locator(".ui.facet")
@@ -52,7 +53,7 @@ test("filter draft", async ({ page, baseURL }) => {
     .locator("visible=true")
     .count();
 
-  const randomCheckboxIndex = Math.floor(Math.random() * numberOfCheckboxes);
+  const randomCheckboxIndex = await getRandomInt(numberOfCheckboxes);
 
   const selectedCheckbox = selectedAgg
     .locator(".list .item .checkbox input")
@@ -60,7 +61,7 @@ test("filter draft", async ({ page, baseURL }) => {
 
   const selectedBucketCount = await selectedAgg
     .locator(".list .item .facet-count")
-    .filter({ has: page.locator("visible=true") })
+    .locator("visible=true") 
     .nth(randomCheckboxIndex)
     .textContent()
     .then((text) => {
