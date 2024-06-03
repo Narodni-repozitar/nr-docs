@@ -195,14 +195,7 @@ const FormFieldsContainer = () => {
           includesPaths={["metadata.creators", "metadata.contributors"]}
           label={i18next.t("Creators")}
         >
-          <FieldDataProvider
-            value={{
-              getFieldData: getFieldDataUtil(
-                formConfig.ui_model,
-                "metadata.creators.0"
-              ),
-            }}
-          >
+          <FieldDataProvider fieldPathPrefix="metadata.creators.0">
             {/* TODO: make a hoc to wrap each component that needs a specific provider (with specific prefix) */}
             <Overridable
               id="NrDocs.Deposit.CreatorsField.container"
@@ -218,14 +211,7 @@ const FormFieldsContainer = () => {
               />
             </Overridable>
           </FieldDataProvider>
-          <FieldDataProvider
-            value={{
-              getFieldData: getFieldDataUtil(
-                formConfig.ui_model,
-                "metadata.contributors.0"
-              ),
-            }}
-          >
+          <FieldDataProvider fieldPathPrefix="metadata.contributors.0">
             <Overridable
               id="NrDocs.Deposit.ContributorsField.container"
               fieldPath="metadata.contributors"
@@ -336,27 +322,29 @@ const FormFieldsContainer = () => {
         </AccordionField>
       </Overridable>
       <Overridable id="NrDocs.Deposit.AccordionRelatedItems.container">
-        <AccordionField
-          includesPaths={["metadata.relatedItems"]}
-          label={i18next.t("Related items")}
-        >
-          <Overridable
-            id="NrDocs.Deposit.RelatedItemsField.container"
-            fieldPath="metadata.relatedItems"
+        <FieldDataProvider fieldPathPrefix="metadata.relatedItems.0">
+          <AccordionField
+            includesPaths={["metadata.relatedItems"]}
+            label={i18next.t("Related items")}
           >
-            <RelatedItemsField
+            <Overridable
+              id="NrDocs.Deposit.RelatedItemsField.container"
               fieldPath="metadata.relatedItems"
-              label={
-                <FieldLabel
-                  htmlFor={"metadata.relatedItems"}
-                  icon="pencil"
-                  label={i18next.t("Link to/from other resources")}
-                />
-              }
-              {...getFieldData("metadata.relatedItems")}
-            />
-          </Overridable>
-        </AccordionField>
+            >
+              <RelatedItemsField
+                fieldPath="metadata.relatedItems"
+                label={
+                  <FieldLabel
+                    htmlFor={"metadata.relatedItems"}
+                    icon="pencil"
+                    label={i18next.t("Link to/from other resources")}
+                  />
+                }
+                {...getFieldData("metadata.relatedItems")}
+              />
+            </Overridable>
+          </AccordionField>
+        </FieldDataProvider>
       </Overridable>
       <Overridable id="NrDocs.Deposit.AccordionEvents.container">
         <AccordionField
