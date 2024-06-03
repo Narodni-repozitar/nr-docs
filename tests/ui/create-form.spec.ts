@@ -43,10 +43,10 @@ test("successful form submit", async ({ page }) => {
     // select language
 
     await page.locator(`[name='metadata.languages']`).click();
-    await page.waitForSelector('div[role="listbox"].visible.menu');
+    await page.waitForSelector('.visible.menu[role="listbox"]');
 
     const optionsLang = await page.$$(
-      '[role="listbox"].visible.menu [role="option"]'
+      '.visible.menu[role="listbox"] [role="option"]'
     );
 
     const randomIndexLang = Math.floor(Math.random() * optionsLang.length);
@@ -59,10 +59,10 @@ test("successful form submit", async ({ page }) => {
     // select access rights
 
     await page.locator(`[name='metadata.accessRights']`).click();
-    await page.waitForSelector('div[role="listbox"].visible.menu');
+    await page.waitForSelector('.visible.menu[role="listbox"]');
 
     const optionsRights = await page.$$(
-      '[role="listbox"].visible.menu [role="option"]'
+      '.visible.menu[role="listbox"] [role="option"]'
     );
 
     const randomIndexRights = Math.floor(Math.random() * optionsRights.length);
@@ -101,7 +101,7 @@ test("form validation", async ({ page }) => {
 
     await page.waitForSelector(`.label[role='alert']`);
 
-    const alertLabels = await page.$$('div.label[role="alert"]');
+    const alertLabels = await page.$$('.label[role="alert"]');
 
     expect(alertLabels.length).toBe(5);
   } catch (error) {
@@ -148,36 +148,70 @@ test("file upload", async ({ page }) => {
 test("tree-field manipulation and selected result check", async ({ page }) => {
   await page.goto("/docs/_new");
 
-  await page.locator(`[name='metadata.subjectCategories']`).click();
+  const singleTreeField = page.locator(`[name='metadata.resourceType']`);
+  singleTreeField.click();
+
+  const singleTreeFieldSubmitButton = page.locator(
+    ".actions button:not(.ui.label button)"
+  );
+
+  const numberOfOptionsSingle = await page
+    .locator(".tree-column .row:visible")
+    .count();
+  const randomIndexSingle = Math.floor(Math.random() * numberOfOptionsSingle);
+
+  await page
+    .locator(".tree-column .row:visible")
+    .nth(randomIndexSingle)
+    .dblclick();
+
+  const breadcrumbText = await page
+    .locator(".ui.label .ui.breadcrumb")
+    .last()
+    .innerText();
+
+  await singleTreeFieldSubmitButton.click();
+  await expect(
+    singleTreeField.locator(".text span").filter({ hasText: breadcrumbText })
+  ).toHaveCount(1);
+
+  // multiple
+  const multipleTreeField = page.locator(`[name='metadata.subjectCategories']`);
+  await multipleTreeField.click();
   await page.waitForSelector(".tree-field");
 
-  const numberOfOptions = await page
+  const numberOfOptionsMultiple = await page
     .locator(".tree-column .row")
     .locator("visible=true")
     .count();
-  const randomIndex = Math.floor(Math.random() * numberOfOptions);
+  const randomIndexMultiple = Math.floor(
+    Math.random() * numberOfOptionsMultiple
+  );
 
   await page
     .locator(".tree-column .row.spaced")
-    .locator("visible=true")
-    .nth(randomIndex)
-    .dblclick();
+    .nth(randomIndexMultiple)
+    .locator(".checkbox")
+    .click();
 
   const checkedButtonText = await page
     .locator(".tree-column .row.spaced")
-    .locator("visible=true")
-    .nth(randomIndex)
+    .nth(randomIndexMultiple)
     .innerText();
 
-  const lastLabelBreadcrumbText = await page
-    .locator(".actions .row .ui.label")
-    .last()
-    .locator('.ui.breadcrumb')
+  const labelLocator = page.locator(".actions .row .ui.label").last();
+  await labelLocator.waitFor({ state: "visible" });
+
+  const lastLabelBreadcrumbText = await labelLocator
+    .locator(".ui.breadcrumb")
     .innerText();
 
   expect(lastLabelBreadcrumbText).toContain(checkedButtonText);
-  const submitButton = page.locator(".actions button:not(.ui.label button)");
-  await submitButton.click();
+
+  const multipleTreeFieldSubmitButton = page.locator(
+    ".actions button:not(.ui.label button)"
+  );
+  await multipleTreeFieldSubmitButton.click();
 
   await expect(page.locator(".tree-field").first()).toBeHidden();
   await expect(

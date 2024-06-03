@@ -81,7 +81,10 @@ test("filter draft", async ({ page, baseURL }) => {
     `${selectedBucketCount}`
   );
   // clear filters
-  await page.locator('.tablet.row button[name="clear"]').click();
+  await page
+    .locator('.tablet button[name="clear"]')
+    .locator("visible=true")
+    .click();
   await expect(page).toHaveURL(
     `${baseURL}me/records/?q=&l=list&p=1&s=10&sort=newest`
   );
