@@ -19,7 +19,6 @@ test.afterAll(async () => {
 test("successful form submit", async ({ page }) => {
   try {
     await page.goto(`/docs/_new`);
-
     // title fill
     await page.locator(`[name='metadata.title']`).fill("test");
 
@@ -28,13 +27,13 @@ test("successful form submit", async ({ page }) => {
     await page.waitForSelector(".tree-field");
 
     const numberOfOptions = await page
-      .locator(".tree-column.column .row")
+      .locator(".tree-column .row")
       .locator("visible=true")
       .count();
     const randomIndex = Math.floor(Math.random() * numberOfOptions);
 
     await page
-      .locator(".tree-column .row.spaced")
+      .locator(".tree-column .row")
       .locator("visible=true")
       .nth(randomIndex)
       .dblclick();
@@ -118,9 +117,9 @@ test("file upload", async ({ page }) => {
     await page.locator(`[name='save']`).click();
     await page.locator(`[name='save']`).click();
 
-    const parentLocator = await page.getByTestId("filesupload-button");
+    const parentLocator = page.getByTestId("filesupload-button");
 
-    const buttonNotInTable = await parentLocator.locator(
+    const buttonNotInTable = parentLocator.locator(
       "button:not(.ui.table button)"
     );
 
@@ -149,11 +148,11 @@ test("file upload", async ({ page }) => {
 test("tree-field manipulation and selected result check", async ({ page }) => {
   await page.goto("/docs/_new");
 
-  await page.locator(`[name='metadata.resourceType']`).click();
+  await page.locator(`[name='metadata.subjectCategories']`).click();
   await page.waitForSelector(".tree-field");
 
   const numberOfOptions = await page
-    .locator(".tree-column.column .row")
+    .locator(".tree-column .row")
     .locator("visible=true")
     .count();
   const randomIndex = Math.floor(Math.random() * numberOfOptions);
@@ -171,8 +170,9 @@ test("tree-field manipulation and selected result check", async ({ page }) => {
     .innerText();
 
   const lastLabelBreadcrumbText = await page
-    .locator(".ui.label .ui.breadcrumb")
+    .locator(".actions .row .ui.label")
     .last()
+    .locator('.ui.breadcrumb')
     .innerText();
 
   expect(lastLabelBreadcrumbText).toContain(checkedButtonText);

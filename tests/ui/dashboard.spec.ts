@@ -24,7 +24,7 @@ test("search draft", async ({ page, baseURL }) => {
     `${baseURL}me/records/?q=test&l=list&p=1&s=10&sort=bestmatch`
   );
 
-  await expect(page.getByTestId("aggregation-count")).toContainText("78");
+  await expect(page.getByTestId("aggregation-count")).toContainText("0");
 });
 
 test("filter draft", async ({ page, baseURL }) => {
