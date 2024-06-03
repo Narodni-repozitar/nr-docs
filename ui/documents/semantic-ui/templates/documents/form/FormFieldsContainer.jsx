@@ -5,8 +5,6 @@ import {
   FormikStateLogger,
   EDTFSingleDatePicker,
   useFieldData,
-  FieldDataProvider,
-  getFieldData as getFieldDataUtil,
 } from "@js/oarepo_ui";
 import {
   LocalVocabularySelectField,
@@ -195,48 +193,46 @@ const FormFieldsContainer = () => {
           includesPaths={["metadata.creators", "metadata.contributors"]}
           label={i18next.t("Creators")}
         >
-          <FieldDataProvider fieldPathPrefix="metadata.creators.0">
-            {/* TODO: make a hoc to wrap each component that needs a specific provider (with specific prefix) */}
-            <Overridable
-              id="NrDocs.Deposit.CreatorsField.container"
+          {/* TODO: make a hoc to wrap each component that needs a specific provider (with specific prefix) */}
+          <Overridable
+            id="NrDocs.Deposit.CreatorsField.container"
+            fieldPath="metadata.creators"
+          >
+            <CreatibutorsField
+              label={i18next.t("Authors")}
+              labelIcon="user"
               fieldPath="metadata.creators"
-            >
-              <CreatibutorsField
-                label={i18next.t("Authors")}
-                labelIcon="user"
-                fieldPath="metadata.creators"
-                schema="creators"
-                autocompleteNames="off"
-                required
-              />
-            </Overridable>
-          </FieldDataProvider>
-          <FieldDataProvider fieldPathPrefix="metadata.contributors.0">
-            <Overridable
-              id="NrDocs.Deposit.ContributorsField.container"
+              schema="creators"
+              autocompleteNames="off"
+              required
+              fieldPathPrefix="metadata.creators.0"
+            />
+          </Overridable>
+          <Overridable
+            id="NrDocs.Deposit.ContributorsField.container"
+            fieldPath="metadata.contributors"
+          >
+            <CreatibutorsField
+              label={i18next.t("Contributors")}
+              addButtonLabel={i18next.t("Add contributor")}
+              modal={{
+                addLabel: i18next.t("Add contributor"),
+                editLabel: i18next.t("Edit contributor"),
+              }}
+              labelIcon="user"
               fieldPath="metadata.contributors"
-            >
-              <CreatibutorsField
-                label={i18next.t("Contributors")}
-                addButtonLabel={i18next.t("Add contributor")}
-                modal={{
-                  addLabel: i18next.t("Add contributor"),
-                  editLabel: i18next.t("Edit contributor"),
-                }}
-                labelIcon="user"
-                fieldPath="metadata.contributors"
-                schema="contributors"
-                autocompleteNames="off"
-                nameFieldPlaceholder={i18next.t("Write contributor's name.")}
-                lastNameFieldPlaceholder={i18next.t(
-                  "Write contributor's last name."
-                )}
-                nameTypeHelpText={i18next.t(
-                  "Choose if the contributor is a person or an organization."
-                )}
-              />
-            </Overridable>
-          </FieldDataProvider>
+              schema="contributors"
+              autocompleteNames="off"
+              nameFieldPlaceholder={i18next.t("Write contributor's name.")}
+              lastNameFieldPlaceholder={i18next.t(
+                "Write contributor's last name."
+              )}
+              nameTypeHelpText={i18next.t(
+                "Choose if the contributor is a person or an organization."
+              )}
+              fieldPathPrefix="metadata.contributors.0"
+            />
+          </Overridable>
         </AccordionField>
       </Overridable>
       <Overridable id="NrDocs.Deposit.AccordionFieldDescription.container">
@@ -322,29 +318,27 @@ const FormFieldsContainer = () => {
         </AccordionField>
       </Overridable>
       <Overridable id="NrDocs.Deposit.AccordionRelatedItems.container">
-        <FieldDataProvider fieldPathPrefix="metadata.relatedItems.0">
-          <AccordionField
-            includesPaths={["metadata.relatedItems"]}
-            label={i18next.t("Related items")}
+        <AccordionField
+          includesPaths={["metadata.relatedItems"]}
+          label={i18next.t("Related items")}
+        >
+          <Overridable
+            id="NrDocs.Deposit.RelatedItemsField.container"
+            fieldPath="metadata.relatedItems"
           >
-            <Overridable
-              id="NrDocs.Deposit.RelatedItemsField.container"
+            <RelatedItemsField
               fieldPath="metadata.relatedItems"
-            >
-              <RelatedItemsField
-                fieldPath="metadata.relatedItems"
-                label={
-                  <FieldLabel
-                    htmlFor={"metadata.relatedItems"}
-                    icon="pencil"
-                    label={i18next.t("Link to/from other resources")}
-                  />
-                }
-                {...getFieldData("metadata.relatedItems")}
-              />
-            </Overridable>
-          </AccordionField>
-        </FieldDataProvider>
+              label={
+                <FieldLabel
+                  htmlFor={"metadata.relatedItems"}
+                  icon="pencil"
+                  label={i18next.t("Link to/from other resources")}
+                />
+              }
+              {...getFieldData("metadata.relatedItems")}
+            />
+          </Overridable>
+        </AccordionField>
       </Overridable>
       <Overridable id="NrDocs.Deposit.AccordionEvents.container">
         <AccordionField
