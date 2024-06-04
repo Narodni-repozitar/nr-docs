@@ -21,8 +21,7 @@ dependencies = [
     "oarepo-ui",
     "oarepo-vocabularies",
     "oarepo[s3]==12.*",
-    "python-dotenv",
-    "marshmallow-i18n-messages"
+    "python-dotenv"
 ]
 requires-python = ">=3.10,<3.11"
 

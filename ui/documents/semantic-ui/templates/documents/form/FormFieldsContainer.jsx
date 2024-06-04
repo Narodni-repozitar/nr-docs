@@ -23,7 +23,8 @@ import {
   RelatedItemsField,
   objectIdentifiersSchema,
   FileUploader,
-} from "@nr";
+  LicenseField,
+} from "@nr/forms";
 import Overridable from "react-overridable";
 import { i18next } from "@translations/i18next";
 import _has from "lodash/has";

@@ -5,7 +5,7 @@
 groups = ["default"]
 strategy = ["cross_platform", "inherit_metadata"]
 lock_version = "4.4.1"
-content_hash = "sha256:da312e770dbdc560a4639f6e961c47c5b8ca0f3142343a00f50cbf5e9f1a51e9"
+content_hash = "sha256:d31d372f9594ebf1fc47c97a8b13f40032b4fa6a57313a55d1b0250200998971"
 
 [[package]]
 name = "alembic"
@@ -238,23 +238,23 @@ files = [
 
 [[package]]
 name = "boto3"
-version = "1.34.108"
+version = "1.34.117"
 requires_python = ">=3.8"
 summary = "The AWS SDK for Python"
 groups = ["default"]
 dependencies = [
-    "botocore<1.35.0,>=1.34.108",
+    "botocore<1.35.0,>=1.34.117",
     "jmespath<2.0.0,>=0.7.1",
     "s3transfer<0.11.0,>=0.10.0",
 ]
 files = [
-    {file = "boto3-1.34.108-py3-none-any.whl", hash = "sha256:3601267d76cac17f1d4595c3d8d968dc15be074b79bfa3985187a02b328a0a5f"},
-    {file = "boto3-1.34.108.tar.gz", hash = "sha256:677723295151d29ff9b363598a20c1997c4e2af7e50669d9e428b757fe586a10"},
+    {file = "boto3-1.34.117-py3-none-any.whl", hash = "sha256:1506589e30566bbb2f4997b60968ff7d4ef8a998836c31eedd36437ac3b7408a"},
+    {file = "boto3-1.34.117.tar.gz", hash = "sha256:c8a383b904d6faaf7eed0c06e31b423db128e4c09ce7bd2afc39d1cd07030a51"},
 ]
 
 [[package]]
 name = "botocore"
-version = "1.34.108"
+version = "1.34.117"
 requires_python = ">=3.8"
 summary = "Low-level, data-driven core of boto 3."
 groups = ["default"]
@@ -264,8 +264,8 @@ dependencies = [
     "urllib3!=2.2.0,<3,>=1.25.4; python_version >= \"3.10\"",
 ]
 files = [
-    {file = "botocore-1.34.108-py3-none-any.whl", hash = "sha256:b1b9d00804267669c5fcc36489269f7e9c43580c30f0885fbf669cf73cec720b"},
-    {file = "botocore-1.34.108.tar.gz", hash = "sha256:384c9408c447631475dc41fdc9bf2e0f30c29c420d96bfe8b468bdc2bace3e13"},
+    {file = "botocore-1.34.117-py3-none-any.whl", hash = "sha256:26a431997f882bcdd1e835f44c24b2a1752b1c4e5183c2ce62999ce95d518d6c"},
+    {file = "botocore-1.34.117.tar.gz", hash = "sha256:4637ca42e6c51aebc4d9a2d92f97bf4bdb042e3f7985ff31a659a11e4c170e73"},
 ]
 
 [[package]]
@@ -346,13 +346,13 @@ files = [
 
 [[package]]
 name = "certifi"
-version = "2024.2.2"
+version = "2024.6.2"
 requires_python = ">=3.6"
 summary = "Python package for providing Mozilla's CA Bundle."
 groups = ["default"]
 files = [
-    {file = "certifi-2024.2.2-py3-none-any.whl", hash = "sha256:dc383c07b76109f368f6106eee2b593b04a011ea4d55f652c6ca24a754d1cdd1"},
-    {file = "certifi-2024.2.2.tar.gz", hash = "sha256:0569859f95fc761b18b45ef421b1290a0f65f147e92a1e5eb3e635f9a5e4e66f"},
+    {file = "certifi-2024.6.2-py3-none-any.whl", hash = "sha256:ddc6c8ce995e6987e7faf5e3f1b02b302836a0e5d98ece18392cb1a36c72ad56"},
+    {file = "certifi-2024.6.2.tar.gz", hash = "sha256:3cd43f1c6fa7dedc5899d69d3ad0398fd018ad1a17fba83ddaf78aa46c747516"},
 ]
 
 [[package]]
@@ -772,6 +772,15 @@ files = [
 ]
 
 [[package]]
+name = "events"
+version = "0.5"
+summary = "Bringing the elegance of C# EventHandler to Python"
+groups = ["default"]
+files = [
+    {file = "Events-0.5-py3-none-any.whl", hash = "sha256:a7286af378ba3e46640ac9825156c93bdba7502174dd696090fdfcd4d80a1abd"},
+]
+
+[[package]]
 name = "exceptiongroup"
 version = "1.2.1"
 requires_python = ">=3.7"
@@ -796,7 +805,7 @@ files = [
 
 [[package]]
 name = "faker"
-version = "25.2.0"
+version = "25.3.0"
 requires_python = ">=3.8"
 summary = "Faker is a Python package that generates fake data for you."
 groups = ["default"]
@@ -804,8 +813,8 @@ dependencies = [
     "python-dateutil>=2.4",
 ]
 files = [
-    {file = "Faker-25.2.0-py3-none-any.whl", hash = "sha256:cfe97c4857c4c36ee32ea4aaabef884895992e209bae4cbd26807cf3e05c6918"},
-    {file = "Faker-25.2.0.tar.gz", hash = "sha256:45b84f47ff1ef86e3d1a8d11583ca871ecf6730fad0660edadc02576583a2423"},
+    {file = "Faker-25.3.0-py3-none-any.whl", hash = "sha256:0158d47e955b6ec22134c0a74ebb7ed34fe600896208bafbf1008db831b17f04"},
+    {file = "Faker-25.3.0.tar.gz", hash = "sha256:bcbe31eee5ef4bbf87ce36c4eba53c01e2a1d912fde2a4d3528b430d2beb784f"},
 ]
 
 [[package]]
@@ -1486,7 +1495,7 @@ files = [
 
 [[package]]
 name = "invenio-administration"
-version = "2.2.1"
+version = "2.2.3"
 requires_python = ">=3.7"
 summary = "Invenio module that adds administration panel to the system."
 groups = ["default"]
@@ -1502,8 +1511,8 @@ dependencies = [
     "invenio-vocabularies<4.0.0,>=3.0.0",
 ]
 files = [
-    {file = "invenio-administration-2.2.1.tar.gz", hash = "sha256:15b0678e1b4e36fccc85e58ffad7aaf307e9fb4cfdfdd4d94f7db7c1cb22f7dd"},
-    {file = "invenio_administration-2.2.1-py2.py3-none-any.whl", hash = "sha256:7d5ce0932ae3ceb6bf7ee274fbd9cfe6685b68356a3054f1f0de32d4f7875bff"},
+    {file = "invenio-administration-2.2.3.tar.gz", hash = "sha256:1df2e360d14359cec133f593d9e7919c0d7cd10164b031c0b31938545d7d5ea0"},
+    {file = "invenio_administration-2.2.3-py2.py3-none-any.whl", hash = "sha256:334c80b5dae52487ab687f06204e07455e8413b720dc145077d1dbf6bbcc2dae"},
 ]
 
 [[package]]
@@ -1849,17 +1858,17 @@ files = [
 
 [[package]]
 name = "invenio-mail"
-version = "2.1.0"
+version = "2.1.1"
 requires_python = ">=3.7"
 summary = "Invenio-Mail is an integration layer between Invenio and Flask-Mail."
 groups = ["default"]
 dependencies = [
-    "Flask-Mail>=0.9.1",
+    "Flask-Mail<0.10.0,>=0.9.1",
     "Flask>=0.11.1",
 ]
 files = [
-    {file = "invenio-mail-2.1.0.tar.gz", hash = "sha256:fe2e660faab86653288eb9732ce06702f2c9b0fefbabe9fea1aaf49efed708e9"},
-    {file = "invenio_mail-2.1.0-py2.py3-none-any.whl", hash = "sha256:d31824cdfa7aff15e0ff67f20258cca87adc4548a4711d4b0bd6e318b30cfd2f"},
+    {file = "invenio-mail-2.1.1.tar.gz", hash = "sha256:fa652ba65f7fef1e32b1898bb94131912db882fcdc4980e3649ab41160911c44"},
+    {file = "invenio_mail-2.1.1-py2.py3-none-any.whl", hash = "sha256:7260aff9cd0563fca792e271f85f35cc9756820ca0070298143931437654147a"},
 ]
 
 [[package]]
@@ -2078,7 +2087,7 @@ files = [
 
 [[package]]
 name = "invenio-records-resources"
-version = "5.7.0"
+version = "5.10.0"
 requires_python = ">=3.7"
 summary = "Invenio resources module to create REST APIs."
 groups = ["default"]
@@ -2103,8 +2112,8 @@ dependencies = [
     "zipstream-ng>=1.3.4",
 ]
 files = [
-    {file = "invenio-records-resources-5.7.0.tar.gz", hash = "sha256:c61aa904cd26cbeed45a3acffb4eedfdede1545751ce68dee6b752f5ed521ba9"},
-    {file = "invenio_records_resources-5.7.0-py2.py3-none-any.whl", hash = "sha256:ac83397b48320bb2700bccb05fe63abf0f8916c6d6f596b3712d1693852943cc"},
+    {file = "invenio-records-resources-5.10.0.tar.gz", hash = "sha256:9a4d064a39caf4409b59f244a10c7525af94ee06200589f186efe619e6b0b417"},
+    {file = "invenio_records_resources-5.10.0-py2.py3-none-any.whl", hash = "sha256:3eb9242dd65536958d58192d616f73b7055fd99ffa34a5f99869c03927d2a5f9"},
 ]
 
 [[package]]
@@ -2334,7 +2343,7 @@ files = [
 
 [[package]]
 name = "ipython"
-version = "8.24.0"
+version = "8.25.0"
 requires_python = ">=3.10"
 summary = "IPython: Productive Interactive Computing"
 groups = ["default"]
@@ -2352,8 +2361,8 @@ dependencies = [
     "typing-extensions>=4.6; python_version < \"3.12\"",
 ]
 files = [
-    {file = "ipython-8.24.0-py3-none-any.whl", hash = "sha256:d7bf2f6c4314984e3e02393213bab8703cf163ede39672ce5918c51fe253a2a3"},
-    {file = "ipython-8.24.0.tar.gz", hash = "sha256:010db3f8a728a578bb641fdd06c063b9fb8e96a9464c63aec6310fbcb5e80501"},
+    {file = "ipython-8.25.0-py3-none-any.whl", hash = "sha256:53eee7ad44df903a06655871cbab66d156a051fd86f3ec6750470ac9604ac1ab"},
+    {file = "ipython-8.25.0.tar.gz", hash = "sha256:c6ed726a140b6e725b911528f80439c534fac915246af3efc39440a6b0f9d716"},
 ]
 
 [[package]]
@@ -2432,7 +2441,7 @@ files = [
 
 [[package]]
 name = "jinjax"
-version = "0.36"
+version = "0.37"
 requires_python = "<4.0,>=3.9"
 summary = "Replace your HTML templates with Python server-Side components"
 groups = ["default"]
@@ -2442,8 +2451,8 @@ dependencies = [
     "whitenoise>=5.3",
 ]
 files = [
-    {file = "jinjax-0.36-py3-none-any.whl", hash = "sha256:d5880a05962aae1c9863d91290d259055301bf586c7dc9fe9574d4edaaa91316"},
-    {file = "jinjax-0.36.tar.gz", hash = "sha256:ee406e5a85d36094f7223d518268d6d550809df47c582c7fd9b0d993d39fbb80"},
+    {file = "jinjax-0.37-py3-none-any.whl", hash = "sha256:c45a7a495e617f4c582ea19c831a19239b427b813ff23b819e7ba041edc5f11d"},
+    {file = "jinjax-0.37.tar.gz", hash = "sha256:0ec87e61a0b5e1b77381299828d563b06b6402c38d4c990c8228bca901d5c77d"},
 ]
 
 [[package]]
@@ -2561,7 +2570,7 @@ files = [
 
 [[package]]
 name = "jupyter-client"
-version = "8.6.1"
+version = "8.6.2"
 requires_python = ">=3.8"
 summary = "Jupyter protocol implementation and client libraries"
 groups = ["default"]
@@ -2573,8 +2582,8 @@ dependencies = [
     "traitlets>=5.3",
 ]
 files = [
-    {file = "jupyter_client-8.6.1-py3-none-any.whl", hash = "sha256:3b7bd22f058434e3b9a7ea4b1500ed47de2713872288c0d511d19926f99b459f"},
-    {file = "jupyter_client-8.6.1.tar.gz", hash = "sha256:e842515e2bab8e19186d89fdfea7abd15e39dd581f94e399f00e2af5a1652d3f"},
+    {file = "jupyter_client-8.6.2-py3-none-any.whl", hash = "sha256:50cbc5c66fd1b8f65ecb66bc490ab73217993632809b6e505687de18e9dea39f"},
+    {file = "jupyter_client-8.6.2.tar.gz", hash = "sha256:2bda14d55ee5ba58552a8c53ae43d215ad9868853489213f37da060ced54d8df"},
 ]
 
 [[package]]
@@ -2960,7 +2969,7 @@ files = [
 
 [[package]]
 name = "marshmallow-utils"
-version = "0.8.2"
+version = "0.9.0"
 requires_python = ">=3.7"
 summary = "Extras and utilities for Marshmallow."
 groups = ["default"]
@@ -2980,8 +2989,8 @@ dependencies = [
     "werkzeug>=1.0.0",
 ]
 files = [
-    {file = "marshmallow-utils-0.8.2.tar.gz", hash = "sha256:2d5a315b82da8864174cf17ac59119995b8d4bf0cda5fbd1688fc5b2860e18c4"},
-    {file = "marshmallow_utils-0.8.2-py2.py3-none-any.whl", hash = "sha256:45a38869951c30712953139d6b8d0bd4c93ac5a1f960734f6769a1d9433c2577"},
+    {file = "marshmallow-utils-0.9.0.tar.gz", hash = "sha256:e1864678e3bc2b031ed94f716a8b2d3eec0f1957851d280a63c914e392e7686e"},
+    {file = "marshmallow_utils-0.9.0-py2.py3-none-any.whl", hash = "sha256:4ea60a2d0eb8f6cba27bec77ea0543935dff4e015a53bcf22a3722f185ac8c0d"},
 ]
 
 [[package]]
@@ -3165,7 +3174,7 @@ files = [
 
 [[package]]
 name = "nr-metadata"
-version = "2.0.23"
+version = "2.0.25"
 requires_python = ">=3.9"
 summary = "\"Generated metadata files for the Czech National Repository\""
 groups = ["default"]
@@ -3175,8 +3184,8 @@ dependencies = [
     "oarepo-vocabularies>=2.0.0",
 ]
 files = [
-    {file = "nr_metadata-2.0.23-py2.py3-none-any.whl", hash = "sha256:22aa428e68cae44ef0d69738fb1275a20f162d0c68ec51e57bdcc249aacf205d"},
-    {file = "nr_metadata-2.0.23.tar.gz", hash = "sha256:141a30f604f1a088085965602a225d58cc4adbac9ab208659bcb1661ea8da60e"},
+    {file = "nr_metadata-2.0.25-py2.py3-none-any.whl", hash = "sha256:7a3dfd40eb93bd5f9e0bf75910abe59e37f483add6441fbfb357868aa50f6241"},
+    {file = "nr_metadata-2.0.25.tar.gz", hash = "sha256:b91dcbe11aae1dd5fe9ef1b766fe71b61f70a272442588c47b22517a697e333c"},
 ]
 
 [[package]]
@@ -3210,7 +3219,7 @@ files = [
 
 [[package]]
 name = "oarepo"
-version = "12.0.19"
+version = "12.0.20"
 requires_python = ">=3.10"
 summary = "CESNET, UCT Prague and NTK wrapper around Invenio v3."
 groups = ["default"]
@@ -3233,7 +3242,7 @@ dependencies = [
     "cachelib==0.9.0",
     "cairosvg==2.7.1",
     "celery==5.3.6",
-    "certifi==2024.2.2",
+    "certifi==2024.6.2",
     "charset-normalizer==3.3.2",
     "citeproc-py-styles==0.1.3",
     "citeproc-py==0.6.0",
@@ -3257,9 +3266,10 @@ dependencies = [
     "dojson==1.5.0",
     "edtf==4.0.1",
     "email-validator==2.1.1",
+    "events==0.5",
     "exceptiongroup==1.2.1; python_version < \"3.11\"",
     "executing==2.0.1",
-    "faker==25.2.0",
+    "faker==25.3.0",
     "fastjsonschema==2.19.1",
     "flask-admin==1.6.1",
     "flask-alembic==2.0.1",
@@ -3302,7 +3312,7 @@ dependencies = [
     "invenio-access==2.0.0",
     "invenio-accounts==5.0.1",
     "invenio-admin==1.4.0",
-    "invenio-administration==2.2.1",
+    "invenio-administration==2.2.3",
     "invenio-app==1.5.0",
     "invenio-assets==3.0.3",
     "invenio-banners==3.0.1",
@@ -3320,7 +3330,7 @@ dependencies = [
     "invenio-indexer==2.3.0",
     "invenio-jsonschemas==1.1.4",
     "invenio-logging==2.1.1",
-    "invenio-mail==2.1.0",
+    "invenio-mail==2.1.1",
     "invenio-notifications==0.5.0",
     "invenio-oaiserver==2.2.1",
     "invenio-oauth2server==2.3.1",
@@ -3331,7 +3341,7 @@ dependencies = [
     "invenio-queues==1.0.1",
     "invenio-records-files==1.2.1",
     "invenio-records-permissions==0.19.2",
-    "invenio-records-resources==5.7.0",
+    "invenio-records-resources==5.10.0",
     "invenio-records-rest==2.4.1",
     "invenio-records-ui==1.2.0",
     "invenio-records==2.3.0",
@@ -3345,7 +3355,7 @@ dependencies = [
     "invenio-users-resources==5.2.0",
     "invenio-vocabularies==3.4.0",
     "invenio-webhooks==1.0.1",
-    "ipython==8.24.0",
+    "ipython==8.25.0",
     "isbnlib==3.10.14",
     "itsdangerous==2.0.1",
     "jedi==0.19.1",
@@ -3357,7 +3367,7 @@ dependencies = [
     "jsonresolver==0.3.2",
     "jsonschema-specifications==2023.12.1",
     "jsonschema==4.22.0",
-    "jupyter-client==8.6.1",
+    "jupyter-client==8.6.2",
     "jupyter-core==5.7.2",
     "jupyterlab-pygments==0.3.0",
     "kombu==5.3.7",
@@ -3368,7 +3378,7 @@ dependencies = [
     "mako==1.3.5",
     "markupsafe==2.1.5",
     "marshmallow-oneofschema==3.1.1",
-    "marshmallow-utils==0.8.2",
+    "marshmallow-utils==0.9.0",
     "marshmallow==3.21.2",
     "matplotlib-inline==0.1.7",
     "maxminddb-geolite2==2018.703",
@@ -3381,7 +3391,7 @@ dependencies = [
     "nbformat==5.10.4",
     "oauthlib==2.1.0",
     "opensearch-dsl==2.1.0",
-    "opensearch-py==2.5.0",
+    "opensearch-py==2.6.0",
     "ordered-set==4.1.0",
     "pandocfilters==1.5.1",
     "parso==0.8.4",
@@ -3391,16 +3401,16 @@ dependencies = [
     "platformdirs==4.2.2",
     "pluggy==0.13.1",
     "ply==3.11",
-    "prompt-toolkit==3.0.43",
+    "prompt-toolkit==3.0.45",
     "psycopg2-binary==2.9.9",
     "ptyprocess==0.7.0; sys_platform != \"win32\" and sys_platform != \"emscripten\"",
     "pure-eval==0.2.2",
-    "pycountry==23.12.11",
+    "pycountry==22.3.5",
     "pycparser==2.22",
     "pydash==6.0.2",
     "pygments==2.18.0",
     "pyjwt==2.8.0",
-    "pymysql==1.1.0",
+    "pymysql==1.1.1",
     "pynpm==0.2.0",
     "python-dateutil==2.9.0.post0",
     "python-geoip==1.2",
@@ -3413,7 +3423,7 @@ dependencies = [
     "redis==5.0.4",
     "referencing==0.35.1",
     "requests-oauthlib==1.1.0",
-    "requests==2.31.0",
+    "requests==2.32.3",
     "rich==12.6.0",
     "rpds-py==0.18.1",
     "sentry-sdk==1.45.0",
@@ -3433,13 +3443,13 @@ dependencies = [
     "types-python-dateutil==2.9.0.20240316",
     "types-requests==2.31.0.6",
     "types-urllib3==1.26.25.14",
-    "typing-extensions==4.11.0",
+    "typing-extensions==4.12.1",
     "tzdata==2024.1",
     "ua-parser==0.18.0",
     "uritemplate==4.1.1",
-    "uritools==4.0.2",
-    "urllib3==1.26.18",
-    "validators==0.28.1",
+    "uritools==4.0.3",
+    "urllib3==2.2.1",
+    "validators==0.28.3",
     "vine==5.1.0",
     "wand==0.6.13",
     "watchdog==2.2.1",
@@ -3452,17 +3462,17 @@ dependencies = [
     "wtforms-components==0.10.5",
     "wtforms==2.3.3",
     "xmltodict==0.12.0",
-    "zipp==3.18.2",
+    "zipp==3.19.1",
     "zipstream-ng==1.7.1",
 ]
 files = [
-    {file = "oarepo-12.0.19-py3-none-any.whl", hash = "sha256:a1465c79d21b33f9b849e9cbfbdfb2ab9419ccffc7941b752a67cf97d370dd73"},
-    {file = "oarepo-12.0.19.tar.gz", hash = "sha256:734cb2923361cd85f9cadd9d314a1f3193a38bcb260e9be79a1115e2466b766c"},
+    {file = "oarepo-12.0.20-py3-none-any.whl", hash = "sha256:fa78ef16e3eab4ca48431d117901fff4944317454ac808ce4fbf4d272656ff33"},
+    {file = "oarepo-12.0.20.tar.gz", hash = "sha256:b661acd34fa962c71dc963b0a6a35f434f98b8a0f1cf4354c93daf47024d82ae"},
 ]
 
 [[package]]
 name = "oarepo-dashboard"
-version = "1.0.5"
+version = "1.0.6"
 summary = "Support for user dashboard (records, communities, requests)"
 groups = ["default"]
 dependencies = [
@@ -3472,13 +3482,13 @@ dependencies = [
     "openpyxl",
 ]
 files = [
-    {file = "oarepo_dashboard-1.0.5-py3-none-any.whl", hash = "sha256:96607319d8f4ce956100772359cec6a1e229417503cf2035e129e0446779eb8c"},
-    {file = "oarepo_dashboard-1.0.5.tar.gz", hash = "sha256:6d88c4a72d04ffdae1e4ba270372e521ca8ff4c3fa7e1e3555bd0f9901360f43"},
+    {file = "oarepo_dashboard-1.0.6-py3-none-any.whl", hash = "sha256:0923c7ddb056c4fc78b6e1410a42291567145ef5c7c2d9ab8d61ae41bb6ae171"},
+    {file = "oarepo_dashboard-1.0.6.tar.gz", hash = "sha256:3861e92b813b116318aefc50b9cf42c8fa59591f5971ab6cb77e639e7ea8cc88"},
 ]
 
 [[package]]
 name = "oarepo-global-search"
-version = "1.0.8"
+version = "1.0.11"
 requires_python = ">=3.10"
 summary = "\"A model builder plugin for global search\""
 groups = ["default"]
@@ -3488,8 +3498,8 @@ dependencies = [
     "oarepo-ui",
 ]
 files = [
-    {file = "oarepo_global_search-1.0.8-py2.py3-none-any.whl", hash = "sha256:9599c92d0ce46c8459ea2c3a1a11768912c6c9f19facd43de75e485020002bc4"},
-    {file = "oarepo_global_search-1.0.8.tar.gz", hash = "sha256:9920561597a301acd0c88ea0b14369a66d4f3a00f4a9ddad565e662880583623"},
+    {file = "oarepo_global_search-1.0.11-py2.py3-none-any.whl", hash = "sha256:98ca7a6a9f57fbc438c8477c436d2701dcfb1b54dffee1c76ac0cc741937718b"},
+    {file = "oarepo_global_search-1.0.11.tar.gz", hash = "sha256:7c58f83e9008926131240ddbbe336165b23098206bc9e56052304c84d2058b5e"},
 ]
 
 [[package]]
@@ -3554,7 +3564,7 @@ files = [
 
 [[package]]
 name = "oarepo-requests"
-version = "1.1.16"
+version = "1.1.17"
 summary = ""
 groups = ["default"]
 dependencies = [
@@ -3562,13 +3572,13 @@ dependencies = [
     "oarepo-runtime",
 ]
 files = [
-    {file = "oarepo_requests-1.1.16-py3-none-any.whl", hash = "sha256:627b7a38a6e68d49b93e950612ffab040a3d6c54f98c98d128f1038990ed5f7e"},
-    {file = "oarepo_requests-1.1.16.tar.gz", hash = "sha256:e976ebc29218e0004c49ec53361b0a1eadcb4781f8d4b97fc9b5e2daba3995fe"},
+    {file = "oarepo_requests-1.1.17-py3-none-any.whl", hash = "sha256:eb8dd56252a614c7e289453e25bd1760e096642a29ff9ac8a1ea2f218beb4f57"},
+    {file = "oarepo_requests-1.1.17.tar.gz", hash = "sha256:bc26887a294fba4222a2b3ef209ec3f020b5e3a7dfa85d8d97035d77e8a1f4e7"},
 ]
 
 [[package]]
 name = "oarepo-runtime"
-version = "1.5.30"
+version = "1.5.32"
 summary = "A set of runtime extensions of Invenio repository"
 groups = ["default"]
 dependencies = [
@@ -3581,13 +3591,13 @@ dependencies = [
     "tqdm",
 ]
 files = [
-    {file = "oarepo-runtime-1.5.30.tar.gz", hash = "sha256:98c6d5c85603db23fbd6402f627385e6da3060c692bf7e196bc9506db12bab91"},
-    {file = "oarepo_runtime-1.5.30-py3-none-any.whl", hash = "sha256:27326c4c7a03112835b1600760b6abc812e5d61c538e9cb2073c146adeea567d"},
+    {file = "oarepo_runtime-1.5.32-py3-none-any.whl", hash = "sha256:1775284be8d68353fcb170bdc5f2e67e37ab206fc810421c4ba79d43f665c365"},
+    {file = "oarepo_runtime-1.5.32.tar.gz", hash = "sha256:f13958d427ded99c83c92c9d33ec38882e6d065ecab24fa615c02c26b3048119"},
 ]
 
 [[package]]
 name = "oarepo-ui"
-version = "5.1.31"
+version = "5.1.32"
 requires_python = ">=3.10"
 summary = "UI module for invenio 3.5+"
 groups = ["default"]
@@ -3599,8 +3609,8 @@ dependencies = [
     "oarepo-runtime",
 ]
 files = [
-    {file = "oarepo_ui-5.1.31-py2.py3-none-any.whl", hash = "sha256:69de8f7063a28bbd3ab54f193ada8d65106ffa9aaf85f95c574e303ded8463f9"},
-    {file = "oarepo_ui-5.1.31.tar.gz", hash = "sha256:0aa90d4be60fe4d5f9ed5f8a44d352fe653704252f48f973d6a26f8c34b5cf98"},
+    {file = "oarepo_ui-5.1.32-py2.py3-none-any.whl", hash = "sha256:031ddcc8fa6441bfb132166b4b742f258419eb2fdf3cc1bf204e0b5cddfc9486"},
+    {file = "oarepo_ui-5.1.32.tar.gz", hash = "sha256:4a4bd317d5af6ecc04b898540b078b243c472b126b32f060c1818b77b942b8fc"},
 ]
 
 [[package]]
@@ -3622,24 +3632,24 @@ files = [
 
 [[package]]
 name = "oarepo"
-version = "12.0.19"
+version = "12.0.20"
 extras = ["s3"]
 requires_python = ">=3.10"
 summary = "CESNET, UCT Prague and NTK wrapper around Invenio v3."
 groups = ["default"]
 dependencies = [
-    "boto3==1.34.108",
-    "botocore==1.34.108",
+    "boto3==1.34.117",
+    "botocore==1.34.117",
     "fsspec==2024.5.0",
     "invenio-s3==1.0.6",
     "jmespath==1.0.1",
-    "oarepo==12.0.19",
+    "oarepo==12.0.20",
     "s3fs==0.4.2",
     "s3transfer==0.10.1",
 ]
 files = [
-    {file = "oarepo-12.0.19-py3-none-any.whl", hash = "sha256:a1465c79d21b33f9b849e9cbfbdfb2ab9419ccffc7941b752a67cf97d370dd73"},
-    {file = "oarepo-12.0.19.tar.gz", hash = "sha256:734cb2923361cd85f9cadd9d314a1f3193a38bcb260e9be79a1115e2466b766c"},
+    {file = "oarepo-12.0.20-py3-none-any.whl", hash = "sha256:fa78ef16e3eab4ca48431d117901fff4944317454ac808ce4fbf4d272656ff33"},
+    {file = "oarepo-12.0.20.tar.gz", hash = "sha256:b661acd34fa962c71dc963b0a6a35f434f98b8a0f1cf4354c93daf47024d82ae"},
 ]
 
 [[package]]
@@ -3654,7 +3664,7 @@ files = [
 
 [[package]]
 name = "openpyxl"
-version = "3.1.2"
+version = "3.1.3"
 requires_python = ">=3.6"
 summary = "A Python library to read/write Excel 2010 xlsx/xlsm files"
 groups = ["default"]
@@ -3662,8 +3672,8 @@ dependencies = [
     "et-xmlfile",
 ]
 files = [
-    {file = "openpyxl-3.1.2-py2.py3-none-any.whl", hash = "sha256:f91456ead12ab3c6c2e9491cf33ba6d08357d802192379bb482f1033ade496f5"},
-    {file = "openpyxl-3.1.2.tar.gz", hash = "sha256:a6f5977418eff3b2d5500d54d9db50c8277a368436f4e4f8ddb1be3422870184"},
+    {file = "openpyxl-3.1.3-py2.py3-none-any.whl", hash = "sha256:25071b558db709de9e8782c3d3e058af3b23ffb2fc6f40c8f0c45a154eced2c3"},
+    {file = "openpyxl-3.1.3.tar.gz", hash = "sha256:8dd482e5350125b2388070bb2477927be2e8ebc27df61178709bc8c8751da2f9"},
 ]
 
 [[package]]
@@ -3684,20 +3694,21 @@ files = [
 
 [[package]]
 name = "opensearch-py"
-version = "2.5.0"
-requires_python = "!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,<4,>=2.7"
+version = "2.6.0"
+requires_python = "<4,>=3.8"
 summary = "Python client for OpenSearch"
 groups = ["default"]
 dependencies = [
+    "Events",
     "certifi>=2022.12.07",
     "python-dateutil",
     "requests<3.0.0,>=2.4.0",
     "six",
-    "urllib3<2,>=1.26.18",
+    "urllib3!=2.2.0,<3,>=1.26.18; python_version >= \"3.10\"",
 ]
 files = [
-    {file = "opensearch-py-2.5.0.tar.gz", hash = "sha256:0dde4ac7158a717d92a8cd81964cb99705a4b80bcf9258ba195b9a9f23f5226d"},
-    {file = "opensearch_py-2.5.0-py2.py3-none-any.whl", hash = "sha256:cf093a40e272b60663f20417fc1264ac724dcf1e03c1a4542a6b44835b1e6c49"},
+    {file = "opensearch_py-2.6.0-py2.py3-none-any.whl", hash = "sha256:b6e78b685dd4e9c016d7a4299cf1de69e299c88322e3f81c716e6e23fe5683c1"},
+    {file = "opensearch_py-2.6.0.tar.gz", hash = "sha256:0b7c27e8ed84c03c99558406927b6161f186a72502ca6d0325413d8e5523ba96"},
 ]
 
 [[package]]
@@ -3848,7 +3859,7 @@ files = [
 
 [[package]]
 name = "prompt-toolkit"
-version = "3.0.43"
+version = "3.0.45"
 requires_python = ">=3.7.0"
 summary = "Library for building powerful interactive command lines in Python"
 groups = ["default"]
@@ -3856,8 +3867,8 @@ dependencies = [
     "wcwidth",
 ]
 files = [
-    {file = "prompt_toolkit-3.0.43-py3-none-any.whl", hash = "sha256:a11a29cb3bf0a28a387fe5122cdb649816a957cd9261dcedf8c9f1fef33eacf6"},
-    {file = "prompt_toolkit-3.0.43.tar.gz", hash = "sha256:3527b7af26106cbc65a040bcc84839a3566ec1b051bb0bfe953631e704b0ff7d"},
+    {file = "prompt_toolkit-3.0.45-py3-none-any.whl", hash = "sha256:a29b89160e494e3ea8622b09fa5897610b437884dcdcd054fdc1308883326c2a"},
+    {file = "prompt_toolkit-3.0.45.tar.gz", hash = "sha256:07c60ee4ab7b7e90824b61afa840c8f5aad2d46b3e2e10acc33d8ecc94a49089"},
 ]
 
 [[package]]
@@ -3905,13 +3916,15 @@ files = [
 
 [[package]]
 name = "pycountry"
-version = "23.12.11"
-requires_python = ">=3.8"
+version = "22.3.5"
+requires_python = ">=3.6, <4"
 summary = "ISO country, subdivision, language, currency and script definitions and their translations"
 groups = ["default"]
+dependencies = [
+    "setuptools",
+]
 files = [
-    {file = "pycountry-23.12.11-py3-none-any.whl", hash = "sha256:2ff91cff4f40ff61086e773d61e72005fe95de4a57bfc765509db05695dc50ab"},
-    {file = "pycountry-23.12.11.tar.gz", hash = "sha256:00569d82eaefbc6a490a311bfa84a9c571cff9ddbf8b0a4f4e7b4f868b4ad925"},
+    {file = "pycountry-22.3.5.tar.gz", hash = "sha256:b2163a246c585894d808f18783e19137cb70a0c18fb36748dc01fc6f109c1646"},
 ]
 
 [[package]]
@@ -3987,13 +4000,13 @@ files = [
 
 [[package]]
 name = "pymysql"
-version = "1.1.0"
+version = "1.1.1"
 requires_python = ">=3.7"
 summary = "Pure Python MySQL Driver"
 groups = ["default"]
 files = [
-    {file = "PyMySQL-1.1.0-py3-none-any.whl", hash = "sha256:8969ec6d763c856f7073c4c64662882675702efcb114b4bcbb955aea3a069fa7"},
-    {file = "PyMySQL-1.1.0.tar.gz", hash = "sha256:4f13a7df8bf36a51e81dd9f3605fede45a4878fe02f9236349fd82a3f0612f96"},
+    {file = "PyMySQL-1.1.1-py3-none-any.whl", hash = "sha256:4de15da4c61dc132f4fb9ab763063e693d521a80fd0e87943b9a453dd4c19d6c"},
+    {file = "pymysql-1.1.1.tar.gz", hash = "sha256:e127611aaf2b417403c60bf4dc570124aeb4a57f5f37b8e95ae399a42f904cd0"},
 ]
 
 [[package]]
@@ -4167,45 +4180,45 @@ files = [
 
 [[package]]
 name = "rapidfuzz"
-version = "3.9.1"
+version = "3.9.3"
 requires_python = ">=3.8"
 summary = "rapid fuzzy string matching"
 groups = ["default"]
 files = [
-    {file = "rapidfuzz-3.9.1-cp310-cp310-macosx_10_9_x86_64.whl", hash = "sha256:5f897a9bff517d5c6af6a90131796b4298b547b9a9a4df3cf285006be33aae5b"},
-    {file = "rapidfuzz-3.9.1-cp310-cp310-macosx_11_0_arm64.whl", hash = "sha256:83c570ce23b447625929c0e7c4f2eab6d90f5a576db2b26a5aa0594a53d560ea"},
-    {file = "rapidfuzz-3.9.1-cp310-cp310-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:e4c6b6455ee8404a663e15477a8bfe98b1afb329ff224bcf6d15f623a3761b95"},
-    {file = "rapidfuzz-3.9.1-cp310-cp310-manylinux_2_17_i686.manylinux2014_i686.whl", hash = "sha256:aa44aef769e5834fef4fde091fd646cc1c52a2813b3aa241ae54b3028960abaa"},
-    {file = "rapidfuzz-3.9.1-cp310-cp310-manylinux_2_17_ppc64le.manylinux2014_ppc64le.whl", hash = "sha256:25ea055ae40fb60f503f02b44b3ac35a39a9108be33f89e05b81bc4e3c849ec8"},
-    {file = "rapidfuzz-3.9.1-cp310-cp310-manylinux_2_17_s390x.manylinux2014_s390x.whl", hash = "sha256:fb592bad9d58b47c6681f0c180767d2c98775a35f7267131d33723139c3d6c2e"},
-    {file = "rapidfuzz-3.9.1-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:eb023adfefa62410fff877f7cc70cd4758cbfbad963e87d146cf71b022dce197"},
-    {file = "rapidfuzz-3.9.1-cp310-cp310-musllinux_1_2_aarch64.whl", hash = "sha256:c883d2d2e31c759af1f3fdeb67ec151cf94e307f745b3d02ab3a2ef6595485f2"},
-    {file = "rapidfuzz-3.9.1-cp310-cp310-musllinux_1_2_i686.whl", hash = "sha256:8e11405d81e8baea4999a5757a982009566cff8f6a121d5ccf042aab81ae0230"},
-    {file = "rapidfuzz-3.9.1-cp310-cp310-musllinux_1_2_ppc64le.whl", hash = "sha256:02ed579f35ddd3552c7f74bc0c10800b432d9b09a4cebb19fd7a10b3b4759cc0"},
-    {file = "rapidfuzz-3.9.1-cp310-cp310-musllinux_1_2_s390x.whl", hash = "sha256:9f8615a2a67a1f80b3aa7a3d7fbe6a2ed062a54c98988e3f9b664b49a3bc115e"},
-    {file = "rapidfuzz-3.9.1-cp310-cp310-musllinux_1_2_x86_64.whl", hash = "sha256:64058f4a3698c6c8464df47a3b7da303db2477b2447142da3e67fc091f4c366a"},
-    {file = "rapidfuzz-3.9.1-cp310-cp310-win32.whl", hash = "sha256:2ef42c43c94139c890aeec40bc442c4bf8d48e15b456a88ce0f4cc5cfcad1896"},
-    {file = "rapidfuzz-3.9.1-cp310-cp310-win_amd64.whl", hash = "sha256:c99d001c45c31c2cd2f7361bc2036d3062b21db5f43beea8bc5109d43fe9f283"},
-    {file = "rapidfuzz-3.9.1-cp310-cp310-win_arm64.whl", hash = "sha256:da3f495cf4f7a443b34a6d3c6805265595fcd13641b3253a8e2034289d828dd9"},
-    {file = "rapidfuzz-3.9.1-pp310-pypy310_pp73-macosx_10_9_x86_64.whl", hash = "sha256:dc4b5de5d6f9347d836d849b56bca630169353cbe5c10fa7fe93bb1677b49770"},
-    {file = "rapidfuzz-3.9.1-pp310-pypy310_pp73-macosx_11_0_arm64.whl", hash = "sha256:9f74d93148081049ccc86f276d54cd7c8c0692250245660b4fcd904ed1db1e01"},
-    {file = "rapidfuzz-3.9.1-pp310-pypy310_pp73-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:9f9dfdcd75e16e5874efee233b28aec1322623b0f1f20641452d06ea2d8ba5ef"},
-    {file = "rapidfuzz-3.9.1-pp310-pypy310_pp73-manylinux_2_17_i686.manylinux2014_i686.whl", hash = "sha256:97ab8f153984a5d827ebb5a5b80ee59563efcf2fa3e569dcd46ea7e7c9845e93"},
-    {file = "rapidfuzz-3.9.1-pp310-pypy310_pp73-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:b8a6d5a8edc452920efdf1b499a2a47bb8a28440f7ab3fe28bb7d6636ccf71c3"},
-    {file = "rapidfuzz-3.9.1-pp310-pypy310_pp73-win_amd64.whl", hash = "sha256:06879b598e798a4d33a283c2b4fa0d555d7706b6531e3321b161d62e986f7f57"},
-    {file = "rapidfuzz-3.9.1-pp38-pypy38_pp73-macosx_10_9_x86_64.whl", hash = "sha256:0f906ab6220778404498e0ce255c4cc89f98ea5e656e54cc59c5813c877eb86b"},
-    {file = "rapidfuzz-3.9.1-pp38-pypy38_pp73-macosx_11_0_arm64.whl", hash = "sha256:d3da444890c9559fd15717d97f8373b1cd14007f68c9b037aa93ef7ca969b559"},
-    {file = "rapidfuzz-3.9.1-pp38-pypy38_pp73-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:bc4503841cd3cbe22b5ac44f15bc834ec97d811a3c3943f73f5643266c8674e1"},
-    {file = "rapidfuzz-3.9.1-pp38-pypy38_pp73-manylinux_2_17_i686.manylinux2014_i686.whl", hash = "sha256:5713c56b30ed75ada3a8f008cf8e8e6323386ce48fac2bf2d07285fe6c91f5a4"},
-    {file = "rapidfuzz-3.9.1-pp38-pypy38_pp73-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:eb3f1af099cd1d98001691fbdadd422f088f21eadcacf5698b393b7569e24dc4"},
-    {file = "rapidfuzz-3.9.1-pp38-pypy38_pp73-win_amd64.whl", hash = "sha256:53477e1e6d85d603c9a319cfd00ab9f0a57b6d68bcdb268d6b15a79e64d693d0"},
-    {file = "rapidfuzz-3.9.1-pp39-pypy39_pp73-macosx_10_9_x86_64.whl", hash = "sha256:a47550eabf235e5d50e7d448c18f77f6e8082aa3571e9df511c8388525ea9372"},
-    {file = "rapidfuzz-3.9.1-pp39-pypy39_pp73-macosx_11_0_arm64.whl", hash = "sha256:c6b11a38b61cc2462a113b123f5e932cda0e525f816d6fe4b68516f97d7f9d49"},
-    {file = "rapidfuzz-3.9.1-pp39-pypy39_pp73-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:414644a2fc8a3e5fafda95b430214ed892faa4d0a07401d33892bc9ca5c84974"},
-    {file = "rapidfuzz-3.9.1-pp39-pypy39_pp73-manylinux_2_17_i686.manylinux2014_i686.whl", hash = "sha256:1539e7439b68013c5d2ab7ed9d3d221480a15595207764145ae177077d28016d"},
-    {file = "rapidfuzz-3.9.1-pp39-pypy39_pp73-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:e18f0e9351f7e5d5387774ff4d5cabd824341e16b866eb1c8d3f557111b447ef"},
-    {file = "rapidfuzz-3.9.1-pp39-pypy39_pp73-win_amd64.whl", hash = "sha256:d2ff268a8bf57a76512804d5ca2097afaf98e64e8947d514cde7e2e8446aa5f7"},
-    {file = "rapidfuzz-3.9.1.tar.gz", hash = "sha256:a42eb645241f39a59c45a7fc15e3faf61886bff3a4a22263fd0f7cfb90e91b7f"},
+    {file = "rapidfuzz-3.9.3-cp310-cp310-macosx_10_9_x86_64.whl", hash = "sha256:bdb8c5b8e29238ec80727c2ba3b301efd45aa30c6a7001123a6647b8e6f77ea4"},
+    {file = "rapidfuzz-3.9.3-cp310-cp310-macosx_11_0_arm64.whl", hash = "sha256:b3bd0d9632088c63a241f217742b1cf86e2e8ae573e01354775bd5016d12138c"},
+    {file = "rapidfuzz-3.9.3-cp310-cp310-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:153f23c03d4917f6a1fc2fb56d279cc6537d1929237ff08ee7429d0e40464a18"},
+    {file = "rapidfuzz-3.9.3-cp310-cp310-manylinux_2_17_i686.manylinux2014_i686.whl", hash = "sha256:a96c5225e840f1587f1bac8fa6f67562b38e095341576e82b728a82021f26d62"},
+    {file = "rapidfuzz-3.9.3-cp310-cp310-manylinux_2_17_ppc64le.manylinux2014_ppc64le.whl", hash = "sha256:b777cd910ceecd738adc58593d6ed42e73f60ad04ecdb4a841ae410b51c92e0e"},
+    {file = "rapidfuzz-3.9.3-cp310-cp310-manylinux_2_17_s390x.manylinux2014_s390x.whl", hash = "sha256:53e06e4b81f552da04940aa41fc556ba39dee5513d1861144300c36c33265b76"},
+    {file = "rapidfuzz-3.9.3-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:5c7ca5b6050f18fdcacdada2dc5fb7619ff998cd9aba82aed2414eee74ebe6cd"},
+    {file = "rapidfuzz-3.9.3-cp310-cp310-musllinux_1_2_aarch64.whl", hash = "sha256:87bb8d84cb41446a808c4b5f746e29d8a53499381ed72f6c4e456fe0f81c80a8"},
+    {file = "rapidfuzz-3.9.3-cp310-cp310-musllinux_1_2_i686.whl", hash = "sha256:959a15186d18425d19811bea86a8ffbe19fd48644004d29008e636631420a9b7"},
+    {file = "rapidfuzz-3.9.3-cp310-cp310-musllinux_1_2_ppc64le.whl", hash = "sha256:a24603dd05fb4e3c09d636b881ce347e5f55f925a6b1b4115527308a323b9f8e"},
+    {file = "rapidfuzz-3.9.3-cp310-cp310-musllinux_1_2_s390x.whl", hash = "sha256:0d055da0e801c71dd74ba81d72d41b2fa32afa182b9fea6b4b199d2ce937450d"},
+    {file = "rapidfuzz-3.9.3-cp310-cp310-musllinux_1_2_x86_64.whl", hash = "sha256:875b581afb29a7213cf9d98cb0f98df862f1020bce9d9b2e6199b60e78a41d14"},
+    {file = "rapidfuzz-3.9.3-cp310-cp310-win32.whl", hash = "sha256:6073a46f61479a89802e3f04655267caa6c14eb8ac9d81a635a13805f735ebc1"},
+    {file = "rapidfuzz-3.9.3-cp310-cp310-win_amd64.whl", hash = "sha256:119c010e20e561249b99ca2627f769fdc8305b07193f63dbc07bca0a6c27e892"},
+    {file = "rapidfuzz-3.9.3-cp310-cp310-win_arm64.whl", hash = "sha256:790b0b244f3213581d42baa2fed8875f9ee2b2f9b91f94f100ec80d15b140ba9"},
+    {file = "rapidfuzz-3.9.3-pp310-pypy310_pp73-macosx_10_9_x86_64.whl", hash = "sha256:5410dc848c947a603792f4f51b904a3331cf1dc60621586bfbe7a6de72da1091"},
+    {file = "rapidfuzz-3.9.3-pp310-pypy310_pp73-macosx_11_0_arm64.whl", hash = "sha256:282d55700a1a3d3a7980746eb2fcd48c9bbc1572ebe0840d0340d548a54d01fe"},
+    {file = "rapidfuzz-3.9.3-pp310-pypy310_pp73-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:dc1037507810833646481f5729901a154523f98cbebb1157ba3a821012e16402"},
+    {file = "rapidfuzz-3.9.3-pp310-pypy310_pp73-manylinux_2_17_i686.manylinux2014_i686.whl", hash = "sha256:5e33f779391caedcba2ba3089fb6e8e557feab540e9149a5c3f7fea7a3a7df37"},
+    {file = "rapidfuzz-3.9.3-pp310-pypy310_pp73-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:41a81a9f311dc83d22661f9b1a1de983b201322df0c4554042ffffd0f2040c37"},
+    {file = "rapidfuzz-3.9.3-pp310-pypy310_pp73-win_amd64.whl", hash = "sha256:a93250bd8fae996350c251e1752f2c03335bb8a0a5b0c7e910a593849121a435"},
+    {file = "rapidfuzz-3.9.3-pp38-pypy38_pp73-macosx_10_9_x86_64.whl", hash = "sha256:3617d1aa7716c57d120b6adc8f7c989f2d65bc2b0cbd5f9288f1fc7bf469da11"},
+    {file = "rapidfuzz-3.9.3-pp38-pypy38_pp73-macosx_11_0_arm64.whl", hash = "sha256:ad04a3f5384b82933213bba2459f6424decc2823df40098920856bdee5fd6e88"},
+    {file = "rapidfuzz-3.9.3-pp38-pypy38_pp73-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:8709918da8a88ad73c9d4dd0ecf24179a4f0ceba0bee21efc6ea21a8b5290349"},
+    {file = "rapidfuzz-3.9.3-pp38-pypy38_pp73-manylinux_2_17_i686.manylinux2014_i686.whl", hash = "sha256:b770f85eab24034e6ef7df04b2bfd9a45048e24f8a808e903441aa5abde8ecdd"},
+    {file = "rapidfuzz-3.9.3-pp38-pypy38_pp73-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:930b4e6fdb4d914390141a2b99a6f77a52beacf1d06aa4e170cba3a98e24c1bc"},
+    {file = "rapidfuzz-3.9.3-pp38-pypy38_pp73-win_amd64.whl", hash = "sha256:c8444e921bfc3757c475c4f4d7416a7aa69b2d992d5114fe55af21411187ab0d"},
+    {file = "rapidfuzz-3.9.3-pp39-pypy39_pp73-macosx_10_9_x86_64.whl", hash = "sha256:2c1d3ef3878f871abe6826e386c3d61b5292ef5f7946fe646f4206b85836b5da"},
+    {file = "rapidfuzz-3.9.3-pp39-pypy39_pp73-macosx_11_0_arm64.whl", hash = "sha256:d861bf326ee7dabc35c532a40384541578cd1ec1e1b7db9f9ecbba56eb76ca22"},
+    {file = "rapidfuzz-3.9.3-pp39-pypy39_pp73-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:cde6b9d9ba5007077ee321ec722fa714ebc0cbd9a32ccf0f4dd3cc3f20952d71"},
+    {file = "rapidfuzz-3.9.3-pp39-pypy39_pp73-manylinux_2_17_i686.manylinux2014_i686.whl", hash = "sha256:3bb6546e7b6bed1aefbe24f68a5fb9b891cc5aef61bca6c1a7b1054b7f0359bb"},
+    {file = "rapidfuzz-3.9.3-pp39-pypy39_pp73-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:3d8a57261ef7996d5ced7c8cba9189ada3fbeffd1815f70f635e4558d93766cb"},
+    {file = "rapidfuzz-3.9.3-pp39-pypy39_pp73-win_amd64.whl", hash = "sha256:67201c02efc596923ad950519e0b75ceb78d524177ea557134d6567b9ac2c283"},
+    {file = "rapidfuzz-3.9.3.tar.gz", hash = "sha256:b398ea66e8ed50451bce5997c430197d5e4b06ac4aa74602717f792d8d8d06e2"},
 ]
 
 [[package]]
@@ -4239,8 +4252,8 @@ files = [
 
 [[package]]
 name = "requests"
-version = "2.31.0"
-requires_python = ">=3.7"
+version = "2.32.3"
+requires_python = ">=3.8"
 summary = "Python HTTP for Humans."
 groups = ["default"]
 dependencies = [
@@ -4250,8 +4263,8 @@ dependencies = [
     "urllib3<3,>=1.21.1",
 ]
 files = [
-    {file = "requests-2.31.0-py3-none-any.whl", hash = "sha256:58cd2187c01e70e6e26505bca751777aa9f2ee0b7f4300988b709f44e013003f"},
-    {file = "requests-2.31.0.tar.gz", hash = "sha256:942c5a758f98d790eaed1a29cb6eefc7ffb0d1cf7af05c3d2791656dbd6ad1e1"},
+    {file = "requests-2.32.3-py3-none-any.whl", hash = "sha256:70761cfe03c773ceb22aa2f671b4757976145175cdfca038c02654d061d6dcc6"},
+    {file = "requests-2.32.3.tar.gz", hash = "sha256:55365417734eb18255590a9ff9eb97e9e1da868d4ccd6402399eaf68af20a760"},
 ]
 
 [[package]]
@@ -4704,13 +4717,13 @@ files = [
 
 [[package]]
 name = "typing-extensions"
-version = "4.11.0"
+version = "4.12.1"
 requires_python = ">=3.8"
 summary = "Backported and Experimental Type Hints for Python 3.8+"
 groups = ["default"]
 files = [
-    {file = "typing_extensions-4.11.0-py3-none-any.whl", hash = "sha256:c1f94d72897edaf4ce775bb7558d5b79d8126906a14ea5ed1635921406c0387a"},
-    {file = "typing_extensions-4.11.0.tar.gz", hash = "sha256:83f085bd5ca59c80295fc2a82ab5dac679cbe02b9f33f7d83af68e241bea51b0"},
+    {file = "typing_extensions-4.12.1-py3-none-any.whl", hash = "sha256:6024b58b69089e5a89c347397254e35f1bf02a907728ec7fee9bf0fe837d203a"},
+    {file = "typing_extensions-4.12.1.tar.gz", hash = "sha256:915f5e35ff76f56588223f15fdd5938f9a1cf9195c0de25130c627e4d597f6d1"},
 ]
 
 [[package]]
@@ -4747,35 +4760,35 @@ files = [
 
 [[package]]
 name = "uritools"
-version = "4.0.2"
+version = "4.0.3"
 requires_python = ">=3.7"
 summary = "URI parsing, classification and composition"
 groups = ["default"]
 files = [
-    {file = "uritools-4.0.2-py3-none-any.whl", hash = "sha256:607b15eae1e7b69a120f463a7d98f91a56671e1ab92aae13f8e1f25c017fe60e"},
-    {file = "uritools-4.0.2.tar.gz", hash = "sha256:04df2b787d0eb76200e8319382a03562fbfe4741fd66c15506b08d3b8211d573"},
+    {file = "uritools-4.0.3-py3-none-any.whl", hash = "sha256:bae297d090e69a0451130ffba6f2f1c9477244aa0a5543d66aed2d9f77d0dd9c"},
+    {file = "uritools-4.0.3.tar.gz", hash = "sha256:ee06a182a9c849464ce9d5fa917539aacc8edd2a4924d1b7aabeeecabcae3bc2"},
 ]
 
 [[package]]
 name = "urllib3"
-version = "1.26.18"
-requires_python = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*, !=3.5.*"
+version = "2.2.1"
+requires_python = ">=3.8"
 summary = "HTTP library with thread-safe connection pooling, file post, and more."
 groups = ["default"]
 files = [
-    {file = "urllib3-1.26.18-py2.py3-none-any.whl", hash = "sha256:34b97092d7e0a3a8cf7cd10e386f401b3737364026c45e622aa02903dffe0f07"},
-    {file = "urllib3-1.26.18.tar.gz", hash = "sha256:f8ecc1bba5667413457c529ab955bf8c67b45db799d159066261719e328580a0"},
+    {file = "urllib3-2.2.1-py3-none-any.whl", hash = "sha256:450b20ec296a467077128bff42b73080516e71b56ff59a60a02bef2232c4fa9d"},
+    {file = "urllib3-2.2.1.tar.gz", hash = "sha256:d0570876c61ab9e520d776c38acbbb5b05a776d3f9ff98a5c8fd5162a444cf19"},
 ]
 
 [[package]]
 name = "validators"
-version = "0.28.1"
+version = "0.28.3"
 requires_python = ">=3.8"
 summary = "Python Data Validation for Humans™"
 groups = ["default"]
 files = [
-    {file = "validators-0.28.1-py3-none-any.whl", hash = "sha256:890c98789ad884037f059af6ea915ec2d667129d509180c2c590b8009a4c4219"},
-    {file = "validators-0.28.1.tar.gz", hash = "sha256:5ac88e7916c3405f0ce38ac2ac82a477fcf4d90dbbeddd04c8193171fc17f7dc"},
+    {file = "validators-0.28.3-py3-none-any.whl", hash = "sha256:53cafa854f13850156259d9cc479b864ee901f6a96e6b109e6fc33f98f37d99f"},
+    {file = "validators-0.28.3.tar.gz", hash = "sha256:c6c79840bcde9ba77b19f6218f7738188115e27830cbaff43264bc4ed24c429d"},
 ]
 
 [[package]]
@@ -4963,13 +4976,13 @@ files = [
 
 [[package]]
 name = "zipp"
-version = "3.18.2"
+version = "3.19.1"
 requires_python = ">=3.8"
 summary = "Backport of pathlib-compatible object wrapper for zip files"
 groups = ["default"]
 files = [
-    {file = "zipp-3.18.2-py3-none-any.whl", hash = "sha256:dce197b859eb796242b0622af1b8beb0a722d52aa2f57133ead08edd5bf5374e"},
-    {file = "zipp-3.18.2.tar.gz", hash = "sha256:6278d9ddbcfb1f1089a88fde84481528b07b0e10474e09dcfe53dad4069fa059"},
+    {file = "zipp-3.19.1-py3-none-any.whl", hash = "sha256:2828e64edb5386ea6a52e7ba7cdb17bb30a73a858f5eb6eb93d8d36f5ea26091"},
+    {file = "zipp-3.19.1.tar.gz", hash = "sha256:35427f6d5594f4acf82d25541438348c26736fa9b3afa2754bcd63cdb99d8e8f"},
 ]
 
 [[package]]
