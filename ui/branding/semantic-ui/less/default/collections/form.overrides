@@ -38,7 +38,9 @@
   .sidebar-buttons {
     display: flex;
   }
-
+  .close-btn {
+    border: 1px solid @primaryColor;
+  }
   .ui.form .invenio-accordion-field {
     label.helptext {
       font-weight: normal;
@@ -132,7 +134,7 @@
   #main-content {
     .ui.icon.left.labeled.button {
       background-color: @arrayAddButtonFieldColor;
-      color: black;
+      color: @arrayAddButtonTextColor;
       margin-top: 0;
     }
     .ui.icon.left.labeled.button:hover {
@@ -165,10 +167,14 @@
     margin-bottom: 0 !important;
   }
 
+  .invenio-group-field.fields {
+    background-color: @arrayFieldColor;
+    border-radius: 0.5rem;
+  }
   .content {
     .ui.icon.left.labeled.button {
       background-color: @arrayAddButtonFieldColor;
-      color: black;
+      color: @arrayAddButtonTextColor;
     }
     .ui.icon.left.labeled.button:hover {
       background-color: @arrayAddButtonFieldHoverColor;
@@ -183,16 +189,18 @@
         margin-bottom: 0 !important;
       }
     }
-    .fields.invenio-group-field {
-      margin-bottom: 0 !important;
-      @media (max-width: 1200px) {
-        flex-wrap: wrap;
-      }
+    .highlighted {
+      background-color: @highlightedfieldcolor !important;
     }
   }
   .subjects-modal-fields {
     .field {
-      margin-bottom: 1rem !important;
+      margin-bottom: 0 !important;
+    }
+    @media (max-width: @tabletBreakpoint) {
+      .close-btn {
+        margin-bottom: 0.5rem;
+      }
     }
   }
 }
