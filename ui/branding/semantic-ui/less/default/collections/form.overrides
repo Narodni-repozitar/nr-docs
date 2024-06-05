@@ -162,7 +162,9 @@
   .field {
     margin-bottom: 2rem !important;
   }
-
+  .close-btn {
+    border: 1px solid @primaryColor;
+  }
   .modal-identifiers-field {
     margin-bottom: 0 !important;
   }
@@ -194,6 +196,11 @@
     }
   }
   .subjects-modal-fields {
+    .invenio-group-field.fields {
+      .invenio-group-field.fields {
+        background-color: transparent;
+      }
+    }
     .field {
       margin-bottom: 0 !important;
     }
