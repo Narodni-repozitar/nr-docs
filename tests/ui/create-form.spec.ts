@@ -38,9 +38,7 @@ test("successful form submit", async ({ page }) => {
       .locator(".tree-column .row")
       .locator("visible=true")
       .nth(randomIndex)
-      .dblclick();
-
-    await page.locator(".modal .actions .button").click();
+      .click();
 
     // select language
 
@@ -160,10 +158,6 @@ test("tree-field manipulation and selected result check", async ({ page }) => {
 
   await page.waitForSelector(".tree-field", { state: "visible" });
 
-  const singleTreeFieldSubmitButton = page.locator(
-    ".actions button:not(.ui.label button)"
-  );
-
   const numberOfOptionsSingle = await page
     .locator(".tree-column .row:visible")
     .count();
@@ -173,14 +167,8 @@ test("tree-field manipulation and selected result check", async ({ page }) => {
   await page
     .locator(".tree-column .row:visible")
     .nth(randomIndexSingle)
-    .dblclick();
-  await page.waitForSelector(".ui.label .ui.breadcrumb", { state: "visible" });
-  const breadcrumbText = await page
-    .locator(".ui.label .ui.breadcrumb")
-    .last()
-    .innerText();
-
-  await singleTreeFieldSubmitButton.click();
+    .click();
+    
   await expect(
     singleTreeField.locator(".text span").filter({ hasText: breadcrumbText })
   ).toHaveCount(1);
