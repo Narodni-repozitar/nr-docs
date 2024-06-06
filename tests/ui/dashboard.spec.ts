@@ -40,7 +40,7 @@ test("filter draft", async ({ page, baseURL }) => {
     .locator("visible=true")
     .count();
 
-  const randomAggIndex = await getRandomInt(numberOfAggs);
+  const randomAggIndex = getRandomInt(numberOfAggs);
 
   const selectedAgg = page
     .locator(".ui.facet")
