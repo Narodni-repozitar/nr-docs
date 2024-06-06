@@ -32,7 +32,7 @@ test("successful form submit", async ({ page }) => {
       .locator("visible=true")
       .count();
 
-    const randomIndex = await getRandomInt(numberOfOptions);
+    const randomIndex = getRandomInt(numberOfOptions);
 
     await page
       .locator(".tree-column .row")
@@ -53,7 +53,7 @@ test("successful form submit", async ({ page }) => {
       '.visible.menu[role="listbox"] [role="option"]'
     );
 
-    const randomIndexLang = await getRandomInt(optionsLang.length);
+    const randomIndexLang = getRandomInt(optionsLang.length);
     const optionToClickLang = optionsLang[randomIndexLang];
 
     const optionNameLang = await optionToClickLang.getAttribute("name");
@@ -71,7 +71,7 @@ test("successful form submit", async ({ page }) => {
       '.visible.menu[role="listbox"] [role="option"]'
     );
 
-    const randomIndexRights = await getRandomInt(optionsRights.length);
+    const randomIndexRights = getRandomInt(optionsRights.length);
 
     const optionToClickRights = optionsRights[randomIndexRights];
 
@@ -168,7 +168,7 @@ test("tree-field manipulation and selected result check", async ({ page }) => {
     .locator(".tree-column .row:visible")
     .count();
 
-  const randomIndexSingle = await getRandomInt(numberOfOptionsSingle);
+  const randomIndexSingle = getRandomInt(numberOfOptionsSingle);
 
   await page
     .locator(".tree-column .row:visible")
@@ -194,7 +194,7 @@ test("tree-field manipulation and selected result check", async ({ page }) => {
     .locator(".tree-column .row")
     .locator("visible=true")
     .count();
-  const randomIndexMultiple = await getRandomInt(numberOfOptionsMultiple);
+  const randomIndexMultiple = getRandomInt(numberOfOptionsMultiple);
 
   await page
     .locator(".tree-column .row.spaced")

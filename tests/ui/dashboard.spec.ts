@@ -53,7 +53,7 @@ test("filter draft", async ({ page, baseURL }) => {
     .locator("visible=true")
     .count();
 
-  const randomCheckboxIndex = await getRandomInt(numberOfCheckboxes);
+  const randomCheckboxIndex = getRandomInt(numberOfCheckboxes);
 
   const selectedCheckbox = selectedAgg
     .locator(".list .item .checkbox input")
@@ -94,7 +94,7 @@ test("filter draft", async ({ page, baseURL }) => {
 test("redirection to form", async ({ page, baseURL }) => {
   await page.goto("/me/records/");
   await page.locator("#invenio-burger-toggle").click();
-  const btn = await page.getByTestId("newupload-button");
+  const btn = page.getByTestId("newupload-button");
 
   await btn.click({ force: true });
   await expect(page).toHaveURL(`${baseURL}docs/_new`);
