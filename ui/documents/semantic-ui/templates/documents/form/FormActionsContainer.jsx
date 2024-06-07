@@ -5,7 +5,6 @@ import {
   PreviewButton,
   SaveButton,
   DeleteButton,
-  ValidateButton,
   useFormConfig,
 } from "@js/oarepo_ui";
 import { TextField, FieldLabel } from "react-invenio-forms";
@@ -46,9 +45,6 @@ const FormActionsContainer = () => {
                 />
               }
             />
-          </Grid.Column>
-          <Grid.Column width={16} className="pt-10">
-            <ValidateButton />
           </Grid.Column>
           <Grid.Column width={16} className="pt-10">
             <DeleteButton redirectUrl={links.search} />
