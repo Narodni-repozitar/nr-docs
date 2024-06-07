@@ -46,8 +46,8 @@ class DocumentsServiceConfig(
         *FilteredResultServiceConfig.components,
         DataComponent,
         OwnersComponent,
-        DraftFilesComponent,
         FilesComponent,
+        DraftFilesComponent,
     ]
 
     model = "documents"

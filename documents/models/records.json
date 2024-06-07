@@ -102,7 +102,6 @@
                 "\"topic\""
             ]
         },
-        "custom-fields": [],
         "permissions": {
             "presets": [
                 "authenticated"
@@ -143,6 +142,7 @@
             "generate": true
         },
         "searchable": true,
+        "custom-fields": [],
         "ui": {
             "marshmallow": {
                 "generate": true,
@@ -183,8 +183,8 @@
             "components": [
                 "{{invenio_records_resources.services.records.components.DataComponent}}",
                 "{{oarepo_runtime.services.components.OwnersComponent}}",
-                "{{invenio_drafts_resources.services.records.components.DraftFilesComponent}}",
-                "{{oarepo_runtime.services.files.FilesComponent}}"
+                "{{oarepo_runtime.services.files.FilesComponent}}",
+                "{{invenio_drafts_resources.services.records.components.DraftFilesComponent}}"
             ],
             "generate": true,
             "config-key": "DOCUMENTS_RECORD_SERVICE_CONFIG",
@@ -258,10 +258,10 @@
             "fields": {
                 "sort_options": "{{oarepo_runtime.services.search.ICUSortOptions}}('documents')"
             },
-            "generate": true,
             "module": "documents.services.records.search",
-            "extra-code": "",
             "class": "documents.services.records.search.DocumentsSearchOptions",
+            "generate": true,
+            "extra-code": "",
             "imports": []
         },
         "resource-config": {
@@ -326,10 +326,43 @@
             "suffix-upper": "DOCUMENTS",
             "suffix-snake": "documents"
         },
-        "tests": {
-            "extra-fixtures": [],
-            "extra-code": "",
-            "module": "tests"
+        "draft-files": {
+            "type": "draft-file",
+            "properties": {},
+            "searchable": true,
+            "resource": {
+                "base-classes": [
+                    "oarepo_ui.resources.file_resource.S3RedirectFileResource"
+                ]
+            },
+            "tests": {
+                "extra-fixtures": [],
+                "extra-code": "",
+                "module": "tests"
+            }
+        },
+        "draft": {
+            "type": "draft_record",
+            "properties": {},
+            "requests": {
+                "types": {
+                    "publish-draft": {
+                        "base-classes": [
+                            "oarepo_requests.types.publish_draft.PublishDraftRequestType"
+                        ],
+                        "allowed-receiver-ref-types": [
+                            "user",
+                            "group"
+                        ]
+                    }
+                }
+            },
+            "searchable": true,
+            "tests": {
+                "extra-fixtures": [],
+                "extra-code": "",
+                "module": "tests"
+            }
         },
         "files": {
             "type": "file",
@@ -425,43 +458,10 @@
                 "module": "tests"
             }
         },
-        "draft": {
-            "type": "draft_record",
-            "properties": {},
-            "requests": {
-                "types": {
-                    "publish-draft": {
-                        "base-classes": [
-                            "oarepo_requests.types.publish_draft.PublishDraftRequestType"
-                        ],
-                        "allowed-receiver-ref-types": [
-                            "user",
-                            "group"
-                        ]
-                    }
-                }
-            },
-            "searchable": true,
-            "tests": {
-                "extra-fixtures": [],
-                "extra-code": "",
-                "module": "tests"
-            }
-        },
-        "draft-files": {
-            "type": "draft-file",
-            "properties": {},
-            "searchable": true,
-            "resource": {
-                "base-classes": [
-                    "oarepo_ui.resources.file_resource.S3RedirectFileResource"
-                ]
-            },
-            "tests": {
-                "extra-fixtures": [],
-                "extra-code": "",
-                "module": "tests"
-            }
+        "tests": {
+            "extra-fixtures": [],
+            "extra-code": "",
+            "module": "tests"
         },
         "sample": {
             "file": "data/sample_data.yaml"
@@ -524,6 +524,19 @@
             "module": "documents.proxies",
             "generate": true
         },
+        "translations": {
+            "module": "documents.translations",
+            "alias": "documents"
+        },
+        "files-field": {
+            "generate": true,
+            "field-class": "invenio_records_resources.records.systemfields.FilesField",
+            "file-class": "documents.records.api.DocumentsRecord",
+            "field-args": [
+                "store=False"
+            ],
+            "imports": []
+        },
         "record-metadata": {
             "generate": true,
             "module": "documents.records.models",
@@ -571,15 +584,6 @@
             ],
             "imports": []
         },
-        "files-field": {
-            "generate": true,
-            "field-class": "invenio_records_resources.records.systemfields.FilesField",
-            "file-class": "documents.records.api.DocumentsRecord",
-            "field-args": [
-                "store=False"
-            ],
-            "imports": []
-        },
         "json-schema-settings": {
             "generate": true,
             "alias": "documents",
@@ -587,10 +591,6 @@
             "module": "documents.records.jsonschemas",
             "name": "documents-1.0.0.json",
             "file": "documents/records/jsonschemas/documents-1.0.0.json"
-        },
-        "translations": {
-            "module": "documents.translations",
-            "alias": "documents"
         },
         "multilingual-dumper": {
             "generate": true,
@@ -3482,7 +3482,6 @@
                             "properties": {
                                 "geoLocationPlace": {
                                     "type": "keyword",
-                                    "description": "Free description of the location; ie. Atlantic Ocean",
                                     "marshmallow": {
                                         "read": false,
                                         "write": false
@@ -3492,7 +3491,8 @@
                                             "read": false,
                                             "write": false
                                         }
-                                    }
+                                    },
+                                    "description": "Free description of the location; ie. Atlantic Ocean"
                                 },
                                 "geoLocationPoint": {
                                     "type": "object",
@@ -5852,7 +5852,6 @@
                                 "itemRelationType": {
                                     "type": "vocabulary",
                                     "vocabulary-type": "item-relation-types",
-                                    "description": "typ vztahu k původnímu popisovanému dok.",
                                     "ui": {
                                         "marshmallow": {
                                             "class": "nr_metadata.common.services.records.ui_schema_datatypes.NRItemRelationTypeVocabularyUISchema",
@@ -5871,6 +5870,7 @@
                                         "unknown": "INCLUDE",
                                         "generate": true
                                     },
+                                    "description": "typ vztahu k původnímu popisovanému dok.",
                                     "label.cs": "Typ vazby",
                                     "label.en": "Relation type",
                                     "imports": [
@@ -6101,7 +6101,6 @@
                                 "itemTitle": {
                                     "type": "fulltext",
                                     "required": true,
-                                    "description": "název propojeného dokumentu",
                                     "marshmallow": {
                                         "read": false,
                                         "write": false
@@ -6112,6 +6111,7 @@
                                             "write": false
                                         }
                                     },
+                                    "description": "název propojeného dokumentu",
                                     "label.cs": "Název",
                                     "label.en": "Title"
                                 },
@@ -6838,7 +6838,7 @@
                         },
                         "properties": {
                             "dateDefended": {
-                                "type": "date",
+                                "type": "edtf",
                                 "ui": {
                                     "marshmallow": {
                                         "read": false,

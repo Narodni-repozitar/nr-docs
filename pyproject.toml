@@ -8,6 +8,7 @@ dependencies = [
     "deepmerge>=1.1.0",
     "invenio-drafts-resources>=1.0.4",
     "json5",
+    "marshmallow-i18n-messages",
     "nr-metadata>=2.0.0",
     "nr-oaipmh-harvesters>=1.0.0",
     "nr-vocabularies>=2.0.8",
@@ -56,7 +57,7 @@ documents = "documents.ext:DocumentsExt"
 oai_s3_harvester = "common.ext:OaiS3HarvesterExt"
 
 [project.entry-points."invenio_db.alembic"]
-documents = "common:alembic"
+documents = "documents:alembic"
 
 [project.entry-points."invenio_db.models"]
 documents = "documents.records.models"
@@ -88,6 +89,7 @@ edit_record = "oarepo_requests.types.edit_record:EditRecordRequestType"
 publish_draft = "oarepo_requests.types.publish_draft:PublishDraftRequestType"
 documents_delete_record = "documents.records.requests.delete_record.types:DeleteRecordRequestType"
 documents_edit_record = "documents.records.requests.edit_record.types:EditRecordRequestType"
+documents_publish_draft = "documents.records.requests.publish_draft.types:PublishDraftRequestType"
 
 [project.optional-dependencies]
 tests = [
