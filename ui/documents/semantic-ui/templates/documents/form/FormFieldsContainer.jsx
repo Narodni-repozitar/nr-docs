@@ -4,7 +4,7 @@ import {
   MultilingualTextInput,
   FormikStateLogger,
   EDTFSingleDatePicker,
-  sanitizeInput 
+  sanitizeInput,
 } from "@js/oarepo_ui";
 import { LocalVocabularySelectField } from "@js/oarepo_vocabularies";
 import { AccordionField, FieldLabel, TextField } from "react-invenio-forms";
@@ -37,6 +37,9 @@ const FormFieldsContainer = () => {
   );
 
   const { values, setFieldValue, setFieldTouched } = useFormikContext();
+
+  const validTags = "strong,b,div,br,p,i,li";
+  const toolBar = "bold italic | bullist numlist | outdent indent | undo redo";
 
   return (
     <React.Fragment>
@@ -333,9 +336,8 @@ const FormFieldsContainer = () => {
               fieldPath="metadata.abstract"
               rich={true}
               editorConfig={{
-                toolbar:
-                  "bold italic | bullist numlist | outdent indent | undo redo",
-                valid_elements: "strong,b,div,br,p,i,li",
+                toolbar: toolBar,
+                valid_elements: validTags,
               }}
               required
               helpText={i18next.t(
@@ -367,9 +369,8 @@ const FormFieldsContainer = () => {
               fieldPath="metadata.notes"
               rich={true}
               editorConfig={{
-                toolbar:
-                  "bold italic | bullist numlist | outdent indent | undo redo",
-                valid_elements: "strong,b,div,br,p,i,li",
+                toolbar: toolBar,
+                valid_elements: validTags,
               }}
               required
               helpText={i18next.t(
