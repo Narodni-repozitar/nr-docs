@@ -1,5 +1,4 @@
 import { test, expect } from "playwright/test";
-import { getRandomInt } from "./util";
 
 let apiContext;
 
@@ -40,7 +39,7 @@ test("filter draft", async ({ page, baseURL }) => {
     .locator("visible=true")
     .count();
 
-  const randomAggIndex = getRandomInt(numberOfAggs);
+  const randomAggIndex = Math.floor(Math.random() * numberOfAggs);
 
   const selectedAgg = page
     .locator(".ui.facet")
@@ -53,7 +52,7 @@ test("filter draft", async ({ page, baseURL }) => {
     .locator("visible=true")
     .count();
 
-  const randomCheckboxIndex = getRandomInt(numberOfCheckboxes);
+  const randomCheckboxIndex = Math.floor(Math.random() * numberOfCheckboxes);
 
   const selectedCheckbox = selectedAgg
     .locator(".list .item .checkbox input")

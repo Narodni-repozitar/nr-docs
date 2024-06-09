@@ -1,5 +1,4 @@
 import { test, expect } from "playwright/test";
-import { getRandomInt } from "./util";
 
 let apiContext;
 
@@ -32,7 +31,7 @@ test("successful form submit", async ({ page }) => {
       .locator("visible=true")
       .count();
 
-    const randomIndex = getRandomInt(numberOfOptions);
+    const randomIndex = Math.floor(Math.random() * numberOfOptions);
 
     await page
       .locator(".tree-column .row")
@@ -51,7 +50,7 @@ test("successful form submit", async ({ page }) => {
       '.visible.menu[role="listbox"] [role="option"]'
     );
 
-    const randomIndexLang = getRandomInt(optionsLang.length);
+    const randomIndexLang = Math.floor(Math.random() * optionsLang.length);
     const optionToClickLang = optionsLang[randomIndexLang];
 
     const optionNameLang = await optionToClickLang.getAttribute("name");
@@ -69,7 +68,7 @@ test("successful form submit", async ({ page }) => {
       '.visible.menu[role="listbox"] [role="option"]'
     );
 
-    const randomIndexRights = getRandomInt(optionsRights.length);
+    const randomIndexRights = Math.floor(Math.random() * optionsRights.length);
 
     const optionToClickRights = optionsRights[randomIndexRights];
 
@@ -162,15 +161,20 @@ test("tree-field manipulation and selected result check", async ({ page }) => {
     .locator(".tree-column .row:visible")
     .count();
 
-  const randomIndexSingle = getRandomInt(numberOfOptionsSingle);
+  const randomIndexSingle = Math.floor(Math.random() * numberOfOptionsSingle);
 
-  await page
+  const selectedOption = page
     .locator(".tree-column .row:visible")
-    .nth(randomIndexSingle)
-    .click();
-    
+    .nth(randomIndexSingle);
+
+  await selectedOption.click();
+
+  const selectedOptionText = await selectedOption.innerText();
+
   await expect(
-    singleTreeField.locator(".text span").filter({ hasText: breadcrumbText })
+    singleTreeField
+      .locator(".text span")
+      .filter({ hasText: selectedOptionText })
   ).toHaveCount(1);
 
   // multiple
@@ -182,7 +186,9 @@ test("tree-field manipulation and selected result check", async ({ page }) => {
     .locator(".tree-column .row")
     .locator("visible=true")
     .count();
-  const randomIndexMultiple = getRandomInt(numberOfOptionsMultiple);
+  const randomIndexMultiple = Math.floor(
+    Math.random() * numberOfOptionsMultiple
+  );
 
   await page
     .locator(".tree-column .row.spaced")

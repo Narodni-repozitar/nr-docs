@@ -20,7 +20,7 @@ test("get records", async ({ page, baseURL }) => {
   await page.goto("/");
   const pagenav = page.waitForNavigation({ waitUntil: "load" });
 
-  const form = await page.locator('.ui.form[role="search"]');
+  const form = page.locator('.ui.form[role="search"]');
   await form.locator('button[type="submit"]').click();
 
   await pagenav;
