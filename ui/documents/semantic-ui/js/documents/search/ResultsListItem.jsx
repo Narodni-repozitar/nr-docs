@@ -182,22 +182,38 @@ export const ResultsListItemComponent = ({
 
   const rights = _get(result, "metadata.rights");
 
-  const descriptionStripped = _get(
-    result,
-    "metadata.abstract[0].value",
-    i18next.t("No description")
-  );
+  let abstract = _get(result, "metadata.abstract", []);
+
+  if (abstract.length === 0) {
+    abstract = i18next.t("No description");
+  } else {
+    abstract =
+      abstract.find((a) => a.lang === i18next.language)?.value ||
+      abstract[0].value;
+  }
 
   const languages = _get(result, "metadata.languages", []);
 
   const publicationDate = _get(
     result,
-    "metadata.dateAvailable",
+    "metadata.dateIssued",
     i18next.t("No publication date found.")
   );
   const resourceType = _get(result, "metadata.resourceType");
+
   const subjects = _get(result, "metadata.subjects", []);
-  const title = _get(result, "metadata.title", "No title");
+
+  const additionalTitles = _get(result, "metadata.additionalTitles", []);
+
+  const translatedTitle = additionalTitles.find(
+    (title) =>
+      title?.titleType === "translatedTitle" &&
+      title?.title?.lang === i18next.language
+  )?.title?.value;
+
+  const title =
+    translatedTitle ?? _get(result, "metadata.title", i18next.t("No title"));
+
   const versions = _get(result, "versions");
 
   const thesis = _get(result, "metadata.thesis");
@@ -214,7 +230,7 @@ export const ResultsListItemComponent = ({
       accessStatus={accessRights}
       createdDate={createdDate}
       creators={creators}
-      descriptionStripped={descriptionStripped}
+      abstract={abstract}
       publicationDate={publicationDate}
       publishers={publishers}
       resourceType={resourceType}
@@ -230,7 +246,7 @@ export const ResultsListItemComponent = ({
         <Item.Content>
           <Grid>
             <Grid.Row columns={2}>
-              <Grid.Column className="results-list item-side">
+              <Grid.Column className="results-list item-side computer tablet only">
                 <ItemSidebarIcons rights={rights} accessStatus={accessRights} />
               </Grid.Column>
               <Grid.Column className="results-list item-main">
@@ -250,7 +266,7 @@ export const ResultsListItemComponent = ({
                   searchUrl={searchAppConfig.ui_endpoint}
                 />
                 <Item.Description>
-                  {_truncate(descriptionStripped, { length: 350 })}
+                  {_truncate(abstract, { length: 350 })}
                 </Item.Description>
                 <ItemExtraInfo
                   createdDate={createdDate}
