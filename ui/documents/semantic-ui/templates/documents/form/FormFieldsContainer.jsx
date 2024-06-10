@@ -41,7 +41,8 @@ const FormFieldsContainer = () => {
 
   const { values, setFieldValue, setFieldTouched } = useFormikContext();
 
-  const validTags = "strong,b,div,br,p,i,li";
+  const validTags =
+    "a,abbr,acronym,b,blockquote,br,code,div,table,tbody,td,th,tr,em,h1,h2,h3,h4,h5,i,li,ol,p,pre,span,strike,strong,sub,sup,u,ul";
   const toolBar = "bold italic | bullist numlist | outdent indent | undo redo";
 
   return (
