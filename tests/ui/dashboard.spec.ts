@@ -25,7 +25,7 @@ test("search draft", async ({ page, baseURL }) => {
     `${baseURL}me/records/?q=test&l=list&p=1&s=10&sort=bestmatch`
   );
 
-  await expect(page.getByTestId("aggregation-count")).toContainText("0");
+  await expect(page.getByTestId("total-results")).toContainText("0");
 });
 
 test("filter draft", async ({ page, baseURL }) => {
@@ -77,7 +77,7 @@ test("filter draft", async ({ page, baseURL }) => {
   );
   expect(isChecked).toBeTruthy();
 
-  await expect(page.getByTestId("aggregation-count")).toContainText(
+  await expect(page.getByTestId("total-results")).toContainText(
     `${selectedBucketCount}`
   );
   // clear filters
@@ -116,7 +116,7 @@ test("get records", async ({ page, baseURL }) => {
     `${baseURL}me/records/?q=&l=list&p=1&s=10&sort=newest`
   );
 
-  await expect(page.getByTestId("aggregation-count")).toContainText("20");
+  await expect(page.getByTestId("total-results")).toContainText("20");
 
   await expect(page.getByTestId("result-item")).toHaveCount(10);
 

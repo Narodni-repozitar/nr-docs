@@ -28,7 +28,7 @@ test("get records", async ({ page, baseURL }) => {
     `${baseURL}docs/?q=&l=list&p=1&s=10&sort=newest`
   );
 
-  await expect(page.getByTestId("aggregation-count")).toContainText("20");
+  await expect(page.getByTestId("total-results")).toContainText("20");
 
   await expect(page.getByTestId("result-item")).toHaveCount(10);
 
@@ -48,5 +48,5 @@ test("get records", async ({ page, baseURL }) => {
     `${baseURL}docs/?q=test&l=list&p=1&s=10&sort=bestmatch`
   );
 
-  await expect(page.getByTestId("aggregation-count")).toContainText("0");
+  await expect(page.getByTestId("total-results")).toContainText("0");
 });
