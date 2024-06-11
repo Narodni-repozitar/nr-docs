@@ -1,7 +1,7 @@
 @searchButtonColor: @green;
 
 @blackHover: none;
-// @basicBorderSize :0px;
+@basicBorderSize: 0px;
 @blackFocus: none;
 @blackActive: none;
 @blackDown: none;
