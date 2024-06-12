@@ -171,6 +171,7 @@ const FormFieldsContainer = () => {
             <LocalVocabularySelectField
               optimized
               fieldPath="metadata.accessRights"
+              required
               clearable
               label={
                 <FieldLabel
