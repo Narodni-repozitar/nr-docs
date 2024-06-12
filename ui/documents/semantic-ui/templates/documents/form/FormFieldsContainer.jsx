@@ -171,6 +171,7 @@ const FormFieldsContainer = () => {
             <LocalVocabularySelectField
               optimized
               fieldPath="metadata.accessRights"
+              required
               clearable
               label={
                 <FieldLabel
@@ -406,9 +407,7 @@ const FormFieldsContainer = () => {
         <AccordionField
           includesPaths={["files.enabled"]}
           active
-          label={
-            <label htmlFor="files.enabled">{i18next.t("Files upload")}</label>
-          }
+          label={<label htmlFor="files.enabled">{i18next.t("Files")}</label>}
         >
           <Overridable id="NrDocs.Deposit.FileUploader.container">
             <FileUploader recordFiles={recordFiles} />
