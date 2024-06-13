@@ -3190,7 +3190,7 @@ files = [
 
 [[package]]
 name = "nr-oaipmh-harvesters"
-version = "1.0.16"
+version = "1.0.17"
 summary = "OAIPMH harvesters for National repository"
 groups = ["default"]
 dependencies = [
@@ -3200,8 +3200,8 @@ dependencies = [
     "oarepo-oai-pmh-harvester>=4.0.0",
 ]
 files = [
-    {file = "nr_oaipmh_harvesters-1.0.16-py3-none-any.whl", hash = "sha256:b443f1170b50519c303b9ba38ce2f59a85256cfb93580f3b8f54ab67a55fd23a"},
-    {file = "nr_oaipmh_harvesters-1.0.16.tar.gz", hash = "sha256:0045d72847ee4285ebc9132161b0895d16d9632cc047d4176d158a591d614b00"},
+    {file = "nr_oaipmh_harvesters-1.0.17-py3-none-any.whl", hash = "sha256:8667f80f4528b094f833a226061be8ab177913f80dc5f62f43cb9030b0936330"},
+    {file = "nr_oaipmh_harvesters-1.0.17.tar.gz", hash = "sha256:2bb9fb680bf7fa0a0cc796309d7a6d6b451175dd4191f8fd368e1e41ded2f20d"},
 ]
 
 [[package]]
@@ -3472,7 +3472,7 @@ files = [
 
 [[package]]
 name = "oarepo-dashboard"
-version = "1.0.6"
+version = "1.0.7"
 summary = "Support for user dashboard (records, communities, requests)"
 groups = ["default"]
 dependencies = [
@@ -3482,13 +3482,13 @@ dependencies = [
     "openpyxl",
 ]
 files = [
-    {file = "oarepo_dashboard-1.0.6-py3-none-any.whl", hash = "sha256:0923c7ddb056c4fc78b6e1410a42291567145ef5c7c2d9ab8d61ae41bb6ae171"},
-    {file = "oarepo_dashboard-1.0.6.tar.gz", hash = "sha256:3861e92b813b116318aefc50b9cf42c8fa59591f5971ab6cb77e639e7ea8cc88"},
+    {file = "oarepo_dashboard-1.0.7-py3-none-any.whl", hash = "sha256:5a72a69215bb9740a41faf7d3f624b50fbbf338aab39f0c070b59fc008bc3b18"},
+    {file = "oarepo_dashboard-1.0.7.tar.gz", hash = "sha256:d1d18bbc885ae727ffa1a722877effb94195df2315acdb1171ecc4f4fc9da761"},
 ]
 
 [[package]]
 name = "oarepo-global-search"
-version = "1.0.11"
+version = "1.0.12"
 requires_python = ">=3.10"
 summary = "\"A model builder plugin for global search\""
 groups = ["default"]
@@ -3498,8 +3498,8 @@ dependencies = [
     "oarepo-ui",
 ]
 files = [
-    {file = "oarepo_global_search-1.0.11-py2.py3-none-any.whl", hash = "sha256:98ca7a6a9f57fbc438c8477c436d2701dcfb1b54dffee1c76ac0cc741937718b"},
-    {file = "oarepo_global_search-1.0.11.tar.gz", hash = "sha256:7c58f83e9008926131240ddbbe336165b23098206bc9e56052304c84d2058b5e"},
+    {file = "oarepo_global_search-1.0.12-py2.py3-none-any.whl", hash = "sha256:40cf876ce52671416d1d66c685996275d2a5ebe20b4716015cce717327f3791d"},
+    {file = "oarepo_global_search-1.0.12.tar.gz", hash = "sha256:8f2222414d494d753243ad89fe1591988d4061ccfb23f5904378745429f2fb8e"},
 ]
 
 [[package]]
@@ -3564,7 +3564,7 @@ files = [
 
 [[package]]
 name = "oarepo-requests"
-version = "1.1.17"
+version = "1.1.18"
 summary = ""
 groups = ["default"]
 dependencies = [
@@ -3572,13 +3572,13 @@ dependencies = [
     "oarepo-runtime",
 ]
 files = [
-    {file = "oarepo_requests-1.1.17-py3-none-any.whl", hash = "sha256:eb8dd56252a614c7e289453e25bd1760e096642a29ff9ac8a1ea2f218beb4f57"},
-    {file = "oarepo_requests-1.1.17.tar.gz", hash = "sha256:bc26887a294fba4222a2b3ef209ec3f020b5e3a7dfa85d8d97035d77e8a1f4e7"},
+    {file = "oarepo_requests-1.1.18-py3-none-any.whl", hash = "sha256:6511af9219b90f5b725285cbd25655dd1b6c237526e210f554fc28fbac79d223"},
+    {file = "oarepo_requests-1.1.18.tar.gz", hash = "sha256:262f3b79c34a9577095b57beafacefb01b8e1128176f12757142a9b1ac41b5b3"},
 ]
 
 [[package]]
 name = "oarepo-runtime"
-version = "1.5.33"
+version = "1.5.35"
 summary = "A set of runtime extensions of Invenio repository"
 groups = ["default"]
 dependencies = [
@@ -3591,13 +3591,13 @@ dependencies = [
     "tqdm",
 ]
 files = [
-    {file = "oarepo_runtime-1.5.33-py3-none-any.whl", hash = "sha256:09e3770d873ee24f7a19ff8e09f061c7b25941390e23e70a7a12bc5d4e0501ad"},
-    {file = "oarepo_runtime-1.5.33.tar.gz", hash = "sha256:5932ef76b1ab97b3d417164bdbf5fbc58f15a63a819f1aab94524141e77b31b5"},
+    {file = "oarepo_runtime-1.5.35-py3-none-any.whl", hash = "sha256:a2b31b7a746b1f51b33b00f5f26611418733f3329d8948243e9b95b8918d4eba"},
+    {file = "oarepo_runtime-1.5.35.tar.gz", hash = "sha256:e896e7ad6bb6110d0fc90ed48e94ff16eec97b376f9c46285c1ffe108f13808b"},
 ]
 
 [[package]]
 name = "oarepo-ui"
-version = "5.1.32"
+version = "5.1.33"
 requires_python = ">=3.10"
 summary = "UI module for invenio 3.5+"
 groups = ["default"]
@@ -3609,8 +3609,8 @@ dependencies = [
     "oarepo-runtime",
 ]
 files = [
-    {file = "oarepo_ui-5.1.32-py2.py3-none-any.whl", hash = "sha256:031ddcc8fa6441bfb132166b4b742f258419eb2fdf3cc1bf204e0b5cddfc9486"},
-    {file = "oarepo_ui-5.1.32.tar.gz", hash = "sha256:4a4bd317d5af6ecc04b898540b078b243c472b126b32f060c1818b77b942b8fc"},
+    {file = "oarepo_ui-5.1.33-py2.py3-none-any.whl", hash = "sha256:59fe029e6170490b895ea93de0e077d675953d28a5e426c204718cea2c2f372b"},
+    {file = "oarepo_ui-5.1.33.tar.gz", hash = "sha256:082ffdd5be5adca88c686d1e135f2341148819ebe62e188366577abdb5ef7b9a"},
 ]
 
 [[package]]
@@ -3664,16 +3664,16 @@ files = [
 
 [[package]]
 name = "openpyxl"
-version = "3.1.3"
-requires_python = ">=3.6"
+version = "3.1.4"
+requires_python = ">=3.8"
 summary = "A Python library to read/write Excel 2010 xlsx/xlsm files"
 groups = ["default"]
 dependencies = [
     "et-xmlfile",
 ]
 files = [
-    {file = "openpyxl-3.1.3-py2.py3-none-any.whl", hash = "sha256:25071b558db709de9e8782c3d3e058af3b23ffb2fc6f40c8f0c45a154eced2c3"},
-    {file = "openpyxl-3.1.3.tar.gz", hash = "sha256:8dd482e5350125b2388070bb2477927be2e8ebc27df61178709bc8c8751da2f9"},
+    {file = "openpyxl-3.1.4-py2.py3-none-any.whl", hash = "sha256:ec17f6483f2b8f7c88c57e5e5d3b0de0e3fb9ac70edc084d28e864f5b33bbefd"},
+    {file = "openpyxl-3.1.4.tar.gz", hash = "sha256:8d2c8adf5d20d6ce8f9bca381df86b534835e974ed0156dacefa76f68c1d69fb"},
 ]
 
 [[package]]
@@ -3724,13 +3724,13 @@ files = [
 
 [[package]]
 name = "packaging"
-version = "24.0"
-requires_python = ">=3.7"
+version = "24.1"
+requires_python = ">=3.8"
 summary = "Core utilities for Python packages"
 groups = ["default"]
 files = [
-    {file = "packaging-24.0-py3-none-any.whl", hash = "sha256:2ddfb553fdf02fb784c234c7ba6ccc288296ceabec964ad2eae3777778130bc5"},
-    {file = "packaging-24.0.tar.gz", hash = "sha256:eb82c5e3e56209074766e6885bb04b8c38a0c015d0a30036ebe7ece34c9989e9"},
+    {file = "packaging-24.1-py3-none-any.whl", hash = "sha256:5b8f2217dbdbd2f7f384c41c628544e6d52f2d0f53c6d0c3ea61aa5d1d7ff124"},
+    {file = "packaging-24.1.tar.gz", hash = "sha256:026ed72c8ed3fcce5bf8950572258698927fd1dbda10a5e981cdf0ac37f4f002"},
 ]
 
 [[package]]
