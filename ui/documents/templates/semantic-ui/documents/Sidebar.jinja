@@ -1,4 +1,4 @@
-{#def metadata, record #}
+{#def metadata, record, extra_context #}
 
 {% if record.links.edit_html%}
   <section class="ui segment">
@@ -11,51 +11,4 @@
   <RecordRequests record={record} />
 </section>
 <IdentifiersAndLinks originalRecordUrl={metadata.originalRecord} objectIdentifiers={metadata.objectIdentifiers}/>
-<section id="export-record" aria-label="{{_('Export')}}" class="ui segment exports">
-  <h2 class="ui small header detail-sidebar-header">{{_('Export')}}</h2>
-  <div id="recordExportDownload">
-    <div class="ui grid">
-      <div class="eleven wide column">
-        <div
-          role="listbox"
-          aria-expanded="false"
-          class="ui fluid selection dropdown"
-          tabindex="0"
-        >
-          <div
-            aria-atomic="true"
-            aria-live="polite"
-            role="alert"
-            class="divider text"
-          >
-            JSON
-          </div>
-          <i aria-hidden="true" class="dropdown icon"></i>
-          <div class="menu transition">
-            <div
-              style="pointer-events: all;"
-              role="option"
-              aria-checked="true"
-              aria-selected="true"
-              class="active selected item"
-            >
-              <span class="text">JSON</span>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="five wide column pl-0">
-        <a
-          href="{{record.links.export_path}}/json"
-          title="Download file"
-          class="ui fluid button"
-          role="button"
-        >
-          Export
-        </a>
-      </div>
-    </div>
-  </div>
-<SidebarApiLinks links={record.links}></SidebarApiLinks>
-
-</section>
+<RecordExport record={record} metadata={metadata} extra_context={extra_context}/>
