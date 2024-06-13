@@ -20,8 +20,8 @@ class DocumentsResourceConfig(RecordsUIResourceConfig):
         PermissionsComponent,
         FilesComponent,
     ]
-    
-    search_component = "documents/search/ResultsListItem.jsx"
+
+    search_component = "documents/search/ResultsListItem"
     application_id = "documents"
 
     templates = {
