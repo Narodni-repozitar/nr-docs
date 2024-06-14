@@ -8,6 +8,7 @@ dependencies = [
     "deepmerge>=1.1.0",
     "invenio-drafts-resources>=1.0.4",
     "json5",
+    "marshmallow-i18n-messages",
     "nr-metadata>=2.0.0",
     "nr-oaipmh-harvesters>=1.0.0",
     "nr-vocabularies>=2.0.8",
@@ -16,12 +17,11 @@ dependencies = [
     "oarepo-published-service>=1.0.0",
     "oarepo-published-service>=1.0.2",
     "oarepo-requests>=1.0.2",
-    "marshmallow-i18n-messages",
     "oarepo-runtime",
     "oarepo-ui",
     "oarepo-vocabularies",
     "oarepo[s3]==12.*",
-    "python-dotenv"
+    "python-dotenv",
 ]
 requires-python = ">=3.10,<3.11"
 
@@ -57,7 +57,7 @@ documents = "documents.ext:DocumentsExt"
 oai_s3_harvester = "common.ext:OaiS3HarvesterExt"
 
 [project.entry-points."invenio_db.alembic"]
-documents = "common:alembic"
+documents = "documents:alembic"
 
 [project.entry-points."invenio_db.models"]
 documents = "documents.records.models"

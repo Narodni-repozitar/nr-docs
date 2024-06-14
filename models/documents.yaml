@@ -22,7 +22,6 @@ profiles:
 record:
   extend: nr-documents#DocumentModel
   use:
-  - ./documents-requests.yaml
   - ./documents-custom_fields.yaml
   - ./documents-facets.yaml
   - ./documents-harvest.yaml
