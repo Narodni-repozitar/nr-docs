@@ -1,6 +1,5 @@
 {#def metadata, ui, record, extra_context #}
 <h1 class="ui header">{{ metadata.title }}</h1>
-
 <dl class="ui very basic table">
     <Field label={_('metadata/additionalTitles.label')}>
        <AdditionalTitles data={metadata.additionalTitles}></AdditionalTitles>
@@ -9,14 +8,14 @@
     <dd>
         <People  metadata={metadata} search_link={record.links.search_link}></People>
     </dd>
-    <Field label={ _('metadata/dateAvailable.label') }>{{metadata.dateAvailable}}</Field>
+    <Field label={ _('metadata/dateIssued.label') }>{{metadata.dateIssued}}</Field>
     <Field label={ _('metadata/dateModified.label') }>{{metadata.dateModified}}</Field>
 
     <Field label={ _('metadata/languages.label') }>
         <VocabularyArray vocabulary={metadata.languages} search_link={record.links.search_link} searchFacet="metadata_languages" vocabulary_type="languages"></VocabularyArray>
     </Field>
      <Field label={ _('metadata/resourceType.label') }>
-        <VocabularyItem vocabulary={metadata.resourceType} search_link={record.links.search_link} searchFacet="metadata_resourceType" vocabulary_type="resource-type"></VocabularyItem>
+        <VocabularyItem vocabulary={metadata.resourceType} search_link={record.links.search_link} searchFacet="metadata_resourceType" vocabulary_type="resource-types"></VocabularyItem>
     </Field>
     {% if metadata.thesis %}
         <Field label={ _('metadata/thesis/dateDefended.label') }>{{metadata.thesis.dateDefended}}</Field>
@@ -29,7 +28,6 @@
     <Field label={ _('metadata/abstract.label') }>
         <Multilingual data={metadata.abstract}></Multilingual>
     </Field>
-
         {% if metadata.thesis %}
           <Field label={ _('metadata/thesis/degreeGrantors.label') }>
             <TaxonomyArray taxonomy={metadata.thesis.degreeGrantors} search_link={record.links.search_link} searchFacet="metadata_thesis_degreeGrantors" vocabulary_type="institutions"></TaxonomyArray>

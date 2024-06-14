@@ -3472,7 +3472,7 @@ files = [
 
 [[package]]
 name = "oarepo-dashboard"
-version = "1.0.5"
+version = "1.0.6"
 summary = "Support for user dashboard (records, communities, requests)"
 groups = ["default"]
 dependencies = [
@@ -3482,13 +3482,13 @@ dependencies = [
     "openpyxl",
 ]
 files = [
-    {file = "oarepo_dashboard-1.0.5-py3-none-any.whl", hash = "sha256:96607319d8f4ce956100772359cec6a1e229417503cf2035e129e0446779eb8c"},
-    {file = "oarepo_dashboard-1.0.5.tar.gz", hash = "sha256:6d88c4a72d04ffdae1e4ba270372e521ca8ff4c3fa7e1e3555bd0f9901360f43"},
+    {file = "oarepo_dashboard-1.0.6-py3-none-any.whl", hash = "sha256:0923c7ddb056c4fc78b6e1410a42291567145ef5c7c2d9ab8d61ae41bb6ae171"},
+    {file = "oarepo_dashboard-1.0.6.tar.gz", hash = "sha256:3861e92b813b116318aefc50b9cf42c8fa59591f5971ab6cb77e639e7ea8cc88"},
 ]
 
 [[package]]
 name = "oarepo-global-search"
-version = "1.0.10"
+version = "1.0.11"
 requires_python = ">=3.10"
 summary = "\"A model builder plugin for global search\""
 groups = ["default"]
@@ -3498,8 +3498,8 @@ dependencies = [
     "oarepo-ui",
 ]
 files = [
-    {file = "oarepo_global_search-1.0.10-py2.py3-none-any.whl", hash = "sha256:54ec1b6ac9a2514e739f9db0dfcc693caedf95b300c1f80440a43ecf25c0733d"},
-    {file = "oarepo_global_search-1.0.10.tar.gz", hash = "sha256:a8ece44ea76585125d9632714c21e568a6b1d0a246244ba5a1a0f93b0d9441c1"},
+    {file = "oarepo_global_search-1.0.11-py2.py3-none-any.whl", hash = "sha256:98ca7a6a9f57fbc438c8477c436d2701dcfb1b54dffee1c76ac0cc741937718b"},
+    {file = "oarepo_global_search-1.0.11.tar.gz", hash = "sha256:7c58f83e9008926131240ddbbe336165b23098206bc9e56052304c84d2058b5e"},
 ]
 
 [[package]]
@@ -3578,7 +3578,7 @@ files = [
 
 [[package]]
 name = "oarepo-runtime"
-version = "1.5.31"
+version = "1.5.32"
 summary = "A set of runtime extensions of Invenio repository"
 groups = ["default"]
 dependencies = [
@@ -3591,8 +3591,8 @@ dependencies = [
     "tqdm",
 ]
 files = [
-    {file = "oarepo_runtime-1.5.31-py3-none-any.whl", hash = "sha256:b9f4e81126c4e29e67801a8c333a256f9cb394e200a3e5d6dcac588c6c35c0d0"},
-    {file = "oarepo_runtime-1.5.31.tar.gz", hash = "sha256:f78aefe972aec563ba326ec0358fe635533ce4d119b6eb2b3da16c63889ec70c"},
+    {file = "oarepo_runtime-1.5.32-py3-none-any.whl", hash = "sha256:1775284be8d68353fcb170bdc5f2e67e37ab206fc810421c4ba79d43f665c365"},
+    {file = "oarepo_runtime-1.5.32.tar.gz", hash = "sha256:f13958d427ded99c83c92c9d33ec38882e6d065ecab24fa615c02c26b3048119"},
 ]
 
 [[package]]

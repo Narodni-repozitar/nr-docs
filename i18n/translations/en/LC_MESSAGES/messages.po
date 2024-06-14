@@ -139,7 +139,7 @@ msgstr "Funder"
 
 #: models/nr-documents/nr_documents/services/records/facets.py:194
 msgid "metadata/fundingReferences/projectID.label"
-msgstr "Project double"
+msgstr "Project identifier"
 
 #: models/nr-documents/nr_documents/services/records/facets.py:199
 msgid "metadata/geoLocations/geoLocationPlace.label"
@@ -438,7 +438,7 @@ msgstr "Events"
 
 #: sites/nr-docs/site/nr_docs/translations/jinjax_messages.jinja:14
 msgid "metadata/externalLocation.label"
-msgstr ""
+msgstr "External location"
 
 #: sites/nr-docs/site/nr_docs/translations/jinjax_messages.jinja:15
 msgid "metadata/fundingReferences.label"
@@ -3852,4 +3852,15 @@ msgid "Back"
 msgstr ""
 
 msgid "Files upload"
+msgstr ""
+
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:503
+msgid "record_status"
+msgstr ""
+
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:505
+msgid "has_draft"
+msgstr ""
+
+msgid "Document description"
 msgstr ""

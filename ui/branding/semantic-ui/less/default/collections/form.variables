@@ -1,7 +1,8 @@
 /***********************************************
          Invenio App RDM Form Variables
 ***********************************************/
-@arrayFieldColor: #ebede2;
+@arrayFieldColor: rgba(242, 242, 242);
 @highlightedfieldcolor: #d37c7c;
-@arrayAddButtonFieldColor: #eee8a9;
-@arrayAddButtonFieldHoverColor: #e5db70;
+@arrayAddButtonFieldColor: #9c27b0;
+@arrayAddButtonFieldHoverColor: #9b56a7;
+@arrayAddButtonTextColor: white;

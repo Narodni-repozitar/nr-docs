@@ -8,14 +8,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2024-04-15 11:19+0200\n"
+"POT-Creation-Date: 2024-05-15 10:11+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.14.0\n"
+"Generated-By: Babel 2.15.0\n"
 
 #: /home/dusanst/Projects/new_nr_docs/nr-docs/common/just_for_translations.py:5
 msgid "Submitted"
@@ -454,6 +454,14 @@ msgstr ""
 msgid "syntheticFields/people.label"
 msgstr ""
 
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:503
+msgid "record_status"
+msgstr ""
+
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:505
+msgid "has_draft"
+msgstr ""
+
 #: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/branding/__init__.py:23
 msgid "New upload"
 msgstr ""
@@ -681,9 +689,6 @@ msgstr ""
 msgid "Select the language(s) of the resource"
 msgstr ""
 
-msgid "Date issued"
-msgstr ""
-
 msgid "The date can be a year, year and month or a full date."
 msgstr ""
 
@@ -706,9 +711,6 @@ msgid "Choose access type - if the resource is open or has some restrictions."
 msgstr ""
 
 msgid "Licenses"
-msgstr ""
-
-msgid "Choose licenses"
 msgstr ""
 
 msgid ""
@@ -744,7 +746,7 @@ msgstr ""
 msgid "Choose if the contributor is a person or an organization."
 msgstr ""
 
-msgid "Resource description"
+msgid "Document description"
 msgstr ""
 
 msgid "Subject Categories"
