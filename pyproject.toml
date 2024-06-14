@@ -83,13 +83,6 @@ documents = "documents.models:records.json"
 documents = "documents.models:ui.json"
 documents_file = "documents.models:ui.json"
 
-[project.entry-points."invenio_requests.types"]
-delete_record = "oarepo_requests.types.delete_record:DeleteRecordRequestType"
-edit_record = "oarepo_requests.types.edit_record:EditRecordRequestType"
-publish_draft = "oarepo_requests.types.publish_draft:PublishDraftRequestType"
-documents_delete_record = "documents.records.requests.delete_record.types:DeleteRecordRequestType"
-documents_edit_record = "documents.records.requests.edit_record.types:EditRecordRequestType"
-
 [project.optional-dependencies]
 tests = [
     "pytest-invenio>=1.4.11",
