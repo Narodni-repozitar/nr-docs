@@ -1,3 +1,7 @@
+forks:
+  invenio-communities: https://github.com/oarepo/invenio-communities
+  invenio-oauthclient: https://github.com/oarepo/invenio-oauthclient
+  invenio-records-resources: https://github.com/oarepo/invenio-records-resources
 i18n:
   babel_input_translations:
   - documents/translations
@@ -16,8 +20,8 @@ i18n:
 models:
 - api_prefix: documents
   base_model: documents
-  features: [files, requests, nr_vocabularies, vocabularies, relations, communities,
-    custom_fields, drafts, multilingual, tests]
+  features: [drafts, custom_fields, multilingual, requests, nr_vocabularies, relations,
+    tests, vocabularies, files, communities]
   model_description: Text documents of any kind
   model_name: documents
   model_package: documents
