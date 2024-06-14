@@ -39,7 +39,7 @@ if [ -z "$PYTHON" ] ; then
   done
 
   if [ -z "$PYTHON" ] ; then
-    echo "No supported python version found. Please install python 3.9 or higher
+    echo "No supported python version found. Please install python 3.10 or higher
     or set the PYTHON environment variable to the python executable."
     exit 1
   fi
