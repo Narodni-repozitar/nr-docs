@@ -58,7 +58,8 @@ record:
     base-classes:
       - oarepo_runtime.services.config.service.PermissionsPresetsConfigMixin
       - common.services.config.FilteredResultServiceConfig
-
+    components:
+      - "{{oarepo_vocabularies.authorities.components.AuthorityComponent}}"
 
   published-service-config:
     base-classes:
