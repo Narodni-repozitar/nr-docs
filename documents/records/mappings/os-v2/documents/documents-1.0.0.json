@@ -1118,7 +1118,7 @@
                         "properties": {
                             "dateDefended": {
                                 "type": "date",
-                                "format": "basic_date||strict_date"
+                                "format": "strict_date||yyyy-MM||yyyy"
                             },
                             "defended": {
                                 "type": "boolean"
