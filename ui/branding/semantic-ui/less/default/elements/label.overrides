@@ -7,6 +7,10 @@
     position: relative;
     bottom: @languageLift;
   }
+  &.active-filters-count-label {
+    background-color: @accentColor;
+    color: @white;
+  }
 
   .ui.tree-field .actions & {
     height: min-content;

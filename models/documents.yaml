@@ -2,6 +2,7 @@ plugins:
   builder:
     disable:
     - script_sample_data
+    - invenio_record_metadata_alembic_setup_cfg
   packages:
   - oarepo-model-builder-requests
   - oarepo-model-builder-drafts
@@ -22,7 +23,6 @@ profiles:
 record:
   extend: nr-documents#DocumentModel
   use:
-  - ./documents-requests.yaml
   - ./documents-custom_fields.yaml
   - ./documents-facets.yaml
   - ./documents-harvest.yaml

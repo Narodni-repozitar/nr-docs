@@ -2,18 +2,8 @@
   &.transparent {
     background-color: transparent;
   }
-
   .tree-field &.icon.secondary {
     height: 3rem;
     margin: 0 1rem 1rem;
-  }
-  .tree-field .content & {
-    background-color: transparent;
-  }
-  .tree-field &.basic {
-    text-align: left;
-  }
-  .tree-field .actions &.small {
-    height: min-content;
   }
 }

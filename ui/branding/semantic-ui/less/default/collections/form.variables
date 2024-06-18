@@ -3,6 +3,4 @@
 ***********************************************/
 @arrayFieldColor: rgba(242, 242, 242);
 @highlightedfieldcolor: #d37c7c;
-@arrayAddButtonFieldColor: #9c27b0;
-@arrayAddButtonFieldHoverColor: #9b56a7;
 @arrayAddButtonTextColor: white;
