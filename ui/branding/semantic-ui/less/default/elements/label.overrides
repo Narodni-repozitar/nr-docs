@@ -7,9 +7,4 @@
     position: relative;
     bottom: @languageLift;
   }
-
-  .ui.tree-field .actions & {
-    height: min-content;
-    margin: 0.5rem 0;
-  }
 }
