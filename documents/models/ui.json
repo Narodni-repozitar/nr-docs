@@ -1874,8 +1874,8 @@
                     "hint": "metadata/thesis.hint",
                     "children": {
                         "dateDefended": {
-                            "detail": "date",
-                            "input": "date",
+                            "detail": "edtf",
+                            "input": "edtf",
                             "help": "metadata/thesis/dateDefended.help",
                             "label": "metadata/thesis/dateDefended.label",
                             "hint": "metadata/thesis/dateDefended.hint",
