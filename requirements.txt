@@ -29,9 +29,9 @@ oarepo-global-search==1.0.12
 oarepo-model-builder==4.0.85
 oarepo-oai-pmh-harvester==4.0.45
 oarepo-published-service==1.0.3
-oarepo-requests==1.2.1
+oarepo-requests==1.2.2
 oarepo-runtime==1.5.36
-oarepo-ui==5.1.33
+oarepo-ui==5.1.34
 oarepo-vocabularies==2.0.89
 openpyxl==3.1.4
 pathspec==0.12.1
