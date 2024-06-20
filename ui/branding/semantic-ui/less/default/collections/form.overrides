@@ -131,16 +131,6 @@
     margin-top: 0.5rem;
   }
 
-  #main-content {
-    .ui.icon.left.labeled.button {
-      background-color: @arrayAddButtonFieldColor;
-      color: @arrayAddButtonTextColor;
-      margin-top: 0;
-    }
-    .ui.icon.left.labeled.button:hover {
-      background-color: @arrayAddButtonFieldHoverColor;
-    }
-  }
   #main-content > .field {
     margin-bottom: 2rem;
   }
@@ -174,13 +164,6 @@
     border-radius: 0.5rem;
   }
   .content {
-    .ui.icon.left.labeled.button {
-      background-color: @arrayAddButtonFieldColor;
-      color: @arrayAddButtonTextColor;
-    }
-    .ui.icon.left.labeled.button:hover {
-      background-color: @arrayAddButtonFieldHoverColor;
-    }
     label.helptext {
       font-weight: normal;
       font-size: 1rem;
@@ -209,5 +192,24 @@
         margin-bottom: 0.5rem;
       }
     }
+  }
+}
+
+.ui.form {
+  .array-field-add-button {
+    button {
+      background-color: @accentColor;
+      color: @arrayAddButtonTextColor;
+    }
+    button:hover {
+      background-color: @lightAccentColor;
+    }
+  }
+  .files-upload-button {
+    background-color: @accentColor;
+    color: @arrayAddButtonTextColor;
+  }
+  .files-upload-button:hover {
+    background-color: @lightAccentColor;
   }
 }

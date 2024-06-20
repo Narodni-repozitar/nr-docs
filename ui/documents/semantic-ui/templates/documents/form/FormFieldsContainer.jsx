@@ -4,6 +4,8 @@ import {
   MultilingualTextInput,
   FormikStateLogger,
   EDTFSingleDatePicker,
+  sanitizeInput,
+  validTags,
 } from "@js/oarepo_ui";
 import {
   LocalVocabularySelectField,
@@ -28,6 +30,7 @@ import {
 import Overridable from "react-overridable";
 import { i18next } from "@translations/i18next";
 import _has from "lodash/has";
+import { useFormikContext, getIn } from "formik";
 
 const FormFieldsContainer = () => {
   const { formConfig, files: recordFiles } = useFormConfig();
@@ -36,6 +39,9 @@ const FormFieldsContainer = () => {
     (options) => options.filter((option) => option.props?.submission),
     []
   );
+
+  const { values, setFieldValue, setFieldTouched } = useFormikContext();
+  const toolBar = "bold italic | bullist numlist | outdent indent | undo redo";
 
   return (
     <React.Fragment>
@@ -72,6 +78,13 @@ const FormFieldsContainer = () => {
                   label={i18next.t("Title")}
                 />
               }
+              onBlur={() => {
+                const cleanedContent = sanitizeInput(
+                  getIn(values, "metadata.title")
+                );
+                setFieldValue("metadata.title", cleanedContent);
+                setFieldTouched("metadata.title", true);
+              }}
             />
           </Overridable>
           <Overridable
@@ -323,6 +336,10 @@ const FormFieldsContainer = () => {
               textFieldLabel={i18next.t("Description")}
               fieldPath="metadata.abstract"
               rich={true}
+              editorConfig={{
+                toolbar: toolBar,
+                valid_elements: validTags,
+              }}
               required
               helpText={i18next.t(
                 "Choose abstract language and write down the text.Abstract can be provided in multiple languages."
@@ -347,6 +364,7 @@ const FormFieldsContainer = () => {
             fieldPath="metadata.notes"
           >
             <StringArrayField
+              label={i18next.t("Notes")}
               fieldPath="metadata.notes"
               helpText={i18next.t(
                 "Space for additional information related to the resource."
@@ -413,7 +431,7 @@ const FormFieldsContainer = () => {
           data-testid="filesupload-button"
         >
           <Overridable id="NrDocs.Deposit.FileUploader.container">
-            <FileUploader recordFiles={recordFiles}/>
+            <FileUploader recordFiles={recordFiles} />
           </Overridable>
         </AccordionField>
       </Overridable>

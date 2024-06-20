@@ -46,10 +46,10 @@ class DocumentsServiceConfig(
         *PermissionsPresetsConfigMixin.components,
         *FilteredResultServiceConfig.components,
         AuthorityComponent,
-        DataComponent,
         OwnersComponent,
         FilesComponent,
         DraftFilesComponent,
+        DataComponent,
     ]
 
     model = "documents"

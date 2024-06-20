@@ -1,20 +1,13 @@
 from oarepo_requests.resolvers.ui import (
-    FallbackEntityReferenceUIResolver,
-    GroupEntityReferenceUIResolver,
     RecordEntityDraftReferenceUIResolver,
     RecordEntityReferenceUIResolver,
-    UserEntityReferenceUIResolver,
 )
 from oarepo_requests.resources.draft.resource import DraftRecordRequestsResource
 from oarepo_requests.services.draft.service import DraftRecordRequestsService
-from oarepo_runtime.records.entity_resolvers import GroupResolver, UserResolver
 
 from documents.files.api import DocumentsFileDraft
 from documents.files.requests.resolvers import DocumentsFileDraftResolver
 from documents.records.api import DocumentsDraft, DocumentsRecord
-from documents.records.requests.delete_record.types import DeleteRecordRequestType
-from documents.records.requests.edit_record.types import EditRecordRequestType
-from documents.records.requests.publish_draft.types import PublishDraftRequestType
 from documents.records.requests.resolvers import (
     DocumentsDraftResolver,
     DocumentsResolver,
@@ -58,16 +51,7 @@ DOCUMENTS_REQUESTS_RESOURCE_CLASS = DraftRecordRequestsResource
 DOCUMENTS_REQUESTS_SERVICE_CLASS = DraftRecordRequestsService
 
 
-REQUESTS_REGISTERED_TYPES = [
-    DeleteRecordRequestType(),
-    EditRecordRequestType(),
-    PublishDraftRequestType(),
-]
-
-
 REQUESTS_ENTITY_RESOLVERS = [
-    UserResolver(),
-    GroupResolver(),
     DocumentsResolver(
         record_cls=DocumentsRecord, service_id="documents", type_key="documents"
     ),
@@ -83,13 +67,10 @@ REQUESTS_ENTITY_RESOLVERS = [
 
 
 ENTITY_REFERENCE_UI_RESOLVERS = {
-    "user": UserEntityReferenceUIResolver("user"),
-    "fallback": FallbackEntityReferenceUIResolver("fallback"),
-    "group": GroupEntityReferenceUIResolver("group"),
     "documents": RecordEntityReferenceUIResolver("documents"),
     "documents_draft": RecordEntityDraftReferenceUIResolver("documents_draft"),
 }
-REQUESTS_UI_SERIALIZATION_REFERENCED_FIELDS = ["created_by", "receiver", "topic"]
+REQUESTS_UI_SERIALIZATION_REFERENCED_FIELDS = []
 
 
 DOCUMENTS_FILES_RESOURCE_CONFIG = DocumentsFileResourceConfig

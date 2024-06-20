@@ -17,12 +17,11 @@ dependencies = [
     "oarepo-published-service>=1.0.0",
     "oarepo-published-service>=1.0.2",
     "oarepo-requests>=1.0.2",
-    "marshmallow-i18n-messages",
     "oarepo-runtime",
     "oarepo-ui",
     "oarepo-vocabularies",
     "oarepo[s3]==12.*",
-    "python-dotenv"
+    "python-dotenv",
 ]
 requires-python = ">=3.10,<3.11"
 
@@ -83,14 +82,6 @@ documents = "documents.models:records.json"
 [project.entry-points."oarepo.ui"]
 documents = "documents.models:ui.json"
 documents_file = "documents.models:ui.json"
-
-[project.entry-points."invenio_requests.types"]
-delete_record = "oarepo_requests.types.delete_record:DeleteRecordRequestType"
-edit_record = "oarepo_requests.types.edit_record:EditRecordRequestType"
-publish_draft = "oarepo_requests.types.publish_draft:PublishDraftRequestType"
-documents_delete_record = "documents.records.requests.delete_record.types:DeleteRecordRequestType"
-documents_edit_record = "documents.records.requests.edit_record.types:EditRecordRequestType"
-documents_publish_draft = "documents.records.requests.publish_draft.types:PublishDraftRequestType"
 
 [project.optional-dependencies]
 tests = [
