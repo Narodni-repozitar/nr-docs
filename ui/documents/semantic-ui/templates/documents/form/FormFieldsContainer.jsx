@@ -5,7 +5,7 @@ import {
   FormikStateLogger,
   EDTFSingleDatePicker,
   sanitizeInput,
-  validTags
+  validTags,
 } from "@js/oarepo_ui";
 import {
   LocalVocabularySelectField,
@@ -363,21 +363,12 @@ const FormFieldsContainer = () => {
             id="NrDocs.Deposit.NotesField.container"
             fieldPath="metadata.notes"
           >
-            <MultilingualTextInput
-              labelIcon="pencil"
+            <StringArrayField
               label={i18next.t("Notes")}
-              textFieldLabel={i18next.t("Note")}
               fieldPath="metadata.notes"
-              rich={true}
-              editorConfig={{
-                toolbar: toolBar,
-                valid_elements: validTags,
-              }}
-              required
               helpText={i18next.t(
                 "Space for additional information related to the resource."
               )}
-              lngFieldWidth={4}
             />
           </Overridable>
         </AccordionField>
@@ -440,7 +431,7 @@ const FormFieldsContainer = () => {
           data-testid="filesupload-button"
         >
           <Overridable id="NrDocs.Deposit.FileUploader.container">
-            <FileUploader recordFiles={recordFiles}/>
+            <FileUploader recordFiles={recordFiles} />
           </Overridable>
         </AccordionField>
       </Overridable>
