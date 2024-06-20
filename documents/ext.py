@@ -29,7 +29,12 @@ class DocumentsExt:
         """Initialize configuration."""
         for identifier in dir(config):
             if re.match("^[A-Z_0-9]*$", identifier) and not identifier.startswith("_"):
-                app.config.setdefault(identifier, getattr(config, identifier))
+                if isinstance(app.config.get(identifier), list):
+                    app.config[identifier] += getattr(config, identifier)
+                elif isinstance(app.config.get(identifier), dict):
+                    app.config[identifier].update(getattr(config, identifier))
+                else:
+                    app.config.setdefault(identifier, getattr(config, identifier))
 
     def is_inherited(self):
         from importlib_metadata import entry_points

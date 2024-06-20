@@ -3,11 +3,10 @@ from invenio_records_resources.services.files.schema import (
     FileSchema as InvenioFileSchema,
 )
 from marshmallow import fields as ma_fields
-from oarepo_requests.services.schema import RequestsSchemaMixin
 from oarepo_runtime.services.schema.validation import validate_date
 
 
-class DocumentsFileSchema(RequestsSchemaMixin, InvenioFileSchema):
+class DocumentsFileSchema(InvenioFileSchema):
     class Meta:
         unknown = ma.RAISE
 
