@@ -62,6 +62,7 @@
             "generate": true
         },
         "searchable": true,
+        "custom-fields": [],
         "ui": {
             "marshmallow": {
                 "generate": true,

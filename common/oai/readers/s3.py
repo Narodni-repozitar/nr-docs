@@ -26,6 +26,7 @@ TWO_WEEKS = 14 * 24 * 3600
 BACKOFF_FACTOR = 2
 CREATE_PRESIGNED_URL_MAX_ATTEMPTS = 10
 
+
 class S3Reader(BaseReader):
     """
     Extension of `BaseReader` to process records from S3 service.
@@ -62,31 +63,36 @@ class S3Reader(BaseReader):
             aws_secret_access_key=os.environ["NUSL_S3_SECRET_KEY"],
         )
         s3_bucket_name = os.environ.get("NUSL_S3_BUCKET", "nr-repo-docs-harvest")
-        harvest_name = os.environ.get("NUSL_S3_HARVEST_NAME", "nusl-harvest-02")
+        harvest_name = os.environ.get("NUSL_S3_HARVEST_NAME", "nusl-harvest-03")
 
         paginator = s3_client.get_paginator("list_objects_v2")
         pages = paginator.paginate(Bucket=s3_bucket_name, Prefix=harvest_name)
         size = 0
         for page in pages:
             for obj in page["Contents"]:
-                if re.match(r"^.*harvest-\d{2}/\d{4}-\d{2}-\d{2}-to-\d{4}-\d{2}-\d{2}/data/oai.*", obj["Key"]):
+                if re.match(
+                    r"^.*harvest-\d{2}/\d{4}-\d{2}-\d{2}-to-\d{4}-\d{2}-\d{2}/data/oai.*",
+                    obj["Key"],
+                ):
                     continue
-                
+
                 size += obj["Size"]
 
                 for i in range(7):
                     try:
-                        yaml_data = s3_client.get_object(Bucket=s3_bucket_name, Key=obj["Key"])[
-                            "Body"
-                        ]
+                        yaml_data = s3_client.get_object(
+                            Bucket=s3_bucket_name, Key=obj["Key"]
+                        )["Body"]
                         yaml_data = yaml_data.read()
                         break
                     except:
-                        time.sleep(2 ** i)
+                        time.sleep(2**i)
                 else:
                     raise Exception(f"Failed to download the file {obj['Key']} from S3")
 
-                yaml_data = gzip.GzipFile(fileobj=BytesIO(yaml_data)).read().decode("utf-8")
+                yaml_data = (
+                    gzip.GzipFile(fileobj=BytesIO(yaml_data)).read().decode("utf-8")
+                )
 
                 _, datestamp, _ = obj["Key"].split("/")
                 content = list(yaml.safe_load_all(yaml_data))
@@ -151,6 +157,7 @@ def expand_datestamp(datestamp):
     elif "+" not in datestamp:
         datestamp += "+00:00"
     return datetime.datetime.fromisoformat(datestamp).astimezone(pytz.utc).isoformat()
+
 
 def create_presigned_url(s3_client, bucket_name, object_name):
     """
@@ -330,4 +337,3 @@ def is_record_out_of_period(datestamp_until, datestamp_from, datestamp):
         or datestamp_is_before_period
         or datestamp_is_after_period
     )
-
