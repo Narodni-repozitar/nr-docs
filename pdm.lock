@@ -5,7 +5,7 @@
 groups = ["default"]
 strategy = ["cross_platform", "inherit_metadata"]
 lock_version = "4.4.1"
-content_hash = "sha256:65c6b0c3f2bc81cd9de00a49a6cb9112f3ca73fce18ca6952a0ef52f9faf45f7"
+content_hash = "sha256:6637b7b99641034e0575e67adc00513034450bf2dcc1dee2d93cae52bd76213b"
 
 [[package]]
 name = "alembic"
@@ -292,7 +292,7 @@ files = [
 
 [[package]]
 name = "cairocffi"
-version = "1.7.0"
+version = "1.7.1"
 requires_python = ">=3.8"
 summary = "cffi-based cairo bindings for Python"
 groups = ["default"]
@@ -300,8 +300,8 @@ dependencies = [
     "cffi>=1.1.0",
 ]
 files = [
-    {file = "cairocffi-1.7.0-py3-none-any.whl", hash = "sha256:1f29a8d41dbda4090c0aa33bcdea64f3b493e95f74a43ea107c4a8a7b7f632ef"},
-    {file = "cairocffi-1.7.0.tar.gz", hash = "sha256:7761863603894305f3160eca68452f373433ca8745ab7dd445bd2c6ce50dcab7"},
+    {file = "cairocffi-1.7.1-py3-none-any.whl", hash = "sha256:9803a0e11f6c962f3b0ae2ec8ba6ae45e957a146a004697a1ac1bbf16b073b3f"},
+    {file = "cairocffi-1.7.1.tar.gz", hash = "sha256:2e48ee864884ec4a3a34bfa8c9ab9999f688286eb714a15a43ec9d068c36557b"},
 ]
 
 [[package]]
@@ -3174,7 +3174,7 @@ files = [
 
 [[package]]
 name = "nr-metadata"
-version = "2.0.26"
+version = "2.0.27"
 requires_python = ">=3.9"
 summary = "\"Generated metadata files for the Czech National Repository\""
 groups = ["default"]
@@ -3184,13 +3184,13 @@ dependencies = [
     "oarepo-vocabularies>=2.0.0",
 ]
 files = [
-    {file = "nr_metadata-2.0.26-py2.py3-none-any.whl", hash = "sha256:cc98c4a93766513965958b86ebdcbc5237b273941ad876a7533320e05bcd16df"},
-    {file = "nr_metadata-2.0.26.tar.gz", hash = "sha256:8378966ed58e96190071f1a2c27a1c3009d07dd0a78e23bd23a4700dcd2b01a4"},
+    {file = "nr_metadata-2.0.27-py2.py3-none-any.whl", hash = "sha256:3021f661d8fb5e5f71e43c547b9b91bd2a987045e7949df00820ff5cff135c6f"},
+    {file = "nr_metadata-2.0.27.tar.gz", hash = "sha256:a759efd88661e516077c5a69a24148cbd8464d40b87788779a967cbb0b5df3cd"},
 ]
 
 [[package]]
 name = "nr-oaipmh-harvesters"
-version = "1.0.17"
+version = "1.0.19"
 summary = "OAIPMH harvesters for National repository"
 groups = ["default"]
 dependencies = [
@@ -3200,21 +3200,21 @@ dependencies = [
     "oarepo-oai-pmh-harvester>=4.0.0",
 ]
 files = [
-    {file = "nr_oaipmh_harvesters-1.0.17-py3-none-any.whl", hash = "sha256:8667f80f4528b094f833a226061be8ab177913f80dc5f62f43cb9030b0936330"},
-    {file = "nr_oaipmh_harvesters-1.0.17.tar.gz", hash = "sha256:2bb9fb680bf7fa0a0cc796309d7a6d6b451175dd4191f8fd368e1e41ded2f20d"},
+    {file = "nr_oaipmh_harvesters-1.0.19-py3-none-any.whl", hash = "sha256:8c7b81eb067522d74ce9cdc8bbedfbf9c3b1f28848eb020f30a8628c54d04530"},
+    {file = "nr_oaipmh_harvesters-1.0.19.tar.gz", hash = "sha256:887368436ba833a57ba8c86c4c1e8a2a32efb776f1845edba089fce4546d7d12"},
 ]
 
 [[package]]
 name = "nr-vocabularies"
-version = "2.0.12"
+version = "2.0.13"
 summary = "A sample application for nr_vocabularies"
 groups = ["default"]
 dependencies = [
     "oarepo-vocabularies>=1.0.0",
 ]
 files = [
-    {file = "nr_vocabularies-2.0.12-py3-none-any.whl", hash = "sha256:8e8853193f0e5e15efde09441e5223c1f6dbbcdb93cff97c6470529ea638f5cf"},
-    {file = "nr_vocabularies-2.0.12.tar.gz", hash = "sha256:dbc997ca24e47fc2854c5bcec227f22791aad20e5713800b250ea013036d22e1"},
+    {file = "nr_vocabularies-2.0.13-py3-none-any.whl", hash = "sha256:50da7d0fce588df98fc83fc8ba40d849dd6541ed8597f145c71f2a9c03610dd1"},
+    {file = "nr_vocabularies-2.0.13.tar.gz", hash = "sha256:0adf331fe04c356ab74ae04dd37e715785a885494ac961f0998dd59b23ff8562"},
 ]
 
 [[package]]
@@ -3472,7 +3472,7 @@ files = [
 
 [[package]]
 name = "oarepo-dashboard"
-version = "1.0.7"
+version = "1.0.8"
 summary = "Support for user dashboard (records, communities, requests)"
 groups = ["default"]
 dependencies = [
@@ -3482,24 +3482,23 @@ dependencies = [
     "openpyxl",
 ]
 files = [
-    {file = "oarepo_dashboard-1.0.7-py3-none-any.whl", hash = "sha256:5a72a69215bb9740a41faf7d3f624b50fbbf338aab39f0c070b59fc008bc3b18"},
-    {file = "oarepo_dashboard-1.0.7.tar.gz", hash = "sha256:d1d18bbc885ae727ffa1a722877effb94195df2315acdb1171ecc4f4fc9da761"},
+    {file = "oarepo_dashboard-1.0.8-py3-none-any.whl", hash = "sha256:09da37eba204b67a0113462f639cf41ad405c166b825fd9603c1473ddb7d7bc8"},
+    {file = "oarepo_dashboard-1.0.8.tar.gz", hash = "sha256:b4df97fc886914eb6a7f3fa354e46e5a56c40f02ee6f000ff21838d878d2bb74"},
 ]
 
 [[package]]
 name = "oarepo-global-search"
-version = "1.0.12"
+version = "1.0.13"
 requires_python = ">=3.10"
 summary = "\"A model builder plugin for global search\""
 groups = ["default"]
 dependencies = [
-    "invenio-records-resources>=0.21.4",
     "oarepo-model-builder>=4.0.0",
     "oarepo-ui",
 ]
 files = [
-    {file = "oarepo_global_search-1.0.12-py2.py3-none-any.whl", hash = "sha256:40cf876ce52671416d1d66c685996275d2a5ebe20b4716015cce717327f3791d"},
-    {file = "oarepo_global_search-1.0.12.tar.gz", hash = "sha256:8f2222414d494d753243ad89fe1591988d4061ccfb23f5904378745429f2fb8e"},
+    {file = "oarepo_global_search-1.0.13-py2.py3-none-any.whl", hash = "sha256:e77f0c393c343fe041c3701271794e30ecd761cc600ace4cb12ef034f381e97d"},
+    {file = "oarepo_global_search-1.0.13.tar.gz", hash = "sha256:63303a69192843810efdd3cf1433ba522cf0fd6fa7994f9f12dcb489ef3707ac"},
 ]
 
 [[package]]
@@ -3597,7 +3596,7 @@ files = [
 
 [[package]]
 name = "oarepo-ui"
-version = "5.1.34"
+version = "5.1.36"
 requires_python = ">=3.10"
 summary = "UI module for invenio 3.5+"
 groups = ["default"]
@@ -3609,8 +3608,8 @@ dependencies = [
     "oarepo-runtime",
 ]
 files = [
-    {file = "oarepo_ui-5.1.34-py2.py3-none-any.whl", hash = "sha256:1f62796d31a9b341f64c4aafa3327b8078cddcf28fe1cc02957c2632c9e66ccd"},
-    {file = "oarepo_ui-5.1.34.tar.gz", hash = "sha256:8efe4eb52f9ddd3a12364555e52037456ccd1d73b7ebf41a41dfc08ae2be5b16"},
+    {file = "oarepo_ui-5.1.36-py2.py3-none-any.whl", hash = "sha256:035960fed4163b3a80b5a5883ff2b662b2d453a58ed66a09db509067a833f60f"},
+    {file = "oarepo_ui-5.1.36.tar.gz", hash = "sha256:220f012cd2b02c51d808776eb61b8b1e128edb82a387eca833995b751b41fcbc"},
 ]
 
 [[package]]
@@ -4415,13 +4414,13 @@ files = [
 
 [[package]]
 name = "setuptools"
-version = "70.0.0"
+version = "70.1.0"
 requires_python = ">=3.8"
 summary = "Easily download, build, install, upgrade, and uninstall Python packages"
 groups = ["default"]
 files = [
-    {file = "setuptools-70.0.0-py3-none-any.whl", hash = "sha256:54faa7f2e8d2d11bcd2c07bed282eef1046b5c080d1c32add737d7b5817b1ad4"},
-    {file = "setuptools-70.0.0.tar.gz", hash = "sha256:f211a66637b8fa059bb28183da127d4e86396c991a942b028c6650d4319c3fd0"},
+    {file = "setuptools-70.1.0-py3-none-any.whl", hash = "sha256:d9b8b771455a97c8a9f3ab3448ebe0b29b5e105f1228bba41028be116985a267"},
+    {file = "setuptools-70.1.0.tar.gz", hash = "sha256:01a1e793faa5bd89abc851fa15d0a0db26f160890c7102cd8dce643e886b47f5"},
 ]
 
 [[package]]
@@ -4887,13 +4886,13 @@ files = [
 
 [[package]]
 name = "whitenoise"
-version = "6.6.0"
+version = "6.7.0"
 requires_python = ">=3.8"
 summary = "Radically simplified static file serving for WSGI applications"
 groups = ["default"]
 files = [
-    {file = "whitenoise-6.6.0-py3-none-any.whl", hash = "sha256:b1f9db9bf67dc183484d760b99f4080185633136a273a03f6436034a41064146"},
-    {file = "whitenoise-6.6.0.tar.gz", hash = "sha256:8998f7370973447fac1e8ef6e8ded2c5209a7b1f67c1012866dbcd09681c3251"},
+    {file = "whitenoise-6.7.0-py3-none-any.whl", hash = "sha256:a1ae85e01fdc9815d12fa33f17765bc132ed2c54fa76daf9e39e879dd93566f6"},
+    {file = "whitenoise-6.7.0.tar.gz", hash = "sha256:58c7a6cd811e275a6c91af22e96e87da0b1109e9a53bb7464116ef4c963bf636"},
 ]
 
 [[package]]

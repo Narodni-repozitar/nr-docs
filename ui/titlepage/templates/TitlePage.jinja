@@ -26,10 +26,10 @@
                         {%- block frontpage_search %}
                                 {%- block frontpage_title %}
                                     <div class="ui text container centered">
-                                        <div class="ui frontpage header">
+                                        <div class="flex align-items-center justify-center rel-mb-3">
                                             {%- if config.THEME_FRONTPAGE_LOGO %}
-                                                <img class="ui medium image frontpage-logo"
-                                                    src="{{ url_for('static', filename=config.THEME_FRONTPAGE_LOGO) }}"
+                                                <img class="ui large image"
+                                                    src="{{ url_for('static', filename=config.THEME_LOGO.replace('<language>', current_i18n.language)) }}"
                                                     alt="{{ _(config.THEME_SITENAME) }}"/>
                                             {%- else %}
                                                 <h1>{{ _(config.THEME_SITENAME) }}</h1>
