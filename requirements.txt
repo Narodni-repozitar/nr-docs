@@ -1,4 +1,4 @@
-oarepo==12.0.21
+oarepo[s3]==12.0.21
 autoflake==2.3.1
 black==24.4.2
 cachetools==5.3.3
@@ -27,12 +27,12 @@ nr-vocabularies==2.0.13
 oarepo-dashboard==1.0.8
 oarepo-global-search==1.0.13
 oarepo-model-builder==4.0.85
-oarepo-oai-pmh-harvester==4.0.45
+oarepo-oai-pmh-harvester==4.0.46
 oarepo-published-service==1.0.3
 oarepo-requests==1.2.2
-oarepo-runtime==1.5.36
+oarepo-runtime==1.5.37
 oarepo-ui==5.1.36
-oarepo-vocabularies==2.0.89
+oarepo-vocabularies==2.0.90
 openpyxl==3.1.4
 pathspec==0.12.1
 pyflakes==3.2.0

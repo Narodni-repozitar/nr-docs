@@ -4,8 +4,8 @@
 [metadata]
 groups = ["default"]
 strategy = ["cross_platform", "inherit_metadata"]
-lock_version = "4.4.1"
-content_hash = "sha256:6637b7b99641034e0575e67adc00513034450bf2dcc1dee2d93cae52bd76213b"
+lock_version = "4.4.2"
+content_hash = "sha256:9299bf7429872321bbf627639050990354b145a8996de4c56b1a4da14241b9c6"
 
 [[package]]
 name = "alembic"
@@ -3534,7 +3534,7 @@ files = [
 
 [[package]]
 name = "oarepo-oai-pmh-harvester"
-version = "4.0.45"
+version = "4.0.46"
 summary = "OAIPMH harvester"
 groups = ["default"]
 dependencies = [
@@ -3546,8 +3546,8 @@ dependencies = [
     "tqdm>=4.64.1",
 ]
 files = [
-    {file = "oarepo-oai-pmh-harvester-4.0.45.tar.gz", hash = "sha256:5459708faefb8e0a16bdcd7ea1d463dfc77459372d4f1219125d39956383dccb"},
-    {file = "oarepo_oai_pmh_harvester-4.0.45-py3-none-any.whl", hash = "sha256:b3ba7d94ad4018b4227e6bcba0bfd850c8bfaf1f61c5f3d813df8288621cac1b"},
+    {file = "oarepo_oai_pmh_harvester-4.0.46-py3-none-any.whl", hash = "sha256:98b0d97416682c01c2eb2b2230444882e21d20bc576b558db48a0fa4bfa75419"},
+    {file = "oarepo_oai_pmh_harvester-4.0.46.tar.gz", hash = "sha256:b27afa8870eaa58bc48ff03e61780091af30bf9020f4996d9fd632167c8e0fa4"},
 ]
 
 [[package]]
@@ -3577,7 +3577,7 @@ files = [
 
 [[package]]
 name = "oarepo-runtime"
-version = "1.5.36"
+version = "1.5.37"
 summary = "A set of runtime extensions of Invenio repository"
 groups = ["default"]
 dependencies = [
@@ -3590,8 +3590,8 @@ dependencies = [
     "tqdm",
 ]
 files = [
-    {file = "oarepo_runtime-1.5.36-py3-none-any.whl", hash = "sha256:171a1d76a78ce03ddf441cb6e9ac87e1d41763a6f8a3a2025b6392d40056f8d9"},
-    {file = "oarepo_runtime-1.5.36.tar.gz", hash = "sha256:676c7c80e370453e02acb7bf9405da6bcac9af2b0299bb4816c87ef0e71c3799"},
+    {file = "oarepo_runtime-1.5.37-py3-none-any.whl", hash = "sha256:72c772314347798672c366b0f7823868772a71ced1eb62e3c21f73b6daa95ed8"},
+    {file = "oarepo_runtime-1.5.37.tar.gz", hash = "sha256:d13085923546becd332bef03e994f87cadbe99158e18c38d1dd61d8ac474388e"},
 ]
 
 [[package]]
@@ -3614,7 +3614,7 @@ files = [
 
 [[package]]
 name = "oarepo-vocabularies"
-version = "2.0.89"
+version = "2.0.90"
 summary = "Support for custom fields and hierarchy on Invenio vocabularies"
 groups = ["default"]
 dependencies = [
@@ -3625,8 +3625,8 @@ dependencies = [
     "openpyxl",
 ]
 files = [
-    {file = "oarepo_vocabularies-2.0.89-py3-none-any.whl", hash = "sha256:344aa4892242baf8b63957eba65f0a2e886e6f2ddd23d81311ee07efd0b520fe"},
-    {file = "oarepo_vocabularies-2.0.89.tar.gz", hash = "sha256:40d657cd5da202c62fb28047ab6e2c9a3f25b951f95911986c71db247f881680"},
+    {file = "oarepo_vocabularies-2.0.90-py3-none-any.whl", hash = "sha256:1961bb9d87604e0db2fd873152a5909f54daa59b68b28a5b5cbb31f3a92cdee2"},
+    {file = "oarepo_vocabularies-2.0.90.tar.gz", hash = "sha256:97cfc5e7f56c6145149feca0e553471291e0b50b08416581e65668c79802d658"},
 ]
 
 [[package]]
@@ -4414,13 +4414,13 @@ files = [
 
 [[package]]
 name = "setuptools"
-version = "70.1.0"
+version = "70.1.1"
 requires_python = ">=3.8"
 summary = "Easily download, build, install, upgrade, and uninstall Python packages"
 groups = ["default"]
 files = [
-    {file = "setuptools-70.1.0-py3-none-any.whl", hash = "sha256:d9b8b771455a97c8a9f3ab3448ebe0b29b5e105f1228bba41028be116985a267"},
-    {file = "setuptools-70.1.0.tar.gz", hash = "sha256:01a1e793faa5bd89abc851fa15d0a0db26f160890c7102cd8dce643e886b47f5"},
+    {file = "setuptools-70.1.1-py3-none-any.whl", hash = "sha256:a58a8fde0541dab0419750bcc521fbdf8585f6e5cb41909df3a472ef7b81ca95"},
+    {file = "setuptools-70.1.1.tar.gz", hash = "sha256:937a48c7cdb7a21eb53cd7f9b59e525503aa8abaf3584c730dc5f7a5bec3a650"},
 ]
 
 [[package]]
