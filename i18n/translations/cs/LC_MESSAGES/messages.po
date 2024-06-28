@@ -3251,3 +3251,13 @@ msgstr ""
 
 msgid "Document description"
 msgstr "Popis dokumentu"
+
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/common/just_for_translations.py:10
+msgid "Beta version of document respository"
+msgstr "Beta verze dokumentového repozitáře"
+
+msgid "No title"
+msgstr "Bez názvu"
+
+msgid "Select the discipline."
+msgstr "Vyberte disciplínu."

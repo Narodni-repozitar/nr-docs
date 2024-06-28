@@ -39,7 +39,9 @@
   font-size: @baseFontSize;
 }
 
-body {
+body,
+html {
+  font-size: @baseFontSize;
   min-width: 350px;
   font-family: Roboto;
   height: 100vh;
