@@ -3864,3 +3864,13 @@ msgstr ""
 
 msgid "Document description"
 msgstr ""
+
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/common/just_for_translations.py:10
+msgid "Beta version of document respository"
+msgstr ""
+
+msgid "No title"
+msgstr ""
+
+msgid "Select the discipline."
+msgstr ""

@@ -7,4 +7,5 @@ translation_strings = [
     _("Accepted"),
     _("Declined"),
     _("Cancelled"),
+    _("Beta version of document respository"),
 ]
