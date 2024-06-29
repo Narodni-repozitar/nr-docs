@@ -5,7 +5,6 @@ import {
   FormikStateLogger,
   EDTFSingleDatePicker,
   useSanitizeInput,
-  getValidTagsForEditor,
 } from "@js/oarepo_ui";
 import {
   LocalVocabularySelectField,
@@ -42,8 +41,7 @@ const FormFieldsContainer = () => {
 
   const { values, setFieldValue, setFieldTouched } = useFormikContext();
   const toolBar = "bold italic | bullist numlist | outdent indent | undo redo";
-  const { sanitizeInput, allowedHtmlAttrs, allowedHtmlTags } =
-    useSanitizeInput();
+  const { sanitizeInput, vailidEditorTags } = useSanitizeInput();
 
   return (
     <React.Fragment>
@@ -340,10 +338,7 @@ const FormFieldsContainer = () => {
               rich={true}
               editorConfig={{
                 toolbar: toolBar,
-                valid_elements: getValidTagsForEditor(
-                  allowedHtmlTags,
-                  allowedHtmlAttrs
-                ),
+                valid_elements: vailidEditorTags,
               }}
               required
               helpText={i18next.t(
