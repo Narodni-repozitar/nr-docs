@@ -7,25 +7,11 @@
     position: relative;
     bottom: @languageLift;
   }
-
-  &.keyword-subjects {
-    font-size: 1.1rem;
-    text-wrap: nowrap;
-    border: 1px solid blue;
-    border-radius: 5px;
-    padding: 0.2rem;
-    background-color: transparent;
-    margin-top: 1rem;
+  &.active-filters-count-label {
+    background-color: @accentColor;
+    color: @white;
   }
 
-  &.external-subjects {
-    font-size: 1.1rem;
-    margin-right: 1rem;
-    background-color: transparent;
-    a {
-      color: blue;
-    }
-  }
   .ui.tree-field .actions & {
     height: min-content;
     margin: 0.5rem 0;

@@ -5,6 +5,7 @@ import {
   FormikStateLogger,
   EDTFSingleDatePicker,
   useFieldData,
+  validTags,
 } from "@js/oarepo_ui";
 import {
   LocalVocabularySelectField,
@@ -29,6 +30,7 @@ import {
 import Overridable from "react-overridable";
 import { i18next } from "@translations/i18next";
 import _has from "lodash/has";
+import { useFormikContext, getIn } from "formik";
 
 const FormFieldsContainer = () => {
   const { formConfig, files: recordFiles } = useFormConfig();
@@ -38,6 +40,10 @@ const FormFieldsContainer = () => {
     []
   );
   const { getFieldData } = useFieldData();
+
+  const { values, setFieldValue, setFieldTouched } = useFormikContext();
+  const toolBar = "bold italic | bullist numlist | outdent indent | undo redo";
+
   return (
     <React.Fragment>
       <Overridable id="NrDocs.Deposit.AccordionFieldBasicInformation.container">
@@ -142,6 +148,7 @@ const FormFieldsContainer = () => {
             <LocalVocabularySelectField
               optimized
               fieldPath="metadata.accessRights"
+              required
               clearable
               optionsListName="access-rights"
               {...getFieldData("metadata.accessRights", "tag")
@@ -276,6 +283,10 @@ const FormFieldsContainer = () => {
               textFieldLabel={i18next.t("Description")}
               fieldPath="metadata.abstract"
               rich={true}
+              editorConfig={{
+                toolbar: toolBar,
+                valid_elements: validTags,
+              }}
               required
               lngFieldWidth={4}
               {...getFieldData("metadata.abstract").fullRepresentation}
@@ -298,6 +309,7 @@ const FormFieldsContainer = () => {
             fieldPath="metadata.notes"
           >
             <StringArrayField
+              label={i18next.t("Notes")}
               fieldPath="metadata.notes"
               {...getFieldData("metadata.notes").fullRepresentation}
             />
@@ -360,6 +372,7 @@ const FormFieldsContainer = () => {
           label={
             <label htmlFor="files.enabled">{i18next.t("Files upload")}</label>
           }
+          data-testid="filesupload-button"
         >
           <Overridable id="NrDocs.Deposit.FileUploader.container">
             <FileUploader recordFiles={recordFiles} />

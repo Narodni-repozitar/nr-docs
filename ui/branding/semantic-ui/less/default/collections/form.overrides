@@ -40,7 +40,9 @@
   .sidebar-buttons {
     display: flex;
   }
-
+  .close-btn {
+    border: 1px solid @primaryColor;
+  }
   .ui.form .invenio-accordion-field {
     label.helptext {
       font-weight: normal;
@@ -131,16 +133,6 @@
     margin-top: 0.5rem;
   }
 
-  #main-content {
-    .ui.icon.left.labeled.button {
-      background-color: @arrayAddButtonFieldColor;
-      color: black;
-      margin-top: 0;
-    }
-    .ui.icon.left.labeled.button:hover {
-      background-color: @arrayAddButtonFieldHoverColor;
-    }
-  }
   #main-content > .field {
     margin-bottom: 2rem;
   }
@@ -162,19 +154,18 @@
   .field {
     margin-bottom: 2rem !important;
   }
-
+  .close-btn {
+    border: 1px solid @primaryColor;
+  }
   .modal-identifiers-field {
     margin-bottom: 0 !important;
   }
 
+  .invenio-group-field.fields {
+    background-color: @arrayFieldColor;
+    border-radius: 0.5rem;
+  }
   .content {
-    .ui.icon.left.labeled.button {
-      background-color: @arrayAddButtonFieldColor;
-      color: black;
-    }
-    .ui.icon.left.labeled.button:hover {
-      background-color: @arrayAddButtonFieldHoverColor;
-    }
     label.helptext {
       font-weight: normal;
       font-size: 1rem;
@@ -185,16 +176,42 @@
         margin-bottom: 0 !important;
       }
     }
-    .fields.invenio-group-field {
-      margin-bottom: 0 !important;
-      @media (max-width: 1200px) {
-        flex-wrap: wrap;
-      }
+    .highlighted {
+      background-color: @highlightedfieldcolor !important;
     }
   }
   .subjects-modal-fields {
-    .field {
-      margin-bottom: 1rem !important;
+    .invenio-group-field.fields {
+      .invenio-group-field.fields {
+        background-color: transparent;
+      }
     }
+    .field {
+      margin-bottom: 0 !important;
+    }
+    @media (max-width: @tabletBreakpoint) {
+      .close-btn {
+        margin-bottom: 0.5rem;
+      }
+    }
+  }
+}
+
+.ui.form {
+  .array-field-add-button {
+    button {
+      background-color: @accentColor;
+      color: @arrayAddButtonTextColor;
+    }
+    button:hover {
+      background-color: @lightAccentColor;
+    }
+  }
+  .files-upload-button {
+    background-color: @accentColor;
+    color: @arrayAddButtonTextColor;
+  }
+  .files-upload-button:hover {
+    background-color: @lightAccentColor;
   }
 }

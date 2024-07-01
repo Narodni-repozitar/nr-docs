@@ -242,11 +242,11 @@ export const ResultsListItemComponent = ({
       thesis={thesis}
       allVersionsVisible={allVersionsVisible}
     >
-      <Item key={result.id}>
+      <Item key={result.id} data-testid="result-item">
         <Item.Content>
           <Grid>
             <Grid.Row columns={2}>
-              <Grid.Column className="results-list item-side">
+              <Grid.Column className="results-list item-side computer tablet only">
                 <ItemSidebarIcons rights={rights} accessStatus={accessRights} />
               </Grid.Column>
               <Grid.Column className="results-list item-main">

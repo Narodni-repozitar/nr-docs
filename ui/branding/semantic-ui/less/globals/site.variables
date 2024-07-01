@@ -1,6 +1,7 @@
 @fontName: "Roboto";
 @importGoogleFonts: false;
-@baseFontSize: 16px;
+@baseFontSize: 1rem;
+@fontSize: 1rem;
 
 /*-------------------
       Site Colors
@@ -10,6 +11,8 @@
 @blue: #0478f0;
 @grey: darken(@lightGrey, 50);
 @lightGrey: #e8e6e6;
+@accentColor: #9c27b0;
+@lightAccentColor: lighten(@accentColor, 10);
 
 @navbar_background_image: url("../../../static/images/background.png");
 @navbar_background_color: #fff;

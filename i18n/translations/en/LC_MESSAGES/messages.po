@@ -438,7 +438,7 @@ msgstr "Events"
 
 #: sites/nr-docs/site/nr_docs/translations/jinjax_messages.jinja:14
 msgid "metadata/externalLocation.label"
-msgstr ""
+msgstr "External location"
 
 #: sites/nr-docs/site/nr_docs/translations/jinjax_messages.jinja:15
 msgid "metadata/fundingReferences.label"
@@ -3863,4 +3863,14 @@ msgid "has_draft"
 msgstr ""
 
 msgid "Document description"
+msgstr ""
+
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/common/just_for_translations.py:10
+msgid "Beta version of document respository"
+msgstr ""
+
+msgid "No title"
+msgstr ""
+
+msgid "Select the discipline."
 msgstr ""

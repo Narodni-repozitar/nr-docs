@@ -9,6 +9,7 @@ from oarepo_runtime.records import has_draft, is_published_record
 from oarepo_runtime.services.components import OwnersComponent
 from oarepo_runtime.services.config.service import PermissionsPresetsConfigMixin
 from oarepo_runtime.services.files import FilesComponent
+from oarepo_vocabularies.authorities.components import AuthorityComponent
 
 from common.services.config import FilteredResultServiceConfig
 from documents.records.api import DocumentsDraft, DocumentsRecord
@@ -44,10 +45,11 @@ class DocumentsServiceConfig(
     components = [
         *PermissionsPresetsConfigMixin.components,
         *FilteredResultServiceConfig.components,
-        DataComponent,
+        AuthorityComponent,
         OwnersComponent,
-        DraftFilesComponent,
         FilesComponent,
+        DraftFilesComponent,
+        DataComponent,
     ]
 
     model = "documents"
