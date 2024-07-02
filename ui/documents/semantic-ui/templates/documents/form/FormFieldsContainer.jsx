@@ -6,6 +6,7 @@ import {
   EDTFSingleDatePicker,
   useFieldData,
   validTags,
+  sanitizeInput,
 } from "@js/oarepo_ui";
 import {
   LocalVocabularySelectField,
@@ -71,6 +72,13 @@ const FormFieldsContainer = () => {
               optimized
               fieldPath="metadata.title"
               {...getFieldData("metadata.title").fullRepresentation}
+              onBlur={() => {
+                const cleanedContent = sanitizeInput(
+                  getIn(values, "metadata.title")
+                );
+                setFieldValue("metadata.title", cleanedContent);
+                setFieldTouched("metadata.title", true);
+              }}
             />
           </Overridable>
           <Overridable
