@@ -41,7 +41,7 @@ const FormFieldsContainer = () => {
 
   const { values, setFieldValue, setFieldTouched } = useFormikContext();
   const toolBar = "bold italic | bullist numlist | outdent indent | undo redo";
-  const { sanitizeInput, vailidEditorTags } = useSanitizeInput();
+  const { sanitizeInput, validEditorTags } = useSanitizeInput();
 
   return (
     <React.Fragment>
@@ -338,7 +338,7 @@ const FormFieldsContainer = () => {
               rich={true}
               editorConfig={{
                 toolbar: toolBar,
-                valid_elements: vailidEditorTags,
+                valid_elements: validEditorTags,
               }}
               required
               helpText={i18next.t(
