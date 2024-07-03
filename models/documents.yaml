@@ -55,10 +55,12 @@ record:
       properties:
         year:
           facets:
+            facet-class: common.services.facets.IntegerHistogramFacet
             args:
               - size=100000
         defenseYear:
           facets:
+            facet-class: common.services.facets.IntegerHistogramFacet
             args:
               - size=100000
   resource-config:

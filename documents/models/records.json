@@ -7218,6 +7218,7 @@
                             "write": false
                         },
                         "facets": {
+                            "facet-class": "common.services.facets.IntegerHistogramFacet",
                             "args": [
                                 "size=100000"
                             ]
@@ -7526,6 +7527,7 @@
                             "write": false
                         },
                         "facets": {
+                            "facet-class": "common.services.facets.IntegerHistogramFacet",
                             "args": [
                                 "size=100000"
                             ]

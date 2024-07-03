@@ -9,6 +9,8 @@ from oarepo_vocabularies.services.facets import (
     VocabularyFacet,
 )
 
+from common.services.facets import IntegerHistogramFacet
+
 metadata_abstract_cs = TermsFacet(
     field="metadata.abstract.cs.keyword", label=_("metadata/abstract.label")
 )
@@ -485,7 +487,7 @@ syntheticFields_date = DateTimeFacet(
     field="syntheticFields.date", label=_("syntheticFields/date.label")
 )
 
-syntheticFields_defenseYear = TermsFacet(
+syntheticFields_defenseYear = IntegerHistogramFacet(
     field="syntheticFields.defenseYear",
     label=_("syntheticFields/defenseYear.label"),
     size=100000,
@@ -505,7 +507,7 @@ syntheticFields_people = TermsFacet(
     field="syntheticFields.people", label=_("syntheticFields/people.label")
 )
 
-syntheticFields_year = TermsFacet(
+syntheticFields_year = IntegerHistogramFacet(
     field="syntheticFields.year", label=_("syntheticFields/year.label"), size=100000
 )
 
