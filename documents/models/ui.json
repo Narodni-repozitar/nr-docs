@@ -2069,12 +2069,20 @@
             "hint": "syntheticFields.hint",
             "children": {
                 "date": {
-                    "detail": "date",
-                    "input": "date",
+                    "detail": "edtf",
+                    "input": "edtf",
                     "help": "syntheticFields/date.help",
                     "label": "syntheticFields/date.label",
                     "hint": "syntheticFields/date.hint",
                     "facet": "syntheticFields_date"
+                },
+                "defenseYear": {
+                    "detail": "integer",
+                    "input": "integer",
+                    "help": "syntheticFields/defenseYear.help",
+                    "label": "syntheticFields/defenseYear.label",
+                    "hint": "syntheticFields/defenseYear.hint",
+                    "facet": "syntheticFields_defenseYear"
                 },
                 "institutions": {
                     "detail": "taxonomy_item",
@@ -2188,6 +2196,14 @@
                     "label": "syntheticFields/people.label",
                     "hint": "syntheticFields/people.hint",
                     "facet": "syntheticFields_people"
+                },
+                "year": {
+                    "detail": "integer",
+                    "input": "integer",
+                    "help": "syntheticFields/year.help",
+                    "label": "syntheticFields/year.label",
+                    "hint": "syntheticFields/year.hint",
+                    "facet": "syntheticFields_year"
                 }
             }
         },

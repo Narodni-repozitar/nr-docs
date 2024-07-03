@@ -485,6 +485,12 @@ syntheticFields_date = DateTimeFacet(
     field="syntheticFields.date", label=_("syntheticFields/date.label")
 )
 
+syntheticFields_defenseYear = TermsFacet(
+    field="syntheticFields.defenseYear",
+    label=_("syntheticFields/defenseYear.label"),
+    size=100000,
+)
+
 syntheticFields_institutions = HierarchyVocabularyFacet(
     field="syntheticFields.institutions",
     label=_("syntheticFields/institutions.label"),
@@ -497,6 +503,10 @@ syntheticFields_keywords = TermsFacet(
 
 syntheticFields_people = TermsFacet(
     field="syntheticFields.people", label=_("syntheticFields/people.label")
+)
+
+syntheticFields_year = TermsFacet(
+    field="syntheticFields.year", label=_("syntheticFields/year.label"), size=100000
 )
 
 

@@ -1219,7 +1219,10 @@
                 "properties": {
                     "date": {
                         "type": "date",
-                        "format": "basic_date||strict_date"
+                        "format": "strict_date||yyyy-MM||yyyy"
+                    },
+                    "defenseYear": {
+                        "type": "integer"
                     },
                     "institutions": {
                         "type": "object",
@@ -1280,6 +1283,9 @@
                     "people": {
                         "type": "keyword",
                         "ignore_above": 1024
+                    },
+                    "year": {
+                        "type": "integer"
                     }
                 }
             },
