@@ -55,14 +55,12 @@ record:
       properties:
         year:
           facets:
-            facet-class: common.services.facets.IntegerHistogramFacet
-            args:
-              - size=100000
+            facet-class: common.services.facets.YearAutoHistogramFacet
+          type: edtf
         defenseYear:
           facets:
-            facet-class: common.services.facets.IntegerHistogramFacet
-            args:
-              - size=100000
+            facet-class: common.services.facets.YearAutoHistogramFacet
+          type: edtf
   resource-config:
     base-html-url: /docs/
     base-url: /docs/
@@ -132,14 +130,14 @@ record:
             selector=FirstItemSelector("metadata.dateModified", "metadata.dateIssued"),
             key="syntheticFields.year",
             filter=lambda x: len(x) >= 4,
-            map=lambda x: int(x[:4])
+            map=lambda x: x[:4]
         )
       defenseYear: |
         SyntheticSystemField(
             selector=PathSelector("metadata.thesis.dateDefended"),
             key="syntheticFields.defenseYear",
             filter=lambda x: len(x) >= 4,
-            map=lambda x: int(x[:4])
+            map=lambda x: x[:4]
         )
 
 

@@ -1222,7 +1222,8 @@
                         "format": "strict_date||yyyy-MM||yyyy"
                     },
                     "defenseYear": {
-                        "type": "integer"
+                        "type": "date",
+                        "format": "strict_date||yyyy-MM||yyyy"
                     },
                     "institutions": {
                         "type": "object",
@@ -1285,7 +1286,8 @@
                         "ignore_above": 1024
                     },
                     "year": {
-                        "type": "integer"
+                        "type": "date",
+                        "format": "strict_date||yyyy-MM||yyyy"
                     }
                 }
             },

@@ -91,14 +91,14 @@ class DocumentsRecord(InvenioRecord):
         selector=FirstItemSelector("metadata.dateModified", "metadata.dateIssued"),
         key="syntheticFields.year",
         filter=lambda x: len(x) >= 4,
-        map=lambda x: int(x[:4]),
+        map=lambda x: x[:4],
     )
 
     defenseYear = SyntheticSystemField(
         selector=PathSelector("metadata.thesis.dateDefended"),
         key="syntheticFields.defenseYear",
         filter=lambda x: len(x) >= 4,
-        map=lambda x: int(x[:4]),
+        map=lambda x: x[:4],
     )
 
     relations = RelationsField(

@@ -2077,8 +2077,8 @@
                     "facet": "syntheticFields_date"
                 },
                 "defenseYear": {
-                    "detail": "integer",
-                    "input": "integer",
+                    "detail": "edtf",
+                    "input": "edtf",
                     "help": "syntheticFields/defenseYear.help",
                     "label": "syntheticFields/defenseYear.label",
                     "hint": "syntheticFields/defenseYear.hint",
@@ -2198,8 +2198,8 @@
                     "facet": "syntheticFields_people"
                 },
                 "year": {
-                    "detail": "integer",
-                    "input": "integer",
+                    "detail": "edtf",
+                    "input": "edtf",
                     "help": "syntheticFields/year.help",
                     "label": "syntheticFields/year.label",
                     "hint": "syntheticFields/year.hint",
