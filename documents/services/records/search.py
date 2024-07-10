@@ -10,6 +10,7 @@ class DocumentsSearchOptions(I18nSearchOptions):
         "curator": {
             "syntheticFields_people": facets.syntheticFields_people,
             "syntheticFields_year": facets.syntheticFields_year,
+            "syntheticFields_year_stats": facets.syntheticFields_year_stats,
             "syntheticFields_defenseYear": facets.syntheticFields_defenseYear,
             "metadata_accessRights": facets.metadata_accessRights,
             "metadata_rights": facets.metadata_rights,
@@ -24,6 +25,7 @@ class DocumentsSearchOptions(I18nSearchOptions):
         "default": {
             "syntheticFields_people": facets.syntheticFields_people,
             "syntheticFields_year": facets.syntheticFields_year,
+            "syntheticFields_year_stats": facets.syntheticFields_year_stats,
             "syntheticFields_defenseYear": facets.syntheticFields_defenseYear,
             "metadata_accessRights": facets.metadata_accessRights,
             "metadata_rights": facets.metadata_rights,

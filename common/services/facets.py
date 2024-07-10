@@ -93,3 +93,28 @@ class YearAutoHistogramFacet(LabelledFacetMixin, dsl.Facet):
             ret[0].doc_count = doc_count
 
         return ret
+
+
+class YearStatsFacet(LabelledFacetMixin, dsl.Facet):
+    """Stats facet.
+
+    .. code-block:: python
+
+        facets = {
+            'year_stats': StatsFacet(
+                field='year',
+                label=_('Year'),
+            )
+        }
+    """
+
+    agg_type = "stats"
+
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+
+    def get_labelled_values(self, data, filter_values):
+        return {
+            'min': data.min_as_string[:4],
+            'max': data.max_as_string[:4],
+        }

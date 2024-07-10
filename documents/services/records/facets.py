@@ -9,7 +9,7 @@ from oarepo_vocabularies.services.facets import (
     VocabularyFacet,
 )
 
-from common.services.facets import YearAutoHistogramFacet
+from common.services.facets import YearAutoHistogramFacet, YearStatsFacet
 
 metadata_abstract_cs = TermsFacet(
     field="metadata.abstract.cs.keyword", label=_("metadata/abstract.label")
@@ -509,6 +509,9 @@ syntheticFields_year = YearAutoHistogramFacet(
     field="syntheticFields.year", label=_("syntheticFields/year.label")
 )
 
+syntheticFields_year_stats = YearStatsFacet(
+    field="syntheticFields.year", label=_("syntheticFields/yearStats.label")
+)
 
 record_status = TermsFacet(field="record_status", label=_("record_status"))
 
