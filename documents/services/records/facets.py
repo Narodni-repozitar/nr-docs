@@ -509,6 +509,7 @@ syntheticFields_year = YearAutoHistogramFacet(
     field="syntheticFields.year", label=_("syntheticFields/year.label")
 )
 
+
 record_status = TermsFacet(field="record_status", label=_("record_status"))
 
 has_draft = TermsFacet(field="has_draft", label=_("has_draft"))
