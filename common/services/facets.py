@@ -23,7 +23,8 @@ class YearAutoHistogramFacet(LabelledFacetMixin, dsl.Facet):
     def __init__(self, **kwargs):
         self._min_doc_count = kwargs.pop("min_doc_count", 0)
         buckets = kwargs.pop("buckets", 20)
-        super().__init__(**kwargs, buckets=buckets, format="yyyy")
+        # TODO: the minimum interval should be year, but opensearch does not support it yet
+        super().__init__(**kwargs, buckets=buckets, format="yyyy", minimum_interval="month")
 
     def get_value_filter(self, filter_value):
         if "/" in filter_value:
@@ -51,6 +52,11 @@ class YearAutoHistogramFacet(LabelledFacetMixin, dsl.Facet):
     def get_labelled_values(self, data, filter_values):
         """Get a labelled version of a bucket."""
         interval = data.to_dict()["interval"]
+
+        # workaround for "minimum_interval" - if it returns "3m", treat it as 1y as values are always in years
+        if not interval.endswith("y"):
+            interval = "1y"
+
         interval_in_years = int(re.sub(r"\D", "", interval))
 
         buckets = data.buckets
@@ -111,28 +117,3 @@ class YearAutoHistogramFacet(LabelledFacetMixin, dsl.Facet):
             ret[0].interval = interval
 
         return ret
-
-
-class YearStatsFacet(LabelledFacetMixin, dsl.Facet):
-    """Stats facet.
-
-    .. code-block:: python
-
-        facets = {
-            'year_stats': StatsFacet(
-                field='year',
-                label=_('Year'),
-            )
-        }
-    """
-
-    agg_type = "stats"
-
-    def __init__(self, **kwargs):
-        super().__init__(**kwargs)
-
-    def get_labelled_values(self, data, filter_values):
-        return {
-            'min': data.min_as_string[:4],
-            'max': data.max_as_string[:4],
-        }
