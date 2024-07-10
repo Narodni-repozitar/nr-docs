@@ -56,7 +56,7 @@ class YearAutoHistogramFacet(LabelledFacetMixin, dsl.Facet):
         buckets = data.buckets
 
         for bucket in buckets:
-            bucket.interval = interval
+            bucket.interval = interval_in_years
 
         if self._min_doc_count > 0:
             buckets = self._merge_small_buckets(buckets, interval_in_years)
@@ -68,6 +68,7 @@ class YearAutoHistogramFacet(LabelledFacetMixin, dsl.Facet):
             out_buckets.append(
                 {
                     **bucket.to_dict(),
+                    "interval": f"{bucket.interval}y",
                     "start": str(value),
                 }
             )
