@@ -2,7 +2,9 @@ import marshmallow as ma
 from invenio_drafts_resources.services.records.schema import (
     ParentSchema as InvenioParentSchema,
 )
+from invenio_vocabularies.services.schema import i18n_strings
 from marshmallow import fields as ma_fields
+from marshmallow.fields import String
 from marshmallow.utils import get_value
 from marshmallow_utils.fields import SanitizedUnicode
 from nr_metadata.documents.services.records.schema import (
@@ -11,6 +13,7 @@ from nr_metadata.documents.services.records.schema import (
     NRDocumentSyntheticFieldsSchema,
 )
 from oarepo_runtime.services.schema.marshmallow import DictOnlySchema
+from oarepo_vocabularies.services.schema import HierarchySchema
 
 
 class GeneratedParentSchema(InvenioParentSchema):
@@ -27,7 +30,7 @@ class DocumentsSchema(NRDocumentRecordSchema):
 
     oai = ma_fields.Nested(lambda: OaiSchema())
 
-    syntheticFields = ma_fields.Nested(lambda: NRDocumentSyntheticFieldsSchema())
+    syntheticFields = ma_fields.Nested(lambda: SyntheticFieldsSchema())
     parent = ma.fields.Nested(GeneratedParentSchema)
     files = ma.fields.Nested(
         lambda: FilesOptionsSchema(), load_default={"enabled": True}
@@ -63,6 +66,29 @@ class HarvestSchema(DictOnlySchema):
     datestamp = ma_fields.String()
 
     identifier = ma_fields.String()
+
+
+class InstitutionsSchema(DictOnlySchema):
+    class Meta:
+        unknown = ma.INCLUDE
+
+    _id = String(data_key="id", attribute="id")
+
+    _version = String(data_key="@v", attribute="@v")
+
+    hierarchy = ma_fields.Nested(lambda: HierarchySchema())
+
+    title = i18n_strings
+
+
+class KeywordsSchema(DictOnlySchema):
+    class Meta:
+        unknown = ma.RAISE
+
+
+class SyntheticFieldsSchema(NRDocumentSyntheticFieldsSchema):
+    class Meta:
+        unknown = ma.RAISE
 
 
 class FilesOptionsSchema(ma.Schema):

@@ -16,6 +16,7 @@ from oarepo_runtime.records.systemfields.icu import ICUSearchField
 from oarepo_runtime.records.systemfields.owner import OwnersField
 from oarepo_runtime.records.systemfields.record_status import RecordStatusSystemField
 
+from common.records.synthetic_fields import KeywordsFieldSelector
 from common.services.sort import TitleICUSortField
 from documents.files.api import DocumentsFile, DocumentsFileDraft
 from documents.records.dumpers.dumper import DocumentsDraftDumper, DocumentsDumper
@@ -78,7 +79,7 @@ class DocumentsRecord(InvenioRecord):
     )
 
     keywords = SyntheticSystemField(
-        PathSelector("metadata.subjects.subject.value"),
+        selector=KeywordsFieldSelector("metadata.subjects.subject"),
         key="syntheticFields.keywords",
     )
 
