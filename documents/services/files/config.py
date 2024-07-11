@@ -29,6 +29,8 @@ class DocumentsFileServiceConfig(PermissionsPresetsConfigMixin, FileServiceConfi
     ]
 
     model = "documents"
+    allowed_mimetypes = []
+    allowed_extensions = []
     allow_upload = False
 
     @property
@@ -79,6 +81,6 @@ class DocumentsFileDraftServiceConfig(PermissionsPresetsConfigMixin, FileService
         return {
             "commit": FileLink("{+api}/docs/{id}/draft/files/{key}/commit"),
             "content": FileLink("{+api}/docs/{id}/draft/files/{key}/content"),
-            "self": FileLink("{+api}/docs/{id}/draft/files/{key}"),
             "preview": FileLink("{+ui}/docs/{id}/files/{key}/preview"),
+            "self": FileLink("{+api}/docs/{id}/draft/files/{key}"),
         }

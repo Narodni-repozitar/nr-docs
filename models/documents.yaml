@@ -82,6 +82,7 @@ record:
       - import: oarepo_runtime.records.systemfields.PathSelector
       - import: oarepo_runtime.records.systemfields.FirstItemSelector
       - import: nr_metadata.records.systemfields.keyword_mapper
+      - import: common.records.synthetic_fields.KeywordsFieldSelector
     fields:
       sort: "{{common.services.sort.TitleICUSortField}}(source_field='metadata.title')"
       title_search: "{{oarepo_runtime.records.systemfields.icu.ICUSearchField}}(source_field='metadata.title')"
@@ -105,7 +106,7 @@ record:
         )
       keywords: |
         SyntheticSystemField(
-            PathSelector("metadata.subjects.subject.value"),
+            selector=KeywordsFieldSelector("metadata.subjects.subject"),
             key="syntheticFields.keywords",
         )
       date: |
