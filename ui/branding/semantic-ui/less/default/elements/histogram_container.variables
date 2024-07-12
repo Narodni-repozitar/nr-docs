@@ -1,0 +1,4 @@
+@histogramRectangleColor: @accentColor;
+@histogramRectangleHoverColor: @primaryColor;
+@selectedSliderColor: @accentColor;
+@thumbStroke: @accentColor;
