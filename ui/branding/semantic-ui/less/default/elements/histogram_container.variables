@@ -2,3 +2,4 @@
 @histogramRectangleHoverColor: @primaryColor;
 @selectedSliderColor: @accentColor;
 @thumbStroke: @accentColor;
+@yaxisLineStroke: @accentColor;
