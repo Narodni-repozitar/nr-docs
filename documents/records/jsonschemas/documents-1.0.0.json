@@ -969,7 +969,21 @@
                     }
                 },
                 "keywords": {
-                    "type": "string"
+                    "type": "object",
+                    "properties": {
+                        "cs": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        },
+                        "en": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    }
                 },
                 "people": {
                     "type": "string"

@@ -1,5 +1,5 @@
 from oarepo_ui.resources import BabelComponent, PermissionsComponent
-from oarepo_ui.resources.components import FilesComponent
+from oarepo_ui.resources.components import FilesComponent, AllowedHtmlTagsComponent
 from oarepo_vocabularies.ui.resources.components import (
     DepositVocabularyOptionsComponent,
 )
@@ -15,6 +15,7 @@ class DocumentsResourceConfig(RecordsUIResourceConfig):
     api_service = "documents"
 
     components = [
+        AllowedHtmlTagsComponent,
         BabelComponent,
         DepositVocabularyOptionsComponent,
         PermissionsComponent,

@@ -1298,8 +1298,17 @@
                         }
                     },
                     "keywords": {
-                        "type": "keyword",
-                        "ignore_above": 1024
+                        "type": "object",
+                        "properties": {
+                            "cs": {
+                                "type": "keyword",
+                                "ignore_above": 1024
+                            },
+                            "en": {
+                                "type": "keyword",
+                                "ignore_above": 1024
+                            }
+                        }
                     },
                     "people": {
                         "type": "keyword",

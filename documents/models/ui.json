@@ -2259,7 +2259,37 @@
                     "help": "syntheticFields/keywords.help",
                     "label": "syntheticFields/keywords.label",
                     "hint": "syntheticFields/keywords.hint",
-                    "facet": "syntheticFields_keywords"
+                    "facet": "syntheticFields_keywords",
+                    "children": {
+                        "cs": {
+                            "detail": "array",
+                            "input": "array",
+                            "help": "syntheticFields/keywords/cs.help",
+                            "label": "syntheticFields/keywords/cs.label",
+                            "hint": "syntheticFields/keywords/cs.hint",
+                            "child": {
+                                "detail": "keyword",
+                                "input": "keyword",
+                                "help": "syntheticFields/keywords/cs.help",
+                                "label": "syntheticFields/keywords/cs.label",
+                                "hint": "syntheticFields/keywords/cs.hint"
+                            }
+                        },
+                        "en": {
+                            "detail": "array",
+                            "input": "array",
+                            "help": "syntheticFields/keywords/en.help",
+                            "label": "syntheticFields/keywords/en.label",
+                            "hint": "syntheticFields/keywords/en.hint",
+                            "child": {
+                                "detail": "keyword",
+                                "input": "keyword",
+                                "help": "syntheticFields/keywords/en.help",
+                                "label": "syntheticFields/keywords/en.label",
+                                "hint": "syntheticFields/keywords/en.hint"
+                            }
+                        }
+                    }
                 },
                 "people": {
                     "detail": "keyword",
