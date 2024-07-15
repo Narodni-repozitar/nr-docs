@@ -3038,7 +3038,7 @@ files = [
 
 [[package]]
 name = "nr-metadata"
-version = "2.0.32"
+version = "2.0.33"
 requires_python = ">=3.9"
 summary = "\"Generated metadata files for the Czech National Repository\""
 groups = ["default"]
@@ -3048,8 +3048,8 @@ dependencies = [
     "oarepo-vocabularies>=2.0.0",
 ]
 files = [
-    {file = "nr_metadata-2.0.32-py2.py3-none-any.whl", hash = "sha256:1fd508d471567ad84da56a0326a6c9453d359dc18a106682fabf1c35541d24aa"},
-    {file = "nr_metadata-2.0.32.tar.gz", hash = "sha256:40eebc5c9ae6c88d324d869d381ab975cd58d6464cc92a2ae348fcea0e4a47ea"},
+    {file = "nr_metadata-2.0.33-py2.py3-none-any.whl", hash = "sha256:d43111ee50278d43b7a1b97044160d3006edfae417fbf901f7bb915b4cc0388d"},
+    {file = "nr_metadata-2.0.33.tar.gz", hash = "sha256:90a60b8ecad4fba79578c6a9e8aebf0cbaae98f00cd6618fdd7774c28a361849"},
 ]
 
 [[package]]
