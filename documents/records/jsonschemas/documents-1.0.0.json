@@ -922,7 +922,8 @@
                     "format": "date"
                 },
                 "defenseYear": {
-                    "type": "integer"
+                    "type": "string",
+                    "format": "date"
                 },
                 "institutions": {
                     "type": "object",
@@ -988,7 +989,8 @@
                     "type": "string"
                 },
                 "year": {
-                    "type": "integer"
+                    "type": "string",
+                    "format": "date"
                 }
             }
         },
