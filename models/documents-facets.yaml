@@ -25,31 +25,3 @@ facets:
       metadata.fundingReferences.funder: 10
       metadata.fundingReferences.projectID: 11
       metadata.files.enabled: 12
-
-properties:
-  syntheticFields:
-    properties:
-      keywords:
-        type: object
-        facets:
-          facet-class: common.services.facets.KeywordsFacet
-          facet: true
-        marshmallow:
-          read: false
-          write: false
-          generate: false
-        properties:
-          cs[]:
-            type: keyword
-            facets:
-              facet: false
-            marshmallow:
-              read: false
-              write: false
-          en[]:
-            type: keyword
-            facets:
-              facet: false
-            marshmallow:
-              read: false
-              write: false

@@ -177,10 +177,7 @@
                     "import": "oarepo_runtime.records.systemfields.FirstItemSelector"
                 },
                 {
-                    "import": "nr_metadata.records.systemfields.keyword_mapper"
-                },
-                {
-                    "import": "common.records.synthetic_fields.KeywordsFieldSelector"
+                    "import": "nr_metadata.records.synthetic_fields.KeywordsFieldSelector"
                 }
             ],
             "fields": {
@@ -7287,19 +7284,13 @@
                 "type": "object",
                 "ui": {
                     "marshmallow": {
-                        "generate": true,
-                        "base-classes": [
-                            "nr_metadata.documents.services.records.ui_schema.NRDocumentSyntheticFieldsUISchema"
-                        ],
-                        "class": "documents.services.records.ui_schema.SyntheticFieldsUISchema"
+                        "generate": false,
+                        "class": "nr_metadata.documents.services.records.ui_schema.NRDocumentSyntheticFieldsUISchema"
                     }
                 },
                 "marshmallow": {
-                    "generate": true,
-                    "base-classes": [
-                        "nr_metadata.documents.services.records.schema.NRDocumentSyntheticFieldsSchema"
-                    ],
-                    "class": "documents.services.records.schema.SyntheticFieldsSchema"
+                    "generate": false,
+                    "class": "nr_metadata.documents.services.records.schema.NRDocumentSyntheticFieldsSchema"
                 },
                 "properties": {
                     "date": {
@@ -7320,7 +7311,7 @@
                     "defenseYear": {
                         "type": "edtf",
                         "facets": {
-                            "facet-class": "common.services.facets.YearAutoHistogramFacet"
+                            "facet-class": "oarepo_runtime.services.facets.year_histogram.YearAutoHistogramFacet"
                         },
                         "ui": {
                             "marshmallow": {
@@ -7596,12 +7587,14 @@
                     "keywords": {
                         "type": "object",
                         "facets": {
-                            "facet-class": "common.services.facets.KeywordsFacet",
+                            "facet-class": "nr_metadata.services.records.facets.KeywordsFacet",
                             "facet": true
                         },
                         "ui": {
                             "marshmallow": {
                                 "generate": true,
+                                "read": false,
+                                "write": false,
                                 "class": "documents.services.records.ui_schema.KeywordsUISchema"
                             }
                         },
@@ -7624,6 +7617,12 @@
                                     },
                                     "facets": {
                                         "facet": false
+                                    },
+                                    "ui": {
+                                        "marshmallow": {
+                                            "read": false,
+                                            "write": false
+                                        }
                                     }
                                 }
                             },
@@ -7637,6 +7636,12 @@
                                     },
                                     "facets": {
                                         "facet": false
+                                    },
+                                    "ui": {
+                                        "marshmallow": {
+                                            "read": false,
+                                            "write": false
+                                        }
                                     }
                                 }
                             }
@@ -7660,7 +7665,7 @@
                     "year": {
                         "type": "edtf",
                         "facets": {
-                            "facet-class": "common.services.facets.YearAutoHistogramFacet"
+                            "facet-class": "oarepo_runtime.services.facets.year_histogram.YearAutoHistogramFacet"
                         },
                         "ui": {
                             "marshmallow": {

@@ -51,16 +51,6 @@ record:
     type: dcmnts
   properties:
     metadata: {}
-    syntheticFields:
-      properties:
-        year:
-          facets:
-            facet-class: common.services.facets.YearAutoHistogramFacet
-          type: edtf
-        defenseYear:
-          facets:
-            facet-class: common.services.facets.YearAutoHistogramFacet
-          type: edtf
   resource-config:
     base-html-url: /docs/
     base-url: /docs/
@@ -92,8 +82,7 @@ record:
       - import: oarepo_runtime.records.systemfields.SyntheticSystemField
       - import: oarepo_runtime.records.systemfields.PathSelector
       - import: oarepo_runtime.records.systemfields.FirstItemSelector
-      - import: nr_metadata.records.systemfields.keyword_mapper
-      - import: common.records.synthetic_fields.KeywordsFieldSelector
+      - import: nr_metadata.records.synthetic_fields.KeywordsFieldSelector
     fields:
       sort: "{{common.services.sort.TitleICUSortField}}(source_field='metadata.title')"
       title_search: "{{oarepo_runtime.records.systemfields.icu.ICUSearchField}}(source_field='metadata.title')"

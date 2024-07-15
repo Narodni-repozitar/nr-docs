@@ -1,15 +1,15 @@
 """Facet definitions."""
 
 from invenio_records_resources.services.records.facets import TermsFacet
+from nr_metadata.services.records.facets import KeywordsFacet
 from oarepo_runtime.i18n import lazy_gettext as _
 from oarepo_runtime.services.facets.date import DateTimeFacet
 from oarepo_runtime.services.facets.nested_facet import NestedLabeledFacet
+from oarepo_runtime.services.facets.year_histogram import YearAutoHistogramFacet
 from oarepo_vocabularies.services.facets import (
     HierarchyVocabularyFacet,
     VocabularyFacet,
 )
-
-from common.services.facets import KeywordsFacet, YearAutoHistogramFacet
 
 metadata_abstract_cs = TermsFacet(
     field="metadata.abstract.cs.keyword", label=_("metadata/abstract.label")
