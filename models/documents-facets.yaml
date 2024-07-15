@@ -2,52 +2,26 @@ facets:
   facet-groups:
     default:
       syntheticFields.people: 1
-      syntheticFields.date: 2
-      metadata.accessRights: 3
-      metadata.rights: 4
-      metadata.resourceType: 5
-      syntheticFields.keywords: 6
-      metadata.languages: 7
-      syntheticFields.institutions: 8
-      metadata.fundingReferences.funder: 9
-      metadata.fundingReferences.projectID: 10
+      syntheticFields.year: 2
+      syntheticFields.defenseYear: 3
+      metadata.accessRights: 4
+      metadata.rights: 5
+      metadata.resourceType: 6
+      syntheticFields.keywords: 7
+      metadata.languages: 8
+      syntheticFields.institutions: 9
+      metadata.fundingReferences.funder: 10
+      metadata.fundingReferences.projectID: 11
     curator:
       syntheticFields.people: 1
-      syntheticFields.date: 2
-      metadata.accessRights: 3
-      metadata.rights: 4
-      metadata.resourceType: 5
-      syntheticFields.keywords: 6
-      metadata.languages: 7
-      syntheticFields.institutions: 8
-      metadata.fundingReferences.funder: 9
-      metadata.fundingReferences.projectID: 10
-      metadata.files.enabled: 11
-
-properties:
-  syntheticFields:
-    properties:
-      keywords:
-        type: object
-        facets:
-          facet-class: common.services.facets.KeywordsFacet
-          facet: true
-        marshmallow:
-          read: false
-          write: false
-          generate: false
-        properties:
-          cs[]:
-            type: keyword
-            facets:
-              facet: false
-            marshmallow:
-              read: false
-              write: false
-          en[]:
-            type: keyword
-            facets:
-              facet: false
-            marshmallow:
-              read: false
-              write: false
+      syntheticFields.year: 2
+      syntheticFields.defenseYear: 3
+      metadata.accessRights: 4
+      metadata.rights: 5
+      metadata.resourceType: 6
+      syntheticFields.keywords: 7
+      metadata.languages: 8
+      syntheticFields.institutions: 9
+      metadata.fundingReferences.funder: 10
+      metadata.fundingReferences.projectID: 11
+      metadata.files.enabled: 12
