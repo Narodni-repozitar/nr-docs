@@ -12,7 +12,7 @@ language-data==1.2.0
 levenshtein==0.25.1
 marisa-trie==1.2.0
 marshmallow-i18n-messages==0.1.0
-nr-metadata==2.0.32
+nr-metadata==2.0.33
 nr-oaipmh-harvesters==1.0.20
 nr-vocabularies==2.0.13
 oarepo-dashboard==1.0.8
