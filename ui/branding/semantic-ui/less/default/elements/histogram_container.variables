@@ -1,5 +1,8 @@
 @histogramRectangleColor: @blue;
 @histogramRectangleHoverColor: @linkHoverColor;
-@selectedSliderColor: @accentColor;
-@thumbStroke: @accentColor;
+@selectedSliderColor: @linkHoverColor;
+@thumbColor: @blue;
+@thumbStroke: @blue;
+@thumbFillHovered: @linkHoverColor;
 @yaxisLineStroke: @textColor;
+@sliderThumbFontSize: 1rem;
