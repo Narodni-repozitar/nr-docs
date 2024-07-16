@@ -1,5 +1,5 @@
-@histogramRectangleColor: @accentColor;
-@histogramRectangleHoverColor: @primaryColor;
+@histogramRectangleColor: @blue;
+@histogramRectangleHoverColor: @linkHoverColor;
 @selectedSliderColor: @accentColor;
 @thumbStroke: @accentColor;
-@yaxisLineStroke: @accentColor;
+@yaxisLineStroke: @textColor;
