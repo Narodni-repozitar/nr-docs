@@ -1,10 +1,9 @@
 import re
 from functools import cached_property
 
+from documents import config
 from oarepo_requests.proxies import current_oarepo_requests_service
 from oarepo_requests.resources.draft.config import DraftRecordRequestsResourceConfig
-
-from documents import config
 
 
 class DocumentsExt:
@@ -132,4 +131,18 @@ class DocumentsExt:
         return config.DOCUMENTS_DRAFT_FILES_RESOURCE_CLASS(
             service=self.service_draft_files,
             config=config.DOCUMENTS_DRAFT_FILES_RESOURCE_CONFIG(),
+        )
+
+    @cached_property
+    def service_record_communities(self):
+        return config.DOCUMENTS_RECORD_COMMUNITIES_SERVICE_CLASS(
+            config=config.DOCUMENTS_RECORD_COMMUNITIES_SERVICE_CONFIG(),
+            record_service=self.service_records,
+        )
+
+    @cached_property
+    def resource_record_communities(self):
+        return config.DOCUMENTS_RECORD_COMMUNITIES_RESOURCE_CLASS(
+            service=self.service_record_communities,
+            config=config.DOCUMENTS_RECORD_COMMUNITIES_RESOURCE_CONFIG(),
         )

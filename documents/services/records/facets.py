@@ -4,6 +4,7 @@ from invenio_records_resources.services.records.facets import TermsFacet
 from oarepo_runtime.i18n import lazy_gettext as _
 from oarepo_runtime.services.facets.date import DateTimeFacet
 from oarepo_runtime.services.facets.nested_facet import NestedLabeledFacet
+from oarepo_runtime.services.facets.year_histogram import YearAutoHistogramFacet
 from oarepo_vocabularies.services.facets import (
     HierarchyVocabularyFacet,
     VocabularyFacet,
@@ -487,7 +488,7 @@ syntheticFields_date = DateTimeFacet(
     field="syntheticFields.date", label=_("syntheticFields/date.label")
 )
 
-syntheticFields_defenseYear = TermsFacet(
+syntheticFields_defenseYear = YearAutoHistogramFacet(
     field="syntheticFields.defenseYear", label=_("syntheticFields/defenseYear.label")
 )
 
@@ -505,7 +506,7 @@ syntheticFields_people = TermsFacet(
     field="syntheticFields.people", label=_("syntheticFields/people.label")
 )
 
-syntheticFields_year = TermsFacet(
+syntheticFields_year = YearAutoHistogramFacet(
     field="syntheticFields.year", label=_("syntheticFields/year.label")
 )
 

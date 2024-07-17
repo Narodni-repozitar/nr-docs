@@ -12,6 +12,7 @@ dependencies = [
     "nr-metadata>=2.0.0",
     "nr-oaipmh-harvesters>=1.0.0",
     "nr-vocabularies>=2.0.8",
+    "oarepo-communities>=4.0.13",
     "oarepo-dashboard>=1.0.0",
     "oarepo-global-search>=1.0.13",
     "oarepo-published-service>=1.0.0",
@@ -21,6 +22,7 @@ dependencies = [
     "oarepo-ui",
     "oarepo-vocabularies",
     "oarepo[s3]==12.*",
+    "oarepo-workflows>=1.0.0",
     "python-dotenv",
 ]
 requires-python = ">=3.10,<3.11"
@@ -41,6 +43,7 @@ documents_file_draft = "documents.views.draft_files.app:create_app_blueprint"
 ui_documents = "ui.documents:create_blueprint"
 documents_requests = "documents.views.requests.api:create_api_blueprint"
 ui_community_records = "ui.community_records:create_blueprint"
+documents_record_communities = "documents.views.record_communities.app:create_app_blueprint"
 
 [project.entry-points."invenio_i18n.translations"]
 translations = "i18n"
@@ -69,6 +72,7 @@ documents = "documents.views.records.api:create_api_blueprint"
 documents_file = "documents.views.files.api:create_api_blueprint"
 documents_file_draft = "documents.views.draft_files.api:create_api_blueprint"
 documents_requests = "documents.views.requests.api:create_api_blueprint"
+documents_record_communities = "documents.views.record_communities.api:create_api_blueprint"
 
 [project.entry-points."invenio_search.mappings"]
 documents = "documents.records.mappings"

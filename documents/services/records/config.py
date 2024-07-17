@@ -1,3 +1,8 @@
+from documents.records.api import DocumentsDraft, DocumentsRecord
+from documents.services.records.permissions import DocumentsPermissionPolicy
+from documents.services.records.results import DocumentsRecordItem, DocumentsRecordList
+from documents.services.records.schema import DocumentsSchema
+from documents.services.records.search import DocumentsSearchOptions
 from invenio_drafts_resources.services.records.components import DraftFilesComponent
 from invenio_records_resources.services import (
     ConditionalLink,
@@ -12,11 +17,6 @@ from oarepo_runtime.services.files import FilesComponent
 from oarepo_vocabularies.authorities.components import AuthorityComponent
 
 from common.services.config import FilteredResultServiceConfig
-from documents.records.api import DocumentsDraft, DocumentsRecord
-from documents.services.records.permissions import DocumentsPermissionPolicy
-from documents.services.records.results import DocumentsRecordItem, DocumentsRecordList
-from documents.services.records.schema import DocumentsSchema
-from documents.services.records.search import DocumentsSearchOptions
 
 
 class DocumentsServiceConfig(
@@ -28,7 +28,7 @@ class DocumentsServiceConfig(
 
     result_list_cls = DocumentsRecordList
 
-    PERMISSIONS_PRESETS = ["authenticated"]
+    PERMISSIONS_PRESETS = ["workflow"]
 
     url_prefix = "/docs/"
 
@@ -48,8 +48,8 @@ class DocumentsServiceConfig(
         AuthorityComponent,
         OwnersComponent,
         FilesComponent,
-        DraftFilesComponent,
         DataComponent,
+        DraftFilesComponent,
     ]
 
     model = "documents"

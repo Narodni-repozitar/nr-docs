@@ -1,10 +1,9 @@
-from invenio_records_resources.services import FileLink, FileServiceConfig, RecordLink
-from invenio_records_resources.services.records.components import DataComponent
-from oarepo_runtime.services.config.service import PermissionsPresetsConfigMixin
-
 from documents.records.api import DocumentsDraft, DocumentsRecord
 from documents.services.files.schema import DocumentsFileSchema
 from documents.services.records.permissions import DocumentsPermissionPolicy
+from invenio_records_resources.services import FileLink, FileServiceConfig, RecordLink
+from invenio_records_resources.services.records.components import DataComponent
+from oarepo_runtime.services.config.service import PermissionsPresetsConfigMixin
 
 
 class DocumentsFileServiceConfig(PermissionsPresetsConfigMixin, FileServiceConfig):

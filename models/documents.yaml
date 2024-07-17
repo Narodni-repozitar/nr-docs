@@ -20,6 +20,7 @@ profiles:
 - draft
 - files
 - draft_files
+- record_communities
 record:
   extend: nr-documents#DocumentModel
   use:
@@ -27,14 +28,25 @@ record:
   - ./documents-facets.yaml
   - ./documents-harvest.yaml
 
-  draft: {}
+  draft:
+    record:
+      fields:
+        state: "{{oarepo_workflows.records.systemfields.state.RecordStateField}}()"
+  draft-parent-record:
+    fields:
+      workflow: "{{oarepo_workflows.records.systemfields.workflow.WorkflowField}}()"
+  draft-parent-record-metadata:
+    base-classes:
+      - oarepo_workflows.records.models.RecordWorkflowParentModelMixin
+      - invenio_db.db{db.Model}
+      - invenio_records.models.RecordMetadataBase
   draft-files:
     resource:
       base-classes: [ oarepo_ui.resources.file_resource.S3RedirectFileResource ]
   permissions:
     presets:
 #    - communities
-    - authenticated
+    - workflow
   files:
     resource:
       base-classes: [ oarepo_ui.resources.file_resource.S3RedirectFileResource ]
@@ -43,6 +55,9 @@ record:
       - ./documents-files.yaml
     use:
     - invenio_files
+  record-communities:
+    permissions:
+      presets: [ "workflow" ]
   module:
     qualified: documents
   pid:
@@ -115,6 +130,7 @@ record:
             key="syntheticFields.date",
             filter=lambda x: len(x) == 10
         )
+      state: "{{oarepo_workflows.records.systemfields.state.RecordStateField}}(initial='published')"
 
 
   mapping:
