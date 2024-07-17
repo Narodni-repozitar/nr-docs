@@ -12,7 +12,7 @@ source "$(dirname "$0")/../.venv/bin/activate"
 
 invenio oarepo oai harvester add nusl-offline --name "Offline NUSL harvester" \
             --url https://s3.cl4.du.cesnet.cz --set global --prefix marcxml \
-            --loader 's3{bucket=nr-repo-docs-harvest,harvest_name=nusl-harvest-02}' \
+            --loader 's3{bucket=nr-repo-docs-harvest,harvest_name=nusl-harvest-03}' \
             --transformer marcxml --transformer nusl \
             --writer 'service{service=published_documents}'
 
