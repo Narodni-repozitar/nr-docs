@@ -3366,7 +3366,7 @@ files = [
 
 [[package]]
 name = "oarepo-oai-pmh-harvester"
-version = "4.0.46"
+version = "4.1.0"
 summary = "OAIPMH harvester"
 groups = ["default"]
 dependencies = [
@@ -3378,8 +3378,8 @@ dependencies = [
     "tqdm>=4.64.1",
 ]
 files = [
-    {file = "oarepo_oai_pmh_harvester-4.0.46-py3-none-any.whl", hash = "sha256:98b0d97416682c01c2eb2b2230444882e21d20bc576b558db48a0fa4bfa75419"},
-    {file = "oarepo_oai_pmh_harvester-4.0.46.tar.gz", hash = "sha256:b27afa8870eaa58bc48ff03e61780091af30bf9020f4996d9fd632167c8e0fa4"},
+    {file = "oarepo_oai_pmh_harvester-4.1.0-py3-none-any.whl", hash = "sha256:e45ddc5c7175e9a08f99c12b3f5198a5f1c333b0b77e866e6c5ee6041366c5d9"},
+    {file = "oarepo_oai_pmh_harvester-4.1.0.tar.gz", hash = "sha256:eac6d7b7905ec705b6ec4069c531bc28c57a4422acf134326b2adaa3fba8b947"},
 ]
 
 [[package]]
@@ -3428,7 +3428,7 @@ files = [
 
 [[package]]
 name = "oarepo-ui"
-version = "5.1.41"
+version = "5.2.0"
 requires_python = ">=3.10"
 summary = "UI module for invenio 3.5+"
 groups = ["default"]
@@ -3440,8 +3440,8 @@ dependencies = [
     "oarepo-runtime",
 ]
 files = [
-    {file = "oarepo_ui-5.1.41-py2.py3-none-any.whl", hash = "sha256:9a24ea50549c918c644b23a29ddf4f258c4c31b9c3b1fa61a7bac31894405822"},
-    {file = "oarepo_ui-5.1.41.tar.gz", hash = "sha256:f9798d4e73a12b6b959bc2ddec534b4515aaa65e5dd4e849923439ddb120bc1b"},
+    {file = "oarepo_ui-5.2.0-py2.py3-none-any.whl", hash = "sha256:0c87a16973ee549e208b357b64aaf43d3b92f6da006a85ed82b9bef354e956f3"},
+    {file = "oarepo_ui-5.2.0.tar.gz", hash = "sha256:450ae3360f261f364c56976967bc629b58c3dc9e416b8f832c9b1476f91941a9"},
 ]
 
 [[package]]
