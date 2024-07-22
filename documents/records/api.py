@@ -5,9 +5,8 @@ from invenio_records.systemfields import ConstantField, ModelField
 from invenio_records_resources.records.systemfields import FilesField, IndexField
 from invenio_records_resources.records.systemfields.pid import PIDField, PIDFieldContext
 from invenio_vocabularies.records.api import Vocabulary
-from oarepo_communities.records.systemfields.communities import (
-    OARepoCommunitiesFieldContext,
-)
+from nr_metadata.records.synthetic_fields import KeywordsFieldSelector
+from oarepo_communities.records.systemfields.communities import OARepoCommunitiesFieldContext
 from oarepo_runtime.records.relations import PIDRelation, RelationsField
 from oarepo_runtime.records.systemfields import (
     FirstItemSelector,
@@ -21,7 +20,6 @@ from oarepo_runtime.records.systemfields.record_status import RecordStatusSystem
 from oarepo_workflows.records.systemfields.state import RecordStateField
 from oarepo_workflows.records.systemfields.workflow import WorkflowField
 
-from common.records.synthetic_fields import KeywordsFieldSelector
 from common.services.sort import TitleICUSortField
 from documents.files.api import DocumentsFile, DocumentsFileDraft
 from documents.records.dumpers.dumper import DocumentsDraftDumper, DocumentsDumper
@@ -29,8 +27,9 @@ from documents.records.models import (
     DocumentsDraftMetadata,
     DocumentsMetadata,
     DocumentsParentMetadata,
-    DocumentsParentState,
+    DocumentsParentState, DocumentsRecordCommunitiesMetadata,
 )
+from invenio_communities.records.records.systemfields import CommunitiesField
 
 
 class DocumentsParentRecord(ParentRecord):
@@ -353,6 +352,8 @@ class DocumentsDraft(InvenioDraft):
 
     bucket_id = ModelField(dump=False)
     bucket = ModelField(dump=False)
+
+    state = RecordStateField()
 
 
 DocumentsFile.record_cls = DocumentsRecord

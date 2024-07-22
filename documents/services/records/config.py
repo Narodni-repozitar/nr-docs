@@ -48,7 +48,6 @@ class DocumentsServiceConfig(
         AuthorityComponent,
         OwnersComponent,
         FilesComponent,
-        DataComponent,
         DraftFilesComponent,
         DataComponent,
         DateIssuedComponent,
