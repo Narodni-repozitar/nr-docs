@@ -12,3 +12,4 @@ node_modules
 .pdm-python
 .DS_Store
 .tx
+/requirements-resolved-local.txt
