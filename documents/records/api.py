@@ -1,13 +1,3 @@
-from documents.files.api import DocumentsFile, DocumentsFileDraft
-from documents.records.dumpers.dumper import DocumentsDraftDumper, DocumentsDumper
-from documents.records.models import (
-    DocumentsDraftMetadata,
-    DocumentsMetadata,
-    DocumentsParentMetadata,
-    DocumentsParentState,
-    DocumentsRecordCommunitiesMetadata,
-)
-from invenio_communities.records.records.systemfields import CommunitiesField
 from invenio_drafts_resources.records.api import Draft as InvenioDraft
 from invenio_drafts_resources.records.api import DraftRecordIdProviderV2, ParentRecord
 from invenio_drafts_resources.records.api import Record as InvenioRecord
@@ -33,6 +23,14 @@ from oarepo_workflows.records.systemfields.workflow import WorkflowField
 
 from common.records.synthetic_fields import KeywordsFieldSelector
 from common.services.sort import TitleICUSortField
+from documents.files.api import DocumentsFile, DocumentsFileDraft
+from documents.records.dumpers.dumper import DocumentsDraftDumper, DocumentsDumper
+from documents.records.models import (
+    DocumentsDraftMetadata,
+    DocumentsMetadata,
+    DocumentsParentMetadata,
+    DocumentsParentState,
+)
 
 
 class DocumentsParentRecord(ParentRecord):
@@ -99,7 +97,20 @@ class DocumentsRecord(InvenioRecord):
     date = SyntheticSystemField(
         selector=FirstItemSelector("metadata.dateModified", "metadata.dateIssued"),
         key="syntheticFields.date",
-        filter=lambda x: len(x) == 10,
+    )
+
+    year = SyntheticSystemField(
+        selector=FirstItemSelector("metadata.dateModified", "metadata.dateIssued"),
+        key="syntheticFields.year",
+        filter=lambda x: len(x) >= 4,
+        map=lambda x: x[:4],
+    )
+
+    defenseYear = SyntheticSystemField(
+        selector=PathSelector("metadata.thesis.dateDefended"),
+        key="syntheticFields.defenseYear",
+        filter=lambda x: len(x) >= 4,
+        map=lambda x: x[:4],
     )
 
     state = RecordStateField(initial="published")
@@ -232,8 +243,6 @@ class DocumentsDraft(InvenioDraft):
     )
 
     dumper = DocumentsDraftDumper()
-
-    state = RecordStateField()
 
     relations = RelationsField(
         accessRights=PIDRelation(

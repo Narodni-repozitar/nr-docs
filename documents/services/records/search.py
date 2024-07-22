@@ -9,7 +9,8 @@ class DocumentsSearchOptions(I18nSearchOptions):
     facet_groups = {
         "curator": {
             "syntheticFields_people": facets.syntheticFields_people,
-            "syntheticFields_date": facets.syntheticFields_date,
+            "syntheticFields_year": facets.syntheticFields_year,
+            "syntheticFields_defenseYear": facets.syntheticFields_defenseYear,
             "metadata_accessRights": facets.metadata_accessRights,
             "metadata_rights": facets.metadata_rights,
             "metadata_resourceType": facets.metadata_resourceType,
@@ -22,7 +23,8 @@ class DocumentsSearchOptions(I18nSearchOptions):
         },
         "default": {
             "syntheticFields_people": facets.syntheticFields_people,
-            "syntheticFields_date": facets.syntheticFields_date,
+            "syntheticFields_year": facets.syntheticFields_year,
+            "syntheticFields_defenseYear": facets.syntheticFields_defenseYear,
             "metadata_accessRights": facets.metadata_accessRights,
             "metadata_rights": facets.metadata_rights,
             "metadata_resourceType": facets.metadata_resourceType,

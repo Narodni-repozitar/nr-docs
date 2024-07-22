@@ -1,8 +1,3 @@
-from documents.records.api import DocumentsDraft, DocumentsRecord
-from documents.services.records.permissions import DocumentsPermissionPolicy
-from documents.services.records.results import DocumentsRecordItem, DocumentsRecordList
-from documents.services.records.schema import DocumentsSchema
-from documents.services.records.search import DocumentsSearchOptions
 from invenio_drafts_resources.services.records.components import DraftFilesComponent
 from invenio_records_resources.services import (
     ConditionalLink,
@@ -11,12 +6,17 @@ from invenio_records_resources.services import (
 )
 from invenio_records_resources.services.records.components import DataComponent
 from oarepo_runtime.records import has_draft, is_published_record
-from oarepo_runtime.services.components import OwnersComponent
+from oarepo_runtime.services.components import OwnersComponent, DateIssuedComponent
 from oarepo_runtime.services.config.service import PermissionsPresetsConfigMixin
 from oarepo_runtime.services.files import FilesComponent
 from oarepo_vocabularies.authorities.components import AuthorityComponent
 
 from common.services.config import FilteredResultServiceConfig
+from documents.records.api import DocumentsDraft, DocumentsRecord
+from documents.services.records.permissions import DocumentsPermissionPolicy
+from documents.services.records.results import DocumentsRecordItem, DocumentsRecordList
+from documents.services.records.schema import DocumentsSchema
+from documents.services.records.search import DocumentsSearchOptions
 
 
 class DocumentsServiceConfig(
@@ -50,6 +50,8 @@ class DocumentsServiceConfig(
         FilesComponent,
         DataComponent,
         DraftFilesComponent,
+        DataComponent,
+        DateIssuedComponent,
     ]
 
     model = "documents"
