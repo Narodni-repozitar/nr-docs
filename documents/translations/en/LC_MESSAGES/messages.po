@@ -2,8 +2,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
-"POT-Creation-Date: 2024-06-14T12:07:51.095326\n"
-"PO-Revision-Date: 2024-06-14T12:07:51.095327\n"
+"POT-Creation-Date: 2024-07-15T10:50:58.226024\n"
+"PO-Revision-Date: 2024-07-15T10:50:58.226026\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -2019,6 +2019,51 @@ msgstr ""
 msgid "oai/harvest/identifier.hint"
 msgstr ""
 
+msgid "pid.help"
+msgstr ""
+
+msgid "pid.label"
+msgstr ""
+
+msgid "pid.hint"
+msgstr ""
+
+msgid "pid/obj_type.help"
+msgstr ""
+
+msgid "pid/obj_type.label"
+msgstr ""
+
+msgid "pid/obj_type.hint"
+msgstr ""
+
+msgid "pid/pid_type.help"
+msgstr ""
+
+msgid "pid/pid_type.label"
+msgstr ""
+
+msgid "pid/pid_type.hint"
+msgstr ""
+
+msgid "pid/pk.help"
+msgstr ""
+
+msgid "pid/pk.label"
+msgstr ""
+
+msgid "pid/pk.hint"
+msgstr ""
+
+msgid "pid/status.help"
+msgstr ""
+
+msgid "pid/status.label"
+msgstr ""
+
+msgid "pid/status.hint"
+msgstr ""
+
 msgid "syntheticFields.help"
 msgstr ""
 
@@ -2035,6 +2080,15 @@ msgid "syntheticFields/date.help"
 msgstr ""
 
 msgid "syntheticFields/date.hint"
+msgstr ""
+
+msgid "syntheticFields/defenseYear.label"
+msgstr "Defense year"
+
+msgid "syntheticFields/defenseYear.help"
+msgstr ""
+
+msgid "syntheticFields/defenseYear.hint"
 msgstr ""
 
 msgid "syntheticFields/institutions.label"
@@ -2136,6 +2190,24 @@ msgstr ""
 msgid "syntheticFields/keywords.hint"
 msgstr ""
 
+msgid "syntheticFields/keywords/cs.help"
+msgstr ""
+
+msgid "syntheticFields/keywords/cs.label"
+msgstr ""
+
+msgid "syntheticFields/keywords/cs.hint"
+msgstr ""
+
+msgid "syntheticFields/keywords/en.help"
+msgstr ""
+
+msgid "syntheticFields/keywords/en.label"
+msgstr ""
+
+msgid "syntheticFields/keywords/en.hint"
+msgstr ""
+
 msgid "syntheticFields/people.label"
 msgstr "People"
 
@@ -2143,6 +2215,15 @@ msgid "syntheticFields/people.help"
 msgstr ""
 
 msgid "syntheticFields/people.hint"
+msgstr ""
+
+msgid "syntheticFields/year.label"
+msgstr "Updated year"
+
+msgid "syntheticFields/year.help"
+msgstr ""
+
+msgid "syntheticFields/year.hint"
 msgstr ""
 
 msgid "updated.help"

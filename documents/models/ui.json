@@ -148,6 +148,7 @@
                             "title": {
                                 "detail": "multilingual",
                                 "input": "i18nStr",
+                                "required": true,
                                 "help": "metadata/additionalTitles/title.help",
                                 "label": "metadata/additionalTitles/title.label",
                                 "hint": "metadata/additionalTitles/title.hint",
@@ -173,6 +174,7 @@
                             "titleType": {
                                 "detail": "keyword",
                                 "input": "keyword",
+                                "required": true,
                                 "help": "metadata/additionalTitles/titleType.help",
                                 "label": "metadata/additionalTitles/titleType.label",
                                 "hint": "metadata/additionalTitles/titleType.hint",
@@ -322,6 +324,7 @@
                                         "identifier": {
                                             "detail": "keyword",
                                             "input": "keyword",
+                                            "required": true,
                                             "help": "metadata/contributors/authorityIdentifiers/identifier.help",
                                             "label": "metadata/contributors/authorityIdentifiers/identifier.label",
                                             "hint": "metadata/contributors/authorityIdentifiers/identifier.hint",
@@ -330,6 +333,7 @@
                                         "scheme": {
                                             "detail": "keyword",
                                             "input": "keyword",
+                                            "required": true,
                                             "help": "metadata/contributors/authorityIdentifiers/scheme.help",
                                             "label": "metadata/contributors/authorityIdentifiers/scheme.label",
                                             "hint": "metadata/contributors/authorityIdentifiers/scheme.hint",
@@ -382,6 +386,7 @@
                             "fullName": {
                                 "detail": "keyword",
                                 "input": "keyword",
+                                "required": true,
                                 "help": "metadata/contributors/fullName.help",
                                 "label": "metadata/contributors/fullName.label",
                                 "hint": "metadata/contributors/fullName.hint",
@@ -410,6 +415,7 @@
                 "creators": {
                     "detail": "array",
                     "input": "array",
+                    "required": true,
                     "help": "metadata/creators.help",
                     "label": "metadata/creators.label",
                     "hint": "metadata/creators.hint",
@@ -547,6 +553,7 @@
                                         "identifier": {
                                             "detail": "keyword",
                                             "input": "keyword",
+                                            "required": true,
                                             "help": "metadata/creators/authorityIdentifiers/identifier.help",
                                             "label": "metadata/creators/authorityIdentifiers/identifier.label",
                                             "hint": "metadata/creators/authorityIdentifiers/identifier.hint",
@@ -555,6 +562,7 @@
                                         "scheme": {
                                             "detail": "keyword",
                                             "input": "keyword",
+                                            "required": true,
                                             "help": "metadata/creators/authorityIdentifiers/scheme.help",
                                             "label": "metadata/creators/authorityIdentifiers/scheme.label",
                                             "hint": "metadata/creators/authorityIdentifiers/scheme.hint",
@@ -575,6 +583,7 @@
                             "fullName": {
                                 "detail": "keyword",
                                 "input": "keyword",
+                                "required": true,
                                 "help": "metadata/creators/fullName.help",
                                 "label": "metadata/creators/fullName.label",
                                 "hint": "metadata/creators/fullName.hint",
@@ -640,6 +649,7 @@
                             "eventDate": {
                                 "detail": "edtf-interval",
                                 "input": "edtf-interval",
+                                "required": true,
                                 "help": "metadata/events/eventDate.help",
                                 "label": "metadata/events/eventDate.label",
                                 "hint": "metadata/events/eventDate.hint"
@@ -647,6 +657,7 @@
                             "eventLocation": {
                                 "detail": "location",
                                 "input": false,
+                                "required": true,
                                 "help": "metadata/events/eventLocation.help",
                                 "label": "metadata/events/eventLocation.label",
                                 "hint": "metadata/events/eventLocation.hint",
@@ -686,6 +697,7 @@
                                     "place": {
                                         "detail": "keyword",
                                         "input": "keyword",
+                                        "required": true,
                                         "help": "metadata/events/eventLocation/place.help",
                                         "label": "metadata/events/eventLocation/place.label",
                                         "hint": "metadata/events/eventLocation/place.hint",
@@ -710,6 +722,7 @@
                             "eventNameOriginal": {
                                 "detail": "fulltext",
                                 "input": "fulltext",
+                                "required": true,
                                 "help": "metadata/events/eventNameOriginal.help",
                                 "label": "metadata/events/eventNameOriginal.label",
                                 "hint": "metadata/events/eventNameOriginal.hint"
@@ -734,6 +747,7 @@
                         "externalLocationURL": {
                             "detail": "url",
                             "input": "url",
+                            "required": true,
                             "help": "metadata/externalLocation/externalLocationURL.help",
                             "label": "metadata/externalLocation/externalLocationURL.label",
                             "hint": "metadata/externalLocation/externalLocationURL.hint",
@@ -796,6 +810,7 @@
                             "projectID": {
                                 "detail": "keyword",
                                 "input": "keyword",
+                                "required": true,
                                 "help": "metadata/fundingReferences/projectID.help",
                                 "label": "metadata/fundingReferences/projectID.label",
                                 "hint": "metadata/fundingReferences/projectID.hint",
@@ -842,6 +857,7 @@
                                     "pointLatitude": {
                                         "detail": "double",
                                         "input": "double",
+                                        "required": true,
                                         "help": "metadata/geoLocations/geoLocationPoint/pointLatitude.help",
                                         "label": "metadata/geoLocations/geoLocationPoint/pointLatitude.label",
                                         "hint": "metadata/geoLocations/geoLocationPoint/pointLatitude.hint",
@@ -850,6 +866,7 @@
                                     "pointLongitude": {
                                         "detail": "double",
                                         "input": "double",
+                                        "required": true,
                                         "help": "metadata/geoLocations/geoLocationPoint/pointLongitude.help",
                                         "label": "metadata/geoLocations/geoLocationPoint/pointLongitude.label",
                                         "hint": "metadata/geoLocations/geoLocationPoint/pointLongitude.hint",
@@ -863,6 +880,7 @@
                 "languages": {
                     "detail": "array",
                     "input": "array",
+                    "required": true,
                     "help": "metadata/languages.help",
                     "label": "metadata/languages.label",
                     "hint": "metadata/languages.hint",
@@ -961,6 +979,7 @@
                             "identifier": {
                                 "detail": "keyword",
                                 "input": "keyword",
+                                "required": true,
                                 "help": "metadata/objectIdentifiers/identifier.help",
                                 "label": "metadata/objectIdentifiers/identifier.label",
                                 "hint": "metadata/objectIdentifiers/identifier.hint",
@@ -969,6 +988,7 @@
                             "scheme": {
                                 "detail": "keyword",
                                 "input": "keyword",
+                                "required": true,
                                 "help": "metadata/objectIdentifiers/scheme.help",
                                 "label": "metadata/objectIdentifiers/scheme.label",
                                 "hint": "metadata/objectIdentifiers/scheme.hint",
@@ -1153,6 +1173,7 @@
                                                     "identifier": {
                                                         "detail": "keyword",
                                                         "input": "keyword",
+                                                        "required": true,
                                                         "help": "metadata/relatedItems/itemContributors/authorityIdentifiers/identifier.help",
                                                         "label": "metadata/relatedItems/itemContributors/authorityIdentifiers/identifier.label",
                                                         "hint": "metadata/relatedItems/itemContributors/authorityIdentifiers/identifier.hint",
@@ -1161,6 +1182,7 @@
                                                     "scheme": {
                                                         "detail": "keyword",
                                                         "input": "keyword",
+                                                        "required": true,
                                                         "help": "metadata/relatedItems/itemContributors/authorityIdentifiers/scheme.help",
                                                         "label": "metadata/relatedItems/itemContributors/authorityIdentifiers/scheme.label",
                                                         "hint": "metadata/relatedItems/itemContributors/authorityIdentifiers/scheme.hint",
@@ -1213,6 +1235,7 @@
                                         "fullName": {
                                             "detail": "keyword",
                                             "input": "keyword",
+                                            "required": true,
                                             "help": "metadata/relatedItems/itemContributors/fullName.help",
                                             "label": "metadata/relatedItems/itemContributors/fullName.label",
                                             "hint": "metadata/relatedItems/itemContributors/fullName.hint",
@@ -1378,6 +1401,7 @@
                                                     "identifier": {
                                                         "detail": "keyword",
                                                         "input": "keyword",
+                                                        "required": true,
                                                         "help": "metadata/relatedItems/itemCreators/authorityIdentifiers/identifier.help",
                                                         "label": "metadata/relatedItems/itemCreators/authorityIdentifiers/identifier.label",
                                                         "hint": "metadata/relatedItems/itemCreators/authorityIdentifiers/identifier.hint",
@@ -1386,6 +1410,7 @@
                                                     "scheme": {
                                                         "detail": "keyword",
                                                         "input": "keyword",
+                                                        "required": true,
                                                         "help": "metadata/relatedItems/itemCreators/authorityIdentifiers/scheme.help",
                                                         "label": "metadata/relatedItems/itemCreators/authorityIdentifiers/scheme.label",
                                                         "hint": "metadata/relatedItems/itemCreators/authorityIdentifiers/scheme.hint",
@@ -1406,6 +1431,7 @@
                                         "fullName": {
                                             "detail": "keyword",
                                             "input": "keyword",
+                                            "required": true,
                                             "help": "metadata/relatedItems/itemCreators/fullName.help",
                                             "label": "metadata/relatedItems/itemCreators/fullName.label",
                                             "hint": "metadata/relatedItems/itemCreators/fullName.hint",
@@ -1463,6 +1489,7 @@
                                         "identifier": {
                                             "detail": "keyword",
                                             "input": "keyword",
+                                            "required": true,
                                             "help": "metadata/relatedItems/itemPIDs/identifier.help",
                                             "label": "metadata/relatedItems/itemPIDs/identifier.label",
                                             "hint": "metadata/relatedItems/itemPIDs/identifier.hint",
@@ -1471,6 +1498,7 @@
                                         "scheme": {
                                             "detail": "keyword",
                                             "input": "keyword",
+                                            "required": true,
                                             "help": "metadata/relatedItems/itemPIDs/scheme.help",
                                             "label": "metadata/relatedItems/itemPIDs/scheme.label",
                                             "hint": "metadata/relatedItems/itemPIDs/scheme.hint",
@@ -1563,6 +1591,7 @@
                             "itemTitle": {
                                 "detail": "fulltext",
                                 "input": "fulltext",
+                                "required": true,
                                 "help": "metadata/relatedItems/itemTitle.help",
                                 "label": "metadata/relatedItems/itemTitle.label",
                                 "hint": "metadata/relatedItems/itemTitle.hint"
@@ -1598,6 +1627,7 @@
                     "detail": "vocabulary_item",
                     "edit": "vocabulary_item",
                     "input": "vocabulary",
+                    "required": true,
                     "help": "metadata/resourceType.help",
                     "label": "metadata/resourceType.label",
                     "hint": "metadata/resourceType.hint",
@@ -1674,6 +1704,7 @@
                             "seriesTitle": {
                                 "detail": "keyword",
                                 "input": "keyword",
+                                "required": true,
                                 "help": "metadata/series/seriesTitle.help",
                                 "label": "metadata/series/seriesTitle.label",
                                 "hint": "metadata/series/seriesTitle.hint",
@@ -1753,6 +1784,7 @@
                             "subject": {
                                 "detail": "string",
                                 "input": "array",
+                                "required": true,
                                 "help": "metadata/subjects/subject.help",
                                 "label": "metadata/subjects/subject.label",
                                 "hint": "metadata/subjects/subject.hint",
@@ -1817,6 +1849,7 @@
                             "identifier": {
                                 "detail": "keyword",
                                 "input": "keyword",
+                                "required": true,
                                 "help": "metadata/systemIdentifiers/identifier.help",
                                 "label": "metadata/systemIdentifiers/identifier.label",
                                 "hint": "metadata/systemIdentifiers/identifier.hint",
@@ -1825,6 +1858,7 @@
                             "scheme": {
                                 "detail": "keyword",
                                 "input": "keyword",
+                                "required": true,
                                 "help": "metadata/systemIdentifiers/scheme.help",
                                 "label": "metadata/systemIdentifiers/scheme.label",
                                 "hint": "metadata/systemIdentifiers/scheme.hint",
@@ -2013,6 +2047,7 @@
                 "title": {
                     "detail": "fulltext+keyword",
                     "input": "fulltext+keyword",
+                    "required": true,
                     "help": "metadata/title.help",
                     "label": "metadata/title.label",
                     "hint": "metadata/title.hint"
@@ -2061,6 +2096,43 @@
                 }
             }
         },
+        "pid": {
+            "detail": false,
+            "input": false,
+            "help": "pid.help",
+            "label": "pid.label",
+            "hint": "pid.hint",
+            "children": {
+                "obj_type": {
+                    "detail": "keyword",
+                    "input": "keyword",
+                    "help": "pid/obj_type.help",
+                    "label": "pid/obj_type.label",
+                    "hint": "pid/obj_type.hint"
+                },
+                "pid_type": {
+                    "detail": "keyword",
+                    "input": "keyword",
+                    "help": "pid/pid_type.help",
+                    "label": "pid/pid_type.label",
+                    "hint": "pid/pid_type.hint"
+                },
+                "pk": {
+                    "detail": "integer",
+                    "input": "integer",
+                    "help": "pid/pk.help",
+                    "label": "pid/pk.label",
+                    "hint": "pid/pk.hint"
+                },
+                "status": {
+                    "detail": "keyword",
+                    "input": "keyword",
+                    "help": "pid/status.help",
+                    "label": "pid/status.label",
+                    "hint": "pid/status.hint"
+                }
+            }
+        },
         "syntheticFields": {
             "detail": "syntheticfield",
             "input": "syntheticfield",
@@ -2069,12 +2141,20 @@
             "hint": "syntheticFields.hint",
             "children": {
                 "date": {
-                    "detail": "date",
-                    "input": "date",
+                    "detail": "edtf",
+                    "input": "edtf",
                     "help": "syntheticFields/date.help",
                     "label": "syntheticFields/date.label",
                     "hint": "syntheticFields/date.hint",
                     "facet": "syntheticFields_date"
+                },
+                "defenseYear": {
+                    "detail": "edtf",
+                    "input": "edtf",
+                    "help": "syntheticFields/defenseYear.help",
+                    "label": "syntheticFields/defenseYear.label",
+                    "hint": "syntheticFields/defenseYear.hint",
+                    "facet": "syntheticFields_defenseYear"
                 },
                 "institutions": {
                     "detail": "taxonomy_item",
@@ -2179,7 +2259,37 @@
                     "help": "syntheticFields/keywords.help",
                     "label": "syntheticFields/keywords.label",
                     "hint": "syntheticFields/keywords.hint",
-                    "facet": "syntheticFields_keywords"
+                    "facet": "syntheticFields_keywords",
+                    "children": {
+                        "cs": {
+                            "detail": "array",
+                            "input": "array",
+                            "help": "syntheticFields/keywords/cs.help",
+                            "label": "syntheticFields/keywords/cs.label",
+                            "hint": "syntheticFields/keywords/cs.hint",
+                            "child": {
+                                "detail": "keyword",
+                                "input": "keyword",
+                                "help": "syntheticFields/keywords/cs.help",
+                                "label": "syntheticFields/keywords/cs.label",
+                                "hint": "syntheticFields/keywords/cs.hint"
+                            }
+                        },
+                        "en": {
+                            "detail": "array",
+                            "input": "array",
+                            "help": "syntheticFields/keywords/en.help",
+                            "label": "syntheticFields/keywords/en.label",
+                            "hint": "syntheticFields/keywords/en.hint",
+                            "child": {
+                                "detail": "keyword",
+                                "input": "keyword",
+                                "help": "syntheticFields/keywords/en.help",
+                                "label": "syntheticFields/keywords/en.label",
+                                "hint": "syntheticFields/keywords/en.hint"
+                            }
+                        }
+                    }
                 },
                 "people": {
                     "detail": "keyword",
@@ -2188,6 +2298,14 @@
                     "label": "syntheticFields/people.label",
                     "hint": "syntheticFields/people.hint",
                     "facet": "syntheticFields_people"
+                },
+                "year": {
+                    "detail": "edtf",
+                    "input": "edtf",
+                    "help": "syntheticFields/year.help",
+                    "label": "syntheticFields/year.label",
+                    "hint": "syntheticFields/year.hint",
+                    "facet": "syntheticFields_year"
                 }
             }
         },

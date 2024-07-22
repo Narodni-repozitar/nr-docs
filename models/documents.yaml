@@ -38,6 +38,8 @@ record:
   files:
     resource:
       base-classes: [ oarepo_ui.resources.file_resource.S3RedirectFileResource ]
+    resource-config:
+      base-html-url: /docs/
     properties:
       use:
       - ./documents-files.yaml
@@ -48,8 +50,7 @@ record:
   pid:
     type: dcmnts
   properties:
-    metadata:
-      properties: {}
+    metadata: {}
   resource-config:
     base-html-url: /docs/
     base-url: /docs/
@@ -60,6 +61,7 @@ record:
       - common.services.config.FilteredResultServiceConfig
     components:
       - "{{oarepo_vocabularies.authorities.components.AuthorityComponent}}"
+      - "{{oarepo_runtime.services.components.DateIssuedComponent}}"
 
   published-service-config:
     base-classes:
@@ -81,13 +83,14 @@ record:
       - import: oarepo_runtime.records.systemfields.SyntheticSystemField
       - import: oarepo_runtime.records.systemfields.PathSelector
       - import: oarepo_runtime.records.systemfields.FirstItemSelector
-      - import: nr_metadata.records.systemfields.keyword_mapper
+      - import: nr_metadata.records.synthetic_fields.KeywordsFieldSelector
     fields:
       sort: "{{common.services.sort.TitleICUSortField}}(source_field='metadata.title')"
       title_search: "{{oarepo_runtime.records.systemfields.icu.ICUSearchField}}(source_field='metadata.title')"
       creator_search: "{{oarepo_runtime.records.systemfields.icu.ICUSearchField}}(source_field='metadata.creators.fullName')"
       abstract_search: "{{oarepo_runtime.records.systemfields.icu.ICUSearchField}}(source_field='metadata.abstract.value')"
-      # for the time being put here
+
+      # TODO: these are not somehow merged from the nr-model, need to find out why
       people: |
         SyntheticSystemField(
             PathSelector("metadata.creators", "metadata.contributors"),
@@ -105,14 +108,27 @@ record:
         )
       keywords: |
         SyntheticSystemField(
-            PathSelector("metadata.subjects.subject.value"),
+            selector=KeywordsFieldSelector("metadata.subjects.subject"),
             key="syntheticFields.keywords",
         )
       date: |
         SyntheticSystemField(
             selector=FirstItemSelector("metadata.dateModified", "metadata.dateIssued"),
             key="syntheticFields.date",
-            filter=lambda x: len(x) == 10
+        )
+      year: |
+        SyntheticSystemField(
+            selector=FirstItemSelector("metadata.dateModified", "metadata.dateIssued"),
+            key="syntheticFields.year",
+            filter=lambda x: len(x) >= 4,
+            map=lambda x: x[:4]
+        )
+      defenseYear: |
+        SyntheticSystemField(
+            selector=PathSelector("metadata.thesis.dateDefended"),
+            key="syntheticFields.defenseYear",
+            filter=lambda x: len(x) >= 4,
+            map=lambda x: x[:4]
         )
 
 

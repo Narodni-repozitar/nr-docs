@@ -897,10 +897,31 @@
                 }
             }
         },
+        "pid": {
+            "type": "object",
+            "properties": {
+                "obj_type": {
+                    "type": "string"
+                },
+                "pid_type": {
+                    "type": "string"
+                },
+                "pk": {
+                    "type": "integer"
+                },
+                "status": {
+                    "type": "string"
+                }
+            }
+        },
         "syntheticFields": {
             "type": "object",
             "properties": {
                 "date": {
+                    "type": "string",
+                    "format": "date"
+                },
+                "defenseYear": {
                     "type": "string",
                     "format": "date"
                 },
@@ -948,10 +969,28 @@
                     }
                 },
                 "keywords": {
-                    "type": "string"
+                    "type": "object",
+                    "properties": {
+                        "cs": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        },
+                        "en": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    }
                 },
                 "people": {
                     "type": "string"
+                },
+                "year": {
+                    "type": "string",
+                    "format": "date"
                 }
             }
         },

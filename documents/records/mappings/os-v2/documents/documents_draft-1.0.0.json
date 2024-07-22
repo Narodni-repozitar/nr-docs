@@ -1214,12 +1214,36 @@
                     }
                 }
             },
+            "pid": {
+                "type": "object",
+                "properties": {
+                    "obj_type": {
+                        "type": "keyword",
+                        "ignore_above": 1024
+                    },
+                    "pid_type": {
+                        "type": "keyword",
+                        "ignore_above": 1024
+                    },
+                    "pk": {
+                        "type": "integer"
+                    },
+                    "status": {
+                        "type": "keyword",
+                        "ignore_above": 1024
+                    }
+                }
+            },
             "syntheticFields": {
                 "type": "object",
                 "properties": {
                     "date": {
                         "type": "date",
-                        "format": "basic_date||strict_date"
+                        "format": "strict_date||yyyy-MM||yyyy"
+                    },
+                    "defenseYear": {
+                        "type": "date",
+                        "format": "strict_date||yyyy-MM||yyyy"
                     },
                     "institutions": {
                         "type": "object",
@@ -1274,12 +1298,25 @@
                         }
                     },
                     "keywords": {
-                        "type": "keyword",
-                        "ignore_above": 1024
+                        "type": "object",
+                        "properties": {
+                            "cs": {
+                                "type": "keyword",
+                                "ignore_above": 1024
+                            },
+                            "en": {
+                                "type": "keyword",
+                                "ignore_above": 1024
+                            }
+                        }
                     },
                     "people": {
                         "type": "keyword",
                         "ignore_above": 1024
+                    },
+                    "year": {
+                        "type": "date",
+                        "format": "strict_date||yyyy-MM||yyyy"
                     }
                 }
             },

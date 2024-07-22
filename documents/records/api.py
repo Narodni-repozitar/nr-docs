@@ -5,6 +5,7 @@ from invenio_records.systemfields import ConstantField, ModelField
 from invenio_records_resources.records.systemfields import FilesField, IndexField
 from invenio_records_resources.records.systemfields.pid import PIDField, PIDFieldContext
 from invenio_vocabularies.records.api import Vocabulary
+from nr_metadata.records.synthetic_fields import KeywordsFieldSelector
 from oarepo_runtime.records.relations import PIDRelation, RelationsField
 from oarepo_runtime.records.systemfields import (
     FirstItemSelector,
@@ -78,14 +79,27 @@ class DocumentsRecord(InvenioRecord):
     )
 
     keywords = SyntheticSystemField(
-        PathSelector("metadata.subjects.subject.value"),
+        selector=KeywordsFieldSelector("metadata.subjects.subject"),
         key="syntheticFields.keywords",
     )
 
     date = SyntheticSystemField(
         selector=FirstItemSelector("metadata.dateModified", "metadata.dateIssued"),
         key="syntheticFields.date",
-        filter=lambda x: len(x) == 10,
+    )
+
+    year = SyntheticSystemField(
+        selector=FirstItemSelector("metadata.dateModified", "metadata.dateIssued"),
+        key="syntheticFields.year",
+        filter=lambda x: len(x) >= 4,
+        map=lambda x: x[:4],
+    )
+
+    defenseYear = SyntheticSystemField(
+        selector=PathSelector("metadata.thesis.dateDefended"),
+        key="syntheticFields.defenseYear",
+        filter=lambda x: len(x) >= 4,
+        map=lambda x: x[:4],
     )
 
     relations = RelationsField(
