@@ -6,6 +6,7 @@ from invenio_records_resources.records.systemfields import FilesField, IndexFiel
 from invenio_records_resources.records.systemfields.pid import PIDField, PIDFieldContext
 from invenio_vocabularies.records.api import Vocabulary
 from nr_metadata.records.synthetic_fields import KeywordsFieldSelector
+from oarepo_communities.records.systemfields.communities import OARepoCommunitiesFieldContext
 from oarepo_runtime.records.relations import PIDRelation, RelationsField
 from oarepo_runtime.records.systemfields import (
     FirstItemSelector,
@@ -16,6 +17,8 @@ from oarepo_runtime.records.systemfields.has_draftcheck import HasDraftCheckFiel
 from oarepo_runtime.records.systemfields.icu import ICUSearchField
 from oarepo_runtime.records.systemfields.owner import OwnersField
 from oarepo_runtime.records.systemfields.record_status import RecordStatusSystemField
+from oarepo_workflows.records.systemfields.state import RecordStateField
+from oarepo_workflows.records.systemfields.workflow import WorkflowField
 
 from common.services.sort import TitleICUSortField
 from documents.files.api import DocumentsFile, DocumentsFileDraft
@@ -24,12 +27,19 @@ from documents.records.models import (
     DocumentsDraftMetadata,
     DocumentsMetadata,
     DocumentsParentMetadata,
-    DocumentsParentState,
+    DocumentsParentState, DocumentsRecordCommunitiesMetadata,
 )
+from invenio_communities.records.records.systemfields import CommunitiesField
 
 
 class DocumentsParentRecord(ParentRecord):
     model_cls = DocumentsParentMetadata
+
+    workflow = WorkflowField()
+
+    communities = CommunitiesField(
+        DocumentsRecordCommunitiesMetadata, context_cls=OARepoCommunitiesFieldContext
+    )
 
     owners = OwnersField()
 
@@ -101,6 +111,8 @@ class DocumentsRecord(InvenioRecord):
         filter=lambda x: len(x) >= 4,
         map=lambda x: x[:4],
     )
+
+    state = RecordStateField(initial="published")
 
     relations = RelationsField(
         accessRights=PIDRelation(
@@ -340,6 +352,8 @@ class DocumentsDraft(InvenioDraft):
 
     bucket_id = ModelField(dump=False)
     bucket = ModelField(dump=False)
+
+    state = RecordStateField()
 
 
 DocumentsFile.record_cls = DocumentsRecord

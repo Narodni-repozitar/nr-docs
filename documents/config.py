@@ -1,10 +1,3 @@
-from oarepo_requests.resolvers.ui import (
-    RecordEntityDraftReferenceUIResolver,
-    RecordEntityReferenceUIResolver,
-)
-from oarepo_requests.resources.draft.resource import DraftRecordRequestsResource
-from oarepo_requests.services.draft.service import DraftRecordRequestsService
-
 from documents.files.api import DocumentsFileDraft
 from documents.files.requests.resolvers import DocumentsFileDraftResolver
 from documents.records.api import DocumentsDraft, DocumentsRecord
@@ -20,6 +13,12 @@ from documents.resources.files.resource import (
     DocumentsFileDraftResource,
     DocumentsFileResource,
 )
+from documents.resources.record_communities.config import (
+    DocumentsRecordCommunitiesResourceConfig,
+)
+from documents.resources.record_communities.resource import (
+    DocumentsRecordCommunitiesResource,
+)
 from documents.resources.records.config import DocumentsResourceConfig
 from documents.resources.records.resource import DocumentsResource
 from documents.services.files.config import (
@@ -30,8 +29,20 @@ from documents.services.files.service import (
     DocumentsFileDraftService,
     DocumentsFileService,
 )
+from documents.services.record_communities.config import (
+    DocumentsRecordCommunitiesServiceConfig,
+)
+from documents.services.record_communities.service import (
+    DocumentsRecordCommunitiesService,
+)
 from documents.services.records.config import DocumentsServiceConfig
 from documents.services.records.service import DocumentsService
+from oarepo_requests.resolvers.ui import (
+    RecordEntityDraftReferenceUIResolver,
+    RecordEntityReferenceUIResolver,
+)
+from oarepo_requests.resources.draft.resource import DraftRecordRequestsResource
+from oarepo_requests.services.draft.service import DraftRecordRequestsService
 
 DOCUMENTS_RECORD_RESOURCE_CONFIG = DocumentsResourceConfig
 
@@ -95,3 +106,15 @@ DOCUMENTS_DRAFT_FILES_SERVICE_CONFIG = DocumentsFileDraftServiceConfig
 
 
 DOCUMENTS_DRAFT_FILES_SERVICE_CLASS = DocumentsFileDraftService
+
+
+DOCUMENTS_RECORD_COMMUNITIES_RESOURCE_CONFIG = DocumentsRecordCommunitiesResourceConfig
+
+
+DOCUMENTS_RECORD_COMMUNITIES_RESOURCE_CLASS = DocumentsRecordCommunitiesResource
+
+
+DOCUMENTS_RECORD_COMMUNITIES_SERVICE_CONFIG = DocumentsRecordCommunitiesServiceConfig
+
+
+DOCUMENTS_RECORD_COMMUNITIES_SERVICE_CLASS = DocumentsRecordCommunitiesService

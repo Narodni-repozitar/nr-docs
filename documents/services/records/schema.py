@@ -10,6 +10,7 @@ from nr_metadata.documents.services.records.schema import (
     NRDocumentRecordSchema,
     NRDocumentSyntheticFieldsSchema,
 )
+from oarepo_communities.schemas.parent import CommunitiesParentSchema
 from oarepo_runtime.services.schema.marshmallow import DictOnlySchema
 
 
@@ -17,6 +18,8 @@ class GeneratedParentSchema(InvenioParentSchema):
     """"""
 
     owners = ma.fields.List(ma.fields.Dict(), load_only=True)
+
+    communities = ma_fields.Nested(CommunitiesParentSchema)
 
 
 class DocumentsSchema(NRDocumentRecordSchema):

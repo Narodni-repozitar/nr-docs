@@ -1,11 +1,10 @@
 import importlib_metadata
-from flask_resources import ResponseHandler
-from invenio_records_resources.resources import FileResourceConfig
-
 from documents.resources.files.ui import (
     DocumentsFileDraftUIJSONSerializer,
     DocumentsFileUIJSONSerializer,
 )
+from flask_resources import ResponseHandler
+from invenio_records_resources.resources import FileResourceConfig
 
 
 class DocumentsFileResourceConfig(FileResourceConfig):

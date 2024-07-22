@@ -1,14 +1,18 @@
 import importlib_metadata
-from documents.resources.records.ui import DocumentsUIJSONSerializer
+from documents.resources.record_communities.ui import (
+    DocumentsRecordCommunitiesUIJSONSerializer,
+)
 from flask_resources import ResponseHandler
-from invenio_drafts_resources.resources import RecordResourceConfig
+from oarepo_communities.resources.record_communities.config import (
+    RecordCommunitiesResourceConfig,
+)
 
 
-class DocumentsResourceConfig(RecordResourceConfig):
+class DocumentsRecordCommunitiesResourceConfig(RecordCommunitiesResourceConfig):
     """DocumentsRecord resource config."""
 
-    blueprint_name = "documents"
-    url_prefix = "/docs/"
+    blueprint_name = "documents_record_communities"
+    url_prefix = "/documents/"
 
     @property
     def response_handlers(self):
@@ -19,7 +23,7 @@ class DocumentsResourceConfig(RecordResourceConfig):
             entrypoint_response_handlers.update(x.load())
         return {
             "application/vnd.inveniordm.v1+json": ResponseHandler(
-                DocumentsUIJSONSerializer()
+                DocumentsRecordCommunitiesUIJSONSerializer()
             ),
             **super().response_handlers,
             **entrypoint_response_handlers,
