@@ -156,7 +156,6 @@ const FormFieldsContainer = () => {
             <LocalVocabularySelectField
               optimized
               fieldPath="metadata.accessRights"
-              required
               clearable
               optionsListName="access-rights"
               {...getFieldData("metadata.accessRights", "tag")
@@ -295,7 +294,6 @@ const FormFieldsContainer = () => {
                 toolbar: toolBar,
                 valid_elements: validEditorTags,
               }}
-              required
               lngFieldWidth={4}
               {...getFieldData("metadata.abstract").fullRepresentation}
             />
@@ -317,7 +315,6 @@ const FormFieldsContainer = () => {
             fieldPath="metadata.notes"
           >
             <StringArrayField
-              label={i18next.t("Notes")}
               fieldPath="metadata.notes"
               {...getFieldData("metadata.notes").fullRepresentation}
             />
@@ -348,14 +345,8 @@ const FormFieldsContainer = () => {
           >
             <RelatedItemsField
               fieldPath="metadata.relatedItems"
-              label={
-                <FieldLabel
-                  htmlFor={"metadata.relatedItems"}
-                  icon="pencil"
-                  label={i18next.t("Link to/from other resources")}
-                />
-              }
-              {...getFieldData("metadata.relatedItems")}
+
+              {...getFieldData("metadata.relatedItems").fullRepresentation}
             />
           </Overridable>
         </AccordionField>
