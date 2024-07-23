@@ -11,7 +11,7 @@ import {
   LocalVocabularySelectField,
   VocabularyTreeSelectField,
 } from "@js/oarepo_vocabularies";
-import { AccordionField, FieldLabel, TextField } from "react-invenio-forms";
+import { AccordionField, TextField } from "react-invenio-forms";
 import {
   StringArrayField,
   AdditionalTitlesField,
@@ -71,7 +71,8 @@ const FormFieldsContainer = () => {
             <TextField
               optimized
               fieldPath="metadata.title"
-              {...getFieldData("metadata.title").fullRepresentation}
+              {...getFieldData({ fieldPath: "metadata.title" })
+                .fullRepresentation}
               onBlur={() => {
                 const cleanedContent = sanitizeInput(
                   getIn(values, "metadata.title")
@@ -97,8 +98,10 @@ const FormFieldsContainer = () => {
               clearable
               optionsListName="resource-types"
               filterFunction={filterResourceTypes}
-              {...getFieldData("metadata.resourceType", "tag")
-                .fullRepresentation}
+              {...getFieldData({
+                fieldPath: "metadata.resourceType",
+                icon: "tag",
+              }).fullRepresentation}
             />
           </Overridable>
           <Overridable
@@ -125,8 +128,10 @@ const FormFieldsContainer = () => {
               multiple={true}
               clearable
               optionsListName="languages"
-              {...getFieldData("metadata.languages", "language")
-                .fullRepresentation}
+              {...getFieldData({
+                fieldPath: "metadata.languages",
+                icon: "language",
+              }).fullRepresentation}
             />
           </Overridable>
           <Overridable
@@ -135,8 +140,10 @@ const FormFieldsContainer = () => {
           >
             <EDTFSingleDatePicker
               fieldPath="metadata.dateIssued"
-              {...getFieldData("metadata.dateIssued", "calendar")
-                .fullRepresentation}
+              {...getFieldData({
+                fieldPath: "metadata.dateIssued",
+                icon: "calendar",
+              }).fullRepresentation}
             />
           </Overridable>
           <Overridable
@@ -146,7 +153,8 @@ const FormFieldsContainer = () => {
             <StringArrayField
               fieldPath="metadata.publishers"
               addButtonLabel={i18next.t("Add publisher")}
-              {...getFieldData("metadata.publishers").fullRepresentation}
+              {...getFieldData({ fieldPath: "metadata.publishers" })
+                .fullRepresentation}
             />
           </Overridable>
           <Overridable
@@ -158,8 +166,10 @@ const FormFieldsContainer = () => {
               fieldPath="metadata.accessRights"
               clearable
               optionsListName="access-rights"
-              {...getFieldData("metadata.accessRights", "tag")
-                .fullRepresentation}
+              {...getFieldData({
+                fieldPath: "metadata.accessRights",
+                icon: "tag",
+              }).fullRepresentation}
             />
           </Overridable>
           <Overridable
@@ -184,8 +194,10 @@ const FormFieldsContainer = () => {
                 },
               }}
               fieldPath="metadata.rights"
-              {...getFieldData("metadata.rights", "drivers license")
-                .fullRepresentation}
+              {...getFieldData({
+                fieldPath: "metadata.rights",
+                icon: "drivers license",
+              }).fullRepresentation}
             />
           </Overridable>
           <Overridable
@@ -195,7 +207,10 @@ const FormFieldsContainer = () => {
             {editMode && (
               <EDTFSingleDatePicker
                 fieldPath="metadata.dateModified"
-                {...getFieldData("metadata.dateModified").fullRepresentation}
+                {...getFieldData({
+                  fieldPath: "metadata.dateModified",
+                  icon: "calendar",
+                }).fullRepresentation}
               />
             )}
           </Overridable>
@@ -207,19 +222,17 @@ const FormFieldsContainer = () => {
           includesPaths={["metadata.creators", "metadata.contributors"]}
           label={i18next.t("Creators")}
         >
-          {/* TODO: make a hoc to wrap each component that needs a specific provider (with specific prefix) */}
           <Overridable
             id="NrDocs.Deposit.CreatorsField.container"
             fieldPath="metadata.creators"
           >
             <CreatibutorsField
-              label={i18next.t("Authors")}
-              labelIcon="user"
               fieldPath="metadata.creators"
               schema="creators"
               autocompleteNames="off"
-              required
               fieldPathPrefix="metadata.creators.0"
+              {...getFieldData({ fieldPath: "metadata.creators", icon: "user" })
+                .fullRepresentation}
             />
           </Overridable>
           <Overridable
@@ -227,24 +240,22 @@ const FormFieldsContainer = () => {
             fieldPath="metadata.contributors"
           >
             <CreatibutorsField
-              label={i18next.t("Contributors")}
               addButtonLabel={i18next.t("Add contributor")}
               modal={{
                 addLabel: i18next.t("Add contributor"),
                 editLabel: i18next.t("Edit contributor"),
               }}
-              labelIcon="user"
               fieldPath="metadata.contributors"
               schema="contributors"
               autocompleteNames="off"
-              nameFieldPlaceholder={i18next.t("Write contributor's name.")}
-              lastNameFieldPlaceholder={i18next.t(
-                "Write contributor's last name."
-              )}
               nameTypeHelpText={i18next.t(
                 "Choose if the contributor is a person or an organization."
               )}
               fieldPathPrefix="metadata.contributors.0"
+              {...getFieldData({
+                fieldPath: "metadata.contributors",
+                icon: "user",
+              }).fullRepresentation}
             />
           </Overridable>
         </AccordionField>
@@ -278,8 +289,10 @@ const FormFieldsContainer = () => {
               multiple={true}
               clearable
               optionsListName="subject-categories"
-              {...getFieldData("metadata.subjectCategories", "tag")
-                .fullRepresentation}
+              {...getFieldData({
+                fieldPath: "metadata.subjectCategories",
+                icon: "tag",
+              }).fullRepresentation}
             />
           </Overridable>
           <Overridable
@@ -295,7 +308,8 @@ const FormFieldsContainer = () => {
                 valid_elements: validEditorTags,
               }}
               lngFieldWidth={4}
-              {...getFieldData("metadata.abstract").fullRepresentation}
+              {...getFieldData({ fieldPath: "metadata.abstract" })
+                .fullRepresentation}
             />
           </Overridable>
           <Overridable
@@ -316,7 +330,8 @@ const FormFieldsContainer = () => {
           >
             <StringArrayField
               fieldPath="metadata.notes"
-              {...getFieldData("metadata.notes").fullRepresentation}
+              {...getFieldData({ fieldPath: "metadata.notes" })
+                .fullRepresentation}
             />
           </Overridable>
         </AccordionField>
@@ -345,8 +360,8 @@ const FormFieldsContainer = () => {
           >
             <RelatedItemsField
               fieldPath="metadata.relatedItems"
-
-              {...getFieldData("metadata.relatedItems").fullRepresentation}
+              {...getFieldData({ fieldPath: "metadata.relatedItems" })
+                .fullRepresentation}
             />
           </Overridable>
         </AccordionField>
