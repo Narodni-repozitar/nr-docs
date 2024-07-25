@@ -1,4 +1,4 @@
-oarepo[s3]==12.0.21
+oarepo==12.0.22
 cachetools==5.4.0
 deepmerge==1.1.1
 et-xmlfile==1.1.0
@@ -12,14 +12,14 @@ language-data==1.2.0
 levenshtein==0.25.1
 marisa-trie==1.2.0
 marshmallow-i18n-messages==0.1.0
-nr-metadata==2.0.33
+nr-metadata==2.0.34
 nr-oaipmh-harvesters==1.0.20
 nr-vocabularies==2.1.0
-oarepo-dashboard==1.0.8
-oarepo-global-search==1.0.15
+oarepo-dashboard==1.0.9
+oarepo-global-search==1.0.18
 oarepo-oai-pmh-harvester==4.1.0
 oarepo-published-service==1.0.3
-oarepo-requests==1.3.1
+oarepo-requests==1.3.2
 oarepo-runtime==1.5.43
 oarepo-ui==5.2.0
 oarepo-vocabularies==2.0.92
