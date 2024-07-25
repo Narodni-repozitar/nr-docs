@@ -1,5 +1,3 @@
-from typing import Union, Optional
-
 from invenio_access.permissions import system_identity
 from oarepo_runtime.datastreams.types import StreamBatch
 from oarepo_runtime.datastreams.writers import BaseWriter
