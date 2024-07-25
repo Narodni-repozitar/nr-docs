@@ -15,11 +15,3 @@ class CompositeWriter(BaseWriter):
         self.service.write(batch)
         self.attachment_service.write(batch)
         return batch
-
-class TimestampUpdateWriter(BaseWriter):
-    def __init__(self, *, service, identity=None):
-        identity = identity or system_identity
-        self.service = service
-
-    def write(self, batch: StreamBatch) -> StreamBatch:
-        pass
