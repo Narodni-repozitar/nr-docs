@@ -71,8 +71,7 @@ const FormFieldsContainer = () => {
             <TextField
               optimized
               fieldPath="metadata.title"
-              {...getFieldData({ fieldPath: "metadata.title" })
-                .fullRepresentation}
+              {...getFieldData({ fieldPath: "metadata.title" })}
               onBlur={() => {
                 const cleanedContent = sanitizeInput(
                   getIn(values, "metadata.title")
@@ -101,7 +100,7 @@ const FormFieldsContainer = () => {
               {...getFieldData({
                 fieldPath: "metadata.resourceType",
                 icon: "tag",
-              }).fullRepresentation}
+              })}
             />
           </Overridable>
           <Overridable
@@ -131,7 +130,7 @@ const FormFieldsContainer = () => {
               {...getFieldData({
                 fieldPath: "metadata.languages",
                 icon: "language",
-              }).fullRepresentation}
+              })}
             />
           </Overridable>
           <Overridable
@@ -143,7 +142,7 @@ const FormFieldsContainer = () => {
               {...getFieldData({
                 fieldPath: "metadata.dateIssued",
                 icon: "calendar",
-              }).fullRepresentation}
+              })}
             />
           </Overridable>
           <Overridable
@@ -153,8 +152,7 @@ const FormFieldsContainer = () => {
             <StringArrayField
               fieldPath="metadata.publishers"
               addButtonLabel={i18next.t("Add publisher")}
-              {...getFieldData({ fieldPath: "metadata.publishers" })
-                .fullRepresentation}
+              {...getFieldData({ fieldPath: "metadata.publishers" })}
             />
           </Overridable>
           <Overridable
@@ -169,7 +167,7 @@ const FormFieldsContainer = () => {
               {...getFieldData({
                 fieldPath: "metadata.accessRights",
                 icon: "tag",
-              }).fullRepresentation}
+              })}
             />
           </Overridable>
           <Overridable
@@ -197,7 +195,7 @@ const FormFieldsContainer = () => {
               {...getFieldData({
                 fieldPath: "metadata.rights",
                 icon: "drivers license",
-              }).fullRepresentation}
+              })}
             />
           </Overridable>
           <Overridable
@@ -210,7 +208,7 @@ const FormFieldsContainer = () => {
                 {...getFieldData({
                   fieldPath: "metadata.dateModified",
                   icon: "calendar",
-                }).fullRepresentation}
+                })}
               />
             )}
           </Overridable>
@@ -231,8 +229,10 @@ const FormFieldsContainer = () => {
               schema="creators"
               autocompleteNames="off"
               fieldPathPrefix="metadata.creators.0"
-              {...getFieldData({ fieldPath: "metadata.creators", icon: "user" })
-                .fullRepresentation}
+              {...getFieldData({
+                fieldPath: "metadata.creators",
+                icon: "user",
+              })}
             />
           </Overridable>
           <Overridable
@@ -255,7 +255,7 @@ const FormFieldsContainer = () => {
               {...getFieldData({
                 fieldPath: "metadata.contributors",
                 icon: "user",
-              }).fullRepresentation}
+              })}
             />
           </Overridable>
         </AccordionField>
@@ -292,7 +292,7 @@ const FormFieldsContainer = () => {
               {...getFieldData({
                 fieldPath: "metadata.subjectCategories",
                 icon: "tag",
-              }).fullRepresentation}
+              })}
             />
           </Overridable>
           <Overridable
@@ -308,8 +308,7 @@ const FormFieldsContainer = () => {
                 valid_elements: validEditorTags,
               }}
               lngFieldWidth={4}
-              {...getFieldData({ fieldPath: "metadata.abstract" })
-                .fullRepresentation}
+              {...getFieldData({ fieldPath: "metadata.abstract" })}
             />
           </Overridable>
           <Overridable
@@ -330,8 +329,7 @@ const FormFieldsContainer = () => {
           >
             <StringArrayField
               fieldPath="metadata.notes"
-              {...getFieldData({ fieldPath: "metadata.notes" })
-                .fullRepresentation}
+              {...getFieldData({ fieldPath: "metadata.notes" })}
             />
           </Overridable>
         </AccordionField>
@@ -360,8 +358,7 @@ const FormFieldsContainer = () => {
           >
             <RelatedItemsField
               fieldPath="metadata.relatedItems"
-              {...getFieldData({ fieldPath: "metadata.relatedItems" })
-                .fullRepresentation}
+              {...getFieldData({ fieldPath: "metadata.relatedItems" })}
             />
           </Overridable>
         </AccordionField>
