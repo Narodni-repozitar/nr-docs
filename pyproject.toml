@@ -6,7 +6,6 @@ packages = []
 authors = []
 dependencies = [
     "deepmerge>=1.1.0",
-    "invenio-drafts-resources>=1.0.4",
     "json5",
     "marshmallow-i18n-messages",
     "nr-metadata>=2.0.0",
@@ -20,7 +19,7 @@ dependencies = [
     "oarepo-runtime",
     "oarepo-ui",
     "oarepo-vocabularies",
-    "oarepo[s3]==12.*",
+    "oarepo[s3,rdm]>=12.0.27,<13",
     "python-dotenv",
 ]
 requires-python = ">=3.10,<3.11"
