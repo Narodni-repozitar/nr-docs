@@ -1,4 +1,4 @@
-oarepo[s3]==12.0.22
+oarepo[s3,rdm]==12.0.27
 cachetools==5.4.0
 deepmerge==1.1.1
 et-xmlfile==1.1.0
@@ -27,5 +27,4 @@ openpyxl==3.1.5
 python-dotenv==1.0.1
 rapidfuzz==3.9.4
 sickle==0.7.0
-tqdm==4.66.4
 whitenoise==6.7.0
