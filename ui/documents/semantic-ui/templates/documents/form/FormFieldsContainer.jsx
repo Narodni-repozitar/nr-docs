@@ -110,11 +110,6 @@ const FormFieldsContainer = () => {
             <IdentifiersField
               options={objectIdentifiersSchema}
               fieldPath="metadata.objectIdentifiers"
-              identifierLabel={i18next.t("Identifier")}
-              label={i18next.t("Identifier")}
-              helpText={i18next.t(
-                "Choose identifier type and write the identifier. You can add more identifiers."
-              )}
             />
           </Overridable>
           <Overridable
