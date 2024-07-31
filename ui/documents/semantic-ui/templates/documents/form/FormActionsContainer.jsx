@@ -5,13 +5,11 @@ import {
   PreviewButton,
   SaveButton,
   DeleteButton,
-  useFormConfig,
 } from "@js/oarepo_ui";
 import { TextField, FieldLabel } from "react-invenio-forms";
 import { i18next } from "@translations/i18next";
 
 const FormActionsContainer = () => {
-  const { links } = useFormConfig();
   return (
     <Card fluid>
       {/* <Card.Content>
@@ -47,7 +45,7 @@ const FormActionsContainer = () => {
             />
           </Grid.Column>
           <Grid.Column width={16} className="pt-10">
-            <DeleteButton redirectUrl={links.search} />
+            <DeleteButton redirectUrl="/me/records" />
           </Grid.Column>
         </Grid>
       </Card.Content>
