@@ -1,4 +1,5 @@
 forks:
+  invenio-administration: https://github.com/oarepo/invenio-administration
   invenio-communities: https://github.com/oarepo/invenio-communities
   invenio-drafts-resources: https://github.com/oarepo/invenio-drafts-resources
   invenio-oauthclient: https://github.com/oarepo/invenio-oauthclient
