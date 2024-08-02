@@ -35,7 +35,9 @@ const FormFieldsContainer = () => {
   const { formConfig, files: recordFiles } = useFormConfig();
   const editMode = _has(formConfig, "updateUrl");
   const filterResourceTypes = useCallback(
-    (options) => options.filter((option) => option.props?.submission),
+    (options) => options.map(opt => ({
+        ...opt, selectable: !!opt.props?.submission
+      })),
     []
   );
 
