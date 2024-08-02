@@ -2,8 +2,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
-"POT-Creation-Date: 2024-07-15T10:50:58.226024\n"
-"PO-Revision-Date: 2024-07-15T10:50:58.226026\n"
+"POT-Creation-Date: 2024-07-24T15:09:51.259067\n"
+"PO-Revision-Date: 2024-07-24T15:09:51.259068\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -49,6 +49,8 @@ msgstr "Abstract"
 
 msgid "metadata/abstract.help"
 msgstr ""
+"Choose abstract language and write down the text.Abstract can be provided in"
+" multiple languages."
 
 msgid "metadata/abstract.hint"
 msgstr ""
@@ -74,10 +76,11 @@ msgstr ""
 msgid "metadata/accessRights.label"
 msgstr "Access rights"
 
-msgid "metadata/accessRights.help"
-msgstr ""
-
 msgid "metadata/accessRights.hint"
+msgstr ""
+"Choose access type - if the resource is open or has some restrictions."
+
+msgid "metadata/accessRights.help"
 msgstr ""
 
 msgid "metadata/accessRights/id.help"
@@ -139,6 +142,8 @@ msgstr "Additional titles"
 
 msgid "metadata/additionalTitles.help"
 msgstr ""
+"If the title is given in other languages, choose the type of title and "
+"corresponding language."
 
 msgid "metadata/additionalTitles.hint"
 msgstr ""
@@ -210,6 +215,8 @@ msgstr "Affiliation"
 
 msgid "metadata/contributors/affiliations.hint"
 msgstr ""
+"Start typing the name of the institution, then select the institution from "
+"the menu."
 
 msgid "metadata/contributors/affiliations/id.help"
 msgstr ""
@@ -301,11 +308,13 @@ msgstr ""
 msgid "metadata/contributors/affiliations/@v.hint"
 msgstr ""
 
+msgid "metadata/contributors/authorityIdentifiers.label"
+msgstr "Person identifier"
+
 msgid "metadata/contributors/authorityIdentifiers.help"
 msgstr ""
-
-msgid "metadata/contributors/authorityIdentifiers.label"
-msgstr ""
+"Choose the identifier type from the menu. Write the identifier without a "
+"prefix (e.g. https://orcid.org/0009-0004-8646-7185 or jk01051816)."
 
 msgid "metadata/contributors/authorityIdentifiers.hint"
 msgstr ""
@@ -313,10 +322,10 @@ msgstr ""
 msgid "identifier.label"
 msgstr "Identifier"
 
-msgid "identifier.help"
-msgstr ""
-
 msgid "identifier.hint"
+msgstr "e.g. https://orcid.org/0009-0004-8646-7185 for ORCID."
+
+msgid "identifier.help"
 msgstr ""
 
 msgid "identifier_type.label"
@@ -354,10 +363,10 @@ msgstr ""
 msgid "metadata/contributors/contributorType.label"
 msgstr "Contributor's type"
 
-msgid "metadata/contributors/contributorType.help"
-msgstr ""
-
 msgid "metadata/contributors/contributorType.hint"
+msgstr "Choose the role of the contributor (editor, illustrator…)."
+
+msgid "metadata/contributors/contributorType.help"
 msgstr ""
 
 msgid "metadata/contributors/contributorType/id.help"
@@ -387,31 +396,33 @@ msgstr ""
 msgid "metadata/contributors/contributorType/@v.hint"
 msgstr ""
 
+msgid "metadata/contributors/familyName.label"
+msgstr "Last name"
+
+msgid "metadata/contributors/familyName.hint"
+msgstr "Write the contributor's last name."
+
 msgid "metadata/contributors/familyName.help"
 msgstr ""
 
-msgid "metadata/contributors/familyName.label"
-msgstr ""
-
-msgid "metadata/contributors/familyName.hint"
-msgstr ""
-
 msgid "metadata/contributors/fullName.label"
-msgstr "Contributor name"
+msgstr "Contributor's name"
 
 msgid "metadata/contributors/fullName.help"
 msgstr ""
 
 msgid "metadata/contributors/fullName.hint"
 msgstr ""
-
-msgid "metadata/contributors/givenName.help"
-msgstr ""
+"Start typing the name of the institution, then select the institution from "
+"the menu."
 
 msgid "metadata/contributors/givenName.label"
-msgstr ""
+msgstr "Name"
 
 msgid "metadata/contributors/givenName.hint"
+msgstr "Write the contributor's name."
+
+msgid "metadata/contributors/givenName.help"
 msgstr ""
 
 msgid "metadata/contributors/nameType.label"
@@ -457,6 +468,8 @@ msgstr "Affiliation"
 
 msgid "metadata/creators/affiliations.hint"
 msgstr ""
+"Start typing the name of the institution, then select the institution from "
+"the menu."
 
 msgid "metadata/creators/affiliations/id.help"
 msgstr ""
@@ -548,40 +561,44 @@ msgstr ""
 msgid "metadata/creators/affiliations/@v.hint"
 msgstr ""
 
+msgid "metadata/creators/authorityIdentifiers.label"
+msgstr "Person identifier"
+
 msgid "metadata/creators/authorityIdentifiers.help"
 msgstr ""
-
-msgid "metadata/creators/authorityIdentifiers.label"
-msgstr ""
+"Choose the identifier type from the menu. Write the identifier without a "
+"prefix (e.g. https://orcid.org/0009-0004-8646-7185 or jk01051816)."
 
 msgid "metadata/creators/authorityIdentifiers.hint"
 msgstr ""
 
+msgid "metadata/creators/familyName.label"
+msgstr "Last name"
+
+msgid "metadata/creators/familyName.hint"
+msgstr "Write the author's last name."
+
 msgid "metadata/creators/familyName.help"
 msgstr ""
 
-msgid "metadata/creators/familyName.label"
-msgstr ""
-
-msgid "metadata/creators/familyName.hint"
-msgstr ""
-
 msgid "metadata/creators/fullName.label"
-msgstr "Author name"
+msgstr "Author's name"
 
 msgid "metadata/creators/fullName.help"
 msgstr ""
 
 msgid "metadata/creators/fullName.hint"
 msgstr ""
-
-msgid "metadata/creators/givenName.help"
-msgstr ""
+"Start typing the name of the institution, then select the institution from "
+"the menu."
 
 msgid "metadata/creators/givenName.label"
-msgstr ""
+msgstr "Name"
 
 msgid "metadata/creators/givenName.hint"
+msgstr "Write the author's name."
+
+msgid "metadata/creators/givenName.help"
 msgstr ""
 
 msgid "metadata/creators/nameType.label"
@@ -611,11 +628,11 @@ msgstr ""
 msgid "metadata/dateIssued.label"
 msgstr "Date issued"
 
-msgid "metadata/dateIssued.help"
-msgstr ""
-
 msgid "metadata/dateIssued.hint"
-msgstr ""
+msgstr "Choose the issuance date from the calendar."
+
+msgid "metadata/dateIssued.help"
+msgstr "The date can be a year, year and month or a full date."
 
 msgid "metadata/dateModified.label"
 msgstr "Date modified"
@@ -638,11 +655,11 @@ msgstr ""
 msgid "metadata/events/eventDate.label"
 msgstr "Event date"
 
-msgid "metadata/events/eventDate.help"
-msgstr ""
-
 msgid "metadata/events/eventDate.hint"
-msgstr ""
+msgstr "Choose the time period (From - To)."
+
+msgid "metadata/events/eventDate.help"
+msgstr "Choose the time interval in which the event took place."
 
 msgid "metadata/events/eventLocation.help"
 msgstr ""
@@ -656,10 +673,10 @@ msgstr ""
 msgid "metadata/events/eventLocation/country.label"
 msgstr "Country"
 
-msgid "metadata/events/eventLocation/country.help"
-msgstr ""
-
 msgid "metadata/events/eventLocation/country.hint"
+msgstr "Choose a country from the menu."
+
+msgid "metadata/events/eventLocation/country.help"
 msgstr ""
 
 msgid "metadata/events/eventLocation/country/id.help"
@@ -690,16 +707,16 @@ msgid "metadata/events/eventLocation/country/@v.hint"
 msgstr ""
 
 msgid "metadata/events/eventLocation/place.label"
-msgstr "Place"
+msgstr "Event location"
+
+msgid "metadata/events/eventLocation/place.hint"
+msgstr "Write the location of the event (city)."
 
 msgid "metadata/events/eventLocation/place.help"
 msgstr ""
 
-msgid "metadata/events/eventLocation/place.hint"
-msgstr ""
-
 msgid "metadata/events/eventNameAlternate.help"
-msgstr ""
+msgstr "If the event has other known names, list them here."
 
 msgid "metadata/events/eventNameAlternate.label"
 msgstr "Event alternate name"
@@ -710,10 +727,10 @@ msgstr ""
 msgid "metadata/events/eventNameOriginal.label"
 msgstr "Event name"
 
-msgid "metadata/events/eventNameOriginal.help"
-msgstr ""
-
 msgid "metadata/events/eventNameOriginal.hint"
+msgstr "Write the main name of the event."
+
+msgid "metadata/events/eventNameOriginal.help"
 msgstr ""
 
 msgid "metadata/externalLocation.help"
@@ -755,10 +772,11 @@ msgstr ""
 msgid "metadata/fundingReferences/funder.label"
 msgstr "Funder"
 
-msgid "metadata/fundingReferences/funder.help"
-msgstr ""
-
 msgid "metadata/fundingReferences/funder.hint"
+msgstr ""
+"Start typing the name of the funder, then select the funder from the menu."
+
+msgid "metadata/fundingReferences/funder.help"
 msgstr ""
 
 msgid "metadata/fundingReferences/funder/id.help"
@@ -791,28 +809,29 @@ msgstr ""
 msgid "metadata/fundingReferences/fundingProgram.label"
 msgstr "Funding program"
 
-msgid "metadata/fundingReferences/fundingProgram.help"
-msgstr ""
-
 msgid "metadata/fundingReferences/fundingProgram.hint"
+msgstr ""
+"Write the name of the research program under which the project was funded."
+
+msgid "metadata/fundingReferences/fundingProgram.help"
 msgstr ""
 
 msgid "metadata/fundingReferences/projectID.label"
 msgstr "Project identifier"
 
-msgid "metadata/fundingReferences/projectID.help"
-msgstr ""
-
 msgid "metadata/fundingReferences/projectID.hint"
+msgstr "Write the project code."
+
+msgid "metadata/fundingReferences/projectID.help"
 msgstr ""
 
 msgid "metadata/fundingReferences/projectName.label"
 msgstr "Project name"
 
-msgid "metadata/fundingReferences/projectName.help"
-msgstr ""
-
 msgid "metadata/fundingReferences/projectName.hint"
+msgstr "Write the project name."
+
+msgid "metadata/fundingReferences/projectName.help"
 msgstr ""
 
 msgid "metadata/geoLocations.label"
@@ -867,7 +886,7 @@ msgid "metadata/languages.help"
 msgstr ""
 
 msgid "metadata/languages.hint"
-msgstr ""
+msgstr "Choose the language(s) of the resource."
 
 msgid "metadata/languages/id.help"
 msgstr ""
@@ -927,16 +946,18 @@ msgid "metadata/notes.label"
 msgstr "Notes"
 
 msgid "metadata/notes.help"
-msgstr ""
+msgstr "Space for additional information related to the resource."
 
 msgid "metadata/notes.hint"
 msgstr ""
 
 msgid "metadata/objectIdentifiers.label"
-msgstr "Object identifiers"
+msgstr "Identifier"
 
 msgid "metadata/objectIdentifiers.help"
 msgstr ""
+"Choose the type of identifier and write it down. You can provide more "
+"identifiers."
 
 msgid "metadata/objectIdentifiers.hint"
 msgstr ""
@@ -944,19 +965,19 @@ msgstr ""
 msgid "metadata/objectIdentifiers/identifier.label"
 msgstr "Object identifier"
 
-msgid "metadata/objectIdentifiers/identifier.help"
-msgstr ""
-
 msgid "metadata/objectIdentifiers/identifier.hint"
+msgstr "e.g. 10.1086/679716 for DOI."
+
+msgid "metadata/objectIdentifiers/identifier.help"
 msgstr ""
 
 msgid "metadata/objectIdentifiers/scheme.label"
 msgstr "Identifier type"
 
-msgid "metadata/objectIdentifiers/scheme.help"
-msgstr ""
-
 msgid "metadata/objectIdentifiers/scheme.hint"
+msgstr "e.g. DOI, HANDLE or ISBN."
+
+msgid "metadata/objectIdentifiers/scheme.help"
 msgstr ""
 
 msgid "metadata/objectIdentifiers/scheme.enum.DOI"
@@ -990,7 +1011,7 @@ msgid "metadata/publishers.label"
 msgstr "Publishers"
 
 msgid "metadata/publishers.help"
-msgstr ""
+msgstr "Write the name of the publisher. You can write more publishers."
 
 msgid "metadata/publishers.hint"
 msgstr ""
@@ -1000,6 +1021,9 @@ msgstr "Link to/from other resources:"
 
 msgid "metadata/relatedItems.help"
 msgstr ""
+"Write down information about the resource related to the one you are "
+"describing here (e.g. if you are describing an article, you can identify the"
+" journal in which the article was published)."
 
 msgid "metadata/relatedItems.hint"
 msgstr ""
@@ -1023,6 +1047,8 @@ msgstr "Affiliation"
 
 msgid "metadata/relatedItems/itemContributors/affiliations.hint"
 msgstr ""
+"Start typing the name of the institution, then select the institution from "
+"the menu."
 
 msgid "metadata/relatedItems/itemContributors/affiliations/id.help"
 msgstr ""
@@ -1129,11 +1155,13 @@ msgstr ""
 msgid "metadata/relatedItems/itemContributors/affiliations/@v.hint"
 msgstr ""
 
+msgid "metadata/relatedItems/itemContributors/authorityIdentifiers.label"
+msgstr "Person identifier"
+
 msgid "metadata/relatedItems/itemContributors/authorityIdentifiers.help"
 msgstr ""
-
-msgid "metadata/relatedItems/itemContributors/authorityIdentifiers.label"
-msgstr ""
+"Choose the identifier type from the menu. Write the identifier without a "
+"prefix (e.g. https://orcid.org/0009-0004-8646-7185 or jk01051816)."
 
 msgid "metadata/relatedItems/itemContributors/authorityIdentifiers.hint"
 msgstr ""
@@ -1141,10 +1169,10 @@ msgstr ""
 msgid "metadata/relatedItems/itemContributors/contributorType.label"
 msgstr "Contributor's type"
 
-msgid "metadata/relatedItems/itemContributors/contributorType.help"
-msgstr ""
-
 msgid "metadata/relatedItems/itemContributors/contributorType.hint"
+msgstr "Choose the role of the contributor (editor, illustrator…)."
+
+msgid "metadata/relatedItems/itemContributors/contributorType.help"
 msgstr ""
 
 msgid "metadata/relatedItems/itemContributors/contributorType/id.help"
@@ -1174,31 +1202,33 @@ msgstr ""
 msgid "metadata/relatedItems/itemContributors/contributorType/@v.hint"
 msgstr ""
 
+msgid "metadata/relatedItems/itemContributors/familyName.label"
+msgstr "Last name"
+
+msgid "metadata/relatedItems/itemContributors/familyName.hint"
+msgstr "Write the author's last name."
+
 msgid "metadata/relatedItems/itemContributors/familyName.help"
 msgstr ""
 
-msgid "metadata/relatedItems/itemContributors/familyName.label"
-msgstr ""
-
-msgid "metadata/relatedItems/itemContributors/familyName.hint"
-msgstr ""
-
 msgid "metadata/relatedItems/itemContributors/fullName.label"
-msgstr "Author name"
+msgstr "Author's name"
 
 msgid "metadata/relatedItems/itemContributors/fullName.help"
 msgstr ""
 
 msgid "metadata/relatedItems/itemContributors/fullName.hint"
 msgstr ""
-
-msgid "metadata/relatedItems/itemContributors/givenName.help"
-msgstr ""
+"Start typing the name of the institution, then select the institution from "
+"the menu."
 
 msgid "metadata/relatedItems/itemContributors/givenName.label"
-msgstr ""
+msgstr "Name"
 
 msgid "metadata/relatedItems/itemContributors/givenName.hint"
+msgstr "Write the author's name."
+
+msgid "metadata/relatedItems/itemContributors/givenName.help"
 msgstr ""
 
 msgid "metadata/relatedItems/itemContributors/nameType.label"
@@ -1235,6 +1265,8 @@ msgstr "Affiliation"
 
 msgid "metadata/relatedItems/itemCreators/affiliations.hint"
 msgstr ""
+"Start typing the name of the institution, then select the institution from "
+"the menu."
 
 msgid "metadata/relatedItems/itemCreators/affiliations/id.help"
 msgstr ""
@@ -1332,40 +1364,44 @@ msgstr ""
 msgid "metadata/relatedItems/itemCreators/affiliations/@v.hint"
 msgstr ""
 
+msgid "metadata/relatedItems/itemCreators/authorityIdentifiers.label"
+msgstr "Person identifier"
+
 msgid "metadata/relatedItems/itemCreators/authorityIdentifiers.help"
 msgstr ""
-
-msgid "metadata/relatedItems/itemCreators/authorityIdentifiers.label"
-msgstr ""
+"Choose the identifier type from the menu. Write the identifier without a "
+"prefix (e.g. https://orcid.org/0009-0004-8646-7185 or jk01051816)."
 
 msgid "metadata/relatedItems/itemCreators/authorityIdentifiers.hint"
 msgstr ""
 
+msgid "metadata/relatedItems/itemCreators/familyName.label"
+msgstr "Last name"
+
+msgid "metadata/relatedItems/itemCreators/familyName.hint"
+msgstr "Write the author's last name."
+
 msgid "metadata/relatedItems/itemCreators/familyName.help"
 msgstr ""
 
-msgid "metadata/relatedItems/itemCreators/familyName.label"
-msgstr ""
-
-msgid "metadata/relatedItems/itemCreators/familyName.hint"
-msgstr ""
-
 msgid "metadata/relatedItems/itemCreators/fullName.label"
-msgstr "Author name"
+msgstr "Author's name"
 
 msgid "metadata/relatedItems/itemCreators/fullName.help"
 msgstr ""
 
 msgid "metadata/relatedItems/itemCreators/fullName.hint"
 msgstr ""
-
-msgid "metadata/relatedItems/itemCreators/givenName.help"
-msgstr ""
+"Start typing the name of the institution, then select the institution from "
+"the menu."
 
 msgid "metadata/relatedItems/itemCreators/givenName.label"
-msgstr ""
+msgstr "Name"
 
 msgid "metadata/relatedItems/itemCreators/givenName.hint"
+msgstr "Write the author's name."
+
+msgid "metadata/relatedItems/itemCreators/givenName.help"
 msgstr ""
 
 msgid "metadata/relatedItems/itemCreators/nameType.label"
@@ -1402,7 +1438,7 @@ msgid "metadata/relatedItems/itemIssue.hint"
 msgstr ""
 
 msgid "metadata/relatedItems/itemPIDs.help"
-msgstr ""
+msgstr "Permanent object identifiers such as ISBN, DOI, etc."
 
 msgid "metadata/relatedItems/itemPIDs.label"
 msgstr ""
@@ -1413,19 +1449,19 @@ msgstr ""
 msgid "metadata/relatedItems/itemPIDs/identifier.label"
 msgstr "Object identifier"
 
-msgid "metadata/relatedItems/itemPIDs/identifier.help"
-msgstr ""
-
 msgid "metadata/relatedItems/itemPIDs/identifier.hint"
+msgstr "e.g. 10.1086/679716 for DOI."
+
+msgid "metadata/relatedItems/itemPIDs/identifier.help"
 msgstr ""
 
 msgid "metadata/relatedItems/itemPIDs/scheme.label"
 msgstr "Identifier type"
 
-msgid "metadata/relatedItems/itemPIDs/scheme.help"
-msgstr ""
-
 msgid "metadata/relatedItems/itemPIDs/scheme.hint"
+msgstr "e.g. DOI, HANDLE or ISBN."
+
+msgid "metadata/relatedItems/itemPIDs/scheme.help"
 msgstr ""
 
 msgid "metadata/relatedItems/itemPIDs/scheme.enum.DOI"
@@ -1458,10 +1494,10 @@ msgstr ""
 msgid "metadata/relatedItems/itemRelationType.label"
 msgstr "Relation type"
 
-msgid "metadata/relatedItems/itemRelationType.help"
-msgstr ""
-
 msgid "metadata/relatedItems/itemRelationType.hint"
+msgstr "Choose the relation type."
+
+msgid "metadata/relatedItems/itemRelationType.help"
 msgstr ""
 
 msgid "metadata/relatedItems/itemRelationType/id.help"
@@ -1539,10 +1575,10 @@ msgstr ""
 msgid "metadata/relatedItems/itemTitle.label"
 msgstr "Title"
 
-msgid "metadata/relatedItems/itemTitle.help"
-msgstr ""
-
 msgid "metadata/relatedItems/itemTitle.hint"
+msgstr "Title of the linked document."
+
+msgid "metadata/relatedItems/itemTitle.help"
 msgstr ""
 
 msgid "metadata/relatedItems/itemURL.label"
@@ -1572,13 +1608,13 @@ msgstr ""
 msgid "metadata/relatedItems/itemYear.hint"
 msgstr ""
 
+msgid "metadata/resourceType.hint"
+msgstr "Choose resource type."
+
 msgid "metadata/resourceType.label"
 msgstr "Resource type"
 
 msgid "metadata/resourceType.help"
-msgstr ""
-
-msgid "metadata/resourceType.hint"
 msgstr ""
 
 msgid "metadata/resourceType/id.help"
@@ -1613,6 +1649,9 @@ msgstr "Rights/Licenses"
 
 msgid "metadata/rights.help"
 msgstr ""
+"If a Creative Commons license is associated with the resource, select the "
+"appropriate license option from the menu. We recommend choosing the latest "
+"versions, namely 3.0 Czech and 4.0 International."
 
 msgid "metadata/rights.hint"
 msgstr ""
@@ -1649,6 +1688,8 @@ msgstr "Series"
 
 msgid "metadata/series.help"
 msgstr ""
+"Write down the name of the series/edition. Write down the volume of the "
+"series/edition if the name is provided."
 
 msgid "metadata/series.hint"
 msgstr ""
@@ -1674,10 +1715,10 @@ msgstr ""
 msgid "metadata/subjectCategories.label"
 msgstr "Subject categories"
 
-msgid "metadata/subjectCategories.help"
-msgstr ""
-
 msgid "metadata/subjectCategories.hint"
+msgstr "Choose subject category."
+
+msgid "metadata/subjectCategories.help"
 msgstr ""
 
 msgid "metadata/subjectCategories/id.help"
@@ -1711,7 +1752,7 @@ msgid "metadata/subjects.label"
 msgstr "Keywords"
 
 msgid "metadata/subjects.help"
-msgstr ""
+msgstr "Write down words describing the resource, always choose language."
 
 msgid "metadata/subjects.hint"
 msgstr ""
@@ -1968,19 +2009,19 @@ msgstr ""
 msgid "metadata/title.label"
 msgstr "Title"
 
-msgid "metadata/title.help"
-msgstr ""
-
 msgid "metadata/title.hint"
+msgstr "Fill in the main title of the resource."
+
+msgid "metadata/title.help"
 msgstr ""
 
 msgid "metadata/version.label"
 msgstr "Resource version"
 
-msgid "metadata/version.help"
-msgstr ""
-
 msgid "metadata/version.hint"
+msgstr "Write down the version (first, second…)."
+
+msgid "metadata/version.help"
 msgstr ""
 
 msgid "oai.help"
