@@ -347,6 +347,7 @@
                                 "detail": "vocabulary_item",
                                 "edit": "vocabulary_item",
                                 "input": "vocabulary",
+                                "required": true,
                                 "help": "metadata/contributors/contributorType.help",
                                 "label": "metadata/contributors/contributorType.label",
                                 "hint": "metadata/contributors/contributorType.hint",
@@ -378,6 +379,7 @@
                             "familyName": {
                                 "detail": "keyword",
                                 "input": "keyword",
+                                "required": true,
                                 "help": "metadata/contributors/familyName.help",
                                 "label": "metadata/contributors/familyName.label",
                                 "hint": "metadata/contributors/familyName.hint",
@@ -395,6 +397,7 @@
                             "givenName": {
                                 "detail": "keyword",
                                 "input": "keyword",
+                                "required": true,
                                 "help": "metadata/contributors/givenName.help",
                                 "label": "metadata/contributors/givenName.label",
                                 "hint": "metadata/contributors/givenName.hint",
@@ -575,6 +578,7 @@
                             "familyName": {
                                 "detail": "keyword",
                                 "input": "keyword",
+                                "required": true,
                                 "help": "metadata/creators/familyName.help",
                                 "label": "metadata/creators/familyName.label",
                                 "hint": "metadata/creators/familyName.hint",
@@ -592,6 +596,7 @@
                             "givenName": {
                                 "detail": "keyword",
                                 "input": "keyword",
+                                "required": true,
                                 "help": "metadata/creators/givenName.help",
                                 "label": "metadata/creators/givenName.label",
                                 "hint": "metadata/creators/givenName.hint",
@@ -1196,6 +1201,7 @@
                                             "detail": "vocabulary_item",
                                             "edit": "vocabulary_item",
                                             "input": "vocabulary",
+                                            "required": true,
                                             "help": "metadata/relatedItems/itemContributors/contributorType.help",
                                             "label": "metadata/relatedItems/itemContributors/contributorType.label",
                                             "hint": "metadata/relatedItems/itemContributors/contributorType.hint",
@@ -1227,6 +1233,7 @@
                                         "familyName": {
                                             "detail": "keyword",
                                             "input": "keyword",
+                                            "required": true,
                                             "help": "metadata/relatedItems/itemContributors/familyName.help",
                                             "label": "metadata/relatedItems/itemContributors/familyName.label",
                                             "hint": "metadata/relatedItems/itemContributors/familyName.hint",
@@ -1244,6 +1251,7 @@
                                         "givenName": {
                                             "detail": "keyword",
                                             "input": "keyword",
+                                            "required": true,
                                             "help": "metadata/relatedItems/itemContributors/givenName.help",
                                             "label": "metadata/relatedItems/itemContributors/givenName.label",
                                             "hint": "metadata/relatedItems/itemContributors/givenName.hint",
@@ -1423,6 +1431,7 @@
                                         "familyName": {
                                             "detail": "keyword",
                                             "input": "keyword",
+                                            "required": true,
                                             "help": "metadata/relatedItems/itemCreators/familyName.help",
                                             "label": "metadata/relatedItems/itemCreators/familyName.label",
                                             "hint": "metadata/relatedItems/itemCreators/familyName.hint",
@@ -1440,6 +1449,7 @@
                                         "givenName": {
                                             "detail": "keyword",
                                             "input": "keyword",
+                                            "required": true,
                                             "help": "metadata/relatedItems/itemCreators/givenName.help",
                                             "label": "metadata/relatedItems/itemCreators/givenName.label",
                                             "hint": "metadata/relatedItems/itemCreators/givenName.hint",
