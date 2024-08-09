@@ -1,0 +1,86 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "id": "local://records/parent-v2.0.0.json",
+  "title": "InvenioRDM Parent Record Schema v2.0.0",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "$schema": {
+      "description": "JSONSchema declaration.",
+      "type": "string"
+    },
+
+    "id": {
+      "description": "Persistent record identifier (alphanumeric).",
+      "type": "string"
+    },
+
+    "pid": {"$ref": "local://records/definitions-v1.0.0.json#/internal-pid"},
+
+    "access": {
+      "type": "object",
+      "description": "Access control and ownership for all versions of a record.",
+      "additionalProperties": false,
+      "properties": {
+
+        "owned_by": {
+          "description": "List of owners of the child records.",
+          "type": "array",
+          "uniqueItems": true,
+          "items": {"$ref": "local://records/definitions-v1.0.0.json#/agent"}
+        },
+
+        "grants": {
+          "description": "Access grants for the child records.",
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["subject", "id", "level"],
+            "additionalProperties": false,
+            "properties": {
+              "subject": {
+                "type": "string",
+                "enum": ["user", "role", "sysrole"]
+              },
+              "id": {
+                "type": "string"
+              },
+              "level": {
+                "type": "string"
+              }
+            }
+          }
+        },
+
+        "links": {
+          "description": "Secret links for the child records.",
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["id"],
+            "additionalProperties": false,
+            "properties": {
+              "id": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
+
+    "communities": {
+      "$ref": "local://communities/definitions-v2.0.0.json#/communities"
+    },
+
+    "review": {
+      "$ref": "local://requests/request-v1.0.0.json"
+    },
+
+    "permission_flags": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Storage of permission flag fields."
+    }
+  }
+}

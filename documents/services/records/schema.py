@@ -10,8 +10,10 @@ from nr_metadata.documents.services.records.schema import (
     NRDocumentRecordSchema,
     NRDocumentSyntheticFieldsSchema,
 )
+from marshmallow_utils.fields import NestedAttribute
+from invenio_rdm_records.services.schemas.versions import VersionsSchema
 from oarepo_runtime.services.schema.marshmallow import DictOnlySchema
-
+from invenio_rdm_records.services.schemas.tombstone import DeletionStatusSchema
 
 class GeneratedParentSchema(InvenioParentSchema):
     """"""
@@ -32,6 +34,10 @@ class DocumentsSchema(NRDocumentRecordSchema):
     files = ma.fields.Nested(
         lambda: FilesOptionsSchema(), load_default={"enabled": True}
     )
+    #rdm_records addition
+    versions = NestedAttribute(VersionsSchema, dump_only=True)
+    deletion_status = ma_fields.Nested(DeletionStatusSchema, dump_only=True)
+
 
     # todo this needs to be generated for [default preview] to work
     def get_attribute(self, obj, attr, default):

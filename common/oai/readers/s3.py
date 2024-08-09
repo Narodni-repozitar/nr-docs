@@ -59,8 +59,8 @@ class S3Reader(BaseReader):
         s3_client = boto3.client(
             "s3",
             endpoint_url=self.source,
-            aws_access_key_id=os.environ["NUSL_S3_ACCESS_KEY"],
-            aws_secret_access_key=os.environ["NUSL_S3_SECRET_KEY"],
+            aws_access_key_id="IZ20KLUR2O6Q1L1NESIS",
+            aws_secret_access_key="deVFi1gcvxT1cd6VXwIG14mV41REIO3dLxgZHqlj",
         )
         s3_bucket_name = os.environ.get("NUSL_S3_BUCKET", "nr-repo-docs-harvest")
         harvest_name = os.environ.get("NUSL_S3_HARVEST_NAME", "nusl-harvest-03")

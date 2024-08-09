@@ -72,8 +72,10 @@ documents_requests = "documents.views.requests.api:create_api_blueprint"
 [project.entry-points."invenio_search.mappings"]
 documents = "documents.records.mappings"
 
+
 [project.entry-points."invenio_jsonschemas.schemas"]
 documents = "documents.records.jsonschemas"
+#invenio_rdm_records = "invenio_rdm_records.records.jsonschemas"
 
 [project.entry-points."oarepo.models"]
 documents = "documents.models:records.json"
