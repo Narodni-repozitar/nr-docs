@@ -20,7 +20,7 @@ oarepo-dashboard==1.0.9
 oarepo-global-search==1.0.20
 oarepo-oai-pmh-harvester==4.1.2
 oarepo-published-service==1.0.3
-oarepo-requests==2.0.1
+oarepo-requests==2.0.2
 oarepo-runtime==1.5.48
 oarepo-ui==5.2.1
 oarepo-vocabularies==2.0.94
