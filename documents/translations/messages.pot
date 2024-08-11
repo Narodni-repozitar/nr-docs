@@ -2,8 +2,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
-"POT-Creation-Date: 2024-07-24T15:09:51.259084\n"
-"PO-Revision-Date: 2024-07-24T15:09:51.259085\n"
+"POT-Creation-Date: 2024-08-11T15:05:19.734060\n"
+"PO-Revision-Date: 2024-08-11T15:05:19.734061\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -53,19 +53,19 @@ msgstr ""
 msgid "metadata/abstract.hint"
 msgstr ""
 
-msgid "metadata/abstract/lang.help"
+msgid "metadata/abstract/lang.label"
 msgstr ""
 
-msgid "metadata/abstract/lang.label"
+msgid "metadata/abstract/lang.help"
 msgstr ""
 
 msgid "metadata/abstract/lang.hint"
 msgstr ""
 
-msgid "metadata/abstract/value.help"
+msgid "metadata/abstract/value.label"
 msgstr ""
 
-msgid "metadata/abstract/value.label"
+msgid "metadata/abstract/value.help"
 msgstr ""
 
 msgid "metadata/abstract/value.hint"
@@ -116,19 +116,19 @@ msgstr ""
 msgid "metadata/accessibility.hint"
 msgstr ""
 
-msgid "metadata/accessibility/lang.help"
+msgid "metadata/accessibility/lang.label"
 msgstr ""
 
-msgid "metadata/accessibility/lang.label"
+msgid "metadata/accessibility/lang.help"
 msgstr ""
 
 msgid "metadata/accessibility/lang.hint"
 msgstr ""
 
-msgid "metadata/accessibility/value.help"
+msgid "metadata/accessibility/value.label"
 msgstr ""
 
-msgid "metadata/accessibility/value.label"
+msgid "metadata/accessibility/value.help"
 msgstr ""
 
 msgid "metadata/accessibility/value.hint"
@@ -152,19 +152,19 @@ msgstr ""
 msgid "metadata/additionalTitles/title.hint"
 msgstr ""
 
-msgid "metadata/additionalTitles/title/lang.help"
+msgid "metadata/additionalTitles/title/lang.label"
 msgstr ""
 
-msgid "metadata/additionalTitles/title/lang.label"
+msgid "metadata/additionalTitles/title/lang.help"
 msgstr ""
 
 msgid "metadata/additionalTitles/title/lang.hint"
 msgstr ""
 
-msgid "metadata/additionalTitles/title/value.help"
+msgid "metadata/additionalTitles/title/value.label"
 msgstr ""
 
-msgid "metadata/additionalTitles/title/value.label"
+msgid "metadata/additionalTitles/title/value.help"
 msgstr ""
 
 msgid "metadata/additionalTitles/title/value.hint"
@@ -899,19 +899,19 @@ msgstr ""
 msgid "metadata/methods.hint"
 msgstr ""
 
-msgid "metadata/methods/lang.help"
+msgid "metadata/methods/lang.label"
 msgstr ""
 
-msgid "metadata/methods/lang.label"
+msgid "metadata/methods/lang.help"
 msgstr ""
 
 msgid "metadata/methods/lang.hint"
 msgstr ""
 
-msgid "metadata/methods/value.help"
+msgid "metadata/methods/value.label"
 msgstr ""
 
-msgid "metadata/methods/value.label"
+msgid "metadata/methods/value.help"
 msgstr ""
 
 msgid "metadata/methods/value.hint"
@@ -1724,19 +1724,19 @@ msgstr ""
 msgid "metadata/subjects/subject.hint"
 msgstr ""
 
-msgid "metadata/subjects/subject/lang.help"
+msgid "metadata/subjects/subject/lang.label"
 msgstr ""
 
-msgid "metadata/subjects/subject/lang.label"
+msgid "metadata/subjects/subject/lang.help"
 msgstr ""
 
 msgid "metadata/subjects/subject/lang.hint"
 msgstr ""
 
-msgid "metadata/subjects/subject/value.help"
+msgid "metadata/subjects/subject/value.label"
 msgstr ""
 
-msgid "metadata/subjects/subject/value.label"
+msgid "metadata/subjects/subject/value.help"
 msgstr ""
 
 msgid "metadata/subjects/subject/value.hint"
@@ -1811,19 +1811,19 @@ msgstr ""
 msgid "metadata/technicalInfo.hint"
 msgstr ""
 
-msgid "metadata/technicalInfo/lang.help"
+msgid "metadata/technicalInfo/lang.label"
 msgstr ""
 
-msgid "metadata/technicalInfo/lang.label"
+msgid "metadata/technicalInfo/lang.help"
 msgstr ""
 
 msgid "metadata/technicalInfo/lang.hint"
 msgstr ""
 
-msgid "metadata/technicalInfo/value.help"
+msgid "metadata/technicalInfo/value.label"
 msgstr ""
 
-msgid "metadata/technicalInfo/value.label"
+msgid "metadata/technicalInfo/value.help"
 msgstr ""
 
 msgid "metadata/technicalInfo/value.hint"

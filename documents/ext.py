@@ -32,7 +32,9 @@ class DocumentsExt:
                 if isinstance(app.config.get(identifier), list):
                     app.config[identifier] += getattr(config, identifier)
                 elif isinstance(app.config.get(identifier), dict):
-                    app.config[identifier].update(getattr(config, identifier))
+                    for k, v in getattr(config, identifier).items():
+                        if k not in app.config[identifier]:
+                            app.config[identifier][k] = v
                 else:
                     app.config.setdefault(identifier, getattr(config, identifier))
 

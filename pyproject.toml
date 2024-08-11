@@ -19,6 +19,8 @@ dependencies = [
     "oarepo-runtime",
     "oarepo-ui",
     "oarepo-vocabularies",
+    "oarepo-workflows>=1.0.0",
+    "oarepo-communities>=5.0.0",
     "oarepo[s3,rdm]>=12.0.27,<13",
     "python-dotenv",
 ]
