@@ -32,10 +32,11 @@ record:
   draft-files:
     resource:
       base-classes: [ oarepo_ui.resources.file_resource.S3RedirectFileResource ]
+
   permissions:
     presets:
-#    - communities
-    - authenticated
+      - docs
+
   files:
     resource:
       base-classes: [ oarepo_ui.resources.file_resource.S3RedirectFileResource ]
@@ -63,6 +64,11 @@ record:
     components:
       - "{{oarepo_vocabularies.authorities.components.AuthorityComponent}}"
       - "{{oarepo_runtime.services.components.DateIssuedComponent}}"
+
+  service:
+    base-classes:
+      - common.services.components.AddDefaultCommunityComponent
+
 
   published-service-config:
     base-classes:

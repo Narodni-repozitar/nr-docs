@@ -25,7 +25,7 @@
 from datetime import timedelta
 
 from invenio_communities.generators import IfRestricted
-from invenio_records_permissions.generators import AnyUser
+from invenio_records_permissions.generators import AnyUser, AuthenticatedUser
 from oarepo_communities.services.permissions.generators import (
     CommunityMembers,
     CommunityRole,
@@ -35,7 +35,7 @@ from oarepo_runtime.services.permissions.generators import RecordOwners, UserWit
 from oarepo_workflows import (
     AutoApprove,
     IfInState,
-    WorkflowPermissionPolicy,
+    DefaultWorkflowPermissionPolicy,
     WorkflowRequest,
     WorkflowRequestEscalation,
     WorkflowRequestPolicy,
@@ -43,7 +43,8 @@ from oarepo_workflows import (
 )
 
 
-class DefaultWorkflowPermissions(WorkflowPermissionPolicy):
+# TODO: naming issue: DefaultWorkflowPermissions vs DefaultWorkflowPermissionPolicy
+class DefaultWorkflowPermissions(DefaultWorkflowPermissionPolicy):
     can_create = [
         CommunityRole("submitter"),
     ]
