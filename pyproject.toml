@@ -15,7 +15,7 @@ dependencies = [
     "oarepo-global-search>=1.0.13",
     "oarepo-published-service>=1.0.0",
     "oarepo-published-service>=1.0.2",
-    "oarepo-requests>=1.0.2",
+    "oarepo-requests>=2.0.0",
     "oarepo-runtime",
     "oarepo-ui",
     "oarepo-vocabularies",

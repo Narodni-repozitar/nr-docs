@@ -28,7 +28,7 @@ from invenio_communities.generators import IfRestricted
 from invenio_records_permissions.generators import AnyUser, AuthenticatedUser
 from oarepo_communities.services.permissions.generators import (
     CommunityMembers,
-    CommunityRole,
+    CommunityRole, DefaultCommunityRole,
 )
 from oarepo_requests.services.permissions.generators import IfRequestedBy
 from oarepo_runtime.services.permissions.generators import RecordOwners, UserWithRole
@@ -46,7 +46,9 @@ from oarepo_workflows import (
 # TODO: naming issue: DefaultWorkflowPermissions vs DefaultWorkflowPermissionPolicy
 class DefaultWorkflowPermissions(DefaultWorkflowPermissionPolicy):
     can_create = [
-        CommunityRole("submitter"),
+        DefaultCommunityRole("submitter"),
+        DefaultCommunityRole("owner"),
+        DefaultCommunityRole("curator"),
     ]
 
     can_read = [
