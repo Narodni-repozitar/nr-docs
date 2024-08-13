@@ -67,7 +67,7 @@ record:
 
   service:
     base-classes:
-      - common.services.components.AddDefaultCommunityComponent
+      - common.services.service.AddDefaultCommunityServiceMixin
 
 
   published-service-config:

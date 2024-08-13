@@ -47,8 +47,8 @@ from oarepo_workflows import (
 class DefaultWorkflowPermissions(DefaultWorkflowPermissionPolicy):
     can_create = [
         DefaultCommunityRole("submitter"),
-        DefaultCommunityRole("owner"),
         DefaultCommunityRole("curator"),
+        UserWithRole("administrator"),
     ]
 
     can_read = [
