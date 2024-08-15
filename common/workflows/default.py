@@ -61,7 +61,7 @@ class DefaultWorkflowPermissions(DefaultWorkflowPermissionPolicy):
         IfInState(
             "published",
             then_=[
-                IfRestricted(
+                IfRestricted( # todo - crashes on missing parent access field now
                     "visibility",
                     then_=[CommunityMembers()],
                     else_=[AnyUser()],
