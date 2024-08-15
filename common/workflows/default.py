@@ -25,10 +25,13 @@
 from datetime import timedelta
 
 from invenio_communities.generators import IfRestricted
-from invenio_records_permissions.generators import AnyUser, AuthenticatedUser
+from invenio_requests.services.permissions import PermissionPolicy as InvenioRequestsPermissionPolicy
+from invenio_records_permissions.generators import AnyUser
 from oarepo_communities.services.permissions.generators import (
     CommunityMembers,
-    CommunityRole, DefaultCommunityRole,
+    CommunityRole,
+    PrimaryCommunityRole,
+    PrimaryCommunityMembers,
 )
 from oarepo_requests.services.permissions.generators import IfRequestedBy
 from oarepo_runtime.services.permissions.generators import RecordOwners, UserWithRole
@@ -46,8 +49,8 @@ from oarepo_workflows import (
 # TODO: naming issue: DefaultWorkflowPermissions vs DefaultWorkflowPermissionPolicy
 class DefaultWorkflowPermissions(DefaultWorkflowPermissionPolicy):
     can_create = [
-        DefaultCommunityRole("submitter"),
-        DefaultCommunityRole("curator"),
+        PrimaryCommunityRole("submitter"),
+        PrimaryCommunityRole("curator"),
         UserWithRole("administrator"),
     ]
 
@@ -62,7 +65,7 @@ class DefaultWorkflowPermissions(DefaultWorkflowPermissionPolicy):
         IfInState(
             "published",
             then_=[
-                IfRestricted(
+                IfRestricted( # todo - crashes on missing parent access field now
                     "visibility",
                     then_=[CommunityMembers()],
                     else_=[AnyUser()],
@@ -72,15 +75,7 @@ class DefaultWorkflowPermissions(DefaultWorkflowPermissionPolicy):
         # every member of the community can see the metadata of the drafts, but not the files
         IfInState(
             "draft",
-            then_=[CommunityMembers()],
-        ),
-        IfInState(
-            "retracting",
-            then_=[
-                RecordOwners(),
-                CommunityRole("curator"),
-                UserWithRole("administrator"),
-            ],
+            then_=[PrimaryCommunityMembers()],
         ),
     ]
 
@@ -89,7 +84,7 @@ class DefaultWorkflowPermissions(DefaultWorkflowPermissionPolicy):
             "draft",
             then_=[
                 RecordOwners(),
-                CommunityRole("curator"),
+                PrimaryCommunityRole("curator"),
                 UserWithRole("administrator"),
             ],
         ),
@@ -97,7 +92,7 @@ class DefaultWorkflowPermissions(DefaultWorkflowPermissionPolicy):
         IfInState(
             "submitted",
             then_=[
-                CommunityRole("curator"),
+                PrimaryCommunityRole("curator"),
                 UserWithRole("administrator"),
             ],
         ),
@@ -109,7 +104,7 @@ class DefaultWorkflowPermissions(DefaultWorkflowPermissionPolicy):
             "draft",
             then_=[
                 RecordOwners(),
-                CommunityRole("curator"),
+                PrimaryCommunityRole("curator"),
                 UserWithRole("administrator"),
             ],
         ),
@@ -117,17 +112,17 @@ class DefaultWorkflowPermissions(DefaultWorkflowPermissionPolicy):
 
 
 class DefaultWorkflowRequests(WorkflowRequestPolicy):
-    publish_request = WorkflowRequest(
+    publish_draft = WorkflowRequest(
         # if the record is in draft state, the owner or curator can request publishing
         requesters=[
-            IfInState("draft", then_=[RecordOwners(), CommunityRole("curator")])
+            IfInState("draft", then_=[RecordOwners(), PrimaryCommunityRole("curator")])
         ],
         recipients=[
             # if the requester is the curator of the community, auto approve the request
             IfRequestedBy(
-                requesters=CommunityRole("curator"),
+                requesters=PrimaryCommunityRole("curator"),
                 then_=[AutoApprove()],
-                else_=[CommunityRole("curator")],
+                else_=[PrimaryCommunityRole("curator")],
             )
         ],
         transitions=WorkflowTransitions(
@@ -141,13 +136,13 @@ class DefaultWorkflowRequests(WorkflowRequestPolicy):
         ],
     )
 
-    edit_request = WorkflowRequest(
+    edit_published_record = WorkflowRequest(
         requesters=[
             IfInState(
                 "published",
                 then_=[
                     RecordOwners(),
-                    CommunityRole("curator"),
+                    PrimaryCommunityRole("curator"),
                     UserWithRole("administrator"),
                 ],
             )
@@ -157,7 +152,7 @@ class DefaultWorkflowRequests(WorkflowRequestPolicy):
         recipients=[AutoApprove()],
     )
 
-    delete_request = WorkflowRequest(
+    delete_published_record = WorkflowRequest(
         # if the record is draft, it is covered by the delete permission
         # if published, only the owner or curator can request deleting
         requesters=[
@@ -165,7 +160,7 @@ class DefaultWorkflowRequests(WorkflowRequestPolicy):
                 "published",
                 then_=[
                     RecordOwners(),
-                    CommunityRole("curator"),
+                    PrimaryCommunityRole("curator"),
                     UserWithRole("administrator"),
                 ],
             )
@@ -174,9 +169,9 @@ class DefaultWorkflowRequests(WorkflowRequestPolicy):
         # otherwise, the request is sent to the curator
         recipients=[
             IfRequestedBy(
-                requesters=[CommunityRole("curator"), UserWithRole("administrator")],
+                requesters=[PrimaryCommunityRole("curator"), UserWithRole("administrator")],
                 then_=[AutoApprove()],
-                else_=[CommunityRole("curator")],
+                else_=[PrimaryCommunityRole("curator")],
             )
         ],
         # the record comes to the state of retracting when the request is submitted. If the request
@@ -195,14 +190,14 @@ class DefaultWorkflowRequests(WorkflowRequestPolicy):
     assign_doi = WorkflowRequest(
         requesters=[
             RecordOwners(),
-            CommunityRole("curator"),
+            PrimaryCommunityRole("curator"),
             UserWithRole("administrator"),
         ],
         recipients=[
             IfRequestedBy(
-                requesters=[CommunityRole("curator"), UserWithRole("administrator")],
+                requesters=[PrimaryCommunityRole("curator"), UserWithRole("administrator")],
                 then_=[AutoApprove()],
-                else_=[CommunityRole("curator")],
+                else_=[PrimaryCommunityRole("curator")],
             )
         ],
         escalations=[

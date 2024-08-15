@@ -65,10 +65,6 @@ record:
       - "{{oarepo_vocabularies.authorities.components.AuthorityComponent}}"
       - "{{oarepo_runtime.services.components.DateIssuedComponent}}"
 
-  service:
-    base-classes:
-      - common.services.service.AddDefaultCommunityServiceMixin
-
 
   published-service-config:
     base-classes:
