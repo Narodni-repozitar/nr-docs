@@ -5,7 +5,9 @@ from invenio_records_resources.services import (
     pagination_links,
 )
 from invenio_records_resources.services.records.components import DataComponent
-from oarepo_communities.services.components.default_workflow import CommunityDefaultWorkflowComponent
+from oarepo_communities.services.components.default_workflow import (
+    CommunityDefaultWorkflowComponent,
+)
 from oarepo_communities.services.components.include import CommunityInclusionComponent
 from oarepo_runtime.records import has_draft, is_published_record
 from oarepo_runtime.services.components import DateIssuedComponent, OwnersComponent

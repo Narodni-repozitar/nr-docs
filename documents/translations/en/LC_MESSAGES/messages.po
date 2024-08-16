@@ -2,8 +2,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
-"POT-Creation-Date: 2024-08-11T15:05:19.734046\n"
-"PO-Revision-Date: 2024-08-11T15:05:19.734047\n"
+"POT-Creation-Date: 2024-08-16T11:21:51.986904\n"
+"PO-Revision-Date: 2024-08-16T11:21:51.986906\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -313,51 +313,50 @@ msgstr "Person identifier"
 
 msgid "metadata/contributors/authorityIdentifiers.help"
 msgstr ""
-"Choose the identifier type from the menu. Write the identifier without a "
-"prefix (e.g. https://orcid.org/0009-0004-8646-7185 or jk01051816)."
+"Choose the identifier type from the menu. Write the identifier without a prefix (e.g. https://orcid.org/0009-0004-8646-7185 or jk01051816). \n"
+"We recommend providing at least one of the identifier types.\n"
+"If you need to expand the range of identifier types, contact us at support@narodni-repozitar.cz.\n"
 
 msgid "metadata/contributors/authorityIdentifiers.hint"
 msgstr ""
 
-msgid "identifier.label"
+msgid "metadata/contributors/authorityIdentifiers/identifier.label"
 msgstr "Identifier"
 
-msgid "identifier.hint"
+msgid "metadata/contributors/authorityIdentifiers/identifier.hint"
 msgstr "e.g. https://orcid.org/0009-0004-8646-7185 for ORCID."
 
-msgid "identifier.help"
+msgid "metadata/contributors/authorityIdentifiers/identifier.help"
 msgstr ""
 
-msgid "identifier_type.label"
+msgid "metadata/contributors/authorityIdentifiers/scheme.label"
 msgstr "Identifier type"
 
-msgid "identifier_type.hint"
-msgstr ""
-"We recommend providing at least one of the identifier types.\n"
-"If you need to expand the range of identifier types, contact us at support@narodni-repozitar.cz.\n"
+msgid "metadata/contributors/authorityIdentifiers/scheme.hint"
+msgstr "e.g. ORCID, scopusID"
 
-msgid "identifier_type.help"
+msgid "metadata/contributors/authorityIdentifiers/scheme.help"
 msgstr ""
 
-msgid "identifier_type.enum.orcid"
+msgid "metadata/contributors/authorityIdentifiers/scheme.enum.orcid"
 msgstr ""
 
-msgid "identifier_type.enum.scopusID"
+msgid "metadata/contributors/authorityIdentifiers/scheme.enum.scopusID"
 msgstr ""
 
-msgid "identifier_type.enum.researcherID"
+msgid "metadata/contributors/authorityIdentifiers/scheme.enum.researcherID"
 msgstr ""
 
-msgid "identifier_type.enum.czenasAutID"
+msgid "metadata/contributors/authorityIdentifiers/scheme.enum.czenasAutID"
 msgstr ""
 
-msgid "identifier_type.enum.vedidk"
+msgid "metadata/contributors/authorityIdentifiers/scheme.enum.vedidk"
 msgstr ""
 
-msgid "identifier_type.enum.institutionalID"
+msgid "metadata/contributors/authorityIdentifiers/scheme.enum.institutionalID"
 msgstr ""
 
-msgid "identifier_type.enum.ISNI"
+msgid "metadata/contributors/authorityIdentifiers/scheme.enum.ISNI"
 msgstr ""
 
 msgid "metadata/contributors/contributorType.label"
@@ -437,13 +436,13 @@ msgstr ""
 msgid "metadata/contributors/nameType.enum.Personal"
 msgstr ""
 
-msgid "identifier_type.enum.ROR"
+msgid "metadata/contributors/authorityIdentifiers/scheme.enum.ROR"
 msgstr ""
 
-msgid "identifier_type.enum.ICO"
+msgid "metadata/contributors/authorityIdentifiers/scheme.enum.ICO"
 msgstr ""
 
-msgid "identifier_type.enum.DOI"
+msgid "metadata/contributors/authorityIdentifiers/scheme.enum.DOI"
 msgstr ""
 
 msgid "metadata/contributors/nameType.enum.Organizational"
@@ -566,10 +565,50 @@ msgstr "Person identifier"
 
 msgid "metadata/creators/authorityIdentifiers.help"
 msgstr ""
-"Choose the identifier type from the menu. Write the identifier without a "
-"prefix (e.g. https://orcid.org/0009-0004-8646-7185 or jk01051816)."
+"Choose the identifier type from the menu. Write the identifier without a prefix (e.g. https://orcid.org/0009-0004-8646-7185 or jk01051816). \n"
+"We recommend providing at least one of the identifier types.\n"
+"If you need to expand the range of identifier types, contact us at support@narodni-repozitar.cz.\n"
 
 msgid "metadata/creators/authorityIdentifiers.hint"
+msgstr ""
+
+msgid "metadata/creators/authorityIdentifiers/identifier.label"
+msgstr "Identifier"
+
+msgid "metadata/creators/authorityIdentifiers/identifier.hint"
+msgstr "e.g. https://orcid.org/0009-0004-8646-7185 for ORCID."
+
+msgid "metadata/creators/authorityIdentifiers/identifier.help"
+msgstr ""
+
+msgid "metadata/creators/authorityIdentifiers/scheme.label"
+msgstr "Identifier type"
+
+msgid "metadata/creators/authorityIdentifiers/scheme.hint"
+msgstr "e.g. ORCID, scopusID"
+
+msgid "metadata/creators/authorityIdentifiers/scheme.help"
+msgstr ""
+
+msgid "metadata/creators/authorityIdentifiers/scheme.enum.orcid"
+msgstr ""
+
+msgid "metadata/creators/authorityIdentifiers/scheme.enum.scopusID"
+msgstr ""
+
+msgid "metadata/creators/authorityIdentifiers/scheme.enum.researcherID"
+msgstr ""
+
+msgid "metadata/creators/authorityIdentifiers/scheme.enum.czenasAutID"
+msgstr ""
+
+msgid "metadata/creators/authorityIdentifiers/scheme.enum.vedidk"
+msgstr ""
+
+msgid "metadata/creators/authorityIdentifiers/scheme.enum.institutionalID"
+msgstr ""
+
+msgid "metadata/creators/authorityIdentifiers/scheme.enum.ISNI"
 msgstr ""
 
 msgid "metadata/creators/familyName.label"
@@ -611,6 +650,15 @@ msgid "metadata/creators/nameType.hint"
 msgstr ""
 
 msgid "metadata/creators/nameType.enum.Personal"
+msgstr ""
+
+msgid "metadata/creators/authorityIdentifiers/scheme.enum.ROR"
+msgstr ""
+
+msgid "metadata/creators/authorityIdentifiers/scheme.enum.ICO"
+msgstr ""
+
+msgid "metadata/creators/authorityIdentifiers/scheme.enum.DOI"
 msgstr ""
 
 msgid "metadata/creators/nameType.enum.Organizational"
@@ -1160,10 +1208,63 @@ msgstr "Person identifier"
 
 msgid "metadata/relatedItems/itemContributors/authorityIdentifiers.help"
 msgstr ""
-"Choose the identifier type from the menu. Write the identifier without a "
-"prefix (e.g. https://orcid.org/0009-0004-8646-7185 or jk01051816)."
+"Choose the identifier type from the menu. Write the identifier without a prefix (e.g. https://orcid.org/0009-0004-8646-7185 or jk01051816). \n"
+"We recommend providing at least one of the identifier types.\n"
+"If you need to expand the range of identifier types, contact us at support@narodni-repozitar.cz.\n"
 
 msgid "metadata/relatedItems/itemContributors/authorityIdentifiers.hint"
+msgstr ""
+
+msgid ""
+"metadata/relatedItems/itemContributors/authorityIdentifiers/identifier.label"
+msgstr "Identifier"
+
+msgid ""
+"metadata/relatedItems/itemContributors/authorityIdentifiers/identifier.hint"
+msgstr "e.g. https://orcid.org/0009-0004-8646-7185 for ORCID."
+
+msgid ""
+"metadata/relatedItems/itemContributors/authorityIdentifiers/identifier.help"
+msgstr ""
+
+msgid ""
+"metadata/relatedItems/itemContributors/authorityIdentifiers/scheme.label"
+msgstr "Identifier type"
+
+msgid ""
+"metadata/relatedItems/itemContributors/authorityIdentifiers/scheme.hint"
+msgstr "e.g. ORCID, scopusID"
+
+msgid ""
+"metadata/relatedItems/itemContributors/authorityIdentifiers/scheme.help"
+msgstr ""
+
+msgid ""
+"metadata/relatedItems/itemContributors/authorityIdentifiers/scheme.enum.orcid"
+msgstr ""
+
+msgid ""
+"metadata/relatedItems/itemContributors/authorityIdentifiers/scheme.enum.scopusID"
+msgstr ""
+
+msgid ""
+"metadata/relatedItems/itemContributors/authorityIdentifiers/scheme.enum.researcherID"
+msgstr ""
+
+msgid ""
+"metadata/relatedItems/itemContributors/authorityIdentifiers/scheme.enum.czenasAutID"
+msgstr ""
+
+msgid ""
+"metadata/relatedItems/itemContributors/authorityIdentifiers/scheme.enum.vedidk"
+msgstr ""
+
+msgid ""
+"metadata/relatedItems/itemContributors/authorityIdentifiers/scheme.enum.institutionalID"
+msgstr ""
+
+msgid ""
+"metadata/relatedItems/itemContributors/authorityIdentifiers/scheme.enum.ISNI"
 msgstr ""
 
 msgid "metadata/relatedItems/itemContributors/contributorType.label"
@@ -1241,6 +1342,18 @@ msgid "metadata/relatedItems/itemContributors/nameType.hint"
 msgstr ""
 
 msgid "metadata/relatedItems/itemContributors/nameType.enum.Personal"
+msgstr ""
+
+msgid ""
+"metadata/relatedItems/itemContributors/authorityIdentifiers/scheme.enum.ROR"
+msgstr ""
+
+msgid ""
+"metadata/relatedItems/itemContributors/authorityIdentifiers/scheme.enum.ICO"
+msgstr ""
+
+msgid ""
+"metadata/relatedItems/itemContributors/authorityIdentifiers/scheme.enum.DOI"
 msgstr ""
 
 msgid "metadata/relatedItems/itemContributors/nameType.enum.Organizational"
@@ -1369,10 +1482,60 @@ msgstr "Person identifier"
 
 msgid "metadata/relatedItems/itemCreators/authorityIdentifiers.help"
 msgstr ""
-"Choose the identifier type from the menu. Write the identifier without a "
-"prefix (e.g. https://orcid.org/0009-0004-8646-7185 or jk01051816)."
+"Choose the identifier type from the menu. Write the identifier without a prefix (e.g. https://orcid.org/0009-0004-8646-7185 or jk01051816). \n"
+"We recommend providing at least one of the identifier types.\n"
+"If you need to expand the range of identifier types, contact us at support@narodni-repozitar.cz.\n"
 
 msgid "metadata/relatedItems/itemCreators/authorityIdentifiers.hint"
+msgstr ""
+
+msgid ""
+"metadata/relatedItems/itemCreators/authorityIdentifiers/identifier.label"
+msgstr "Identifier"
+
+msgid ""
+"metadata/relatedItems/itemCreators/authorityIdentifiers/identifier.hint"
+msgstr "e.g. https://orcid.org/0009-0004-8646-7185 for ORCID."
+
+msgid ""
+"metadata/relatedItems/itemCreators/authorityIdentifiers/identifier.help"
+msgstr ""
+
+msgid "metadata/relatedItems/itemCreators/authorityIdentifiers/scheme.label"
+msgstr "Identifier type"
+
+msgid "metadata/relatedItems/itemCreators/authorityIdentifiers/scheme.hint"
+msgstr "e.g. ORCID, scopusID"
+
+msgid "metadata/relatedItems/itemCreators/authorityIdentifiers/scheme.help"
+msgstr ""
+
+msgid ""
+"metadata/relatedItems/itemCreators/authorityIdentifiers/scheme.enum.orcid"
+msgstr ""
+
+msgid ""
+"metadata/relatedItems/itemCreators/authorityIdentifiers/scheme.enum.scopusID"
+msgstr ""
+
+msgid ""
+"metadata/relatedItems/itemCreators/authorityIdentifiers/scheme.enum.researcherID"
+msgstr ""
+
+msgid ""
+"metadata/relatedItems/itemCreators/authorityIdentifiers/scheme.enum.czenasAutID"
+msgstr ""
+
+msgid ""
+"metadata/relatedItems/itemCreators/authorityIdentifiers/scheme.enum.vedidk"
+msgstr ""
+
+msgid ""
+"metadata/relatedItems/itemCreators/authorityIdentifiers/scheme.enum.institutionalID"
+msgstr ""
+
+msgid ""
+"metadata/relatedItems/itemCreators/authorityIdentifiers/scheme.enum.ISNI"
 msgstr ""
 
 msgid "metadata/relatedItems/itemCreators/familyName.label"
@@ -1416,6 +1579,18 @@ msgstr ""
 msgid "metadata/relatedItems/itemCreators/nameType.enum.Personal"
 msgstr ""
 
+msgid ""
+"metadata/relatedItems/itemCreators/authorityIdentifiers/scheme.enum.ROR"
+msgstr ""
+
+msgid ""
+"metadata/relatedItems/itemCreators/authorityIdentifiers/scheme.enum.ICO"
+msgstr ""
+
+msgid ""
+"metadata/relatedItems/itemCreators/authorityIdentifiers/scheme.enum.DOI"
+msgstr ""
+
 msgid "metadata/relatedItems/itemCreators/nameType.enum.Organizational"
 msgstr ""
 
@@ -1437,11 +1612,11 @@ msgstr ""
 msgid "metadata/relatedItems/itemIssue.hint"
 msgstr ""
 
+msgid "metadata/relatedItems/itemPIDs.label"
+msgstr "Identifier"
+
 msgid "metadata/relatedItems/itemPIDs.help"
 msgstr "Permanent object identifiers such as ISBN, DOI, etc."
-
-msgid "metadata/relatedItems/itemPIDs.label"
-msgstr ""
 
 msgid "metadata/relatedItems/itemPIDs.hint"
 msgstr ""
