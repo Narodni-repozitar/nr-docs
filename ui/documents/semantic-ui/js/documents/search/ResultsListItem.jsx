@@ -184,13 +184,9 @@ export const ResultsListItemComponent = ({
 
   let abstract = _get(result, "metadata.abstract", []);
 
-  if (abstract.length === 0) {
-    abstract = i18next.t("No description");
-  } else {
-    abstract =
-      abstract.find((a) => a.lang === i18next.language)?.value ||
-      abstract[0].value;
-  }
+  abstract =
+    abstract.find((a) => a.lang === i18next.language)?.value ||
+    abstract[0].value;
 
   const languages = _get(result, "metadata.languages", []);
 
@@ -265,9 +261,11 @@ export const ResultsListItemComponent = ({
                   subjects={subjects}
                   searchUrl={searchAppConfig.ui_endpoint}
                 />
-                <Item.Description>
-                  {_truncate(abstract, { length: 350 })}
-                </Item.Description>
+                {abstract && (
+                  <Item.Description>
+                    {_truncate(abstract, { length: 350 })}
+                  </Item.Description>
+                )}
                 <ItemExtraInfo
                   createdDate={createdDate}
                   publishers={publishers}
