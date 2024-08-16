@@ -15,7 +15,7 @@ invenio oarepo oai harvester add nusl-manual-submissions --name "Manual submissi
             --loader 'sickle' \
             --transformer marcxml --transformer nusl \
             --writer 'service{service=published_documents}' \
-            # attachment writer
+            --writer 'attachment{service=published_documents}' \
             --writer 'timestamp_update{service=published_documents}'
 
-# invenio oarepo oai harvester run nusl-manual-submissions
+invenio oarepo oai harvester run nusl-manual-submissions
