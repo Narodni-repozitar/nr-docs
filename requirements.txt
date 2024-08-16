@@ -13,7 +13,7 @@ levenshtein==0.25.1
 marisa-trie==1.2.0
 marshmallow-i18n-messages==0.1.0
 nr-metadata==2.0.36
-nr-oaipmh-harvesters==1.0.20
+nr-oaipmh-harvesters==1.0.21
 nr-vocabularies==2.1.0
 oarepo-communities==5.0.3
 oarepo-dashboard==1.0.9
@@ -22,7 +22,7 @@ oarepo-oai-pmh-harvester==4.1.2
 oarepo-published-service==1.0.3
 oarepo-requests==2.0.3
 oarepo-runtime==1.5.50
-oarepo-ui==5.2.5
+oarepo-ui==5.2.6
 oarepo-vocabularies==2.0.94
 oarepo-workflows==1.0.7
 openpyxl==3.1.5
