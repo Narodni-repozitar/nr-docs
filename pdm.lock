@@ -3347,7 +3347,7 @@ files = [
 
 [[package]]
 name = "nr-metadata"
-version = "2.0.35"
+version = "2.0.36"
 requires_python = ">=3.9"
 summary = "\"Generated metadata files for the Czech National Repository\""
 groups = ["default"]
@@ -3357,13 +3357,13 @@ dependencies = [
     "oarepo-vocabularies>=2.0.0",
 ]
 files = [
-    {file = "nr_metadata-2.0.35-py2.py3-none-any.whl", hash = "sha256:18d80513b3fb90c2639c3f3895f73c186b19d017ab84e5d6bd5892f188b88a69"},
-    {file = "nr_metadata-2.0.35.tar.gz", hash = "sha256:688ef114545cf1ed88e37e95dd32371770ad801164599d953abab9ef46c5e3b3"},
+    {file = "nr_metadata-2.0.36-py2.py3-none-any.whl", hash = "sha256:4d16d5ee20368f8ad5cfb702c06cdf7b52664b5b0ff394ecb041a0aaa453b2a3"},
+    {file = "nr_metadata-2.0.36.tar.gz", hash = "sha256:d90026701c63b334cf3afd0c4284eee6de4b436e5b7bc7d9ffb96cf3557db54a"},
 ]
 
 [[package]]
 name = "nr-oaipmh-harvesters"
-version = "1.0.20"
+version = "1.0.21"
 summary = "OAIPMH harvesters for National repository"
 groups = ["default"]
 dependencies = [
@@ -3373,8 +3373,8 @@ dependencies = [
     "oarepo-oai-pmh-harvester>=4.0.0",
 ]
 files = [
-    {file = "nr_oaipmh_harvesters-1.0.20-py3-none-any.whl", hash = "sha256:a6a427d22e3c26c225fafb3cb0e1dba7a69f48149a2939a7101d54976ae662ca"},
-    {file = "nr_oaipmh_harvesters-1.0.20.tar.gz", hash = "sha256:bd3bc0be8fea540936b8ac5f18b41fda5921535d147240de61f887c737fdc222"},
+    {file = "nr_oaipmh_harvesters-1.0.21-py3-none-any.whl", hash = "sha256:584c345e88febaee21bd146107127bb8ff3cbcaf12610d85a96b79098dfd351b"},
+    {file = "nr_oaipmh_harvesters-1.0.21.tar.gz", hash = "sha256:5d27a312db54e7e9a20b01d390e0e4ee72689ddc4b1d5e5eebe8e584512baf58"},
 ]
 
 [[package]]
@@ -3723,7 +3723,7 @@ files = [
 
 [[package]]
 name = "oarepo-oai-pmh-harvester"
-version = "4.1.2"
+version = "4.1.3"
 summary = "OAIPMH harvester"
 groups = ["default"]
 dependencies = [
@@ -3735,8 +3735,8 @@ dependencies = [
     "tqdm>=4.64.1",
 ]
 files = [
-    {file = "oarepo_oai_pmh_harvester-4.1.2-py3-none-any.whl", hash = "sha256:79ad5f373403620a4eb2a8f309295cc29cf93c3340ebd98501a955b6fed34b72"},
-    {file = "oarepo_oai_pmh_harvester-4.1.2.tar.gz", hash = "sha256:14d67ca474de79257148f7ea218ccf8de141f01713747227b483e6782ba0726f"},
+    {file = "oarepo_oai_pmh_harvester-4.1.3-py3-none-any.whl", hash = "sha256:6f59e85cbc40f75d3eac8662eaa32b145eaa3d59f36034efe9fa2d4652e78fcd"},
+    {file = "oarepo_oai_pmh_harvester-4.1.3.tar.gz", hash = "sha256:03a5892953cb4a678c2ea08839f98e34068f0a0ef09acaa0b1a30e6a74438da1"},
 ]
 
 [[package]]
@@ -3752,7 +3752,7 @@ files = [
 
 [[package]]
 name = "oarepo-requests"
-version = "2.0.2"
+version = "2.0.3"
 summary = ""
 groups = ["default"]
 dependencies = [
@@ -3760,8 +3760,8 @@ dependencies = [
     "oarepo-runtime",
 ]
 files = [
-    {file = "oarepo_requests-2.0.2-py3-none-any.whl", hash = "sha256:d2c6af81ac04e48b94b3d0b838bc68c9784d0da7a410f7f9f99682388d80e2af"},
-    {file = "oarepo_requests-2.0.2.tar.gz", hash = "sha256:1d4342ccd43d71bab5d4e4e7890f969f5b70a5ef72c2371a93929db499cfd529"},
+    {file = "oarepo_requests-2.0.3-py3-none-any.whl", hash = "sha256:0c539fc1a8d9240caaaa1d672640bc3ce775dcbff5de58317d17de5e1ed32a90"},
+    {file = "oarepo_requests-2.0.3.tar.gz", hash = "sha256:fd314ca96839e2f4cd9c590343f64cf8d7a70a83338d75c23166e028b24601a8"},
 ]
 
 [[package]]
@@ -3787,7 +3787,7 @@ files = [
 
 [[package]]
 name = "oarepo-ui"
-version = "5.2.4"
+version = "5.2.6"
 requires_python = ">=3.10"
 summary = "UI module for invenio 3.5+"
 groups = ["default"]
@@ -3799,8 +3799,8 @@ dependencies = [
     "oarepo-runtime",
 ]
 files = [
-    {file = "oarepo_ui-5.2.4-py2.py3-none-any.whl", hash = "sha256:88ad136451f1828ac94f2a97bb589689fdc107d2c2ab2caca68e7fbcd5a13146"},
-    {file = "oarepo_ui-5.2.4.tar.gz", hash = "sha256:ffe64506c85af0281a4d987eb2d062f288c0a2212078a2dfabef19b477887796"},
+    {file = "oarepo_ui-5.2.6-py2.py3-none-any.whl", hash = "sha256:4b11964b6cafe0304e9abeb9a596ee29101bdd5ffec446e1e3b9969bbd852c12"},
+    {file = "oarepo_ui-5.2.6.tar.gz", hash = "sha256:0c448110970c148fcc921770b396f1d72160c01290f4871f0d78a51ec98a75f6"},
 ]
 
 [[package]]
