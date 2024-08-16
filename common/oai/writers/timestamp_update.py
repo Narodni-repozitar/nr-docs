@@ -1,5 +1,6 @@
 from invenio_access.permissions import system_identity
 from invenio_db import db
+from invenio_pidstore.errors import PIDDoesNotExistError
 from invenio_records_resources.proxies import current_service_registry
 from sqlalchemy import Table, update
 
@@ -17,6 +18,9 @@ class TimestampUpdateWriter(BaseWriter):
 
     def write(self, batch: StreamBatch) -> StreamBatch:
         for entry in batch.ok_entries:
+            if entry.deleted:
+                continue
+
             read_entry = self._service.read(system_identity, entry.id)
 
             model = read_entry._record.model
