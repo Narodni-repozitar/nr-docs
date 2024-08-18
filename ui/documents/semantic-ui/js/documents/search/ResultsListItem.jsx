@@ -182,11 +182,16 @@ export const ResultsListItemComponent = ({
 
   const rights = _get(result, "metadata.rights");
 
-  let abstract = _get(result, "metadata.abstract", []);
+  const abstracts = _get(result, "metadata.abstract", []);
 
-  abstract =
-    abstract.find((a) => a.lang === i18next.language)?.value ||
-    abstract[0].value;
+  let abstract;
+  if (abstracts.length > 0) {
+    abstract =
+      abstracts.find((a) => a.lang === i18next.language)?.value ||
+      abstracts[0].value;
+  } else {
+    abstract = null;
+  }
 
   const languages = _get(result, "metadata.languages", []);
 
