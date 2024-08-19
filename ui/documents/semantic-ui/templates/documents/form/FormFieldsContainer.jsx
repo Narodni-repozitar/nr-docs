@@ -6,6 +6,7 @@ import {
   EDTFSingleDatePicker,
   useFieldData,
   useSanitizeInput,
+  CommunitySelector,
 } from "@js/oarepo_ui";
 import {
   LocalVocabularySelectField,
@@ -36,8 +37,10 @@ const FormFieldsContainer = () => {
   const { formConfig, files: recordFiles } = useFormConfig();
   const editMode = _has(formConfig, "updateUrl");
   const filterResourceTypes = useCallback(
-    (options) => options.map(opt => ({
-        ...opt, selectable: !!opt.props?.submission
+    (options) =>
+      options.map((opt) => ({
+        ...opt,
+        selectable: !!opt.props?.submission,
       })),
     []
   );
@@ -66,6 +69,9 @@ const FormFieldsContainer = () => {
 
   return (
     <React.Fragment>
+      <Overridable id="NrDocs.Deposit.CommunitySelector.container">
+        <CommunitySelector />
+      </Overridable>
       <Overridable id="NrDocs.Deposit.AccordionFieldBasicInformation.container">
         <AccordionField
           includesPaths={[
