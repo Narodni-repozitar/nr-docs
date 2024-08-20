@@ -5,7 +5,7 @@ from oarepo_requests.resolvers.ui import (
 from oarepo_requests.resources.draft.resource import DraftRecordRequestsResource
 from oarepo_requests.services.draft.service import DraftRecordRequestsService
 
-from documents.files.api import DocumentsFileDraft
+from documents.files.api import DocumentsFile, DocumentsFileDraft
 from documents.files.requests.resolvers import DocumentsFileDraftResolver
 from documents.records.api import DocumentsDraft, DocumentsRecord
 from documents.records.requests.resolvers import (
@@ -45,13 +45,21 @@ DOCUMENTS_RECORD_SERVICE_CONFIG = DocumentsServiceConfig
 DOCUMENTS_RECORD_SERVICE_CLASS = DocumentsService
 
 
+OAREPO_PRIMARY_RECORD_SERVICE = {
+    DocumentsRecord: "documents",
+    DocumentsDraft: "documents",
+    DocumentsFile: "documents_file",
+    DocumentsFileDraft: "documents_file_draft",
+}
+
+
 DOCUMENTS_REQUESTS_RESOURCE_CLASS = DraftRecordRequestsResource
 
 
 DOCUMENTS_REQUESTS_SERVICE_CLASS = DraftRecordRequestsService
 
 
-REQUESTS_ENTITY_RESOLVERS = [
+DOCUMENTS_ENTITY_RESOLVERS = [
     DocumentsResolver(
         record_cls=DocumentsRecord, service_id="documents", type_key="documents"
     ),
