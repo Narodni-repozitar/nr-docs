@@ -24,11 +24,8 @@
 
 from datetime import timedelta
 
-from invenio_communities.generators import IfRestricted
-from invenio_requests.services.permissions import PermissionPolicy as InvenioRequestsPermissionPolicy
 from invenio_records_permissions.generators import AnyUser
 from oarepo_communities.services.permissions.generators import (
-    CommunityMembers,
     CommunityRole,
     PrimaryCommunityRole,
     PrimaryCommunityMembers,
@@ -64,13 +61,14 @@ class DefaultWorkflowPermissions(DefaultWorkflowPermissionPolicy):
         # otherwise, any user can see it
         IfInState(
             "published",
-            then_=[
-                IfRestricted( # todo - crashes on missing parent access field now
-                    "visibility",
-                    then_=[CommunityMembers()],
-                    else_=[AnyUser()],
-                )
-            ],
+            then_=[AnyUser()],
+            # then_=[
+            #     IfRestricted( # todo - crashes on missing parent access field now
+            #         "visibility",
+            #         then_=[CommunityMembers()],
+            #         else_=[AnyUser()],
+            #     )
+            # ],
         ),
         # every member of the community can see the metadata of the drafts, but not the files
         IfInState(
