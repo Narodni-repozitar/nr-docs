@@ -15,6 +15,7 @@ plugins:
   - oarepo-model-builder-files
   - oarepo-model-builder-cf
   - oarepo-model-builder-polymorphic
+  - oarepo-model-builder-communities>=5.0.0
 profiles:
 - record
 - draft
@@ -31,10 +32,11 @@ record:
   draft-files:
     resource:
       base-classes: [ oarepo_ui.resources.file_resource.S3RedirectFileResource ]
+
   permissions:
     presets:
-#    - communities
-    - authenticated
+      - docs
+
   files:
     resource:
       base-classes: [ oarepo_ui.resources.file_resource.S3RedirectFileResource ]
@@ -62,6 +64,7 @@ record:
     components:
       - "{{oarepo_vocabularies.authorities.components.AuthorityComponent}}"
       - "{{oarepo_runtime.services.components.DateIssuedComponent}}"
+
 
   published-service-config:
     base-classes:

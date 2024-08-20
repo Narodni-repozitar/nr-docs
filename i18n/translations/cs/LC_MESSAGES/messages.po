@@ -26,7 +26,7 @@ msgstr "Jazyk"
 
 #: models/nr-documents/nr_documents/services/records/facets.py:37
 msgid "metadata/abstract/value.label"
-msgstr "Abstrakt"
+msgstr "Text"
 
 #: models/nr-documents/nr_documents/services/records/facets.py:43
 #: sites/nr-docs/site/nr_docs/translations/jinjax_messages.jinja:11
@@ -44,7 +44,7 @@ msgstr "Jazyk"
 
 #: models/nr-documents/nr_documents/services/records/facets.py:67
 msgid "metadata/accessibility/value.label"
-msgstr "Dostupnost"
+msgstr "Text"
 
 #: models/nr-documents/nr_documents/services/records/facets.py:73
 #: models/nr-documents/nr_documents/services/records/facets.py:78
@@ -57,7 +57,7 @@ msgstr "Jazyk"
 
 #: models/nr-documents/nr_documents/services/records/facets.py:93
 msgid "metadata/additionalTitles/title/value.label"
-msgstr "Název"
+msgstr "Text"
 
 #: models/nr-documents/nr_documents/services/records/facets.py:99
 msgid "metadata/additionalTitles/titleType.label"
@@ -77,7 +77,7 @@ msgstr "Identifikátor"
 
 #: models/nr-documents/nr_documents/services/records/facets.py:119
 msgid "metadata/contributors/authorityIdentifiers/scheme.label"
-msgstr "Schema identifikátoru"
+msgstr "Typ identifikátoru"
 
 #: models/nr-documents/nr_documents/services/records/facets.py:124
 msgid "metadata/contributors/fullName.label"
@@ -101,7 +101,7 @@ msgstr "Identifikátor"
 
 #: models/nr-documents/nr_documents/services/records/facets.py:151
 msgid "metadata/creators/authorityIdentifiers/scheme.label"
-msgstr "Schema identifikátoru"
+msgstr "Typ identifikátoru"
 
 #: models/nr-documents/nr_documents/services/records/facets.py:155
 msgid "metadata/creators/fullName.label"
@@ -170,7 +170,7 @@ msgstr "Jazyk"
 
 #: models/nr-documents/nr_documents/services/records/facets.py:236
 msgid "metadata/methods/value.label"
-msgstr "Název metodologie"
+msgstr "Text"
 
 #: models/nr-documents/nr_documents/services/records/facets.py:242
 msgid "metadata/objectIdentifiers/identifier.label"
@@ -198,7 +198,7 @@ msgstr "Identifikátor"
 #: models/nr-documents/nr_documents/services/records/facets.py:269
 msgid ""
 "metadata/relatedItems/itemContributors/authorityIdentifiers/scheme.label"
-msgstr "Schema identifikátoru"
+msgstr "Typ identifikátoru"
 
 #: models/nr-documents/nr_documents/services/records/facets.py:274
 msgid "metadata/relatedItems/itemContributors/fullName.label"
@@ -223,7 +223,7 @@ msgstr "Identifikátor"
 
 #: models/nr-documents/nr_documents/services/records/facets.py:301
 msgid "metadata/relatedItems/itemCreators/authorityIdentifiers/scheme.label"
-msgstr "Schema identifikátoru"
+msgstr "Typ identifikátoru"
 
 #: models/nr-documents/nr_documents/services/records/facets.py:306
 msgid "metadata/relatedItems/itemCreators/fullName.label"
@@ -315,7 +315,7 @@ msgstr "Jazyk"
 
 #: models/nr-documents/nr_documents/services/records/facets.py:422
 msgid "metadata/subjects/subject/value.label"
-msgstr "Klíčové slovo"
+msgstr "Text"
 
 #: models/nr-documents/nr_documents/services/records/facets.py:428
 msgid "metadata/subjects/subjectScheme.label"
@@ -345,7 +345,7 @@ msgstr "Jazyk"
 
 #: models/nr-documents/nr_documents/services/records/facets.py:465
 msgid "metadata/technicalInfo/value.label"
-msgstr "Technické informace"
+msgstr "Text"
 
 #: models/nr-documents/nr_documents/services/records/facets.py:470
 #: sites/nr-docs/site/nr_docs/translations/jinjax_messages.jinja:5
@@ -434,7 +434,7 @@ msgstr "Vydavatel/é"
 
 #: sites/nr-docs/site/nr_docs/translations/jinjax_messages.jinja:13
 msgid "metadata/events.label"
-msgstr "Události"
+msgstr "Související akce"
 
 #: sites/nr-docs/site/nr_docs/translations/jinjax_messages.jinja:14
 msgid "metadata/externalLocation.label"
@@ -1288,8 +1288,9 @@ msgstr ""
 
 msgid "metadata/contributors/authorityIdentifiers.help"
 msgstr ""
-"Vyberte z nabídky typ identifikátoru. Napište identifikátor bez předpony "
-"(tj. https://orcid.org/0009-0004-8646-7185 nebo jk01051816)."
+"Vyberte z nabídky typ identifikátoru. Napište identifikátor bez předpony (tj. https://orcid.org/0009-0004-8646-7185 nebo jk01051816). \n"
+"Doporučujeme zadat alespoň jeden z typů identifikátorů. \n"
+"Pokud potřebujete rozšířit nabídku typů identifikátorů, kontaktujte nás na support@narodni-repozitar.cz.\n"
 
 msgid "metadata/contributors/authorityIdentifiers.label"
 msgstr "Identifikátor osoby"
@@ -1500,8 +1501,9 @@ msgstr ""
 
 msgid "metadata/creators/authorityIdentifiers.help"
 msgstr ""
-"Vyberte z nabídky typ identifikátoru. Napište identifikátor bez předpony "
-"(tj. https://orcid.org/0009-0004-8646-7185 nebo jk01051816)."
+"Vyberte z nabídky typ identifikátoru. Napište identifikátor bez předpony (tj. https://orcid.org/0009-0004-8646-7185 nebo jk01051816). \n"
+"Doporučujeme zadat alespoň jeden z typů identifikátorů. \n"
+"Pokud potřebujete rozšířit nabídku typů identifikátorů, kontaktujte nás na support@narodni-repozitar.cz.\n"
 
 msgid "metadata/creators/authorityIdentifiers.label"
 msgstr "Identifikátor osoby"
@@ -1548,7 +1550,7 @@ msgid "metadata/events.hint"
 msgstr ""
 
 msgid "metadata/events/eventDate.label"
-msgstr "Datum konání akce"
+msgstr "Datum akce"
 
 msgid "metadata/events/eventDate.help"
 msgstr "Vyberte časový interval, ve kterém se událost odehrála."
@@ -1972,8 +1974,9 @@ msgstr ""
 
 msgid "metadata/relatedItems/itemContributors/authorityIdentifiers.help"
 msgstr ""
-"Vyberte z nabídky typ identifikátoru. Napište identifikátor bez předpony "
-"(tj. https://orcid.org/0009-0004-8646-7185 nebo jk01051816)."
+"Vyberte z nabídky typ identifikátoru. Napište identifikátor bez předpony (tj. https://orcid.org/0009-0004-8646-7185 nebo jk01051816). \n"
+"Doporučujeme zadat alespoň jeden z typů identifikátorů. \n"
+"Pokud potřebujete rozšířit nabídku typů identifikátorů, kontaktujte nás na support@narodni-repozitar.cz.\n"
 
 msgid "metadata/relatedItems/itemContributors/authorityIdentifiers.label"
 msgstr "Identifikátor osoby"
@@ -2140,8 +2143,9 @@ msgstr ""
 
 msgid "metadata/relatedItems/itemCreators/authorityIdentifiers.help"
 msgstr ""
-"Vyberte z nabídky typ identifikátoru. Napište identifikátor bez předpony "
-"(tj. https://orcid.org/0009-0004-8646-7185 nebo jk01051816)."
+"Vyberte z nabídky typ identifikátoru. Napište identifikátor bez předpony (tj. https://orcid.org/0009-0004-8646-7185 nebo jk01051816). \n"
+"Doporučujeme zadat alespoň jeden z typů identifikátorů. \n"
+"Pokud potřebujete rozšířit nabídku typů identifikátorů, kontaktujte nás na support@narodni-repozitar.cz.\n"
 
 msgid "metadata/relatedItems/itemCreators/authorityIdentifiers.label"
 msgstr "Identifikátor osoby"
@@ -2185,7 +2189,7 @@ msgid "metadata/relatedItems/itemPIDs.help"
 msgstr "Trvalé identifikátory objektu jako ISBN, DOI atd."
 
 msgid "metadata/relatedItems/itemPIDs.label"
-msgstr "Persistentní identifikátory položky"
+msgstr "Identifikátor"
 
 msgid "metadata/relatedItems/itemPIDs.hint"
 msgstr ""
@@ -3376,4 +3380,198 @@ msgid "syntheticFields/year.help"
 msgstr ""
 
 msgid "syntheticFields/year.hint"
+msgstr ""
+
+msgid "metadata/contributors/authorityIdentifiers/identifier.hint"
+msgstr "např https://orcid.org/0009-0004-8646-7185 pro ORCID."
+
+msgid "metadata/contributors/authorityIdentifiers/identifier.help"
+msgstr ""
+
+msgid "metadata/contributors/authorityIdentifiers/scheme.hint"
+msgstr "např ORCID, scopusID"
+
+msgid "metadata/contributors/authorityIdentifiers/scheme.help"
+msgstr ""
+
+msgid "metadata/contributors/authorityIdentifiers/scheme.enum.orcid"
+msgstr ""
+
+msgid "metadata/contributors/authorityIdentifiers/scheme.enum.scopusID"
+msgstr ""
+
+msgid "metadata/contributors/authorityIdentifiers/scheme.enum.researcherID"
+msgstr ""
+
+msgid "metadata/contributors/authorityIdentifiers/scheme.enum.czenasAutID"
+msgstr ""
+
+msgid "metadata/contributors/authorityIdentifiers/scheme.enum.vedidk"
+msgstr ""
+
+msgid "metadata/contributors/authorityIdentifiers/scheme.enum.institutionalID"
+msgstr ""
+
+msgid "metadata/contributors/authorityIdentifiers/scheme.enum.ISNI"
+msgstr ""
+
+msgid "metadata/contributors/authorityIdentifiers/scheme.enum.ROR"
+msgstr ""
+
+msgid "metadata/contributors/authorityIdentifiers/scheme.enum.ICO"
+msgstr ""
+
+msgid "metadata/contributors/authorityIdentifiers/scheme.enum.DOI"
+msgstr ""
+
+msgid "metadata/creators/authorityIdentifiers/identifier.hint"
+msgstr "např https://orcid.org/0009-0004-8646-7185 pro ORCID."
+
+msgid "metadata/creators/authorityIdentifiers/identifier.help"
+msgstr ""
+
+msgid "metadata/creators/authorityIdentifiers/scheme.hint"
+msgstr "např ORCID, scopusID"
+
+msgid "metadata/creators/authorityIdentifiers/scheme.help"
+msgstr ""
+
+msgid "metadata/creators/authorityIdentifiers/scheme.enum.orcid"
+msgstr ""
+
+msgid "metadata/creators/authorityIdentifiers/scheme.enum.scopusID"
+msgstr ""
+
+msgid "metadata/creators/authorityIdentifiers/scheme.enum.researcherID"
+msgstr ""
+
+msgid "metadata/creators/authorityIdentifiers/scheme.enum.czenasAutID"
+msgstr ""
+
+msgid "metadata/creators/authorityIdentifiers/scheme.enum.vedidk"
+msgstr ""
+
+msgid "metadata/creators/authorityIdentifiers/scheme.enum.institutionalID"
+msgstr ""
+
+msgid "metadata/creators/authorityIdentifiers/scheme.enum.ISNI"
+msgstr ""
+
+msgid "metadata/creators/authorityIdentifiers/scheme.enum.ROR"
+msgstr ""
+
+msgid "metadata/creators/authorityIdentifiers/scheme.enum.ICO"
+msgstr ""
+
+msgid "metadata/creators/authorityIdentifiers/scheme.enum.DOI"
+msgstr ""
+
+msgid ""
+"metadata/relatedItems/itemContributors/authorityIdentifiers/identifier.hint"
+msgstr "např https://orcid.org/0009-0004-8646-7185 pro ORCID."
+
+msgid ""
+"metadata/relatedItems/itemContributors/authorityIdentifiers/identifier.help"
+msgstr ""
+
+msgid ""
+"metadata/relatedItems/itemContributors/authorityIdentifiers/scheme.hint"
+msgstr "např ORCID, scopusID"
+
+msgid ""
+"metadata/relatedItems/itemContributors/authorityIdentifiers/scheme.help"
+msgstr ""
+
+msgid ""
+"metadata/relatedItems/itemContributors/authorityIdentifiers/scheme.enum.orcid"
+msgstr ""
+
+msgid ""
+"metadata/relatedItems/itemContributors/authorityIdentifiers/scheme.enum.scopusID"
+msgstr ""
+
+msgid ""
+"metadata/relatedItems/itemContributors/authorityIdentifiers/scheme.enum.researcherID"
+msgstr ""
+
+msgid ""
+"metadata/relatedItems/itemContributors/authorityIdentifiers/scheme.enum.czenasAutID"
+msgstr ""
+
+msgid ""
+"metadata/relatedItems/itemContributors/authorityIdentifiers/scheme.enum.vedidk"
+msgstr ""
+
+msgid ""
+"metadata/relatedItems/itemContributors/authorityIdentifiers/scheme.enum.institutionalID"
+msgstr ""
+
+msgid ""
+"metadata/relatedItems/itemContributors/authorityIdentifiers/scheme.enum.ISNI"
+msgstr ""
+
+msgid ""
+"metadata/relatedItems/itemContributors/authorityIdentifiers/scheme.enum.ROR"
+msgstr ""
+
+msgid ""
+"metadata/relatedItems/itemContributors/authorityIdentifiers/scheme.enum.ICO"
+msgstr ""
+
+msgid ""
+"metadata/relatedItems/itemContributors/authorityIdentifiers/scheme.enum.DOI"
+msgstr ""
+
+msgid ""
+"metadata/relatedItems/itemCreators/authorityIdentifiers/identifier.hint"
+msgstr "např https://orcid.org/0009-0004-8646-7185 pro ORCID."
+
+msgid ""
+"metadata/relatedItems/itemCreators/authorityIdentifiers/identifier.help"
+msgstr ""
+
+msgid "metadata/relatedItems/itemCreators/authorityIdentifiers/scheme.hint"
+msgstr "např ORCID, scopusID"
+
+msgid "metadata/relatedItems/itemCreators/authorityIdentifiers/scheme.help"
+msgstr ""
+
+msgid ""
+"metadata/relatedItems/itemCreators/authorityIdentifiers/scheme.enum.orcid"
+msgstr ""
+
+msgid ""
+"metadata/relatedItems/itemCreators/authorityIdentifiers/scheme.enum.scopusID"
+msgstr ""
+
+msgid ""
+"metadata/relatedItems/itemCreators/authorityIdentifiers/scheme.enum.researcherID"
+msgstr ""
+
+msgid ""
+"metadata/relatedItems/itemCreators/authorityIdentifiers/scheme.enum.czenasAutID"
+msgstr ""
+
+msgid ""
+"metadata/relatedItems/itemCreators/authorityIdentifiers/scheme.enum.vedidk"
+msgstr ""
+
+msgid ""
+"metadata/relatedItems/itemCreators/authorityIdentifiers/scheme.enum.institutionalID"
+msgstr ""
+
+msgid ""
+"metadata/relatedItems/itemCreators/authorityIdentifiers/scheme.enum.ISNI"
+msgstr ""
+
+msgid ""
+"metadata/relatedItems/itemCreators/authorityIdentifiers/scheme.enum.ROR"
+msgstr ""
+
+msgid ""
+"metadata/relatedItems/itemCreators/authorityIdentifiers/scheme.enum.ICO"
+msgstr ""
+
+msgid ""
+"metadata/relatedItems/itemCreators/authorityIdentifiers/scheme.enum.DOI"
 msgstr ""

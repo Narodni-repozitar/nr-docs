@@ -22,11 +22,11 @@ msgstr "Abstract"
 
 #: models/nr-documents/nr_documents/services/records/facets.py:29
 msgid "metadata/abstract/lang.label"
-msgstr ""
+msgstr "Language"
 
 #: models/nr-documents/nr_documents/services/records/facets.py:37
 msgid "metadata/abstract/value.label"
-msgstr ""
+msgstr "Text"
 
 #: models/nr-documents/nr_documents/services/records/facets.py:43
 #: sites/nr-docs/site/nr_docs/translations/jinjax_messages.jinja:11
@@ -40,11 +40,11 @@ msgstr "Resource accessibility"
 
 #: models/nr-documents/nr_documents/services/records/facets.py:59
 msgid "metadata/accessibility/lang.label"
-msgstr ""
+msgstr "Language"
 
 #: models/nr-documents/nr_documents/services/records/facets.py:67
 msgid "metadata/accessibility/value.label"
-msgstr ""
+msgstr "Text"
 
 #: models/nr-documents/nr_documents/services/records/facets.py:73
 #: models/nr-documents/nr_documents/services/records/facets.py:78
@@ -53,11 +53,11 @@ msgstr ""
 
 #: models/nr-documents/nr_documents/services/records/facets.py:85
 msgid "metadata/additionalTitles/title/lang.label"
-msgstr ""
+msgstr "Language"
 
 #: models/nr-documents/nr_documents/services/records/facets.py:93
 msgid "metadata/additionalTitles/title/value.label"
-msgstr ""
+msgstr "Text"
 
 #: models/nr-documents/nr_documents/services/records/facets.py:99
 msgid "metadata/additionalTitles/titleType.label"
@@ -73,11 +73,11 @@ msgstr "Affiliation"
 
 #: models/nr-documents/nr_documents/services/records/facets.py:114
 msgid "metadata/contributors/authorityIdentifiers/identifier.label"
-msgstr ""
+msgstr "Identifier"
 
 #: models/nr-documents/nr_documents/services/records/facets.py:119
 msgid "metadata/contributors/authorityIdentifiers/scheme.label"
-msgstr ""
+msgstr "Identifier type"
 
 #: models/nr-documents/nr_documents/services/records/facets.py:124
 msgid "metadata/contributors/fullName.label"
@@ -97,11 +97,11 @@ msgstr "Affiliation"
 
 #: models/nr-documents/nr_documents/services/records/facets.py:146
 msgid "metadata/creators/authorityIdentifiers/identifier.label"
-msgstr ""
+msgstr "Identifier"
 
 #: models/nr-documents/nr_documents/services/records/facets.py:151
 msgid "metadata/creators/authorityIdentifiers/scheme.label"
-msgstr ""
+msgstr "Identifier type"
 
 #: models/nr-documents/nr_documents/services/records/facets.py:155
 msgid "metadata/creators/fullName.label"
@@ -166,11 +166,11 @@ msgstr "Methods"
 
 #: models/nr-documents/nr_documents/services/records/facets.py:229
 msgid "metadata/methods/lang.label"
-msgstr ""
+msgstr "Language"
 
 #: models/nr-documents/nr_documents/services/records/facets.py:236
 msgid "metadata/methods/value.label"
-msgstr ""
+msgstr "Text"
 
 #: models/nr-documents/nr_documents/services/records/facets.py:242
 msgid "metadata/objectIdentifiers/identifier.label"
@@ -193,12 +193,12 @@ msgstr "Affiliation"
 #: models/nr-documents/nr_documents/services/records/facets.py:262
 msgid ""
 "metadata/relatedItems/itemContributors/authorityIdentifiers/identifier.label"
-msgstr ""
+msgstr "Identifier"
 
 #: models/nr-documents/nr_documents/services/records/facets.py:269
 msgid ""
 "metadata/relatedItems/itemContributors/authorityIdentifiers/scheme.label"
-msgstr ""
+msgstr "Identifier type"
 
 #: models/nr-documents/nr_documents/services/records/facets.py:274
 msgid "metadata/relatedItems/itemContributors/fullName.label"
@@ -219,11 +219,11 @@ msgstr "Affiliation"
 #: models/nr-documents/nr_documents/services/records/facets.py:296
 msgid ""
 "metadata/relatedItems/itemCreators/authorityIdentifiers/identifier.label"
-msgstr ""
+msgstr "Identifier"
 
 #: models/nr-documents/nr_documents/services/records/facets.py:301
 msgid "metadata/relatedItems/itemCreators/authorityIdentifiers/scheme.label"
-msgstr ""
+msgstr "Identifier type"
 
 #: models/nr-documents/nr_documents/services/records/facets.py:306
 msgid "metadata/relatedItems/itemCreators/fullName.label"
@@ -311,11 +311,11 @@ msgstr "Keywords"
 
 #: models/nr-documents/nr_documents/services/records/facets.py:414
 msgid "metadata/subjects/subject/lang.label"
-msgstr ""
+msgstr "Language"
 
 #: models/nr-documents/nr_documents/services/records/facets.py:422
 msgid "metadata/subjects/subject/value.label"
-msgstr ""
+msgstr "Text"
 
 #: models/nr-documents/nr_documents/services/records/facets.py:428
 msgid "metadata/subjects/subjectScheme.label"
@@ -341,11 +341,11 @@ msgstr "Technical information"
 
 #: models/nr-documents/nr_documents/services/records/facets.py:457
 msgid "metadata/technicalInfo/lang.label"
-msgstr ""
+msgstr "Language"
 
 #: models/nr-documents/nr_documents/services/records/facets.py:465
 msgid "metadata/technicalInfo/value.label"
-msgstr ""
+msgstr "Text"
 
 #: models/nr-documents/nr_documents/services/records/facets.py:470
 #: sites/nr-docs/site/nr_docs/translations/jinjax_messages.jinja:5
@@ -1289,8 +1289,9 @@ msgstr ""
 
 msgid "metadata/contributors/authorityIdentifiers.help"
 msgstr ""
-"Choose the identifier type from the menu. Write the identifier without a "
-"prefix (e.g. https://orcid.org/0009-0004-8646-7185 or jk01051816)."
+"Choose the identifier type from the menu. Write the identifier without a prefix (e.g. https://orcid.org/0009-0004-8646-7185 or jk01051816). \n"
+"We recommend providing at least one of the identifier types.\n"
+"If you need to expand the range of identifier types, contact us at support@narodni-repozitar.cz.\n"
 
 msgid "metadata/contributors/authorityIdentifiers.label"
 msgstr "Person identifier"
@@ -1505,8 +1506,9 @@ msgstr ""
 
 msgid "metadata/creators/authorityIdentifiers.help"
 msgstr ""
-"Choose the identifier type from the menu. Write the identifier without a "
-"prefix (e.g. https://orcid.org/0009-0004-8646-7185 or jk01051816)."
+"Choose the identifier type from the menu. Write the identifier without a prefix (e.g. https://orcid.org/0009-0004-8646-7185 or jk01051816). \n"
+"We recommend providing at least one of the identifier types.\n"
+"If you need to expand the range of identifier types, contact us at support@narodni-repozitar.cz.\n"
 
 msgid "metadata/creators/authorityIdentifiers.label"
 msgstr "Person identifier"
@@ -1981,8 +1983,9 @@ msgstr ""
 
 msgid "metadata/relatedItems/itemContributors/authorityIdentifiers.help"
 msgstr ""
-"Choose the identifier type from the menu. Write the identifier without a "
-"prefix (e.g. https://orcid.org/0009-0004-8646-7185 or jk01051816)."
+"Choose the identifier type from the menu. Write the identifier without a prefix (e.g. https://orcid.org/0009-0004-8646-7185 or jk01051816). \n"
+"We recommend providing at least one of the identifier types.\n"
+"If you need to expand the range of identifier types, contact us at support@narodni-repozitar.cz.\n"
 
 msgid "metadata/relatedItems/itemContributors/authorityIdentifiers.label"
 msgstr "Person identifier"
@@ -2153,8 +2156,9 @@ msgstr ""
 
 msgid "metadata/relatedItems/itemCreators/authorityIdentifiers.help"
 msgstr ""
-"Choose the identifier type from the menu. Write the identifier without a "
-"prefix (e.g. https://orcid.org/0009-0004-8646-7185 or jk01051816)."
+"Choose the identifier type from the menu. Write the identifier without a prefix (e.g. https://orcid.org/0009-0004-8646-7185 or jk01051816). \n"
+"We recommend providing at least one of the identifier types.\n"
+"If you need to expand the range of identifier types, contact us at support@narodni-repozitar.cz.\n"
 
 msgid "metadata/relatedItems/itemCreators/authorityIdentifiers.label"
 msgstr "Person identifier"
@@ -2200,7 +2204,7 @@ msgid "metadata/relatedItems/itemPIDs.help"
 msgstr "Permanent object identifiers such as ISBN, DOI, etc."
 
 msgid "metadata/relatedItems/itemPIDs.label"
-msgstr ""
+msgstr "Identifier"
 
 msgid "metadata/relatedItems/itemPIDs.hint"
 msgstr ""
@@ -3997,4 +4001,198 @@ msgid "syntheticFields/year.help"
 msgstr ""
 
 msgid "syntheticFields/year.hint"
+msgstr ""
+
+msgid "metadata/contributors/authorityIdentifiers/identifier.hint"
+msgstr "e.g. https://orcid.org/0009-0004-8646-7185 for ORCID."
+
+msgid "metadata/contributors/authorityIdentifiers/identifier.help"
+msgstr ""
+
+msgid "metadata/contributors/authorityIdentifiers/scheme.hint"
+msgstr "e.g. ORCID, scopusID"
+
+msgid "metadata/contributors/authorityIdentifiers/scheme.help"
+msgstr ""
+
+msgid "metadata/contributors/authorityIdentifiers/scheme.enum.orcid"
+msgstr ""
+
+msgid "metadata/contributors/authorityIdentifiers/scheme.enum.scopusID"
+msgstr ""
+
+msgid "metadata/contributors/authorityIdentifiers/scheme.enum.researcherID"
+msgstr ""
+
+msgid "metadata/contributors/authorityIdentifiers/scheme.enum.czenasAutID"
+msgstr ""
+
+msgid "metadata/contributors/authorityIdentifiers/scheme.enum.vedidk"
+msgstr ""
+
+msgid "metadata/contributors/authorityIdentifiers/scheme.enum.institutionalID"
+msgstr ""
+
+msgid "metadata/contributors/authorityIdentifiers/scheme.enum.ISNI"
+msgstr ""
+
+msgid "metadata/contributors/authorityIdentifiers/scheme.enum.ROR"
+msgstr ""
+
+msgid "metadata/contributors/authorityIdentifiers/scheme.enum.ICO"
+msgstr ""
+
+msgid "metadata/contributors/authorityIdentifiers/scheme.enum.DOI"
+msgstr ""
+
+msgid "metadata/creators/authorityIdentifiers/identifier.hint"
+msgstr "e.g. https://orcid.org/0009-0004-8646-7185 for ORCID."
+
+msgid "metadata/creators/authorityIdentifiers/identifier.help"
+msgstr ""
+
+msgid "metadata/creators/authorityIdentifiers/scheme.hint"
+msgstr "e.g. ORCID, scopusID"
+
+msgid "metadata/creators/authorityIdentifiers/scheme.help"
+msgstr ""
+
+msgid "metadata/creators/authorityIdentifiers/scheme.enum.orcid"
+msgstr ""
+
+msgid "metadata/creators/authorityIdentifiers/scheme.enum.scopusID"
+msgstr ""
+
+msgid "metadata/creators/authorityIdentifiers/scheme.enum.researcherID"
+msgstr ""
+
+msgid "metadata/creators/authorityIdentifiers/scheme.enum.czenasAutID"
+msgstr ""
+
+msgid "metadata/creators/authorityIdentifiers/scheme.enum.vedidk"
+msgstr ""
+
+msgid "metadata/creators/authorityIdentifiers/scheme.enum.institutionalID"
+msgstr ""
+
+msgid "metadata/creators/authorityIdentifiers/scheme.enum.ISNI"
+msgstr ""
+
+msgid "metadata/creators/authorityIdentifiers/scheme.enum.ROR"
+msgstr ""
+
+msgid "metadata/creators/authorityIdentifiers/scheme.enum.ICO"
+msgstr ""
+
+msgid "metadata/creators/authorityIdentifiers/scheme.enum.DOI"
+msgstr ""
+
+msgid ""
+"metadata/relatedItems/itemContributors/authorityIdentifiers/identifier.hint"
+msgstr "e.g. https://orcid.org/0009-0004-8646-7185 for ORCID."
+
+msgid ""
+"metadata/relatedItems/itemContributors/authorityIdentifiers/identifier.help"
+msgstr ""
+
+msgid ""
+"metadata/relatedItems/itemContributors/authorityIdentifiers/scheme.hint"
+msgstr "e.g. ORCID, scopusID"
+
+msgid ""
+"metadata/relatedItems/itemContributors/authorityIdentifiers/scheme.help"
+msgstr ""
+
+msgid ""
+"metadata/relatedItems/itemContributors/authorityIdentifiers/scheme.enum.orcid"
+msgstr ""
+
+msgid ""
+"metadata/relatedItems/itemContributors/authorityIdentifiers/scheme.enum.scopusID"
+msgstr ""
+
+msgid ""
+"metadata/relatedItems/itemContributors/authorityIdentifiers/scheme.enum.researcherID"
+msgstr ""
+
+msgid ""
+"metadata/relatedItems/itemContributors/authorityIdentifiers/scheme.enum.czenasAutID"
+msgstr ""
+
+msgid ""
+"metadata/relatedItems/itemContributors/authorityIdentifiers/scheme.enum.vedidk"
+msgstr ""
+
+msgid ""
+"metadata/relatedItems/itemContributors/authorityIdentifiers/scheme.enum.institutionalID"
+msgstr ""
+
+msgid ""
+"metadata/relatedItems/itemContributors/authorityIdentifiers/scheme.enum.ISNI"
+msgstr ""
+
+msgid ""
+"metadata/relatedItems/itemContributors/authorityIdentifiers/scheme.enum.ROR"
+msgstr ""
+
+msgid ""
+"metadata/relatedItems/itemContributors/authorityIdentifiers/scheme.enum.ICO"
+msgstr ""
+
+msgid ""
+"metadata/relatedItems/itemContributors/authorityIdentifiers/scheme.enum.DOI"
+msgstr ""
+
+msgid ""
+"metadata/relatedItems/itemCreators/authorityIdentifiers/identifier.hint"
+msgstr "e.g. https://orcid.org/0009-0004-8646-7185 for ORCID."
+
+msgid ""
+"metadata/relatedItems/itemCreators/authorityIdentifiers/identifier.help"
+msgstr ""
+
+msgid "metadata/relatedItems/itemCreators/authorityIdentifiers/scheme.hint"
+msgstr "e.g. ORCID, scopusID"
+
+msgid "metadata/relatedItems/itemCreators/authorityIdentifiers/scheme.help"
+msgstr ""
+
+msgid ""
+"metadata/relatedItems/itemCreators/authorityIdentifiers/scheme.enum.orcid"
+msgstr ""
+
+msgid ""
+"metadata/relatedItems/itemCreators/authorityIdentifiers/scheme.enum.scopusID"
+msgstr ""
+
+msgid ""
+"metadata/relatedItems/itemCreators/authorityIdentifiers/scheme.enum.researcherID"
+msgstr ""
+
+msgid ""
+"metadata/relatedItems/itemCreators/authorityIdentifiers/scheme.enum.czenasAutID"
+msgstr ""
+
+msgid ""
+"metadata/relatedItems/itemCreators/authorityIdentifiers/scheme.enum.vedidk"
+msgstr ""
+
+msgid ""
+"metadata/relatedItems/itemCreators/authorityIdentifiers/scheme.enum.institutionalID"
+msgstr ""
+
+msgid ""
+"metadata/relatedItems/itemCreators/authorityIdentifiers/scheme.enum.ISNI"
+msgstr ""
+
+msgid ""
+"metadata/relatedItems/itemCreators/authorityIdentifiers/scheme.enum.ROR"
+msgstr ""
+
+msgid ""
+"metadata/relatedItems/itemCreators/authorityIdentifiers/scheme.enum.ICO"
+msgstr ""
+
+msgid ""
+"metadata/relatedItems/itemCreators/authorityIdentifiers/scheme.enum.DOI"
 msgstr ""

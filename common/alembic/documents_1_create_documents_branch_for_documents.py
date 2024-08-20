@@ -1,5 +1,4 @@
-import sqlalchemy_utils.types
-import sqlalchemy_utils
+
 #
 # This file is part of Invenio.
 # Copyright (C) 2016-2018 CERN.
@@ -9,22 +8,18 @@ import sqlalchemy_utils
 
 """Create documents branch for documents."""
 
-from alembic import op
-import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = 'documents_1'
+revision = "documents_1"
 down_revision = None
-branch_labels = ('documents',)
+branch_labels = ("documents",)
 depends_on = None
 
 
 def upgrade():
     """Upgrade database."""
-    pass
 
 
 def downgrade():
     """Downgrade database."""
-    pass

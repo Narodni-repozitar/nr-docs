@@ -1,7 +1,4 @@
 import marshmallow as ma
-from invenio_drafts_resources.services.records.schema import (
-    ParentSchema as InvenioParentSchema,
-)
 from marshmallow import fields as ma_fields
 from marshmallow.utils import get_value
 from marshmallow_utils.fields import SanitizedUnicode
@@ -10,13 +7,17 @@ from nr_metadata.documents.services.records.schema import (
     NRDocumentRecordSchema,
     NRDocumentSyntheticFieldsSchema,
 )
+from oarepo_communities.schemas.parent import CommunitiesParentSchema
 from oarepo_runtime.services.schema.marshmallow import DictOnlySchema
+from oarepo_workflows.services.records.schema import WorkflowParentSchema
 
 
-class GeneratedParentSchema(InvenioParentSchema):
+class GeneratedParentSchema(WorkflowParentSchema):
     """"""
 
     owners = ma.fields.List(ma.fields.Dict(), load_only=True)
+
+    communities = ma_fields.Nested(CommunitiesParentSchema)
 
 
 class DocumentsSchema(NRDocumentRecordSchema):
