@@ -53,6 +53,7 @@
                             "lang": {
                                 "detail": "keyword",
                                 "input": "keyword",
+                                "required": true,
                                 "help": "metadata/abstract/lang.help",
                                 "label": "metadata/abstract/lang.label",
                                 "hint": "metadata/abstract/lang.hint",
@@ -61,6 +62,7 @@
                             "value": {
                                 "detail": "fulltext+keyword",
                                 "input": "fulltext+keyword",
+                                "required": true,
                                 "help": "metadata/abstract/value.help",
                                 "label": "metadata/abstract/value.label",
                                 "hint": "metadata/abstract/value.hint"
@@ -117,6 +119,7 @@
                             "lang": {
                                 "detail": "keyword",
                                 "input": "keyword",
+                                "required": true,
                                 "help": "metadata/accessibility/lang.help",
                                 "label": "metadata/accessibility/lang.label",
                                 "hint": "metadata/accessibility/lang.hint",
@@ -125,6 +128,7 @@
                             "value": {
                                 "detail": "fulltext+keyword",
                                 "input": "fulltext+keyword",
+                                "required": true,
                                 "help": "metadata/accessibility/value.help",
                                 "label": "metadata/accessibility/value.label",
                                 "hint": "metadata/accessibility/value.hint"
@@ -157,6 +161,7 @@
                                     "lang": {
                                         "detail": "keyword",
                                         "input": "keyword",
+                                        "required": true,
                                         "help": "metadata/additionalTitles/title/lang.help",
                                         "label": "metadata/additionalTitles/title/lang.label",
                                         "hint": "metadata/additionalTitles/title/lang.hint",
@@ -165,6 +170,7 @@
                                     "value": {
                                         "detail": "fulltext+keyword",
                                         "input": "fulltext+keyword",
+                                        "required": true,
                                         "help": "metadata/additionalTitles/title/value.help",
                                         "label": "metadata/additionalTitles/title/value.label",
                                         "hint": "metadata/additionalTitles/title/value.hint"
@@ -939,6 +945,7 @@
                             "lang": {
                                 "detail": "keyword",
                                 "input": "keyword",
+                                "required": true,
                                 "help": "metadata/methods/lang.help",
                                 "label": "metadata/methods/lang.label",
                                 "hint": "metadata/methods/lang.hint",
@@ -947,6 +954,7 @@
                             "value": {
                                 "detail": "fulltext+keyword",
                                 "input": "fulltext+keyword",
+                                "required": true,
                                 "help": "metadata/methods/value.help",
                                 "label": "metadata/methods/value.label",
                                 "hint": "metadata/methods/value.hint"
@@ -1809,6 +1817,7 @@
                                         "lang": {
                                             "detail": "keyword",
                                             "input": "keyword",
+                                            "required": true,
                                             "help": "metadata/subjects/subject/lang.help",
                                             "label": "metadata/subjects/subject/lang.label",
                                             "hint": "metadata/subjects/subject/lang.hint",
@@ -1817,6 +1826,7 @@
                                         "value": {
                                             "detail": "fulltext+keyword",
                                             "input": "fulltext+keyword",
+                                            "required": true,
                                             "help": "metadata/subjects/subject/value.help",
                                             "label": "metadata/subjects/subject/value.label",
                                             "hint": "metadata/subjects/subject/value.hint"
@@ -1895,6 +1905,7 @@
                             "lang": {
                                 "detail": "keyword",
                                 "input": "keyword",
+                                "required": true,
                                 "help": "metadata/technicalInfo/lang.help",
                                 "label": "metadata/technicalInfo/lang.label",
                                 "hint": "metadata/technicalInfo/lang.hint",
@@ -1903,6 +1914,7 @@
                             "value": {
                                 "detail": "fulltext+keyword",
                                 "input": "fulltext+keyword",
+                                "required": true,
                                 "help": "metadata/technicalInfo/value.help",
                                 "label": "metadata/technicalInfo/value.label",
                                 "hint": "metadata/technicalInfo/value.hint"
