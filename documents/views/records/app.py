@@ -45,7 +45,7 @@ def init_addons_documents_requests(state):
 
     from documents import config
 
-    for er in getattr(config, "REQUESTS_ENTITY_RESOLVERS", []):
+    for er in getattr(config, "DOCUMENTS_ENTITY_RESOLVERS", []):
         requests.entity_resolvers_registry.register_type(er)
 
 

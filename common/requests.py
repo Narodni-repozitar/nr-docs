@@ -17,4 +17,6 @@ request_type_receivers = {
 
 
 def request_receivers(*args, request_type=None, **kwargs):
-    return request_type_receivers.get(request_type, default_receiver)(*args, request_type, **kwargs)
+    return request_type_receivers.get(request_type, default_receiver)(
+        *args, request_type, **kwargs
+    )
