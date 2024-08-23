@@ -1,3 +1,4 @@
+from invenio_communities.records.records.systemfields import CommunitiesField
 from invenio_drafts_resources.records.api import Draft as InvenioDraft
 from invenio_drafts_resources.records.api import DraftRecordIdProviderV2, ParentRecord
 from invenio_drafts_resources.records.api import Record as InvenioRecord
@@ -6,6 +7,9 @@ from invenio_records_resources.records.systemfields import FilesField, IndexFiel
 from invenio_records_resources.records.systemfields.pid import PIDField, PIDFieldContext
 from invenio_vocabularies.records.api import Vocabulary
 from nr_metadata.records.synthetic_fields import KeywordsFieldSelector
+from oarepo_communities.records.systemfields.communities import (
+    OARepoCommunitiesFieldContext,
+)
 from oarepo_runtime.records.relations import PIDRelation, RelationsField
 from oarepo_runtime.records.systemfields import (
     FirstItemSelector,
@@ -16,11 +20,14 @@ from oarepo_runtime.records.systemfields.has_draftcheck import HasDraftCheckFiel
 from oarepo_runtime.records.systemfields.icu import ICUSearchField
 from oarepo_runtime.records.systemfields.owner import OwnersField
 from oarepo_runtime.records.systemfields.record_status import RecordStatusSystemField
+from oarepo_workflows.records.systemfields.state import RecordStateField
+from oarepo_workflows.records.systemfields.workflow import WorkflowField
 
 from common.services.sort import TitleICUSortField
 from documents.files.api import DocumentsFile, DocumentsFileDraft
 from documents.records.dumpers.dumper import DocumentsDraftDumper, DocumentsDumper
 from documents.records.models import (
+    DocumentsCommunitiesMetadata,
     DocumentsDraftMetadata,
     DocumentsMetadata,
     DocumentsParentMetadata,
@@ -30,6 +37,12 @@ from documents.records.models import (
 
 class DocumentsParentRecord(ParentRecord):
     model_cls = DocumentsParentMetadata
+
+    workflow = WorkflowField()
+
+    communities = CommunitiesField(
+        DocumentsCommunitiesMetadata, context_cls=OARepoCommunitiesFieldContext
+    )
 
     owners = OwnersField()
 
@@ -101,6 +114,8 @@ class DocumentsRecord(InvenioRecord):
         filter=lambda x: len(x) >= 4,
         map=lambda x: x[:4],
     )
+
+    state = RecordStateField(initial="published")
 
     relations = RelationsField(
         accessRights=PIDRelation(
@@ -230,6 +245,8 @@ class DocumentsDraft(InvenioDraft):
     )
 
     dumper = DocumentsDraftDumper()
+
+    state = RecordStateField()
 
     relations = RelationsField(
         accessRights=PIDRelation(
