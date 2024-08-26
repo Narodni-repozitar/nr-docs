@@ -5,6 +5,7 @@ import {
   PreviewButton,
   SaveButton,
   DeleteButton,
+  SelectedCommunity,
 } from "@js/oarepo_ui";
 import { TextField, FieldLabel } from "react-invenio-forms";
 import { i18next } from "@translations/i18next";
@@ -46,6 +47,9 @@ const FormActionsContainer = () => {
           </Grid.Column>
           <Grid.Column width={16} className="pt-10">
             <DeleteButton redirectUrl="/me/records" />
+          </Grid.Column>
+          <Grid.Column width={16} className="pt-10">
+            <SelectedCommunity />
           </Grid.Column>
         </Grid>
       </Card.Content>
