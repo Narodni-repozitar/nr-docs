@@ -1,10 +1,9 @@
 import re
 from functools import cached_property
 
+from documents import config
 from oarepo_requests.proxies import current_oarepo_requests_service
 from oarepo_requests.resources.draft.config import DraftRecordRequestsResourceConfig
-
-from documents import config
 
 
 class DocumentsExt:

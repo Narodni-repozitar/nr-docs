@@ -17,6 +17,8 @@ class DocumentsUISchema(UIRequestsSerializationMixin, NRDocumentRecordUISchema):
 
     oai = ma_fields.Nested(lambda: OaiUISchema())
 
+    state = ma_fields.String(dump_only=True)
+
     syntheticFields = ma_fields.Nested(lambda: NRDocumentSyntheticFieldsUISchema())
 
 

@@ -1,7 +1,6 @@
+from documents.files.models import DocumentsFileDraftMetadata, DocumentsFileMetadata
 from invenio_records_resources.records.api import FileRecord
 from invenio_records_resources.records.systemfields import IndexField
-
-from documents.files.models import DocumentsFileDraftMetadata, DocumentsFileMetadata
 
 
 class DocumentsFile(FileRecord):

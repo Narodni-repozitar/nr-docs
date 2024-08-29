@@ -483,6 +483,8 @@ oai_harvest_identifier = TermsFacet(
     field="oai.harvest.identifier", label=_("oai/harvest/identifier.label")
 )
 
+state = TermsFacet(field="state", label=_("state.label"))
+
 syntheticFields_date = DateTimeFacet(
     field="syntheticFields.date", label=_("syntheticFields/date.label")
 )

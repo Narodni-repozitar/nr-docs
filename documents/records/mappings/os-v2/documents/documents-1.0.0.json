@@ -1234,6 +1234,10 @@
                     }
                 }
             },
+            "state": {
+                "type": "keyword",
+                "ignore_above": 1024
+            },
             "syntheticFields": {
                 "type": "object",
                 "properties": {
