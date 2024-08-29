@@ -1,14 +1,9 @@
-from invenio_records_resources.services import FileLink, FileServiceConfig, RecordLink
-from invenio_records_resources.services.records.components import DataComponent
-from oarepo_communities.services.components.default_workflow import (
-    CommunityDefaultWorkflowComponent,
-)
-from oarepo_communities.services.components.include import CommunityInclusionComponent
-from oarepo_runtime.services.config.service import PermissionsPresetsConfigMixin
-
 from documents.records.api import DocumentsDraft, DocumentsRecord
 from documents.services.files.schema import DocumentsFileSchema
 from documents.services.records.permissions import DocumentsPermissionPolicy
+from invenio_records_resources.services import FileLink, FileServiceConfig, RecordLink
+from oarepo_runtime.services.components import CustomFieldsComponent
+from oarepo_runtime.services.config.service import PermissionsPresetsConfigMixin
 
 
 class DocumentsFileServiceConfig(PermissionsPresetsConfigMixin, FileServiceConfig):
@@ -29,9 +24,7 @@ class DocumentsFileServiceConfig(PermissionsPresetsConfigMixin, FileServiceConfi
     components = [
         *PermissionsPresetsConfigMixin.components,
         *FileServiceConfig.components,
-        CommunityDefaultWorkflowComponent,
-        CommunityInclusionComponent,
-        DataComponent,
+        CustomFieldsComponent,
     ]
 
     model = "documents"
@@ -71,8 +64,7 @@ class DocumentsFileDraftServiceConfig(PermissionsPresetsConfigMixin, FileService
     components = [
         *PermissionsPresetsConfigMixin.components,
         *FileServiceConfig.components,
-        CommunityInclusionComponent,
-        DataComponent,
+        CustomFieldsComponent,
     ]
 
     model = "documents"
