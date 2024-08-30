@@ -35,7 +35,7 @@ from oarepo_runtime.services.permissions.generators import RecordOwners, UserWit
 from oarepo_workflows import (
     AutoApprove,
     IfInState,
-    DefaultWorkflowPermissionPolicy,
+    DefaultWorkflowPermissions,
     WorkflowRequest,
     WorkflowRequestEscalation,
     WorkflowRequestPolicy,
@@ -43,8 +43,8 @@ from oarepo_workflows import (
 )
 
 
-# TODO: naming issue: DefaultWorkflowPermissions vs DefaultWorkflowPermissionPolicy
-class DefaultWorkflowPermissions(DefaultWorkflowPermissionPolicy):
+# TODO: naming issue: DefaultWorkflowPermissions vs DefaultWorkflowPermissions
+class DefaultWorkflowPermissions(DefaultWorkflowPermissions):
     can_create = [
         PrimaryCommunityRole("submitter"),
         PrimaryCommunityRole("curator"),
@@ -167,7 +167,10 @@ class DefaultWorkflowRequests(WorkflowRequestPolicy):
         # otherwise, the request is sent to the curator
         recipients=[
             IfRequestedBy(
-                requesters=[PrimaryCommunityRole("curator"), UserWithRole("administrator")],
+                requesters=[
+                    PrimaryCommunityRole("curator"),
+                    UserWithRole("administrator"),
+                ],
                 then_=[AutoApprove()],
                 else_=[PrimaryCommunityRole("curator")],
             )
@@ -193,7 +196,10 @@ class DefaultWorkflowRequests(WorkflowRequestPolicy):
         ],
         recipients=[
             IfRequestedBy(
-                requesters=[PrimaryCommunityRole("curator"), UserWithRole("administrator")],
+                requesters=[
+                    PrimaryCommunityRole("curator"),
+                    UserWithRole("administrator"),
+                ],
                 then_=[AutoApprove()],
                 else_=[PrimaryCommunityRole("curator")],
             )

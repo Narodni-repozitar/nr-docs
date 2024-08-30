@@ -3347,7 +3347,11 @@ files = [
 
 [[package]]
 name = "nr-metadata"
+<<<<<<< Updated upstream
 version = "2.0.36"
+=======
+version = "2.0.37"
+>>>>>>> Stashed changes
 requires_python = ">=3.9"
 summary = "\"Generated metadata files for the Czech National Repository\""
 groups = ["default"]
@@ -3357,8 +3361,13 @@ dependencies = [
     "oarepo-vocabularies>=2.0.0",
 ]
 files = [
+<<<<<<< Updated upstream
     {file = "nr_metadata-2.0.36-py2.py3-none-any.whl", hash = "sha256:4d16d5ee20368f8ad5cfb702c06cdf7b52664b5b0ff394ecb041a0aaa453b2a3"},
     {file = "nr_metadata-2.0.36.tar.gz", hash = "sha256:d90026701c63b334cf3afd0c4284eee6de4b436e5b7bc7d9ffb96cf3557db54a"},
+=======
+    {file = "nr_metadata-2.0.37-py2.py3-none-any.whl", hash = "sha256:71a692ba4e060912a8ba2fdae23c9c044f25627cbe6937fe3704c0212eb9654d"},
+    {file = "nr_metadata-2.0.37.tar.gz", hash = "sha256:c8fd12b70a7f2bc594f7d3e88efb595a7224f7b8531a302b4918a444cfb2fa9e"},
+>>>>>>> Stashed changes
 ]
 
 [[package]]
@@ -3693,7 +3702,11 @@ files = [
 
 [[package]]
 name = "oarepo-communities"
+<<<<<<< Updated upstream
 version = "5.0.11"
+=======
+version = "5.0.12"
+>>>>>>> Stashed changes
 summary = ""
 groups = ["default"]
 dependencies = [
@@ -3703,8 +3716,13 @@ dependencies = [
     "oarepo-runtime",
 ]
 files = [
+<<<<<<< Updated upstream
     {file = "oarepo_communities-5.0.11-py3-none-any.whl", hash = "sha256:7921da3c61561de0ba04db37f79bafd0d2883670f3e77dff32a870cc4ee75510"},
     {file = "oarepo_communities-5.0.11.tar.gz", hash = "sha256:e8e7fd08a8d8500cfc98e104fa9ebc2c7fdccad2a57c5e4b2414b94f893224e6"},
+=======
+    {file = "oarepo_communities-5.0.12-py3-none-any.whl", hash = "sha256:ac0066a7936cb85ec9eaab501ada1e01c2a0b51466405cfb0688ee819db96033"},
+    {file = "oarepo_communities-5.0.12.tar.gz", hash = "sha256:94cb56fdd8a75fa8e8ee2839ed44c3ccef0a18c04c83fb1a3645d4553ba8049d"},
+>>>>>>> Stashed changes
 ]
 
 [[package]]
@@ -3725,7 +3743,11 @@ files = [
 
 [[package]]
 name = "oarepo-global-search"
+<<<<<<< Updated upstream
 version = "1.0.22"
+=======
+version = "1.0.23"
+>>>>>>> Stashed changes
 requires_python = ">=3.10"
 summary = "\"A model builder plugin for global search\""
 groups = ["default"]
@@ -3733,8 +3755,13 @@ dependencies = [
     "oarepo-ui",
 ]
 files = [
+<<<<<<< Updated upstream
     {file = "oarepo_global_search-1.0.22-py2.py3-none-any.whl", hash = "sha256:fb270ede93f951f979b3fdcac54d049b3020b41d84fac43c026ac3fb3262a237"},
     {file = "oarepo_global_search-1.0.22.tar.gz", hash = "sha256:be430afed6e82257cae2e8afb6555db6104eee4f885fcce8ceefda5c398919e0"},
+=======
+    {file = "oarepo_global_search-1.0.23-py2.py3-none-any.whl", hash = "sha256:34fb8ecae89ad2aebb521511e4aee51e85ea06985b2a3a8693bfa05bab81c7e9"},
+    {file = "oarepo_global_search-1.0.23.tar.gz", hash = "sha256:4411d27889054640f36f440ffadd92dd61805cb60bdcd6fbae8fa4962cbaf183"},
+>>>>>>> Stashed changes
 ]
 
 [[package]]
@@ -3768,7 +3795,11 @@ files = [
 
 [[package]]
 name = "oarepo-requests"
+<<<<<<< Updated upstream
 version = "2.0.4"
+=======
+version = "2.0.7"
+>>>>>>> Stashed changes
 summary = ""
 groups = ["default"]
 dependencies = [
@@ -3776,13 +3807,22 @@ dependencies = [
     "oarepo-runtime",
 ]
 files = [
+<<<<<<< Updated upstream
     {file = "oarepo_requests-2.0.4-py3-none-any.whl", hash = "sha256:4bebc3115927f8a16ae91a94ff04b21cd4bad0c84899dd17111fa605d9be5002"},
     {file = "oarepo_requests-2.0.4.tar.gz", hash = "sha256:7d747ab81e5f4054deabb598b70c783d82e1341970c3adc18f809a5e5553beb2"},
+=======
+    {file = "oarepo_requests-2.0.7-py3-none-any.whl", hash = "sha256:096f264f1326f5dd0cbee96998b1f78a9f54f7d7b37b1446550f1590b47dc7a7"},
+    {file = "oarepo_requests-2.0.7.tar.gz", hash = "sha256:8430668dc6f750e947e30e9b3dfcd480900478433b78e3b52feedf39612933a8"},
+>>>>>>> Stashed changes
 ]
 
 [[package]]
 name = "oarepo-runtime"
+<<<<<<< Updated upstream
 version = "1.5.54"
+=======
+version = "1.5.57"
+>>>>>>> Stashed changes
 summary = "A set of runtime extensions of Invenio repository"
 groups = ["default"]
 dependencies = [
@@ -3797,13 +3837,22 @@ dependencies = [
     "tqdm",
 ]
 files = [
+<<<<<<< Updated upstream
     {file = "oarepo_runtime-1.5.54-py3-none-any.whl", hash = "sha256:806394cbab194538cd6ada81efd64b68bcac097bb1dab326cb457adfb30f4600"},
     {file = "oarepo_runtime-1.5.54.tar.gz", hash = "sha256:c9f2b0bc08e2930fc7c3594f6a5aae5019db4284c8fe7f1352f5d2c9d2c6b184"},
+=======
+    {file = "oarepo_runtime-1.5.57-py3-none-any.whl", hash = "sha256:d34b8031b29a285efcd51ed04f499760158ef97c8f64ddd70445a66ad20f0c5e"},
+    {file = "oarepo_runtime-1.5.57.tar.gz", hash = "sha256:4c541e6df31956db48d6c5be29fe963439edeba0f099cee1455f91b095e83766"},
+>>>>>>> Stashed changes
 ]
 
 [[package]]
 name = "oarepo-ui"
+<<<<<<< Updated upstream
 version = "5.2.6"
+=======
+version = "5.2.8"
+>>>>>>> Stashed changes
 requires_python = ">=3.10"
 summary = "UI module for invenio 3.5+"
 groups = ["default"]
@@ -3815,8 +3864,13 @@ dependencies = [
     "oarepo-runtime",
 ]
 files = [
+<<<<<<< Updated upstream
     {file = "oarepo_ui-5.2.6-py2.py3-none-any.whl", hash = "sha256:4b11964b6cafe0304e9abeb9a596ee29101bdd5ffec446e1e3b9969bbd852c12"},
     {file = "oarepo_ui-5.2.6.tar.gz", hash = "sha256:0c448110970c148fcc921770b396f1d72160c01290f4871f0d78a51ec98a75f6"},
+=======
+    {file = "oarepo_ui-5.2.8-py2.py3-none-any.whl", hash = "sha256:cbca58fe2cd2083f4e9d1dbca10eab278cec52d30a9ee957c3c1f6949f3f455f"},
+    {file = "oarepo_ui-5.2.8.tar.gz", hash = "sha256:749f4a7e6b8695ac03548fa5c3cb782b5a72ff23df1c590c3f949468620dea04"},
+>>>>>>> Stashed changes
 ]
 
 [[package]]
@@ -3838,7 +3892,11 @@ files = [
 
 [[package]]
 name = "oarepo-workflows"
+<<<<<<< Updated upstream
 version = "1.0.8"
+=======
+version = "1.0.9"
+>>>>>>> Stashed changes
 summary = ""
 groups = ["default"]
 dependencies = [
@@ -3847,8 +3905,13 @@ dependencies = [
     "oarepo-runtime",
 ]
 files = [
+<<<<<<< Updated upstream
     {file = "oarepo_workflows-1.0.8-py3-none-any.whl", hash = "sha256:330684e4885a31f44eeb5977add740082f7c4bc048bf8608532540b632ea0b12"},
     {file = "oarepo_workflows-1.0.8.tar.gz", hash = "sha256:71883d8cb32e635f0e7c713e70f8a80523bf1a5d3491230590257d8cc8000b03"},
+=======
+    {file = "oarepo_workflows-1.0.9-py3-none-any.whl", hash = "sha256:87534f161ed2dafcd6ff4f30f264a5acadbb123dd4d8042f6888229dc73e9de4"},
+    {file = "oarepo_workflows-1.0.9.tar.gz", hash = "sha256:140651ed940c4a403cd36c9f691bab4cb9941aba088b9b59f6f9f490af9de384"},
+>>>>>>> Stashed changes
 ]
 
 [[package]]
