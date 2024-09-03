@@ -1,27 +1,31 @@
+from documents.records.api import DocumentsDraft, DocumentsRecord
+from documents.services.records.permissions import DocumentsPermissionPolicy
+from documents.services.records.results import DocumentsRecordItem, DocumentsRecordList
+from documents.services.records.schema import DocumentsSchema
+from documents.services.records.search import DocumentsSearchOptions
 from invenio_drafts_resources.services.records.components import DraftFilesComponent
 from invenio_records_resources.services import (
     ConditionalLink,
     RecordLink,
     pagination_links,
 )
-from invenio_records_resources.services.records.components import DataComponent
 from oarepo_communities.services.components.default_workflow import (
     CommunityDefaultWorkflowComponent,
 )
 from oarepo_communities.services.components.include import CommunityInclusionComponent
+from oarepo_communities.services.links import CommunitiesLinks
 from oarepo_runtime.records import has_draft, is_published_record
-from oarepo_runtime.services.components import DateIssuedComponent, OwnersComponent
+from oarepo_runtime.services.components import (
+    CustomFieldsComponent,
+    DateIssuedComponent,
+    OwnersComponent,
+)
 from oarepo_runtime.services.config.service import PermissionsPresetsConfigMixin
 from oarepo_runtime.services.files import FilesComponent
 from oarepo_vocabularies.authorities.components import AuthorityComponent
 from oarepo_workflows.services.components.workflow import WorkflowComponent
 
 from common.services.config import FilteredResultServiceConfig
-from documents.records.api import DocumentsDraft, DocumentsRecord
-from documents.services.records.permissions import DocumentsPermissionPolicy
-from documents.services.records.results import DocumentsRecordItem, DocumentsRecordList
-from documents.services.records.schema import DocumentsSchema
-from documents.services.records.search import DocumentsSearchOptions
 
 
 class DocumentsServiceConfig(
@@ -56,8 +60,8 @@ class DocumentsServiceConfig(
         CommunityInclusionComponent,
         OwnersComponent,
         FilesComponent,
+        CustomFieldsComponent,
         DraftFilesComponent,
-        DataComponent,
         WorkflowComponent,
     ]
 
@@ -68,6 +72,17 @@ class DocumentsServiceConfig(
     @property
     def links_item(self):
         return {
+            "applicable-requests": ConditionalLink(
+                cond=is_published_record,
+                if_=RecordLink("{+api}/docs/{id}/requests/applicable"),
+                else_=RecordLink("{+api}/docs/{id}/draft/requests/applicable"),
+            ),
+            "communities": CommunitiesLinks(
+                {
+                    "self": "{+api}/communities/{id}",
+                    "self_html": "{+ui}/communities/{slug}/records",
+                }
+            ),
             "draft": RecordLink("{+api}/docs/{id}/draft"),
             "edit_html": RecordLink("{+ui}/docs/{id}/edit", when=has_draft),
             "files": ConditionalLink(
