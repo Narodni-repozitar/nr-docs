@@ -1,3 +1,10 @@
+from oarepo_requests.resolvers.ui import (
+    RecordEntityDraftReferenceUIResolver,
+    RecordEntityReferenceUIResolver,
+)
+from oarepo_requests.resources.draft.resource import DraftRecordRequestsResource
+from oarepo_requests.services.draft.service import DraftRecordRequestsService
+
 from documents.files.api import DocumentsFile, DocumentsFileDraft
 from documents.files.requests.resolvers import DocumentsFileDraftResolver
 from documents.records.api import DocumentsDraft, DocumentsRecord
@@ -25,12 +32,6 @@ from documents.services.files.service import (
 )
 from documents.services.records.config import DocumentsServiceConfig
 from documents.services.records.service import DocumentsService
-from oarepo_requests.resolvers.ui import (
-    RecordEntityDraftReferenceUIResolver,
-    RecordEntityReferenceUIResolver,
-)
-from oarepo_requests.resources.draft.resource import DraftRecordRequestsResource
-from oarepo_requests.services.draft.service import DraftRecordRequestsService
 
 DOCUMENTS_RECORD_RESOURCE_CONFIG = DocumentsResourceConfig
 

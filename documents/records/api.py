@@ -1,12 +1,3 @@
-from documents.files.api import DocumentsFile, DocumentsFileDraft
-from documents.records.dumpers.dumper import DocumentsDraftDumper, DocumentsDumper
-from documents.records.models import (
-    DocumentsCommunitiesMetadata,
-    DocumentsDraftMetadata,
-    DocumentsMetadata,
-    DocumentsParentMetadata,
-    DocumentsParentState,
-)
 from invenio_communities.records.records.systemfields import CommunitiesField
 from invenio_drafts_resources.records.api import Draft as InvenioDraft
 from invenio_drafts_resources.records.api import DraftRecordIdProviderV2, ParentRecord
@@ -33,6 +24,15 @@ from oarepo_workflows.records.systemfields.state import RecordStateField
 from oarepo_workflows.records.systemfields.workflow import WorkflowField
 
 from common.services.sort import TitleICUSortField
+from documents.files.api import DocumentsFile, DocumentsFileDraft
+from documents.records.dumpers.dumper import DocumentsDraftDumper, DocumentsDumper
+from documents.records.models import (
+    DocumentsCommunitiesMetadata,
+    DocumentsDraftMetadata,
+    DocumentsMetadata,
+    DocumentsParentMetadata,
+    DocumentsParentState,
+)
 
 
 class DocumentsParentRecord(ParentRecord):
