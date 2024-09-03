@@ -35,7 +35,7 @@ from oarepo_runtime.services.permissions.generators import RecordOwners, UserWit
 from oarepo_workflows import (
     AutoApprove,
     IfInState,
-    DefaultWorkflowPermissionPolicy,
+    DefaultWorkflowPermissions,
     WorkflowRequest,
     WorkflowRequestEscalation,
     WorkflowRequestPolicy,
@@ -43,8 +43,7 @@ from oarepo_workflows import (
 )
 
 
-# TODO: naming issue: DefaultWorkflowPermissions vs DefaultWorkflowPermissionPolicy
-class DefaultWorkflowPermissions(DefaultWorkflowPermissionPolicy):
+class DocsDefaultWorkflowPermissions(DefaultWorkflowPermissions):
     can_create = [
         PrimaryCommunityRole("submitter"),
         PrimaryCommunityRole("curator"),
@@ -109,7 +108,7 @@ class DefaultWorkflowPermissions(DefaultWorkflowPermissionPolicy):
     ]
 
 
-class DefaultWorkflowRequests(WorkflowRequestPolicy):
+class DocsDefaultWorkflowRequests(WorkflowRequestPolicy):
     publish_draft = WorkflowRequest(
         # if the record is in draft state, the owner or curator can request publishing
         requesters=[
