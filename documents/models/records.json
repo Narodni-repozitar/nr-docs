@@ -38,7 +38,6 @@
             ],
             "generate": true
         },
-        "custom-fields": [],
         "permissions": {
             "presets": [
                 "docs"
@@ -61,6 +60,7 @@
             "class": "documents.services.records.schema.DocumentsSchema",
             "extra-code": ""
         },
+        "custom-fields": [],
         "searchable": true,
         "pid": {
             "type": "dcmnts",
@@ -129,8 +129,8 @@
                 "{{oarepo_communities.services.components.include.CommunityInclusionComponent}}",
                 "{{oarepo_runtime.services.components.OwnersComponent}}",
                 "{{oarepo_runtime.services.files.FilesComponent}}",
+                "{{oarepo_runtime.services.components.CustomFieldsComponent}}",
                 "{{invenio_drafts_resources.services.records.components.DraftFilesComponent}}",
-                "{{invenio_records_resources.services.records.components.DataComponent}}",
                 "{{oarepo_workflows.services.components.workflow.WorkflowComponent}}"
             ],
             "generate": true,
@@ -255,16 +255,6 @@
             "suffix-upper": "DOCUMENTS",
             "suffix-snake": "documents"
         },
-        "draft": {
-            "type": "draft_record",
-            "properties": {},
-            "searchable": true,
-            "tests": {
-                "extra-fixtures": [],
-                "extra-code": "",
-                "module": "tests"
-            }
-        },
         "draft-files": {
             "type": "draft-file",
             "properties": {},
@@ -274,6 +264,16 @@
                     "oarepo_ui.resources.file_resource.S3RedirectFileResource"
                 ]
             },
+            "tests": {
+                "extra-fixtures": [],
+                "extra-code": "",
+                "module": "tests"
+            }
+        },
+        "draft": {
+            "type": "draft_record",
+            "properties": {},
+            "searchable": true,
             "tests": {
                 "extra-fixtures": [],
                 "extra-code": "",
@@ -450,6 +450,19 @@
             "module": "documents.proxies",
             "generate": true
         },
+        "resource": {
+            "base-classes": [
+                "invenio_drafts_resources.resources.RecordResource"
+            ],
+            "generate": true,
+            "config-key": "DOCUMENTS_RECORD_RESOURCE_CLASS",
+            "module": "documents.resources.records.resource",
+            "class": "documents.resources.records.resource.DocumentsResource",
+            "proxy": "current_resource",
+            "extra-code": "",
+            "imports": [],
+            "additional-args": []
+        },
         "record-resolver": {
             "generate": true,
             "module": "documents.records.requests.resolvers",
@@ -464,19 +477,6 @@
             "generate": true,
             "class": "oarepo_requests.resolvers.ui.RecordEntityReferenceUIResolver"
         },
-        "resource": {
-            "base-classes": [
-                "invenio_drafts_resources.resources.RecordResource"
-            ],
-            "generate": true,
-            "config-key": "DOCUMENTS_RECORD_RESOURCE_CLASS",
-            "module": "documents.resources.records.resource",
-            "class": "documents.resources.records.resource.DocumentsResource",
-            "proxy": "current_resource",
-            "extra-code": "",
-            "imports": [],
-            "additional-args": []
-        },
         "files-field": {
             "generate": true,
             "field-class": "invenio_records_resources.records.systemfields.FilesField",
@@ -486,6 +486,10 @@
             ],
             "imports": []
         },
+        "translations": {
+            "module": "documents.translations",
+            "alias": "documents"
+        },
         "json-schema-settings": {
             "generate": true,
             "alias": "documents",
@@ -493,10 +497,6 @@
             "module": "documents.records.jsonschemas",
             "name": "documents-1.0.0.json",
             "file": "documents/records/jsonschemas/documents-1.0.0.json"
-        },
-        "translations": {
-            "module": "documents.translations",
-            "alias": "documents"
         },
         "record-metadata": {
             "generate": true,
@@ -3567,7 +3567,6 @@
                             "properties": {
                                 "geoLocationPlace": {
                                     "type": "keyword",
-                                    "description": "Free description of the location; ie. Atlantic Ocean",
                                     "marshmallow": {
                                         "read": false,
                                         "write": false
@@ -3577,7 +3576,8 @@
                                             "read": false,
                                             "write": false
                                         }
-                                    }
+                                    },
+                                    "description": "Free description of the location; ie. Atlantic Ocean"
                                 },
                                 "geoLocationPoint": {
                                     "type": "object",
@@ -6028,7 +6028,6 @@
                                 "itemRelationType": {
                                     "type": "vocabulary",
                                     "vocabulary-type": "item-relation-types",
-                                    "description": "typ vztahu k původnímu popisovanému dok.",
                                     "ui": {
                                         "marshmallow": {
                                             "class": "nr_metadata.common.services.records.ui_schema_datatypes.NRItemRelationTypeVocabularyUISchema",
@@ -6047,6 +6046,7 @@
                                         "unknown": "INCLUDE",
                                         "generate": true
                                     },
+                                    "description": "typ vztahu k původnímu popisovanému dok.",
                                     "label.cs": "Typ vazby",
                                     "label.en": "Relation type",
                                     "hint.cs": "Vyberte typ vazby.",
@@ -7546,6 +7546,19 @@
                                 "write": false
                             }
                         }
+                    }
+                }
+            },
+            "state": {
+                "type": "keyword",
+                "marshmallow": {
+                    "read": true,
+                    "write": false
+                },
+                "ui": {
+                    "marshmallow": {
+                        "read": true,
+                        "write": false
                     }
                 }
             },

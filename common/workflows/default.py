@@ -30,20 +30,21 @@ from oarepo_communities.services.permissions.generators import (
     PrimaryCommunityRole,
     PrimaryCommunityMembers,
 )
-from oarepo_requests.services.permissions.generators import IfRequestedBy
+from oarepo_communities.services.permissions.policy import CommunityDefaultWorkflowPermissions
+from oarepo_requests.services.permissions.generators import IfRequestedBy, RequestActive
 from oarepo_runtime.services.permissions.generators import RecordOwners, UserWithRole
 from oarepo_workflows import (
     AutoApprove,
     IfInState,
-    DefaultWorkflowPermissions,
     WorkflowRequest,
     WorkflowRequestEscalation,
     WorkflowRequestPolicy,
     WorkflowTransitions,
 )
+from oarepo_requests.services.permissions.workflow_policies import RequestBasedWorkflowPermissions
 
 
-class DocsDefaultWorkflowPermissions(DefaultWorkflowPermissions):
+class DefaultWorkflowPermissions(CommunityDefaultWorkflowPermissions):
     can_create = [
         PrimaryCommunityRole("submitter"),
         PrimaryCommunityRole("curator"),
@@ -105,10 +106,10 @@ class DocsDefaultWorkflowPermissions(DefaultWorkflowPermissions):
                 UserWithRole("administrator"),
             ],
         ),
-    ]
+    ] + CommunityDefaultWorkflowPermissions.can_delete
 
 
-class DocsDefaultWorkflowRequests(WorkflowRequestPolicy):
+class DefaultWorkflowRequests(WorkflowRequestPolicy):
     publish_draft = WorkflowRequest(
         # if the record is in draft state, the owner or curator can request publishing
         requesters=[
@@ -134,6 +135,22 @@ class DocsDefaultWorkflowRequests(WorkflowRequestPolicy):
     )
 
     edit_published_record = WorkflowRequest(
+        requesters=[
+            IfInState(
+                "published",
+                then_=[
+                    RecordOwners(),
+                    PrimaryCommunityRole("curator"),
+                    UserWithRole("administrator"),
+                ],
+            )
+        ],
+        # the request is auto-approve, we do not limit the owner of the record to create a new
+        # draft version. It will need to be accepted by the curator though.
+        recipients=[AutoApprove()],
+    )
+
+    new_version = WorkflowRequest(
         requesters=[
             IfInState(
                 "published",

@@ -1,12 +1,4 @@
-forks:
-  invenio-administration: https://github.com/oarepo/invenio-administration
-  invenio-communities: https://github.com/oarepo/invenio-communities
-  invenio-drafts-resources: https://github.com/oarepo/invenio-drafts-resources
-  invenio-oauthclient: https://github.com/oarepo/invenio-oauthclient
-  invenio-records-resources: https://github.com/oarepo/invenio-records-resources
-  invenio-requests: https://github.com/oarepo/invenio-requests
-  invenio-app-rdm: https://github.com/oarepo/invenio-app-rdm
-  invenio-rdm-records: https://github.com/oarepo/invenio-rdm-records
+forks: {}
 i18n:
   babel_input_translations:
   - documents/translations

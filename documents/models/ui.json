@@ -2155,6 +2155,14 @@
                 }
             }
         },
+        "state": {
+            "detail": "keyword",
+            "input": "keyword",
+            "help": "state.help",
+            "label": "state.label",
+            "hint": "state.hint",
+            "facet": "state"
+        },
         "syntheticFields": {
             "detail": "syntheticfield",
             "input": "syntheticfield",

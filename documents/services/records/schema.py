@@ -28,6 +28,8 @@ class DocumentsSchema(NRDocumentRecordSchema):
 
     oai = ma_fields.Nested(lambda: OaiSchema())
 
+    state = ma_fields.String(dump_only=True)
+
     syntheticFields = ma_fields.Nested(lambda: NRDocumentSyntheticFieldsSchema())
     parent = ma.fields.Nested(GeneratedParentSchema)
     files = ma.fields.Nested(
