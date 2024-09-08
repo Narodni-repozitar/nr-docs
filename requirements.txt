@@ -1,4 +1,4 @@
-oarepo[s3,rdm]==12.1.33
+oarepo[s3,rdm]==12.1.34
 cachetools==5.5.0
 deepmerge==2.0
 et-xmlfile==1.1.0
@@ -23,7 +23,7 @@ oarepo-published-service==1.0.3
 oarepo-requests==2.0.8
 oarepo-runtime==1.5.58
 oarepo-ui==5.2.8
-oarepo-vocabularies==2.0.96
+oarepo-vocabularies==2.0.97
 oarepo-workflows==1.0.9
 openpyxl==3.1.5
 python-dotenv==1.0.1
