@@ -25,7 +25,7 @@ dependencies = [
     "python-dotenv",
     "oarepo-oidc-einfra>=1.0.0",
 ]
-requires-python = ">=3.10,<3.11"
+requires-python = ">=3.12,<3.13"
 
 [project.entry-points."invenio_assets.webpack"]
 branding = "ui.branding.webpack:theme"
