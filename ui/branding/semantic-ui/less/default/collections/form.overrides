@@ -210,4 +210,10 @@
   .files-upload-button:hover {
     background-color: @lightAccentColor;
   }
+
+  .required.field > label.helptext:after {
+    content: '';
+    display: none;
+  }
+
 }
