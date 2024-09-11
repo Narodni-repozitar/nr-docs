@@ -8,7 +8,7 @@ class ComponentsResourceConfig(TemplatePageUIResourceConfig):
     template_folder = "templates"
 
 
-def create_blueprint():
+def create_blueprint(app):
     """Register blueprint for this resource."""
     blueprint = TemplatePageUIResource(ComponentsResourceConfig()).as_blueprint()
 
