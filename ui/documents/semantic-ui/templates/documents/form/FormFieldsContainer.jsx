@@ -64,8 +64,7 @@ const FormFieldsContainer = () => {
   }, []);
 
   const { values, setFieldValue, setFieldTouched } = useFormikContext();
-  const toolBar = "bold italic | bullist numlist | outdent indent | undo redo";
-  const { sanitizeInput, validEditorTags } = useSanitizeInput();
+  const { sanitizeInput } = useSanitizeInput();
 
   return (
     <React.Fragment>
@@ -323,10 +322,6 @@ const FormFieldsContainer = () => {
               textFieldLabel={i18next.t("Description")}
               fieldPath="metadata.abstract"
               rich={true}
-              editorConfig={{
-                toolbar: toolBar,
-                valid_elements: validEditorTags,
-              }}
               lngFieldWidth={4}
               {...getFieldData({ fieldPath: "metadata.abstract" })}
             />

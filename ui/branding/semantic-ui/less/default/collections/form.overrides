@@ -194,6 +194,11 @@
 }
 
 .ui.form {
+  @media (max-width: @tabletBreakpoint) {
+    .array-field-add-button {
+      margin-top: 1rem !important;
+    }
+  }
   .array-field-add-button {
     button {
       background-color: @accentColor;
