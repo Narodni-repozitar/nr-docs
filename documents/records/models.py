@@ -9,7 +9,8 @@ from invenio_files_rest.models import Bucket
 from invenio_records.models import RecordMetadataBase
 from oarepo_workflows.records.models import RecordWorkflowParentModelMixin
 from sqlalchemy_utils import UUIDType
-
+from invenio_rdm_records.records.systemfields.deletion_status import RecordDeletionStatusEnum
+from sqlalchemy_utils.types import ChoiceType
 
 class DocumentsParentMetadata(
     RecordWorkflowParentModelMixin, db.Model, RecordMetadataBase
@@ -29,7 +30,11 @@ class DocumentsMetadata(db.Model, RecordMetadataBase, ParentRecordMixin):
     __parent_record_model__ = DocumentsParentMetadata
     bucket_id = db.Column(UUIDType, db.ForeignKey(Bucket.id))
     bucket = db.relationship(Bucket)
-
+    deletion_status = db.Column(
+        ChoiceType(RecordDeletionStatusEnum, impl=db.String(1)),
+        nullable=False,
+        default=RecordDeletionStatusEnum.PUBLISHED.value,
+    )
 
 class DocumentsDraftMetadata(db.Model, DraftMetadataBase, ParentRecordMixin):
     """Model for DocumentsDraft metadata."""

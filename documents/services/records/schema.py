@@ -1,7 +1,6 @@
 import marshmallow as ma
 from marshmallow import fields as ma_fields
 from marshmallow.utils import get_value
-from marshmallow_utils.fields import SanitizedUnicode
 from nr_metadata.documents.services.records.schema import (
     NRDocumentMetadataSchema,
     NRDocumentRecordSchema,
@@ -10,6 +9,11 @@ from nr_metadata.documents.services.records.schema import (
 from oarepo_communities.schemas.parent import CommunitiesParentSchema
 from oarepo_runtime.services.schema.marshmallow import DictOnlySchema
 from oarepo_workflows.services.records.schema import WorkflowParentSchema
+from marshmallow_utils.fields import SanitizedUnicode
+from marshmallow_utils.fields.nestedattr import NestedAttribute
+from invenio_rdm_records.services.schemas.versions import VersionsSchema
+from invenio_rdm_records.services.schemas.tombstone import DeletionStatusSchema
+from invenio_rdm_records.services.schemas.access import AccessSchema
 
 
 class GeneratedParentSchema(WorkflowParentSchema):
@@ -33,7 +37,10 @@ class DocumentsSchema(NRDocumentRecordSchema):
     files = ma.fields.Nested(
         lambda: FilesOptionsSchema(), load_default={"enabled": True}
     )
+    versions = NestedAttribute(VersionsSchema, dump_only=True)
+    deletion_status = ma_fields.Nested(DeletionStatusSchema, dump_only=True)
 
+    access = NestedAttribute(AccessSchema)
     # todo this needs to be generated for [default preview] to work
     def get_attribute(self, obj, attr, default):
         """Override how attributes are retrieved when dumping.

@@ -23,7 +23,6 @@ from documents.services.records.results import DocumentsRecordItem, DocumentsRec
 from documents.services.records.schema import DocumentsSchema
 from documents.services.records.search import DocumentsSearchOptions
 
-
 class DocumentsServiceConfig(
     PermissionsPresetsConfigMixin, FilteredResultServiceConfig
 ):
@@ -54,7 +53,6 @@ class DocumentsServiceConfig(
         DateIssuedComponent,
         CommunityDefaultWorkflowComponent,
         CommunityInclusionComponent,
-        OwnersComponent,
         FilesComponent,
         DraftFilesComponent,
         DataComponent,
