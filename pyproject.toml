@@ -21,7 +21,7 @@ dependencies = [
     "oarepo-ui",
     "oarepo-vocabularies",
     "oarepo-workflows>=1.0.0",
-    "oarepo[s3,rdm]>=12.0.27,<13",
+    "oarepo[s3,rdm]>=12.1.0,<13",
     "python-dotenv",
 ]
 requires-python = ">=3.10,<3.11"
@@ -41,7 +41,6 @@ documents_file = "documents.views.files.app:create_app_blueprint"
 documents_file_draft = "documents.views.draft_files.app:create_app_blueprint"
 ui_documents = "ui.documents:create_blueprint"
 documents_requests = "documents.views.requests.api:create_api_blueprint"
-ui_community_records = "ui.community_records:create_blueprint"
 
 [project.entry-points."invenio_i18n.translations"]
 translations = "i18n"
@@ -94,13 +93,13 @@ requires = [
     "pdm-backend",
 ]
 build-backend = "pdm.backend"
-
-[build_system]
-requires = [
-    "setuptools",
-    "wheel",
-    "babel>2.8",
-]
-build-backend = "setuptools.build_meta"
+#
+#[build_system]
+#requires = [
+#    "setuptools",
+#    "wheel",
+#    "babel>2.8",
+#]
+#build-backend = "setuptools.build_meta"
 
 [tool.pdm]

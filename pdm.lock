@@ -697,11 +697,19 @@ name = "deepmerge"
 version = "2.0"
 requires_python = ">=3.8"
 summary = "A toolset for deeply merging Python dictionaries."
+version = "2.0"
+requires_python = ">=3.8"
+summary = "A toolset for deeply merging Python dictionaries."
 groups = ["default"]
 dependencies = [
     "typing-extensions; python_version <= \"3.9\"",
 ]
+dependencies = [
+    "typing-extensions; python_version <= \"3.9\"",
+]
 files = [
+    {file = "deepmerge-2.0-py3-none-any.whl", hash = "sha256:6de9ce507115cff0bed95ff0ce9ecc31088ef50cbdf09bc90a09349a318b3d00"},
+    {file = "deepmerge-2.0.tar.gz", hash = "sha256:5c3d86081fbebd04dd5de03626a0607b809a98fb6ccba5770b62466fe940ff20"},
     {file = "deepmerge-2.0-py3-none-any.whl", hash = "sha256:6de9ce507115cff0bed95ff0ce9ecc31088ef50cbdf09bc90a09349a318b3d00"},
     {file = "deepmerge-2.0.tar.gz", hash = "sha256:5c3d86081fbebd04dd5de03626a0607b809a98fb6ccba5770b62466fe940ff20"},
 ]

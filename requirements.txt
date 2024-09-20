@@ -1,4 +1,4 @@
-oarepo[s3,rdm]==12.0.28
+oarepo[s3,rdm]==12.1.35
 cachetools==5.5.0
 deepmerge==2.0
 et-xmlfile==1.1.0

@@ -131,6 +131,7 @@ class DocumentsSearchOptions(I18nSearchOptions):
         "metadata_version": facets.metadata_version,
         "oai_harvest_datestamp": facets.oai_harvest_datestamp,
         "oai_harvest_identifier": facets.oai_harvest_identifier,
+        "state": facets.state,
         "syntheticFields_date": facets.syntheticFields_date,
         "syntheticFields_defenseYear": facets.syntheticFields_defenseYear,
         "syntheticFields_institutions": facets.syntheticFields_institutions,
