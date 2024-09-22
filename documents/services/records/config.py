@@ -63,8 +63,8 @@ class DocumentsServiceConfig(
         CommunityDefaultWorkflowComponent,
         CommunityInclusionComponent,
         OwnersComponent,
-        CustomFieldsComponent,
         FilesComponent,
+        CustomFieldsComponent,
         DraftFilesComponent,
         WorkflowComponent,
     ]
