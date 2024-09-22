@@ -24,7 +24,7 @@ dependencies = [
     "oarepo[s3,rdm]>=12.1.0,<13",
     "python-dotenv",
 ]
-requires-python = ">=3.10,<3.11"
+requires-python = ">=3.12,<3.13"
 
 [project.entry-points."invenio_assets.webpack"]
 branding = "ui.branding.webpack:theme"
@@ -40,7 +40,8 @@ documents = "documents.views.records.app:create_app_blueprint"
 documents_file = "documents.views.files.app:create_app_blueprint"
 documents_file_draft = "documents.views.draft_files.app:create_app_blueprint"
 ui_documents = "ui.documents:create_blueprint"
-documents_requests = "documents.views.requests.api:create_api_blueprint"
+documents_requests = "documents.views.requests.app:create_app_blueprint"
+documents_request_types = "documents.views.request_types.app:create_app_blueprint"
 
 [project.entry-points."invenio_i18n.translations"]
 translations = "i18n"
@@ -69,6 +70,7 @@ documents = "documents.views.records.api:create_api_blueprint"
 documents_file = "documents.views.files.api:create_api_blueprint"
 documents_file_draft = "documents.views.draft_files.api:create_api_blueprint"
 documents_requests = "documents.views.requests.api:create_api_blueprint"
+documents_request_types = "documents.views.request_types.api:create_api_blueprint"
 
 [project.entry-points."invenio_search.mappings"]
 documents = "documents.records.mappings"
@@ -93,13 +95,5 @@ requires = [
     "pdm-backend",
 ]
 build-backend = "pdm.backend"
-#
-#[build_system]
-#requires = [
-#    "setuptools",
-#    "wheel",
-#    "babel>2.8",
-#]
-#build-backend = "setuptools.build_meta"
 
 [tool.pdm]

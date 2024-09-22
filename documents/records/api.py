@@ -5,7 +5,6 @@ from invenio_drafts_resources.records.api import Record as InvenioRecord
 from invenio_records.systemfields import ConstantField, ModelField
 from invenio_records_resources.records.systemfields import FilesField, IndexField
 from invenio_records_resources.records.systemfields.pid import PIDField, PIDFieldContext
-from invenio_vocabularies.records.api import Vocabulary
 from nr_metadata.records.synthetic_fields import KeywordsFieldSelector
 from oarepo_communities.records.systemfields.communities import (
     OARepoCommunitiesFieldContext,
@@ -20,6 +19,7 @@ from oarepo_runtime.records.systemfields.has_draftcheck import HasDraftCheckFiel
 from oarepo_runtime.records.systemfields.icu import ICUSearchField
 from oarepo_runtime.records.systemfields.owner import OwnersField
 from oarepo_runtime.records.systemfields.record_status import RecordStatusSystemField
+from oarepo_vocabularies.records.api import Vocabulary
 from oarepo_workflows.records.systemfields.state import RecordStateField
 from oarepo_workflows.records.systemfields.workflow import WorkflowField
 

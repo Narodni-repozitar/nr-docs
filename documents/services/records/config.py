@@ -1,8 +1,3 @@
-from documents.records.api import DocumentsDraft, DocumentsRecord
-from documents.services.records.permissions import DocumentsPermissionPolicy
-from documents.services.records.results import DocumentsRecordItem, DocumentsRecordList
-from documents.services.records.schema import DocumentsSchema
-from documents.services.records.search import DocumentsSearchOptions
 from invenio_drafts_resources.services.records.components import DraftFilesComponent
 from invenio_records_resources.services import (
     ConditionalLink,
@@ -26,6 +21,11 @@ from oarepo_vocabularies.authorities.components import AuthorityComponent
 from oarepo_workflows.services.components.workflow import WorkflowComponent
 
 from common.services.config import FilteredResultServiceConfig
+from documents.records.api import DocumentsDraft, DocumentsRecord
+from documents.services.records.permissions import DocumentsPermissionPolicy
+from documents.services.records.results import DocumentsRecordItem, DocumentsRecordList
+from documents.services.records.schema import DocumentsSchema
+from documents.services.records.search import DocumentsSearchOptions
 
 
 class DocumentsServiceConfig(
@@ -83,8 +83,16 @@ class DocumentsServiceConfig(
                     "self_html": "{+ui}/communities/{slug}/records",
                 }
             ),
-            "draft": RecordLink("{+api}/docs/{id}/draft"),
-            "edit_html": RecordLink("{+ui}/docs/{id}/edit", when=has_draft),
+            # TODO: added manually
+            "draft": ConditionalLink(
+                cond=has_draft,
+                if_=RecordLink("{+api}/docs/{id}/draft"),
+            ),
+            # TODO: added manually
+            "edit_html": ConditionalLink(
+                cond=has_draft,
+                if_=RecordLink("{+ui}/docs/{id}/edit", when=has_draft),
+            ),
             "files": ConditionalLink(
                 cond=is_published_record,
                 if_=RecordLink("{+api}/docs/{id}/files"),
@@ -92,7 +100,7 @@ class DocumentsServiceConfig(
             ),
             "latest": RecordLink("{+api}/docs/{id}/versions/latest"),
             "latest_html": RecordLink("{+ui}/docs/{id}/latest"),
-            "publish": RecordLink("{+api}/docs/{id}/draft/actions/publish"),
+            # "publish": RecordLink("{+api}/docs/{id}/draft/actions/publish"),
             "record": RecordLink("{+api}/docs/{id}"),
             "requests": ConditionalLink(
                 cond=is_published_record,
