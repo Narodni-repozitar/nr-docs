@@ -87,11 +87,13 @@ class DocumentsServiceConfig(
             "draft": ConditionalLink(
                 cond=has_draft,
                 if_=RecordLink("{+api}/docs/{id}/draft"),
+                else_=RecordLink("{+ui}/docs/{id}/edit", when=has_draft),
             ),
             # TODO: added manually
             "edit_html": ConditionalLink(
                 cond=has_draft,
                 if_=RecordLink("{+ui}/docs/{id}/edit", when=has_draft),
+                else_=RecordLink("{+ui}/docs/{id}/edit", when=has_draft),
             ),
             "files": ConditionalLink(
                 cond=is_published_record,
