@@ -1,0 +1,977 @@
+slug: agritec
+metadata:
+  title: AGRITEC, výzkum, šlechtění, služby 
+access:
+  visibility: public
+---
+slug: agrotest-fyto
+metadata:
+  title: Agrotest fyto, s.r.o.
+access:
+  visibility: public
+---
+slug: agrovyzkum-rapotin
+metadata:
+  title: Agrovýzkum Rapotín
+access:
+  visibility: public
+---
+slug: akademie-muzickych-umeni-v-praze
+metadata:
+  title: Akademie múzických umění
+access:
+  visibility: public
+---
+slug: akademie-vytvarnych-umeni
+metadata:
+  title: Akademie výtvarných umění
+access:
+  visibility: public
+---
+slug: archeologicky-ustav-brno
+metadata:
+  title: Archeologický ústav AV ČR, Brno
+access:
+  visibility: public
+---
+slug: archeologicky-ustav-praha
+metadata:
+  title: Archeologický ústav AV ČR, Praha
+access:
+  visibility: public
+---
+slug: archip
+metadata:
+  title: Architectural Institute in Prague
+access:
+  visibility: public
+---
+slug: archiv-doc-jiri-soucek
+metadata:
+  title: Archiv Doc. Jiřího Součka
+access:
+  visibility: public
+---
+slug: archiv-ing-arch-jana-moucky
+metadata:
+  title: Archiv Ing. Arch. Jana Mouchy
+access:
+  visibility: public
+---
+slug: arnika
+metadata:
+  title: Arnika
+access:
+  visibility: public
+---
+slug: astronomicky-ustav
+metadata:
+  title: Astronomický ústav AV ČR
+access:
+  visibility: public
+---
+slug: biofyzikalni-ustav
+metadata:
+  title: Biofyzikální ústav AV ČR
+access:
+  visibility: public
+---
+slug: biologicke-centrum
+metadata:
+  title: Biologické centrum AV ČR
+access:
+  visibility: public
+---
+slug: biotechnologicky-ustav
+metadata:
+  title: Biotechnologický ústav AV ČR
+access:
+  visibility: public
+---
+slug: botanicky-ustav
+metadata:
+  title: Botanický ústav AV ČR
+access:
+  visibility: public
+---
+slug: cenia
+metadata:
+  title: CENIA, česká informační agentura životního prostředí
+access:
+  visibility: public
+---
+slug: centrum-dopravniho-vyzkumu
+metadata:
+  title: Centrum dopravního výzkumu, v.v.i. Brno
+access:
+  visibility: public
+---
+slug: centrum-pro-dopravu-a-energetiku
+metadata:
+  title: Centrum pro dopravu a energetiku
+access:
+  visibility: public
+---
+slug: centrum-pro-regionalni-rozvoj
+metadata:
+  title: Centrum pro regionální rozvoj České republiky
+access:
+  visibility: public
+---
+slug: centrum-pro-studium-vysokeho-skolstvi
+metadata:
+  title: Centrum pro studium vysokého školství
+access:
+  visibility: public
+---
+slug: centrum-vyzkumu-globalni-zmeny
+metadata:
+  title: Ústav výzkumu globální změny AV ČR
+access:
+  visibility: public
+---
+slug: ceska-asociace-ergoterapeutu
+metadata:
+  title: Česká asociace ergoterapeutů
+access:
+  visibility: public
+---
+slug: ceska-asociace-paraplegiku
+metadata:
+  title: Česká asociace paraplegiků
+access:
+  visibility: public
+---
+slug: ceska-narodni-banka
+metadata:
+  title: ČNB
+access:
+  visibility: public
+---
+slug: ceska-spolecnost-ornitologicka
+metadata:
+  title: Česká společnost ornitologická
+access:
+  visibility: public
+---
+slug: ceska-zemedelska-univerzita
+metadata:
+  title: Česká zemědělská univerzita v Praze
+access:
+  visibility: public
+---
+slug: cesky-statisticky-urad
+metadata:
+  title: Český statistický úřad
+access:
+  visibility: public
+---
+slug: cesnet
+metadata:
+  title: CESNET
+access:
+  visibility: public
+---
+slug: clovek-v-tisni
+metadata:
+  title: Člověk v tísni, o.p.s
+access:
+  visibility: public
+---
+slug: crdm
+metadata:
+  title: Česká rada dětí a mládeže
+access:
+  visibility: public
+---
+slug: cvut
+metadata:
+  title: České vysoké učení technické v Praze
+access:
+  visibility: public
+---
+slug: czwa
+metadata:
+  title: "CzWa: Asociace pro vodu ČR"
+access:
+  visibility: public
+---
+slug: ekodomov
+metadata:
+  title: Ekodomov
+access:
+  visibility: public
+---
+slug: entomologicky-ustav
+metadata:
+  title: Entomologický ústav AV ČR
+access:
+  visibility: public
+---
+slug: etnologicky-ustav
+metadata:
+  title: Etnologický ústav AV ČR
+access:
+  visibility: public
+---
+slug: evropske-hodnoty
+metadata:
+  title: Evropské hodnoty 
+access:
+  visibility: public
+---
+slug: fairtrade-cz-sk
+metadata:
+  title: Fairtrade Česko a Slovensko
+access:
+  visibility: public
+---
+slug: filosoficky-ustav
+metadata:
+  title: Filosofický ústav AV ČR
+access:
+  visibility: public
+---
+slug: fyzikalni-ustav
+metadata:
+  title: Fyzikální ústav AV ČR
+access:
+  visibility: public
+---
+slug: fyziologicky-ustav
+metadata:
+  title: Fyziologický ústav AV ČR
+access:
+  visibility: public
+---
+slug: galerie-vytvarneho-umeni-v-ostrave
+metadata:
+  title: Galerie výtvarného umění v Ostravě
+access:
+  visibility: public
+---
+slug: gender-studies
+metadata:
+  title: Gender Studies
+access:
+  visibility: public
+---
+slug: geofyzikalni-ustav
+metadata:
+  title: Geofyzikální ústav AV ČR
+access:
+  visibility: public
+---
+slug: geologicky-ustav
+metadata:
+  title: Geologický ústav AV ČR
+access:
+  visibility: public
+---
+slug: gle
+metadata:
+  title: GLE
+access:
+  visibility: public
+---
+slug: hestia
+metadata:
+  title: HESTIA
+access:
+  visibility: public
+---
+slug: historicky-ustav
+metadata:
+  title: Historický ústav AV ČR
+access:
+  visibility: public
+---
+slug: hydrobiologicky-ustav
+metadata:
+  title: Hydrobiologický ústav AV ČR
+access:
+  visibility: public
+---
+slug: chmelarsky-institut
+metadata:
+  title: Chmelařský institut
+access:
+  visibility: public
+---
+slug: institut-umeni
+metadata:
+  title: Institut umění - Divadelní ústav
+access:
+  visibility: public
+---
+slug: iuridicum-remedium
+metadata:
+  title: Iuridicum Remedium, o.s.
+access:
+  visibility: public
+---
+slug: jihoceska-univerzita-v-ceskych-budejovicich
+metadata:
+  title: Jihočeská univerzita v Českých Budějovicích
+access:
+  visibility: public
+---
+slug: jihomoravske-muzeum-ve-znojme
+metadata:
+  title: Jihomoravské muzeum ve Znojmě
+access:
+  visibility: public
+---
+slug: knihovna-av-cr
+metadata:
+  title: Knihovna AV ČR
+access:
+  visibility: public
+---
+slug: literarni-akademie
+metadata:
+  title: Literární akademie
+access:
+  visibility: public
+---
+slug: mapova-sbirka-prf
+metadata:
+  title: Mapová sbírka PřF UK
+access:
+  visibility: public
+---
+slug: masarykova-univerzita
+metadata:
+  title: Masarykova univerzita
+access:
+  visibility: public
+---
+slug: masarykuv-ustav-a-archiv
+metadata:
+  title: Masarykův ústav + Archiv
+access:
+  visibility: public
+---
+slug: matematicky-ustav
+metadata:
+  title: Matematický ústav AV ČR
+access:
+  visibility: public
+---
+slug: mendelova-univerzita-v-brne
+metadata:
+  title: Mendelova univerzita v Brně
+access:
+  visibility: public
+---
+slug: mikrobiologicky-ustav
+metadata:
+  title: Mikrobiologický ústav AV ČR
+access:
+  visibility: public
+---
+slug: ministerstvo-obrany
+metadata:
+  title: Ministerstvo obrany
+access:
+  visibility: public
+---
+slug: ministerstvo-spravedlnosti
+metadata:
+  title: Ministerstvo spravedlnosti
+access:
+  visibility: public
+---
+slug: ministerstvo-zivotniho-prostredi
+metadata:
+  title: Ministerstvo životního prostředí
+access:
+  visibility: public
+---
+slug: moravska-galerie
+metadata:
+  title: Moravská galerie v Brně
+access:
+  visibility: public
+---
+slug: moravska-zemska-knihovna
+metadata:
+  title: Moravská zemská knihovna
+access:
+  visibility: public
+---
+slug: muzeum-brnenska
+metadata:
+  title: Muzeum Brněnska
+access:
+  visibility: public
+---
+slug: muzeum-skla-a-bizuterie
+metadata:
+  title: Muzeum skla a bižuterie v Jablonci nad Nisou
+access:
+  visibility: public
+---
+slug: muzeum-vychodnich-cech
+metadata:
+  title: Muzeum východních Čech v Hradci Králové
+access:
+  visibility: public
+---
+slug: nacr
+metadata:
+  title: Národní archiv
+access:
+  visibility: public
+---
+slug: nadace-promeny
+metadata:
+  title: Nadace Proměny Karla Komárka
+access:
+  visibility: public
+---
+slug: narodni-hrebcin-kladruby
+metadata:
+  title: Národní hřebčín Kladruby nad Labem
+access:
+  visibility: public
+---
+slug: narodni-informacni-a-poradenske-stredisko-pro-kulturu
+metadata:
+  title: Národní informační a poradenské středisko pro kulturu (NIPOS)
+access:
+  visibility: public
+---
+slug: narodni-knihovna
+metadata:
+  title: Národní knihovna ČR
+access:
+  visibility: public
+---
+slug: narodni-lekarska-knihovna
+metadata:
+  title: Národní lékařská knihovna
+access:
+  visibility: public
+---
+slug: narodni-muzeum
+metadata:
+  title: Národní muzeum
+access:
+  visibility: public
+---
+slug: narodni-muzeum-v-prirode
+metadata:
+  title: Národní muzeum v přírodě
+access:
+  visibility: public
+---
+slug: narodni-pamatkovy-ustav
+metadata:
+  title: Národní památkový ústav
+access:
+  visibility: public
+---
+slug: narodni-technicka-knihovna
+metadata:
+  title: Národní technická knihovna
+access:
+  visibility: public
+---
+slug: narodni-technicke-muzeum
+metadata:
+  title: Národní technické muzeum
+access:
+  visibility: public
+---
+slug: narodni-zemedelske-muzeum
+metadata:
+  title: Národní zemědělské muzeum
+access:
+  visibility: public
+---
+slug: narodohospodarsky-ustav
+metadata:
+  title: Národohospodářský ústav AV ČR
+access:
+  visibility: public
+---
+slug: nfa
+metadata:
+  title: Národní filmový archiv
+access:
+  visibility: public
+---
+slug: nulk
+metadata:
+  title: Národní ústav lidové kultury
+access:
+  visibility: public
+---
+slug: nuv
+metadata:
+  title: Národní ústav pro vzdělávání
+access:
+  visibility: public
+---
+slug: orientalni-ustav
+metadata:
+  title: Orientální ústav AV ČR
+access:
+  visibility: public
+---
+slug: oseva
+metadata:
+  title: OSEVA vývoj a výzkum
+access:
+  visibility: public
+---
+slug: ostravska-univerzita
+metadata:
+  title: Ostravská univerzita
+access:
+  visibility: public
+---
+slug: pamatnik-narodniho-pisemnictvi
+metadata:
+  title: Památník národního písemnictví
+access:
+  visibility: public
+---
+slug: parazitologicky-ustav
+metadata:
+  title: Parazitologický ústav AV ČR
+access:
+  visibility: public
+---
+slug: parlamentni-institut
+metadata:
+  title: Parlamentní institut
+access:
+  visibility: public
+---
+slug: prague-college
+metadata:
+  title: Prague College
+access:
+  visibility: public
+---
+slug: psychologicky-ustav
+metadata:
+  title: Psychologický ústav AV ČR
+access:
+  visibility: public
+---
+slug: sdruzeni-pro-integraci-a-migraci
+metadata:
+  title: Sdružení pro integraci a migraci
+access:
+  visibility: public
+---
+slug: severoceske-muzeum-v-liberci
+metadata:
+  title: Severočeské muzeum v Liberci
+access:
+  visibility: public
+---
+slug: siriri
+metadata:
+  title: SIRIRI
+access:
+  visibility: public
+---
+slug: slezska-univerzita-opava
+metadata:
+  title: Slezská univerzita v Opavě
+access:
+  visibility: public
+---
+slug: slezske-zemske-muzeum
+metadata:
+  title: Slezské zemské muzeum
+access:
+  visibility: public
+---
+slug: slovansky-ustav
+metadata:
+  title: Slovanský ústav AV ČR
+access:
+  visibility: public
+---
+slug: sociologicky-ustav
+metadata:
+  title: Sociologický ústav AV ČR
+access:
+  visibility: public
+---
+slug: surao
+metadata:
+  title: Správa úložišť radioaktivních odpadů
+access:
+  visibility: public
+---
+slug: szpi
+metadata:
+  title: Státní zemědělská a potravinářská inspekce
+access:
+  visibility: public
+---
+slug: technicke-muzeum-v-brne
+metadata:
+  title: Technické muzeum v Brně
+access:
+  visibility: public
+---
+slug: technologicke-centrum
+metadata:
+  title: Technologické centrum AV ČR
+access:
+  visibility: public
+---
+slug: uhk
+metadata:
+  title: Univerzita Hradec Králové
+access:
+  visibility: public
+---
+slug: ujep
+metadata:
+  title: Univerzita Jana Evangelisty Purkyně
+access:
+  visibility: public
+---
+slug: umeleckoprumyslove-museum
+metadata:
+  title: Uměleckoprůmyslové museum
+access:
+  visibility: public
+---
+slug: univerzita-karlova-v-praze
+metadata:
+  title: Univerzita Karlova
+access:
+  visibility: public
+---
+slug: upce
+metadata:
+  title: Univerzita Pardubice
+access:
+  visibility: public
+---
+slug: upol
+metadata:
+  title: Univerzita Palackého v Olomouci
+access:
+  visibility: public
+---
+slug: urad-prumysloveho-vlastnictvi
+metadata:
+  title: Úřad průmyslového vlastnictví
+access:
+  visibility: public
+---
+slug: ustav-analyticke-chemie
+metadata:
+  title: Ústav analytické chemie AV ČR
+access:
+  visibility: public
+---
+slug: ustav-anorganicke-chemie
+metadata:
+  title: Ústav anorganické chemie AV ČR
+access:
+  visibility: public
+---
+slug: ustav-archeologicke-pamatkove-pece-severozapadnich-cech
+metadata:
+  title: Ústav archeologické památkové péče severozápadních Čech
+access:
+  visibility: public
+---
+slug: ustav-biologie-obratlovcu
+metadata:
+  title: Ústav biologie obratlovců AV ČR
+access:
+  visibility: public
+---
+slug: ustav-dejin-umeni
+metadata:
+  title: Ústav dějin umění AV ČR
+access:
+  visibility: public
+---
+slug: ustav-experimentalni-botaniky
+metadata:
+  title: Ústav experimentální botaniky AV ČR
+access:
+  visibility: public
+---
+slug: ustav-experimentalni-mediciny
+metadata:
+  title: Ústav experimentální medicíny AV ČR
+access:
+  visibility: public
+---
+slug: ustav-fotoniky-a-elektroniky
+metadata:
+  title: Ústav fotoniky a elektroniky AV ČR
+access:
+  visibility: public
+---
+slug: ustav-fyzikalni-chemie-j-heyrovskeho
+metadata:
+  title: Ústav fyzikální chemie J. Heyrovského AV ČR
+access:
+  visibility: public
+---
+slug: ustav-fyziky-atmosfery
+metadata:
+  title: Ústav fyziky atmosféry AV ČR
+access:
+  visibility: public
+---
+slug: ustav-fyziky-materialu
+metadata:
+  title: Ústav fyziky materiálů AV ČR
+access:
+  visibility: public
+---
+slug: ustav-fyziky-plazmatu
+metadata:
+  title: Ústav fyziky plazmatu AV ČR
+access:
+  visibility: public
+---
+slug: ustav-geoniky
+metadata:
+  title: Ústav geoniky AV ČR
+access:
+  visibility: public
+---
+slug: ustav-chemickych-procesu
+metadata:
+  title: Ústav chemických procesů AV ČR
+access:
+  visibility: public
+---
+slug: ustav-informatiky
+metadata:
+  title: Ústav informatiky AV ČR
+access:
+  visibility: public
+---
+slug: ustav-jaderne-fyziky
+metadata:
+  title: Ústav jaderné fyziky AV ČR
+access:
+  visibility: public
+---
+slug: ustav-makromolekularni-chemie
+metadata:
+  title: Ústav makromolekulární chemie AV ČR
+access:
+  visibility: public
+---
+slug: ustav-molekularni-biologie-rostlin
+metadata:
+  title: Ústav molekulární biologie rostlin AV ČR
+access:
+  visibility: public
+---
+slug: ustav-molekularni-genetiky
+metadata:
+  title: Ústav molekulární genetiky AV ČR
+access:
+  visibility: public
+---
+slug: ustav-organicke-chemie-a-biochemie
+metadata:
+  title: Ústav organické chemie a biochemie AV ČR
+access:
+  visibility: public
+---
+slug: ustav-pristrojove-techniky
+metadata:
+  title: Ústav přístrojové techniky AV ČR
+access:
+  visibility: public
+---
+slug: ustav-pro-ceskou-literaturu
+metadata:
+  title: Ústav pro českou literaturu AV ČR
+access:
+  visibility: public
+---
+slug: ustav-pro-hydrodynamiku
+metadata:
+  title: Ústav pro hydrodynamiku AV ČR
+access:
+  visibility: public
+---
+slug: ustav-pro-jazyk-cesky
+metadata:
+  title: Ústav pro jazyk český AV ČR
+access:
+  visibility: public
+---
+slug: ustav-pro-soudobe-dejiny
+metadata:
+  title: Ústav pro soudobé dějiny AV ČR
+access:
+  visibility: public
+---
+slug: ustav-pro-studium-totalitnich-rezimu
+metadata:
+  title: Ústav pro studium totalitních režimů
+access:
+  visibility: public
+---
+slug: ustav-pudni-biologie
+metadata:
+  title: Ústav půdní biologie AV ČR
+access:
+  visibility: public
+---
+slug: ustav-statu-a-prava
+metadata:
+  title: Ústav státu a práva AV ČR
+access:
+  visibility: public
+---
+slug: ustav-struktury-a-mechaniky-hornin
+metadata:
+  title: Ústav struktury a mechaniky hornin AV ČR
+access:
+  visibility: public
+---
+slug: ustav-teoreticke-a-aplikovane-mechaniky
+metadata:
+  title: Ústav teoretické a aplikované mechaniky AV ČR
+access:
+  visibility: public
+---
+slug: ustav-teorie-informace-a-automatizace
+metadata:
+  title: Ústav teorie informace a automatizace AV ČR
+access:
+  visibility: public
+---
+slug: ustav-termomechaniky
+metadata:
+  title: Ústav termomechaniky AV ČR
+access:
+  visibility: public
+---
+slug: ustav-zivocisne-fyziologie-a-genetiky
+metadata:
+  title: Ústav živočišné fyziologie a genetiky AV ČR
+access:
+  visibility: public
+---
+slug: vscht
+metadata:
+  title: Vysoká škola chemicko-technologická v Praze
+access:
+  visibility: public
+---
+slug: vugtk
+metadata:
+  title: Výzkumný ústav geodetický, topografický a kartografický
+access:
+  visibility: public
+---
+slug: vutbr
+metadata:
+  title: Vysoké učení technické v Brně
+access:
+  visibility: public
+---
+slug: vuv-tgm
+metadata:
+  title: Výzkumný ústav vodohospodářský T. G. Masaryka
+access:
+  visibility: public
+---
+slug: vvud
+metadata:
+  title: Výzkumný a vývojový ústav dřevařský, Praha
+access:
+  visibility: public
+---
+slug: vysoka-skola-ekonomicka-v-praze
+metadata:
+  title: Vysoká škola ekonomická v Praze
+access:
+  visibility: public
+---
+slug: vysoka-skola-evropskych-a-regionalnich-studii
+metadata:
+  title: Vysoká škola evropských a regionálních studií
+access:
+  visibility: public
+---
+slug: vysoka-skola-financni-a-spravni
+metadata:
+  title: Vysoká škola finanční a správní
+access:
+  visibility: public
+---
+slug: vysoka-skola-manazerske-informatiky-a-ekonomiky
+metadata:
+  title: Vysoká škola podnikání a práva (Vysoká škola manažerské informatiky a ekonomiky)
+access:
+  visibility: public
+---
+slug: vyzkumny-ustav-bezpecnosti-prace
+metadata:
+  title: Výzkumný ústav bezpečnosti práce
+access:
+  visibility: public
+---
+slug: vyzkumny-ustav-lesniho-hospodarstvi-a-myslivosti
+metadata:
+  title: Výzkumný ústav lesního hospodářství a myslivosti
+access:
+  visibility: public
+---
+slug: vyzkumny-ustav-potravinarsky
+metadata:
+  title: Výzkumný ústav potravinářský Praha
+access:
+  visibility: public
+---
+slug: vyzkumny-ustav-prace-a-socialnich-veci
+metadata:
+  title: Výzkumný ústav práce a sociálních věcí
+access:
+  visibility: public
+---
+slug: vyzkumny-ustav-rostlinne-vyroby
+metadata:
+  title: Výzkumný ústav rostlinné výroby
+access:
+  visibility: public
+---
+slug: vyzkumny-ustav-silva-taroucy
+metadata:
+  title: Výzkumný ústav Silva Taroucy pro krajinu a okrasné zahradnictví
+access:
+  visibility: public
+---
+slug: woodexpert
+metadata:
+  title: WOODEXPERT s.r.o.
+access:
+  visibility: public
+---
+slug: zapadoceska-univerzita
+metadata:
+  title: Západočeská univerzita v Plzni
+access:
+  visibility: public
+---
+slug: zapadoceske-muzeum-v-plzni
+metadata:
+  title: Západočeské muzeum v Plzni
+access:
+  visibility: public
