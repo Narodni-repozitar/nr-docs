@@ -1,4 +1,6 @@
 from datetime import datetime
+from invenio_access.permissions import system_identity
+from invenio_vocabularies.proxies import current_service as vocabulary_service
 
 
 class DataCiteMappingNRDocs:
@@ -10,7 +12,7 @@ class DataCiteMappingNRDocs:
         else:
             for creator in data["creators"]:
                 if "fullName" not in creator:
-                    errors.append("Full name of contributor is mandatory")
+                    errors.append("Full name of creator is mandatory")
                 if "authorityIdentifiers" in creator:
                     for id in creator["authorityIdentifiers"]:
                         if "scheme" not in id:
@@ -68,6 +70,7 @@ class DataCiteMappingNRDocs:
 
         date_obj = datetime.strptime(metadata['dateIssued'], '%Y-%m-%d')
         year = date_obj.year
+        
         payload["publicationYear"] = year
         payload["url"] = data['links']['self']
 
@@ -132,57 +135,10 @@ def publisher(data):
     if "publishers" in data:
         return data["publishers"][0]
 
-def resource_type_mapping(rs_type):
-    title_mapping = {
-        "book": "Book",
-        "book-chapter": "BookChapter",
-        "article": "JournalArticle",
-        "review": "Text",
-        "Dataset": "Dataset",
-        "conference-paper": "ConferencePaper",
-        "conference-proceeding": "ConferenceProceedings",
-        "conference-programme": "Event",
-        "conference-poster": "Other",
-        "data-paper": "DataPaper",
-        "data-management-plan": "OutputManagementPlan",
-        "software": "Software",
-        "software-paper": "Text",
-        "interactive-resource": "InteractiveResource",
-        "model": "Model",
-        "physical-object": "PhysicalObject",
-        "bachelor-thesis": "Dissertation",
-        "master-thesis": "Dissertation",
-        "rigorous-thesis": "Dissertation",
-        "doctoral-thesis": "Dissertation",
-        "post-doctoral-thesis": "Dissertation",
-        "certified-methodology": "Workflow",
-        "methodology-without-certification": "Workflow",
-        "heritage-procedure": "Workflow",
-        "treatment-procedure": "Workflow",
-        "annual-report": "Report",
-        "research-report": "Report",
-        "project-report": "Report",
-        "statistical-or-status-report": "Report",
-        "conservation-report": "Report",
-        "field-report": "Report",
-        "business-trip-report": "Report",
-        "press-release": "Report",
-        "trade-literature": "Text",
-        "studies-and-analyses": "Text",
-        "specialized-map": "Other",
-        "educational-material": "Text",
-        "exhibition-catalogue-or-guide": "Text",
-        "other": "Other",
-        "cartographic-material": "Other",
-        "patent": "Text",
-        "standard": "Standard",
-        "journal": "Journal",
-    }
-    return title_mapping.get(rs_type, "")
-
 def resource_type(data):
     if "resourceType" in data:
-        return resource_type_mapping(data["resourceType"]["id"])
+        voc = vocabulary_service.read(system_identity, ('resource-types', data["resourceType"]["id"]))
+        return voc.data['props']['dataCiteType']
 
 def subjects(data):
     dc_subjects = []
@@ -195,8 +151,6 @@ def subjects(data):
         if dc_sub != {}:
             dc_subjects.append(dc_sub)
     return dc_subjects
-
-    pass
 
 def title(data):
     datacite_titles = []
@@ -216,45 +170,6 @@ def title(data):
 
     return datacite_titles
 
-def contributor_role(title):
-    title_mapping = {
-        "contact-person": "ContactPerson",
-        "data-collector": "DataCollector",
-        "data-curator": "DataCurator",
-        "data-manager": "DataManager",
-        "distributor": "Distributor",
-        "editor": "Editor",
-        "producer": "Producer",
-        "project-leader": "ProjectLeader",
-        "project-manager": "ProjectManager",
-        "project-member": "ProjectMember",
-        "researcher": "Researcher",
-        "research-group": "ResearchGroup",
-        "rights-holder": "RightsHolder",
-        "supervisor": "Supervisor",
-        "referee": "Other",
-        "advisor": "Other",
-        "illustrator": "Other",
-        "exhibition-curator": "Other",
-        "moderator": "Other",
-        "translator": "Other",
-        "photographer": "Other",
-        "reviewer": "Other",
-        "collaborator": "Other",
-        "artist": "Other",
-        "interviewee": "Other",
-        "interviewer": "Other",
-        "organizer": "Other",
-        "speaker": "Other",
-        "panelist": "Other",
-        "publisher": "Other",
-        "proofreader": "Other",
-        "owner": "Other",
-        "former-owner": "Other",
-        "respondent": "Other",
-    }
-
-    return title_mapping.get(title, "")
 
 def creatibutor(data, type):
     creatibutor_def = data[type]
@@ -265,8 +180,13 @@ def creatibutor(data, type):
             datacite_creatibutor["name"] = creatibutor["fullName"]
         if "nameType" in creatibutor:
             datacite_creatibutor["nameType"] = creatibutor["nameType"]
-        if "role" in creatibutor:
-            datacite_creatibutor["contributorType"] = contributor_role(creatibutor["role"]["id"])
+        if "contributorType" in creatibutor:
+            voc = vocabulary_service.read(system_identity, ('contributor-types', creatibutor["contributorType"]["id"]))
+            if 'dataCiteType' in voc.data['props']:
+                contr_type = voc.data['props']['dataCiteType']
+            else:
+                contr_type = "Other"
+            datacite_creatibutor["contributorType"] = contr_type
         if "authorityIdentifiers" in creatibutor:
             creatibutors_ids = []
             for id in creatibutor["authorityIdentifiers"]:
@@ -303,9 +223,10 @@ def related_items(data):
         if "itemCreators" in rel:
             dc_rel["creators"] = creatibutor(rel, "itemCreators")
         if "itemRelationType" in rel:
-            dc_rel["relationType"] = rel["itemRelationType"]["title"][0].upper() + rel["itemRelationType"]["title"][1:]
+            dc_rel["relationType"] = rel["itemRelationType"]["id"][0].upper() + rel["itemRelationType"]["id"][1:]
         if "itemResourceType" in rel:
-            dc_rel["relatedItemType"] = resource_type_mapping(rel["itemResourceType"]["title"])
+            voc = vocabulary_service.read(system_identity, ('resource-types', rel["itemResourceType"]["id"]))
+            dc_rel["relatedItemType"] = voc.data['props']['dataCiteType']
         if "itemStartPage" in rel:
             dc_rel["firstPage"] = rel["itemStartPage"]
         if "itemEndPage" in rel:
