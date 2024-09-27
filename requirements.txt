@@ -24,9 +24,10 @@ oarepo-requests==2.0.9
 oarepo-runtime==1.5.60
 oarepo-ui==5.2.12
 oarepo-vocabularies==2.0.102
-oarepo-workflows==1.0.10
+oarepo-workflows==1.0.1
 openpyxl==3.1.5
 python-dotenv==1.0.1
 rapidfuzz==3.9.7
 sickle==0.7.0
 whitenoise==6.7.0
+oarepo-doi==1.0.7

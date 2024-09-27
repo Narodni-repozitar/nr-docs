@@ -26,7 +26,7 @@ from oarepo_vocabularies.authorities.components import AuthorityComponent
 from oarepo_workflows.services.components.workflow import WorkflowComponent
 
 from common.services.config import FilteredResultServiceConfig
-
+from oarepo_doi.services.components import DoiComponent
 
 class DocumentsServiceConfig(
     PermissionsPresetsConfigMixin, FilteredResultServiceConfig
@@ -63,6 +63,7 @@ class DocumentsServiceConfig(
         CustomFieldsComponent,
         DraftFilesComponent,
         WorkflowComponent,
+        DoiComponent
     ]
 
     model = "documents"
