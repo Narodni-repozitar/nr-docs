@@ -1,13 +1,13 @@
 {#def metadata, record, extra_context #}
 
+
+<section class="ui segment" aria-label='{{ _("Actions") }}'>
 {% if record.links.edit_html%}
-  <section class="ui segment">
     <SidebarLink icon="pencil" href={record.links.edit_html}>
       {{_('Edit')}}
     </SidebarLink>
-  </section>
+    <div class="rel-mb-1"></div>
 {% endif %}
-<section class="ui segment" aria-label='{{ _("Record request list") }}'>
   <RecordRequests record={record} />
 </section>
 <IdentifiersAndLinks originalRecordUrl={metadata.originalRecord} objectIdentifiers={metadata.objectIdentifiers}/>

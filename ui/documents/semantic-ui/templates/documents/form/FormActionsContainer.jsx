@@ -6,14 +6,12 @@ import {
   DeleteButton,
   SelectedCommunity,
   useDepositApiClient,
-  serializeErrors,
 } from "@js/oarepo_ui";
-import { i18next } from "@translations/i18next";
 import { RecordRequests } from "@js/oarepo_requests/components";
 import { useFormikContext } from "formik";
 
 const FormActionsContainer = () => {
-  const { values, setErrors } = useFormikContext();
+  const { values } = useFormikContext();
   const { save } = useDepositApiClient();
   return (
     <Card fluid>
@@ -31,21 +29,7 @@ const FormActionsContainer = () => {
           </Grid.Column>
           {values.id && (
             <Grid.Column width={16} className="pt-10">
-              <RecordRequests
-                record={values}
-                onErrorCallback={(e) =>
-                  setErrors(
-                    serializeErrors(
-                      e?.response?.data?.errors,
-                      i18next.t(
-                        "Request failed due to record validation errors. Please fix them and try again."
-                      )
-                    )
-                  )
-                }
-                saveDraft={save}
-                shouldRedirectToEdit={false}
-              />
+              <RecordRequests record={values} onBeforeAction={() => save()} />
             </Grid.Column>
           )}
           {values.id && (
