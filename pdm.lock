@@ -697,11 +697,19 @@ name = "deepmerge"
 version = "2.0"
 requires_python = ">=3.8"
 summary = "A toolset for deeply merging Python dictionaries."
+version = "2.0"
+requires_python = ">=3.8"
+summary = "A toolset for deeply merging Python dictionaries."
 groups = ["default"]
 dependencies = [
     "typing-extensions; python_version <= \"3.9\"",
 ]
+dependencies = [
+    "typing-extensions; python_version <= \"3.9\"",
+]
 files = [
+    {file = "deepmerge-2.0-py3-none-any.whl", hash = "sha256:6de9ce507115cff0bed95ff0ce9ecc31088ef50cbdf09bc90a09349a318b3d00"},
+    {file = "deepmerge-2.0.tar.gz", hash = "sha256:5c3d86081fbebd04dd5de03626a0607b809a98fb6ccba5770b62466fe940ff20"},
     {file = "deepmerge-2.0-py3-none-any.whl", hash = "sha256:6de9ce507115cff0bed95ff0ce9ecc31088ef50cbdf09bc90a09349a318b3d00"},
     {file = "deepmerge-2.0.tar.gz", hash = "sha256:5c3d86081fbebd04dd5de03626a0607b809a98fb6ccba5770b62466fe940ff20"},
 ]
@@ -2822,31 +2830,34 @@ files = [
 
 [[package]]
 name = "levenshtein"
-version = "0.25.1"
-requires_python = ">=3.8"
+version = "0.26.0"
+requires_python = ">=3.9"
 summary = "Python extension for computing string edit distances and similarities."
 groups = ["default"]
 dependencies = [
-    "rapidfuzz<4.0.0,>=3.8.0",
+    "rapidfuzz<4.0.0,>=3.9.0",
 ]
 files = [
-    {file = "Levenshtein-0.25.1-cp310-cp310-macosx_10_9_universal2.whl", hash = "sha256:eb4d1ec9f2dcbde1757c4b7fb65b8682bc2de45b9552e201988f287548b7abdf"},
-    {file = "Levenshtein-0.25.1-cp310-cp310-macosx_10_9_x86_64.whl", hash = "sha256:b4d9fa3affef48a7e727cdbd0d9502cd060da86f34d8b3627edd769d347570e2"},
-    {file = "Levenshtein-0.25.1-cp310-cp310-macosx_11_0_arm64.whl", hash = "sha256:c1b6cd186e58196ff8b402565317e9346b408d0c04fa0ed12ce4868c0fcb6d03"},
-    {file = "Levenshtein-0.25.1-cp310-cp310-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:82637ef5428384dd1812849dd7328992819bf0c4a20bff0a3b3ee806821af7ed"},
-    {file = "Levenshtein-0.25.1-cp310-cp310-manylinux_2_17_ppc64le.manylinux2014_ppc64le.whl", hash = "sha256:e73656da6cc3e32a6e4bcd48562fcb64599ef124997f2c91f5320d7f1532c069"},
-    {file = "Levenshtein-0.25.1-cp310-cp310-manylinux_2_17_s390x.manylinux2014_s390x.whl", hash = "sha256:5abff796f92cdfba69b9cbf6527afae918d0e95cbfac000bd84017f74e0bd427"},
-    {file = "Levenshtein-0.25.1-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:38827d82f2ca9cb755da6f03e686866f2f411280db005f4304272378412b4cba"},
-    {file = "Levenshtein-0.25.1-cp310-cp310-manylinux_2_5_i686.manylinux1_i686.manylinux_2_17_i686.manylinux2014_i686.whl", hash = "sha256:2b989df1e3231261a87d68dfa001a2070771e178b09650f9cf99a20e3d3abc28"},
-    {file = "Levenshtein-0.25.1-cp310-cp310-musllinux_1_1_aarch64.whl", hash = "sha256:2011d3b3897d438a2f88ef7aed7747f28739cae8538ec7c18c33dd989930c7a0"},
-    {file = "Levenshtein-0.25.1-cp310-cp310-musllinux_1_1_i686.whl", hash = "sha256:6c375b33ec7acc1c6855e8ee8c7c8ac6262576ffed484ff5c556695527f49686"},
-    {file = "Levenshtein-0.25.1-cp310-cp310-musllinux_1_1_ppc64le.whl", hash = "sha256:ce0cb9dd012ef1bf4d5b9d40603e7709b6581aec5acd32fcea9b371b294ca7aa"},
-    {file = "Levenshtein-0.25.1-cp310-cp310-musllinux_1_1_s390x.whl", hash = "sha256:9da9ecb81bae67d784defed7274f894011259b038ec31f2339c4958157970115"},
-    {file = "Levenshtein-0.25.1-cp310-cp310-musllinux_1_1_x86_64.whl", hash = "sha256:3bd7be5dbe5f4a1b691f381e39512927b39d1e195bd0ad61f9bf217a25bf36c9"},
-    {file = "Levenshtein-0.25.1-cp310-cp310-win32.whl", hash = "sha256:f6abb9ced98261de67eb495b95e1d2325fa42b0344ed5763f7c0f36ee2e2bdba"},
-    {file = "Levenshtein-0.25.1-cp310-cp310-win_amd64.whl", hash = "sha256:97581af3e0a6d359af85c6cf06e51f77f4d635f7109ff7f8ed7fd634d8d8c923"},
-    {file = "Levenshtein-0.25.1-cp310-cp310-win_arm64.whl", hash = "sha256:9ba008f490788c6d8d5a10735fcf83559965be97e4ef0812db388a84b1cc736a"},
-    {file = "Levenshtein-0.25.1.tar.gz", hash = "sha256:2df14471c778c75ffbd59cb64bbecfd4b0ef320ef9f80e4804764be7d5678980"},
+    {file = "levenshtein-0.26.0-cp310-cp310-macosx_11_0_arm64.whl", hash = "sha256:e5fb23bf35ef1094d00415bb2116dd862fb919adc4044436508029dafedfd687"},
+    {file = "levenshtein-0.26.0-cp310-cp310-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:ea97df5fecf4195ed24aa4c245e5b6cf42527a5818bd7d0d92ba8c7425828861"},
+    {file = "levenshtein-0.26.0-cp310-cp310-manylinux_2_17_ppc64le.manylinux2014_ppc64le.whl", hash = "sha256:0c06ddb9149ee0f25ba334ad04ee3f782be3e64ab4bf8b9f34d6e4bf19a22880"},
+    {file = "levenshtein-0.26.0-cp310-cp310-manylinux_2_17_s390x.manylinux2014_s390x.whl", hash = "sha256:bf2561d9077367aa01f3c6caf6132cec84b2b9a481f64f14f35f9e976a353605"},
+    {file = "levenshtein-0.26.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:54200110ba27c20cb2e3bc48cf855d7d910c6704a47caefe97ced8c59ee075b4"},
+    {file = "levenshtein-0.26.0-cp310-cp310-manylinux_2_5_i686.manylinux1_i686.manylinux_2_17_i686.manylinux2014_i686.whl", hash = "sha256:ed1c1354f0f1e4736c2fb6f91e3913b63e38c8873a228a299f656bdaf788e1eb"},
+    {file = "levenshtein-0.26.0-cp310-cp310-musllinux_1_2_aarch64.whl", hash = "sha256:4ecf7d755304d2ffab2ee808100f5e87889347b572c61c97d9f4f9a318806713"},
+    {file = "levenshtein-0.26.0-cp310-cp310-musllinux_1_2_i686.whl", hash = "sha256:c532571fabd8a23fa12971f432cd17ababa031dee6efbaa8fa31380876593a3e"},
+    {file = "levenshtein-0.26.0-cp310-cp310-musllinux_1_2_ppc64le.whl", hash = "sha256:71a3afbfc7d97fd536f128084a20c2a79b5d79995c7111eced1baf4d103ea6d4"},
+    {file = "levenshtein-0.26.0-cp310-cp310-musllinux_1_2_s390x.whl", hash = "sha256:c49a20ddb119ab2d56e7e4d62e43602dff8c397718be4f00474723b40d626a7f"},
+    {file = "levenshtein-0.26.0-cp310-cp310-musllinux_1_2_x86_64.whl", hash = "sha256:e8a34d41c7b392df98fce7c8353ea87cbbbf39239db141096ded00f4e1e75e6e"},
+    {file = "levenshtein-0.26.0-cp310-cp310-win32.whl", hash = "sha256:a541040a01333994e5a037cb4e2c2b0e2496a2141facf63bbc9b359fe9f5b1dd"},
+    {file = "levenshtein-0.26.0-cp310-cp310-win_amd64.whl", hash = "sha256:68a165bd91dab44c2b91c8278e3728f0da98cb48b1ed7f263bfdf616efcf4932"},
+    {file = "levenshtein-0.26.0-cp310-cp310-win_arm64.whl", hash = "sha256:968731244a7d56354c912c054e7b6ea33c3700632ef7cab1c895b3110e86dc7b"},
+    {file = "levenshtein-0.26.0-pp310-pypy310_pp73-macosx_11_0_arm64.whl", hash = "sha256:ca2735baf43fb540be7d3cf24eb2fc97a395e9e85ec8fae64199f3b2ccbf5c5c"},
+    {file = "levenshtein-0.26.0-pp310-pypy310_pp73-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:93a949fabc6280ab44a6252d780577715e8e71a63a295c4730ce5490006ae1f5"},
+    {file = "levenshtein-0.26.0-pp310-pypy310_pp73-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:588094f406d5cb01dbf74201f8b4fe345d2b92a789997eb5371dad754f831d5b"},
+    {file = "levenshtein-0.26.0-pp310-pypy310_pp73-manylinux_2_5_i686.manylinux1_i686.manylinux_2_17_i686.manylinux2014_i686.whl", hash = "sha256:c95201c7425cdff12ed16ff0a15af52c46477935e7589d1dc6ebd24f416c9ed8"},
+    {file = "levenshtein-0.26.0-pp310-pypy310_pp73-win_amd64.whl", hash = "sha256:651b011617937d18f671450c8294d11b5b556b09e33ac038b923ae6496e35d31"},
+    {file = "levenshtein-0.26.0.tar.gz", hash = "sha256:960b020d96bbd348400d6ff5c16290adee49f0ae2d42707a550a3b4f7d092abe"},
 ]
 
 [[package]]
@@ -3351,23 +3362,24 @@ files = [
 
 [[package]]
 name = "nr-metadata"
-version = "2.0.37"
+version = "2.0.39"
 requires_python = ">=3.9"
 summary = "\"Generated metadata files for the Czech National Repository\""
 groups = ["default"]
 dependencies = [
     "deepmerge>=1.1.0",
+    "oarepo-global-search>=1.0.23",
     "oarepo-runtime>=1.0.0",
     "oarepo-vocabularies>=2.0.0",
 ]
 files = [
-    {file = "nr_metadata-2.0.37-py2.py3-none-any.whl", hash = "sha256:71a692ba4e060912a8ba2fdae23c9c044f25627cbe6937fe3704c0212eb9654d"},
-    {file = "nr_metadata-2.0.37.tar.gz", hash = "sha256:c8fd12b70a7f2bc594f7d3e88efb595a7224f7b8531a302b4918a444cfb2fa9e"},
+    {file = "nr_metadata-2.0.39-py2.py3-none-any.whl", hash = "sha256:4bd087f0b6915c009f6f5255fc20764e21855c25dcaaa023be98d2242ee0bf3e"},
+    {file = "nr_metadata-2.0.39.tar.gz", hash = "sha256:8cdfa9313bcec02c904109887f214532f4c4d9befaa588398ee85ac984ba9908"},
 ]
 
 [[package]]
 name = "nr-oaipmh-harvesters"
-version = "1.0.21"
+version = "1.0.22"
 summary = "OAIPMH harvesters for National repository"
 groups = ["default"]
 dependencies = [
@@ -3377,8 +3389,8 @@ dependencies = [
     "oarepo-oai-pmh-harvester>=4.0.0",
 ]
 files = [
-    {file = "nr_oaipmh_harvesters-1.0.21-py3-none-any.whl", hash = "sha256:584c345e88febaee21bd146107127bb8ff3cbcaf12610d85a96b79098dfd351b"},
-    {file = "nr_oaipmh_harvesters-1.0.21.tar.gz", hash = "sha256:5d27a312db54e7e9a20b01d390e0e4ee72689ddc4b1d5e5eebe8e584512baf58"},
+    {file = "nr_oaipmh_harvesters-1.0.22-py3-none-any.whl", hash = "sha256:eb4d9b0696f9c8fe667da8304803d411e3cec2f949dcadfc2b261ff8e5e5aba7"},
+    {file = "nr_oaipmh_harvesters-1.0.22.tar.gz", hash = "sha256:99d07f22fb1338e47a093293611d4655d54e46daab4df365e04cb5125f8c48c0"},
 ]
 
 [[package]]
@@ -3697,7 +3709,7 @@ files = [
 
 [[package]]
 name = "oarepo-communities"
-version = "5.0.12"
+version = "5.0.16"
 summary = ""
 groups = ["default"]
 dependencies = [
@@ -3707,13 +3719,13 @@ dependencies = [
     "oarepo-runtime",
 ]
 files = [
-    {file = "oarepo_communities-5.0.12-py3-none-any.whl", hash = "sha256:ac0066a7936cb85ec9eaab501ada1e01c2a0b51466405cfb0688ee819db96033"},
-    {file = "oarepo_communities-5.0.12.tar.gz", hash = "sha256:94cb56fdd8a75fa8e8ee2839ed44c3ccef0a18c04c83fb1a3645d4553ba8049d"},
+    {file = "oarepo_communities-5.0.16-py3-none-any.whl", hash = "sha256:869e5181986b50a1ea635b76ad01e8e6ff0072284de8e507cb7fccbe22c619c6"},
+    {file = "oarepo_communities-5.0.16.tar.gz", hash = "sha256:d87f548b46e18e1360cc5c6cea05cdf5aff58eb0c33c498198e87983df3381b7"},
 ]
 
 [[package]]
 name = "oarepo-dashboard"
-version = "1.0.9"
+version = "1.0.11"
 summary = "Support for user dashboard (records, communities, requests)"
 groups = ["default"]
 dependencies = [
@@ -3723,13 +3735,13 @@ dependencies = [
     "openpyxl",
 ]
 files = [
-    {file = "oarepo_dashboard-1.0.9-py3-none-any.whl", hash = "sha256:4d090ad7b59f77561ce39a224b2519e3f4f8c050b68e817ccae6915dfee2668e"},
-    {file = "oarepo_dashboard-1.0.9.tar.gz", hash = "sha256:f283d1ef4ff780ef09a7dccd6ac063ede7eb476d0a27769d047fc1628adc6638"},
+    {file = "oarepo_dashboard-1.0.11-py3-none-any.whl", hash = "sha256:b65e59aa525c4e4c7149a5b59b9fd3d335c2be528e1cfc4e44760de9dca2f32c"},
+    {file = "oarepo_dashboard-1.0.11.tar.gz", hash = "sha256:a647c44e6c966bb782cff580676b8695d6a4cdb13486af995faa9005f2a3f39a"},
 ]
 
 [[package]]
 name = "oarepo-global-search"
-version = "1.0.23"
+version = "1.0.26"
 requires_python = ">=3.10"
 summary = "\"A model builder plugin for global search\""
 groups = ["default"]
@@ -3737,8 +3749,8 @@ dependencies = [
     "oarepo-ui",
 ]
 files = [
-    {file = "oarepo_global_search-1.0.23-py2.py3-none-any.whl", hash = "sha256:34fb8ecae89ad2aebb521511e4aee51e85ea06985b2a3a8693bfa05bab81c7e9"},
-    {file = "oarepo_global_search-1.0.23.tar.gz", hash = "sha256:4411d27889054640f36f440ffadd92dd61805cb60bdcd6fbae8fa4962cbaf183"},
+    {file = "oarepo_global_search-1.0.26-py2.py3-none-any.whl", hash = "sha256:9d9becfa5246285c3d557ed11d4688a0791334c63ccbf67f952d9b336703cffe"},
+    {file = "oarepo_global_search-1.0.26.tar.gz", hash = "sha256:f24a440f6109c77c25c0277073e28436b7e2d7529e2a7b47d1ef8749d565cb34"},
 ]
 
 [[package]]
@@ -3772,7 +3784,7 @@ files = [
 
 [[package]]
 name = "oarepo-requests"
-version = "2.0.8"
+version = "2.0.9"
 summary = ""
 groups = ["default"]
 dependencies = [
@@ -3780,13 +3792,13 @@ dependencies = [
     "oarepo-runtime",
 ]
 files = [
-    {file = "oarepo_requests-2.0.8-py3-none-any.whl", hash = "sha256:b5af538d359ba0b9d052cb5722bbd3883d054afa93d74c1ed7c294211897a595"},
-    {file = "oarepo_requests-2.0.8.tar.gz", hash = "sha256:07f7e4562ba49c31fa8a942a7271f5495c2c3433e3770b247b657b300ad66b88"},
+    {file = "oarepo_requests-2.0.9-py3-none-any.whl", hash = "sha256:6d69a9df5e72aee5f3b2112a18a74cadf975fcf8cc98058342f7d8a99fe4a38c"},
+    {file = "oarepo_requests-2.0.9.tar.gz", hash = "sha256:364c968f19ac1bace08928aef4511a7aa5a5478adae19852e0eccd678caf2fd2"},
 ]
 
 [[package]]
 name = "oarepo-runtime"
-version = "1.5.58"
+version = "1.5.60"
 summary = "A set of runtime extensions of Invenio repository"
 groups = ["default"]
 dependencies = [
@@ -3801,13 +3813,13 @@ dependencies = [
     "tqdm",
 ]
 files = [
-    {file = "oarepo_runtime-1.5.58-py3-none-any.whl", hash = "sha256:a8de78642bed213074c8bde631010b3253475d16d551fc1e65ec714b43a85a09"},
-    {file = "oarepo_runtime-1.5.58.tar.gz", hash = "sha256:7eeb858aad5356d67d54369277f9e562d493d52f7e2bf5ee1ae0691a691bc9df"},
+    {file = "oarepo_runtime-1.5.60-py3-none-any.whl", hash = "sha256:12bf9815f54d75fd917ee1fe0a552b1d737793105fad8033d62886aac6c3a80e"},
+    {file = "oarepo_runtime-1.5.60.tar.gz", hash = "sha256:6032deb0e97301484aa72f75dc4952c1ba5e1ffae7b0f677c4115e94581b679e"},
 ]
 
 [[package]]
 name = "oarepo-ui"
-version = "5.2.8"
+version = "5.2.12"
 requires_python = ">=3.10"
 summary = "UI module for invenio 3.5+"
 groups = ["default"]
@@ -3819,13 +3831,13 @@ dependencies = [
     "oarepo-runtime",
 ]
 files = [
-    {file = "oarepo_ui-5.2.8-py2.py3-none-any.whl", hash = "sha256:cbca58fe2cd2083f4e9d1dbca10eab278cec52d30a9ee957c3c1f6949f3f455f"},
-    {file = "oarepo_ui-5.2.8.tar.gz", hash = "sha256:749f4a7e6b8695ac03548fa5c3cb782b5a72ff23df1c590c3f949468620dea04"},
+    {file = "oarepo_ui-5.2.12-py2.py3-none-any.whl", hash = "sha256:3d0873b534304fdd978b8c6fc2668a1c7ed5164c2b773ec15aeeaf3be64bbb18"},
+    {file = "oarepo_ui-5.2.12.tar.gz", hash = "sha256:c5d0d6219078a0105081a09849cb2dcdda59656788af986b3664426d69e0dad1"},
 ]
 
 [[package]]
 name = "oarepo-vocabularies"
-version = "2.0.96"
+version = "2.0.102"
 summary = "Support for custom fields and hierarchy on Invenio vocabularies"
 groups = ["default"]
 dependencies = [
@@ -3836,13 +3848,13 @@ dependencies = [
     "openpyxl",
 ]
 files = [
-    {file = "oarepo_vocabularies-2.0.96-py3-none-any.whl", hash = "sha256:21fe372001bdf1177ec5b165d79d89af55c3b9920484b85141c4655df3b569d9"},
-    {file = "oarepo_vocabularies-2.0.96.tar.gz", hash = "sha256:1eb687877d57b8f71cb2624fd0e9071b963e127e2f0e17f272c7472ab211765f"},
+    {file = "oarepo_vocabularies-2.0.102-py3-none-any.whl", hash = "sha256:8f91bcf4d349c4006c4bd93ee059710082692d70504e8c558bf1a30a263994cc"},
+    {file = "oarepo_vocabularies-2.0.102.tar.gz", hash = "sha256:c1db6ba84aba8c97867909ec0b8b758ca7157b6f58970513549c65db9bd5807d"},
 ]
 
 [[package]]
 name = "oarepo-workflows"
-version = "1.0.9"
+version = "1.0.10"
 summary = ""
 groups = ["default"]
 dependencies = [
@@ -3851,8 +3863,8 @@ dependencies = [
     "oarepo-runtime",
 ]
 files = [
-    {file = "oarepo_workflows-1.0.9-py3-none-any.whl", hash = "sha256:87534f161ed2dafcd6ff4f30f264a5acadbb123dd4d8042f6888229dc73e9de4"},
-    {file = "oarepo_workflows-1.0.9.tar.gz", hash = "sha256:140651ed940c4a403cd36c9f691bab4cb9941aba088b9b59f6f9f490af9de384"},
+    {file = "oarepo_workflows-1.0.10-py3-none-any.whl", hash = "sha256:972d48b4006c2e4e23a9d58b24154166bdbd693b76bf6bb9fd81dd97150d381f"},
+    {file = "oarepo_workflows-1.0.10.tar.gz", hash = "sha256:ddf450f751c160179819fad4a14c59fa3e61f1c3fabc5c4a7c7feb2eb3010f1e"},
 ]
 
 [[package]]
@@ -4398,33 +4410,33 @@ files = [
 
 [[package]]
 name = "rapidfuzz"
-version = "3.9.6"
+version = "3.9.7"
 requires_python = ">=3.8"
 summary = "rapid fuzzy string matching"
 groups = ["default"]
 files = [
-    {file = "rapidfuzz-3.9.6-cp310-cp310-macosx_10_9_x86_64.whl", hash = "sha256:a7ed0d0b9c85720f0ae33ac5efc8dc3f60c1489dad5c29d735fbdf2f66f0431f"},
-    {file = "rapidfuzz-3.9.6-cp310-cp310-macosx_11_0_arm64.whl", hash = "sha256:f3deff6ab7017ed21b9aec5874a07ad13e6b2a688af055837f88b743c7bfd947"},
-    {file = "rapidfuzz-3.9.6-cp310-cp310-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:5c3f9fc060160507b2704f7d1491bd58453d69689b580cbc85289335b14fe8ca"},
-    {file = "rapidfuzz-3.9.6-cp310-cp310-manylinux_2_17_i686.manylinux2014_i686.whl", hash = "sha256:c4e86c2b3827fa6169ad6e7d4b790ce02a20acefb8b78d92fa4249589bbc7a2c"},
-    {file = "rapidfuzz-3.9.6-cp310-cp310-manylinux_2_17_ppc64le.manylinux2014_ppc64le.whl", hash = "sha256:f982e1aafb4bd8207a5e073b1efef9e68a984e91330e1bbf364f9ed157ed83f0"},
-    {file = "rapidfuzz-3.9.6-cp310-cp310-manylinux_2_17_s390x.manylinux2014_s390x.whl", hash = "sha256:9196a51d0ec5eaaaf5bca54a85b7b1e666fc944c332f68e6427503af9fb8c49e"},
-    {file = "rapidfuzz-3.9.6-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:fb5a514064e02585b1cc09da2fe406a6dc1a7e5f3e92dd4f27c53e5f1465ec81"},
-    {file = "rapidfuzz-3.9.6-cp310-cp310-musllinux_1_2_aarch64.whl", hash = "sha256:e3a4244f65dbc3580b1275480118c3763f9dc29fc3dd96610560cb5e140a4d4a"},
-    {file = "rapidfuzz-3.9.6-cp310-cp310-musllinux_1_2_i686.whl", hash = "sha256:f6ebb910a702e41641e1e1dada3843bc11ba9107a33c98daef6945a885a40a07"},
-    {file = "rapidfuzz-3.9.6-cp310-cp310-musllinux_1_2_ppc64le.whl", hash = "sha256:624fbe96115fb39addafa288d583b5493bc76dab1d34d0ebba9987d6871afdf9"},
-    {file = "rapidfuzz-3.9.6-cp310-cp310-musllinux_1_2_s390x.whl", hash = "sha256:1c59f1c1507b7a557cf3c410c76e91f097460da7d97e51c985343798e9df7a3c"},
-    {file = "rapidfuzz-3.9.6-cp310-cp310-musllinux_1_2_x86_64.whl", hash = "sha256:f6f0256cb27b6a0fb2e1918477d1b56473cd04acfa245376a342e7c15806a396"},
-    {file = "rapidfuzz-3.9.6-cp310-cp310-win32.whl", hash = "sha256:24d473d00d23a30a85802b502b417a7f5126019c3beec91a6739fe7b95388b24"},
-    {file = "rapidfuzz-3.9.6-cp310-cp310-win_amd64.whl", hash = "sha256:248f6d2612e661e2b5f9a22bbd5862a1600e720da7bb6ad8a55bb1548cdfa423"},
-    {file = "rapidfuzz-3.9.6-cp310-cp310-win_arm64.whl", hash = "sha256:e03fdf0e74f346ed7e798135df5f2a0fb8d6b96582b00ebef202dcf2171e1d1d"},
-    {file = "rapidfuzz-3.9.6-pp310-pypy310_pp73-macosx_10_15_x86_64.whl", hash = "sha256:a65c2f63218ea2dedd56fc56361035e189ca123bd9c9ce63a9bef6f99540d681"},
-    {file = "rapidfuzz-3.9.6-pp310-pypy310_pp73-macosx_11_0_arm64.whl", hash = "sha256:680dc78a5f889d3b89f74824b89fe357f49f88ad10d2c121e9c3ad37bac1e4eb"},
-    {file = "rapidfuzz-3.9.6-pp310-pypy310_pp73-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:b8ca862927a0b05bd825e46ddf82d0724ea44b07d898ef639386530bf9b40f15"},
-    {file = "rapidfuzz-3.9.6-pp310-pypy310_pp73-manylinux_2_17_i686.manylinux2014_i686.whl", hash = "sha256:2116fa1fbff21fa52cd46f3cfcb1e193ba1d65d81f8b6e123193451cd3d6c15e"},
-    {file = "rapidfuzz-3.9.6-pp310-pypy310_pp73-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:4dcb7d9afd740370a897c15da61d3d57a8d54738d7c764a99cedb5f746d6a003"},
-    {file = "rapidfuzz-3.9.6-pp310-pypy310_pp73-win_amd64.whl", hash = "sha256:1a5bd6401bb489e14cbb5981c378d53ede850b7cc84b2464cad606149cc4e17d"},
-    {file = "rapidfuzz-3.9.6.tar.gz", hash = "sha256:5cf2a7d621e4515fee84722e93563bf77ff2cbe832a77a48b81f88f9e23b9e8d"},
+    {file = "rapidfuzz-3.9.7-cp310-cp310-macosx_10_9_x86_64.whl", hash = "sha256:ccf68e30b80e903f2309f90a438dbd640dd98e878eeb5ad361a288051ee5b75c"},
+    {file = "rapidfuzz-3.9.7-cp310-cp310-macosx_11_0_arm64.whl", hash = "sha256:696a79018ef989bf1c9abd9005841cee18005ccad4748bad8a4c274c47b6241a"},
+    {file = "rapidfuzz-3.9.7-cp310-cp310-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:c4eebf6c93af0ae866c22b403a84747580bb5c10f0d7b51c82a87f25405d4dcb"},
+    {file = "rapidfuzz-3.9.7-cp310-cp310-manylinux_2_17_i686.manylinux2014_i686.whl", hash = "sha256:0e9125377fa3d21a8abd4fbdbcf1c27be73e8b1850f0b61b5b711364bf3b59db"},
+    {file = "rapidfuzz-3.9.7-cp310-cp310-manylinux_2_17_ppc64le.manylinux2014_ppc64le.whl", hash = "sha256:c12d180b17a22d107c8747de9c68d0b9c1d15dcda5445ff9bf9f4ccfb67c3e16"},
+    {file = "rapidfuzz-3.9.7-cp310-cp310-manylinux_2_17_s390x.manylinux2014_s390x.whl", hash = "sha256:c1318d42610c26dcd68bd3279a1bf9e3605377260867c9a8ed22eafc1bd93a7c"},
+    {file = "rapidfuzz-3.9.7-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:dd5fa6e3c6e0333051c1f3a49f0807b3366f4131c8d6ac8c3e05fd0d0ce3755c"},
+    {file = "rapidfuzz-3.9.7-cp310-cp310-musllinux_1_2_aarch64.whl", hash = "sha256:fcf79b686962d7bec458a0babc904cb4fa319808805e036b9d5a531ee6b9b835"},
+    {file = "rapidfuzz-3.9.7-cp310-cp310-musllinux_1_2_i686.whl", hash = "sha256:8b01153c7466d0bad48fba77a303d5a768e66f24b763853469f47220b3de4661"},
+    {file = "rapidfuzz-3.9.7-cp310-cp310-musllinux_1_2_ppc64le.whl", hash = "sha256:94baaeea0b4f8632a6da69348b1e741043eba18d4e3088d674d3f76586b6223d"},
+    {file = "rapidfuzz-3.9.7-cp310-cp310-musllinux_1_2_s390x.whl", hash = "sha256:6c5b32875646cb7f60c193ade99b2e4b124f19583492115293cd00f6fb198b17"},
+    {file = "rapidfuzz-3.9.7-cp310-cp310-musllinux_1_2_x86_64.whl", hash = "sha256:110b6294396bc0a447648627479c9320f095c2034c0537f687592e0f58622638"},
+    {file = "rapidfuzz-3.9.7-cp310-cp310-win32.whl", hash = "sha256:3445a35c4c8d288f2b2011eb61bce1227c633ce85a3154e727170f37c0266bb2"},
+    {file = "rapidfuzz-3.9.7-cp310-cp310-win_amd64.whl", hash = "sha256:0d1415a732ee75e74a90af12020b77a0b396b36c60afae1bde3208a78cd2c9fc"},
+    {file = "rapidfuzz-3.9.7-cp310-cp310-win_arm64.whl", hash = "sha256:836f4d88b8bd0fff2ebe815dcaab8aa6c8d07d1d566a7e21dd137cf6fe11ed5b"},
+    {file = "rapidfuzz-3.9.7-pp310-pypy310_pp73-macosx_10_15_x86_64.whl", hash = "sha256:d7df9c2194c7ec930b33c991c55dbd0c10951bd25800c0b7a7b571994ebbced5"},
+    {file = "rapidfuzz-3.9.7-pp310-pypy310_pp73-macosx_11_0_arm64.whl", hash = "sha256:68bd888eafd07b09585dcc8bc2716c5ecdb7eed62827470664d25588982b2873"},
+    {file = "rapidfuzz-3.9.7-pp310-pypy310_pp73-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:d1230e0f9026851a6a432beaa0ce575dda7b39fe689b576f99a0704fbb81fc9c"},
+    {file = "rapidfuzz-3.9.7-pp310-pypy310_pp73-manylinux_2_17_i686.manylinux2014_i686.whl", hash = "sha256:a3b36e1c61b796ae1777f3e9e11fd39898b09d351c9384baf6e3b7e6191d8ced"},
+    {file = "rapidfuzz-3.9.7-pp310-pypy310_pp73-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:9dba13d86806fcf3fe9c9919f58575e0090eadfb89c058bde02bcc7ab24e4548"},
+    {file = "rapidfuzz-3.9.7-pp310-pypy310_pp73-win_amd64.whl", hash = "sha256:1f1a33e84056b7892c721d84475d3bde49a145126bc4c6efe0d6d0d59cb31c29"},
+    {file = "rapidfuzz-3.9.7.tar.gz", hash = "sha256:f1c7296534c1afb6f495aa95871f14ccdc197c6db42965854e483100df313030"},
 ]
 
 [[package]]
