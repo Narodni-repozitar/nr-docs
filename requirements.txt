@@ -30,3 +30,4 @@ python-dotenv==1.0.1
 rapidfuzz==3.9.7
 sickle==0.7.0
 whitenoise==6.7.0
+oarepo-doi==1.0.10
