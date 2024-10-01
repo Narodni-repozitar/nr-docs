@@ -1,9 +1,10 @@
-from documents.records.api import DocumentsDraft, DocumentsRecord
-from documents.services.files.schema import DocumentsFileSchema
-from documents.services.records.permissions import DocumentsPermissionPolicy
 from invenio_records_resources.services import FileLink, FileServiceConfig, RecordLink
 from oarepo_runtime.services.components import CustomFieldsComponent
 from oarepo_runtime.services.config.service import PermissionsPresetsConfigMixin
+
+from documents.records.api import DocumentsDraft, DocumentsRecord
+from documents.services.files.schema import DocumentsFileSchema
+from documents.services.records.permissions import DocumentsPermissionPolicy
 
 
 class DocumentsFileServiceConfig(PermissionsPresetsConfigMixin, FileServiceConfig):

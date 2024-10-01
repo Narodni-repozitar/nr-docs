@@ -27,13 +27,14 @@ def init_create_app_blueprint(state):
     # register service
     sregistry = app.extensions["invenio-records-resources"].registry
     sregistry.register(
-        ext.service_requests, service_id=ext.service_requests.config.service_id
+        ext.service_record_requests,
+        service_id=ext.service_record_requests.config.service_id,
     )
 
     # Register indexer
-    if hasattr(ext.service_requests, "indexer"):
+    if hasattr(ext.service_record_requests, "indexer"):
         iregistry = app.extensions["invenio-indexer"].registry
         iregistry.register(
-            ext.service_requests.indexer,
-            indexer_id=ext.service_requests.config.service_id,
+            ext.service_record_requests.indexer,
+            indexer_id=ext.service_record_requests.config.service_id,
         )
