@@ -5,7 +5,8 @@ from invenio_vocabularies.proxies import current_service as vocabulary_service
 
 class DataCiteMappingNRDocs:
 
-    def metadata_check(self, data, errors=[]):
+    def metadata_check(self, data):
+        errors=[]
         data = data["metadata"]
         if "creators" not in data:
             errors.append("Creators are mandatory")
