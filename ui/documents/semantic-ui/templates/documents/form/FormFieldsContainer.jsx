@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect } from "react";
+import React, { useCallback } from "react";
 import {
   useFormConfig,
   MultilingualTextInput,
@@ -45,23 +45,6 @@ const FormFieldsContainer = () => {
     []
   );
   const { getFieldData } = useFieldData();
-
-  // on chrome there is an annoying issue where after deletion you are redirected, and then
-  // if you click back on browser <-, it serves you the deleted page, which does not exist from the cache.
-  // on firefox it does not happen.
-  useEffect(() => {
-    const handleUnload = () => {};
-
-    const handleBeforeUnload = () => {};
-
-    window.addEventListener("unload", handleUnload);
-    window.addEventListener("beforeunload", handleBeforeUnload);
-
-    return () => {
-      window.removeEventListener("unload", handleUnload);
-      window.removeEventListener("beforeunload", handleBeforeUnload);
-    };
-  }, []);
 
   const { values, setFieldValue, setFieldTouched } = useFormikContext();
   const { sanitizeInput } = useSanitizeInput();
