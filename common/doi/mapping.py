@@ -5,39 +5,40 @@ from invenio_vocabularies.proxies import current_service as vocabulary_service
 
 class DataCiteMappingNRDocs:
 
-    def metadata_check(self, data):
-        errors=[]
+        def metadata_check(self, data):
+        errors = {}
         data = data["metadata"]
         if "creators" not in data:
-            errors.append("Creators are mandatory")
+            errors["metadata.creators"] = ["Creators are mandatory"]
         else:
-            for creator in data["creators"]:
+            for i, creator in enumerate(data["creators"]):
                 if "fullName" not in creator:
-                    errors.append("Full name of creator is mandatory")
+                    errors["metadata.creators[{i}].fullName"] = ["Full name of creator is mandatory"]
                 if "authorityIdentifiers" in creator:
-                    for id in creator["authorityIdentifiers"]:
+                    for j, id in enumerate(creator["authorityIdentifiers"]):
                         if "scheme" not in id:
-                            errors.append("Authority identifier scheme is mandatory")
-
+                            errors["metadata.creators[{i}].authorityIdentifiers[{j}].scheme"] = [
+                                "Authority identifier scheme is mandatory"]
         if "contributors" in data:
-            for contributor in data["contributors"]:
+            for i, contributor in enumerate(data["contributors"]):
                 if "fullName" not in contributor:
-                    errors.append("Full name of contributor is mandatory")
+                    errors["metadata.contributors[{i}].fullName"] = [
+                        "Full name of contributor is mandatory"]
                 if "authorityIdentifiers" in contributor:
-                    for id in contributor["authorityIdentifiers"]:
+                    for j, id in enumerate(contributor["authorityIdentifiers"]):
                         if "scheme" not in id:
-                            errors.append("Authority identifier scheme is mandatory")
-
+                            errors["metadata.contributors[{i}].authorityIdentifiers[{j}].scheme"] = [
+                                "Authority identifier scheme is mandatory"]
         if "title" not in data:
-            errors.append("Title is mandatory")
+            errors["metadata.title"] = ["Title is mandatory"]
         if "resourceType" not in data:
-            errors.append("Resource type is mandatory")
+            errors["metadata.resourceType"] = ["Resource type is mandatory"]
         if "dateIssued" not in data:
-            errors.append("Date issued is mandatory")
-        if "fundingReferences" in data and "funderName":
-            for fund in data["fundingReferences"]:
+            errors["metadata.dateIssued"] = ["Date issued is mandatory"]
+        if "fundingReferences" in data:
+            for i, fund in enumerate(data["fundingReferences"]):
                 if "projectName" not in fund:
-                    errors.append("Funder name is mandatory")
+                    errors["metadata.fundingReferences[{i}].projectName"] = ["Funder name is mandatory"]
 
         return errors
 
