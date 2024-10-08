@@ -4,10 +4,8 @@
     <Field label={_('metadata/additionalTitles.label')}>
        <AdditionalTitles data={metadata.additionalTitles}></AdditionalTitles>
     </Field>
-        <dt>{{ _('People') }}</dt>
-    <dd>
-        <People  metadata={metadata} search_link={record.links.search_link}></People>
-    </dd>
+
+    <Creatibutors  metadata={metadata} search_link={record.links.search_link}></Creatibutors>
     <Field label={ _('metadata/dateIssued.label') }>{{metadata.dateIssued}}</Field>
     <Field label={ _('metadata/dateModified.label') }>{{metadata.dateModified}}</Field>
 
