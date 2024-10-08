@@ -3,7 +3,7 @@ cachetools==5.5.0
 deepmerge==2.0
 et-xmlfile==1.1.0
 flask-babelex==0.9.4
-frozendict==2.4.4
+frozendict==2.4.5
 jinja2-simple-tags==0.6.1
 jinjax==0.37
 json5==0.9.25
@@ -17,13 +17,14 @@ nr-oaipmh-harvesters==1.0.22
 nr-vocabularies==2.1.0
 oarepo-communities==5.0.16
 oarepo-dashboard==1.0.11
+oarepo-doi==1.0.10
 oarepo-global-search==1.0.26
-oarepo-oai-pmh-harvester==4.1.4
+oarepo-oai-pmh-harvester==4.1.6
 oarepo-published-service==1.0.3
 oarepo-requests==2.1.5
 oarepo-runtime==1.5.61
-oarepo-ui==5.2.12
-oarepo-vocabularies==2.0.102
+oarepo-ui==5.2.14
+oarepo-vocabularies==2.1.0
 oarepo-workflows==1.0.10
 openpyxl==3.1.5
 python-dotenv==1.0.1
