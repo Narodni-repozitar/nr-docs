@@ -32,7 +32,7 @@ const FormActionsContainer = () => {
             <Grid.Column width={16} className="pt-10">
               <RecordRequests
                 record={values}
-                onBeforeAction={() => save()}
+                onBeforeAction={() => save({ successMessage: "" })}
                 onActionError={(
                   e,
                   variables,

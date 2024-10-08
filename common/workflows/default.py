@@ -23,14 +23,20 @@
 #
 
 from datetime import timedelta
-
+from invenio_records_permissions.generators import (
+    AnyUser,
+    AuthenticatedUser,
+    SystemProcess,
+)
 from invenio_records_permissions.generators import AnyUser
 from oarepo_communities.services.permissions.generators import (
     CommunityRole,
     PrimaryCommunityRole,
     PrimaryCommunityMembers,
 )
-from oarepo_communities.services.permissions.policy import CommunityDefaultWorkflowPermissions
+from oarepo_communities.services.permissions.policy import (
+    CommunityDefaultWorkflowPermissions,
+)
 from oarepo_requests.services.permissions.generators import IfRequestedBy, RequestActive
 from oarepo_runtime.services.permissions.generators import RecordOwners, UserWithRole
 from oarepo_workflows import (
@@ -41,7 +47,9 @@ from oarepo_workflows import (
     WorkflowRequestPolicy,
     WorkflowTransitions,
 )
-from oarepo_requests.services.permissions.workflow_policies import RequestBasedWorkflowPermissions
+from oarepo_requests.services.permissions.workflow_policies import (
+    RequestBasedWorkflowPermissions,
+)
 
 
 class DefaultWorkflowPermissions(CommunityDefaultWorkflowPermissions):
@@ -107,6 +115,8 @@ class DefaultWorkflowPermissions(CommunityDefaultWorkflowPermissions):
             ],
         ),
     ] + CommunityDefaultWorkflowPermissions.can_delete
+
+    can_create_files = [CommunityRole("curator")]
 
 
 class DefaultWorkflowRequests(WorkflowRequestPolicy):
