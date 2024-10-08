@@ -1,0 +1,4 @@
+communities:
+- service: communities
+  writer: service
+- source: ./communities.yaml

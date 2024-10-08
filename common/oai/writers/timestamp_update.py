@@ -2,8 +2,7 @@ from invenio_access.permissions import system_identity
 from invenio_db import db
 from invenio_records_resources.proxies import current_service_registry
 from invenio_records_resources.services.uow import UnitOfWork
-from invenio_search.engine import dsl
-from sqlalchemy import Table, update, select
+from sqlalchemy import Table, update
 
 from invenio_records_resources.services.uow import RecordIndexOp
 from oarepo_runtime.datastreams.types import StreamBatch
@@ -32,8 +31,8 @@ class TimestampUpdateWriter(BaseWriter):
                     update(table)
                     .where(table.c.id == model.id)
                     .values(
-                        updated=record.data["oai"]["harvest"]["datestamp"],
-                        created=record.data["oai"]["harvest"]["datestamp"],
+                        updated=entry.context["oai"]["datestamp"],
+                        created=entry.context["oai"]["datestamp"],
                     )
                 )
                 db.session.execute(stmt)

@@ -27,6 +27,7 @@ from documents.services.records.results import DocumentsRecordItem, DocumentsRec
 from documents.services.records.schema import DocumentsSchema
 from documents.services.records.search import DocumentsSearchOptions
 
+from oarepo_doi.services.components import DoiComponent
 
 class DocumentsServiceConfig(
     PermissionsPresetsConfigMixin, FilteredResultServiceConfig
@@ -63,6 +64,7 @@ class DocumentsServiceConfig(
         CustomFieldsComponent,
         DraftFilesComponent,
         WorkflowComponent,
+        DoiComponent
     ]
 
     model = "documents"
