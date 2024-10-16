@@ -36,6 +36,13 @@ if [ -f ~/.envrc.local ] ; then
   source ~/.envrc.local
 fi
 
+
+SUPPORTED_PYTHON_PATHS=(
+  /usr/bin/python3.12
+  /opt/homebrew/bin/python3.12
+  /usr/local/bin/python3.12
+)
+
 if [ -z "$PYTHON" ] ; then
 
   PYTHON=$(/usr/bin/env python3.12 -c "import sys; print(sys.executable)")

@@ -55,6 +55,7 @@ from oarepo_requests.services.permissions.workflow_policies import (
 class DefaultWorkflowPermissions(CommunityDefaultWorkflowPermissions):
     can_create = [
         PrimaryCommunityRole("submitter"),
+        PrimaryCommunityRole("owner"),
         PrimaryCommunityRole("curator"),
         UserWithRole("administrator"),
     ]
@@ -130,7 +131,7 @@ class DefaultWorkflowRequests(WorkflowRequestPolicy):
             IfRequestedBy(
                 requesters=PrimaryCommunityRole("curator"),
                 then_=[AutoApprove()],
-                else_=[PrimaryCommunityRole("curator")],
+                else_=[PrimaryCommunityRole("curator"), PrimaryCommunityRole("owner")],
             )
         ],
         transitions=WorkflowTransitions(

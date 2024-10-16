@@ -102,7 +102,7 @@ const FormFieldsContainer = () => {
               optimized
               fieldPath="metadata.resourceType"
               clearable
-              optionsListName="resource-types"
+              vocabulary="resource-types"
               filterFunction={filterResourceTypes}
               {...getFieldData({
                 fieldPath: "metadata.resourceType",
@@ -290,7 +290,7 @@ const FormFieldsContainer = () => {
               fieldPath="metadata.subjectCategories"
               multiple={true}
               clearable
-              optionsListName="subject-categories"
+              vocabulary="subject-categories"
               {...getFieldData({
                 fieldPath: "metadata.subjectCategories",
                 icon: "tag",
