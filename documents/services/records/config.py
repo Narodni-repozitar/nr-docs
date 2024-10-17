@@ -1,8 +1,3 @@
-from documents.records.api import DocumentsDraft, DocumentsRecord
-from documents.services.records.permissions import DocumentsPermissionPolicy
-from documents.services.records.results import DocumentsRecordItem, DocumentsRecordList
-from documents.services.records.schema import DocumentsSchema
-from documents.services.records.search import DocumentsSearchOptions
 from invenio_drafts_resources.services.records.components import DraftFilesComponent
 from invenio_records_resources.services import (
     ConditionalLink,
@@ -14,6 +9,8 @@ from oarepo_communities.services.components.default_workflow import (
 )
 from oarepo_communities.services.components.include import CommunityInclusionComponent
 from oarepo_communities.services.links import CommunitiesLinks
+from oarepo_doi.services.components import DoiComponent
+from oarepo_oaipmh_harvester.components import OaiSectionComponent
 from oarepo_runtime.records import has_draft, is_published_record
 from oarepo_runtime.services.components import (
     CustomFieldsComponent,
@@ -26,7 +23,12 @@ from oarepo_vocabularies.authorities.components import AuthorityComponent
 from oarepo_workflows.services.components.workflow import WorkflowComponent
 
 from common.services.config import FilteredResultServiceConfig
-from oarepo_doi.services.components import DoiComponent
+from documents.records.api import DocumentsDraft, DocumentsRecord
+from documents.services.records.permissions import DocumentsPermissionPolicy
+from documents.services.records.results import DocumentsRecordItem, DocumentsRecordList
+from documents.services.records.schema import DocumentsSchema
+from documents.services.records.search import DocumentsSearchOptions
+
 
 class DocumentsServiceConfig(
     PermissionsPresetsConfigMixin, FilteredResultServiceConfig
@@ -56,14 +58,15 @@ class DocumentsServiceConfig(
         *FilteredResultServiceConfig.components,
         AuthorityComponent,
         DateIssuedComponent,
+        DoiComponent,
+        OaiSectionComponent,
         CommunityDefaultWorkflowComponent,
         CommunityInclusionComponent,
         OwnersComponent,
-        FilesComponent,
         CustomFieldsComponent,
+        FilesComponent,
         DraftFilesComponent,
         WorkflowComponent,
-        DoiComponent
     ]
 
     model = "documents"
