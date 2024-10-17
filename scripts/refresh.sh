@@ -14,5 +14,3 @@ invenio oarepo cf init
 invenio files location create --default default s3://default;
 invenio oarepo index reindex
 invenio oarepo index reindex
-invenio oarepo fixtures load --verbose
-invenio oarepo fixtures load fixtures --verbose
