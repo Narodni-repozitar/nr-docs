@@ -2,7 +2,7 @@ from flask import Blueprint
 
 
 def create_app_blueprint(app):
-    blueprint = Blueprint("documents_requests_app", __name__, url_prefix="/docs/")
+    blueprint = Blueprint("documents_request_types_app", __name__, url_prefix="/docs/")
     blueprint.record_once(init_create_app_blueprint)
 
     # calls record_once for all other functions starting with "init_addons_"
@@ -27,14 +27,14 @@ def init_create_app_blueprint(state):
     # register service
     sregistry = app.extensions["invenio-records-resources"].registry
     sregistry.register(
-        ext.service_record_requests,
-        service_id=ext.service_record_requests.config.service_id,
+        ext.service_record_request_types,
+        service_id=ext.service_record_request_types.config.service_id,
     )
 
     # Register indexer
-    if hasattr(ext.service_record_requests, "indexer"):
+    if hasattr(ext.service_record_request_types, "indexer"):
         iregistry = app.extensions["invenio-indexer"].registry
         iregistry.register(
-            ext.service_record_requests.indexer,
-            indexer_id=ext.service_record_requests.config.service_id,
+            ext.service_record_request_types.indexer,
+            indexer_id=ext.service_record_request_types.config.service_id,
         )

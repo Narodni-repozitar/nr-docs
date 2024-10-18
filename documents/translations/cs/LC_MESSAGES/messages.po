@@ -2,8 +2,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
-"POT-Creation-Date: 2024-08-26T14:49:33.689510\n"
-"PO-Revision-Date: 2024-08-26T14:49:33.689527\n"
+"POT-Creation-Date: 2024-10-18T13:45:39.535441\n"
+"PO-Revision-Date: 2024-10-18T13:45:39.535450\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -141,9 +141,7 @@ msgid "metadata/additionalTitles.label"
 msgstr "Další názvy"
 
 msgid "metadata/additionalTitles.help"
-msgstr ""
-"Pokud má název další jazykovou variantu, vyplňte ji, zvolte typ názvu a "
-"příslušný jazyk, ve kterém je název zapsán."
+msgstr "Pokud existují další názvy zdroje, uveďte je. Vyberte typ a jazyk."
 
 msgid "metadata/additionalTitles.hint"
 msgstr ""
@@ -176,7 +174,7 @@ msgid "metadata/additionalTitles/title/value.hint"
 msgstr ""
 
 msgid "metadata/additionalTitles/titleType.label"
-msgstr "Druh názvu"
+msgstr "Typ názvu"
 
 msgid "metadata/additionalTitles/titleType.help"
 msgstr ""
@@ -311,8 +309,8 @@ msgstr "Identifikátor osoby"
 
 msgid "metadata/contributors/authorityIdentifiers.help"
 msgstr ""
-"Vyberte z nabídky typ identifikátoru. Napište identifikátor bez předpony (tj. https://orcid.org/0009-0004-8646-7185 nebo jk01051816). \n"
-"Doporučujeme zadat alespoň jeden z typů identifikátorů. \n"
+"Vyberte z nabídky typ identifikátoru. Uveďte hodnotu identifikátoru (tj. https://orcid.org/0009-0004-8646-7185 nebo jk01051816). \n"
+"Doporučujeme zadat alespoň jeden z typů identifikátorů, ideálně ORCID iD. \n"
 "Pokud potřebujete rozšířit nabídku typů identifikátorů, kontaktujte nás na support@narodni-repozitar.cz.\n"
 
 msgid "metadata/contributors/authorityIdentifiers.hint"
@@ -331,7 +329,7 @@ msgid "metadata/contributors/authorityIdentifiers/scheme.label"
 msgstr "Typ identifikátoru"
 
 msgid "metadata/contributors/authorityIdentifiers/scheme.hint"
-msgstr "např ORCID, scopusID"
+msgstr "Identifikátor osoby"
 
 msgid "metadata/contributors/authorityIdentifiers/scheme.help"
 msgstr ""
@@ -358,10 +356,10 @@ msgid "metadata/contributors/authorityIdentifiers/scheme.enum.ISNI"
 msgstr ""
 
 msgid "metadata/contributors/contributorType.label"
-msgstr "Typ přispěvatele"
+msgstr "Role přispěvatele"
 
 msgid "metadata/contributors/contributorType.hint"
-msgstr "Vyberte z rolety roli přispěvatele (editor, ilustrátor…)."
+msgstr "Vyberte roli přispěvatele z nabídky (editor, ilustrátor…)."
 
 msgid "metadata/contributors/contributorType.help"
 msgstr ""
@@ -397,7 +395,7 @@ msgid "metadata/contributors/familyName.label"
 msgstr "Příjmení"
 
 msgid "metadata/contributors/familyName.hint"
-msgstr "Napište příjmení přispěvatele."
+msgstr "Uveďte příjmení přispěvatele."
 
 msgid "metadata/contributors/familyName.help"
 msgstr ""
@@ -414,10 +412,10 @@ msgstr ""
 "našeptavače."
 
 msgid "metadata/contributors/givenName.label"
-msgstr "Jméno"
+msgstr "Křestní jméno"
 
 msgid "metadata/contributors/givenName.hint"
-msgstr "Napište jméno přispěvatele."
+msgstr "Uveďte křestní jméno přispěvatele."
 
 msgid "metadata/contributors/givenName.help"
 msgstr ""
@@ -561,8 +559,8 @@ msgstr "Identifikátor osoby"
 
 msgid "metadata/creators/authorityIdentifiers.help"
 msgstr ""
-"Vyberte z nabídky typ identifikátoru. Napište identifikátor bez předpony (tj. https://orcid.org/0009-0004-8646-7185 nebo jk01051816). \n"
-"Doporučujeme zadat alespoň jeden z typů identifikátorů. \n"
+"Vyberte z nabídky typ identifikátoru. Uveďte hodnotu identifikátoru (tj. https://orcid.org/0009-0004-8646-7185 nebo jk01051816). \n"
+"Doporučujeme zadat alespoň jeden z typů identifikátorů, ideálně ORCID iD. \n"
 "Pokud potřebujete rozšířit nabídku typů identifikátorů, kontaktujte nás na support@narodni-repozitar.cz.\n"
 
 msgid "metadata/creators/authorityIdentifiers.hint"
@@ -581,7 +579,7 @@ msgid "metadata/creators/authorityIdentifiers/scheme.label"
 msgstr "Typ identifikátoru"
 
 msgid "metadata/creators/authorityIdentifiers/scheme.hint"
-msgstr "např ORCID, scopusID"
+msgstr "Identifikátor osoby"
 
 msgid "metadata/creators/authorityIdentifiers/scheme.help"
 msgstr ""
@@ -611,7 +609,7 @@ msgid "metadata/creators/familyName.label"
 msgstr "Příjmení"
 
 msgid "metadata/creators/familyName.hint"
-msgstr "Napište příjmení autora."
+msgstr "Uveďte příjmení autora."
 
 msgid "metadata/creators/familyName.help"
 msgstr ""
@@ -628,10 +626,10 @@ msgstr ""
 "našeptavače."
 
 msgid "metadata/creators/givenName.label"
-msgstr "Jméno"
+msgstr "Křestní jméno"
 
 msgid "metadata/creators/givenName.hint"
-msgstr "Napište jméno autora."
+msgstr "Uveďte jméno autora."
 
 msgid "metadata/creators/givenName.help"
 msgstr ""
@@ -673,10 +671,12 @@ msgid "metadata/dateIssued.label"
 msgstr "Datum vydání"
 
 msgid "metadata/dateIssued.hint"
-msgstr "Zvolte z kalendáře datum, kdy byl zdroj vydan."
+msgstr "Zvolte z kalendáře datum, kdy byl zdroj vydán."
 
 msgid "metadata/dateIssued.help"
-msgstr "Datum může být rok, rok a měsíc nebo celé datum."
+msgstr ""
+"Datum může být rok, rok a měsíc nebo celé datum. V záhlaví kalendáře můžete "
+"zvolit typ data."
 
 msgid "metadata/dateModified.label"
 msgstr "Datum změny zdroje"
@@ -697,13 +697,13 @@ msgid "metadata/events.hint"
 msgstr ""
 
 msgid "metadata/events/eventDate.label"
-msgstr "Datum akce"
+msgstr "Datum konání akce"
 
 msgid "metadata/events/eventDate.hint"
-msgstr "Vyberte časové období (Od - Do)."
+msgstr "Vyberte časový interval (Od - Do), ve kterém se událost odehrála."
 
 msgid "metadata/events/eventDate.help"
-msgstr "Vyberte časový interval, ve kterém se událost odehrála."
+msgstr ""
 
 msgid "metadata/events/eventLocation.help"
 msgstr ""
@@ -718,7 +718,7 @@ msgid "metadata/events/eventLocation/country.label"
 msgstr "Země"
 
 msgid "metadata/events/eventLocation/country.hint"
-msgstr "Zvolte stát z nabídky."
+msgstr "Vyberte stát z nabídky."
 
 msgid "metadata/events/eventLocation/country.help"
 msgstr ""
@@ -751,10 +751,10 @@ msgid "metadata/events/eventLocation/country/@v.hint"
 msgstr ""
 
 msgid "metadata/events/eventLocation/place.label"
-msgstr "Místo konání akce"
+msgstr "Lokace"
 
 msgid "metadata/events/eventLocation/place.hint"
-msgstr "Zapište místo konání akce (město)."
+msgstr "Uveďte místo, které má vazbu k danému objektu/akci (př. město)."
 
 msgid "metadata/events/eventLocation/place.help"
 msgstr ""
@@ -772,7 +772,7 @@ msgid "metadata/events/eventNameOriginal.label"
 msgstr "Název akce"
 
 msgid "metadata/events/eventNameOriginal.hint"
-msgstr "Zapište hlavní název akce."
+msgstr "Uveďte hlavní název akce (např. konference)."
 
 msgid "metadata/events/eventNameOriginal.help"
 msgstr ""
@@ -805,7 +805,7 @@ msgid "metadata/externalLocation/externalLocationURL.hint"
 msgstr ""
 
 msgid "metadata/fundingReferences.label"
-msgstr "Projekt nebo financování"
+msgstr "Granty a financování"
 
 msgid "metadata/fundingReferences.help"
 msgstr ""
@@ -856,7 +856,7 @@ msgstr "Výzkumný program"
 
 msgid "metadata/fundingReferences/fundingProgram.hint"
 msgstr ""
-"Zapište název výzkumného programu, v rámci kterého byl projekt financován."
+"Uveďte název výzkumného programu, v rámci kterého byl projekt financován."
 
 msgid "metadata/fundingReferences/fundingProgram.help"
 msgstr ""
@@ -865,7 +865,7 @@ msgid "metadata/fundingReferences/projectID.label"
 msgstr "Číslo projektu"
 
 msgid "metadata/fundingReferences/projectID.hint"
-msgstr "Zapište kód projektu."
+msgstr "Uveďte kód/číslo projektu."
 
 msgid "metadata/fundingReferences/projectID.help"
 msgstr ""
@@ -874,7 +874,7 @@ msgid "metadata/fundingReferences/projectName.label"
 msgstr "Název projektu"
 
 msgid "metadata/fundingReferences/projectName.hint"
-msgstr "Zapište název projektu."
+msgstr "Uveďte název projektu."
 
 msgid "metadata/fundingReferences/projectName.help"
 msgstr ""
@@ -965,6 +965,8 @@ msgstr "Metodologie"
 
 msgid "metadata/methods.help"
 msgstr ""
+"Vyberte jazyk a zapište nebo vložte text. Metodologii můžete popsat ve více "
+"jazycích."
 
 msgid "metadata/methods.hint"
 msgstr ""
@@ -997,11 +999,12 @@ msgid "metadata/notes.hint"
 msgstr ""
 
 msgid "metadata/objectIdentifiers.label"
-msgstr "Identifikátor"
+msgstr "Identifikátory"
 
 msgid "metadata/objectIdentifiers.help"
 msgstr ""
-"Vyberte typ identifikátoru a zapište jej. Můžete zapsat více identifikátorů."
+"Vyberte typ identifikátoru a zapište jej. Můžete zapsat více typů "
+"identifikátorů."
 
 msgid "metadata/objectIdentifiers.hint"
 msgstr ""
@@ -1055,13 +1058,13 @@ msgid "metadata/publishers.label"
 msgstr "Vydavatel/é"
 
 msgid "metadata/publishers.help"
-msgstr "Zapište vydavatele. Můžete zapsat i více vydavatelů."
+msgstr "Uveďte vydavatele. Můžete zapsat i více vydavatelů."
 
 msgid "metadata/publishers.hint"
 msgstr ""
 
 msgid "metadata/relatedItems.label"
-msgstr "Vazba na/z dalších zdrojů:"
+msgstr "Vazba na související zdroje"
 
 msgid "metadata/relatedItems.help"
 msgstr ""
@@ -1202,8 +1205,8 @@ msgstr "Identifikátor osoby"
 
 msgid "metadata/relatedItems/itemContributors/authorityIdentifiers.help"
 msgstr ""
-"Vyberte z nabídky typ identifikátoru. Napište identifikátor bez předpony (tj. https://orcid.org/0009-0004-8646-7185 nebo jk01051816). \n"
-"Doporučujeme zadat alespoň jeden z typů identifikátorů. \n"
+"Vyberte z nabídky typ identifikátoru. Uveďte hodnotu identifikátoru (tj. https://orcid.org/0009-0004-8646-7185 nebo jk01051816). \n"
+"Doporučujeme zadat alespoň jeden z typů identifikátorů, ideálně ORCID iD. \n"
 "Pokud potřebujete rozšířit nabídku typů identifikátorů, kontaktujte nás na support@narodni-repozitar.cz.\n"
 
 msgid "metadata/relatedItems/itemContributors/authorityIdentifiers.hint"
@@ -1227,7 +1230,7 @@ msgstr "Typ identifikátoru"
 
 msgid ""
 "metadata/relatedItems/itemContributors/authorityIdentifiers/scheme.hint"
-msgstr "např ORCID, scopusID"
+msgstr "Identifikátor osoby"
 
 msgid ""
 "metadata/relatedItems/itemContributors/authorityIdentifiers/scheme.help"
@@ -1262,10 +1265,10 @@ msgid ""
 msgstr ""
 
 msgid "metadata/relatedItems/itemContributors/contributorType.label"
-msgstr "Typ přispěvatele"
+msgstr "Role přispěvatele"
 
 msgid "metadata/relatedItems/itemContributors/contributorType.hint"
-msgstr "Vyberte z rolety roli přispěvatele (editor, ilustrátor…)."
+msgstr "Vyberte roli přispěvatele z nabídky (editor, ilustrátor…)."
 
 msgid "metadata/relatedItems/itemContributors/contributorType.help"
 msgstr ""
@@ -1301,7 +1304,7 @@ msgid "metadata/relatedItems/itemContributors/familyName.label"
 msgstr "Příjmení"
 
 msgid "metadata/relatedItems/itemContributors/familyName.hint"
-msgstr "Napište příjmení autora."
+msgstr "Uveďte příjmení autora."
 
 msgid "metadata/relatedItems/itemContributors/familyName.help"
 msgstr ""
@@ -1318,10 +1321,10 @@ msgstr ""
 "našeptavače."
 
 msgid "metadata/relatedItems/itemContributors/givenName.label"
-msgstr "Jméno"
+msgstr "Křestní jméno"
 
 msgid "metadata/relatedItems/itemContributors/givenName.hint"
-msgstr "Napište jméno autora."
+msgstr "Uveďte jméno autora."
 
 msgid "metadata/relatedItems/itemContributors/givenName.help"
 msgstr ""
@@ -1474,8 +1477,8 @@ msgstr "Identifikátor osoby"
 
 msgid "metadata/relatedItems/itemCreators/authorityIdentifiers.help"
 msgstr ""
-"Vyberte z nabídky typ identifikátoru. Napište identifikátor bez předpony (tj. https://orcid.org/0009-0004-8646-7185 nebo jk01051816). \n"
-"Doporučujeme zadat alespoň jeden z typů identifikátorů. \n"
+"Vyberte z nabídky typ identifikátoru. Uveďte hodnotu identifikátoru (tj. https://orcid.org/0009-0004-8646-7185 nebo jk01051816). \n"
+"Doporučujeme zadat alespoň jeden z typů identifikátorů, ideálně ORCID iD. \n"
 "Pokud potřebujete rozšířit nabídku typů identifikátorů, kontaktujte nás na support@narodni-repozitar.cz.\n"
 
 msgid "metadata/relatedItems/itemCreators/authorityIdentifiers.hint"
@@ -1497,7 +1500,7 @@ msgid "metadata/relatedItems/itemCreators/authorityIdentifiers/scheme.label"
 msgstr "Typ identifikátoru"
 
 msgid "metadata/relatedItems/itemCreators/authorityIdentifiers/scheme.hint"
-msgstr "např ORCID, scopusID"
+msgstr "Identifikátor osoby"
 
 msgid "metadata/relatedItems/itemCreators/authorityIdentifiers/scheme.help"
 msgstr ""
@@ -1534,7 +1537,7 @@ msgid "metadata/relatedItems/itemCreators/familyName.label"
 msgstr "Příjmení"
 
 msgid "metadata/relatedItems/itemCreators/familyName.hint"
-msgstr "Napište příjmení autora."
+msgstr "Uveďte příjmení autora."
 
 msgid "metadata/relatedItems/itemCreators/familyName.help"
 msgstr ""
@@ -1551,10 +1554,10 @@ msgstr ""
 "našeptavače."
 
 msgid "metadata/relatedItems/itemCreators/givenName.label"
-msgstr "Jméno"
+msgstr "Křestní jméno"
 
 msgid "metadata/relatedItems/itemCreators/givenName.hint"
-msgstr "Napište jméno autora."
+msgstr "Uveďte jméno autora."
 
 msgid "metadata/relatedItems/itemCreators/givenName.help"
 msgstr ""
@@ -1598,10 +1601,10 @@ msgstr ""
 msgid "metadata/relatedItems/itemIssue.label"
 msgstr "Číslo"
 
-msgid "metadata/relatedItems/itemIssue.help"
-msgstr ""
-
 msgid "metadata/relatedItems/itemIssue.hint"
+msgstr "Uvádějte pouze pokud se jedná o časopis nebo sborník."
+
+msgid "metadata/relatedItems/itemIssue.help"
 msgstr ""
 
 msgid "metadata/relatedItems/itemPIDs.label"
@@ -1662,7 +1665,7 @@ msgid "metadata/relatedItems/itemRelationType.label"
 msgstr "Typ vazby"
 
 msgid "metadata/relatedItems/itemRelationType.hint"
-msgstr "Vyberte typ vazby."
+msgstr "Vyberte typ vazby mezi popisovaným a souvisejícím zdrojem."
 
 msgid "metadata/relatedItems/itemRelationType.help"
 msgstr ""
@@ -1743,7 +1746,7 @@ msgid "metadata/relatedItems/itemTitle.label"
 msgstr "Název"
 
 msgid "metadata/relatedItems/itemTitle.hint"
-msgstr "Název propojeného dokumentu."
+msgstr "Název souvisejícího zdroje."
 
 msgid "metadata/relatedItems/itemTitle.help"
 msgstr ""
@@ -1751,23 +1754,23 @@ msgstr ""
 msgid "metadata/relatedItems/itemURL.label"
 msgstr "URL"
 
-msgid "metadata/relatedItems/itemURL.help"
-msgstr ""
-
 msgid "metadata/relatedItems/itemURL.hint"
+msgstr "Uveďte URL adresu souvisejícího zdroje, ze které je dostupný."
+
+msgid "metadata/relatedItems/itemURL.help"
 msgstr ""
 
 msgid "metadata/relatedItems/itemVolume.label"
 msgstr "Ročník"
 
+msgid "metadata/relatedItems/itemVolume.hint"
+msgstr "Uvádějte pouze pokud se jedná o časopis nebo sborník."
+
 msgid "metadata/relatedItems/itemVolume.help"
 msgstr ""
 
-msgid "metadata/relatedItems/itemVolume.hint"
-msgstr ""
-
 msgid "metadata/relatedItems/itemYear.label"
-msgstr "Rok"
+msgstr "Rok vydání"
 
 msgid "metadata/relatedItems/itemYear.help"
 msgstr ""
@@ -1812,13 +1815,13 @@ msgid "metadata/resourceType/@v.hint"
 msgstr ""
 
 msgid "metadata/rights.label"
-msgstr "Práva/Licence"
+msgstr "Licence"
 
 msgid "metadata/rights.help"
 msgstr ""
-"Pokud se k datové sadě váže licence Creative Commons, vyberte příslušnou "
-"variantu licence z nabídky. Doporučujeme výběr nejnovějších verzí a to 3.0 "
-"Česko a 4.0 International."
+"Pokud se k popisovanému zdroji váže licence Creative Commons, vyberte "
+"příslušnou variantu z nabídky. Doporučujeme výběr nejnovější verze 4.0 "
+"International."
 
 msgid "metadata/rights.hint"
 msgstr ""
@@ -1865,7 +1868,7 @@ msgid "metadata/series/seriesTitle.label"
 msgstr "Název edice"
 
 msgid "metadata/series/seriesTitle.help"
-msgstr ""
+msgstr "Tématicky sdružuje podobné zdroje k sobě."
 
 msgid "metadata/series/seriesTitle.hint"
 msgstr ""
@@ -1919,7 +1922,9 @@ msgid "metadata/subjects.label"
 msgstr "Klíčová slova"
 
 msgid "metadata/subjects.help"
-msgstr "Zapisujte slova popisující zdroj, zvolte vždy jazyk."
+msgstr ""
+"Zapisujte slova popisující zdroj, zvolte vždy jazyk. Zapisujte klíčová slova"
+" jednotlivě."
 
 msgid "metadata/subjects.hint"
 msgstr ""
@@ -2025,6 +2030,8 @@ msgstr "Technické informace"
 
 msgid "metadata/technicalInfo.help"
 msgstr ""
+"Vyberte jazyk a zapište nebo vložte text. Technické informace můžete "
+"poskytnout ve více jazycích."
 
 msgid "metadata/technicalInfo.hint"
 msgstr ""
@@ -2177,7 +2184,7 @@ msgid "metadata/title.label"
 msgstr "Název"
 
 msgid "metadata/title.hint"
-msgstr "Vyplňte hlavní název zdroje."
+msgstr "Uveďte hlavní název zdroje."
 
 msgid "metadata/title.help"
 msgstr ""

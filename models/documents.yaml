@@ -64,6 +64,8 @@ record:
     components:
       - "{{oarepo_vocabularies.authorities.components.AuthorityComponent}}"
       - "{{oarepo_runtime.services.components.DateIssuedComponent}}"
+      - "{{oarepo_doi.services.components.DoiComponent}}"
+      - "{{oarepo_oaipmh_harvester.components.OaiSectionComponent}}"
 
 
   published-service-config:
