@@ -26,7 +26,7 @@ from documents.services.records.permissions import DocumentsPermissionPolicy
 from documents.services.records.results import DocumentsRecordItem, DocumentsRecordList
 from documents.services.records.schema import DocumentsSchema
 from documents.services.records.search import DocumentsSearchOptions
-# from oarepo_doi.services.components import DoiComponent
+from oarepo_doi.services.components import DoiComponent
 
 
 class DocumentsServiceConfig(
@@ -64,7 +64,7 @@ class DocumentsServiceConfig(
         CustomFieldsComponent,
         DraftFilesComponent,
         WorkflowComponent,
-        # DoiComponent
+        DoiComponent,
     ]
 
     model = "documents"
