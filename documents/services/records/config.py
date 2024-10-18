@@ -63,8 +63,8 @@ class DocumentsServiceConfig(
         CommunityDefaultWorkflowComponent,
         CommunityInclusionComponent,
         OwnersComponent,
-        CustomFieldsComponent,
         FilesComponent,
+        CustomFieldsComponent,
         DraftFilesComponent,
         WorkflowComponent,
     ]
@@ -87,17 +87,17 @@ class DocumentsServiceConfig(
                     "self_html": "{+ui}/communities/{slug}/records",
                 }
             ),
-            "draft": RecordLink("{+api}/docs/{id}/draft"),
+            "draft": RecordLink("{+api}/docs/{id}/draft", when=has_draft),
             "edit_html": RecordLink("{+ui}/docs/{id}/edit", when=has_draft),
             "files": ConditionalLink(
                 cond=is_published_record,
                 if_=RecordLink("{+api}/docs/{id}/files"),
                 else_=RecordLink("{+api}/docs/{id}/draft/files"),
             ),
-            "latest": RecordLink("{+api}/docs/{id}/versions/latest"),
-            "latest_html": RecordLink("{+ui}/docs/{id}/latest"),
-            "publish": RecordLink("{+api}/docs/{id}/draft/actions/publish"),
-            "record": RecordLink("{+api}/docs/{id}"),
+            "latest": RecordLink("{+api}/docs/{id}/versions/latest", when=is_published_record),
+            "latest_html": RecordLink("{+ui}/docs/{id}/latest", when=is_published_record),
+            # "publish": RecordLink("{+api}/docs/{id}/draft/actions/publish"),
+            "record": RecordLink("{+api}/docs/{id}"),   # TODO: when: has_published_record
             "requests": ConditionalLink(
                 cond=is_published_record,
                 if_=RecordLink("{+api}/docs/{id}/requests"),
@@ -113,7 +113,7 @@ class DocumentsServiceConfig(
                 if_=RecordLink("{+ui}/docs/{id}"),
                 else_=RecordLink("{+ui}/docs/{id}/preview"),
             ),
-            "versions": RecordLink("{+api}/docs/{id}/versions"),
+            "versions": RecordLink("{+api}/docs/{id}/versions", when=is_published_record),
         }
 
     @property
