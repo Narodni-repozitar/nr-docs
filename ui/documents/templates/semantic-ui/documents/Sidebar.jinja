@@ -3,10 +3,11 @@
 <section class="ui segment" aria-label='{{ _("Actions") }}'>
 <h2 class="ui small header detail-sidebar-header">{{ _("Actions") }}</h2>
 {% if record.links.edit_html%}
+  <div class="mb-10">
     <SidebarLink icon="pencil" href={record.links.edit_html}>
       {{_('Edit')}}
     </SidebarLink>
-    <div class="rel-mb-1"></div>
+  </div>
 {% endif %}
   <RecordRequests record={record} />
 </section>
