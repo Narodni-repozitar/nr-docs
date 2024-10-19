@@ -9,6 +9,8 @@ from oarepo_communities.services.components.default_workflow import (
 )
 from oarepo_communities.services.components.include import CommunityInclusionComponent
 from oarepo_communities.services.links import CommunitiesLinks
+from oarepo_doi.services.components import DoiComponent
+from oarepo_oaipmh_harvester.components import OaiSectionComponent
 from oarepo_runtime.records import has_draft, is_published_record
 from oarepo_runtime.services.components import (
     CustomFieldsComponent,
@@ -26,7 +28,6 @@ from documents.services.records.permissions import DocumentsPermissionPolicy
 from documents.services.records.results import DocumentsRecordItem, DocumentsRecordList
 from documents.services.records.schema import DocumentsSchema
 from documents.services.records.search import DocumentsSearchOptions
-from oarepo_doi.services.components import DoiComponent
 
 
 class DocumentsServiceConfig(
@@ -57,6 +58,8 @@ class DocumentsServiceConfig(
         *FilteredResultServiceConfig.components,
         AuthorityComponent,
         DateIssuedComponent,
+        DoiComponent,
+        OaiSectionComponent,
         CommunityDefaultWorkflowComponent,
         CommunityInclusionComponent,
         OwnersComponent,
@@ -64,7 +67,6 @@ class DocumentsServiceConfig(
         CustomFieldsComponent,
         DraftFilesComponent,
         WorkflowComponent,
-        DoiComponent,
     ]
 
     model = "documents"
@@ -85,27 +87,17 @@ class DocumentsServiceConfig(
                     "self_html": "{+ui}/communities/{slug}/records",
                 }
             ),
-            # TODO: added manually
-            "draft": ConditionalLink(
-                cond=has_draft,
-                if_=RecordLink("{+api}/docs/{id}/draft"),
-                else_=RecordLink("{+ui}/docs/{id}/edit", when=has_draft),
-            ),
-            # TODO: added manually
-            "edit_html": ConditionalLink(
-                cond=has_draft,
-                if_=RecordLink("{+ui}/docs/{id}/edit", when=has_draft),
-                else_=RecordLink("{+ui}/docs/{id}/edit", when=has_draft),
-            ),
+            "draft": RecordLink("{+api}/docs/{id}/draft", when=has_draft),
+            "edit_html": RecordLink("{+ui}/docs/{id}/edit", when=has_draft),
             "files": ConditionalLink(
                 cond=is_published_record,
                 if_=RecordLink("{+api}/docs/{id}/files"),
                 else_=RecordLink("{+api}/docs/{id}/draft/files"),
             ),
-            "latest": RecordLink("{+api}/docs/{id}/versions/latest"),
-            "latest_html": RecordLink("{+ui}/docs/{id}/latest"),
+            "latest": RecordLink("{+api}/docs/{id}/versions/latest", when=is_published_record),
+            "latest_html": RecordLink("{+ui}/docs/{id}/latest", when=is_published_record),
             # "publish": RecordLink("{+api}/docs/{id}/draft/actions/publish"),
-            "record": RecordLink("{+api}/docs/{id}"),
+            "record": RecordLink("{+api}/docs/{id}"),   # TODO: when: has_published_record
             "requests": ConditionalLink(
                 cond=is_published_record,
                 if_=RecordLink("{+api}/docs/{id}/requests"),
@@ -121,7 +113,7 @@ class DocumentsServiceConfig(
                 if_=RecordLink("{+ui}/docs/{id}"),
                 else_=RecordLink("{+ui}/docs/{id}/preview"),
             ),
-            "versions": RecordLink("{+api}/docs/{id}/versions"),
+            "versions": RecordLink("{+api}/docs/{id}/versions", when=is_published_record),
         }
 
     @property

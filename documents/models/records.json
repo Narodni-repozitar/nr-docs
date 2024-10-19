@@ -22,6 +22,23 @@
             "file": "documents/records/mappings/os-v2/documents/documents-1.0.0.json",
             "index-field-args": []
         },
+        "published-service-config": {
+            "base-classes": [
+                "oarepo_published_service.services.PublishedServiceConfig",
+                "oarepo_runtime.services.config.service.PermissionsPresetsConfigMixin"
+            ],
+            "config-key": "DOCUMENTS_RECORD_PUBLISHED_SERVICE_CONFIG",
+            "module": "documents.services.records.published.config",
+            "class": "documents.services.records.published.config.DocumentsPublishedServiceConfig",
+            "extra-code": "",
+            "service-id": "published_documents",
+            "components": [
+                "{{oarepo_runtime.services.files.FilesComponent}}",
+                "{{oarepo_published_service.services.records.components.bucket.CreatePublishedBucketComponent}}"
+            ],
+            "generate": true
+        },
+        "custom-fields": [],
         "permissions": {
             "presets": [
                 "docs"
@@ -44,56 +61,7 @@
             "class": "documents.services.records.schema.DocumentsSchema",
             "extra-code": ""
         },
-        "published-service-config": {
-            "base-classes": [
-                "oarepo_published_service.services.PublishedServiceConfig",
-                "oarepo_runtime.services.config.service.PermissionsPresetsConfigMixin"
-            ],
-            "config-key": "DOCUMENTS_RECORD_PUBLISHED_SERVICE_CONFIG",
-            "module": "documents.services.records.published.config",
-            "class": "documents.services.records.published.config.DocumentsPublishedServiceConfig",
-            "extra-code": "",
-            "service-id": "published_documents",
-            "components": [
-                "{{oarepo_runtime.services.files.FilesComponent}}",
-                "{{oarepo_published_service.services.records.components.bucket.CreatePublishedBucketComponent}}"
-            ],
-            "generate": true
-        },
-        "custom-fields": [],
         "searchable": true,
-        "ui": {
-            "marshmallow": {
-                "generate": true,
-                "base-classes": [
-                    "oarepo_requests.services.ui_schema.UIRequestsSerializationMixin",
-                    "nr_metadata.documents.services.records.ui_schema.NRDocumentRecordUISchema"
-                ],
-                "module": "documents.services.records.ui_schema",
-                "class": "documents.services.records.ui_schema.DocumentsUISchema",
-                "extra-code": "",
-                "imports": []
-            },
-            "module": "documents.models",
-            "file": "documents/models/ui.json",
-            "alias": "documents"
-        },
-        "json-serializer": {
-            "base-classes": [
-                "common.services.filtered_json_ui_serializer.FilteredUIJSONSerializer"
-            ],
-            "module": "documents.resources.records.ui",
-            "class": "documents.resources.records.ui.DocumentsUIJSONSerializer",
-            "imports": [],
-            "extra-code": "",
-            "generate": true,
-            "list_schema_cls": "flask_resources.BaseListSchema",
-            "format_serializer_cls": "flask_resources.serializers.JSONSerializer",
-            "schema-context-args": {
-                "\"object_key\"": "\"ui\"",
-                "\"identity\"": "{{ flask.g{g.identity} }}"
-            }
-        },
         "service-config": {
             "base-classes": [
                 "oarepo_runtime.services.config.service.PermissionsPresetsConfigMixin",
@@ -102,6 +70,8 @@
             "components": [
                 "{{oarepo_vocabularies.authorities.components.AuthorityComponent}}",
                 "{{oarepo_runtime.services.components.DateIssuedComponent}}",
+                "{{oarepo_doi.services.components.DoiComponent}}",
+                "{{oarepo_oaipmh_harvester.components.OaiSectionComponent}}",
                 "{{oarepo_communities.services.components.default_workflow.CommunityDefaultWorkflowComponent}}",
                 "{{oarepo_communities.services.components.include.CommunityInclusionComponent}}",
                 "{{oarepo_runtime.services.components.OwnersComponent}}",
@@ -141,40 +111,37 @@
             ],
             "extra-code": ""
         },
-        "facets": {
-            "facet-groups": {
-                "default": {
-                    "syntheticFields.people": 1,
-                    "syntheticFields.year": 2,
-                    "syntheticFields.defenseYear": 3,
-                    "metadata.accessRights": 4,
-                    "metadata.rights": 5,
-                    "metadata.resourceType": 6,
-                    "syntheticFields.keywords": 7,
-                    "metadata.languages": 8,
-                    "syntheticFields.institutions": 9,
-                    "metadata.fundingReferences.funder": 10,
-                    "metadata.fundingReferences.projectID": 11
-                },
-                "curator": {
-                    "syntheticFields.people": 1,
-                    "syntheticFields.year": 2,
-                    "syntheticFields.defenseYear": 3,
-                    "metadata.accessRights": 4,
-                    "metadata.rights": 5,
-                    "metadata.resourceType": 6,
-                    "syntheticFields.keywords": 7,
-                    "metadata.languages": 8,
-                    "syntheticFields.institutions": 9,
-                    "metadata.fundingReferences.funder": 10,
-                    "metadata.fundingReferences.projectID": 11,
-                    "metadata.files.enabled": 12
-                }
+        "ui": {
+            "marshmallow": {
+                "generate": true,
+                "base-classes": [
+                    "oarepo_requests.services.ui_schema.UIRequestsSerializationMixin",
+                    "nr_metadata.documents.services.records.ui_schema.NRDocumentRecordUISchema"
+                ],
+                "module": "documents.services.records.ui_schema",
+                "class": "documents.services.records.ui_schema.DocumentsUISchema",
+                "extra-code": "",
+                "imports": []
             },
-            "generate": true,
-            "module": "documents.services.records.facets",
+            "module": "documents.models",
+            "file": "documents/models/ui.json",
+            "alias": "documents"
+        },
+        "json-serializer": {
+            "base-classes": [
+                "common.services.filtered_json_ui_serializer.FilteredUIJSONSerializer"
+            ],
+            "module": "documents.resources.records.ui",
+            "class": "documents.resources.records.ui.DocumentsUIJSONSerializer",
+            "imports": [],
             "extra-code": "",
-            "groups": true
+            "generate": true,
+            "list_schema_cls": "flask_resources.BaseListSchema",
+            "format_serializer_cls": "flask_resources.serializers.JSONSerializer",
+            "schema-context-args": {
+                "\"object_key\"": "\"ui\"",
+                "\"identity\"": "{{ flask.g{g.identity} }}"
+            }
         },
         "search-options": {
             "base-classes": [
@@ -239,6 +206,41 @@
             "module": "documents.records.api",
             "class": "documents.records.api.DocumentsRecord",
             "extra-code": ""
+        },
+        "facets": {
+            "facet-groups": {
+                "default": {
+                    "syntheticFields.people": 1,
+                    "syntheticFields.year": 2,
+                    "syntheticFields.defenseYear": 3,
+                    "metadata.accessRights": 4,
+                    "metadata.rights": 5,
+                    "metadata.resourceType": 6,
+                    "syntheticFields.keywords": 7,
+                    "metadata.languages": 8,
+                    "syntheticFields.institutions": 9,
+                    "metadata.fundingReferences.funder": 10,
+                    "metadata.fundingReferences.projectID": 11
+                },
+                "curator": {
+                    "syntheticFields.people": 1,
+                    "syntheticFields.year": 2,
+                    "syntheticFields.defenseYear": 3,
+                    "metadata.accessRights": 4,
+                    "metadata.rights": 5,
+                    "metadata.resourceType": 6,
+                    "syntheticFields.keywords": 7,
+                    "metadata.languages": 8,
+                    "syntheticFields.institutions": 9,
+                    "metadata.fundingReferences.funder": 10,
+                    "metadata.fundingReferences.projectID": 11,
+                    "metadata.files.enabled": 12
+                }
+            },
+            "generate": true,
+            "module": "documents.services.records.facets",
+            "extra-code": "",
+            "groups": true
         },
         "module": {
             "qualified": "documents",
@@ -390,33 +392,6 @@
             "skip": false
         },
         "model-name": "Documents",
-        "resource": {
-            "base-classes": [
-                "invenio_drafts_resources.resources.RecordResource"
-            ],
-            "generate": true,
-            "config-key": "DOCUMENTS_RECORD_RESOURCE_CLASS",
-            "module": "documents.resources.records.resource",
-            "class": "documents.resources.records.resource.DocumentsResource",
-            "proxy": "current_resource",
-            "extra-code": "",
-            "imports": [],
-            "additional-args": []
-        },
-        "record-resolver": {
-            "generate": true,
-            "module": "documents.records.requests.resolvers",
-            "class": "documents.records.requests.resolvers.DocumentsResolver",
-            "base-classes": [
-                "oarepo_runtime.records.entity_resolvers.RecordResolver"
-            ],
-            "imports": [],
-            "custom-proxy-class": "oarepo_runtime.records.entity_resolvers.RecordProxy"
-        },
-        "ui-record-resolver": {
-            "generate": true,
-            "class": "oarepo_requests.resolvers.ui.RecordEntityReferenceUIResolver"
-        },
         "config": {
             "generate": true,
             "module": "documents.config",
@@ -457,6 +432,33 @@
             "module": "documents.proxies",
             "generate": true
         },
+        "resource": {
+            "base-classes": [
+                "invenio_drafts_resources.resources.RecordResource"
+            ],
+            "generate": true,
+            "config-key": "DOCUMENTS_RECORD_RESOURCE_CLASS",
+            "module": "documents.resources.records.resource",
+            "class": "documents.resources.records.resource.DocumentsResource",
+            "proxy": "current_resource",
+            "extra-code": "",
+            "imports": [],
+            "additional-args": []
+        },
+        "record-resolver": {
+            "generate": true,
+            "module": "documents.records.requests.resolvers",
+            "class": "documents.records.requests.resolvers.DocumentsResolver",
+            "base-classes": [
+                "oarepo_runtime.records.entity_resolvers.RecordResolver"
+            ],
+            "imports": [],
+            "custom-proxy-class": "oarepo_runtime.records.entity_resolvers.RecordProxy"
+        },
+        "ui-record-resolver": {
+            "generate": true,
+            "class": "oarepo_requests.resolvers.ui.RecordEntityReferenceUIResolver"
+        },
         "draft-parent-record-metadata": {
             "base-classes": [
                 "oarepo_workflows.records.models.RecordWorkflowParentModelMixin",
@@ -485,6 +487,14 @@
                 "store=False"
             ],
             "imports": []
+        },
+        "json-schema-settings": {
+            "generate": true,
+            "alias": "documents",
+            "version": "1.0.0",
+            "module": "documents.records.jsonschemas",
+            "name": "documents-1.0.0.json",
+            "file": "documents/records/jsonschemas/documents-1.0.0.json"
         },
         "record-metadata": {
             "generate": true,
@@ -521,20 +531,23 @@
             "module": "documents.translations",
             "alias": "documents"
         },
-        "json-schema-settings": {
-            "generate": true,
-            "alias": "documents",
-            "version": "1.0.0",
-            "module": "documents.records.jsonschemas",
-            "name": "documents-1.0.0.json",
-            "file": "documents/records/jsonschemas/documents-1.0.0.json"
-        },
         "multilingual-dumper": {
             "generate": true,
             "module": "documents.records.dumpers.multilingual",
             "class": "documents.records.dumpers.multilingual.MultilingualSearchDumperExt",
             "base-classes": [
                 "oarepo_runtime.records.dumpers.multilingual_dumper.MultilingualDumper"
+            ],
+            "extra-code": "",
+            "extensions": [],
+            "imports": []
+        },
+        "edtf-interval-dumper": {
+            "generate": true,
+            "module": "documents.records.dumpers.edtf",
+            "class": "documents.records.dumpers.edtf.DocumentsEDTFIntervalDumperExt",
+            "base-classes": [
+                "oarepo_runtime.records.dumpers.edtf_interval.EDTFIntervalDumperExt"
             ],
             "extra-code": "",
             "extensions": [],
@@ -584,29 +597,6 @@
                 "draft_files_service=self.service_draft_files"
             ]
         },
-        "edtf-interval-dumper": {
-            "generate": true,
-            "module": "documents.records.dumpers.edtf",
-            "class": "documents.records.dumpers.edtf.DocumentsEDTFIntervalDumperExt",
-            "base-classes": [
-                "oarepo_runtime.records.dumpers.edtf_interval.EDTFIntervalDumperExt"
-            ],
-            "extra-code": "",
-            "extensions": [],
-            "imports": []
-        },
-        "published-service": {
-            "generate": true,
-            "config-key": "DOCUMENTS_RECORD_PUBLISHED_SERVICE_CLASS",
-            "proxy": "current_published_service",
-            "module": "documents.services.records.published.service",
-            "class": "documents.services.records.published.service.DocumentsPublishedService",
-            "extra-code": "",
-            "base-classes": [
-                "oarepo_published_service.services.service.PublishedService"
-            ],
-            "imports": []
-        },
         "record-list": {
             "generate": true,
             "module": "documents.services.records.results",
@@ -629,6 +619,18 @@
             "components": [
                 "{{oarepo_requests.services.results.RequestsComponent}}()",
                 "{{oarepo_requests.services.results.RequestTypesComponent}}()"
+            ],
+            "imports": []
+        },
+        "published-service": {
+            "generate": true,
+            "config-key": "DOCUMENTS_RECORD_PUBLISHED_SERVICE_CLASS",
+            "proxy": "current_published_service",
+            "module": "documents.services.records.published.service",
+            "class": "documents.services.records.published.service.DocumentsPublishedService",
+            "extra-code": "",
+            "base-classes": [
+                "oarepo_published_service.services.service.PublishedService"
             ],
             "imports": []
         },
@@ -3603,6 +3605,7 @@
                             "properties": {
                                 "geoLocationPlace": {
                                     "type": "keyword",
+                                    "description": "Free description of the location; ie. Atlantic Ocean",
                                     "marshmallow": {
                                         "read": false,
                                         "write": false
@@ -3612,8 +3615,7 @@
                                             "read": false,
                                             "write": false
                                         }
-                                    },
-                                    "description": "Free description of the location; ie. Atlantic Ocean"
+                                    }
                                 },
                                 "geoLocationPoint": {
                                     "type": "object",
@@ -6076,6 +6078,7 @@
                                 "itemRelationType": {
                                     "type": "vocabulary",
                                     "vocabulary-type": "item-relation-types",
+                                    "description": "typ vztahu k původnímu popisovanému dok.",
                                     "ui": {
                                         "marshmallow": {
                                             "class": "nr_metadata.common.services.records.ui_schema_datatypes.NRItemRelationTypeVocabularyUISchema",
@@ -6094,7 +6097,6 @@
                                         "unknown": "INCLUDE",
                                         "generate": true
                                     },
-                                    "description": "typ vztahu k původnímu popisovanému dok.",
                                     "label.cs": "Typ vazby",
                                     "label.en": "Relation type",
                                     "hint.cs": "Vyberte typ vazby mezi popisovaným a souvisejícím zdrojem.",
