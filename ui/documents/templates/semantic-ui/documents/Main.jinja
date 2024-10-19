@@ -1,5 +1,5 @@
 {#def metadata, ui, record, extra_context #}
-<h1 class="ui header">{{ metadata.title }}</h1>
+<h1 class="ui header">{{ metadata.title if metadata.title else _("Title not provided") }}</h1>
 <dl class="ui very basic table">
     <Field label={_('metadata/additionalTitles.label')}>
        <AdditionalTitles data={metadata.additionalTitles}></AdditionalTitles>
