@@ -21,15 +21,13 @@ const FormActionsContainer = () => {
         </Card.Content> */}
       <Card.Content>
         <Grid>
-          <Grid.Column computer={8} mobile={16} className="left-btn-col">
-            <SaveButton fluid />
-          </Grid.Column>
+          <Grid.Column width={16}>
+            <div className="flex">
+              <SaveButton fluid className="mb-10" />
+              <PreviewButton fluid className="mb-10" />
+            </div>
 
-          <Grid.Column computer={8} mobile={16} className="right-btn-col">
-            <PreviewButton fluid />
-          </Grid.Column>
-          {values.id && (
-            <Grid.Column width={16} className="pt-10">
+            {values.id && (
               <RecordRequests
                 record={values}
                 onBeforeAction={() => save({ successMessage: "" })}
@@ -49,13 +47,9 @@ const FormActionsContainer = () => {
                   modalControl?.closeModal();
                 }}
               />
-            </Grid.Column>
-          )}
-          {values.id && (
-            <Grid.Column width={16} className="pt-10">
-              <DeleteButton redirectUrl="/me/records" />
-            </Grid.Column>
-          )}
+            )}
+            {values.id && <DeleteButton redirectUrl="/me/records" />}
+          </Grid.Column>
           <Grid.Column width={16} className="pt-10">
             <SelectedCommunity />
           </Grid.Column>

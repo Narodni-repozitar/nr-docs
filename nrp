@@ -45,9 +45,19 @@ SUPPORTED_PYTHON_PATHS=(
 
 if [ -z "$PYTHON" ] ; then
 
-  PYTHON=$(/usr/bin/env python3.12 -c "import sys; print(sys.executable)")
+  # find a supported python
+  for python_path in "${SUPPORTED_PYTHON_PATHS[@]}"; do
+      if [ -x "$python_path" ] ; then
+        # try to execute it
+        if command -v $python_path >/dev/null 2>&1; then
+            PYTHON=$python_path
+            break
+        fi
+      fi
+  done
+
   if [ -z "$PYTHON" ] ; then
-    echo "No supported python found. Please install python 3.12
+    echo "No supported python found. Please install python 3.10
     or set the PYTHON environment variable to the python executable."
     exit 1
   fi
