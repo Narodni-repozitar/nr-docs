@@ -5,8 +5,8 @@ import {
   PreviewButton,
   SaveButton,
   DeleteButton,
-  SelectedCommunity,
 } from "@js/oarepo_ui";
+import { SelectedCommunity } from "@js/communities_components/CommunitySelector/SelectedCommunity";
 import { TextField, FieldLabel } from "react-invenio-forms";
 import { i18next } from "@translations/i18next";
 
