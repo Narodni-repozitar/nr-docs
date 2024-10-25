@@ -10,7 +10,6 @@ class DocumentsSearchOptions(I18nSearchOptions):
         "curator": {
             "syntheticFields_people": facets.syntheticFields_people,
             "syntheticFields_year": facets.syntheticFields_year,
-            "syntheticFields_defenseYear": facets.syntheticFields_defenseYear,
             "metadata_accessRights": facets.metadata_accessRights,
             "metadata_rights": facets.metadata_rights,
             "metadata_resourceType": facets.metadata_resourceType,
@@ -24,7 +23,6 @@ class DocumentsSearchOptions(I18nSearchOptions):
         "default": {
             "syntheticFields_people": facets.syntheticFields_people,
             "syntheticFields_year": facets.syntheticFields_year,
-            "syntheticFields_defenseYear": facets.syntheticFields_defenseYear,
             "metadata_accessRights": facets.metadata_accessRights,
             "metadata_rights": facets.metadata_rights,
             "metadata_resourceType": facets.metadata_resourceType,
@@ -133,7 +131,6 @@ class DocumentsSearchOptions(I18nSearchOptions):
         "oai_harvest_identifier": facets.oai_harvest_identifier,
         "state": facets.state,
         "syntheticFields_date": facets.syntheticFields_date,
-        "syntheticFields_defenseYear": facets.syntheticFields_defenseYear,
         "syntheticFields_institutions": facets.syntheticFields_institutions,
         "syntheticFields_keywords": facets.syntheticFields_keywords,
         "syntheticFields_people": facets.syntheticFields_people,
