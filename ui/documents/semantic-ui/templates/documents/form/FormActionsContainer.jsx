@@ -8,6 +8,7 @@ import {
   useDepositApiClient,
   serializeErrors,
 } from "@js/oarepo_ui";
+import { i18next } from "@translations/i18next";
 import { RecordRequests } from "@js/oarepo_requests/components";
 import { useFormikContext } from "formik";
 
@@ -40,7 +41,9 @@ const FormActionsContainer = () => {
                   if (e?.response?.data?.errors?.length > 0) {
                     const errors = serializeErrors(
                       e?.response?.data?.errors,
-                      "Action failed due to validation errors. Please correct the errors and try again:"
+                      i18next.t(
+                        "Action failed due to validation errors. Please correct the errors and try again:"
+                      )
                     );
                     setErrors(errors);
                   }
