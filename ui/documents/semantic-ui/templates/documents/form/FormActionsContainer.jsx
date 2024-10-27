@@ -4,11 +4,11 @@ import {
   PreviewButton,
   SaveButton,
   DeleteButton,
-  SelectedCommunity,
   useDepositApiClient,
   serializeErrors,
 } from "@js/oarepo_ui";
 import { i18next } from "@translations/i18next";
+import { SelectedCommunity } from "@js/communities_components/CommunitySelector/SelectedCommunity";
 import { RecordRequests } from "@js/oarepo_requests/components";
 import { useFormikContext } from "formik";
 
