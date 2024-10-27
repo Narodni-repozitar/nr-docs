@@ -6,8 +6,8 @@ import {
   EDTFSingleDatePicker,
   useFieldData,
   useSanitizeInput,
-  CommunitySelector,
 } from "@js/oarepo_ui";
+import { CommunitySelector } from "@js/communities_components/CommunitySelector/CommunitySelector";
 import {
   LocalVocabularySelectField,
   VocabularyTreeSelectField,
