@@ -1,5 +1,5 @@
 {#def metadata, record, extra_context #}
-
+{% if record.request_types or record.requests or record.links.edit_html%}
 <section class="ui segment" aria-label='{{ _("Actions") }}'>
 <h2 class="ui small header detail-sidebar-header">{{ _("Actions") }}</h2>
 {% if record.links.edit_html%}
@@ -11,5 +11,6 @@
 {% endif %}
   <RecordRequests record={record} />
 </section>
+{% endif %}
 <IdentifiersAndLinks originalRecordUrl={metadata.originalRecord} objectIdentifiers={metadata.objectIdentifiers}/>
 <RecordExport record={record} metadata={metadata} extra_context={extra_context}/>
