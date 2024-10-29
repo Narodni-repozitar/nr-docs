@@ -245,4 +245,3 @@ def related_items(data):
         if dc_rel != {}:
             dc_related_items.append(dc_rel)
     return dc_related_items
-

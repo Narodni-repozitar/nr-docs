@@ -1,16 +1,20 @@
 import React from "react";
 import { Card, Grid } from "semantic-ui-react";
 import {
-  PublishButton,
   PreviewButton,
   SaveButton,
   DeleteButton,
+  useDepositApiClient,
+  serializeErrors,
 } from "@js/oarepo_ui";
-import { SelectedCommunity } from "@js/communities_components/CommunitySelector/SelectedCommunity";
-import { TextField, FieldLabel } from "react-invenio-forms";
 import { i18next } from "@translations/i18next";
+import { SelectedCommunity } from "@js/communities_components/CommunitySelector/SelectedCommunity";
+import { RecordRequests } from "@js/oarepo_requests/components";
+import { useFormikContext } from "formik";
 
 const FormActionsContainer = () => {
+  const { values, setErrors } = useFormikContext();
+  const { save } = useDepositApiClient();
   return (
     <Card fluid>
       {/* <Card.Content>
@@ -18,35 +22,36 @@ const FormActionsContainer = () => {
         </Card.Content> */}
       <Card.Content>
         <Grid>
-          <Grid.Column computer={8} mobile={16} className="left-btn-col">
-            <SaveButton fluid />
-          </Grid.Column>
+          <Grid.Column width={16}>
+            <div className="flex">
+              <SaveButton fluid className="mb-10" />
+              <PreviewButton fluid className="mb-10" />
+            </div>
 
-          <Grid.Column computer={8} mobile={16} className="right-btn-col">
-            <PreviewButton fluid />
-          </Grid.Column>
-
-          <Grid.Column width={16} className="pt-10">
-            <PublishButton
-              additionalInputs={
-                <TextField
-                  fieldPath="metadata.version"
-                  placeholder={i18next.t(
-                    "Write the version (first, second ...)."
-                  )}
-                  label={
-                    <FieldLabel
-                      htmlFor={"metadata.version"}
-                      icon="pencil"
-                      label={i18next.t("Version")}
-                    />
+            {values.id && (
+              <RecordRequests
+                record={values}
+                onBeforeAction={() => save({ successMessage: "" })}
+                onActionError={(
+                  e,
+                  variables,
+                  requestModalFormik,
+                  modalControl
+                ) => {
+                  if (e?.response?.data?.errors?.length > 0) {
+                    const errors = serializeErrors(
+                      e?.response?.data?.errors,
+                      i18next.t(
+                        "Action failed due to validation errors. Please correct the errors and try again:"
+                      )
+                    );
+                    setErrors(errors);
                   }
-                />
-              }
-            />
-          </Grid.Column>
-          <Grid.Column width={16} className="pt-10">
-            <DeleteButton redirectUrl="/me/records" />
+                  modalControl?.closeModal();
+                }}
+              />
+            )}
+            {values.id && <DeleteButton redirectUrl="/me/records" />}
           </Grid.Column>
           <Grid.Column width={16} className="pt-10">
             <SelectedCommunity />
