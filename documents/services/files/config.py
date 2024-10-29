@@ -10,7 +10,7 @@ from documents.services.records.permissions import DocumentsPermissionPolicy
 class DocumentsFileServiceConfig(PermissionsPresetsConfigMixin, FileServiceConfig):
     """DocumentsRecord service config."""
 
-    PERMISSIONS_PRESETS = ["workflow"]
+    PERMISSIONS_PRESETS = ["everyone"]
 
     url_prefix = "/docs/<pid_value>"
 
@@ -52,7 +52,7 @@ class DocumentsFileServiceConfig(PermissionsPresetsConfigMixin, FileServiceConfi
 class DocumentsFileDraftServiceConfig(PermissionsPresetsConfigMixin, FileServiceConfig):
     """DocumentsDraft service config."""
 
-    PERMISSIONS_PRESETS = ["workflow"]
+    PERMISSIONS_PRESETS = ["everyone"]
 
     url_prefix = "/docs/<pid_value>/draft"
 
