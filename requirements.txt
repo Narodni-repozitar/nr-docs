@@ -21,7 +21,7 @@ oarepo-doi==1.0.12
 oarepo-global-search==1.0.26
 oarepo-oai-pmh-harvester==4.1.7
 oarepo-published-service==1.0.3
-oarepo-requests==2.2.5
+oarepo-requests==2.2.6
 oarepo-runtime==1.5.65
 oarepo-ui==5.2.18
 oarepo-vocabularies==2.1.2
