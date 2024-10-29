@@ -12,7 +12,7 @@ language-data==1.2.0
 levenshtein==0.26.1
 marisa-trie==1.2.1
 marshmallow-i18n-messages==0.1.0
-nr-metadata==2.0.42
+nr-metadata==2.0.43
 nr-oaipmh-harvesters==1.0.22
 nr-vocabularies==2.1.1
 oarepo-communities==5.0.21
@@ -21,11 +21,11 @@ oarepo-doi==1.0.12
 oarepo-global-search==1.0.26
 oarepo-oai-pmh-harvester==4.1.7
 oarepo-published-service==1.0.3
-oarepo-requests==2.2.6
+oarepo-requests==2.2.7
 oarepo-runtime==1.5.65
 oarepo-ui==5.2.18
 oarepo-vocabularies==2.1.2
-oarepo-workflows==1.0.10
+oarepo-workflows==1.0.11
 openpyxl==3.1.5
 python-dotenv==1.0.1
 rapidfuzz==3.10.1

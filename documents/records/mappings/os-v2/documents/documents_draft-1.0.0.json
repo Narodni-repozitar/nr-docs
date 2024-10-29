@@ -1249,7 +1249,20 @@
                         "type": "date",
                         "format": "strict_date||yyyy-MM||yyyy"
                     },
-                    "institutions": {
+                    "keywords": {
+                        "type": "object",
+                        "properties": {
+                            "cs": {
+                                "type": "keyword",
+                                "ignore_above": 1024
+                            },
+                            "en": {
+                                "type": "keyword",
+                                "ignore_above": 1024
+                            }
+                        }
+                    },
+                    "organizations": {
                         "type": "object",
                         "properties": {
                             "id": {
@@ -1296,19 +1309,6 @@
                                 }
                             },
                             "@v": {
-                                "type": "keyword",
-                                "ignore_above": 1024
-                            }
-                        }
-                    },
-                    "keywords": {
-                        "type": "object",
-                        "properties": {
-                            "cs": {
-                                "type": "keyword",
-                                "ignore_above": 1024
-                            },
-                            "en": {
                                 "type": "keyword",
                                 "ignore_above": 1024
                             }
