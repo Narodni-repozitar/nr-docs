@@ -39,7 +39,7 @@ class DocumentsServiceConfig(
 
     result_list_cls = DocumentsRecordList
 
-    PERMISSIONS_PRESETS = ["docs"]
+    PERMISSIONS_PRESETS = ["workflow"]
 
     url_prefix = "/docs/"
 
