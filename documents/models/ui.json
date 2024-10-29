@@ -2225,101 +2225,12 @@
                     }
                 },
                 "organizations": {
-                    "detail": "taxonomy_item",
-                    "edit": "taxonomy_item",
-                    "input": "taxonomy",
+                    "detail": "keyword",
+                    "input": "keyword",
                     "help": "syntheticFields/organizations.help",
                     "label": "syntheticFields/organizations.label",
                     "hint": "syntheticFields/organizations.hint",
-                    "facet": "syntheticFields_organizations",
-                    "children": {
-                        "id": {
-                            "detail": "keyword",
-                            "input": "keyword",
-                            "help": "syntheticFields/organizations/id.help",
-                            "label": "syntheticFields/organizations/id.label",
-                            "hint": "syntheticFields/organizations/id.hint"
-                        },
-                        "title": {
-                            "detail": false,
-                            "input": false,
-                            "help": "syntheticFields/organizations/title.help",
-                            "label": "syntheticFields/organizations/title.label",
-                            "hint": "syntheticFields/organizations/title.hint"
-                        },
-                        "hierarchy": {
-                            "detail": false,
-                            "input": false,
-                            "help": "syntheticFields/organizations/hierarchy.help",
-                            "label": "syntheticFields/organizations/hierarchy.label",
-                            "hint": "syntheticFields/organizations/hierarchy.hint",
-                            "children": {
-                                "ancestors": {
-                                    "detail": "array",
-                                    "input": "array",
-                                    "help": "syntheticFields/organizations/hierarchy/ancestors.help",
-                                    "label": "syntheticFields/organizations/hierarchy/ancestors.label",
-                                    "hint": "syntheticFields/organizations/hierarchy/ancestors.hint",
-                                    "child": {
-                                        "detail": "keyword",
-                                        "input": "keyword",
-                                        "help": "syntheticFields/organizations/hierarchy/ancestors.help",
-                                        "label": "syntheticFields/organizations/hierarchy/ancestors.label",
-                                        "hint": "syntheticFields/organizations/hierarchy/ancestors.hint"
-                                    }
-                                },
-                                "ancestors_or_self": {
-                                    "detail": "array",
-                                    "input": "array",
-                                    "help": "syntheticFields/organizations/hierarchy/ancestors_or_self.help",
-                                    "label": "syntheticFields/organizations/hierarchy/ancestors_or_self.label",
-                                    "hint": "syntheticFields/organizations/hierarchy/ancestors_or_self.hint",
-                                    "child": {
-                                        "detail": "keyword",
-                                        "input": "keyword",
-                                        "help": "syntheticFields/organizations/hierarchy/ancestors_or_self.help",
-                                        "label": "syntheticFields/organizations/hierarchy/ancestors_or_self.label",
-                                        "hint": "syntheticFields/organizations/hierarchy/ancestors_or_self.hint"
-                                    }
-                                },
-                                "level": {
-                                    "detail": "integer",
-                                    "input": "integer",
-                                    "help": "syntheticFields/organizations/hierarchy/level.help",
-                                    "label": "syntheticFields/organizations/hierarchy/level.label",
-                                    "hint": "syntheticFields/organizations/hierarchy/level.hint"
-                                },
-                                "parent": {
-                                    "detail": "keyword",
-                                    "input": "keyword",
-                                    "help": "syntheticFields/organizations/hierarchy/parent.help",
-                                    "label": "syntheticFields/organizations/hierarchy/parent.label",
-                                    "hint": "syntheticFields/organizations/hierarchy/parent.hint"
-                                },
-                                "title": {
-                                    "detail": "array",
-                                    "input": "array",
-                                    "help": "syntheticFields/organizations/hierarchy/title.help",
-                                    "label": "syntheticFields/organizations/hierarchy/title.label",
-                                    "hint": "syntheticFields/organizations/hierarchy/title.hint",
-                                    "child": {
-                                        "detail": false,
-                                        "input": false,
-                                        "help": "syntheticFields/organizations/hierarchy/title.help",
-                                        "label": "syntheticFields/organizations/hierarchy/title.label",
-                                        "hint": "syntheticFields/organizations/hierarchy/title.hint"
-                                    }
-                                }
-                            }
-                        },
-                        "@v": {
-                            "detail": "keyword",
-                            "input": "keyword",
-                            "help": "syntheticFields/organizations/@v.help",
-                            "label": "syntheticFields/organizations/@v.label",
-                            "hint": "syntheticFields/organizations/@v.hint"
-                        }
-                    }
+                    "facet": "syntheticFields_organizations"
                 },
                 "people": {
                     "detail": "keyword",
@@ -2328,6 +2239,14 @@
                     "label": "syntheticFields/people.label",
                     "hint": "syntheticFields/people.hint",
                     "facet": "syntheticFields_people"
+                },
+                "test_organizations": {
+                    "detail": "keyword",
+                    "input": "keyword",
+                    "help": "syntheticFields/test_organizations.help",
+                    "label": "syntheticFields/test_organizations.label",
+                    "hint": "syntheticFields/test_organizations.hint",
+                    "facet": "syntheticFields_test_organizations"
                 },
                 "year": {
                     "detail": "edtf",

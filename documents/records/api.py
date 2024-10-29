@@ -89,11 +89,12 @@ class DocumentsRecord(InvenioRecord):
             FilteredSelector(
                 PathSelector("metadata.creators", "metadata.contributors"),
                 filter=lambda x: x["nameType"] == "Personal",
-                projection="affiliations",
+                projection="affiliations.title.cs",
             ),
             FilteredSelector(
                 PathSelector("metadata.creators", "metadata.contributors"),
                 filter=lambda x: x["nameType"] == "Organizational",
+                projection="fullName",
             ),
         ),
         key="syntheticFields.organizations",
@@ -213,11 +214,6 @@ class DocumentsRecord(InvenioRecord):
         ),
         degreeGrantors=PIDRelation(
             "metadata.thesis.degreeGrantors",
-            keys=["id", "title", "hierarchy"],
-            pid_field=Vocabulary.pid.with_type_ctx("institutions"),
-        ),
-        organizations=PIDRelation(
-            "syntheticFields.organizations",
             keys=["id", "title", "hierarchy"],
             pid_field=Vocabulary.pid.with_type_ctx("institutions"),
         ),
@@ -344,11 +340,6 @@ class DocumentsDraft(InvenioDraft):
         ),
         degreeGrantors=PIDRelation(
             "metadata.thesis.degreeGrantors",
-            keys=["id", "title", "hierarchy"],
-            pid_field=Vocabulary.pid.with_type_ctx("institutions"),
-        ),
-        organizations=PIDRelation(
-            "syntheticFields.organizations",
             keys=["id", "title", "hierarchy"],
             pid_field=Vocabulary.pid.with_type_ctx("institutions"),
         ),

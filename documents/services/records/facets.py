@@ -497,14 +497,18 @@ syntheticFields_keywords = KeywordsFacet(
     field="syntheticFields.keywords", label=_("syntheticFields/keywords.label")
 )
 
-syntheticFields_organizations = HierarchyVocabularyFacet(
+syntheticFields_organizations = TermsFacet(
     field="syntheticFields.organizations",
     label=_("syntheticFields/organizations.label"),
-    vocabulary="institutions",
 )
 
 syntheticFields_people = TermsFacet(
     field="syntheticFields.people", label=_("syntheticFields/people.label")
+)
+
+syntheticFields_test_organizations = TermsFacet(
+    field="syntheticFields.test_organizations",
+    label=_("syntheticFields/test_organizations.label"),
 )
 
 syntheticFields_year = YearAutoHistogramFacet(

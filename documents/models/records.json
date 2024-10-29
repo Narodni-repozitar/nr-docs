@@ -41,7 +41,7 @@
         "custom-fields": [],
         "permissions": {
             "presets": [
-                "workflow"
+                "docs"
             ],
             "generate": true,
             "extra-code": "",
@@ -198,7 +198,7 @@
                 "creator_search": "{{oarepo_runtime.records.systemfields.icu.ICUSearchField}}(source_field='metadata.creators.fullName')",
                 "abstract_search": "{{oarepo_runtime.records.systemfields.icu.ICUSearchField}}(source_field='metadata.abstract.value')",
                 "people": "SyntheticSystemField(\n    PathSelector(\"metadata.creators\", \"metadata.contributors\"),\n    filter=lambda x: x.get(\"nameType\") == \"Personal\",\n    map=lambda x: x.get(\"fullName\"),\n    key=\"syntheticFields.people\",\n)\n",
-                "organizations": "SyntheticSystemField(\n    MultiSelector(\n        FilteredSelector(\n            PathSelector(\"metadata.creators\", \"metadata.contributors\"),\n            filter=lambda x: x[\"nameType\"] == \"Personal\",\n            projection=\"affiliations\",\n        ),\n        FilteredSelector(\n            PathSelector(\"metadata.creators\", \"metadata.contributors\"),\n            filter=lambda x: x[\"nameType\"] == \"Organizational\",\n        ),\n    ),\n    key=\"syntheticFields.organizations\",\n)\n",
+                "organizations": "SyntheticSystemField(\n  MultiSelector(\n      FilteredSelector(\n          PathSelector(\"metadata.creators\", \"metadata.contributors\"),\n          filter=lambda x: x[\"nameType\"] == \"Personal\",\n          projection=\"affiliations.title.cs\",\n      ),\n      FilteredSelector(\n          PathSelector(\"metadata.creators\", \"metadata.contributors\"),\n          filter=lambda x: x[\"nameType\"] == \"Organizational\",\n          projection=\"fullName\",\n      ),\n  ),\n  key=\"syntheticFields.organizations\",\n)\n",
                 "keywords": "SyntheticSystemField(\n    selector=KeywordsFieldSelector(\"metadata.subjects.subject\"),\n    key=\"syntheticFields.keywords\",\n)\n",
                 "date": "SyntheticSystemField(\n    selector=FirstItemSelector(\"metadata.dateModified\", \"metadata.dateIssued\"),\n    key=\"syntheticFields.date\",\n)\n",
                 "year": "SyntheticSystemField(\n    selector=FirstItemSelector(\"metadata.dateModified\", \"metadata.dateIssued\"),\n    key=\"syntheticFields.year\",\n    filter=lambda x: len(x) >= 4,\n    map=lambda x: x[:4]\n)\n",
@@ -449,6 +449,20 @@
             "imports": [],
             "additional-args": []
         },
+        "record-resolver": {
+            "generate": true,
+            "module": "documents.records.requests.resolvers",
+            "class": "documents.records.requests.resolvers.DocumentsResolver",
+            "base-classes": [
+                "oarepo_runtime.records.entity_resolvers.RecordResolver"
+            ],
+            "imports": [],
+            "custom-proxy-class": "oarepo_runtime.records.entity_resolvers.RecordProxy"
+        },
+        "ui-record-resolver": {
+            "generate": true,
+            "class": "oarepo_requests.resolvers.ui.RecordEntityReferenceUIResolver"
+        },
         "draft-parent-record-metadata": {
             "base-classes": [
                 "oarepo_workflows.records.models.RecordWorkflowParentModelMixin",
@@ -468,20 +482,6 @@
             "module": "documents.services.records.schema",
             "class": "documents.services.records.schema.GeneratedParentSchema",
             "generate": true
-        },
-        "record-resolver": {
-            "generate": true,
-            "module": "documents.records.requests.resolvers",
-            "class": "documents.records.requests.resolvers.DocumentsResolver",
-            "base-classes": [
-                "oarepo_runtime.records.entity_resolvers.RecordResolver"
-            ],
-            "imports": [],
-            "custom-proxy-class": "oarepo_runtime.records.entity_resolvers.RecordProxy"
-        },
-        "ui-record-resolver": {
-            "generate": true,
-            "class": "oarepo_requests.resolvers.ui.RecordEntityReferenceUIResolver"
         },
         "files-field": {
             "generate": true,
@@ -7628,13 +7628,19 @@
                 "type": "object",
                 "ui": {
                     "marshmallow": {
-                        "generate": false,
-                        "class": "nr_metadata.documents.services.records.ui_schema.NRDocumentSyntheticFieldsUISchema"
+                        "generate": true,
+                        "base-classes": [
+                            "nr_metadata.documents.services.records.ui_schema.NRDocumentSyntheticFieldsUISchema"
+                        ],
+                        "class": "documents.services.records.ui_schema.SyntheticFieldsUISchema"
                     }
                 },
                 "marshmallow": {
-                    "generate": false,
-                    "class": "nr_metadata.documents.services.records.schema.NRDocumentSyntheticFieldsSchema"
+                    "generate": true,
+                    "base-classes": [
+                        "nr_metadata.documents.services.records.schema.NRDocumentSyntheticFieldsSchema"
+                    ],
+                    "class": "documents.services.records.schema.SyntheticFieldsSchema"
                 },
                 "properties": {
                     "date": {
@@ -7734,262 +7740,19 @@
                         }
                     },
                     "organizations": {
-                        "type": "taxonomy",
-                        "vocabulary-type": "institutions",
+                        "type": "keyword",
+                        "marshmallow": {
+                            "read": false,
+                            "write": false
+                        },
                         "ui": {
                             "marshmallow": {
                                 "read": false,
-                                "write": false,
-                                "unknown": "INCLUDE",
-                                "generate": true,
-                                "class": "documents.services.records.ui_schema.OrganizationsUISchema"
-                            },
-                            "detail": "taxonomy_item",
-                            "edit": "taxonomy_item"
-                        },
-                        "marshmallow": {
-                            "read": false,
-                            "write": false,
-                            "unknown": "INCLUDE",
-                            "generate": true,
-                            "class": "documents.services.records.schema.OrganizationsSchema"
+                                "write": false
+                            }
                         },
                         "label.cs": "Instituce",
-                        "label.en": "Institutions",
-                        "keys": [
-                            "id",
-                            "title",
-                            {
-                                "key": "hierarchy",
-                                "model": {
-                                    "type": "object",
-                                    "marshmallow": {
-                                        "class": "oarepo_vocabularies.services.schema.HierarchySchema",
-                                        "generate": false,
-                                        "imports": [
-                                            {
-                                                "import": "oarepo_vocabularies.services.schema.HierarchySchema"
-                                            }
-                                        ]
-                                    },
-                                    "ui": {
-                                        "marshmallow": {
-                                            "class": "oarepo_vocabularies.services.ui_schema.HierarchyUISchema",
-                                            "generate": false,
-                                            "imports": [
-                                                {
-                                                    "import": "oarepo_vocabularies.services.ui_schema.HierarchyUISchema"
-                                                }
-                                            ]
-                                        }
-                                    },
-                                    "properties": {
-                                        "parent": {
-                                            "type": "keyword"
-                                        },
-                                        "level": {
-                                            "type": "integer"
-                                        },
-                                        "title": {
-                                            "type": "array",
-                                            "items": {
-                                                "type": "object",
-                                                "propertyNames": {
-                                                    "pattern": "^[a-z]{2}$"
-                                                },
-                                                "additionalProperties": {
-                                                    "type": "string"
-                                                },
-                                                "mapping": {
-                                                    "dynamic": true
-                                                },
-                                                "marshmallow": {
-                                                    "field": "i18n_strings",
-                                                    "generate": false,
-                                                    "class": "documents.services.records.schema.TitleItemSchema"
-                                                },
-                                                "ui": {
-                                                    "marshmallow": {
-                                                        "field": "i18n_strings",
-                                                        "generate": false,
-                                                        "class": "documents.services.records.ui_schema.TitleItemUISchema"
-                                                    }
-                                                }
-                                            }
-                                        },
-                                        "ancestors": {
-                                            "type": "array",
-                                            "items": {
-                                                "type": "keyword"
-                                            }
-                                        },
-                                        "ancestors_or_self": {
-                                            "type": "array",
-                                            "items": {
-                                                "type": "keyword"
-                                            }
-                                        }
-                                    }
-                                },
-                                "target": "hierarchy"
-                            }
-                        ],
-                        "imports": [
-                            {
-                                "import": "oarepo_vocabularies.records.api.Vocabulary"
-                            }
-                        ],
-                        "model": "vocabularies",
-                        "pid-field": "Vocabulary.pid.with_type_ctx(\"institutions\")",
-                        "facets": {
-                            "args": [
-                                "vocabulary='institutions'"
-                            ]
-                        },
-                        "properties": {
-                            "id": {
-                                "marshmallow": {
-                                    "field-class": "marshmallow.fields.String",
-                                    "validators": [],
-                                    "imports": []
-                                },
-                                "ui": {
-                                    "marshmallow": {
-                                        "field-class": "marshmallow.fields.String",
-                                        "validators": [],
-                                        "imports": []
-                                    }
-                                },
-                                "type": "keyword",
-                                "mapping": {
-                                    "fields": {
-                                        "text": {
-                                            "type": "search_as_you_type"
-                                        }
-                                    }
-                                },
-                                "sample": {
-                                    "skip": true
-                                }
-                            },
-                            "title": {
-                                "marshmallow": {
-                                    "generate": false,
-                                    "field": "{{invenio_vocabularies.services.schema.i18n_strings}}",
-                                    "field-class": "marshmallow.fields.Nested",
-                                    "validators": [],
-                                    "class": "invenio_vocabularies.services.records.schema.TitleSchema"
-                                },
-                                "ui": {
-                                    "marshmallow": {
-                                        "field": "{{oarepo_vocabularies.services.ui_schema.VocabularyI18nStrUIField}}()",
-                                        "generate": false
-                                    }
-                                },
-                                "mapping": {
-                                    "dynamic": true,
-                                    "properties": {
-                                        "en": {
-                                            "type": "search_as_you_type",
-                                            "copy_to": "title_sort"
-                                        }
-                                    }
-                                },
-                                "type": "object",
-                                "propertyNames": {
-                                    "pattern": "^[a-z]{2}$"
-                                },
-                                "additionalProperties": {
-                                    "type": "string"
-                                }
-                            },
-                            "hierarchy": {
-                                "type": "object",
-                                "marshmallow": {
-                                    "class": "oarepo_vocabularies.services.schema.HierarchySchema",
-                                    "generate": false,
-                                    "imports": [
-                                        {
-                                            "import": "oarepo_vocabularies.services.schema.HierarchySchema"
-                                        }
-                                    ]
-                                },
-                                "ui": {
-                                    "marshmallow": {
-                                        "class": "oarepo_vocabularies.services.ui_schema.HierarchyUISchema",
-                                        "generate": false,
-                                        "imports": [
-                                            {
-                                                "import": "oarepo_vocabularies.services.ui_schema.HierarchyUISchema"
-                                            }
-                                        ]
-                                    }
-                                },
-                                "properties": {
-                                    "ancestors": {
-                                        "type": "array",
-                                        "items": {
-                                            "type": "keyword"
-                                        }
-                                    },
-                                    "ancestors_or_self": {
-                                        "type": "array",
-                                        "items": {
-                                            "type": "keyword"
-                                        }
-                                    },
-                                    "level": {
-                                        "type": "integer"
-                                    },
-                                    "parent": {
-                                        "type": "keyword"
-                                    },
-                                    "title": {
-                                        "type": "array",
-                                        "items": {
-                                            "type": "object",
-                                            "propertyNames": {
-                                                "pattern": "^[a-z]{2}$"
-                                            },
-                                            "additionalProperties": {
-                                                "type": "string"
-                                            },
-                                            "mapping": {
-                                                "dynamic": true
-                                            },
-                                            "marshmallow": {
-                                                "field": "i18n_strings",
-                                                "generate": false,
-                                                "class": "documents.services.records.schema.TitleItemSchema"
-                                            },
-                                            "ui": {
-                                                "marshmallow": {
-                                                    "field": "i18n_strings",
-                                                    "generate": false,
-                                                    "class": "documents.services.records.ui_schema.TitleItemUISchema"
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
-                            },
-                            "@v": {
-                                "type": "keyword",
-                                "marshmallow": {
-                                    "field-name": "_version",
-                                    "field-class": "marshmallow.fields.String"
-                                },
-                                "ui": {
-                                    "marshmallow": {
-                                        "field-name": "_version",
-                                        "field-class": "marshmallow.fields.String"
-                                    }
-                                },
-                                "facets": {
-                                    "facet": false
-                                }
-                            }
-                        }
+                        "label.en": "Institutions"
                     },
                     "people": {
                         "type": "keyword",
@@ -8005,6 +7768,9 @@
                         },
                         "label.cs": "Lidé",
                         "label.en": "People"
+                    },
+                    "test_organizations": {
+                        "type": "keyword"
                     },
                     "year": {
                         "type": "edtf",

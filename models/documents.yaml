@@ -53,6 +53,12 @@ record:
     type: dcmnts
   properties:
     metadata: {}
+
+    syntheticFields:
+      properties:
+        test_organizations:
+          type: keyword
+
   resource-config:
     base-html-url: /docs/
     base-url: /docs/

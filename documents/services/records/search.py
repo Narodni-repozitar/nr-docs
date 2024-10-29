@@ -135,6 +135,7 @@ class DocumentsSearchOptions(I18nSearchOptions):
         "syntheticFields_keywords": facets.syntheticFields_keywords,
         "syntheticFields_organizations": facets.syntheticFields_organizations,
         "syntheticFields_people": facets.syntheticFields_people,
+        "syntheticFields_test_organizations": facets.syntheticFields_test_organizations,
         "syntheticFields_year": facets.syntheticFields_year,
         **getattr(I18nSearchOptions, "facets", {}),
         "record_status": facets.record_status,
