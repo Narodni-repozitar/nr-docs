@@ -53,6 +53,12 @@ record:
     type: dcmnts
   properties:
     metadata: {}
+
+    syntheticFields:
+      properties:
+        test_organizations:
+          type: keyword
+
   resource-config:
     base-html-url: /docs/
     base-url: /docs/
@@ -83,59 +89,11 @@ record:
     fields:
       sort_options: "{{oarepo_runtime.services.search.ICUSortOptions}}('documents')"
   record:
-    # TODO: find out why these are not included from nr-model
-    imports:
-      - import: oarepo_runtime.records.systemfields.SyntheticSystemField
-      - import: oarepo_runtime.records.systemfields.PathSelector
-      - import: oarepo_runtime.records.systemfields.FirstItemSelector
-      - import: nr_metadata.records.synthetic_fields.KeywordsFieldSelector
     fields:
       sort: "{{common.services.sort.TitleICUSortField}}(source_field='metadata.title')"
       title_search: "{{oarepo_runtime.records.systemfields.icu.ICUSearchField}}(source_field='metadata.title')"
       creator_search: "{{oarepo_runtime.records.systemfields.icu.ICUSearchField}}(source_field='metadata.creators.fullName')"
       abstract_search: "{{oarepo_runtime.records.systemfields.icu.ICUSearchField}}(source_field='metadata.abstract.value')"
-
-      # TODO: these are not somehow merged from the nr-model, need to find out why
-      people: |
-        SyntheticSystemField(
-            PathSelector("metadata.creators", "metadata.contributors"),
-            filter=lambda x: x.get("nameType") == "Personal",
-            map=lambda x: x.get("fullName"),
-            key="syntheticFields.people",
-        )
-      institutions: |
-        SyntheticSystemField(
-            PathSelector(
-                  "metadata.creators.affiliations", 
-                  "metadata.contributors.affiliations", 
-                  "metadata.thesis.degreeGrantors"),
-            key="syntheticFields.institutions",
-        )
-      keywords: |
-        SyntheticSystemField(
-            selector=KeywordsFieldSelector("metadata.subjects.subject"),
-            key="syntheticFields.keywords",
-        )
-      date: |
-        SyntheticSystemField(
-            selector=FirstItemSelector("metadata.dateModified", "metadata.dateIssued"),
-            key="syntheticFields.date",
-        )
-      year: |
-        SyntheticSystemField(
-            selector=FirstItemSelector("metadata.dateModified", "metadata.dateIssued"),
-            key="syntheticFields.year",
-            filter=lambda x: len(x) >= 4,
-            map=lambda x: x[:4]
-        )
-      defenseYear: |
-        SyntheticSystemField(
-            selector=PathSelector("metadata.thesis.dateDefended"),
-            key="syntheticFields.defenseYear",
-            filter=lambda x: len(x) >= 4,
-            map=lambda x: x[:4]
-        )
-
 
   mapping:
     template:

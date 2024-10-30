@@ -493,18 +493,22 @@ syntheticFields_defenseYear = YearAutoHistogramFacet(
     field="syntheticFields.defenseYear", label=_("syntheticFields/defenseYear.label")
 )
 
-syntheticFields_institutions = HierarchyVocabularyFacet(
-    field="syntheticFields.institutions",
-    label=_("syntheticFields/institutions.label"),
-    vocabulary="institutions",
-)
-
 syntheticFields_keywords = KeywordsFacet(
     field="syntheticFields.keywords", label=_("syntheticFields/keywords.label")
 )
 
+syntheticFields_organizations = TermsFacet(
+    field="syntheticFields.organizations",
+    label=_("syntheticFields/organizations.label"),
+)
+
 syntheticFields_people = TermsFacet(
     field="syntheticFields.people", label=_("syntheticFields/people.label")
+)
+
+syntheticFields_test_organizations = TermsFacet(
+    field="syntheticFields.test_organizations",
+    label=_("syntheticFields/test_organizations.label"),
 )
 
 syntheticFields_year = YearAutoHistogramFacet(

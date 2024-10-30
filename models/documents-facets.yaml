@@ -8,7 +8,7 @@ facets:
       metadata.resourceType: 5
       syntheticFields.keywords: 6
       metadata.languages: 7
-      syntheticFields.institutions: 8
+      syntheticFields.organizations: 8
       metadata.fundingReferences.funder: 9
       metadata.fundingReferences.projectID: 10
     curator:
@@ -19,7 +19,7 @@ facets:
       metadata.resourceType: 5
       syntheticFields.keywords: 6
       metadata.languages: 7
-      syntheticFields.institutions: 8
+      syntheticFields.organizations: 8
       metadata.fundingReferences.funder: 9
       metadata.fundingReferences.projectID: 10
       metadata.files.enabled: 11

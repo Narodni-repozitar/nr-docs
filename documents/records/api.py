@@ -11,7 +11,9 @@ from oarepo_communities.records.systemfields.communities import (
 )
 from oarepo_runtime.records.relations import PIDRelation, RelationsField
 from oarepo_runtime.records.systemfields import (
+    FilteredSelector,
     FirstItemSelector,
+    MultiSelector,
     PathSelector,
     SyntheticSystemField,
 )
@@ -82,13 +84,20 @@ class DocumentsRecord(InvenioRecord):
         key="syntheticFields.people",
     )
 
-    institutions = SyntheticSystemField(
-        PathSelector(
-            "metadata.creators.affiliations",
-            "metadata.contributors.affiliations",
-            "metadata.thesis.degreeGrantors",
+    organizations = SyntheticSystemField(
+        MultiSelector(
+            FilteredSelector(
+                PathSelector("metadata.creators", "metadata.contributors"),
+                filter=lambda x: x["nameType"] == "Personal",
+                projection="affiliations.title.cs",
+            ),
+            FilteredSelector(
+                PathSelector("metadata.creators", "metadata.contributors"),
+                filter=lambda x: x["nameType"] == "Organizational",
+                projection="fullName",
+            ),
         ),
-        key="syntheticFields.institutions",
+        key="syntheticFields.organizations",
     )
 
     keywords = SyntheticSystemField(
@@ -205,11 +214,6 @@ class DocumentsRecord(InvenioRecord):
         ),
         degreeGrantors=PIDRelation(
             "metadata.thesis.degreeGrantors",
-            keys=["id", "title", "hierarchy"],
-            pid_field=Vocabulary.pid.with_type_ctx("institutions"),
-        ),
-        institutions=PIDRelation(
-            "syntheticFields.institutions",
             keys=["id", "title", "hierarchy"],
             pid_field=Vocabulary.pid.with_type_ctx("institutions"),
         ),
@@ -336,11 +340,6 @@ class DocumentsDraft(InvenioDraft):
         ),
         degreeGrantors=PIDRelation(
             "metadata.thesis.degreeGrantors",
-            keys=["id", "title", "hierarchy"],
-            pid_field=Vocabulary.pid.with_type_ctx("institutions"),
-        ),
-        institutions=PIDRelation(
-            "syntheticFields.institutions",
             keys=["id", "title", "hierarchy"],
             pid_field=Vocabulary.pid.with_type_ctx("institutions"),
         ),

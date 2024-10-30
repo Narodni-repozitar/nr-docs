@@ -6,6 +6,7 @@ from oarepo_vocabularies.ui.resources.components import (
 from oarepo_ui.resources.config import RecordsUIResourceConfig
 from oarepo_ui.resources.resource import RecordsUIResource
 from oarepo_ui.resources.components import AllowedCommunitiesComponent
+from oarepo_ui.resources.components.custom_fields import CustomFieldsComponent
 
 
 class DocumentsResourceConfig(RecordsUIResourceConfig):
@@ -21,7 +22,8 @@ class DocumentsResourceConfig(RecordsUIResourceConfig):
         DepositVocabularyOptionsComponent,
         PermissionsComponent,
         FilesComponent,
-        AllowedCommunitiesComponent
+        AllowedCommunitiesComponent,
+        CustomFieldsComponent
     ]
 
     search_component = "documents/search/ResultsListItem"
