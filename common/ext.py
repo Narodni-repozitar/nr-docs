@@ -3,11 +3,10 @@ from io import StringIO
 from typing import Union
 
 import yaml
-from oarepo_runtime.datastreams.datastreams import Signature, SignatureKind
-
 from oarepo_oaipmh_harvester import cli  # noqa
 from oarepo_oaipmh_harvester.harvester import harvest
 from oarepo_oaipmh_harvester.oai_harvester.records.api import OaiHarvesterRecord
+from oarepo_runtime.datastreams.datastreams import Signature, SignatureKind
 
 from . import config
 
@@ -33,7 +32,7 @@ class OaiS3HarvesterExt(object):
         on_background=False,
         identifiers=None,
         datestamp_from=None,
-        datestamp_until=None
+        datestamp_until=None,
     ):
         harvest(
             harvester_or_code=harvester_or_code,
@@ -41,9 +40,8 @@ class OaiS3HarvesterExt(object):
             on_background=on_background,
             identifiers=identifiers,
             datestamp_from=datestamp_from,
-            datestamp_until=datestamp_until
+            datestamp_until=datestamp_until,
         )
-        
 
     def get_parser_signature(self, parser_name, **kwargs) -> Signature:
         parser_name, args = split_processor_name(parser_name)

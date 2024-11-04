@@ -1,5 +1,5 @@
 from invenio_records_resources.services import FileLink, FileServiceConfig, RecordLink
-from invenio_records_resources.services.records.components import DataComponent
+from oarepo_runtime.services.components import CustomFieldsComponent
 from oarepo_runtime.services.config.service import PermissionsPresetsConfigMixin
 
 from documents.records.api import DocumentsDraft, DocumentsRecord
@@ -25,7 +25,7 @@ class DocumentsFileServiceConfig(PermissionsPresetsConfigMixin, FileServiceConfi
     components = [
         *PermissionsPresetsConfigMixin.components,
         *FileServiceConfig.components,
-        DataComponent,
+        CustomFieldsComponent,
     ]
 
     model = "documents"
@@ -65,7 +65,7 @@ class DocumentsFileDraftServiceConfig(PermissionsPresetsConfigMixin, FileService
     components = [
         *PermissionsPresetsConfigMixin.components,
         *FileServiceConfig.components,
-        DataComponent,
+        CustomFieldsComponent,
     ]
 
     model = "documents"

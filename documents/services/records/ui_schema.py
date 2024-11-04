@@ -17,7 +17,9 @@ class DocumentsUISchema(UIRequestsSerializationMixin, NRDocumentRecordUISchema):
 
     oai = ma_fields.Nested(lambda: OaiUISchema())
 
-    syntheticFields = ma_fields.Nested(lambda: NRDocumentSyntheticFieldsUISchema())
+    state = ma_fields.String(dump_only=True)
+
+    syntheticFields = ma_fields.Nested(lambda: SyntheticFieldsUISchema())
 
 
 class OaiUISchema(DictOnlySchema):
@@ -34,3 +36,15 @@ class HarvestUISchema(DictOnlySchema):
     datestamp = ma_fields.String()
 
     identifier = ma_fields.String()
+
+
+class KeywordsUISchema(DictOnlySchema):
+    class Meta:
+        unknown = ma.RAISE
+
+
+class SyntheticFieldsUISchema(NRDocumentSyntheticFieldsUISchema):
+    class Meta:
+        unknown = ma.RAISE
+
+    test_organizations = ma_fields.String()

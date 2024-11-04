@@ -914,6 +914,9 @@
                 }
             }
         },
+        "state": {
+            "type": "string"
+        },
         "syntheticFields": {
             "type": "object",
             "properties": {
@@ -924,49 +927,6 @@
                 "defenseYear": {
                     "type": "string",
                     "format": "date"
-                },
-                "institutions": {
-                    "type": "object",
-                    "properties": {
-                        "id": {
-                            "type": "string"
-                        },
-                        "title": {
-                            "type": "object"
-                        },
-                        "hierarchy": {
-                            "type": "object",
-                            "properties": {
-                                "ancestors": {
-                                    "type": "array",
-                                    "items": {
-                                        "type": "string"
-                                    }
-                                },
-                                "ancestors_or_self": {
-                                    "type": "array",
-                                    "items": {
-                                        "type": "string"
-                                    }
-                                },
-                                "level": {
-                                    "type": "integer"
-                                },
-                                "parent": {
-                                    "type": "string"
-                                },
-                                "title": {
-                                    "type": "array",
-                                    "items": {
-                                        "type": "object"
-                                    }
-                                }
-                            }
-                        },
-                        "@v": {
-                            "type": "string"
-                        }
-                    }
                 },
                 "keywords": {
                     "type": "object",
@@ -985,7 +945,13 @@
                         }
                     }
                 },
+                "organizations": {
+                    "type": "string"
+                },
                 "people": {
+                    "type": "string"
+                },
+                "test_organizations": {
                     "type": "string"
                 },
                 "year": {

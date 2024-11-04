@@ -26,7 +26,7 @@ msgstr "Jazyk"
 
 #: models/nr-documents/nr_documents/services/records/facets.py:37
 msgid "metadata/abstract/value.label"
-msgstr "Abstrakt"
+msgstr "Text"
 
 #: models/nr-documents/nr_documents/services/records/facets.py:43
 #: sites/nr-docs/site/nr_docs/translations/jinjax_messages.jinja:11
@@ -44,7 +44,7 @@ msgstr "Jazyk"
 
 #: models/nr-documents/nr_documents/services/records/facets.py:67
 msgid "metadata/accessibility/value.label"
-msgstr "Dostupnost"
+msgstr "Text"
 
 #: models/nr-documents/nr_documents/services/records/facets.py:73
 #: models/nr-documents/nr_documents/services/records/facets.py:78
@@ -57,11 +57,11 @@ msgstr "Jazyk"
 
 #: models/nr-documents/nr_documents/services/records/facets.py:93
 msgid "metadata/additionalTitles/title/value.label"
-msgstr "Název"
+msgstr "Text"
 
 #: models/nr-documents/nr_documents/services/records/facets.py:99
 msgid "metadata/additionalTitles/titleType.label"
-msgstr "Druh názvu"
+msgstr "Typ názvu"
 
 #: models/nr-documents/nr_documents/services/records/facets.py:103
 msgid "metadata/collection.label"
@@ -77,7 +77,7 @@ msgstr "Identifikátor"
 
 #: models/nr-documents/nr_documents/services/records/facets.py:119
 msgid "metadata/contributors/authorityIdentifiers/scheme.label"
-msgstr "Schema identifikátoru"
+msgstr "Typ identifikátoru"
 
 #: models/nr-documents/nr_documents/services/records/facets.py:124
 msgid "metadata/contributors/fullName.label"
@@ -101,7 +101,7 @@ msgstr "Identifikátor"
 
 #: models/nr-documents/nr_documents/services/records/facets.py:151
 msgid "metadata/creators/authorityIdentifiers/scheme.label"
-msgstr "Schema identifikátoru"
+msgstr "Typ identifikátoru"
 
 #: models/nr-documents/nr_documents/services/records/facets.py:155
 msgid "metadata/creators/fullName.label"
@@ -127,7 +127,7 @@ msgstr "Země"
 
 #: models/nr-documents/nr_documents/services/records/facets.py:178
 msgid "metadata/events/eventLocation/place.label"
-msgstr "Místo"
+msgstr "Lokace"
 
 #: models/nr-documents/nr_documents/services/records/facets.py:183
 msgid "metadata/externalLocation/externalLocationURL.label"
@@ -170,7 +170,7 @@ msgstr "Jazyk"
 
 #: models/nr-documents/nr_documents/services/records/facets.py:236
 msgid "metadata/methods/value.label"
-msgstr "Název metodologie"
+msgstr "Text"
 
 #: models/nr-documents/nr_documents/services/records/facets.py:242
 msgid "metadata/objectIdentifiers/identifier.label"
@@ -198,7 +198,7 @@ msgstr "Identifikátor"
 #: models/nr-documents/nr_documents/services/records/facets.py:269
 msgid ""
 "metadata/relatedItems/itemContributors/authorityIdentifiers/scheme.label"
-msgstr "Schema identifikátoru"
+msgstr "Typ identifikátoru"
 
 #: models/nr-documents/nr_documents/services/records/facets.py:274
 msgid "metadata/relatedItems/itemContributors/fullName.label"
@@ -223,7 +223,7 @@ msgstr "Identifikátor"
 
 #: models/nr-documents/nr_documents/services/records/facets.py:301
 msgid "metadata/relatedItems/itemCreators/authorityIdentifiers/scheme.label"
-msgstr "Schema identifikátoru"
+msgstr "Typ identifikátoru"
 
 #: models/nr-documents/nr_documents/services/records/facets.py:306
 msgid "metadata/relatedItems/itemCreators/fullName.label"
@@ -275,7 +275,7 @@ msgstr "Ročník"
 
 #: models/nr-documents/nr_documents/services/records/facets.py:368
 msgid "metadata/relatedItems/itemYear.label"
-msgstr "Rok"
+msgstr "Rok vydání"
 
 #: models/nr-documents/nr_documents/services/records/facets.py:373
 #: sites/nr-docs/site/nr_docs/translations/jinjax_messages.jinja:4
@@ -285,7 +285,7 @@ msgstr "Typ zdroje"
 #: models/nr-documents/nr_documents/services/records/facets.py:378
 #: sites/nr-docs/site/nr_docs/translations/jinjax_messages.jinja:12
 msgid "metadata/rights.label"
-msgstr "Práva/Licence"
+msgstr "Licence"
 
 #: models/nr-documents/nr_documents/services/records/facets.py:382
 msgid "metadata/series/seriesTitle.label"
@@ -315,7 +315,7 @@ msgstr "Jazyk"
 
 #: models/nr-documents/nr_documents/services/records/facets.py:422
 msgid "metadata/subjects/subject/value.label"
-msgstr "Klíčové slovo"
+msgstr "Text"
 
 #: models/nr-documents/nr_documents/services/records/facets.py:428
 msgid "metadata/subjects/subjectScheme.label"
@@ -345,7 +345,7 @@ msgstr "Jazyk"
 
 #: models/nr-documents/nr_documents/services/records/facets.py:465
 msgid "metadata/technicalInfo/value.label"
-msgstr "Technické informace"
+msgstr "Text"
 
 #: models/nr-documents/nr_documents/services/records/facets.py:470
 #: sites/nr-docs/site/nr_docs/translations/jinjax_messages.jinja:5
@@ -430,11 +430,11 @@ msgstr "Klíčová slova"
 
 #: sites/nr-docs/site/nr_docs/translations/jinjax_messages.jinja:10
 msgid "metadata/publishers.label"
-msgstr "Vydavatelé"
+msgstr "Vydavatel/é"
 
 #: sites/nr-docs/site/nr_docs/translations/jinjax_messages.jinja:13
 msgid "metadata/events.label"
-msgstr "Události"
+msgstr "Související akce"
 
 #: sites/nr-docs/site/nr_docs/translations/jinjax_messages.jinja:14
 msgid "metadata/externalLocation.label"
@@ -442,7 +442,7 @@ msgstr "Externí umístění"
 
 #: sites/nr-docs/site/nr_docs/translations/jinjax_messages.jinja:15
 msgid "metadata/fundingReferences.label"
-msgstr "Projekt nebo financování"
+msgstr "Granty a financování"
 
 #: sites/nr-docs/site/nr_docs/translations/jinjax_messages.jinja:16
 msgid "metadata/geoLocations.label"
@@ -480,7 +480,7 @@ msgstr "Kolekce"
 #: ui/docs-app/docs_app/templates/semantic-ui/docs_app/Sidebar.html.jinja:6
 #: ui/docs-app/docs_app/templates/semantic-ui/docs_app/Sidebar.html.jinja:7
 msgid "metadata/objectIdentifiers.label"
-msgstr "Identifikátory objektu"
+msgstr "Identifikátory"
 
 #: ui/docs-app/docs_app/templates/semantic-ui/docs_app/Sidebar.html.jinja:22
 #: ui/docs-app/docs_app/templates/semantic-ui/docs_app/Sidebar.html.jinja:23
@@ -1065,6 +1065,8 @@ msgstr ""
 
 msgid "metadata/abstract.help"
 msgstr ""
+"Vyberte jazyk abstraktu a zapište nebo vložte text. Abstrakt můžete vložit "
+"ve více jazycích."
 
 msgid "metadata/abstract.hint"
 msgstr ""
@@ -1086,6 +1088,7 @@ msgstr ""
 
 msgid "metadata/accessRights.hint"
 msgstr ""
+"Vyberte typ přístupu, zda bude zdroj dostupný otevřeně nebo s omezením."
 
 msgid "metadata/accessRights/id.help"
 msgstr ""
@@ -1136,7 +1139,7 @@ msgid "metadata/additionalTitles.label"
 msgstr "Další názvy"
 
 msgid "metadata/additionalTitles.help"
-msgstr "Další názvy"
+msgstr "Pokud existují další názvy zdroje, uveďte je. Vyberte typ a jazyk."
 
 msgid "metadata/additionalTitles.hint"
 msgstr ""
@@ -1197,8 +1200,8 @@ msgstr ""
 
 msgid "metadata/contributors/affiliations.hint"
 msgstr ""
-"Uveďte instituci/instituce, pod jejíž záštitou jste se na tvorbě objektu "
-"podíleli."
+"Začněte zapisovat název instituce, následně zvolte instituci z nabídky "
+"našeptavače."
 
 msgid "metadata/contributors/affiliations/id.help"
 msgstr ""
@@ -1283,9 +1286,12 @@ msgstr ""
 
 msgid "metadata/contributors/authorityIdentifiers.help"
 msgstr ""
+"Vyberte z nabídky typ identifikátoru. Uveďte hodnotu identifikátoru (tj. https://orcid.org/0009-0004-8646-7185 nebo jk01051816). \n"
+"Doporučujeme zadat alespoň jeden z typů identifikátorů, ideálně ORCID iD. \n"
+"Pokud potřebujete rozšířit nabídku typů identifikátorů, kontaktujte nás na support@narodni-repozitar.cz.\n"
 
 msgid "metadata/contributors/authorityIdentifiers.label"
-msgstr "Identifikátory"
+msgstr "Identifikátor osoby"
 
 msgid "metadata/contributors/authorityIdentifiers.hint"
 msgstr ""
@@ -1297,7 +1303,7 @@ msgid "identifier.help"
 msgstr ""
 
 msgid "identifier.hint"
-msgstr ""
+msgstr "např https://orcid.org/0009-0004-8646-7185 pro ORCID."
 
 msgid "identifier_type.label"
 msgstr "Typ identifikátoru"
@@ -1345,6 +1351,8 @@ msgstr ""
 
 msgid "metadata/contributors/fullName.hint"
 msgstr ""
+"Začněte zapisovat název instituce, následně zvolte instituci z nabídky "
+"našeptavače."
 
 msgid "metadata/contributors/nameType.hint"
 msgstr "Jako tvůrce je možné označit osobu nebo instituci."
@@ -1405,8 +1413,8 @@ msgstr ""
 
 msgid "metadata/creators/affiliations.hint"
 msgstr ""
-"Uveďte instituci/instituce, pod jejíž záštitou jste se na tvorbě objektu "
-"podíleli."
+"Začněte zapisovat název instituce, následně zvolte instituci z nabídky "
+"našeptavače."
 
 msgid "metadata/creators/affiliations/id.help"
 msgstr ""
@@ -1491,9 +1499,12 @@ msgstr ""
 
 msgid "metadata/creators/authorityIdentifiers.help"
 msgstr ""
+"Vyberte z nabídky typ identifikátoru. Uveďte hodnotu identifikátoru (tj. https://orcid.org/0009-0004-8646-7185 nebo jk01051816). \n"
+"Doporučujeme zadat alespoň jeden z typů identifikátorů, ideálně ORCID iD. \n"
+"Pokud potřebujete rozšířit nabídku typů identifikátorů, kontaktujte nás na support@narodni-repozitar.cz.\n"
 
 msgid "metadata/creators/authorityIdentifiers.label"
-msgstr "Identifikátory"
+msgstr "Identifikátor osoby"
 
 msgid "metadata/creators/authorityIdentifiers.hint"
 msgstr ""
@@ -1503,6 +1514,8 @@ msgstr ""
 
 msgid "metadata/creators/fullName.hint"
 msgstr ""
+"Začněte zapisovat název instituce, následně zvolte instituci z nabídky "
+"našeptavače."
 
 msgid "metadata/creators/nameType.hint"
 msgstr "Jako tvůrce je možné označit osobu nebo instituci."
@@ -1538,10 +1551,10 @@ msgid "metadata/events/eventDate.label"
 msgstr "Datum konání akce"
 
 msgid "metadata/events/eventDate.help"
-msgstr ""
+msgstr "Vyberte časový interval, ve kterém se událost odehrála."
 
 msgid "metadata/events/eventDate.hint"
-msgstr ""
+msgstr "Vyberte časový interval (Od - Do), ve kterém se událost odehrála."
 
 msgid "metadata/events/eventLocation.help"
 msgstr ""
@@ -1556,7 +1569,7 @@ msgid "metadata/events/eventLocation/country.help"
 msgstr ""
 
 msgid "metadata/events/eventLocation/country.hint"
-msgstr ""
+msgstr "Vyberte stát z nabídky."
 
 msgid "metadata/events/eventLocation/country/id.help"
 msgstr ""
@@ -1589,10 +1602,10 @@ msgid "metadata/events/eventLocation/place.help"
 msgstr ""
 
 msgid "metadata/events/eventLocation/place.hint"
-msgstr ""
+msgstr "Uveďte místo, které má vazbu k danému objektu/akci (př. město)."
 
 msgid "metadata/events/eventNameAlternate.help"
-msgstr ""
+msgstr "Pokud má akce další známe názvy, uveďte je zde."
 
 msgid "metadata/events/eventNameAlternate.label"
 msgstr "Alternativní název akce"
@@ -1607,7 +1620,7 @@ msgid "metadata/events/eventNameOriginal.help"
 msgstr ""
 
 msgid "metadata/events/eventNameOriginal.hint"
-msgstr ""
+msgstr "Uveďte hlavní název akce (např. konference)."
 
 msgid "metadata/externalLocation.help"
 msgstr ""
@@ -1641,6 +1654,8 @@ msgstr ""
 
 msgid "metadata/fundingReferences/funder.hint"
 msgstr ""
+"Začněte zapisovat název poskytovatele, následně vyberte z nabídky "
+"našeptavače."
 
 msgid "metadata/fundingReferences/funder/id.help"
 msgstr ""
@@ -1677,12 +1692,13 @@ msgstr ""
 
 msgid "metadata/fundingReferences/fundingProgram.hint"
 msgstr ""
+"Uveďte název výzkumného programu, v rámci kterého byl projekt financován."
 
 msgid "metadata/fundingReferences/projectID.help"
 msgstr ""
 
 msgid "metadata/fundingReferences/projectID.hint"
-msgstr ""
+msgstr "Uveďte kód/číslo projektu."
 
 msgid "metadata/fundingReferences/projectName.label"
 msgstr "Název projektu"
@@ -1691,7 +1707,7 @@ msgid "metadata/fundingReferences/projectName.help"
 msgstr ""
 
 msgid "metadata/fundingReferences/projectName.hint"
-msgstr ""
+msgstr "Uveďte název projektu."
 
 msgid "metadata/geoLocations.help"
 msgstr ""
@@ -1730,7 +1746,7 @@ msgid "metadata/languages.help"
 msgstr ""
 
 msgid "metadata/languages.hint"
-msgstr ""
+msgstr "Vyberte jazyk/jazyky zdroje."
 
 msgid "metadata/languages/id.help"
 msgstr ""
@@ -1761,6 +1777,8 @@ msgstr ""
 
 msgid "metadata/methods.help"
 msgstr ""
+"Vyberte jazyk a zapište nebo vložte text. Metodologii můžete popsat ve více "
+"jazycích."
 
 msgid "metadata/methods.hint"
 msgstr ""
@@ -1778,13 +1796,15 @@ msgid "metadata/methods/value.hint"
 msgstr ""
 
 msgid "metadata/notes.help"
-msgstr ""
+msgstr "Prostor pro další informace ke zdroji."
 
 msgid "metadata/notes.hint"
 msgstr ""
 
 msgid "metadata/objectIdentifiers.help"
 msgstr ""
+"Vyberte typ identifikátoru a zapište jej. Můžete zapsat více typů "
+"identifikátorů."
 
 msgid "metadata/objectIdentifiers.hint"
 msgstr ""
@@ -1793,13 +1813,13 @@ msgid "metadata/objectIdentifiers/identifier.help"
 msgstr ""
 
 msgid "metadata/objectIdentifiers/identifier.hint"
-msgstr ""
+msgstr "např. 10.1086/679716 pro DOI."
 
 msgid "metadata/objectIdentifiers/scheme.help"
 msgstr ""
 
 msgid "metadata/objectIdentifiers/scheme.hint"
-msgstr ""
+msgstr "např. DOI, HANDLE nebo ISBN."
 
 msgid "metadata/objectIdentifiers/scheme.enum.DOI"
 msgstr ""
@@ -1823,16 +1843,19 @@ msgid "metadata/originalRecord.hint"
 msgstr ""
 
 msgid "metadata/publishers.help"
-msgstr ""
+msgstr "Uveďte vydavatele. Můžete zapsat i více vydavatelů."
 
 msgid "metadata/publishers.hint"
 msgstr ""
 
 msgid "metadata/relatedItems.label"
-msgstr "Vazba na/z dalších zdrojů:"
+msgstr "Vazba na související zdroje"
 
 msgid "metadata/relatedItems.help"
 msgstr ""
+"Zapište informace o zdroji, který souvisí se zdrojem, který zde popisujete "
+"(např. pokud popisujete článek, sem můžete identifikovat časopis, ve kterém "
+"článek vyšel)."
 
 msgid "metadata/relatedItems.hint"
 msgstr ""
@@ -1851,8 +1874,8 @@ msgstr ""
 
 msgid "metadata/relatedItems/itemContributors/affiliations.hint"
 msgstr ""
-"Uveďte instituci/instituce, pod jejíž záštitou jste se na tvorbě objektu "
-"podíleli."
+"Začněte zapisovat název instituce, následně zvolte instituci z nabídky "
+"našeptavače."
 
 msgid "metadata/relatedItems/itemContributors/affiliations/id.help"
 msgstr ""
@@ -1952,9 +1975,12 @@ msgstr ""
 
 msgid "metadata/relatedItems/itemContributors/authorityIdentifiers.help"
 msgstr ""
+"Vyberte z nabídky typ identifikátoru. Uveďte hodnotu identifikátoru (tj. https://orcid.org/0009-0004-8646-7185 nebo jk01051816). \n"
+"Doporučujeme zadat alespoň jeden z typů identifikátorů, ideálně ORCID iD. \n"
+"Pokud potřebujete rozšířit nabídku typů identifikátorů, kontaktujte nás na support@narodni-repozitar.cz.\n"
 
 msgid "metadata/relatedItems/itemContributors/authorityIdentifiers.label"
-msgstr "Identifikátory"
+msgstr "Identifikátor osoby"
 
 msgid "metadata/relatedItems/itemContributors/authorityIdentifiers.hint"
 msgstr ""
@@ -1964,6 +1990,8 @@ msgstr ""
 
 msgid "metadata/relatedItems/itemContributors/fullName.hint"
 msgstr ""
+"Začněte zapisovat název instituce, následně zvolte instituci z nabídky "
+"našeptavače."
 
 msgid "metadata/relatedItems/itemContributors/nameType.hint"
 msgstr "Jako tvůrce je možné označit osobu nebo instituci."
@@ -2024,8 +2052,8 @@ msgstr ""
 
 msgid "metadata/relatedItems/itemCreators/affiliations.hint"
 msgstr ""
-"Uveďte instituci/instituce, pod jejíž záštitou jste se na tvorbě objektu "
-"podíleli."
+"Začněte zapisovat název instituce, následně zvolte instituci z nabídky "
+"našeptavače."
 
 msgid "metadata/relatedItems/itemCreators/affiliations/id.help"
 msgstr ""
@@ -2116,9 +2144,12 @@ msgstr ""
 
 msgid "metadata/relatedItems/itemCreators/authorityIdentifiers.help"
 msgstr ""
+"Vyberte z nabídky typ identifikátoru. Uveďte hodnotu identifikátoru (tj. https://orcid.org/0009-0004-8646-7185 nebo jk01051816). \n"
+"Doporučujeme zadat alespoň jeden z typů identifikátorů, ideálně ORCID iD. \n"
+"Pokud potřebujete rozšířit nabídku typů identifikátorů, kontaktujte nás na support@narodni-repozitar.cz.\n"
 
 msgid "metadata/relatedItems/itemCreators/authorityIdentifiers.label"
-msgstr "Identifikátory"
+msgstr "Identifikátor osoby"
 
 msgid "metadata/relatedItems/itemCreators/authorityIdentifiers.hint"
 msgstr ""
@@ -2128,6 +2159,8 @@ msgstr ""
 
 msgid "metadata/relatedItems/itemCreators/fullName.hint"
 msgstr ""
+"Začněte zapisovat název instituce, následně zvolte instituci z nabídky "
+"našeptavače."
 
 msgid "metadata/relatedItems/itemCreators/nameType.hint"
 msgstr "Jako tvůrce je možné označit osobu nebo instituci."
@@ -2151,13 +2184,13 @@ msgid "metadata/relatedItems/itemIssue.help"
 msgstr ""
 
 msgid "metadata/relatedItems/itemIssue.hint"
-msgstr ""
+msgstr "Uvádějte pouze pokud se jedná o časopis nebo sborník."
 
 msgid "metadata/relatedItems/itemPIDs.help"
-msgstr ""
+msgstr "Trvalé identifikátory objektu jako ISBN, DOI atd."
 
 msgid "metadata/relatedItems/itemPIDs.label"
-msgstr "Persistentní identifikátory položky"
+msgstr "Identifikátor"
 
 msgid "metadata/relatedItems/itemPIDs.hint"
 msgstr ""
@@ -2166,13 +2199,13 @@ msgid "metadata/relatedItems/itemPIDs/identifier.help"
 msgstr ""
 
 msgid "metadata/relatedItems/itemPIDs/identifier.hint"
-msgstr ""
+msgstr "např. 10.1086/679716 pro DOI."
 
 msgid "metadata/relatedItems/itemPIDs/scheme.help"
 msgstr ""
 
 msgid "metadata/relatedItems/itemPIDs/scheme.hint"
-msgstr ""
+msgstr "např. DOI, HANDLE nebo ISBN."
 
 msgid "metadata/relatedItems/itemPIDs/scheme.enum.DOI"
 msgstr ""
@@ -2199,7 +2232,7 @@ msgid "metadata/relatedItems/itemRelationType.help"
 msgstr ""
 
 msgid "metadata/relatedItems/itemRelationType.hint"
-msgstr ""
+msgstr "Vyberte typ vazby mezi popisovaným a souvisejícím zdrojem."
 
 msgid "metadata/relatedItems/itemRelationType/id.help"
 msgstr ""
@@ -2274,19 +2307,19 @@ msgid "metadata/relatedItems/itemTitle.help"
 msgstr ""
 
 msgid "metadata/relatedItems/itemTitle.hint"
-msgstr ""
+msgstr "Název souvisejícího zdroje."
 
 msgid "metadata/relatedItems/itemURL.help"
 msgstr ""
 
 msgid "metadata/relatedItems/itemURL.hint"
-msgstr ""
+msgstr "Uveďte URL adresu souvisejícího zdroje, ze které je dostupný."
 
 msgid "metadata/relatedItems/itemVolume.help"
 msgstr ""
 
 msgid "metadata/relatedItems/itemVolume.hint"
-msgstr ""
+msgstr "Uvádějte pouze pokud se jedná o časopis nebo sborník."
 
 msgid "metadata/relatedItems/itemYear.help"
 msgstr ""
@@ -2298,7 +2331,7 @@ msgid "metadata/resourceType.help"
 msgstr ""
 
 msgid "metadata/resourceType.hint"
-msgstr ""
+msgstr "Vyberte typ zdroje."
 
 msgid "metadata/resourceType/id.help"
 msgstr ""
@@ -2329,6 +2362,9 @@ msgstr ""
 
 msgid "metadata/rights.help"
 msgstr ""
+"Pokud se k popisovanému zdroji váže licence Creative Commons, vyberte "
+"příslušnou variantu z nabídky. Doporučujeme výběr nejnovější verze 4.0 "
+"International."
 
 msgid "metadata/rights.hint"
 msgstr ""
@@ -2362,12 +2398,14 @@ msgstr ""
 
 msgid "metadata/series.help"
 msgstr ""
+"Zapište název edice/série. Zapište svazek edice/série, pokud je název "
+"uveden."
 
 msgid "metadata/series.hint"
 msgstr ""
 
 msgid "metadata/series/seriesTitle.help"
-msgstr ""
+msgstr "Tématicky sdružuje podobné zdroje k sobě."
 
 msgid "metadata/series/seriesTitle.hint"
 msgstr ""
@@ -2382,7 +2420,7 @@ msgid "metadata/subjectCategories.help"
 msgstr ""
 
 msgid "metadata/subjectCategories.hint"
-msgstr ""
+msgstr "Vyberte název oboru."
 
 msgid "metadata/subjectCategories/id.help"
 msgstr ""
@@ -2413,6 +2451,8 @@ msgstr ""
 
 msgid "metadata/subjects.help"
 msgstr ""
+"Zapisujte slova popisující zdroj, zvolte vždy jazyk. Zapisujte klíčová slova"
+" jednotlivě."
 
 msgid "metadata/subjects.hint"
 msgstr ""
@@ -2491,6 +2531,8 @@ msgstr ""
 
 msgid "metadata/technicalInfo.help"
 msgstr ""
+"Vyberte jazyk a zapište nebo vložte text. Technické informace můžete "
+"poskytnout ve více jazycích."
 
 msgid "metadata/technicalInfo.hint"
 msgstr ""
@@ -2625,13 +2667,13 @@ msgid "metadata/title.help"
 msgstr ""
 
 msgid "metadata/title.hint"
-msgstr ""
+msgstr "Uveďte hlavní název zdroje."
 
 msgid "metadata/version.help"
 msgstr ""
 
 msgid "metadata/version.hint"
-msgstr ""
+msgstr "Zapište verzi (první, druhá…)."
 
 msgid "syntheticFields.help"
 msgstr ""
@@ -2827,43 +2869,43 @@ msgstr "Publikovat draft"
 
 #: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:90
 msgid "metadata/contributors/contributorType.label"
-msgstr "Typ přispěvatele"
+msgstr "Role přispěvatele"
 
 #: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:96
 msgid "metadata/contributors/familyName.label"
-msgstr ""
+msgstr "Příjmení"
 
 #: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:106
 msgid "metadata/contributors/givenName.label"
-msgstr ""
+msgstr "Křestní jméno"
 
 #: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:131
 msgid "metadata/creators/familyName.label"
-msgstr ""
+msgstr "Příjmení"
 
 #: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:139
 msgid "metadata/creators/givenName.label"
-msgstr ""
+msgstr "Křestní jméno"
 
 #: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:255
 msgid "metadata/relatedItems/itemContributors/contributorType.label"
-msgstr "Typ přispěvatele"
+msgstr "Role přispěvatele"
 
 #: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:261
 msgid "metadata/relatedItems/itemContributors/familyName.label"
-msgstr ""
+msgstr "Příjmení"
 
 #: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:271
 msgid "metadata/relatedItems/itemContributors/givenName.label"
-msgstr ""
+msgstr "Křestní jméno"
 
 #: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:297
 msgid "metadata/relatedItems/itemCreators/familyName.label"
-msgstr ""
+msgstr "Příjmení"
 
 #: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:307
 msgid "metadata/relatedItems/itemCreators/givenName.label"
-msgstr ""
+msgstr "Křestní jméno"
 
 #: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:485
 msgid "syntheticFields/date.label"
@@ -2944,7 +2986,7 @@ msgid "metadata/contributors/contributorType.help"
 msgstr ""
 
 msgid "metadata/contributors/contributorType.hint"
-msgstr ""
+msgstr "Vyberte roli přispěvatele z nabídky (editor, ilustrátor…)."
 
 msgid "metadata/contributors/contributorType/id.help"
 msgstr ""
@@ -2977,13 +3019,13 @@ msgid "metadata/contributors/familyName.help"
 msgstr ""
 
 msgid "metadata/contributors/familyName.hint"
-msgstr ""
+msgstr "Uveďte příjmení přispěvatele."
 
 msgid "metadata/contributors/givenName.help"
 msgstr ""
 
 msgid "metadata/contributors/givenName.hint"
-msgstr ""
+msgstr "Uveďte křestní jméno přispěvatele."
 
 msgid "metadata/creators/affiliations/ror.help"
 msgstr ""
@@ -2998,19 +3040,21 @@ msgid "metadata/creators/familyName.help"
 msgstr ""
 
 msgid "metadata/creators/familyName.hint"
-msgstr ""
+msgstr "Uveďte příjmení autora."
 
 msgid "metadata/creators/givenName.help"
 msgstr ""
 
 msgid "metadata/creators/givenName.hint"
-msgstr ""
+msgstr "Uveďte jméno autora."
 
 msgid "metadata/dateIssued.help"
 msgstr ""
+"Datum může být rok, rok a měsíc nebo celé datum. V záhlaví kalendáře můžete "
+"zvolit typ data."
 
 msgid "metadata/dateIssued.hint"
-msgstr ""
+msgstr "Zvolte z kalendáře datum, kdy byl zdroj vydán."
 
 msgid "metadata/objectIdentifiers/scheme.enum.IGSN"
 msgstr ""
@@ -3028,7 +3072,7 @@ msgid "metadata/relatedItems/itemContributors/contributorType.help"
 msgstr ""
 
 msgid "metadata/relatedItems/itemContributors/contributorType.hint"
-msgstr ""
+msgstr "Vyberte roli přispěvatele z nabídky (editor, ilustrátor…)."
 
 msgid "metadata/relatedItems/itemContributors/contributorType/id.help"
 msgstr ""
@@ -3061,13 +3105,13 @@ msgid "metadata/relatedItems/itemContributors/familyName.help"
 msgstr ""
 
 msgid "metadata/relatedItems/itemContributors/familyName.hint"
-msgstr ""
+msgstr "Uveďte příjmení autora."
 
 msgid "metadata/relatedItems/itemContributors/givenName.help"
 msgstr ""
 
 msgid "metadata/relatedItems/itemContributors/givenName.hint"
-msgstr ""
+msgstr "Uveďte jméno autora."
 
 msgid "metadata/relatedItems/itemCreators/affiliations/ror.help"
 msgstr ""
@@ -3082,13 +3126,13 @@ msgid "metadata/relatedItems/itemCreators/familyName.help"
 msgstr ""
 
 msgid "metadata/relatedItems/itemCreators/familyName.hint"
-msgstr ""
+msgstr "Uveďte příjmení autora."
 
 msgid "metadata/relatedItems/itemCreators/givenName.help"
 msgstr ""
 
 msgid "metadata/relatedItems/itemCreators/givenName.hint"
-msgstr ""
+msgstr "Uveďte jméno autora."
 
 msgid "metadata/relatedItems/itemPIDs/scheme.enum.IGSN"
 msgstr ""
@@ -3261,3 +3305,294 @@ msgstr "Bez názvu"
 
 msgid "Select the discipline."
 msgstr "Vyberte disciplínu."
+
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:491
+msgid "syntheticFields/defenseYear.label"
+msgstr "Rok obhajoby"
+
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:509
+msgid "syntheticFields/year.label"
+msgstr "Rok poslední změny"
+
+msgid "pid.help"
+msgstr ""
+
+msgid "pid.label"
+msgstr ""
+
+msgid "pid.hint"
+msgstr ""
+
+msgid "pid/obj_type.help"
+msgstr ""
+
+msgid "pid/obj_type.label"
+msgstr ""
+
+msgid "pid/obj_type.hint"
+msgstr ""
+
+msgid "pid/pid_type.help"
+msgstr ""
+
+msgid "pid/pid_type.label"
+msgstr ""
+
+msgid "pid/pid_type.hint"
+msgstr ""
+
+msgid "pid/pk.help"
+msgstr ""
+
+msgid "pid/pk.label"
+msgstr ""
+
+msgid "pid/pk.hint"
+msgstr ""
+
+msgid "pid/status.help"
+msgstr ""
+
+msgid "pid/status.label"
+msgstr ""
+
+msgid "pid/status.hint"
+msgstr ""
+
+msgid "syntheticFields/defenseYear.help"
+msgstr ""
+
+msgid "syntheticFields/defenseYear.hint"
+msgstr ""
+
+msgid "syntheticFields/keywords/cs.help"
+msgstr ""
+
+msgid "syntheticFields/keywords/cs.label"
+msgstr ""
+
+msgid "syntheticFields/keywords/cs.hint"
+msgstr ""
+
+msgid "syntheticFields/keywords/en.help"
+msgstr ""
+
+msgid "syntheticFields/keywords/en.label"
+msgstr ""
+
+msgid "syntheticFields/keywords/en.hint"
+msgstr ""
+
+msgid "syntheticFields/year.help"
+msgstr ""
+
+msgid "syntheticFields/year.hint"
+msgstr ""
+
+msgid "metadata/contributors/authorityIdentifiers/identifier.hint"
+msgstr "např https://orcid.org/0009-0004-8646-7185 pro ORCID."
+
+msgid "metadata/contributors/authorityIdentifiers/identifier.help"
+msgstr ""
+
+msgid "metadata/contributors/authorityIdentifiers/scheme.hint"
+msgstr "Identifikátor osoby"
+
+msgid "metadata/contributors/authorityIdentifiers/scheme.help"
+msgstr ""
+
+msgid "metadata/contributors/authorityIdentifiers/scheme.enum.orcid"
+msgstr ""
+
+msgid "metadata/contributors/authorityIdentifiers/scheme.enum.scopusID"
+msgstr ""
+
+msgid "metadata/contributors/authorityIdentifiers/scheme.enum.researcherID"
+msgstr ""
+
+msgid "metadata/contributors/authorityIdentifiers/scheme.enum.czenasAutID"
+msgstr ""
+
+msgid "metadata/contributors/authorityIdentifiers/scheme.enum.vedidk"
+msgstr ""
+
+msgid "metadata/contributors/authorityIdentifiers/scheme.enum.institutionalID"
+msgstr ""
+
+msgid "metadata/contributors/authorityIdentifiers/scheme.enum.ISNI"
+msgstr ""
+
+msgid "metadata/contributors/authorityIdentifiers/scheme.enum.ROR"
+msgstr ""
+
+msgid "metadata/contributors/authorityIdentifiers/scheme.enum.ICO"
+msgstr ""
+
+msgid "metadata/contributors/authorityIdentifiers/scheme.enum.DOI"
+msgstr ""
+
+msgid "metadata/creators/authorityIdentifiers/identifier.hint"
+msgstr "např https://orcid.org/0009-0004-8646-7185 pro ORCID."
+
+msgid "metadata/creators/authorityIdentifiers/identifier.help"
+msgstr ""
+
+msgid "metadata/creators/authorityIdentifiers/scheme.hint"
+msgstr "Identifikátor osoby"
+
+msgid "metadata/creators/authorityIdentifiers/scheme.help"
+msgstr ""
+
+msgid "metadata/creators/authorityIdentifiers/scheme.enum.orcid"
+msgstr ""
+
+msgid "metadata/creators/authorityIdentifiers/scheme.enum.scopusID"
+msgstr ""
+
+msgid "metadata/creators/authorityIdentifiers/scheme.enum.researcherID"
+msgstr ""
+
+msgid "metadata/creators/authorityIdentifiers/scheme.enum.czenasAutID"
+msgstr ""
+
+msgid "metadata/creators/authorityIdentifiers/scheme.enum.vedidk"
+msgstr ""
+
+msgid "metadata/creators/authorityIdentifiers/scheme.enum.institutionalID"
+msgstr ""
+
+msgid "metadata/creators/authorityIdentifiers/scheme.enum.ISNI"
+msgstr ""
+
+msgid "metadata/creators/authorityIdentifiers/scheme.enum.ROR"
+msgstr ""
+
+msgid "metadata/creators/authorityIdentifiers/scheme.enum.ICO"
+msgstr ""
+
+msgid "metadata/creators/authorityIdentifiers/scheme.enum.DOI"
+msgstr ""
+
+msgid ""
+"metadata/relatedItems/itemContributors/authorityIdentifiers/identifier.hint"
+msgstr "např https://orcid.org/0009-0004-8646-7185 pro ORCID."
+
+msgid ""
+"metadata/relatedItems/itemContributors/authorityIdentifiers/identifier.help"
+msgstr ""
+
+msgid ""
+"metadata/relatedItems/itemContributors/authorityIdentifiers/scheme.hint"
+msgstr "Identifikátor osoby"
+
+msgid ""
+"metadata/relatedItems/itemContributors/authorityIdentifiers/scheme.help"
+msgstr ""
+
+msgid ""
+"metadata/relatedItems/itemContributors/authorityIdentifiers/scheme.enum.orcid"
+msgstr ""
+
+msgid ""
+"metadata/relatedItems/itemContributors/authorityIdentifiers/scheme.enum.scopusID"
+msgstr ""
+
+msgid ""
+"metadata/relatedItems/itemContributors/authorityIdentifiers/scheme.enum.researcherID"
+msgstr ""
+
+msgid ""
+"metadata/relatedItems/itemContributors/authorityIdentifiers/scheme.enum.czenasAutID"
+msgstr ""
+
+msgid ""
+"metadata/relatedItems/itemContributors/authorityIdentifiers/scheme.enum.vedidk"
+msgstr ""
+
+msgid ""
+"metadata/relatedItems/itemContributors/authorityIdentifiers/scheme.enum.institutionalID"
+msgstr ""
+
+msgid ""
+"metadata/relatedItems/itemContributors/authorityIdentifiers/scheme.enum.ISNI"
+msgstr ""
+
+msgid ""
+"metadata/relatedItems/itemContributors/authorityIdentifiers/scheme.enum.ROR"
+msgstr ""
+
+msgid ""
+"metadata/relatedItems/itemContributors/authorityIdentifiers/scheme.enum.ICO"
+msgstr ""
+
+msgid ""
+"metadata/relatedItems/itemContributors/authorityIdentifiers/scheme.enum.DOI"
+msgstr ""
+
+msgid ""
+"metadata/relatedItems/itemCreators/authorityIdentifiers/identifier.hint"
+msgstr "např https://orcid.org/0009-0004-8646-7185 pro ORCID."
+
+msgid ""
+"metadata/relatedItems/itemCreators/authorityIdentifiers/identifier.help"
+msgstr ""
+
+msgid "metadata/relatedItems/itemCreators/authorityIdentifiers/scheme.hint"
+msgstr "Identifikátor osoby"
+
+msgid "metadata/relatedItems/itemCreators/authorityIdentifiers/scheme.help"
+msgstr ""
+
+msgid ""
+"metadata/relatedItems/itemCreators/authorityIdentifiers/scheme.enum.orcid"
+msgstr ""
+
+msgid ""
+"metadata/relatedItems/itemCreators/authorityIdentifiers/scheme.enum.scopusID"
+msgstr ""
+
+msgid ""
+"metadata/relatedItems/itemCreators/authorityIdentifiers/scheme.enum.researcherID"
+msgstr ""
+
+msgid ""
+"metadata/relatedItems/itemCreators/authorityIdentifiers/scheme.enum.czenasAutID"
+msgstr ""
+
+msgid ""
+"metadata/relatedItems/itemCreators/authorityIdentifiers/scheme.enum.vedidk"
+msgstr ""
+
+msgid ""
+"metadata/relatedItems/itemCreators/authorityIdentifiers/scheme.enum.institutionalID"
+msgstr ""
+
+msgid ""
+"metadata/relatedItems/itemCreators/authorityIdentifiers/scheme.enum.ISNI"
+msgstr ""
+
+msgid ""
+"metadata/relatedItems/itemCreators/authorityIdentifiers/scheme.enum.ROR"
+msgstr ""
+
+msgid ""
+"metadata/relatedItems/itemCreators/authorityIdentifiers/scheme.enum.ICO"
+msgstr ""
+
+msgid ""
+"metadata/relatedItems/itemCreators/authorityIdentifiers/scheme.enum.DOI"
+msgstr ""
+
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:486
+msgid "state.label"
+msgstr ""
+
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:2
+msgid "Title not provided"
+msgstr "Název nebyl poskytnut."
+
+msgid "state.help"
+msgstr ""
+
+msgid "state.hint"
+msgstr ""

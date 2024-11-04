@@ -16,6 +16,7 @@ import {
   DoubleSeparator,
   ResultsItemResourceType,
 } from "@nr/search";
+import { getValueFromMultilingualArray } from "@js/oarepo_ui";
 
 const ItemHeader = ({ title, searchUrl, selfLink }) => {
   const viewLink = new URL(
@@ -65,7 +66,7 @@ const ItemSubheader = ({
             >
               {publicationDate}
             </span>
-            <DoubleSeparator />
+            {languages.length > 0 && <DoubleSeparator />}
             <span
               aria-label={i18next.t("Languages")}
               title={i18next.t("Languages")}
@@ -182,15 +183,7 @@ export const ResultsListItemComponent = ({
 
   const rights = _get(result, "metadata.rights");
 
-  let abstract = _get(result, "metadata.abstract", []);
-
-  if (abstract.length === 0) {
-    abstract = i18next.t("No description");
-  } else {
-    abstract =
-      abstract.find((a) => a.lang === i18next.language)?.value ||
-      abstract[0].value;
-  }
+  const abstract = _get(result, "metadata.abstract", null);
 
   const languages = _get(result, "metadata.languages", []);
 
@@ -265,9 +258,13 @@ export const ResultsListItemComponent = ({
                   subjects={subjects}
                   searchUrl={searchAppConfig.ui_endpoint}
                 />
-                <Item.Description>
-                  {_truncate(abstract, { length: 350 })}
-                </Item.Description>
+                {abstract && abstract.length > 0 && (
+                  <Item.Description>
+                    {_truncate(getValueFromMultilingualArray(abstract), {
+                      length: 350,
+                    })}
+                  </Item.Description>
+                )}
                 <ItemExtraInfo
                   createdDate={createdDate}
                   publishers={publishers}

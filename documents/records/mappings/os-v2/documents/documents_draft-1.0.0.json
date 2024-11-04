@@ -1234,6 +1234,10 @@
                     }
                 }
             },
+            "state": {
+                "type": "keyword",
+                "ignore_above": 1024
+            },
             "syntheticFields": {
                 "type": "object",
                 "properties": {
@@ -1244,58 +1248,6 @@
                     "defenseYear": {
                         "type": "date",
                         "format": "strict_date||yyyy-MM||yyyy"
-                    },
-                    "institutions": {
-                        "type": "object",
-                        "properties": {
-                            "id": {
-                                "fields": {
-                                    "text": {
-                                        "type": "search_as_you_type"
-                                    }
-                                },
-                                "type": "keyword",
-                                "ignore_above": 1024
-                            },
-                            "title": {
-                                "dynamic": true,
-                                "properties": {
-                                    "en": {
-                                        "type": "search_as_you_type",
-                                        "copy_to": "title_sort"
-                                    }
-                                },
-                                "type": "object"
-                            },
-                            "hierarchy": {
-                                "type": "object",
-                                "properties": {
-                                    "ancestors": {
-                                        "type": "keyword",
-                                        "ignore_above": 1024
-                                    },
-                                    "ancestors_or_self": {
-                                        "type": "keyword",
-                                        "ignore_above": 1024
-                                    },
-                                    "level": {
-                                        "type": "integer"
-                                    },
-                                    "parent": {
-                                        "type": "keyword",
-                                        "ignore_above": 1024
-                                    },
-                                    "title": {
-                                        "dynamic": true,
-                                        "type": "object"
-                                    }
-                                }
-                            },
-                            "@v": {
-                                "type": "keyword",
-                                "ignore_above": 1024
-                            }
-                        }
                     },
                     "keywords": {
                         "type": "object",
@@ -1310,7 +1262,15 @@
                             }
                         }
                     },
+                    "organizations": {
+                        "type": "keyword",
+                        "ignore_above": 1024
+                    },
                     "people": {
+                        "type": "keyword",
+                        "ignore_above": 1024
+                    },
+                    "test_organizations": {
                         "type": "keyword",
                         "ignore_above": 1024
                     },
