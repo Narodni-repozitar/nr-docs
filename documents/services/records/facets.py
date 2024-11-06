@@ -506,10 +506,6 @@ syntheticFields_people = TermsFacet(
     field="syntheticFields.people", label=_("syntheticFields/people.label")
 )
 
-syntheticFields_test_organizations = TermsFacet(
-    field="syntheticFields.test_organizations",
-    label=_("syntheticFields/test_organizations.label"),
-)
 
 syntheticFields_year = YearAutoHistogramFacet(
     field="syntheticFields.year", label=_("syntheticFields/year.label")
