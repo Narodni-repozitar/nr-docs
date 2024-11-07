@@ -32,7 +32,9 @@ from documents.services.records.schema import DocumentsSchema
 from documents.services.records.search import DocumentsSearchOptions
 from invenio_records_resources.services.base.config import FromConfig
 from invenio_rdm_records.services.components import DefaultRecordsComponents
-DocumentRecordComponents = [*DefaultRecordsComponents, DateIssuedComponent,
+DocumentRecordComponents = [*DefaultRecordsComponents,
+        # *PermissionsPresetsConfigMixin.components, needs to be changed in oarepo_runtime, because this does not work
+        DateIssuedComponent,
         AuthorityComponent,
         DoiComponent,
         OaiSectionComponent,
@@ -40,7 +42,7 @@ DocumentRecordComponents = [*DefaultRecordsComponents, DateIssuedComponent,
         CommunityInclusionComponent,
         FilesComponent,
         CustomFieldsComponent,
-        # DraftFilesComponent,
+        # DraftFilesComponent, because it is duplicated
         WorkflowComponent,]
 class DocumentsServiceConfig(
     PermissionsPresetsConfigMixin, FilteredResultServiceConfig
