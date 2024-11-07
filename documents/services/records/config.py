@@ -7,6 +7,7 @@ from invenio_records_resources.services import (
 from oarepo_communities.services.components.default_workflow import (
     CommunityDefaultWorkflowComponent,
 )
+from invenio_rdm_records.services.components import AccessComponent
 from oarepo_communities.services.components.include import CommunityInclusionComponent
 from oarepo_communities.services.links import CommunitiesLinks
 from oarepo_doi.services.components import DoiComponent
@@ -17,6 +18,7 @@ from oarepo_runtime.services.components import (
     DateIssuedComponent,
     OwnersComponent,
 )
+from invenio_drafts_resources.services.records.components import PIDComponent, DraftMetadataComponent
 from oarepo_runtime.services.config.service import PermissionsPresetsConfigMixin
 from oarepo_runtime.services.files import FilesComponent
 from oarepo_vocabularies.authorities.components import AuthorityComponent
@@ -28,8 +30,18 @@ from documents.services.records.permissions import DocumentsPermissionPolicy
 from documents.services.records.results import DocumentsRecordItem, DocumentsRecordList
 from documents.services.records.schema import DocumentsSchema
 from documents.services.records.search import DocumentsSearchOptions
-
-
+from invenio_records_resources.services.base.config import FromConfig
+from invenio_rdm_records.services.components import DefaultRecordsComponents
+DocumentRecordComponents = [*DefaultRecordsComponents, DateIssuedComponent,
+        AuthorityComponent,
+        DoiComponent,
+        OaiSectionComponent,
+        CommunityDefaultWorkflowComponent,
+        CommunityInclusionComponent,
+        FilesComponent,
+        CustomFieldsComponent,
+        # DraftFilesComponent,
+        WorkflowComponent,]
 class DocumentsServiceConfig(
     PermissionsPresetsConfigMixin, FilteredResultServiceConfig
 ):
@@ -53,21 +65,45 @@ class DocumentsServiceConfig(
 
     service_id = "documents"
 
-    components = [
-        *PermissionsPresetsConfigMixin.components,
-        *FilteredResultServiceConfig.components,
-        AuthorityComponent,
-        DateIssuedComponent,
-        DoiComponent,
-        OaiSectionComponent,
-        CommunityDefaultWorkflowComponent,
-        CommunityInclusionComponent,
-        OwnersComponent,
-        FilesComponent,
-        CustomFieldsComponent,
-        DraftFilesComponent,
-        WorkflowComponent,
-    ]
+    # components = [
+    #     # *PermissionsPresetsConfigMixin.components,
+    #     DraftMetadataComponent,
+    #     PIDComponent,
+    #     AuthorityComponent,
+    #     DateIssuedComponent,
+    #     DoiComponent,
+    #     OaiSectionComponent,
+    #     CommunityDefaultWorkflowComponent,
+    #     CommunityInclusionComponent,
+    #     # OwnersComponent,
+    #     FilesComponent,
+    #     CustomFieldsComponent,
+    #     DraftFilesComponent,
+    #     WorkflowComponent,
+    # ]
+
+    components = FromConfig(
+        "DOCUMENT_SERVICE_COMPONENTS", default=DocumentRecordComponents
+    )
+    # @property
+    # def components(self):
+    #     return [
+    #     *super().components,
+    #     # DraftMetadataComponent,
+    #     # AccessComponent,
+    #     # PIDComponent,
+    #     AuthorityComponent,
+    #     DateIssuedComponent,
+    #     DoiComponent,
+    #     OaiSectionComponent,
+    #     CommunityDefaultWorkflowComponent,
+    #     CommunityInclusionComponent,
+    #     # OwnersComponent,
+    #     FilesComponent,
+    #     CustomFieldsComponent,
+    #     DraftFilesComponent,
+    #     WorkflowComponent,
+    # ]
 
     model = "documents"
     draft_cls = DocumentsDraft

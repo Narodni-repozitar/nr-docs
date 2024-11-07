@@ -35,9 +35,9 @@ from documents.records.models import (
     DocumentsParentMetadata,
     DocumentsParentState,
 )
+from invenio_rdm_records.records.api import RDMRecord, RDMParent, RDMDraft
 
-
-class DocumentsParentRecord(ParentRecord):
+class DocumentsParentRecord(RDMParent):
     model_cls = DocumentsParentMetadata
 
     workflow = WorkflowField()
@@ -46,14 +46,14 @@ class DocumentsParentRecord(ParentRecord):
         DocumentsCommunitiesMetadata, context_cls=OARepoCommunitiesFieldContext
     )
 
-    owners = OwnersField()
+    # owners = OwnersField()
 
 
 class DocumentsIdProvider(DraftRecordIdProviderV2):
     pid_type = "dcmnts"
 
 
-class DocumentsRecord(InvenioRecord):
+class DocumentsRecord(RDMRecord):
 
     model_cls = DocumentsMetadata
 
@@ -233,7 +233,7 @@ class DocumentsRecord(InvenioRecord):
     bucket = ModelField(dump=False)
 
 
-class DocumentsDraft(InvenioDraft):
+class DocumentsDraft(RDMDraft):
 
     model_cls = DocumentsDraftMetadata
 

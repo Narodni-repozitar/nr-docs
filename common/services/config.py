@@ -3,7 +3,11 @@ from invenio_drafts_resources.services import (
 )
 
 from common.services.filtered_record_list import FilteredRecordList
+from invenio_rdm_records.services.config import RDMRecordServiceConfig
 
+# class FilteredResultServiceConfig(InvenioRecordDraftsServiceConfig):
+#     result_list_cls = FilteredRecordList
 
-class FilteredResultServiceConfig(InvenioRecordDraftsServiceConfig):
+class FilteredResultServiceConfig(RDMRecordServiceConfig):
     result_list_cls = FilteredRecordList
+
