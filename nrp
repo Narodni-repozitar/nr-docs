@@ -37,32 +37,32 @@ if [ -f ~/.envrc.local ] ; then
 fi
 
 
-SUPPORTED_PYTHON_PATHS=(
-  /usr/bin/python3.12
-  /opt/homebrew/bin/python3.12
-  /usr/local/bin/python3.12
-)
+# SUPPORTED_PYTHON_PATHS=(
+#   /usr/bin/python3.12
+#   /opt/homebrew/bin/python3.12
+#   /usr/local/bin/python3.12
+# )
 
-if [ -z "$PYTHON" ] ; then
+# if [ -z "$PYTHON" ] ; then
 
-  # find a supported python
-  for python_path in "${SUPPORTED_PYTHON_PATHS[@]}"; do
-      if [ -x "$python_path" ] ; then
-        # try to execute it
-        if command -v $python_path >/dev/null 2>&1; then
-            PYTHON=$python_path
-            break
-        fi
-      fi
-  done
+#   # find a supported python
+#   for python_path in "${SUPPORTED_PYTHON_PATHS[@]}"; do
+#       if [ -x "$python_path" ] ; then
+#         # try to execute it
+#         if command -v $python_path >/dev/null 2>&1; then
+#             PYTHON=$python_path
+#             break
+#         fi
+#       fi
+#   done
 
-  if [ -z "$PYTHON" ] ; then
-    echo "No supported python found. Please install python 3.10
-    or set the PYTHON environment variable to the python executable."
-    exit 1
-  fi
-fi
-
+#   if [ -z "$PYTHON" ] ; then
+#     echo "No supported python found. Please install python 3.10
+#     or set the PYTHON environment variable to the python executable."
+#     exit 1
+#   fi
+# fi
+PYTHON=/home/dusanst/.pyenv/versions/3.12.0/bin/python
 echo "Will use python at path $PYTHON"
 export PYTHON
 

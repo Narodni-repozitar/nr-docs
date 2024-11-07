@@ -23,7 +23,7 @@ class DocumentsResourceConfig(RecordsUIResourceConfig):
         PermissionsComponent,
         FilesComponent,
         AllowedCommunitiesComponent,
-        CustomFieldsComponent
+        CustomFieldsComponent,
     ]
 
     search_component = "documents/search/ResultsListItem"

@@ -11,6 +11,7 @@ import { CommunitySelector } from "@js/communities_components/CommunitySelector/
 import {
   LocalVocabularySelectField,
   VocabularyTreeSelectField,
+  VocabularyRemoteSelectField,
 } from "@js/oarepo_vocabularies";
 import { AccordionField, TextField } from "react-invenio-forms";
 import {
@@ -123,7 +124,7 @@ const FormFieldsContainer = () => {
             id="NrDocs.Deposit.LanguagesField.container"
             fieldPath="metadata.languages"
           >
-            <LocalVocabularySelectField
+            {/* <LocalVocabularySelectField
               optimized
               fieldPath="metadata.languages"
               multiple={true}
@@ -133,6 +134,30 @@ const FormFieldsContainer = () => {
                 fieldPath: "metadata.languages",
                 icon: "language",
               })}
+            /> */}
+            <VocabularyRemoteSelectField
+              // overriddenComponents={{
+              //   "VocabularyRemoteSelect.ext.ResultsList.item":
+              //     RORInstitutionResult,
+              // }}
+              vocabulary="languages"
+              multiple={true}
+              fieldPath="metadata.languages"
+              // closeOnDimmerClick={true}
+              // triggerButton={
+              //   <VocabularyModalTrigger
+              //     label={
+              //       multiple
+              //         ? i18next.t("Choose affiliations")
+              //         : i18next.t("Choose affiliation")
+              //     }
+              //   />
+              // }
+              label="Languages"
+              // {...getFieldData({
+              //   fieldPath: fieldPath,
+              // })}
+              // {...rest}
             />
           </Overridable>
           <Overridable

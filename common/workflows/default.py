@@ -30,7 +30,9 @@ from oarepo_communities.services.permissions.generators import (
     PrimaryCommunityRole,
     PrimaryCommunityMembers,
 )
-from oarepo_communities.services.permissions.policy import CommunityDefaultWorkflowPermissions
+from oarepo_communities.services.permissions.policy import (
+    CommunityDefaultWorkflowPermissions,
+)
 from oarepo_requests.services.permissions.generators import IfRequestedBy, RequestActive
 from oarepo_runtime.services.permissions.generators import RecordOwners, UserWithRole
 from oarepo_workflows import (
@@ -41,7 +43,9 @@ from oarepo_workflows import (
     WorkflowRequestPolicy,
     WorkflowTransitions,
 )
-from oarepo_requests.services.permissions.workflow_policies import RequestBasedWorkflowPermissions
+from oarepo_requests.services.permissions.workflow_policies import (
+    RequestBasedWorkflowPermissions,
+)
 
 
 class DefaultWorkflowPermissions(CommunityDefaultWorkflowPermissions):
@@ -134,7 +138,18 @@ class DefaultWorkflowRequests(WorkflowRequestPolicy):
             )
         ],
     )
-
+    delete_draft = WorkflowRequest(
+        requesters=[
+            IfInState("draft", then_=[RecordOwners(), PrimaryCommunityRole("curator")])
+        ],
+        recipients=[
+            # if the requester is the curator of the community, auto approve the request
+            AutoApprove()
+        ],
+        transitions=WorkflowTransitions(
+            submitted="submitted", accepted="deleted", declined="draft"
+        ),
+    )
     edit_published_record = WorkflowRequest(
         requesters=[
             IfInState(
