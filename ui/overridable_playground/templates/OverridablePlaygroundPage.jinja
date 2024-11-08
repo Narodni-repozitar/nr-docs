@@ -44,13 +44,14 @@
     <h2>React</h2>
     <ol>
         <li>
-            {% include "default.html" %}
-        </li>
-        <li>
-            {% include "other/other.html" %}
+            <div id="react-example-1"></div>
         </li>
     </ol>
     </section>
-    {{ webpack['playground.js'] }}
 
 {%- endblock page_body %}
+
+{% block javascript %}
+    {{ super() }}
+    {{ webpack['playground.js'] }}
+{% endblock %}

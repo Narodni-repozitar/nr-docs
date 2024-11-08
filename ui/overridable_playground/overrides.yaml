@@ -11,4 +11,4 @@ react:
 #  Target can be either:
 #  - templates reference subpath
 #  - dynamic JS module import string in format <module_name>:<export_name>
-  SearchApp.SearchBar.element: '@js/oarepo_ui:SearchappSearchbarElement'
+  ExampleComponent.container: 'playground/OverridenExample'
