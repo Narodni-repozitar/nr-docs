@@ -43,6 +43,7 @@ documents_file_draft = "documents.views.draft_files.app:create_app_blueprint"
 ui_documents = "ui.documents:create_blueprint"
 documents_requests = "documents.views.requests.app:create_app_blueprint"
 documents_request_types = "documents.views.request_types.app:create_app_blueprint"
+ui_overridable_playground = "ui.overridable_playground:create_blueprint"
 
 [project.entry-points."invenio_i18n.translations"]
 translations = "i18n"
@@ -72,6 +73,10 @@ documents_file = "documents.views.files.api:create_api_blueprint"
 documents_file_draft = "documents.views.draft_files.api:create_api_blueprint"
 documents_requests = "documents.views.requests.api:create_api_blueprint"
 documents_request_types = "documents.views.request_types.api:create_api_blueprint"
+
+[project.entry-points."oarepo.ui_overrides"]
+100-branding = "ui.branding:overrides.yaml"
+200-playground = "ui.overridable_playground:overrides.yaml"
 
 [project.entry-points."invenio_search.mappings"]
 documents = "documents.records.mappings"

@@ -1,0 +1,14 @@
+---
+jinja:
+#  Jinja(X) template/component name overrides
+#  TODO: pre-provision possible keys with current_oarepo_ui.catalog.list_templates()?
+  default.html: overridden.html
+  other/other.html: overridden-other.html
+  Default: Overridden
+  invenio_administration/header/header.html: administration/header.html
+react:
+#  React-overridable component overrides
+#  Target can be either:
+#  - templates reference subpath
+#  - dynamic JS module import string in format <module_name>:<export_name>
+  SearchApp.SearchBar.element: '@js/oarepo_ui:SearchappSearchbarElement'

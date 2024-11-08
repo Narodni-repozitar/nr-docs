@@ -1,0 +1,54 @@
+{%- extends config.BASE_TEMPLATE %}
+
+{%- block page_body %}
+    <h1>Overridables playground</h1>
+
+    Overrides usage:
+
+    <p>1. Register your overrides.yaml to setup.cfg/pyproject:</p>
+
+    <pre>
+[project.entry-points."oarepo.ui_overrides"]
+100-branding = "ui.branding:overrides.yaml"
+200-playground = "ui.overridable_playground:overrides.yaml"
+    </pre>
+    <p>(higher numeric priority gets merged over lower priority ones)</p>
+
+    <p>2. Reload your invenio server (same after changes to overrides.yaml)</p>
+
+    <section>
+    <h2>Jinja Templates</h2>
+    <ol>
+        <li>
+            {% include "default.html" %}
+        </li>
+        <li>
+            {% include "other/other.html" %}
+        </li>
+        <li>
+            Overridden <a href="/administration">administration page</a> header
+        </li>
+    </ol>
+    </section>
+
+    <section>
+     <h2>JinjaX components</h2>
+    <ol>
+        <li>
+            <Default />
+        </li>
+    </ol>
+    </section>
+
+    <section>
+    <h2>React</h2>
+    <ol>
+        <li>
+            {% include "default.html" %}
+        </li>
+        <li>
+            {% include "other/other.html" %}
+        </li>
+    </ol>
+    </section>
+{%- endblock page_body %}

@@ -17,8 +17,8 @@ i18n:
 models:
 - api_prefix: documents
   base_model: documents
-  features: [communities, files, multilingual, tests, requests, nr_vocabularies, relations,
-    drafts, custom_fields, vocabularies]
+  features: [relations, requests, tests, nr_vocabularies, drafts, communities, custom_fields,
+    files, vocabularies, multilingual]
   model_description: Text documents of any kind
   model_name: documents
   model_package: documents
@@ -40,4 +40,9 @@ uis:
   endpoint: /community-records
   model: null
   name: community_records
+  ui_serializer_class: null
+- api_service: null
+  endpoint: /overridable-playground
+  model: null
+  name: overridable_playground
   ui_serializer_class: null
