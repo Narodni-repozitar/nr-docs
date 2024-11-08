@@ -32,6 +32,7 @@ branding = "ui.branding.webpack:theme"
 i18n = "i18n.webpack:theme"
 components = "ui.components.webpack:theme"
 ui_documents = "ui.documents.webpack:theme"
+ui_overridable_playground = "ui.overridable_playground:webpack:theme"
 
 [project.entry-points."invenio_base.blueprints"]
 branding = "ui.branding:create_blueprint"
