@@ -7,6 +7,7 @@ theme = WebpackThemeBundle(
     themes={
         "semantic-ui": dict(
             entry={
+                "playground": "./js/playground/index.js",
             },
             dependencies={
             },
