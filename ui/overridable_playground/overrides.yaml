@@ -10,5 +10,5 @@ react:
 #  React-overridable component overrides
 #  Target can be either:
 #  - templates reference subpath
+  ExampleComponent.container: 'playground/OverriddenExample'
 #  - dynamic JS module import string in format <module_name>:<export_name>
-  ExampleComponent.container: 'playground/OverridenExample'
