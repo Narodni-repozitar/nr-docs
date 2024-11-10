@@ -23,7 +23,7 @@ class TimestampUpdateWriter(BaseWriter):
                 if entry.deleted:
                     continue
 
-                with record_invenio_exceptions(entry, uow):
+                with record_invenio_exceptions(entry):
                     self._write_entry(entry, uow)
 
             uow.commit()
