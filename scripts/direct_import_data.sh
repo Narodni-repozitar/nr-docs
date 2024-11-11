@@ -10,6 +10,9 @@ set -e
 source ~/.envrc.local
 source "$(dirname "$0")/../.venv/bin/activate"
 
+invenio oarepo fixtures load --verbose
+invenio oarepo fixtures load fixtures --verbose
+
 invenio oarepo oai harvester add nusl-manual-submissions --name "Manual submissions NUSL harvester" \
             --url https://invenio.nusl.cz/oai2d --set manual_submission --prefix marcxml \
             --loader 'sickle' \

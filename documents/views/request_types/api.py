@@ -1,9 +1,9 @@
-from flask import Blueprint
 
 
-def create_app_blueprint(app):
-    blueprint = Blueprint("documents_requests_app", __name__, url_prefix="/docs/")
-    blueprint.record_once(init_create_app_blueprint)
+def create_api_blueprint(app):
+    """Create DocumentsRecord blueprint."""
+    blueprint = app.extensions["documents"].resource_record_request_types.as_blueprint()
+    blueprint.record_once(init_create_api_blueprint)
 
     # calls record_once for all other functions starting with "init_addons_"
     # https://stackoverflow.com/questions/58785162/how-can-i-call-function-with-string-value-that-equals-to-function-name
@@ -19,7 +19,7 @@ def create_app_blueprint(app):
     return blueprint
 
 
-def init_create_app_blueprint(state):
+def init_create_api_blueprint(state):
     """Init app."""
     app = state.app
     ext = app.extensions["documents"]
@@ -27,14 +27,14 @@ def init_create_app_blueprint(state):
     # register service
     sregistry = app.extensions["invenio-records-resources"].registry
     sregistry.register(
-        ext.service_record_requests,
-        service_id=ext.service_record_requests.config.service_id,
+        ext.service_record_request_types,
+        service_id=ext.service_record_request_types.config.service_id,
     )
 
     # Register indexer
-    if hasattr(ext.service_record_requests, "indexer"):
+    if hasattr(ext.service_record_request_types, "indexer"):
         iregistry = app.extensions["invenio-indexer"].registry
         iregistry.register(
-            ext.service_record_requests.indexer,
-            indexer_id=ext.service_record_requests.config.service_id,
+            ext.service_record_request_types.indexer,
+            indexer_id=ext.service_record_request_types.config.service_id,
         )

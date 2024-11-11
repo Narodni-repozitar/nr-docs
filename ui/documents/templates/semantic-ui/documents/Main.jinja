@@ -1,13 +1,12 @@
 {#def metadata, ui, record, extra_context #}
-<h1 class="ui header">{{ metadata.title }}</h1>
+<h1 class="ui header">{{ metadata.title if metadata.title else _("Title not provided") }}</h1>
 <dl class="ui very basic table">
     <Field label={_('metadata/additionalTitles.label')}>
        <AdditionalTitles data={metadata.additionalTitles}></AdditionalTitles>
     </Field>
-        <dt>{{ _('People') }}</dt>
-    <dd>
-        <People  metadata={metadata} search_link={record.links.search_link}></People>
-    </dd>
+
+    <Creatibutors  metadata={metadata} search_link={record.links.search_link}></Creatibutors>
+    
     <Field label={ _('metadata/dateIssued.label') }>{{metadata.dateIssued}}</Field>
     <Field label={ _('metadata/dateModified.label') }>{{metadata.dateModified}}</Field>
 

@@ -5,7 +5,7 @@ from invenio_vocabularies.proxies import current_service as vocabulary_service
 
 class DataCiteMappingNRDocs:
 
-        def metadata_check(self, data):
+    def metadata_check(self, data):
         errors = {}
         data = data["metadata"]
         if "creators" not in data:
@@ -245,4 +245,3 @@ def related_items(data):
         if dc_rel != {}:
             dc_related_items.append(dc_rel)
     return dc_related_items
-

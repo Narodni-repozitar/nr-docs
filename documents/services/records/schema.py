@@ -30,7 +30,7 @@ class DocumentsSchema(NRDocumentRecordSchema):
 
     state = ma_fields.String(dump_only=True)
 
-    syntheticFields = ma_fields.Nested(lambda: NRDocumentSyntheticFieldsSchema())
+    syntheticFields = ma_fields.Nested(lambda: SyntheticFieldsSchema())
     parent = ma.fields.Nested(GeneratedParentSchema)
     files = ma.fields.Nested(
         lambda: FilesOptionsSchema(), load_default={"enabled": True}
@@ -66,6 +66,18 @@ class HarvestSchema(DictOnlySchema):
     datestamp = ma_fields.String()
 
     identifier = ma_fields.String()
+
+
+class KeywordsSchema(DictOnlySchema):
+    class Meta:
+        unknown = ma.RAISE
+
+
+class SyntheticFieldsSchema(NRDocumentSyntheticFieldsSchema):
+    class Meta:
+        unknown = ma.RAISE
+
+    test_organizations = ma_fields.String()
 
 
 class FilesOptionsSchema(ma.Schema):
