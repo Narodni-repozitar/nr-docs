@@ -17,7 +17,7 @@ nr-oaipmh-harvesters==1.0.24
 nr-vocabularies==2.1.2
 oarepo-communities==5.0.23
 oarepo-dashboard==1.0.12
-oarepo-doi==1.0.13
+oarepo-doi==1.0.14
 oarepo-global-search==1.0.27
 oarepo-oai-pmh-harvester==4.1.7
 oarepo-published-service==1.0.3
