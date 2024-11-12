@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2024-10-19 15:57+0200\n"
+"POT-Creation-Date: 2024-11-12 10:44+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,588 +17,584 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.16.0\n"
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/common/just_for_translations.py:5
+#: /Users/alzbetapokorna/cesnet/nr/temp/nr-docs/common/just_for_translations.py:5
 msgid "Submitted"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/common/just_for_translations.py:6
+#: /Users/alzbetapokorna/cesnet/nr/temp/nr-docs/common/just_for_translations.py:6
 msgid "Expired"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/common/just_for_translations.py:7
+#: /Users/alzbetapokorna/cesnet/nr/temp/nr-docs/common/just_for_translations.py:7
 msgid "Accepted"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/common/just_for_translations.py:8
+#: /Users/alzbetapokorna/cesnet/nr/temp/nr-docs/common/just_for_translations.py:8
 msgid "Declined"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/common/just_for_translations.py:9
+#: /Users/alzbetapokorna/cesnet/nr/temp/nr-docs/common/just_for_translations.py:9
 msgid "Cancelled"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/common/just_for_translations.py:10
+#: /Users/alzbetapokorna/cesnet/nr/temp/nr-docs/common/just_for_translations.py:10
 msgid "Beta version of document respository"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:15
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:19
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:28
+#: /Users/alzbetapokorna/cesnet/nr/temp/nr-docs/documents/services/records/facets.py:15
+#: /Users/alzbetapokorna/cesnet/nr/temp/nr-docs/documents/services/records/facets.py:19
+#: /Users/alzbetapokorna/cesnet/nr/temp/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:27
 #: i18n/translations/jinjax_messages.jinja:8
 msgid "metadata/abstract.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:25
+#: /Users/alzbetapokorna/cesnet/nr/temp/nr-docs/documents/services/records/facets.py:25
 msgid "metadata/abstract/lang.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:31
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:44
+#: /Users/alzbetapokorna/cesnet/nr/temp/nr-docs/documents/services/records/facets.py:31
+#: /Users/alzbetapokorna/cesnet/nr/temp/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:43
 #: i18n/translations/jinjax_messages.jinja:13
 msgid "metadata/accessRights.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:36
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:40
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:40
+#: /Users/alzbetapokorna/cesnet/nr/temp/nr-docs/documents/services/records/facets.py:36
+#: /Users/alzbetapokorna/cesnet/nr/temp/nr-docs/documents/services/records/facets.py:40
+#: /Users/alzbetapokorna/cesnet/nr/temp/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:39
 #: i18n/translations/jinjax_messages.jinja:11
 msgid "metadata/accessibility.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:47
+#: /Users/alzbetapokorna/cesnet/nr/temp/nr-docs/documents/services/records/facets.py:47
 msgid "metadata/accessibility/lang.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:53
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:58
+#: /Users/alzbetapokorna/cesnet/nr/temp/nr-docs/documents/services/records/facets.py:53
+#: /Users/alzbetapokorna/cesnet/nr/temp/nr-docs/documents/services/records/facets.py:58
 msgid "metadata/additionalTitles/title.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:65
+#: /Users/alzbetapokorna/cesnet/nr/temp/nr-docs/documents/services/records/facets.py:65
 msgid "metadata/additionalTitles/title/lang.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:71
+#: /Users/alzbetapokorna/cesnet/nr/temp/nr-docs/documents/services/records/facets.py:71
 msgid "metadata/additionalTitles/titleType.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:76
+#: /Users/alzbetapokorna/cesnet/nr/temp/nr-docs/documents/services/records/facets.py:76
 msgid "metadata/contributors/affiliations.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:82
+#: /Users/alzbetapokorna/cesnet/nr/temp/nr-docs/documents/services/records/facets.py:82
 msgid "metadata/contributors/authorityIdentifiers/identifier.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:87
+#: /Users/alzbetapokorna/cesnet/nr/temp/nr-docs/documents/services/records/facets.py:87
 msgid "metadata/contributors/authorityIdentifiers/scheme.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:92
+#: /Users/alzbetapokorna/cesnet/nr/temp/nr-docs/documents/services/records/facets.py:92
 msgid "metadata/contributors/contributorType.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:98
+#: /Users/alzbetapokorna/cesnet/nr/temp/nr-docs/documents/services/records/facets.py:98
 msgid "metadata/contributors/familyName.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:103
+#: /Users/alzbetapokorna/cesnet/nr/temp/nr-docs/documents/services/records/facets.py:103
 msgid "metadata/contributors/fullName.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:108
+#: /Users/alzbetapokorna/cesnet/nr/temp/nr-docs/documents/services/records/facets.py:108
 msgid "metadata/contributors/givenName.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:113
+#: /Users/alzbetapokorna/cesnet/nr/temp/nr-docs/documents/services/records/facets.py:113
 msgid "metadata/contributors/nameType.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:118
+#: /Users/alzbetapokorna/cesnet/nr/temp/nr-docs/documents/services/records/facets.py:118
 msgid "metadata/creators/affiliations.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:124
+#: /Users/alzbetapokorna/cesnet/nr/temp/nr-docs/documents/services/records/facets.py:124
 msgid "metadata/creators/authorityIdentifiers/identifier.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:129
+#: /Users/alzbetapokorna/cesnet/nr/temp/nr-docs/documents/services/records/facets.py:129
 msgid "metadata/creators/authorityIdentifiers/scheme.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:133
+#: /Users/alzbetapokorna/cesnet/nr/temp/nr-docs/documents/services/records/facets.py:133
 msgid "metadata/creators/familyName.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:137
+#: /Users/alzbetapokorna/cesnet/nr/temp/nr-docs/documents/services/records/facets.py:137
 msgid "metadata/creators/fullName.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:141
+#: /Users/alzbetapokorna/cesnet/nr/temp/nr-docs/documents/services/records/facets.py:141
 msgid "metadata/creators/givenName.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:145
+#: /Users/alzbetapokorna/cesnet/nr/temp/nr-docs/documents/services/records/facets.py:145
 msgid "metadata/creators/nameType.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:149
+#: /Users/alzbetapokorna/cesnet/nr/temp/nr-docs/documents/services/records/facets.py:149
 msgid "metadata/dateAvailable.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:153
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:11
+#: /Users/alzbetapokorna/cesnet/nr/temp/nr-docs/documents/services/records/facets.py:153
+#: /Users/alzbetapokorna/cesnet/nr/temp/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:10
 #: i18n/translations/jinjax_messages.jinja:2
 msgid "metadata/dateIssued.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:157
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:12
+#: /Users/alzbetapokorna/cesnet/nr/temp/nr-docs/documents/services/records/facets.py:157
+#: /Users/alzbetapokorna/cesnet/nr/temp/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:11
 #: i18n/translations/jinjax_messages.jinja:3
 msgid "metadata/dateModified.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:162
+#: /Users/alzbetapokorna/cesnet/nr/temp/nr-docs/documents/services/records/facets.py:162
 msgid "metadata/events/eventLocation/country.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:168
+#: /Users/alzbetapokorna/cesnet/nr/temp/nr-docs/documents/services/records/facets.py:168
 msgid "metadata/events/eventLocation/place.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:173
+#: /Users/alzbetapokorna/cesnet/nr/temp/nr-docs/documents/services/records/facets.py:173
 msgid "metadata/externalLocation/externalLocationURL.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:178
+#: /Users/alzbetapokorna/cesnet/nr/temp/nr-docs/documents/services/records/facets.py:178
 msgid "metadata/fundingReferences/funder.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:184
+#: /Users/alzbetapokorna/cesnet/nr/temp/nr-docs/documents/services/records/facets.py:184
 msgid "metadata/fundingReferences/projectID.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:189
+#: /Users/alzbetapokorna/cesnet/nr/temp/nr-docs/documents/services/records/facets.py:189
 msgid "metadata/geoLocations/geoLocationPlace.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:194
+#: /Users/alzbetapokorna/cesnet/nr/temp/nr-docs/documents/services/records/facets.py:194
 msgid "metadata/geoLocations/geoLocationPoint/pointLatitude.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:199
+#: /Users/alzbetapokorna/cesnet/nr/temp/nr-docs/documents/services/records/facets.py:199
 msgid "metadata/geoLocations/geoLocationPoint/pointLongitude.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:204
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:14
+#: /Users/alzbetapokorna/cesnet/nr/temp/nr-docs/documents/services/records/facets.py:204
+#: /Users/alzbetapokorna/cesnet/nr/temp/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:13
 #: i18n/translations/jinjax_messages.jinja:4
 msgid "metadata/languages.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:209
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:213
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:68
+#: /Users/alzbetapokorna/cesnet/nr/temp/nr-docs/documents/services/records/facets.py:209
+#: /Users/alzbetapokorna/cesnet/nr/temp/nr-docs/documents/services/records/facets.py:213
+#: /Users/alzbetapokorna/cesnet/nr/temp/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:67
 #: i18n/translations/jinjax_messages.jinja:20
 msgid "metadata/methods.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:219
+#: /Users/alzbetapokorna/cesnet/nr/temp/nr-docs/documents/services/records/facets.py:219
 msgid "metadata/methods/lang.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:225
+#: /Users/alzbetapokorna/cesnet/nr/temp/nr-docs/documents/services/records/facets.py:225
 msgid "metadata/objectIdentifiers/identifier.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:230
+#: /Users/alzbetapokorna/cesnet/nr/temp/nr-docs/documents/services/records/facets.py:230
 msgid "metadata/objectIdentifiers/scheme.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:234
+#: /Users/alzbetapokorna/cesnet/nr/temp/nr-docs/documents/services/records/facets.py:234
 msgid "metadata/originalRecord.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:239
+#: /Users/alzbetapokorna/cesnet/nr/temp/nr-docs/documents/services/records/facets.py:239
 msgid "metadata/relatedItems/itemContributors/affiliations.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:245
+#: /Users/alzbetapokorna/cesnet/nr/temp/nr-docs/documents/services/records/facets.py:245
 msgid ""
 "metadata/relatedItems/itemContributors/authorityIdentifiers/identifier.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:252
+#: /Users/alzbetapokorna/cesnet/nr/temp/nr-docs/documents/services/records/facets.py:252
 msgid ""
 "metadata/relatedItems/itemContributors/authorityIdentifiers/scheme.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:257
+#: /Users/alzbetapokorna/cesnet/nr/temp/nr-docs/documents/services/records/facets.py:257
 msgid "metadata/relatedItems/itemContributors/contributorType.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:263
+#: /Users/alzbetapokorna/cesnet/nr/temp/nr-docs/documents/services/records/facets.py:263
 msgid "metadata/relatedItems/itemContributors/familyName.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:268
+#: /Users/alzbetapokorna/cesnet/nr/temp/nr-docs/documents/services/records/facets.py:268
 msgid "metadata/relatedItems/itemContributors/fullName.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:273
+#: /Users/alzbetapokorna/cesnet/nr/temp/nr-docs/documents/services/records/facets.py:273
 msgid "metadata/relatedItems/itemContributors/givenName.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:278
+#: /Users/alzbetapokorna/cesnet/nr/temp/nr-docs/documents/services/records/facets.py:278
 msgid "metadata/relatedItems/itemContributors/nameType.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:283
+#: /Users/alzbetapokorna/cesnet/nr/temp/nr-docs/documents/services/records/facets.py:283
 msgid "metadata/relatedItems/itemCreators/affiliations.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:289
+#: /Users/alzbetapokorna/cesnet/nr/temp/nr-docs/documents/services/records/facets.py:289
 msgid ""
 "metadata/relatedItems/itemCreators/authorityIdentifiers/identifier.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:294
+#: /Users/alzbetapokorna/cesnet/nr/temp/nr-docs/documents/services/records/facets.py:294
 msgid "metadata/relatedItems/itemCreators/authorityIdentifiers/scheme.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:299
+#: /Users/alzbetapokorna/cesnet/nr/temp/nr-docs/documents/services/records/facets.py:299
 msgid "metadata/relatedItems/itemCreators/familyName.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:304
+#: /Users/alzbetapokorna/cesnet/nr/temp/nr-docs/documents/services/records/facets.py:304
 msgid "metadata/relatedItems/itemCreators/fullName.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:309
+#: /Users/alzbetapokorna/cesnet/nr/temp/nr-docs/documents/services/records/facets.py:309
 msgid "metadata/relatedItems/itemCreators/givenName.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:314
+#: /Users/alzbetapokorna/cesnet/nr/temp/nr-docs/documents/services/records/facets.py:314
 msgid "metadata/relatedItems/itemCreators/nameType.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:319
+#: /Users/alzbetapokorna/cesnet/nr/temp/nr-docs/documents/services/records/facets.py:319
 msgid "metadata/relatedItems/itemEndPage.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:324
+#: /Users/alzbetapokorna/cesnet/nr/temp/nr-docs/documents/services/records/facets.py:324
 msgid "metadata/relatedItems/itemIssue.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:329
+#: /Users/alzbetapokorna/cesnet/nr/temp/nr-docs/documents/services/records/facets.py:329
 msgid "metadata/relatedItems/itemPIDs/identifier.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:334
+#: /Users/alzbetapokorna/cesnet/nr/temp/nr-docs/documents/services/records/facets.py:334
 msgid "metadata/relatedItems/itemPIDs/scheme.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:339
+#: /Users/alzbetapokorna/cesnet/nr/temp/nr-docs/documents/services/records/facets.py:339
 msgid "metadata/relatedItems/itemPublisher.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:344
+#: /Users/alzbetapokorna/cesnet/nr/temp/nr-docs/documents/services/records/facets.py:344
 msgid "metadata/relatedItems/itemRelationType.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:350
+#: /Users/alzbetapokorna/cesnet/nr/temp/nr-docs/documents/services/records/facets.py:350
 msgid "metadata/relatedItems/itemResourceType.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:356
+#: /Users/alzbetapokorna/cesnet/nr/temp/nr-docs/documents/services/records/facets.py:356
 msgid "metadata/relatedItems/itemStartPage.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:361
+#: /Users/alzbetapokorna/cesnet/nr/temp/nr-docs/documents/services/records/facets.py:361
 msgid "metadata/relatedItems/itemURL.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:366
+#: /Users/alzbetapokorna/cesnet/nr/temp/nr-docs/documents/services/records/facets.py:366
 msgid "metadata/relatedItems/itemVolume.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:371
+#: /Users/alzbetapokorna/cesnet/nr/temp/nr-docs/documents/services/records/facets.py:371
 msgid "metadata/relatedItems/itemYear.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:376
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:17
+#: /Users/alzbetapokorna/cesnet/nr/temp/nr-docs/documents/services/records/facets.py:376
+#: /Users/alzbetapokorna/cesnet/nr/temp/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:16
 #: i18n/translations/jinjax_messages.jinja:5
 msgid "metadata/resourceType.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:381
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:47
+#: /Users/alzbetapokorna/cesnet/nr/temp/nr-docs/documents/services/records/facets.py:381
+#: /Users/alzbetapokorna/cesnet/nr/temp/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:46
 #: i18n/translations/jinjax_messages.jinja:14
 msgid "metadata/rights.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:385
+#: /Users/alzbetapokorna/cesnet/nr/temp/nr-docs/documents/services/records/facets.py:385
 msgid "metadata/series/seriesTitle.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:389
+#: /Users/alzbetapokorna/cesnet/nr/temp/nr-docs/documents/services/records/facets.py:389
 msgid "metadata/series/seriesVolume.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:394
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:77
+#: /Users/alzbetapokorna/cesnet/nr/temp/nr-docs/documents/services/records/facets.py:394
+#: /Users/alzbetapokorna/cesnet/nr/temp/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:76
 #: i18n/translations/jinjax_messages.jinja:23
 msgid "metadata/subjectCategories.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:400
+#: /Users/alzbetapokorna/cesnet/nr/temp/nr-docs/documents/services/records/facets.py:400
 msgid "metadata/subjects/classificationCode.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:405
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:410
+#: /Users/alzbetapokorna/cesnet/nr/temp/nr-docs/documents/services/records/facets.py:405
+#: /Users/alzbetapokorna/cesnet/nr/temp/nr-docs/documents/services/records/facets.py:410
 msgid "metadata/subjects/subject.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:417
+#: /Users/alzbetapokorna/cesnet/nr/temp/nr-docs/documents/services/records/facets.py:417
 msgid "metadata/subjects/subject/lang.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:423
+#: /Users/alzbetapokorna/cesnet/nr/temp/nr-docs/documents/services/records/facets.py:423
 msgid "metadata/subjects/subjectScheme.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:427
+#: /Users/alzbetapokorna/cesnet/nr/temp/nr-docs/documents/services/records/facets.py:427
 msgid "metadata/subjects/valueURI.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:432
+#: /Users/alzbetapokorna/cesnet/nr/temp/nr-docs/documents/services/records/facets.py:432
 msgid "metadata/systemIdentifiers/identifier.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:437
+#: /Users/alzbetapokorna/cesnet/nr/temp/nr-docs/documents/services/records/facets.py:437
 msgid "metadata/systemIdentifiers/scheme.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:441
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:445
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:80
+#: /Users/alzbetapokorna/cesnet/nr/temp/nr-docs/documents/services/records/facets.py:441
+#: /Users/alzbetapokorna/cesnet/nr/temp/nr-docs/documents/services/records/facets.py:445
+#: /Users/alzbetapokorna/cesnet/nr/temp/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:79
 #: i18n/translations/jinjax_messages.jinja:24
 msgid "metadata/technicalInfo.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:452
+#: /Users/alzbetapokorna/cesnet/nr/temp/nr-docs/documents/services/records/facets.py:452
 msgid "metadata/technicalInfo/lang.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:457
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:21
+#: /Users/alzbetapokorna/cesnet/nr/temp/nr-docs/documents/services/records/facets.py:457
+#: /Users/alzbetapokorna/cesnet/nr/temp/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:20
 #: i18n/translations/jinjax_messages.jinja:6
 msgid "metadata/thesis/dateDefended.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:461
+#: /Users/alzbetapokorna/cesnet/nr/temp/nr-docs/documents/services/records/facets.py:461
 msgid "metadata/thesis/defended.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:466
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:32
+#: /Users/alzbetapokorna/cesnet/nr/temp/nr-docs/documents/services/records/facets.py:466
+#: /Users/alzbetapokorna/cesnet/nr/temp/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:31
 #: i18n/translations/jinjax_messages.jinja:9
 msgid "metadata/thesis/degreeGrantors.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:471
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:35
+#: /Users/alzbetapokorna/cesnet/nr/temp/nr-docs/documents/services/records/facets.py:471
+#: /Users/alzbetapokorna/cesnet/nr/temp/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:34
 #: i18n/translations/jinjax_messages.jinja:10
 msgid "metadata/thesis/studyFields.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:475
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:84
+#: /Users/alzbetapokorna/cesnet/nr/temp/nr-docs/documents/services/records/facets.py:475
+#: /Users/alzbetapokorna/cesnet/nr/temp/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:83
 #: i18n/translations/jinjax_messages.jinja:25
 msgid "metadata/version.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:479
+#: /Users/alzbetapokorna/cesnet/nr/temp/nr-docs/documents/services/records/facets.py:479
 msgid "oai/harvest/datestamp.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:483
+#: /Users/alzbetapokorna/cesnet/nr/temp/nr-docs/documents/services/records/facets.py:483
 msgid "oai/harvest/identifier.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:486
+#: /Users/alzbetapokorna/cesnet/nr/temp/nr-docs/documents/services/records/facets.py:486
 msgid "state.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:489
+#: /Users/alzbetapokorna/cesnet/nr/temp/nr-docs/documents/services/records/facets.py:489
 msgid "syntheticFields/date.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:493
+#: /Users/alzbetapokorna/cesnet/nr/temp/nr-docs/documents/services/records/facets.py:493
 msgid "syntheticFields/defenseYear.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:498
-msgid "syntheticFields/institutions.label"
-msgstr ""
-
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:503
+#: /Users/alzbetapokorna/cesnet/nr/temp/nr-docs/documents/services/records/facets.py:497
 msgid "syntheticFields/keywords.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:507
+#: /Users/alzbetapokorna/cesnet/nr/temp/nr-docs/documents/services/records/facets.py:502
+msgid "syntheticFields/organizations.label"
+msgstr ""
+
+#: /Users/alzbetapokorna/cesnet/nr/temp/nr-docs/documents/services/records/facets.py:506
 msgid "syntheticFields/people.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:511
+#: /Users/alzbetapokorna/cesnet/nr/temp/nr-docs/documents/services/records/facets.py:511
 msgid "syntheticFields/year.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:515
+#: /Users/alzbetapokorna/cesnet/nr/temp/nr-docs/documents/services/records/facets.py:515
 msgid "record_status"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:517
+#: /Users/alzbetapokorna/cesnet/nr/temp/nr-docs/documents/services/records/facets.py:517
 msgid "has_draft"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/branding/__init__.py:23
+#: /Users/alzbetapokorna/cesnet/nr/temp/nr-docs/ui/branding/__init__.py:23
 msgid "New upload"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/branding/templates/footer.html:12
+#: /Users/alzbetapokorna/cesnet/nr/temp/nr-docs/ui/branding/templates/footer.html:12
 msgid "Contact"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/branding/templates/header.html:20
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/branding/templates/header.html:21
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/branding/templates/searchbar.html:30
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/branding/templates/searchbar.html:31
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/titlepage/templates/TitlePage.jinja:49
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/titlepage/templates/TitlePage.jinja:51
+#: /Users/alzbetapokorna/cesnet/nr/temp/nr-docs/ui/branding/templates/header.html:20
+#: /Users/alzbetapokorna/cesnet/nr/temp/nr-docs/ui/branding/templates/header.html:21
+#: /Users/alzbetapokorna/cesnet/nr/temp/nr-docs/ui/branding/templates/searchbar.html:30
+#: /Users/alzbetapokorna/cesnet/nr/temp/nr-docs/ui/branding/templates/searchbar.html:31
+#: /Users/alzbetapokorna/cesnet/nr/temp/nr-docs/ui/titlepage/templates/TitlePage.jinja:49
+#: /Users/alzbetapokorna/cesnet/nr/temp/nr-docs/ui/titlepage/templates/TitlePage.jinja:51
 msgid "Search"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/branding/templates/header_login.html:15
+#: /Users/alzbetapokorna/cesnet/nr/temp/nr-docs/ui/branding/templates/header_login.html:15
 msgid "Log in"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/branding/templates/header_login.html:19
+#: /Users/alzbetapokorna/cesnet/nr/temp/nr-docs/ui/branding/templates/header_login.html:19
 msgid "Sign up"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/branding/templates/header_login.html:36
+#: /Users/alzbetapokorna/cesnet/nr/temp/nr-docs/ui/branding/templates/header_login.html:36
 msgid "Quick create"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/branding/templates/header_login.html:53
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/documents/templates/semantic-ui/documents/Sidebar.jinja:3
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/documents/templates/semantic-ui/documents/Sidebar.jinja:4
+#: /Users/alzbetapokorna/cesnet/nr/temp/nr-docs/ui/branding/templates/header_login.html:53
+#: /Users/alzbetapokorna/cesnet/nr/temp/nr-docs/ui/documents/templates/semantic-ui/documents/Sidebar.jinja:3
+#: /Users/alzbetapokorna/cesnet/nr/temp/nr-docs/ui/documents/templates/semantic-ui/documents/Sidebar.jinja:4
 msgid "Actions"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/branding/templates/header_login.html:72
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/branding/templates/header_login.html:113
+#: /Users/alzbetapokorna/cesnet/nr/temp/nr-docs/ui/branding/templates/header_login.html:72
+#: /Users/alzbetapokorna/cesnet/nr/temp/nr-docs/ui/branding/templates/header_login.html:113
 msgid "My account"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/branding/templates/header_login.html:107
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/branding/templates/header_login.html:136
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/branding/templates/header_login.html:143
+#: /Users/alzbetapokorna/cesnet/nr/temp/nr-docs/ui/branding/templates/header_login.html:107
+#: /Users/alzbetapokorna/cesnet/nr/temp/nr-docs/ui/branding/templates/header_login.html:136
+#: /Users/alzbetapokorna/cesnet/nr/temp/nr-docs/ui/branding/templates/header_login.html:143
 msgid "Log out"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/branding/templates/searchbar.html:5
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/branding/templates/searchbar.html:11
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/branding/templates/searchbar.html:21
+#: /Users/alzbetapokorna/cesnet/nr/temp/nr-docs/ui/branding/templates/searchbar.html:5
+#: /Users/alzbetapokorna/cesnet/nr/temp/nr-docs/ui/branding/templates/searchbar.html:11
+#: /Users/alzbetapokorna/cesnet/nr/temp/nr-docs/ui/branding/templates/searchbar.html:21
 msgid "in"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/branding/templates/searchbar.html:5
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/branding/templates/searchbar.html:6
+#: /Users/alzbetapokorna/cesnet/nr/temp/nr-docs/ui/branding/templates/searchbar.html:5
+#: /Users/alzbetapokorna/cesnet/nr/temp/nr-docs/ui/branding/templates/searchbar.html:6
 msgid "In this community"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/branding/templates/searchbar.html:11
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/branding/templates/searchbar.html:12
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/branding/templates/searchbar.html:20
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/branding/templates/searchbar.html:21
+#: /Users/alzbetapokorna/cesnet/nr/temp/nr-docs/ui/branding/templates/searchbar.html:11
+#: /Users/alzbetapokorna/cesnet/nr/temp/nr-docs/ui/branding/templates/searchbar.html:12
+#: /Users/alzbetapokorna/cesnet/nr/temp/nr-docs/ui/branding/templates/searchbar.html:20
+#: /Users/alzbetapokorna/cesnet/nr/temp/nr-docs/ui/branding/templates/searchbar.html:21
 msgid "All document records"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/documents/templates/semantic-ui/documents/Detail.jinja:2
+#: /Users/alzbetapokorna/cesnet/nr/temp/nr-docs/ui/documents/templates/semantic-ui/documents/Detail.jinja:2
 msgid "NR Document repository"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:2
+#: /Users/alzbetapokorna/cesnet/nr/temp/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:2
 msgid "Title not provided"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:4
+#: /Users/alzbetapokorna/cesnet/nr/temp/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:4
 #: i18n/translations/jinjax_messages.jinja:1
 msgid "metadata/additionalTitles.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:7
-msgid "People"
-msgstr ""
-
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:24
+#: /Users/alzbetapokorna/cesnet/nr/temp/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:23
 #: i18n/translations/jinjax_messages.jinja:7
 msgid "metadata/subjects.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:41
+#: /Users/alzbetapokorna/cesnet/nr/temp/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:40
 #: i18n/translations/jinjax_messages.jinja:12
 msgid "metadata/publishers.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:51
+#: /Users/alzbetapokorna/cesnet/nr/temp/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:50
 #: i18n/translations/jinjax_messages.jinja:15
 msgid "metadata/events.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:54
+#: /Users/alzbetapokorna/cesnet/nr/temp/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:53
 #: i18n/translations/jinjax_messages.jinja:16
 msgid "metadata/externalLocation.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:58
+#: /Users/alzbetapokorna/cesnet/nr/temp/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:57
 #: i18n/translations/jinjax_messages.jinja:17
 msgid "metadata/fundingReferences.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:63
+#: /Users/alzbetapokorna/cesnet/nr/temp/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:62
 #: i18n/translations/jinjax_messages.jinja:18
 msgid "metadata/relatedItems.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:65
+#: /Users/alzbetapokorna/cesnet/nr/temp/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:64
 #: i18n/translations/jinjax_messages.jinja:19
 msgid "metadata/geoLocations.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:71
+#: /Users/alzbetapokorna/cesnet/nr/temp/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:70
 #: i18n/translations/jinjax_messages.jinja:21
 msgid "metadata/notes.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:74
+#: /Users/alzbetapokorna/cesnet/nr/temp/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:73
 #: i18n/translations/jinjax_messages.jinja:22
 msgid "metadata/series.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/documents/templates/semantic-ui/documents/Search.jinja:3
+#: /Users/alzbetapokorna/cesnet/nr/temp/nr-docs/ui/documents/templates/semantic-ui/documents/Search.jinja:3
 msgid "Search results"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/documents/templates/semantic-ui/documents/Search.jinja:3
+#: /Users/alzbetapokorna/cesnet/nr/temp/nr-docs/ui/documents/templates/semantic-ui/documents/Search.jinja:3
 msgid "documents"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/documents/templates/semantic-ui/documents/Sidebar.jinja:7
+#: /Users/alzbetapokorna/cesnet/nr/temp/nr-docs/ui/documents/templates/semantic-ui/documents/Sidebar.jinja:8
 msgid "Edit"
 msgstr ""
 
@@ -624,6 +620,11 @@ msgid "No publication date found."
 msgstr ""
 
 msgid "No title"
+msgstr ""
+
+msgid ""
+"Action failed due to validation errors. Please correct the errors and try "
+"again:"
 msgstr ""
 
 msgid "Basic information"

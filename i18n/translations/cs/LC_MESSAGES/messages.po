@@ -3312,7 +3312,7 @@ msgstr "Rok obhajoby"
 
 #: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:509
 msgid "syntheticFields/year.label"
-msgstr "Rok poslední změny"
+msgstr "Datum vydání"
 
 msgid "pid.help"
 msgstr ""
@@ -3595,4 +3595,28 @@ msgid "state.help"
 msgstr ""
 
 msgid "state.hint"
+msgstr ""
+
+#: /Users/alzbetapokorna/cesnet/nr/temp/nr-docs/documents/services/records/facets.py:502
+msgid "syntheticFields/organizations.label"
+msgstr "Instituce"
+
+msgid ""
+"Action failed due to validation errors. Please correct the errors and try "
+"again:"
+msgstr ""
+
+msgid "syntheticFields/organizations.help"
+msgstr ""
+
+msgid "syntheticFields/organizations.hint"
+msgstr ""
+
+msgid "syntheticFields/test_organizations.help"
+msgstr ""
+
+msgid "syntheticFields/test_organizations.label"
+msgstr ""
+
+msgid "syntheticFields/test_organizations.hint"
 msgstr ""

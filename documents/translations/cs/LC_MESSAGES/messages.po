@@ -2370,7 +2370,7 @@ msgid "syntheticFields/test_organizations.hint"
 msgstr ""
 
 msgid "syntheticFields/year.label"
-msgstr "Rok poslední změny"
+msgstr "Datum vydání"
 
 msgid "syntheticFields/year.help"
 msgstr ""
