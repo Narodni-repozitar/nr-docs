@@ -5,14 +5,15 @@ from invenio_drafts_resources.records.api import Record as InvenioRecord
 from invenio_records.systemfields import ConstantField, ModelField
 from invenio_records_resources.records.systemfields import FilesField, IndexField
 from invenio_records_resources.records.systemfields.pid import PIDField, PIDFieldContext
-from invenio_vocabularies.records.api import Vocabulary
 from nr_metadata.records.synthetic_fields import KeywordsFieldSelector
 from oarepo_communities.records.systemfields.communities import (
     OARepoCommunitiesFieldContext,
 )
 from oarepo_runtime.records.relations import PIDRelation, RelationsField
 from oarepo_runtime.records.systemfields import (
+    FilteredSelector,
     FirstItemSelector,
+    MultiSelector,
     PathSelector,
     SyntheticSystemField,
 )
@@ -20,6 +21,7 @@ from oarepo_runtime.records.systemfields.has_draftcheck import HasDraftCheckFiel
 from oarepo_runtime.records.systemfields.icu import ICUSearchField
 from oarepo_runtime.records.systemfields.owner import OwnersField
 from oarepo_runtime.records.systemfields.record_status import RecordStatusSystemField
+from oarepo_vocabularies.records.api import Vocabulary
 from oarepo_workflows.records.systemfields.state import RecordStateField
 from oarepo_workflows.records.systemfields.workflow import WorkflowField
 
@@ -82,13 +84,20 @@ class DocumentsRecord(InvenioRecord):
         key="syntheticFields.people",
     )
 
-    institutions = SyntheticSystemField(
-        PathSelector(
-            "metadata.creators.affiliations",
-            "metadata.contributors.affiliations",
-            "metadata.thesis.degreeGrantors",
+    organizations = SyntheticSystemField(
+        MultiSelector(
+            FilteredSelector(
+                PathSelector("metadata.creators", "metadata.contributors"),
+                filter=lambda x: x["nameType"] == "Personal",
+                projection="affiliations.title.cs",
+            ),
+            FilteredSelector(
+                PathSelector("metadata.creators", "metadata.contributors"),
+                filter=lambda x: x["nameType"] == "Organizational",
+                projection="fullName",
+            ),
         ),
-        key="syntheticFields.institutions",
+        key="syntheticFields.organizations",
     )
 
     keywords = SyntheticSystemField(
@@ -205,11 +214,6 @@ class DocumentsRecord(InvenioRecord):
         ),
         degreeGrantors=PIDRelation(
             "metadata.thesis.degreeGrantors",
-            keys=["id", "title", "hierarchy"],
-            pid_field=Vocabulary.pid.with_type_ctx("institutions"),
-        ),
-        institutions=PIDRelation(
-            "syntheticFields.institutions",
             keys=["id", "title", "hierarchy"],
             pid_field=Vocabulary.pid.with_type_ctx("institutions"),
         ),
@@ -336,11 +340,6 @@ class DocumentsDraft(InvenioDraft):
         ),
         degreeGrantors=PIDRelation(
             "metadata.thesis.degreeGrantors",
-            keys=["id", "title", "hierarchy"],
-            pid_field=Vocabulary.pid.with_type_ctx("institutions"),
-        ),
-        institutions=PIDRelation(
-            "syntheticFields.institutions",
             keys=["id", "title", "hierarchy"],
             pid_field=Vocabulary.pid.with_type_ctx("institutions"),
         ),

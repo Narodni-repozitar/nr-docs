@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect } from "react";
+import React, { useCallback } from "react";
 import {
   useFormConfig,
   MultilingualTextInput,
@@ -6,8 +6,8 @@ import {
   EDTFSingleDatePicker,
   useFieldData,
   useSanitizeInput,
-  CommunitySelector,
 } from "@js/oarepo_ui";
+import { CommunitySelector } from "@js/communities_components/CommunitySelector/CommunitySelector";
 import {
   LocalVocabularySelectField,
   VocabularyTreeSelectField,
@@ -46,26 +46,8 @@ const FormFieldsContainer = () => {
   );
   const { getFieldData } = useFieldData();
 
-  // on chrome there is an annoying issue where after deletion you are redirected, and then
-  // if you click back on browser <-, it serves you the deleted page, which does not exist from the cache.
-  // on firefox it does not happen.
-  useEffect(() => {
-    const handleUnload = () => {};
-
-    const handleBeforeUnload = () => {};
-
-    window.addEventListener("unload", handleUnload);
-    window.addEventListener("beforeunload", handleBeforeUnload);
-
-    return () => {
-      window.removeEventListener("unload", handleUnload);
-      window.removeEventListener("beforeunload", handleBeforeUnload);
-    };
-  }, []);
-
   const { values, setFieldValue, setFieldTouched } = useFormikContext();
-  const toolBar = "bold italic | bullist numlist | outdent indent | undo redo";
-  const { sanitizeInput, validEditorTags } = useSanitizeInput();
+  const { sanitizeInput } = useSanitizeInput();
 
   return (
     <React.Fragment>
@@ -120,7 +102,7 @@ const FormFieldsContainer = () => {
               optimized
               fieldPath="metadata.resourceType"
               clearable
-              optionsListName="resource-types"
+              vocabulary="resource-types"
               filterFunction={filterResourceTypes}
               {...getFieldData({
                 fieldPath: "metadata.resourceType",
@@ -308,7 +290,7 @@ const FormFieldsContainer = () => {
               fieldPath="metadata.subjectCategories"
               multiple={true}
               clearable
-              optionsListName="subject-categories"
+              vocabulary="subject-categories"
               {...getFieldData({
                 fieldPath: "metadata.subjectCategories",
                 icon: "tag",
@@ -323,10 +305,6 @@ const FormFieldsContainer = () => {
               textFieldLabel={i18next.t("Description")}
               fieldPath="metadata.abstract"
               rich={true}
-              editorConfig={{
-                toolbar: toolBar,
-                valid_elements: validEditorTags,
-              }}
               lngFieldWidth={4}
               {...getFieldData({ fieldPath: "metadata.abstract" })}
             />

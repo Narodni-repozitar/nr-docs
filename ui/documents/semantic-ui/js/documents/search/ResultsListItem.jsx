@@ -66,7 +66,7 @@ const ItemSubheader = ({
             >
               {publicationDate}
             </span>
-            <DoubleSeparator />
+            {languages.length > 0 && <DoubleSeparator />}
             <span
               aria-label={i18next.t("Languages")}
               title={i18next.t("Languages")}
