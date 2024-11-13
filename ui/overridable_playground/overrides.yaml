@@ -12,3 +12,4 @@ react:
 #  - templates reference subpath
   ExampleComponent.container: 'playground/OverriddenExample'
 #  - dynamic JS module import string in format <module_name>:<export_name>
+  OtherExampleComponent.container: 'js/playground/mycomponents/:I18nString'
