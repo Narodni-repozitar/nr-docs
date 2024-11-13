@@ -17,6 +17,7 @@ import {
   ResultsItemResourceType,
 } from "@nr/search";
 import { getValueFromMultilingualArray } from "@js/oarepo_ui";
+import sanitizeHtml from "sanitize-html";
 
 const ItemHeader = ({ title, searchUrl, selfLink }) => {
   const viewLink = new URL(
@@ -176,6 +177,8 @@ export const ResultsListItemComponent = ({
 }) => {
   const searchAppConfig = useContext(SearchConfigurationContext);
 
+  const { allowedHtmlTags } = searchAppConfig;
+
   const accessRights = _get(result, "metadata.accessRights");
   const createdDate = _get(result, "created", "No creation date found.");
   const creators = result.metadata?.creators;
@@ -259,11 +262,19 @@ export const ResultsListItemComponent = ({
                   searchUrl={searchAppConfig.ui_endpoint}
                 />
                 {abstract && abstract.length > 0 && (
-                  <Item.Description>
-                    {_truncate(getValueFromMultilingualArray(abstract), {
-                      length: 350,
-                    })}
-                  </Item.Description>
+                  <Item.Description
+                    dangerouslySetInnerHTML={{
+                      __html: _truncate(
+                        sanitizeHtml(getValueFromMultilingualArray(abstract), {
+                          allowedTags: allowedHtmlTags,
+                          allowedAttributes: {},
+                        }),
+                        {
+                          length: 350,
+                        }
+                      ),
+                    }}
+                  />
                 )}
                 <ItemExtraInfo
                   createdDate={createdDate}
