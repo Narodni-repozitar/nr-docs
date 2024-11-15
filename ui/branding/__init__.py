@@ -3,14 +3,15 @@ from flask import Blueprint
 from flask_menu import current_menu
 from oarepo_runtime.i18n import lazy_gettext as _
 from flask import g, session
+from flask_login import user_logged_in, user_logged_out
+
 from invenio_records_resources.proxies import current_service_registry
 
+view_deposit_page_permission_key = f"view_deposit_page_permission"
 
 def check_permissions():
     print(session, flush=True)
     print("check_permissions_menu", flush=True)
-    user_id = session.get("_user_id")
-    view_deposit_page_permission_key = f"view_deposit_page_{user_id}"
 
     if view_deposit_page_permission_key in session:
         return session[view_deposit_page_permission_key]
@@ -32,6 +33,14 @@ def check_permissions():
     # print(permission_to_create, "documents_service", flush=True)
 
     # return permission_to_create
+
+def clear_cached_permissions(*args, **kwargs):
+    print("Clearing cached permissions", flush=True)
+    session.pop(view_deposit_page_permission_key, None)
+
+
+user_logged_in.connect(clear_cached_permissions)
+user_logged_out.connect(clear_cached_permissions)
 
 
 def create_blueprint(app):
