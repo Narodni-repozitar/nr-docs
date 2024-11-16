@@ -237,7 +237,11 @@ export const ResultsListItemComponent = ({
       thesis={thesis}
       allVersionsVisible={allVersionsVisible}
     >
-      <Item key={result.id} data-testid="result-item">
+      <Item
+        key={result.id}
+        data-testid="result-item"
+        className="word-break-all"
+      >
         <Item.Content>
           <Grid>
             <Grid.Row columns={2}>

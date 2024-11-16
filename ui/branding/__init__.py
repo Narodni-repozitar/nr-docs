@@ -25,9 +25,6 @@ def create_blueprint(app):
             # TODO: create function that checks if user has any permissions and as optimalization cache it in session
             # visible_when=check_permissions,
         )
-        # hide the /admi (maximum recursion depth exceeded menu)
-        admin_menu = current_menu.submenu("settings.admin")
-        admin_menu.hide()
 
     # Add URL rules
     return blueprint
