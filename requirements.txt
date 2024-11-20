@@ -6,7 +6,7 @@ flask-babelex==0.9.4
 frozendict==2.4.6
 jinja2-simple-tags==0.6.1
 jinjax==0.37
-json5==0.9.25
+json5==0.9.28
 langcodes==3.4.1
 language-data==1.2.0
 levenshtein==0.26.1
@@ -21,7 +21,7 @@ oarepo-doi==1.0.14
 oarepo-global-search==1.0.27
 oarepo-oai-pmh-harvester==4.1.7
 oarepo-published-service==1.0.3
-oarepo-requests==2.2.9
+oarepo-requests==2.2.10
 oarepo-runtime==1.5.69
 oarepo-ui==5.2.23
 oarepo-vocabularies==2.1.6
