@@ -169,7 +169,6 @@
     label.helptext {
       font-weight: normal;
       font-size: 1rem;
-      padding-left: 3px;
     }
 
     .highlighted {
