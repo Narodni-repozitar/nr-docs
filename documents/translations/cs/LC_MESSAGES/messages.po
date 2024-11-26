@@ -2352,7 +2352,7 @@ msgid "syntheticFields/organizations.hint"
 msgstr ""
 
 msgid "syntheticFields/people.label"
-msgstr "Lidé"
+msgstr "Tvůrci"
 
 msgid "syntheticFields/people.help"
 msgstr ""

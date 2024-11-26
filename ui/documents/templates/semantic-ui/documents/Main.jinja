@@ -1,5 +1,17 @@
 {#def metadata, ui, record, extra_context #}
-<h1 class="ui header">{{ metadata.title if metadata.title else _("Title not provided") }}</h1>
+{% set ns = namespace(localized_title=None)%}
+{% if metadata.additionalTitles %}
+    {% for additionalTitle in metadata.additionalTitles%}
+        {% if additionalTitle.titleType == "translatedTitle" and additionalTitle.title.lang == current_i18n.language %}
+            {% set ns.localized_title = additionalTitle.title.value %}
+        {% endif %}
+    {% endfor %}
+{% endif %}
+{% if ns.localized_title %}
+    <h1 class="ui header">{{ ns.localized_title }}</h1>
+{% else %}
+    <h1 class="ui header">{{ metadata.title if metadata.title else _("Title not provided") }}</h1>
+{% endif %}
 <dl class="ui very basic table">
     <Field label={_('metadata/additionalTitles.label')}>
        <AdditionalTitles data={metadata.additionalTitles}></AdditionalTitles>

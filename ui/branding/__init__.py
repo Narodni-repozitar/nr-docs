@@ -1,8 +1,9 @@
 from pathlib import Path
-
 from flask import Blueprint
 from flask_menu import current_menu
 from oarepo_runtime.i18n import lazy_gettext as _
+from oarepo_ui.utils import can_view_deposit_page
+
 
 def create_blueprint(app):
     """Register blueprint for this resource."""
@@ -22,6 +23,8 @@ def create_blueprint(app):
             "documents.create",
             _("New upload"),
             order=1,
+            # TODO: create function that checks if user has any permissions and as optimalization cache it in session
+            visible_when=can_view_deposit_page,
         )
 
     # Add URL rules

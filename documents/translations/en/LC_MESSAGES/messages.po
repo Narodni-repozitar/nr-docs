@@ -2361,7 +2361,7 @@ msgid "syntheticFields/organizations.hint"
 msgstr ""
 
 msgid "syntheticFields/people.label"
-msgstr "People"
+msgstr "Creators"
 
 msgid "syntheticFields/people.help"
 msgstr ""
