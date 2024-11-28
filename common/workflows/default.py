@@ -23,7 +23,7 @@
 
 from datetime import timedelta
 
-from invenio_records_permissions.generators import AnyUser
+from invenio_records_permissions.generators import AnyUser, SystemProcess, Disable
 from oarepo_communities.services.permissions.generators import (
     CommunityRole,
     PrimaryCommunityRole,
@@ -106,6 +106,10 @@ class DefaultWorkflowPermissions(CommunityDefaultWorkflowPermissions):
             ],
         ),
     ] + CommunityDefaultWorkflowPermissions.can_delete
+
+    can_manage_files = [
+        Disable(),
+    ]
 
 
 class DefaultWorkflowRequests(WorkflowRequestPolicy):
