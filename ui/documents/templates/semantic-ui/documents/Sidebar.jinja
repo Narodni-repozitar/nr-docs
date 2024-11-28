@@ -9,8 +9,10 @@
     </SidebarLink>
   </div>
 {% endif %}
+{% if record.expanded.request_types or record.expanded.requests %}
   <RecordRequests record={record} />
-</section>
 {% endif %}
+{% endif %}
+</section>
 <IdentifiersAndLinks originalRecordUrl={metadata.originalRecord} objectIdentifiers={metadata.objectIdentifiers}/>
 <RecordExport record={record} metadata={metadata} extra_context={extra_context}/>
