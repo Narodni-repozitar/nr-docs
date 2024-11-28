@@ -22,4 +22,4 @@ invenio oarepo oai harvester add nusl-manual-submissions --name "Manual submissi
             --writer 'owner{service=documents}' \
             --writer 'timestamp_update{service=documents}'
 
-# invenio oarepo oai harvester run nusl-manual-submissions
+invenio oarepo oai harvester run nusl-manual-submissions

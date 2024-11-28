@@ -10,6 +10,9 @@
 .ui.container {
   &.page-subheader-outer {
     background-color: @highlightHeaderColor;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
   }
   &.page-subheader {
     margin-top: 0;
