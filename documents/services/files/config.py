@@ -81,6 +81,6 @@ class DocumentsFileDraftServiceConfig(PermissionsPresetsConfigMixin, FileService
         return {
             "commit": FileLink("{+api}/docs/{id}/draft/files/{key}/commit"),
             "content": FileLink("{+api}/docs/{id}/draft/files/{key}/content"),
-            "preview": FileLink("{+ui}/docs/{id}/files/{key}/preview"),
+            "preview": FileLink("{+ui}/docs/{id}/preview/files/{key}/preview"),
             "self": FileLink("{+api}/docs/{id}/draft/files/{key}"),
         }
