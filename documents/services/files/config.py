@@ -5,7 +5,8 @@ from oarepo_runtime.services.config.service import PermissionsPresetsConfigMixin
 from documents.records.api import DocumentsDraft, DocumentsRecord
 from documents.services.files.schema import DocumentsFileSchema
 from documents.services.records.permissions import DocumentsPermissionPolicy
-
+from invenio_rdm_records.services.config import RDMFileRecordServiceConfig
+from invenio_rdm_records.services.config import RDMFileDraftServiceConfig
 
 class DocumentsFileServiceConfig(PermissionsPresetsConfigMixin, FileServiceConfig):
     """DocumentsRecord service config."""
@@ -23,7 +24,6 @@ class DocumentsFileServiceConfig(PermissionsPresetsConfigMixin, FileServiceConfi
     service_id = "documents_file"
 
     components = [
-        *PermissionsPresetsConfigMixin.components,
         *FileServiceConfig.components,
         CustomFieldsComponent,
     ]
@@ -63,7 +63,6 @@ class DocumentsFileDraftServiceConfig(PermissionsPresetsConfigMixin, FileService
     service_id = "documents_file_draft"
 
     components = [
-        *PermissionsPresetsConfigMixin.components,
         *FileServiceConfig.components,
         CustomFieldsComponent,
     ]

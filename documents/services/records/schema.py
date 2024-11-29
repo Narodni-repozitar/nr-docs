@@ -10,12 +10,16 @@ from nr_metadata.documents.services.records.schema import (
 from oarepo_communities.schemas.parent import CommunitiesParentSchema
 from oarepo_runtime.services.schema.marshmallow import DictOnlySchema
 from oarepo_workflows.services.records.schema import WorkflowParentSchema
-
+from marshmallow_utils.fields import SanitizedUnicode
+from marshmallow_utils.fields.nestedattr import NestedAttribute
+from invenio_rdm_records.services.schemas.versions import VersionsSchema
+from invenio_rdm_records.services.schemas.tombstone import DeletionStatusSchema
+from invenio_rdm_records.services.schemas.access import AccessSchema
 
 class GeneratedParentSchema(WorkflowParentSchema):
     """"""
 
-    owners = ma.fields.List(ma.fields.Dict(), load_only=True)
+    # owners = ma.fields.List(ma.fields.Dict(), load_only=True)
 
     communities = ma_fields.Nested(CommunitiesParentSchema)
 
@@ -24,6 +28,10 @@ class DocumentsSchema(NRDocumentRecordSchema):
     class Meta:
         unknown = ma.RAISE
 
+    versions = NestedAttribute(VersionsSchema, dump_only=True)
+    deletion_status = ma_fields.Nested(DeletionStatusSchema, dump_only=True)
+
+    access = NestedAttribute(AccessSchema)
     metadata = ma_fields.Nested(lambda: NRDocumentMetadataSchema())
 
     oai = ma_fields.Nested(lambda: OaiSchema())

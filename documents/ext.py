@@ -4,6 +4,7 @@ from functools import cached_property
 from oarepo_requests.proxies import current_oarepo_requests_service
 from oarepo_requests.resources.draft.config import DraftRecordRequestsResourceConfig
 from oarepo_requests.resources.draft.types.config import DraftRequestTypesResourceConfig
+from invenio_rdm_records.services.pids import PIDsService, PIDManager
 
 from documents import config
 
@@ -17,6 +18,7 @@ class DocumentsExt:
 
     def init_app(self, app):
         """Flask application initialization."""
+        self.app = app
 
         self.init_config(app)
         if not self.is_inherited():
@@ -55,11 +57,20 @@ class DocumentsExt:
 
     @cached_property
     def service_records(self):
+        config_class = config.DOCUMENTS_RECORD_SERVICE_CONFIG.build(self.app)
         return config.DOCUMENTS_RECORD_SERVICE_CLASS(
-            config=config.DOCUMENTS_RECORD_SERVICE_CONFIG(),
+            config=config_class,
             files_service=self.service_files,
             draft_files_service=self.service_draft_files,
+            pids_service=PIDsService(config_class, PIDManager)
         )
+    # @cached_property
+    # def service_records(self):
+    #     return config.DOCUMENTS_RECORD_SERVICE_CLASS(
+    #         config=config.DOCUMENTS_RECORD_SERVICE_CONFIG(),
+    #         files_service=self.service_files,
+    #         draft_files_service=self.service_draft_files,
+    #     )
 
     @cached_property
     def resource_records(self):
@@ -114,7 +125,24 @@ class DocumentsExt:
         )
 
     @cached_property
+    def service_records(self):
+        config_class = config.DOCUMENTS_RECORD_SERVICE_CONFIG.build(self.app)
+        return config.DOCUMENTS_RECORD_SERVICE_CLASS(
+            config=config_class,
+            files_service=self.service_files,
+            draft_files_service=self.service_draft_files,
+            pids_service=PIDsService(config_class, PIDManager)
+        )
+
+    # @cached_property
+    # def service_files(self):
+    #     files_config = config.DOCUMENTS_FILES_SERVICE_CONFIG.build(self.app)
+    #     return config.DOCUMENTS_FILES_SERVICE_CLASS(
+    #         config=files_config,
+    #     )
+    @cached_property
     def service_files(self):
+
         return config.DOCUMENTS_FILES_SERVICE_CLASS(
             config=config.DOCUMENTS_FILES_SERVICE_CONFIG(),
         )
@@ -139,6 +167,12 @@ class DocumentsExt:
             config=DocumentsFilePublishedServiceConfig(),
         )
 
+    # @cached_property
+    # def service_draft_files(self):
+    #     draft_files_config = config.DOCUMENTS_DRAFT_FILES_SERVICE_CONFIG.build(self.app)
+    #     return config.DOCUMENTS_DRAFT_FILES_SERVICE_CLASS(
+    #         config=draft_files_config,
+    #     )
     @cached_property
     def service_draft_files(self):
         return config.DOCUMENTS_DRAFT_FILES_SERVICE_CLASS(
