@@ -1,4 +1,3 @@
-from common.services.components.temporary_access import TemporaryAccessComponent
 from invenio_drafts_resources.services.records.components import DraftFilesComponent
 from invenio_records_resources.services import (
     ConditionalLink,
@@ -68,7 +67,6 @@ class DocumentsServiceConfig(
         CustomFieldsComponent,
         DraftFilesComponent,
         WorkflowComponent,
-        TemporaryAccessComponent
     ]
 
     model = "documents"
