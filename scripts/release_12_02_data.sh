@@ -53,12 +53,11 @@ done
 cat ./fixtures/communities.yaml | grep 'slug:' | sed 's/slug: //g' | while read com; do
     echo "Adding users to community $com"
     invenio oarepo communities members add $com "vlastnik-${com}@test.com" owner &
-    invenio oarepo communities members add $com "kurator-${com}@test.com" kurator &
+    invenio oarepo communities members add $com "kurator-${com}@test.com" curator &
     invenio oarepo communities members add $com "clen-${com}@test.com" &
     invenio oarepo communities members add $com "prispevatel-${com}@test.com" submitter &
     wait
 done
-
 
 invenio oarepo oai harvester add nusl-manual-submissions --name "Manual submissions NUSL harvester" \
             --url https://invenio.nusl.cz/oai2d --set manual_submission --prefix marcxml \
