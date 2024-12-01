@@ -1,13 +1,12 @@
 from invenio_access.permissions import system_identity
-from invenio_db import db
 from invenio_communities.communities.records.models import CommunityMetadata
 from invenio_communities.members.records.models import MemberModel
+from invenio_db import db
 from invenio_records_resources.proxies import current_service_registry
-from sqlalchemy import and_, select, Table, update
-
 from oarepo_runtime.datastreams.types import StreamBatch, StreamEntry
 from oarepo_runtime.datastreams.writers import BaseWriter
 from oarepo_runtime.datastreams.writers.utils import record_invenio_exceptions
+from sqlalchemy import Table, and_, select, update
 
 
 class OwnershipWriter(BaseWriter):
@@ -29,27 +28,22 @@ class OwnershipWriter(BaseWriter):
     def _write_entry(self, entry: StreamEntry):
         record = self._service.read(system_identity, entry.id)
         record_communities = self._find_record_communities(record)
-        communities_owners = [self._find_community_curator(community[0]) for community in record_communities]
+        communities_owners = [
+            self._find_community_owner(community[0]) for community in record_communities
+        ]
         self._add_owners(record, communities_owners)
 
     def _find_record_communities(self, record):
         communities_ids = record._record.parent.communities.ids
-        stmt = (
-            select(CommunityMetadata)
-            .where(CommunityMetadata.id.in_(communities_ids))
+        stmt = select(CommunityMetadata).where(
+            CommunityMetadata.id.in_(communities_ids)
         )
         record_communities_result = db.session.execute(stmt)
         return record_communities_result.fetchall()
-    
-    def _find_community_curator(self, community):
-        stmt = (
-            select(MemberModel)
-            .where(
-                and_(
-                    MemberModel.community_id == community.id,
-                    MemberModel.role == "curator"
-                )
-            )
+
+    def _find_community_owner(self, community):
+        stmt = select(MemberModel).where(
+            and_(MemberModel.community_id == community.id, MemberModel.role == "owner")
         )
         community_members_result = db.session.execute(stmt)
         return community_members_result.fetchone()
@@ -60,7 +54,11 @@ class OwnershipWriter(BaseWriter):
         stmt = (
             update(table)
             .where(table.c.id == parent_model.id)
-            .values(json=table.c.json.op('||')({"owners": [{ "user": owner[0].user_id } for owner in owners]}))
+            .values(
+                json=table.c.json.op("||")(
+                    {"owners": [{"user": owner[0].user_id} for owner in owners]}
+                )
+            )
         )
         db.session.execute(stmt)
         db.session.commit()
