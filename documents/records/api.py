@@ -1,3 +1,4 @@
+from common.records.temporary_access import TemporaryRecordAccessField
 from invenio_communities.records.records.systemfields import CommunitiesField
 from invenio_drafts_resources.records.api import Draft as InvenioDraft
 from invenio_drafts_resources.records.api import DraftRecordIdProviderV2, ParentRecord
@@ -68,6 +69,8 @@ class DocumentsRecord(InvenioRecord):
     )
 
     dumper = DocumentsDumper()
+
+    access = TemporaryRecordAccessField()
 
     sort = TitleICUSortField(source_field="metadata.title")
 
@@ -249,6 +252,8 @@ class DocumentsDraft(InvenioDraft):
     )
 
     dumper = DocumentsDraftDumper()
+
+    access = TemporaryRecordAccessField()
 
     state = RecordStateField()
 

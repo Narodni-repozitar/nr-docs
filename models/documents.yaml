@@ -47,6 +47,11 @@ record:
       - ./documents-files.yaml
     use:
     - invenio_files
+
+    permissions:  # TODO: should be taken automatically from the record's permissions presets
+      presets:
+        - docs
+
   module:
     qualified: documents
   pid:
@@ -72,7 +77,7 @@ record:
       - "{{oarepo_runtime.services.components.DateIssuedComponent}}"
       - "{{oarepo_doi.services.components.DoiComponent}}"
       - "{{oarepo_oaipmh_harvester.components.OaiSectionComponent}}"
-
+      - "{{common.services.components.temporary_access.TemporaryAccessComponent}}"
 
   published-service-config:
     base-classes:
@@ -94,6 +99,8 @@ record:
       title_search: "{{oarepo_runtime.records.systemfields.icu.ICUSearchField}}(source_field='metadata.title')"
       creator_search: "{{oarepo_runtime.records.systemfields.icu.ICUSearchField}}(source_field='metadata.creators.fullName')"
       abstract_search: "{{oarepo_runtime.records.systemfields.icu.ICUSearchField}}(source_field='metadata.abstract.value')"
+      access: "{{common.records.temporary_access.TemporaryRecordAccessField}}()"
+
 
   mapping:
     template:
