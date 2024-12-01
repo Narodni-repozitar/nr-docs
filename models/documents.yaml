@@ -77,7 +77,6 @@ record:
       - "{{oarepo_runtime.services.components.DateIssuedComponent}}"
       - "{{oarepo_doi.services.components.DoiComponent}}"
       - "{{oarepo_oaipmh_harvester.components.OaiSectionComponent}}"
-      - "{{common.services.components.temporary_access.TemporaryAccessComponent}}"
 
   published-service-config:
     base-classes:
