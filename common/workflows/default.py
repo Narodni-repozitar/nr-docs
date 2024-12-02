@@ -43,6 +43,8 @@ from oarepo_workflows import (
     WorkflowRequestPolicy,
     WorkflowTransitions,
 )
+from invenio_i18n import lazy_gettext as _
+
 
 
 class DefaultWorkflowPermissions(CommunityDefaultWorkflowPermissions):
@@ -257,3 +259,14 @@ class DefaultWorkflowRequests(WorkflowRequestPolicy):
             )
         ],
     )
+
+
+if False:
+    # just for translation extraction
+    translated_strings = [
+        _('state:draft'),
+        _('state:published'),
+        _('state:submitted'),
+        _('state:retracting'),
+        _('state:deleted'),
+    ]

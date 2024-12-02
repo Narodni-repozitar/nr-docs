@@ -3599,7 +3599,7 @@ msgstr "Keywords"
 
 #: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:499
 msgid "syntheticFields/people.label"
-msgstr "Creators"
+msgstr "People"
 
 #: /Users/m/w/nrp/nr-docs/ui/documents/templates/semantic-ui/documents/Sidebar.jinja:2
 msgid "Record request list"
@@ -3934,7 +3934,7 @@ msgstr "Defense year"
 
 #: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:509
 msgid "syntheticFields/year.label"
-msgstr "Updated year"
+msgstr "Publication date"
 
 msgid "pid.help"
 msgstr ""
@@ -4241,4 +4241,34 @@ msgid "syntheticFields/test_organizations.label"
 msgstr ""
 
 msgid "syntheticFields/test_organizations.hint"
+msgstr ""
+
+#: /Users/m/w/nrp/nr-docs/common/workflows/default.py:267
+msgid "state:draft"
+msgstr "Draft"
+
+#: /Users/m/w/nrp/nr-docs/common/workflows/default.py:268
+msgid "state:published"
+msgstr "Published"
+
+#: /Users/m/w/nrp/nr-docs/common/workflows/default.py:269
+msgid "state:submitted"
+msgstr "Submitted"
+
+#: /Users/m/w/nrp/nr-docs/common/workflows/default.py:270
+msgid "state:retracting"
+msgstr "Retracting"
+
+#: /Users/m/w/nrp/nr-docs/common/workflows/default.py:271
+msgid "state:deleted"
+msgstr "Deleted"
+
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:489
+msgid "state_timestamp.label"
+msgstr ""
+
+msgid "state_timestamp.help"
+msgstr ""
+
+msgid "state_timestamp.hint"
 msgstr ""
