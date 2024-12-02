@@ -917,6 +917,10 @@
         "state": {
             "type": "string"
         },
+        "state_timestamp": {
+            "type": "string",
+            "format": "date-time"
+        },
         "syntheticFields": {
             "type": "object",
             "properties": {
@@ -949,9 +953,6 @@
                     "type": "string"
                 },
                 "people": {
-                    "type": "string"
-                },
-                "test_organizations": {
                     "type": "string"
                 },
                 "year": {

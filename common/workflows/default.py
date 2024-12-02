@@ -23,15 +23,18 @@
 
 from datetime import timedelta
 
-from invenio_records_permissions.generators import AnyUser, SystemProcess, Disable
+from invenio_rdm_records.services.generators import IfRestricted
+from invenio_records_permissions.generators import AnyUser, Disable
 from oarepo_communities.services.permissions.generators import (
     CommunityRole,
-    PrimaryCommunityRole,
     PrimaryCommunityMembers,
+    PrimaryCommunityRole,
 )
-from oarepo_communities.services.permissions.policy import CommunityDefaultWorkflowPermissions
-from oarepo_requests.services.permissions.generators import IfRequestedBy, RequestActive
-from oarepo_runtime.services.permissions.generators import RecordOwners, UserWithRole
+from oarepo_communities.services.permissions.policy import (
+    CommunityDefaultWorkflowPermissions,
+)
+from oarepo_requests.services.permissions.generators import IfRequestedBy
+from oarepo_runtime.services.permissions.generators import RecordOwners
 from oarepo_workflows import (
     AutoApprove,
     IfInState,
@@ -40,7 +43,6 @@ from oarepo_workflows import (
     WorkflowRequestPolicy,
     WorkflowTransitions,
 )
-from oarepo_requests.services.permissions.workflow_policies import RequestBasedWorkflowPermissions
 
 
 class DefaultWorkflowPermissions(CommunityDefaultWorkflowPermissions):
@@ -50,7 +52,7 @@ class DefaultWorkflowPermissions(CommunityDefaultWorkflowPermissions):
         PrimaryCommunityRole("curator"),
     ]
 
-    can_read = [
+    can_read_generic = [
         RecordOwners(),
         # curator can see the record in any state
         CommunityRole("curator"),
@@ -58,23 +60,40 @@ class DefaultWorkflowPermissions(CommunityDefaultWorkflowPermissions):
         CommunityRole("owner"),
         # if the record is published and restricted, only members of the community can see it,
         # otherwise, any user can see it
-        IfInState(
-            "published",
-            then_=[AnyUser()],
-            # then_=[
-            #     IfRestricted( # todo - crashes on missing parent access field now
-            #         "visibility",
-            #         then_=[CommunityMembers()],
-            #         else_=[AnyUser()],
-            #     )
-            # ],
-        ),
         # every member of the community can see the metadata of the drafts, but not the files
         IfInState(
             "draft",
             then_=[PrimaryCommunityMembers()],
         ),
     ]
+
+    can_read = can_read_generic + [
+        IfInState(
+            "published",
+            then_=[
+                IfRestricted(
+                    "record",
+                    then_=[PrimaryCommunityMembers()],
+                    else_=[AnyUser()],
+                )
+            ],
+        ),
+    ]
+
+    can_read_files = can_read_generic + [
+        IfInState(
+            "published",
+            then_=[
+                IfRestricted(
+                    "files",
+                    then_=[PrimaryCommunityMembers()],
+                    else_=[AnyUser()],
+                )
+            ],
+        ),
+    ]
+
+    can_get_content_files = can_read_files
 
     can_update = [
         IfInState(
@@ -121,7 +140,10 @@ class DefaultWorkflowRequests(WorkflowRequestPolicy):
         recipients=[
             # if the requester is the curator of the community, auto approve the request
             IfRequestedBy(
-                requesters=PrimaryCommunityRole("curator"),
+                requesters=[
+                    PrimaryCommunityRole("curator"),
+                    PrimaryCommunityRole("owner"),
+                ],
                 then_=[AutoApprove()],
                 else_=[PrimaryCommunityRole("curator"), PrimaryCommunityRole("owner")],
             )
@@ -132,9 +154,10 @@ class DefaultWorkflowRequests(WorkflowRequestPolicy):
         # if the request is not resolved in 21 days, escalate it to the administrator
         escalations=[
             WorkflowRequestEscalation(
-                after=timedelta(days=21), recipients=[
+                after=timedelta(days=21),
+                recipients=[
                     PrimaryCommunityRole("owner"),
-                ]
+                ],
             )
         ],
     )
@@ -204,9 +227,10 @@ class DefaultWorkflowRequests(WorkflowRequestPolicy):
         # if the request is not resolved in 21 days, escalate it to the administrator
         escalations=[
             WorkflowRequestEscalation(
-                after=timedelta(days=21), recipients=[
+                after=timedelta(days=21),
+                recipients=[
                     PrimaryCommunityRole("owner"),
-                ]
+                ],
             )
         ],
     )
