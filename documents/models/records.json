@@ -38,7 +38,7 @@
             ],
             "generate": true
         },
-        "custom-fields": [],
+        "searchable": true,
         "permissions": {
             "presets": [
                 "docs"
@@ -61,7 +61,74 @@
             "class": "documents.services.records.schema.DocumentsSchema",
             "extra-code": ""
         },
-        "searchable": true,
+        "custom-fields": [],
+        "pid": {
+            "type": "dcmnts",
+            "provider-base-classes": [
+                "invenio_drafts_resources.records.api.DraftRecordIdProviderV2"
+            ],
+            "imports": [
+                {
+                    "import": "invenio_records_resources.records.systemfields.pid.PIDField"
+                },
+                {
+                    "import": "invenio_records_resources.records.systemfields.pid.PIDFieldContext"
+                }
+            ],
+            "generate": true,
+            "module": "documents.records.api",
+            "provider-class": "documents.records.api.DocumentsIdProvider",
+            "field-class": "invenio_records_resources.records.systemfields.pid.PIDField",
+            "context-class": "invenio_records_resources.records.systemfields.pid.PIDFieldContext",
+            "field-args": [
+                "create=True"
+            ],
+            "extra-code": ""
+        },
+        "record": {
+            "imports": [
+                {
+                    "import": "oarepo_runtime.records.systemfields.SyntheticSystemField"
+                },
+                {
+                    "import": "oarepo_runtime.records.systemfields.PathSelector"
+                },
+                {
+                    "import": "oarepo_runtime.records.systemfields.FilteredSelector"
+                },
+                {
+                    "import": "oarepo_runtime.records.systemfields.MultiSelector"
+                },
+                {
+                    "import": "oarepo_runtime.records.systemfields.FirstItemSelector"
+                },
+                {
+                    "import": "nr_metadata.records.synthetic_fields.KeywordsFieldSelector"
+                }
+            ],
+            "fields": {
+                "sort": "{{common.services.sort.TitleICUSortField}}(source_field='metadata.title')",
+                "title_search": "{{oarepo_runtime.records.systemfields.icu.ICUSearchField}}(source_field='metadata.title')",
+                "creator_search": "{{oarepo_runtime.records.systemfields.icu.ICUSearchField}}(source_field='metadata.creators.fullName')",
+                "abstract_search": "{{oarepo_runtime.records.systemfields.icu.ICUSearchField}}(source_field='metadata.abstract.value')",
+                "access": "{{common.records.temporary_access.TemporaryRecordAccessField}}()",
+                "people": "SyntheticSystemField(\n    PathSelector(\"metadata.creators\", \"metadata.contributors\"),\n    filter=lambda x: x.get(\"nameType\") == \"Personal\",\n    map=lambda x: x.get(\"fullName\"),\n    key=\"syntheticFields.people\",\n)\n",
+                "organizations": "SyntheticSystemField(\n  MultiSelector(\n      FilteredSelector(\n          PathSelector(\"metadata.creators\", \"metadata.contributors\"),\n          filter=lambda x: x[\"nameType\"] == \"Personal\",\n          projection=\"affiliations.title.cs\",\n      ),\n      FilteredSelector(\n          PathSelector(\"metadata.creators\", \"metadata.contributors\"),\n          filter=lambda x: x[\"nameType\"] == \"Organizational\",\n          projection=\"fullName\",\n      ),\n  ),\n  key=\"syntheticFields.organizations\",\n)\n",
+                "keywords": "SyntheticSystemField(\n    selector=KeywordsFieldSelector(\"metadata.subjects.subject\"),\n    key=\"syntheticFields.keywords\",\n)\n",
+                "date": "SyntheticSystemField(\n    selector=FirstItemSelector(\"metadata.dateModified\", \"metadata.dateIssued\"),\n    key=\"syntheticFields.date\",\n)\n",
+                "year": "SyntheticSystemField(\n    selector=FirstItemSelector(\"metadata.dateIssued\", \"metadata.thesis.dateDefended\"),\n    key=\"syntheticFields.year\",\n    filter=lambda x: len(x) >= 4,\n    map=lambda x: x[:4]\n)\n",
+                "defenseYear": "SyntheticSystemField(\n    selector=PathSelector(\"metadata.thesis.dateDefended\"),\n    key=\"syntheticFields.defenseYear\",\n    filter=lambda x: len(x) >= 4,\n    map=lambda x: x[:4]\n)\n",
+                "state": "{{oarepo_workflows.records.systemfields.state.RecordStateField}}(initial='published')",
+                "state_timestamp": "{{oarepo_workflows.records.systemfields.state.RecordStateTimestampField}}()"
+            },
+            "base-classes": [
+                "invenio_drafts_resources.records.api.Record{InvenioRecord}"
+            ],
+            "generate": true,
+            "module": "documents.records.api",
+            "class": "documents.records.api.DocumentsRecord",
+            "extra-code": ""
+        },
         "service-config": {
             "base-classes": [
                 "oarepo_runtime.services.config.service.PermissionsPresetsConfigMixin",
@@ -87,29 +154,6 @@
             "extra-code": "",
             "service-id": "documents",
             "additional-args": []
-        },
-        "pid": {
-            "type": "dcmnts",
-            "provider-base-classes": [
-                "invenio_drafts_resources.records.api.DraftRecordIdProviderV2"
-            ],
-            "imports": [
-                {
-                    "import": "invenio_records_resources.records.systemfields.pid.PIDField"
-                },
-                {
-                    "import": "invenio_records_resources.records.systemfields.pid.PIDFieldContext"
-                }
-            ],
-            "generate": true,
-            "module": "documents.records.api",
-            "provider-class": "documents.records.api.DocumentsIdProvider",
-            "field-class": "invenio_records_resources.records.systemfields.pid.PIDField",
-            "context-class": "invenio_records_resources.records.systemfields.pid.PIDFieldContext",
-            "field-args": [
-                "create=True"
-            ],
-            "extra-code": ""
         },
         "ui": {
             "marshmallow": {
@@ -171,48 +215,6 @@
             "imports": [],
             "additional-args": []
         },
-        "record": {
-            "imports": [
-                {
-                    "import": "oarepo_runtime.records.systemfields.SyntheticSystemField"
-                },
-                {
-                    "import": "oarepo_runtime.records.systemfields.PathSelector"
-                },
-                {
-                    "import": "oarepo_runtime.records.systemfields.FilteredSelector"
-                },
-                {
-                    "import": "oarepo_runtime.records.systemfields.MultiSelector"
-                },
-                {
-                    "import": "oarepo_runtime.records.systemfields.FirstItemSelector"
-                },
-                {
-                    "import": "nr_metadata.records.synthetic_fields.KeywordsFieldSelector"
-                }
-            ],
-            "fields": {
-                "sort": "{{common.services.sort.TitleICUSortField}}(source_field='metadata.title')",
-                "title_search": "{{oarepo_runtime.records.systemfields.icu.ICUSearchField}}(source_field='metadata.title')",
-                "creator_search": "{{oarepo_runtime.records.systemfields.icu.ICUSearchField}}(source_field='metadata.creators.fullName')",
-                "abstract_search": "{{oarepo_runtime.records.systemfields.icu.ICUSearchField}}(source_field='metadata.abstract.value')",
-                "people": "SyntheticSystemField(\n    PathSelector(\"metadata.creators\", \"metadata.contributors\"),\n    filter=lambda x: x.get(\"nameType\") == \"Personal\",\n    map=lambda x: x.get(\"fullName\"),\n    key=\"syntheticFields.people\",\n)\n",
-                "organizations": "SyntheticSystemField(\n  MultiSelector(\n      FilteredSelector(\n          PathSelector(\"metadata.creators\", \"metadata.contributors\"),\n          filter=lambda x: x[\"nameType\"] == \"Personal\",\n          projection=\"affiliations.title.cs\",\n      ),\n      FilteredSelector(\n          PathSelector(\"metadata.creators\", \"metadata.contributors\"),\n          filter=lambda x: x[\"nameType\"] == \"Organizational\",\n          projection=\"fullName\",\n      ),\n  ),\n  key=\"syntheticFields.organizations\",\n)\n",
-                "keywords": "SyntheticSystemField(\n    selector=KeywordsFieldSelector(\"metadata.subjects.subject\"),\n    key=\"syntheticFields.keywords\",\n)\n",
-                "date": "SyntheticSystemField(\n    selector=FirstItemSelector(\"metadata.dateModified\", \"metadata.dateIssued\"),\n    key=\"syntheticFields.date\",\n)\n",
-                "year": "SyntheticSystemField(\n    selector=FirstItemSelector(\"metadata.dateModified\", \"metadata.dateIssued\"),\n    key=\"syntheticFields.year\",\n    filter=lambda x: len(x) >= 4,\n    map=lambda x: x[:4]\n)\n",
-                "defenseYear": "SyntheticSystemField(\n    selector=PathSelector(\"metadata.thesis.dateDefended\"),\n    key=\"syntheticFields.defenseYear\",\n    filter=lambda x: len(x) >= 4,\n    map=lambda x: x[:4]\n)\n",
-                "state": "{{oarepo_workflows.records.systemfields.state.RecordStateField}}(initial='published')"
-            },
-            "base-classes": [
-                "invenio_drafts_resources.records.api.Record{InvenioRecord}"
-            ],
-            "generate": true,
-            "module": "documents.records.api",
-            "class": "documents.records.api.DocumentsRecord",
-            "extra-code": ""
-        },
         "facets": {
             "facet-groups": {
                 "default": {
@@ -261,10 +263,25 @@
             "suffix-upper": "DOCUMENTS",
             "suffix-snake": "documents"
         },
+        "draft": {
+            "type": "draft_record",
+            "properties": {},
+            "searchable": true,
+            "tests": {
+                "extra-fixtures": [],
+                "extra-code": "",
+                "module": "tests"
+            }
+        },
         "draft-files": {
             "type": "draft-file",
             "properties": {},
             "searchable": true,
+            "permissions": {
+                "presets": [
+                    "docs"
+                ]
+            },
             "resource": {
                 "base-classes": [
                     "oarepo_ui.resources.file_resource.S3RedirectFileResource"
@@ -280,16 +297,6 @@
             "extra-fixtures": [],
             "extra-code": "",
             "module": "tests"
-        },
-        "draft": {
-            "type": "draft_record",
-            "properties": {},
-            "searchable": true,
-            "tests": {
-                "extra-fixtures": [],
-                "extra-code": "",
-                "module": "tests"
-            }
         },
         "files": {
             "type": "file",
@@ -362,6 +369,7 @@
                     "type": "keyword"
                 }
             },
+            "searchable": true,
             "marshmallow": {
                 "imports": [
                     {
@@ -373,7 +381,11 @@
                     "InvenioFileSchema"
                 ]
             },
-            "searchable": true,
+            "permissions": {
+                "presets": [
+                    "docs"
+                ]
+            },
             "resource": {
                 "base-classes": [
                     "oarepo_ui.resources.file_resource.S3RedirectFileResource"
@@ -396,6 +408,26 @@
             "skip": false
         },
         "model-name": "Documents",
+        "draft-parent-record-metadata": {
+            "base-classes": [
+                "oarepo_workflows.records.models.RecordWorkflowParentModelMixin",
+                "invenio_db.db{db.Model}",
+                "invenio_records.models.RecordMetadataBase"
+            ],
+            "class": "documents.records.models.DocumentsParentMetadata",
+            "imports": [],
+            "table": "documents_parent_record_metadata",
+            "module": "documents.records.models",
+            "generate": true
+        },
+        "parent-record-marshmallow": {
+            "base-classes": [
+                "oarepo_workflows.services.records.schema.WorkflowParentSchema"
+            ],
+            "module": "documents.services.records.schema",
+            "class": "documents.services.records.schema.GeneratedParentSchema",
+            "generate": true
+        },
         "config": {
             "generate": true,
             "module": "documents.config",
@@ -436,19 +468,6 @@
             "module": "documents.proxies",
             "generate": true
         },
-        "resource": {
-            "base-classes": [
-                "invenio_drafts_resources.resources.RecordResource"
-            ],
-            "generate": true,
-            "config-key": "DOCUMENTS_RECORD_RESOURCE_CLASS",
-            "module": "documents.resources.records.resource",
-            "class": "documents.resources.records.resource.DocumentsResource",
-            "proxy": "current_resource",
-            "extra-code": "",
-            "imports": [],
-            "additional-args": []
-        },
         "record-resolver": {
             "generate": true,
             "module": "documents.records.requests.resolvers",
@@ -463,25 +482,22 @@
             "generate": true,
             "class": "oarepo_requests.resolvers.ui.RecordEntityReferenceUIResolver"
         },
-        "draft-parent-record-metadata": {
+        "resource": {
             "base-classes": [
-                "oarepo_workflows.records.models.RecordWorkflowParentModelMixin",
-                "invenio_db.db{db.Model}",
-                "invenio_records.models.RecordMetadataBase"
+                "invenio_drafts_resources.resources.RecordResource"
             ],
-            "class": "documents.records.models.DocumentsParentMetadata",
+            "generate": true,
+            "config-key": "DOCUMENTS_RECORD_RESOURCE_CLASS",
+            "module": "documents.resources.records.resource",
+            "class": "documents.resources.records.resource.DocumentsResource",
+            "proxy": "current_resource",
+            "extra-code": "",
             "imports": [],
-            "table": "documents_parent_record_metadata",
-            "module": "documents.records.models",
-            "generate": true
+            "additional-args": []
         },
-        "parent-record-marshmallow": {
-            "base-classes": [
-                "oarepo_workflows.services.records.schema.WorkflowParentSchema"
-            ],
-            "module": "documents.services.records.schema",
-            "class": "documents.services.records.schema.GeneratedParentSchema",
-            "generate": true
+        "translations": {
+            "module": "documents.translations",
+            "alias": "documents"
         },
         "files-field": {
             "generate": true,
@@ -516,6 +532,22 @@
             "use-versioning": true,
             "alembic": "documents.alembic"
         },
+        "service": {
+            "imports": [],
+            "base-classes": [
+                "invenio_drafts_resources.services.RecordService{InvenioRecordService}"
+            ],
+            "generate": true,
+            "config-key": "DOCUMENTS_RECORD_SERVICE_CLASS",
+            "proxy": "current_service",
+            "module": "documents.services.records.service",
+            "class": "documents.services.records.service.DocumentsService",
+            "extra-code": "",
+            "additional-args": [
+                "files_service=self.service_files",
+                "draft_files_service=self.service_draft_files"
+            ]
+        },
         "record-dumper": {
             "generate": true,
             "module": "documents.records.dumpers.dumper",
@@ -530,10 +562,6 @@
                 "{{documents.records.dumpers.edtf.DocumentsEDTFIntervalDumperExt}}()"
             ],
             "imports": []
-        },
-        "translations": {
-            "module": "documents.translations",
-            "alias": "documents"
         },
         "multilingual-dumper": {
             "generate": true,
@@ -555,6 +583,31 @@
             ],
             "extra-code": "",
             "extensions": [],
+            "imports": []
+        },
+        "record-list": {
+            "generate": true,
+            "module": "documents.services.records.results",
+            "class": "documents.services.records.results.DocumentsRecordList",
+            "extra-code": "",
+            "base-classes": [
+                "oarepo_runtime.services.results.RecordList"
+            ],
+            "components": [],
+            "imports": []
+        },
+        "record-item": {
+            "generate": true,
+            "module": "documents.services.records.results",
+            "class": "documents.services.records.results.DocumentsRecordItem",
+            "extra-code": "",
+            "base-classes": [
+                "oarepo_runtime.services.results.RecordItem"
+            ],
+            "components": [
+                "{{oarepo_requests.services.results.RequestsComponent}}()",
+                "{{oarepo_requests.services.results.RequestTypesComponent}}()"
+            ],
             "imports": []
         },
         "draft-parent-record": {
@@ -584,47 +637,6 @@
             "name": "parent-v1.0.0.json",
             "file": "documents/records/jsonschemas/parent-v1.0.0.json",
             "generate": true
-        },
-        "service": {
-            "imports": [],
-            "base-classes": [
-                "invenio_drafts_resources.services.RecordService{InvenioRecordService}"
-            ],
-            "generate": true,
-            "config-key": "DOCUMENTS_RECORD_SERVICE_CLASS",
-            "proxy": "current_service",
-            "module": "documents.services.records.service",
-            "class": "documents.services.records.service.DocumentsService",
-            "extra-code": "",
-            "additional-args": [
-                "files_service=self.service_files",
-                "draft_files_service=self.service_draft_files"
-            ]
-        },
-        "record-list": {
-            "generate": true,
-            "module": "documents.services.records.results",
-            "class": "documents.services.records.results.DocumentsRecordList",
-            "extra-code": "",
-            "base-classes": [
-                "oarepo_runtime.services.results.RecordList"
-            ],
-            "components": [],
-            "imports": []
-        },
-        "record-item": {
-            "generate": true,
-            "module": "documents.services.records.results",
-            "class": "documents.services.records.results.DocumentsRecordItem",
-            "extra-code": "",
-            "base-classes": [
-                "oarepo_runtime.services.results.RecordItem"
-            ],
-            "components": [
-                "{{oarepo_requests.services.results.RequestsComponent}}()",
-                "{{oarepo_requests.services.results.RequestTypesComponent}}()"
-            ],
-            "imports": []
         },
         "published-service": {
             "generate": true,
@@ -868,6 +880,7 @@
                     },
                     "accessRights": {
                         "type": "vocabulary",
+                        "required": true,
                         "vocabulary-type": "access-rights",
                         "ui": {
                             "marshmallow": {
@@ -3420,6 +3433,7 @@
                             "properties": {
                                 "funder": {
                                     "type": "vocabulary",
+                                    "required": true,
                                     "vocabulary-type": "funders",
                                     "ui": {
                                         "marshmallow": {
@@ -7624,23 +7638,30 @@
                     }
                 }
             },
+            "state_timestamp": {
+                "type": "datetime",
+                "marshmallow": {
+                    "read": true,
+                    "write": false
+                },
+                "ui": {
+                    "marshmallow": {
+                        "read": true,
+                        "write": false
+                    }
+                }
+            },
             "syntheticFields": {
                 "type": "object",
                 "ui": {
                     "marshmallow": {
-                        "generate": true,
-                        "base-classes": [
-                            "nr_metadata.documents.services.records.ui_schema.NRDocumentSyntheticFieldsUISchema"
-                        ],
-                        "class": "documents.services.records.ui_schema.SyntheticFieldsUISchema"
+                        "generate": false,
+                        "class": "nr_metadata.documents.services.records.ui_schema.NRDocumentSyntheticFieldsUISchema"
                     }
                 },
                 "marshmallow": {
-                    "generate": true,
-                    "base-classes": [
-                        "nr_metadata.documents.services.records.schema.NRDocumentSyntheticFieldsSchema"
-                    ],
-                    "class": "documents.services.records.schema.SyntheticFieldsSchema"
+                    "generate": false,
+                    "class": "nr_metadata.documents.services.records.schema.NRDocumentSyntheticFieldsSchema"
                 },
                 "properties": {
                     "date": {
@@ -7769,9 +7790,6 @@
                         "label.cs": "Lidé",
                         "label.en": "People"
                     },
-                    "test_organizations": {
-                        "type": "keyword"
-                    },
                     "year": {
                         "type": "edtf",
                         "facets": {
@@ -7787,8 +7805,8 @@
                             "read": false,
                             "write": false
                         },
-                        "label.cs": "Rok poslední změny",
-                        "label.en": "Updated year"
+                        "label.cs": "Datum vydání",
+                        "label.en": "Publication date"
                     }
                 }
             },
