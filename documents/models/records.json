@@ -263,16 +263,6 @@
             "suffix-upper": "DOCUMENTS",
             "suffix-snake": "documents"
         },
-        "draft": {
-            "type": "draft_record",
-            "properties": {},
-            "searchable": true,
-            "tests": {
-                "extra-fixtures": [],
-                "extra-code": "",
-                "module": "tests"
-            }
-        },
         "draft-files": {
             "type": "draft-file",
             "properties": {},
@@ -287,6 +277,16 @@
                     "oarepo_ui.resources.file_resource.S3RedirectFileResource"
                 ]
             },
+            "tests": {
+                "extra-fixtures": [],
+                "extra-code": "",
+                "module": "tests"
+            }
+        },
+        "draft": {
+            "type": "draft_record",
+            "properties": {},
+            "searchable": true,
             "tests": {
                 "extra-fixtures": [],
                 "extra-code": "",
