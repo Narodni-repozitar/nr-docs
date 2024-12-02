@@ -1,4 +1,3 @@
-from common.records.temporary_access import TemporaryRecordAccessField
 from invenio_communities.records.records.systemfields import CommunitiesField
 from invenio_drafts_resources.records.api import Draft as InvenioDraft
 from invenio_drafts_resources.records.api import DraftRecordIdProviderV2, ParentRecord
@@ -23,9 +22,13 @@ from oarepo_runtime.records.systemfields.icu import ICUSearchField
 from oarepo_runtime.records.systemfields.owner import OwnersField
 from oarepo_runtime.records.systemfields.record_status import RecordStatusSystemField
 from oarepo_vocabularies.records.api import Vocabulary
-from oarepo_workflows.records.systemfields.state import RecordStateField
+from oarepo_workflows.records.systemfields.state import (
+    RecordStateField,
+    RecordStateTimestampField,
+)
 from oarepo_workflows.records.systemfields.workflow import WorkflowField
 
+from common.records.temporary_access import TemporaryRecordAccessField
 from common.services.sort import TitleICUSortField
 from documents.files.api import DocumentsFile, DocumentsFileDraft
 from documents.records.dumpers.dumper import DocumentsDraftDumper, DocumentsDumper
@@ -70,8 +73,6 @@ class DocumentsRecord(InvenioRecord):
 
     dumper = DocumentsDumper()
 
-    access = TemporaryRecordAccessField()
-
     sort = TitleICUSortField(source_field="metadata.title")
 
     title_search = ICUSearchField(source_field="metadata.title")
@@ -79,6 +80,8 @@ class DocumentsRecord(InvenioRecord):
     creator_search = ICUSearchField(source_field="metadata.creators.fullName")
 
     abstract_search = ICUSearchField(source_field="metadata.abstract.value")
+
+    access = TemporaryRecordAccessField()
 
     people = SyntheticSystemField(
         PathSelector("metadata.creators", "metadata.contributors"),
@@ -114,7 +117,9 @@ class DocumentsRecord(InvenioRecord):
     )
 
     year = SyntheticSystemField(
-        selector=FirstItemSelector("metadata.dateModified", "metadata.dateIssued"),
+        selector=FirstItemSelector(
+            "metadata.dateIssued", "metadata.thesis.dateDefended"
+        ),
         key="syntheticFields.year",
         filter=lambda x: len(x) >= 4,
         map=lambda x: x[:4],
@@ -128,6 +133,8 @@ class DocumentsRecord(InvenioRecord):
     )
 
     state = RecordStateField(initial="published")
+
+    state_timestamp = RecordStateTimestampField()
 
     relations = RelationsField(
         accessRights=PIDRelation(
@@ -253,9 +260,9 @@ class DocumentsDraft(InvenioDraft):
 
     dumper = DocumentsDraftDumper()
 
-    access = TemporaryRecordAccessField()
-
     state = RecordStateField()
+
+    state_timestamp = RecordStateTimestampField()
 
     relations = RelationsField(
         accessRights=PIDRelation(

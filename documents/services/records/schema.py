@@ -9,6 +9,7 @@ from nr_metadata.documents.services.records.schema import (
 )
 from oarepo_communities.schemas.parent import CommunitiesParentSchema
 from oarepo_runtime.services.schema.marshmallow import DictOnlySchema
+from oarepo_runtime.services.schema.validation import validate_datetime
 from oarepo_workflows.services.records.schema import WorkflowParentSchema
 
 
@@ -30,7 +31,9 @@ class DocumentsSchema(NRDocumentRecordSchema):
 
     state = ma_fields.String(dump_only=True)
 
-    syntheticFields = ma_fields.Nested(lambda: SyntheticFieldsSchema())
+    state_timestamp = ma_fields.String(dump_only=True, validate=[validate_datetime])
+
+    syntheticFields = ma_fields.Nested(lambda: NRDocumentSyntheticFieldsSchema())
     parent = ma.fields.Nested(GeneratedParentSchema)
     files = ma.fields.Nested(
         lambda: FilesOptionsSchema(), load_default={"enabled": True}
@@ -66,18 +69,6 @@ class HarvestSchema(DictOnlySchema):
     datestamp = ma_fields.String()
 
     identifier = ma_fields.String()
-
-
-class KeywordsSchema(DictOnlySchema):
-    class Meta:
-        unknown = ma.RAISE
-
-
-class SyntheticFieldsSchema(NRDocumentSyntheticFieldsSchema):
-    class Meta:
-        unknown = ma.RAISE
-
-    test_organizations = ma_fields.String()
 
 
 class FilesOptionsSchema(ma.Schema):

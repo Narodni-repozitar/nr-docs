@@ -130,6 +130,7 @@ class DocumentsSearchOptions(I18nSearchOptions):
         "oai_harvest_datestamp": facets.oai_harvest_datestamp,
         "oai_harvest_identifier": facets.oai_harvest_identifier,
         "state": facets.state,
+        "state_timestamp": facets.state_timestamp,
         "syntheticFields_date": facets.syntheticFields_date,
         "syntheticFields_defenseYear": facets.syntheticFields_defenseYear,
         "syntheticFields_keywords": facets.syntheticFields_keywords,

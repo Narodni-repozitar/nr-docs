@@ -33,6 +33,10 @@ record:
     resource:
       base-classes: [ oarepo_ui.resources.file_resource.S3RedirectFileResource ]
 
+    permissions:  # TODO: should be taken automatically from the record's permissions presets
+      presets:
+        - docs
+
   permissions:
     presets:
       - docs
@@ -60,9 +64,7 @@ record:
     metadata: {}
 
     syntheticFields:
-      properties:
-        test_organizations:
-          type: keyword
+      properties: {}
 
   resource-config:
     base-html-url: /docs/

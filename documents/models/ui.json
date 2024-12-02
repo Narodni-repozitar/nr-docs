@@ -74,6 +74,7 @@
                     "detail": "vocabulary_item",
                     "edit": "vocabulary_item",
                     "input": "vocabulary",
+                    "required": true,
                     "help": "metadata/accessRights.help",
                     "label": "metadata/accessRights.label",
                     "hint": "metadata/accessRights.hint",
@@ -783,6 +784,7 @@
                                 "detail": "vocabulary_item",
                                 "edit": "vocabulary_item",
                                 "input": "vocabulary",
+                                "required": true,
                                 "help": "metadata/fundingReferences/funder.help",
                                 "label": "metadata/fundingReferences/funder.label",
                                 "hint": "metadata/fundingReferences/funder.hint",
@@ -2163,6 +2165,14 @@
             "hint": "state.hint",
             "facet": "state"
         },
+        "state_timestamp": {
+            "detail": "datetime",
+            "input": "datetime",
+            "help": "state_timestamp.help",
+            "label": "state_timestamp.label",
+            "hint": "state_timestamp.hint",
+            "facet": "state_timestamp"
+        },
         "syntheticFields": {
             "detail": "syntheticfield",
             "input": "syntheticfield",
@@ -2239,14 +2249,6 @@
                     "label": "syntheticFields/people.label",
                     "hint": "syntheticFields/people.hint",
                     "facet": "syntheticFields_people"
-                },
-                "test_organizations": {
-                    "detail": "keyword",
-                    "input": "keyword",
-                    "help": "syntheticFields/test_organizations.help",
-                    "label": "syntheticFields/test_organizations.label",
-                    "hint": "syntheticFields/test_organizations.hint",
-                    "facet": "syntheticFields_test_organizations"
                 },
                 "year": {
                     "detail": "edtf",

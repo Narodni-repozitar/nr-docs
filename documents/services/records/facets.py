@@ -485,6 +485,10 @@ oai_harvest_identifier = TermsFacet(
 
 state = TermsFacet(field="state", label=_("state.label"))
 
+state_timestamp = DateTimeFacet(
+    field="state_timestamp", label=_("state_timestamp.label")
+)
+
 syntheticFields_date = DateTimeFacet(
     field="syntheticFields.date", label=_("syntheticFields/date.label")
 )
@@ -505,7 +509,6 @@ syntheticFields_organizations = TermsFacet(
 syntheticFields_people = TermsFacet(
     field="syntheticFields.people", label=_("syntheticFields/people.label")
 )
-
 
 syntheticFields_year = YearAutoHistogramFacet(
     field="syntheticFields.year", label=_("syntheticFields/year.label")
