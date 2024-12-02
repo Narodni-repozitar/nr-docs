@@ -264,6 +264,65 @@ class DocumentsDraft(InvenioDraft):
 
     state_timestamp = RecordStateTimestampField()
 
+    sort = TitleICUSortField(source_field="metadata.title")
+
+    title_search = ICUSearchField(source_field="metadata.title")
+
+    creator_search = ICUSearchField(source_field="metadata.creators.fullName")
+
+    abstract_search = ICUSearchField(source_field="metadata.abstract.value")
+
+    access = TemporaryRecordAccessField()
+
+    people = SyntheticSystemField(
+        PathSelector("metadata.creators", "metadata.contributors"),
+        filter=lambda x: x.get("nameType") == "Personal",
+        map=lambda x: x.get("fullName"),
+        key="syntheticFields.people",
+    )
+
+    organizations = SyntheticSystemField(
+        MultiSelector(
+            FilteredSelector(
+                PathSelector("metadata.creators", "metadata.contributors"),
+                filter=lambda x: x["nameType"] == "Personal",
+                projection="affiliations.title.cs",
+            ),
+            FilteredSelector(
+                PathSelector("metadata.creators", "metadata.contributors"),
+                filter=lambda x: x["nameType"] == "Organizational",
+                projection="fullName",
+            ),
+        ),
+        key="syntheticFields.organizations",
+    )
+
+    keywords = SyntheticSystemField(
+        selector=KeywordsFieldSelector("metadata.subjects.subject"),
+        key="syntheticFields.keywords",
+    )
+
+    date = SyntheticSystemField(
+        selector=FirstItemSelector("metadata.dateModified", "metadata.dateIssued"),
+        key="syntheticFields.date",
+    )
+
+    year = SyntheticSystemField(
+        selector=FirstItemSelector(
+            "metadata.dateIssued", "metadata.thesis.dateDefended"
+        ),
+        key="syntheticFields.year",
+        filter=lambda x: len(x) >= 4,
+        map=lambda x: x[:4],
+    )
+
+    defenseYear = SyntheticSystemField(
+        selector=PathSelector("metadata.thesis.dateDefended"),
+        key="syntheticFields.defenseYear",
+        filter=lambda x: len(x) >= 4,
+        map=lambda x: x[:4],
+    )
+
     relations = RelationsField(
         accessRights=PIDRelation(
             "metadata.accessRights",
