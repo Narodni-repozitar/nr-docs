@@ -275,7 +275,7 @@ msgstr "Ročník"
 
 #: models/nr-documents/nr_documents/services/records/facets.py:368
 msgid "metadata/relatedItems/itemYear.label"
-msgstr "Rok vydání"
+msgstr "Datum vydání"
 
 #: models/nr-documents/nr_documents/services/records/facets.py:373
 #: sites/nr-docs/site/nr_docs/translations/jinjax_messages.jinja:4

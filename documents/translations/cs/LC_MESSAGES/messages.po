@@ -1770,7 +1770,7 @@ msgid "metadata/relatedItems/itemVolume.help"
 msgstr ""
 
 msgid "metadata/relatedItems/itemYear.label"
-msgstr "Rok vydání"
+msgstr "Datum vydání"
 
 msgid "metadata/relatedItems/itemYear.help"
 msgstr ""
