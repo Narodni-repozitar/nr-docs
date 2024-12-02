@@ -1,4 +1,3 @@
-from datetime import datetime
 from invenio_access.permissions import system_identity
 from invenio_vocabularies.proxies import current_service as vocabulary_service
 from oarepo_doi.doi_mapping_base import DataCiteMappingBase
@@ -6,6 +5,7 @@ from babel_edtf import parse_edtf
 
 
 class DataCiteMappingNRDocs(DataCiteMappingBase):
+
     def metadata_check(self, data):
         errors = {}
         data = data["metadata"]
@@ -14,27 +14,22 @@ class DataCiteMappingNRDocs(DataCiteMappingBase):
         else:
             for i, creator in enumerate(data["creators"]):
                 if "fullName" not in creator:
-                    errors["metadata.creators[{i}].fullName"] = [
-                        "Full name of creator is mandatory"
-                    ]
+                    errors["metadata.creators[{i}].fullName"] = ["Full name of creator is mandatory"]
                 if "authorityIdentifiers" in creator:
                     for j, id in enumerate(creator["authorityIdentifiers"]):
                         if "scheme" not in id:
-                            errors[
-                                "metadata.creators[{i}].authorityIdentifiers[{j}].scheme"
-                            ] = ["Authority identifier scheme is mandatory"]
+                            errors["metadata.creators[{i}].authorityIdentifiers[{j}].scheme"] = [
+                                "Authority identifier scheme is mandatory"]
         if "contributors" in data:
             for i, contributor in enumerate(data["contributors"]):
                 if "fullName" not in contributor:
                     errors["metadata.contributors[{i}].fullName"] = [
-                        "Full name of contributor is mandatory"
-                    ]
+                        "Full name of contributor is mandatory"]
                 if "authorityIdentifiers" in contributor:
                     for j, id in enumerate(contributor["authorityIdentifiers"]):
                         if "scheme" not in id:
-                            errors[
-                                "metadata.contributors[{i}].authorityIdentifiers[{j}].scheme"
-                            ] = ["Authority identifier scheme is mandatory"]
+                            errors["metadata.contributors[{i}].authorityIdentifiers[{j}].scheme"] = [
+                                "Authority identifier scheme is mandatory"]
         if "title" not in data:
             errors["metadata.title"] = ["Title is mandatory"]
         if "resourceType" not in data:
@@ -44,9 +39,7 @@ class DataCiteMappingNRDocs(DataCiteMappingBase):
         if "fundingReferences" in data:
             for i, fund in enumerate(data["fundingReferences"]):
                 if "projectName" not in fund:
-                    errors["metadata.fundingReferences[{i}].projectName"] = [
-                        "Funder name is mandatory"
-                    ]
+                    errors["metadata.fundingReferences[{i}].projectName"] = ["Funder name is mandatory"]
 
         return errors
 
@@ -77,18 +70,16 @@ class DataCiteMappingNRDocs(DataCiteMappingBase):
             dc_contributors = creatibutor(metadata, "contributors")
             payload["contributors"] = dc_contributors
 
-        date_obj = parse_edtf(metadata["dateIssued"])
+        date_obj = parse_edtf(metadata['dateIssued'])
 
         year = date_obj.year
 
         payload["publicationYear"] = year
-        payload["url"] = data["links"]["self"]
+        payload["url"] = data['links']['self']
 
         dc_dates = []
         if "dateAvailable" in metadata:
-            dc_dates.append(
-                {"date": metadata["dateAvailable"], "dateType": "Available"}
-            )
+            dc_dates.append({"date": metadata["dateAvailable"], "dateType": "Available"})
         if "dateModified" in metadata:
             dc_dates.append({"date": metadata["dateModified"], "dateType": "Updated"})
         if "dateIssued" in metadata:
@@ -99,21 +90,14 @@ class DataCiteMappingNRDocs(DataCiteMappingBase):
         if "rights" in metadata:
             dc_rights = []
             right = metadata["rights"]
-            dc_rights.append(
-                {"rights": right["title"], "rightsIdentifier": right["id"]}
-            )
+            dc_rights.append({"rights": right["title"], "rightsIdentifier": right["id"]})
             if len(dc_rights) > 0:
                 payload["rightsList"] = dc_rights
         if "abstract" in metadata:
             dc_descriptions = []
             for abstr in metadata["abstract"]:
                 dc_descriptions.append(
-                    {
-                        "lang": abstr["lang"],
-                        "description": abstr["value"],
-                        "descriptionType": "Abstract",
-                    }
-                )
+                    {"lang": abstr["lang"], "description": abstr["value"], "descriptionType": "Abstract"})
             if len(dc_descriptions) > 0:
                 payload["descriptions"] = dc_descriptions
 
@@ -128,7 +112,6 @@ class DataCiteMappingNRDocs(DataCiteMappingBase):
 
         return payload
 
-
 def publisher(data):
     if "publishers" in data:
         return data["publishers"][0]
@@ -136,10 +119,8 @@ def publisher(data):
 
 def resource_type(data):
     if "resourceType" in data:
-        voc = vocabulary_service.read(
-            system_identity, ("resource-types", data["resourceType"]["id"])
-        )
-        return voc.data["props"]["dataCiteType"]
+        voc = vocabulary_service.read(system_identity, ('resource-types', data["resourceType"]["id"]))
+        return voc.data['props']['dataCiteType']
 
 
 def subjects(data):
@@ -167,9 +148,7 @@ def title(data):
                 additional_datacite_title["lang"] = add_title["title"]["lang"]
                 additional_datacite_title["title"] = add_title["title"]["value"]
             if "titleType" in add_title:
-                additional_datacite_title["titleType"] = (
-                    add_title["titleType"][0].upper() + add_title["titleType"][1:]
-                )
+                additional_datacite_title["titleType"] = add_title["titleType"][0].upper() + add_title["titleType"][1:]
             if additional_datacite_title != {}:
                 datacite_titles.append(additional_datacite_title)
 
@@ -186,12 +165,9 @@ def creatibutor(data, type):
         if "nameType" in creatibutor:
             datacite_creatibutor["nameType"] = creatibutor["nameType"]
         if "contributorType" in creatibutor:
-            voc = vocabulary_service.read(
-                system_identity,
-                ("contributor-types", creatibutor["contributorType"]["id"]),
-            )
-            if "dataCiteType" in voc.data["props"]:
-                contr_type = voc.data["props"]["dataCiteType"]
+            voc = vocabulary_service.read(system_identity, ('contributor-types', creatibutor["contributorType"]["id"]))
+            if 'dataCiteType' in voc.data['props']:
+                contr_type = voc.data['props']['dataCiteType']
             else:
                 contr_type = "Other"
             datacite_creatibutor["contributorType"] = contr_type
@@ -232,15 +208,10 @@ def related_items(data):
         if "itemCreators" in rel:
             dc_rel["creators"] = creatibutor(rel, "itemCreators")
         if "itemRelationType" in rel:
-            dc_rel["relationType"] = (
-                rel["itemRelationType"]["id"][0].upper()
-                + rel["itemRelationType"]["id"][1:]
-            )
+            dc_rel["relationType"] = rel["itemRelationType"]["id"][0].upper() + rel["itemRelationType"]["id"][1:]
         if "itemResourceType" in rel:
-            voc = vocabulary_service.read(
-                system_identity, ("resource-types", rel["itemResourceType"]["id"])
-            )
-            dc_rel["relatedItemType"] = voc.data["props"]["dataCiteType"]
+            voc = vocabulary_service.read(system_identity, ('resource-types', rel["itemResourceType"]["id"]))
+            dc_rel["relatedItemType"] = voc.data['props']['dataCiteType']
         if "itemStartPage" in rel:
             dc_rel["firstPage"] = rel["itemStartPage"]
         if "itemEndPage" in rel:
