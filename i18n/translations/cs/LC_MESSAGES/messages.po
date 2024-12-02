@@ -747,10 +747,10 @@ msgid "Preview"
 msgstr "Náhled"
 
 msgid "Publish"
-msgstr "Publikovat"
+msgstr "Zveřejnit"
 
 msgid "Are you sure you wish to publish this draft?"
-msgstr "Jste si jistý, že chcete tento koncept publikovat?"
+msgstr "Jste si jistý, že chcete tento koncept zveřejnit?"
 
 msgid "Add series"
 msgstr "Přidat edici"
@@ -2865,7 +2865,7 @@ msgstr "Upravit záznam"
 
 #: /Users/m/w/nrp/nr-docs/documents/records/requests/publish_draft/types.py:8
 msgid "Publish draft"
-msgstr "Publikovat draft"
+msgstr "Zveřejnit koncept"
 
 #: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:90
 msgid "metadata/contributors/contributorType.label"
