@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2024-12-02 10:22+0100\n"
+"POT-Creation-Date: 2024-12-02 10:53+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -39,6 +39,10 @@ msgstr ""
 
 #: /Users/m/w/nrp/nr-docs/common/just_for_translations.py:10
 msgid "Beta version of document respository"
+msgstr ""
+
+#: /Users/m/w/nrp/nr-docs/common/services/components/temporary_access.py:51
+msgid "Files are not allowed for metadata only access."
 msgstr ""
 
 #: /Users/m/w/nrp/nr-docs/common/workflows/default.py:267
