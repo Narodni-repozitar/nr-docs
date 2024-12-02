@@ -28,6 +28,12 @@ record:
   - ./documents-facets.yaml
   - ./documents-harvest.yaml
 
+  properties:
+    state:
+      ui:
+        marshmallow:
+          field-class: common.services.schema.LocalizedStateField
+
   draft: {}
   draft-files:
     resource:
