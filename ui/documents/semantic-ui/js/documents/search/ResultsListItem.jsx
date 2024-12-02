@@ -252,11 +252,14 @@ export const ResultsListItemComponent = ({
                 <ItemSidebarIcons rights={rights} accessStatus={accessRights} />
               </Grid.Column>
               <Grid.Column className="results-list item-main">
-                <ItemHeader
-                  title={title}
-                  searchUrl={searchAppConfig.ui_endpoint}
-                  selfLink={result.links.self_html}
-                />
+                <div className="justify-space-between flex">
+                  <ItemHeader
+                    title={title}
+                    searchUrl={searchAppConfig.ui_endpoint}
+                    selfLink={result.links.self_html}
+                  />
+                  <Label title={result.state_timestamp}>{result.state}</Label>
+                </div>
                 <ItemSubheader
                   creators={creators}
                   contributors={contributors}
