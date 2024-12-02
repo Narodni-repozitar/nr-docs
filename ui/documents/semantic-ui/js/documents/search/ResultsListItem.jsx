@@ -181,7 +181,7 @@ export const ResultsListItemComponent = ({
 
   const { allowedHtmlTags } = searchAppConfig;
 
-  const accessRights = _get(result, "metadata.accessRights");
+  const accessRights = _get(result, "metadata.accessRights", null);
   const createdDate = _get(result, "created", "No creation date found.");
   const creators = result.metadata?.creators;
   const contributors = _get(result, "metadata.contributors", []);
@@ -258,7 +258,12 @@ export const ResultsListItemComponent = ({
                     searchUrl={searchAppConfig.ui_endpoint}
                     selfLink={result.links.self_html}
                   />
-                  <Label title={result.state_timestamp}>{result.state}</Label>
+                  <div>
+                    <Label title={result.state_timestamp}>{result.state}</Label>
+                    {accessRights && accessRights.id !== "c_abf2" && (
+                      <Label>{accessRights.title}</Label>
+                    )}
+                  </div>
                 </div>
                 <ItemSubheader
                   creators={creators}
