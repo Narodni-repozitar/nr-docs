@@ -58,7 +58,7 @@ cat ./fixtures/communities.yaml | grep 'slug:' | sed 's/slug: //g' | while read 
     echo "Creating users for community $com"
     invenio users create -a -c "kurator-${com}@test.com" --password "${USER_PASSWORD}"  --profile "{\"full_name\": \"Kurátor komunity ${com}\"}" &
     invenio users create -a -c "clen-${com}@test.com" --password "${USER_PASSWORD}"  --profile "{\"full_name\": \"Člen komunity ${com}\"}" &
-    invenio users create -a -c "prispevatel-${com}@test.com" --password "${USER_PASSWORD}" --profile "{\"full_name\": \"Kurátor komunity ${com}\"}" &
+    invenio users create -a -c "prispevatel-${com}@test.com" --password "${USER_PASSWORD}" --profile "{\"full_name\": \"Přispěvatel komunity ${com}\"}" &
     wait
 done
 
