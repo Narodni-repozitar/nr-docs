@@ -22,7 +22,7 @@ oarepo-glitchtip==1.0.1
 oarepo-global-search==1.0.29
 oarepo-oai-pmh-harvester==4.1.7
 oarepo-published-service==1.0.3
-oarepo-requests==2.3.4
+oarepo-requests==2.3.5
 oarepo-runtime==1.5.74
 oarepo-ui==5.2.29
 oarepo-vocabularies==2.1.8
