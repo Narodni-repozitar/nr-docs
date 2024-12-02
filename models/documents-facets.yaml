@@ -6,7 +6,6 @@ facets:
       metadata.accessRights: 3
       metadata.rights: 4
       metadata.resourceType: 5
-      syntheticFields.keywords: 6
       metadata.languages: 7
       syntheticFields.organizations: 8
       metadata.fundingReferences.funder: 9
@@ -17,7 +16,6 @@ facets:
       metadata.accessRights: 3
       metadata.rights: 4
       metadata.resourceType: 5
-      syntheticFields.keywords: 6
       metadata.languages: 7
       syntheticFields.organizations: 8
       metadata.fundingReferences.funder: 9
