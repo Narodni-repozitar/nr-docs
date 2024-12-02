@@ -1,12 +1,11 @@
 #
 # Roles within the workflow:
 #
-# administrator == supercurator, NTK staff
-#
 # Community roles:
 #
 # CommunityRole("submitter") == people who can create new records
 # CommunityRole("curator") == people who can publish records and remove them
+# CommunityRole("owner") == supercurator, NTK staff
 # CommunityMembers() == member of the community
 #
 # Synthetic roles:
@@ -24,15 +23,18 @@
 
 from datetime import timedelta
 
-from invenio_records_permissions.generators import AnyUser
+from invenio_rdm_records.services.generators import IfRestricted
+from invenio_records_permissions.generators import AnyUser, Disable
 from oarepo_communities.services.permissions.generators import (
     CommunityRole,
-    PrimaryCommunityRole,
     PrimaryCommunityMembers,
+    PrimaryCommunityRole,
 )
-from oarepo_communities.services.permissions.policy import CommunityDefaultWorkflowPermissions
-from oarepo_requests.services.permissions.generators import IfRequestedBy, RequestActive
-from oarepo_runtime.services.permissions.generators import RecordOwners, UserWithRole
+from oarepo_communities.services.permissions.policy import (
+    CommunityDefaultWorkflowPermissions,
+)
+from oarepo_requests.services.permissions.generators import IfRequestedBy
+from oarepo_runtime.services.permissions.generators import RecordOwners
 from oarepo_workflows import (
     AutoApprove,
     IfInState,
@@ -41,9 +43,6 @@ from oarepo_workflows import (
     WorkflowRequestPolicy,
     WorkflowTransitions,
 )
-# TODO: Administration can not be used in recipients, so will make problem
-# TODO: with escalations above. Use a class inheriting from Administration instead.
-from invenio_administration.generators import Administration
 
 
 class DefaultWorkflowPermissions(CommunityDefaultWorkflowPermissions):
@@ -51,28 +50,16 @@ class DefaultWorkflowPermissions(CommunityDefaultWorkflowPermissions):
         PrimaryCommunityRole("submitter"),
         PrimaryCommunityRole("owner"),
         PrimaryCommunityRole("curator"),
-        Administration(),
     ]
 
-    can_read = [
+    can_read_generic = [
         RecordOwners(),
         # curator can see the record in any state
         CommunityRole("curator"),
-        # administrator can see everything
-        Administration(),
+        # owner of community can see the record in any state
+        CommunityRole("owner"),
         # if the record is published and restricted, only members of the community can see it,
         # otherwise, any user can see it
-        IfInState(
-            "published",
-            then_=[AnyUser()],
-            # then_=[
-            #     IfRestricted( # todo - crashes on missing parent access field now
-            #         "visibility",
-            #         then_=[CommunityMembers()],
-            #         else_=[AnyUser()],
-            #     )
-            # ],
-        ),
         # every member of the community can see the metadata of the drafts, but not the files
         IfInState(
             "draft",
@@ -80,13 +67,41 @@ class DefaultWorkflowPermissions(CommunityDefaultWorkflowPermissions):
         ),
     ]
 
+    can_read = can_read_generic + [
+        IfInState(
+            "published",
+            then_=[
+                IfRestricted(
+                    "record",
+                    then_=[PrimaryCommunityMembers()],
+                    else_=[AnyUser()],
+                )
+            ],
+        ),
+    ]
+
+    can_read_files = can_read_generic + [
+        IfInState(
+            "published",
+            then_=[
+                IfRestricted(
+                    "files",
+                    then_=[PrimaryCommunityMembers()],
+                    else_=[AnyUser()],
+                )
+            ],
+        ),
+    ]
+
+    can_get_content_files = can_read_files
+
     can_update = [
         IfInState(
             "draft",
             then_=[
                 RecordOwners(),
                 PrimaryCommunityRole("curator"),
-                Administration(),
+                PrimaryCommunityRole("owner"),
             ],
         ),
         # if not draft, can not be directly updated by any means, must use request
@@ -94,7 +109,7 @@ class DefaultWorkflowPermissions(CommunityDefaultWorkflowPermissions):
             "submitted",
             then_=[
                 PrimaryCommunityRole("curator"),
-                Administration(),
+                PrimaryCommunityRole("owner"),
             ],
         ),
     ]
@@ -106,10 +121,14 @@ class DefaultWorkflowPermissions(CommunityDefaultWorkflowPermissions):
             then_=[
                 RecordOwners(),
                 PrimaryCommunityRole("curator"),
-                Administration(),
+                PrimaryCommunityRole("owner"),
             ],
         ),
     ] + CommunityDefaultWorkflowPermissions.can_delete
+
+    can_manage_files = [
+        Disable(),
+    ]
 
 
 class DefaultWorkflowRequests(WorkflowRequestPolicy):
@@ -121,7 +140,10 @@ class DefaultWorkflowRequests(WorkflowRequestPolicy):
         recipients=[
             # if the requester is the curator of the community, auto approve the request
             IfRequestedBy(
-                requesters=PrimaryCommunityRole("curator"),
+                requesters=[
+                    PrimaryCommunityRole("curator"),
+                    PrimaryCommunityRole("owner"),
+                ],
                 then_=[AutoApprove()],
                 else_=[PrimaryCommunityRole("curator"), PrimaryCommunityRole("owner")],
             )
@@ -132,7 +154,10 @@ class DefaultWorkflowRequests(WorkflowRequestPolicy):
         # if the request is not resolved in 21 days, escalate it to the administrator
         escalations=[
             WorkflowRequestEscalation(
-                after=timedelta(days=21), recipients=[Administration()]
+                after=timedelta(days=21),
+                recipients=[
+                    PrimaryCommunityRole("owner"),
+                ],
             )
         ],
     )
@@ -144,7 +169,7 @@ class DefaultWorkflowRequests(WorkflowRequestPolicy):
                 then_=[
                     RecordOwners(),
                     PrimaryCommunityRole("curator"),
-                    Administration(),
+                    PrimaryCommunityRole("owner"),
                 ],
             )
         ],
@@ -160,7 +185,7 @@ class DefaultWorkflowRequests(WorkflowRequestPolicy):
                 then_=[
                     RecordOwners(),
                     PrimaryCommunityRole("curator"),
-                    Administration(),
+                    PrimaryCommunityRole("owner"),
                 ],
             )
         ],
@@ -178,7 +203,7 @@ class DefaultWorkflowRequests(WorkflowRequestPolicy):
                 then_=[
                     RecordOwners(),
                     PrimaryCommunityRole("curator"),
-                    Administration(),
+                    PrimaryCommunityRole("owner"),
                 ],
             )
         ],
@@ -186,7 +211,10 @@ class DefaultWorkflowRequests(WorkflowRequestPolicy):
         # otherwise, the request is sent to the curator
         recipients=[
             IfRequestedBy(
-                requesters=[PrimaryCommunityRole("curator"), Administration()],
+                requesters=[
+                    PrimaryCommunityRole("curator"),
+                    PrimaryCommunityRole("owner"),
+                ],
                 then_=[AutoApprove()],
                 else_=[PrimaryCommunityRole("curator")],
             )
@@ -199,7 +227,10 @@ class DefaultWorkflowRequests(WorkflowRequestPolicy):
         # if the request is not resolved in 21 days, escalate it to the administrator
         escalations=[
             WorkflowRequestEscalation(
-                after=timedelta(days=21), recipients=[Administration()]
+                after=timedelta(days=21),
+                recipients=[
+                    PrimaryCommunityRole("owner"),
+                ],
             )
         ],
     )
@@ -208,18 +239,21 @@ class DefaultWorkflowRequests(WorkflowRequestPolicy):
         requesters=[
             RecordOwners(),
             PrimaryCommunityRole("curator"),
-            Administration(),
+            PrimaryCommunityRole("owner"),
         ],
         recipients=[
             IfRequestedBy(
-                requesters=[PrimaryCommunityRole("curator"), Administration()],
+                requesters=[
+                    PrimaryCommunityRole("curator"),
+                    PrimaryCommunityRole("owner"),
+                ],
                 then_=[AutoApprove()],
                 else_=[PrimaryCommunityRole("curator")],
             )
         ],
         escalations=[
             WorkflowRequestEscalation(
-                after=timedelta(days=21), recipients=[Administration()]
+                after=timedelta(days=21), recipients=[PrimaryCommunityRole("owner")]
             )
         ],
     )

@@ -1,9 +1,10 @@
 from datetime import datetime
 from invenio_access.permissions import system_identity
 from invenio_vocabularies.proxies import current_service as vocabulary_service
+from oarepo_doi.doi_mapping_base import DataCiteMappingBase
 
 
-class DataCiteMappingNRDocs:
+class DataCiteMappingNRDocs(DataCiteMappingBase):
 
     def metadata_check(self, data):
         errors = {}
@@ -49,7 +50,7 @@ class DataCiteMappingNRDocs:
         titles = title(metadata)
         # publishers = publisher(data)
 
-        #todo: what is the correct value here? if it should be from the record data - check also needs to be added since publisher field is mandatory in DC
+        # todo: what is the correct value here? if it should be from the record data - check also needs to be added since publisher field is mandatory in DC
         publishers = "NTK"
 
         dc_resource_type = resource_type(metadata)
@@ -69,10 +70,9 @@ class DataCiteMappingNRDocs:
             dc_contributors = creatibutor(metadata, "contributors")
             payload["contributors"] = dc_contributors
 
-
         date_obj = datetime.strptime(metadata['dateIssued'], '%Y-%m-%d')
         year = date_obj.year
-        
+
         payload["publicationYear"] = year
         payload["url"] = data['links']['self']
 
@@ -91,7 +91,7 @@ class DataCiteMappingNRDocs:
             right = metadata["rights"]
             dc_rights.append({"rights": right["title"], "rightsIdentifier": right["id"]})
             if len(dc_rights) > 0:
-                payload ["rightsList"] = dc_rights
+                payload["rightsList"] = dc_rights
         if "abstract" in metadata:
             dc_descriptions = []
             for abstr in metadata["abstract"]:
@@ -111,36 +111,16 @@ class DataCiteMappingNRDocs:
 
         return payload
 
-    def get_doi(self, record):
-        object_identifiers = record["metadata"].get("objectIdentifiers", [])
-        doi = None
-        for id in object_identifiers:
-            if id["scheme"] == "DOI":
-                doi = id["identifier"]
-        return doi
-
-    def add_doi(self, record, data,  doi_value):
-        doi = {"scheme": "DOI", "identifier": doi_value}
-
-        if "objectIdentifiers" in data["metadata"]:
-            data["metadata"]["objectIdentifiers"].append(doi)
-        else:
-            data["metadata"]["objectIdentifiers"] = [doi]
-
-        record.update(data)
-        record.commit()
-
-
-
-
 def publisher(data):
     if "publishers" in data:
         return data["publishers"][0]
+
 
 def resource_type(data):
     if "resourceType" in data:
         voc = vocabulary_service.read(system_identity, ('resource-types', data["resourceType"]["id"]))
         return voc.data['props']['dataCiteType']
+
 
 def subjects(data):
     dc_subjects = []
@@ -153,6 +133,7 @@ def subjects(data):
         if dc_sub != {}:
             dc_subjects.append(dc_sub)
     return dc_subjects
+
 
 def title(data):
     datacite_titles = []
@@ -178,7 +159,7 @@ def creatibutor(data, type):
     datacite_creatibutors = []
     for creatibutor in creatibutor_def:
         datacite_creatibutor = {}
-        if "fullName" in creatibutor: #required
+        if "fullName" in creatibutor:  # required
             datacite_creatibutor["name"] = creatibutor["fullName"]
         if "nameType" in creatibutor:
             datacite_creatibutor["nameType"] = creatibutor["nameType"]
@@ -193,7 +174,7 @@ def creatibutor(data, type):
             creatibutors_ids = []
             for id in creatibutor["authorityIdentifiers"]:
                 creatibutor_id = {}
-                if "scheme" in id: #required
+                if "scheme" in id:  # required
                     creatibutor_id["nameIdentifierScheme"] = id["scheme"]
                 if "identifier" in id:
                     creatibutor_id["nameIdentifier"] = id["identifier"]
@@ -214,6 +195,7 @@ def funder(data):
             dc_funder["funderName"] = f["funder"]
         dc_funders.append(dc_funder)
     return dc_funders
+
 
 def related_items(data):
     dc_related_items = []
@@ -236,7 +218,7 @@ def related_items(data):
         if "itemIssue" in rel:
             dc_rel["issue"] = rel["itemIssue"]
         if "itemTitle" in rel:
-            dc_rel["Title"] = {"title" : rel["itemTitle"]}
+            dc_rel["Title"] = {"title": rel["itemTitle"]}
         if "itemVolume" in rel:
             dc_rel["volume "] = rel["itemVolume"]
         if "itemYear" in rel:

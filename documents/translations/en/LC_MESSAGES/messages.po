@@ -2,8 +2,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
-"POT-Creation-Date: 2024-10-29T21:00:45.900575\n"
-"PO-Revision-Date: 2024-10-29T21:00:45.900576\n"
+"POT-Creation-Date: 2024-12-02T07:26:24.152430\n"
+"PO-Revision-Date: 2024-12-02T07:26:24.152432\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -2297,6 +2297,15 @@ msgstr ""
 msgid "state.hint"
 msgstr ""
 
+msgid "state_timestamp.help"
+msgstr ""
+
+msgid "state_timestamp.label"
+msgstr ""
+
+msgid "state_timestamp.hint"
+msgstr ""
+
 msgid "syntheticFields.help"
 msgstr ""
 
@@ -2369,17 +2378,8 @@ msgstr ""
 msgid "syntheticFields/people.hint"
 msgstr ""
 
-msgid "syntheticFields/test_organizations.help"
-msgstr ""
-
-msgid "syntheticFields/test_organizations.label"
-msgstr ""
-
-msgid "syntheticFields/test_organizations.hint"
-msgstr ""
-
 msgid "syntheticFields/year.label"
-msgstr "Updated year"
+msgstr "Publication date"
 
 msgid "syntheticFields/year.help"
 msgstr ""

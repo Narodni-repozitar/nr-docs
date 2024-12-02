@@ -10,7 +10,7 @@ from documents.services.records.permissions import DocumentsPermissionPolicy
 class DocumentsFileServiceConfig(PermissionsPresetsConfigMixin, FileServiceConfig):
     """DocumentsRecord service config."""
 
-    PERMISSIONS_PRESETS = ["everyone"]
+    PERMISSIONS_PRESETS = ["docs"]
 
     url_prefix = "/docs/<pid_value>"
 
@@ -52,7 +52,7 @@ class DocumentsFileServiceConfig(PermissionsPresetsConfigMixin, FileServiceConfi
 class DocumentsFileDraftServiceConfig(PermissionsPresetsConfigMixin, FileServiceConfig):
     """DocumentsDraft service config."""
 
-    PERMISSIONS_PRESETS = ["everyone"]
+    PERMISSIONS_PRESETS = ["docs"]
 
     url_prefix = "/docs/<pid_value>/draft"
 
@@ -81,6 +81,6 @@ class DocumentsFileDraftServiceConfig(PermissionsPresetsConfigMixin, FileService
         return {
             "commit": FileLink("{+api}/docs/{id}/draft/files/{key}/commit"),
             "content": FileLink("{+api}/docs/{id}/draft/files/{key}/content"),
-            "preview": FileLink("{+ui}/docs/{id}/files/{key}/preview"),
+            "preview": FileLink("{+ui}/docs/{id}/preview/files/{key}/preview"),
             "self": FileLink("{+api}/docs/{id}/draft/files/{key}"),
         }

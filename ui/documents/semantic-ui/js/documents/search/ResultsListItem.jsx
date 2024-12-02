@@ -17,6 +17,7 @@ import {
   ResultsItemResourceType,
 } from "@nr/search";
 import { getValueFromMultilingualArray } from "@js/oarepo_ui";
+import sanitizeHtml from "sanitize-html";
 
 const ItemHeader = ({ title, searchUrl, selfLink }) => {
   const viewLink = new URL(
@@ -114,7 +115,7 @@ ItemSubheader.propTypes = {
   searchUrl: PropTypes.string,
 };
 
-const ItemExtraInfo = ({ createdDate, publishers }) => {
+const ItemExtraInfo = ({ createdDate, publishers, version }) => {
   return (
     <Item.Extra>
       <div>
@@ -122,7 +123,8 @@ const ItemExtraInfo = ({ createdDate, publishers }) => {
           <p>
             {createdDate && (
               <>
-                {i18next.t("Uploaded on")} <span>{createdDate}</span>
+                {i18next.t("Uploaded on")} <span>{createdDate}</span>{" "}
+                {version && `(${version})`}
               </>
             )}
             {createdDate && publishers.length > 0 && " | "}
@@ -142,6 +144,7 @@ const ItemExtraInfo = ({ createdDate, publishers }) => {
 ItemExtraInfo.propTypes = {
   createdDate: PropTypes.string,
   publishers: PropTypes.array,
+  version: PropTypes.string,
 };
 
 const ItemSidebarIcons = ({ accessStatus, rights }) => {
@@ -176,6 +179,8 @@ export const ResultsListItemComponent = ({
 }) => {
   const searchAppConfig = useContext(SearchConfigurationContext);
 
+  const { allowedHtmlTags } = searchAppConfig;
+
   const accessRights = _get(result, "metadata.accessRights");
   const createdDate = _get(result, "created", "No creation date found.");
   const creators = result.metadata?.creators;
@@ -207,7 +212,7 @@ export const ResultsListItemComponent = ({
   const title =
     translatedTitle ?? _get(result, "metadata.title", i18next.t("No title"));
 
-  const versions = _get(result, "versions");
+  const version = _get(result, "metadata.version", null);
 
   const thesis = _get(result, "metadata.thesis");
   const publishers = _get(result, "metadata.publishers", []);
@@ -230,12 +235,16 @@ export const ResultsListItemComponent = ({
       subjects={subjects}
       languages={languages}
       title={title}
-      versions={versions}
+      version={version}
       rights={rights}
       thesis={thesis}
       allVersionsVisible={allVersionsVisible}
     >
-      <Item key={result.id} data-testid="result-item">
+      <Item
+        key={result.id}
+        data-testid="result-item"
+        className="word-break-all"
+      >
         <Item.Content>
           <Grid>
             <Grid.Row columns={2}>
@@ -259,15 +268,24 @@ export const ResultsListItemComponent = ({
                   searchUrl={searchAppConfig.ui_endpoint}
                 />
                 {abstract && abstract.length > 0 && (
-                  <Item.Description>
-                    {_truncate(getValueFromMultilingualArray(abstract), {
-                      length: 350,
-                    })}
-                  </Item.Description>
+                  <Item.Description
+                    dangerouslySetInnerHTML={{
+                      __html: _truncate(
+                        sanitizeHtml(getValueFromMultilingualArray(abstract), {
+                          allowedTags: allowedHtmlTags,
+                          allowedAttributes: {},
+                        }),
+                        {
+                          length: 350,
+                        }
+                      ),
+                    }}
+                  />
                 )}
                 <ItemExtraInfo
                   createdDate={createdDate}
                   publishers={publishers}
+                  version={version}
                 />
               </Grid.Column>
             </Grid.Row>

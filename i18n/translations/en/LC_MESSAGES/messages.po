@@ -2917,7 +2917,7 @@ msgstr "Keywords"
 
 #: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:499
 msgid "syntheticFields/people.label"
-msgstr "People"
+msgstr "Creators"
 
 msgid "Fill in the main title of the resource."
 msgstr ""
@@ -3599,7 +3599,7 @@ msgstr "Keywords"
 
 #: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:499
 msgid "syntheticFields/people.label"
-msgstr "People"
+msgstr "Creators"
 
 #: /Users/m/w/nrp/nr-docs/ui/documents/templates/semantic-ui/documents/Sidebar.jinja:2
 msgid "Record request list"
@@ -4217,4 +4217,28 @@ msgid "state.help"
 msgstr ""
 
 msgid "state.hint"
+msgstr ""
+
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:502
+msgid "syntheticFields/organizations.label"
+msgstr "Institutions"
+
+msgid ""
+"Action failed due to validation errors. Please correct the errors and try "
+"again:"
+msgstr ""
+
+msgid "syntheticFields/organizations.help"
+msgstr ""
+
+msgid "syntheticFields/organizations.hint"
+msgstr ""
+
+msgid "syntheticFields/test_organizations.help"
+msgstr ""
+
+msgid "syntheticFields/test_organizations.label"
+msgstr ""
+
+msgid "syntheticFields/test_organizations.hint"
 msgstr ""
