@@ -3,6 +3,7 @@ from io import StringIO
 from typing import Union
 
 import yaml
+from flask_principal import identity_loaded
 from oarepo_oaipmh_harvester import cli  # noqa
 from oarepo_oaipmh_harvester.harvester import harvest
 from oarepo_oaipmh_harvester.oai_harvester.records.api import OaiHarvesterRecord
@@ -79,3 +80,28 @@ def split_processor_name(processor):
     rest = re.sub(r"\\(.)", r"\1", rest)
     args = yaml.safe_load(StringIO(rest))
     return processor, args
+
+
+class ActionPermissionsExt:
+    def __init__(self, app=None):
+        if app:
+            self.init_app(app)
+
+    def init_app(self, app):
+        self.app = app
+        app.extensions["action_permissions"] = self
+        
+        identity_loaded.connect_via(app)(load_action_permissions)
+
+
+def load_action_permissions(sender, identity):
+    # TODO: need to have a deeper look at this
+    from invenio_access.models import ActionUsers
+    from flask_principal import ActionNeed
+
+    user_id = identity.id
+    if user_id is None:
+        return
+
+    for au in ActionUsers.query.filter_by(user_id=user_id, exclude=False).all():
+        identity.provides.add(ActionNeed(au.action))

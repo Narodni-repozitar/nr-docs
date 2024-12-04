@@ -181,7 +181,7 @@ export const ResultsListItemComponent = ({
 
   const { allowedHtmlTags } = searchAppConfig;
 
-  const accessRights = _get(result, "metadata.accessRights");
+  const accessRights = _get(result, "metadata.accessRights", null);
   const createdDate = _get(result, "created", "No creation date found.");
   const creators = result.metadata?.creators;
   const contributors = _get(result, "metadata.contributors", []);
@@ -252,11 +252,19 @@ export const ResultsListItemComponent = ({
                 <ItemSidebarIcons rights={rights} accessStatus={accessRights} />
               </Grid.Column>
               <Grid.Column className="results-list item-main">
-                <ItemHeader
-                  title={title}
-                  searchUrl={searchAppConfig.ui_endpoint}
-                  selfLink={result.links.self_html}
-                />
+                <div className="justify-space-between flex">
+                  <ItemHeader
+                    title={title}
+                    searchUrl={searchAppConfig.ui_endpoint}
+                    selfLink={result.links.self_html}
+                  />
+                  <div>
+                    <Label title={result.state_timestamp}>{result.state}</Label>
+                    {accessRights && accessRights.id !== "c_abf2" && (
+                      <Label>{accessRights.title}</Label>
+                    )}
+                  </div>
+                </div>
                 <ItemSubheader
                   creators={creators}
                   contributors={contributors}

@@ -1,7 +1,7 @@
-from datetime import datetime
 from invenio_access.permissions import system_identity
 from invenio_vocabularies.proxies import current_service as vocabulary_service
 from oarepo_doi.doi_mapping_base import DataCiteMappingBase
+from babel_edtf import parse_edtf
 
 
 class DataCiteMappingNRDocs(DataCiteMappingBase):
@@ -70,7 +70,8 @@ class DataCiteMappingNRDocs(DataCiteMappingBase):
             dc_contributors = creatibutor(metadata, "contributors")
             payload["contributors"] = dc_contributors
 
-        date_obj = datetime.strptime(metadata['dateIssued'], '%Y-%m-%d')
+        date_obj = parse_edtf(metadata['dateIssued'])
+
         year = date_obj.year
 
         payload["publicationYear"] = year

@@ -5,6 +5,7 @@ Temporary implementation of RDM access field.
 from invenio_drafts_resources.services.records.components import ServiceComponent
 from invenio_rdm_records.records.systemfields.access.field.record import RecordAccess
 from marshmallow import ValidationError
+from oarepo_runtime.i18n import gettext as _
 
 
 class TemporaryAccessComponent(ServiceComponent):
@@ -47,7 +48,7 @@ class TemporaryAccessComponent(ServiceComponent):
             case "c_14cb":  # metadata only
                 if record.files:
                     raise ValidationError(
-                        "Files are not allowed for metadata only access.",
+                        _("Files are not allowed for metadata only access."),
                         field_name="files.enabled",
                     )
                 access.embargo.active = False
