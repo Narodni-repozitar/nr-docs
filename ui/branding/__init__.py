@@ -1,4 +1,5 @@
 from pathlib import Path
+
 from flask import Blueprint
 from flask_menu import current_menu
 from oarepo_runtime.i18n import lazy_gettext as _
@@ -18,6 +19,9 @@ def create_blueprint(app):
 
     @blueprint.before_app_first_request
     def init_menu():
+        # session.clear()
+        print(app.kvsession_store, "session_store", flush=True)
+        print("before_first_request", flush=True)
         """Initialize menu before first request."""
         current_menu.submenu("plus.create").register(
             "documents.create",
