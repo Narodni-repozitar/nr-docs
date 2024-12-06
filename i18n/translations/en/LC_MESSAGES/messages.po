@@ -4276,3 +4276,6 @@ msgstr ""
 #: /Users/m/w/nrp/nr-docs/common/services/components/temporary_access.py:51
 msgid "Files are not allowed for metadata only access."
 msgstr ""
+
+msgid "version"
+msgstr ""
