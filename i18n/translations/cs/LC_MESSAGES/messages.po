@@ -3656,3 +3656,6 @@ msgid "Files are not allowed for metadata only access."
 msgstr ""
 "Před přepnutím záznamu do režimu 'pouze metadata' je nutno odstranit všechny"
 " soubory."
+
+msgid "version"
+msgstr "verze"
