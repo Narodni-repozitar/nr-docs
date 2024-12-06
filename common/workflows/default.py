@@ -95,6 +95,8 @@ class DefaultWorkflowPermissions(CommunityDefaultWorkflowPermissions):
         ),
     ]
 
+    can_list_files = can_read_files
+
     can_get_content_files = can_read_files
 
     can_update = [

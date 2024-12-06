@@ -1,5 +1,14 @@
-from invenio_records_resources.services import FileLink, FileServiceConfig, RecordLink
+from invenio_records_resources.services import (
+    FileLink,
+    FileServiceConfig,
+    LinksTemplate,
+    RecordLink,
+)
 from oarepo_runtime.services.components import CustomFieldsComponent
+from oarepo_runtime.services.config import (
+    has_file_permission,
+    has_permission_file_service,
+)
 from oarepo_runtime.services.config.service import PermissionsPresetsConfigMixin
 
 from documents.records.api import DocumentsDraft, DocumentsRecord
@@ -22,6 +31,8 @@ class DocumentsFileServiceConfig(PermissionsPresetsConfigMixin, FileServiceConfi
 
     service_id = "documents_file"
 
+    search_item_links_template = LinksTemplate
+
     components = [
         *PermissionsPresetsConfigMixin.components,
         *FileServiceConfig.components,
@@ -36,16 +47,27 @@ class DocumentsFileServiceConfig(PermissionsPresetsConfigMixin, FileServiceConfi
     @property
     def file_links_list(self):
         return {
-            "self": RecordLink("{+api}/docs/{id}/files"),
+            "self": RecordLink(
+                "{+api}/docs/{id}/files", when=has_permission_file_service("list_files")
+            ),
         }
 
     @property
     def file_links_item(self):
         return {
-            "commit": FileLink("{+api}/docs/{id}/files/{key}/commit"),
-            "content": FileLink("{+api}/docs/{id}/files/{key}/content"),
+            "commit": FileLink(
+                "{+api}/docs/{id}/files/{key}/commit",
+                when=has_permission_file_service("commit_files"),
+            ),
+            "content": FileLink(
+                "{+api}/docs/{id}/files/{key}/content",
+                when=has_permission_file_service("get_content_files"),
+            ),
             "preview": FileLink("{+ui}/docs/{id}/files/{key}/preview"),
-            "self": FileLink("{+api}/docs/{id}/files/{key}"),
+            "self": FileLink(
+                "{+api}/docs/{id}/files/{key}",
+                when=has_permission_file_service("read_files"),
+            ),
         }
 
 
@@ -62,6 +84,8 @@ class DocumentsFileDraftServiceConfig(PermissionsPresetsConfigMixin, FileService
 
     service_id = "documents_file_draft"
 
+    search_item_links_template = LinksTemplate
+
     components = [
         *PermissionsPresetsConfigMixin.components,
         *FileServiceConfig.components,
@@ -73,14 +97,25 @@ class DocumentsFileDraftServiceConfig(PermissionsPresetsConfigMixin, FileService
     @property
     def file_links_list(self):
         return {
-            "self": RecordLink("{+api}/docs/{id}/draft/files"),
+            "self": RecordLink(
+                "{+api}/docs/{id}/draft/files", when=has_file_permission("list_files")
+            ),
         }
 
     @property
     def file_links_item(self):
         return {
-            "commit": FileLink("{+api}/docs/{id}/draft/files/{key}/commit"),
-            "content": FileLink("{+api}/docs/{id}/draft/files/{key}/content"),
+            "commit": FileLink(
+                "{+api}/docs/{id}/draft/files/{key}/commit",
+                when=has_file_permission("commit_files"),
+            ),
+            "content": FileLink(
+                "{+api}/docs/{id}/draft/files/{key}/content",
+                when=has_file_permission("get_content_files"),
+            ),
             "preview": FileLink("{+ui}/docs/{id}/preview/files/{key}/preview"),
-            "self": FileLink("{+api}/docs/{id}/draft/files/{key}"),
+            "self": FileLink(
+                "{+api}/docs/{id}/draft/files/{key}",
+                when=has_file_permission("read_files"),
+            ),
         }
