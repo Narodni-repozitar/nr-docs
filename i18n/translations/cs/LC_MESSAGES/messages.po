@@ -3656,3 +3656,7 @@ msgid "Files are not allowed for metadata only access."
 msgstr ""
 "Před přepnutím záznamu do režimu 'pouze metadata' je nutno odstranit všechny"
 " soubory."
+
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/common/doi/mapping.py:7
+msgid "Missing data for required field."
+msgstr "Chybějící data pro povinné pole."

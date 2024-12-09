@@ -275,7 +275,7 @@ msgstr "Volume"
 
 #: models/nr-documents/nr_documents/services/records/facets.py:368
 msgid "metadata/relatedItems/itemYear.label"
-msgstr "Publication date"
+msgstr "Publication Year"
 
 #: models/nr-documents/nr_documents/services/records/facets.py:373
 #: sites/nr-docs/site/nr_docs/translations/jinjax_messages.jinja:4
@@ -4275,4 +4275,8 @@ msgstr ""
 
 #: /Users/m/w/nrp/nr-docs/common/services/components/temporary_access.py:51
 msgid "Files are not allowed for metadata only access."
+msgstr ""
+
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/common/doi/mapping.py:7
+msgid "Missing data for required field."
 msgstr ""
