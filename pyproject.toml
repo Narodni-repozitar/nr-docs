@@ -14,8 +14,10 @@ dependencies = [
     "oarepo-communities>=5.0.0",
     "oarepo-dashboard>=1.0.0",
     "oarepo-doi",
+    "oarepo-doi",
     "oarepo-glitchtip==1.0.*",
     "oarepo-global-search>=1.0.13",
+    "oarepo-oidc-einfra>=1.0.0",
     "oarepo-published-service>=1.0.0",
     "oarepo-published-service>=1.0.2",
     "oarepo-requests>=2.0.0",
@@ -25,8 +27,6 @@ dependencies = [
     "oarepo-workflows>=1.0.0",
     "oarepo[s3,rdm]>=12.1.0,<13",
     "python-dotenv",
-    "oarepo-oidc-einfra>=1.0.0",
-    "oarepo-doi"
 ]
 requires-python = ">=3.12,<3.13"
 

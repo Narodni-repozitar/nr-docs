@@ -275,7 +275,7 @@ msgstr "Volume"
 
 #: models/nr-documents/nr_documents/services/records/facets.py:368
 msgid "metadata/relatedItems/itemYear.label"
-msgstr "Publication date"
+msgstr "Publication Year"
 
 #: models/nr-documents/nr_documents/services/records/facets.py:373
 #: sites/nr-docs/site/nr_docs/translations/jinjax_messages.jinja:4
@@ -3599,7 +3599,7 @@ msgstr "Keywords"
 
 #: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:499
 msgid "syntheticFields/people.label"
-msgstr "People"
+msgstr "Creators"
 
 #: /Users/m/w/nrp/nr-docs/ui/documents/templates/semantic-ui/documents/Sidebar.jinja:2
 msgid "Record request list"

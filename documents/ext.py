@@ -9,24 +9,23 @@ from documents import config
 
 
 class DocumentsExt:
-
     def __init__(self, app=None):
-
         if app:
             self.init_app(app)
 
     def init_app(self, app):
         """Flask application initialization."""
+        self.app = app
 
         self.init_config(app)
         if not self.is_inherited():
             self.register_flask_extension(app)
 
         from flask_principal import identity_loaded
+
         identity_loaded.connect_via(app)(load_action_permissions)
 
     def register_flask_extension(self, app):
-
         app.extensions["documents"] = self
 
     def init_config(self, app):
@@ -58,8 +57,15 @@ class DocumentsExt:
 
     @cached_property
     def service_records(self):
+        service_config = config.DOCUMENTS_RECORD_SERVICE_CONFIG
+        if hasattr(service_config, "build"):
+            config_class = service_config.build(self.app)
+        else:
+            config_class = service_config()
+
+        service_kwargs = {"config": config_class}
         return config.DOCUMENTS_RECORD_SERVICE_CLASS(
-            config=config.DOCUMENTS_RECORD_SERVICE_CONFIG(),
+            **service_kwargs,
             files_service=self.service_files,
             draft_files_service=self.service_draft_files,
         )
@@ -118,8 +124,15 @@ class DocumentsExt:
 
     @cached_property
     def service_files(self):
+        service_config = config.DOCUMENTS_FILES_SERVICE_CONFIG
+        if hasattr(service_config, "build"):
+            config_class = service_config.build(self.app)
+        else:
+            config_class = service_config()
+
+        service_kwargs = {"config": config_class}
         return config.DOCUMENTS_FILES_SERVICE_CLASS(
-            config=config.DOCUMENTS_FILES_SERVICE_CONFIG(),
+            **service_kwargs,
         )
 
     @cached_property
@@ -144,8 +157,15 @@ class DocumentsExt:
 
     @cached_property
     def service_draft_files(self):
+        service_config = config.DOCUMENTS_DRAFT_FILES_SERVICE_CONFIG
+        if hasattr(service_config, "build"):
+            config_class = service_config.build(self.app)
+        else:
+            config_class = service_config()
+
+        service_kwargs = {"config": config_class}
         return config.DOCUMENTS_DRAFT_FILES_SERVICE_CLASS(
-            config=config.DOCUMENTS_DRAFT_FILES_SERVICE_CONFIG(),
+            **service_kwargs,
         )
 
     @cached_property
@@ -158,8 +178,8 @@ class DocumentsExt:
 
 def load_action_permissions(sender, identity):
     # TODO: need to have a deeper look at this
-    from invenio_access.models import ActionUsers
     from flask_principal import ActionNeed
+    from invenio_access.models import ActionUsers
 
     user_id = identity.id
     if user_id is None:
