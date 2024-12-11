@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2024-12-09 10:44+0100\n"
+"POT-Creation-Date: 2024-12-11 18:11+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -49,23 +49,23 @@ msgstr ""
 msgid "Files are not allowed for metadata only access."
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/common/workflows/default.py:269
+#: /Users/m/w/nrp/nr-docs/common/workflows/default.py:269
 msgid "state:draft"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/common/workflows/default.py:270
+#: /Users/m/w/nrp/nr-docs/common/workflows/default.py:270
 msgid "state:published"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/common/workflows/default.py:271
+#: /Users/m/w/nrp/nr-docs/common/workflows/default.py:271
 msgid "state:submitted"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/common/workflows/default.py:272
+#: /Users/m/w/nrp/nr-docs/common/workflows/default.py:272
 msgid "state:retracting"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/common/workflows/default.py:273
+#: /Users/m/w/nrp/nr-docs/common/workflows/default.py:273
 msgid "state:deleted"
 msgstr ""
 
@@ -496,7 +496,7 @@ msgstr ""
 msgid "has_draft"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/branding/__init__.py:24
+#: /Users/m/w/nrp/nr-docs/ui/branding/__init__.py:25
 msgid "New upload"
 msgstr ""
 
@@ -643,6 +643,9 @@ msgid "not defended"
 msgstr ""
 
 msgid "Uploaded on"
+msgstr ""
+
+msgid "version"
 msgstr ""
 
 msgid "Published in: "

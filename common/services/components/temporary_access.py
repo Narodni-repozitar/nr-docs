@@ -41,7 +41,7 @@ class TemporaryAccessComponent(ServiceComponent):
                 data["files"]["enabled"] = True
             case "c_16ec":  # restricted access
                 access.embargo.active = False
-                access.protection.record = "restricted"
+                access.protection.record = "public"
                 access.protection.files = "restricted"
                 record.files.enabled = True
                 data["files"]["enabled"] = True
@@ -53,7 +53,7 @@ class TemporaryAccessComponent(ServiceComponent):
                     )
                 access.embargo.active = False
                 access.protection.record = "public"
-                access.protection.files = "restricted"
+                access.protection.files = "restricted"  # just for sure
                 record.files.enabled = False
                 data["files"]["enabled"] = False
 

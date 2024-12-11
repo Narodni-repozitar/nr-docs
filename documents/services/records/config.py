@@ -16,6 +16,7 @@ from oarepo_runtime.services.components import (
     CustomFieldsComponent,
     DateIssuedComponent,
     OwnersComponent,
+    process_service_configs,
 )
 from oarepo_runtime.services.config import (
     has_draft,
@@ -62,26 +63,37 @@ class DocumentsServiceConfig(
     service_id = "documents"
 
     search_item_links_template = LinksTemplate
-
-    components = [
-        *PermissionsPresetsConfigMixin.components,
-        *FilteredResultServiceConfig.components,
-        AuthorityComponent,
-        DateIssuedComponent,
-        DoiComponent,
-        OaiSectionComponent,
-        CommunityDefaultWorkflowComponent,
-        CommunityInclusionComponent,
-        OwnersComponent,
-        CustomFieldsComponent,
-        DraftFilesComponent,
-        FilesComponent,
-        WorkflowComponent,
-    ]
-
-    model = "documents"
     draft_cls = DocumentsDraft
     search_drafts = DocumentsSearchOptions
+
+    @property
+    def components(self):
+        components_list = []
+        components_list.extend(process_service_configs(type(self).mro()[2:]))
+        additional_components = [
+            AuthorityComponent,
+            DateIssuedComponent,
+            DoiComponent,
+            OaiSectionComponent,
+            CommunityDefaultWorkflowComponent,
+            CommunityInclusionComponent,
+            OwnersComponent,
+            FilesComponent,
+            DraftFilesComponent,
+            CustomFieldsComponent,
+            WorkflowComponent,
+        ]
+        components_list.extend(additional_components)
+        seen = set()
+        unique_components = []
+        for component in components_list:
+            if component not in seen:
+                unique_components.append(component)
+                seen.add(component)
+
+        return unique_components
+
+    model = "documents"
 
     @property
     def links_item(self):
@@ -102,7 +114,7 @@ class DocumentsServiceConfig(
                 when=has_draft() & has_permission("read_draft"),
             ),
             "edit_html": RecordLink(
-                "{+ui}/docs/{id}/edit", when=has_draft() & has_permission("read_draft")
+                "{+ui}/docs/{id}/edit", when=has_draft() & has_permission("update")
             ),
             "files": ConditionalLink(
                 cond=is_published_record(),
