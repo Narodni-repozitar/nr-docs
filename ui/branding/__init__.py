@@ -19,9 +19,6 @@ def create_blueprint(app):
 
     @blueprint.before_app_first_request
     def init_menu():
-        # session.clear()
-        print(app.kvsession_store, "session_store", flush=True)
-        print("before_first_request", flush=True)
         """Initialize menu before first request."""
         current_menu.submenu("plus.create").register(
             "documents.create",
