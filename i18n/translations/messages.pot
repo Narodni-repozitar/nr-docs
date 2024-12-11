@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2024-12-11 18:11+0100\n"
+"POT-Creation-Date: 2024-12-11 18:31+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -39,6 +39,10 @@ msgstr ""
 
 #: /Users/m/w/nrp/nr-docs/common/just_for_translations.py:10
 msgid "Beta version of document respository"
+msgstr ""
+
+#: /Users/m/w/nrp/nr-docs/common/doi/mapping.py:7
+msgid "Missing data for required field."
 msgstr ""
 
 #: /Users/m/w/nrp/nr-docs/common/services/components/temporary_access.py:51

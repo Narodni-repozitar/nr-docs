@@ -3659,3 +3659,7 @@ msgstr ""
 
 msgid "version"
 msgstr "verze"
+
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/common/doi/mapping.py:7
+msgid "Missing data for required field."
+msgstr "Chybějící data pro povinné pole."
