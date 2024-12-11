@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2024-12-11 18:11+0100\n"
+"POT-Creation-Date: 2024-12-11 18:31+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,35 +17,35 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.16.0\n"
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/common/just_for_translations.py:5
+#: /Users/m/w/nrp/nr-docs/common/just_for_translations.py:5
 msgid "Submitted"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/common/just_for_translations.py:6
+#: /Users/m/w/nrp/nr-docs/common/just_for_translations.py:6
 msgid "Expired"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/common/just_for_translations.py:7
+#: /Users/m/w/nrp/nr-docs/common/just_for_translations.py:7
 msgid "Accepted"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/common/just_for_translations.py:8
+#: /Users/m/w/nrp/nr-docs/common/just_for_translations.py:8
 msgid "Declined"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/common/just_for_translations.py:9
+#: /Users/m/w/nrp/nr-docs/common/just_for_translations.py:9
 msgid "Cancelled"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/common/just_for_translations.py:10
+#: /Users/m/w/nrp/nr-docs/common/just_for_translations.py:10
 msgid "Beta version of document respository"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/common/doi/mapping.py:7
+#: /Users/m/w/nrp/nr-docs/common/doi/mapping.py:7
 msgid "Missing data for required field."
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/common/services/components/temporary_access.py:51
+#: /Users/m/w/nrp/nr-docs/common/services/components/temporary_access.py:51
 msgid "Files are not allowed for metadata only access."
 msgstr ""
 
@@ -69,430 +69,430 @@ msgstr ""
 msgid "state:deleted"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:15
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:19
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:39
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:15
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:19
+#: /Users/m/w/nrp/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:39
 #: i18n/translations/jinjax_messages.jinja:8
 msgid "metadata/abstract.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:25
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:25
 msgid "metadata/abstract/lang.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:31
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:55
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:31
+#: /Users/m/w/nrp/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:55
 #: i18n/translations/jinjax_messages.jinja:13
 msgid "metadata/accessRights.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:36
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:40
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:51
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:36
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:40
+#: /Users/m/w/nrp/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:51
 #: i18n/translations/jinjax_messages.jinja:11
 msgid "metadata/accessibility.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:47
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:47
 msgid "metadata/accessibility/lang.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:53
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:58
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:53
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:58
 msgid "metadata/additionalTitles/title.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:65
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:65
 msgid "metadata/additionalTitles/title/lang.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:71
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:71
 msgid "metadata/additionalTitles/titleType.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:76
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:76
 msgid "metadata/contributors/affiliations.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:82
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:82
 msgid "metadata/contributors/authorityIdentifiers/identifier.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:87
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:87
 msgid "metadata/contributors/authorityIdentifiers/scheme.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:92
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:92
 msgid "metadata/contributors/contributorType.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:98
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:98
 msgid "metadata/contributors/familyName.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:103
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:103
 msgid "metadata/contributors/fullName.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:108
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:108
 msgid "metadata/contributors/givenName.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:113
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:113
 msgid "metadata/contributors/nameType.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:118
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:118
 msgid "metadata/creators/affiliations.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:124
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:124
 msgid "metadata/creators/authorityIdentifiers/identifier.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:129
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:129
 msgid "metadata/creators/authorityIdentifiers/scheme.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:133
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:133
 msgid "metadata/creators/familyName.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:137
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:137
 msgid "metadata/creators/fullName.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:141
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:141
 msgid "metadata/creators/givenName.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:145
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:145
 msgid "metadata/creators/nameType.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:149
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:149
 msgid "metadata/dateAvailable.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:153
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:22
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:153
+#: /Users/m/w/nrp/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:22
 #: i18n/translations/jinjax_messages.jinja:2
 msgid "metadata/dateIssued.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:157
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:23
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:157
+#: /Users/m/w/nrp/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:23
 #: i18n/translations/jinjax_messages.jinja:3
 msgid "metadata/dateModified.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:162
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:162
 msgid "metadata/events/eventLocation/country.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:168
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:168
 msgid "metadata/events/eventLocation/place.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:173
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:173
 msgid "metadata/externalLocation/externalLocationURL.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:178
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:178
 msgid "metadata/fundingReferences/funder.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:184
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:184
 msgid "metadata/fundingReferences/projectID.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:189
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:189
 msgid "metadata/geoLocations/geoLocationPlace.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:194
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:194
 msgid "metadata/geoLocations/geoLocationPoint/pointLatitude.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:199
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:199
 msgid "metadata/geoLocations/geoLocationPoint/pointLongitude.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:204
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:25
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:204
+#: /Users/m/w/nrp/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:25
 #: i18n/translations/jinjax_messages.jinja:4
 msgid "metadata/languages.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:209
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:213
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:79
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:209
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:213
+#: /Users/m/w/nrp/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:79
 #: i18n/translations/jinjax_messages.jinja:20
 msgid "metadata/methods.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:219
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:219
 msgid "metadata/methods/lang.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:225
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:225
 msgid "metadata/objectIdentifiers/identifier.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:230
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:230
 msgid "metadata/objectIdentifiers/scheme.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:234
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:234
 msgid "metadata/originalRecord.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:239
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:239
 msgid "metadata/relatedItems/itemContributors/affiliations.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:245
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:245
 msgid ""
 "metadata/relatedItems/itemContributors/authorityIdentifiers/identifier.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:252
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:252
 msgid ""
 "metadata/relatedItems/itemContributors/authorityIdentifiers/scheme.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:257
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:257
 msgid "metadata/relatedItems/itemContributors/contributorType.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:263
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:263
 msgid "metadata/relatedItems/itemContributors/familyName.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:268
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:268
 msgid "metadata/relatedItems/itemContributors/fullName.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:273
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:273
 msgid "metadata/relatedItems/itemContributors/givenName.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:278
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:278
 msgid "metadata/relatedItems/itemContributors/nameType.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:283
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:283
 msgid "metadata/relatedItems/itemCreators/affiliations.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:289
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:289
 msgid ""
 "metadata/relatedItems/itemCreators/authorityIdentifiers/identifier.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:294
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:294
 msgid "metadata/relatedItems/itemCreators/authorityIdentifiers/scheme.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:299
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:299
 msgid "metadata/relatedItems/itemCreators/familyName.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:304
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:304
 msgid "metadata/relatedItems/itemCreators/fullName.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:309
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:309
 msgid "metadata/relatedItems/itemCreators/givenName.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:314
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:314
 msgid "metadata/relatedItems/itemCreators/nameType.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:319
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:319
 msgid "metadata/relatedItems/itemEndPage.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:324
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:324
 msgid "metadata/relatedItems/itemIssue.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:329
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:329
 msgid "metadata/relatedItems/itemPIDs/identifier.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:334
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:334
 msgid "metadata/relatedItems/itemPIDs/scheme.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:339
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:339
 msgid "metadata/relatedItems/itemPublisher.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:344
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:344
 msgid "metadata/relatedItems/itemRelationType.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:350
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:350
 msgid "metadata/relatedItems/itemResourceType.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:356
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:356
 msgid "metadata/relatedItems/itemStartPage.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:361
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:361
 msgid "metadata/relatedItems/itemURL.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:366
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:366
 msgid "metadata/relatedItems/itemVolume.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:371
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:371
 msgid "metadata/relatedItems/itemYear.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:376
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:28
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:376
+#: /Users/m/w/nrp/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:28
 #: i18n/translations/jinjax_messages.jinja:5
 msgid "metadata/resourceType.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:381
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:58
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:381
+#: /Users/m/w/nrp/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:58
 #: i18n/translations/jinjax_messages.jinja:14
 msgid "metadata/rights.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:385
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:385
 msgid "metadata/series/seriesTitle.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:389
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:389
 msgid "metadata/series/seriesVolume.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:394
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:88
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:394
+#: /Users/m/w/nrp/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:88
 #: i18n/translations/jinjax_messages.jinja:23
 msgid "metadata/subjectCategories.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:400
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:400
 msgid "metadata/subjects/classificationCode.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:405
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:410
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:405
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:410
 msgid "metadata/subjects/subject.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:417
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:417
 msgid "metadata/subjects/subject/lang.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:423
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:423
 msgid "metadata/subjects/subjectScheme.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:427
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:427
 msgid "metadata/subjects/valueURI.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:432
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:432
 msgid "metadata/systemIdentifiers/identifier.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:437
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:437
 msgid "metadata/systemIdentifiers/scheme.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:441
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:445
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:91
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:441
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:445
+#: /Users/m/w/nrp/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:91
 #: i18n/translations/jinjax_messages.jinja:24
 msgid "metadata/technicalInfo.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:452
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:452
 msgid "metadata/technicalInfo/lang.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:457
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:32
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:457
+#: /Users/m/w/nrp/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:32
 #: i18n/translations/jinjax_messages.jinja:6
 msgid "metadata/thesis/dateDefended.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:461
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:461
 msgid "metadata/thesis/defended.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:466
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:43
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:466
+#: /Users/m/w/nrp/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:43
 #: i18n/translations/jinjax_messages.jinja:9
 msgid "metadata/thesis/degreeGrantors.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:471
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:46
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:471
+#: /Users/m/w/nrp/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:46
 #: i18n/translations/jinjax_messages.jinja:10
 msgid "metadata/thesis/studyFields.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:475
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:95
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:475
+#: /Users/m/w/nrp/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:95
 #: i18n/translations/jinjax_messages.jinja:25
 msgid "metadata/version.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:479
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:479
 msgid "oai/harvest/datestamp.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:483
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:483
 msgid "oai/harvest/identifier.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:486
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:486
 msgid "state.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:489
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:489
 msgid "state_timestamp.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:493
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:493
 msgid "syntheticFields/date.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:497
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:497
 msgid "syntheticFields/defenseYear.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:501
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:501
 msgid "syntheticFields/keywords.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:506
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:506
 msgid "syntheticFields/organizations.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:510
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:510
 msgid "syntheticFields/people.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:514
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:514
 msgid "syntheticFields/year.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:518
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:518
 msgid "record_status"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:520
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:520
 msgid "has_draft"
 msgstr ""
 
@@ -500,133 +500,133 @@ msgstr ""
 msgid "New upload"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/branding/templates/footer.html:12
+#: /Users/m/w/nrp/nr-docs/ui/branding/templates/footer.html:12
 msgid "Contact"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/branding/templates/header.html:20
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/branding/templates/header.html:21
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/branding/templates/searchbar.html:30
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/branding/templates/searchbar.html:31
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/titlepage/templates/TitlePage.jinja:49
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/titlepage/templates/TitlePage.jinja:51
+#: /Users/m/w/nrp/nr-docs/ui/branding/templates/header.html:20
+#: /Users/m/w/nrp/nr-docs/ui/branding/templates/header.html:21
+#: /Users/m/w/nrp/nr-docs/ui/branding/templates/searchbar.html:30
+#: /Users/m/w/nrp/nr-docs/ui/branding/templates/searchbar.html:31
+#: /Users/m/w/nrp/nr-docs/ui/titlepage/templates/TitlePage.jinja:49
+#: /Users/m/w/nrp/nr-docs/ui/titlepage/templates/TitlePage.jinja:51
 msgid "Search"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/branding/templates/header_login.html:15
+#: /Users/m/w/nrp/nr-docs/ui/branding/templates/header_login.html:15
 msgid "Log in"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/branding/templates/header_login.html:19
+#: /Users/m/w/nrp/nr-docs/ui/branding/templates/header_login.html:19
 msgid "Sign up"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/branding/templates/header_login.html:36
+#: /Users/m/w/nrp/nr-docs/ui/branding/templates/header_login.html:36
 msgid "Quick create"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/branding/templates/header_login.html:53
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/documents/templates/semantic-ui/documents/Sidebar.jinja:3
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/documents/templates/semantic-ui/documents/Sidebar.jinja:4
+#: /Users/m/w/nrp/nr-docs/ui/branding/templates/header_login.html:53
+#: /Users/m/w/nrp/nr-docs/ui/documents/templates/semantic-ui/documents/Sidebar.jinja:3
+#: /Users/m/w/nrp/nr-docs/ui/documents/templates/semantic-ui/documents/Sidebar.jinja:4
 msgid "Actions"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/branding/templates/header_login.html:72
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/branding/templates/header_login.html:113
+#: /Users/m/w/nrp/nr-docs/ui/branding/templates/header_login.html:72
+#: /Users/m/w/nrp/nr-docs/ui/branding/templates/header_login.html:113
 msgid "My account"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/branding/templates/header_login.html:107
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/branding/templates/header_login.html:136
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/branding/templates/header_login.html:143
+#: /Users/m/w/nrp/nr-docs/ui/branding/templates/header_login.html:107
+#: /Users/m/w/nrp/nr-docs/ui/branding/templates/header_login.html:136
+#: /Users/m/w/nrp/nr-docs/ui/branding/templates/header_login.html:143
 msgid "Log out"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/branding/templates/searchbar.html:5
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/branding/templates/searchbar.html:11
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/branding/templates/searchbar.html:21
+#: /Users/m/w/nrp/nr-docs/ui/branding/templates/searchbar.html:5
+#: /Users/m/w/nrp/nr-docs/ui/branding/templates/searchbar.html:11
+#: /Users/m/w/nrp/nr-docs/ui/branding/templates/searchbar.html:21
 msgid "in"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/branding/templates/searchbar.html:5
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/branding/templates/searchbar.html:6
+#: /Users/m/w/nrp/nr-docs/ui/branding/templates/searchbar.html:5
+#: /Users/m/w/nrp/nr-docs/ui/branding/templates/searchbar.html:6
 msgid "In this community"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/branding/templates/searchbar.html:11
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/branding/templates/searchbar.html:12
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/branding/templates/searchbar.html:20
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/branding/templates/searchbar.html:21
+#: /Users/m/w/nrp/nr-docs/ui/branding/templates/searchbar.html:11
+#: /Users/m/w/nrp/nr-docs/ui/branding/templates/searchbar.html:12
+#: /Users/m/w/nrp/nr-docs/ui/branding/templates/searchbar.html:20
+#: /Users/m/w/nrp/nr-docs/ui/branding/templates/searchbar.html:21
 msgid "All document records"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/documents/templates/semantic-ui/documents/Detail.jinja:2
+#: /Users/m/w/nrp/nr-docs/ui/documents/templates/semantic-ui/documents/Detail.jinja:2
 msgid "NR Document repository"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:13
+#: /Users/m/w/nrp/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:13
 msgid "Title not provided"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:16
+#: /Users/m/w/nrp/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:16
 #: i18n/translations/jinjax_messages.jinja:1
 msgid "metadata/additionalTitles.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:35
+#: /Users/m/w/nrp/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:35
 #: i18n/translations/jinjax_messages.jinja:7
 msgid "metadata/subjects.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:52
+#: /Users/m/w/nrp/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:52
 #: i18n/translations/jinjax_messages.jinja:12
 msgid "metadata/publishers.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:62
+#: /Users/m/w/nrp/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:62
 #: i18n/translations/jinjax_messages.jinja:15
 msgid "metadata/events.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:65
+#: /Users/m/w/nrp/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:65
 #: i18n/translations/jinjax_messages.jinja:16
 msgid "metadata/externalLocation.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:69
+#: /Users/m/w/nrp/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:69
 #: i18n/translations/jinjax_messages.jinja:17
 msgid "metadata/fundingReferences.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:74
+#: /Users/m/w/nrp/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:74
 #: i18n/translations/jinjax_messages.jinja:18
 msgid "metadata/relatedItems.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:76
+#: /Users/m/w/nrp/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:76
 #: i18n/translations/jinjax_messages.jinja:19
 msgid "metadata/geoLocations.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:82
+#: /Users/m/w/nrp/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:82
 #: i18n/translations/jinjax_messages.jinja:21
 msgid "metadata/notes.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:85
+#: /Users/m/w/nrp/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:85
 #: i18n/translations/jinjax_messages.jinja:22
 msgid "metadata/series.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/documents/templates/semantic-ui/documents/Search.jinja:3
+#: /Users/m/w/nrp/nr-docs/ui/documents/templates/semantic-ui/documents/Search.jinja:3
 msgid "Search results"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/documents/templates/semantic-ui/documents/Search.jinja:3
+#: /Users/m/w/nrp/nr-docs/ui/documents/templates/semantic-ui/documents/Search.jinja:3
 msgid "documents"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/documents/templates/semantic-ui/documents/Sidebar.jinja:8
+#: /Users/m/w/nrp/nr-docs/ui/documents/templates/semantic-ui/documents/Sidebar.jinja:8
 msgid "Edit"
 msgstr ""
 
