@@ -4,7 +4,10 @@ from invenio_records_resources.services import (
     LinksTemplate,
     RecordLink,
 )
-from oarepo_runtime.services.components import CustomFieldsComponent
+from oarepo_runtime.services.components import (
+    CustomFieldsComponent,
+    process_service_configs,
+)
 from oarepo_runtime.services.config import (
     has_file_permission,
     has_permission_file_service,
@@ -32,17 +35,26 @@ class DocumentsFileServiceConfig(PermissionsPresetsConfigMixin, FileServiceConfi
     service_id = "documents_file"
 
     search_item_links_template = LinksTemplate
-
-    components = [
-        *PermissionsPresetsConfigMixin.components,
-        *FileServiceConfig.components,
-        CustomFieldsComponent,
-    ]
-
-    model = "documents"
     allowed_mimetypes = []
     allowed_extensions = []
     allow_upload = False
+
+    @property
+    def components(self):
+        components_list = []
+        components_list.extend(process_service_configs(type(self).mro()[2:]))
+        additional_components = [CustomFieldsComponent]
+        components_list.extend(additional_components)
+        seen = set()
+        unique_components = []
+        for component in components_list:
+            if component not in seen:
+                unique_components.append(component)
+                seen.add(component)
+
+        return unique_components
+
+    model = "documents"
 
     @property
     def file_links_list(self):
@@ -86,11 +98,20 @@ class DocumentsFileDraftServiceConfig(PermissionsPresetsConfigMixin, FileService
 
     search_item_links_template = LinksTemplate
 
-    components = [
-        *PermissionsPresetsConfigMixin.components,
-        *FileServiceConfig.components,
-        CustomFieldsComponent,
-    ]
+    @property
+    def components(self):
+        components_list = []
+        components_list.extend(process_service_configs(type(self).mro()[2:]))
+        additional_components = [CustomFieldsComponent]
+        components_list.extend(additional_components)
+        seen = set()
+        unique_components = []
+        for component in components_list:
+            if component not in seen:
+                unique_components.append(component)
+                seen.add(component)
+
+        return unique_components
 
     model = "documents"
 
