@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2024-12-02 15:21+0100\n"
+"POT-Creation-Date: 2024-12-11 18:31+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -41,27 +41,31 @@ msgstr ""
 msgid "Beta version of document respository"
 msgstr ""
 
+#: /Users/m/w/nrp/nr-docs/common/doi/mapping.py:7
+msgid "Missing data for required field."
+msgstr ""
+
 #: /Users/m/w/nrp/nr-docs/common/services/components/temporary_access.py:51
 msgid "Files are not allowed for metadata only access."
 msgstr ""
 
-#: /Users/m/w/nrp/nr-docs/common/workflows/default.py:267
+#: /Users/m/w/nrp/nr-docs/common/workflows/default.py:269
 msgid "state:draft"
 msgstr ""
 
-#: /Users/m/w/nrp/nr-docs/common/workflows/default.py:268
+#: /Users/m/w/nrp/nr-docs/common/workflows/default.py:270
 msgid "state:published"
 msgstr ""
 
-#: /Users/m/w/nrp/nr-docs/common/workflows/default.py:269
+#: /Users/m/w/nrp/nr-docs/common/workflows/default.py:271
 msgid "state:submitted"
 msgstr ""
 
-#: /Users/m/w/nrp/nr-docs/common/workflows/default.py:270
+#: /Users/m/w/nrp/nr-docs/common/workflows/default.py:272
 msgid "state:retracting"
 msgstr ""
 
-#: /Users/m/w/nrp/nr-docs/common/workflows/default.py:271
+#: /Users/m/w/nrp/nr-docs/common/workflows/default.py:273
 msgid "state:deleted"
 msgstr ""
 
@@ -492,7 +496,7 @@ msgstr ""
 msgid "has_draft"
 msgstr ""
 
-#: /Users/m/w/nrp/nr-docs/ui/branding/__init__.py:24
+#: /Users/m/w/nrp/nr-docs/ui/branding/__init__.py:25
 msgid "New upload"
 msgstr ""
 
@@ -639,6 +643,9 @@ msgid "not defended"
 msgstr ""
 
 msgid "Uploaded on"
+msgstr ""
+
+msgid "version"
 msgstr ""
 
 msgid "Published in: "

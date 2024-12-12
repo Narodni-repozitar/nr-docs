@@ -1,4 +1,5 @@
 from pathlib import Path
+
 from flask import Blueprint
 from flask_menu import current_menu
 from oarepo_runtime.i18n import lazy_gettext as _

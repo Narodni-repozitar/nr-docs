@@ -2917,7 +2917,7 @@ msgstr "Klíčová slova"
 
 #: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:499
 msgid "syntheticFields/people.label"
-msgstr "Lidé"
+msgstr "Tvůrci"
 
 msgid "Fill in the main title of the resource."
 msgstr "Vyplňte hlavní název zdroje."
@@ -3656,3 +3656,10 @@ msgid "Files are not allowed for metadata only access."
 msgstr ""
 "Před přepnutím záznamu do režimu 'pouze metadata' je nutno odstranit všechny"
 " soubory."
+
+msgid "version"
+msgstr "verze"
+
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/common/doi/mapping.py:7
+msgid "Missing data for required field."
+msgstr "Chybějící data pro povinné pole."

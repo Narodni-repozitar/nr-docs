@@ -39,6 +39,7 @@
             "generate": true
         },
         "searchable": true,
+        "custom-fields": [],
         "permissions": {
             "presets": [
                 "docs"
@@ -61,7 +62,6 @@
             "class": "documents.services.records.schema.DocumentsSchema",
             "extra-code": ""
         },
-        "custom-fields": [],
         "pid": {
             "type": "dcmnts",
             "provider-base-classes": [
@@ -143,8 +143,8 @@
                 "{{oarepo_communities.services.components.include.CommunityInclusionComponent}}",
                 "{{oarepo_runtime.services.components.OwnersComponent}}",
                 "{{oarepo_runtime.services.files.FilesComponent}}",
-                "{{oarepo_runtime.services.components.CustomFieldsComponent}}",
                 "{{invenio_drafts_resources.services.records.components.DraftFilesComponent}}",
+                "{{oarepo_runtime.services.components.CustomFieldsComponent}}",
                 "{{oarepo_workflows.services.components.workflow.WorkflowComponent}}"
             ],
             "generate": true,
@@ -153,7 +153,8 @@
             "class": "documents.services.records.config.DocumentsServiceConfig",
             "extra-code": "",
             "service-id": "documents",
-            "additional-args": []
+            "additional-args": [],
+            "search-item-links-template-cls": "invenio_records_resources.services.LinksTemplate"
         },
         "ui": {
             "marshmallow": {
@@ -223,7 +224,6 @@
                     "metadata.accessRights": 3,
                     "metadata.rights": 4,
                     "metadata.resourceType": 5,
-                    "syntheticFields.keywords": 6,
                     "metadata.languages": 7,
                     "syntheticFields.organizations": 8,
                     "metadata.fundingReferences.funder": 9,
@@ -235,7 +235,6 @@
                     "metadata.accessRights": 3,
                     "metadata.rights": 4,
                     "metadata.resourceType": 5,
-                    "syntheticFields.keywords": 6,
                     "metadata.languages": 7,
                     "syntheticFields.organizations": 8,
                     "metadata.fundingReferences.funder": 9,
@@ -263,6 +262,16 @@
             "suffix-upper": "DOCUMENTS",
             "suffix-snake": "documents"
         },
+        "draft": {
+            "type": "draft_record",
+            "properties": {},
+            "searchable": true,
+            "tests": {
+                "extra-fixtures": [],
+                "extra-code": "",
+                "module": "tests"
+            }
+        },
         "draft-files": {
             "type": "draft-file",
             "properties": {},
@@ -277,16 +286,6 @@
                     "oarepo_ui.resources.file_resource.S3RedirectFileResource"
                 ]
             },
-            "tests": {
-                "extra-fixtures": [],
-                "extra-code": "",
-                "module": "tests"
-            }
-        },
-        "draft": {
-            "type": "draft_record",
-            "properties": {},
-            "searchable": true,
             "tests": {
                 "extra-fixtures": [],
                 "extra-code": "",
@@ -404,6 +403,7 @@
             "file": "data/sample_data.yaml"
         },
         "ext-resource": {
+            "service-kwargs": {},
             "generate": true,
             "skip": false
         },
@@ -468,6 +468,19 @@
             "module": "documents.proxies",
             "generate": true
         },
+        "resource": {
+            "base-classes": [
+                "invenio_drafts_resources.resources.RecordResource"
+            ],
+            "generate": true,
+            "config-key": "DOCUMENTS_RECORD_RESOURCE_CLASS",
+            "module": "documents.resources.records.resource",
+            "class": "documents.resources.records.resource.DocumentsResource",
+            "proxy": "current_resource",
+            "extra-code": "",
+            "imports": [],
+            "additional-args": []
+        },
         "record-resolver": {
             "generate": true,
             "module": "documents.records.requests.resolvers",
@@ -481,19 +494,6 @@
         "ui-record-resolver": {
             "generate": true,
             "class": "oarepo_requests.resolvers.ui.RecordEntityReferenceUIResolver"
-        },
-        "resource": {
-            "base-classes": [
-                "invenio_drafts_resources.resources.RecordResource"
-            ],
-            "generate": true,
-            "config-key": "DOCUMENTS_RECORD_RESOURCE_CLASS",
-            "module": "documents.resources.records.resource",
-            "class": "documents.resources.records.resource.DocumentsResource",
-            "proxy": "current_resource",
-            "extra-code": "",
-            "imports": [],
-            "additional-args": []
         },
         "translations": {
             "module": "documents.translations",
@@ -7787,8 +7787,8 @@
                                 "write": false
                             }
                         },
-                        "label.cs": "Lidé",
-                        "label.en": "People"
+                        "label.cs": "Tvůrci",
+                        "label.en": "Creators"
                     },
                     "year": {
                         "type": "edtf",
