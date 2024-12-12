@@ -11,10 +11,24 @@ import { i18next } from "@translations/i18next";
 import { SelectedCommunity } from "@js/communities_components/CommunitySelector/SelectedCommunity";
 import { RecordRequests } from "@js/oarepo_requests/components";
 import { useFormikContext } from "formik";
+import { REQUEST_TYPE } from "@js/oarepo_requests_common";
 
 const FormActionsContainer = () => {
   const { values, setErrors } = useFormikContext();
   const { save } = useDepositApiClient();
+
+  const onBeforeAction = ({ requestActionName }) => {
+    // Do not try to save in case user is declining or cancelling the request from the form
+    if (
+      requestActionName === REQUEST_TYPE.DECLINE ||
+      requestActionName === REQUEST_TYPE.CANCEL
+    ) {
+      return true;
+    } else {
+      return save({ successMessage: "" });
+    }
+  };
+
   return (
     <Card fluid>
       {/* <Card.Content>
@@ -31,13 +45,8 @@ const FormActionsContainer = () => {
             {values.id && (
               <RecordRequests
                 record={values}
-                onBeforeAction={() => save({ successMessage: "" })}
-                onActionError={(
-                  e,
-                  variables,
-                  requestModalFormik,
-                  modalControl
-                ) => {
+                onBeforeAction={onBeforeAction}
+                onActionError={({ e, modalControl }) => {
                   if (e?.response?.data?.errors?.length > 0) {
                     const errors = serializeErrors(
                       e?.response?.data?.errors,
