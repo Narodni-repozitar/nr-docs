@@ -1,5 +1,5 @@
 #
-# Import script for 2024-12-02 release
+# Import script for 2024-12-12 release
 #
 # Usage:
 # export USER_PASSWORD=<your_password>
