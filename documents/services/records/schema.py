@@ -14,7 +14,9 @@ from oarepo_communities.schemas.parent import CommunitiesParentSchema
 from oarepo_runtime.services.schema.marshmallow import DictOnlySchema
 from oarepo_runtime.services.schema.validation import validate_datetime
 from oarepo_workflows.services.records.schema import WorkflowParentSchema
-
+from oarepo_runtime.services.schema.rdm import RDMRecordMixin
+from invenio_rdm_records.services.schemas.access import AccessSchema
+from marshmallow_utils.fields.nestedattr import NestedAttribute
 
 class GeneratedParentSchema(WorkflowParentSchema):
     """"""
@@ -34,12 +36,15 @@ class LocalNRDocumentMetadataSchema(NRDocumentMetadataSchema):
     )
 
 
-class DocumentsSchema(NRDocumentRecordSchema):
+class DocumentsSchema(NRDocumentRecordSchema, RDMRecordMixin):
     class Meta:
         unknown = ma.RAISE
 
     # TODO: fix model builder to include required languages. Until then
     # please keep the overriden code here
+    access = NestedAttribute(lambda: AccessSchema())
+
+
     metadata = ma_fields.Nested(lambda: LocalNRDocumentMetadataSchema())
 
     oai = ma_fields.Nested(lambda: OaiSchema())

@@ -9,7 +9,12 @@ from invenio_files_rest.models import Bucket
 from invenio_records.models import RecordMetadataBase
 from oarepo_workflows.records.models import RecordWorkflowParentModelMixin
 from sqlalchemy_utils import UUIDType
-
+from invenio_records.models import RecordMetadataBase
+from sqlalchemy_utils import UUIDType
+from sqlalchemy_utils.types import ChoiceType
+from invenio_rdm_records.records.systemfields.deletion_status import (
+    RecordDeletionStatusEnum,
+)
 
 class DocumentsParentMetadata(
     RecordWorkflowParentModelMixin, db.Model, RecordMetadataBase
@@ -25,6 +30,12 @@ class DocumentsMetadata(db.Model, RecordMetadataBase, ParentRecordMixin):
 
     # Enables SQLAlchemy-Continuum versioning
     __versioned__ = {}
+
+    deletion_status = db.Column(
+        ChoiceType(RecordDeletionStatusEnum, impl=db.String(1)),
+        nullable=False,
+        default=RecordDeletionStatusEnum.PUBLISHED.value,
+    )
 
     __parent_record_model__ = DocumentsParentMetadata
     bucket_id = db.Column(UUIDType, db.ForeignKey(Bucket.id))
