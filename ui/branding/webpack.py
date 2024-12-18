@@ -11,6 +11,7 @@ theme = WebpackThemeBundle(
             },
             "dependencies": {
                 "react-searchkit": "^2.0.0",
+                "bluebird": "^3.5.1",
             },
             "devDependencies": {},
             "aliases": {

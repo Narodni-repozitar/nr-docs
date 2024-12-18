@@ -61,64 +61,49 @@ def get_package_and_package_lock_files(project_path):
 
 
 class NPMPackage(InvenioNPMPackage):
-    def _run_npm(self, command, *args, **kwargs):
-        """Run an NPM command.
-
-        By default the call is blocking until NPM is finished and output
-        is directed to stdout. If ``wait=False`` is passed to the method,
-        you get a handle to the process (return value of ``subprocess.Popen``).
-
-        :param command: NPM command to run.
-        :param args: List of arguments.
-        :param wait: Wait for NPM command to finish. By defaul
-        """
+    def install(self, *args, **kwargs):
+        """Handle the NPM install command with additional logic."""
         source_package_files = package_files_exist()
         package_files_same = False
 
-        if command == "install":
-            venv_package_json = self.package_json
-            if source_package_files["exists"]:
-                with open(source_package_files["package_json_path"], "r") as fp:
-                    package_json_source = json.load(fp)
-                    if venv_package_json == package_json_source:
-                        package_files_same = True
-                        shutil.copy(
-                            source_package_files["package_lock_json_path"],
-                            self._package_json_path,
-                        )
-            npm_install_return_code = run_npm(
-                dirname(self.package_json_path),
-                command,
-                npm_bin=self._npm_bin,
-                args=args,
-                shell=self._shell,
-                **kwargs,
+        venv_package_json = self.package_json
+        if source_package_files["exists"]:
+            with open(source_package_files["package_json_path"], "r") as fp:
+                package_json_source = json.load(fp)
+                if venv_package_json == package_json_source:
+                    package_files_same = True
+                    print("Copying package lock to venv", flush=True)
+                    shutil.copy(
+                        source_package_files["package_lock_json_path"],
+                        self._package_json_path,
+                    )
+                else:
+                    print("Package files are different", flush=True)
+
+        npm_install_return_code = run_npm(
+            dirname(self.package_json_path),
+            "install",
+            npm_bin=self._npm_bin,
+            args=args,
+            shell=self._shell,
+            **kwargs,
+        )
+
+        if not package_files_same and npm_install_return_code == 0:
+            print(
+                "Copying package.json and package-lock.json to source directory",
+                flush=True,
+            )
+            shutil.copy(
+                join(self._package_json_path, "package.json"),
+                source_package_files["package_json_path"],
+            )
+            shutil.copy(
+                join(self._package_json_path, "package-lock.json"),
+                source_package_files["package_lock_json_path"],
             )
 
-            if not package_files_same and npm_install_return_code == 0:
-                print(
-                    self._package_json_path,
-                    "package_json_pathaaa",
-                    flush=True,
-                )
-                shutil.copy(
-                    join(self._package_json_path, "package.json"),
-                    source_package_files["package_json_path"],
-                )
-                shutil.copy(
-                    join(self._package_json_path, "package-lock.json"),
-                    source_package_files["package_lock_json_path"],
-                )
-            return npm_install_return_code
-        else:
-            return run_npm(
-                dirname(self.package_json_path),
-                command,
-                npm_bin=self._npm_bin,
-                args=args,
-                shell=self._shell,
-                **kwargs,
-            )
+        return npm_install_return_code
 
     # def copy_package_and_package_lock_to_sources(self);
     #     pass

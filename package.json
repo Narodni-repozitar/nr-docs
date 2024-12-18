@@ -11,6 +11,7 @@
     "@tinymce/tinymce-react": "^4.3.0",
     "admin-lte": "~2.4.8",
     "axios": "^0.21.0",
+    "bluebird": "^3.5.1",
     "d3": "^7.8.5",
     "edtf": "^4.0.0",
     "flightjs": "~1.5.1",
