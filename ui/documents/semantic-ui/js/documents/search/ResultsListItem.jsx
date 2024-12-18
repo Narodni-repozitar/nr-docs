@@ -243,7 +243,6 @@ export const ResultsListItemComponent = ({
       <Item
         key={result.id}
         data-testid="result-item"
-        className="word-break-all"
       >
         <Item.Content>
           <Grid>
