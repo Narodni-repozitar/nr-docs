@@ -37,10 +37,11 @@ from documents.services.records.permissions import DocumentsPermissionPolicy
 from documents.services.records.results import DocumentsRecordItem, DocumentsRecordList
 from documents.services.records.schema import DocumentsSchema
 from documents.services.records.search import DocumentsSearchOptions
+from invenio_rdm_records.services.config import RDMRecordServiceConfig
 
 
 class DocumentsServiceConfig(
-    PermissionsPresetsConfigMixin, FilteredResultServiceConfig
+    PermissionsPresetsConfigMixin, FilteredResultServiceConfig, RDMRecordServiceConfig
 ):
     """DocumentsRecord service config."""
 

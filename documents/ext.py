@@ -7,7 +7,7 @@ from oarepo_requests.resources.draft.types.config import DraftRequestTypesResour
 
 from documents import config
 
-
+from invenio_rdm_records.services.pids import PIDManager, PIDsService
 class DocumentsExt:
     def __init__(self, app=None):
         if app:
@@ -63,7 +63,9 @@ class DocumentsExt:
         else:
             config_class = service_config()
 
-        service_kwargs = {"config": config_class}
+        service_kwargs = {"config": config_class,
+                        "pids_service": PIDsService(config_class, PIDManager)
+                          }
         return config.DOCUMENTS_RECORD_SERVICE_CLASS(
             **service_kwargs,
             files_service=self.service_files,
