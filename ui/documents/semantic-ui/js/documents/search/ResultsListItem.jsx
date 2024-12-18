@@ -257,7 +257,7 @@ export const ResultsListItemComponent = ({
                     searchUrl={searchAppConfig.ui_endpoint}
                     selfLink={result.links.self_html}
                   />
-                  <div className='results-list item-access-rights'>
+                  <div className='item-access-rights'>
                     <Label title={result.state_timestamp}>{result.state}</Label>
                     {accessRights && accessRights.id !== "c_abf2" && (
                       <Label>{accessRights.title}</Label>
