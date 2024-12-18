@@ -243,7 +243,6 @@ export const ResultsListItemComponent = ({
       <Item
         key={result.id}
         data-testid="result-item"
-        className="word-break-all"
       >
         <Item.Content>
           <Grid>
@@ -258,7 +257,7 @@ export const ResultsListItemComponent = ({
                     searchUrl={searchAppConfig.ui_endpoint}
                     selfLink={result.links.self_html}
                   />
-                  <div>
+                  <div className='item-access-rights'>
                     <Label title={result.state_timestamp}>{result.state}</Label>
                     {accessRights && accessRights.id !== "c_abf2" && (
                       <Label>{accessRights.title}</Label>
