@@ -247,7 +247,7 @@ export const ResultsListItemComponent = ({
         <Item.Content>
           <Grid>
             <Grid.Row columns={2}>
-              <Grid.Column floated="right" className="results-list item-side computer tablet only">
+              <Grid.Column className="results-list item-side computer tablet only">
                 <ItemSidebarIcons rights={rights} accessStatus={accessRights} />
               </Grid.Column>
               <Grid.Column className="results-list item-main">
