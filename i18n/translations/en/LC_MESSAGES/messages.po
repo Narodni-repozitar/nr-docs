@@ -665,7 +665,7 @@ msgid "If you delete the draft, the work you have done on it will be lost."
 msgstr "If you delete the draft, the work you have done on it will be lost."
 
 msgid "Add event"
-msgstr "Add event"
+msgstr "Add related event"
 
 msgid "Events"
 msgstr "Events"
