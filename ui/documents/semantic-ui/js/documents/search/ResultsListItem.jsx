@@ -248,7 +248,7 @@ export const ResultsListItemComponent = ({
         <Item.Content>
           <Grid>
             <Grid.Row columns={2}>
-              <Grid.Column className="results-list item-side computer tablet only">
+              <Grid.Column floated="right" className="results-list item-side computer tablet only">
                 <ItemSidebarIcons rights={rights} accessStatus={accessRights} />
               </Grid.Column>
               <Grid.Column className="results-list item-main">
@@ -258,7 +258,7 @@ export const ResultsListItemComponent = ({
                     searchUrl={searchAppConfig.ui_endpoint}
                     selfLink={result.links.self_html}
                   />
-                  <div>
+                  <div className='results-list item-access-rights'>
                     <Label title={result.state_timestamp}>{result.state}</Label>
                     {accessRights && accessRights.id !== "c_abf2" && (
                       <Label>{accessRights.title}</Label>

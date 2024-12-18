@@ -1,5 +1,9 @@
 .column.results-list.item-main {
     flex: 1;
+
+    .item-access-rights {
+        flex-shrink: 0;
+    }
 }
     
 .column.results-list.item-side {
