@@ -26,8 +26,8 @@ def package_files_exist():
     else:
         return {
             "exists": False,
-            "package_json_path": None,
-            "package_lock_json_path": None,
+            "package_json_path": package_json_path,
+            "package_lock_json_path": package_lock_json_path,
         }
 
 
@@ -72,13 +72,16 @@ class NPMPackage(InvenioNPMPackage):
         :param args: List of arguments.
         :param wait: Wait for NPM command to finish. By defaul
         """
+        source_package_files = package_files_exist()
+        package_files_same = False
+
         if command == "install":
             venv_package_json = self.package_json
-            source_package_files = package_files_exist()
             if source_package_files["exists"]:
                 with open(source_package_files["package_json_path"], "r") as fp:
                     package_json_source = json.load(fp)
                     if venv_package_json == package_json_source:
+                        package_files_same = True
                         shutil.copy(
                             source_package_files["package_lock_json_path"],
                             self._package_json_path,
@@ -91,10 +94,13 @@ class NPMPackage(InvenioNPMPackage):
                 shell=self._shell,
                 **kwargs,
             )
-            if (
-                venv_package_json != package_json_source
-                and npm_install_return_code == 0
-            ):
+
+            if not package_files_same and npm_install_return_code == 0:
+                print(
+                    self._package_json_path,
+                    "package_json_pathaaa",
+                    flush=True,
+                )
                 shutil.copy(
                     join(self._package_json_path, "package.json"),
                     source_package_files["package_json_path"],
@@ -104,15 +110,15 @@ class NPMPackage(InvenioNPMPackage):
                     source_package_files["package_lock_json_path"],
                 )
             return npm_install_return_code
-
-        return run_npm(
-            dirname(self.package_json_path),
-            command,
-            npm_bin=self._npm_bin,
-            args=args,
-            shell=self._shell,
-            **kwargs,
-        )
+        else:
+            return run_npm(
+                dirname(self.package_json_path),
+                command,
+                npm_bin=self._npm_bin,
+                args=args,
+                shell=self._shell,
+                **kwargs,
+            )
 
     # def copy_package_and_package_lock_to_sources(self);
     #     pass
