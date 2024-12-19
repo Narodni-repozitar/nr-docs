@@ -1,4 +1,4 @@
-import React, { useCallback } from "react";
+import * as React from "react";
 import {
   useFormConfig,
   MultilingualTextInput,
@@ -36,14 +36,10 @@ import { useFormikContext, getIn } from "formik";
 const FormFieldsContainer = () => {
   const { formConfig, files: recordFiles } = useFormConfig();
   const editMode = _has(formConfig, "updateUrl");
-  const filterResourceTypes = useCallback(
-    (options) =>
-      options.map((opt) => ({
-        ...opt,
-        selectable: !!opt.props?.submission,
-      })),
-    []
+  const submissibleResourceTypes = (options) => options.filter(
+      opt => !!opt.props?.submission && opt.props?.submission !== 'false'
   );
+
   const { getFieldData } = useFieldData();
 
   const { values, setFieldValue, setFieldTouched } = useFormikContext();
@@ -98,12 +94,13 @@ const FormFieldsContainer = () => {
             id="NrDocs.Deposit.ResourceTypeField.container"
             fieldPath="metadata.resourceType"
           >
-            <VocabularyTreeSelectField
+            <LocalVocabularySelectField
               optimized
               fieldPath="metadata.resourceType"
+              multiple={false}
+              filterFunction={submissibleResourceTypes}
               clearable
-              vocabulary="resource-types"
-              filterFunction={filterResourceTypes}
+              optionsListName="resource-types"
               {...getFieldData({
                 fieldPath: "metadata.resourceType",
                 icon: "tag",
