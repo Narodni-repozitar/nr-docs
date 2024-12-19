@@ -40,10 +40,9 @@ const FormFieldsContainer = () => {
     (options) =>
       options.map((opt) => ({
         ...opt,
-        selectable: !!opt.props?.submission,
-      })),
-    []
-  );
+        selectable: !!opt.props?.submission && opt.props?.submission !== 'false',
+      })), []);
+
   const { getFieldData } = useFieldData();
 
   const { values, setFieldValue, setFieldTouched } = useFormikContext();
