@@ -47,6 +47,14 @@ class DataCiteMappingNRDocs(DataCiteMappingBase):
                     errors[f"metadata.fundingReferences[{i}].projectName"] = [
                         missing_data_message
                     ]
+        if "relatedItems" in data:
+            for i, item in enumerate(data["relatedItems"]):
+                if "itemTitle" not in item:
+                    errors[f"metadata.relatedItems[{i}].itemTitle"] = [missing_data_message]
+                if "itemRelationType" not in item:
+                    errors[f"metadata.relatedItems[{i}].itemRelationType"] = [missing_data_message]
+                if "itemResourceType" not in item:
+                    errors[f"metadata.relatedItems[{i}].itemResourceType"] = [missing_data_message]
 
         return errors
 
@@ -248,7 +256,7 @@ def related_items(data):
         if "itemIssue" in rel:
             dc_rel["issue"] = rel["itemIssue"]
         if "itemTitle" in rel:
-            dc_rel["Title"] = {"title": rel["itemTitle"]}
+            dc_rel["title"] = {"title": rel["itemTitle"]}
         if "itemVolume" in rel:
             dc_rel["volume "] = rel["itemVolume"]
         if "itemYear" in rel:
