@@ -198,8 +198,8 @@ def creatibutor(data, type):
                 system_identity,
                 ("contributor-types", creatibutor["contributorType"]["id"]),
             )
-            if "dataCiteType" in voc.data["props"]:
-                contr_type = voc.data["props"]["dataCiteType"]
+            if "dataCiteCode" in voc.data["props"]:
+                contr_type = voc.data["props"]["dataCiteCode"]
             else:
                 contr_type = "Other"
             datacite_creatibutor["contributorType"] = contr_type
