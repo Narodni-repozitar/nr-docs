@@ -90,7 +90,7 @@ class DataCiteMappingNRDocs(DataCiteMappingBase):
         year = date_obj.year
 
         payload["publicationYear"] = year
-        payload["url"] = data["links"]["self"]
+        payload["url"] = data["links"]["self_html"]
 
         dc_dates = []
         if "dateAvailable" in metadata:
