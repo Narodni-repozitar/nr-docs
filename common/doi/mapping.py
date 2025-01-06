@@ -153,13 +153,16 @@ def resource_type(data):
 def subjects(data):
     dc_subjects = []
     for sub in data["subjects"]:
-        dc_sub = {}
         if "subject" in sub:
-            dc_sub["subject"] = sub["subject"][0]["value"]
-        if "subjectScheme" in sub:
-            dc_sub["subjectScheme"] = sub["subjectScheme"]
-        if dc_sub != {}:
-            dc_subjects.append(dc_sub)
+            for s in sub["subject"]:
+                dc_sub = {}
+                if "value" in s:
+                    dc_sub["subject"] = s["value"]
+                if "lang" in s:
+                    dc_sub["lang"] = s["lang"]
+                if dc_sub != {}:
+                    dc_sub["subjectScheme"] = "keyword"
+                    dc_subjects.append(dc_sub)
     return dc_subjects
 
 
