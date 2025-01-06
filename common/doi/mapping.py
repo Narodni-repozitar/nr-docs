@@ -160,8 +160,8 @@ def subjects(data):
                     dc_sub["subject"] = s["value"]
                 if "lang" in s:
                     dc_sub["lang"] = s["lang"]
-                dc_sub["subjectScheme"] = "keyword"
                 if dc_sub != {}:
+                    dc_sub["subjectScheme"] = "keyword"
                     dc_subjects.append(dc_sub)
     return dc_subjects
 
