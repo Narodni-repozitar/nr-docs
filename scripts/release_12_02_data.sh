@@ -81,6 +81,8 @@ invenio oarepo oai harvester add nusl-manual-submissions --name "Manual submissi
             --writer 'owner{service=documents}' \
             --writer 'timestamp_update{service=documents}'
 
+nusl_id_timestamp.sh datecreated.csv created_timestamps.py ../common/oai/writers
+
 if [ "$HARVEST" == "true" ] ; then
     invenio oarepo oai harvester run nusl-manual-submissions --batch-size 10
 fi
