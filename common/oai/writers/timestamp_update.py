@@ -7,7 +7,9 @@ from sqlalchemy import Table, update
 from invenio_records_resources.services.uow import RecordIndexOp
 from oarepo_runtime.datastreams.types import StreamBatch, StreamEntry
 from oarepo_runtime.datastreams.writers import BaseWriter
-from oarepo_runtime.datastreams.writers.utils import record_invenio_exceptions 
+from oarepo_runtime.datastreams.writers.utils import record_invenio_exceptions
+
+from .date_created import identifier_dates
 
 class TimestampUpdateWriter(BaseWriter):
     def __init__(self, *, service, identity=None):
@@ -32,6 +34,8 @@ class TimestampUpdateWriter(BaseWriter):
         db.session.expunge_all()
 
     def _write_entry(self, entry: StreamEntry, uow: UnitOfWork):
+        datestamp = self._get_created_timestamp(entry)
+
         record = self._service.read(system_identity, entry.id)
 
         model = record._record.model
@@ -40,8 +44,8 @@ class TimestampUpdateWriter(BaseWriter):
             update(table)
             .where(table.c.id == model.id)
             .values(
-                updated=entry.context["oai"]["datestamp"],
-                created=entry.context["oai"]["datestamp"],
+                updated=datestamp,
+                created=datestamp,
             )
         )
         db.session.execute(stmt)
@@ -49,3 +53,27 @@ class TimestampUpdateWriter(BaseWriter):
         record1 = self._service.read(system_identity, entry.id)
 
         uow.register(RecordIndexOp(record1._record, indexer=self._service.indexer, index_refresh=True))
+
+    def _get_created_timestamp(self, entry: StreamEntry) -> str:
+        def get_nusl_id(entry: StreamEntry) -> str:
+            system_identifiers = entry.entry['metadata']['systemIdentifiers']
+            nusl_id = None
+            for sys_idf in system_identifiers:
+                if sys_idf["scheme"] == "nusl":
+                    nusl_id = sys_idf["identifier"].split("-")[1]
+                    break
+                elif sys_idf["scheme"] == "nuslOAI":
+                    nusl_id = sys_idf["identifier"].split(":")[1]
+                    break
+
+            if nusl_id is None:
+                raise ValueError(f"NUSL identifier does not exist.")
+
+            return nusl_id
+        
+        nusl_id = get_nusl_id(entry)
+        datestamp = identifier_dates.get(nusl_id, None)
+        if datestamp is None:
+            raise KeyError(f"The date created is not present for this record.")
+        
+        return datestamp
