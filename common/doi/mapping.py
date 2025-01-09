@@ -23,6 +23,8 @@ class DataCiteMappingNRDocs(DataCiteMappingBase):
                             errors[
                                 f"metadata.creators[{i}].authorityIdentifiers[{j}].scheme"
                             ] = [missing_data_message]
+        if "publishers" not in data:
+            errors["metadata.publishers"] = [missing_data_message]
         if "contributors" in data:
             for i, contributor in enumerate(data["contributors"]):
                 if "fullName" not in contributor:
@@ -63,10 +65,7 @@ class DataCiteMappingNRDocs(DataCiteMappingBase):
         metadata = data["metadata"]
         creators = creatibutor(metadata, "creators")
         titles = title(metadata)
-        # publishers = publisher(data)
-
-        # todo: what is the correct value here? if it should be from the record data - check also needs to be added since publisher field is mandatory in DC
-        publishers = "NTK"
+        publishers = publisher(metadata)
 
         dc_resource_type = resource_type(metadata)
 
