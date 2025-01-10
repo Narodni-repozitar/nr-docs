@@ -1,8 +1,12 @@
 from invenio_communities.permissions import CommunityPermissionPolicy
 from invenio_administration.generators import Administration
 from invenio_records_permissions.generators import SystemProcess
-from invenio_communities.generators import CommunityManagersForRole
+from invenio_communities.generators import (
+    CommunityManagersForRole,
+)
+from oarepo_communities.services.permissions.generators import PrimaryCommunityRole
 from invenio_records_permissions.generators import Disable
+
 
 class NrDocsCommunitiesPermissionPolicy(CommunityPermissionPolicy):
     """Permissions for Community CRUD operations specific to nr-docs.
@@ -14,6 +18,7 @@ class NrDocsCommunitiesPermissionPolicy(CommunityPermissionPolicy):
     CommunityPermissionPolicy class. They are commented out to be able to see
     how the total permissions look like.
     """
+
     can_create = [Administration(), SystemProcess()]
     """Only administrators can create communities, not common users."""
 
@@ -65,16 +70,16 @@ class NrDocsCommunitiesPermissionPolicy(CommunityPermissionPolicy):
     # can_rename = [CommunityOwners(), SystemProcess()]
     # """Who can rename a community."""
     #
-    can_submit_record = [ SystemProcess() ]
+    can_submit_record = [SystemProcess()]
     """Who can submit a record to a community directly. 
        We have a workflow for this, so allow just the system process."""
     #
     # # who can include a record directly, without a review
-    can_include_directly = [ SystemProcess() ]
+    can_include_directly = [SystemProcess()]
     """We have a workflow for both including to a secondary community 
        and publishing within primary, so just the system process."""
     #
-    can_members_add = [ SystemProcess() ]
+    can_members_add = [SystemProcess()]
     """In invenio, one can invite a group - we are disabling this behaviour as
     users are handled by AAI and the invitation process targets individual users."""
     #
@@ -92,30 +97,19 @@ class NrDocsCommunitiesPermissionPolicy(CommunityPermissionPolicy):
     # ]
     # """who can manage members of a community (remove them, change visibility, ...)"""
     #
-    # can_members_search = [
-    #     CommunityMembers(),
-    #     SystemProcess(),
-    # ]
-    # """Who can search for members of a community - just the members of the same community."""
+    can_members_search = [
+        PrimaryCommunityRole("owner"),
+        PrimaryCommunityRole("curator"),
+        SystemProcess(),
+    ]
+    # """Who can search for members of a community - only owners and curators."""
     #
-    # can_members_search_public = [
-    #     IfRestricted(
-    #         "visibility",
-    #         then_=[CommunityMembers()],
-    #         else_=[
-    #             IfRestricted(
-    #                 "members_visibility",
-    #                 then_=[CommunityMembers()],
-    #                 else_=[AnyUser()],
-    #             ),
-    #         ],
-    #     ),
-    #     SystemProcess(),
-    # ]
-    # """Who can search for members of a public community -
-    #     - if the community is restricted, only the members can search for other members
-    #     - if the members are restricted, only the members can search for other members
-    #    - otherwise, anyone can search for members."""
+    can_members_search_public = [
+        PrimaryCommunityRole("owner"),
+        PrimaryCommunityRole("curator"),
+        SystemProcess(),
+    ]
+    # """Who can search for members of a public community - only owners and curators."""
     #
     # # Ability to use membership update api
     # can_members_bulk_update = [
@@ -171,6 +165,6 @@ class NrDocsCommunitiesPermissionPolicy(CommunityPermissionPolicy):
     # request_membership permission is based on configuration, community settings and
     # identity. Other factors (e.g., previous membership requests) are not under
     # its purview and are dealt with elsewhere.
-    can_request_membership = [ Disable() ]
+    can_request_membership = [Disable()]
     """Currently user can not ask for direct inclusion (just invitations), 
     so disable the direct request."""
