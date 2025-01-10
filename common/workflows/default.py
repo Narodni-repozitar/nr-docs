@@ -28,7 +28,7 @@ from invenio_records_permissions.generators import AnyUser, Disable
 from oarepo_communities.services.permissions.generators import (
     CommunityRole,
     PrimaryCommunityMembers,
-    PrimaryCommunityRole,
+    PrimaryCommunityRole, TargetCommunityRole,
 )
 from oarepo_communities.services.permissions.policy import (
     CommunityDefaultWorkflowPermissions,
@@ -262,6 +262,32 @@ class DefaultWorkflowRequests(WorkflowRequestPolicy):
         ],
     )
 
+    initiate_community_migration = WorkflowRequest(
+        requesters=[
+            RecordOwners(),
+            PrimaryCommunityRole("curator"),
+            PrimaryCommunityRole("owner"),
+        ],
+        recipients=[
+            IfRequestedBy(
+                requesters=[
+                    RecordOwners()
+                ],
+                then_=[
+                    PrimaryCommunityRole("curator"),
+                    PrimaryCommunityRole("owner"),
+                ],
+                else_=[AutoApprove()]
+            )
+        ],
+    )
+    confirm_community_migration = WorkflowRequest(
+        requesters=[],
+        recipients=[
+            TargetCommunityRole("curator"),
+            TargetCommunityRole("owner"),
+        ],
+    )
 
 if False:
     # just for translation extraction
