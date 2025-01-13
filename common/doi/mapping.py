@@ -252,7 +252,7 @@ def related_items(data):
                 system_identity, ("resource-types", rel["itemResourceType"]["id"])
             )
             dc_rel["relatedItemType"] = voc.data["props"]["dataCiteType"]
-                if "itemPIDs" in rel:
+        if "itemPIDs" in rel:
             identifier_definition = {}
             for identifier in rel["itemPIDs"]:
                 if "identifier" in identifier and "scheme" in identifier:
