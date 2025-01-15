@@ -1,8 +1,7 @@
-from invenio_rdm_records.services.generators import IfRestricted, IfDraft
+from invenio_rdm_records.services.generators import IfRestricted
 from invenio_records_permissions.generators import AnyUser, Disable
 from oarepo_communities.services.permissions.generators import (
     CommunityRole,
-    PrimaryCommunityMembers,
     PrimaryCommunityRole,
 )
 from oarepo_communities.services.permissions.policy import (
