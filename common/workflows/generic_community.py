@@ -33,21 +33,14 @@ class GenericCommunityWorkflowPermissions(CommunityDefaultWorkflowPermissions):
         RecordOwners(),
         CommunityRole("owner"),
         CommunityRole("curator"),
-        IfInState(
-            "draft",
-            then_=[PrimaryCommunityMembers()],
-        ),
     ]
 
     can_read = can_read_generic + [
         IfInState(
             "published",
             then_=[
-                IfRestricted(
-                    "record",
-                    then_=[PrimaryCommunityMembers()],
-                    else_=[AnyUser()],
-                )
+                # If the record is published, anyone can see its metadata
+                AnyUser(),
             ],
         ),
     ]
@@ -58,11 +51,11 @@ class GenericCommunityWorkflowPermissions(CommunityDefaultWorkflowPermissions):
             then_=[
                 IfRestricted(
                     "files",
+                    # Only the owner sees files from embargoed/restricted records
                     then_=[
                         RecordOwners(),
-                        # PrimaryCommunityRole("owner"),
-                    ],  # Only the owner sees files in embargoed/restricted
-                    else_=[],  # No one else sees the files
+                    ],
+                    else_=[AnyUser()],
                 )
             ],
         ),
