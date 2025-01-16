@@ -5,6 +5,9 @@ from invenio_records_resources.services.files.components.base import (
     FileServiceComponent,
 )
 
+from invenio_records_resources.services.errors import FailedFileUploadException
+from flask_babel import _
+
 
 class AllowedDocumentExtensionsComponent(FileServiceComponent):
     def init_files(self, identity, id, record, data):

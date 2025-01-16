@@ -1,7 +1,10 @@
 import importlib_metadata
-from flask_resources import ResponseHandler
+from flask_resources import HTTPJSONException, ResponseHandler, create_error_handler
 from invenio_records_resources.resources import FileResourceConfig
 
+from common.services.files.allowed_document_extensions import (
+    InvalidFileExtensionException,
+)
 from documents.resources.files.ui import (
     DocumentsFileDraftUIJSONSerializer,
     DocumentsFileUIJSONSerializer,

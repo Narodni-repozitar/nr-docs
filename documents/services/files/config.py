@@ -1,3 +1,4 @@
+from flask_resources import HTTPJSONException, create_error_handler
 from invenio_records_resources.services import (
     FileLink,
     FileServiceConfig,
@@ -16,6 +17,7 @@ from oarepo_runtime.services.config.service import PermissionsPresetsConfigMixin
 
 from common.services.files.allowed_document_extensions import (
     AllowedDocumentExtensionsComponent,
+    InvalidFileExtensionException,
 )
 from documents.records.api import DocumentsDraft, DocumentsRecord
 from documents.services.files.schema import DocumentsFileSchema
