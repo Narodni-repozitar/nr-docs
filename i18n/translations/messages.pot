@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2025-01-16 15:38+0100\n"
+"POT-Creation-Date: 2025-01-16 17:16+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -49,8 +49,10 @@ msgstr ""
 msgid "Files are not allowed for metadata only access."
 msgstr ""
 
-#: /Users/pragerdom/work/nr-docs/common/services/files/allowed_document_extensions.py:26
-msgid "Failed to upload '{file_key}'. Invalid extension."
+#: /Users/pragerdom/work/nr-docs/common/services/files/allowed_document_extensions.py:28
+msgid ""
+"Failed to upload '{file_key}'. Invalid extension. Supported formats are: "
+"{allowed_extensions}"
 msgstr ""
 
 #: /Users/pragerdom/work/nr-docs/common/workflows/default.py:269

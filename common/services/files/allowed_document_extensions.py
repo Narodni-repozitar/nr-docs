@@ -9,11 +9,13 @@ from flask_babel import _
 
 class AllowedDocumentExtensionsComponent(FileServiceComponent):
     def init_files(self, identity, id, record, data):
-        allowed_extensions = current_app.config["ALLOWED_DOCUMENT_FILE_EXTENSIONS"]
+        allowed_extensions = tuple(
+            current_app.config["ALLOWED_DOCUMENT_FILE_EXTENSIONS"]
+        )
 
         for file_data in data:
             file_name = file_data["key"]
-            if not file_name.endswith(tuple(allowed_extensions)):
+            if not file_name.endswith(allowed_extensions):
                 raise InvalidFileExtensionException(file_name)
 
 
@@ -23,8 +25,13 @@ class InvalidFileExtensionException(Exception):
     def __init__(self, file_key):
         """Constructor."""
         super().__init__(
-            _("Failed to upload '{file_key}'. Invalid extension.").format(
-                file_key=file_key
+            _(
+                "Failed to upload '{file_key}'. Invalid extension. Supported formats are: {supported_formats}"
+            ).format(
+                file_key=file_key,
+                supported_formats=", ".join(
+                    current_app.config["ALLOWED_DOCUMENT_FILE_EXTENSIONS"]
+                ),
             )
         )
         self.file_key = file_key
