@@ -26,10 +26,10 @@ class InvalidFileExtensionException(Exception):
         """Constructor."""
         super().__init__(
             _(
-                "Failed to upload '{file_key}'. Invalid extension. Supported formats are: {supported_formats}"
+                "Failed to upload '{file_key}'. Invalid extension. Supported formats are: {allowed_extensions}"
             ).format(
                 file_key=file_key,
-                supported_formats=", ".join(
+                allowed_extensions=", ".join(
                     current_app.config["ALLOWED_DOCUMENT_FILE_EXTENSIONS"]
                 ),
             )
