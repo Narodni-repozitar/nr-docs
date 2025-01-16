@@ -1,9 +1,3 @@
-# take allowed extensions from here:
-# current_app.config[ALLOWED_DOCUMENT_FILE_EXTENSIONS]
-
-
-# .venv/lib/python3.12/site-packages/invenio_records_resources/services/files/components/base.py
-
 from flask import current_app
 from invenio_records_resources.services.files.components.base import (
     FileServiceComponent,
