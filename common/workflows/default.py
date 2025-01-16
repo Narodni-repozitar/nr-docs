@@ -29,6 +29,7 @@ from oarepo_communities.services.permissions.generators import (
     CommunityRole,
     PrimaryCommunityMembers,
     PrimaryCommunityRole,
+    TargetCommunityRole,
 )
 from oarepo_communities.services.permissions.policy import (
     CommunityDefaultWorkflowPermissions,
@@ -44,7 +45,6 @@ from oarepo_workflows import (
     WorkflowTransitions,
 )
 from invenio_i18n import lazy_gettext as _
-
 
 
 class DefaultWorkflowPermissions(CommunityDefaultWorkflowPermissions):
@@ -153,7 +153,10 @@ class DefaultWorkflowRequests(WorkflowRequestPolicy):
             )
         ],
         transitions=WorkflowTransitions(
-            submitted="submitted", accepted="published", declined="draft", cancelled="draft"
+            submitted="submitted",
+            accepted="published",
+            declined="draft",
+            cancelled="draft",
         ),
         # if the request is not resolved in 21 days, escalate it to the administrator
         escalations=[
@@ -226,7 +229,10 @@ class DefaultWorkflowRequests(WorkflowRequestPolicy):
         # the record comes to the state of retracting when the request is submitted. If the request
         # is accepted, the record is deleted, if declined, it is published again.
         transitions=WorkflowTransitions(
-            submitted="retracting", declined="published", accepted="deleted", cancelled="published"
+            submitted="retracting",
+            declined="published",
+            accepted="deleted",
+            cancelled="published",
         ),
         # if the request is not resolved in 21 days, escalate it to the administrator
         escalations=[
@@ -261,14 +267,45 @@ class DefaultWorkflowRequests(WorkflowRequestPolicy):
             )
         ],
     )
+    initiate_community_migration = WorkflowRequest(
+        requesters=[
+            RecordOwners(),
+            PrimaryCommunityRole("curator"),
+            PrimaryCommunityRole("owner"),
+        ],
+        recipients=[
+            IfRequestedBy(
+                requesters=[
+                    PrimaryCommunityRole("curator"),
+                    PrimaryCommunityRole("owner"),
+                ],
+                then_=[AutoApprove()],
+                else_=[PrimaryCommunityRole("curator"), PrimaryCommunityRole("owner")],
+            )
+        ],
+    )
+    confirm_community_migration = WorkflowRequest(
+        requesters=[],
+        recipients=[
+            TargetCommunityRole("curator"),
+            TargetCommunityRole("owner"),
+        ],
+    )
+    secondary_community_submission = WorkflowRequest(
+        requesters=[RecordOwners()],
+        recipients=[
+            TargetCommunityRole("curator"),
+            TargetCommunityRole("owner"),
+        ],
+    )
 
 
 if False:
     # just for translation extraction
     translated_strings = [
-        _('state:draft'),
-        _('state:published'),
-        _('state:submitted'),
-        _('state:retracting'),
-        _('state:deleted'),
+        _("state:draft"),
+        _("state:published"),
+        _("state:submitted"),
+        _("state:retracting"),
+        _("state:deleted"),
     ]
