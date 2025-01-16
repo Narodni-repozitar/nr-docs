@@ -9,14 +9,28 @@ from invenio_records_resources.services.files.components.base import (
     FileServiceComponent,
 )
 
+from invenio_records_resources.services.errors import FailedFileUploadException
+from flask_babel import _
+
 
 class AllowedDocumentExtensionsComponent(FileServiceComponent):
     def init_files(self, identity, id, record, data):
-        # schema = self.service.file_schema.schema(many=True)
-        # validated_data = schema.load(data)
-
-        # validate file extensions
         allowed_extensions = current_app.config["ALLOWED_DOCUMENT_FILE_EXTENSIONS"]
+
         for file_data in data:
-            if file_data["key"].split(".")[-1] not in allowed_extensions:
-                raise Exception("File extension not allowed")
+            file_name = file_data["key"]
+            if not file_name.endswith(tuple(allowed_extensions)):
+                raise InvalidFileExtensionException(file_name)
+
+
+class InvalidFileExtensionException(Exception):
+    """File has invalid extension. Refer to ALLOWED_DOCUMENT_FILE_EXTENSIONS in invenio.cfg for allowed extensions."""
+
+    def __init__(self, file_key):
+        """Constructor."""
+        super().__init__(
+            _("Failed to upload '{file_key}'. Invalid extension.").format(
+                file_key=file_key
+            )
+        )
+        self.file_key = file_key
