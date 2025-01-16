@@ -3664,6 +3664,10 @@ msgstr "verze"
 msgid "Missing data for required field."
 msgstr "Chybějící data pro povinné pole."
 
-#: /Users/pragerdom/work/nr-docs/common/services/files/allowed_document_extensions.py:26
-msgid "Failed to upload '{file_key}'. Invalid extension."
-msgstr "Nepodařilo se nahrát soubor '{file_key}'. Neplatná přípona."
+#: /Users/pragerdom/work/nr-docs/common/services/files/allowed_document_extensions.py:28
+msgid ""
+"Failed to upload '{file_key}'. Invalid extension. Supported formats are: "
+"{allowed_extensions}"
+msgstr ""
+"Nepodařilo se nahrát soubor '{file_key}'. Neplatná přípona. Podporované "
+"formáty souboru jsou: {allowed_extensions}"

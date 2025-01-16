@@ -17,7 +17,6 @@ class AllowedDocumentExtensionsComponent(FileServiceComponent):
 
         for file_data in data:
             file_name = file_data["key"]
-
             if not file_name.endswith(allowed_extensions):
                 raise InvalidFileExtensionException(file_name)
 

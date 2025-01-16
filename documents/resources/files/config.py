@@ -5,6 +5,7 @@ from invenio_records_resources.resources import FileResourceConfig
 from common.services.files.allowed_document_extensions import (
     InvalidFileExtensionException,
 )
+from common.config import INVALID_FILE_EXTENSION_EXCEPTION_HANDLER
 from documents.resources.files.ui import (
     DocumentsFileDraftUIJSONSerializer,
     DocumentsFileUIJSONSerializer,
