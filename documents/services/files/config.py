@@ -14,6 +14,9 @@ from oarepo_runtime.services.config import (
 )
 from oarepo_runtime.services.config.service import PermissionsPresetsConfigMixin
 
+from common.services.files.allowed_document_extensions import (
+    AllowedDocumentExtensionsComponent,
+)
 from documents.records.api import DocumentsDraft, DocumentsRecord
 from documents.services.files.schema import DocumentsFileSchema
 from documents.services.records.permissions import DocumentsPermissionPolicy
@@ -102,7 +105,10 @@ class DocumentsFileDraftServiceConfig(PermissionsPresetsConfigMixin, FileService
     def components(self):
         components_list = []
         components_list.extend(process_service_configs(type(self).mro()[2:]))
-        additional_components = [CustomFieldsComponent]
+        additional_components = [
+            CustomFieldsComponent,
+            AllowedDocumentExtensionsComponent,
+        ]
         components_list.extend(additional_components)
         seen = set()
         unique_components = []
