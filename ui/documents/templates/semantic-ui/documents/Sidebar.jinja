@@ -9,7 +9,9 @@
     </SidebarLink>
   </div>
 {% endif %}
+{% if record.expanded.request_types or record.expanded.requests %}
   <RecordRequests record={record} />
+{% endif %}
 </section>
 {% endif %}
 <IdentifiersAndLinks originalRecordUrl={metadata.originalRecord} objectIdentifiers={metadata.objectIdentifiers}/>

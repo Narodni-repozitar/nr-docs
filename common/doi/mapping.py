@@ -23,6 +23,8 @@ class DataCiteMappingNRDocs(DataCiteMappingBase):
                             errors[
                                 f"metadata.creators[{i}].authorityIdentifiers[{j}].scheme"
                             ] = [missing_data_message]
+        if "publishers" not in data:
+            errors["metadata.publishers"] = [missing_data_message]
         if "contributors" in data:
             for i, contributor in enumerate(data["contributors"]):
                 if "fullName" not in contributor:
@@ -63,10 +65,7 @@ class DataCiteMappingNRDocs(DataCiteMappingBase):
         metadata = data["metadata"]
         creators = creatibutor(metadata, "creators")
         titles = title(metadata)
-        # publishers = publisher(data)
-
-        # todo: what is the correct value here? if it should be from the record data - check also needs to be added since publisher field is mandatory in DC
-        publishers = "NTK"
+        publishers = publisher(metadata)
 
         dc_resource_type = resource_type(metadata)
 
@@ -129,7 +128,7 @@ class DataCiteMappingNRDocs(DataCiteMappingBase):
             payload["FundingReference"] = funder(metadata)
 
         if "relatedItems" in metadata:
-            payload["relatedItems"] = related_items(metadata)
+            payload["relatedItems"], payload["relatedIdentifiers"] = related_items(metadata)
 
         if "languages" in metadata:
             payload["language"] = metadata["languages"][0]["id"]
@@ -236,6 +235,7 @@ def funder(data):
 def related_items(data):
     dc_related_items = []
     related_items_def = data["relatedItems"]
+    dc_related_identifiers = []
     for rel in related_items_def:
         dc_rel = {}
         if "itemContributors" in rel:
@@ -252,6 +252,28 @@ def related_items(data):
                 system_identity, ("resource-types", rel["itemResourceType"]["id"])
             )
             dc_rel["relatedItemType"] = voc.data["props"]["dataCiteType"]
+        if "itemPIDs" in rel:
+            identifier_definition = {}
+            for identifier in rel["itemPIDs"]:
+                if "identifier" in identifier and "scheme" in identifier:
+                    if identifier["scheme"] == "DOI":
+                        identifier_definition["relatedItemIdentifier"] = identifier["identifier"]
+                        identifier_definition["relatedItemIdentifierType"] = identifier["scheme"]
+                        break
+                    elif identifier_definition == {} and identifier["scheme"] != "RIV":
+                        identifier_definition["relatedItemIdentifier"] = identifier["identifier"]
+                        identifier_definition["relatedItemIdentifierType"] = identifier["scheme"]
+                    else:
+                        continue
+            if identifier_definition != {}:
+                if "relationType" in dc_rel and "relatedItemType" in dc_rel:
+                    dc_related_identifiers.append({"relationType": dc_rel["relationType"],
+                                               "relatedIdentifier": identifier_definition["relatedItemIdentifier"],
+                                               "relatedIdentifierType": identifier_definition["relatedItemIdentifierType"],
+                                               "resourceTypeGeneral": dc_rel["relatedItemType"]})
+
+
+                dc_rel["relatedItemIdentifier"] = identifier_definition
         if "itemStartPage" in rel:
             dc_rel["firstPage"] = rel["itemStartPage"]
         if "itemEndPage" in rel:
@@ -267,4 +289,4 @@ def related_items(data):
 
         if dc_rel != {}:
             dc_related_items.append(dc_rel)
-    return dc_related_items
+    return dc_related_items , dc_related_identifiers
