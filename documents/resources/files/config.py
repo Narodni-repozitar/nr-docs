@@ -1,7 +1,11 @@
 import importlib_metadata
-from flask_resources import ResponseHandler
+from flask_resources import HTTPJSONException, ResponseHandler, create_error_handler
 from invenio_records_resources.resources import FileResourceConfig
 
+from common.services.files.allowed_document_extensions import (
+    InvalidFileExtensionException,
+)
+from common.config import INVALID_FILE_EXTENSION_EXCEPTION_HANDLER
 from documents.resources.files.ui import (
     DocumentsFileDraftUIJSONSerializer,
     DocumentsFileUIJSONSerializer,
@@ -29,6 +33,8 @@ class DocumentsFileResourceConfig(FileResourceConfig):
             **entrypoint_response_handlers,
         }
 
+    error_handlers = INVALID_FILE_EXTENSION_EXCEPTION_HANDLER
+
 
 class DocumentsFileDraftResourceConfig(FileResourceConfig):
     """DocumentsFileDraft resource config."""
@@ -50,3 +56,5 @@ class DocumentsFileDraftResourceConfig(FileResourceConfig):
             **super().response_handlers,
             **entrypoint_response_handlers,
         }
+
+    error_handlers = INVALID_FILE_EXTENSION_EXCEPTION_HANDLER

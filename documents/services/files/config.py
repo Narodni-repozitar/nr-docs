@@ -1,3 +1,4 @@
+from flask_resources import HTTPJSONException, create_error_handler
 from invenio_records_resources.services import (
     FileLink,
     FileServiceConfig,
@@ -13,6 +14,10 @@ from oarepo_runtime.services.config import (
     has_permission_file_service,
 )
 from oarepo_runtime.services.config.service import PermissionsPresetsConfigMixin
+
+from common.services.files.allowed_document_extensions import (
+    AllowedDocumentExtensionsComponent,
+)
 
 from documents.records.api import DocumentsDraft, DocumentsRecord
 from documents.services.files.schema import DocumentsFileSchema
@@ -43,7 +48,10 @@ class DocumentsFileServiceConfig(PermissionsPresetsConfigMixin, FileServiceConfi
     def components(self):
         components_list = []
         components_list.extend(process_service_configs(type(self).mro()[2:]))
-        additional_components = [CustomFieldsComponent]
+        additional_components = [
+            CustomFieldsComponent,
+            AllowedDocumentExtensionsComponent,
+        ]
         components_list.extend(additional_components)
         seen = set()
         unique_components = []
@@ -102,7 +110,10 @@ class DocumentsFileDraftServiceConfig(PermissionsPresetsConfigMixin, FileService
     def components(self):
         components_list = []
         components_list.extend(process_service_configs(type(self).mro()[2:]))
-        additional_components = [CustomFieldsComponent]
+        additional_components = [
+            CustomFieldsComponent,
+            AllowedDocumentExtensionsComponent,
+        ]
         components_list.extend(additional_components)
         seen = set()
         unique_components = []

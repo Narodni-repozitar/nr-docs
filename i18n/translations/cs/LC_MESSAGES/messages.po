@@ -3663,3 +3663,10 @@ msgstr "verze"
 #: /home/dusanst/Projects/new_nr_docs/nr-docs/common/doi/mapping.py:7
 msgid "Missing data for required field."
 msgstr "Chybějící data pro povinné pole."
+
+msgid ""
+"Invalid file extension for '{file_key}'. Supported formats: "
+"{allowed_extensions}"
+msgstr ""
+"Neplatná přípona souboru '{file_key}'. Podporované formáty: "
+"{allowed_extensions}"
