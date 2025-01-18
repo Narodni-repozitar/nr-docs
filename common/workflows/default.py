@@ -269,9 +269,14 @@ class DefaultWorkflowRequests(WorkflowRequestPolicy):
     )
     initiate_community_migration = WorkflowRequest(
         requesters=[
-            RecordOwners(),
-            PrimaryCommunityRole("curator"),
-            PrimaryCommunityRole("owner"),
+            IfInState(
+                "published",
+                then_=[
+                    RecordOwners(),
+                    PrimaryCommunityRole("curator"),
+                    PrimaryCommunityRole("owner"),
+                ],
+            )
         ],
         recipients=[
             IfRequestedBy(
@@ -292,10 +297,21 @@ class DefaultWorkflowRequests(WorkflowRequestPolicy):
         ],
     )
     secondary_community_submission = WorkflowRequest(
-        requesters=[RecordOwners()],
+        requesters=[
+            IfInState(
+                "published",
+                then_=[PrimaryCommunityMembers()],
+            )
+        ],
         recipients=[
-            TargetCommunityRole("curator"),
-            TargetCommunityRole("owner"),
+            IfRequestedBy(
+                requesters=[
+                    TargetCommunityRole("curator"),
+                    TargetCommunityRole("owner"),
+                ],
+                then_=[AutoApprove()],
+                else_=[TargetCommunityRole("curator"), TargetCommunityRole("owner")],
+            )
         ],
     )
 
