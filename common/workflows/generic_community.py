@@ -50,9 +50,10 @@ class GenericCommunityWorkflowPermissions(CommunityDefaultWorkflowPermissions):
             then_=[
                 IfRestricted(
                     "files",
-                    # Only the owner sees files from embargoed/restricted records
                     then_=[
                         RecordOwners(),
+                        PrimaryCommunityRole("curator"),
+                        PrimaryCommunityRole("owner"),
                     ],
                     else_=[AnyUser()],
                 )
