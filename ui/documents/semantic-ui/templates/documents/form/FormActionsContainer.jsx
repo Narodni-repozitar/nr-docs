@@ -10,9 +10,8 @@ import {
 import { i18next } from "@translations/i18next";
 import { SelectedCommunity } from "@js/communities_components/CommunitySelector/SelectedCommunity";
 import { RecordRequests } from "@js/oarepo_requests/components";
-import { useFormikContext } from "formik";
+import { useFormikContext, setIn } from "formik";
 import { REQUEST_TYPE } from "@js/oarepo_requests_common";
-import { setIn } from "formik";
 
 const FormActionsContainer = () => {
   const { values, setErrors } = useFormikContext();
@@ -57,7 +56,6 @@ const FormActionsContainer = () => {
                     e?.response?.data?.errors
                   ) {
                     let errorsObj = {};
-                    console.log(e?.response?.data?.errors);
                     for (const error of e.response.data.errors) {
                       errorsObj = setIn(
                         errorsObj,
@@ -65,7 +63,6 @@ const FormActionsContainer = () => {
                         error.messages.join(" ")
                       );
                     }
-                    console.log(errorsObj);
                     formik?.setErrors(errorsObj);
                   } else if (e?.response?.data?.errors?.length > 0) {
                     const errors = serializeErrors(
