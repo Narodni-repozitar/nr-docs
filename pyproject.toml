@@ -91,6 +91,12 @@ documents = "documents.models:records.json"
 documents = "documents.models:ui.json"
 documents_file = "documents.models:ui.json"
 
+[project.entry-points."invenio.documents_files.error_handlers"]
+invalid_file_extension = "common.services.files.allowed_document_extensions:ERROR_HANDLERS"
+
+[project.entry-points."invenio.documents_draft_files.error_handlers"]
+invalid_file_extension = "common.services.files.allowed_document_extensions:ERROR_HANDLERS"
+
 [project.optional-dependencies]
 tests = [
     "pytest-invenio>=1.4.11",
