@@ -3,7 +3,7 @@ import {
   parseSearchAppConfigs,
   SearchappSearchbarElement,
   HistogramWSlider,
-} from "@js/oarepo_ui";
+} from "@js/oarepo_ui/search";
 
 const [{ overridableIdPrefix }] = parseSearchAppConfigs();
 
