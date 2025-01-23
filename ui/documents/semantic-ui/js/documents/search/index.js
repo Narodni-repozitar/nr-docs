@@ -5,12 +5,4 @@ import {
   HistogramWSlider,
 } from "@js/oarepo_ui/search";
 
-const [{ overridableIdPrefix }] = parseSearchAppConfigs();
-
-export const componentOverrides = {
-  [`${overridableIdPrefix}.SearchBar.element`]: SearchappSearchbarElement,
-  [`${overridableIdPrefix}.BucketAggregation.element.syntheticFields_year`]:
-    HistogramWSlider,
-};
-
-createSearchAppsInit({ componentOverrides });
+createSearchAppsInit();
