@@ -16,3 +16,6 @@
 {% endif %}
 <IdentifiersAndLinks originalRecordUrl={metadata.originalRecord} objectIdentifiers={metadata.objectIdentifiers}/>
 <RecordExport record={record} metadata={metadata} extra_context={extra_context}/>
+{% if record.expanded.communities %}
+  <RecordCommunities communities={record.expanded.communities} />
+{% endif %}
