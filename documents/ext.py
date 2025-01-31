@@ -1,6 +1,7 @@
 import re
 from functools import cached_property
 
+from invenio_rdm_records.services.pids import PIDManager, PIDsService
 from oarepo_requests.proxies import current_oarepo_requests_service
 from oarepo_requests.resources.draft.config import DraftRecordRequestsResourceConfig
 from oarepo_requests.resources.draft.types.config import DraftRequestTypesResourceConfig
@@ -9,7 +10,9 @@ from documents import config
 
 
 class DocumentsExt:
+
     def __init__(self, app=None):
+
         if app:
             self.init_app(app)
 
@@ -21,11 +24,8 @@ class DocumentsExt:
         if not self.is_inherited():
             self.register_flask_extension(app)
 
-        from flask_principal import identity_loaded
-
-        identity_loaded.connect_via(app)(load_action_permissions)
-
     def register_flask_extension(self, app):
+
         app.extensions["documents"] = self
 
     def init_config(self, app):
@@ -63,7 +63,10 @@ class DocumentsExt:
         else:
             config_class = service_config()
 
-        service_kwargs = {"config": config_class}
+        service_kwargs = {
+            "pids_service": PIDsService(config_class, PIDManager),
+            "config": config_class,
+        }
         return config.DOCUMENTS_RECORD_SERVICE_CLASS(
             **service_kwargs,
             files_service=self.service_files,
@@ -108,21 +111,6 @@ class DocumentsExt:
         )
 
     @cached_property
-    def published_service_records(self):
-        from documents.services.records.published.config import (
-            DocumentsPublishedServiceConfig,
-        )
-        from documents.services.records.published.service import (
-            DocumentsPublishedService,
-        )
-
-        return DocumentsPublishedService(
-            config=DocumentsPublishedServiceConfig(
-                proxied_drafts_config=self.service_records.config
-            ),
-        )
-
-    @cached_property
     def service_files(self):
         service_config = config.DOCUMENTS_FILES_SERVICE_CONFIG
         if hasattr(service_config, "build"):
@@ -140,19 +128,6 @@ class DocumentsExt:
         return config.DOCUMENTS_FILES_RESOURCE_CLASS(
             service=self.service_files,
             config=config.DOCUMENTS_FILES_RESOURCE_CONFIG(),
-        )
-
-    @cached_property
-    def published_service_files(self):
-        from documents.services.files.published.config import (
-            DocumentsFilePublishedServiceConfig,
-        )
-        from documents.services.files.published.service import (
-            DocumentsFilePublishedService,
-        )
-
-        return DocumentsFilePublishedService(
-            config=DocumentsFilePublishedServiceConfig(),
         )
 
     @cached_property
@@ -174,17 +149,3 @@ class DocumentsExt:
             service=self.service_draft_files,
             config=config.DOCUMENTS_DRAFT_FILES_RESOURCE_CONFIG(),
         )
-
-
-def load_action_permissions(sender, identity):
-    # TODO: need to have a deeper look at this
-    from flask_principal import ActionNeed
-    from invenio_access.models import ActionUsers
-
-    user_id = identity.id
-    if user_id is None:
-        return
-
-    for au in ActionUsers.query.filter_by(user_id=user_id, exclude=False).all():
-        identity.provides.add(ActionNeed(au.action))
-    pass
