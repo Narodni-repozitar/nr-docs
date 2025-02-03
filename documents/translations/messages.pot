@@ -2,8 +2,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
-"POT-Creation-Date: 2024-12-11T18:02:11.092418\n"
-"PO-Revision-Date: 2024-12-11T18:02:11.092420\n"
+"POT-Creation-Date: 2025-01-31T12:04:57.996243\n"
+"PO-Revision-Date: 2025-01-31T12:04:57.996244\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -26,6 +26,15 @@ msgstr ""
 msgid "created.hint"
 msgstr ""
 
+msgid "deletion_status.help"
+msgstr ""
+
+msgid "deletion_status.label"
+msgstr ""
+
+msgid "deletion_status.hint"
+msgstr ""
+
 msgid "id.help"
 msgstr ""
 
@@ -33,6 +42,24 @@ msgid "id.label"
 msgstr ""
 
 msgid "id.hint"
+msgstr ""
+
+msgid "is_deleted.help"
+msgstr ""
+
+msgid "is_deleted.label"
+msgstr ""
+
+msgid "is_deleted.hint"
+msgstr ""
+
+msgid "is_published.help"
+msgstr ""
+
+msgid "is_published.label"
+msgstr ""
+
+msgid "is_published.hint"
 msgstr ""
 
 msgid "metadata.help"
@@ -2333,4 +2360,76 @@ msgid "updated.label"
 msgstr ""
 
 msgid "updated.hint"
+msgstr ""
+
+msgid "version_id.help"
+msgstr ""
+
+msgid "version_id.label"
+msgstr ""
+
+msgid "version_id.hint"
+msgstr ""
+
+msgid "versions.help"
+msgstr ""
+
+msgid "versions.label"
+msgstr ""
+
+msgid "versions.hint"
+msgstr ""
+
+msgid "versions/index.help"
+msgstr ""
+
+msgid "versions/index.label"
+msgstr ""
+
+msgid "versions/index.hint"
+msgstr ""
+
+msgid "versions/is_latest.help"
+msgstr ""
+
+msgid "versions/is_latest.label"
+msgstr ""
+
+msgid "versions/is_latest.hint"
+msgstr ""
+
+msgid "versions/is_latest_draft.help"
+msgstr ""
+
+msgid "versions/is_latest_draft.label"
+msgstr ""
+
+msgid "versions/is_latest_draft.hint"
+msgstr ""
+
+msgid "versions/latest_id.help"
+msgstr ""
+
+msgid "versions/latest_id.label"
+msgstr ""
+
+msgid "versions/latest_id.hint"
+msgstr ""
+
+msgid "versions/latest_index.help"
+msgstr ""
+
+msgid "versions/latest_index.label"
+msgstr ""
+
+msgid "versions/latest_index.hint"
+msgstr ""
+
+msgid "versions/next_draft_id.help"
+msgstr ""
+
+msgid "versions/next_draft_id.label"
+msgstr ""
+
+msgid "versions/next_draft_id.hint"
 msgstr ""

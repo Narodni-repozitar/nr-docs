@@ -16,6 +16,7 @@ plugins:
   - oarepo-model-builder-cf
   - oarepo-model-builder-polymorphic
   - oarepo-model-builder-communities>=5.0.0
+  - oarepo-model-builder-rdm
 profiles:
 - record
 - draft
@@ -85,11 +86,6 @@ record:
       - "{{oarepo_runtime.services.components.DateIssuedComponent}}"
       - "{{oarepo_doi.services.components.DoiComponent}}"
       - "{{oarepo_oaipmh_harvester.components.OaiSectionComponent}}"
-
-  published-service-config:
-    base-classes:
-      - oarepo_published_service.services.PublishedServiceConfig
-      - oarepo_runtime.services.config.service.PermissionsPresetsConfigMixin
 
   json-serializer:
     base-classes: [ common.services.filtered_json_ui_serializer.FilteredUIJSONSerializer ]

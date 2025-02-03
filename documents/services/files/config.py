@@ -41,18 +41,8 @@ class DocumentsFileServiceConfig(PermissionsPresetsConfigMixin, FileServiceConfi
 
     @property
     def components(self):
-        components_list = []
-        components_list.extend(process_service_configs(type(self).mro()[2:]))
-        additional_components = [CustomFieldsComponent]
-        components_list.extend(additional_components)
-        seen = set()
-        unique_components = []
-        for component in components_list:
-            if component not in seen:
-                unique_components.append(component)
-                seen.add(component)
 
-        return unique_components
+        return process_service_configs(self) + [CustomFieldsComponent]
 
     model = "documents"
 
@@ -100,18 +90,8 @@ class DocumentsFileDraftServiceConfig(PermissionsPresetsConfigMixin, FileService
 
     @property
     def components(self):
-        components_list = []
-        components_list.extend(process_service_configs(type(self).mro()[2:]))
-        additional_components = [CustomFieldsComponent]
-        components_list.extend(additional_components)
-        seen = set()
-        unique_components = []
-        for component in components_list:
-            if component not in seen:
-                unique_components.append(component)
-                seen.add(component)
 
-        return unique_components
+        return process_service_configs(self) + [CustomFieldsComponent]
 
     model = "documents"
 
