@@ -34,10 +34,6 @@ class RestrictedWorkflowPermissions(CommunityDefaultWorkflowPermissions):
         RecordOwners(),
         CommunityRole("curator"),
         CommunityRole("owner"),
-        IfInState(
-            "draft",
-            then_=[PrimaryCommunityMembers()],
-        ),
     ]
 
     can_read = can_read_generic + [
