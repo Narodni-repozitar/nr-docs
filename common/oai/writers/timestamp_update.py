@@ -9,15 +9,19 @@ from oarepo_runtime.datastreams.types import StreamBatch, StreamEntry
 from oarepo_runtime.datastreams.writers import BaseWriter
 from oarepo_runtime.datastreams.writers.utils import record_invenio_exceptions
 
-from .date_created import identifier_dates
-
 class TimestampUpdateWriter(BaseWriter):
-    def __init__(self, *, service, identity=None):
+    def __init__(self, *, service, date_created_csv_path, identity=None):
         if isinstance(service, str):
             service = current_service_registry.get(service)
 
         self._service = service
         self._identity = identity or system_identity
+
+        self._dates = {}
+        with open(date_created_csv_path, 'r') as f:
+            for line in f:
+                identifier, date = line.strip().split(',')
+                self._dates[identifier] = f"{date}T00:00:00+00:00"
 
     def write(self, batch: StreamBatch) -> StreamBatch:
         with UnitOfWork() as uow:
@@ -56,24 +60,22 @@ class TimestampUpdateWriter(BaseWriter):
 
     def _get_created_timestamp(self, entry: StreamEntry) -> str:
         def get_nusl_id(entry: StreamEntry) -> str:
-            system_identifiers = entry.entry['metadata']['systemIdentifiers']
-            nusl_id = None
-            for sys_idf in system_identifiers:
-                if sys_idf["scheme"] == "nusl":
-                    nusl_id = sys_idf["identifier"].split("-")[1]
-                    break
-                elif sys_idf["scheme"] == "nuslOAI":
-                    nusl_id = sys_idf["identifier"].split(":")[1]
-                    break
+                system_identifiers = entry.entry['metadata']['systemIdentifiers']
+                nusl_id = None
+                for sys_idf in system_identifiers:
+                    if sys_idf["scheme"] == "nusl":
+                        nusl_id = sys_idf["identifier"].split("-")[1]
+                        break
+                    elif sys_idf["scheme"] == "nuslOAI":
+                        nusl_id = sys_idf["identifier"].split(":")[1]
+                        break
 
-            if nusl_id is None:
-                raise ValueError(f"NUSL identifier does not exist.")
+                if nusl_id is None:
+                    raise ValueError(f"NUSL identifier does not exist.")
 
-            return nusl_id
-        
+                return nusl_id
+
         nusl_id = get_nusl_id(entry)
-        datestamp = identifier_dates.get(nusl_id, None)
-        if datestamp is None:
-            raise KeyError(f"The date created is not present for this record.")
-        
-        return datestamp
+        if nusl_id not in self._dates:
+            raise KeyError(f"Date not found for identifier {nusl_id}")
+        return self._dates[nusl_id]
