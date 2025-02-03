@@ -1,7 +1,15 @@
 from invenio_communities.records.records.systemfields import CommunitiesField
-from invenio_drafts_resources.records.api import Draft as InvenioDraft
-from invenio_drafts_resources.records.api import DraftRecordIdProviderV2, ParentRecord
-from invenio_drafts_resources.records.api import Record as InvenioRecord
+from invenio_drafts_resources.records.api import DraftRecordIdProviderV2
+from invenio_drafts_resources.services.records.components.media_files import (
+    MediaFilesAttrConfig,
+)
+from invenio_rdm_records.records.api import (
+    RDMDraft,
+    RDMMediaFileDraft,
+    RDMMediaFileRecord,
+    RDMParent,
+    RDMRecord,
+)
 from invenio_records.systemfields import ConstantField, ModelField
 from invenio_records_resources.records.systemfields import FilesField, IndexField
 from invenio_records_resources.records.systemfields.pid import PIDField, PIDFieldContext
@@ -19,7 +27,6 @@ from oarepo_runtime.records.systemfields import (
 )
 from oarepo_runtime.records.systemfields.has_draftcheck import HasDraftCheckField
 from oarepo_runtime.records.systemfields.icu import ICUSearchField
-from oarepo_runtime.records.systemfields.owner import OwnersField
 from oarepo_runtime.records.systemfields.record_status import RecordStatusSystemField
 from oarepo_vocabularies.records.api import Vocabulary
 from oarepo_workflows.records.systemfields.state import (
@@ -41,7 +48,7 @@ from documents.records.models import (
 )
 
 
-class DocumentsParentRecord(ParentRecord):
+class DocumentsParentRecord(RDMParent):
     model_cls = DocumentsParentMetadata
 
     workflow = WorkflowField()
@@ -50,14 +57,12 @@ class DocumentsParentRecord(ParentRecord):
         DocumentsCommunitiesMetadata, context_cls=OARepoCommunitiesFieldContext
     )
 
-    owners = OwnersField()
-
 
 class DocumentsIdProvider(DraftRecordIdProviderV2):
     pid_type = "dcmnts"
 
 
-class DocumentsRecord(InvenioRecord):
+class DocumentsRecord(RDMRecord):
 
     model_cls = DocumentsMetadata
 
@@ -133,6 +138,17 @@ class DocumentsRecord(InvenioRecord):
     state = RecordStateField(initial="published")
 
     state_timestamp = RecordStateTimestampField()
+
+    media_files = FilesField(
+        key=MediaFilesAttrConfig["_files_attr_key"],
+        bucket_id_attr=MediaFilesAttrConfig["_files_bucket_id_attr_key"],
+        bucket_attr=MediaFilesAttrConfig["_files_bucket_attr_key"],
+        store=False,
+        dump=False,
+        file_cls=RDMMediaFileRecord,
+        create=False,
+        delete=False,
+    )
 
     relations = RelationsField(
         accessRights=PIDRelation(
@@ -241,7 +257,24 @@ class DocumentsRecord(InvenioRecord):
     bucket = ModelField(dump=False)
 
 
-class DocumentsDraft(InvenioDraft):
+class RDMRecordMediaFiles(DocumentsRecord):
+    """RDM Media file record API."""
+
+    files = FilesField(
+        key=MediaFilesAttrConfig["_files_attr_key"],
+        bucket_id_attr=MediaFilesAttrConfig["_files_bucket_id_attr_key"],
+        bucket_attr=MediaFilesAttrConfig["_files_bucket_attr_key"],
+        store=False,
+        dump=False,
+        file_cls=RDMMediaFileRecord,
+        # Don't create
+        create=False,
+        # Don't delete, we'll manage in the service
+        delete=False,
+    )
+
+
+class DocumentsDraft(RDMDraft):
 
     model_cls = DocumentsDraftMetadata
 
@@ -319,6 +352,17 @@ class DocumentsDraft(InvenioDraft):
         key="syntheticFields.defenseYear",
         filter=lambda x: len(x) >= 4,
         map=lambda x: x[:4],
+    )
+
+    media_files = FilesField(
+        key=MediaFilesAttrConfig["_files_attr_key"],
+        bucket_id_attr=MediaFilesAttrConfig["_files_bucket_id_attr_key"],
+        bucket_attr=MediaFilesAttrConfig["_files_bucket_attr_key"],
+        store=False,
+        dump=False,
+        file_cls=RDMMediaFileDraft,
+        create=False,
+        delete=False,
     )
 
     relations = RelationsField(
@@ -426,6 +470,24 @@ class DocumentsDraft(InvenioDraft):
     bucket_id = ModelField(dump=False)
     bucket = ModelField(dump=False)
 
+
+class RDMDraftMediaFiles(DocumentsDraft):
+    """RDM Draft media file API."""
+
+    files = FilesField(
+        key=MediaFilesAttrConfig["_files_attr_key"],
+        bucket_id_attr=MediaFilesAttrConfig["_files_bucket_id_attr_key"],
+        bucket_attr=MediaFilesAttrConfig["_files_bucket_attr_key"],
+        store=False,
+        dump=False,
+        file_cls=RDMMediaFileDraft,
+        # Don't delete, we'll manage in the service
+        delete=False,
+    )
+
+
+RDMMediaFileRecord.record_cls = RDMRecordMediaFiles
+RDMMediaFileDraft.record_cls = RDMDraftMediaFiles
 
 DocumentsFile.record_cls = DocumentsRecord
 
