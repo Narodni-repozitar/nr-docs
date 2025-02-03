@@ -85,7 +85,7 @@ invenio oarepo oai harvester add nusl-manual-submissions --name "Manual submissi
             --writer 'attachment{service=documents_file_draft}' \
             --writer 'publish{service=documents}' \
             --writer 'owner{service=documents}' \
-            --writer 'timestamp_update{service=documents}'
+            --writer 'timestamp_update{service=documents,date_created_csv_path="datecreated.csv"}'
 
 nusl_id_timestamp.sh datecreated.csv created_timestamps.py ../common/oai/writers
 
