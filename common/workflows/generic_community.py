@@ -1,39 +1,7 @@
-#
-# Roles within the workflow:
-#
-# Community roles:
-#
-# CommunityRole("submitter") == people who can create new records
-# CommunityRole("curator") == people who can publish records and remove them
-# CommunityRole("owner") == supercurator, NTK staff
-# CommunityMembers() == member of the community
-#
-# Synthetic roles:
-#
-# RecordOwners() == actual owner of the record (person who created it)
-#
-#
-# Record states:
-#
-# draft == record is being created
-# submitted == record is submitted for approval/publishing but not yet accepted
-# published == record is published
-# deleting == record is in the process of being deleted (request filed but not yet accepted)
-#
-
-from datetime import timedelta
-
-from invenio_i18n import lazy_gettext as _
-from invenio_rdm_records.services.generators import IfRecordDeleted, IfRestricted
-from invenio_records_permissions.generators import (
-    AnyUser,
-    Disable,
-    SystemProcess,
-)
-from invenio_users_resources.services.permissions import UserManager
+from invenio_rdm_records.services.generators import IfRestricted
+from invenio_records_permissions.generators import AnyUser, Disable
 from oarepo_communities.services.permissions.generators import (
     CommunityRole,
-    PrimaryCommunityMembers,
     PrimaryCommunityRole,
 )
 from oarepo_communities.services.permissions.policy import (
@@ -49,9 +17,11 @@ from oarepo_workflows import (
     WorkflowRequestPolicy,
     WorkflowTransitions,
 )
+from datetime import timedelta
+from invenio_i18n import lazy_gettext as _
 
 
-class DefaultWorkflowPermissions(CommunityDefaultWorkflowPermissions):
+class GenericCommunityWorkflowPermissions(CommunityDefaultWorkflowPermissions):
     can_create = [
         PrimaryCommunityRole("submitter"),
         PrimaryCommunityRole("owner"),
@@ -60,39 +30,18 @@ class DefaultWorkflowPermissions(CommunityDefaultWorkflowPermissions):
 
     can_read_generic = [
         RecordOwners(),
-        # curator can see the record in any state
-        CommunityRole("curator"),
-        # owner of community can see the record in any state
         CommunityRole("owner"),
-        # if the record is published and restricted, only members of the community can see it,
-        # otherwise, any user can see it
-        # every member of the community can see the metadata of the drafts, but not the files
-        IfInState(
-            "draft",
-            then_=[PrimaryCommunityMembers()],
-        ),
+        CommunityRole("curator"),
     ]
 
     can_read = can_read_generic + [
         IfInState(
             "published",
             then_=[
-                IfRestricted(
-                    "record",
-                    then_=[PrimaryCommunityMembers()],
-                    else_=[AnyUser()],
-                )
+                # If the record is published, anyone can see its metadata
+                AnyUser(),
             ],
         ),
-    ]
-    can_read_deleted = [
-        IfRecordDeleted(
-            then_=[
-                UserManager,  # this is strange, but taken from RDM
-                SystemProcess(),
-            ],
-            else_=can_read,
-        )
     ]
 
     can_read_files = can_read_generic + [
@@ -101,7 +50,11 @@ class DefaultWorkflowPermissions(CommunityDefaultWorkflowPermissions):
             then_=[
                 IfRestricted(
                     "files",
-                    then_=[PrimaryCommunityMembers()],
+                    then_=[
+                        RecordOwners(),
+                        PrimaryCommunityRole("curator"),
+                        PrimaryCommunityRole("owner"),
+                    ],
                     else_=[AnyUser()],
                 )
             ],
@@ -121,7 +74,6 @@ class DefaultWorkflowPermissions(CommunityDefaultWorkflowPermissions):
                 PrimaryCommunityRole("owner"),
             ],
         ),
-        # if not draft, can not be directly updated by any means, must use request
         IfInState(
             "submitted",
             then_=[
@@ -132,7 +84,6 @@ class DefaultWorkflowPermissions(CommunityDefaultWorkflowPermissions):
     ]
 
     can_delete = [
-        # draft can be deleted, published record must be deleted via request
         IfInState(
             "draft",
             then_=[
@@ -143,19 +94,15 @@ class DefaultWorkflowPermissions(CommunityDefaultWorkflowPermissions):
         ),
     ] + CommunityDefaultWorkflowPermissions.can_delete
 
-    can_manage_files = [
-        Disable(),
-    ]
+    can_manage_files = [Disable()]
 
 
-class DefaultWorkflowRequests(WorkflowRequestPolicy):
+class GenericCommunityWorkflowRequests(WorkflowRequestPolicy):
     publish_draft = WorkflowRequest(
-        # if the record is in draft state, the owner or curator can request publishing
         requesters=[
             IfInState("draft", then_=[RecordOwners(), PrimaryCommunityRole("curator")])
         ],
         recipients=[
-            # if the requester is the curator of the community, auto approve the request
             IfRequestedBy(
                 requesters=[
                     PrimaryCommunityRole("curator"),
@@ -171,7 +118,6 @@ class DefaultWorkflowRequests(WorkflowRequestPolicy):
             declined="draft",
             cancelled="draft",
         ),
-        # if the request is not resolved in 21 days, escalate it to the administrator
         escalations=[
             WorkflowRequestEscalation(
                 after=timedelta(days=21),
@@ -193,8 +139,6 @@ class DefaultWorkflowRequests(WorkflowRequestPolicy):
                 ],
             )
         ],
-        # the request is auto-approve, we do not limit the owner of the record to create a new
-        # draft version. It will need to be accepted by the curator though.
         recipients=[AutoApprove()],
     )
 
@@ -209,14 +153,10 @@ class DefaultWorkflowRequests(WorkflowRequestPolicy):
                 ],
             )
         ],
-        # the request is auto-approve, we do not limit the owner of the record to create a new
-        # draft version. It will need to be accepted by the curator though.
         recipients=[AutoApprove()],
     )
 
     delete_published_record = WorkflowRequest(
-        # if the record is draft, it is covered by the delete permission
-        # if published, only the owner or curator can request deleting
         requesters=[
             IfInState(
                 "published",
@@ -227,8 +167,6 @@ class DefaultWorkflowRequests(WorkflowRequestPolicy):
                 ],
             )
         ],
-        # if the requester is the curator of the community or administrator, auto approve the request,
-        # otherwise, the request is sent to the curator
         recipients=[
             IfRequestedBy(
                 requesters=[
@@ -239,15 +177,12 @@ class DefaultWorkflowRequests(WorkflowRequestPolicy):
                 else_=[PrimaryCommunityRole("curator")],
             )
         ],
-        # the record comes to the state of retracting when the request is submitted. If the request
-        # is accepted, the record is deleted, if declined, it is published again.
         transitions=WorkflowTransitions(
             submitted="retracting",
             declined="published",
             accepted="deleted",
             cancelled="published",
         ),
-        # if the request is not resolved in 21 days, escalate it to the administrator
         escalations=[
             WorkflowRequestEscalation(
                 after=timedelta(days=21),
@@ -276,14 +211,14 @@ class DefaultWorkflowRequests(WorkflowRequestPolicy):
         ],
         escalations=[
             WorkflowRequestEscalation(
-                after=timedelta(days=21), recipients=[PrimaryCommunityRole("owner")]
+                after=timedelta(days=21),
+                recipients=[PrimaryCommunityRole("owner")],
             )
         ],
     )
 
 
 if False:
-    # just for translation extraction
     translated_strings = [
         _("state:draft"),
         _("state:published"),
