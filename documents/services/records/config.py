@@ -1,4 +1,4 @@
-from invenio_drafts_resources.services.records.components import DraftFilesComponent
+from invenio_rdm_records.services.config import RDMRecordServiceConfig
 from invenio_records_resources.services import (
     ConditionalLink,
     LinksTemplate,
@@ -26,12 +26,10 @@ from oarepo_runtime.services.config import (
     is_published_record,
 )
 from oarepo_runtime.services.config.service import PermissionsPresetsConfigMixin
-from oarepo_runtime.services.files import FilesComponent
 from oarepo_runtime.services.records import pagination_links_html
 from oarepo_vocabularies.authorities.components import AuthorityComponent
 from oarepo_workflows.services.components.workflow import WorkflowComponent
 
-from common.services.config import FilteredResultServiceConfig
 from documents.records.api import DocumentsDraft, DocumentsRecord
 from documents.services.records.permissions import DocumentsPermissionPolicy
 from documents.services.records.results import DocumentsRecordItem, DocumentsRecordList
@@ -39,9 +37,7 @@ from documents.services.records.schema import DocumentsSchema
 from documents.services.records.search import DocumentsSearchOptions
 
 
-class DocumentsServiceConfig(
-    PermissionsPresetsConfigMixin, FilteredResultServiceConfig
-):
+class DocumentsServiceConfig(PermissionsPresetsConfigMixin, RDMRecordServiceConfig):
     """DocumentsRecord service config."""
 
     result_item_cls = DocumentsRecordItem
@@ -68,9 +64,8 @@ class DocumentsServiceConfig(
 
     @property
     def components(self):
-        components_list = []
-        components_list.extend(process_service_configs(type(self).mro()[2:]))
-        additional_components = [
+
+        return process_service_configs(self) + [
             AuthorityComponent,
             DateIssuedComponent,
             DoiComponent,
@@ -78,20 +73,9 @@ class DocumentsServiceConfig(
             CommunityDefaultWorkflowComponent,
             CommunityInclusionComponent,
             OwnersComponent,
-            FilesComponent,
-            DraftFilesComponent,
             CustomFieldsComponent,
             WorkflowComponent,
         ]
-        components_list.extend(additional_components)
-        seen = set()
-        unique_components = []
-        for component in components_list:
-            if component not in seen:
-                unique_components.append(component)
-                seen.add(component)
-
-        return unique_components
 
     model = "documents"
 

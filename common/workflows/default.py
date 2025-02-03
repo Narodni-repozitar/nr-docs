@@ -23,8 +23,14 @@
 
 from datetime import timedelta
 
-from invenio_rdm_records.services.generators import IfRestricted, IfDraft
-from invenio_records_permissions.generators import AnyUser, Disable
+from invenio_i18n import lazy_gettext as _
+from invenio_rdm_records.services.generators import IfRecordDeleted, IfRestricted
+from invenio_records_permissions.generators import (
+    AnyUser,
+    Disable,
+    SystemProcess,
+)
+from invenio_users_resources.services.permissions import UserManager
 from oarepo_communities.services.permissions.generators import (
     CommunityRole,
     PrimaryCommunityMembers,
@@ -43,7 +49,6 @@ from oarepo_workflows import (
     WorkflowRequestPolicy,
     WorkflowTransitions,
 )
-from invenio_i18n import lazy_gettext as _
 
 
 class DefaultWorkflowPermissions(CommunityDefaultWorkflowPermissions):
@@ -79,6 +84,15 @@ class DefaultWorkflowPermissions(CommunityDefaultWorkflowPermissions):
                 )
             ],
         ),
+    ]
+    can_read_deleted = [
+        IfRecordDeleted(
+            then_=[
+                UserManager,  # this is strange, but taken from RDM
+                SystemProcess(),
+            ],
+            else_=can_read,
+        )
     ]
 
     can_read_files = can_read_generic + [

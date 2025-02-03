@@ -22,12 +22,33 @@
             "label": "created.label",
             "hint": "created.hint"
         },
+        "deletion_status": {
+            "detail": "keyword",
+            "input": "keyword",
+            "help": "deletion_status.help",
+            "label": "deletion_status.label",
+            "hint": "deletion_status.hint"
+        },
         "id": {
             "detail": "keyword",
             "input": "keyword",
             "help": "id.help",
             "label": "id.label",
             "hint": "id.hint"
+        },
+        "is_deleted": {
+            "detail": "boolean",
+            "input": "boolean",
+            "help": "is_deleted.help",
+            "label": "is_deleted.label",
+            "hint": "is_deleted.hint"
+        },
+        "is_published": {
+            "detail": "boolean",
+            "input": "boolean",
+            "help": "is_published.help",
+            "label": "is_published.label",
+            "hint": "is_published.hint"
         },
         "metadata": {
             "detail": "metadatum",
@@ -2266,6 +2287,64 @@
             "help": "updated.help",
             "label": "updated.label",
             "hint": "updated.hint"
+        },
+        "version_id": {
+            "detail": "integer",
+            "input": "integer",
+            "help": "version_id.help",
+            "label": "version_id.label",
+            "hint": "version_id.hint"
+        },
+        "versions": {
+            "detail": "version",
+            "input": "version",
+            "help": "versions.help",
+            "label": "versions.label",
+            "hint": "versions.hint",
+            "children": {
+                "index": {
+                    "detail": "integer",
+                    "input": "integer",
+                    "help": "versions/index.help",
+                    "label": "versions/index.label",
+                    "hint": "versions/index.hint"
+                },
+                "is_latest": {
+                    "detail": "boolean",
+                    "input": "boolean",
+                    "help": "versions/is_latest.help",
+                    "label": "versions/is_latest.label",
+                    "hint": "versions/is_latest.hint"
+                },
+                "is_latest_draft": {
+                    "detail": "boolean",
+                    "input": "boolean",
+                    "help": "versions/is_latest_draft.help",
+                    "label": "versions/is_latest_draft.label",
+                    "hint": "versions/is_latest_draft.hint"
+                },
+                "latest_id": {
+                    "detail": "keyword",
+                    "input": "keyword",
+                    "help": "versions/latest_id.help",
+                    "label": "versions/latest_id.label",
+                    "hint": "versions/latest_id.hint"
+                },
+                "latest_index": {
+                    "detail": "integer",
+                    "input": "integer",
+                    "help": "versions/latest_index.help",
+                    "label": "versions/latest_index.label",
+                    "hint": "versions/latest_index.hint"
+                },
+                "next_draft_id": {
+                    "detail": "keyword",
+                    "input": "keyword",
+                    "help": "versions/next_draft_id.help",
+                    "label": "versions/next_draft_id.label",
+                    "hint": "versions/next_draft_id.hint"
+                }
+            }
         }
     }
 }
