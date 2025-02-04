@@ -94,7 +94,6 @@ class TimestampUpdateWriter(BaseWriter):
                     if not identifier or not date:
                         continue
                     dates[identifier.strip()] = f"{date.strip()}T00:00:00+00:00"
-                    
         except csv.Error as e:
             raise ValueError(f"Error processing CSV at line {line_num}: {str(e)}")
         except (IOError, UnicodeDecodeError) as e:
