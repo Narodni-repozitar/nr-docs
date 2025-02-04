@@ -35,6 +35,7 @@ from oarepo_communities.services.permissions.generators import (
     CommunityRole,
     PrimaryCommunityMembers,
     PrimaryCommunityRole,
+    TargetCommunityRole,
 )
 from oarepo_communities.services.permissions.policy import (
     CommunityDefaultWorkflowPermissions,
@@ -277,6 +278,53 @@ class DefaultWorkflowRequests(WorkflowRequestPolicy):
         escalations=[
             WorkflowRequestEscalation(
                 after=timedelta(days=21), recipients=[PrimaryCommunityRole("owner")]
+            )
+        ],
+    )
+    initiate_community_migration = WorkflowRequest(
+        requesters=[
+            IfInState(
+                "published",
+                then_=[
+                    RecordOwners(),
+                    PrimaryCommunityRole("curator"),
+                    PrimaryCommunityRole("owner"),
+                ],
+            )
+        ],
+        recipients=[
+            IfRequestedBy(
+                requesters=[
+                    PrimaryCommunityRole("curator"),
+                    PrimaryCommunityRole("owner"),
+                ],
+                then_=[AutoApprove()],
+                else_=[PrimaryCommunityRole("curator"), PrimaryCommunityRole("owner")],
+            )
+        ],
+    )
+    confirm_community_migration = WorkflowRequest(
+        requesters=[],
+        recipients=[
+            TargetCommunityRole("curator"),
+            TargetCommunityRole("owner"),
+        ],
+    )
+    secondary_community_submission = WorkflowRequest(
+        requesters=[
+            IfInState(
+                "published",
+                then_=[PrimaryCommunityMembers()],
+            )
+        ],
+        recipients=[
+            IfRequestedBy(
+                requesters=[
+                    TargetCommunityRole("curator"),
+                    TargetCommunityRole("owner"),
+                ],
+                then_=[AutoApprove()],
+                else_=[TargetCommunityRole("curator"), TargetCommunityRole("owner")],
             )
         ],
     )
