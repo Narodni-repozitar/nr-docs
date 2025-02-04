@@ -15,6 +15,16 @@ from oarepo_workflows.services.records.schema import WorkflowParentSchema
 from nr_metadata.common.services.records.schema_datatypes import (
     NRLanguageVocabularySchema,
 )
+from marshmallow import fields
+from invenio_rdm_records.services.schemas.access import AccessSchema
+from marshmallow_utils.fields import (
+    EDTFDateTimeString,
+    NestedAttribute,
+    SanitizedHTML,
+    SanitizedUnicode,
+    TZDateTime,
+)
+
 
 class GeneratedParentSchema(WorkflowParentSchema):
     """"""
@@ -22,6 +32,7 @@ class GeneratedParentSchema(WorkflowParentSchema):
     owners = ma.fields.List(ma.fields.Dict(), load_only=True)
 
     communities = ma_fields.Nested(CommunitiesParentSchema)
+
 
 # TODO: fix model builder to include required languages. Until then
 # please keep the overriden code here
@@ -31,6 +42,7 @@ class LocalNRDocumentMetadataSchema(NRDocumentMetadataSchema):
         required=True,
         validate=[ma.validate.Length(min=1)],
     )
+
 
 class DocumentsSchema(NRDocumentRecordSchema, RDMRecordMixin):
     class Meta:
@@ -42,7 +54,7 @@ class DocumentsSchema(NRDocumentRecordSchema, RDMRecordMixin):
     oai = ma_fields.Nested(lambda: OaiSchema())
 
     state = ma_fields.String(dump_only=True)
-
+    access = NestedAttribute(AccessSchema)
     state_timestamp = ma_fields.String(dump_only=True, validate=[validate_datetime])
 
     syntheticFields = ma_fields.Nested(lambda: NRDocumentSyntheticFieldsSchema())
@@ -50,6 +62,7 @@ class DocumentsSchema(NRDocumentRecordSchema, RDMRecordMixin):
     files = ma.fields.Nested(
         lambda: FilesOptionsSchema(), load_default={"enabled": True}
     )
+    is_published = fields.Boolean(dump_only=True)
 
     # todo this needs to be generated for [default preview] to work
     def get_attribute(self, obj, attr, default):

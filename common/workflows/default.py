@@ -147,6 +147,8 @@ class DefaultWorkflowPermissions(CommunityDefaultWorkflowPermissions):
         Disable(),
     ]
 
+    can_manage_record_access = [RecordOwners()]
+
 
 class DefaultWorkflowRequests(WorkflowRequestPolicy):
     publish_draft = WorkflowRequest(
