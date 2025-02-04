@@ -10,18 +10,22 @@ import {
 import { i18next } from "@translations/i18next";
 import { SelectedCommunity } from "@js/communities_components/CommunitySelector/SelectedCommunity";
 import { RecordRequests } from "@js/oarepo_requests/components";
-import { useFormikContext } from "formik";
+import { useFormikContext, setIn } from "formik";
 import { REQUEST_TYPE } from "@js/oarepo_requests_common";
 
 const FormActionsContainer = () => {
   const { values, setErrors } = useFormikContext();
   const { save } = useDepositApiClient();
 
-  const onBeforeAction = ({ requestActionName }) => {
+  const onBeforeAction = ({ requestActionName, requestOrRequestType }) => {
+    const requestType =
+      requestOrRequestType?.type || requestOrRequestType?.type_id;
     // Do not try to save in case user is declining or cancelling the request from the form
     if (
       requestActionName === REQUEST_TYPE.DECLINE ||
-      requestActionName === REQUEST_TYPE.CANCEL
+      requestActionName === REQUEST_TYPE.CANCEL ||
+      requestType === "initiate_community_migration" ||
+      requestType === "confirm_community_migration"
     ) {
       return true;
     } else {
@@ -46,8 +50,21 @@ const FormActionsContainer = () => {
               <RecordRequests
                 record={values}
                 onBeforeAction={onBeforeAction}
-                onActionError={({ e, modalControl }) => {
-                  if (e?.response?.data?.errors?.length > 0) {
+                onActionError={({ e, modalControl, formik }) => {
+                  if (
+                    e?.response?.data?.error_type === "cf_validation_error" &&
+                    e?.response?.data?.errors
+                  ) {
+                    let errorsObj = {};
+                    for (const error of e.response.data.errors) {
+                      errorsObj = setIn(
+                        errorsObj,
+                        error.field,
+                        error.messages.join(" ")
+                      );
+                    }
+                    formik?.setErrors(errorsObj);
+                  } else if (e?.response?.data?.errors?.length > 0) {
                     const errors = serializeErrors(
                       e?.response?.data?.errors,
                       i18next.t(
@@ -55,8 +72,8 @@ const FormActionsContainer = () => {
                       )
                     );
                     setErrors(errors);
+                    modalControl?.closeModal();
                   }
-                  modalControl?.closeModal();
                 }}
               />
             )}
