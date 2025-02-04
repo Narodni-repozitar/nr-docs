@@ -1,9 +1,11 @@
+import csv
 from invenio_access.permissions import system_identity
 from invenio_db import db
 from invenio_records_resources.proxies import current_service_registry
 from invenio_records_resources.services.uow import UnitOfWork
 from pathlib import Path
 from sqlalchemy import Table, update
+from typing import Dict
 
 from invenio_records_resources.services.uow import RecordIndexOp
 from oarepo_runtime.datastreams.types import StreamBatch, StreamEntry
@@ -77,7 +79,7 @@ class TimestampUpdateWriter(BaseWriter):
             raise KeyError(f"Date not found for identifier {nusl_id}")
         return self._dates[nusl_id]
     
-    def _try_load_dates(self, path) -> None:
+    def _try_load_dates(self, path: str) -> Dict[str, str]:
         csv_path = Path(path)
         if not csv_path.exists():
             raise ValueError(f"CSV file not found at: '{csv_path}'")
@@ -87,26 +89,14 @@ class TimestampUpdateWriter(BaseWriter):
         dates = {}
         try:
             with csv_path.open('r', encoding='utf-8') as f:
-                for line_num, line in enumerate(f, 1):
-                    try:
-                        line = line.strip()
-                        if not line:
-                            continue
-                        if ',' not in line:
-                            raise ValueError(f"Invalid CSV format at line {line_num}: missing comma separator")
-                        
-                        identifier, date = line.split(',', 1)
-                        identifier = identifier.strip()
-                        date = date.strip()
-                        
-                        if not identifier or not date:
-                            raise ValueError(f"Invalid CSV format at line {line_num}: empty identifier or date")
-                        
-                        dates[identifier] = f"{date}T00:00:00+00:00"
-                        
-                    except ValueError as e:
-                        raise ValueError(f"Error processing CSV at line {line_num}: {str(e)}")
+                reader = csv.reader(f)
+                for line_num, (identifier, date) in enumerate(reader, 1):
+                    if not identifier or not date:
+                        continue
+                    dates[identifier.strip()] = f"{date.strip()}T00:00:00+00:00"
                     
+        except csv.Error as e:
+            raise ValueError(f"Error processing CSV at line {line_num}: {str(e)}")
         except (IOError, UnicodeDecodeError) as e:
             raise RuntimeError(f"Failed to read CSV file: {str(e)}")
         
