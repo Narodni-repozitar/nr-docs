@@ -1,7 +1,7 @@
 import marshmallow as ma
 from marshmallow import fields as ma_fields
 from marshmallow.utils import get_value
-from marshmallow_utils.fields import SanitizedUnicode
+from marshmallow_utils.fields import SanitizedUnicode, NestedAttribute
 from nr_metadata.documents.services.records.schema import (
     NRDocumentMetadataSchema,
     NRDocumentRecordSchema,
@@ -17,13 +17,6 @@ from nr_metadata.common.services.records.schema_datatypes import (
 )
 from marshmallow import fields
 from invenio_rdm_records.services.schemas.access import AccessSchema
-from marshmallow_utils.fields import (
-    EDTFDateTimeString,
-    NestedAttribute,
-    SanitizedHTML,
-    SanitizedUnicode,
-    TZDateTime,
-)
 
 
 class GeneratedParentSchema(WorkflowParentSchema):
@@ -62,7 +55,6 @@ class DocumentsSchema(NRDocumentRecordSchema, RDMRecordMixin):
     files = ma.fields.Nested(
         lambda: FilesOptionsSchema(), load_default={"enabled": True}
     )
-    is_published = fields.Boolean(dump_only=True)
 
     # todo this needs to be generated for [default preview] to work
     def get_attribute(self, obj, attr, default):

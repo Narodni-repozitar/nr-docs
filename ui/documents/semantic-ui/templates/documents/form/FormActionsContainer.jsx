@@ -20,7 +20,7 @@ const FormActionsContainer = () => {
   const { save } = useDepositApiClient();
   const {
     formConfig: {
-      permissions,
+      // permissions,
       allowRecordRestriction,
       recordRestrictionGracePeriod,
     },
