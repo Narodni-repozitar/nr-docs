@@ -16,12 +16,14 @@ from nr_metadata.common.services.records.schema_datatypes import (
     NRLanguageVocabularySchema,
 )
 
+
 class GeneratedParentSchema(WorkflowParentSchema):
     """"""
 
     owners = ma.fields.List(ma.fields.Dict(), load_only=True)
 
     communities = ma_fields.Nested(CommunitiesParentSchema)
+
 
 # TODO: fix model builder to include required languages. Until then
 # please keep the overriden code here
@@ -31,6 +33,7 @@ class LocalNRDocumentMetadataSchema(NRDocumentMetadataSchema):
         required=True,
         validate=[ma.validate.Length(min=1)],
     )
+
 
 class DocumentsSchema(NRDocumentRecordSchema, RDMRecordMixin):
     class Meta:
@@ -42,7 +45,7 @@ class DocumentsSchema(NRDocumentRecordSchema, RDMRecordMixin):
     oai = ma_fields.Nested(lambda: OaiSchema())
 
     state = ma_fields.String(dump_only=True)
-
+    is_published = ma_fields.Boolean(dump_only=True)
     state_timestamp = ma_fields.String(dump_only=True, validate=[validate_datetime])
 
     syntheticFields = ma_fields.Nested(lambda: NRDocumentSyntheticFieldsSchema())
