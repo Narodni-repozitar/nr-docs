@@ -19,7 +19,11 @@ const FormActionsContainer = () => {
   const { values, setErrors } = useFormikContext();
   const { save } = useDepositApiClient();
   const {
-    formConfig: { permissions },
+    formConfig: {
+      permissions,
+      allowRecordRestriction,
+      recordRestrictionGracePeriod,
+    },
   } = useFormConfig();
 
   const onBeforeAction = ({ requestActionName }) => {
@@ -80,8 +84,8 @@ const FormActionsContainer = () => {
         labelIcon="shield"
         fieldPath="access"
         showMetadataAccess={permissions?.can_manage_record_access}
-        recordRestrictionGracePeriod={0}
-        allowRecordRestriction={true}
+        recordRestrictionGracePeriod={recordRestrictionGracePeriod}
+        allowRecordRestriction={allowRecordRestriction}
       />
     </React.Fragment>
   );
