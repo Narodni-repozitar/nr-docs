@@ -7,6 +7,7 @@ from oarepo_ui.resources.config import RecordsUIResourceConfig
 from oarepo_ui.resources.resource import RecordsUIResource
 from oarepo_ui.resources.components import AllowedCommunitiesComponent
 from oarepo_ui.resources.components.custom_fields import CustomFieldsComponent
+from oarepo_ui.resources.components import FilesLockedComponent
 
 
 class DocumentsResourceConfig(RecordsUIResourceConfig):
@@ -23,7 +24,8 @@ class DocumentsResourceConfig(RecordsUIResourceConfig):
         PermissionsComponent,
         FilesComponent,
         AllowedCommunitiesComponent,
-        CustomFieldsComponent
+        CustomFieldsComponent,
+        FilesLockedComponent,
     ]
 
     search_component = "documents/search/ResultsListItem"
