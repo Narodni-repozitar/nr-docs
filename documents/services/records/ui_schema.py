@@ -9,43 +9,59 @@ from oarepo_requests.services.ui_schema import UIRequestsSerializationMixin
 from oarepo_runtime.services.schema.marshmallow import DictOnlySchema
 from oarepo_runtime.services.schema.ui import LocalizedDateTime
 from common.services.schema import LocalizedStateField
-from invenio_rdm_records.services.schemas.access import AccessSchema, EmbargoSchema
-from marshmallow_utils.fields import NestedAttribute
+from invenio_i18n.ext import current_i18n
 
-from marshmallow import validates, ValidationError
-from flask_babel import gettext as _
+from marshmallow import fields
+from oarepo_vocabularies.proxies import current_ui_vocabulary_cache
+from babel_edtf import format_edtf
 
 
-class AccessUISchema(DictOnlySchema):
-    """UI schema for Access."""
+class AccessStatusField(fields.Field):
+    """Record access status."""
 
-    class Meta:
-        unknown = ma.RAISE  # Prevents unknown fields
+    def get_access_rights_vocabulary_id(
+        self, access: dict, has_files: bool
+    ) -> str | None:
+        """Derives metadata_access_rights from access dictionary and file presence."""
 
-    record = ma_fields.String(required=True)
-    files = ma_fields.String(required=True)
-    embargo = ma_fields.Nested(lambda: EmbargoSchema())  # Assuming you need this
-    status = ma_fields.String()
+        embargo_active = access.get("embargo", {}).get("active", False)
+        record_access = access.get("record")
+        files_access = access.get("files")
+        vocabulary_id = "c_16ec"
 
-    def validate_protection_value(self, value, field_name):
-        """Check that the protection value is valid."""
-        if value not in ["public", "restricted"]:
-            raise ValidationError(
-                _("'{field_name}' must be either 'public' or 'restricted'").format(
-                    field_name=field_name
+        if embargo_active:
+            vocabulary_id = "c_f1cf"
+        elif record_access == "public" and not has_files:
+            vocabulary_id = "c_14cb"
+        elif record_access == files_access == "public":
+            vocabulary_id = "c_abf2"
+
+        return vocabulary_id
+
+    def _serialize(self, value, attr, obj, **kwargs) -> dict | None:
+        """Serialise access status."""
+        record_access_dict = obj.get("access")
+        _files = obj.get("files", {})
+        has_files = _files is not None and _files.get("enabled", False)
+        access_rights_vocabulary_id = self.get_access_rights_vocabulary_id(
+            record_access_dict, has_files
+        )
+        access_rights_vocabulary = current_ui_vocabulary_cache.get(
+            ["access-rights"]
+        ).get("access-rights", None)
+        embargoed_until = record_access_dict.get("embargo").get("until")
+        if access_rights_vocabulary_id and access_rights_vocabulary:
+            return {
+                "id": access_rights_vocabulary_id,
+                "title": access_rights_vocabulary.get(access_rights_vocabulary_id).get(
+                    "text", ""
                 ),
-                field_name,
-            )
-
-    @validates("record")
-    def validate_record_protection(self, value):
-        """Validate the record protection value."""
-        self.validate_protection_value(value, "record")
-
-    @validates("files")
-    def validate_files_protection(self, value):
-        """Validate the files protection value."""
-        self.validate_protection_value(value, "files")
+                "embargoedUntil": format_edtf(
+                    embargoed_until, locale=current_i18n.locale
+                )
+                if embargoed_until
+                else None,
+            }
 
 
 class DocumentsUISchema(UIRequestsSerializationMixin, NRDocumentRecordUISchema):
@@ -64,7 +80,7 @@ class DocumentsUISchema(UIRequestsSerializationMixin, NRDocumentRecordUISchema):
 
     syntheticFields = ma_fields.Nested(lambda: NRDocumentSyntheticFieldsUISchema())
 
-    access = ma_fields.Nested(lambda: AccessUISchema())
+    access_status = AccessStatusField(attribute="access")
 
 
 class OaiUISchema(DictOnlySchema):

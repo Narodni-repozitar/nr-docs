@@ -53,7 +53,10 @@
         <Array data={metadata.publishers}></Array>
     </Field>
     <Field label={ _('metadata/accessRights.label') }>
-        <VocabularyItem vocabulary={metadata.accessRights} search_link={record.links.search_link} searchFacet="metadata_accessRights" vocabulary_type="access-rights"></VocabularyItem>
+        <VocabularyItem vocabulary={record.access_status} search_link={record.links.search_link} searchFacet="metadata_accessRights" vocabulary_type="access-rights"></VocabularyItem>
+        {% if record.access_status.embargoedUntil %}
+         <div class="ui label inline">{{_("until")}} {{record.access_status.embargoedUntil}}</div>
+        {% endif %}
        </Field>
     <Field label={ _('metadata/rights.label') }>
         <VocabularyItem vocabulary={metadata.rights} search_link={record.links.search_link} searchFacet="metadata_rights" vocabulary_type="rights"></VocabularyItem>

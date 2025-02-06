@@ -180,8 +180,7 @@ export const ResultsListItemComponent = ({
   const searchAppConfig = useContext(SearchConfigurationContext);
 
   const { allowedHtmlTags } = searchAppConfig;
-  const access = _get(result, "access", null);
-  const accessRights = _get(result, "metadata.accessRights", null);
+  const accessRights = _get(result, "access_status", null);
   const createdDate = _get(result, "created", "No creation date found.");
   const creators = result.metadata?.creators;
   const contributors = _get(result, "metadata.contributors", []);
@@ -257,7 +256,9 @@ export const ResultsListItemComponent = ({
                   <div className="item-access-rights">
                     <Label title={result.state_timestamp}>{result.state}</Label>
                     {accessRights && accessRights.id !== "c_abf2" && (
-                      <Label>{accessRights.title}</Label>
+                      <Label title={accessRights.embargoedUntil}>
+                        {accessRights.title}
+                      </Label>
                     )}
                   </div>
                 </div>
