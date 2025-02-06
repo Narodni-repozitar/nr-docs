@@ -1,4 +1,4 @@
-{#def metadata, record, extra_context #}
+{#def metadata, record, extra_context, is_preview #}
 {%set recordRequests = record.expanded.requests and record.expanded.requests|selectattr('status', 'in', ['submitted', 'created'])|list%}
 {% if record.expanded.request_types or recordRequests or record.links.edit_html %}
 <section class="ui segment" aria-label='{{ _("Actions") }}'>
@@ -20,3 +20,4 @@
 {% endif %}
 <IdentifiersAndLinks originalRecordUrl={metadata.originalRecord} objectIdentifiers={metadata.objectIdentifiers}/>
 <RecordExport record={record} metadata={metadata} extra_context={extra_context}/>
+<RecordVersions record={record} is_preview={is_preview} />
