@@ -180,7 +180,7 @@ export const ResultsListItemComponent = ({
   const searchAppConfig = useContext(SearchConfigurationContext);
 
   const { allowedHtmlTags } = searchAppConfig;
-
+  const access = _get(result, "access", null);
   const accessRights = _get(result, "metadata.accessRights", null);
   const createdDate = _get(result, "created", "No creation date found.");
   const creators = result.metadata?.creators;
@@ -240,10 +240,7 @@ export const ResultsListItemComponent = ({
       thesis={thesis}
       allVersionsVisible={allVersionsVisible}
     >
-      <Item
-        key={result.id}
-        data-testid="result-item"
-      >
+      <Item key={result.id} data-testid="result-item">
         <Item.Content>
           <Grid>
             <Grid.Row columns={2}>
@@ -257,7 +254,7 @@ export const ResultsListItemComponent = ({
                     searchUrl={searchAppConfig.ui_endpoint}
                     selfLink={result.links.self_html}
                   />
-                  <div className='item-access-rights'>
+                  <div className="item-access-rights">
                     <Label title={result.state_timestamp}>{result.state}</Label>
                     {accessRights && accessRights.id !== "c_abf2" && (
                       <Label>{accessRights.title}</Label>

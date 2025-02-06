@@ -63,7 +63,6 @@ class DocumentsIdProvider(DraftRecordIdProviderV2):
 
 
 class DocumentsRecord(RDMRecord):
-
     model_cls = DocumentsMetadata
 
     schema = ConstantField("$schema", "local://documents-1.0.0.json")
@@ -84,7 +83,7 @@ class DocumentsRecord(RDMRecord):
 
     abstract_search = ICUSearchField(source_field="metadata.abstract.value")
 
-    access = TemporaryRecordAccessField()
+    # access = TemporaryRecordAccessField()
 
     people = SyntheticSystemField(
         PathSelector("metadata.creators", "metadata.contributors"),
@@ -275,7 +274,6 @@ class RDMRecordMediaFiles(DocumentsRecord):
 
 
 class DocumentsDraft(RDMDraft):
-
     model_cls = DocumentsDraftMetadata
 
     schema = ConstantField("$schema", "local://documents-1.0.0.json")
@@ -303,7 +301,7 @@ class DocumentsDraft(RDMDraft):
 
     abstract_search = ICUSearchField(source_field="metadata.abstract.value")
 
-    access = TemporaryRecordAccessField()
+    # access = TemporaryRecordAccessField()
 
     people = SyntheticSystemField(
         PathSelector("metadata.creators", "metadata.contributors"),

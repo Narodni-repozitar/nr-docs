@@ -10,6 +10,6 @@ class FilteredResultServiceConfig(InvenioRecordDraftsServiceConfig):
     result_list_cls = FilteredRecordList
 
     components = [
-        TemporaryAccessComponent,
+        # TemporaryAccessComponent,
         *InvenioRecordDraftsServiceConfig.components,
     ]

@@ -15,7 +15,6 @@ from oarepo_workflows.services.records.schema import WorkflowParentSchema
 from nr_metadata.common.services.records.schema_datatypes import (
     NRLanguageVocabularySchema,
 )
-from marshmallow import fields
 from invenio_rdm_records.services.schemas.access import AccessSchema
 
 
