@@ -1,6 +1,7 @@
 from oarepo_runtime.services.search import I18nSearchOptions, ICUSortOptions
 
 from . import facets
+from invenio_rdm_records.services.facets import access_status
 
 
 class DocumentsSearchOptions(I18nSearchOptions):
@@ -8,6 +9,7 @@ class DocumentsSearchOptions(I18nSearchOptions):
 
     facet_groups = {
         "curator": {
+            "access_status": facets.access_status,
             "syntheticFields_people": facets.syntheticFields_people,
             "syntheticFields_year": facets.syntheticFields_year,
             "metadata_accessRights": facets.metadata_accessRights,
@@ -24,6 +26,7 @@ class DocumentsSearchOptions(I18nSearchOptions):
             **getattr(I18nSearchOptions, "facet_groups", {}).get("curator", {}),
         },
         "default": {
+            "access_status": facets.access_status,
             "syntheticFields_people": facets.syntheticFields_people,
             "syntheticFields_year": facets.syntheticFields_year,
             "metadata_accessRights": facets.metadata_accessRights,
@@ -42,6 +45,7 @@ class DocumentsSearchOptions(I18nSearchOptions):
     }
 
     facets = {
+        "access_status": facets.access_status,
         "metadata_abstract_cs": facets.metadata_abstract_cs,
         "metadata_abstract_en": facets.metadata_abstract_en,
         "metadata_abstract_lang": facets.metadata_abstract_lang,

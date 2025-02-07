@@ -10,6 +10,24 @@ from oarepo_vocabularies.services.facets import (
     HierarchyVocabularyFacet,
     VocabularyFacet,
 )
+from invenio_rdm_records.records.systemfields.access.field.record import (
+    AccessStatusEnum,
+)
+from oarepo_vocabularies.services.facets import CachedVocabularyLabels
+
+access_rights_labels = CachedVocabularyLabels("access-rights")
+
+access_status = TermsFacet(
+    field="access.status.keyword",
+    label=_("Access status"),
+    value_labels={
+        AccessStatusEnum.OPEN.value: _("Open"),
+        AccessStatusEnum.EMBARGOED.value: _("Embargoed"),
+        AccessStatusEnum.RESTRICTED.value: _("Restricted"),
+        AccessStatusEnum.METADATA_ONLY.value: _("Metadata-only"),
+    },
+)
+
 
 metadata_abstract_cs = TermsFacet(
     field="metadata.abstract.cs.keyword", label=_("metadata/abstract.label")
