@@ -35,7 +35,6 @@ from oarepo_workflows.records.systemfields.state import (
 )
 from oarepo_workflows.records.systemfields.workflow import WorkflowField
 
-from common.records.temporary_access import TemporaryRecordAccessField
 from common.services.sort import TitleICUSortField
 from documents.files.api import DocumentsFile, DocumentsFileDraft
 from documents.records.dumpers.dumper import DocumentsDraftDumper, DocumentsDumper
@@ -82,8 +81,6 @@ class DocumentsRecord(RDMRecord):
     creator_search = ICUSearchField(source_field="metadata.creators.fullName")
 
     abstract_search = ICUSearchField(source_field="metadata.abstract.value")
-
-    # access = TemporaryRecordAccessField()
 
     people = SyntheticSystemField(
         PathSelector("metadata.creators", "metadata.contributors"),
@@ -300,8 +297,6 @@ class DocumentsDraft(RDMDraft):
     creator_search = ICUSearchField(source_field="metadata.creators.fullName")
 
     abstract_search = ICUSearchField(source_field="metadata.abstract.value")
-
-    # access = TemporaryRecordAccessField()
 
     people = SyntheticSystemField(
         PathSelector("metadata.creators", "metadata.contributors"),

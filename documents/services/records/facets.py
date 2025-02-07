@@ -13,9 +13,7 @@ from oarepo_vocabularies.services.facets import (
 from invenio_rdm_records.records.systemfields.access.field.record import (
     AccessStatusEnum,
 )
-from oarepo_vocabularies.services.facets import CachedVocabularyLabels
 
-access_rights_labels = CachedVocabularyLabels("access-rights")
 
 access_status = TermsFacet(
     field="access.status.keyword",
