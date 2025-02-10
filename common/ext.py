@@ -8,6 +8,8 @@ from oarepo_oaipmh_harvester import cli  # noqa
 from oarepo_oaipmh_harvester.harvester import harvest
 from oarepo_oaipmh_harvester.oai_harvester.records.api import OaiHarvesterRecord
 from oarepo_runtime.datastreams.datastreams import Signature, SignatureKind
+from flask_babel import lazy_gettext as _
+
 
 from . import config
 
@@ -88,9 +90,21 @@ class ActionPermissionsExt:
             self.init_app(app)
 
     def init_app(self, app):
+        from invenio_rdm_records.records.systemfields.access.field.record import (
+            AccessStatusEnum,
+        )
+
+        from documents.services.records.facets import access_status
+
+        access_status._value_labels = {
+            AccessStatusEnum.OPEN: _("It is open"),
+            AccessStatusEnum.EMBARGOED: _("it is Embargoed"),
+            AccessStatusEnum.RESTRICTED: _("it is Restricted"),
+            AccessStatusEnum.METADATA_ONLY: _("it is Metadata-only"),
+        }
         self.app = app
         app.extensions["action_permissions"] = self
-        
+
         identity_loaded.connect_via(app)(load_action_permissions)
 
 

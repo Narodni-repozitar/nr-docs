@@ -255,9 +255,9 @@ export const ResultsListItemComponent = ({
                   />
                   <div className="item-access-rights">
                     <Label title={result.state_timestamp}>{result.state}</Label>
-                    {accessRights && accessRights.id !== "c_abf2" && (
-                      <Label title={accessRights.embargoedUntil}>
-                        {accessRights.title}
+                    {accessRights && accessRights.id !== "open" && (
+                      <Label title={accessRights.embargo_date_l10n}>
+                        {accessRights.title_l10n}
                       </Label>
                     )}
                   </div>

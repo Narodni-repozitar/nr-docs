@@ -26,18 +26,21 @@ const FormActionsContainer = () => {
     },
   } = useFormConfig();
 
-  const onBeforeAction = ({ requestActionName }) => {
-    // Do not try to save in case user is declining or cancelling the request from the form
+  const onBeforeAction = ({ requestActionName, requestOrRequestType }) => {
     if (
       requestActionName === REQUEST_TYPE.DECLINE ||
       requestActionName === REQUEST_TYPE.CANCEL
     ) {
       return true;
     } else {
-      return save({ successMessage: "" });
+      return save({
+        errorMessage: i18next.t(
+          "The request ({requestType}) could not be made due to validation errors. Please fix them and try again:",
+          { requestType: requestOrRequestType.name }
+        ),
+      });
     }
   };
-
   return (
     <React.Fragment>
       <Card fluid>

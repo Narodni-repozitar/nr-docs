@@ -1,7 +1,6 @@
 from oarepo_runtime.services.search import I18nSearchOptions, ICUSortOptions
 
 from . import facets
-from invenio_rdm_records.services.facets import access_status
 
 
 class DocumentsSearchOptions(I18nSearchOptions):
