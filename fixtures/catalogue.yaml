@@ -2,3 +2,7 @@ communities:
 - service: communities
   writer: service
 - source: ./communities.yaml
+awards:
+- service: awards
+  writer: service
+- source: ./awards.yaml
