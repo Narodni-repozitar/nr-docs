@@ -23,10 +23,10 @@ class UIObjectAccessStatus(InvenioUIObjectAccessStatus):
     def title(self):
         """Access status title."""
         return {
-            AccessStatusEnum.OPEN: _("It is open"),
-            AccessStatusEnum.EMBARGOED: _("it is Embargoed"),
-            AccessStatusEnum.RESTRICTED: _("it is Restricted"),
-            AccessStatusEnum.METADATA_ONLY: _("it is Metadata-only"),
+            AccessStatusEnum.OPEN: _("access.status.open"),
+            AccessStatusEnum.EMBARGOED: _("access.status.embargoed"),
+            AccessStatusEnum.RESTRICTED: _("access.status.restricted"),
+            AccessStatusEnum.METADATA_ONLY: _("access.status.metadata_only"),
         }.get(self.access_status)
 
 

@@ -19,10 +19,10 @@ access_status = TermsFacet(
     field="access.status.keyword",
     label=_("Access status"),
     value_labels={
-        AccessStatusEnum.OPEN.value: _("Open"),
-        AccessStatusEnum.EMBARGOED.value: _("Embargoed"),
-        AccessStatusEnum.RESTRICTED.value: _("Restricted"),
-        AccessStatusEnum.METADATA_ONLY.value: _("Metadata-only"),
+        AccessStatusEnum.OPEN.value: _("access.status.open"),
+        AccessStatusEnum.EMBARGOED.value: _("access.status.embargoed"),
+        AccessStatusEnum.RESTRICTED.value: _("access.status.restricted"),
+        AccessStatusEnum.METADATA_ONLY.value: _("access.status.metadata-only"),
     },
 )
 
