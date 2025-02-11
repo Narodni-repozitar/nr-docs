@@ -36,11 +36,24 @@ import { useFormikContext, getIn } from "formik";
 const FormFieldsContainer = () => {
   const { formConfig, files: recordFiles } = useFormConfig();
   const editMode = _has(formConfig, "updateUrl");
-  const submissibleResourceTypes = (options) => options.filter(
-      opt => !!opt.props?.submission && opt.props?.submission !== 'false'
-  );
 
+  const submissibleResourceTypes = React.useCallback(
+    (options) =>
+      options.filter(
+        (opt) => !!opt.props?.submission && opt.props?.submission !== "false"
+      ),
+    []
+  );
   const { getFieldData } = useFieldData();
+
+  const { label: subjectCategoriesLabel } = React.useMemo(
+    () =>
+      getFieldData({
+        fieldPath: "metadata.subjectCategories",
+        icon: "tag",
+      }),
+    []
+  );
 
   const { values, setFieldValue, setFieldTouched } = useFormikContext();
   const { sanitizeInput } = useSanitizeInput();
@@ -283,15 +296,10 @@ const FormFieldsContainer = () => {
             fieldPath="metadata.subjectCategories"
           >
             <VocabularyTreeSelectField
-              optimized
               fieldPath="metadata.subjectCategories"
               multiple={true}
-              clearable
               vocabulary="subject-categories"
-              {...getFieldData({
-                fieldPath: "metadata.subjectCategories",
-                icon: "tag",
-              })}
+              label={subjectCategoriesLabel}
             />
           </Overridable>
           <Overridable
