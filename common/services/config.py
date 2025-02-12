@@ -7,6 +7,7 @@ from common.services.filtered_record_list import FilteredRecordList
 
 
 class FilteredResultServiceConfig(InvenioRecordDraftsServiceConfig):
+
     result_list_cls = FilteredRecordList
 
     components = [
