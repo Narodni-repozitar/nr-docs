@@ -122,22 +122,20 @@ const FormFieldsContainer = ({
   const { getFieldData } = useFieldData();
 
   const saveAndSetActiveAccordion = async (accordionId) => {
+    if (activeAccordion.id === accordionId) return;
     const currentIndex = accordionData.findIndex(
       (accordion) => accordion.id === activeAccordion.id
     );
     const nextIndex = accordionData.findIndex(
       (accordion) => accordion.id === accordionId
     );
-    if (nextIndex < currentIndex) {
-      handleAccordionChange(accordionId);
-      return;
-    }
+
     const response = await partialSave({
       includedErrorPaths: accordionData.find(
         (acc) => acc.id === activeAccordion.id
       ).includesPaths,
     });
-    if (!response) return;
+    if (!response && nextIndex > currentIndex) return;
     handleAccordionChange(accordionId);
   };
 
