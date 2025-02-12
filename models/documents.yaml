@@ -40,7 +40,7 @@ record:
     resource:
       base-classes: [ oarepo_ui.resources.file_resource.S3RedirectFileResource ]
     service-config:
-      components: [ common.services.files.allowed_document_extensions.AllowedDocumentExtensionsComponent ]
+      components: [ "{{common.services.files.allowed_document_extensions.AllowedDocumentExtensionsComponent}}" ]
 
     permissions:  # TODO: should be taken automatically from the record's permissions presets
       presets:
