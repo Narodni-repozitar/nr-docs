@@ -1,10 +1,12 @@
+from flask_babel import _
+from flask_resources import HTTPJSONException
 from flask import current_app
 from invenio_records_resources.services.files.components.base import (
     FileServiceComponent,
 )
 
+from invenio_records_resources.services.errors import FailedFileUploadException
 from flask_babel import _
-from flask_resources import HTTPJSONException
 
 
 class AllowedDocumentExtensionsComponent(FileServiceComponent):
@@ -36,11 +38,13 @@ class InvalidFileExtensionException(Exception):
         )
         self.file_key = file_key
 
+
 def create_invalid_file_extension_handler():
     return lambda e: HTTPJSONException(
         code=415,
         description=str(e),
     )
+
 
 ERROR_HANDLERS = {
     InvalidFileExtensionException: create_invalid_file_extension_handler()
