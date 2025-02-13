@@ -1,7 +1,9 @@
 import marshmallow as ma
+from invenio_rdm_records.services.schemas.access import AccessSchema
 from marshmallow import fields as ma_fields
 from marshmallow.utils import get_value
 from marshmallow_utils.fields import SanitizedUnicode
+from marshmallow_utils.fields.nestedattr import NestedAttribute
 from nr_metadata.documents.services.records.schema import (
     NRDocumentMetadataSchema,
     NRDocumentRecordSchema,
@@ -12,9 +14,7 @@ from oarepo_runtime.services.schema.marshmallow import DictOnlySchema
 from oarepo_runtime.services.schema.rdm import RDMRecordMixin
 from oarepo_runtime.services.schema.validation import validate_datetime
 from oarepo_workflows.services.records.schema import WorkflowParentSchema
-from nr_metadata.common.services.records.schema_datatypes import (
-    NRLanguageVocabularySchema,
-)
+
 
 class GeneratedParentSchema(WorkflowParentSchema):
     """"""
@@ -23,22 +23,15 @@ class GeneratedParentSchema(WorkflowParentSchema):
 
     communities = ma_fields.Nested(CommunitiesParentSchema)
 
-# TODO: fix model builder to include required languages. Until then
-# please keep the overriden code here
-class LocalNRDocumentMetadataSchema(NRDocumentMetadataSchema):
-    languages = ma_fields.List(
-        ma_fields.Nested(lambda: NRLanguageVocabularySchema()),
-        required=True,
-        validate=[ma.validate.Length(min=1)],
-    )
 
 class DocumentsSchema(NRDocumentRecordSchema, RDMRecordMixin):
     class Meta:
         unknown = ma.RAISE
 
-    # TODO: fix model builder to include required languages. Until then
-    # please keep the overriden code here
-    metadata = ma_fields.Nested(lambda: LocalNRDocumentMetadataSchema())
+    access = NestedAttribute(lambda: AccessSchema())
+
+    metadata = ma_fields.Nested(lambda: NRDocumentMetadataSchema())
+
     oai = ma_fields.Nested(lambda: OaiSchema())
 
     state = ma_fields.String(dump_only=True)
