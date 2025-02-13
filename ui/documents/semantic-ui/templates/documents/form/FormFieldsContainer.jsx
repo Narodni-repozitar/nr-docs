@@ -46,15 +46,6 @@ const FormFieldsContainer = () => {
   );
   const { getFieldData } = useFieldData();
 
-  const { label: subjectCategoriesLabel } = React.useMemo(
-    () =>
-      getFieldData({
-        fieldPath: "metadata.subjectCategories",
-        icon: "tag",
-      }),
-    []
-  );
-
   const { values, setFieldValue, setFieldTouched } = useFormikContext();
   const { sanitizeInput } = useSanitizeInput();
 
@@ -299,7 +290,10 @@ const FormFieldsContainer = () => {
               fieldPath="metadata.subjectCategories"
               multiple={true}
               vocabulary="subject-categories"
-              label={subjectCategoriesLabel}
+              {...getFieldData({
+                fieldPath: "metadata.subjectCategories",
+                icon: "tag",
+              })}
             />
           </Overridable>
           <Overridable
