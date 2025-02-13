@@ -1,3 +1,7 @@
+names:
+- service: names
+  writer: service
+- source: ./names.yaml
 communities:
 - service: communities
   writer: service
