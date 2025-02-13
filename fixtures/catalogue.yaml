@@ -1,12 +1,12 @@
-names:
-- service: names
+awards:
+- service: awards
   writer: service
-- source: ./names.yaml
+- source: ./awards_with_id.yaml
 communities:
 - service: communities
   writer: service
 - source: ./communities.yaml
-awards:
-- service: awards
+names:
+- service: names
   writer: service
-- source: ./awards.yaml
+- source: ./names.yaml
