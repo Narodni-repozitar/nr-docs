@@ -1,3 +1,4 @@
+from flask_resources import HTTPJSONException, create_error_handler
 from oarepo_runtime.datastreams.writers.attachments_service import (
     AttachmentsServiceWriter,
 )

@@ -4283,3 +4283,25 @@ msgstr ""
 #: /home/dusanst/Projects/new_nr_docs/nr-docs/common/doi/mapping.py:7
 msgid "Missing data for required field."
 msgstr ""
+
+#: /Users/pragerdom/work/nr-docs/common/services/files/allowed_document_extensions.py:26
+msgid "Failed to upload '{file_key}'. Invalid extension."
+msgstr ""
+
+#: /Users/pragerdom/work/nr-docs/common/services/files/allowed_document_extensions.py:28
+msgid ""
+"Failed to upload '{file_key}'. Invalid extension. Supported formats are: "
+"{allowed_extensions}"
+msgstr ""
+
+#: /Users/pragerdom/work/nr-docs/common/services/files/allowed_document_extensions.py:28
+msgid ""
+"Invalid file extension for '{file_key}'. Supported formats are: "
+"{allowed_extensions}"
+msgstr ""
+
+#: /Users/pragerdom/work/nr-docs/common/services/files/allowed_document_extensions.py:28
+msgid ""
+"Invalid file extension for '{file_key}'. Supported formats: "
+"{allowed_extensions}"
+msgstr ""
