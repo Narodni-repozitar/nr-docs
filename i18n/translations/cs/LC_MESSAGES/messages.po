@@ -3689,11 +3689,6 @@ msgstr "omezený přístup"
 msgid "access.status.metadata-only"
 msgstr "pouze metadata"
 
-msgid ""
-"The request ({requestType}) could not be made due to validation errors. "
-"Please fix them and try again:"
-msgstr ""
-
 msgid "Visibility"
 msgstr ""
 
@@ -3795,3 +3790,10 @@ msgstr ""
 
 msgid "versions/next_draft_id.hint"
 msgstr ""
+
+msgid ""
+"The request ({{requestType}}) could not be made due to validation errors. "
+"Please fix them and try again:"
+msgstr ""
+"Požadavek ({{requestType}}) nemohl být proveden kvůli chybám validace. "
+"Prosím, opravte je a zkuste to znovu:"

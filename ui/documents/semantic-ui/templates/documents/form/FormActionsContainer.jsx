@@ -27,6 +27,7 @@ const FormActionsContainer = () => {
   } = useFormConfig();
 
   const onBeforeAction = ({ requestActionName, requestOrRequestType }) => {
+    console.log(requestOrRequestType);
     if (
       requestActionName === REQUEST_TYPE.DECLINE ||
       requestActionName === REQUEST_TYPE.CANCEL
@@ -35,7 +36,7 @@ const FormActionsContainer = () => {
     } else {
       return save({
         errorMessage: i18next.t(
-          "The request ({requestType}) could not be made due to validation errors. Please fix them and try again:",
+          "The request ({{requestType}}) could not be made due to validation errors. Please fix them and try again:",
           { requestType: requestOrRequestType.name }
         ),
       });
@@ -82,7 +83,7 @@ const FormActionsContainer = () => {
         </Card.Content>
       </Card>
       <AccessRightField
-        label={i18next.t("Visibility")}
+        label={i18next.t("metadata/accessRights.label")}
         record={values}
         labelIcon="shield"
         fieldPath="access"
