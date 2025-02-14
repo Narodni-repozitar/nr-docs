@@ -63,8 +63,21 @@ const FormActionsContainer = () => {
                 <RecordRequests
                   record={values}
                   onBeforeAction={onBeforeAction}
-                  onActionError={({ e, modalControl }) => {
-                    if (e?.response?.data?.errors?.length > 0) {
+                  onActionError={({ e, modalControl, formik }) => {
+                    if (
+                      e?.response?.data?.error_type === "cf_validation_error" &&
+                      e?.response?.data?.errors
+                    ) {
+                      let errorsObj = {};
+                      for (const error of e.response.data.errors) {
+                        errorsObj = setIn(
+                          errorsObj,
+                          error.field,
+                          error.messages.join(" ")
+                        );
+                      }
+                      formik?.setErrors(errorsObj);
+                    } else if (e?.response?.data?.errors?.length > 0) {
                       const errors = serializeErrors(
                         e?.response?.data?.errors,
                         i18next.t(
@@ -72,8 +85,8 @@ const FormActionsContainer = () => {
                         )
                       );
                       setErrors(errors);
+                      modalControl?.closeModal();
                     }
-                    modalControl?.closeModal();
                   }}
                 />
               )}
