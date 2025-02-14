@@ -1,15 +1,14 @@
+from flask import current_app
 from flask_babel import _
 from flask_resources import HTTPJSONException
-from flask import current_app
 from invenio_records_resources.services.files.components.base import (
     FileServiceComponent,
 )
 
-from invenio_records_resources.services.errors import FailedFileUploadException
-from flask_babel import _
-
 
 class AllowedDocumentExtensionsComponent(FileServiceComponent):
+    affects = "*"
+
     def init_files(self, identity, id, record, data):
         allowed_extensions = tuple(
             current_app.config["ALLOWED_DOCUMENT_FILE_EXTENSIONS"]
