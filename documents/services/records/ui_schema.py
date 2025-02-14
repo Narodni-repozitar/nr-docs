@@ -8,7 +8,6 @@ from nr_metadata.documents.services.records.ui_schema import (
 from oarepo_requests.services.ui_schema import UIRequestsSerializationMixin
 from oarepo_runtime.services.schema.marshmallow import DictOnlySchema
 from oarepo_runtime.services.schema.ui import LocalizedDateTime
-from common.services.schema import LocalizedStateField
 
 
 class DocumentsUISchema(UIRequestsSerializationMixin, NRDocumentRecordUISchema):
@@ -19,9 +18,8 @@ class DocumentsUISchema(UIRequestsSerializationMixin, NRDocumentRecordUISchema):
 
     oai = ma_fields.Nested(lambda: OaiUISchema())
 
-    # TODO: model builder seems to ignore field-class during merging of schemas,
-    # need to investigate why !!!
-    state = LocalizedStateField(dump_only=True)
+    state = ma_fields.String(dump_only=True)
+
     state_timestamp = LocalizedDateTime(dump_only=True)
 
     syntheticFields = ma_fields.Nested(lambda: NRDocumentSyntheticFieldsUISchema())

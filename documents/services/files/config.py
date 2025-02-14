@@ -44,7 +44,9 @@ class DocumentsFileServiceConfig(PermissionsPresetsConfigMixin, FileServiceConfi
 
     @property
     def components(self):
-        return process_service_configs(self, CustomFieldsComponent)
+        return process_service_configs(
+            self, AllowedDocumentExtensionsComponent, CustomFieldsComponent
+        )
 
     model = "documents"
 
