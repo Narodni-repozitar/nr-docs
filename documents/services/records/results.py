@@ -8,7 +8,7 @@ class DocumentsRecordItem(RecordItem):
 
     components = [
         *RecordItem.components,
-        RecordCommunitiesComponent,
+        RecordCommunitiesComponent(),
         RequestsComponent(),
         RequestTypesComponent(),
     ]
