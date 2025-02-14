@@ -34,7 +34,10 @@ from documents.records.api import DocumentsDraft, DocumentsRecord
 from documents.services.records.permissions import DocumentsPermissionPolicy
 from documents.services.records.results import DocumentsRecordItem, DocumentsRecordList
 from documents.services.records.schema import DocumentsSchema
-from documents.services.records.search import DocumentsSearchOptions
+from documents.services.records.search import (
+    DocumentsSearchOptions,
+    DocumentsDraftSearchOptions,
+)
 from invenio_rdm_records.services.components.access import AccessComponent
 
 
@@ -61,7 +64,7 @@ class DocumentsServiceConfig(PermissionsPresetsConfigMixin, RDMRecordServiceConf
 
     search_item_links_template = LinksTemplate
     draft_cls = DocumentsDraft
-    search_drafts = DocumentsSearchOptions
+    search_drafts = DocumentsDraftSearchOptions
 
     @property
     def components(self):

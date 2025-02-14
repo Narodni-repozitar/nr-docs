@@ -12,6 +12,10 @@ from oarepo_ui.resources.components import (
     AllowedCommunitiesComponent,
 )
 
+from ui.documents.components.allowed_file_extension_ui_component import (
+    AllowedFileExtensionUIComponent,
+)
+
 
 class DocumentsResourceConfig(RecordsUIResourceConfig):
     template_folder = "templates"
@@ -30,6 +34,7 @@ class DocumentsResourceConfig(RecordsUIResourceConfig):
         CustomFieldsComponent,
         RecordRestrictionComponent,
         EmptyRecordAccessComponent,
+        AllowedFileExtensionUIComponent,
     ]
 
     search_component = "documents/search/ResultsListItem"

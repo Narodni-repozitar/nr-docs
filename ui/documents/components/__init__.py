@@ -1,0 +1,3 @@
+from .allowed_file_extension_ui_component import AllowedFileExtensionUIComponent
+
+__all__ = "AllowedFileExtensionUIComponent"

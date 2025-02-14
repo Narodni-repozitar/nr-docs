@@ -39,6 +39,8 @@ record:
   draft-files:
     resource:
       base-classes: [ oarepo_ui.resources.file_resource.S3RedirectFileResource ]
+    service-config:
+      components: [ "{{common.services.files.allowed_document_extensions.AllowedDocumentExtensionsComponent}}" ]
 
     permissions:  # TODO: should be taken automatically from the record's permissions presets
       presets:
@@ -62,6 +64,8 @@ record:
     permissions:  # TODO: should be taken automatically from the record's permissions presets
       presets:
         - docs
+    service-config:
+      components: [ "{{common.services.files.allowed_document_extensions.AllowedDocumentExtensionsComponent}}" ]
 
   module:
     qualified: documents

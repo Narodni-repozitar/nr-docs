@@ -53,7 +53,6 @@ class AccessStatusField(ma_fields.Field):
                 "message_class": record_access_status_ui.message_class,
             }
 
-
 class DocumentsUISchema(UIRequestsSerializationMixin, NRDocumentRecordUISchema):
     class Meta:
         unknown = ma.RAISE
@@ -65,7 +64,7 @@ class DocumentsUISchema(UIRequestsSerializationMixin, NRDocumentRecordUISchema):
     # TODO: model builder seems to ignore field-class during merging of schemas,
     # need to investigate why !!!
     state = LocalizedStateField(dump_only=True)
-
+    
     state_timestamp = LocalizedDateTime(dump_only=True)
 
     syntheticFields = ma_fields.Nested(lambda: NRDocumentSyntheticFieldsUISchema())

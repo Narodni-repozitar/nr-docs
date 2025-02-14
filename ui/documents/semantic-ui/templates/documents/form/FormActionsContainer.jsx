@@ -12,7 +12,7 @@ import {
 import { i18next } from "@translations/i18next";
 import { SelectedCommunity } from "@js/communities_components/CommunitySelector/SelectedCommunity";
 import { RecordRequests } from "@js/oarepo_requests/components";
-import { useFormikContext } from "formik";
+import { useFormikContext, setIn } from "formik";
 import { REQUEST_TYPE } from "@js/oarepo_requests_common";
 
 const FormActionsContainer = () => {
@@ -27,10 +27,14 @@ const FormActionsContainer = () => {
   } = useFormConfig();
 
   const onBeforeAction = ({ requestActionName, requestOrRequestType }) => {
-    console.log(requestOrRequestType);
+    const requestType =
+      requestOrRequestType?.type || requestOrRequestType?.type_id;
+    // Do not try to save in case user is declining or cancelling the request from the form
     if (
       requestActionName === REQUEST_TYPE.DECLINE ||
-      requestActionName === REQUEST_TYPE.CANCEL
+      requestActionName === REQUEST_TYPE.CANCEL ||
+      requestType === "initiate_community_migration" ||
+      requestType === "confirm_community_migration"
     ) {
       return true;
     } else {
@@ -55,7 +59,6 @@ const FormActionsContainer = () => {
                 <SaveButton fluid className="mb-10" />
                 <PreviewButton fluid className="mb-10" />
               </div>
-
               {values.id && (
                 <RecordRequests
                   record={values}

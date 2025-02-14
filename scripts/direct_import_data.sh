@@ -20,6 +20,6 @@ invenio oarepo oai harvester add nusl-manual-submissions --name "Manual submissi
             --writer 'attachment{service=documents_file_draft}' \
             --writer 'publish{service=documents}' \
             --writer 'owner{service=documents}' \
-            --writer 'timestamp_update{service=documents}'
+            --writer 'timestamp_update{service=documents,date_created_csv_path="./scripts/datecreated.csv"}'
 
 invenio oarepo oai harvester run nusl-manual-submissions
