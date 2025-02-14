@@ -20,7 +20,7 @@ const FormActionsContainer = () => {
   const { save } = useDepositApiClient();
   const {
     formConfig: {
-      // permissions,
+      permissions,
       allowRecordRestriction,
       recordRestrictionGracePeriod,
     },
@@ -86,10 +86,9 @@ const FormActionsContainer = () => {
         record={values}
         labelIcon="shield"
         fieldPath="access"
-        // showMetadataAccess={permissions?.can_manage_record_access}
+        showMetadataAccess={permissions?.can_manage_record_access}
         // permissions seem to not work properly when on /_new, in this case I think it is OK that you can restrict
         // since you have access to the form
-        showMetadataAccess={true}
         recordRestrictionGracePeriod={recordRestrictionGracePeriod}
         allowRecordRestriction={allowRecordRestriction}
       />

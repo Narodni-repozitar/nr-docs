@@ -18,6 +18,8 @@ from invenio_rdm_records.records.systemfields.access.field.record import (
 from oarepo_runtime.i18n import lazy_gettext as _
 
 
+# seems not possible to avoid, as they have this hardcoded in their object,
+# and translation keys are i.e. open, which gets translated to otevret
 class UIObjectAccessStatus(InvenioUIObjectAccessStatus):
     @property
     def title(self):
@@ -26,7 +28,7 @@ class UIObjectAccessStatus(InvenioUIObjectAccessStatus):
             AccessStatusEnum.OPEN: _("access.status.open"),
             AccessStatusEnum.EMBARGOED: _("access.status.embargoed"),
             AccessStatusEnum.RESTRICTED: _("access.status.restricted"),
-            AccessStatusEnum.METADATA_ONLY: _("access.status.metadata_only"),
+            AccessStatusEnum.METADATA_ONLY: _("access.status.metadata-only"),
         }.get(self.access_status)
 
 

@@ -17,7 +17,7 @@ from invenio_rdm_records.records.systemfields.access.field.record import (
 
 access_status = TermsFacet(
     field="access.status.keyword",
-    label=_("Access status"),
+    label=_("metadata/accessRights.label"),
     value_labels={
         AccessStatusEnum.OPEN.value: _("access.status.open"),
         AccessStatusEnum.EMBARGOED.value: _("access.status.embargoed"),
