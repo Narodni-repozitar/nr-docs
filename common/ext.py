@@ -9,7 +9,10 @@ from oarepo_oaipmh_harvester.harvester import harvest
 from oarepo_oaipmh_harvester.oai_harvester.records.api import OaiHarvesterRecord
 from oarepo_runtime.datastreams.datastreams import Signature, SignatureKind
 
-from . import config
+from . import (
+    config,
+)
+from .cli import documents as documents_cli
 
 
 class OaiS3HarvesterExt(object):
@@ -25,6 +28,7 @@ class OaiS3HarvesterExt(object):
         self.app = app
         app.extensions["oai_s3_harvester"] = self
         self.load_config(app)
+        app.cli.add_command(documents_cli)
 
     def run(
         self,
@@ -96,8 +100,8 @@ class ActionPermissionsExt:
 
 def load_action_permissions(sender, identity):
     # TODO: need to have a deeper look at this
-    from invenio_access.models import ActionUsers
     from flask_principal import ActionNeed
+    from invenio_access.models import ActionUsers
 
     user_id = identity.id
     if user_id is None:
