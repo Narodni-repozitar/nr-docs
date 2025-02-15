@@ -10,6 +10,7 @@ from invenio_rdm_records.records.api import (
     RDMParent,
     RDMRecord,
 )
+from invenio_rdm_records.records.systemfields import RecordAccessField
 from invenio_records.systemfields import ConstantField, ModelField
 from invenio_records_resources.records.systemfields import FilesField, IndexField
 from invenio_records_resources.records.systemfields.pid import PIDField, PIDFieldContext
@@ -35,7 +36,6 @@ from oarepo_workflows.records.systemfields.state import (
 )
 from oarepo_workflows.records.systemfields.workflow import WorkflowField
 
-from common.records.temporary_access import TemporaryRecordAccessField
 from common.services.sort import TitleICUSortField
 from documents.files.api import DocumentsFile, DocumentsFileDraft
 from documents.records.dumpers.dumper import DocumentsDraftDumper, DocumentsDumper
@@ -63,7 +63,6 @@ class DocumentsIdProvider(DraftRecordIdProviderV2):
 
 
 class DocumentsRecord(RDMRecord):
-
     model_cls = DocumentsMetadata
 
     schema = ConstantField("$schema", "local://documents-1.0.0.json")
@@ -84,7 +83,7 @@ class DocumentsRecord(RDMRecord):
 
     abstract_search = ICUSearchField(source_field="metadata.abstract.value")
 
-    access = TemporaryRecordAccessField()
+    access = RecordAccessField()
 
     people = SyntheticSystemField(
         PathSelector("metadata.creators", "metadata.contributors"),
@@ -275,7 +274,6 @@ class RDMRecordMediaFiles(DocumentsRecord):
 
 
 class DocumentsDraft(RDMDraft):
-
     model_cls = DocumentsDraftMetadata
 
     schema = ConstantField("$schema", "local://documents-1.0.0.json")
@@ -303,7 +301,7 @@ class DocumentsDraft(RDMDraft):
 
     abstract_search = ICUSearchField(source_field="metadata.abstract.value")
 
-    access = TemporaryRecordAccessField()
+    access = RecordAccessField()
 
     people = SyntheticSystemField(
         PathSelector("metadata.creators", "metadata.contributors"),
