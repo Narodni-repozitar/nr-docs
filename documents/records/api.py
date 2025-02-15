@@ -82,8 +82,6 @@ class DocumentsRecord(RDMRecord):
 
     abstract_search = ICUSearchField(source_field="metadata.abstract.value")
 
-    access = RecordAccessField()
-
     people = SyntheticSystemField(
         PathSelector("metadata.creators", "metadata.contributors"),
         filter=lambda x: x.get("nameType") == "Personal",
@@ -299,8 +297,6 @@ class DocumentsDraft(RDMDraft):
     creator_search = ICUSearchField(source_field="metadata.creators.fullName")
 
     abstract_search = ICUSearchField(source_field="metadata.abstract.value")
-
-    access = RecordAccessField()
 
     people = SyntheticSystemField(
         PathSelector("metadata.creators", "metadata.contributors"),
