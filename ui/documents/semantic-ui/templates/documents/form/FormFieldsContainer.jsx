@@ -37,7 +37,7 @@ const FormFieldsContainer = () => {
   const { formConfig, files: recordFiles } = useFormConfig();
   const editMode = _has(formConfig, "updateUrl");
   const submissibleResourceTypes = (options) => options.filter(
-      opt => !!opt.props?.submission && opt.props?.submission !== 'false'
+    opt => !!opt.props?.submission && opt.props?.submission !== 'false'
   );
 
   const { getFieldData } = useFieldData();
@@ -154,6 +154,7 @@ const FormFieldsContainer = () => {
               {...getFieldData({ fieldPath: "metadata.publishers" })}
             />
           </Overridable>
+          {/* Access rights field is disabled as we use invenio RDM access
           <Overridable
             id="NrDocs.Deposit.AccessRightsField.container"
             fieldPath="metadata.accessRights"
@@ -169,6 +170,7 @@ const FormFieldsContainer = () => {
               })}
             />
           </Overridable>
+          */}
           <Overridable
             id="NrDocs.Deposit.LicenseField.container"
             fieldPath="metadata.rights"
@@ -371,6 +373,9 @@ const FormFieldsContainer = () => {
           </Overridable>
         </AccordionField>
       </Overridable>
+      <div>TODO: metadata only - do we need to have an explicit checkbox or
+        are missing files enough to express that the record does not have those?
+      </div>
       <Overridable id="NrDocs.Deposit.AccordionFieldFiles.container">
         <AccordionField
           includesPaths={["files.enabled"]}
