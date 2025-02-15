@@ -1,7 +1,12 @@
 from datetime import timedelta
 
-from invenio_rdm_records.services.generators import IfRestricted, IfDraft
-from invenio_records_permissions.generators import AnyUser, Disable
+from invenio_i18n import lazy_gettext as _
+from invenio_rdm_records.services.generators import IfRestricted
+from invenio_records_permissions.generators import (
+    AnyUser,
+    Disable,
+    SystemProcess,
+)
 from oarepo_communities.services.permissions.generators import (
     CommunityRole,
     PrimaryCommunityMembers,
@@ -10,6 +15,7 @@ from oarepo_communities.services.permissions.generators import (
 from oarepo_communities.services.permissions.policy import (
     CommunityDefaultWorkflowPermissions,
 )
+from oarepo_oaipmh_harvester.services.generators import IfNotHarvested
 from oarepo_requests.services.permissions.generators import IfRequestedBy
 from oarepo_runtime.services.permissions.generators import RecordOwners
 from oarepo_workflows import (
@@ -20,7 +26,6 @@ from oarepo_workflows import (
     WorkflowRequestPolicy,
     WorkflowTransitions,
 )
-from invenio_i18n import lazy_gettext as _
 
 
 class RestrictedWorkflowPermissions(CommunityDefaultWorkflowPermissions):
@@ -108,7 +113,12 @@ class RestrictedWorkflowPermissions(CommunityDefaultWorkflowPermissions):
 class RestrictedWorkflowRequests(WorkflowRequestPolicy):
     publish_draft = WorkflowRequest(
         requesters=[
-            IfInState("draft", then_=[RecordOwners(), PrimaryCommunityRole("curator")])
+            IfNotHarvested(
+                then_=IfInState(
+                    "draft", then_=[RecordOwners(), PrimaryCommunityRole("curator")]
+                ),
+                else_=[PrimaryCommunityRole("curator")],
+            )
         ],
         recipients=[
             IfRequestedBy(
@@ -138,13 +148,16 @@ class RestrictedWorkflowRequests(WorkflowRequestPolicy):
 
     edit_published_record = WorkflowRequest(
         requesters=[
-            IfInState(
-                "published",
-                then_=[
-                    RecordOwners(),
-                    PrimaryCommunityRole("curator"),
-                    PrimaryCommunityRole("owner"),
-                ],
+            IfNotHarvested(
+                then_=IfInState(
+                    "published",
+                    then_=[
+                        RecordOwners(),
+                        PrimaryCommunityRole("curator"),
+                        PrimaryCommunityRole("owner"),
+                    ],
+                ),
+                else_=SystemProcess(),
             )
         ],
         recipients=[AutoApprove()],
@@ -166,13 +179,16 @@ class RestrictedWorkflowRequests(WorkflowRequestPolicy):
 
     delete_published_record = WorkflowRequest(
         requesters=[
-            IfInState(
-                "published",
-                then_=[
-                    RecordOwners(),
-                    PrimaryCommunityRole("curator"),
-                    PrimaryCommunityRole("owner"),
-                ],
+            IfNotHarvested(
+                then_=IfInState(
+                    "published",
+                    then_=[
+                        RecordOwners(),
+                        PrimaryCommunityRole("curator"),
+                        PrimaryCommunityRole("owner"),
+                    ],
+                ),
+                else_=SystemProcess(),
             )
         ],
         recipients=[
@@ -203,9 +219,14 @@ class RestrictedWorkflowRequests(WorkflowRequestPolicy):
 
     assign_doi = WorkflowRequest(
         requesters=[
-            RecordOwners(),
-            PrimaryCommunityRole("curator"),
-            PrimaryCommunityRole("owner"),
+            IfNotHarvested(
+                then_=[
+                    RecordOwners(),
+                    PrimaryCommunityRole("curator"),
+                    PrimaryCommunityRole("owner"),
+                ],
+                else_=[SystemProcess()],
+            )
         ],
         recipients=[
             IfRequestedBy(
