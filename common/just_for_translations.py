@@ -8,4 +8,5 @@ translation_strings = [
     _("Declined"),
     _("Cancelled"),
     _("Beta version of document respository"),
+    _("access/status.label"),
 ]

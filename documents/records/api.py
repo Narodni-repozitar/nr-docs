@@ -10,7 +10,6 @@ from invenio_rdm_records.records.api import (
     RDMParent,
     RDMRecord,
 )
-from invenio_rdm_records.records.systemfields import RecordAccessField
 from invenio_records.systemfields import ConstantField, ModelField
 from invenio_records_resources.records.systemfields import FilesField, IndexField
 from invenio_records_resources.records.systemfields.pid import PIDField, PIDFieldContext
@@ -82,8 +81,6 @@ class DocumentsRecord(RDMRecord):
     creator_search = ICUSearchField(source_field="metadata.creators.fullName")
 
     abstract_search = ICUSearchField(source_field="metadata.abstract.value")
-
-    access = RecordAccessField()
 
     people = SyntheticSystemField(
         PathSelector("metadata.creators", "metadata.contributors"),
@@ -300,8 +297,6 @@ class DocumentsDraft(RDMDraft):
     creator_search = ICUSearchField(source_field="metadata.creators.fullName")
 
     abstract_search = ICUSearchField(source_field="metadata.abstract.value")
-
-    access = RecordAccessField()
 
     people = SyntheticSystemField(
         PathSelector("metadata.creators", "metadata.contributors"),

@@ -12,6 +12,7 @@ class DocumentsSearchOptions(I18nRDMSearchOptions):
 
     facet_groups = {
         "curator": {
+            "access_status": facets.access_status,
             "syntheticFields_people": facets.syntheticFields_people,
             "syntheticFields_year": facets.syntheticFields_year,
             "metadata_accessRights": facets.metadata_accessRights,
@@ -28,6 +29,7 @@ class DocumentsSearchOptions(I18nRDMSearchOptions):
             **getattr(I18nRDMSearchOptions, "facet_groups", {}).get("curator", {}),
         },
         "default": {
+            "access_status": facets.access_status,
             "syntheticFields_people": facets.syntheticFields_people,
             "syntheticFields_year": facets.syntheticFields_year,
             "metadata_accessRights": facets.metadata_accessRights,
