@@ -4432,3 +4432,98 @@ msgid ""
 "The request ({{requestType}}) could not be made due to validation errors. "
 "Please fix them and try again:"
 msgstr ""
+
+#: /Users/m/w/nrp/nr-docs/common/just_for_translations.py:11
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:42
+msgid "access/status.label"
+msgstr "Access rights"
+
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:31
+msgid "access/embargo/active.label"
+msgstr "Embargo active"
+
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:35
+msgid "access/embargo/until.label"
+msgstr "Embargo expiration"
+
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:38
+msgid "access/files.label"
+msgstr "Access to files"
+
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:40
+msgid "access/record.label"
+msgstr "Access to record"
+
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:552
+msgid "expires_at.label"
+msgstr ""
+
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:554
+msgid "fork_version_id.label"
+msgstr ""
+
+msgid "access.help"
+msgstr ""
+
+msgid "access.label"
+msgstr ""
+
+msgid "access.hint"
+msgstr ""
+
+msgid "access/embargo.help"
+msgstr ""
+
+msgid "access/embargo.label"
+msgstr ""
+
+msgid "access/embargo.hint"
+msgstr ""
+
+msgid "access/embargo/active.help"
+msgstr ""
+
+msgid "access/embargo/active.hint"
+msgstr ""
+
+msgid "access/embargo/reason.help"
+msgstr ""
+
+msgid "access/embargo/reason.label"
+msgstr ""
+
+msgid "access/embargo/reason.hint"
+msgstr ""
+
+msgid "access/embargo/until.help"
+msgstr ""
+
+msgid "access/embargo/until.hint"
+msgstr ""
+
+msgid "access/files.help"
+msgstr ""
+
+msgid "access/files.hint"
+msgstr ""
+
+msgid "access/record.help"
+msgstr ""
+
+msgid "access/record.hint"
+msgstr ""
+
+msgid "access/status.help"
+msgstr ""
+
+msgid "access/status.hint"
+msgstr ""
+
+msgid "pids.help"
+msgstr ""
+
+msgid "pids.label"
+msgstr ""
+
+msgid "pids.hint"
+msgstr ""
