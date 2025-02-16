@@ -55,6 +55,9 @@ class DocumentsSchema(NRDocumentRecordSchema, RDMRecordMixin):
     files = ma.fields.Nested(
         lambda: FilesOptionsSchema(), load_default={"enabled": True}
     )
+    is_published = ma.fields.Boolean(dump_only=True)
+
+    is_draft = ma_fields.Boolean(attribute="is_draft")
 
     # todo this needs to be generated for [default preview] to work
     def get_attribute(self, obj, attr, default):
