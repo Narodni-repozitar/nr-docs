@@ -55,25 +55,25 @@ invenio oarepo fixtures load --no-system-fixtures ./fixtures --verbose
 
 invenio oarepo communities create generic "Obecná komunita"
 
-invenio users create -a -c "vlastnik@test.com" --password "${USER_PASSWORD}" --profile '{"full_name": "Vlastník - superkurátor"}'
-invenio oarepo communities members add generic "vlastnik@test.com" owner
-invenio access allow administration-access user vlastnik@test.com
-invenio access allow administration-moderation user vlastnik@test.com
+invenio users create -a -c "nrdocstest+vlastnik@gmail.com" --password "${USER_PASSWORD}" --profile '{"full_name": "Vlastník - superkurátor"}'
+invenio oarepo communities members add generic "nrdocstest+vlastnik@gmail.com" owner
+invenio access allow administration-access user nrdocstest+vlastnik@gmail.com
+invenio access allow administration-moderation user nrdocstest+vlastnik@gmail.com
 
 cat ./fixtures/communities.yaml | grep 'slug:' | sed 's/slug: //g' | while read com; do
     echo "Creating users for community $com"
-    invenio users create -a -c "kurator-${com}@test.com" --password "${USER_PASSWORD}"  --profile "{\"full_name\": \"Kurátor komunity ${com}\"}" &
-    invenio users create -a -c "clen-${com}@test.com" --password "${USER_PASSWORD}"  --profile "{\"full_name\": \"Člen komunity ${com}\"}" &
-    invenio users create -a -c "prispevatel-${com}@test.com" --password "${USER_PASSWORD}" --profile "{\"full_name\": \"Přispěvatel komunity ${com}\"}" &
+    invenio users create -a -c "nrdocstest+kurator-${com}@gmail.com" --password "${USER_PASSWORD}"  --profile "{\"full_name\": \"Kurátor komunity ${com}\"}" &
+    invenio users create -a -c "nrdocstest+clen-${com}@gmail.com" --password "${USER_PASSWORD}"  --profile "{\"full_name\": \"Člen komunity ${com}\"}" &
+    invenio users create -a -c "nrdocstest+prispevatel-${com}@gmail.com" --password "${USER_PASSWORD}" --profile "{\"full_name\": \"Přispěvatel komunity ${com}\"}" &
     wait
 done
 
 cat ./fixtures/communities.yaml | grep 'slug:' | sed 's/slug: //g' | while read com; do
     echo "Adding users to community $com"
-    invenio oarepo communities members add $com "vlastnik@test.com" owner &
-    invenio oarepo communities members add $com "kurator-${com}@test.com" curator &
-    invenio oarepo communities members add $com "clen-${com}@test.com" &
-    invenio oarepo communities members add $com "prispevatel-${com}@test.com" submitter &
+    invenio oarepo communities members add $com "nrdocstest+vlastnik@gmail.com" owner &
+    invenio oarepo communities members add $com "nrdocstest+kurator-${com}@gmail.com" curator &
+    invenio oarepo communities members add $com "nrdocstest+clen-${com}@gmail.com" &
+    invenio oarepo communities members add $com "nrdocstest+prispevatel-${com}@gmail.com" submitter &
     wait
 done
 
