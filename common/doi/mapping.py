@@ -16,26 +16,26 @@ class DataCiteMappingNRDocs(DataCiteMappingBase):
         else:
             for i, creator in enumerate(data["creators"]):
                 if "fullName" not in creator:
-                    errors[f"metadata.creators[{i}].fullName"] = [missing_data_message]
+                    errors[f"metadata.creators.{i}.fullName"] = [missing_data_message]
                 if "authorityIdentifiers" in creator:
                     for j, id in enumerate(creator["authorityIdentifiers"]):
                         if "scheme" not in id:
                             errors[
-                                f"metadata.creators[{i}].authorityIdentifiers[{j}].scheme"
+                                f"metadata.creators.{i}.authorityIdentifiers[{j}].scheme"
                             ] = [missing_data_message]
         if "publishers" not in data:
             errors["metadata.publishers"] = [missing_data_message]
         if "contributors" in data:
             for i, contributor in enumerate(data["contributors"]):
                 if "fullName" not in contributor:
-                    errors[f"metadata.contributors[{i}].fullName"] = [
+                    errors[f"metadata.contributors.{i}.fullName"] = [
                         missing_data_message
                     ]
                 if "authorityIdentifiers" in contributor:
                     for j, id in enumerate(contributor["authorityIdentifiers"]):
                         if "scheme" not in id:
                             errors[
-                                f"metadata.contributors[{i}].authorityIdentifiers[{j}].scheme"
+                                f"metadata.contributors.{i}.authorityIdentifiers[{j}].scheme"
                             ] = [missing_data_message]
         if "title" not in data:
             errors["metadata.title"] = [missing_data_message]
@@ -46,17 +46,23 @@ class DataCiteMappingNRDocs(DataCiteMappingBase):
         if "fundingReferences" in data:
             for i, fund in enumerate(data["fundingReferences"]):
                 if "projectName" not in fund:
-                    errors[f"metadata.fundingReferences[{i}].projectName"] = [
+                    errors[f"metadata.fundingReferences.{i}.projectName"] = [
                         missing_data_message
                     ]
         if "relatedItems" in data:
             for i, item in enumerate(data["relatedItems"]):
                 if "itemTitle" not in item:
-                    errors[f"metadata.relatedItems[{i}].itemTitle"] = [missing_data_message]
+                    errors[f"metadata.relatedItems.{i}.itemTitle"] = [
+                        missing_data_message
+                    ]
                 if "itemRelationType" not in item:
-                    errors[f"metadata.relatedItems[{i}].itemRelationType"] = [missing_data_message]
+                    errors[f"metadata.relatedItems.{i}.itemRelationType"] = [
+                        missing_data_message
+                    ]
                 if "itemResourceType" not in item:
-                    errors[f"metadata.relatedItems[{i}].itemResourceType"] = [missing_data_message]
+                    errors[f"metadata.relatedItems.{i}.itemResourceType"] = [
+                        missing_data_message
+                    ]
 
         return errors
 
@@ -128,7 +134,9 @@ class DataCiteMappingNRDocs(DataCiteMappingBase):
             payload["FundingReference"] = funder(metadata)
 
         if "relatedItems" in metadata:
-            payload["relatedItems"], payload["relatedIdentifiers"] = related_items(metadata)
+            payload["relatedItems"], payload["relatedIdentifiers"] = related_items(
+                metadata
+            )
 
         if "languages" in metadata:
             payload["language"] = metadata["languages"][0]["id"]
@@ -257,21 +265,36 @@ def related_items(data):
             for identifier in rel["itemPIDs"]:
                 if "identifier" in identifier and "scheme" in identifier:
                     if identifier["scheme"] == "DOI":
-                        identifier_definition["relatedItemIdentifier"] = identifier["identifier"]
-                        identifier_definition["relatedItemIdentifierType"] = identifier["scheme"]
+                        identifier_definition["relatedItemIdentifier"] = identifier[
+                            "identifier"
+                        ]
+                        identifier_definition["relatedItemIdentifierType"] = identifier[
+                            "scheme"
+                        ]
                         break
                     elif identifier_definition == {} and identifier["scheme"] != "RIV":
-                        identifier_definition["relatedItemIdentifier"] = identifier["identifier"]
-                        identifier_definition["relatedItemIdentifierType"] = identifier["scheme"]
+                        identifier_definition["relatedItemIdentifier"] = identifier[
+                            "identifier"
+                        ]
+                        identifier_definition["relatedItemIdentifierType"] = identifier[
+                            "scheme"
+                        ]
                     else:
                         continue
             if identifier_definition != {}:
                 if "relationType" in dc_rel and "relatedItemType" in dc_rel:
-                    dc_related_identifiers.append({"relationType": dc_rel["relationType"],
-                                               "relatedIdentifier": identifier_definition["relatedItemIdentifier"],
-                                               "relatedIdentifierType": identifier_definition["relatedItemIdentifierType"],
-                                               "resourceTypeGeneral": dc_rel["relatedItemType"]})
-
+                    dc_related_identifiers.append(
+                        {
+                            "relationType": dc_rel["relationType"],
+                            "relatedIdentifier": identifier_definition[
+                                "relatedItemIdentifier"
+                            ],
+                            "relatedIdentifierType": identifier_definition[
+                                "relatedItemIdentifierType"
+                            ],
+                            "resourceTypeGeneral": dc_rel["relatedItemType"],
+                        }
+                    )
 
                 dc_rel["relatedItemIdentifier"] = identifier_definition
         if "itemStartPage" in rel:
@@ -289,4 +312,4 @@ def related_items(data):
 
         if dc_rel != {}:
             dc_related_items.append(dc_rel)
-    return dc_related_items , dc_related_identifiers
+    return dc_related_items, dc_related_identifiers
