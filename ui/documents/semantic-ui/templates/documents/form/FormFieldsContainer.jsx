@@ -381,7 +381,7 @@ const FormFieldsContainer = () => {
           data-testid="filesupload-button"
         >
           <Overridable id="NrDocs.Deposit.FileUploader.container">
-            <FileUploader recordFiles={recordFiles} />
+            <FileUploader recordFiles={recordFiles} allowedFileTypes={formConfig.allowed_file_extensions} />
           </Overridable>
         </AccordionField>
       </Overridable>
