@@ -3796,8 +3796,7 @@ msgid ""
 "Please fix them and try again:"
 msgstr ""
 "Požadavek ({{requestType}}) nemohl být proveden kvůli chybám validace. "
-"Prosím, opravte je a zkuste to znovu:Neplatná přípona souboru '{file_key}'. "
-"Podporované formáty: {allowed_extensions}"
+"Prosím, opravte je a zkuste to znovu:"
 
 #: /Users/m/w/nrp/nr-docs/common/just_for_translations.py:11
 #: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:42
