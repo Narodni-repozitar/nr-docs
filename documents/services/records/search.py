@@ -12,9 +12,9 @@ class DocumentsSearchOptions(I18nRDMSearchOptions):
 
     facet_groups = {
         "curator": {
+            "access_status": facets.access_status,
             "syntheticFields_people": facets.syntheticFields_people,
             "syntheticFields_year": facets.syntheticFields_year,
-            "metadata_accessRights": facets.metadata_accessRights,
             "metadata_rights": facets.metadata_rights,
             "metadata_resourceType": facets.metadata_resourceType,
             "metadata_languages": facets.metadata_languages,
@@ -28,9 +28,9 @@ class DocumentsSearchOptions(I18nRDMSearchOptions):
             **getattr(I18nRDMSearchOptions, "facet_groups", {}).get("curator", {}),
         },
         "default": {
+            "access_status": facets.access_status,
             "syntheticFields_people": facets.syntheticFields_people,
             "syntheticFields_year": facets.syntheticFields_year,
-            "metadata_accessRights": facets.metadata_accessRights,
             "metadata_rights": facets.metadata_rights,
             "metadata_resourceType": facets.metadata_resourceType,
             "metadata_languages": facets.metadata_languages,
@@ -54,7 +54,6 @@ class DocumentsSearchOptions(I18nRDMSearchOptions):
         "metadata_abstract_cs": facets.metadata_abstract_cs,
         "metadata_abstract_en": facets.metadata_abstract_en,
         "metadata_abstract_lang": facets.metadata_abstract_lang,
-        "metadata_accessRights": facets.metadata_accessRights,
         "metadata_accessibility_cs": facets.metadata_accessibility_cs,
         "metadata_accessibility_en": facets.metadata_accessibility_en,
         "metadata_accessibility_lang": facets.metadata_accessibility_lang,
@@ -250,7 +249,6 @@ class DocumentsDraftSearchOptions(I18nRDMDraftsSearchOptions):
         "metadata_abstract_cs": facets.metadata_abstract_cs,
         "metadata_abstract_en": facets.metadata_abstract_en,
         "metadata_abstract_lang": facets.metadata_abstract_lang,
-        "metadata_accessRights": facets.metadata_accessRights,
         "metadata_accessibility_cs": facets.metadata_accessibility_cs,
         "metadata_accessibility_en": facets.metadata_accessibility_en,
         "metadata_accessibility_lang": facets.metadata_accessibility_lang,

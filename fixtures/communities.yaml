@@ -208,6 +208,12 @@ metadata:
 access:
   visibility: public
 ---
+slug: eosccz
+metadata:
+  title: EOSC CZ, European Open Science Cloud
+access:
+  visibility: public
+---
 slug: etnologicky-ustav
 metadata:
   title: Etnologický ústav AV ČR

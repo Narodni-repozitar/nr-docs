@@ -7,11 +7,17 @@
         {% endif %}
     {% endfor %}
 {% endif %}
-{% if ns.localized_title %}
-    <h1 class="ui header">{{ ns.localized_title }}</h1>
-{% else %}
-    <h1 class="ui header">{{ metadata.title if metadata.title else _("Title not provided") }}</h1>
-{% endif %}
+<div>
+    <h1 class="ui header m-0 inline">
+        {% if ns.localized_title %}
+            {{ ns.localized_title }}
+        {% else %}
+            {{ metadata.title if metadata.title else _("Title not provided") }}
+        {% endif %}
+        <AccessRight access={record.access_status} search_link={record.links.search_link} />
+    </h1>
+</div>
+
 <dl class="ui very basic table">
     <Field label={_('metadata/additionalTitles.label')}>
        <AdditionalTitles data={metadata.additionalTitles}></AdditionalTitles>
@@ -52,9 +58,6 @@
  <Field label={ _('metadata/publishers.label') }>
         <Array data={metadata.publishers}></Array>
     </Field>
-    <Field label={ _('metadata/accessRights.label') }>
-        <VocabularyItem vocabulary={metadata.accessRights} search_link={record.links.search_link} searchFacet="metadata_accessRights" vocabulary_type="access-rights"></VocabularyItem>
-       </Field>
     <Field label={ _('metadata/rights.label') }>
         <VocabularyItem vocabulary={metadata.rights} search_link={record.links.search_link} searchFacet="metadata_rights" vocabulary_type="rights"></VocabularyItem>
     </Field>

@@ -156,39 +156,6 @@
                         }
                     }
                 },
-                "accessRights": {
-                    "detail": "vocabulary_item",
-                    "edit": "vocabulary_item",
-                    "input": "vocabulary",
-                    "required": true,
-                    "help": "metadata/accessRights.help",
-                    "label": "metadata/accessRights.label",
-                    "hint": "metadata/accessRights.hint",
-                    "facet": "metadata_accessRights",
-                    "children": {
-                        "id": {
-                            "detail": "keyword",
-                            "input": "keyword",
-                            "help": "metadata/accessRights/id.help",
-                            "label": "metadata/accessRights/id.label",
-                            "hint": "metadata/accessRights/id.hint"
-                        },
-                        "title": {
-                            "detail": false,
-                            "input": false,
-                            "help": "metadata/accessRights/title.help",
-                            "label": "metadata/accessRights/title.label",
-                            "hint": "metadata/accessRights/title.hint"
-                        },
-                        "@v": {
-                            "detail": "keyword",
-                            "input": "keyword",
-                            "help": "metadata/accessRights/@v.help",
-                            "label": "metadata/accessRights/@v.label",
-                            "hint": "metadata/accessRights/@v.hint"
-                        }
-                    }
-                },
                 "accessibility": {
                     "detail": "string",
                     "input": "array",

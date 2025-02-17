@@ -1,12 +1,18 @@
 from oarepo_ui.resources import BabelComponent, PermissionsComponent
-from oarepo_ui.resources.components import FilesComponent, AllowedHtmlTagsComponent
+from oarepo_ui.resources.components import (
+    AllowedCommunitiesComponent,
+    AllowedHtmlTagsComponent,
+    EmptyRecordAccessComponent,
+    FilesComponent,
+    FilesLockedComponent,
+    RecordRestrictionComponent,
+)
+from oarepo_ui.resources.components.custom_fields import CustomFieldsComponent
+from oarepo_ui.resources.config import RecordsUIResourceConfig
+from oarepo_ui.resources.resource import RecordsUIResource
 from oarepo_vocabularies.ui.resources.components import (
     DepositVocabularyOptionsComponent,
 )
-from oarepo_ui.resources.config import RecordsUIResourceConfig
-from oarepo_ui.resources.resource import RecordsUIResource
-from oarepo_ui.resources.components import AllowedCommunitiesComponent
-from oarepo_ui.resources.components.custom_fields import CustomFieldsComponent
 
 from ui.documents.components.allowed_file_extension_ui_component import (
     AllowedFileExtensionUIComponent,
@@ -28,6 +34,9 @@ class DocumentsResourceConfig(RecordsUIResourceConfig):
         FilesComponent,
         AllowedCommunitiesComponent,
         CustomFieldsComponent,
+        RecordRestrictionComponent,
+        EmptyRecordAccessComponent,
+        FilesLockedComponent,
         AllowedFileExtensionUIComponent,
     ]
 

@@ -106,7 +106,6 @@ record:
       title_search: "{{oarepo_runtime.records.systemfields.icu.ICUSearchField}}(source_field='metadata.title')"
       creator_search: "{{oarepo_runtime.records.systemfields.icu.ICUSearchField}}(source_field='metadata.creators.fullName')"
       abstract_search: "{{oarepo_runtime.records.systemfields.icu.ICUSearchField}}(source_field='metadata.abstract.value')"
-      access: "{{common.records.temporary_access.TemporaryRecordAccessField}}()"
 
 
   mapping:
