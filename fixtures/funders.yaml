@@ -1,0 +1,634 @@
+id: AV0
+nonpreferredLabels:
+- en: CAS
+props:
+  acronym: AV ČR
+relatedURI:
+  CrossrefFunderID: http://dx.doi.org/10.13039/501100004240
+  ROR: https://ror.org/053avzc18
+title:
+  cs: Akademie věd České republiky
+  en: Czech Academy of Sciences
+---
+id: BIS
+props:
+  acronym: BIS
+relatedURI:
+  ROR: https://ror.org/01tjgrk20
+title:
+  cs: Bezpečnostní a informační služba
+  en: Security Information Service
+---
+id: CBU
+props:
+  acronym: ČBÚ
+relatedURI:
+  ROR: https://ror.org/04kgngk14
+title:
+  cs: Český báňský úřad
+  en: Czech Mining Office Board
+---
+id: CSU
+nonpreferredLabels:
+- en: CZSO
+props:
+  acronym: ČSÚ
+relatedURI:
+  ROR: https://ror.org/03w948j83
+title:
+  cs: Český statistický úřad
+  en: Czech Statistical Office
+---
+id: CUZ
+props:
+  acronym: ČÚZK
+relatedURI:
+  ROR: https://ror.org/0111dmn28
+title:
+  cs: Český úřad zeměměřičský a katastrální
+  en: Czech Office for Surveying, Mapping and Cadastre
+---
+id: GA0
+nonpreferredLabels:
+- en: CSF
+props:
+  acronym: GA ČR
+relatedURI:
+  CrossrefFunderID: http://dx.doi.org/10.13039/501100001824
+  ROR: https://ror.org/01pv73b02
+title:
+  cs: Grantová agentura České republiky
+  en: Czech Science Foundation
+---
+id: KHK
+title:
+  cs: Královéhradecký kraj
+  en: Hradec Králové Region
+---
+id: KHP
+title:
+  cs: Hlavní město Praha
+  en: Prague
+---
+id: KJC
+title:
+  cs: Jihočeský kraj
+  en: South Bohemian Region
+---
+id: KJM
+title:
+  cs: Jihomoravský kraj
+  en: South Moravian Region
+---
+id: KKV
+title:
+  cs: Karlovarský kraj
+  en: Karlovy Vary Region
+---
+id: KLI
+title:
+  cs: Liberecký kraj
+  en: Liberec Region
+---
+id: KMS
+title:
+  cs: Moravskoslezský kraj
+  en: Moravian-Silesian Region
+---
+id: KOL
+title:
+  cs: Olomoucký kraj
+  en: Olomouc Region
+---
+id: KPB
+title:
+  cs: Pardubický kraj
+  en: Pardubice Region
+---
+id: KPZ
+title:
+  cs: Plzeňský kraj
+  en: Pilsen Region
+---
+id: KSC
+title:
+  cs: Středočeský kraj
+  en: Central Bohemia Region
+---
+id: KUL
+title:
+  cs: Ústecký kraj
+  en: Usti Region
+---
+id: KVY
+title:
+  cs: Kraj Vysočina
+  en: Vysocina Region
+---
+id: KZL
+title:
+  cs: Zlínský kraj
+  en: Zlin Region
+---
+id: MD0
+props:
+  acronym: MD ČR
+relatedURI:
+  CrossrefFunderID: http://dx.doi.org/10.13039/100007654
+  ROR: https://ror.org/00p9p2506
+title:
+  cs: Ministerstvo dopravy
+  en: Ministry of Transport of the Czech Republic
+---
+id: MDS
+props:
+  acronym: MDS
+title:
+  cs: Ministerstvo dopravy a spojů
+tags:
+- deprecated
+---
+id: MF0
+props:
+  acronym: MF ČR
+relatedURI:
+  ROR: https://ror.org/00mjd8b34
+title:
+  cs: Ministerstvo financí
+  en: Ministry of Finance of the Czech Republic
+---
+id: MK0
+props:
+  acronym: MK ČR
+relatedURI:
+  CrossrefFunderID: http://dx.doi.org/10.13039/501100005619
+  ROR: https://ror.org/00fxxw604
+title:
+  cs: Ministerstvo kultury
+  en: Ministry of Culture of the Czech Republic
+---
+id: MMR
+props:
+  acronym: MMR
+relatedURI:
+  ROR: https://ror.org/045smbc57
+title:
+  cs: Ministerstvo pro místní rozvoj
+  en: Ministry of Regional Development of the Czech Republic
+---
+id: MO0
+props:
+  acronym: MO ČR
+relatedURI:
+  CrossrefFunderID: http://dx.doi.org/10.13039/501100014911
+  ROR: https://ror.org/00r7raa16
+title:
+  cs: Ministerstvo obrany
+  en: Ministry of Defence of the Czech Republic
+---
+id: MPO
+props:
+  acronym: MPO
+relatedURI:
+  CrossrefFunderID: http://dx.doi.org/10.13039/501100004578
+  ROR: https://ror.org/03j4eb467
+title:
+  cs: Ministerstvo průmyslu a obchodu
+  en: Ministry of Industry and Trade of the Czech Republic
+---
+id: MPS
+props:
+  acronym: MPSV
+relatedURI:
+  CrossrefFunderID: http://dx.doi.org/10.13039/501100007452
+  ROR: https://ror.org/01bvj3e58
+title:
+  cs: Ministerstvo práce a sociálních věcí
+  en: Ministry of Labour and Social Affairs of the Czech Republic
+---
+id: MS0
+props:
+  acronym: MS ČR
+relatedURI:
+  ROR: https://ror.org/0531qh590
+title:
+  cs: Ministerstvo spravedlnosti
+  en: Ministry of Justice of the Czech Republic
+---
+id: MSM
+props:
+  acronym: MŠMT
+relatedURI:
+  CrossrefFunderID: http://dx.doi.org/10.13039/501100001823
+  ROR: https://ror.org/037n8p820
+title:
+  cs: Ministerstvo školství, mládeže a tělovýchovy
+  en: Ministry of Education, Youth and Sports of the Czech Republic
+---
+id: MV0
+props:
+  acronym: MV ČR
+relatedURI:
+  CrossrefFunderID: http://dx.doi.org/10.13039/100009532
+  ROR: https://ror.org/05w1nn565
+title:
+  cs: Ministerstvo vnitra
+  en: Ministry of Interior of the Czech Republic
+---
+id: MZ0
+props:
+  acronym: MZ ČR
+relatedURI:
+  CrossrefFunderID: http://dx.doi.org/10.13039/501100003243
+  ROR: https://ror.org/00y6khe77
+title:
+  cs: Ministerstvo zdravotnictví
+  en: Ministry of Health of the Czech Republic
+---
+id: MZE
+props:
+  acronym: MZe ČR
+relatedURI:
+  CrossrefFunderID: http://dx.doi.org/10.13039/501100006533
+  ROR: https://ror.org/049wftm75
+title:
+  cs: Ministerstvo zemědělství
+  en: Ministry of Agriculture of the Czech Republic
+---
+id: MZP
+props:
+  acronym: MZP ČR
+relatedURI:
+  CrossrefFunderID: http://dx.doi.org/10.13039/501100013855
+  ROR: https://ror.org/04e74dh47
+title:
+  cs: Ministerstvo životního prostředí
+  en: Ministry of Environment of the Czech Republic
+---
+id: MZV
+props:
+  acronym: MZV ČR
+relatedURI:
+  ROR: https://ror.org/00h3t4h60
+title:
+  cs: Ministerstvo zahraničních věcí
+  en: Ministry of Foreign Affairs of the Czech Republic
+---
+id: NBU
+props:
+  acronym: NBÚ
+relatedURI:
+  ROR: https://ror.org/02yy6jb09
+title:
+  cs: Národní bezpečnostní úřad
+  en: National Security Authority
+---
+id: SUJ
+props:
+  acronym: SÚJB
+relatedURI:
+  ROR: https://ror.org/02dy2h219
+title:
+  cs: Státní úřad pro jadernou bezpečnost
+  en: State Office for Nuclear Safety
+---
+id: TA0
+nonpreferredLabels:
+- en: TA CR
+props:
+  acronym: TA ČR
+relatedURI:
+  CrossrefFunderID: http://dx.doi.org/10.13039/100014809
+  ROR: https://ror.org/04v0fk911
+title:
+  cs: Technologická agentura České republiky
+  en: Technology Agency of the Czech Republic
+---
+id: URV
+title:
+  cs: Úřad vlády
+  en: Office of the Goverment
+---
+id: USC
+title:
+  cs: Územně samosprávné celky (nerozlišeno)
+  en: Regional autonomous units of the CR (unstructured)
+---
+id: MI0
+props:
+  acronym: MI ČR
+title:
+  cs: Ministerstvo informatiky
+  en: Ministry of Informatics of the Czech Republic
+---
+id: MH0
+props:
+  acronym: MH ČR
+title:
+  cs: Ministerstvo hospodářství
+  en: Ministry of Industry of the Czech Republic
+---
+id: EC
+props:
+  acronym: EC
+relatedURI:
+  CrossrefFunderID: http://dx.doi.org/10.13039/501100000780
+  ROR: https://ror.org/00k4n6c32
+title:
+  cs: Evropská komise
+  en: European Commission
+---
+id: GA-UK
+props:
+  acronym: GA UK
+relatedURI:
+  CrossrefFunderID: http://dx.doi.org/10.13039/100007543
+title:
+  cs: Grantová agentura Univerzity Karlovy
+  en: Charles University Grant Agency
+---
+id: NIH
+props:
+  acronym: NIH
+relatedURI:
+  CrossrefFunderID: http://dx.doi.org/10.13039/100000002
+  ROR: https://ror.org/01cwqze88
+title:
+  en: National Institutes of Health
+---
+id: NATO
+props:
+  acronym: NATO
+relatedURI:
+  CrossrefFunderID: http://dx.doi.org/10.13039/100004415
+  ROR: https://ror.org/00bkaqj51
+title:
+  cs: Severoatlantická aliance
+  en: North Atlantic Treaty Organization
+---
+id: IAEA
+props:
+  acronym: IAEA
+relatedURI:
+  CrossrefFunderID: http://dx.doi.org/10.13039/501100004493
+  ROR: https://ror.org/00gtfax65
+title:
+  cs: Mezinárodní agentura pro atomovou energii
+  en: International Atomic Energy Agency
+---
+id: NSF
+props:
+  acronym: NSF
+relatedURI:
+  CrossrefFunderID: http://dx.doi.org/10.13039/100000001
+  ROR: https://ror.org/021nxhr62
+title:
+  cs: Národní vědecká nadace
+  en: National Science Foundation
+---
+id: ESF-science
+props:
+  acronym: ESF
+relatedURI:
+  CrossrefFunderID: http://dx.doi.org/10.13039/501100000782
+  ROR: https://ror.org/04esata81
+title:
+  en: European Science Foundation
+---
+id: HSRF
+props:
+  acronym: HSRF
+title:
+  en: Health System Research Fund
+---
+id: SFZP-CR
+props:
+  acronym: SFŽP ČR
+title:
+  cs: Státní fond životního prostředí ČR
+---
+id: CESNET
+props:
+  acronym: CESNET
+title:
+  cs: Fond rozvoje sdružení CESNET
+---
+id: National-geographic
+relatedURI:
+  CrossrefFunderID: http://dx.doi.org/10.13039/100006363
+  ROR: https://ror.org/04bqh5m06
+title:
+  en: National Geographic Society
+---
+id: BNSF
+props:
+  acronym: BNSF
+relatedURI:
+  CrossrefFunderID: http://dx.doi.org/10.13039/501100003336
+  ROR: https://ror.org/05eg49r29
+title:
+  en: Bulgarian National Science Fund
+---
+id: CEU
+props:
+  acronym: CEU
+relatedURI:
+  CrossrefFunderID: http://dx.doi.org/10.13039/501100006061
+  ROR: https://ror.org/02zx40v98
+title:
+  cs: Středoevropská univerzita
+  en: Central European University
+---
+id: CNRS
+props:
+  acronym: CNRS
+relatedURI:
+  CrossrefFunderID: http://dx.doi.org/10.13039/501100004794
+  ROR: https://ror.org/02feahw73
+title:
+  en: French National Centre for Scientific Research
+  fr: Centre national de la recherche scientifique
+---
+id: CVUT
+props:
+  acronym: ČVUT
+relatedURI:
+  CrossrefFunderID: http://dx.doi.org/10.13039/100007655
+  ROR: https://ror.org/03kqpb082
+title:
+  cs: České vysoké učení technické v Praze
+  en: Czech Technical University in Prague
+---
+id: CzechInvest
+relatedURI:
+  ROR: https://ror.org/04zyrd219
+title:
+  cs: CzechInvest
+---
+id: DFG
+props:
+  acronym: DFG
+relatedURI:
+  CrossrefFunderID: http://dx.doi.org/10.13039/501100001659
+  ROR: https://ror.org/018mejw64
+title:
+  de: Deutsche Forschungsgemeinschaft
+  en: German Research Association
+---
+id: EEA
+relatedURI:
+  CrossrefFunderID: http://dx.doi.org/10.13039/501100000806
+  ROR: https://ror.org/02k4b9v70
+title:
+  cs: Evropská agentura pro životní prostředí
+  en: European Environment Agency
+---
+id: EIGE
+props:
+  acronym: EIGE
+title:
+  en: European Institute for Gender Equality
+---
+id: EPSRC
+props:
+  acronym: EPSRC
+relatedURI:
+  CrossrefFunderID: http://dx.doi.org/10.13039/501100000266
+  ROR: https://ror.org/0439y7842
+title:
+  cs: Rada pro výzkum v oblasti strojírenství a fyzikálních věd
+  en: Engineering and Physical Sciences Research Council
+---
+id: FRA
+props:
+  acronym: FRA
+title:
+  cs: Agentura Evropské unie pro základní práva
+  en: European Union Agency for Fundamental Rights
+---
+id: ESF-social
+props:
+  acronym: ESF
+relatedURI:
+  CrossrefFunderID: http://dx.doi.org/10.13039/501100004895
+title:
+  cs: Evropský sociální fond
+  en: European Social Fund
+---
+id: ESA
+relatedURI:
+  CrossrefFunderID: http://dx.doi.org/10.13039/501100000844
+  ROR: https://ror.org/03wd9za21
+title:
+  cs: Evropská kosmická agentura
+  en: European Space Agency
+---
+id: LCR
+title:
+  cs: Grantová služba LČR (Lesy ČR)
+---
+id: IVF
+relatedURI:
+  CrossrefFunderID: http://dx.doi.org/10.13039/100012825
+  ROR: https://ror.org/04e3ssz85
+title:
+  cs: Mezinárodní visegrádský fond
+  en: International Visegrad Fund
+---
+id: EEA-Norway-grants
+relatedURI:
+  CrossrefFunderID: http://dx.doi.org/10.13039/501100013609
+  ROR: https://ror.org/02dfxg175
+title:
+  cs: Fondy EHP a Norska
+  en: EEA and Norway Grants
+---
+id: NF-Neuron
+relatedURI:
+  CrossrefFunderID: http://dx.doi.org/10.13039/501100013856
+title:
+  cs: Nadační fond Neuron
+  en: Neuron Benevolent Fund for the Support of Science
+---
+id: NASA
+props:
+  acronym: NASA
+relatedURI:
+  CrossrefFunderID: http://dx.doi.org/10.13039/100000104
+  ROR: https://ror.org/027ka1x80
+title:
+  cs: Národní úřad pro letectví a vesmír
+  en: National Aeronautics and Space Administration
+---
+id: NCEEER
+nonpreferredLabels:
+- en: National Council for Soviet and East Euroepan Research
+props:
+  acronym: NCEEER
+relatedURI:
+  CrossrefFunderID: http://dx.doi.org/10.13039/100012658
+title:
+  en: National Council for Eurasian and East European Research
+---
+id: NCN
+props:
+  acronym: NCN
+relatedURI:
+  CrossrefFunderID: http://dx.doi.org/10.13039/501100004281
+  ROR: https://ror.org/03ha2q922
+title:
+  en: National Science Centre (Poland)
+  pl: Narodowe Centrum Nauki
+---
+id: NSC-Taiwan
+relatedURI:
+  CrossrefFunderID: http://dx.doi.org/10.13039/501100001868
+title:
+  en: National Science Council of Taiwan
+---
+id: VEGA
+props:
+  acronym: VEGA
+relatedURI:
+  CrossrefFunderID: http://dx.doi.org/10.13039/501100006109
+title:
+  en: Scientific Grant Agency
+  sk: Vedecká grantová agentúra MŠVVaŠ SR a SAV
+---
+id: SNSF
+props:
+  acronym: SNSF
+relatedURI:
+  CrossrefFunderID: http://dx.doi.org/10.13039/501100001711
+  ROR: https://ror.org/00yjd3n13
+title:
+  de: Schweizerischer Nationalfonds zur Förderung der Wissenschaftlichen Forschung
+  en: Swiss National Science Foundation
+---
+id: FWF
+props:
+  acronym: FWF
+relatedURI:
+  CrossrefFunderID: http://dx.doi.org/10.13039/501100002428
+  ROR: https://ror.org/013tf3c58
+title:
+  de: Fonds zur Förderung der wissenschaftlichen Forschung
+  en: Austrian Science Fund
+---
+id: UPCE
+props:
+  acronym: UPCE
+relatedURI:
+  ROR: https://ror.org/01chzd453
+title:
+  cs: Univerzita Pardubice
+  en: University of Pardubice
+---
+id: APVV
+props:
+  acronym: APVV
+relatedURI:
+  ROR: https://ror.org/037nx0e70
+title:
+  sk: Agentúra na podporu výskumu a vývoja
+  en: Slovak Research and Development Agency
