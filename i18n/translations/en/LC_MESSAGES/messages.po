@@ -4283,3 +4283,247 @@ msgstr ""
 #: /home/dusanst/Projects/new_nr_docs/nr-docs/common/doi/mapping.py:7
 msgid "Missing data for required field."
 msgstr ""
+
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/common/services/files/allowed_document_extensions.py:28
+#: /Users/pragerdom/work/nr-docs/common/services/files/allowed_document_extensions.py:26
+msgid "Failed to upload '{file_key}'. Invalid extension."
+msgstr ""
+
+#: /Users/pragerdom/work/nr-docs/common/services/files/allowed_document_extensions.py:28
+msgid ""
+"Failed to upload '{file_key}'. Invalid extension. Supported formats are: "
+"{allowed_extensions}"
+msgstr ""
+
+#: /Users/pragerdom/work/nr-docs/common/services/files/allowed_document_extensions.py:28
+msgid ""
+"Invalid file extension for '{file_key}'. Supported formats are: "
+"{allowed_extensions}"
+msgstr ""
+
+#: /Users/pragerdom/work/nr-docs/common/services/files/allowed_document_extensions.py:28
+msgid ""
+"Invalid file extension for '{file_key}'. Supported formats: "
+"{allowed_extensions}"
+msgstr ""
+
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:22
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/ui_schema.py:28
+msgid "access.status.open"
+msgstr "open access"
+
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:23
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/ui_schema.py:29
+msgid "access.status.embargoed"
+msgstr "embargoed access"
+
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:24
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/ui_schema.py:30
+msgid "access.status.restricted"
+msgstr "restricted access"
+
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:25
+msgid "access.status.metadata-only"
+msgstr "metadata only access"
+
+msgid "Visibility"
+msgstr ""
+
+msgid "deletion_status.help"
+msgstr ""
+
+msgid "deletion_status.label"
+msgstr ""
+
+msgid "deletion_status.hint"
+msgstr ""
+
+msgid "is_deleted.help"
+msgstr ""
+
+msgid "is_deleted.label"
+msgstr ""
+
+msgid "is_deleted.hint"
+msgstr ""
+
+msgid "is_published.help"
+msgstr ""
+
+msgid "is_published.label"
+msgstr ""
+
+msgid "is_published.hint"
+msgstr ""
+
+msgid "version_id.help"
+msgstr ""
+
+msgid "version_id.label"
+msgstr ""
+
+msgid "version_id.hint"
+msgstr ""
+
+msgid "versions.help"
+msgstr ""
+
+msgid "versions.label"
+msgstr ""
+
+msgid "versions.hint"
+msgstr ""
+
+msgid "versions/index.help"
+msgstr ""
+
+msgid "versions/index.label"
+msgstr ""
+
+msgid "versions/index.hint"
+msgstr ""
+
+msgid "versions/is_latest.help"
+msgstr ""
+
+msgid "versions/is_latest.label"
+msgstr ""
+
+msgid "versions/is_latest.hint"
+msgstr ""
+
+msgid "versions/is_latest_draft.help"
+msgstr ""
+
+msgid "versions/is_latest_draft.label"
+msgstr ""
+
+msgid "versions/is_latest_draft.hint"
+msgstr ""
+
+msgid "versions/latest_id.help"
+msgstr ""
+
+msgid "versions/latest_id.label"
+msgstr ""
+
+msgid "versions/latest_id.hint"
+msgstr ""
+
+msgid "versions/latest_index.help"
+msgstr ""
+
+msgid "versions/latest_index.label"
+msgstr ""
+
+msgid "versions/latest_index.hint"
+msgstr ""
+
+msgid "versions/next_draft_id.help"
+msgstr ""
+
+msgid "versions/next_draft_id.label"
+msgstr ""
+
+msgid "versions/next_draft_id.hint"
+msgstr ""
+
+msgid ""
+"The request ({{requestType}}) could not be made due to validation errors. "
+"Please fix them and try again:"
+msgstr ""
+
+#: /Users/m/w/nrp/nr-docs/common/just_for_translations.py:11
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:42
+msgid "access/status.label"
+msgstr "Access rights"
+
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:31
+msgid "access/embargo/active.label"
+msgstr "Embargo active"
+
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:35
+msgid "access/embargo/until.label"
+msgstr "Embargo expiration"
+
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:38
+msgid "access/files.label"
+msgstr "Access to files"
+
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:40
+msgid "access/record.label"
+msgstr "Access to record"
+
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:552
+msgid "expires_at.label"
+msgstr ""
+
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:554
+msgid "fork_version_id.label"
+msgstr ""
+
+msgid "access.help"
+msgstr ""
+
+msgid "access.label"
+msgstr ""
+
+msgid "access.hint"
+msgstr ""
+
+msgid "access/embargo.help"
+msgstr ""
+
+msgid "access/embargo.label"
+msgstr ""
+
+msgid "access/embargo.hint"
+msgstr ""
+
+msgid "access/embargo/active.help"
+msgstr ""
+
+msgid "access/embargo/active.hint"
+msgstr ""
+
+msgid "access/embargo/reason.help"
+msgstr ""
+
+msgid "access/embargo/reason.label"
+msgstr ""
+
+msgid "access/embargo/reason.hint"
+msgstr ""
+
+msgid "access/embargo/until.help"
+msgstr ""
+
+msgid "access/embargo/until.hint"
+msgstr ""
+
+msgid "access/files.help"
+msgstr ""
+
+msgid "access/files.hint"
+msgstr ""
+
+msgid "access/record.help"
+msgstr ""
+
+msgid "access/record.hint"
+msgstr ""
+
+msgid "access/status.help"
+msgstr ""
+
+msgid "access/status.hint"
+msgstr ""
+
+msgid "pids.help"
+msgstr ""
+
+msgid "pids.label"
+msgstr ""
+
+msgid "pids.hint"
+msgstr ""

@@ -10,6 +10,36 @@ from oarepo_vocabularies.services.facets import (
     HierarchyVocabularyFacet,
     VocabularyFacet,
 )
+from invenio_rdm_records.records.systemfields.access.field.record import (
+    AccessStatusEnum,
+)
+
+
+access_status = TermsFacet(
+    field="access.status.keyword",
+    label=_("metadata/accessRights.label"),
+    value_labels={
+        AccessStatusEnum.OPEN.value: _("access.status.open"),
+        AccessStatusEnum.EMBARGOED.value: _("access.status.embargoed"),
+        AccessStatusEnum.RESTRICTED.value: _("access.status.restricted"),
+        AccessStatusEnum.METADATA_ONLY.value: _("access.status.metadata-only"),
+    },
+)
+
+
+access_embargo_active = TermsFacet(
+    field="access.embargo.active", label=_("access/embargo/active.label")
+)
+
+access_embargo_until = DateTimeFacet(
+    field="access.embargo.until", label=_("access/embargo/until.label")
+)
+
+access_files = TermsFacet(field="access.files", label=_("access/files.label"))
+
+access_record = TermsFacet(field="access.record", label=_("access/record.label"))
+
+access_status = TermsFacet(field="access.status", label=_("access/status.label"))
 
 metadata_abstract_cs = TermsFacet(
     field="metadata.abstract.cs.keyword", label=_("metadata/abstract.label")
@@ -518,3 +548,7 @@ syntheticFields_year = YearAutoHistogramFacet(
 record_status = TermsFacet(field="record_status", label=_("record_status"))
 
 has_draft = TermsFacet(field="has_draft", label=_("has_draft"))
+
+expires_at = DateTimeFacet(field="expires_at", label=_("expires_at.label"))
+
+fork_version_id = TermsFacet(field="fork_version_id", label=_("fork_version_id.label"))

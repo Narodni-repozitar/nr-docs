@@ -1,14 +1,14 @@
 # Translations template for PROJECT.
-# Copyright (C) 2024 ORGANIZATION
+# Copyright (C) 2025 ORGANIZATION
 # This file is distributed under the same license as the PROJECT project.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
 #
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2024-12-18 13:21+0100\n"
+"POT-Creation-Date: 2025-02-16 18:04+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,617 +17,657 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.16.0\n"
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/common/just_for_translations.py:5
+#: /Users/m/w/nrp/nr-docs/common/just_for_translations.py:5
 msgid "Submitted"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/common/just_for_translations.py:6
+#: /Users/m/w/nrp/nr-docs/common/just_for_translations.py:6
 msgid "Expired"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/common/just_for_translations.py:7
+#: /Users/m/w/nrp/nr-docs/common/just_for_translations.py:7
 msgid "Accepted"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/common/just_for_translations.py:8
+#: /Users/m/w/nrp/nr-docs/common/just_for_translations.py:8
 msgid "Declined"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/common/just_for_translations.py:9
+#: /Users/m/w/nrp/nr-docs/common/just_for_translations.py:9
 msgid "Cancelled"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/common/just_for_translations.py:10
+#: /Users/m/w/nrp/nr-docs/common/just_for_translations.py:10
 msgid "Beta version of document respository"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/common/doi/mapping.py:7
+#: /Users/m/w/nrp/nr-docs/common/just_for_translations.py:11
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:42
+msgid "access/status.label"
+msgstr ""
+
+#: /Users/m/w/nrp/nr-docs/common/doi/mapping.py:7
 msgid "Missing data for required field."
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/common/services/components/temporary_access.py:51
+#: /Users/m/w/nrp/nr-docs/common/services/components/temporary_access.py:51
 msgid "Files are not allowed for metadata only access."
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/common/workflows/default.py:269
+#: /Users/m/w/nrp/nr-docs/common/services/files/allowed_document_extensions.py:29
+msgid ""
+"Invalid file extension for '{file_key}'. Supported formats: "
+"{allowed_extensions}"
+msgstr ""
+
+#: /Users/m/w/nrp/nr-docs/common/workflows/default.py:382
+#: /Users/m/w/nrp/nr-docs/common/workflows/generic_community.py:268
+#: /Users/m/w/nrp/nr-docs/common/workflows/restricted.py:274
 msgid "state:draft"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/common/workflows/default.py:270
+#: /Users/m/w/nrp/nr-docs/common/workflows/default.py:383
+#: /Users/m/w/nrp/nr-docs/common/workflows/generic_community.py:269
+#: /Users/m/w/nrp/nr-docs/common/workflows/restricted.py:275
 msgid "state:published"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/common/workflows/default.py:271
+#: /Users/m/w/nrp/nr-docs/common/workflows/default.py:384
+#: /Users/m/w/nrp/nr-docs/common/workflows/generic_community.py:270
+#: /Users/m/w/nrp/nr-docs/common/workflows/restricted.py:276
 msgid "state:submitted"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/common/workflows/default.py:272
+#: /Users/m/w/nrp/nr-docs/common/workflows/default.py:385
+#: /Users/m/w/nrp/nr-docs/common/workflows/generic_community.py:271
+#: /Users/m/w/nrp/nr-docs/common/workflows/restricted.py:277
 msgid "state:retracting"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/common/workflows/default.py:273
+#: /Users/m/w/nrp/nr-docs/common/workflows/default.py:386
+#: /Users/m/w/nrp/nr-docs/common/workflows/generic_community.py:272
+#: /Users/m/w/nrp/nr-docs/common/workflows/restricted.py:278
 msgid "state:deleted"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:15
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:19
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:39
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:20
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:61
+msgid "metadata/accessRights.label"
+msgstr ""
+
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:22
+#: /Users/m/w/nrp/nr-docs/documents/services/records/ui_schema.py:28
+msgid "access.status.open"
+msgstr ""
+
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:23
+#: /Users/m/w/nrp/nr-docs/documents/services/records/ui_schema.py:29
+msgid "access.status.embargoed"
+msgstr ""
+
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:24
+#: /Users/m/w/nrp/nr-docs/documents/services/records/ui_schema.py:30
+msgid "access.status.restricted"
+msgstr ""
+
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:25
+#: /Users/m/w/nrp/nr-docs/documents/services/records/ui_schema.py:31
+msgid "access.status.metadata-only"
+msgstr ""
+
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:31
+msgid "access/embargo/active.label"
+msgstr ""
+
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:35
+msgid "access/embargo/until.label"
+msgstr ""
+
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:38
+msgid "access/files.label"
+msgstr ""
+
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:40
+msgid "access/record.label"
+msgstr ""
+
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:45
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:49
 #: i18n/translations/jinjax_messages.jinja:8
 msgid "metadata/abstract.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:25
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:55
 msgid "metadata/abstract/lang.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:31
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:55
-#: i18n/translations/jinjax_messages.jinja:13
-msgid "metadata/accessRights.label"
-msgstr ""
-
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:36
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:40
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:51
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:66
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:70
 #: i18n/translations/jinjax_messages.jinja:11
 msgid "metadata/accessibility.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:47
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:77
 msgid "metadata/accessibility/lang.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:53
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:58
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:83
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:88
 msgid "metadata/additionalTitles/title.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:65
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:95
 msgid "metadata/additionalTitles/title/lang.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:71
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:101
 msgid "metadata/additionalTitles/titleType.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:76
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:106
 msgid "metadata/contributors/affiliations.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:82
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:112
 msgid "metadata/contributors/authorityIdentifiers/identifier.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:87
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:117
 msgid "metadata/contributors/authorityIdentifiers/scheme.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:92
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:122
 msgid "metadata/contributors/contributorType.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:98
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:128
 msgid "metadata/contributors/familyName.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:103
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:133
 msgid "metadata/contributors/fullName.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:108
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:138
 msgid "metadata/contributors/givenName.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:113
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:143
 msgid "metadata/contributors/nameType.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:118
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:148
 msgid "metadata/creators/affiliations.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:124
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:154
 msgid "metadata/creators/authorityIdentifiers/identifier.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:129
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:159
 msgid "metadata/creators/authorityIdentifiers/scheme.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:133
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:163
 msgid "metadata/creators/familyName.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:137
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:167
 msgid "metadata/creators/fullName.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:141
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:171
 msgid "metadata/creators/givenName.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:145
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:175
 msgid "metadata/creators/nameType.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:149
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:179
 msgid "metadata/dateAvailable.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:153
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:22
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:183
 #: i18n/translations/jinjax_messages.jinja:2
 msgid "metadata/dateIssued.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:157
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:23
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:187
 #: i18n/translations/jinjax_messages.jinja:3
 msgid "metadata/dateModified.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:162
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:192
 msgid "metadata/events/eventLocation/country.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:168
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:198
 msgid "metadata/events/eventLocation/place.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:173
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:203
 msgid "metadata/externalLocation/externalLocationURL.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:178
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:208
 msgid "metadata/fundingReferences/funder.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:184
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:214
 msgid "metadata/fundingReferences/projectID.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:189
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:219
 msgid "metadata/geoLocations/geoLocationPlace.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:194
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:224
 msgid "metadata/geoLocations/geoLocationPoint/pointLatitude.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:199
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:229
 msgid "metadata/geoLocations/geoLocationPoint/pointLongitude.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:204
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:25
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:234
 #: i18n/translations/jinjax_messages.jinja:4
 msgid "metadata/languages.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:209
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:213
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:79
-#: i18n/translations/jinjax_messages.jinja:20
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:239
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:243
+#: i18n/translations/jinjax_messages.jinja:19
 msgid "metadata/methods.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:219
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:249
 msgid "metadata/methods/lang.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:225
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:255
 msgid "metadata/objectIdentifiers/identifier.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:230
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:260
 msgid "metadata/objectIdentifiers/scheme.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:234
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:264
 msgid "metadata/originalRecord.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:239
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:269
 msgid "metadata/relatedItems/itemContributors/affiliations.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:245
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:275
 msgid ""
 "metadata/relatedItems/itemContributors/authorityIdentifiers/identifier.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:252
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:282
 msgid ""
 "metadata/relatedItems/itemContributors/authorityIdentifiers/scheme.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:257
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:287
 msgid "metadata/relatedItems/itemContributors/contributorType.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:263
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:293
 msgid "metadata/relatedItems/itemContributors/familyName.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:268
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:298
 msgid "metadata/relatedItems/itemContributors/fullName.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:273
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:303
 msgid "metadata/relatedItems/itemContributors/givenName.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:278
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:308
 msgid "metadata/relatedItems/itemContributors/nameType.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:283
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:313
 msgid "metadata/relatedItems/itemCreators/affiliations.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:289
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:319
 msgid ""
 "metadata/relatedItems/itemCreators/authorityIdentifiers/identifier.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:294
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:324
 msgid "metadata/relatedItems/itemCreators/authorityIdentifiers/scheme.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:299
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:329
 msgid "metadata/relatedItems/itemCreators/familyName.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:304
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:334
 msgid "metadata/relatedItems/itemCreators/fullName.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:309
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:339
 msgid "metadata/relatedItems/itemCreators/givenName.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:314
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:344
 msgid "metadata/relatedItems/itemCreators/nameType.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:319
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:349
 msgid "metadata/relatedItems/itemEndPage.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:324
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:354
 msgid "metadata/relatedItems/itemIssue.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:329
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:359
 msgid "metadata/relatedItems/itemPIDs/identifier.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:334
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:364
 msgid "metadata/relatedItems/itemPIDs/scheme.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:339
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:369
 msgid "metadata/relatedItems/itemPublisher.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:344
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:374
 msgid "metadata/relatedItems/itemRelationType.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:350
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:380
 msgid "metadata/relatedItems/itemResourceType.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:356
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:386
 msgid "metadata/relatedItems/itemStartPage.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:361
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:391
 msgid "metadata/relatedItems/itemURL.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:366
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:396
 msgid "metadata/relatedItems/itemVolume.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:371
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:401
 msgid "metadata/relatedItems/itemYear.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:376
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:28
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:406
 #: i18n/translations/jinjax_messages.jinja:5
 msgid "metadata/resourceType.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:381
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:58
-#: i18n/translations/jinjax_messages.jinja:14
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:411
+#: i18n/translations/jinjax_messages.jinja:13
 msgid "metadata/rights.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:385
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:415
 msgid "metadata/series/seriesTitle.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:389
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:419
 msgid "metadata/series/seriesVolume.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:394
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:88
-#: i18n/translations/jinjax_messages.jinja:23
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:424
+#: i18n/translations/jinjax_messages.jinja:22
 msgid "metadata/subjectCategories.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:400
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:430
 msgid "metadata/subjects/classificationCode.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:405
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:410
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:435
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:440
 msgid "metadata/subjects/subject.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:417
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:447
 msgid "metadata/subjects/subject/lang.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:423
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:453
 msgid "metadata/subjects/subjectScheme.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:427
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:457
 msgid "metadata/subjects/valueURI.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:432
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:462
 msgid "metadata/systemIdentifiers/identifier.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:437
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:467
 msgid "metadata/systemIdentifiers/scheme.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:441
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:445
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:91
-#: i18n/translations/jinjax_messages.jinja:24
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:471
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:475
+#: i18n/translations/jinjax_messages.jinja:23
 msgid "metadata/technicalInfo.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:452
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:482
 msgid "metadata/technicalInfo/lang.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:457
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:32
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:487
 #: i18n/translations/jinjax_messages.jinja:6
 msgid "metadata/thesis/dateDefended.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:461
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:491
 msgid "metadata/thesis/defended.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:466
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:43
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:496
 #: i18n/translations/jinjax_messages.jinja:9
 msgid "metadata/thesis/degreeGrantors.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:471
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:46
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:501
 #: i18n/translations/jinjax_messages.jinja:10
 msgid "metadata/thesis/studyFields.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:475
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:95
-#: i18n/translations/jinjax_messages.jinja:25
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:505
+#: i18n/translations/jinjax_messages.jinja:24
 msgid "metadata/version.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:479
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:509
 msgid "oai/harvest/datestamp.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:483
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:513
 msgid "oai/harvest/identifier.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:486
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:516
 msgid "state.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:489
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:519
 msgid "state_timestamp.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:493
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:523
 msgid "syntheticFields/date.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:497
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:527
 msgid "syntheticFields/defenseYear.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:501
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:531
 msgid "syntheticFields/keywords.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:506
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:536
 msgid "syntheticFields/organizations.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:510
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:540
 msgid "syntheticFields/people.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:514
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:544
 msgid "syntheticFields/year.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:518
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:548
 msgid "record_status"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:520
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:550
 msgid "has_draft"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/ui/branding/__init__.py:25
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:552
+msgid "expires_at.label"
+msgstr ""
+
+#: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:554
+msgid "fork_version_id.label"
+msgstr ""
+
+#: /Users/m/w/nrp/nr-docs/ui/branding/__init__.py:25
 msgid "New upload"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/ui/branding/templates/footer.html:12
+#: /Users/m/w/nrp/nr-docs/ui/branding/templates/footer.html:12
 msgid "Contact"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/ui/branding/templates/header.html:20
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/ui/branding/templates/header.html:21
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/ui/branding/templates/searchbar.html:30
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/ui/branding/templates/searchbar.html:31
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/ui/titlepage/templates/TitlePage.jinja:49
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/ui/titlepage/templates/TitlePage.jinja:51
+#: /Users/m/w/nrp/nr-docs/ui/branding/templates/header.html:20
+#: /Users/m/w/nrp/nr-docs/ui/branding/templates/header.html:21
+#: /Users/m/w/nrp/nr-docs/ui/branding/templates/searchbar.html:30
+#: /Users/m/w/nrp/nr-docs/ui/branding/templates/searchbar.html:31
+#: /Users/m/w/nrp/nr-docs/ui/titlepage/templates/TitlePage.jinja:49
+#: /Users/m/w/nrp/nr-docs/ui/titlepage/templates/TitlePage.jinja:51
 msgid "Search"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/ui/branding/templates/header_login.html:15
+#: /Users/m/w/nrp/nr-docs/ui/branding/templates/header_login.html:15
 msgid "Log in"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/ui/branding/templates/header_login.html:19
+#: /Users/m/w/nrp/nr-docs/ui/branding/templates/header_login.html:19
 msgid "Sign up"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/ui/branding/templates/header_login.html:36
+#: /Users/m/w/nrp/nr-docs/ui/branding/templates/header_login.html:36
 msgid "Quick create"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/ui/branding/templates/header_login.html:53
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/ui/documents/templates/semantic-ui/documents/Sidebar.jinja:3
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/ui/documents/templates/semantic-ui/documents/Sidebar.jinja:4
+#: /Users/m/w/nrp/nr-docs/ui/branding/templates/header_login.html:53
+#: /Users/m/w/nrp/nr-docs/ui/documents/templates/semantic-ui/documents/Sidebar.jinja:4
+#: /Users/m/w/nrp/nr-docs/ui/documents/templates/semantic-ui/documents/Sidebar.jinja:5
 msgid "Actions"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/ui/branding/templates/header_login.html:72
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/ui/branding/templates/header_login.html:113
+#: /Users/m/w/nrp/nr-docs/ui/branding/templates/header_login.html:72
+#: /Users/m/w/nrp/nr-docs/ui/branding/templates/header_login.html:113
 msgid "My account"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/ui/branding/templates/header_login.html:107
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/ui/branding/templates/header_login.html:136
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/ui/branding/templates/header_login.html:143
+#: /Users/m/w/nrp/nr-docs/ui/branding/templates/header_login.html:107
+#: /Users/m/w/nrp/nr-docs/ui/branding/templates/header_login.html:136
+#: /Users/m/w/nrp/nr-docs/ui/branding/templates/header_login.html:143
 msgid "Log out"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/ui/branding/templates/searchbar.html:5
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/ui/branding/templates/searchbar.html:11
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/ui/branding/templates/searchbar.html:21
+#: /Users/m/w/nrp/nr-docs/ui/branding/templates/searchbar.html:5
+#: /Users/m/w/nrp/nr-docs/ui/branding/templates/searchbar.html:11
+#: /Users/m/w/nrp/nr-docs/ui/branding/templates/searchbar.html:21
 msgid "in"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/ui/branding/templates/searchbar.html:5
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/ui/branding/templates/searchbar.html:6
+#: /Users/m/w/nrp/nr-docs/ui/branding/templates/searchbar.html:5
+#: /Users/m/w/nrp/nr-docs/ui/branding/templates/searchbar.html:6
 msgid "In this community"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/ui/branding/templates/searchbar.html:11
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/ui/branding/templates/searchbar.html:12
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/ui/branding/templates/searchbar.html:20
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/ui/branding/templates/searchbar.html:21
+#: /Users/m/w/nrp/nr-docs/ui/branding/templates/searchbar.html:11
+#: /Users/m/w/nrp/nr-docs/ui/branding/templates/searchbar.html:12
+#: /Users/m/w/nrp/nr-docs/ui/branding/templates/searchbar.html:20
+#: /Users/m/w/nrp/nr-docs/ui/branding/templates/searchbar.html:21
 msgid "All document records"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/ui/documents/templates/semantic-ui/documents/Detail.jinja:2
+#: /Users/m/w/nrp/nr-docs/ui/documents/templates/semantic-ui/documents/Detail.jinja:2
 msgid "NR Document repository"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:13
+#: /Users/m/w/nrp/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:15
 msgid "Title not provided"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:16
+#: /Users/m/w/nrp/nr-docs/ui/documents/templates/semantic-ui/documents/Search.jinja:3
+msgid "Search results"
+msgstr ""
+
+#: /Users/m/w/nrp/nr-docs/ui/documents/templates/semantic-ui/documents/Search.jinja:3
+msgid "documents"
+msgstr ""
+
+#: /Users/m/w/nrp/nr-docs/ui/documents/templates/semantic-ui/documents/Sidebar.jinja:9
+msgid "Edit"
+msgstr ""
+
 #: i18n/translations/jinjax_messages.jinja:1
 msgid "metadata/additionalTitles.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:35
 #: i18n/translations/jinjax_messages.jinja:7
 msgid "metadata/subjects.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:52
 #: i18n/translations/jinjax_messages.jinja:12
 msgid "metadata/publishers.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:62
-#: i18n/translations/jinjax_messages.jinja:15
+#: i18n/translations/jinjax_messages.jinja:14
 msgid "metadata/events.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:65
-#: i18n/translations/jinjax_messages.jinja:16
+#: i18n/translations/jinjax_messages.jinja:15
 msgid "metadata/externalLocation.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:69
-#: i18n/translations/jinjax_messages.jinja:17
+#: i18n/translations/jinjax_messages.jinja:16
 msgid "metadata/fundingReferences.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:74
-#: i18n/translations/jinjax_messages.jinja:18
+#: i18n/translations/jinjax_messages.jinja:17
 msgid "metadata/relatedItems.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:76
-#: i18n/translations/jinjax_messages.jinja:19
+#: i18n/translations/jinjax_messages.jinja:18
 msgid "metadata/geoLocations.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:82
-#: i18n/translations/jinjax_messages.jinja:21
+#: i18n/translations/jinjax_messages.jinja:20
 msgid "metadata/notes.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:85
-#: i18n/translations/jinjax_messages.jinja:22
+#: i18n/translations/jinjax_messages.jinja:21
 msgid "metadata/series.label"
-msgstr ""
-
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/ui/documents/templates/semantic-ui/documents/Search.jinja:3
-msgid "Search results"
-msgstr ""
-
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/ui/documents/templates/semantic-ui/documents/Search.jinja:3
-msgid "documents"
-msgstr ""
-
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/ui/documents/templates/semantic-ui/documents/Sidebar.jinja:8
-msgid "Edit"
 msgstr ""
 
 msgid "Publication date"
@@ -655,6 +695,11 @@ msgid "No publication date found."
 msgstr ""
 
 msgid "No title"
+msgstr ""
+
+msgid ""
+"The request ({{requestType}}) could not be made due to validation errors. "
+"Please fix them and try again:"
 msgstr ""
 
 msgid ""

@@ -5,8 +5,16 @@ from oarepo_vocabularies.ui.resources.components import (
 )
 from oarepo_ui.resources.config import RecordsUIResourceConfig
 from oarepo_ui.resources.resource import RecordsUIResource
-from oarepo_ui.resources.components import AllowedCommunitiesComponent
 from oarepo_ui.resources.components.custom_fields import CustomFieldsComponent
+from oarepo_ui.resources.components import (
+    RecordRestrictionComponent,
+    EmptyRecordAccessComponent,
+    AllowedCommunitiesComponent,
+)
+
+from ui.documents.components.allowed_file_extension_ui_component import (
+    AllowedFileExtensionUIComponent,
+)
 
 
 class DocumentsResourceConfig(RecordsUIResourceConfig):
@@ -23,7 +31,10 @@ class DocumentsResourceConfig(RecordsUIResourceConfig):
         PermissionsComponent,
         FilesComponent,
         AllowedCommunitiesComponent,
-        CustomFieldsComponent
+        CustomFieldsComponent,
+        RecordRestrictionComponent,
+        EmptyRecordAccessComponent,
+        AllowedFileExtensionUIComponent,
     ]
 
     search_component = "documents/search/ResultsListItem"

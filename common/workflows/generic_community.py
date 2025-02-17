@@ -1,5 +1,12 @@
+from datetime import timedelta
+
+from invenio_i18n import lazy_gettext as _
 from invenio_rdm_records.services.generators import IfRestricted
-from invenio_records_permissions.generators import AnyUser, Disable
+from invenio_records_permissions.generators import (
+    AnyUser,
+    Disable,
+    SystemProcess,
+)
 from oarepo_communities.services.permissions.generators import (
     CommunityRole,
     PrimaryCommunityRole,
@@ -7,8 +14,9 @@ from oarepo_communities.services.permissions.generators import (
 from oarepo_communities.services.permissions.policy import (
     CommunityDefaultWorkflowPermissions,
 )
+from oarepo_oaipmh_harvester.services.generators import IfNotHarvested
 from oarepo_requests.services.permissions.generators import IfRequestedBy
-from oarepo_runtime.services.permissions.generators import RecordOwners
+from oarepo_runtime.services.permissions.generators import IfDraftType, RecordOwners
 from oarepo_workflows import (
     AutoApprove,
     IfInState,
@@ -17,8 +25,6 @@ from oarepo_workflows import (
     WorkflowRequestPolicy,
     WorkflowTransitions,
 )
-from datetime import timedelta
-from invenio_i18n import lazy_gettext as _
 
 
 class GenericCommunityWorkflowPermissions(CommunityDefaultWorkflowPermissions):
@@ -97,46 +103,77 @@ class GenericCommunityWorkflowPermissions(CommunityDefaultWorkflowPermissions):
     can_manage_files = [Disable()]
 
 
+# if the record is in draft state, the owner or curator can request publishing
+publish_requesters = IfNotHarvested(
+    then_=IfInState("draft", then_=[RecordOwners(), PrimaryCommunityRole("curator")]),
+    else_=SystemProcess(),
+)
+
+# if the requester is the curator of the community, auto approve the request
+publish_recipients = IfRequestedBy(
+    requesters=[
+        PrimaryCommunityRole("curator"),
+        PrimaryCommunityRole("owner"),
+    ],
+    then_=[AutoApprove()],
+    else_=[PrimaryCommunityRole("curator"), PrimaryCommunityRole("owner")],
+)
+
+publish_transitions = WorkflowTransitions(
+    submitted="submitted",
+    accepted="published",
+    declined="draft",
+    cancelled="draft",
+)
+
+# if the request is not resolved in 21 days, escalate it to the administrator
+publish_escalations = [
+    WorkflowRequestEscalation(
+        after=timedelta(days=21),
+        recipients=[
+            PrimaryCommunityRole("owner"),
+        ],
+    )
+]
+
+
 class GenericCommunityWorkflowRequests(WorkflowRequestPolicy):
     publish_draft = WorkflowRequest(
         requesters=[
-            IfInState("draft", then_=[RecordOwners(), PrimaryCommunityRole("curator")])
-        ],
-        recipients=[
-            IfRequestedBy(
-                requesters=[
-                    PrimaryCommunityRole("curator"),
-                    PrimaryCommunityRole("owner"),
-                ],
-                then_=[AutoApprove()],
-                else_=[PrimaryCommunityRole("curator"), PrimaryCommunityRole("owner")],
+            IfDraftType(
+                "metadata",
+                then_=publish_requesters,
             )
         ],
-        transitions=WorkflowTransitions(
-            submitted="submitted",
-            accepted="published",
-            declined="draft",
-            cancelled="draft",
-        ),
-        escalations=[
-            WorkflowRequestEscalation(
-                after=timedelta(days=21),
-                recipients=[
-                    PrimaryCommunityRole("owner"),
-                ],
+        recipients=[publish_recipients],
+        transitions=publish_transitions,
+        escalations=publish_escalations,
+    )
+
+    publish_new_version = WorkflowRequest(
+        requesters=[
+            IfDraftType(
+                ["new_version", "initial"],
+                then_=publish_requesters,
             )
         ],
+        recipients=[publish_recipients],
+        transitions=publish_transitions,
+        escalations=publish_escalations,
     )
 
     edit_published_record = WorkflowRequest(
         requesters=[
-            IfInState(
-                "published",
-                then_=[
-                    RecordOwners(),
-                    PrimaryCommunityRole("curator"),
-                    PrimaryCommunityRole("owner"),
-                ],
+            IfNotHarvested(
+                then_=IfInState(
+                    "published",
+                    then_=[
+                        RecordOwners(),
+                        PrimaryCommunityRole("curator"),
+                        PrimaryCommunityRole("owner"),
+                    ],
+                ),
+                else_=[SystemProcess()],
             )
         ],
         recipients=[AutoApprove()],
@@ -158,13 +195,16 @@ class GenericCommunityWorkflowRequests(WorkflowRequestPolicy):
 
     delete_published_record = WorkflowRequest(
         requesters=[
-            IfInState(
-                "published",
-                then_=[
-                    RecordOwners(),
-                    PrimaryCommunityRole("curator"),
-                    PrimaryCommunityRole("owner"),
-                ],
+            IfNotHarvested(
+                then_=IfInState(
+                    "published",
+                    then_=[
+                        RecordOwners(),
+                        PrimaryCommunityRole("curator"),
+                        PrimaryCommunityRole("owner"),
+                    ],
+                ),
+                else_=[SystemProcess()],
             )
         ],
         recipients=[
@@ -195,9 +235,14 @@ class GenericCommunityWorkflowRequests(WorkflowRequestPolicy):
 
     assign_doi = WorkflowRequest(
         requesters=[
-            RecordOwners(),
-            PrimaryCommunityRole("curator"),
-            PrimaryCommunityRole("owner"),
+            IfNotHarvested(
+                then_=[
+                    RecordOwners(),
+                    PrimaryCommunityRole("curator"),
+                    PrimaryCommunityRole("owner"),
+                ],
+                else_=[SystemProcess()],
+            )
         ],
         recipients=[
             IfRequestedBy(

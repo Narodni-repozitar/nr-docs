@@ -1,4 +1,4 @@
-{#def metadata, record, extra_context #}
+{#def metadata, record, extra_context, is_preview #}
 {%set recordRequests = record.expanded.requests and record.expanded.requests|selectattr('status', 'in', ['submitted', 'created'])|list%}
 {% if record.expanded.request_types or recordRequests or record.links.edit_html %}
 <section class="ui segment" aria-label='{{ _("Actions") }}'>
@@ -19,4 +19,13 @@
   <RecordCommunities communities={record.expanded.communities} />
 {% endif %}
 <IdentifiersAndLinks originalRecordUrl={metadata.originalRecord} objectIdentifiers={metadata.objectIdentifiers}/>
+
+{% if "oai" not in record 
+      or "harvest" not in record.oai 
+      or "identifier" not in record.oai.harvest 
+%}
+{# do not show the versions for harvested records #}
+<RecordVersions record={record} is_preview={is_preview} />
+{% endif %}
+
 <RecordExport record={record} metadata={metadata} extra_context={extra_context}/>
