@@ -1,9 +1,7 @@
 import marshmallow as ma
-from invenio_rdm_records.services.schemas.access import AccessSchema
 from marshmallow import fields as ma_fields
 from marshmallow.utils import get_value
 from marshmallow_utils.fields import SanitizedUnicode
-from marshmallow_utils.fields.nestedattr import NestedAttribute
 from nr_metadata.common.services.records.schema_datatypes import (
     NRLanguageVocabularySchema,
 )
@@ -44,12 +42,10 @@ class DocumentsSchema(NRDocumentRecordSchema):
     # please keep the overriden code here
     metadata = ma_fields.Nested(lambda: LocalNRDocumentMetadataSchema())
 
-    access = NestedAttribute(lambda: AccessSchema())
-
     oai = ma_fields.Nested(lambda: OaiSchema())
 
     state = ma_fields.String(dump_only=True)
-    access = NestedAttribute(AccessSchema)
+
     state_timestamp = ma_fields.String(dump_only=True, validate=[validate_datetime])
 
     syntheticFields = ma_fields.Nested(lambda: NRDocumentSyntheticFieldsSchema())

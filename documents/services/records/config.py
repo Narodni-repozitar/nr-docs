@@ -15,7 +15,6 @@ from oarepo_oaipmh_harvester.components import OaiSectionComponent
 from oarepo_runtime.services.components import (
     CustomFieldsComponent,
     DateIssuedComponent,
-    OwnersComponent,
     process_service_configs,
 )
 from oarepo_runtime.services.config import (
@@ -35,10 +34,9 @@ from documents.services.records.permissions import DocumentsPermissionPolicy
 from documents.services.records.results import DocumentsRecordItem, DocumentsRecordList
 from documents.services.records.schema import DocumentsSchema
 from documents.services.records.search import (
-    DocumentsSearchOptions,
     DocumentsDraftSearchOptions,
+    DocumentsSearchOptions,
 )
-from invenio_rdm_records.services.components.access import AccessComponent
 
 
 class DocumentsServiceConfig(PermissionsPresetsConfigMixin, RDMRecordServiceConfig):
@@ -68,18 +66,17 @@ class DocumentsServiceConfig(PermissionsPresetsConfigMixin, RDMRecordServiceConf
 
     @property
     def components(self):
-        return process_service_configs(self) + [
+        return process_service_configs(
+            self,
             AuthorityComponent,
             DateIssuedComponent,
             DoiComponent,
             OaiSectionComponent,
             CommunityDefaultWorkflowComponent,
             CommunityInclusionComponent,
-            OwnersComponent,
             CustomFieldsComponent,
             WorkflowComponent,
-            AccessComponent,
-        ]
+        )
 
     model = "documents"
 

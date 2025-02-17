@@ -62,6 +62,7 @@ class DocumentsIdProvider(DraftRecordIdProviderV2):
 
 
 class DocumentsRecord(RDMRecord):
+
     model_cls = DocumentsMetadata
 
     schema = ConstantField("$schema", "local://documents-1.0.0.json")
@@ -147,11 +148,6 @@ class DocumentsRecord(RDMRecord):
     )
 
     relations = RelationsField(
-        accessRights=PIDRelation(
-            "metadata.accessRights",
-            keys=["id", "title"],
-            pid_field=Vocabulary.pid.with_type_ctx("access-rights"),
-        ),
         affiliations=PIDRelation(
             "metadata.contributors.affiliations",
             keys=["id", "title", {"key": "props.ror", "target": "ror"}, "hierarchy"],
@@ -271,6 +267,7 @@ class RDMRecordMediaFiles(DocumentsRecord):
 
 
 class DocumentsDraft(RDMDraft):
+
     model_cls = DocumentsDraftMetadata
 
     schema = ConstantField("$schema", "local://documents-1.0.0.json")
@@ -359,11 +356,6 @@ class DocumentsDraft(RDMDraft):
     )
 
     relations = RelationsField(
-        accessRights=PIDRelation(
-            "metadata.accessRights",
-            keys=["id", "title"],
-            pid_field=Vocabulary.pid.with_type_ctx("access-rights"),
-        ),
         affiliations=PIDRelation(
             "metadata.contributors.affiliations",
             keys=["id", "title", {"key": "props.ror", "target": "ror"}, "hierarchy"],

@@ -1,5 +1,8 @@
 """Facet definitions."""
 
+from invenio_rdm_records.records.systemfields.access.field.record import (
+    AccessStatusEnum,
+)
 from invenio_records_resources.services.records.facets import TermsFacet
 from nr_metadata.services.records.facets import KeywordsFacet
 from oarepo_runtime.i18n import lazy_gettext as _
@@ -10,13 +13,13 @@ from oarepo_vocabularies.services.facets import (
     HierarchyVocabularyFacet,
     VocabularyFacet,
 )
-from invenio_rdm_records.records.systemfields.access.field.record import (
-    AccessStatusEnum,
-)
 
-
+#
+# As soon as translation context is implemented in invenio rdm, we will remove
+# this facet and use the one from invenio_rdm_records
+#
 access_status = TermsFacet(
-    field="access.status.keyword",
+    field="access.status",
     label=_("metadata/accessRights.label"),
     value_labels={
         AccessStatusEnum.OPEN.value: _("access.status.open"),
@@ -39,7 +42,8 @@ access_files = TermsFacet(field="access.files", label=_("access/files.label"))
 
 access_record = TermsFacet(field="access.record", label=_("access/record.label"))
 
-access_status = TermsFacet(field="access.status", label=_("access/status.label"))
+# Replaced with access_status above
+# access_status = TermsFacet(field="access.status", label=_("access/status.label"))
 
 metadata_abstract_cs = TermsFacet(
     field="metadata.abstract.cs.keyword", label=_("metadata/abstract.label")
@@ -54,12 +58,6 @@ metadata_abstract_lang = NestedLabeledFacet(
     nested_facet=TermsFacet(
         field="metadata.abstract.lang", label=_("metadata/abstract/lang.label")
     ),
-)
-
-metadata_accessRights = VocabularyFacet(
-    field="metadata.accessRights",
-    label=_("metadata/accessRights.label"),
-    vocabulary="access-rights",
 )
 
 metadata_accessibility_cs = TermsFacet(
