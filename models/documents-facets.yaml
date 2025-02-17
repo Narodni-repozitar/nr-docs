@@ -3,7 +3,7 @@ facets:
     default:
       syntheticFields.people: 1
       syntheticFields.year: 2
-      metadata.accessRights: 3
+      access_status: 3,
       metadata.rights: 4
       metadata.resourceType: 5
       metadata.languages: 7
@@ -13,7 +13,7 @@ facets:
     curator:
       syntheticFields.people: 1
       syntheticFields.year: 2
-      metadata.accessRights: 3
+      access_status: 3,
       metadata.rights: 4
       metadata.resourceType: 5
       metadata.languages: 7

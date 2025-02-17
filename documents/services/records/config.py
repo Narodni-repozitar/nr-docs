@@ -15,7 +15,6 @@ from oarepo_oaipmh_harvester.components import OaiSectionComponent
 from oarepo_runtime.services.components import (
     CustomFieldsComponent,
     DateIssuedComponent,
-    OwnersComponent,
     process_service_configs,
 )
 from oarepo_runtime.services.config import (
@@ -75,7 +74,6 @@ class DocumentsServiceConfig(PermissionsPresetsConfigMixin, RDMRecordServiceConf
             OaiSectionComponent,
             CommunityDefaultWorkflowComponent,
             CommunityInclusionComponent,
-            OwnersComponent,
             CustomFieldsComponent,
             WorkflowComponent,
         )

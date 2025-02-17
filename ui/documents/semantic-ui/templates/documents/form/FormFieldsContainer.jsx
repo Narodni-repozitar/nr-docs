@@ -36,10 +36,14 @@ import { useFormikContext, getIn } from "formik";
 const FormFieldsContainer = () => {
   const { formConfig, files: recordFiles } = useFormConfig();
   const editMode = _has(formConfig, "updateUrl");
-  const submissibleResourceTypes = (options) => options.filter(
-      opt => !!opt.props?.submission && opt.props?.submission !== 'false'
-  );
 
+  const submissibleResourceTypes = React.useCallback(
+    (options) =>
+      options.filter(
+        (opt) => !!opt.props?.submission && opt.props?.submission !== "false"
+      ),
+    []
+  );
   const { getFieldData } = useFieldData();
 
   const { values, setFieldValue, setFieldTouched } = useFormikContext();
@@ -154,6 +158,7 @@ const FormFieldsContainer = () => {
               {...getFieldData({ fieldPath: "metadata.publishers" })}
             />
           </Overridable>
+          {/* Access rights field is disabled as we use invenio RDM access
           <Overridable
             id="NrDocs.Deposit.AccessRightsField.container"
             fieldPath="metadata.accessRights"
@@ -169,6 +174,7 @@ const FormFieldsContainer = () => {
               })}
             />
           </Overridable>
+          */}
           <Overridable
             id="NrDocs.Deposit.LicenseField.container"
             fieldPath="metadata.rights"
@@ -283,10 +289,8 @@ const FormFieldsContainer = () => {
             fieldPath="metadata.subjectCategories"
           >
             <VocabularyTreeSelectField
-              optimized
               fieldPath="metadata.subjectCategories"
               multiple={true}
-              clearable
               vocabulary="subject-categories"
               {...getFieldData({
                 fieldPath: "metadata.subjectCategories",
@@ -371,6 +375,9 @@ const FormFieldsContainer = () => {
           </Overridable>
         </AccordionField>
       </Overridable>
+      <div>TODO: metadata only - do we need to have an explicit checkbox or
+        are missing files enough to express that the record does not have those?
+      </div>
       <Overridable id="NrDocs.Deposit.AccordionFieldFiles.container">
         <AccordionField
           includesPaths={["files.enabled"]}

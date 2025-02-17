@@ -2,8 +2,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
-"POT-Creation-Date: 2025-02-14T10:43:57.554671\n"
-"PO-Revision-Date: 2025-02-14T10:43:57.554672\n"
+"POT-Creation-Date: 2025-02-17T13:40:47.640544\n"
+"PO-Revision-Date: 2025-02-17T13:40:47.640545\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -168,42 +168,6 @@ msgid "metadata/abstract/value.help"
 msgstr ""
 
 msgid "metadata/abstract/value.hint"
-msgstr ""
-
-msgid "metadata/accessRights.label"
-msgstr ""
-
-msgid "metadata/accessRights.hint"
-msgstr ""
-
-msgid "metadata/accessRights.help"
-msgstr ""
-
-msgid "metadata/accessRights/id.help"
-msgstr ""
-
-msgid "metadata/accessRights/id.label"
-msgstr ""
-
-msgid "metadata/accessRights/id.hint"
-msgstr ""
-
-msgid "metadata/accessRights/title.help"
-msgstr ""
-
-msgid "metadata/accessRights/title.label"
-msgstr ""
-
-msgid "metadata/accessRights/title.hint"
-msgstr ""
-
-msgid "metadata/accessRights/@v.help"
-msgstr ""
-
-msgid "metadata/accessRights/@v.label"
-msgstr ""
-
-msgid "metadata/accessRights/@v.hint"
 msgstr ""
 
 msgid "metadata/accessibility.label"
