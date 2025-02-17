@@ -28,7 +28,7 @@ class GeneratedParentSchema(WorkflowParentSchema):
 
 
 # TODO: fix model builder to include required languages. Until then
-    # please keep the overriden code here
+# please keep the overriden code here
 class LocalNRDocumentMetadataSchema(NRDocumentMetadataSchema):
     languages = ma_fields.List(
         ma_fields.Nested(lambda: NRLanguageVocabularySchema()),
@@ -50,7 +50,6 @@ class DocumentsSchema(NRDocumentRecordSchema, RDMRecordMixin):
     oai = ma_fields.Nested(lambda: OaiSchema())
 
     state = ma_fields.String(dump_only=True)
-    is_published = ma_fields.Boolean(dump_only=True)
     state_timestamp = ma_fields.String(dump_only=True, validate=[validate_datetime])
 
     syntheticFields = ma_fields.Nested(lambda: NRDocumentSyntheticFieldsSchema())
