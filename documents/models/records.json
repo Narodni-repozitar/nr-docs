@@ -40,8 +40,7 @@
         "marshmallow": {
             "generate": true,
             "base-classes": [
-                "nr_metadata.documents.services.records.schema.NRDocumentRecordSchema",
-                "oarepo_runtime.services.schema.rdm.RDMRecordMixin"
+                "nr_metadata.documents.services.records.schema.NRDocumentRecordSchema"
             ],
             "module": "documents.services.records.schema",
             "class": "documents.services.records.schema.DocumentsSchema",
@@ -130,7 +129,6 @@
                 "title_search": "{{oarepo_runtime.records.systemfields.icu.ICUSearchField}}(source_field='metadata.title')",
                 "creator_search": "{{oarepo_runtime.records.systemfields.icu.ICUSearchField}}(source_field='metadata.creators.fullName')",
                 "abstract_search": "{{oarepo_runtime.records.systemfields.icu.ICUSearchField}}(source_field='metadata.abstract.value')",
-                "access": "{{common.records.temporary_access.TemporaryRecordAccessField}}()",
                 "people": "SyntheticSystemField(\n    PathSelector(\"metadata.creators\", \"metadata.contributors\"),\n    filter=lambda x: x.get(\"nameType\") == \"Personal\",\n    map=lambda x: x.get(\"fullName\"),\n    key=\"syntheticFields.people\",\n)\n",
                 "organizations": "SyntheticSystemField(\n  MultiSelector(\n      FilteredSelector(\n          PathSelector(\"metadata.creators\", \"metadata.contributors\"),\n          filter=lambda x: x[\"nameType\"] == \"Personal\",\n          projection=\"affiliations.title.cs\",\n      ),\n      FilteredSelector(\n          PathSelector(\"metadata.creators\", \"metadata.contributors\"),\n          filter=lambda x: x[\"nameType\"] == \"Organizational\",\n          projection=\"fullName\",\n      ),\n  ),\n  key=\"syntheticFields.organizations\",\n)\n",
                 "keywords": "SyntheticSystemField(\n    selector=KeywordsFieldSelector(\"metadata.subjects.subject\"),\n    key=\"syntheticFields.keywords\",\n)\n",
@@ -161,7 +159,6 @@
                 "{{oarepo_oaipmh_harvester.components.OaiSectionComponent}}",
                 "{{oarepo_communities.services.components.default_workflow.CommunityDefaultWorkflowComponent}}",
                 "{{oarepo_communities.services.components.include.CommunityInclusionComponent}}",
-                "{{oarepo_runtime.services.components.OwnersComponent}}",
                 "{{oarepo_runtime.services.components.CustomFieldsComponent}}",
                 "{{oarepo_workflows.services.components.workflow.WorkflowComponent}}"
             ],
@@ -207,7 +204,7 @@
         },
         "search-options": {
             "base-classes": [
-                "oarepo_runtime.services.search.I18nSearchOptions"
+                "oarepo_runtime.services.search.I18nRDMSearchOptions"
             ],
             "sort-options-field": "extra_sort_options",
             "fields": {
@@ -217,7 +214,13 @@
             "class": "documents.services.records.search.DocumentsSearchOptions",
             "generate": true,
             "extra-code": "",
-            "imports": []
+            "imports": [],
+            "versions": {
+                "class": "documents.DocumentsVersionsSearchOptions",
+                "base-classes": [
+                    "invenio_rdm_records.services.config.RDMSearchVersionsOptions"
+                ]
+            }
         },
         "resource-config": {
             "base-url": "/docs/",
@@ -247,21 +250,6 @@
             "suffix": "documents",
             "suffix-upper": "DOCUMENTS",
             "suffix-snake": "documents"
-        },
-        "tests": {
-            "extra-fixtures": [],
-            "extra-code": "",
-            "module": "tests"
-        },
-        "draft": {
-            "type": "draft_record",
-            "properties": {},
-            "searchable": true,
-            "tests": {
-                "extra-fixtures": [],
-                "extra-code": "",
-                "module": "tests"
-            }
         },
         "files": {
             "type": "file",
@@ -345,10 +333,15 @@
                     "InvenioFileSchema"
                 ]
             },
-            "searchable": true,
             "permissions": {
                 "presets": [
                     "docs"
+                ]
+            },
+            "searchable": true,
+            "service-config": {
+                "components": [
+                    "{{common.services.files.allowed_document_extensions.AllowedDocumentExtensionsComponent}}"
                 ]
             },
             "resource": {
@@ -365,6 +358,21 @@
                 "module": "tests"
             }
         },
+        "draft": {
+            "type": "draft_record",
+            "properties": {},
+            "searchable": true,
+            "tests": {
+                "extra-fixtures": [],
+                "extra-code": "",
+                "module": "tests"
+            }
+        },
+        "tests": {
+            "extra-fixtures": [],
+            "extra-code": "",
+            "module": "tests"
+        },
         "draft-files": {
             "type": "draft-file",
             "properties": {},
@@ -374,6 +382,11 @@
                 ]
             },
             "searchable": true,
+            "service-config": {
+                "components": [
+                    "{{common.services.files.allowed_document_extensions.AllowedDocumentExtensionsComponent}}"
+                ]
+            },
             "resource": {
                 "base-classes": [
                     "oarepo_ui.resources.file_resource.S3RedirectFileResource"
@@ -487,15 +500,6 @@
             "module": "documents.translations",
             "alias": "documents"
         },
-        "files-field": {
-            "generate": true,
-            "field-class": "invenio_records_resources.records.systemfields.FilesField",
-            "file-class": "documents.records.api.DocumentsRecord",
-            "field-args": [
-                "store=False"
-            ],
-            "imports": []
-        },
         "record-metadata": {
             "generate": true,
             "module": "documents.records.models",
@@ -540,6 +544,15 @@
                 "{{oarepo_runtime.records.systemfields.mapping.SystemFieldDumperExt}}()",
                 "{{documents.records.dumpers.multilingual.MultilingualSearchDumperExt}}()",
                 "{{documents.records.dumpers.edtf.DocumentsEDTFIntervalDumperExt}}()"
+            ],
+            "imports": []
+        },
+        "files-field": {
+            "generate": true,
+            "field-class": "invenio_records_resources.records.systemfields.FilesField",
+            "file-class": "documents.records.api.DocumentsRecord",
+            "field-args": [
+                "store=False"
             ],
             "imports": []
         },
@@ -621,6 +634,7 @@
                 "oarepo_runtime.services.results.RecordItem"
             ],
             "components": [
+                "{{oarepo_communities.services.results.RecordCommunitiesComponent}}()",
                 "{{oarepo_requests.services.results.RequestsComponent}}()",
                 "{{oarepo_requests.services.results.RequestTypesComponent}}()"
             ],
@@ -724,6 +738,156 @@
                 },
                 "sample": {
                     "skip": true
+                }
+            },
+            "access": {
+                "type": "object",
+                "ui": {
+                    "marshmallow": {
+                        "generate": true,
+                        "read": false,
+                        "write": false,
+                        "class": "documents.services.records.ui_schema.AccessUISchema"
+                    }
+                },
+                "marshmallow": {
+                    "generate": false,
+                    "class": "invenio_rdm_records.services.schemas.access.AccessSchema",
+                    "field-class": "marshmallow_utils.fields.nestedattr.NestedAttribute"
+                },
+                "sample": {
+                    "skip": true
+                },
+                "properties": {
+                    "embargo": {
+                        "type": "object",
+                        "ui": {
+                            "marshmallow": {
+                                "generate": true,
+                                "class": "documents.services.records.ui_schema.EmbargoUISchema"
+                            }
+                        },
+                        "marshmallow": {
+                            "generate": true,
+                            "class": "documents.services.records.schema.EmbargoSchema"
+                        },
+                        "properties": {
+                            "active": {
+                                "type": "boolean",
+                                "json-schema": {
+                                    "type": [
+                                        "boolean",
+                                        "null"
+                                    ]
+                                },
+                                "ui": {
+                                    "marshmallow": {
+                                        "read": false,
+                                        "write": false
+                                    }
+                                },
+                                "marshmallow": {
+                                    "read": false,
+                                    "write": false
+                                },
+                                "sample": {
+                                    "skip": true
+                                }
+                            },
+                            "reason": {
+                                "type": "fulltext",
+                                "json-schema": {
+                                    "type": [
+                                        "string",
+                                        "null"
+                                    ]
+                                },
+                                "marshmallow": {
+                                    "read": false,
+                                    "write": false
+                                },
+                                "ui": {
+                                    "marshmallow": {
+                                        "read": false,
+                                        "write": false
+                                    }
+                                },
+                                "sample": {
+                                    "skip": true
+                                }
+                            },
+                            "until": {
+                                "type": "date",
+                                "json-schema": {
+                                    "type": [
+                                        "string",
+                                        "null"
+                                    ]
+                                },
+                                "ui": {
+                                    "marshmallow": {
+                                        "read": false,
+                                        "write": false
+                                    }
+                                },
+                                "marshmallow": {
+                                    "read": false,
+                                    "write": false
+                                },
+                                "sample": {
+                                    "skip": true
+                                }
+                            }
+                        }
+                    },
+                    "files": {
+                        "type": "keyword",
+                        "marshmallow": {
+                            "read": false,
+                            "write": false
+                        },
+                        "ui": {
+                            "marshmallow": {
+                                "read": false,
+                                "write": false
+                            }
+                        },
+                        "sample": {
+                            "skip": true
+                        }
+                    },
+                    "record": {
+                        "type": "keyword",
+                        "marshmallow": {
+                            "read": false,
+                            "write": false
+                        },
+                        "ui": {
+                            "marshmallow": {
+                                "read": false,
+                                "write": false
+                            }
+                        },
+                        "sample": {
+                            "skip": true
+                        }
+                    },
+                    "status": {
+                        "type": "keyword",
+                        "marshmallow": {
+                            "read": false,
+                            "write": false
+                        },
+                        "ui": {
+                            "marshmallow": {
+                                "read": false,
+                                "write": false
+                            }
+                        },
+                        "sample": {
+                            "skip": true
+                        }
+                    }
                 }
             },
             "created": {
@@ -910,129 +1074,6 @@
                                     "required": true,
                                     "label.cs": "Text",
                                     "label.en": "Text"
-                                }
-                            }
-                        }
-                    },
-                    "accessRights": {
-                        "type": "vocabulary",
-                        "required": true,
-                        "vocabulary-type": "access-rights",
-                        "ui": {
-                            "marshmallow": {
-                                "class": "nr_metadata.common.services.records.ui_schema_datatypes.NRAccessRightsVocabularyUISchema",
-                                "read": false,
-                                "write": false,
-                                "unknown": "INCLUDE",
-                                "generate": true
-                            },
-                            "detail": "vocabulary_item",
-                            "edit": "vocabulary_item"
-                        },
-                        "marshmallow": {
-                            "class": "nr_metadata.common.services.records.schema_datatypes.NRAccessRightsVocabularySchema",
-                            "read": false,
-                            "write": false,
-                            "unknown": "INCLUDE",
-                            "generate": true
-                        },
-                        "sample": [
-                            "open",
-                            "embargoed",
-                            "restricted",
-                            "metadata only"
-                        ],
-                        "label.cs": "Přístupová práva",
-                        "label.en": "Access rights",
-                        "hint.cs": "Vyberte typ přístupu, zda bude zdroj dostupný otevřeně nebo s omezením.",
-                        "hint.en": "Choose access type - if the resource is open or has some restrictions.",
-                        "imports": [
-                            {
-                                "import": "oarepo_vocabularies.records.api.Vocabulary"
-                            }
-                        ],
-                        "model": "vocabularies",
-                        "keys": [
-                            "id",
-                            "title"
-                        ],
-                        "pid-field": "Vocabulary.pid.with_type_ctx(\"access-rights\")",
-                        "facets": {
-                            "args": [
-                                "vocabulary='access-rights'"
-                            ]
-                        },
-                        "properties": {
-                            "id": {
-                                "marshmallow": {
-                                    "field-class": "marshmallow.fields.String",
-                                    "validators": [],
-                                    "imports": []
-                                },
-                                "ui": {
-                                    "marshmallow": {
-                                        "field-class": "marshmallow.fields.String",
-                                        "validators": [],
-                                        "imports": []
-                                    }
-                                },
-                                "type": "keyword",
-                                "mapping": {
-                                    "fields": {
-                                        "text": {
-                                            "type": "search_as_you_type"
-                                        }
-                                    }
-                                },
-                                "sample": {
-                                    "skip": true
-                                }
-                            },
-                            "title": {
-                                "marshmallow": {
-                                    "generate": false,
-                                    "field": "{{invenio_vocabularies.services.schema.i18n_strings}}",
-                                    "field-class": "marshmallow.fields.Nested",
-                                    "validators": [],
-                                    "class": "invenio_vocabularies.services.records.schema.TitleSchema"
-                                },
-                                "ui": {
-                                    "marshmallow": {
-                                        "field": "{{oarepo_vocabularies.services.ui_schema.VocabularyI18nStrUIField}}()",
-                                        "generate": false
-                                    }
-                                },
-                                "mapping": {
-                                    "dynamic": true,
-                                    "properties": {
-                                        "en": {
-                                            "type": "search_as_you_type",
-                                            "copy_to": "title_sort"
-                                        }
-                                    }
-                                },
-                                "type": "object",
-                                "propertyNames": {
-                                    "pattern": "^[a-z]{2}$"
-                                },
-                                "additionalProperties": {
-                                    "type": "string"
-                                }
-                            },
-                            "@v": {
-                                "type": "keyword",
-                                "marshmallow": {
-                                    "field-name": "_version",
-                                    "field-class": "marshmallow.fields.String"
-                                },
-                                "ui": {
-                                    "marshmallow": {
-                                        "field-name": "_version",
-                                        "field-class": "marshmallow.fields.String"
-                                    }
-                                },
-                                "facets": {
-                                    "facet": false
                                 }
                             }
                         }
@@ -7659,6 +7700,45 @@
                             }
                         }
                     }
+                }
+            },
+            "pids": {
+                "type": "object",
+                "json-schema": {
+                    "additionalProperties": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                            "identifier": {
+                                "type": "string"
+                            },
+                            "provider": {
+                                "type": "string"
+                            },
+                            "client": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "uniqueItems": true,
+                    "type": "object",
+                    "propertyNames": {
+                        "pattern": "^[a-z_-][a-z0-9_-]*$"
+                    }
+                },
+                "ui": {
+                    "marshmallow": {
+                        "generate": true,
+                        "read": false,
+                        "write": false,
+                        "class": "documents.services.records.ui_schema.PidsUISchema"
+                    }
+                },
+                "marshmallow": {
+                    "generate": false,
+                    "read": false,
+                    "write": false,
+                    "field": "{{marshmallow.fields.Dict}}( keys={{marshmallow_utils.fields.SanitizedUnicode}}(validate={{invenio_rdm_records.services.schemas.record.validate_scheme}}),values={{marshmallow.fields.Nested}}({{invenio_rdm_records.services.schemas.pids.PIDSchema}}),)"
                 }
             },
             "state": {

@@ -40,8 +40,9 @@ from oarepo_communities.services.permissions.generators import (
 from oarepo_communities.services.permissions.policy import (
     CommunityDefaultWorkflowPermissions,
 )
+from oarepo_oaipmh_harvester.services.generators import IfNotHarvested
 from oarepo_requests.services.permissions.generators import IfRequestedBy
-from oarepo_runtime.services.permissions.generators import RecordOwners
+from oarepo_runtime.services.permissions.generators import IfDraftType, RecordOwners
 from oarepo_workflows import (
     AutoApprove,
     IfInState,
@@ -149,49 +150,77 @@ class DefaultWorkflowPermissions(CommunityDefaultWorkflowPermissions):
     ]
 
 
+# if the record is in draft state, the owner or curator can request publishing
+publish_requesters = IfNotHarvested(
+    then_=IfInState("draft", then_=[RecordOwners(), PrimaryCommunityRole("curator")]),
+    else_=SystemProcess(),
+)
+
+# if the requester is the curator of the community, auto approve the request
+publish_recipients = IfRequestedBy(
+    requesters=[
+        PrimaryCommunityRole("curator"),
+        PrimaryCommunityRole("owner"),
+    ],
+    then_=[AutoApprove()],
+    else_=[PrimaryCommunityRole("curator"), PrimaryCommunityRole("owner")],
+)
+
+publish_transitions = WorkflowTransitions(
+    submitted="submitted",
+    accepted="published",
+    declined="draft",
+    cancelled="draft",
+)
+
+# if the request is not resolved in 21 days, escalate it to the administrator
+publish_escalations = [
+    WorkflowRequestEscalation(
+        after=timedelta(days=21),
+        recipients=[
+            PrimaryCommunityRole("owner"),
+        ],
+    )
+]
+
+
 class DefaultWorkflowRequests(WorkflowRequestPolicy):
     publish_draft = WorkflowRequest(
-        # if the record is in draft state, the owner or curator can request publishing
         requesters=[
-            IfInState("draft", then_=[RecordOwners(), PrimaryCommunityRole("curator")])
-        ],
-        recipients=[
-            # if the requester is the curator of the community, auto approve the request
-            IfRequestedBy(
-                requesters=[
-                    PrimaryCommunityRole("curator"),
-                    PrimaryCommunityRole("owner"),
-                ],
-                then_=[AutoApprove()],
-                else_=[PrimaryCommunityRole("curator"), PrimaryCommunityRole("owner")],
+            IfDraftType(
+                "metadata",
+                then_=publish_requesters,
             )
         ],
-        transitions=WorkflowTransitions(
-            submitted="submitted",
-            accepted="published",
-            declined="draft",
-            cancelled="draft",
-        ),
-        # if the request is not resolved in 21 days, escalate it to the administrator
-        escalations=[
-            WorkflowRequestEscalation(
-                after=timedelta(days=21),
-                recipients=[
-                    PrimaryCommunityRole("owner"),
-                ],
+        recipients=[publish_recipients],
+        transitions=publish_transitions,
+        escalations=publish_escalations,
+    )
+
+    publish_new_version = WorkflowRequest(
+        requesters=[
+            IfDraftType(
+                ["new_version", "initial"],
+                then_=publish_requesters,
             )
         ],
+        recipients=[publish_recipients],
+        transitions=publish_transitions,
+        escalations=publish_escalations,
     )
 
     edit_published_record = WorkflowRequest(
         requesters=[
-            IfInState(
-                "published",
-                then_=[
-                    RecordOwners(),
-                    PrimaryCommunityRole("curator"),
-                    PrimaryCommunityRole("owner"),
-                ],
+            IfNotHarvested(
+                then_=IfInState(
+                    "published",
+                    then_=[
+                        RecordOwners(),
+                        PrimaryCommunityRole("curator"),
+                        PrimaryCommunityRole("owner"),
+                    ],
+                ),
+                else_=SystemProcess(),
             )
         ],
         # the request is auto-approve, we do not limit the owner of the record to create a new
@@ -201,13 +230,16 @@ class DefaultWorkflowRequests(WorkflowRequestPolicy):
 
     new_version = WorkflowRequest(
         requesters=[
-            IfInState(
-                "published",
-                then_=[
-                    RecordOwners(),
-                    PrimaryCommunityRole("curator"),
-                    PrimaryCommunityRole("owner"),
-                ],
+            IfNotHarvested(
+                then_=IfInState(
+                    "published",
+                    then_=[
+                        RecordOwners(),
+                        PrimaryCommunityRole("curator"),
+                        PrimaryCommunityRole("owner"),
+                    ],
+                ),
+                else_=SystemProcess(),
             )
         ],
         # the request is auto-approve, we do not limit the owner of the record to create a new
@@ -219,13 +251,16 @@ class DefaultWorkflowRequests(WorkflowRequestPolicy):
         # if the record is draft, it is covered by the delete permission
         # if published, only the owner or curator can request deleting
         requesters=[
-            IfInState(
-                "published",
-                then_=[
-                    RecordOwners(),
-                    PrimaryCommunityRole("curator"),
-                    PrimaryCommunityRole("owner"),
-                ],
+            IfNotHarvested(
+                then_=IfInState(
+                    "published",
+                    then_=[
+                        RecordOwners(),
+                        PrimaryCommunityRole("curator"),
+                        PrimaryCommunityRole("owner"),
+                    ],
+                ),
+                else_=SystemProcess(),
             )
         ],
         # if the requester is the curator of the community or administrator, auto approve the request,
@@ -261,9 +296,14 @@ class DefaultWorkflowRequests(WorkflowRequestPolicy):
 
     assign_doi = WorkflowRequest(
         requesters=[
-            RecordOwners(),
-            PrimaryCommunityRole("curator"),
-            PrimaryCommunityRole("owner"),
+            IfNotHarvested(
+                then_=[
+                    RecordOwners(),
+                    PrimaryCommunityRole("curator"),
+                    PrimaryCommunityRole("owner"),
+                ],
+                else_=SystemProcess(),
+            )
         ],
         recipients=[
             IfRequestedBy(
@@ -283,13 +323,16 @@ class DefaultWorkflowRequests(WorkflowRequestPolicy):
     )
     initiate_community_migration = WorkflowRequest(
         requesters=[
-            IfInState(
-                "published",
-                then_=[
-                    RecordOwners(),
-                    PrimaryCommunityRole("curator"),
-                    PrimaryCommunityRole("owner"),
-                ],
+            IfNotHarvested(
+                then_=IfInState(
+                    "published",
+                    then_=[
+                        RecordOwners(),
+                        PrimaryCommunityRole("curator"),
+                        PrimaryCommunityRole("owner"),
+                    ],
+                ),
+                else_=SystemProcess(),
             )
         ],
         recipients=[
@@ -312,9 +355,12 @@ class DefaultWorkflowRequests(WorkflowRequestPolicy):
     )
     secondary_community_submission = WorkflowRequest(
         requesters=[
-            IfInState(
-                "published",
-                then_=[PrimaryCommunityMembers()],
+            IfNotHarvested(
+                then_=IfInState(
+                    "published",
+                    then_=[PrimaryCommunityMembers()],
+                ),
+                else_=SystemProcess(),
             )
         ],
         recipients=[

@@ -35,7 +35,6 @@ from oarepo_workflows.records.systemfields.state import (
 )
 from oarepo_workflows.records.systemfields.workflow import WorkflowField
 
-from common.records.temporary_access import TemporaryRecordAccessField
 from common.services.sort import TitleICUSortField
 from documents.files.api import DocumentsFile, DocumentsFileDraft
 from documents.records.dumpers.dumper import DocumentsDraftDumper, DocumentsDumper
@@ -83,8 +82,6 @@ class DocumentsRecord(RDMRecord):
     creator_search = ICUSearchField(source_field="metadata.creators.fullName")
 
     abstract_search = ICUSearchField(source_field="metadata.abstract.value")
-
-    access = TemporaryRecordAccessField()
 
     people = SyntheticSystemField(
         PathSelector("metadata.creators", "metadata.contributors"),
@@ -151,11 +148,6 @@ class DocumentsRecord(RDMRecord):
     )
 
     relations = RelationsField(
-        accessRights=PIDRelation(
-            "metadata.accessRights",
-            keys=["id", "title"],
-            pid_field=Vocabulary.pid.with_type_ctx("access-rights"),
-        ),
         affiliations=PIDRelation(
             "metadata.contributors.affiliations",
             keys=["id", "title", {"key": "props.ror", "target": "ror"}, "hierarchy"],
@@ -303,8 +295,6 @@ class DocumentsDraft(RDMDraft):
 
     abstract_search = ICUSearchField(source_field="metadata.abstract.value")
 
-    access = TemporaryRecordAccessField()
-
     people = SyntheticSystemField(
         PathSelector("metadata.creators", "metadata.contributors"),
         filter=lambda x: x.get("nameType") == "Personal",
@@ -366,11 +356,6 @@ class DocumentsDraft(RDMDraft):
     )
 
     relations = RelationsField(
-        accessRights=PIDRelation(
-            "metadata.accessRights",
-            keys=["id", "title"],
-            pid_field=Vocabulary.pid.with_type_ctx("access-rights"),
-        ),
         affiliations=PIDRelation(
             "metadata.contributors.affiliations",
             keys=["id", "title", {"key": "props.ror", "target": "ror"}, "hierarchy"],

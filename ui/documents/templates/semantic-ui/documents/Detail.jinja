@@ -12,7 +12,7 @@
 {% endblock %}
 
 {% block record_sidebar %}
-    <Sidebar metadata={metadata} ui={ui} extra_context={extra_context} record={record}/>
+    <Sidebar metadata={metadata} ui={ui} extra_context={extra_context} record={record} is_preview={is_preview}/>
 {% endblock record_sidebar %}
 
 {%- block javascript %}

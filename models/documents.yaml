@@ -64,6 +64,8 @@ record:
     permissions:  # TODO: should be taken automatically from the record's permissions presets
       presets:
         - docs
+    service-config:
+      components: [ "{{common.services.files.allowed_document_extensions.AllowedDocumentExtensionsComponent}}" ]
 
   module:
     qualified: documents
@@ -104,7 +106,6 @@ record:
       title_search: "{{oarepo_runtime.records.systemfields.icu.ICUSearchField}}(source_field='metadata.title')"
       creator_search: "{{oarepo_runtime.records.systemfields.icu.ICUSearchField}}(source_field='metadata.creators.fullName')"
       abstract_search: "{{oarepo_runtime.records.systemfields.icu.ICUSearchField}}(source_field='metadata.abstract.value')"
-      access: "{{common.records.temporary_access.TemporaryRecordAccessField}}()"
 
 
   mapping:

@@ -15,6 +15,71 @@
             "label": "$schema.label",
             "hint": "$schema.hint"
         },
+        "access": {
+            "detail": "acces",
+            "input": "acces",
+            "help": "access.help",
+            "label": "access.label",
+            "hint": "access.hint",
+            "children": {
+                "embargo": {
+                    "detail": false,
+                    "input": false,
+                    "help": "access/embargo.help",
+                    "label": "access/embargo.label",
+                    "hint": "access/embargo.hint",
+                    "children": {
+                        "active": {
+                            "detail": "boolean",
+                            "input": "boolean",
+                            "help": "access/embargo/active.help",
+                            "label": "access/embargo/active.label",
+                            "hint": "access/embargo/active.hint",
+                            "facet": "access_embargo_active"
+                        },
+                        "reason": {
+                            "detail": "fulltext",
+                            "input": "fulltext",
+                            "help": "access/embargo/reason.help",
+                            "label": "access/embargo/reason.label",
+                            "hint": "access/embargo/reason.hint"
+                        },
+                        "until": {
+                            "detail": "date",
+                            "input": "date",
+                            "help": "access/embargo/until.help",
+                            "label": "access/embargo/until.label",
+                            "hint": "access/embargo/until.hint",
+                            "facet": "access_embargo_until"
+                        }
+                    }
+                },
+                "files": {
+                    "detail": "keyword",
+                    "input": "keyword",
+                    "help": "access/files.help",
+                    "label": "access/files.label",
+                    "hint": "access/files.hint",
+                    "facet": "access_files"
+                },
+                "record": {
+                    "detail": "keyword",
+                    "input": "keyword",
+                    "help": "access/record.help",
+                    "label": "access/record.label",
+                    "hint": "access/record.hint",
+                    "facet": "access_record"
+                },
+                "status": {
+                    "detail": "keyword",
+                    "input": "keyword",
+                    "help": "access/status.help",
+                    "label": "access/status.label",
+                    "hint": "access/status.hint",
+                    "facet": "access_status"
+                }
+            }
+        },
         "created": {
             "detail": "datetime",
             "input": "datetime",
@@ -88,39 +153,6 @@
                                 "label": "metadata/abstract/value.label",
                                 "hint": "metadata/abstract/value.hint"
                             }
-                        }
-                    }
-                },
-                "accessRights": {
-                    "detail": "vocabulary_item",
-                    "edit": "vocabulary_item",
-                    "input": "vocabulary",
-                    "required": true,
-                    "help": "metadata/accessRights.help",
-                    "label": "metadata/accessRights.label",
-                    "hint": "metadata/accessRights.hint",
-                    "facet": "metadata_accessRights",
-                    "children": {
-                        "id": {
-                            "detail": "keyword",
-                            "input": "keyword",
-                            "help": "metadata/accessRights/id.help",
-                            "label": "metadata/accessRights/id.label",
-                            "hint": "metadata/accessRights/id.hint"
-                        },
-                        "title": {
-                            "detail": false,
-                            "input": false,
-                            "help": "metadata/accessRights/title.help",
-                            "label": "metadata/accessRights/title.label",
-                            "hint": "metadata/accessRights/title.hint"
-                        },
-                        "@v": {
-                            "detail": "keyword",
-                            "input": "keyword",
-                            "help": "metadata/accessRights/@v.help",
-                            "label": "metadata/accessRights/@v.label",
-                            "hint": "metadata/accessRights/@v.hint"
                         }
                     }
                 },
@@ -2177,6 +2209,13 @@
                     "hint": "pid/status.hint"
                 }
             }
+        },
+        "pids": {
+            "detail": "pid",
+            "input": "pid",
+            "help": "pids.help",
+            "label": "pids.label",
+            "hint": "pids.hint"
         },
         "state": {
             "detail": "keyword",

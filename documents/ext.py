@@ -152,7 +152,6 @@ class DocumentsExt:
             service=self.service_draft_files,
             config=config.DOCUMENTS_DRAFT_FILES_RESOURCE_CONFIG(),
         )
-
 def load_action_permissions(sender, identity):
     # TODO: need to have a deeper look at this
     from flask_principal import ActionNeed
