@@ -21,7 +21,7 @@ class DataCiteMappingNRDocs(DataCiteMappingBase):
                     for j, id in enumerate(creator["authorityIdentifiers"]):
                         if "scheme" not in id:
                             errors[
-                                f"metadata.creators.{i}.authorityIdentifiers[{j}].scheme"
+                                f"metadata.creators.{i}.authorityIdentifiers.{j}.scheme"
                             ] = [missing_data_message]
         if "publishers" not in data:
             errors["metadata.publishers"] = [missing_data_message]
@@ -35,7 +35,7 @@ class DataCiteMappingNRDocs(DataCiteMappingBase):
                     for j, id in enumerate(contributor["authorityIdentifiers"]):
                         if "scheme" not in id:
                             errors[
-                                f"metadata.contributors.{i}.authorityIdentifiers[{j}].scheme"
+                                f"metadata.contributors.{i}.authorityIdentifiers.{j}.scheme"
                             ] = [missing_data_message]
         if "title" not in data:
             errors["metadata.title"] = [missing_data_message]
