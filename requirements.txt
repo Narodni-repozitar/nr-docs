@@ -25,7 +25,7 @@ oarepo-oidc-einfra==1.0.4
 oarepo-published-service==1.0.3
 oarepo-requests==2.3.18
 oarepo-runtime==1.5.95
-oarepo-ui==5.2.40
+oarepo-ui==5.2.42
 oarepo-vocabularies==2.1.17
 oarepo-workflows==1.1.8
 openpyxl==3.1.5
