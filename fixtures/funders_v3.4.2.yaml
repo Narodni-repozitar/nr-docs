@@ -532,3 +532,15 @@ identifiers:
 - scheme: ROR
   identifier: https://ror.org/037nx0e70
 country: SK
+---
+id: MU
+name: Masaryk University
+identifiers:
+- scheme: ROR
+  identifier: https://ror.org/02j46qs45
+---
+id: NAZV
+name: National Agency for Agricultural Research
+identifiers:
+- scheme: ROR
+  identifier: https://ror.org/051rtqg79
