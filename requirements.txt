@@ -1,5 +1,5 @@
 oarepo[s3,rdm]==12.2.6
-cachetools==5.5.1
+cachetools==5.5.2
 deepmerge==2.0
 et-xmlfile==2.0.0
 flask-babelex==0.9.4
@@ -25,7 +25,7 @@ oarepo-oidc-einfra==1.0.4
 oarepo-published-service==1.0.3
 oarepo-requests==2.3.19
 oarepo-runtime==1.5.95
-oarepo-ui==5.2.42
+oarepo-ui==5.2.43
 oarepo-vocabularies==2.1.18
 oarepo-workflows==1.1.8
 openpyxl==3.1.5
