@@ -2,3 +2,15 @@ communities:
 - service: communities
   writer: service
 - source: ./communities.yaml
+funders:
+- service: funders
+  writer: service
+- source: ./funders_v3.4.2.yaml # Data are in the form accepted by the invenio-vocabularies v3.4.2.
+awards:
+- service: awards
+  writer: service
+- source: ./awards.yaml
+names:
+- service: names
+  writer: service
+- source: ./names.yaml
