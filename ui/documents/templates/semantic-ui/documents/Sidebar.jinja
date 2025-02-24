@@ -1,4 +1,4 @@
-{#def metadata, record, extra_context, is_preview #}
+{#def metadata, record, extra_context, is_preview, api_record #}
 {%set recordRequests = record.expanded.requests and record.expanded.requests|selectattr('status_code', 'in', ['submitted', 'created'])|list%}
 {% if record.expanded.request_types or recordRequests or record.links.edit_html %}
 <section class="ui segment" aria-label='{{ _("Actions") }}'>
@@ -19,6 +19,7 @@
   <RecordCommunities communities={record.expanded.communities} />
 {% endif %}
 <IdentifiersAndLinks originalRecordUrl={metadata.originalRecord} objectIdentifiers={metadata.objectIdentifiers}/>
+<Metrics record={api_record} />
 
 {% if "oai" not in record 
       or "harvest" not in record.oai 
