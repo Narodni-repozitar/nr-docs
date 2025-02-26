@@ -5,15 +5,18 @@ import {
   SaveButton,
   DeleteButton,
   useDepositApiClient,
-  serializeErrors,
   AccessRightField,
   useFormConfig,
 } from "@js/oarepo_ui";
 import { i18next } from "@translations/i18next";
 import { SelectedCommunity } from "@js/communities_components/CommunitySelector/SelectedCommunity";
 import { RecordRequests } from "@js/oarepo_requests/components";
-import { useFormikContext, setIn } from "formik";
-import { REQUEST_TYPE } from "@js/oarepo_requests_common";
+import { useFormikContext } from "formik";
+import {
+  REQUEST_TYPE,
+  cfValidationErrorPlugin,
+  recordValidationErrorsPlugin,
+} from "@js/oarepo_requests_common";
 
 const FormActionsContainer = () => {
   const { values, setErrors } = useFormikContext();
@@ -50,8 +53,8 @@ const FormActionsContainer = () => {
     <React.Fragment>
       <Card fluid>
         {/* <Card.Content>
-          <DepositStatusBox />
-        </Card.Content> */}
+            <DepositStatusBox />
+          </Card.Content> */}
         <Card.Content>
           <Grid>
             <Grid.Column width={16}>
@@ -59,38 +62,16 @@ const FormActionsContainer = () => {
                 <SaveButton fluid className="mb-10" />
                 <PreviewButton fluid className="mb-10" />
               </div>
-              {values.id && (
-                <RecordRequests
-                  record={values}
-                  onBeforeAction={onBeforeAction}
-                  onActionError={({ e, modalControl, formik }) => {
-                    if (
-                      e?.response?.data?.error_type === "cf_validation_error" &&
-                      e?.response?.data?.errors
-                    ) {
-                      let errorsObj = {};
-                      for (const error of e.response.data.errors) {
-                        errorsObj = setIn(
-                          errorsObj,
-                          error.field,
-                          error.messages.join(" ")
-                        );
-                      }
-                      formik?.setErrors(errorsObj);
-                    } else if (e?.response?.data?.errors?.length > 0) {
-                      const errors = serializeErrors(
-                        e?.response?.data?.errors,
-                        i18next.t(
-                          "Action failed due to validation errors. Please correct the errors and try again:"
-                        )
-                      );
-                      setErrors(errors);
-                      modalControl?.closeModal();
-                    }
-                  }}
-                />
-              )}
-              {values.id && <DeleteButton redirectUrl="/me/records" />}
+              <RecordRequests
+                record={values}
+                onBeforeAction={onBeforeAction}
+                onErrorPlugins={[
+                  cfValidationErrorPlugin,
+                  recordValidationErrorsPlugin,
+                ]}
+                actionExtraContext={{ setErrors }}
+              />
+              <DeleteButton redirectUrl="/me/records" />
             </Grid.Column>
             <Grid.Column width={16} className="pt-10">
               <SelectedCommunity />

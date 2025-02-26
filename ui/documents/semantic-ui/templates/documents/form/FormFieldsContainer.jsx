@@ -375,8 +375,9 @@ const FormFieldsContainer = () => {
           </Overridable>
         </AccordionField>
       </Overridable>
-      <div>TODO: metadata only - do we need to have an explicit checkbox or
-        are missing files enough to express that the record does not have those?
+      <div>
+        TODO: metadata only - do we need to have an explicit checkbox or are
+        missing files enough to express that the record does not have those?
       </div>
       <Overridable id="NrDocs.Deposit.AccordionFieldFiles.container">
         <AccordionField
@@ -388,7 +389,10 @@ const FormFieldsContainer = () => {
           data-testid="filesupload-button"
         >
           <Overridable id="NrDocs.Deposit.FileUploader.container">
-            <FileUploader recordFiles={recordFiles} allowedFileTypes={formConfig.allowed_file_extensions} />
+            <FileUploader
+              recordFiles={recordFiles}
+              allowedFileTypes={formConfig.allowed_file_extensions}
+            />
           </Overridable>
         </AccordionField>
       </Overridable>
