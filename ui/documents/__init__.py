@@ -7,6 +7,7 @@ from oarepo_ui.resources.components import (
     FilesLockedComponent,
     RecordRestrictionComponent,
 )
+from oarepo_ui.ui.components import UIComponent
 from oarepo_ui.resources.components.custom_fields import CustomFieldsComponent
 from oarepo_ui.resources.config import RecordsUIResourceConfig
 from oarepo_ui.resources.resource import RecordsUIResource
@@ -40,7 +41,7 @@ class DocumentsResourceConfig(RecordsUIResourceConfig):
         AllowedFileExtensionUIComponent,
     ]
 
-    search_component = "documents/search/ResultsListItem"
+    search_component = UIComponent("DocumentsResultsListItem", "@js/documents/search/ResultsListItem", "default")
     application_id = "documents"
 
     templates = {
