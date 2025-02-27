@@ -16,6 +16,7 @@ import {
   REQUEST_TYPE,
   cfValidationErrorPlugin,
   recordValidationErrorsPlugin,
+  beforeActionFormErrorPlugin,
 } from "@js/oarepo_requests_common";
 
 const FormActionsContainer = () => {
@@ -68,6 +69,7 @@ const FormActionsContainer = () => {
                 onErrorPlugins={[
                   cfValidationErrorPlugin,
                   recordValidationErrorsPlugin,
+                  beforeActionFormErrorPlugin,
                 ]}
                 actionExtraContext={{ setErrors }}
               />
