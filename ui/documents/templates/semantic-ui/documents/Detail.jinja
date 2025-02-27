@@ -1,4 +1,4 @@
-{# def metadata, extra_context, record, ui, is_preview=None #}
+{# def metadata, extra_context, record, ui, is_preview=None, api_record=None #}
 {%- set title = metadata.title ~ " | " ~ _("NR Document repository") %}
 
 {% extends "oarepo_ui/detail.html" %}
@@ -12,7 +12,7 @@
 {% endblock %}
 
 {% block record_sidebar %}
-    <Sidebar metadata={metadata} ui={ui} extra_context={extra_context} record={record} is_preview={is_preview}/>
+    <Sidebar metadata={metadata} ui={ui} extra_context={extra_context} record={record} is_preview={is_preview} api_record={api_record}/>
 {% endblock record_sidebar %}
 
 {%- block javascript %}
