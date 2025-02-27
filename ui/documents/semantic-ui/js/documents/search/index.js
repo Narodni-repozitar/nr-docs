@@ -2,6 +2,7 @@ import {
   parseSearchAppConfigs,
   createSearchAppsInit,
 } from "@js/oarepo_ui/search";
+import { parametrize } from 'react-overridable';
 import ResultsListItem from "./ResultsListItem";
 import { SearchAppFacets } from '@js/oarepo_ui/search/SearchAppFacets';
 
