@@ -66,11 +66,7 @@ const FormActionsContainer = () => {
               <RecordRequests
                 record={values}
                 onBeforeAction={onBeforeAction}
-                onErrorPlugins={[
-                  cfValidationErrorPlugin,
-                  recordValidationErrorsPlugin,
-                  beforeActionFormErrorPlugin,
-                ]}
+                onErrorPlugins={[beforeActionFormErrorPlugin]}
                 actionExtraContext={{ setErrors }}
               />
               <DeleteButton redirectUrl="/me/records" />
