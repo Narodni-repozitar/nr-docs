@@ -45,7 +45,10 @@ const FormActionsContainer = () => {
       return save({
         errorMessage: i18next.t(
           "The request ({{requestType}}) could not be made due to validation errors. Please fix them and try again:",
-          { requestType: requestOrRequestType.name }
+          {
+            requestType:
+              requestOrRequestType?.stateful_name || requestOrRequestType.name,
+          }
         ),
       });
     }
