@@ -14,8 +14,6 @@ import { RecordRequests } from "@js/oarepo_requests/components";
 import { useFormikContext } from "formik";
 import {
   REQUEST_TYPE,
-  cfValidationErrorPlugin,
-  recordValidationErrorsPlugin,
   beforeActionFormErrorPlugin,
 } from "@js/oarepo_requests_common";
 
