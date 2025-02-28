@@ -6,7 +6,9 @@ import {
   EDTFSingleDatePicker,
   useFieldData,
   useSanitizeInput,
-} from "@js/oarepo_ui";
+  FilesField,
+  StringArrayField,
+} from "@js/oarepo_ui/forms";
 import { CommunitySelector } from "@js/communities_components/CommunitySelector/CommunitySelector";
 import {
   LocalVocabularySelectField,
@@ -14,7 +16,6 @@ import {
 } from "@js/oarepo_vocabularies";
 import { AccordionField, TextField } from "react-invenio-forms";
 import {
-  StringArrayField,
   AdditionalTitlesField,
   FundersField,
   ExternalLocationField,
@@ -25,7 +26,6 @@ import {
   CreatibutorsField,
   RelatedItemsField,
   objectIdentifiersSchema,
-  FileUploader,
   LicenseField,
 } from "@nr/forms";
 import Overridable from "react-overridable";
@@ -327,6 +327,7 @@ const FormFieldsContainer = () => {
             fieldPath="metadata.notes"
           >
             <StringArrayField
+              addButtonLabel={i18next.t("Add note")}
               fieldPath="metadata.notes"
               {...getFieldData({ fieldPath: "metadata.notes" })}
             />
@@ -389,7 +390,14 @@ const FormFieldsContainer = () => {
           data-testid="filesupload-button"
         >
           <Overridable id="NrDocs.Deposit.FileUploader.container">
-            <FileUploader
+            <FilesField
+              fileMetadataFields={[
+                {
+                  id: "fileNote",
+                  defaultValue: "",
+                  isUserInput: true,
+                },
+              ]}
               recordFiles={recordFiles}
               allowedFileTypes={formConfig.allowed_file_extensions}
             />
