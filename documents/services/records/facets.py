@@ -1,5 +1,8 @@
 """Facet definitions."""
 
+from invenio_rdm_records.records.systemfields.access.field.record import (
+    AccessStatusEnum,
+)
 from invenio_records_resources.services.records.facets import TermsFacet
 from nr_metadata.services.records.facets import KeywordsFacet
 from oarepo_runtime.i18n import lazy_gettext as _
