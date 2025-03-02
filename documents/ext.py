@@ -27,6 +27,7 @@ class DocumentsExt:
         from flask_principal import identity_loaded
 
         identity_loaded.connect_via(app)(load_action_permissions)
+
     def register_flask_extension(self, app):
 
         app.extensions["documents"] = self
@@ -43,6 +44,31 @@ class DocumentsExt:
                             app.config[identifier][k] = v
                 else:
                     app.config.setdefault(identifier, getattr(config, identifier))
+
+        rdm_model_config = {
+            "model_service": "documents.services.records.service.DocumentsService",
+            "service_config": (
+                "documents.services.records.config.DocumentsServiceConfig"
+            ),
+            "ui_resource_config": "ui.documents.DocumentsUIResourceConfig",
+            "api_resource_config": (
+                "documents.resources.records.config.DocumentsResourceConfig"
+            ),
+        }
+
+        app.config.setdefault("GLOBAL_SEARCH_MODELS", [])
+        for cfg in app.config["GLOBAL_SEARCH_MODELS"]:
+            if cfg["model_service"] == rdm_model_config["model_service"]:
+                break
+        else:
+            app.config["GLOBAL_SEARCH_MODELS"].append(rdm_model_config)
+
+        app.config.setdefault("RDM_MODELS", [])
+        for cfg in app.config["RDM_MODELS"]:
+            if cfg["model_service"] == rdm_model_config["model_service"]:
+                break
+        else:
+            app.config["RDM_MODELS"].append(rdm_model_config)
 
     def is_inherited(self):
         from importlib_metadata import entry_points
@@ -152,6 +178,8 @@ class DocumentsExt:
             service=self.service_draft_files,
             config=config.DOCUMENTS_DRAFT_FILES_RESOURCE_CONFIG(),
         )
+
+
 def load_action_permissions(sender, identity):
     # TODO: need to have a deeper look at this
     from flask_principal import ActionNeed
