@@ -45,6 +45,7 @@ class DocumentsSchema(NRDocumentRecordSchema):
     oai = ma_fields.Nested(lambda: OaiSchema())
 
     state = ma_fields.String(dump_only=True)
+
     state_timestamp = ma_fields.String(dump_only=True, validate=[validate_datetime])
 
     syntheticFields = ma_fields.Nested(lambda: NRDocumentSyntheticFieldsSchema())
