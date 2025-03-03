@@ -15,7 +15,7 @@ marshmallow-i18n-messages==0.1.0
 nr-metadata==2.0.57
 nr-oaipmh-harvesters==1.0.37
 nr-vocabularies==2.1.8
-oarepo-communities==5.1.8
+oarepo-communities==5.1.9
 oarepo-dashboard==1.0.19
 oarepo-doi==1.0.18
 oarepo-glitchtip==1.0.1
@@ -24,10 +24,10 @@ oarepo-oai-pmh-harvester==4.1.9
 oarepo-oidc-einfra==1.0.4
 oarepo-published-service==1.0.3
 oarepo-requests==2.3.19
-oarepo-runtime==1.5.97
-oarepo-ui==5.2.47
+oarepo-runtime==1.5.98
+oarepo-ui==5.2.48
 oarepo-vocabularies==2.1.18
-oarepo-workflows==1.1.8
+oarepo-workflows==1.1.9
 openpyxl==3.1.5
 orcid==1.0.3
 python-dotenv==1.0.1
