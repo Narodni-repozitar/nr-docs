@@ -5,16 +5,16 @@ import {
   FormikStateLogger,
   EDTFSingleDatePicker,
   useFieldData,
-  useSanitizeInput,
   FilesField,
   StringArrayField,
+  TextField,
 } from "@js/oarepo_ui/forms";
 import { CommunitySelector } from "@js/communities_components/CommunitySelector/CommunitySelector";
 import {
   LocalVocabularySelectField,
   VocabularyTreeSelectField,
 } from "@js/oarepo_vocabularies";
-import { AccordionField, TextField } from "react-invenio-forms";
+import { AccordionField } from "react-invenio-forms";
 import {
   AdditionalTitlesField,
   FundersField,
@@ -31,7 +31,6 @@ import {
 import Overridable from "react-overridable";
 import { i18next } from "@translations/i18next";
 import _has from "lodash/has";
-import { useFormikContext, getIn } from "formik";
 
 const FormFieldsContainer = () => {
   const { formConfig, files: recordFiles } = useFormConfig();
@@ -45,9 +44,6 @@ const FormFieldsContainer = () => {
     []
   );
   const { getFieldData } = useFieldData();
-
-  const { values, setFieldValue, setFieldTouched } = useFormikContext();
-  const { sanitizeInput } = useSanitizeInput();
 
   return (
     <React.Fragment>
@@ -64,7 +60,6 @@ const FormFieldsContainer = () => {
             "metadata.languages",
             "metadata.dateIssued",
             "metadata.publishers",
-            "metadata.accessRights",
             "metadata.rights",
             "metadata.dateModified",
           ]}
@@ -75,18 +70,7 @@ const FormFieldsContainer = () => {
             id="NrDocs.Deposit.TitleField.container"
             fieldPath="metadata.title"
           >
-            <TextField
-              optimized
-              fieldPath="metadata.title"
-              {...getFieldData({ fieldPath: "metadata.title" })}
-              onBlur={() => {
-                const cleanedContent = sanitizeInput(
-                  getIn(values, "metadata.title")
-                );
-                setFieldValue("metadata.title", cleanedContent);
-                setFieldTouched("metadata.title", true);
-              }}
-            />
+            <TextField fieldPath="metadata.title" />
           </Overridable>
           <Overridable
             id="NrDocs.Deposit.AdditionalTitlesField.container"
@@ -99,16 +83,9 @@ const FormFieldsContainer = () => {
             fieldPath="metadata.resourceType"
           >
             <LocalVocabularySelectField
-              optimized
               fieldPath="metadata.resourceType"
-              multiple={false}
               filterFunction={submissibleResourceTypes}
-              clearable
               optionsListName="resource-types"
-              {...getFieldData({
-                fieldPath: "metadata.resourceType",
-                icon: "tag",
-              })}
             />
           </Overridable>
           <Overridable
@@ -125,28 +102,15 @@ const FormFieldsContainer = () => {
             fieldPath="metadata.languages"
           >
             <LocalVocabularySelectField
-              optimized
               fieldPath="metadata.languages"
-              multiple={true}
-              clearable
               optionsListName="languages"
-              {...getFieldData({
-                fieldPath: "metadata.languages",
-                icon: "language",
-              })}
             />
           </Overridable>
           <Overridable
             id="NrDocs.Deposit.DateIssuedField.container"
             fieldPath="metadata.dateIssued"
           >
-            <EDTFSingleDatePicker
-              fieldPath="metadata.dateIssued"
-              {...getFieldData({
-                fieldPath: "metadata.dateIssued",
-                icon: "calendar",
-              })}
-            />
+            <EDTFSingleDatePicker fieldPath="metadata.dateIssued" />
           </Overridable>
           <Overridable
             id="NrDocs.Deposit.PublishersField.container"
@@ -155,66 +119,20 @@ const FormFieldsContainer = () => {
             <StringArrayField
               fieldPath="metadata.publishers"
               addButtonLabel={i18next.t("Add publisher")}
-              {...getFieldData({ fieldPath: "metadata.publishers" })}
             />
           </Overridable>
-          {/* Access rights field is disabled as we use invenio RDM access
-          <Overridable
-            id="NrDocs.Deposit.AccessRightsField.container"
-            fieldPath="metadata.accessRights"
-          >
-            <LocalVocabularySelectField
-              optimized
-              fieldPath="metadata.accessRights"
-              clearable
-              optionsListName="access-rights"
-              {...getFieldData({
-                fieldPath: "metadata.accessRights",
-                icon: "tag",
-              })}
-            />
-          </Overridable>
-          */}
           <Overridable
             id="NrDocs.Deposit.LicenseField.container"
             fieldPath="metadata.rights"
           >
-            <LicenseField
-              searchConfig={{
-                searchApi: {
-                  axios: {
-                    headers: {
-                      Accept: "application/vnd.inveniordm.v1+json",
-                    },
-                    url: "/api/vocabularies/rights",
-                  },
-                },
-                initialQueryState: {
-                  size: 25,
-                  page: 1,
-                  sortBy: "bestmatch",
-                  filters: [["tags", ""]],
-                },
-              }}
-              fieldPath="metadata.rights"
-              {...getFieldData({
-                fieldPath: "metadata.rights",
-                icon: "drivers license",
-              })}
-            />
+            <LicenseField fieldPath="metadata.rights" label="bla" />
           </Overridable>
           <Overridable
             id="NrDocs.Deposit.DateModifiedField.container"
             fieldPath="metadata.dateModified"
           >
             {editMode && (
-              <EDTFSingleDatePicker
-                fieldPath="metadata.dateModified"
-                {...getFieldData({
-                  fieldPath: "metadata.dateModified",
-                  icon: "calendar",
-                })}
-              />
+              <EDTFSingleDatePicker fieldPath="metadata.dateModified" />
             )}
           </Overridable>
         </AccordionField>
@@ -302,13 +220,7 @@ const FormFieldsContainer = () => {
             id="NrDocs.Deposit.AbstractField.container"
             fieldPath="metadata.abstract"
           >
-            <MultilingualTextInput
-              textFieldLabel={i18next.t("Description")}
-              fieldPath="metadata.abstract"
-              rich={true}
-              lngFieldWidth={4}
-              {...getFieldData({ fieldPath: "metadata.abstract" })}
-            />
+            <MultilingualTextInput fieldPath="metadata.abstract" rich={true} />
           </Overridable>
           <Overridable
             id="NrDocs.Deposit.SeriesField.container"
@@ -329,7 +241,6 @@ const FormFieldsContainer = () => {
             <StringArrayField
               addButtonLabel={i18next.t("Add note")}
               fieldPath="metadata.notes"
-              {...getFieldData({ fieldPath: "metadata.notes" })}
             />
           </Overridable>
         </AccordionField>
