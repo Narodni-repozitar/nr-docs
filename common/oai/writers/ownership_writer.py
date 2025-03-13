@@ -58,7 +58,7 @@ class OwnershipWriter(BaseWriter):
         
         owned_by = None
         if owners and len(owners) > 0:
-            owned_by = owners[0].user_id
+            owned_by = owners[0][0].user_id
         current_json = dict(result) if result else {}
         if 'access' not in current_json:
             current_json['access'] = {}
