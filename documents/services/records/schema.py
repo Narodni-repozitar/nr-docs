@@ -1,10 +1,12 @@
 import marshmallow as ma
-from marshmallow import fields as ma_fields
-from marshmallow.utils import get_value
-from marshmallow_utils.fields import SanitizedUnicode
 from nr_metadata.common.services.records.schema_datatypes import (
     NRLanguageVocabularySchema,
 )
+from invenio_rdm_records.services.schemas.access import AccessSchema
+from marshmallow import fields as ma_fields
+from marshmallow.utils import get_value
+from marshmallow_utils.fields import SanitizedUnicode
+from marshmallow_utils.fields.nestedattr import NestedAttribute
 from nr_metadata.documents.services.records.schema import (
     NRDocumentMetadataSchema,
     NRDocumentRecordSchema,
@@ -14,16 +16,9 @@ from oarepo_communities.schemas.parent import CommunitiesParentSchema
 from oarepo_runtime.services.schema.marshmallow import DictOnlySchema
 from oarepo_runtime.services.schema.validation import validate_datetime
 from oarepo_workflows.services.records.schema import WorkflowParentSchema
-
-
-class GeneratedParentSchema(WorkflowParentSchema):
-    """"""
-
-    owners = ma.fields.List(ma.fields.Dict(), load_only=True)
-
-    communities = ma_fields.Nested(CommunitiesParentSchema)
-
-
+from nr_metadata.common.services.records.schema_datatypes import (
+    NRLanguageVocabularySchema,
+)
 # TODO: fix model builder to include required languages. Until then
 # please keep the overriden code here
 class LocalNRDocumentMetadataSchema(NRDocumentMetadataSchema):
@@ -32,19 +27,27 @@ class LocalNRDocumentMetadataSchema(NRDocumentMetadataSchema):
         required=True,
         validate=[ma.validate.Length(min=1)],
     )
+class GeneratedParentSchema(WorkflowParentSchema):
+    """"""
+
+    owners = ma.fields.List(ma.fields.Dict(), load_only=True)
+
+    communities = ma_fields.Nested(CommunitiesParentSchema)
 
 
 class DocumentsSchema(NRDocumentRecordSchema):
     class Meta:
         unknown = ma.RAISE
 
+    access = NestedAttribute(lambda: AccessSchema())
+
     # TODO: fix model builder to include required languages. Until then
     # please keep the overriden code here
     metadata = ma_fields.Nested(lambda: LocalNRDocumentMetadataSchema())
-
     oai = ma_fields.Nested(lambda: OaiSchema())
 
     state = ma_fields.String(dump_only=True)
+
     state_timestamp = ma_fields.String(dump_only=True, validate=[validate_datetime])
 
     syntheticFields = ma_fields.Nested(lambda: NRDocumentSyntheticFieldsSchema())
