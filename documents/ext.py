@@ -24,9 +24,9 @@ class DocumentsExt:
         if not self.is_inherited():
             self.register_flask_extension(app)
 
-        for method in dir(self):
-            if method.startswith("init_app_callback_"):
-                getattr(self, method)(app)
+        from flask_principal import identity_loaded
+
+        identity_loaded.connect_via(app)(load_action_permissions)
 
     def register_flask_extension(self, app):
 
@@ -179,3 +179,15 @@ class DocumentsExt:
             service=self.service_draft_files,
             config=config.DOCUMENTS_DRAFT_FILES_RESOURCE_CONFIG(),
         )
+def load_action_permissions(sender, identity):
+    # TODO: need to have a deeper look at this
+    from flask_principal import ActionNeed
+    from invenio_access.models import ActionUsers
+
+    user_id = identity.id
+    if user_id is None:
+        return
+
+    for au in ActionUsers.query.filter_by(user_id=user_id, exclude=False).all():
+        identity.provides.add(ActionNeed(au.action))
+    pass
