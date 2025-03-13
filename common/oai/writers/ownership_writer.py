@@ -62,7 +62,7 @@ class OwnershipWriter(BaseWriter):
         current_json = dict(result) if result else {}
         if 'access' not in current_json:
             current_json['access'] = {}
-        current_json['access']['owned_by'] = owned_by
+        current_json['access']['owned_by'] = { "id": owned_by }
         
         stmt = (
             update(table)
