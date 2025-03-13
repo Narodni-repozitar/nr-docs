@@ -54,7 +54,7 @@ invenio users create -a -c "vlastnik@test.com" --password "${USER_PASSWORD}" --p
 invenio oarepo communities members add generic "vlastnik@test.com" owner
 
 
-cat ./fixtures/communities.yaml | grep 'slug:' | sed 's/slug: //g' | while read com; do
+cat ./fixtures/communities_v3.4.2.yaml | grep 'slug:' | sed 's/slug: //g' | while read com; do
     echo "Creating users for community $com"
     invenio users create -a -c "kurator-${com}@test.com" --password "${USER_PASSWORD}"  --profile "{\"full_name\": \"Kurátor komunity ${com}\"}" &
     invenio users create -a -c "clen-${com}@test.com" --password "${USER_PASSWORD}"  --profile "{\"full_name\": \"Člen komunity ${com}\"}" &
@@ -62,7 +62,7 @@ cat ./fixtures/communities.yaml | grep 'slug:' | sed 's/slug: //g' | while read 
     wait
 done
 
-cat ./fixtures/communities.yaml | grep 'slug:' | sed 's/slug: //g' | while read com; do
+cat ./fixtures/communities_v3.4.2.yaml | grep 'slug:' | sed 's/slug: //g' | while read com; do
     echo "Adding users to community $com"
     invenio oarepo communities members add $com "vlastnik@test.com" owner &
     invenio oarepo communities members add $com "kurator-${com}@test.com" curator &

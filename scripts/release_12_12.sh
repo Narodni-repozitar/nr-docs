@@ -60,7 +60,7 @@ invenio oarepo communities members add generic "nrdocstest+vlastnik@gmail.com" o
 invenio access allow administration-access user nrdocstest+vlastnik@gmail.com
 invenio access allow administration-moderation user nrdocstest+vlastnik@gmail.com
 
-cat ./fixtures/communities.yaml | grep 'slug:' | sed 's/slug: //g' | while read com; do
+cat ./fixtures/communities_v3.4.2.yaml | grep 'slug:' | sed 's/slug: //g' | while read com; do
     echo "Creating users for community $com"
     invenio users create -a -c "nrdocstest+kurator-${com}@gmail.com" --password "${USER_PASSWORD}"  --profile "{\"full_name\": \"Kurátor komunity ${com}\"}" &
     invenio users create -a -c "nrdocstest+clen-${com}@gmail.com" --password "${USER_PASSWORD}"  --profile "{\"full_name\": \"Člen komunity ${com}\"}" &
@@ -68,7 +68,7 @@ cat ./fixtures/communities.yaml | grep 'slug:' | sed 's/slug: //g' | while read 
     wait
 done
 
-cat ./fixtures/communities.yaml | grep 'slug:' | sed 's/slug: //g' | while read com; do
+cat ./fixtures/communities_v3.4.2.yaml | grep 'slug:' | sed 's/slug: //g' | while read com; do
     echo "Adding users to community $com"
     invenio oarepo communities members add $com "nrdocstest+vlastnik@gmail.com" owner &
     invenio oarepo communities members add $com "nrdocstest+kurator-${com}@gmail.com" curator &

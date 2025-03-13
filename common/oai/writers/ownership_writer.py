@@ -51,14 +51,24 @@ class OwnershipWriter(BaseWriter):
     def _add_owners(self, record, owners):
         parent_model = record._record.parent.model
         table = Table(parent_model.__tablename__, parent_model.metadata)
+        
+        result = db.session.execute(
+            select(table.c.json).where(table.c.id == parent_model.id)
+        ).scalar_one()
+        
+        owned_by = None
+        if owners and len(owners) > 0:
+            owned_by = owners[0][0].user_id
+        current_json = dict(result) if result else {}
+        if 'access' not in current_json:
+            current_json['access'] = {}
+        current_json['access']['owned_by'] = { "user": owned_by }
+        
         stmt = (
             update(table)
             .where(table.c.id == parent_model.id)
-            .values(
-                json=table.c.json.op("||")(
-                    {"owners": [{"user": owner[0].user_id} for owner in owners]}
-                )
-            )
+            .values(json=current_json)
         )
+        
         db.session.execute(stmt)
         db.session.commit()
