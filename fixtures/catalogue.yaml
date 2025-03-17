@@ -17,7 +17,7 @@ funders:
 awards:
 - service: awards
   writer: service
-- source: ./awards.yaml
+- source: ./awards_v3.4.2.yaml
 names:
 - service: names
   writer: service
