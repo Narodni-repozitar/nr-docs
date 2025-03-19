@@ -27,6 +27,7 @@ class DocumentsExt:
         from flask_principal import identity_loaded
 
         identity_loaded.connect_via(app)(load_action_permissions)
+
     def register_flask_extension(self, app):
 
         app.extensions["documents"] = self
@@ -112,6 +113,32 @@ class DocumentsExt:
             config=config.DOCUMENTS_RECORD_RESOURCE_CONFIG(),
             record_requests_config=DraftRequestTypesResourceConfig(),
         )
+
+    def init_app_callback_rdm_models(self, app):
+        rdm_model_config = {
+            "model_service": "documents.services.records.service.DocumentsService",
+            "service_config": (
+                "documents.services.records.config.DocumentsServiceConfig"
+            ),
+            "ui_resource_config": "ui.documents.DocumentsUIResourceConfig",
+            "api_resource_config": (
+                "documents.resources.records.config.DocumentsResourceConfig"
+            ),
+        }
+
+        app.config.setdefault("GLOBAL_SEARCH_MODELS", [])
+        for cfg in app.config["GLOBAL_SEARCH_MODELS"]:
+            if cfg["model_service"] == rdm_model_config["model_service"]:
+                break
+        else:
+            app.config["GLOBAL_SEARCH_MODELS"].append(rdm_model_config)
+
+        app.config.setdefault("RDM_MODELS", [])
+        for cfg in app.config["RDM_MODELS"]:
+            if cfg["model_service"] == rdm_model_config["model_service"]:
+                break
+        else:
+            app.config["RDM_MODELS"].append(rdm_model_config)
 
     @cached_property
     def service_files(self):

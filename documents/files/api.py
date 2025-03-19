@@ -19,7 +19,6 @@ class DocumentsFileDraft(FileRecord):
     model_cls = DocumentsFileDraftMetadata
 
     index = IndexField(
-        "documents_file_draft-documents_file_draft-1.0.0",
-        search_alias="documents_file_draft",
+        "documents_file_draft-documents_file_draft-1.0.0",search_alias="documents_file_draft",
     )
     record_cls = None  # is defined inside the parent record

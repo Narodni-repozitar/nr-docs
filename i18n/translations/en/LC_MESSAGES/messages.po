@@ -4527,3 +4527,420 @@ msgstr ""
 
 msgid "pids.hint"
 msgstr ""
+
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:105
+msgid "metadata/contributors/person_or_org/family_name.label"
+msgstr ""
+
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:110
+msgid "metadata/contributors/person_or_org/given_name.label"
+msgstr ""
+
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:115
+msgid "metadata/contributors/person_or_org/identifiers/identifier.label"
+msgstr ""
+
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:120
+msgid "metadata/contributors/person_or_org/identifiers/scheme.label"
+msgstr ""
+
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:125
+msgid "metadata/contributors/person_or_org/name.label"
+msgstr ""
+
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:130
+msgid "metadata/contributors/person_or_org/type.label"
+msgstr ""
+
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:146
+msgid "metadata/creators/person_or_org/family_name.label"
+msgstr ""
+
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:151
+msgid "metadata/creators/person_or_org/given_name.label"
+msgstr ""
+
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:156
+msgid "metadata/creators/person_or_org/identifiers/identifier.label"
+msgstr ""
+
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:161
+msgid "metadata/creators/person_or_org/identifiers/scheme.label"
+msgstr ""
+
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:166
+msgid "metadata/creators/person_or_org/name.label"
+msgstr ""
+
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:171
+msgid "metadata/creators/person_or_org/type.label"
+msgstr ""
+
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:175
+msgid "metadata/creators/role/id.label"
+msgstr ""
+
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:208
+msgid "metadata/funders/award.label"
+msgstr ""
+
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:214
+msgid "metadata/funders/funder.label"
+msgstr "Funder"
+
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:70
+#: i18n/translations/jinjax_messages.jinja:16
+msgid "metadata/funders.label"
+msgstr "Funders"
+
+msgid "metadata/contributors/affiliations/name.help"
+msgstr ""
+
+msgid "metadata/contributors/affiliations/name.label"
+msgstr ""
+
+msgid "metadata/contributors/affiliations/name.hint"
+msgstr ""
+
+msgid "metadata/contributors/person_or_org.help"
+msgstr ""
+
+msgid "metadata/contributors/person_or_org.label"
+msgstr ""
+
+msgid "metadata/contributors/person_or_org.hint"
+msgstr ""
+
+msgid "metadata/contributors/person_or_org/family_name.help"
+msgstr ""
+
+msgid "metadata/contributors/person_or_org/family_name.hint"
+msgstr ""
+
+msgid "metadata/contributors/person_or_org/given_name.help"
+msgstr ""
+
+msgid "metadata/contributors/person_or_org/given_name.hint"
+msgstr ""
+
+msgid "metadata/contributors/person_or_org/identifiers.help"
+msgstr ""
+
+msgid "metadata/contributors/person_or_org/identifiers.label"
+msgstr ""
+
+msgid "metadata/contributors/person_or_org/identifiers.hint"
+msgstr ""
+
+msgid "metadata/contributors/person_or_org/identifiers/identifier.help"
+msgstr ""
+
+msgid "metadata/contributors/person_or_org/identifiers/identifier.hint"
+msgstr ""
+
+msgid "metadata/contributors/person_or_org/identifiers/scheme.help"
+msgstr ""
+
+msgid "metadata/contributors/person_or_org/identifiers/scheme.hint"
+msgstr ""
+
+msgid "metadata/contributors/person_or_org/name.help"
+msgstr ""
+
+msgid "metadata/contributors/person_or_org/name.hint"
+msgstr ""
+
+msgid "metadata/contributors/person_or_org/type.help"
+msgstr ""
+
+msgid "metadata/contributors/person_or_org/type.hint"
+msgstr ""
+
+msgid "metadata/contributors/person_or_org/type.enum.personal"
+msgstr ""
+
+msgid "metadata/contributors/person_or_org/type.enum.organizational"
+msgstr ""
+
+msgid "metadata/creators/affiliations/name.help"
+msgstr ""
+
+msgid "metadata/creators/affiliations/name.label"
+msgstr ""
+
+msgid "metadata/creators/affiliations/name.hint"
+msgstr ""
+
+msgid "metadata/creators/person_or_org.help"
+msgstr ""
+
+msgid "metadata/creators/person_or_org.label"
+msgstr ""
+
+msgid "metadata/creators/person_or_org.hint"
+msgstr ""
+
+msgid "metadata/creators/person_or_org/family_name.help"
+msgstr ""
+
+msgid "metadata/creators/person_or_org/family_name.hint"
+msgstr ""
+
+msgid "metadata/creators/person_or_org/given_name.help"
+msgstr ""
+
+msgid "metadata/creators/person_or_org/given_name.hint"
+msgstr ""
+
+msgid "metadata/creators/person_or_org/identifiers.help"
+msgstr ""
+
+msgid "metadata/creators/person_or_org/identifiers.label"
+msgstr ""
+
+msgid "metadata/creators/person_or_org/identifiers.hint"
+msgstr ""
+
+msgid "metadata/creators/person_or_org/identifiers/identifier.help"
+msgstr ""
+
+msgid "metadata/creators/person_or_org/identifiers/identifier.hint"
+msgstr ""
+
+msgid "metadata/creators/person_or_org/identifiers/scheme.help"
+msgstr ""
+
+msgid "metadata/creators/person_or_org/identifiers/scheme.hint"
+msgstr ""
+
+msgid "metadata/creators/person_or_org/name.help"
+msgstr ""
+
+msgid "metadata/creators/person_or_org/name.hint"
+msgstr ""
+
+msgid "metadata/creators/person_or_org/type.help"
+msgstr ""
+
+msgid "metadata/creators/person_or_org/type.hint"
+msgstr ""
+
+msgid "metadata/creators/person_or_org/type.enum.personal"
+msgstr ""
+
+msgid "metadata/creators/person_or_org/type.enum.organizational"
+msgstr ""
+
+msgid "metadata/creators/role.help"
+msgstr ""
+
+msgid "metadata/creators/role.label"
+msgstr ""
+
+msgid "metadata/creators/role.hint"
+msgstr ""
+
+msgid "metadata/creators/role/id.help"
+msgstr ""
+
+msgid "metadata/creators/role/id.hint"
+msgstr ""
+
+msgid "metadata/funders.help"
+msgstr ""
+
+msgid "metadata/funders.hint"
+msgstr ""
+
+msgid "metadata/funders/award.help"
+msgstr ""
+
+msgid "metadata/funders/award.hint"
+msgstr ""
+
+msgid "metadata/funders/award/title.help"
+msgstr ""
+
+msgid "metadata/funders/award/title.label"
+msgstr ""
+
+msgid "metadata/funders/award/title.hint"
+msgstr ""
+
+msgid "metadata/funders/award/number.help"
+msgstr ""
+
+msgid "metadata/funders/award/number.label"
+msgstr ""
+
+msgid "metadata/funders/award/number.hint"
+msgstr ""
+
+msgid "metadata/funders/award/identifiers.help"
+msgstr ""
+
+msgid "metadata/funders/award/identifiers.label"
+msgstr ""
+
+msgid "metadata/funders/award/identifiers.hint"
+msgstr ""
+
+msgid "metadata/funders/award/identifiers/identifier.help"
+msgstr ""
+
+msgid "metadata/funders/award/identifiers/identifier.label"
+msgstr ""
+
+msgid "metadata/funders/award/identifiers/identifier.hint"
+msgstr ""
+
+msgid "metadata/funders/award/identifiers/schema.help"
+msgstr ""
+
+msgid "metadata/funders/award/identifiers/schema.label"
+msgstr ""
+
+msgid "metadata/funders/award/identifiers/schema.hint"
+msgstr ""
+
+msgid "metadata/funders/award/acronym.help"
+msgstr ""
+
+msgid "metadata/funders/award/acronym.label"
+msgstr ""
+
+msgid "metadata/funders/award/acronym.hint"
+msgstr ""
+
+msgid "metadata/funders/award/program.help"
+msgstr ""
+
+msgid "metadata/funders/award/program.label"
+msgstr ""
+
+msgid "metadata/funders/award/program.hint"
+msgstr ""
+
+msgid "metadata/funders/award/subjects.help"
+msgstr ""
+
+msgid "metadata/funders/award/subjects.label"
+msgstr ""
+
+msgid "metadata/funders/award/subjects.hint"
+msgstr ""
+
+msgid "metadata/funders/award/subjects/id.help"
+msgstr ""
+
+msgid "metadata/funders/award/subjects/id.label"
+msgstr ""
+
+msgid "metadata/funders/award/subjects/id.hint"
+msgstr ""
+
+msgid "metadata/funders/award/subjects/subject.help"
+msgstr ""
+
+msgid "metadata/funders/award/subjects/subject.label"
+msgstr ""
+
+msgid "metadata/funders/award/subjects/subject.hint"
+msgstr ""
+
+msgid "metadata/funders/award/organizations.help"
+msgstr ""
+
+msgid "metadata/funders/award/organizations.label"
+msgstr ""
+
+msgid "metadata/funders/award/organizations.hint"
+msgstr ""
+
+msgid "metadata/funders/award/organizations/id.help"
+msgstr ""
+
+msgid "metadata/funders/award/organizations/id.label"
+msgstr ""
+
+msgid "metadata/funders/award/organizations/id.hint"
+msgstr ""
+
+msgid "metadata/funders/award/organizations/organization.help"
+msgstr ""
+
+msgid "metadata/funders/award/organizations/organization.label"
+msgstr ""
+
+msgid "metadata/funders/award/organizations/organization.hint"
+msgstr ""
+
+msgid "metadata/funders/award/organizations/scheme.help"
+msgstr ""
+
+msgid "metadata/funders/award/organizations/scheme.label"
+msgstr ""
+
+msgid "metadata/funders/award/organizations/scheme.hint"
+msgstr ""
+
+msgid "metadata/funders/award/@v.help"
+msgstr ""
+
+msgid "metadata/funders/award/@v.label"
+msgstr ""
+
+msgid "metadata/funders/award/@v.hint"
+msgstr ""
+
+msgid "metadata/funders/funder.hint"
+msgstr ""
+"Start typing the name of the funder, then select the funder from the menu."
+
+msgid "metadata/funders/funder.help"
+msgstr ""
+
+msgid "metadata/funders/funder/identifiers.help"
+msgstr ""
+
+msgid "metadata/funders/funder/identifiers.label"
+msgstr ""
+
+msgid "metadata/funders/funder/identifiers.hint"
+msgstr ""
+
+msgid "metadata/funders/funder/identifiers/identifier.help"
+msgstr ""
+
+msgid "metadata/funders/funder/identifiers/identifier.label"
+msgstr ""
+
+msgid "metadata/funders/funder/identifiers/identifier.hint"
+msgstr ""
+
+msgid "metadata/funders/funder/identifiers/schema.help"
+msgstr ""
+
+msgid "metadata/funders/funder/identifiers/schema.label"
+msgstr ""
+
+msgid "metadata/funders/funder/identifiers/schema.hint"
+msgstr ""
+
+msgid "metadata/funders/funder/name.help"
+msgstr ""
+
+msgid "metadata/funders/funder/name.label"
+msgstr ""
+
+msgid "metadata/funders/funder/name.hint"
+msgstr ""
+
+msgid "metadata/funders/funder/@v.help"
+msgstr ""
+
+msgid "metadata/funders/funder/@v.label"
+msgstr ""
+
+msgid "metadata/funders/funder/@v.hint"
+msgstr ""

@@ -17,7 +17,6 @@
         <AccessRight access={record.access_status} search_link={record.links.search_link} />
     </h1>
 </div>
-
 <dl class="ui very basic table">
     <Field label={_('metadata/additionalTitles.label')}>
        <AdditionalTitles data={metadata.additionalTitles}></AdditionalTitles>
@@ -61,16 +60,15 @@
     <Field label={ _('metadata/rights.label') }>
         <VocabularyItem vocabulary={metadata.rights} search_link={record.links.search_link} searchFacet="metadata_rights" vocabulary_type="rights"></VocabularyItem>
     </Field>
-
     <Field label={ _('metadata/events.label') }>
         <NrEvents data={metadata.events}></NrEvents>
     </Field>
     <Field label={ _('metadata/externalLocation.label') }>
         <NrExternalLocation data={metadata.externalLocation}></NrExternalLocation>
     </Field>
-    {% if metadata.fundingReferences %}
-    <Field label={ _('metadata/fundingReferences.label') }>
-    <FundingReference funders={metadata.fundingReferences} search_link={record.links.search_link}></FundingReference>
+    {% if metadata.funders %}
+    <Field label={ _('metadata/funders.label') }>
+    <FundingReference funders={metadata.funders} search_link={record.links.search_link}></FundingReference>
     </Field>
     {% endif %}
     {% if metadata.relatedItems %}
