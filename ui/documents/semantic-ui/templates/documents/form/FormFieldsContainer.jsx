@@ -8,6 +8,8 @@ import {
   useSanitizeInput,
   FilesField,
   StringArrayField,
+  FundingField,
+  CreatibutorsField,
 } from "@js/oarepo_ui/forms";
 import { CommunitySelector } from "@js/communities_components/CommunitySelector/CommunitySelector";
 import {
@@ -17,13 +19,11 @@ import {
 import { AccordionField, TextField } from "react-invenio-forms";
 import {
   AdditionalTitlesField,
-  FundersField,
   ExternalLocationField,
   SubjectsField,
   SeriesField,
   EventsField,
   IdentifiersField,
-  CreatibutorsField,
   RelatedItemsField,
   objectIdentifiersSchema,
   LicenseField,
@@ -158,23 +158,6 @@ const FormFieldsContainer = () => {
               {...getFieldData({ fieldPath: "metadata.publishers" })}
             />
           </Overridable>
-          {/* Access rights field is disabled as we use invenio RDM access
-          <Overridable
-            id="NrDocs.Deposit.AccessRightsField.container"
-            fieldPath="metadata.accessRights"
-          >
-            <LocalVocabularySelectField
-              optimized
-              fieldPath="metadata.accessRights"
-              clearable
-              optionsListName="access-rights"
-              {...getFieldData({
-                fieldPath: "metadata.accessRights",
-                icon: "tag",
-              })}
-            />
-          </Overridable>
-          */}
           <Overridable
             id="NrDocs.Deposit.LicenseField.container"
             fieldPath="metadata.rights"
@@ -232,12 +215,7 @@ const FormFieldsContainer = () => {
             <CreatibutorsField
               fieldPath="metadata.creators"
               schema="creators"
-              autocompleteNames="off"
-              fieldPathPrefix="metadata.creators.0"
-              {...getFieldData({
-                fieldPath: "metadata.creators",
-                icon: "user",
-              })}
+              autocompleteNames="search"
             />
           </Overridable>
           <Overridable
@@ -252,15 +230,11 @@ const FormFieldsContainer = () => {
               }}
               fieldPath="metadata.contributors"
               schema="contributors"
-              autocompleteNames="off"
-              nameTypeHelpText={i18next.t(
-                "Choose if the contributor is a person or an organization."
-              )}
-              fieldPathPrefix="metadata.contributors.0"
-              {...getFieldData({
-                fieldPath: "metadata.contributors",
-                icon: "user",
-              })}
+              autocompleteNames="search"
+              roleOptions={
+                formConfig?.vocabularies?.["contributor-types"]?.all || []
+              }
+              showRoleField={true}
             />
           </Overridable>
         </AccordionField>
@@ -336,14 +310,15 @@ const FormFieldsContainer = () => {
       </Overridable>
       <Overridable id="NrDocs.Deposit.AccordionFinancingInformation.container">
         <AccordionField
-          includesPaths={["metadata.fundingReferences"]}
+          includesPaths={["metadata.funders"]}
           label={i18next.t("Financing information")}
         >
           <Overridable
             id="NrDocs.Deposit.FundersField.container"
-            fieldPath="metadata.fundingReferences"
+            fieldPath="metadata.funders"
           >
-            <FundersField fieldPath="metadata.fundingReferences" />
+            <FundingField fieldPath="metadata.funders" />
+            {/* <FundersField fieldPath="metadata.fundingReferences" /> */}
           </Overridable>
         </AccordionField>
       </Overridable>
