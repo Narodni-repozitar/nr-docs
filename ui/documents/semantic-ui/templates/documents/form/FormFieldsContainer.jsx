@@ -223,17 +223,9 @@ const FormFieldsContainer = () => {
             fieldPath="metadata.contributors"
           >
             <CreatibutorsField
-              addButtonLabel={i18next.t("Add contributor")}
-              modal={{
-                addLabel: i18next.t("Add contributor"),
-                editLabel: i18next.t("Edit contributor"),
-              }}
               fieldPath="metadata.contributors"
               schema="contributors"
               autocompleteNames="search"
-              roleOptions={
-                formConfig?.vocabularies?.["contributor-types"]?.all || []
-              }
               showRoleField={true}
             />
           </Overridable>
