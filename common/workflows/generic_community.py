@@ -262,6 +262,35 @@ class GenericCommunityWorkflowRequests(WorkflowRequestPolicy):
         ],
     )
 
+    delete_doi = WorkflowRequest(
+        requesters=[
+            IfNotHarvested(
+                then_=[
+                    RecordOwners(),
+                    PrimaryCommunityRole("curator"),
+                    PrimaryCommunityRole("owner"),
+                ],
+                else_=[SystemProcess()],
+            )
+        ],
+        recipients=[
+            IfRequestedBy(
+                requesters=[
+                    PrimaryCommunityRole("curator"),
+                    PrimaryCommunityRole("owner"),
+                ],
+                then_=[AutoApprove()],
+                else_=[PrimaryCommunityRole("curator")],
+            )
+        ],
+        escalations=[
+            WorkflowRequestEscalation(
+                after=timedelta(days=21),
+                recipients=[PrimaryCommunityRole("owner")],
+            )
+        ],
+    )
+
 
 if False:
     translated_strings = [

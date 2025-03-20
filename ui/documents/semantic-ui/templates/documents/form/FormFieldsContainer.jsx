@@ -6,7 +6,11 @@ import {
   EDTFSingleDatePicker,
   useFieldData,
   useSanitizeInput,
-} from "@js/oarepo_ui";
+  FilesField,
+  StringArrayField,
+  FundingField,
+  CreatibutorsField,
+} from "@js/oarepo_ui/forms";
 import { CommunitySelector } from "@js/communities_components/CommunitySelector/CommunitySelector";
 import {
   LocalVocabularySelectField,
@@ -14,18 +18,14 @@ import {
 } from "@js/oarepo_vocabularies";
 import { AccordionField, TextField } from "react-invenio-forms";
 import {
-  StringArrayField,
   AdditionalTitlesField,
-  FundersField,
   ExternalLocationField,
   SubjectsField,
   SeriesField,
   EventsField,
   IdentifiersField,
-  CreatibutorsField,
   RelatedItemsField,
   objectIdentifiersSchema,
-  FileUploader,
   LicenseField,
 } from "@nr/forms";
 import Overridable from "react-overridable";
@@ -158,23 +158,6 @@ const FormFieldsContainer = () => {
               {...getFieldData({ fieldPath: "metadata.publishers" })}
             />
           </Overridable>
-          {/* Access rights field is disabled as we use invenio RDM access
-          <Overridable
-            id="NrDocs.Deposit.AccessRightsField.container"
-            fieldPath="metadata.accessRights"
-          >
-            <LocalVocabularySelectField
-              optimized
-              fieldPath="metadata.accessRights"
-              clearable
-              optionsListName="access-rights"
-              {...getFieldData({
-                fieldPath: "metadata.accessRights",
-                icon: "tag",
-              })}
-            />
-          </Overridable>
-          */}
           <Overridable
             id="NrDocs.Deposit.LicenseField.container"
             fieldPath="metadata.rights"
@@ -232,12 +215,7 @@ const FormFieldsContainer = () => {
             <CreatibutorsField
               fieldPath="metadata.creators"
               schema="creators"
-              autocompleteNames="off"
-              fieldPathPrefix="metadata.creators.0"
-              {...getFieldData({
-                fieldPath: "metadata.creators",
-                icon: "user",
-              })}
+              autocompleteNames="search"
             />
           </Overridable>
           <Overridable
@@ -245,22 +223,10 @@ const FormFieldsContainer = () => {
             fieldPath="metadata.contributors"
           >
             <CreatibutorsField
-              addButtonLabel={i18next.t("Add contributor")}
-              modal={{
-                addLabel: i18next.t("Add contributor"),
-                editLabel: i18next.t("Edit contributor"),
-              }}
               fieldPath="metadata.contributors"
               schema="contributors"
-              autocompleteNames="off"
-              nameTypeHelpText={i18next.t(
-                "Choose if the contributor is a person or an organization."
-              )}
-              fieldPathPrefix="metadata.contributors.0"
-              {...getFieldData({
-                fieldPath: "metadata.contributors",
-                icon: "user",
-              })}
+              autocompleteNames="search"
+              showRoleField={true}
             />
           </Overridable>
         </AccordionField>
@@ -327,6 +293,7 @@ const FormFieldsContainer = () => {
             fieldPath="metadata.notes"
           >
             <StringArrayField
+              addButtonLabel={i18next.t("Add note")}
               fieldPath="metadata.notes"
               {...getFieldData({ fieldPath: "metadata.notes" })}
             />
@@ -335,14 +302,15 @@ const FormFieldsContainer = () => {
       </Overridable>
       <Overridable id="NrDocs.Deposit.AccordionFinancingInformation.container">
         <AccordionField
-          includesPaths={["metadata.fundingReferences"]}
+          includesPaths={["metadata.funders"]}
           label={i18next.t("Financing information")}
         >
           <Overridable
             id="NrDocs.Deposit.FundersField.container"
-            fieldPath="metadata.fundingReferences"
+            fieldPath="metadata.funders"
           >
-            <FundersField fieldPath="metadata.fundingReferences" />
+            <FundingField fieldPath="metadata.funders" />
+            {/* <FundersField fieldPath="metadata.fundingReferences" /> */}
           </Overridable>
         </AccordionField>
       </Overridable>
@@ -375,8 +343,9 @@ const FormFieldsContainer = () => {
           </Overridable>
         </AccordionField>
       </Overridable>
-      <div>TODO: metadata only - do we need to have an explicit checkbox or
-        are missing files enough to express that the record does not have those?
+      <div>
+        TODO: metadata only - do we need to have an explicit checkbox or are
+        missing files enough to express that the record does not have those?
       </div>
       <Overridable id="NrDocs.Deposit.AccordionFieldFiles.container">
         <AccordionField
@@ -388,7 +357,17 @@ const FormFieldsContainer = () => {
           data-testid="filesupload-button"
         >
           <Overridable id="NrDocs.Deposit.FileUploader.container">
-            <FileUploader recordFiles={recordFiles} allowedFileTypes={formConfig.allowed_file_extensions} />
+            <FilesField
+              fileMetadataFields={[
+                {
+                  id: "fileNote",
+                  defaultValue: "",
+                  isUserInput: true,
+                },
+              ]}
+              recordFiles={recordFiles}
+              allowedFileTypes={formConfig.allowed_file_extensions}
+            />
           </Overridable>
         </AccordionField>
       </Overridable>
