@@ -125,7 +125,7 @@ const FormFieldsContainer = () => {
             id="NrDocs.Deposit.LicenseField.container"
             fieldPath="metadata.rights"
           >
-            <LicenseField fieldPath="metadata.rights" label="bla" />
+            <LicenseField fieldPath="metadata.rights" />
           </Overridable>
           <Overridable
             id="NrDocs.Deposit.DateModifiedField.container"
@@ -208,12 +208,7 @@ const FormFieldsContainer = () => {
           >
             <VocabularyTreeSelectField
               fieldPath="metadata.subjectCategories"
-              multiple={true}
               vocabulary="subject-categories"
-              {...getFieldData({
-                fieldPath: "metadata.subjectCategories",
-                icon: "tag",
-              })}
             />
           </Overridable>
           <Overridable
@@ -267,10 +262,7 @@ const FormFieldsContainer = () => {
             id="NrDocs.Deposit.RelatedItemsField.container"
             fieldPath="metadata.relatedItems"
           >
-            <RelatedItemsField
-              fieldPath="metadata.relatedItems"
-              {...getFieldData({ fieldPath: "metadata.relatedItems" })}
-            />
+            <RelatedItemsField fieldPath="metadata.relatedItems" />
           </Overridable>
         </AccordionField>
       </Overridable>
