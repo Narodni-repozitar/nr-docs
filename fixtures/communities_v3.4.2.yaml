@@ -1,0 +1,1794 @@
+slug: agritec
+access:
+  visibility: public
+metadata:
+  title: AGRITEC, výzkum, šlechtění, služby
+  type:
+    id: organization
+  website: https://www.agritec.cz/
+  organizations:
+  - name: AGRITEC, výzkum, šlechtění, služby
+---
+slug: agrotest-fyto
+access:
+  visibility: public
+metadata:
+  title: Agrotest fyto, s.r.o.
+  type:
+    id: organization
+  website: http://www.vukrom.cz/
+  organizations:
+  - name: Agrotest fyto
+---
+slug: agrovyzkum-rapotin
+access:
+  visibility: public
+metadata:
+  title: Agrovýzkum Rapotín
+  type:
+    id: organization
+  website: https://www.vuchs.cz/main/agrovyzkum/
+  organizations:
+  - name: Agrovýzkum Rapotín
+---
+slug: akademie-muzickych-umeni-v-praze
+access:
+  visibility: public
+metadata:
+  title: Akademie múzických umění
+  type:
+    id: organization
+  website: https://www.amu.cz/cs/
+  organizations:
+  - name: Akademie múzických umění v Praze
+---
+slug: akademie-vytvarnych-umeni
+access:
+  visibility: public
+metadata:
+  title: Akademie výtvarných umění
+  type:
+    id: organization
+  website: http://www.avu.cz
+  organizations:
+  - name: Akademie výtvarných umění v Praze
+---
+slug: archeologicky-ustav-brno
+access:
+  visibility: public
+metadata:
+  title: Archeologický ústav AV ČR, Brno
+  type:
+    id: organization
+  website: https://www.arub.cz/
+  organizations:
+  - name: Archeologický ústav AV ČR, Brno
+---
+slug: archeologicky-ustav-praha
+access:
+  visibility: public
+metadata:
+  title: Archeologický ústav AV ČR, Praha
+  type:
+    id: organization
+  website: https://www.arup.cas.cz/
+  organizations:
+  - name: Archeologický ústav AV ČR, Praha
+---
+slug: archip
+access:
+  visibility: public
+metadata:
+  title: Architectural Institute in Prague
+  description: Ukončená spolupráce, do komunity nepřibývají nové záznamy.
+  type:
+    id: organization
+  website: http://www.archip.eu
+  organizations:
+  - name: Architectural Institute in Prague
+---
+slug: archiv-doc-jiri-soucek
+access:
+  visibility: public
+metadata:
+  title: Archiv Doc. Jiřího Součka
+  type:
+    id: topic
+---
+slug: archiv-ing-arch-jana-moucky
+access:
+  visibility: public
+metadata:
+  title: Archiv Ing. Arch. Jana Moučky
+  type:
+    id: topic
+---
+slug: arnika
+access:
+  visibility: public
+metadata:
+  title: Arnika
+  type:
+    id: organization
+  website: https://arnika.org
+  organizations:
+  - name: Arnika
+---
+slug: astronomicky-ustav
+access:
+  visibility: public
+metadata:
+  title: Astronomický ústav AV ČR
+  type:
+    id: organization
+  website: https://www.asu.cas.cz/
+  organizations:
+  - name: Astronomický ústav AV ČR
+---
+slug: biofyzikalni-ustav
+access:
+  visibility: public
+metadata:
+  title: Biofyzikální ústav AV ČR
+  type:
+    id: organization
+  website: https://www.ibp.cz/cs/
+  organizations:
+  - name: Biofyzikální ústav AV ČR
+---
+slug: biologicke-centrum
+access:
+  visibility: public
+metadata:
+  title: Biologické centrum AV ČR
+  type:
+    id: organization
+  website: https://www.bc.cas.cz/
+  organizations:
+  - name: Biologické centrum AV ČR
+---
+slug: biotechnologicky-ustav
+access:
+  visibility: public
+metadata:
+  title: Biotechnologický ústav AV ČR
+  type:
+    id: organization
+  website: https://www.ibt.cas.cz/cs/
+  organizations:
+  - name: Biotechnologický ústav AV ČR
+---
+slug: botanicky-ustav
+access:
+  visibility: public
+metadata:
+  title: Botanický ústav AV ČR
+  type:
+    id: organization
+  website: https://www.ibot.cas.cz/
+  organizations:
+  - name: Botanický ústav AV ČR
+---
+slug: cenia
+access:
+  visibility: public
+metadata:
+  title: CENIA, česká informační agentura životního prostředí
+  type:
+    id: organization
+  website: https://www.cenia.cz
+  organizations:
+  - name: CENIA, česká informační agentura životního prostředí
+---
+slug: centrum-dopravniho-vyzkumu
+access:
+  visibility: public
+metadata:
+  title: Centrum dopravního výzkumu, v.v.i. Brno
+  type:
+    id: organization
+  website: https://www.cdv.cz
+  organizations:
+  - name: Centrum dopravního výzkumu
+---
+slug: centrum-pro-dopravu-a-energetiku
+access:
+  visibility: public
+metadata:
+  title: Centrum pro dopravu a energetiku
+  type:
+    id: organization
+  website: https://www.cde-org.cz
+  organizations:
+  - name: Centrum pro dopravu a energetiku
+---
+slug: centrum-pro-regionalni-rozvoj
+access:
+  visibility: public
+metadata:
+  title: Centrum pro regionální rozvoj České republiky
+  description: Ukončená spolupráce, do komunity nepřibývají nové záznamy.
+  type:
+    id: organization
+  website: http://www.crr.cz
+  organizations:
+  - name: Centrum pro regionální rozvoj České republiky
+---
+slug: centrum-pro-studium-vysokeho-skolstvi
+access:
+  visibility: public
+metadata:
+  title: Centrum pro studium vysokého školství
+  type:
+    id: organization
+  website: https://www.csvs.cz/
+  organizations:
+  - name: Centrum pro studium vysokého školství
+---
+slug: centrum-vyzkumu-globalni-zmeny
+access:
+  visibility: public
+metadata:
+  title: Ústav výzkumu globální změny AV ČR
+  type:
+    id: organization
+  website: http://www.czechglobe.cz/
+  organizations:
+  - name: Ústav výzkumu globální změny AV ČR
+---
+slug: ceska-asociace-ergoterapeutu
+access:
+  visibility: public
+metadata:
+  title: Česká asociace ergoterapeutů
+  type:
+    id: organization
+  website: https://ergoterapie.cz/
+  organizations:
+  - name: Česká asociace ergoterapeutů
+---
+slug: ceska-asociace-paraplegiku
+access:
+  visibility: public
+metadata:
+  title: Česká asociace paraplegiků
+  type:
+    id: organization
+  website: http://www.czepa.cz/
+  organizations:
+  - name: Česká asociace paraplegiků
+---
+slug: ceska-narodni-banka
+access:
+  visibility: public
+metadata:
+  title: Česká národní banka
+  type:
+    id: organization
+  website: http://www.cnb.cz
+  organizations:
+  - name: Česká národní banka
+---
+slug: ceska-spolecnost-ornitologicka
+access:
+  visibility: public
+metadata:
+  title: Česká společnost ornitologická
+  type:
+    id: organization
+  website: http://www.birdlife.cz/
+  organizations:
+  - name: Česká společnost ornitologická
+---
+slug: ceska-zemedelska-univerzita
+access:
+  visibility: public
+metadata:
+  title: Česká zemědělská univerzita v Praze
+  type:
+    id: organization
+  website: https://www.czu.cz/cs
+  organizations:
+  - name: Česká zemědělská univerzita v Praze
+---
+slug: cesky-statisticky-urad
+access:
+  visibility: public
+metadata:
+  title: Český statistický úřad
+  type:
+    id: organization
+  website: https://www.czso.cz/
+  organizations:
+  - name: Český statistický úřad
+---
+slug: cesnet
+access:
+  visibility: public
+metadata:
+  title: CESNET
+  type:
+    id: organization
+  website: https://www.cesnet.cz/
+  organizations:
+  - name: CESNET
+---
+slug: clovek-v-tisni
+access:
+  visibility: public
+metadata:
+  title: Člověk v tísni, o.p.s
+  description: Ukončená spolupráce, do komunity nepřibývají nové záznamy.
+  type:
+    id: organization
+  website: http://www.clovekvtisni.cz
+  organizations:
+  - name: Člověk v tísni
+---
+slug: crdm
+access:
+  visibility: public
+metadata:
+  title: Česká rada dětí a mládeže
+  type:
+    id: organization
+  website: http://crdm.cz/
+  organizations:
+  - name: Česká rada dětí a mládeže
+---
+slug: cvut
+access:
+  visibility: public
+metadata:
+  title: České vysoké učení technické v Praze
+  type:
+    id: organization
+  website: https://www.cvut.cz/
+  organizations:
+  - name: České vysoké učení technické v Praze
+---
+slug: czwa
+access:
+  visibility: public
+metadata:
+  title: 'CzWa: Asociace pro vodu ČR'
+  type:
+    id: organization
+  website: http://www.czwa.cz/
+  organizations:
+  - name: Asociace pro vodu ČR
+---
+slug: ekodomov
+access:
+  visibility: public
+metadata:
+  title: Ekodomov
+  type:
+    id: organization
+  website: http://www.ekodomov.cz/
+  organizations:
+  - name: Ekodomov
+---
+slug: entomologicky-ustav
+access:
+  visibility: public
+metadata:
+  title: Entomologický ústav AV ČR
+  description: Ústav byl v roce 2006 sloučen pod Biologické centrum AV ČR.
+  type:
+    id: organization
+  website: https://www.entu.cas.cz/
+  organizations:
+  - name: Entomologický ústav AV ČR
+---
+slug: etnologicky-ustav
+access:
+  visibility: public
+metadata:
+  title: Etnologický ústav AV ČR
+  type:
+    id: organization
+  website: https://www.eu.avcr.cz/cs/
+  organizations:
+  - name: Etnologický ústav AV ČR
+---
+slug: evropske-hodnoty
+access:
+  visibility: public
+metadata:
+  title: Evropské hodnoty
+  description: Ukončená spolupráce, do komunity nepřibývají nové záznamy.
+  type:
+    id: organization
+  website: http://www.evropskehodnoty.cz/
+  organizations:
+  - name: Evropské hodnoty
+---
+slug: fairtrade-cz-sk
+access:
+  visibility: public
+metadata:
+  title: Fairtrade Česko a Slovensko
+  type:
+    id: organization
+  website: https://www.fairtrade-cesko.cz
+  organizations:
+  - name: Fairtrade Česko a Slovensko
+---
+slug: filosoficky-ustav
+access:
+  visibility: public
+metadata:
+  title: Filosofický ústav AV ČR
+  type:
+    id: organization
+  website: http://www.flu.cas.cz
+  organizations:
+  - name: Filosofický ústav AV ČR
+---
+slug: fyzikalni-ustav
+access:
+  visibility: public
+metadata:
+  title: Fyzikální ústav AV ČR
+  type:
+    id: organization
+  website: https://www.fzu.cz/home
+  organizations:
+  - name: Fyzikální ústav AV ČR
+---
+slug: fyziologicky-ustav
+access:
+  visibility: public
+metadata:
+  title: Fyziologický ústav AV ČR
+  type:
+    id: organization
+  website: https://fgu.cas.cz/
+  organizations:
+  - name: Fyziologický ústav AV ČR
+---
+slug: galerie-vytvarneho-umeni-v-ostrave
+access:
+  visibility: public
+metadata:
+  title: Galerie výtvarného umění v Ostravě
+  type:
+    id: organization
+  website: http://www.gvuo.cz/
+  organizations:
+  - name: Galerie výtvarného umění v Ostravě
+---
+slug: gender-studies
+access:
+  visibility: public
+metadata:
+  title: Gender Studies
+  type:
+    id: organization
+  website: http://www.genderstudies.cz/
+  organizations:
+  - name: Gender Studies
+---
+slug: geofyzikalni-ustav
+access:
+  visibility: public
+metadata:
+  title: Geofyzikální ústav AV ČR
+  type:
+    id: organization
+  website: http://www.ig.cas.cz/
+  organizations:
+  - name: Geofyzikální ústav AV ČR
+---
+slug: geologicky-ustav
+access:
+  visibility: public
+metadata:
+  title: Geologický ústav AV ČR
+  type:
+    id: organization
+  website: http://www.gli.cas.cz
+  organizations:
+  - name: Geologický ústav AV ČR
+---
+slug: gle
+access:
+  visibility: public
+metadata:
+  title: GLE
+  type:
+    id: organization
+  website: http://gle.cz/
+  organizations:
+  - name: GLE
+---
+slug: hestia
+access:
+  visibility: public
+metadata:
+  title: HESTIA
+  type:
+    id: organization
+  website: http://www.hest.cz/
+  organizations:
+  - name: HESTIA
+---
+slug: historicky-ustav
+access:
+  visibility: public
+metadata:
+  title: Historický ústav AV ČR
+  type:
+    id: organization
+  website: http://www.hiu.cas.cz/
+  organizations:
+  - name: Historický ústav AV ČR
+---
+slug: hydrobiologicky-ustav
+access:
+  visibility: public
+metadata:
+  title: Hydrobiologický ústav AV ČR
+  description: Ústav byl v roce 2006 sloučen pod Biologické centrum AV ČR.
+  type:
+    id: organization
+  website: https://www.hbu.cas.cz/
+  organizations:
+  - name: Hydrobiologický ústav AV ČR
+---
+slug: chmelarsky-institut
+access:
+  visibility: public
+metadata:
+  title: Chmelařský institut
+  type:
+    id: organization
+  website: http://www.chizatec.cz/
+  organizations:
+  - name: Chmelařský institut
+---
+slug: institut-umeni
+access:
+  visibility: public
+metadata:
+  title: Institut umění - Divadelní ústav
+  type:
+    id: organization
+  website: http://www.idu.cz/
+  organizations:
+  - name: Institut umění - Divadelní ústav
+---
+slug: iuridicum-remedium
+access:
+  visibility: public
+metadata:
+  title: Iuridicum Remedium, o.s.
+  type:
+    id: organization
+  website: http://www.iure.org/
+  organizations:
+  - name: Iuridicum Remedium
+---
+slug: jihoceska-univerzita-v-ceskych-budejovicich
+access:
+  visibility: public
+metadata:
+  title: Jihočeská univerzita v Českých Budějovicích
+  type:
+    id: organization
+  website: https://www.jcu.cz/cz/
+  organizations:
+  - name: Jihočeská univerzita v Českých Budějovicích
+---
+slug: jihomoravske-muzeum-ve-znojme
+access:
+  visibility: public
+metadata:
+  title: Jihomoravské muzeum ve Znojmě
+  type:
+    id: organization
+  website: https://www.muzeumznojmo.cz
+  organizations:
+  - name: Jihomoravské muzeum ve Znojmě
+---
+slug: knihovna-av-cr
+access:
+  visibility: public
+metadata:
+  title: Knihovna AV ČR
+  type:
+    id: organization
+  website: https://lib.cas.cz/
+  organizations:
+  - name: Knihovna AV ČR
+---
+slug: masarykova-univerzita
+access:
+  visibility: public
+metadata:
+  title: Masarykova univerzita
+  type:
+    id: organization
+  website: https://www.muni.cz/
+  organizations:
+  - name: Masarykova univerzita
+---
+slug: masarykuv-ustav-a-archiv
+access:
+  visibility: public
+metadata:
+  title: Masarykův ústav + Archiv
+  type:
+    id: organization
+  website: https://www.mua.cas.cz/cs
+  organizations:
+  - name: Masarykův ústav a Archiv AV ČR
+---
+slug: matematicky-ustav
+access:
+  visibility: public
+metadata:
+  title: Matematický ústav AV ČR
+  type:
+    id: organization
+  website: http://www.math.cas.cz
+  organizations:
+  - name: Matematický ústav AV ČR
+---
+slug: mendelova-univerzita-v-brne
+access:
+  visibility: public
+metadata:
+  title: Mendelova univerzita v Brně
+  type:
+    id: organization
+  website: https://mendelu.cz/
+  organizations:
+  - name: Mendelova univerzita v Brně
+---
+slug: mikrobiologicky-ustav
+access:
+  visibility: public
+metadata:
+  title: Mikrobiologický ústav AV ČR
+  type:
+    id: organization
+  website: https://mbu.cas.cz/
+  organizations:
+  - name: Mikrobiologický ústav AV ČR
+---
+slug: ministerstvo-spravedlnosti
+access:
+  visibility: public
+metadata:
+  title: Ministerstvo spravedlnosti
+  type:
+    id: organization
+  website: https://portal.justice.cz
+  organizations:
+  - name: Ministerstvo spravedlnosti ČR
+---
+slug: moravska-galerie
+access:
+  visibility: public
+metadata:
+  title: Moravská galerie v Brně
+  type:
+    id: organization
+  website: https://moravska-galerie.cz
+  organizations:
+  - name: Moravská galerie v Brně
+---
+slug: moravska-zemska-knihovna
+access:
+  visibility: public
+metadata:
+  title: Moravská zemská knihovna
+  type:
+    id: organization
+  website: http://www.mzk.cz/
+  organizations:
+  - name: Moravská zemská knihovna
+---
+slug: muzeum-brnenska
+access:
+  visibility: public
+metadata:
+  title: Muzeum Brněnska
+  type:
+    id: organization
+  website: https://www.muzeumbrnenska.cz
+  organizations:
+  - name: Muzeum Brněnska
+---
+slug: muzeum-skla-a-bizuterie
+access:
+  visibility: public
+metadata:
+  title: Muzeum skla a bižuterie v Jablonci nad Nisou
+  type:
+    id: organization
+  website: https://www.msb-jablonec.cz/novinky
+  organizations:
+  - name: Muzeum skla a bižuterie v Jablonci nad Nisou
+---
+slug: muzeum-vychodnich-cech
+access:
+  visibility: public
+metadata:
+  title: Muzeum východních Čech v Hradci Králové
+  type:
+    id: organization
+  website: http://www.muzeumhk.cz
+  organizations:
+  - name: Muzeum východních Čech v Hradci Králové
+---
+slug: nacr
+access:
+  visibility: public
+metadata:
+  title: Národní archiv
+  type:
+    id: organization
+  website: http://www.nacr.cz/
+  organizations:
+  - name: Národní archiv
+---
+slug: nadace-promeny
+access:
+  visibility: public
+metadata:
+  title: Nadace Karel Komárek Family Foundation
+  type:
+    id: organization
+  website: https://www.komarekfoundation.org/
+  organizations:
+  - name: Nadace Karel Komárek Family Foundation
+---
+slug: narodni-hrebcin-kladruby
+access:
+  visibility: public
+metadata:
+  title: Národní hřebčín Kladruby nad Labem
+  type:
+    id: organization
+  website: https://www.nhkladruby.cz/
+  organizations:
+  - name: Národní hřebčín Kladruby nad Labem
+---
+slug: narodni-informacni-a-poradenske-stredisko-pro-kulturu
+access:
+  visibility: public
+metadata:
+  title: Národní informační a poradenské středisko pro kulturu (NIPOS)
+  type:
+    id: organization
+  website: http://www.nipos-mk.cz/
+  organizations:
+  - name: Národní informační a poradenské středisko pro kulturu (NIPOS)
+---
+slug: narodni-knihovna
+access:
+  visibility: public
+metadata:
+  title: Národní knihovna ČR
+  type:
+    id: organization
+  website: https://www.nkp.cz/
+  organizations:
+  - name: Národní knihovna ČR
+---
+slug: narodni-lekarska-knihovna
+access:
+  visibility: public
+metadata:
+  title: Národní lékařská knihovna
+  type:
+    id: organization
+  website: https://nlk.cz/
+  organizations:
+  - name: Národní lékařská knihovna
+---
+slug: narodni-muzeum
+access:
+  visibility: public
+metadata:
+  title: Národní muzeum
+  type:
+    id: organization
+  website: http://www.nm.cz/
+  organizations:
+  - name: Národní muzeum
+---
+slug: narodni-muzeum-v-prirode
+access:
+  visibility: public
+metadata:
+  title: Národní muzeum v přírodě
+  type:
+    id: organization
+  website: https://www.nmvp.cz/
+  organizations:
+  - name: Národní muzeum v přírodě
+---
+slug: narodni-pamatkovy-ustav
+access:
+  visibility: public
+metadata:
+  title: Národní památkový ústav
+  type:
+    id: organization
+  website: http://www.npu.cz/
+  organizations:
+  - name: Národní památkový ústav
+---
+slug: narodni-technicka-knihovna
+access:
+  visibility: public
+metadata:
+  title: Národní technická knihovna
+  type:
+    id: organization
+  website: https://www.techlib.cz/cs/
+  organizations:
+  - name: Národní technická knihovna
+---
+slug: narodni-technicke-muzeum
+access:
+  visibility: public
+metadata:
+  title: Národní technické muzeum
+  type:
+    id: organization
+  website: http://www.ntm.cz/
+  organizations:
+  - name: Národní technické muzeum
+---
+slug: narodni-zemedelske-muzeum
+access:
+  visibility: public
+metadata:
+  title: Národní zemědělské muzeum
+  type:
+    id: organization
+  website: http://nzm.cz/
+  organizations:
+  - name: Národní zemědělské muzeum
+---
+slug: narodohospodarsky-ustav
+access:
+  visibility: public
+metadata:
+  title: Národohospodářský ústav AV ČR
+  type:
+    id: organization
+  website: https://www.ei.cas.cz/
+  organizations:
+  - name: Národohospodářský ústav AV ČR
+---
+slug: nfa
+access:
+  visibility: public
+metadata:
+  title: Národní filmový archiv
+  type:
+    id: organization
+  website: https://nfa.cz
+  organizations:
+  - name: Národní filmový archiv
+---
+slug: nulk
+access:
+  visibility: public
+metadata:
+  title: Národní ústav lidové kultury
+  type:
+    id: organization
+  website: http://www.nulk.cz/
+  organizations:
+  - name: Národní ústav lidové kultury
+---
+slug: nuv
+access:
+  visibility: public
+metadata:
+  title: Národní ústav pro vzdělávání
+  description: Ukončená spolupráce, do komunity nepřibývají nové záznamy.
+  type:
+    id: organization
+  website: https://archiv-nuv.npi.cz/
+  organizations:
+  - name: Národní ústav pro vzdělávání
+---
+slug: orientalni-ustav
+access:
+  visibility: public
+metadata:
+  title: Orientální ústav AV ČR
+  type:
+    id: organization
+  website: https://orient.cas.cz/cs/
+  organizations:
+  - name: Orientální ústav AV ČR
+---
+slug: oseva
+access:
+  visibility: public
+metadata:
+  title: OSEVA vývoj a výzkum
+  type:
+    id: organization
+  website: http://www.oseva-vav.cz
+  organizations:
+  - name: OSEVA vývoj a výzkum
+---
+slug: ostravska-univerzita
+access:
+  visibility: public
+metadata:
+  title: Ostravská univerzita
+  type:
+    id: organization
+  website: https://www.osu.cz/
+  organizations:
+  - name: Ostravská univerzita
+---
+slug: pamatnik-narodniho-pisemnictvi
+access:
+  visibility: public
+metadata:
+  title: Památník národního písemnictví
+  type:
+    id: organization
+  website: http://www.pamatniknarodnihopisemnictvi.cz/
+  organizations:
+  - name: Památník národního písemnictví
+---
+slug: parazitologicky-ustav
+access:
+  visibility: public
+metadata:
+  title: Parazitologický ústav AV ČR
+  description: Ústav byl v roce 2006 sloučen pod Biologické centrum AV ČR.
+  type:
+    id: organization
+  website: https://www.paru.cas.cz/
+  organizations:
+  - name: Parazitologický ústav AV ČR
+---
+slug: parlamentni-institut
+access:
+  visibility: public
+metadata:
+  title: Parlamentní institut
+  type:
+    id: organization
+  website: http://www.psp.cz/sqw/hp.sqw?k=40
+  organizations:
+  - name: Parlamentní institut
+---
+slug: psychologicky-ustav
+access:
+  visibility: public
+metadata:
+  title: Psychologický ústav AV ČR
+  type:
+    id: organization
+  website: https://www.psu.cas.cz
+  organizations:
+  - name: Psychologický ústav AV ČR
+---
+slug: sdruzeni-pro-integraci-a-migraci
+access:
+  visibility: public
+metadata:
+  title: Sdružení pro integraci a migraci
+  type:
+    id: organization
+  website: http://www.migrace.com/
+  organizations:
+  - name: Sdružení pro integraci a migraci
+---
+slug: severoceske-muzeum-v-liberci
+access:
+  visibility: public
+metadata:
+  title: Severočeské muzeum v Liberci
+  type:
+    id: organization
+  website: http://www.muzeumlb.cz/
+  organizations:
+  - name: Severočeské muzeum v Liberci
+---
+slug: siriri
+access:
+  visibility: public
+metadata:
+  title: SIRIRI
+  type:
+    id: organization
+  website: https://siriri.org/
+  organizations:
+  - name: SIRIRI
+---
+slug: slezska-univerzita-opava
+access:
+  visibility: public
+metadata:
+  title: Slezská univerzita v Opavě
+  type:
+    id: organization
+  website: http://www.slu.cas.cz/
+  organizations:
+  - name: Slezská univerzita v Opavě
+---
+slug: slezske-zemske-muzeum
+access:
+  visibility: public
+metadata:
+  title: Slezské zemské muzeum
+  type:
+    id: organization
+  website: http://www.szm.cz/
+  organizations:
+  - name: Slezské zemské muzeum
+---
+slug: slovansky-ustav
+access:
+  visibility: public
+metadata:
+  title: Slovanský ústav AV ČR
+  type:
+    id: organization
+  website: https://www.slu.cas.cz/cs
+  organizations:
+  - name: Slovanský ústav AV ČR
+---
+slug: centrum-pro-vyzkum-verejneho-mineni
+access:
+  visibility: public
+metadata:
+  title: Sociologický ústav AV ČR
+---
+slug: sociologicky-ustav
+access:
+  visibility: public
+metadata:
+  title: Sociologický ústav AV ČR
+  type:
+    id: organization
+  website: http://www.soc.cas.cz/
+  organizations:
+  - name: Sociologický ústav AV ČR
+---
+slug: surao
+access:
+  visibility: public
+metadata:
+  title: Správa úložišť radioaktivních odpadů
+  type:
+    id: organization
+  website: http://www.surao.cz/
+  organizations:
+  - name: Správa úložišť radioaktivních odpadů
+---
+slug: szpi
+access:
+  visibility: public
+metadata:
+  title: Státní zemědělská a potravinářská inspekce
+  type:
+    id: organization
+  website: http://www.szpi.gov.cz
+  organizations:
+  - name: Státní zemědělská a potravinářská inspekce
+---
+slug: technicke-muzeum-v-brne
+access:
+  visibility: public
+metadata:
+  title: Technické muzeum v Brně
+  type:
+    id: organization
+  website: https://www.tmbrno.cz
+  organizations:
+  - name: Technické muzeum v Brně
+---
+slug: technologicke-centrum
+access:
+  visibility: public
+metadata:
+  title: Technologické centrum AV ČR
+  type:
+    id: organization
+  website: https://www.tc.cz/cs
+  organizations:
+  - name: Technologické centrum AV ČR
+---
+slug: uhk
+access:
+  visibility: public
+metadata:
+  title: Univerzita Hradec Králové
+  type:
+    id: organization
+  website: https://www.uhk.cz/
+  organizations:
+  - name: Univerzita Hradec Králové
+---
+slug: ujep
+access:
+  visibility: public
+metadata:
+  title: Univerzita Jana Evangelisty Purkyně
+  type:
+    id: organization
+  website: https://www.ujep.cz/cs/
+  organizations:
+  - name: Univerzita Jana Evangelisty Purkyně v Ústí nad Labem
+---
+slug: umeleckoprumyslove-museum
+access:
+  visibility: public
+metadata:
+  title: Uměleckoprůmyslové museum
+  type:
+    id: organization
+  website: http://www.upm.cz/
+  organizations:
+  - name: Uměleckoprůmyslové museum
+---
+slug: univerzita-karlova-v-praze
+access:
+  visibility: public
+metadata:
+  title: Univerzita Karlova
+  type:
+    id: organization
+  website: https://cuni.cz/
+  organizations:
+  - name: Univerzita Karlova
+---
+slug: upce
+access:
+  visibility: public
+metadata:
+  title: Univerzita Pardubice
+  type:
+    id: organization
+  website: https://www.upce.cz/
+  organizations:
+  - name: Univerzita Pardubice
+---
+slug: upol
+access:
+  visibility: public
+metadata:
+  title: Univerzita Palackého v Olomouci
+  type:
+    id: organization
+  website: https://www.upol.cz/
+  organizations:
+  - name: Univerzita Palackého v Olomouci
+---
+slug: urad-prumysloveho-vlastnictvi
+access:
+  visibility: public
+metadata:
+  title: Úřad průmyslového vlastnictví
+  type:
+    id: organization
+  website: http://upv.cz/
+  organizations:
+  - name: Úřad průmyslového vlastnictví
+---
+slug: ustav-analyticke-chemie
+access:
+  visibility: public
+metadata:
+  title: Ústav analytické chemie AV ČR
+  type:
+    id: organization
+  website: https://www.iach.cz/cs/
+  organizations:
+  - name: Ústav analytické chemie AV ČR
+---
+slug: ustav-anorganicke-chemie
+access:
+  visibility: public
+metadata:
+  title: Ústav anorganické chemie AV ČR
+  type:
+    id: organization
+  website: https://www.iic.cas.cz/
+  organizations:
+  - name: Ústav anorganické chemie AV ČR
+---
+slug: ustav-archeologicke-pamatkove-pece-severozapadnich-cech
+access:
+  visibility: public
+metadata:
+  title: Ústav archeologické památkové péče severozápadních Čech
+  type:
+    id: organization
+  website: http://www.uappmost.cz/wp/
+  organizations:
+  - name: Ústav archeologické památkové péče severozápadních Čech
+---
+slug: ustav-biologie-obratlovcu
+access:
+  visibility: public
+metadata:
+  title: Ústav biologie obratlovců AV ČR
+  type:
+    id: organization
+  website: https://www.ivb.cz
+  organizations:
+  - name: Ústav biologie obratlovců AV ČR
+---
+slug: ustav-dejin-umeni
+access:
+  visibility: public
+metadata:
+  title: Ústav dějin umění AV ČR
+  type:
+    id: organization
+  website: http://www.udu.cas.cz/
+  organizations:
+  - name: Ústav dějin umění AV ČR
+---
+slug: ustav-experimentalni-botaniky
+access:
+  visibility: public
+metadata:
+  title: Ústav experimentální botaniky AV ČR
+  type:
+    id: organization
+  website: https://www.iem.cas.cz/
+  organizations:
+  - name: Ústav experimentální botaniky AV ČR
+---
+slug: farmakologicky-ustav
+access:
+  visibility: public
+metadata:
+  title: Ústav experimentální medicíny AV ČR
+---
+slug: ustav-experimentalni-mediciny
+access:
+  visibility: public
+metadata:
+  title: Ústav experimentální medicíny AV ČR
+  type:
+    id: organization
+  website: https://www.iem.cas.cz/
+  organizations:
+  - name: Ústav experimentální medicíny
+---
+slug: ustav-fotoniky-a-elektroniky
+access:
+  visibility: public
+metadata:
+  title: Ústav fotoniky a elektroniky AV ČR
+  type:
+    id: organization
+  website: http://www.ufe.cz/
+  organizations:
+  - name: Ústav fotoniky a elektroniky AV ČR
+---
+slug: ustav-fyzikalni-chemie-j-heyrovskeho
+access:
+  visibility: public
+metadata:
+  title: Ústav fyzikální chemie J. Heyrovského AV ČR
+  type:
+    id: organization
+  website: https://www.jh-inst.cas.cz/
+  organizations:
+  - name: Ústav fyzikální chemie J. Heyrovského AV ČR
+---
+slug: ustav-fyziky-atmosfery
+access:
+  visibility: public
+metadata:
+  title: Ústav fyziky atmosféry AV ČR
+  type:
+    id: organization
+  website: https://www.ufa.cas.cz/
+  organizations:
+  - name: Ústav fyziky atmosféry AV ČR
+---
+slug: ustav-fyziky-materialu
+access:
+  visibility: public
+metadata:
+  title: Ústav fyziky materiálů AV ČR
+  type:
+    id: organization
+  website: https://www.ipm.cz/
+  organizations:
+  - name: Ústav fyziky materiálů AV ČR
+---
+slug: ustav-fyziky-plazmatu
+access:
+  visibility: public
+metadata:
+  title: Ústav fyziky plazmatu AV ČR
+  type:
+    id: organization
+  website: https://www.ipp.cas.cz/
+  organizations:
+  - name: Ústav fyziky plazmatu AV ČR
+---
+slug: ustav-geoniky
+access:
+  visibility: public
+metadata:
+  title: Ústav geoniky AV ČR
+  type:
+    id: organization
+  website: http://www.ugn.cas.cz/
+  organizations:
+  - name: Ústav geoniky AV ČR
+---
+slug: ustav-chemickych-procesu
+access:
+  visibility: public
+metadata:
+  title: Ústav chemických procesů AV ČR
+  type:
+    id: organization
+  website: http://www.icpf.cas.cz/
+  organizations:
+  - name: Ústav chemických procesů AV ČR
+---
+slug: ustav-informatiky
+access:
+  visibility: public
+metadata:
+  title: Ústav informatiky AV ČR
+  type:
+    id: organization
+  website: http://www.cs.cas.cz/
+  organizations:
+  - name: Ústav informatiky AV ČR
+---
+slug: ustav-jaderne-fyziky
+access:
+  visibility: public
+metadata:
+  title: Ústav jaderné fyziky AV ČR
+  type:
+    id: organization
+  website: http://www.ujf.cas.cz/
+  organizations:
+  - name: Ústav jaderné fyziky AV ČR
+---
+slug: ustav-makromolekularni-chemie
+access:
+  visibility: public
+metadata:
+  title: Ústav makromolekulární chemie AV ČR
+  type:
+    id: organization
+  website: https://www.imc.cas.cz/cs/
+  organizations:
+  - name: Ústav makromolekulární chemie AV ČR
+---
+slug: ustav-molekularni-biologie-rostlin
+access:
+  visibility: public
+metadata:
+  title: Ústav molekulární biologie rostlin AV ČR
+  description: Ústav byl v roce 2006 sloučen pod Biologické centrum AV ČR.
+  type:
+    id: organization
+  website: https://www.img.cas.cz/
+  organizations:
+  - name: Ústav molekulární biologie rostlin AV ČR
+---
+slug: ustav-molekularni-genetiky
+access:
+  visibility: public
+metadata:
+  title: Ústav molekulární genetiky AV ČR
+  type:
+    id: organization
+  website: https://imtm.cz/
+  organizations:
+  - name: Ústav molekulární genetiky AV ČR
+---
+slug: ustav-organicke-chemie-a-biochemie
+access:
+  visibility: public
+metadata:
+  title: Ústav organické chemie a biochemie AV ČR
+  type:
+    id: organization
+  website: https://www.uochb.cz/cs
+  organizations:
+  - name: Ústav organické chemie a biochemie AV ČR
+---
+slug: ustav-pristrojove-techniky
+access:
+  visibility: public
+metadata:
+  title: Ústav přístrojové techniky AV ČR
+  type:
+    id: organization
+  website: http://www.isibrno.cz/cs
+  organizations:
+  - name: Ústav přístrojové techniky AV ČR
+---
+slug: ustav-pro-ceskou-literaturu
+access:
+  visibility: public
+metadata:
+  title: Ústav pro českou literaturu AV ČR
+  type:
+    id: organization
+  website: http://www.ucl.cas.cz
+  organizations:
+  - name: Ústav pro českou literaturu AV ČR
+---
+slug: ustav-pro-hydrodynamiku
+access:
+  visibility: public
+metadata:
+  title: Ústav pro hydrodynamiku AV ČR
+  type:
+    id: organization
+  website: https://www.ih.cas.cz/
+  organizations:
+  - name: Ústav pro hydrodynamiku AV ČR
+---
+slug: ustav-pro-jazyk-cesky
+access:
+  visibility: public
+metadata:
+  title: Ústav pro jazyk český AV ČR
+  type:
+    id: organization
+  website: http://www.ujc.cas.cz/
+  organizations:
+  - name: Ústav pro jazyk český AV ČR
+---
+slug: ustav-pro-soudobe-dejiny
+access:
+  visibility: public
+metadata:
+  title: Ústav pro soudobé dějiny AV ČR
+  type:
+    id: organization
+  website: http://www.usd.cas.cz/
+  organizations:
+  - name: Ústav pro soudobé dějiny AV ČR
+---
+slug: ustav-pro-studium-totalitnich-rezimu
+access:
+  visibility: public
+metadata:
+  title: Ústav pro studium totalitních režimů
+  type:
+    id: organization
+  website: http://www.ustrcr.cz/
+  organizations:
+  - name: Ústav pro studium totalitních režimů
+---
+slug: ustav-pudni-biologie
+access:
+  visibility: public
+metadata:
+  title: Ústav půdní biologie AV ČR
+  description: Ústav byl v roce 2006 sloučen pod Biologické centrum AV ČR.
+  type:
+    id: organization
+  website: https://www.upb.cas.cz/
+  organizations:
+  - name: Ústav půdní biologie AV ČR
+---
+slug: ustav-statu-a-prava
+access:
+  visibility: public
+metadata:
+  title: Ústav státu a práva AV ČR
+  type:
+    id: organization
+  website: https://www.ilaw.cas.cz/
+  organizations:
+  - name: Ústav státu a práva AV ČR
+---
+slug: ustav-struktury-a-mechaniky-hornin
+access:
+  visibility: public
+metadata:
+  title: Ústav struktury a mechaniky hornin AV ČR
+  type:
+    id: organization
+  website: https://www.irsm.cas.cz/
+  organizations:
+  - name: Ústav struktury a mechaniky hornin AV ČR
+---
+slug: ustav-teoreticke-a-aplikovane-mechaniky
+access:
+  visibility: public
+metadata:
+  title: Ústav teoretické a aplikované mechaniky AV ČR
+  type:
+    id: organization
+  website: http://www.itam.cas.cz/
+  organizations:
+  - name: Ústav teoretické a aplikované mechaniky AV ČR
+---
+slug: ustav-teorie-informace-a-automatizace
+access:
+  visibility: public
+metadata:
+  title: Ústav teorie informace a automatizace AV ČR
+  type:
+    id: organization
+  website: http://www.utia.cas.cz/cs
+  organizations:
+  - name: Ústav teorie informace a automatizace AV ČR
+---
+slug: ustav-fyzikalniho-inzenyrstvi
+access:
+  visibility: public
+metadata:
+  title: Ústav termomechaniky AV ČR
+---
+slug: ustav-pro-elektrotechniku
+access:
+  visibility: public
+metadata:
+  title: Ústav termomechaniky AV ČR
+---
+slug: ustav-termomechaniky
+access:
+  visibility: public
+metadata:
+  title: Ústav termomechaniky AV ČR
+  type:
+    id: organization
+  website: https://www.it.cas.cz/
+  organizations:
+  - name: Ústav termomechaniky AV ČR
+---
+slug: ustav-zivocisne-fyziologie-a-genetiky
+access:
+  visibility: public
+metadata:
+  title: Ústav živočišné fyziologie a genetiky AV ČR
+  type:
+    id: organization
+  website: http://www.iapg.cas.cz/
+  organizations:
+  - name: Ústav živočišné fyziologie a genetiky AV ČR
+---
+slug: vscht
+access:
+  visibility: public
+metadata:
+  title: Vysoká škola chemicko-technologická v Praze
+  type:
+    id: organization
+  website: https://www.vscht.cz/
+  organizations:
+  - name: Vysoká škola chemicko-technologická v Praze
+---
+slug: vugtk
+access:
+  visibility: public
+metadata:
+  title: Výzkumný ústav geodetický, topografický a kartografický
+  type:
+    id: organization
+  website: http://www.vugtk.cz/
+  organizations:
+  - name: Výzkumný ústav geodetický, topografický a kartografický
+---
+slug: vyzkumny-ustav-potravinarsky
+access:
+  visibility: public
+metadata:
+  title: Výzkumný ústav potravinářský Praha
+  description: Ukončená spolupráce, do komunity nepřibývají nové záznamy.
+  type:
+    id: organization
+  website: http://www.vupp.cz
+  organizations:
+  - name: Výzkumný ústav potravinářský Praha
+---
+slug: vutbr
+access:
+  visibility: public
+metadata:
+  title: Vysoké učení technické v Brně
+  type:
+    id: organization
+  website: https://www.vut.cz/
+  organizations:
+  - name: Vysoké učení technické v Brně
+---
+slug: vuv-tgm
+access:
+  visibility: public
+metadata:
+  title: Výzkumný ústav vodohospodářský T. G. Masaryka
+  type:
+    id: organization
+  website: https://www.vuv.cz/
+  organizations:
+  - name: Výzkumný ústav vodohospodářský T. G. Masaryka
+---
+slug: vvud
+access:
+  visibility: public
+metadata:
+  title: Výzkumný a vývojový ústav dřevařský, Praha
+  type:
+    id: organization
+  website: http://www.vvud.cz
+  organizations:
+  - name: Výzkumný a vývojový ústav dřevařský, Praha
+---
+slug: vysoka-skola-ekonomicka-v-praze
+access:
+  visibility: public
+metadata:
+  title: Vysoká škola ekonomická v Praze
+  type:
+    id: organization
+  website: https://www.vse.cz/
+  organizations:
+  - name: Vysoká škola ekonomická v Praze
+---
+slug: vysoka-skola-evropskych-a-regionalnich-studii
+access:
+  visibility: public
+metadata:
+  title: Vysoká škola evropských a regionálních studií
+  type:
+    id: organization
+  website: http://www.vsers.cz
+  organizations:
+  - name: Vysoká škola evropských a regionálních studií
+---
+slug: vysoka-skola-financni-a-spravni
+access:
+  visibility: public
+metadata:
+  title: Vysoká škola finanční a správní
+  type:
+    id: organization
+  website: http://www.vsfs.cz
+  organizations:
+  - name: Vysoká škola finanční a správní
+---
+slug: vyzkumny-ustav-bezpecnosti-prace
+access:
+  visibility: public
+metadata:
+  title: Výzkumný ústav bezpečnosti práce
+  type:
+    id: organization
+  website: http://www.vubp.cz/
+  organizations:
+  - name: Výzkumný ústav bezpečnosti práce
+---
+slug: vyzkumny-ustav-lesniho-hospodarstvi-a-myslivosti
+access:
+  visibility: public
+metadata:
+  title: Výzkumný ústav lesního hospodářství a myslivosti
+  type:
+    id: organization
+  website: http://www.vulhm.cz/
+  organizations:
+  - name: Výzkumný ústav lesního hospodářství a myslivosti
+---
+slug: vyzkumny-ustav-prace-a-socialnich-veci
+access:
+  visibility: public
+metadata:
+  title: Výzkumný ústav práce a sociálních věcí
+  type:
+    id: organization
+  website: http://www.vupsv.cz/
+  organizations:
+  - name: Výzkumný ústav práce a sociálních věcí
+---
+slug: vyzkumny-ustav-rostlinne-vyroby
+access:
+  visibility: public
+metadata:
+  title: Národní centrum zemědělského a potravinářského výzkumu
+  type:
+    id: organization
+  website: http://www.vurv.cz/
+  organizations:
+  - name: Národní centrum zemědělského a potravinářského výzkumu
+---
+slug: vyzkumny-ustav-silva-taroucy
+access:
+  visibility: public
+metadata:
+  title: Výzkumný ústav pro krajinu
+  type:
+    id: organization
+  website: http://www.vukoz.cz/
+  organizations:
+  - name: Výzkumný ústav pro krajinu
+---
+slug: woodexpert
+access:
+  visibility: public
+metadata:
+  title: WOODEXPERT s.r.o.
+  type:
+    id: organization
+  website: http://woodexpert.cz/
+  organizations:
+  - name: WOODEXPERT s.r.o.
+---
+slug: zapadoceska-univerzita
+access:
+  visibility: public
+metadata:
+  title: Západočeská univerzita v Plzni
+  type:
+    id: organization
+  website: https://www.zcu.cz/cs/index.html
+  organizations:
+  - name: Západočeská univerzita v Plzni
+---
+slug: zapadoceske-muzeum-v-plzni
+access:
+  visibility: public
+metadata:
+  title: Západočeské muzeum v Plzni
+  type:
+    id: organization
+  website: http://www.zcm.cz/
+  organizations:
+  - name: Západočeské muzeum v Plzni
+---
+slug: utb
+access:
+  visibility: public
+metadata:
+  title: Univerzita Tomáše Bati ve Zlíně
+  type:
+    id: organization
+  website: https://www.utb.cz/
+  organizations:
+  - name: Univerzita Tomáše Bati ve Zlíně
+---
+slug: tul
+access:
+  visibility: public
+metadata:
+  title: Technická univerzita v Liberci
+  type:
+    id: organization
+  website: https://www.tul.cz/
+  organizations:
+  - name: Technická univerzita v Liberci
+---
+slug: universal
+access:
+  visibility: public
+metadata:
+  title: Generická komunita
+  type:
+    id: topic
+---
+slug: eosc-cz
+access:
+  visibility: public
+metadata:
+  title: Iniciativa EOSC CZ
+  type:
+    id: topic
+  website: https://www.eosc.cz/

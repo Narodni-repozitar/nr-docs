@@ -27,6 +27,7 @@ dependencies = [
     "oarepo-workflows>=1.0.0",
     "oarepo[s3,rdm]>=12.1.0,<13",
     "python-dotenv",
+    "oarepo-rdm>=0.5.0",
 ]
 requires-python = ">=3.12,<3.13"
 
