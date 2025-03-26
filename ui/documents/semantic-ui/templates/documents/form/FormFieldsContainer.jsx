@@ -8,6 +8,7 @@ import {
   FilesField,
   StringArrayField,
   TextField,
+  IdentifiersField,
 } from "@js/oarepo_ui/forms";
 import { CommunitySelector } from "@js/communities_components/CommunitySelector/CommunitySelector";
 import {
@@ -22,7 +23,6 @@ import {
   SubjectsField,
   SeriesField,
   EventsField,
-  IdentifiersField,
   CreatibutorsField,
   RelatedItemsField,
   objectIdentifiersSchema,
