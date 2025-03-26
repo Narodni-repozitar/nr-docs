@@ -4,3 +4,4 @@
 @arrayFieldColor: rgba(242, 242, 242);
 @highlightedfieldcolor: #d37c7c;
 @arrayAddButtonTextColor: white;
+@arrayAddButtonBackgroundColor: @accentColor;
