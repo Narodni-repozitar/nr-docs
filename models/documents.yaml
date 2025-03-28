@@ -34,6 +34,9 @@ record:
       ui:
         marshmallow:
           field-class: common.services.schema.LocalizedStateField
+    metadata: {}
+    syntheticFields:
+      properties: {}
 
   draft: {}
   draft-files:
@@ -71,11 +74,6 @@ record:
     qualified: documents
   pid:
     type: dcmnts
-  properties:
-    metadata: {}
-
-    syntheticFields:
-      properties: {}
 
   resource-config:
     base-html-url: /docs/

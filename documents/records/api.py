@@ -3,10 +3,6 @@ from invenio_drafts_resources.records.api import DraftRecordIdProviderV2
 from invenio_drafts_resources.services.records.components.media_files import (
     MediaFilesAttrConfig,
 )
-from invenio_vocabularies.contrib.affiliations.api import Affiliation
-from invenio_vocabularies.contrib.awards.api import Award
-
-from invenio_vocabularies.contrib.funders.api import Funder
 from invenio_rdm_records.records.api import (
     RDMDraft,
     RDMMediaFileDraft,
@@ -17,6 +13,9 @@ from invenio_rdm_records.records.api import (
 from invenio_records.systemfields import ConstantField, ModelField
 from invenio_records_resources.records.systemfields import FilesField, IndexField
 from invenio_records_resources.records.systemfields.pid import PIDField, PIDFieldContext
+from invenio_vocabularies.contrib.affiliations.api import Affiliation
+from invenio_vocabularies.contrib.awards.api import Award
+from invenio_vocabularies.contrib.funders.api import Funder
 from nr_metadata.records.synthetic_fields import KeywordsFieldSelector
 from oarepo_communities.records.systemfields.communities import (
     OARepoCommunitiesFieldContext,
@@ -71,9 +70,7 @@ class DocumentsRecord(RDMRecord):
 
     schema = ConstantField("$schema", "local://documents-1.0.0.json")
 
-    index = IndexField(
-        "documents-documents-1.0.0", search_alias="documents"
-    )
+    index = IndexField("documents-documents-1.0.0", search_alias="documents")
 
     pid = PIDField(
         provider=DocumentsIdProvider, context_cls=PIDFieldContext, create=True
@@ -91,8 +88,8 @@ class DocumentsRecord(RDMRecord):
 
     people = SyntheticSystemField(
         PathSelector("metadata.creators", "metadata.contributors"),
-        filter=lambda x: x.get("nameType") == "Personal",
-        map=lambda x: x.get("fullName"),
+        filter=lambda x: x.get("person_or_org", {}).get("type") == "personal",
+        map=lambda x: x.get("name"),
         key="syntheticFields.people",
     )
 
@@ -305,27 +302,35 @@ class DocumentsDraft(RDMDraft):
     abstract_search = ICUSearchField(source_field="metadata.abstract.value")
 
     people = SyntheticSystemField(
-        PathSelector("metadata.creators", "metadata.contributors"),
-        filter=lambda x: x.get("nameType") == "Personal",
-        map=lambda x: x.get("fullName"),
+        PathSelector(
+            "metadata.creators.person_or_org", "metadata.contributors.person_or_org"
+        ),
+        filter=lambda x: x.get("type") == "personal",
+        map=lambda x: x.get("name"),
         key="syntheticFields.people",
     )
 
-    # organizations = SyntheticSystemField(
-    #     MultiSelector(
-    #         FilteredSelector(
-    #             PathSelector("metadata.creators", "metadata.contributors"),
-    #             filter=lambda x: x["nameType"] == "Personal",
-    #             projection="affiliations.title.cs",
-    #         ),
-    #         FilteredSelector(
-    #             PathSelector("metadata.creators", "metadata.contributors"),
-    #             filter=lambda x: x["nameType"] == "Organizational",
-    #             projection="fullName",
-    #         ),
-    #     ),
-    #     key="syntheticFields.organizations",
-    # )
+    organizations = SyntheticSystemField(
+        MultiSelector(
+            FilteredSelector(
+                PathSelector(
+                    "metadata.creators.person_or_org",
+                    "metadata.contributors.person_or_org",
+                ),
+                filter=lambda x: x["type"] == "personal",
+                projection="affiliations.title.cs",
+            ),
+            FilteredSelector(
+                PathSelector(
+                    "metadata.creators.person_or_org",
+                    "metadata.contributors.person_or_org",
+                ),
+                filter=lambda x: x["type"] == "organizational",
+                projection="name",
+            ),
+        ),
+        key="syntheticFields.organizations",
+    )
 
     keywords = SyntheticSystemField(
         selector=KeywordsFieldSelector("metadata.subjects.subject"),
