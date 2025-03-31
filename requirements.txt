@@ -25,7 +25,7 @@ oarepo-oidc-einfra==1.0.4
 oarepo-published-service==1.0.3
 oarepo-rdm==0.5.2
 oarepo-requests==2.4.0
-oarepo-runtime==1.5.112
+oarepo-runtime==1.5.114
 oarepo-ui==5.2.54
 oarepo-vocabularies==2.1.20
 oarepo-workflows==1.1.12
