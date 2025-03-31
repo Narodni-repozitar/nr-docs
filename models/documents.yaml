@@ -31,6 +31,7 @@ record:
 
   properties:
     state:
+      type: keyword
       ui:
         marshmallow:
           field-class: common.services.schema.LocalizedStateField
@@ -94,7 +95,7 @@ record:
 
   search-options:
     base-classes:
-      - oarepo_runtime.services.search.I18nSearchOptions
+      - oarepo_runtime.services.search.I18nRDMSearchOptions
     sort-options-field: extra_sort_options
     fields:
       sort_options: "{{oarepo_runtime.services.search.ICUSortOptions}}('documents')"

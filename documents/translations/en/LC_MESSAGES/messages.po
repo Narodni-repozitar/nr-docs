@@ -2,8 +2,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
-"POT-Creation-Date: 2025-03-13T08:52:44.561112\n"
-"PO-Revision-Date: 2025-03-13T08:52:44.561114\n"
+"POT-Creation-Date: 2025-03-31T12:50:20.689884\n"
+"PO-Revision-Date: 2025-03-31T12:50:20.689885\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -381,13 +381,13 @@ msgstr ""
 msgid "metadata/contributors/person_or_org/type.enum.organizational"
 msgstr ""
 
-msgid "metadata/contributors/role.help"
-msgstr ""
-
 msgid "metadata/contributors/role.label"
-msgstr ""
+msgstr "Contributor's role"
 
 msgid "metadata/contributors/role.hint"
+msgstr "Choose the role of the contributor (editor, illustrator…)."
+
+msgid "metadata/contributors/role.help"
 msgstr ""
 
 msgid "metadata/contributors/role/id.help"
@@ -397,6 +397,24 @@ msgid "metadata/contributors/role/id.label"
 msgstr ""
 
 msgid "metadata/contributors/role/id.hint"
+msgstr ""
+
+msgid "metadata/contributors/role/title.help"
+msgstr ""
+
+msgid "metadata/contributors/role/title.label"
+msgstr ""
+
+msgid "metadata/contributors/role/title.hint"
+msgstr ""
+
+msgid "metadata/contributors/role/@v.help"
+msgstr ""
+
+msgid "metadata/contributors/role/@v.label"
+msgstr ""
+
+msgid "metadata/contributors/role/@v.hint"
 msgstr ""
 
 msgid "metadata/creators.label"
@@ -522,13 +540,13 @@ msgstr ""
 msgid "metadata/creators/person_or_org/type.enum.organizational"
 msgstr ""
 
-msgid "metadata/creators/role.help"
-msgstr ""
-
 msgid "metadata/creators/role.label"
-msgstr ""
+msgstr "Contributor's role"
 
 msgid "metadata/creators/role.hint"
+msgstr "Choose the role of the contributor (editor, illustrator…)."
+
+msgid "metadata/creators/role.help"
 msgstr ""
 
 msgid "metadata/creators/role/id.help"
@@ -538,6 +556,24 @@ msgid "metadata/creators/role/id.label"
 msgstr ""
 
 msgid "metadata/creators/role/id.hint"
+msgstr ""
+
+msgid "metadata/creators/role/title.help"
+msgstr ""
+
+msgid "metadata/creators/role/title.label"
+msgstr ""
+
+msgid "metadata/creators/role/title.hint"
+msgstr ""
+
+msgid "metadata/creators/role/@v.help"
+msgstr ""
+
+msgid "metadata/creators/role/@v.label"
+msgstr ""
+
+msgid "metadata/creators/role/@v.hint"
 msgstr ""
 
 msgid "metadata/dateAvailable.label"
@@ -1098,19 +1134,24 @@ msgstr ""
 
 msgid "metadata/relatedItems/itemContributors.hint"
 msgstr ""
-"It is possible to designate a person or an institution as the "
-"creator/contributor."
 
 msgid "metadata/relatedItems/itemContributors/affiliations.help"
 msgstr ""
 
 msgid "metadata/relatedItems/itemContributors/affiliations.label"
-msgstr "Affiliation"
+msgstr ""
 
 msgid "metadata/relatedItems/itemContributors/affiliations.hint"
 msgstr ""
-"Start typing the name of the institution, then select the institution from "
-"the menu."
+
+msgid "metadata/relatedItems/itemContributors/affiliations/name.help"
+msgstr ""
+
+msgid "metadata/relatedItems/itemContributors/affiliations/name.label"
+msgstr ""
+
+msgid "metadata/relatedItems/itemContributors/affiliations/name.hint"
+msgstr ""
 
 msgid "metadata/relatedItems/itemContributors/affiliations/id.help"
 msgstr ""
@@ -1119,93 +1160,6 @@ msgid "metadata/relatedItems/itemContributors/affiliations/id.label"
 msgstr ""
 
 msgid "metadata/relatedItems/itemContributors/affiliations/id.hint"
-msgstr ""
-
-msgid "metadata/relatedItems/itemContributors/affiliations/title.help"
-msgstr ""
-
-msgid "metadata/relatedItems/itemContributors/affiliations/title.label"
-msgstr ""
-
-msgid "metadata/relatedItems/itemContributors/affiliations/title.hint"
-msgstr ""
-
-msgid "metadata/relatedItems/itemContributors/affiliations/ror.help"
-msgstr ""
-
-msgid "metadata/relatedItems/itemContributors/affiliations/ror.label"
-msgstr ""
-
-msgid "metadata/relatedItems/itemContributors/affiliations/ror.hint"
-msgstr ""
-
-msgid "metadata/relatedItems/itemContributors/affiliations/hierarchy.help"
-msgstr ""
-
-msgid "metadata/relatedItems/itemContributors/affiliations/hierarchy.label"
-msgstr ""
-
-msgid "metadata/relatedItems/itemContributors/affiliations/hierarchy.hint"
-msgstr ""
-
-msgid ""
-"metadata/relatedItems/itemContributors/affiliations/hierarchy/ancestors.help"
-msgstr ""
-
-msgid ""
-"metadata/relatedItems/itemContributors/affiliations/hierarchy/ancestors.label"
-msgstr ""
-
-msgid ""
-"metadata/relatedItems/itemContributors/affiliations/hierarchy/ancestors.hint"
-msgstr ""
-
-msgid ""
-"metadata/relatedItems/itemContributors/affiliations/hierarchy/ancestors_or_self.help"
-msgstr ""
-
-msgid ""
-"metadata/relatedItems/itemContributors/affiliations/hierarchy/ancestors_or_self.label"
-msgstr ""
-
-msgid ""
-"metadata/relatedItems/itemContributors/affiliations/hierarchy/ancestors_or_self.hint"
-msgstr ""
-
-msgid ""
-"metadata/relatedItems/itemContributors/affiliations/hierarchy/level.help"
-msgstr ""
-
-msgid ""
-"metadata/relatedItems/itemContributors/affiliations/hierarchy/level.label"
-msgstr ""
-
-msgid ""
-"metadata/relatedItems/itemContributors/affiliations/hierarchy/level.hint"
-msgstr ""
-
-msgid ""
-"metadata/relatedItems/itemContributors/affiliations/hierarchy/parent.help"
-msgstr ""
-
-msgid ""
-"metadata/relatedItems/itemContributors/affiliations/hierarchy/parent.label"
-msgstr ""
-
-msgid ""
-"metadata/relatedItems/itemContributors/affiliations/hierarchy/parent.hint"
-msgstr ""
-
-msgid ""
-"metadata/relatedItems/itemContributors/affiliations/hierarchy/title.help"
-msgstr ""
-
-msgid ""
-"metadata/relatedItems/itemContributors/affiliations/hierarchy/title.label"
-msgstr ""
-
-msgid ""
-"metadata/relatedItems/itemContributors/affiliations/hierarchy/title.hint"
 msgstr ""
 
 msgid "metadata/relatedItems/itemContributors/affiliations/@v.help"
@@ -1217,160 +1171,126 @@ msgstr ""
 msgid "metadata/relatedItems/itemContributors/affiliations/@v.hint"
 msgstr ""
 
-msgid "metadata/relatedItems/itemContributors/authorityIdentifiers.label"
-msgstr "Person Identifier"
-
-msgid "metadata/relatedItems/itemContributors/authorityIdentifiers.help"
-msgstr ""
-"Choose the identifier type from the menu. Fill in the identifier value (e.g. https://orcid.org/0009-0004-8646-7185 or jk01051816). \n"
-"We recommend providing at least one of the identifier types, ideally ORCID iD.\n"
-"If you need to expand the range of identifier types, contact us at support@narodni-repozitar.cz.\n"
-
-msgid "metadata/relatedItems/itemContributors/authorityIdentifiers.hint"
+msgid "metadata/relatedItems/itemContributors/person_or_org.help"
 msgstr ""
 
-msgid ""
-"metadata/relatedItems/itemContributors/authorityIdentifiers/identifier.label"
-msgstr "Identifier"
-
-msgid ""
-"metadata/relatedItems/itemContributors/authorityIdentifiers/identifier.hint"
-msgstr "e.g. https://orcid.org/0009-0004-8646-7185 for ORCID."
-
-msgid ""
-"metadata/relatedItems/itemContributors/authorityIdentifiers/identifier.help"
+msgid "metadata/relatedItems/itemContributors/person_or_org.label"
 msgstr ""
 
-msgid ""
-"metadata/relatedItems/itemContributors/authorityIdentifiers/scheme.label"
-msgstr "Identifier type"
-
-msgid ""
-"metadata/relatedItems/itemContributors/authorityIdentifiers/scheme.hint"
-msgstr "Person identifier"
-
-msgid ""
-"metadata/relatedItems/itemContributors/authorityIdentifiers/scheme.help"
+msgid "metadata/relatedItems/itemContributors/person_or_org.hint"
 msgstr ""
 
-msgid ""
-"metadata/relatedItems/itemContributors/authorityIdentifiers/scheme.enum.orcid"
+msgid "metadata/relatedItems/itemContributors/person_or_org/family_name.help"
+msgstr ""
+
+msgid "metadata/relatedItems/itemContributors/person_or_org/family_name.label"
+msgstr ""
+
+msgid "metadata/relatedItems/itemContributors/person_or_org/family_name.hint"
+msgstr ""
+
+msgid "metadata/relatedItems/itemContributors/person_or_org/given_name.help"
+msgstr ""
+
+msgid "metadata/relatedItems/itemContributors/person_or_org/given_name.label"
+msgstr ""
+
+msgid "metadata/relatedItems/itemContributors/person_or_org/given_name.hint"
+msgstr ""
+
+msgid "metadata/relatedItems/itemContributors/person_or_org/identifiers.help"
+msgstr ""
+
+msgid "metadata/relatedItems/itemContributors/person_or_org/identifiers.label"
+msgstr ""
+
+msgid "metadata/relatedItems/itemContributors/person_or_org/identifiers.hint"
 msgstr ""
 
 msgid ""
-"metadata/relatedItems/itemContributors/authorityIdentifiers/scheme.enum.scopusID"
+"metadata/relatedItems/itemContributors/person_or_org/identifiers/identifier.help"
 msgstr ""
 
 msgid ""
-"metadata/relatedItems/itemContributors/authorityIdentifiers/scheme.enum.researcherID"
+"metadata/relatedItems/itemContributors/person_or_org/identifiers/identifier.label"
 msgstr ""
 
 msgid ""
-"metadata/relatedItems/itemContributors/authorityIdentifiers/scheme.enum.czenasAutID"
+"metadata/relatedItems/itemContributors/person_or_org/identifiers/identifier.hint"
 msgstr ""
 
 msgid ""
-"metadata/relatedItems/itemContributors/authorityIdentifiers/scheme.enum.vedidk"
+"metadata/relatedItems/itemContributors/person_or_org/identifiers/scheme.help"
 msgstr ""
 
 msgid ""
-"metadata/relatedItems/itemContributors/authorityIdentifiers/scheme.enum.institutionalID"
+"metadata/relatedItems/itemContributors/person_or_org/identifiers/scheme.label"
 msgstr ""
 
 msgid ""
-"metadata/relatedItems/itemContributors/authorityIdentifiers/scheme.enum.ISNI"
+"metadata/relatedItems/itemContributors/person_or_org/identifiers/scheme.hint"
 msgstr ""
 
-msgid "metadata/relatedItems/itemContributors/contributorType.label"
+msgid "metadata/relatedItems/itemContributors/person_or_org/name.help"
+msgstr ""
+
+msgid "metadata/relatedItems/itemContributors/person_or_org/name.label"
+msgstr ""
+
+msgid "metadata/relatedItems/itemContributors/person_or_org/name.hint"
+msgstr ""
+
+msgid "metadata/relatedItems/itemContributors/person_or_org/type.help"
+msgstr ""
+
+msgid "metadata/relatedItems/itemContributors/person_or_org/type.label"
+msgstr ""
+
+msgid "metadata/relatedItems/itemContributors/person_or_org/type.hint"
+msgstr ""
+
+msgid ""
+"metadata/relatedItems/itemContributors/person_or_org/type.enum.personal"
+msgstr ""
+
+msgid ""
+"metadata/relatedItems/itemContributors/person_or_org/type.enum.organizational"
+msgstr ""
+
+msgid "metadata/relatedItems/itemContributors/role.label"
 msgstr "Contributor's role"
 
-msgid "metadata/relatedItems/itemContributors/contributorType.hint"
+msgid "metadata/relatedItems/itemContributors/role.hint"
 msgstr "Choose the role of the contributor (editor, illustrator…)."
 
-msgid "metadata/relatedItems/itemContributors/contributorType.help"
+msgid "metadata/relatedItems/itemContributors/role.help"
 msgstr ""
 
-msgid "metadata/relatedItems/itemContributors/contributorType/id.help"
+msgid "metadata/relatedItems/itemContributors/role/id.help"
 msgstr ""
 
-msgid "metadata/relatedItems/itemContributors/contributorType/id.label"
+msgid "metadata/relatedItems/itemContributors/role/id.label"
 msgstr ""
 
-msgid "metadata/relatedItems/itemContributors/contributorType/id.hint"
+msgid "metadata/relatedItems/itemContributors/role/id.hint"
 msgstr ""
 
-msgid "metadata/relatedItems/itemContributors/contributorType/title.help"
+msgid "metadata/relatedItems/itemContributors/role/title.help"
 msgstr ""
 
-msgid "metadata/relatedItems/itemContributors/contributorType/title.label"
+msgid "metadata/relatedItems/itemContributors/role/title.label"
 msgstr ""
 
-msgid "metadata/relatedItems/itemContributors/contributorType/title.hint"
+msgid "metadata/relatedItems/itemContributors/role/title.hint"
 msgstr ""
 
-msgid "metadata/relatedItems/itemContributors/contributorType/@v.help"
+msgid "metadata/relatedItems/itemContributors/role/@v.help"
 msgstr ""
 
-msgid "metadata/relatedItems/itemContributors/contributorType/@v.label"
+msgid "metadata/relatedItems/itemContributors/role/@v.label"
 msgstr ""
 
-msgid "metadata/relatedItems/itemContributors/contributorType/@v.hint"
-msgstr ""
-
-msgid "metadata/relatedItems/itemContributors/familyName.label"
-msgstr "Family Name"
-
-msgid "metadata/relatedItems/itemContributors/familyName.hint"
-msgstr "Fill in the author's family name."
-
-msgid "metadata/relatedItems/itemContributors/familyName.help"
-msgstr ""
-
-msgid "metadata/relatedItems/itemContributors/fullName.label"
-msgstr "Author's name"
-
-msgid "metadata/relatedItems/itemContributors/fullName.help"
-msgstr ""
-
-msgid "metadata/relatedItems/itemContributors/fullName.hint"
-msgstr ""
-"Start typing the name of the institution, then select the institution from "
-"the menu."
-
-msgid "metadata/relatedItems/itemContributors/givenName.label"
-msgstr "Given Name"
-
-msgid "metadata/relatedItems/itemContributors/givenName.hint"
-msgstr "Fill in the author's given name."
-
-msgid "metadata/relatedItems/itemContributors/givenName.help"
-msgstr ""
-
-msgid "metadata/relatedItems/itemContributors/nameType.label"
-msgstr "Type"
-
-msgid "metadata/relatedItems/itemContributors/nameType.help"
-msgstr ""
-
-msgid "metadata/relatedItems/itemContributors/nameType.hint"
-msgstr ""
-
-msgid "metadata/relatedItems/itemContributors/nameType.enum.Personal"
-msgstr ""
-
-msgid ""
-"metadata/relatedItems/itemContributors/authorityIdentifiers/scheme.enum.ROR"
-msgstr ""
-
-msgid ""
-"metadata/relatedItems/itemContributors/authorityIdentifiers/scheme.enum.ICO"
-msgstr ""
-
-msgid ""
-"metadata/relatedItems/itemContributors/authorityIdentifiers/scheme.enum.DOI"
-msgstr ""
-
-msgid "metadata/relatedItems/itemContributors/nameType.enum.Organizational"
+msgid "metadata/relatedItems/itemContributors/role/@v.hint"
 msgstr ""
 
 msgid "metadata/relatedItems/itemCreators.label"
@@ -1381,19 +1301,24 @@ msgstr ""
 
 msgid "metadata/relatedItems/itemCreators.hint"
 msgstr ""
-"It is possible to designate a person or an institution as the "
-"creator/contributor."
 
 msgid "metadata/relatedItems/itemCreators/affiliations.help"
 msgstr ""
 
 msgid "metadata/relatedItems/itemCreators/affiliations.label"
-msgstr "Affiliation"
+msgstr ""
 
 msgid "metadata/relatedItems/itemCreators/affiliations.hint"
 msgstr ""
-"Start typing the name of the institution, then select the institution from "
-"the menu."
+
+msgid "metadata/relatedItems/itemCreators/affiliations/name.help"
+msgstr ""
+
+msgid "metadata/relatedItems/itemCreators/affiliations/name.label"
+msgstr ""
+
+msgid "metadata/relatedItems/itemCreators/affiliations/name.hint"
+msgstr ""
 
 msgid "metadata/relatedItems/itemCreators/affiliations/id.help"
 msgstr ""
@@ -1402,84 +1327,6 @@ msgid "metadata/relatedItems/itemCreators/affiliations/id.label"
 msgstr ""
 
 msgid "metadata/relatedItems/itemCreators/affiliations/id.hint"
-msgstr ""
-
-msgid "metadata/relatedItems/itemCreators/affiliations/title.help"
-msgstr ""
-
-msgid "metadata/relatedItems/itemCreators/affiliations/title.label"
-msgstr ""
-
-msgid "metadata/relatedItems/itemCreators/affiliations/title.hint"
-msgstr ""
-
-msgid "metadata/relatedItems/itemCreators/affiliations/ror.help"
-msgstr ""
-
-msgid "metadata/relatedItems/itemCreators/affiliations/ror.label"
-msgstr ""
-
-msgid "metadata/relatedItems/itemCreators/affiliations/ror.hint"
-msgstr ""
-
-msgid "metadata/relatedItems/itemCreators/affiliations/hierarchy.help"
-msgstr ""
-
-msgid "metadata/relatedItems/itemCreators/affiliations/hierarchy.label"
-msgstr ""
-
-msgid "metadata/relatedItems/itemCreators/affiliations/hierarchy.hint"
-msgstr ""
-
-msgid ""
-"metadata/relatedItems/itemCreators/affiliations/hierarchy/ancestors.help"
-msgstr ""
-
-msgid ""
-"metadata/relatedItems/itemCreators/affiliations/hierarchy/ancestors.label"
-msgstr ""
-
-msgid ""
-"metadata/relatedItems/itemCreators/affiliations/hierarchy/ancestors.hint"
-msgstr ""
-
-msgid ""
-"metadata/relatedItems/itemCreators/affiliations/hierarchy/ancestors_or_self.help"
-msgstr ""
-
-msgid ""
-"metadata/relatedItems/itemCreators/affiliations/hierarchy/ancestors_or_self.label"
-msgstr ""
-
-msgid ""
-"metadata/relatedItems/itemCreators/affiliations/hierarchy/ancestors_or_self.hint"
-msgstr ""
-
-msgid "metadata/relatedItems/itemCreators/affiliations/hierarchy/level.help"
-msgstr ""
-
-msgid "metadata/relatedItems/itemCreators/affiliations/hierarchy/level.label"
-msgstr ""
-
-msgid "metadata/relatedItems/itemCreators/affiliations/hierarchy/level.hint"
-msgstr ""
-
-msgid "metadata/relatedItems/itemCreators/affiliations/hierarchy/parent.help"
-msgstr ""
-
-msgid "metadata/relatedItems/itemCreators/affiliations/hierarchy/parent.label"
-msgstr ""
-
-msgid "metadata/relatedItems/itemCreators/affiliations/hierarchy/parent.hint"
-msgstr ""
-
-msgid "metadata/relatedItems/itemCreators/affiliations/hierarchy/title.help"
-msgstr ""
-
-msgid "metadata/relatedItems/itemCreators/affiliations/hierarchy/title.label"
-msgstr ""
-
-msgid "metadata/relatedItems/itemCreators/affiliations/hierarchy/title.hint"
 msgstr ""
 
 msgid "metadata/relatedItems/itemCreators/affiliations/@v.help"
@@ -1491,121 +1338,125 @@ msgstr ""
 msgid "metadata/relatedItems/itemCreators/affiliations/@v.hint"
 msgstr ""
 
-msgid "metadata/relatedItems/itemCreators/authorityIdentifiers.label"
-msgstr "Person Identifier"
-
-msgid "metadata/relatedItems/itemCreators/authorityIdentifiers.help"
-msgstr ""
-"Choose the identifier type from the menu. Fill in the identifier value (e.g. https://orcid.org/0009-0004-8646-7185 or jk01051816). \n"
-"We recommend providing at least one of the identifier types, ideally ORCID iD.\n"
-"If you need to expand the range of identifier types, contact us at support@narodni-repozitar.cz.\n"
-
-msgid "metadata/relatedItems/itemCreators/authorityIdentifiers.hint"
+msgid "metadata/relatedItems/itemCreators/person_or_org.help"
 msgstr ""
 
-msgid ""
-"metadata/relatedItems/itemCreators/authorityIdentifiers/identifier.label"
-msgstr "Identifier"
-
-msgid ""
-"metadata/relatedItems/itemCreators/authorityIdentifiers/identifier.hint"
-msgstr "e.g. https://orcid.org/0009-0004-8646-7185 for ORCID."
-
-msgid ""
-"metadata/relatedItems/itemCreators/authorityIdentifiers/identifier.help"
+msgid "metadata/relatedItems/itemCreators/person_or_org.label"
 msgstr ""
 
-msgid "metadata/relatedItems/itemCreators/authorityIdentifiers/scheme.label"
-msgstr "Identifier type"
-
-msgid "metadata/relatedItems/itemCreators/authorityIdentifiers/scheme.hint"
-msgstr "Person identifier"
-
-msgid "metadata/relatedItems/itemCreators/authorityIdentifiers/scheme.help"
+msgid "metadata/relatedItems/itemCreators/person_or_org.hint"
 msgstr ""
 
-msgid ""
-"metadata/relatedItems/itemCreators/authorityIdentifiers/scheme.enum.orcid"
+msgid "metadata/relatedItems/itemCreators/person_or_org/family_name.help"
 msgstr ""
 
-msgid ""
-"metadata/relatedItems/itemCreators/authorityIdentifiers/scheme.enum.scopusID"
+msgid "metadata/relatedItems/itemCreators/person_or_org/family_name.label"
+msgstr ""
+
+msgid "metadata/relatedItems/itemCreators/person_or_org/family_name.hint"
+msgstr ""
+
+msgid "metadata/relatedItems/itemCreators/person_or_org/given_name.help"
+msgstr ""
+
+msgid "metadata/relatedItems/itemCreators/person_or_org/given_name.label"
+msgstr ""
+
+msgid "metadata/relatedItems/itemCreators/person_or_org/given_name.hint"
+msgstr ""
+
+msgid "metadata/relatedItems/itemCreators/person_or_org/identifiers.help"
+msgstr ""
+
+msgid "metadata/relatedItems/itemCreators/person_or_org/identifiers.label"
+msgstr ""
+
+msgid "metadata/relatedItems/itemCreators/person_or_org/identifiers.hint"
 msgstr ""
 
 msgid ""
-"metadata/relatedItems/itemCreators/authorityIdentifiers/scheme.enum.researcherID"
+"metadata/relatedItems/itemCreators/person_or_org/identifiers/identifier.help"
 msgstr ""
 
 msgid ""
-"metadata/relatedItems/itemCreators/authorityIdentifiers/scheme.enum.czenasAutID"
+"metadata/relatedItems/itemCreators/person_or_org/identifiers/identifier.label"
 msgstr ""
 
 msgid ""
-"metadata/relatedItems/itemCreators/authorityIdentifiers/scheme.enum.vedidk"
+"metadata/relatedItems/itemCreators/person_or_org/identifiers/identifier.hint"
 msgstr ""
 
 msgid ""
-"metadata/relatedItems/itemCreators/authorityIdentifiers/scheme.enum.institutionalID"
+"metadata/relatedItems/itemCreators/person_or_org/identifiers/scheme.help"
 msgstr ""
 
 msgid ""
-"metadata/relatedItems/itemCreators/authorityIdentifiers/scheme.enum.ISNI"
-msgstr ""
-
-msgid "metadata/relatedItems/itemCreators/familyName.label"
-msgstr "Family Name"
-
-msgid "metadata/relatedItems/itemCreators/familyName.hint"
-msgstr "Fill in the author's family name."
-
-msgid "metadata/relatedItems/itemCreators/familyName.help"
-msgstr ""
-
-msgid "metadata/relatedItems/itemCreators/fullName.label"
-msgstr "Author's name"
-
-msgid "metadata/relatedItems/itemCreators/fullName.help"
-msgstr ""
-
-msgid "metadata/relatedItems/itemCreators/fullName.hint"
-msgstr ""
-"Start typing the name of the institution, then select the institution from "
-"the menu."
-
-msgid "metadata/relatedItems/itemCreators/givenName.label"
-msgstr "Given Name"
-
-msgid "metadata/relatedItems/itemCreators/givenName.hint"
-msgstr "Fill in the author's given name."
-
-msgid "metadata/relatedItems/itemCreators/givenName.help"
-msgstr ""
-
-msgid "metadata/relatedItems/itemCreators/nameType.label"
-msgstr "Type"
-
-msgid "metadata/relatedItems/itemCreators/nameType.help"
-msgstr ""
-
-msgid "metadata/relatedItems/itemCreators/nameType.hint"
-msgstr ""
-
-msgid "metadata/relatedItems/itemCreators/nameType.enum.Personal"
+"metadata/relatedItems/itemCreators/person_or_org/identifiers/scheme.label"
 msgstr ""
 
 msgid ""
-"metadata/relatedItems/itemCreators/authorityIdentifiers/scheme.enum.ROR"
+"metadata/relatedItems/itemCreators/person_or_org/identifiers/scheme.hint"
+msgstr ""
+
+msgid "metadata/relatedItems/itemCreators/person_or_org/name.help"
+msgstr ""
+
+msgid "metadata/relatedItems/itemCreators/person_or_org/name.label"
+msgstr ""
+
+msgid "metadata/relatedItems/itemCreators/person_or_org/name.hint"
+msgstr ""
+
+msgid "metadata/relatedItems/itemCreators/person_or_org/type.help"
+msgstr ""
+
+msgid "metadata/relatedItems/itemCreators/person_or_org/type.label"
+msgstr ""
+
+msgid "metadata/relatedItems/itemCreators/person_or_org/type.hint"
+msgstr ""
+
+msgid "metadata/relatedItems/itemCreators/person_or_org/type.enum.personal"
 msgstr ""
 
 msgid ""
-"metadata/relatedItems/itemCreators/authorityIdentifiers/scheme.enum.ICO"
+"metadata/relatedItems/itemCreators/person_or_org/type.enum.organizational"
 msgstr ""
 
-msgid ""
-"metadata/relatedItems/itemCreators/authorityIdentifiers/scheme.enum.DOI"
+msgid "metadata/relatedItems/itemCreators/role.label"
+msgstr "Contributor's role"
+
+msgid "metadata/relatedItems/itemCreators/role.hint"
+msgstr "Choose the role of the contributor (editor, illustrator…)."
+
+msgid "metadata/relatedItems/itemCreators/role.help"
 msgstr ""
 
-msgid "metadata/relatedItems/itemCreators/nameType.enum.Organizational"
+msgid "metadata/relatedItems/itemCreators/role/id.help"
+msgstr ""
+
+msgid "metadata/relatedItems/itemCreators/role/id.label"
+msgstr ""
+
+msgid "metadata/relatedItems/itemCreators/role/id.hint"
+msgstr ""
+
+msgid "metadata/relatedItems/itemCreators/role/title.help"
+msgstr ""
+
+msgid "metadata/relatedItems/itemCreators/role/title.label"
+msgstr ""
+
+msgid "metadata/relatedItems/itemCreators/role/title.hint"
+msgstr ""
+
+msgid "metadata/relatedItems/itemCreators/role/@v.help"
+msgstr ""
+
+msgid "metadata/relatedItems/itemCreators/role/@v.label"
+msgstr ""
+
+msgid "metadata/relatedItems/itemCreators/role/@v.hint"
 msgstr ""
 
 msgid "metadata/relatedItems/itemEndPage.label"
