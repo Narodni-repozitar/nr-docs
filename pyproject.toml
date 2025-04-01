@@ -98,8 +98,9 @@ invalid_file_extension = "common.services.files.allowed_document_extensions:ERRO
 [project.entry-points."invenio.documents_draft_files.error_handlers"]
 invalid_file_extension = "common.services.files.allowed_document_extensions:ERROR_HANDLERS"
 
-[project.entry-points."invenio.documents_draft_files.request_body_parsers"]
-zenodo_to_nr_docs = "common.resources.zenodo_to_nr_docs.py:REQUEST_BODY_PARSERS"
+[project.entry-points."invenio.documents_record.request_bodyparsers"]
+zenodo_to_nr_docs = "common.resources.zenodo_to_nr_docs:REQUEST_BODY_PARSERS"
+
 
 [project.optional-dependencies]
 tests = [
