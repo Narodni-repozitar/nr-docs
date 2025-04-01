@@ -9,7 +9,7 @@ affiliations:
 communities:
 - service: communities
   writer: service
-- source: ./communities.yaml
+- source: ./communities_v3.4.2.yaml
 funders:
 - service: funders
   writer: service
