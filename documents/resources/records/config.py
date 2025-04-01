@@ -15,7 +15,7 @@ class DocumentsResourceConfig(RecordResourceConfig):
     def response_handlers(self):
         entrypoint_response_handlers = {}
         for x in importlib_metadata.entry_points(
-            group="invenio.documents.response_handlers"
+                group="invenio.documents.response_handlers"
         ):
             entrypoint_response_handlers.update(x.load())
         return {
@@ -30,7 +30,19 @@ class DocumentsResourceConfig(RecordResourceConfig):
     def error_handlers(self):
         entrypoint_error_handlers = {}
         for x in importlib_metadata.entry_points(
-            group="invenio.documents_record.error_handlers"
+                group="invenio.documents_record.error_handlers"
         ):
             entrypoint_error_handlers.update(x.load())
         return {**super().error_handlers, **entrypoint_error_handlers}
+
+    @property
+    def request_body_parsers(self):
+        entrypoint_request_bodyparsers = {}
+        for x in importlib_metadata.entry_points(
+                group="invenio.documents_record.request_bodyparsers"
+        ):
+            entrypoint_request_bodyparsers.update(x.load())
+        return {
+            **super().request_body_parsers,
+            **entrypoint_request_bodyparsers,
+        }

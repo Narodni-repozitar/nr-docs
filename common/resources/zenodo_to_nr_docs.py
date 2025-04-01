@@ -28,8 +28,9 @@ def zenodo_to_nr_docs(zenodo_record):
     if nr_docs['languages']:
         used_language = nr_docs['languages'][0]['id']
 
+    community = metadata['communities'][0]['identifier']
+
     transform_funcs = {
-        'dateModified': transform_date_modified,
         'additionalTitles': transform_additional_titles,
         'relatedItems': transform_related_items,
         'rights': transform_rights,
@@ -46,23 +47,10 @@ def zenodo_to_nr_docs(zenodo_record):
     }
 
     for key, func in transform_funcs.items():
-        if key == 'dateModified':
-            nr_docs[key] = func(zenodo_record, used_language)
-            continue
-
         nr_docs[key] = func(metadata, used_language)
 
-    return {'metadata': nr_docs}
+    return {'parent': {'communities': {'default': community}}, 'metadata': nr_docs}
 
-
-def transform_date_modified(rec, lang='en'):
-    timestamp = rec.get('modified')  # if we pull from zenodo, it always contains modified date
-    if not timestamp:
-        return ""
-
-    dt = datetime.fromisoformat(timestamp)
-    date_part = dt.strftime("%Y-%m-%d")
-    return date_part
 
 
 def transform_subjects(rec, lang='en'):
@@ -142,8 +130,8 @@ def transform_relation_type(zenodo_relation_type):
 def transform_related_items(rec, lang='en'):
     related_identifiers = rec.pop('related_identifiers', [])
     res = []
-
-    for index, related_identifier in enumerate(related_identifiers):
+    index = 0
+    for related_identifier in related_identifiers:
         related_item = {
             'itemTitle': f'Related Item {index + 1}.',  # necessary field in schema, but zenodo records does not have it
             'itemRelationType': transform_relation_type(related_identifier.get('relation'))
@@ -151,30 +139,51 @@ def transform_related_items(rec, lang='en'):
 
         identifier = related_identifier.get('identifier')
 
-        if related_identifier.get('scheme', "").upper() == 'URL' or "http" in identifier:
+        if related_identifier.get('scheme', "").upper() == 'URL' or (
+                "http" in identifier and "doi" not in identifier):
             related_item['itemURL'] = related_identifier.pop('identifier')
         else:
-            related_item['itemPIDs'] = [
-                {'identifier': identifier,
-                 'scheme': get_scheme_from_identifier(related_identifier)
-                 }]
+            scheme, identifier = get_scheme_and_identifier(related_identifier)
+            
+            if not scheme:
+                continue
+                
+            related_item['itemPIDs'] = [{
+                'identifier': identifier,
+                'scheme': scheme
+            }]
+        
+        index += 1
         res.append(related_item)
 
     return res
 
-
-def get_scheme_from_identifier(identifier):
+def get_scheme_and_identifier(identifier):
+    scheme = None
+    
     if 'scheme' in identifier:
-        return identifier['scheme'].upper()
-
-    if bool(re.match('^[0-9]{4}-[0-9]{3}[0-9X]$', identifier.get('identifier'))):
-        return 'ISSN'
+        scheme = identifier['scheme'].upper()
+    elif bool(re.match('^[0-9]{4}-[0-9]{3}[0-9X]$', identifier.get('identifier'))):
+        scheme = 'ISSN'
     elif bool(re.match('(ISBN[-]*(1[03])*[ ]*(: ){0,1})*(([0-9Xx][- ]*){13}|([0-9Xx][- ]*){10})',
                        identifier.get('identifier'))):
-        return 'ISBN'
-    else:
-        return 'unknown'
+        scheme = 'ISBN'
+    elif 'doi' in identifier.get('identifier'):
+        scheme = 'DOI'
+        
+    
+    if scheme == 'DOI' and 'http' in identifier.get('identifier'):
+        return "DOI", extract_doi_from_url(identifier.get('identifier'))
+    
+    return scheme, identifier.get('identifier')
+            
 
+    
+def extract_doi_from_url(url: str) -> str:
+    match = re.search(r"https://doi\.org/([^\s]+)", url)
+    if match:
+        return match.group(1)  
+    return ""
 
 def transform_rights_to_ours(zenodo_rights):
     rights_mapping = {
@@ -231,8 +240,8 @@ def transform_contributors(rec, lang='en'):
 
 def transform_creatibutor(creatibutor):
     res = transform_person_or_org(creatibutor)
-    if creatibutor.get("affiliation"):
-        res['affiliations'] = transform_affiliations(creatibutor)
+    if creatibutor.get("affiliation") and isinstance(creatibutor['affiliation'], str):
+        res['affiliations'] = [{'name': creatibutor['affiliation']}]
     return res
 
 
@@ -899,10 +908,10 @@ def map_affiliation_by_name(zenodo_affiliation, database_affiliations=None):
     for db_id, db_affiliation in database_affiliations.items():
         for key in ['en', 'cs']:
             if db_affiliation.get(key) and match_affiliation(db_id, db_affiliation.get(key)):
-                return {'id': db_id, 'title': {'en': db_affiliation.get('en', ''), 'cz': db_affiliation.get('cs', '')}}
+                return {'id': db_id, 'name': db_affiliation.get('cs') or db_affiliation.get('en')}
 
         for option in db_affiliation.get('other_options', []):
             if match_affiliation(db_id, option):
-                return {'id': db_id, 'title': {'en': db_affiliation.get('en', ''), 'cz': db_affiliation.get('cs', '')}}
+                return {'id': db_id, 'name': db_affiliation.get('cs') or db_affiliation.get('en')}
 
-    return {'id': None, 'title': None}
+    return {'name': None}
