@@ -11,9 +11,11 @@ class ZenodoRequestBodyParser(RequestBodyParser):
         json = super().parse()
         return zenodo_to_nr_docs(json)
 
+
 REQUEST_BODY_PARSERS = {
-    'application/zenodo+json':  ZenodoRequestBodyParser(JSONDeserializer()),
+    'application/zenodo+json': ZenodoRequestBodyParser(JSONDeserializer()),
 }
+
 
 def zenodo_to_nr_docs(zenodo_record):
     # nr_docs = {'originalRecord': zenodo_record['links']['self_html']} dont know if we pull directly from zenodo or not
@@ -53,10 +55,10 @@ def zenodo_to_nr_docs(zenodo_record):
 
 
 def transform_date_modified(rec, lang='en'):
-    timestamp = rec.get('modified')
+    timestamp = rec.get('modified')  # if we pull from zenodo, it always contains modified date
     if not timestamp:
         return ""
-    
+
     dt = datetime.fromisoformat(timestamp)
     date_part = dt.strftime("%Y-%m-%d")
     return date_part
@@ -142,7 +144,7 @@ def transform_related_items(rec, lang='en'):
 
     for index, related_identifier in enumerate(related_identifiers):
         related_item = {
-            'itemTitle': f'Related Item {index + 1}.',
+            'itemTitle': f'Related Item {index + 1}.',  # necessary field in schema, but zenodo records does not have it
             'itemRelationType': transform_relation_type(related_identifier.get('relation'))
         }
 
@@ -166,10 +168,12 @@ def get_scheme_from_identifier(identifier):
 
     if bool(re.match('^[0-9]{4}-[0-9]{3}[0-9X]$', identifier.get('identifier'))):
         return 'ISSN'
-    elif bool(re.match('(ISBN[-]*(1[03])*[ ]*(: ){0,1})*(([0-9Xx][- ]*){13}|([0-9Xx][- ]*){10})', identifier.get('identifier'))):
+    elif bool(re.match('(ISBN[-]*(1[03])*[ ]*(: ){0,1})*(([0-9Xx][- ]*){13}|([0-9Xx][- ]*){10})',
+                       identifier.get('identifier'))):
         return 'ISBN'
     else:
         return 'unknown'
+
 
 def transform_rights_to_ours(zenodo_rights):
     rights_mapping = {
@@ -292,8 +296,8 @@ def transform_abstract(record, lang='en'):
 
 
 def transform_resource_type(rec, lang='en'):
-    resource_type = rec.pop('resource_type', {}) # TODO add others
-    if resource_type.get('type', {}) == 'other' or rec.get('publication_type',"") == 'other':
+    resource_type = rec.pop('resource_type', {})  # TODO add others
+    if resource_type.get('type', {}) == 'other' or rec.get('publication_type', "") == 'other':
         return {'id': 'other', 'title': {'en': 'Other specialized materials'}}
 
     if resource_type.get('type', {}) == 'publication' or rec.get('publication_type', "") == 'article':
