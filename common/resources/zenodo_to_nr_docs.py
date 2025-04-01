@@ -23,6 +23,7 @@ def zenodo_to_nr_docs(zenodo_record):
     metadata = zenodo_record.get('metadata', {}).copy()
 
     nr_docs['languages'] = transform_languages(metadata)
+    # we will use it as default lang, because Zenodo does not have specified field for abstract/title etc.
     used_language = 'en'
     if nr_docs['languages']:
         used_language = nr_docs['languages'][0]['id']
@@ -311,8 +312,8 @@ def transform_languages(rec, lang='en'):
         return [check_language(langs)]
 
     res = []
-    for lang in langs:
-        res.append(check_language(lang))
+    for lang_item in langs:
+        res.append(check_language(lang_item))
 
     return res
 
@@ -371,8 +372,6 @@ aff_vocab = {
                    'Charles Univ Prague, Univ Hosp, Dept Cardiol, Plzen, Czech Republic',
                    'Charles Univ Prague, Fac Med 1, Gen Teaching Hosp, Dept Internal Med 2.Cardiovasc Med, Prague, Czech Republic',
                    'Charles Univ Prague, Fac Med 3, Cardioctr, Srobarova 50, Prague 10034, Czech Republic',
-                   'Faculty of Science, CharlesUniversity, 128 40 Prague 2, Czech Republic',
-                   'Faculty of Science, CharlesUniversity, 128 40 Prague 2, Czech Republic',
                    'Faculty of Science, CharlesUniversity, 128 40 Prague 2, Czech Republic',
                    'Department of Pathophysiology, 2nd Faculty of Medicine, Charles  University, Prague, Czech Republic',
                    'Institute of Anatomy, First Faculty of Medicine, Charles  University, Prague, Czech Republic',
@@ -894,28 +893,16 @@ def map_affiliation_by_name(zenodo_affiliation, database_affiliations=None):
     if database_affiliations is None:
         database_affiliations = aff_vocab
 
-    matched_id = None
-    matched_title = None
+    def match_affiliation(db_id, name):
+        return name and re.search(re.escape(name), zenodo_affiliation, re.IGNORECASE)
 
     for db_id, db_affiliation in database_affiliations.items():
-        if db_affiliation['en'] and re.search(re.escape(db_affiliation['en']), zenodo_affiliation, re.IGNORECASE):
-            matched_id = db_id
-            matched_title = db_affiliation['en']
-            break
-        elif db_affiliation['cs'] and re.search(re.escape(db_affiliation['cs']), zenodo_affiliation, re.IGNORECASE):
-            matched_id = db_id
-            matched_title = db_affiliation['cs']
-            break
-        elif 'other_options' in db_affiliation:
-            for option in db_affiliation['other_options']:
-                if re.search(re.escape(option), zenodo_affiliation, re.IGNORECASE):
-                    matched_id = db_id
-                    matched_title = option
-                    break
-            if matched_id:
-                break
+        for key in ['en', 'cs']:
+            if db_affiliation.get(key) and match_affiliation(db_id, db_affiliation.get(key)):
+                return {'id': db_id, 'title': {'en': db_affiliation.get('en', ''), 'cz': db_affiliation.get('cs', '')}}
 
-    if matched_id:
-        return {'id': matched_id, 'title': matched_title}
-    else:
-        return {'id': None, 'title': None}  # if nothing just return none, it will raise error during import
+        for option in db_affiliation.get('other_options', []):
+            if match_affiliation(db_id, option):
+                return {'id': db_id, 'title': {'en': db_affiliation.get('en', ''), 'cz': db_affiliation.get('cs', '')}}
+
+    return {'id': None, 'title': None}
