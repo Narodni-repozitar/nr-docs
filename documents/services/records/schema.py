@@ -15,7 +15,7 @@ from nr_metadata.documents.services.records.schema import (
 from oarepo_communities.schemas.parent import CommunitiesParentSchema
 from oarepo_runtime.services.schema.marshmallow import DictOnlySchema
 from oarepo_runtime.services.schema.validation import validate_datetime
-from oarepo_workflows.services.records.schema import WorkflowParentSchema
+from oarepo_workflows.services.records.schema import RDMWorkflowParentSchema
 
 
 # TODO: fix model builder to include required languages. Until then
@@ -28,7 +28,7 @@ class LocalNRDocumentMetadataSchema(NRDocumentMetadataSchema):
     )
 
 
-class GeneratedParentSchema(WorkflowParentSchema):
+class GeneratedParentSchema(RDMWorkflowParentSchema):
     """"""
 
     owners = ma.fields.List(ma.fields.Dict(), load_only=True)

@@ -24,10 +24,6 @@ class DocumentsExt:
         if not self.is_inherited():
             self.register_flask_extension(app)
 
-        from flask_principal import identity_loaded
-
-        identity_loaded.connect_via(app)(load_action_permissions)
-
         for method in dir(self):
             if method.startswith("init_app_callback_"):
                 getattr(self, method)(app)
@@ -62,6 +58,25 @@ class DocumentsExt:
             if loaded is not ext_class and issubclass(ext_class, loaded):
                 return True
         return False
+
+    def load_action_permissions(self, sender, identity):
+        # TODO: need to have a deeper look at this
+        from flask_principal import ActionNeed
+        from invenio_access.models import ActionUsers
+
+        user_id = identity.id
+        if user_id is None:
+            return
+
+        for au in ActionUsers.query.filter_by(user_id=user_id, exclude=False).all():
+            identity.provides.add(ActionNeed(au.action))
+
+    def init_app_callback_identity_loaded(self, app):
+        """Load action permissions into the identity when it is loaded."""
+
+        from flask_principal import identity_loaded
+
+        identity_loaded.connect_via(app)(self.load_action_permissions)
 
     @cached_property
     def service_records(self):
@@ -183,17 +198,3 @@ class DocumentsExt:
             service=self.service_draft_files,
             config=config.DOCUMENTS_DRAFT_FILES_RESOURCE_CONFIG(),
         )
-
-
-def load_action_permissions(sender, identity):
-    # TODO: need to have a deeper look at this
-    from flask_principal import ActionNeed
-    from invenio_access.models import ActionUsers
-
-    user_id = identity.id
-    if user_id is None:
-        return
-
-    for au in ActionUsers.query.filter_by(user_id=user_id, exclude=False).all():
-        identity.provides.add(ActionNeed(au.action))
-    pass
