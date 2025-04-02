@@ -4,11 +4,12 @@ import {
   MultilingualTextInput,
   FormikStateLogger,
   EDTFSingleDatePicker,
-  useFieldData,
   FilesField,
   StringArrayField,
   TextField,
   IdentifiersField,
+  FundingField,
+  CreatibutorsField,
 } from "@js/oarepo_ui/forms";
 import { CommunitySelector } from "@js/communities_components/CommunitySelector/CommunitySelector";
 import {
@@ -18,12 +19,10 @@ import {
 import { AccordionField } from "react-invenio-forms";
 import {
   AdditionalTitlesField,
-  FundersField,
   ExternalLocationField,
   SubjectsField,
   SeriesField,
   EventsField,
-  CreatibutorsField,
   RelatedItemsField,
   objectIdentifiersSchema,
   LicenseField,
@@ -43,7 +42,6 @@ const FormFieldsContainer = () => {
       ),
     []
   );
-  const { getFieldData } = useFieldData();
 
   return (
     <React.Fragment>
@@ -150,12 +148,7 @@ const FormFieldsContainer = () => {
             <CreatibutorsField
               fieldPath="metadata.creators"
               schema="creators"
-              autocompleteNames="off"
-              fieldPathPrefix="metadata.creators.0"
-              {...getFieldData({
-                fieldPath: "metadata.creators",
-                icon: "user",
-              })}
+              autocompleteNames="search"
             />
           </Overridable>
           <Overridable
@@ -163,22 +156,10 @@ const FormFieldsContainer = () => {
             fieldPath="metadata.contributors"
           >
             <CreatibutorsField
-              addButtonLabel={i18next.t("Add contributor")}
-              modal={{
-                addLabel: i18next.t("Add contributor"),
-                editLabel: i18next.t("Edit contributor"),
-              }}
               fieldPath="metadata.contributors"
               schema="contributors"
-              autocompleteNames="off"
-              nameTypeHelpText={i18next.t(
-                "Choose if the contributor is a person or an organization."
-              )}
-              fieldPathPrefix="metadata.contributors.0"
-              {...getFieldData({
-                fieldPath: "metadata.contributors",
-                icon: "user",
-              })}
+              autocompleteNames="search"
+              showRoleField={true}
             />
           </Overridable>
         </AccordionField>
@@ -242,14 +223,15 @@ const FormFieldsContainer = () => {
       </Overridable>
       <Overridable id="NrDocs.Deposit.AccordionFinancingInformation.container">
         <AccordionField
-          includesPaths={["metadata.fundingReferences"]}
+          includesPaths={["metadata.funders"]}
           label={i18next.t("Financing information")}
         >
           <Overridable
             id="NrDocs.Deposit.FundersField.container"
-            fieldPath="metadata.fundingReferences"
+            fieldPath="metadata.funders"
           >
-            <FundersField fieldPath="metadata.fundingReferences" />
+            <FundingField fieldPath="metadata.funders" />
+            {/* <FundersField fieldPath="metadata.fundingReferences" /> */}
           </Overridable>
         </AccordionField>
       </Overridable>
