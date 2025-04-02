@@ -1,17 +1,16 @@
 from invenio_access.permissions import system_identity
+from invenio_records_resources.proxies import current_service_registry
 from invenio_requests.proxies import (
     current_requests_service as current_invenio_requests_service,
 )
-from invenio_records_resources.proxies import current_service_registry
-
+from oarepo_requests.proxies import current_oarepo_requests_service
 from oarepo_runtime.datastreams.types import StreamBatch, StreamEntry
 from oarepo_runtime.datastreams.writers import BaseWriter
-from oarepo_runtime.datastreams.writers.utils import record_invenio_exceptions 
-from oarepo_requests.proxies import current_oarepo_requests_service
+from oarepo_runtime.datastreams.writers.utils import record_invenio_exceptions
 
 
 class PublishWriter(BaseWriter):
-    def __init__(self, *, service, identity=None):
+    def __init__(self, *, service, identity=None, **kwargs):
         if isinstance(service, str):
             service = current_service_registry.get(service)
 

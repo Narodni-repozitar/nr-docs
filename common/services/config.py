@@ -1,14 +1,9 @@
-from invenio_drafts_resources.services import (
-    RecordServiceConfig as InvenioRecordDraftsServiceConfig,
-)
+from invenio_rdm_records.services.config import RDMRecordServiceConfig
 
 from common.services.filtered_record_list import FilteredRecordList
 
 
-class FilteredResultServiceConfig(InvenioRecordDraftsServiceConfig):
+class FilteredResultServiceConfig(RDMRecordServiceConfig):
 
     result_list_cls = FilteredRecordList
-
-    components = [
-        *InvenioRecordDraftsServiceConfig.components,
-    ]
+    components = []

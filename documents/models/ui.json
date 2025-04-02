@@ -251,8 +251,8 @@
                     "label": "metadata/contributors.label",
                     "hint": "metadata/contributors.hint",
                     "child": {
-                        "detail": "contributor",
-                        "input": "polymorphic",
+                        "detail": "creator",
+                        "input": "contributor",
                         "help": "metadata/contributors.help",
                         "label": "metadata/contributors.label",
                         "hint": "metadata/contributors.hint",
@@ -264,99 +264,27 @@
                                 "label": "metadata/contributors/affiliations.label",
                                 "hint": "metadata/contributors/affiliations.hint",
                                 "child": {
-                                    "detail": "taxonomy_item",
-                                    "edit": "taxonomy_item",
-                                    "input": "taxonomy",
+                                    "detail": "vocabulary_item",
+                                    "edit": "vocabulary_item",
+                                    "input": "vocabulary",
                                     "help": "metadata/contributors/affiliations.help",
                                     "label": "metadata/contributors/affiliations.label",
                                     "hint": "metadata/contributors/affiliations.hint",
                                     "facet": "metadata_contributors_affiliations",
                                     "children": {
+                                        "name": {
+                                            "detail": "keyword",
+                                            "input": "keyword",
+                                            "help": "metadata/contributors/affiliations/name.help",
+                                            "label": "metadata/contributors/affiliations/name.label",
+                                            "hint": "metadata/contributors/affiliations/name.hint"
+                                        },
                                         "id": {
                                             "detail": "keyword",
                                             "input": "keyword",
                                             "help": "metadata/contributors/affiliations/id.help",
                                             "label": "metadata/contributors/affiliations/id.label",
                                             "hint": "metadata/contributors/affiliations/id.hint"
-                                        },
-                                        "title": {
-                                            "detail": false,
-                                            "input": false,
-                                            "help": "metadata/contributors/affiliations/title.help",
-                                            "label": "metadata/contributors/affiliations/title.label",
-                                            "hint": "metadata/contributors/affiliations/title.hint"
-                                        },
-                                        "ror": {
-                                            "detail": "keyword",
-                                            "input": "keyword",
-                                            "help": "metadata/contributors/affiliations/ror.help",
-                                            "label": "metadata/contributors/affiliations/ror.label",
-                                            "hint": "metadata/contributors/affiliations/ror.hint"
-                                        },
-                                        "hierarchy": {
-                                            "detail": false,
-                                            "input": false,
-                                            "help": "metadata/contributors/affiliations/hierarchy.help",
-                                            "label": "metadata/contributors/affiliations/hierarchy.label",
-                                            "hint": "metadata/contributors/affiliations/hierarchy.hint",
-                                            "children": {
-                                                "ancestors": {
-                                                    "detail": "array",
-                                                    "input": "array",
-                                                    "help": "metadata/contributors/affiliations/hierarchy/ancestors.help",
-                                                    "label": "metadata/contributors/affiliations/hierarchy/ancestors.label",
-                                                    "hint": "metadata/contributors/affiliations/hierarchy/ancestors.hint",
-                                                    "child": {
-                                                        "detail": "keyword",
-                                                        "input": "keyword",
-                                                        "help": "metadata/contributors/affiliations/hierarchy/ancestors.help",
-                                                        "label": "metadata/contributors/affiliations/hierarchy/ancestors.label",
-                                                        "hint": "metadata/contributors/affiliations/hierarchy/ancestors.hint"
-                                                    }
-                                                },
-                                                "ancestors_or_self": {
-                                                    "detail": "array",
-                                                    "input": "array",
-                                                    "help": "metadata/contributors/affiliations/hierarchy/ancestors_or_self.help",
-                                                    "label": "metadata/contributors/affiliations/hierarchy/ancestors_or_self.label",
-                                                    "hint": "metadata/contributors/affiliations/hierarchy/ancestors_or_self.hint",
-                                                    "child": {
-                                                        "detail": "keyword",
-                                                        "input": "keyword",
-                                                        "help": "metadata/contributors/affiliations/hierarchy/ancestors_or_self.help",
-                                                        "label": "metadata/contributors/affiliations/hierarchy/ancestors_or_self.label",
-                                                        "hint": "metadata/contributors/affiliations/hierarchy/ancestors_or_self.hint"
-                                                    }
-                                                },
-                                                "level": {
-                                                    "detail": "integer",
-                                                    "input": "integer",
-                                                    "help": "metadata/contributors/affiliations/hierarchy/level.help",
-                                                    "label": "metadata/contributors/affiliations/hierarchy/level.label",
-                                                    "hint": "metadata/contributors/affiliations/hierarchy/level.hint"
-                                                },
-                                                "parent": {
-                                                    "detail": "keyword",
-                                                    "input": "keyword",
-                                                    "help": "metadata/contributors/affiliations/hierarchy/parent.help",
-                                                    "label": "metadata/contributors/affiliations/hierarchy/parent.label",
-                                                    "hint": "metadata/contributors/affiliations/hierarchy/parent.hint"
-                                                },
-                                                "title": {
-                                                    "detail": "array",
-                                                    "input": "array",
-                                                    "help": "metadata/contributors/affiliations/hierarchy/title.help",
-                                                    "label": "metadata/contributors/affiliations/hierarchy/title.label",
-                                                    "hint": "metadata/contributors/affiliations/hierarchy/title.hint",
-                                                    "child": {
-                                                        "detail": false,
-                                                        "input": false,
-                                                        "help": "metadata/contributors/affiliations/hierarchy/title.help",
-                                                        "label": "metadata/contributors/affiliations/hierarchy/title.label",
-                                                        "hint": "metadata/contributors/affiliations/hierarchy/title.hint"
-                                                    }
-                                                }
-                                            }
                                         },
                                         "@v": {
                                             "detail": "keyword",
@@ -368,109 +296,112 @@
                                     }
                                 }
                             },
-                            "authorityIdentifiers": {
-                                "detail": "array",
-                                "input": "array",
-                                "help": "metadata/contributors/authorityIdentifiers.help",
-                                "label": "metadata/contributors/authorityIdentifiers.label",
-                                "hint": "metadata/contributors/authorityIdentifiers.hint",
-                                "child": {
-                                    "detail": "nr_organization_identifier",
-                                    "input": "authorityidentifier",
-                                    "help": "metadata/contributors/authorityIdentifiers.help",
-                                    "label": "metadata/contributors/authorityIdentifiers.label",
-                                    "hint": "metadata/contributors/authorityIdentifiers.hint",
-                                    "children": {
-                                        "identifier": {
-                                            "detail": "keyword",
-                                            "input": "keyword",
-                                            "required": true,
-                                            "help": "metadata/contributors/authorityIdentifiers/identifier.help",
-                                            "label": "metadata/contributors/authorityIdentifiers/identifier.label",
-                                            "hint": "metadata/contributors/authorityIdentifiers/identifier.hint",
-                                            "facet": "metadata_contributors_authorityIdentifiers_identifier"
-                                        },
-                                        "scheme": {
-                                            "detail": "keyword",
-                                            "input": "keyword",
-                                            "required": true,
-                                            "help": "metadata/contributors/authorityIdentifiers/scheme.help",
-                                            "label": "metadata/contributors/authorityIdentifiers/scheme.label",
-                                            "hint": "metadata/contributors/authorityIdentifiers/scheme.hint",
-                                            "enum": "metadata/contributors/authorityIdentifiers/scheme.enum",
-                                            "facet": "metadata_contributors_authorityIdentifiers_scheme"
+                            "person_or_org": {
+                                "detail": false,
+                                "input": false,
+                                "help": "metadata/contributors/person_or_org.help",
+                                "label": "metadata/contributors/person_or_org.label",
+                                "hint": "metadata/contributors/person_or_org.hint",
+                                "children": {
+                                    "family_name": {
+                                        "detail": "keyword",
+                                        "input": "keyword",
+                                        "help": "metadata/contributors/person_or_org/family_name.help",
+                                        "label": "metadata/contributors/person_or_org/family_name.label",
+                                        "hint": "metadata/contributors/person_or_org/family_name.hint",
+                                        "facet": "metadata_contributors_person_or_org_family_name"
+                                    },
+                                    "given_name": {
+                                        "detail": "keyword",
+                                        "input": "keyword",
+                                        "help": "metadata/contributors/person_or_org/given_name.help",
+                                        "label": "metadata/contributors/person_or_org/given_name.label",
+                                        "hint": "metadata/contributors/person_or_org/given_name.hint",
+                                        "facet": "metadata_contributors_person_or_org_given_name"
+                                    },
+                                    "identifiers": {
+                                        "detail": "array",
+                                        "input": "array",
+                                        "help": "metadata/contributors/person_or_org/identifiers.help",
+                                        "label": "metadata/contributors/person_or_org/identifiers.label",
+                                        "hint": "metadata/contributors/person_or_org/identifiers.hint",
+                                        "child": {
+                                            "detail": "identifier",
+                                            "input": "identifier",
+                                            "help": "metadata/contributors/person_or_org/identifiers.help",
+                                            "label": "metadata/contributors/person_or_org/identifiers.label",
+                                            "hint": "metadata/contributors/person_or_org/identifiers.hint",
+                                            "children": {
+                                                "identifier": {
+                                                    "detail": "keyword",
+                                                    "input": "keyword",
+                                                    "help": "metadata/contributors/person_or_org/identifiers/identifier.help",
+                                                    "label": "metadata/contributors/person_or_org/identifiers/identifier.label",
+                                                    "hint": "metadata/contributors/person_or_org/identifiers/identifier.hint",
+                                                    "facet": "metadata_contributors_person_or_org_identifiers_identifier"
+                                                },
+                                                "scheme": {
+                                                    "detail": "keyword",
+                                                    "input": "keyword",
+                                                    "help": "metadata/contributors/person_or_org/identifiers/scheme.help",
+                                                    "label": "metadata/contributors/person_or_org/identifiers/scheme.label",
+                                                    "hint": "metadata/contributors/person_or_org/identifiers/scheme.hint",
+                                                    "facet": "metadata_contributors_person_or_org_identifiers_scheme"
+                                                }
+                                            }
                                         }
+                                    },
+                                    "name": {
+                                        "detail": "keyword",
+                                        "input": "keyword",
+                                        "help": "metadata/contributors/person_or_org/name.help",
+                                        "label": "metadata/contributors/person_or_org/name.label",
+                                        "hint": "metadata/contributors/person_or_org/name.hint",
+                                        "facet": "metadata_contributors_person_or_org_name"
+                                    },
+                                    "type": {
+                                        "detail": "keyword",
+                                        "input": "keyword",
+                                        "help": "metadata/contributors/person_or_org/type.help",
+                                        "label": "metadata/contributors/person_or_org/type.label",
+                                        "hint": "metadata/contributors/person_or_org/type.hint",
+                                        "enum": "metadata/contributors/person_or_org/type.enum",
+                                        "facet": "metadata_contributors_person_or_org_type"
                                     }
                                 }
                             },
-                            "contributorType": {
+                            "role": {
                                 "detail": "vocabulary_item",
                                 "edit": "vocabulary_item",
                                 "input": "vocabulary",
                                 "required": true,
-                                "help": "metadata/contributors/contributorType.help",
-                                "label": "metadata/contributors/contributorType.label",
-                                "hint": "metadata/contributors/contributorType.hint",
-                                "facet": "metadata_contributors_contributorType",
+                                "help": "metadata/contributors/role.help",
+                                "label": "metadata/contributors/role.label",
+                                "hint": "metadata/contributors/role.hint",
+                                "facet": "metadata_contributors_role",
                                 "children": {
                                     "id": {
                                         "detail": "keyword",
                                         "input": "keyword",
-                                        "help": "metadata/contributors/contributorType/id.help",
-                                        "label": "metadata/contributors/contributorType/id.label",
-                                        "hint": "metadata/contributors/contributorType/id.hint"
+                                        "help": "metadata/contributors/role/id.help",
+                                        "label": "metadata/contributors/role/id.label",
+                                        "hint": "metadata/contributors/role/id.hint"
                                     },
                                     "title": {
                                         "detail": false,
                                         "input": false,
-                                        "help": "metadata/contributors/contributorType/title.help",
-                                        "label": "metadata/contributors/contributorType/title.label",
-                                        "hint": "metadata/contributors/contributorType/title.hint"
+                                        "help": "metadata/contributors/role/title.help",
+                                        "label": "metadata/contributors/role/title.label",
+                                        "hint": "metadata/contributors/role/title.hint"
                                     },
                                     "@v": {
                                         "detail": "keyword",
                                         "input": "keyword",
-                                        "help": "metadata/contributors/contributorType/@v.help",
-                                        "label": "metadata/contributors/contributorType/@v.label",
-                                        "hint": "metadata/contributors/contributorType/@v.hint"
+                                        "help": "metadata/contributors/role/@v.help",
+                                        "label": "metadata/contributors/role/@v.label",
+                                        "hint": "metadata/contributors/role/@v.hint"
                                     }
                                 }
-                            },
-                            "familyName": {
-                                "detail": "keyword",
-                                "input": "keyword",
-                                "required": true,
-                                "help": "metadata/contributors/familyName.help",
-                                "label": "metadata/contributors/familyName.label",
-                                "hint": "metadata/contributors/familyName.hint",
-                                "facet": "metadata_contributors_familyName"
-                            },
-                            "fullName": {
-                                "detail": "keyword",
-                                "input": "keyword",
-                                "required": true,
-                                "help": "metadata/contributors/fullName.help",
-                                "label": "metadata/contributors/fullName.label",
-                                "hint": "metadata/contributors/fullName.hint",
-                                "facet": "metadata_contributors_fullName"
-                            },
-                            "givenName": {
-                                "detail": "keyword",
-                                "input": "keyword",
-                                "required": true,
-                                "help": "metadata/contributors/givenName.help",
-                                "label": "metadata/contributors/givenName.label",
-                                "hint": "metadata/contributors/givenName.hint",
-                                "facet": "metadata_contributors_givenName"
-                            },
-                            "nameType": {
-                                "detail": "keyword",
-                                "input": "keyword",
-                                "help": "metadata/contributors/nameType.help",
-                                "label": "metadata/contributors/nameType.label",
-                                "hint": "metadata/contributors/nameType.hint",
-                                "enum": "metadata/contributors/nameType.enum",
-                                "facet": "metadata_contributors_nameType"
                             }
                         }
                     }
@@ -484,7 +415,7 @@
                     "hint": "metadata/creators.hint",
                     "child": {
                         "detail": "creator",
-                        "input": "polymorphic",
+                        "input": "creator",
                         "help": "metadata/creators.help",
                         "label": "metadata/creators.label",
                         "hint": "metadata/creators.hint",
@@ -496,99 +427,27 @@
                                 "label": "metadata/creators/affiliations.label",
                                 "hint": "metadata/creators/affiliations.hint",
                                 "child": {
-                                    "detail": "taxonomy_item",
-                                    "edit": "taxonomy_item",
-                                    "input": "taxonomy",
+                                    "detail": "vocabulary_item",
+                                    "edit": "vocabulary_item",
+                                    "input": "vocabulary",
                                     "help": "metadata/creators/affiliations.help",
                                     "label": "metadata/creators/affiliations.label",
                                     "hint": "metadata/creators/affiliations.hint",
                                     "facet": "metadata_creators_affiliations",
                                     "children": {
+                                        "name": {
+                                            "detail": "keyword",
+                                            "input": "keyword",
+                                            "help": "metadata/creators/affiliations/name.help",
+                                            "label": "metadata/creators/affiliations/name.label",
+                                            "hint": "metadata/creators/affiliations/name.hint"
+                                        },
                                         "id": {
                                             "detail": "keyword",
                                             "input": "keyword",
                                             "help": "metadata/creators/affiliations/id.help",
                                             "label": "metadata/creators/affiliations/id.label",
                                             "hint": "metadata/creators/affiliations/id.hint"
-                                        },
-                                        "title": {
-                                            "detail": false,
-                                            "input": false,
-                                            "help": "metadata/creators/affiliations/title.help",
-                                            "label": "metadata/creators/affiliations/title.label",
-                                            "hint": "metadata/creators/affiliations/title.hint"
-                                        },
-                                        "ror": {
-                                            "detail": "keyword",
-                                            "input": "keyword",
-                                            "help": "metadata/creators/affiliations/ror.help",
-                                            "label": "metadata/creators/affiliations/ror.label",
-                                            "hint": "metadata/creators/affiliations/ror.hint"
-                                        },
-                                        "hierarchy": {
-                                            "detail": false,
-                                            "input": false,
-                                            "help": "metadata/creators/affiliations/hierarchy.help",
-                                            "label": "metadata/creators/affiliations/hierarchy.label",
-                                            "hint": "metadata/creators/affiliations/hierarchy.hint",
-                                            "children": {
-                                                "ancestors": {
-                                                    "detail": "array",
-                                                    "input": "array",
-                                                    "help": "metadata/creators/affiliations/hierarchy/ancestors.help",
-                                                    "label": "metadata/creators/affiliations/hierarchy/ancestors.label",
-                                                    "hint": "metadata/creators/affiliations/hierarchy/ancestors.hint",
-                                                    "child": {
-                                                        "detail": "keyword",
-                                                        "input": "keyword",
-                                                        "help": "metadata/creators/affiliations/hierarchy/ancestors.help",
-                                                        "label": "metadata/creators/affiliations/hierarchy/ancestors.label",
-                                                        "hint": "metadata/creators/affiliations/hierarchy/ancestors.hint"
-                                                    }
-                                                },
-                                                "ancestors_or_self": {
-                                                    "detail": "array",
-                                                    "input": "array",
-                                                    "help": "metadata/creators/affiliations/hierarchy/ancestors_or_self.help",
-                                                    "label": "metadata/creators/affiliations/hierarchy/ancestors_or_self.label",
-                                                    "hint": "metadata/creators/affiliations/hierarchy/ancestors_or_self.hint",
-                                                    "child": {
-                                                        "detail": "keyword",
-                                                        "input": "keyword",
-                                                        "help": "metadata/creators/affiliations/hierarchy/ancestors_or_self.help",
-                                                        "label": "metadata/creators/affiliations/hierarchy/ancestors_or_self.label",
-                                                        "hint": "metadata/creators/affiliations/hierarchy/ancestors_or_self.hint"
-                                                    }
-                                                },
-                                                "level": {
-                                                    "detail": "integer",
-                                                    "input": "integer",
-                                                    "help": "metadata/creators/affiliations/hierarchy/level.help",
-                                                    "label": "metadata/creators/affiliations/hierarchy/level.label",
-                                                    "hint": "metadata/creators/affiliations/hierarchy/level.hint"
-                                                },
-                                                "parent": {
-                                                    "detail": "keyword",
-                                                    "input": "keyword",
-                                                    "help": "metadata/creators/affiliations/hierarchy/parent.help",
-                                                    "label": "metadata/creators/affiliations/hierarchy/parent.label",
-                                                    "hint": "metadata/creators/affiliations/hierarchy/parent.hint"
-                                                },
-                                                "title": {
-                                                    "detail": "array",
-                                                    "input": "array",
-                                                    "help": "metadata/creators/affiliations/hierarchy/title.help",
-                                                    "label": "metadata/creators/affiliations/hierarchy/title.label",
-                                                    "hint": "metadata/creators/affiliations/hierarchy/title.hint",
-                                                    "child": {
-                                                        "detail": false,
-                                                        "input": false,
-                                                        "help": "metadata/creators/affiliations/hierarchy/title.help",
-                                                        "label": "metadata/creators/affiliations/hierarchy/title.label",
-                                                        "hint": "metadata/creators/affiliations/hierarchy/title.hint"
-                                                    }
-                                                }
-                                            }
                                         },
                                         "@v": {
                                             "detail": "keyword",
@@ -600,76 +459,112 @@
                                     }
                                 }
                             },
-                            "authorityIdentifiers": {
-                                "detail": "array",
-                                "input": "array",
-                                "help": "metadata/creators/authorityIdentifiers.help",
-                                "label": "metadata/creators/authorityIdentifiers.label",
-                                "hint": "metadata/creators/authorityIdentifiers.hint",
-                                "child": {
-                                    "detail": "nr_organization_identifier",
-                                    "input": "authorityidentifier",
-                                    "help": "metadata/creators/authorityIdentifiers.help",
-                                    "label": "metadata/creators/authorityIdentifiers.label",
-                                    "hint": "metadata/creators/authorityIdentifiers.hint",
-                                    "children": {
-                                        "identifier": {
-                                            "detail": "keyword",
-                                            "input": "keyword",
-                                            "required": true,
-                                            "help": "metadata/creators/authorityIdentifiers/identifier.help",
-                                            "label": "metadata/creators/authorityIdentifiers/identifier.label",
-                                            "hint": "metadata/creators/authorityIdentifiers/identifier.hint",
-                                            "facet": "metadata_creators_authorityIdentifiers_identifier"
-                                        },
-                                        "scheme": {
-                                            "detail": "keyword",
-                                            "input": "keyword",
-                                            "required": true,
-                                            "help": "metadata/creators/authorityIdentifiers/scheme.help",
-                                            "label": "metadata/creators/authorityIdentifiers/scheme.label",
-                                            "hint": "metadata/creators/authorityIdentifiers/scheme.hint",
-                                            "enum": "metadata/creators/authorityIdentifiers/scheme.enum",
-                                            "facet": "metadata_creators_authorityIdentifiers_scheme"
+                            "person_or_org": {
+                                "detail": false,
+                                "input": false,
+                                "help": "metadata/creators/person_or_org.help",
+                                "label": "metadata/creators/person_or_org.label",
+                                "hint": "metadata/creators/person_or_org.hint",
+                                "children": {
+                                    "family_name": {
+                                        "detail": "keyword",
+                                        "input": "keyword",
+                                        "help": "metadata/creators/person_or_org/family_name.help",
+                                        "label": "metadata/creators/person_or_org/family_name.label",
+                                        "hint": "metadata/creators/person_or_org/family_name.hint",
+                                        "facet": "metadata_creators_person_or_org_family_name"
+                                    },
+                                    "given_name": {
+                                        "detail": "keyword",
+                                        "input": "keyword",
+                                        "help": "metadata/creators/person_or_org/given_name.help",
+                                        "label": "metadata/creators/person_or_org/given_name.label",
+                                        "hint": "metadata/creators/person_or_org/given_name.hint",
+                                        "facet": "metadata_creators_person_or_org_given_name"
+                                    },
+                                    "identifiers": {
+                                        "detail": "array",
+                                        "input": "array",
+                                        "help": "metadata/creators/person_or_org/identifiers.help",
+                                        "label": "metadata/creators/person_or_org/identifiers.label",
+                                        "hint": "metadata/creators/person_or_org/identifiers.hint",
+                                        "child": {
+                                            "detail": "identifier",
+                                            "input": "identifier",
+                                            "help": "metadata/creators/person_or_org/identifiers.help",
+                                            "label": "metadata/creators/person_or_org/identifiers.label",
+                                            "hint": "metadata/creators/person_or_org/identifiers.hint",
+                                            "children": {
+                                                "identifier": {
+                                                    "detail": "keyword",
+                                                    "input": "keyword",
+                                                    "help": "metadata/creators/person_or_org/identifiers/identifier.help",
+                                                    "label": "metadata/creators/person_or_org/identifiers/identifier.label",
+                                                    "hint": "metadata/creators/person_or_org/identifiers/identifier.hint",
+                                                    "facet": "metadata_creators_person_or_org_identifiers_identifier"
+                                                },
+                                                "scheme": {
+                                                    "detail": "keyword",
+                                                    "input": "keyword",
+                                                    "help": "metadata/creators/person_or_org/identifiers/scheme.help",
+                                                    "label": "metadata/creators/person_or_org/identifiers/scheme.label",
+                                                    "hint": "metadata/creators/person_or_org/identifiers/scheme.hint",
+                                                    "facet": "metadata_creators_person_or_org_identifiers_scheme"
+                                                }
+                                            }
                                         }
+                                    },
+                                    "name": {
+                                        "detail": "keyword",
+                                        "input": "keyword",
+                                        "help": "metadata/creators/person_or_org/name.help",
+                                        "label": "metadata/creators/person_or_org/name.label",
+                                        "hint": "metadata/creators/person_or_org/name.hint",
+                                        "facet": "metadata_creators_person_or_org_name"
+                                    },
+                                    "type": {
+                                        "detail": "keyword",
+                                        "input": "keyword",
+                                        "help": "metadata/creators/person_or_org/type.help",
+                                        "label": "metadata/creators/person_or_org/type.label",
+                                        "hint": "metadata/creators/person_or_org/type.hint",
+                                        "enum": "metadata/creators/person_or_org/type.enum",
+                                        "facet": "metadata_creators_person_or_org_type"
                                     }
                                 }
                             },
-                            "familyName": {
-                                "detail": "keyword",
-                                "input": "keyword",
+                            "role": {
+                                "detail": "vocabulary_item",
+                                "edit": "vocabulary_item",
+                                "input": "vocabulary",
                                 "required": true,
-                                "help": "metadata/creators/familyName.help",
-                                "label": "metadata/creators/familyName.label",
-                                "hint": "metadata/creators/familyName.hint",
-                                "facet": "metadata_creators_familyName"
-                            },
-                            "fullName": {
-                                "detail": "keyword",
-                                "input": "keyword",
-                                "required": true,
-                                "help": "metadata/creators/fullName.help",
-                                "label": "metadata/creators/fullName.label",
-                                "hint": "metadata/creators/fullName.hint",
-                                "facet": "metadata_creators_fullName"
-                            },
-                            "givenName": {
-                                "detail": "keyword",
-                                "input": "keyword",
-                                "required": true,
-                                "help": "metadata/creators/givenName.help",
-                                "label": "metadata/creators/givenName.label",
-                                "hint": "metadata/creators/givenName.hint",
-                                "facet": "metadata_creators_givenName"
-                            },
-                            "nameType": {
-                                "detail": "keyword",
-                                "input": "keyword",
-                                "help": "metadata/creators/nameType.help",
-                                "label": "metadata/creators/nameType.label",
-                                "hint": "metadata/creators/nameType.hint",
-                                "enum": "metadata/creators/nameType.enum",
-                                "facet": "metadata_creators_nameType"
+                                "help": "metadata/creators/role.help",
+                                "label": "metadata/creators/role.label",
+                                "hint": "metadata/creators/role.hint",
+                                "facet": "metadata_creators_role",
+                                "children": {
+                                    "id": {
+                                        "detail": "keyword",
+                                        "input": "keyword",
+                                        "help": "metadata/creators/role/id.help",
+                                        "label": "metadata/creators/role/id.label",
+                                        "hint": "metadata/creators/role/id.hint"
+                                    },
+                                    "title": {
+                                        "detail": false,
+                                        "input": false,
+                                        "help": "metadata/creators/role/title.help",
+                                        "label": "metadata/creators/role/title.label",
+                                        "hint": "metadata/creators/role/title.hint"
+                                    },
+                                    "@v": {
+                                        "detail": "keyword",
+                                        "input": "keyword",
+                                        "help": "metadata/creators/role/@v.help",
+                                        "label": "metadata/creators/role/@v.label",
+                                        "hint": "metadata/creators/role/@v.hint"
+                                    }
+                                }
                             }
                         }
                     }
@@ -820,74 +715,216 @@
                         }
                     }
                 },
-                "fundingReferences": {
+                "funders": {
                     "detail": "array",
                     "input": "array",
-                    "help": "metadata/fundingReferences.help",
-                    "label": "metadata/fundingReferences.label",
-                    "hint": "metadata/fundingReferences.hint",
+                    "help": "metadata/funders.help",
+                    "label": "metadata/funders.label",
+                    "hint": "metadata/funders.hint",
                     "child": {
                         "detail": "funding_reference",
-                        "input": "fundingreference",
-                        "help": "metadata/fundingReferences.help",
-                        "label": "metadata/fundingReferences.label",
-                        "hint": "metadata/fundingReferences.hint",
+                        "input": "funder",
+                        "help": "metadata/funders.help",
+                        "label": "metadata/funders.label",
+                        "hint": "metadata/funders.hint",
                         "children": {
-                            "funder": {
+                            "award": {
                                 "detail": "vocabulary_item",
                                 "edit": "vocabulary_item",
                                 "input": "vocabulary",
-                                "required": true,
-                                "help": "metadata/fundingReferences/funder.help",
-                                "label": "metadata/fundingReferences/funder.label",
-                                "hint": "metadata/fundingReferences/funder.hint",
-                                "facet": "metadata_fundingReferences_funder",
+                                "help": "metadata/funders/award.help",
+                                "label": "metadata/funders/award.label",
+                                "hint": "metadata/funders/award.hint",
+                                "facet": "metadata_funders_award",
                                 "children": {
-                                    "id": {
-                                        "detail": "keyword",
-                                        "input": "keyword",
-                                        "help": "metadata/fundingReferences/funder/id.help",
-                                        "label": "metadata/fundingReferences/funder/id.label",
-                                        "hint": "metadata/fundingReferences/funder/id.hint"
-                                    },
                                     "title": {
                                         "detail": false,
                                         "input": false,
-                                        "help": "metadata/fundingReferences/funder/title.help",
-                                        "label": "metadata/fundingReferences/funder/title.label",
-                                        "hint": "metadata/fundingReferences/funder/title.hint"
+                                        "help": "metadata/funders/award/title.help",
+                                        "label": "metadata/funders/award/title.label",
+                                        "hint": "metadata/funders/award/title.hint"
+                                    },
+                                    "number": {
+                                        "detail": "keyword",
+                                        "input": "keyword",
+                                        "help": "metadata/funders/award/number.help",
+                                        "label": "metadata/funders/award/number.label",
+                                        "hint": "metadata/funders/award/number.hint"
+                                    },
+                                    "identifiers": {
+                                        "detail": "array",
+                                        "input": "array",
+                                        "help": "metadata/funders/award/identifiers.help",
+                                        "label": "metadata/funders/award/identifiers.label",
+                                        "hint": "metadata/funders/award/identifiers.hint",
+                                        "child": {
+                                            "detail": "identifier",
+                                            "input": "identifier",
+                                            "help": "metadata/funders/award/identifiers.help",
+                                            "label": "metadata/funders/award/identifiers.label",
+                                            "hint": "metadata/funders/award/identifiers.hint",
+                                            "children": {
+                                                "identifier": {
+                                                    "detail": "keyword",
+                                                    "input": "keyword",
+                                                    "help": "metadata/funders/award/identifiers/identifier.help",
+                                                    "label": "metadata/funders/award/identifiers/identifier.label",
+                                                    "hint": "metadata/funders/award/identifiers/identifier.hint"
+                                                },
+                                                "schema": {
+                                                    "detail": "keyword",
+                                                    "input": "keyword",
+                                                    "help": "metadata/funders/award/identifiers/schema.help",
+                                                    "label": "metadata/funders/award/identifiers/schema.label",
+                                                    "hint": "metadata/funders/award/identifiers/schema.hint"
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "acronym": {
+                                        "detail": "keyword",
+                                        "input": "keyword",
+                                        "help": "metadata/funders/award/acronym.help",
+                                        "label": "metadata/funders/award/acronym.label",
+                                        "hint": "metadata/funders/award/acronym.hint"
+                                    },
+                                    "program": {
+                                        "detail": "keyword",
+                                        "input": "keyword",
+                                        "help": "metadata/funders/award/program.help",
+                                        "label": "metadata/funders/award/program.label",
+                                        "hint": "metadata/funders/award/program.hint"
+                                    },
+                                    "subjects": {
+                                        "detail": "array",
+                                        "input": "array",
+                                        "help": "metadata/funders/award/subjects.help",
+                                        "label": "metadata/funders/award/subjects.label",
+                                        "hint": "metadata/funders/award/subjects.hint",
+                                        "child": {
+                                            "detail": "subject",
+                                            "input": "subject",
+                                            "help": "metadata/funders/award/subjects.help",
+                                            "label": "metadata/funders/award/subjects.label",
+                                            "hint": "metadata/funders/award/subjects.hint",
+                                            "children": {
+                                                "id": {
+                                                    "detail": "keyword",
+                                                    "input": "keyword",
+                                                    "help": "metadata/funders/award/subjects/id.help",
+                                                    "label": "metadata/funders/award/subjects/id.label",
+                                                    "hint": "metadata/funders/award/subjects/id.hint"
+                                                },
+                                                "subject": {
+                                                    "detail": "keyword",
+                                                    "input": "keyword",
+                                                    "help": "metadata/funders/award/subjects/subject.help",
+                                                    "label": "metadata/funders/award/subjects/subject.label",
+                                                    "hint": "metadata/funders/award/subjects/subject.hint"
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "organizations": {
+                                        "detail": "array",
+                                        "input": "array",
+                                        "help": "metadata/funders/award/organizations.help",
+                                        "label": "metadata/funders/award/organizations.label",
+                                        "hint": "metadata/funders/award/organizations.hint",
+                                        "child": {
+                                            "detail": "organization",
+                                            "input": "organization",
+                                            "help": "metadata/funders/award/organizations.help",
+                                            "label": "metadata/funders/award/organizations.label",
+                                            "hint": "metadata/funders/award/organizations.hint",
+                                            "children": {
+                                                "id": {
+                                                    "detail": "keyword",
+                                                    "input": "keyword",
+                                                    "help": "metadata/funders/award/organizations/id.help",
+                                                    "label": "metadata/funders/award/organizations/id.label",
+                                                    "hint": "metadata/funders/award/organizations/id.hint"
+                                                },
+                                                "organization": {
+                                                    "detail": "keyword",
+                                                    "input": "keyword",
+                                                    "help": "metadata/funders/award/organizations/organization.help",
+                                                    "label": "metadata/funders/award/organizations/organization.label",
+                                                    "hint": "metadata/funders/award/organizations/organization.hint"
+                                                },
+                                                "scheme": {
+                                                    "detail": "keyword",
+                                                    "input": "keyword",
+                                                    "help": "metadata/funders/award/organizations/scheme.help",
+                                                    "label": "metadata/funders/award/organizations/scheme.label",
+                                                    "hint": "metadata/funders/award/organizations/scheme.hint"
+                                                }
+                                            }
+                                        }
                                     },
                                     "@v": {
                                         "detail": "keyword",
                                         "input": "keyword",
-                                        "help": "metadata/fundingReferences/funder/@v.help",
-                                        "label": "metadata/fundingReferences/funder/@v.label",
-                                        "hint": "metadata/fundingReferences/funder/@v.hint"
+                                        "help": "metadata/funders/award/@v.help",
+                                        "label": "metadata/funders/award/@v.label",
+                                        "hint": "metadata/funders/award/@v.hint"
                                     }
                                 }
                             },
-                            "fundingProgram": {
-                                "detail": "fulltext",
-                                "input": "fulltext",
-                                "help": "metadata/fundingReferences/fundingProgram.help",
-                                "label": "metadata/fundingReferences/fundingProgram.label",
-                                "hint": "metadata/fundingReferences/fundingProgram.hint"
-                            },
-                            "projectID": {
-                                "detail": "keyword",
-                                "input": "keyword",
-                                "required": true,
-                                "help": "metadata/fundingReferences/projectID.help",
-                                "label": "metadata/fundingReferences/projectID.label",
-                                "hint": "metadata/fundingReferences/projectID.hint",
-                                "facet": "metadata_fundingReferences_projectID"
-                            },
-                            "projectName": {
-                                "detail": "fulltext",
-                                "input": "fulltext",
-                                "help": "metadata/fundingReferences/projectName.help",
-                                "label": "metadata/fundingReferences/projectName.label",
-                                "hint": "metadata/fundingReferences/projectName.hint"
+                            "funder": {
+                                "detail": "vocabulary_item",
+                                "edit": "vocabulary_item",
+                                "input": "vocabulary",
+                                "help": "metadata/funders/funder.help",
+                                "label": "metadata/funders/funder.label",
+                                "hint": "metadata/funders/funder.hint",
+                                "facet": "metadata_funders_funder",
+                                "children": {
+                                    "identifiers": {
+                                        "detail": "array",
+                                        "input": "array",
+                                        "help": "metadata/funders/funder/identifiers.help",
+                                        "label": "metadata/funders/funder/identifiers.label",
+                                        "hint": "metadata/funders/funder/identifiers.hint",
+                                        "child": {
+                                            "detail": "identifier",
+                                            "input": "identifier",
+                                            "help": "metadata/funders/funder/identifiers.help",
+                                            "label": "metadata/funders/funder/identifiers.label",
+                                            "hint": "metadata/funders/funder/identifiers.hint",
+                                            "children": {
+                                                "identifier": {
+                                                    "detail": "keyword",
+                                                    "input": "keyword",
+                                                    "help": "metadata/funders/funder/identifiers/identifier.help",
+                                                    "label": "metadata/funders/funder/identifiers/identifier.label",
+                                                    "hint": "metadata/funders/funder/identifiers/identifier.hint"
+                                                },
+                                                "schema": {
+                                                    "detail": "keyword",
+                                                    "input": "keyword",
+                                                    "help": "metadata/funders/funder/identifiers/schema.help",
+                                                    "label": "metadata/funders/funder/identifiers/schema.label",
+                                                    "hint": "metadata/funders/funder/identifiers/schema.hint"
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "name": {
+                                        "detail": "keyword",
+                                        "input": "keyword",
+                                        "help": "metadata/funders/funder/name.help",
+                                        "label": "metadata/funders/funder/name.label",
+                                        "hint": "metadata/funders/funder/name.hint"
+                                    },
+                                    "@v": {
+                                        "detail": "keyword",
+                                        "input": "keyword",
+                                        "help": "metadata/funders/funder/@v.help",
+                                        "label": "metadata/funders/funder/@v.label",
+                                        "hint": "metadata/funders/funder/@v.hint"
+                                    }
+                                }
                             }
                         }
                     }
@@ -1108,8 +1145,8 @@
                                 "label": "metadata/relatedItems/itemContributors.label",
                                 "hint": "metadata/relatedItems/itemContributors.hint",
                                 "child": {
-                                    "detail": "contributor",
-                                    "input": "polymorphic",
+                                    "detail": "creator",
+                                    "input": "itemcontributor",
                                     "help": "metadata/relatedItems/itemContributors.help",
                                     "label": "metadata/relatedItems/itemContributors.label",
                                     "hint": "metadata/relatedItems/itemContributors.hint",
@@ -1121,99 +1158,27 @@
                                             "label": "metadata/relatedItems/itemContributors/affiliations.label",
                                             "hint": "metadata/relatedItems/itemContributors/affiliations.hint",
                                             "child": {
-                                                "detail": "taxonomy_item",
-                                                "edit": "taxonomy_item",
-                                                "input": "taxonomy",
+                                                "detail": "vocabulary_item",
+                                                "edit": "vocabulary_item",
+                                                "input": "vocabulary",
                                                 "help": "metadata/relatedItems/itemContributors/affiliations.help",
                                                 "label": "metadata/relatedItems/itemContributors/affiliations.label",
                                                 "hint": "metadata/relatedItems/itemContributors/affiliations.hint",
                                                 "facet": "metadata_relatedItems_itemContributors_affiliations",
                                                 "children": {
+                                                    "name": {
+                                                        "detail": "keyword",
+                                                        "input": "keyword",
+                                                        "help": "metadata/relatedItems/itemContributors/affiliations/name.help",
+                                                        "label": "metadata/relatedItems/itemContributors/affiliations/name.label",
+                                                        "hint": "metadata/relatedItems/itemContributors/affiliations/name.hint"
+                                                    },
                                                     "id": {
                                                         "detail": "keyword",
                                                         "input": "keyword",
                                                         "help": "metadata/relatedItems/itemContributors/affiliations/id.help",
                                                         "label": "metadata/relatedItems/itemContributors/affiliations/id.label",
                                                         "hint": "metadata/relatedItems/itemContributors/affiliations/id.hint"
-                                                    },
-                                                    "title": {
-                                                        "detail": false,
-                                                        "input": false,
-                                                        "help": "metadata/relatedItems/itemContributors/affiliations/title.help",
-                                                        "label": "metadata/relatedItems/itemContributors/affiliations/title.label",
-                                                        "hint": "metadata/relatedItems/itemContributors/affiliations/title.hint"
-                                                    },
-                                                    "ror": {
-                                                        "detail": "keyword",
-                                                        "input": "keyword",
-                                                        "help": "metadata/relatedItems/itemContributors/affiliations/ror.help",
-                                                        "label": "metadata/relatedItems/itemContributors/affiliations/ror.label",
-                                                        "hint": "metadata/relatedItems/itemContributors/affiliations/ror.hint"
-                                                    },
-                                                    "hierarchy": {
-                                                        "detail": false,
-                                                        "input": false,
-                                                        "help": "metadata/relatedItems/itemContributors/affiliations/hierarchy.help",
-                                                        "label": "metadata/relatedItems/itemContributors/affiliations/hierarchy.label",
-                                                        "hint": "metadata/relatedItems/itemContributors/affiliations/hierarchy.hint",
-                                                        "children": {
-                                                            "ancestors": {
-                                                                "detail": "array",
-                                                                "input": "array",
-                                                                "help": "metadata/relatedItems/itemContributors/affiliations/hierarchy/ancestors.help",
-                                                                "label": "metadata/relatedItems/itemContributors/affiliations/hierarchy/ancestors.label",
-                                                                "hint": "metadata/relatedItems/itemContributors/affiliations/hierarchy/ancestors.hint",
-                                                                "child": {
-                                                                    "detail": "keyword",
-                                                                    "input": "keyword",
-                                                                    "help": "metadata/relatedItems/itemContributors/affiliations/hierarchy/ancestors.help",
-                                                                    "label": "metadata/relatedItems/itemContributors/affiliations/hierarchy/ancestors.label",
-                                                                    "hint": "metadata/relatedItems/itemContributors/affiliations/hierarchy/ancestors.hint"
-                                                                }
-                                                            },
-                                                            "ancestors_or_self": {
-                                                                "detail": "array",
-                                                                "input": "array",
-                                                                "help": "metadata/relatedItems/itemContributors/affiliations/hierarchy/ancestors_or_self.help",
-                                                                "label": "metadata/relatedItems/itemContributors/affiliations/hierarchy/ancestors_or_self.label",
-                                                                "hint": "metadata/relatedItems/itemContributors/affiliations/hierarchy/ancestors_or_self.hint",
-                                                                "child": {
-                                                                    "detail": "keyword",
-                                                                    "input": "keyword",
-                                                                    "help": "metadata/relatedItems/itemContributors/affiliations/hierarchy/ancestors_or_self.help",
-                                                                    "label": "metadata/relatedItems/itemContributors/affiliations/hierarchy/ancestors_or_self.label",
-                                                                    "hint": "metadata/relatedItems/itemContributors/affiliations/hierarchy/ancestors_or_self.hint"
-                                                                }
-                                                            },
-                                                            "level": {
-                                                                "detail": "integer",
-                                                                "input": "integer",
-                                                                "help": "metadata/relatedItems/itemContributors/affiliations/hierarchy/level.help",
-                                                                "label": "metadata/relatedItems/itemContributors/affiliations/hierarchy/level.label",
-                                                                "hint": "metadata/relatedItems/itemContributors/affiliations/hierarchy/level.hint"
-                                                            },
-                                                            "parent": {
-                                                                "detail": "keyword",
-                                                                "input": "keyword",
-                                                                "help": "metadata/relatedItems/itemContributors/affiliations/hierarchy/parent.help",
-                                                                "label": "metadata/relatedItems/itemContributors/affiliations/hierarchy/parent.label",
-                                                                "hint": "metadata/relatedItems/itemContributors/affiliations/hierarchy/parent.hint"
-                                                            },
-                                                            "title": {
-                                                                "detail": "array",
-                                                                "input": "array",
-                                                                "help": "metadata/relatedItems/itemContributors/affiliations/hierarchy/title.help",
-                                                                "label": "metadata/relatedItems/itemContributors/affiliations/hierarchy/title.label",
-                                                                "hint": "metadata/relatedItems/itemContributors/affiliations/hierarchy/title.hint",
-                                                                "child": {
-                                                                    "detail": false,
-                                                                    "input": false,
-                                                                    "help": "metadata/relatedItems/itemContributors/affiliations/hierarchy/title.help",
-                                                                    "label": "metadata/relatedItems/itemContributors/affiliations/hierarchy/title.label",
-                                                                    "hint": "metadata/relatedItems/itemContributors/affiliations/hierarchy/title.hint"
-                                                                }
-                                                            }
-                                                        }
                                                     },
                                                     "@v": {
                                                         "detail": "keyword",
@@ -1225,109 +1190,112 @@
                                                 }
                                             }
                                         },
-                                        "authorityIdentifiers": {
-                                            "detail": "array",
-                                            "input": "array",
-                                            "help": "metadata/relatedItems/itemContributors/authorityIdentifiers.help",
-                                            "label": "metadata/relatedItems/itemContributors/authorityIdentifiers.label",
-                                            "hint": "metadata/relatedItems/itemContributors/authorityIdentifiers.hint",
-                                            "child": {
-                                                "detail": "nr_organization_identifier",
-                                                "input": "authorityidentifier",
-                                                "help": "metadata/relatedItems/itemContributors/authorityIdentifiers.help",
-                                                "label": "metadata/relatedItems/itemContributors/authorityIdentifiers.label",
-                                                "hint": "metadata/relatedItems/itemContributors/authorityIdentifiers.hint",
-                                                "children": {
-                                                    "identifier": {
-                                                        "detail": "keyword",
-                                                        "input": "keyword",
-                                                        "required": true,
-                                                        "help": "metadata/relatedItems/itemContributors/authorityIdentifiers/identifier.help",
-                                                        "label": "metadata/relatedItems/itemContributors/authorityIdentifiers/identifier.label",
-                                                        "hint": "metadata/relatedItems/itemContributors/authorityIdentifiers/identifier.hint",
-                                                        "facet": "metadata_relatedItems_itemContributors_authorityIdentifiers_identifier"
-                                                    },
-                                                    "scheme": {
-                                                        "detail": "keyword",
-                                                        "input": "keyword",
-                                                        "required": true,
-                                                        "help": "metadata/relatedItems/itemContributors/authorityIdentifiers/scheme.help",
-                                                        "label": "metadata/relatedItems/itemContributors/authorityIdentifiers/scheme.label",
-                                                        "hint": "metadata/relatedItems/itemContributors/authorityIdentifiers/scheme.hint",
-                                                        "enum": "metadata/relatedItems/itemContributors/authorityIdentifiers/scheme.enum",
-                                                        "facet": "metadata_relatedItems_itemContributors_authorityIdentifiers_scheme"
+                                        "person_or_org": {
+                                            "detail": false,
+                                            "input": false,
+                                            "help": "metadata/relatedItems/itemContributors/person_or_org.help",
+                                            "label": "metadata/relatedItems/itemContributors/person_or_org.label",
+                                            "hint": "metadata/relatedItems/itemContributors/person_or_org.hint",
+                                            "children": {
+                                                "family_name": {
+                                                    "detail": "keyword",
+                                                    "input": "keyword",
+                                                    "help": "metadata/relatedItems/itemContributors/person_or_org/family_name.help",
+                                                    "label": "metadata/relatedItems/itemContributors/person_or_org/family_name.label",
+                                                    "hint": "metadata/relatedItems/itemContributors/person_or_org/family_name.hint",
+                                                    "facet": "metadata_relatedItems_itemContributors_person_or_org_family_name"
+                                                },
+                                                "given_name": {
+                                                    "detail": "keyword",
+                                                    "input": "keyword",
+                                                    "help": "metadata/relatedItems/itemContributors/person_or_org/given_name.help",
+                                                    "label": "metadata/relatedItems/itemContributors/person_or_org/given_name.label",
+                                                    "hint": "metadata/relatedItems/itemContributors/person_or_org/given_name.hint",
+                                                    "facet": "metadata_relatedItems_itemContributors_person_or_org_given_name"
+                                                },
+                                                "identifiers": {
+                                                    "detail": "array",
+                                                    "input": "array",
+                                                    "help": "metadata/relatedItems/itemContributors/person_or_org/identifiers.help",
+                                                    "label": "metadata/relatedItems/itemContributors/person_or_org/identifiers.label",
+                                                    "hint": "metadata/relatedItems/itemContributors/person_or_org/identifiers.hint",
+                                                    "child": {
+                                                        "detail": "identifier",
+                                                        "input": "identifier",
+                                                        "help": "metadata/relatedItems/itemContributors/person_or_org/identifiers.help",
+                                                        "label": "metadata/relatedItems/itemContributors/person_or_org/identifiers.label",
+                                                        "hint": "metadata/relatedItems/itemContributors/person_or_org/identifiers.hint",
+                                                        "children": {
+                                                            "identifier": {
+                                                                "detail": "keyword",
+                                                                "input": "keyword",
+                                                                "help": "metadata/relatedItems/itemContributors/person_or_org/identifiers/identifier.help",
+                                                                "label": "metadata/relatedItems/itemContributors/person_or_org/identifiers/identifier.label",
+                                                                "hint": "metadata/relatedItems/itemContributors/person_or_org/identifiers/identifier.hint",
+                                                                "facet": "metadata_relatedItems_itemContributors_person_or_org_identifiers_identifier"
+                                                            },
+                                                            "scheme": {
+                                                                "detail": "keyword",
+                                                                "input": "keyword",
+                                                                "help": "metadata/relatedItems/itemContributors/person_or_org/identifiers/scheme.help",
+                                                                "label": "metadata/relatedItems/itemContributors/person_or_org/identifiers/scheme.label",
+                                                                "hint": "metadata/relatedItems/itemContributors/person_or_org/identifiers/scheme.hint",
+                                                                "facet": "metadata_relatedItems_itemContributors_person_or_org_identifiers_scheme"
+                                                            }
+                                                        }
                                                     }
+                                                },
+                                                "name": {
+                                                    "detail": "keyword",
+                                                    "input": "keyword",
+                                                    "help": "metadata/relatedItems/itemContributors/person_or_org/name.help",
+                                                    "label": "metadata/relatedItems/itemContributors/person_or_org/name.label",
+                                                    "hint": "metadata/relatedItems/itemContributors/person_or_org/name.hint",
+                                                    "facet": "metadata_relatedItems_itemContributors_person_or_org_name"
+                                                },
+                                                "type": {
+                                                    "detail": "keyword",
+                                                    "input": "keyword",
+                                                    "help": "metadata/relatedItems/itemContributors/person_or_org/type.help",
+                                                    "label": "metadata/relatedItems/itemContributors/person_or_org/type.label",
+                                                    "hint": "metadata/relatedItems/itemContributors/person_or_org/type.hint",
+                                                    "enum": "metadata/relatedItems/itemContributors/person_or_org/type.enum",
+                                                    "facet": "metadata_relatedItems_itemContributors_person_or_org_type"
                                                 }
                                             }
                                         },
-                                        "contributorType": {
+                                        "role": {
                                             "detail": "vocabulary_item",
                                             "edit": "vocabulary_item",
                                             "input": "vocabulary",
                                             "required": true,
-                                            "help": "metadata/relatedItems/itemContributors/contributorType.help",
-                                            "label": "metadata/relatedItems/itemContributors/contributorType.label",
-                                            "hint": "metadata/relatedItems/itemContributors/contributorType.hint",
-                                            "facet": "metadata_relatedItems_itemContributors_contributorType",
+                                            "help": "metadata/relatedItems/itemContributors/role.help",
+                                            "label": "metadata/relatedItems/itemContributors/role.label",
+                                            "hint": "metadata/relatedItems/itemContributors/role.hint",
+                                            "facet": "metadata_relatedItems_itemContributors_role",
                                             "children": {
                                                 "id": {
                                                     "detail": "keyword",
                                                     "input": "keyword",
-                                                    "help": "metadata/relatedItems/itemContributors/contributorType/id.help",
-                                                    "label": "metadata/relatedItems/itemContributors/contributorType/id.label",
-                                                    "hint": "metadata/relatedItems/itemContributors/contributorType/id.hint"
+                                                    "help": "metadata/relatedItems/itemContributors/role/id.help",
+                                                    "label": "metadata/relatedItems/itemContributors/role/id.label",
+                                                    "hint": "metadata/relatedItems/itemContributors/role/id.hint"
                                                 },
                                                 "title": {
                                                     "detail": false,
                                                     "input": false,
-                                                    "help": "metadata/relatedItems/itemContributors/contributorType/title.help",
-                                                    "label": "metadata/relatedItems/itemContributors/contributorType/title.label",
-                                                    "hint": "metadata/relatedItems/itemContributors/contributorType/title.hint"
+                                                    "help": "metadata/relatedItems/itemContributors/role/title.help",
+                                                    "label": "metadata/relatedItems/itemContributors/role/title.label",
+                                                    "hint": "metadata/relatedItems/itemContributors/role/title.hint"
                                                 },
                                                 "@v": {
                                                     "detail": "keyword",
                                                     "input": "keyword",
-                                                    "help": "metadata/relatedItems/itemContributors/contributorType/@v.help",
-                                                    "label": "metadata/relatedItems/itemContributors/contributorType/@v.label",
-                                                    "hint": "metadata/relatedItems/itemContributors/contributorType/@v.hint"
+                                                    "help": "metadata/relatedItems/itemContributors/role/@v.help",
+                                                    "label": "metadata/relatedItems/itemContributors/role/@v.label",
+                                                    "hint": "metadata/relatedItems/itemContributors/role/@v.hint"
                                                 }
                                             }
-                                        },
-                                        "familyName": {
-                                            "detail": "keyword",
-                                            "input": "keyword",
-                                            "required": true,
-                                            "help": "metadata/relatedItems/itemContributors/familyName.help",
-                                            "label": "metadata/relatedItems/itemContributors/familyName.label",
-                                            "hint": "metadata/relatedItems/itemContributors/familyName.hint",
-                                            "facet": "metadata_relatedItems_itemContributors_familyName"
-                                        },
-                                        "fullName": {
-                                            "detail": "keyword",
-                                            "input": "keyword",
-                                            "required": true,
-                                            "help": "metadata/relatedItems/itemContributors/fullName.help",
-                                            "label": "metadata/relatedItems/itemContributors/fullName.label",
-                                            "hint": "metadata/relatedItems/itemContributors/fullName.hint",
-                                            "facet": "metadata_relatedItems_itemContributors_fullName"
-                                        },
-                                        "givenName": {
-                                            "detail": "keyword",
-                                            "input": "keyword",
-                                            "required": true,
-                                            "help": "metadata/relatedItems/itemContributors/givenName.help",
-                                            "label": "metadata/relatedItems/itemContributors/givenName.label",
-                                            "hint": "metadata/relatedItems/itemContributors/givenName.hint",
-                                            "facet": "metadata_relatedItems_itemContributors_givenName"
-                                        },
-                                        "nameType": {
-                                            "detail": "keyword",
-                                            "input": "keyword",
-                                            "help": "metadata/relatedItems/itemContributors/nameType.help",
-                                            "label": "metadata/relatedItems/itemContributors/nameType.label",
-                                            "hint": "metadata/relatedItems/itemContributors/nameType.hint",
-                                            "enum": "metadata/relatedItems/itemContributors/nameType.enum",
-                                            "facet": "metadata_relatedItems_itemContributors_nameType"
                                         }
                                     }
                                 }
@@ -1340,7 +1308,7 @@
                                 "hint": "metadata/relatedItems/itemCreators.hint",
                                 "child": {
                                     "detail": "creator",
-                                    "input": "polymorphic",
+                                    "input": "itemcreator",
                                     "help": "metadata/relatedItems/itemCreators.help",
                                     "label": "metadata/relatedItems/itemCreators.label",
                                     "hint": "metadata/relatedItems/itemCreators.hint",
@@ -1352,99 +1320,27 @@
                                             "label": "metadata/relatedItems/itemCreators/affiliations.label",
                                             "hint": "metadata/relatedItems/itemCreators/affiliations.hint",
                                             "child": {
-                                                "detail": "taxonomy_item",
-                                                "edit": "taxonomy_item",
-                                                "input": "taxonomy",
+                                                "detail": "vocabulary_item",
+                                                "edit": "vocabulary_item",
+                                                "input": "vocabulary",
                                                 "help": "metadata/relatedItems/itemCreators/affiliations.help",
                                                 "label": "metadata/relatedItems/itemCreators/affiliations.label",
                                                 "hint": "metadata/relatedItems/itemCreators/affiliations.hint",
                                                 "facet": "metadata_relatedItems_itemCreators_affiliations",
                                                 "children": {
+                                                    "name": {
+                                                        "detail": "keyword",
+                                                        "input": "keyword",
+                                                        "help": "metadata/relatedItems/itemCreators/affiliations/name.help",
+                                                        "label": "metadata/relatedItems/itemCreators/affiliations/name.label",
+                                                        "hint": "metadata/relatedItems/itemCreators/affiliations/name.hint"
+                                                    },
                                                     "id": {
                                                         "detail": "keyword",
                                                         "input": "keyword",
                                                         "help": "metadata/relatedItems/itemCreators/affiliations/id.help",
                                                         "label": "metadata/relatedItems/itemCreators/affiliations/id.label",
                                                         "hint": "metadata/relatedItems/itemCreators/affiliations/id.hint"
-                                                    },
-                                                    "title": {
-                                                        "detail": false,
-                                                        "input": false,
-                                                        "help": "metadata/relatedItems/itemCreators/affiliations/title.help",
-                                                        "label": "metadata/relatedItems/itemCreators/affiliations/title.label",
-                                                        "hint": "metadata/relatedItems/itemCreators/affiliations/title.hint"
-                                                    },
-                                                    "ror": {
-                                                        "detail": "keyword",
-                                                        "input": "keyword",
-                                                        "help": "metadata/relatedItems/itemCreators/affiliations/ror.help",
-                                                        "label": "metadata/relatedItems/itemCreators/affiliations/ror.label",
-                                                        "hint": "metadata/relatedItems/itemCreators/affiliations/ror.hint"
-                                                    },
-                                                    "hierarchy": {
-                                                        "detail": false,
-                                                        "input": false,
-                                                        "help": "metadata/relatedItems/itemCreators/affiliations/hierarchy.help",
-                                                        "label": "metadata/relatedItems/itemCreators/affiliations/hierarchy.label",
-                                                        "hint": "metadata/relatedItems/itemCreators/affiliations/hierarchy.hint",
-                                                        "children": {
-                                                            "ancestors": {
-                                                                "detail": "array",
-                                                                "input": "array",
-                                                                "help": "metadata/relatedItems/itemCreators/affiliations/hierarchy/ancestors.help",
-                                                                "label": "metadata/relatedItems/itemCreators/affiliations/hierarchy/ancestors.label",
-                                                                "hint": "metadata/relatedItems/itemCreators/affiliations/hierarchy/ancestors.hint",
-                                                                "child": {
-                                                                    "detail": "keyword",
-                                                                    "input": "keyword",
-                                                                    "help": "metadata/relatedItems/itemCreators/affiliations/hierarchy/ancestors.help",
-                                                                    "label": "metadata/relatedItems/itemCreators/affiliations/hierarchy/ancestors.label",
-                                                                    "hint": "metadata/relatedItems/itemCreators/affiliations/hierarchy/ancestors.hint"
-                                                                }
-                                                            },
-                                                            "ancestors_or_self": {
-                                                                "detail": "array",
-                                                                "input": "array",
-                                                                "help": "metadata/relatedItems/itemCreators/affiliations/hierarchy/ancestors_or_self.help",
-                                                                "label": "metadata/relatedItems/itemCreators/affiliations/hierarchy/ancestors_or_self.label",
-                                                                "hint": "metadata/relatedItems/itemCreators/affiliations/hierarchy/ancestors_or_self.hint",
-                                                                "child": {
-                                                                    "detail": "keyword",
-                                                                    "input": "keyword",
-                                                                    "help": "metadata/relatedItems/itemCreators/affiliations/hierarchy/ancestors_or_self.help",
-                                                                    "label": "metadata/relatedItems/itemCreators/affiliations/hierarchy/ancestors_or_self.label",
-                                                                    "hint": "metadata/relatedItems/itemCreators/affiliations/hierarchy/ancestors_or_self.hint"
-                                                                }
-                                                            },
-                                                            "level": {
-                                                                "detail": "integer",
-                                                                "input": "integer",
-                                                                "help": "metadata/relatedItems/itemCreators/affiliations/hierarchy/level.help",
-                                                                "label": "metadata/relatedItems/itemCreators/affiliations/hierarchy/level.label",
-                                                                "hint": "metadata/relatedItems/itemCreators/affiliations/hierarchy/level.hint"
-                                                            },
-                                                            "parent": {
-                                                                "detail": "keyword",
-                                                                "input": "keyword",
-                                                                "help": "metadata/relatedItems/itemCreators/affiliations/hierarchy/parent.help",
-                                                                "label": "metadata/relatedItems/itemCreators/affiliations/hierarchy/parent.label",
-                                                                "hint": "metadata/relatedItems/itemCreators/affiliations/hierarchy/parent.hint"
-                                                            },
-                                                            "title": {
-                                                                "detail": "array",
-                                                                "input": "array",
-                                                                "help": "metadata/relatedItems/itemCreators/affiliations/hierarchy/title.help",
-                                                                "label": "metadata/relatedItems/itemCreators/affiliations/hierarchy/title.label",
-                                                                "hint": "metadata/relatedItems/itemCreators/affiliations/hierarchy/title.hint",
-                                                                "child": {
-                                                                    "detail": false,
-                                                                    "input": false,
-                                                                    "help": "metadata/relatedItems/itemCreators/affiliations/hierarchy/title.help",
-                                                                    "label": "metadata/relatedItems/itemCreators/affiliations/hierarchy/title.label",
-                                                                    "hint": "metadata/relatedItems/itemCreators/affiliations/hierarchy/title.hint"
-                                                                }
-                                                            }
-                                                        }
                                                     },
                                                     "@v": {
                                                         "detail": "keyword",
@@ -1456,76 +1352,112 @@
                                                 }
                                             }
                                         },
-                                        "authorityIdentifiers": {
-                                            "detail": "array",
-                                            "input": "array",
-                                            "help": "metadata/relatedItems/itemCreators/authorityIdentifiers.help",
-                                            "label": "metadata/relatedItems/itemCreators/authorityIdentifiers.label",
-                                            "hint": "metadata/relatedItems/itemCreators/authorityIdentifiers.hint",
-                                            "child": {
-                                                "detail": "nr_organization_identifier",
-                                                "input": "authorityidentifier",
-                                                "help": "metadata/relatedItems/itemCreators/authorityIdentifiers.help",
-                                                "label": "metadata/relatedItems/itemCreators/authorityIdentifiers.label",
-                                                "hint": "metadata/relatedItems/itemCreators/authorityIdentifiers.hint",
-                                                "children": {
-                                                    "identifier": {
-                                                        "detail": "keyword",
-                                                        "input": "keyword",
-                                                        "required": true,
-                                                        "help": "metadata/relatedItems/itemCreators/authorityIdentifiers/identifier.help",
-                                                        "label": "metadata/relatedItems/itemCreators/authorityIdentifiers/identifier.label",
-                                                        "hint": "metadata/relatedItems/itemCreators/authorityIdentifiers/identifier.hint",
-                                                        "facet": "metadata_relatedItems_itemCreators_authorityIdentifiers_identifier"
-                                                    },
-                                                    "scheme": {
-                                                        "detail": "keyword",
-                                                        "input": "keyword",
-                                                        "required": true,
-                                                        "help": "metadata/relatedItems/itemCreators/authorityIdentifiers/scheme.help",
-                                                        "label": "metadata/relatedItems/itemCreators/authorityIdentifiers/scheme.label",
-                                                        "hint": "metadata/relatedItems/itemCreators/authorityIdentifiers/scheme.hint",
-                                                        "enum": "metadata/relatedItems/itemCreators/authorityIdentifiers/scheme.enum",
-                                                        "facet": "metadata_relatedItems_itemCreators_authorityIdentifiers_scheme"
+                                        "person_or_org": {
+                                            "detail": false,
+                                            "input": false,
+                                            "help": "metadata/relatedItems/itemCreators/person_or_org.help",
+                                            "label": "metadata/relatedItems/itemCreators/person_or_org.label",
+                                            "hint": "metadata/relatedItems/itemCreators/person_or_org.hint",
+                                            "children": {
+                                                "family_name": {
+                                                    "detail": "keyword",
+                                                    "input": "keyword",
+                                                    "help": "metadata/relatedItems/itemCreators/person_or_org/family_name.help",
+                                                    "label": "metadata/relatedItems/itemCreators/person_or_org/family_name.label",
+                                                    "hint": "metadata/relatedItems/itemCreators/person_or_org/family_name.hint",
+                                                    "facet": "metadata_relatedItems_itemCreators_person_or_org_family_name"
+                                                },
+                                                "given_name": {
+                                                    "detail": "keyword",
+                                                    "input": "keyword",
+                                                    "help": "metadata/relatedItems/itemCreators/person_or_org/given_name.help",
+                                                    "label": "metadata/relatedItems/itemCreators/person_or_org/given_name.label",
+                                                    "hint": "metadata/relatedItems/itemCreators/person_or_org/given_name.hint",
+                                                    "facet": "metadata_relatedItems_itemCreators_person_or_org_given_name"
+                                                },
+                                                "identifiers": {
+                                                    "detail": "array",
+                                                    "input": "array",
+                                                    "help": "metadata/relatedItems/itemCreators/person_or_org/identifiers.help",
+                                                    "label": "metadata/relatedItems/itemCreators/person_or_org/identifiers.label",
+                                                    "hint": "metadata/relatedItems/itemCreators/person_or_org/identifiers.hint",
+                                                    "child": {
+                                                        "detail": "identifier",
+                                                        "input": "identifier",
+                                                        "help": "metadata/relatedItems/itemCreators/person_or_org/identifiers.help",
+                                                        "label": "metadata/relatedItems/itemCreators/person_or_org/identifiers.label",
+                                                        "hint": "metadata/relatedItems/itemCreators/person_or_org/identifiers.hint",
+                                                        "children": {
+                                                            "identifier": {
+                                                                "detail": "keyword",
+                                                                "input": "keyword",
+                                                                "help": "metadata/relatedItems/itemCreators/person_or_org/identifiers/identifier.help",
+                                                                "label": "metadata/relatedItems/itemCreators/person_or_org/identifiers/identifier.label",
+                                                                "hint": "metadata/relatedItems/itemCreators/person_or_org/identifiers/identifier.hint",
+                                                                "facet": "metadata_relatedItems_itemCreators_person_or_org_identifiers_identifier"
+                                                            },
+                                                            "scheme": {
+                                                                "detail": "keyword",
+                                                                "input": "keyword",
+                                                                "help": "metadata/relatedItems/itemCreators/person_or_org/identifiers/scheme.help",
+                                                                "label": "metadata/relatedItems/itemCreators/person_or_org/identifiers/scheme.label",
+                                                                "hint": "metadata/relatedItems/itemCreators/person_or_org/identifiers/scheme.hint",
+                                                                "facet": "metadata_relatedItems_itemCreators_person_or_org_identifiers_scheme"
+                                                            }
+                                                        }
                                                     }
+                                                },
+                                                "name": {
+                                                    "detail": "keyword",
+                                                    "input": "keyword",
+                                                    "help": "metadata/relatedItems/itemCreators/person_or_org/name.help",
+                                                    "label": "metadata/relatedItems/itemCreators/person_or_org/name.label",
+                                                    "hint": "metadata/relatedItems/itemCreators/person_or_org/name.hint",
+                                                    "facet": "metadata_relatedItems_itemCreators_person_or_org_name"
+                                                },
+                                                "type": {
+                                                    "detail": "keyword",
+                                                    "input": "keyword",
+                                                    "help": "metadata/relatedItems/itemCreators/person_or_org/type.help",
+                                                    "label": "metadata/relatedItems/itemCreators/person_or_org/type.label",
+                                                    "hint": "metadata/relatedItems/itemCreators/person_or_org/type.hint",
+                                                    "enum": "metadata/relatedItems/itemCreators/person_or_org/type.enum",
+                                                    "facet": "metadata_relatedItems_itemCreators_person_or_org_type"
                                                 }
                                             }
                                         },
-                                        "familyName": {
-                                            "detail": "keyword",
-                                            "input": "keyword",
+                                        "role": {
+                                            "detail": "vocabulary_item",
+                                            "edit": "vocabulary_item",
+                                            "input": "vocabulary",
                                             "required": true,
-                                            "help": "metadata/relatedItems/itemCreators/familyName.help",
-                                            "label": "metadata/relatedItems/itemCreators/familyName.label",
-                                            "hint": "metadata/relatedItems/itemCreators/familyName.hint",
-                                            "facet": "metadata_relatedItems_itemCreators_familyName"
-                                        },
-                                        "fullName": {
-                                            "detail": "keyword",
-                                            "input": "keyword",
-                                            "required": true,
-                                            "help": "metadata/relatedItems/itemCreators/fullName.help",
-                                            "label": "metadata/relatedItems/itemCreators/fullName.label",
-                                            "hint": "metadata/relatedItems/itemCreators/fullName.hint",
-                                            "facet": "metadata_relatedItems_itemCreators_fullName"
-                                        },
-                                        "givenName": {
-                                            "detail": "keyword",
-                                            "input": "keyword",
-                                            "required": true,
-                                            "help": "metadata/relatedItems/itemCreators/givenName.help",
-                                            "label": "metadata/relatedItems/itemCreators/givenName.label",
-                                            "hint": "metadata/relatedItems/itemCreators/givenName.hint",
-                                            "facet": "metadata_relatedItems_itemCreators_givenName"
-                                        },
-                                        "nameType": {
-                                            "detail": "keyword",
-                                            "input": "keyword",
-                                            "help": "metadata/relatedItems/itemCreators/nameType.help",
-                                            "label": "metadata/relatedItems/itemCreators/nameType.label",
-                                            "hint": "metadata/relatedItems/itemCreators/nameType.hint",
-                                            "enum": "metadata/relatedItems/itemCreators/nameType.enum",
-                                            "facet": "metadata_relatedItems_itemCreators_nameType"
+                                            "help": "metadata/relatedItems/itemCreators/role.help",
+                                            "label": "metadata/relatedItems/itemCreators/role.label",
+                                            "hint": "metadata/relatedItems/itemCreators/role.hint",
+                                            "facet": "metadata_relatedItems_itemCreators_role",
+                                            "children": {
+                                                "id": {
+                                                    "detail": "keyword",
+                                                    "input": "keyword",
+                                                    "help": "metadata/relatedItems/itemCreators/role/id.help",
+                                                    "label": "metadata/relatedItems/itemCreators/role/id.label",
+                                                    "hint": "metadata/relatedItems/itemCreators/role/id.hint"
+                                                },
+                                                "title": {
+                                                    "detail": false,
+                                                    "input": false,
+                                                    "help": "metadata/relatedItems/itemCreators/role/title.help",
+                                                    "label": "metadata/relatedItems/itemCreators/role/title.label",
+                                                    "hint": "metadata/relatedItems/itemCreators/role/title.hint"
+                                                },
+                                                "@v": {
+                                                    "detail": "keyword",
+                                                    "input": "keyword",
+                                                    "help": "metadata/relatedItems/itemCreators/role/@v.help",
+                                                    "label": "metadata/relatedItems/itemCreators/role/@v.label",
+                                                    "hint": "metadata/relatedItems/itemCreators/role/@v.hint"
+                                                }
+                                            }
                                         }
                                     }
                                 }
