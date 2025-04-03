@@ -2,8 +2,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
-"POT-Creation-Date: 2025-02-17T13:40:47.640544\n"
-"PO-Revision-Date: 2025-02-17T13:40:47.640545\n"
+"POT-Creation-Date: 2025-04-02T10:14:14.609377\n"
+"PO-Revision-Date: 2025-04-02T10:14:14.609381\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -272,6 +272,15 @@ msgstr ""
 msgid "metadata/contributors/affiliations.hint"
 msgstr ""
 
+msgid "metadata/contributors/affiliations/name.help"
+msgstr ""
+
+msgid "metadata/contributors/affiliations/name.label"
+msgstr ""
+
+msgid "metadata/contributors/affiliations/name.hint"
+msgstr ""
+
 msgid "metadata/contributors/affiliations/id.help"
 msgstr ""
 
@@ -279,78 +288,6 @@ msgid "metadata/contributors/affiliations/id.label"
 msgstr ""
 
 msgid "metadata/contributors/affiliations/id.hint"
-msgstr ""
-
-msgid "metadata/contributors/affiliations/title.help"
-msgstr ""
-
-msgid "metadata/contributors/affiliations/title.label"
-msgstr ""
-
-msgid "metadata/contributors/affiliations/title.hint"
-msgstr ""
-
-msgid "metadata/contributors/affiliations/ror.help"
-msgstr ""
-
-msgid "metadata/contributors/affiliations/ror.label"
-msgstr ""
-
-msgid "metadata/contributors/affiliations/ror.hint"
-msgstr ""
-
-msgid "metadata/contributors/affiliations/hierarchy.help"
-msgstr ""
-
-msgid "metadata/contributors/affiliations/hierarchy.label"
-msgstr ""
-
-msgid "metadata/contributors/affiliations/hierarchy.hint"
-msgstr ""
-
-msgid "metadata/contributors/affiliations/hierarchy/ancestors.help"
-msgstr ""
-
-msgid "metadata/contributors/affiliations/hierarchy/ancestors.label"
-msgstr ""
-
-msgid "metadata/contributors/affiliations/hierarchy/ancestors.hint"
-msgstr ""
-
-msgid "metadata/contributors/affiliations/hierarchy/ancestors_or_self.help"
-msgstr ""
-
-msgid "metadata/contributors/affiliations/hierarchy/ancestors_or_self.label"
-msgstr ""
-
-msgid "metadata/contributors/affiliations/hierarchy/ancestors_or_self.hint"
-msgstr ""
-
-msgid "metadata/contributors/affiliations/hierarchy/level.help"
-msgstr ""
-
-msgid "metadata/contributors/affiliations/hierarchy/level.label"
-msgstr ""
-
-msgid "metadata/contributors/affiliations/hierarchy/level.hint"
-msgstr ""
-
-msgid "metadata/contributors/affiliations/hierarchy/parent.help"
-msgstr ""
-
-msgid "metadata/contributors/affiliations/hierarchy/parent.label"
-msgstr ""
-
-msgid "metadata/contributors/affiliations/hierarchy/parent.hint"
-msgstr ""
-
-msgid "metadata/contributors/affiliations/hierarchy/title.help"
-msgstr ""
-
-msgid "metadata/contributors/affiliations/hierarchy/title.label"
-msgstr ""
-
-msgid "metadata/contributors/affiliations/hierarchy/title.hint"
 msgstr ""
 
 msgid "metadata/contributors/affiliations/@v.help"
@@ -362,139 +299,118 @@ msgstr ""
 msgid "metadata/contributors/affiliations/@v.hint"
 msgstr ""
 
-msgid "metadata/contributors/authorityIdentifiers.label"
+msgid "metadata/contributors/person_or_org.help"
 msgstr ""
 
-msgid "metadata/contributors/authorityIdentifiers.help"
+msgid "metadata/contributors/person_or_org.label"
 msgstr ""
 
-msgid "metadata/contributors/authorityIdentifiers.hint"
+msgid "metadata/contributors/person_or_org.hint"
 msgstr ""
 
-msgid "metadata/contributors/authorityIdentifiers/identifier.label"
+msgid "metadata/contributors/person_or_org/family_name.help"
 msgstr ""
 
-msgid "metadata/contributors/authorityIdentifiers/identifier.hint"
+msgid "metadata/contributors/person_or_org/family_name.label"
 msgstr ""
 
-msgid "metadata/contributors/authorityIdentifiers/identifier.help"
+msgid "metadata/contributors/person_or_org/family_name.hint"
 msgstr ""
 
-msgid "metadata/contributors/authorityIdentifiers/scheme.label"
+msgid "metadata/contributors/person_or_org/given_name.help"
 msgstr ""
 
-msgid "metadata/contributors/authorityIdentifiers/scheme.hint"
+msgid "metadata/contributors/person_or_org/given_name.label"
 msgstr ""
 
-msgid "metadata/contributors/authorityIdentifiers/scheme.help"
+msgid "metadata/contributors/person_or_org/given_name.hint"
 msgstr ""
 
-msgid "metadata/contributors/authorityIdentifiers/scheme.enum.orcid"
+msgid "metadata/contributors/person_or_org/identifiers.help"
 msgstr ""
 
-msgid "metadata/contributors/authorityIdentifiers/scheme.enum.scopusID"
+msgid "metadata/contributors/person_or_org/identifiers.label"
 msgstr ""
 
-msgid "metadata/contributors/authorityIdentifiers/scheme.enum.researcherID"
+msgid "metadata/contributors/person_or_org/identifiers.hint"
 msgstr ""
 
-msgid "metadata/contributors/authorityIdentifiers/scheme.enum.czenasAutID"
+msgid "metadata/contributors/person_or_org/identifiers/identifier.help"
 msgstr ""
 
-msgid "metadata/contributors/authorityIdentifiers/scheme.enum.vedidk"
+msgid "metadata/contributors/person_or_org/identifiers/identifier.label"
 msgstr ""
 
-msgid "metadata/contributors/authorityIdentifiers/scheme.enum.institutionalID"
+msgid "metadata/contributors/person_or_org/identifiers/identifier.hint"
 msgstr ""
 
-msgid "metadata/contributors/authorityIdentifiers/scheme.enum.ISNI"
+msgid "metadata/contributors/person_or_org/identifiers/scheme.help"
 msgstr ""
 
-msgid "metadata/contributors/contributorType.label"
+msgid "metadata/contributors/person_or_org/identifiers/scheme.label"
 msgstr ""
 
-msgid "metadata/contributors/contributorType.hint"
+msgid "metadata/contributors/person_or_org/identifiers/scheme.hint"
 msgstr ""
 
-msgid "metadata/contributors/contributorType.help"
+msgid "metadata/contributors/person_or_org/name.help"
 msgstr ""
 
-msgid "metadata/contributors/contributorType/id.help"
+msgid "metadata/contributors/person_or_org/name.label"
 msgstr ""
 
-msgid "metadata/contributors/contributorType/id.label"
+msgid "metadata/contributors/person_or_org/name.hint"
 msgstr ""
 
-msgid "metadata/contributors/contributorType/id.hint"
+msgid "metadata/contributors/person_or_org/type.help"
 msgstr ""
 
-msgid "metadata/contributors/contributorType/title.help"
+msgid "metadata/contributors/person_or_org/type.label"
 msgstr ""
 
-msgid "metadata/contributors/contributorType/title.label"
+msgid "metadata/contributors/person_or_org/type.hint"
 msgstr ""
 
-msgid "metadata/contributors/contributorType/title.hint"
+msgid "metadata/contributors/person_or_org/type.enum.personal"
 msgstr ""
 
-msgid "metadata/contributors/contributorType/@v.help"
+msgid "metadata/contributors/person_or_org/type.enum.organizational"
 msgstr ""
 
-msgid "metadata/contributors/contributorType/@v.label"
+msgid "metadata/contributors/role.label"
 msgstr ""
 
-msgid "metadata/contributors/contributorType/@v.hint"
+msgid "metadata/contributors/role.hint"
 msgstr ""
 
-msgid "metadata/contributors/familyName.label"
+msgid "metadata/contributors/role.help"
 msgstr ""
 
-msgid "metadata/contributors/familyName.hint"
+msgid "metadata/contributors/role/id.help"
 msgstr ""
 
-msgid "metadata/contributors/familyName.help"
+msgid "metadata/contributors/role/id.label"
 msgstr ""
 
-msgid "metadata/contributors/fullName.label"
+msgid "metadata/contributors/role/id.hint"
 msgstr ""
 
-msgid "metadata/contributors/fullName.help"
+msgid "metadata/contributors/role/title.help"
 msgstr ""
 
-msgid "metadata/contributors/fullName.hint"
+msgid "metadata/contributors/role/title.label"
 msgstr ""
 
-msgid "metadata/contributors/givenName.label"
+msgid "metadata/contributors/role/title.hint"
 msgstr ""
 
-msgid "metadata/contributors/givenName.hint"
+msgid "metadata/contributors/role/@v.help"
 msgstr ""
 
-msgid "metadata/contributors/givenName.help"
+msgid "metadata/contributors/role/@v.label"
 msgstr ""
 
-msgid "metadata/contributors/nameType.label"
-msgstr ""
-
-msgid "metadata/contributors/nameType.help"
-msgstr ""
-
-msgid "metadata/contributors/nameType.hint"
-msgstr ""
-
-msgid "metadata/contributors/nameType.enum.Personal"
-msgstr ""
-
-msgid "metadata/contributors/authorityIdentifiers/scheme.enum.ROR"
-msgstr ""
-
-msgid "metadata/contributors/authorityIdentifiers/scheme.enum.ICO"
-msgstr ""
-
-msgid "metadata/contributors/authorityIdentifiers/scheme.enum.DOI"
-msgstr ""
-
-msgid "metadata/contributors/nameType.enum.Organizational"
+msgid "metadata/contributors/role/@v.hint"
 msgstr ""
 
 msgid "metadata/creators.label"
@@ -515,6 +431,15 @@ msgstr ""
 msgid "metadata/creators/affiliations.hint"
 msgstr ""
 
+msgid "metadata/creators/affiliations/name.help"
+msgstr ""
+
+msgid "metadata/creators/affiliations/name.label"
+msgstr ""
+
+msgid "metadata/creators/affiliations/name.hint"
+msgstr ""
+
 msgid "metadata/creators/affiliations/id.help"
 msgstr ""
 
@@ -522,78 +447,6 @@ msgid "metadata/creators/affiliations/id.label"
 msgstr ""
 
 msgid "metadata/creators/affiliations/id.hint"
-msgstr ""
-
-msgid "metadata/creators/affiliations/title.help"
-msgstr ""
-
-msgid "metadata/creators/affiliations/title.label"
-msgstr ""
-
-msgid "metadata/creators/affiliations/title.hint"
-msgstr ""
-
-msgid "metadata/creators/affiliations/ror.help"
-msgstr ""
-
-msgid "metadata/creators/affiliations/ror.label"
-msgstr ""
-
-msgid "metadata/creators/affiliations/ror.hint"
-msgstr ""
-
-msgid "metadata/creators/affiliations/hierarchy.help"
-msgstr ""
-
-msgid "metadata/creators/affiliations/hierarchy.label"
-msgstr ""
-
-msgid "metadata/creators/affiliations/hierarchy.hint"
-msgstr ""
-
-msgid "metadata/creators/affiliations/hierarchy/ancestors.help"
-msgstr ""
-
-msgid "metadata/creators/affiliations/hierarchy/ancestors.label"
-msgstr ""
-
-msgid "metadata/creators/affiliations/hierarchy/ancestors.hint"
-msgstr ""
-
-msgid "metadata/creators/affiliations/hierarchy/ancestors_or_self.help"
-msgstr ""
-
-msgid "metadata/creators/affiliations/hierarchy/ancestors_or_self.label"
-msgstr ""
-
-msgid "metadata/creators/affiliations/hierarchy/ancestors_or_self.hint"
-msgstr ""
-
-msgid "metadata/creators/affiliations/hierarchy/level.help"
-msgstr ""
-
-msgid "metadata/creators/affiliations/hierarchy/level.label"
-msgstr ""
-
-msgid "metadata/creators/affiliations/hierarchy/level.hint"
-msgstr ""
-
-msgid "metadata/creators/affiliations/hierarchy/parent.help"
-msgstr ""
-
-msgid "metadata/creators/affiliations/hierarchy/parent.label"
-msgstr ""
-
-msgid "metadata/creators/affiliations/hierarchy/parent.hint"
-msgstr ""
-
-msgid "metadata/creators/affiliations/hierarchy/title.help"
-msgstr ""
-
-msgid "metadata/creators/affiliations/hierarchy/title.label"
-msgstr ""
-
-msgid "metadata/creators/affiliations/hierarchy/title.hint"
 msgstr ""
 
 msgid "metadata/creators/affiliations/@v.help"
@@ -605,103 +458,118 @@ msgstr ""
 msgid "metadata/creators/affiliations/@v.hint"
 msgstr ""
 
-msgid "metadata/creators/authorityIdentifiers.label"
+msgid "metadata/creators/person_or_org.help"
 msgstr ""
 
-msgid "metadata/creators/authorityIdentifiers.help"
+msgid "metadata/creators/person_or_org.label"
 msgstr ""
 
-msgid "metadata/creators/authorityIdentifiers.hint"
+msgid "metadata/creators/person_or_org.hint"
 msgstr ""
 
-msgid "metadata/creators/authorityIdentifiers/identifier.label"
+msgid "metadata/creators/person_or_org/family_name.help"
 msgstr ""
 
-msgid "metadata/creators/authorityIdentifiers/identifier.hint"
+msgid "metadata/creators/person_or_org/family_name.label"
 msgstr ""
 
-msgid "metadata/creators/authorityIdentifiers/identifier.help"
+msgid "metadata/creators/person_or_org/family_name.hint"
 msgstr ""
 
-msgid "metadata/creators/authorityIdentifiers/scheme.label"
+msgid "metadata/creators/person_or_org/given_name.help"
 msgstr ""
 
-msgid "metadata/creators/authorityIdentifiers/scheme.hint"
+msgid "metadata/creators/person_or_org/given_name.label"
 msgstr ""
 
-msgid "metadata/creators/authorityIdentifiers/scheme.help"
+msgid "metadata/creators/person_or_org/given_name.hint"
 msgstr ""
 
-msgid "metadata/creators/authorityIdentifiers/scheme.enum.orcid"
+msgid "metadata/creators/person_or_org/identifiers.help"
 msgstr ""
 
-msgid "metadata/creators/authorityIdentifiers/scheme.enum.scopusID"
+msgid "metadata/creators/person_or_org/identifiers.label"
 msgstr ""
 
-msgid "metadata/creators/authorityIdentifiers/scheme.enum.researcherID"
+msgid "metadata/creators/person_or_org/identifiers.hint"
 msgstr ""
 
-msgid "metadata/creators/authorityIdentifiers/scheme.enum.czenasAutID"
+msgid "metadata/creators/person_or_org/identifiers/identifier.help"
 msgstr ""
 
-msgid "metadata/creators/authorityIdentifiers/scheme.enum.vedidk"
+msgid "metadata/creators/person_or_org/identifiers/identifier.label"
 msgstr ""
 
-msgid "metadata/creators/authorityIdentifiers/scheme.enum.institutionalID"
+msgid "metadata/creators/person_or_org/identifiers/identifier.hint"
 msgstr ""
 
-msgid "metadata/creators/authorityIdentifiers/scheme.enum.ISNI"
+msgid "metadata/creators/person_or_org/identifiers/scheme.help"
 msgstr ""
 
-msgid "metadata/creators/familyName.label"
+msgid "metadata/creators/person_or_org/identifiers/scheme.label"
 msgstr ""
 
-msgid "metadata/creators/familyName.hint"
+msgid "metadata/creators/person_or_org/identifiers/scheme.hint"
 msgstr ""
 
-msgid "metadata/creators/familyName.help"
+msgid "metadata/creators/person_or_org/name.help"
 msgstr ""
 
-msgid "metadata/creators/fullName.label"
+msgid "metadata/creators/person_or_org/name.label"
 msgstr ""
 
-msgid "metadata/creators/fullName.help"
+msgid "metadata/creators/person_or_org/name.hint"
 msgstr ""
 
-msgid "metadata/creators/fullName.hint"
+msgid "metadata/creators/person_or_org/type.help"
 msgstr ""
 
-msgid "metadata/creators/givenName.label"
+msgid "metadata/creators/person_or_org/type.label"
 msgstr ""
 
-msgid "metadata/creators/givenName.hint"
+msgid "metadata/creators/person_or_org/type.hint"
 msgstr ""
 
-msgid "metadata/creators/givenName.help"
+msgid "metadata/creators/person_or_org/type.enum.personal"
 msgstr ""
 
-msgid "metadata/creators/nameType.label"
+msgid "metadata/creators/person_or_org/type.enum.organizational"
 msgstr ""
 
-msgid "metadata/creators/nameType.help"
+msgid "metadata/creators/role.label"
 msgstr ""
 
-msgid "metadata/creators/nameType.hint"
+msgid "metadata/creators/role.hint"
 msgstr ""
 
-msgid "metadata/creators/nameType.enum.Personal"
+msgid "metadata/creators/role.help"
 msgstr ""
 
-msgid "metadata/creators/authorityIdentifiers/scheme.enum.ROR"
+msgid "metadata/creators/role/id.help"
 msgstr ""
 
-msgid "metadata/creators/authorityIdentifiers/scheme.enum.ICO"
+msgid "metadata/creators/role/id.label"
 msgstr ""
 
-msgid "metadata/creators/authorityIdentifiers/scheme.enum.DOI"
+msgid "metadata/creators/role/id.hint"
 msgstr ""
 
-msgid "metadata/creators/nameType.enum.Organizational"
+msgid "metadata/creators/role/title.help"
+msgstr ""
+
+msgid "metadata/creators/role/title.label"
+msgstr ""
+
+msgid "metadata/creators/role/title.hint"
+msgstr ""
+
+msgid "metadata/creators/role/@v.help"
+msgstr ""
+
+msgid "metadata/creators/role/@v.label"
+msgstr ""
+
+msgid "metadata/creators/role/@v.hint"
 msgstr ""
 
 msgid "metadata/dateAvailable.label"
@@ -848,76 +716,211 @@ msgstr ""
 msgid "metadata/externalLocation/externalLocationURL.hint"
 msgstr ""
 
-msgid "metadata/fundingReferences.label"
+msgid "metadata/funders.label"
 msgstr ""
 
-msgid "metadata/fundingReferences.help"
+msgid "metadata/funders.help"
 msgstr ""
 
-msgid "metadata/fundingReferences.hint"
+msgid "metadata/funders.hint"
 msgstr ""
 
-msgid "metadata/fundingReferences/funder.label"
+msgid "metadata/funders/award.help"
 msgstr ""
 
-msgid "metadata/fundingReferences/funder.hint"
+msgid "metadata/funders/award.label"
 msgstr ""
 
-msgid "metadata/fundingReferences/funder.help"
+msgid "metadata/funders/award.hint"
 msgstr ""
 
-msgid "metadata/fundingReferences/funder/id.help"
+msgid "metadata/funders/award/title.help"
 msgstr ""
 
-msgid "metadata/fundingReferences/funder/id.label"
+msgid "metadata/funders/award/title.label"
 msgstr ""
 
-msgid "metadata/fundingReferences/funder/id.hint"
+msgid "metadata/funders/award/title.hint"
 msgstr ""
 
-msgid "metadata/fundingReferences/funder/title.help"
+msgid "metadata/funders/award/number.help"
 msgstr ""
 
-msgid "metadata/fundingReferences/funder/title.label"
+msgid "metadata/funders/award/number.label"
 msgstr ""
 
-msgid "metadata/fundingReferences/funder/title.hint"
+msgid "metadata/funders/award/number.hint"
 msgstr ""
 
-msgid "metadata/fundingReferences/funder/@v.help"
+msgid "metadata/funders/award/identifiers.help"
 msgstr ""
 
-msgid "metadata/fundingReferences/funder/@v.label"
+msgid "metadata/funders/award/identifiers.label"
 msgstr ""
 
-msgid "metadata/fundingReferences/funder/@v.hint"
+msgid "metadata/funders/award/identifiers.hint"
 msgstr ""
 
-msgid "metadata/fundingReferences/fundingProgram.label"
+msgid "metadata/funders/award/identifiers/identifier.help"
 msgstr ""
 
-msgid "metadata/fundingReferences/fundingProgram.hint"
+msgid "metadata/funders/award/identifiers/identifier.label"
 msgstr ""
 
-msgid "metadata/fundingReferences/fundingProgram.help"
+msgid "metadata/funders/award/identifiers/identifier.hint"
 msgstr ""
 
-msgid "metadata/fundingReferences/projectID.label"
+msgid "metadata/funders/award/identifiers/schema.help"
 msgstr ""
 
-msgid "metadata/fundingReferences/projectID.hint"
+msgid "metadata/funders/award/identifiers/schema.label"
 msgstr ""
 
-msgid "metadata/fundingReferences/projectID.help"
+msgid "metadata/funders/award/identifiers/schema.hint"
 msgstr ""
 
-msgid "metadata/fundingReferences/projectName.label"
+msgid "metadata/funders/award/acronym.help"
 msgstr ""
 
-msgid "metadata/fundingReferences/projectName.hint"
+msgid "metadata/funders/award/acronym.label"
 msgstr ""
 
-msgid "metadata/fundingReferences/projectName.help"
+msgid "metadata/funders/award/acronym.hint"
+msgstr ""
+
+msgid "metadata/funders/award/program.help"
+msgstr ""
+
+msgid "metadata/funders/award/program.label"
+msgstr ""
+
+msgid "metadata/funders/award/program.hint"
+msgstr ""
+
+msgid "metadata/funders/award/subjects.help"
+msgstr ""
+
+msgid "metadata/funders/award/subjects.label"
+msgstr ""
+
+msgid "metadata/funders/award/subjects.hint"
+msgstr ""
+
+msgid "metadata/funders/award/subjects/id.help"
+msgstr ""
+
+msgid "metadata/funders/award/subjects/id.label"
+msgstr ""
+
+msgid "metadata/funders/award/subjects/id.hint"
+msgstr ""
+
+msgid "metadata/funders/award/subjects/subject.help"
+msgstr ""
+
+msgid "metadata/funders/award/subjects/subject.label"
+msgstr ""
+
+msgid "metadata/funders/award/subjects/subject.hint"
+msgstr ""
+
+msgid "metadata/funders/award/organizations.help"
+msgstr ""
+
+msgid "metadata/funders/award/organizations.label"
+msgstr ""
+
+msgid "metadata/funders/award/organizations.hint"
+msgstr ""
+
+msgid "metadata/funders/award/organizations/id.help"
+msgstr ""
+
+msgid "metadata/funders/award/organizations/id.label"
+msgstr ""
+
+msgid "metadata/funders/award/organizations/id.hint"
+msgstr ""
+
+msgid "metadata/funders/award/organizations/organization.help"
+msgstr ""
+
+msgid "metadata/funders/award/organizations/organization.label"
+msgstr ""
+
+msgid "metadata/funders/award/organizations/organization.hint"
+msgstr ""
+
+msgid "metadata/funders/award/organizations/scheme.help"
+msgstr ""
+
+msgid "metadata/funders/award/organizations/scheme.label"
+msgstr ""
+
+msgid "metadata/funders/award/organizations/scheme.hint"
+msgstr ""
+
+msgid "metadata/funders/award/@v.help"
+msgstr ""
+
+msgid "metadata/funders/award/@v.label"
+msgstr ""
+
+msgid "metadata/funders/award/@v.hint"
+msgstr ""
+
+msgid "metadata/funders/funder.label"
+msgstr ""
+
+msgid "metadata/funders/funder.hint"
+msgstr ""
+
+msgid "metadata/funders/funder.help"
+msgstr ""
+
+msgid "metadata/funders/funder/identifiers.help"
+msgstr ""
+
+msgid "metadata/funders/funder/identifiers.label"
+msgstr ""
+
+msgid "metadata/funders/funder/identifiers.hint"
+msgstr ""
+
+msgid "metadata/funders/funder/identifiers/identifier.help"
+msgstr ""
+
+msgid "metadata/funders/funder/identifiers/identifier.label"
+msgstr ""
+
+msgid "metadata/funders/funder/identifiers/identifier.hint"
+msgstr ""
+
+msgid "metadata/funders/funder/identifiers/schema.help"
+msgstr ""
+
+msgid "metadata/funders/funder/identifiers/schema.label"
+msgstr ""
+
+msgid "metadata/funders/funder/identifiers/schema.hint"
+msgstr ""
+
+msgid "metadata/funders/funder/name.help"
+msgstr ""
+
+msgid "metadata/funders/funder/name.label"
+msgstr ""
+
+msgid "metadata/funders/funder/name.hint"
+msgstr ""
+
+msgid "metadata/funders/funder/@v.help"
+msgstr ""
+
+msgid "metadata/funders/funder/@v.label"
+msgstr ""
+
+msgid "metadata/funders/funder/@v.hint"
 msgstr ""
 
 msgid "metadata/geoLocations.label"
@@ -1127,6 +1130,15 @@ msgstr ""
 msgid "metadata/relatedItems/itemContributors/affiliations.hint"
 msgstr ""
 
+msgid "metadata/relatedItems/itemContributors/affiliations/name.help"
+msgstr ""
+
+msgid "metadata/relatedItems/itemContributors/affiliations/name.label"
+msgstr ""
+
+msgid "metadata/relatedItems/itemContributors/affiliations/name.hint"
+msgstr ""
+
 msgid "metadata/relatedItems/itemContributors/affiliations/id.help"
 msgstr ""
 
@@ -1134,93 +1146,6 @@ msgid "metadata/relatedItems/itemContributors/affiliations/id.label"
 msgstr ""
 
 msgid "metadata/relatedItems/itemContributors/affiliations/id.hint"
-msgstr ""
-
-msgid "metadata/relatedItems/itemContributors/affiliations/title.help"
-msgstr ""
-
-msgid "metadata/relatedItems/itemContributors/affiliations/title.label"
-msgstr ""
-
-msgid "metadata/relatedItems/itemContributors/affiliations/title.hint"
-msgstr ""
-
-msgid "metadata/relatedItems/itemContributors/affiliations/ror.help"
-msgstr ""
-
-msgid "metadata/relatedItems/itemContributors/affiliations/ror.label"
-msgstr ""
-
-msgid "metadata/relatedItems/itemContributors/affiliations/ror.hint"
-msgstr ""
-
-msgid "metadata/relatedItems/itemContributors/affiliations/hierarchy.help"
-msgstr ""
-
-msgid "metadata/relatedItems/itemContributors/affiliations/hierarchy.label"
-msgstr ""
-
-msgid "metadata/relatedItems/itemContributors/affiliations/hierarchy.hint"
-msgstr ""
-
-msgid ""
-"metadata/relatedItems/itemContributors/affiliations/hierarchy/ancestors.help"
-msgstr ""
-
-msgid ""
-"metadata/relatedItems/itemContributors/affiliations/hierarchy/ancestors.label"
-msgstr ""
-
-msgid ""
-"metadata/relatedItems/itemContributors/affiliations/hierarchy/ancestors.hint"
-msgstr ""
-
-msgid ""
-"metadata/relatedItems/itemContributors/affiliations/hierarchy/ancestors_or_self.help"
-msgstr ""
-
-msgid ""
-"metadata/relatedItems/itemContributors/affiliations/hierarchy/ancestors_or_self.label"
-msgstr ""
-
-msgid ""
-"metadata/relatedItems/itemContributors/affiliations/hierarchy/ancestors_or_self.hint"
-msgstr ""
-
-msgid ""
-"metadata/relatedItems/itemContributors/affiliations/hierarchy/level.help"
-msgstr ""
-
-msgid ""
-"metadata/relatedItems/itemContributors/affiliations/hierarchy/level.label"
-msgstr ""
-
-msgid ""
-"metadata/relatedItems/itemContributors/affiliations/hierarchy/level.hint"
-msgstr ""
-
-msgid ""
-"metadata/relatedItems/itemContributors/affiliations/hierarchy/parent.help"
-msgstr ""
-
-msgid ""
-"metadata/relatedItems/itemContributors/affiliations/hierarchy/parent.label"
-msgstr ""
-
-msgid ""
-"metadata/relatedItems/itemContributors/affiliations/hierarchy/parent.hint"
-msgstr ""
-
-msgid ""
-"metadata/relatedItems/itemContributors/affiliations/hierarchy/title.help"
-msgstr ""
-
-msgid ""
-"metadata/relatedItems/itemContributors/affiliations/hierarchy/title.label"
-msgstr ""
-
-msgid ""
-"metadata/relatedItems/itemContributors/affiliations/hierarchy/title.hint"
 msgstr ""
 
 msgid "metadata/relatedItems/itemContributors/affiliations/@v.help"
@@ -1232,155 +1157,126 @@ msgstr ""
 msgid "metadata/relatedItems/itemContributors/affiliations/@v.hint"
 msgstr ""
 
-msgid "metadata/relatedItems/itemContributors/authorityIdentifiers.label"
+msgid "metadata/relatedItems/itemContributors/person_or_org.help"
 msgstr ""
 
-msgid "metadata/relatedItems/itemContributors/authorityIdentifiers.help"
+msgid "metadata/relatedItems/itemContributors/person_or_org.label"
 msgstr ""
 
-msgid "metadata/relatedItems/itemContributors/authorityIdentifiers.hint"
+msgid "metadata/relatedItems/itemContributors/person_or_org.hint"
 msgstr ""
 
-msgid ""
-"metadata/relatedItems/itemContributors/authorityIdentifiers/identifier.label"
+msgid "metadata/relatedItems/itemContributors/person_or_org/family_name.help"
 msgstr ""
 
-msgid ""
-"metadata/relatedItems/itemContributors/authorityIdentifiers/identifier.hint"
+msgid "metadata/relatedItems/itemContributors/person_or_org/family_name.label"
 msgstr ""
 
-msgid ""
-"metadata/relatedItems/itemContributors/authorityIdentifiers/identifier.help"
+msgid "metadata/relatedItems/itemContributors/person_or_org/family_name.hint"
 msgstr ""
 
-msgid ""
-"metadata/relatedItems/itemContributors/authorityIdentifiers/scheme.label"
+msgid "metadata/relatedItems/itemContributors/person_or_org/given_name.help"
 msgstr ""
 
-msgid ""
-"metadata/relatedItems/itemContributors/authorityIdentifiers/scheme.hint"
+msgid "metadata/relatedItems/itemContributors/person_or_org/given_name.label"
 msgstr ""
 
-msgid ""
-"metadata/relatedItems/itemContributors/authorityIdentifiers/scheme.help"
+msgid "metadata/relatedItems/itemContributors/person_or_org/given_name.hint"
 msgstr ""
 
-msgid ""
-"metadata/relatedItems/itemContributors/authorityIdentifiers/scheme.enum.orcid"
+msgid "metadata/relatedItems/itemContributors/person_or_org/identifiers.help"
 msgstr ""
 
-msgid ""
-"metadata/relatedItems/itemContributors/authorityIdentifiers/scheme.enum.scopusID"
+msgid "metadata/relatedItems/itemContributors/person_or_org/identifiers.label"
+msgstr ""
+
+msgid "metadata/relatedItems/itemContributors/person_or_org/identifiers.hint"
 msgstr ""
 
 msgid ""
-"metadata/relatedItems/itemContributors/authorityIdentifiers/scheme.enum.researcherID"
+"metadata/relatedItems/itemContributors/person_or_org/identifiers/identifier.help"
 msgstr ""
 
 msgid ""
-"metadata/relatedItems/itemContributors/authorityIdentifiers/scheme.enum.czenasAutID"
+"metadata/relatedItems/itemContributors/person_or_org/identifiers/identifier.label"
 msgstr ""
 
 msgid ""
-"metadata/relatedItems/itemContributors/authorityIdentifiers/scheme.enum.vedidk"
+"metadata/relatedItems/itemContributors/person_or_org/identifiers/identifier.hint"
 msgstr ""
 
 msgid ""
-"metadata/relatedItems/itemContributors/authorityIdentifiers/scheme.enum.institutionalID"
+"metadata/relatedItems/itemContributors/person_or_org/identifiers/scheme.help"
 msgstr ""
 
 msgid ""
-"metadata/relatedItems/itemContributors/authorityIdentifiers/scheme.enum.ISNI"
-msgstr ""
-
-msgid "metadata/relatedItems/itemContributors/contributorType.label"
-msgstr ""
-
-msgid "metadata/relatedItems/itemContributors/contributorType.hint"
-msgstr ""
-
-msgid "metadata/relatedItems/itemContributors/contributorType.help"
-msgstr ""
-
-msgid "metadata/relatedItems/itemContributors/contributorType/id.help"
-msgstr ""
-
-msgid "metadata/relatedItems/itemContributors/contributorType/id.label"
-msgstr ""
-
-msgid "metadata/relatedItems/itemContributors/contributorType/id.hint"
-msgstr ""
-
-msgid "metadata/relatedItems/itemContributors/contributorType/title.help"
-msgstr ""
-
-msgid "metadata/relatedItems/itemContributors/contributorType/title.label"
-msgstr ""
-
-msgid "metadata/relatedItems/itemContributors/contributorType/title.hint"
-msgstr ""
-
-msgid "metadata/relatedItems/itemContributors/contributorType/@v.help"
-msgstr ""
-
-msgid "metadata/relatedItems/itemContributors/contributorType/@v.label"
-msgstr ""
-
-msgid "metadata/relatedItems/itemContributors/contributorType/@v.hint"
-msgstr ""
-
-msgid "metadata/relatedItems/itemContributors/familyName.label"
-msgstr ""
-
-msgid "metadata/relatedItems/itemContributors/familyName.hint"
-msgstr ""
-
-msgid "metadata/relatedItems/itemContributors/familyName.help"
-msgstr ""
-
-msgid "metadata/relatedItems/itemContributors/fullName.label"
-msgstr ""
-
-msgid "metadata/relatedItems/itemContributors/fullName.help"
-msgstr ""
-
-msgid "metadata/relatedItems/itemContributors/fullName.hint"
-msgstr ""
-
-msgid "metadata/relatedItems/itemContributors/givenName.label"
-msgstr ""
-
-msgid "metadata/relatedItems/itemContributors/givenName.hint"
-msgstr ""
-
-msgid "metadata/relatedItems/itemContributors/givenName.help"
-msgstr ""
-
-msgid "metadata/relatedItems/itemContributors/nameType.label"
-msgstr ""
-
-msgid "metadata/relatedItems/itemContributors/nameType.help"
-msgstr ""
-
-msgid "metadata/relatedItems/itemContributors/nameType.hint"
-msgstr ""
-
-msgid "metadata/relatedItems/itemContributors/nameType.enum.Personal"
+"metadata/relatedItems/itemContributors/person_or_org/identifiers/scheme.label"
 msgstr ""
 
 msgid ""
-"metadata/relatedItems/itemContributors/authorityIdentifiers/scheme.enum.ROR"
+"metadata/relatedItems/itemContributors/person_or_org/identifiers/scheme.hint"
+msgstr ""
+
+msgid "metadata/relatedItems/itemContributors/person_or_org/name.help"
+msgstr ""
+
+msgid "metadata/relatedItems/itemContributors/person_or_org/name.label"
+msgstr ""
+
+msgid "metadata/relatedItems/itemContributors/person_or_org/name.hint"
+msgstr ""
+
+msgid "metadata/relatedItems/itemContributors/person_or_org/type.help"
+msgstr ""
+
+msgid "metadata/relatedItems/itemContributors/person_or_org/type.label"
+msgstr ""
+
+msgid "metadata/relatedItems/itemContributors/person_or_org/type.hint"
 msgstr ""
 
 msgid ""
-"metadata/relatedItems/itemContributors/authorityIdentifiers/scheme.enum.ICO"
+"metadata/relatedItems/itemContributors/person_or_org/type.enum.personal"
 msgstr ""
 
 msgid ""
-"metadata/relatedItems/itemContributors/authorityIdentifiers/scheme.enum.DOI"
+"metadata/relatedItems/itemContributors/person_or_org/type.enum.organizational"
 msgstr ""
 
-msgid "metadata/relatedItems/itemContributors/nameType.enum.Organizational"
+msgid "metadata/relatedItems/itemContributors/role.label"
+msgstr ""
+
+msgid "metadata/relatedItems/itemContributors/role.hint"
+msgstr ""
+
+msgid "metadata/relatedItems/itemContributors/role.help"
+msgstr ""
+
+msgid "metadata/relatedItems/itemContributors/role/id.help"
+msgstr ""
+
+msgid "metadata/relatedItems/itemContributors/role/id.label"
+msgstr ""
+
+msgid "metadata/relatedItems/itemContributors/role/id.hint"
+msgstr ""
+
+msgid "metadata/relatedItems/itemContributors/role/title.help"
+msgstr ""
+
+msgid "metadata/relatedItems/itemContributors/role/title.label"
+msgstr ""
+
+msgid "metadata/relatedItems/itemContributors/role/title.hint"
+msgstr ""
+
+msgid "metadata/relatedItems/itemContributors/role/@v.help"
+msgstr ""
+
+msgid "metadata/relatedItems/itemContributors/role/@v.label"
+msgstr ""
+
+msgid "metadata/relatedItems/itemContributors/role/@v.hint"
 msgstr ""
 
 msgid "metadata/relatedItems/itemCreators.label"
@@ -1401,6 +1297,15 @@ msgstr ""
 msgid "metadata/relatedItems/itemCreators/affiliations.hint"
 msgstr ""
 
+msgid "metadata/relatedItems/itemCreators/affiliations/name.help"
+msgstr ""
+
+msgid "metadata/relatedItems/itemCreators/affiliations/name.label"
+msgstr ""
+
+msgid "metadata/relatedItems/itemCreators/affiliations/name.hint"
+msgstr ""
+
 msgid "metadata/relatedItems/itemCreators/affiliations/id.help"
 msgstr ""
 
@@ -1408,84 +1313,6 @@ msgid "metadata/relatedItems/itemCreators/affiliations/id.label"
 msgstr ""
 
 msgid "metadata/relatedItems/itemCreators/affiliations/id.hint"
-msgstr ""
-
-msgid "metadata/relatedItems/itemCreators/affiliations/title.help"
-msgstr ""
-
-msgid "metadata/relatedItems/itemCreators/affiliations/title.label"
-msgstr ""
-
-msgid "metadata/relatedItems/itemCreators/affiliations/title.hint"
-msgstr ""
-
-msgid "metadata/relatedItems/itemCreators/affiliations/ror.help"
-msgstr ""
-
-msgid "metadata/relatedItems/itemCreators/affiliations/ror.label"
-msgstr ""
-
-msgid "metadata/relatedItems/itemCreators/affiliations/ror.hint"
-msgstr ""
-
-msgid "metadata/relatedItems/itemCreators/affiliations/hierarchy.help"
-msgstr ""
-
-msgid "metadata/relatedItems/itemCreators/affiliations/hierarchy.label"
-msgstr ""
-
-msgid "metadata/relatedItems/itemCreators/affiliations/hierarchy.hint"
-msgstr ""
-
-msgid ""
-"metadata/relatedItems/itemCreators/affiliations/hierarchy/ancestors.help"
-msgstr ""
-
-msgid ""
-"metadata/relatedItems/itemCreators/affiliations/hierarchy/ancestors.label"
-msgstr ""
-
-msgid ""
-"metadata/relatedItems/itemCreators/affiliations/hierarchy/ancestors.hint"
-msgstr ""
-
-msgid ""
-"metadata/relatedItems/itemCreators/affiliations/hierarchy/ancestors_or_self.help"
-msgstr ""
-
-msgid ""
-"metadata/relatedItems/itemCreators/affiliations/hierarchy/ancestors_or_self.label"
-msgstr ""
-
-msgid ""
-"metadata/relatedItems/itemCreators/affiliations/hierarchy/ancestors_or_self.hint"
-msgstr ""
-
-msgid "metadata/relatedItems/itemCreators/affiliations/hierarchy/level.help"
-msgstr ""
-
-msgid "metadata/relatedItems/itemCreators/affiliations/hierarchy/level.label"
-msgstr ""
-
-msgid "metadata/relatedItems/itemCreators/affiliations/hierarchy/level.hint"
-msgstr ""
-
-msgid "metadata/relatedItems/itemCreators/affiliations/hierarchy/parent.help"
-msgstr ""
-
-msgid "metadata/relatedItems/itemCreators/affiliations/hierarchy/parent.label"
-msgstr ""
-
-msgid "metadata/relatedItems/itemCreators/affiliations/hierarchy/parent.hint"
-msgstr ""
-
-msgid "metadata/relatedItems/itemCreators/affiliations/hierarchy/title.help"
-msgstr ""
-
-msgid "metadata/relatedItems/itemCreators/affiliations/hierarchy/title.label"
-msgstr ""
-
-msgid "metadata/relatedItems/itemCreators/affiliations/hierarchy/title.hint"
 msgstr ""
 
 msgid "metadata/relatedItems/itemCreators/affiliations/@v.help"
@@ -1497,116 +1324,125 @@ msgstr ""
 msgid "metadata/relatedItems/itemCreators/affiliations/@v.hint"
 msgstr ""
 
-msgid "metadata/relatedItems/itemCreators/authorityIdentifiers.label"
+msgid "metadata/relatedItems/itemCreators/person_or_org.help"
 msgstr ""
 
-msgid "metadata/relatedItems/itemCreators/authorityIdentifiers.help"
+msgid "metadata/relatedItems/itemCreators/person_or_org.label"
 msgstr ""
 
-msgid "metadata/relatedItems/itemCreators/authorityIdentifiers.hint"
+msgid "metadata/relatedItems/itemCreators/person_or_org.hint"
 msgstr ""
 
-msgid ""
-"metadata/relatedItems/itemCreators/authorityIdentifiers/identifier.label"
+msgid "metadata/relatedItems/itemCreators/person_or_org/family_name.help"
 msgstr ""
 
-msgid ""
-"metadata/relatedItems/itemCreators/authorityIdentifiers/identifier.hint"
+msgid "metadata/relatedItems/itemCreators/person_or_org/family_name.label"
 msgstr ""
 
-msgid ""
-"metadata/relatedItems/itemCreators/authorityIdentifiers/identifier.help"
+msgid "metadata/relatedItems/itemCreators/person_or_org/family_name.hint"
 msgstr ""
 
-msgid "metadata/relatedItems/itemCreators/authorityIdentifiers/scheme.label"
+msgid "metadata/relatedItems/itemCreators/person_or_org/given_name.help"
 msgstr ""
 
-msgid "metadata/relatedItems/itemCreators/authorityIdentifiers/scheme.hint"
+msgid "metadata/relatedItems/itemCreators/person_or_org/given_name.label"
 msgstr ""
 
-msgid "metadata/relatedItems/itemCreators/authorityIdentifiers/scheme.help"
+msgid "metadata/relatedItems/itemCreators/person_or_org/given_name.hint"
 msgstr ""
 
-msgid ""
-"metadata/relatedItems/itemCreators/authorityIdentifiers/scheme.enum.orcid"
+msgid "metadata/relatedItems/itemCreators/person_or_org/identifiers.help"
 msgstr ""
 
-msgid ""
-"metadata/relatedItems/itemCreators/authorityIdentifiers/scheme.enum.scopusID"
+msgid "metadata/relatedItems/itemCreators/person_or_org/identifiers.label"
 msgstr ""
 
-msgid ""
-"metadata/relatedItems/itemCreators/authorityIdentifiers/scheme.enum.researcherID"
+msgid "metadata/relatedItems/itemCreators/person_or_org/identifiers.hint"
 msgstr ""
 
 msgid ""
-"metadata/relatedItems/itemCreators/authorityIdentifiers/scheme.enum.czenasAutID"
+"metadata/relatedItems/itemCreators/person_or_org/identifiers/identifier.help"
 msgstr ""
 
 msgid ""
-"metadata/relatedItems/itemCreators/authorityIdentifiers/scheme.enum.vedidk"
+"metadata/relatedItems/itemCreators/person_or_org/identifiers/identifier.label"
 msgstr ""
 
 msgid ""
-"metadata/relatedItems/itemCreators/authorityIdentifiers/scheme.enum.institutionalID"
+"metadata/relatedItems/itemCreators/person_or_org/identifiers/identifier.hint"
 msgstr ""
 
 msgid ""
-"metadata/relatedItems/itemCreators/authorityIdentifiers/scheme.enum.ISNI"
-msgstr ""
-
-msgid "metadata/relatedItems/itemCreators/familyName.label"
-msgstr ""
-
-msgid "metadata/relatedItems/itemCreators/familyName.hint"
-msgstr ""
-
-msgid "metadata/relatedItems/itemCreators/familyName.help"
-msgstr ""
-
-msgid "metadata/relatedItems/itemCreators/fullName.label"
-msgstr ""
-
-msgid "metadata/relatedItems/itemCreators/fullName.help"
-msgstr ""
-
-msgid "metadata/relatedItems/itemCreators/fullName.hint"
-msgstr ""
-
-msgid "metadata/relatedItems/itemCreators/givenName.label"
-msgstr ""
-
-msgid "metadata/relatedItems/itemCreators/givenName.hint"
-msgstr ""
-
-msgid "metadata/relatedItems/itemCreators/givenName.help"
-msgstr ""
-
-msgid "metadata/relatedItems/itemCreators/nameType.label"
-msgstr ""
-
-msgid "metadata/relatedItems/itemCreators/nameType.help"
-msgstr ""
-
-msgid "metadata/relatedItems/itemCreators/nameType.hint"
-msgstr ""
-
-msgid "metadata/relatedItems/itemCreators/nameType.enum.Personal"
+"metadata/relatedItems/itemCreators/person_or_org/identifiers/scheme.help"
 msgstr ""
 
 msgid ""
-"metadata/relatedItems/itemCreators/authorityIdentifiers/scheme.enum.ROR"
+"metadata/relatedItems/itemCreators/person_or_org/identifiers/scheme.label"
 msgstr ""
 
 msgid ""
-"metadata/relatedItems/itemCreators/authorityIdentifiers/scheme.enum.ICO"
+"metadata/relatedItems/itemCreators/person_or_org/identifiers/scheme.hint"
+msgstr ""
+
+msgid "metadata/relatedItems/itemCreators/person_or_org/name.help"
+msgstr ""
+
+msgid "metadata/relatedItems/itemCreators/person_or_org/name.label"
+msgstr ""
+
+msgid "metadata/relatedItems/itemCreators/person_or_org/name.hint"
+msgstr ""
+
+msgid "metadata/relatedItems/itemCreators/person_or_org/type.help"
+msgstr ""
+
+msgid "metadata/relatedItems/itemCreators/person_or_org/type.label"
+msgstr ""
+
+msgid "metadata/relatedItems/itemCreators/person_or_org/type.hint"
+msgstr ""
+
+msgid "metadata/relatedItems/itemCreators/person_or_org/type.enum.personal"
 msgstr ""
 
 msgid ""
-"metadata/relatedItems/itemCreators/authorityIdentifiers/scheme.enum.DOI"
+"metadata/relatedItems/itemCreators/person_or_org/type.enum.organizational"
 msgstr ""
 
-msgid "metadata/relatedItems/itemCreators/nameType.enum.Organizational"
+msgid "metadata/relatedItems/itemCreators/role.label"
+msgstr ""
+
+msgid "metadata/relatedItems/itemCreators/role.hint"
+msgstr ""
+
+msgid "metadata/relatedItems/itemCreators/role.help"
+msgstr ""
+
+msgid "metadata/relatedItems/itemCreators/role/id.help"
+msgstr ""
+
+msgid "metadata/relatedItems/itemCreators/role/id.label"
+msgstr ""
+
+msgid "metadata/relatedItems/itemCreators/role/id.hint"
+msgstr ""
+
+msgid "metadata/relatedItems/itemCreators/role/title.help"
+msgstr ""
+
+msgid "metadata/relatedItems/itemCreators/role/title.label"
+msgstr ""
+
+msgid "metadata/relatedItems/itemCreators/role/title.hint"
+msgstr ""
+
+msgid "metadata/relatedItems/itemCreators/role/@v.help"
+msgstr ""
+
+msgid "metadata/relatedItems/itemCreators/role/@v.label"
+msgstr ""
+
+msgid "metadata/relatedItems/itemCreators/role/@v.hint"
 msgstr ""
 
 msgid "metadata/relatedItems/itemEndPage.label"
