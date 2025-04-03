@@ -1,13 +1,8 @@
 i.access-status {
   display: inline-block;
-  background: no-repeat center;
-  background-size: contain;
-
-  &,
-  &.small {
-    width: 100px;
-    height: 100px;
-  }
+  background: no-repeat center / contain;
+  width: 100px;
+  height: 100px;
 
   &.small {
     width: 3rem;
