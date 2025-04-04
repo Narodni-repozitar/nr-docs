@@ -51,7 +51,7 @@ from oarepo_workflows import (
     WorkflowRequestPolicy,
     WorkflowTransitions,
 )
-
+from invenio_rdm_records.services.generators import SecretLinks
 
 class DefaultWorkflowPermissions(CommunityDefaultWorkflowPermissions):
     can_create = [
@@ -148,6 +148,9 @@ class DefaultWorkflowPermissions(CommunityDefaultWorkflowPermissions):
     can_manage_files = [
         Disable(),
     ]
+
+    can_manage = [RecordOwners(), PrimaryCommunityMembers()] # allows creating and reading links
+    can_manage_record_access = [RecordOwners()] # allows setting record access
 
 
 # if the record is in draft state, the owner or curator can request publishing
