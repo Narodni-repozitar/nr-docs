@@ -155,16 +155,16 @@ class DefaultWorkflowPermissions(CommunityDefaultWorkflowPermissions):
     ]
 
     can_delete = [
-         # draft can be deleted, published record must be deleted via request
-         IfInState(
-             "draft",
-             then_=[
-                 RecordOwners(),
-                 PrimaryCommunityRole("curator"),
-                 PrimaryCommunityRole("owner"),
-             ],
-         ),
-     ] + CommunityDefaultWorkflowPermissions.can_delete
+        # draft can be deleted, published record must be deleted via request
+        IfInState(
+            "draft",
+            then_=[
+                RecordOwners(),
+                PrimaryCommunityRole("curator"),
+                PrimaryCommunityRole("owner"),
+            ],
+        ),
+    ] + CommunityDefaultWorkflowPermissions.can_delete
 
     can_manage_files = [
         Disable(),
