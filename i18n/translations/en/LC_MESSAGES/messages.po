@@ -1375,7 +1375,7 @@ msgid "metadata/contributors/role.help"
 msgstr ""
 
 msgid "metadata/contributors/role.hint"
-msgstr ""
+msgstr "Choose the role of the contributor (editor, illustrator…)."
 
 msgid "metadata/contributors/role/id.help"
 msgstr ""
@@ -2021,7 +2021,7 @@ msgid "metadata/relatedItems/itemContributors/role.help"
 msgstr ""
 
 msgid "metadata/relatedItems/itemContributors/role.hint"
-msgstr ""
+msgstr "Choose the role of the contributor (editor, illustrator…)."
 
 msgid "metadata/relatedItems/itemContributors/role/id.help"
 msgstr ""
@@ -4735,10 +4735,10 @@ msgid "metadata/creators/role.help"
 msgstr ""
 
 msgid "metadata/creators/role.label"
-msgstr ""
+msgstr "Contributor's role"
 
 msgid "metadata/creators/role.hint"
-msgstr ""
+msgstr "Choose the role of the contributor (editor, illustrator…)."
 
 msgid "metadata/creators/role/id.help"
 msgstr ""
@@ -4943,4 +4943,292 @@ msgid "metadata/funders/funder/@v.label"
 msgstr ""
 
 msgid "metadata/funders/funder/@v.hint"
+msgstr ""
+
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:264
+msgid "metadata/relatedItems/itemContributors/person_or_org/family_name.label"
+msgstr ""
+
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:269
+msgid "metadata/relatedItems/itemContributors/person_or_org/given_name.label"
+msgstr ""
+
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:274
+msgid ""
+"metadata/relatedItems/itemContributors/person_or_org/identifiers/identifier.label"
+msgstr ""
+
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:281
+msgid ""
+"metadata/relatedItems/itemContributors/person_or_org/identifiers/scheme.label"
+msgstr ""
+
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:288
+msgid "metadata/relatedItems/itemContributors/person_or_org/name.label"
+msgstr ""
+
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:293
+msgid "metadata/relatedItems/itemContributors/person_or_org/type.label"
+msgstr ""
+
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:310
+msgid "metadata/relatedItems/itemCreators/person_or_org/family_name.label"
+msgstr ""
+
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:315
+msgid "metadata/relatedItems/itemCreators/person_or_org/given_name.label"
+msgstr ""
+
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:320
+msgid ""
+"metadata/relatedItems/itemCreators/person_or_org/identifiers/identifier.label"
+msgstr ""
+
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:327
+msgid ""
+"metadata/relatedItems/itemCreators/person_or_org/identifiers/scheme.label"
+msgstr ""
+
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:334
+msgid "metadata/relatedItems/itemCreators/person_or_org/name.label"
+msgstr ""
+
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:339
+msgid "metadata/relatedItems/itemCreators/person_or_org/type.label"
+msgstr ""
+
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:344
+msgid "metadata/relatedItems/itemCreators/role.label"
+msgstr "Contributor's role"
+
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/for_translations_only.py:4
+msgid "Supercurator"
+msgstr ""
+
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/for_translations_only.py:5
+msgid "Can manage community."
+msgstr ""
+
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/for_translations_only.py:6
+msgid "Curator"
+msgstr ""
+
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/for_translations_only.py:7
+msgid "Can curate records."
+msgstr ""
+
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/for_translations_only.py:8
+msgid "Submitter"
+msgstr ""
+
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/for_translations_only.py:9
+msgid "Can submit records."
+msgstr ""
+
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/for_translations_only.py:10
+msgid "Member"
+msgstr ""
+
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/for_translations_only.py:11
+msgid "Community member with read permissions."
+msgstr ""
+
+msgid "metadata/creators/role/title.help"
+msgstr ""
+
+msgid "metadata/creators/role/title.label"
+msgstr ""
+
+msgid "metadata/creators/role/title.hint"
+msgstr ""
+
+msgid "metadata/creators/role/@v.help"
+msgstr ""
+
+msgid "metadata/creators/role/@v.label"
+msgstr ""
+
+msgid "metadata/creators/role/@v.hint"
+msgstr ""
+
+msgid "metadata/relatedItems/itemContributors/affiliations/name.help"
+msgstr ""
+
+msgid "metadata/relatedItems/itemContributors/affiliations/name.label"
+msgstr ""
+
+msgid "metadata/relatedItems/itemContributors/affiliations/name.hint"
+msgstr ""
+
+msgid "metadata/relatedItems/itemContributors/person_or_org.help"
+msgstr ""
+
+msgid "metadata/relatedItems/itemContributors/person_or_org.label"
+msgstr ""
+
+msgid "metadata/relatedItems/itemContributors/person_or_org.hint"
+msgstr ""
+
+msgid "metadata/relatedItems/itemContributors/person_or_org/family_name.help"
+msgstr ""
+
+msgid "metadata/relatedItems/itemContributors/person_or_org/family_name.hint"
+msgstr ""
+
+msgid "metadata/relatedItems/itemContributors/person_or_org/given_name.help"
+msgstr ""
+
+msgid "metadata/relatedItems/itemContributors/person_or_org/given_name.hint"
+msgstr ""
+
+msgid "metadata/relatedItems/itemContributors/person_or_org/identifiers.help"
+msgstr ""
+
+msgid "metadata/relatedItems/itemContributors/person_or_org/identifiers.label"
+msgstr ""
+
+msgid "metadata/relatedItems/itemContributors/person_or_org/identifiers.hint"
+msgstr ""
+
+msgid ""
+"metadata/relatedItems/itemContributors/person_or_org/identifiers/identifier.help"
+msgstr ""
+
+msgid ""
+"metadata/relatedItems/itemContributors/person_or_org/identifiers/identifier.hint"
+msgstr ""
+
+msgid ""
+"metadata/relatedItems/itemContributors/person_or_org/identifiers/scheme.help"
+msgstr ""
+
+msgid ""
+"metadata/relatedItems/itemContributors/person_or_org/identifiers/scheme.hint"
+msgstr ""
+
+msgid "metadata/relatedItems/itemContributors/person_or_org/name.help"
+msgstr ""
+
+msgid "metadata/relatedItems/itemContributors/person_or_org/name.hint"
+msgstr ""
+
+msgid "metadata/relatedItems/itemContributors/person_or_org/type.help"
+msgstr ""
+
+msgid "metadata/relatedItems/itemContributors/person_or_org/type.hint"
+msgstr ""
+
+msgid ""
+"metadata/relatedItems/itemContributors/person_or_org/type.enum.personal"
+msgstr ""
+
+msgid ""
+"metadata/relatedItems/itemContributors/person_or_org/type.enum.organizational"
+msgstr ""
+
+msgid "metadata/relatedItems/itemCreators/affiliations/name.help"
+msgstr ""
+
+msgid "metadata/relatedItems/itemCreators/affiliations/name.label"
+msgstr ""
+
+msgid "metadata/relatedItems/itemCreators/affiliations/name.hint"
+msgstr ""
+
+msgid "metadata/relatedItems/itemCreators/person_or_org.help"
+msgstr ""
+
+msgid "metadata/relatedItems/itemCreators/person_or_org.label"
+msgstr ""
+
+msgid "metadata/relatedItems/itemCreators/person_or_org.hint"
+msgstr ""
+
+msgid "metadata/relatedItems/itemCreators/person_or_org/family_name.help"
+msgstr ""
+
+msgid "metadata/relatedItems/itemCreators/person_or_org/family_name.hint"
+msgstr ""
+
+msgid "metadata/relatedItems/itemCreators/person_or_org/given_name.help"
+msgstr ""
+
+msgid "metadata/relatedItems/itemCreators/person_or_org/given_name.hint"
+msgstr ""
+
+msgid "metadata/relatedItems/itemCreators/person_or_org/identifiers.help"
+msgstr ""
+
+msgid "metadata/relatedItems/itemCreators/person_or_org/identifiers.label"
+msgstr ""
+
+msgid "metadata/relatedItems/itemCreators/person_or_org/identifiers.hint"
+msgstr ""
+
+msgid ""
+"metadata/relatedItems/itemCreators/person_or_org/identifiers/identifier.help"
+msgstr ""
+
+msgid ""
+"metadata/relatedItems/itemCreators/person_or_org/identifiers/identifier.hint"
+msgstr ""
+
+msgid ""
+"metadata/relatedItems/itemCreators/person_or_org/identifiers/scheme.help"
+msgstr ""
+
+msgid ""
+"metadata/relatedItems/itemCreators/person_or_org/identifiers/scheme.hint"
+msgstr ""
+
+msgid "metadata/relatedItems/itemCreators/person_or_org/name.help"
+msgstr ""
+
+msgid "metadata/relatedItems/itemCreators/person_or_org/name.hint"
+msgstr ""
+
+msgid "metadata/relatedItems/itemCreators/person_or_org/type.help"
+msgstr ""
+
+msgid "metadata/relatedItems/itemCreators/person_or_org/type.hint"
+msgstr ""
+
+msgid "metadata/relatedItems/itemCreators/person_or_org/type.enum.personal"
+msgstr ""
+
+msgid ""
+"metadata/relatedItems/itemCreators/person_or_org/type.enum.organizational"
+msgstr ""
+
+msgid "metadata/relatedItems/itemCreators/role.hint"
+msgstr "Choose the role of the contributor (editor, illustrator…)."
+
+msgid "metadata/relatedItems/itemCreators/role.help"
+msgstr ""
+
+msgid "metadata/relatedItems/itemCreators/role/id.help"
+msgstr ""
+
+msgid "metadata/relatedItems/itemCreators/role/id.label"
+msgstr ""
+
+msgid "metadata/relatedItems/itemCreators/role/id.hint"
+msgstr ""
+
+msgid "metadata/relatedItems/itemCreators/role/title.help"
+msgstr ""
+
+msgid "metadata/relatedItems/itemCreators/role/title.label"
+msgstr ""
+
+msgid "metadata/relatedItems/itemCreators/role/title.hint"
+msgstr ""
+
+msgid "metadata/relatedItems/itemCreators/role/@v.help"
+msgstr ""
+
+msgid "metadata/relatedItems/itemCreators/role/@v.label"
+msgstr ""
+
+msgid "metadata/relatedItems/itemCreators/role/@v.hint"
 msgstr ""
