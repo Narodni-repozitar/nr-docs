@@ -135,6 +135,7 @@ class DocumentsExt:
 
     def init_app_callback_rdm_models(self, app):
         rdm_model_config = {
+            "service_id": "documents",
             "model_service": "documents.services.records.service.DocumentsService",
             "service_config": (
                 "documents.services.records.config.DocumentsServiceConfig"
