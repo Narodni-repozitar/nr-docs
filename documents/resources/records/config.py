@@ -3,7 +3,7 @@ from flask_resources import ResponseHandler
 from invenio_drafts_resources.resources import RecordResourceConfig
 
 from documents.resources.records.ui import DocumentsUIJSONSerializer
-
+from oarepo_runtime.resources.responses import ExportableResponseHandler
 
 class DocumentsResourceConfig(RecordResourceConfig):
     """DocumentsRecord resource config."""
@@ -19,8 +19,8 @@ class DocumentsResourceConfig(RecordResourceConfig):
         ):
             entrypoint_response_handlers.update(x.load())
         return {
-            "application/vnd.inveniordm.v1+json": ResponseHandler(
-                DocumentsUIJSONSerializer()
+            "application/vnd.inveniordm.v1+json": ExportableResponseHandler(
+                export_code="ui_json", name="Native UI JSON", serializer=DocumentsUIJSONSerializer()
             ),
             **super().response_handlers,
             **entrypoint_response_handlers,
