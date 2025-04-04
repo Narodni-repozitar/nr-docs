@@ -1,5 +1,6 @@
 import re
 from datetime import datetime
+from urllib.parse import urlparse
 
 from flask_resources import RequestBodyParser, JSONDeserializer
 
@@ -181,6 +182,17 @@ def get_scheme_and_identifier(identifier):
 
 
 def extract_doi_from_url(url: str) -> str:
+    doi_pattern = re.compile(r"10\.\d{4,9}/[^\s]+")
+
+    match = doi_pattern.search(url)
+    if match:
+        return match.group(0)
+
+    parsed_url = urlparse(url)
+    match = doi_pattern.search(parsed_url.path)
+    if match:
+        return match.group(0)
+
     match = re.search(r"https://doi\.org/([^\s]+)", url)
     if match:
         return match.group(1)
