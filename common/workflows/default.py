@@ -52,8 +52,29 @@ from oarepo_workflows import (
     WorkflowTransitions,
 )
 
+from invenio_access import action_factory
+from invenio_access.permissions import Permission
+from invenio_records_permissions.generators import Generator
+
+
+direct_publish_action = action_factory("administration-direct-publish")
+permission = Permission(direct_publish_action)
+
+
+class DirectPublishAction(Generator):
+    def __init__(self):
+        super(DirectPublishAction, self).__init__()
+
+    def needs(self, **kwargs):
+        return [direct_publish_action]
+
 
 class DefaultWorkflowPermissions(CommunityDefaultWorkflowPermissions):
+    can_publish = [
+        *CommunityDefaultWorkflowPermissions.can_publish,
+        DirectPublishAction(),
+    ]
+
     can_create = [
         PrimaryCommunityRole("submitter"),
         PrimaryCommunityRole("owner"),
@@ -134,16 +155,16 @@ class DefaultWorkflowPermissions(CommunityDefaultWorkflowPermissions):
     ]
 
     can_delete = [
-        # draft can be deleted, published record must be deleted via request
-        IfInState(
-            "draft",
-            then_=[
-                RecordOwners(),
-                PrimaryCommunityRole("curator"),
-                PrimaryCommunityRole("owner"),
-            ],
-        ),
-    ] + CommunityDefaultWorkflowPermissions.can_delete
+                     # draft can be deleted, published record must be deleted via request
+                     IfInState(
+                         "draft",
+                         then_=[
+                             RecordOwners(),
+                             PrimaryCommunityRole("curator"),
+                             PrimaryCommunityRole("owner"),
+                         ],
+                     ),
+                 ] + CommunityDefaultWorkflowPermissions.can_delete
 
     can_manage_files = [
         Disable(),
@@ -176,9 +197,9 @@ publish_transitions = WorkflowTransitions(
 # if the request is not resolved in 21 days, escalate it to the administrator
 publish_escalations = [
     WorkflowRequestEscalation(
-        after=timedelta(days=21),
+        after=timedelta(minutes=5),
         recipients=[
-            PrimaryCommunityRole("owner"),
+            AutoApprove()
         ],
     )
 ]
@@ -286,7 +307,7 @@ class DefaultWorkflowRequests(WorkflowRequestPolicy):
         # if the request is not resolved in 21 days, escalate it to the administrator
         escalations=[
             WorkflowRequestEscalation(
-                after=timedelta(days=21),
+                after=timedelta(minutes=1),
                 recipients=[
                     PrimaryCommunityRole("owner"),
                 ],

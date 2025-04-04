@@ -101,6 +101,8 @@ invalid_file_extension = "common.services.files.allowed_document_extensions:ERRO
 [project.entry-points."invenio.documents_record.request_bodyparsers"]
 zenodo_to_nr_docs = "common.resources.zenodo_to_nr_docs:REQUEST_BODY_PARSERS"
 
+[project.entry-points."invenio_access.actions"]
+direct_publish_action = "common.workflows.default:direct_publish_action"
 
 [project.optional-dependencies]
 tests = [
