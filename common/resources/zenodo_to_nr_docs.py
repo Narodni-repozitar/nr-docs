@@ -56,6 +56,11 @@ def zenodo_to_nr_docs(zenodo_record):
 
 
 def transform_subjects(rec, lang='en'):
+    if rec.get('keyword',''):
+        return [
+            {'subject': [{'lang': lang, 'value': rec.get('keyword')}]}
+        ]
+
     subjects = [
         {"subject": [{"lang": lang, "value": keyword}]}
         for keyword in rec.pop('keywords', [])
