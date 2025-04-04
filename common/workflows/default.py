@@ -155,16 +155,16 @@ class DefaultWorkflowPermissions(CommunityDefaultWorkflowPermissions):
     ]
 
     can_delete = [
-                     # draft can be deleted, published record must be deleted via request
-                     IfInState(
-                         "draft",
-                         then_=[
-                             RecordOwners(),
-                             PrimaryCommunityRole("curator"),
-                             PrimaryCommunityRole("owner"),
-                         ],
-                     ),
-                 ] + CommunityDefaultWorkflowPermissions.can_delete
+         # draft can be deleted, published record must be deleted via request
+         IfInState(
+             "draft",
+             then_=[
+                 RecordOwners(),
+                 PrimaryCommunityRole("curator"),
+                 PrimaryCommunityRole("owner"),
+             ],
+         ),
+     ] + CommunityDefaultWorkflowPermissions.can_delete
 
     can_manage_files = [
         Disable(),
@@ -197,9 +197,9 @@ publish_transitions = WorkflowTransitions(
 # if the request is not resolved in 21 days, escalate it to the administrator
 publish_escalations = [
     WorkflowRequestEscalation(
-        after=timedelta(minutes=5),
+        after=timedelta(days=21),
         recipients=[
-            AutoApprove()
+            PrimaryCommunityRole("owner"),
         ],
     )
 ]
@@ -307,7 +307,7 @@ class DefaultWorkflowRequests(WorkflowRequestPolicy):
         # if the request is not resolved in 21 days, escalate it to the administrator
         escalations=[
             WorkflowRequestEscalation(
-                after=timedelta(minutes=1),
+                after=timedelta(days=21),
                 recipients=[
                     PrimaryCommunityRole("owner"),
                 ],
