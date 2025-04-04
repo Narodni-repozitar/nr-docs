@@ -272,8 +272,8 @@ def transform_accessibility(rec, lang='en'):
 
 
 def transform_publishers(rec, lang='en'):
-    publisher = rec.pop('publisher')
-    return [publisher] if publisher else ['Zenodo']
+    publisher = rec.pop('publisher', 'Zenodo')
+    return [publisher]
 
 
 def transform_dates(record, lang='en'):
