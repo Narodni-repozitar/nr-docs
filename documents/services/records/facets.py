@@ -1,6 +1,5 @@
 """Facet definitions."""
-from invenio_rdm_records.records.systemfields.access.field.record import (
-    AccessStatusEnum)
+
 from invenio_records_resources.services.records.facets import TermsFacet
 from nr_metadata.services.records.facets import KeywordsFacet
 from oarepo_runtime.i18n import lazy_gettext as _
@@ -12,20 +11,6 @@ from oarepo_vocabularies.services.facets import (
     VocabularyFacet,
 )
 
-#
-# As soon as translation context is implemented in invenio rdm, we will remove
-# this facet and use the one from invenio_rdm_records
-#
-access_status = TermsFacet(
-    field="access.status",
-    label=_("metadata/accessRights.label"),
-    value_labels={
-        AccessStatusEnum.OPEN.value: _("access.status.open"),
-        AccessStatusEnum.EMBARGOED.value: _("access.status.embargoed"),
-        AccessStatusEnum.RESTRICTED.value: _("access.status.restricted"),
-        AccessStatusEnum.METADATA_ONLY.value: _("access.status.metadata-only"),
-    },
-)
 access_embargo_active = TermsFacet(
     field="access.embargo.active", label=_("access/embargo/active.label")
 )
@@ -38,8 +23,8 @@ access_files = TermsFacet(field="access.files", label=_("access/files.label"))
 
 access_record = TermsFacet(field="access.record", label=_("access/record.label"))
 
-# Replaced with access_status above
-# access_status = TermsFacet(field="access.status", label=_("access/status.label"))
+access_status = TermsFacet(field="access.status", label=_("access/status.label"))
+
 metadata_abstract_cs = TermsFacet(
     field="metadata.abstract.cs.keyword", label=_("metadata/abstract.label")
 )
@@ -130,9 +115,10 @@ metadata_contributors_person_or_org_type = TermsFacet(
     label=_("metadata/contributors/person_or_org/type.label"),
 )
 
-metadata_contributors_role_id = TermsFacet(
-    field="metadata.contributors.role.id",
-    label=_("metadata/contributors/role/id.label"),
+metadata_contributors_role = VocabularyFacet(
+    field="metadata.contributors.role",
+    label=_("metadata/contributors/role.label"),
+    vocabulary="contributor-types",
 )
 
 metadata_creators_affiliations = VocabularyFacet(
@@ -171,8 +157,10 @@ metadata_creators_person_or_org_type = TermsFacet(
     label=_("metadata/creators/person_or_org/type.label"),
 )
 
-metadata_creators_role_id = TermsFacet(
-    field="metadata.creators.role.id", label=_("metadata/creators/role/id.label")
+metadata_creators_role = VocabularyFacet(
+    field="metadata.creators.role",
+    label=_("metadata/creators/role.label"),
+    vocabulary="contributor-types",
 )
 
 metadata_dateAvailable = DateTimeFacet(
@@ -265,84 +253,96 @@ metadata_originalRecord = TermsFacet(
     field="metadata.originalRecord", label=_("metadata/originalRecord.label")
 )
 
-metadata_relatedItems_itemContributors_affiliations = HierarchyVocabularyFacet(
+metadata_relatedItems_itemContributors_affiliations = VocabularyFacet(
     field="metadata.relatedItems.itemContributors.affiliations",
     label=_("metadata/relatedItems/itemContributors/affiliations.label"),
     vocabulary="affiliations",
 )
 
-metadata_relatedItems_itemContributors_authorityIdentifiers_identifier = TermsFacet(
-    field="metadata.relatedItems.itemContributors.authorityIdentifiers.identifier",
+metadata_relatedItems_itemContributors_person_or_org_family_name = TermsFacet(
+    field="metadata.relatedItems.itemContributors.person_or_org.family_name",
+    label=_("metadata/relatedItems/itemContributors/person_or_org/family_name.label"),
+)
+
+metadata_relatedItems_itemContributors_person_or_org_given_name = TermsFacet(
+    field="metadata.relatedItems.itemContributors.person_or_org.given_name",
+    label=_("metadata/relatedItems/itemContributors/person_or_org/given_name.label"),
+)
+
+metadata_relatedItems_itemContributors_person_or_org_identifiers_identifier = TermsFacet(
+    field="metadata.relatedItems.itemContributors.person_or_org.identifiers.identifier",
     label=_(
-        "metadata/relatedItems/itemContributors/authorityIdentifiers/identifier.label"
+        "metadata/relatedItems/itemContributors/person_or_org/identifiers/identifier.label"
     ),
 )
 
-metadata_relatedItems_itemContributors_authorityIdentifiers_scheme = TermsFacet(
-    field="metadata.relatedItems.itemContributors.authorityIdentifiers.scheme",
-    label=_("metadata/relatedItems/itemContributors/authorityIdentifiers/scheme.label"),
+metadata_relatedItems_itemContributors_person_or_org_identifiers_scheme = TermsFacet(
+    field="metadata.relatedItems.itemContributors.person_or_org.identifiers.scheme",
+    label=_(
+        "metadata/relatedItems/itemContributors/person_or_org/identifiers/scheme.label"
+    ),
 )
 
-metadata_relatedItems_itemContributors_contributorType = VocabularyFacet(
-    field="metadata.relatedItems.itemContributors.contributorType",
-    label=_("metadata/relatedItems/itemContributors/contributorType.label"),
+metadata_relatedItems_itemContributors_person_or_org_name = TermsFacet(
+    field="metadata.relatedItems.itemContributors.person_or_org.name",
+    label=_("metadata/relatedItems/itemContributors/person_or_org/name.label"),
+)
+
+metadata_relatedItems_itemContributors_person_or_org_type = TermsFacet(
+    field="metadata.relatedItems.itemContributors.person_or_org.type",
+    label=_("metadata/relatedItems/itemContributors/person_or_org/type.label"),
+)
+
+metadata_relatedItems_itemContributors_role = VocabularyFacet(
+    field="metadata.relatedItems.itemContributors.role",
+    label=_("metadata/relatedItems/itemContributors/role.label"),
     vocabulary="contributor-types",
 )
 
-metadata_relatedItems_itemContributors_familyName = TermsFacet(
-    field="metadata.relatedItems.itemContributors.familyName",
-    label=_("metadata/relatedItems/itemContributors/familyName.label"),
-)
-
-metadata_relatedItems_itemContributors_fullName = TermsFacet(
-    field="metadata.relatedItems.itemContributors.fullName",
-    label=_("metadata/relatedItems/itemContributors/fullName.label"),
-)
-
-metadata_relatedItems_itemContributors_givenName = TermsFacet(
-    field="metadata.relatedItems.itemContributors.givenName",
-    label=_("metadata/relatedItems/itemContributors/givenName.label"),
-)
-
-metadata_relatedItems_itemContributors_nameType = TermsFacet(
-    field="metadata.relatedItems.itemContributors.nameType",
-    label=_("metadata/relatedItems/itemContributors/nameType.label"),
-)
-
-metadata_relatedItems_itemCreators_affiliations = HierarchyVocabularyFacet(
+metadata_relatedItems_itemCreators_affiliations = VocabularyFacet(
     field="metadata.relatedItems.itemCreators.affiliations",
     label=_("metadata/relatedItems/itemCreators/affiliations.label"),
     vocabulary="affiliations",
 )
 
-metadata_relatedItems_itemCreators_authorityIdentifiers_identifier = TermsFacet(
-    field="metadata.relatedItems.itemCreators.authorityIdentifiers.identifier",
-    label=_("metadata/relatedItems/itemCreators/authorityIdentifiers/identifier.label"),
+metadata_relatedItems_itemCreators_person_or_org_family_name = TermsFacet(
+    field="metadata.relatedItems.itemCreators.person_or_org.family_name",
+    label=_("metadata/relatedItems/itemCreators/person_or_org/family_name.label"),
 )
 
-metadata_relatedItems_itemCreators_authorityIdentifiers_scheme = TermsFacet(
-    field="metadata.relatedItems.itemCreators.authorityIdentifiers.scheme",
-    label=_("metadata/relatedItems/itemCreators/authorityIdentifiers/scheme.label"),
+metadata_relatedItems_itemCreators_person_or_org_given_name = TermsFacet(
+    field="metadata.relatedItems.itemCreators.person_or_org.given_name",
+    label=_("metadata/relatedItems/itemCreators/person_or_org/given_name.label"),
 )
 
-metadata_relatedItems_itemCreators_familyName = TermsFacet(
-    field="metadata.relatedItems.itemCreators.familyName",
-    label=_("metadata/relatedItems/itemCreators/familyName.label"),
+metadata_relatedItems_itemCreators_person_or_org_identifiers_identifier = TermsFacet(
+    field="metadata.relatedItems.itemCreators.person_or_org.identifiers.identifier",
+    label=_(
+        "metadata/relatedItems/itemCreators/person_or_org/identifiers/identifier.label"
+    ),
 )
 
-metadata_relatedItems_itemCreators_fullName = TermsFacet(
-    field="metadata.relatedItems.itemCreators.fullName",
-    label=_("metadata/relatedItems/itemCreators/fullName.label"),
+metadata_relatedItems_itemCreators_person_or_org_identifiers_scheme = TermsFacet(
+    field="metadata.relatedItems.itemCreators.person_or_org.identifiers.scheme",
+    label=_(
+        "metadata/relatedItems/itemCreators/person_or_org/identifiers/scheme.label"
+    ),
 )
 
-metadata_relatedItems_itemCreators_givenName = TermsFacet(
-    field="metadata.relatedItems.itemCreators.givenName",
-    label=_("metadata/relatedItems/itemCreators/givenName.label"),
+metadata_relatedItems_itemCreators_person_or_org_name = TermsFacet(
+    field="metadata.relatedItems.itemCreators.person_or_org.name",
+    label=_("metadata/relatedItems/itemCreators/person_or_org/name.label"),
 )
 
-metadata_relatedItems_itemCreators_nameType = TermsFacet(
-    field="metadata.relatedItems.itemCreators.nameType",
-    label=_("metadata/relatedItems/itemCreators/nameType.label"),
+metadata_relatedItems_itemCreators_person_or_org_type = TermsFacet(
+    field="metadata.relatedItems.itemCreators.person_or_org.type",
+    label=_("metadata/relatedItems/itemCreators/person_or_org/type.label"),
+)
+
+metadata_relatedItems_itemCreators_role = VocabularyFacet(
+    field="metadata.relatedItems.itemCreators.role",
+    label=_("metadata/relatedItems/itemCreators/role.label"),
+    vocabulary="contributor-types",
 )
 
 metadata_relatedItems_itemEndPage = TermsFacet(

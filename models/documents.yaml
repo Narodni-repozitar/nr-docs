@@ -31,9 +31,13 @@ record:
 
   properties:
     state:
+      type: keyword
       ui:
         marshmallow:
           field-class: common.services.schema.LocalizedStateField
+    metadata: {}
+    syntheticFields:
+      properties: {}
 
   draft: {}
   draft-files:
@@ -71,11 +75,6 @@ record:
     qualified: documents
   pid:
     type: dcmnts
-  properties:
-    metadata: {}
-
-    syntheticFields:
-      properties: {}
 
   resource-config:
     base-html-url: /docs/
@@ -96,7 +95,7 @@ record:
 
   search-options:
     base-classes:
-      - oarepo_runtime.services.search.I18nSearchOptions
+      - oarepo_runtime.services.search.I18nRDMSearchOptions
     sort-options-field: extra_sort_options
     fields:
       sort_options: "{{oarepo_runtime.services.search.ICUSortOptions}}('documents')"
@@ -106,6 +105,26 @@ record:
       title_search: "{{oarepo_runtime.records.systemfields.icu.ICUSearchField}}(source_field='metadata.title')"
       creator_search: "{{oarepo_runtime.records.systemfields.icu.ICUSearchField}}(source_field='metadata.creators.fullName')"
       abstract_search: "{{oarepo_runtime.records.systemfields.icu.ICUSearchField}}(source_field='metadata.abstract.value')"
+
+  ext:
+    extra-code: |1
+         def load_action_permissions(self, sender, identity):
+             # TODO: need to have a deeper look at this
+             from flask_principal import ActionNeed
+             from invenio_access.models import ActionUsers
+
+             user_id = identity.id
+             if user_id is None:
+                 return
+ 
+             for au in ActionUsers.query.filter_by(user_id=user_id, exclude=False).all():
+                 identity.provides.add(ActionNeed(au.action))
+ 
+         def init_app_callback_identity_loaded(self, app):
+             """Load action permissions into the identity when it is loaded."""
+ 
+             from flask_principal import identity_loaded
+             identity_loaded.connect_via(app)(self.load_action_permissions)
 
 
   mapping:

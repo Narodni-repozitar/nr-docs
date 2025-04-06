@@ -1,0 +1,25 @@
+i.access-status {
+  display: inline-block;
+  background: no-repeat center / contain;
+  width: 100px;
+  height: 100px;
+
+  &.small {
+    width: 3rem;
+    height: 3rem;
+    vertical-align: middle;
+  }
+
+  &.open {
+    background-image: url("~@less/images/open_access.svg");
+  }
+  &.restricted {
+    background-image: url("~@less/images/closed_access.svg");
+  }
+  &.metadata-only {
+    background-image: url("~@less/images/partially_closed_access.svg");
+  }
+  &.embargoed {
+    background-image: url("~@less/images/partially_closed_access_grey.svg");
+  }
+}

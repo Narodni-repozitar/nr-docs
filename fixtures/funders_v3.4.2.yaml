@@ -1,3 +1,192 @@
+id: AV0
+name: Czech Academy of Sciences
+identifiers:
+- scheme: CrossrefFunderID
+  identifier: http://dx.doi.org/10.13039/501100004240
+- scheme: ROR
+  identifier: https://ror.org/053avzc18
+country: CZ
+---
+id: BIS
+name: Security Information Service
+identifiers:
+- scheme: ROR
+  identifier: https://ror.org/01tjgrk20
+country: CZ
+---
+id: CBU
+name: Czech Mining Office Board
+identifiers:
+- scheme: ROR
+  identifier: https://ror.org/04kgngk14
+country: CZ
+---
+id: CSU
+name: Czech Statistical Office
+identifiers:
+- scheme: ROR
+  identifier: https://ror.org/03w948j83
+country: CZ
+---
+id: CUZ
+name: Czech Office for Surveying, Mapping and Cadastre
+identifiers:
+- scheme: ROR
+  identifier: https://ror.org/0111dmn28
+country: CZ
+---
+id: GA0
+name: Czech Science Foundation
+identifiers:
+- scheme: CrossrefFunderID
+  identifier: http://dx.doi.org/10.13039/501100001824
+- scheme: ROR
+  identifier: https://ror.org/01pv73b02
+country: CZ
+---
+id: KHK
+name: Hradec Králové Region
+country: CZ
+---
+id: KHP
+name: Prague
+country: CZ
+---
+id: KJC
+name: South Bohemian Region
+country: CZ
+---
+id: KJM
+name: South Moravian Region
+country: CZ
+---
+id: KKV
+name: Karlovy Vary Region
+country: CZ
+---
+id: KLI
+name: Liberec Region
+country: CZ
+---
+id: KMS
+name: Moravian-Silesian Region
+country: CZ
+---
+id: KOL
+name: Olomouc Region
+country: CZ
+---
+id: KPB
+name: Pardubice Region
+country: CZ
+---
+id: KPZ
+name: Pilsen Region
+country: CZ
+---
+id: KSC
+name: Central Bohemia Region
+country: CZ
+---
+id: KUL
+name: Usti Region
+country: CZ
+---
+id: KVY
+name: Vysocina Region
+country: CZ
+---
+id: KZL
+name: Zlin Region
+country: CZ
+---
+id: MD0
+name: Ministry of Transport of the Czech Republic
+identifiers:
+- scheme: CrossrefFunderID
+  identifier: http://dx.doi.org/10.13039/100007654
+- scheme: ROR
+  identifier: https://ror.org/00p9p2506
+country: CZ
+---
+id: MDS
+name: Ministerstvo dopravy a spojů
+---
+id: MF0
+name: Ministry of Finance of the Czech Republic
+identifiers:
+- scheme: ROR
+  identifier: https://ror.org/00mjd8b34
+country: CZ
+---
+id: MK0
+name: Ministry of Culture of the Czech Republic
+identifiers:
+- scheme: CrossrefFunderID
+  identifier: http://dx.doi.org/10.13039/501100005619
+- scheme: ROR
+  identifier: https://ror.org/00fxxw604
+country: CZ
+---
+id: MMR
+name: Ministry of Regional Development of the Czech Republic
+identifiers:
+- scheme: ROR
+  identifier: https://ror.org/045smbc57
+country: CZ
+---
+id: MO0
+name: Ministry of Defence of the Czech Republic
+identifiers:
+- scheme: CrossrefFunderID
+  identifier: http://dx.doi.org/10.13039/501100014911
+- scheme: ROR
+  identifier: https://ror.org/00r7raa16
+country: CZ
+---
+id: MPO
+name: Ministry of Industry and Trade of the Czech Republic
+identifiers:
+- scheme: CrossrefFunderID
+  identifier: http://dx.doi.org/10.13039/501100004578
+- scheme: ROR
+  identifier: https://ror.org/03j4eb467
+country: CZ
+---
+id: MPS
+name: Ministry of Labour and Social Affairs of the Czech Republic
+identifiers:
+- scheme: CrossrefFunderID
+  identifier: http://dx.doi.org/10.13039/501100007452
+- scheme: ROR
+  identifier: https://ror.org/01bvj3e58
+country: CZ
+---
+id: MS0
+name: Ministry of Justice of the Czech Republic
+identifiers:
+- scheme: ROR
+  identifier: https://ror.org/0531qh590
+country: CZ
+---
+id: MSM
+name: Ministry of Education, Youth and Sports of the Czech Republic
+identifiers:
+- scheme: CrossrefFunderID
+  identifier: http://dx.doi.org/10.13039/501100001823
+- scheme: ROR
+  identifier: https://ror.org/037n8p820
+country: CZ
+---
+id: MV0
+name: Ministry of Interior of the Czech Republic
+identifiers:
+- scheme: CrossrefFunderID
+  identifier: http://dx.doi.org/10.13039/100009532
+- scheme: ROR
+  identifier: https://ror.org/05w1nn565
+country: CZ
+---
 id: MZ0
 name: Ministry of Health of the Czech Republic
 identifiers:
@@ -6,3 +195,352 @@ identifiers:
 - scheme: ROR
   identifier: https://ror.org/00y6khe77
 country: CZ
+---
+id: MZE
+name: Ministry of Agriculture of the Czech Republic
+identifiers:
+- scheme: CrossrefFunderID
+  identifier: http://dx.doi.org/10.13039/501100006533
+- scheme: ROR
+  identifier: https://ror.org/049wftm75
+country: CZ
+---
+id: MZP
+name: Ministry of Environment of the Czech Republic
+identifiers:
+- scheme: CrossrefFunderID
+  identifier: http://dx.doi.org/10.13039/501100013855
+- scheme: ROR
+  identifier: https://ror.org/04e74dh47
+country: CZ
+---
+id: MZV
+name: Ministry of Foreign Affairs of the Czech Republic
+identifiers:
+- scheme: ROR
+  identifier: https://ror.org/00h3t4h60
+country: CZ
+---
+id: NBU
+name: National Security Authority
+identifiers:
+- scheme: ROR
+  identifier: https://ror.org/02yy6jb09
+country: CZ
+---
+id: SUJ
+name: State Office for Nuclear Safety
+identifiers:
+- scheme: ROR
+  identifier: https://ror.org/02dy2h219
+country: CZ
+---
+id: TA0
+name: Technology Agency of the Czech Republic
+identifiers:
+- scheme: CrossrefFunderID
+  identifier: http://dx.doi.org/10.13039/100014809
+- scheme: ROR
+  identifier: https://ror.org/04v0fk911
+country: CZ
+---
+id: URV
+name: Office of the Goverment
+country: CZ
+---
+id: USC
+name: Regional autonomous units of the CR (unstructured)
+country: CZ
+---
+id: MI0
+name: Ministry of Informatics of the Czech Republic
+country: CZ
+---
+id: MH0
+name: Ministry of Industry of the Czech Republic
+country: CZ
+---
+id: EC
+name: European Commission
+identifiers:
+- scheme: CrossrefFunderID
+  identifier: http://dx.doi.org/10.13039/501100000780
+- scheme: ROR
+  identifier: https://ror.org/00k4n6c32
+country: BE
+---
+id: GA-UK
+name: Charles University Grant Agency
+identifiers:
+- scheme: CrossrefFunderID
+  identifier: http://dx.doi.org/10.13039/100007543
+country: CZ
+---
+id: NIH
+name: National Institutes of Health
+identifiers:
+- scheme: CrossrefFunderID
+  identifier: http://dx.doi.org/10.13039/100000002
+- scheme: ROR
+  identifier: https://ror.org/01cwqze88
+country: US
+---
+id: NATO
+name: North Atlantic Treaty Organization
+identifiers:
+- scheme: CrossrefFunderID
+  identifier: http://dx.doi.org/10.13039/100004415
+- scheme: ROR
+  identifier: https://ror.org/00bkaqj51
+country: BE
+---
+id: IAEA
+name: International Atomic Energy Agency
+identifiers:
+- scheme: CrossrefFunderID
+  identifier: http://dx.doi.org/10.13039/501100004493
+- scheme: ROR
+  identifier: https://ror.org/00gtfax65
+country: IT
+---
+id: NSF
+name: National Science Foundation
+identifiers:
+- scheme: CrossrefFunderID
+  identifier: http://dx.doi.org/10.13039/100000001
+- scheme: ROR
+  identifier: https://ror.org/021nxhr62
+country: US
+---
+id: ESF-science
+name: European Science Foundation
+identifiers:
+- scheme: CrossrefFunderID
+  identifier: http://dx.doi.org/10.13039/501100000782
+- scheme: ROR
+  identifier: https://ror.org/04esata81
+country: FR
+---
+id: HSRF
+name: Health System Research Fund
+---
+id: SFZP-CR
+name: Státní fond životního prostředí ČR
+country: CZ
+---
+id: CESNET
+name: Fond rozvoje sdružení CESNET
+country: CZ
+---
+id: National-geographic
+name: National Geographic Society
+identifiers:
+- scheme: CrossrefFunderID
+  identifier: http://dx.doi.org/10.13039/100006363
+- scheme: ROR
+  identifier: https://ror.org/04bqh5m06
+country: US
+---
+id: BNSF
+name: Bulgarian National Science Fund
+identifiers:
+- scheme: CrossrefFunderID
+  identifier: http://dx.doi.org/10.13039/501100003336
+- scheme: ROR
+  identifier: https://ror.org/05eg49r29
+country: BG
+---
+id: CEU
+name: Central European University
+identifiers:
+- scheme: CrossrefFunderID
+  identifier: http://dx.doi.org/10.13039/501100006061
+- scheme: ROR
+  identifier: https://ror.org/02zx40v98
+country: AT
+---
+id: CNRS
+name: French National Centre for Scientific Research
+identifiers:
+- scheme: CrossrefFunderID
+  identifier: http://dx.doi.org/10.13039/501100004794
+- scheme: ROR
+  identifier: https://ror.org/02feahw73
+country: FR
+---
+id: CVUT
+name: Czech Technical University in Prague
+identifiers:
+- scheme: CrossrefFunderID
+  identifier: http://dx.doi.org/10.13039/100007655
+- scheme: ROR
+  identifier: https://ror.org/03kqpb082
+country: CZ
+---
+id: CzechInvest
+name: CzechInvest
+identifiers:
+- scheme: ROR
+  identifier: https://ror.org/04zyrd219
+country: CZ
+---
+id: DFG
+name: German Research Association
+identifiers:
+- scheme: CrossrefFunderID
+  identifier: http://dx.doi.org/10.13039/501100001659
+- scheme: ROR
+  identifier: https://ror.org/018mejw64
+country: DE
+---
+id: EEA
+name: European Environment Agency
+identifiers:
+- scheme: CrossrefFunderID
+  identifier: http://dx.doi.org/10.13039/501100000806
+- scheme: ROR
+  identifier: https://ror.org/02k4b9v70
+country: DK
+---
+id: EIGE
+name: European Institute for Gender Equality
+country: LT
+---
+id: EPSRC
+name: Engineering and Physical Sciences Research Council
+identifiers:
+- scheme: CrossrefFunderID
+  identifier: http://dx.doi.org/10.13039/501100000266
+- scheme: ROR
+  identifier: https://ror.org/0439y7842
+country: GB
+---
+id: FRA
+name: European Union Agency for Fundamental Rights
+country: AT
+---
+id: ESF-social
+name: European Social Fund
+identifiers:
+- scheme: CrossrefFunderID
+  identifier: http://dx.doi.org/10.13039/501100004895
+---
+id: ESA
+name: European Space Agency
+identifiers:
+- scheme: CrossrefFunderID
+  identifier: http://dx.doi.org/10.13039/501100000844
+- scheme: ROR
+  identifier: https://ror.org/03wd9za21
+country: FR
+---
+id: LCR
+name: Grantová služba LČR (Lesy ČR)
+country: CZ
+---
+id: IVF
+name: International Visegrad Fund
+identifiers:
+- scheme: CrossrefFunderID
+  identifier: http://dx.doi.org/10.13039/100012825
+- scheme: ROR
+  identifier: https://ror.org/04e3ssz85
+country: SK
+---
+id: EEA-Norway-grants
+name: EEA and Norway Grants
+identifiers:
+- scheme: CrossrefFunderID
+  identifier: http://dx.doi.org/10.13039/501100013609
+- scheme: ROR
+  identifier: https://ror.org/02dfxg175
+country: BE
+---
+id: NF-Neuron
+name: Neuron Benevolent Fund for the Support of Science
+identifiers:
+- scheme: CrossrefFunderID
+  identifier: http://dx.doi.org/10.13039/501100013856
+country: CZ
+---
+id: NASA
+name: National Aeronautics and Space Administration
+identifiers:
+- scheme: CrossrefFunderID
+  identifier: http://dx.doi.org/10.13039/100000104
+- scheme: ROR
+  identifier: https://ror.org/027ka1x80
+country: US
+---
+id: NCEEER
+name: National Council for Eurasian and East European Research
+identifiers:
+- scheme: CrossrefFunderID
+  identifier: http://dx.doi.org/10.13039/100012658
+country: US
+---
+id: NCN
+name: National Science Centre (Poland)
+identifiers:
+- scheme: CrossrefFunderID
+  identifier: http://dx.doi.org/10.13039/501100004281
+- scheme: ROR
+  identifier: https://ror.org/03ha2q922
+country: PL
+---
+id: NSC-Taiwan
+name: National Science Council of Taiwan
+identifiers:
+- scheme: CrossrefFunderID
+  identifier: http://dx.doi.org/10.13039/501100001868
+country: TW
+---
+id: VEGA
+name: Scientific Grant Agency
+identifiers:
+- scheme: CrossrefFunderID
+  identifier: http://dx.doi.org/10.13039/501100006109
+country: SK
+---
+id: SNSF
+name: Swiss National Science Foundation
+identifiers:
+- scheme: CrossrefFunderID
+  identifier: http://dx.doi.org/10.13039/501100001711
+- scheme: ROR
+  identifier: https://ror.org/00yjd3n13
+country: CH
+---
+id: FWF
+name: Austrian Science Fund
+identifiers:
+- scheme: CrossrefFunderID
+  identifier: http://dx.doi.org/10.13039/501100002428
+- scheme: ROR
+  identifier: https://ror.org/013tf3c58
+country: AT
+---
+id: UPCE
+name: University of Pardubice
+identifiers:
+- scheme: ROR
+  identifier: https://ror.org/01chzd453
+---
+id: APVV
+name: Slovak Research and Development Agency
+identifiers:
+- scheme: ROR
+  identifier: https://ror.org/037nx0e70
+country: SK
+---
+id: MU
+name: Masaryk University
+identifiers:
+- scheme: ROR
+  identifier: https://ror.org/02j46qs45
+---
+id: NAZV
+name: National Agency for Agricultural Research
+identifiers:
+- scheme: ROR
+  identifier: https://ror.org/051rtqg79
