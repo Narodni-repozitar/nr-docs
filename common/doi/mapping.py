@@ -15,27 +15,27 @@ class DataCiteMappingNRDocs(DataCiteMappingBase):
             errors["metadata.creators"] = [missing_data_message]
         else:
             for i, creator in enumerate(data["creators"]):
-                if "fullName" not in creator:
-                    errors[f"metadata.creators.{i}.fullName"] = [missing_data_message]
-                if "authorityIdentifiers" in creator:
-                    for j, id in enumerate(creator["authorityIdentifiers"]):
+                if "name" not in creator["person_or_org"]:
+                    errors[f"metadata.creators.{i}.person_or_org.name"] = [missing_data_message]
+                if "identifiers" in creator["person_or_org"]:
+                    for j, id in enumerate(creator["person_or_org"]["identifiers"]):
                         if "scheme" not in id:
                             errors[
-                                f"metadata.creators.{i}.authorityIdentifiers.{j}.scheme"
+                                f"metadata.creators.{i}.person_or_org.name.identifiers.{j}.scheme"
                             ] = [missing_data_message]
         if "publishers" not in data:
             errors["metadata.publishers"] = [missing_data_message]
         if "contributors" in data:
             for i, contributor in enumerate(data["contributors"]):
-                if "fullName" not in contributor:
-                    errors[f"metadata.contributors.{i}.fullName"] = [
+                if "name" not in contributor["person_or_org"]:
+                    errors[f"metadata.contributors.person_or_org.{i}.name"] = [
                         missing_data_message
                     ]
-                if "authorityIdentifiers" in contributor:
-                    for j, id in enumerate(contributor["authorityIdentifiers"]):
+                if "identifiers" in contributor["person_or_org"]:
+                    for j, id in enumerate(contributor["person_or_org"]["identifiers"]):
                         if "scheme" not in id:
                             errors[
-                                f"metadata.contributors.{i}.authorityIdentifiers.{j}.scheme"
+                                f"metadata.contributors.{i}.person_or_org.identifiers.{j}.scheme"
                             ] = [missing_data_message]
         if "title" not in data:
             errors["metadata.title"] = [missing_data_message]
@@ -43,12 +43,6 @@ class DataCiteMappingNRDocs(DataCiteMappingBase):
             errors["metadata.resourceType"] = [missing_data_message]
         if "dateIssued" not in data:
             errors["metadata.dateIssued"] = [missing_data_message]
-        if "fundingReferences" in data:
-            for i, fund in enumerate(data["fundingReferences"]):
-                if "projectName" not in fund:
-                    errors[f"metadata.fundingReferences.{i}.projectName"] = [
-                        missing_data_message
-                    ]
         if "relatedItems" in data:
             for i, item in enumerate(data["relatedItems"]):
                 if "itemTitle" not in item:
@@ -130,8 +124,8 @@ class DataCiteMappingNRDocs(DataCiteMappingBase):
             if len(dc_descriptions) > 0:
                 payload["descriptions"] = dc_descriptions
 
-        if "fundingReferences" in metadata:
-            payload["FundingReference"] = funder(metadata)
+        if "funders" in metadata:
+            payload["fundingReferences"] = funder(metadata)
 
         if "relatedItems" in metadata:
             payload["relatedItems"], payload["relatedIdentifiers"] = related_items(
@@ -199,23 +193,23 @@ def creatibutor(data, type):
     datacite_creatibutors = []
     for creatibutor in creatibutor_def:
         datacite_creatibutor = {}
-        if "fullName" in creatibutor:  # required
-            datacite_creatibutor["name"] = creatibutor["fullName"]
-        if "nameType" in creatibutor:
-            datacite_creatibutor["nameType"] = creatibutor["nameType"]
-        if "contributorType" in creatibutor:
+        if "name" in creatibutor["person_or_org"]:  # required
+            datacite_creatibutor["name"] = creatibutor["person_or_org"]["name"]
+        if "type" in creatibutor["person_or_org"]:
+            datacite_creatibutor["nameType"] = creatibutor["person_or_org"]["type"]
+        if "role" in creatibutor:
             voc = vocabulary_service.read(
                 system_identity,
-                ("contributor-types", creatibutor["contributorType"]["id"]),
+                ("contributor-types", creatibutor["role"]["id"]),
             )
             if "dataCiteCode" in voc.data["props"]:
                 contr_type = voc.data["props"]["dataCiteCode"]
             else:
                 contr_type = "Other"
             datacite_creatibutor["contributorType"] = contr_type
-        if "authorityIdentifiers" in creatibutor:
+        if "identifiers" in creatibutor["person_or_org"]:
             creatibutors_ids = []
-            for id in creatibutor["authorityIdentifiers"]:
+            for id in creatibutor["person_or_org"]["identifiers"]:
                 creatibutor_id = {}
                 if "scheme" in id:  # required
                     creatibutor_id["nameIdentifierScheme"] = id["scheme"]
@@ -230,12 +224,25 @@ def creatibutor(data, type):
 
 
 def funder(data):
-    funders_def = data["fundingReferences"]
+    funders_def = data["funders"]
     dc_funders = []
     for f in funders_def:
         dc_funder = {}
         if "funder" in f:
-            dc_funder["funderName"] = f["funder"]
+            voc = vocabulary_service.read(
+                system_identity,
+                ("funders", f["funder"]["id"]),
+            )
+            if "name" in voc.data:
+
+                dc_funder["funderName"] = voc.data["name"]
+
+        if "award" in f:
+            if "title" in f["award"]:
+                value = next(iter(f["award"]["title"].values()))
+                dc_funder["awardTitle"] = value
+            if "number" in f["award"]:
+                dc_funder["awardNumber"] = f["award"]["number"]
         dc_funders.append(dc_funder)
     return dc_funders
 
