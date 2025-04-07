@@ -18,6 +18,9 @@
   label.helptext::after {
     content: "" !important;
   }
+  .compact-label {
+    font-size: 1rem;
+  }
   .invenio-group-field.fields {
     background-color: @arrayFieldColor;
     margin: 0 0 1rem 0;
