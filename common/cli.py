@@ -115,10 +115,8 @@ def create_users(file_path):
                 )
                 db.session.add(u)
                 db.session.commit()
-                user_id = u.id
-            else:
-                user_id = u.id
 
+            user_id = u.id
             for community in communities:
                 slug = community["slug"]
                 role = community["role"]
