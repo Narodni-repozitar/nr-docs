@@ -15,10 +15,8 @@ funders:
   writer: service
 - source: ./funders_v3.4.2.yaml
 awards:
-- service: awards
-  writer: service
+- writer: awards
 - source: ./awards.yaml
 names:
-- service: names
-  writer: service
+- writer: names
 - source: ./names.yaml
