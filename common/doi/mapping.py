@@ -196,7 +196,7 @@ def creatibutor(data, type):
         if "name" in creatibutor["person_or_org"]:  # required
             datacite_creatibutor["name"] = creatibutor["person_or_org"]["name"]
         if "type" in creatibutor["person_or_org"]:
-            datacite_creatibutor["nameType"] = creatibutor["person_or_org"]["type"]
+            datacite_creatibutor["nameType"] = creatibutor["person_or_org"]["type"].capitalize()
         if "role" in creatibutor:
             voc = vocabulary_service.read(
                 system_identity,
