@@ -4,7 +4,7 @@ from flask_resources.serializers import JSONSerializer
 
 from common.services.filtered_json_ui_serializer import FilteredUIJSONSerializer
 from documents.services.records.ui_schema import DocumentsUISchema
-
+from invenio_rdm_records.resources.serializers import DublinCoreXMLSerializer
 
 class DocumentsUIJSONSerializer(FilteredUIJSONSerializer):
     """UI JSON serializer."""
@@ -17,3 +17,6 @@ class DocumentsUIJSONSerializer(FilteredUIJSONSerializer):
             list_schema_cls=BaseListSchema,
             schema_context={"object_key": "ui", "identity": g.identity},
         )
+
+class DocumentsDublinCoreXMLSerializer(DublinCoreXMLSerializer):
+    """"""
