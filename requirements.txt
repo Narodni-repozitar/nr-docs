@@ -19,13 +19,13 @@ oarepo-communities==5.1.12
 oarepo-dashboard==1.0.20
 oarepo-doi==1.0.19
 oarepo-glitchtip==1.0.1
-oarepo-global-search==1.0.42
+oarepo-global-search==1.0.43
 oarepo-oai-pmh-harvester==4.1.10
 oarepo-oidc-einfra==1.0.4
 oarepo-published-service==1.0.3
 oarepo-rdm==0.5.2
 oarepo-requests==2.4.0
-oarepo-runtime==1.5.116
+oarepo-runtime==1.5.117
 oarepo-ui==5.2.61
 oarepo-vocabularies==2.1.23
 oarepo-workflows==1.1.13

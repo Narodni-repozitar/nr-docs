@@ -17,9 +17,9 @@ i.access-status {
     background-image: url("~@less/images/closed_access.svg");
   }
   &.metadata-only {
-    background-image: url("~@less/images/partially_closed_access.svg");
+    background-image: url("~@less/images/partially_closed_access_grey.svg");
   }
   &.embargoed {
-    background-image: url("~@less/images/partially_closed_access_grey.svg");
+    background-image: url("~@less/images/partially_closed_access.svg");
   }
 }
