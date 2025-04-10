@@ -61,6 +61,7 @@ class DocumentsServiceConfig(
     record_cls = DocumentsRecord
 
     service_id = "documents"
+    indexer_queue_name = "documents"
 
     search_item_links_template = LinksTemplate
     draft_cls = DocumentsDraft
@@ -84,7 +85,8 @@ class DocumentsServiceConfig(
 
     @property
     def links_item(self):
-        return {
+        links = {
+            **super().links_item,
             "applicable-requests": ConditionalLink(
                 cond=is_published_record(),
                 if_=RecordLink("{+api}/docs/{id}/requests/applicable"),
@@ -148,10 +150,12 @@ class DocumentsServiceConfig(
                 "{+api}/docs/{id}/versions", when=has_permission("search_versions")
             ),
         }
+        return {k: v for k, v in links.items() if v is not None}
 
     @property
     def links_search_item(self):
-        return {
+        links = {
+            **super().links_search_item,
             "self": ConditionalLink(
                 cond=is_published_record(),
                 if_=RecordLink("{+api}/docs/{id}", when=has_permission("read")),
@@ -167,23 +171,30 @@ class DocumentsServiceConfig(
                 ),
             ),
         }
+        return {k: v for k, v in links.items() if v is not None}
 
     @property
     def links_search(self):
-        return {
+        links = {
+            **super().links_search,
             **pagination_links("{+api}/docs/{?args*}"),
             **pagination_links_html("{+ui}/docs/{?args*}"),
         }
+        return {k: v for k, v in links.items() if v is not None}
 
     @property
     def links_search_drafts(self):
-        return {
+        links = {
+            **super().links_search_drafts,
             **pagination_links("{+api}/user/docs/{?args*}"),
             **pagination_links_html("{+ui}/user/docs/{?args*}"),
         }
+        return {k: v for k, v in links.items() if v is not None}
 
     @property
     def links_search_versions(self):
-        return {
+        links = {
+            **super().links_search_versions,
             **pagination_links("{+api}/docs/{id}/versions{?args*}"),
         }
+        return {k: v for k, v in links.items() if v is not None}

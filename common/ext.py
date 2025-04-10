@@ -8,6 +8,7 @@ from oarepo_oaipmh_harvester import cli  # noqa
 from oarepo_oaipmh_harvester.harvester import harvest
 from oarepo_oaipmh_harvester.oai_harvester.records.api import OaiHarvesterRecord
 from oarepo_runtime.datastreams.datastreams import Signature, SignatureKind
+from flask_babel import lazy_gettext as _
 
 from . import (
     config,
@@ -25,6 +26,18 @@ class OaiS3HarvesterExt(object):
 
     def init_app(self, app):
         """Flask application initialization."""
+        from invenio_rdm_records.records.systemfields.access.field.record import (
+            AccessStatusEnum,
+        )
+
+        from documents.services.records.facets import access_status
+
+        access_status._value_labels = {
+            AccessStatusEnum.OPEN.value: _("access.status.open"),
+            AccessStatusEnum.EMBARGOED.value: _("access.status.embargoed"),
+            AccessStatusEnum.RESTRICTED.value: _("access.status.restricted"),
+            AccessStatusEnum.METADATA_ONLY.value: _("access.status.metadata-only"),
+        }
         self.app = app
         app.extensions["oai_s3_harvester"] = self
         self.load_config(app)

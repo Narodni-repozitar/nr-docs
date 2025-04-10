@@ -2,8 +2,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
-"POT-Creation-Date: 2025-04-02T10:14:14.609211\n"
-"PO-Revision-Date: 2025-04-02T10:14:14.609212\n"
+"POT-Creation-Date: 2025-04-10T08:42:10.490590\n"
+"PO-Revision-Date: 2025-04-10T08:42:10.490591\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -731,10 +731,10 @@ msgstr ""
 msgid "metadata/funders.hint"
 msgstr ""
 
-msgid "metadata/funders/award.help"
-msgstr ""
-
 msgid "metadata/funders/award.label"
+msgstr "Award number"
+
+msgid "metadata/funders/award.help"
 msgstr ""
 
 msgid "metadata/funders/award.hint"
@@ -749,6 +749,15 @@ msgstr ""
 msgid "metadata/funders/award/title.hint"
 msgstr ""
 
+msgid "metadata/funders/award/id.help"
+msgstr ""
+
+msgid "metadata/funders/award/id.label"
+msgstr ""
+
+msgid "metadata/funders/award/id.hint"
+msgstr ""
+
 msgid "metadata/funders/award/number.help"
 msgstr ""
 
@@ -756,6 +765,24 @@ msgid "metadata/funders/award/number.label"
 msgstr ""
 
 msgid "metadata/funders/award/number.hint"
+msgstr ""
+
+msgid "metadata/funders/award/program.help"
+msgstr ""
+
+msgid "metadata/funders/award/program.label"
+msgstr ""
+
+msgid "metadata/funders/award/program.hint"
+msgstr ""
+
+msgid "metadata/funders/award/acronym.help"
+msgstr ""
+
+msgid "metadata/funders/award/acronym.label"
+msgstr ""
+
+msgid "metadata/funders/award/acronym.hint"
 msgstr ""
 
 msgid "metadata/funders/award/identifiers.help"
@@ -776,31 +803,13 @@ msgstr ""
 msgid "metadata/funders/award/identifiers/identifier.hint"
 msgstr ""
 
-msgid "metadata/funders/award/identifiers/schema.help"
+msgid "metadata/funders/award/identifiers/scheme.help"
 msgstr ""
 
-msgid "metadata/funders/award/identifiers/schema.label"
+msgid "metadata/funders/award/identifiers/scheme.label"
 msgstr ""
 
-msgid "metadata/funders/award/identifiers/schema.hint"
-msgstr ""
-
-msgid "metadata/funders/award/acronym.help"
-msgstr ""
-
-msgid "metadata/funders/award/acronym.label"
-msgstr ""
-
-msgid "metadata/funders/award/acronym.hint"
-msgstr ""
-
-msgid "metadata/funders/award/program.help"
-msgstr ""
-
-msgid "metadata/funders/award/program.label"
-msgstr ""
-
-msgid "metadata/funders/award/program.hint"
+msgid "metadata/funders/award/identifiers/scheme.hint"
 msgstr ""
 
 msgid "metadata/funders/award/subjects.help"
@@ -885,40 +894,13 @@ msgstr ""
 msgid "metadata/funders/funder.help"
 msgstr ""
 
-msgid "metadata/funders/funder/identifiers.help"
+msgid "metadata/funders/funder/id.help"
 msgstr ""
 
-msgid "metadata/funders/funder/identifiers.label"
+msgid "metadata/funders/funder/id.label"
 msgstr ""
 
-msgid "metadata/funders/funder/identifiers.hint"
-msgstr ""
-
-msgid "metadata/funders/funder/identifiers/identifier.help"
-msgstr ""
-
-msgid "metadata/funders/funder/identifiers/identifier.label"
-msgstr ""
-
-msgid "metadata/funders/funder/identifiers/identifier.hint"
-msgstr ""
-
-msgid "metadata/funders/funder/identifiers/schema.help"
-msgstr ""
-
-msgid "metadata/funders/funder/identifiers/schema.label"
-msgstr ""
-
-msgid "metadata/funders/funder/identifiers/schema.hint"
-msgstr ""
-
-msgid "metadata/funders/funder/name.help"
-msgstr ""
-
-msgid "metadata/funders/funder/name.label"
-msgstr ""
-
-msgid "metadata/funders/funder/name.hint"
+msgid "metadata/funders/funder/id.hint"
 msgstr ""
 
 msgid "metadata/funders/funder/@v.help"
@@ -928,6 +910,15 @@ msgid "metadata/funders/funder/@v.label"
 msgstr ""
 
 msgid "metadata/funders/funder/@v.hint"
+msgstr ""
+
+msgid "metadata/funders/funder/name.help"
+msgstr ""
+
+msgid "metadata/funders/funder/name.label"
+msgstr ""
+
+msgid "metadata/funders/funder/name.hint"
 msgstr ""
 
 msgid "metadata/geoLocations.label"

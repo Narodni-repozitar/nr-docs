@@ -12,21 +12,27 @@ class DocumentsSearchOptions(I18nRDMSearchOptions):
 
     facet_groups = {
         "curator": {
-            "syntheticFields_people": facets.syntheticFields_people,
+            "access_status": facets.access_status,
             "syntheticFields_year": facets.syntheticFields_year,
-            "metadata_rights": facets.metadata_rights,
-            "metadata_resourceType": facets.metadata_resourceType,
             "metadata_languages": facets.metadata_languages,
+            "metadata_resourceType": facets.metadata_resourceType,
+            "metadata_rights": facets.metadata_rights,
             "syntheticFields_organizations": facets.syntheticFields_organizations,
+            "syntheticFields_people": facets.syntheticFields_people,
+            "metadata_funders_funder": facets.metadata_funders_funder,
+            "metadata_funders_award": facets.metadata_funders_award,
             **getattr(I18nRDMSearchOptions, "facet_groups", {}).get("curator", {}),
         },
         "default": {
-            "syntheticFields_people": facets.syntheticFields_people,
+            "access_status": facets.access_status,
             "syntheticFields_year": facets.syntheticFields_year,
-            "metadata_rights": facets.metadata_rights,
-            "metadata_resourceType": facets.metadata_resourceType,
             "metadata_languages": facets.metadata_languages,
+            "metadata_resourceType": facets.metadata_resourceType,
+            "metadata_rights": facets.metadata_rights,
             "syntheticFields_organizations": facets.syntheticFields_organizations,
+            "syntheticFields_people": facets.syntheticFields_people,
+            "metadata_funders_funder": facets.metadata_funders_funder,
+            "metadata_funders_award": facets.metadata_funders_award,
             **getattr(I18nRDMSearchOptions, "facet_groups", {}).get("default", {}),
         },
     }
