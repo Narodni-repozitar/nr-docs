@@ -14,6 +14,20 @@ from oarepo_runtime.services.schema.marshmallow import DictOnlySchema
 from oarepo_runtime.services.schema.validation import validate_datetime
 from oarepo_workflows.services.records.schema import RDMWorkflowParentSchema
 
+from nr_metadata.common.services.records.schema_datatypes import (
+    NRLanguageVocabularySchema,
+)
+
+
+# TODO: fix model builder to include required languages. Until then
+# please keep the overriden code here
+class LocalNRDocumentMetadataSchema(NRDocumentMetadataSchema):
+    languages = ma_fields.List(
+        ma_fields.Nested(lambda: NRLanguageVocabularySchema()),
+        required=True,
+        validate=[ma.validate.Length(min=1)],
+    )
+
 
 class GeneratedParentSchema(RDMWorkflowParentSchema):
     """"""
@@ -29,7 +43,9 @@ class DocumentsSchema(NRDocumentRecordSchema):
 
     access = NestedAttribute(lambda: AccessSchema())
 
-    metadata = ma_fields.Nested(lambda: NRDocumentMetadataSchema())
+    # TODO: fix model builder to include required languages. Until then
+    # please keep the overriden code here
+    metadata = ma_fields.Nested(lambda: LocalNRDocumentMetadataSchema())
 
     oai = ma_fields.Nested(lambda: OaiSchema())
 
