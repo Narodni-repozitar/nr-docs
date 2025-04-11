@@ -78,6 +78,22 @@ class DocumentsExt:
 
         identity_loaded.connect_via(app)(self.load_action_permissions)
 
+    def init_app_callback_facets_i18n(self, app):
+        """Patch i18n in facets"""
+        from invenio_i18n import lazy_gettext as _
+        from invenio_rdm_records.records.systemfields.access.field.record import (
+            AccessStatusEnum,
+        )
+
+        from documents.services.records.facets import access_status
+
+        access_status._value_labels = {
+            AccessStatusEnum.OPEN.value: _("access.status.open"),
+            AccessStatusEnum.EMBARGOED.value: _("access.status.embargoed"),
+            AccessStatusEnum.RESTRICTED.value: _("access.status.restricted"),
+            AccessStatusEnum.METADATA_ONLY.value: _("access.status.metadata-only"),
+        }
+
     @cached_property
     def service_records(self):
         service_config = config.DOCUMENTS_RECORD_SERVICE_CONFIG
@@ -136,14 +152,21 @@ class DocumentsExt:
     def init_app_callback_rdm_models(self, app):
         rdm_model_config = {
             "service_id": "documents",
+            # deprecated
             "model_service": "documents.services.records.service.DocumentsService",
+            # deprecated
             "service_config": (
                 "documents.services.records.config.DocumentsServiceConfig"
             ),
-            "ui_resource_config": "ui.documents.DocumentsUIResourceConfig",
+            "api_service": "documents.services.records.service.DocumentsService",
+            "api_service_config": (
+                "documents.services.records.config.DocumentsServiceConfig"
+            ),
+            "api_resource": "documents.resources.records.resource.DocumentsResource",
             "api_resource_config": (
                 "documents.resources.records.config.DocumentsResourceConfig"
             ),
+            "ui_resource_config": "ui.documents.DocumentsUIResourceConfig",
         }
 
         app.config.setdefault("GLOBAL_SEARCH_MODELS", [])

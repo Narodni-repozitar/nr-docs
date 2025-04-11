@@ -1,6 +1,9 @@
 import importlib_metadata
-from flask_resources import ResponseHandler
+from flask_resources.serializers.json import JSONSerializer
 from invenio_records_resources.resources import FileResourceConfig
+from invenio_records_resources.resources.records.headers import etag_headers
+from oarepo_runtime.i18n import lazy_gettext as _
+from oarepo_runtime.resources.responses import ExportableResponseHandler
 
 from documents.resources.files.ui import (
     DocumentsFileDraftUIJSONSerializer,
@@ -22,10 +25,17 @@ class DocumentsFileResourceConfig(FileResourceConfig):
         ):
             entrypoint_response_handlers.update(x.load())
         return {
-            "application/vnd.inveniordm.v1+json": ResponseHandler(
-                DocumentsFileUIJSONSerializer()
+            "application/json": ExportableResponseHandler(
+                export_code="json",
+                name=_("Native JSON"),
+                serializer=JSONSerializer(),
+                headers=etag_headers,
             ),
-            **super().response_handlers,
+            "application/vnd.inveniordm.v1+json": ExportableResponseHandler(
+                export_code="ui_json",
+                name=_("Native UI JSON"),
+                serializer=DocumentsFileUIJSONSerializer(),
+            ),
             **entrypoint_response_handlers,
         }
 
@@ -65,10 +75,17 @@ class DocumentsFileDraftResourceConfig(FileResourceConfig):
         ):
             entrypoint_response_handlers.update(x.load())
         return {
-            "application/vnd.inveniordm.v1+json": ResponseHandler(
-                DocumentsFileDraftUIJSONSerializer()
+            "application/json": ExportableResponseHandler(
+                export_code="json",
+                name=_("Native JSON"),
+                serializer=JSONSerializer(),
+                headers=etag_headers,
             ),
-            **super().response_handlers,
+            "application/vnd.inveniordm.v1+json": ExportableResponseHandler(
+                export_code="ui_json",
+                name=_("Native UI JSON"),
+                serializer=DocumentsFileDraftUIJSONSerializer(),
+            ),
             **entrypoint_response_handlers,
         }
 

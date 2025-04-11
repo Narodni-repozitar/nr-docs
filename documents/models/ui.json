@@ -744,49 +744,19 @@
                                         "label": "metadata/funders/award/title.label",
                                         "hint": "metadata/funders/award/title.hint"
                                     },
-                                    "number": {
+                                    "id": {
                                         "detail": "keyword",
                                         "input": "keyword",
+                                        "help": "metadata/funders/award/id.help",
+                                        "label": "metadata/funders/award/id.label",
+                                        "hint": "metadata/funders/award/id.hint"
+                                    },
+                                    "number": {
+                                        "detail": "fulltext",
+                                        "input": "fulltext",
                                         "help": "metadata/funders/award/number.help",
                                         "label": "metadata/funders/award/number.label",
                                         "hint": "metadata/funders/award/number.hint"
-                                    },
-                                    "identifiers": {
-                                        "detail": "array",
-                                        "input": "array",
-                                        "help": "metadata/funders/award/identifiers.help",
-                                        "label": "metadata/funders/award/identifiers.label",
-                                        "hint": "metadata/funders/award/identifiers.hint",
-                                        "child": {
-                                            "detail": "identifier",
-                                            "input": "identifier",
-                                            "help": "metadata/funders/award/identifiers.help",
-                                            "label": "metadata/funders/award/identifiers.label",
-                                            "hint": "metadata/funders/award/identifiers.hint",
-                                            "children": {
-                                                "identifier": {
-                                                    "detail": "keyword",
-                                                    "input": "keyword",
-                                                    "help": "metadata/funders/award/identifiers/identifier.help",
-                                                    "label": "metadata/funders/award/identifiers/identifier.label",
-                                                    "hint": "metadata/funders/award/identifiers/identifier.hint"
-                                                },
-                                                "schema": {
-                                                    "detail": "keyword",
-                                                    "input": "keyword",
-                                                    "help": "metadata/funders/award/identifiers/schema.help",
-                                                    "label": "metadata/funders/award/identifiers/schema.label",
-                                                    "hint": "metadata/funders/award/identifiers/schema.hint"
-                                                }
-                                            }
-                                        }
-                                    },
-                                    "acronym": {
-                                        "detail": "keyword",
-                                        "input": "keyword",
-                                        "help": "metadata/funders/award/acronym.help",
-                                        "label": "metadata/funders/award/acronym.label",
-                                        "hint": "metadata/funders/award/acronym.hint"
                                     },
                                     "program": {
                                         "detail": "keyword",
@@ -794,6 +764,36 @@
                                         "help": "metadata/funders/award/program.help",
                                         "label": "metadata/funders/award/program.label",
                                         "hint": "metadata/funders/award/program.hint"
+                                    },
+                                    "acronym": {
+                                        "detail": "fulltext+keyword",
+                                        "input": "fulltext+keyword",
+                                        "help": "metadata/funders/award/acronym.help",
+                                        "label": "metadata/funders/award/acronym.label",
+                                        "hint": "metadata/funders/award/acronym.hint"
+                                    },
+                                    "identifiers": {
+                                        "detail": "identifier",
+                                        "input": "identifier",
+                                        "help": "metadata/funders/award/identifiers.help",
+                                        "label": "metadata/funders/award/identifiers.label",
+                                        "hint": "metadata/funders/award/identifiers.hint",
+                                        "children": {
+                                            "identifier": {
+                                                "detail": "keyword",
+                                                "input": "keyword",
+                                                "help": "metadata/funders/award/identifiers/identifier.help",
+                                                "label": "metadata/funders/award/identifiers/identifier.label",
+                                                "hint": "metadata/funders/award/identifiers/identifier.hint"
+                                            },
+                                            "scheme": {
+                                                "detail": "keyword",
+                                                "input": "keyword",
+                                                "help": "metadata/funders/award/identifiers/scheme.help",
+                                                "label": "metadata/funders/award/identifiers/scheme.label",
+                                                "hint": "metadata/funders/award/identifiers/scheme.hint"
+                                            }
+                                        }
                                     },
                                     "subjects": {
                                         "detail": "array",
@@ -826,39 +826,32 @@
                                         }
                                     },
                                     "organizations": {
-                                        "detail": "array",
-                                        "input": "array",
+                                        "detail": "organization",
+                                        "input": "organization",
                                         "help": "metadata/funders/award/organizations.help",
                                         "label": "metadata/funders/award/organizations.label",
                                         "hint": "metadata/funders/award/organizations.hint",
-                                        "child": {
-                                            "detail": "organization",
-                                            "input": "organization",
-                                            "help": "metadata/funders/award/organizations.help",
-                                            "label": "metadata/funders/award/organizations.label",
-                                            "hint": "metadata/funders/award/organizations.hint",
-                                            "children": {
-                                                "id": {
-                                                    "detail": "keyword",
-                                                    "input": "keyword",
-                                                    "help": "metadata/funders/award/organizations/id.help",
-                                                    "label": "metadata/funders/award/organizations/id.label",
-                                                    "hint": "metadata/funders/award/organizations/id.hint"
-                                                },
-                                                "organization": {
-                                                    "detail": "keyword",
-                                                    "input": "keyword",
-                                                    "help": "metadata/funders/award/organizations/organization.help",
-                                                    "label": "metadata/funders/award/organizations/organization.label",
-                                                    "hint": "metadata/funders/award/organizations/organization.hint"
-                                                },
-                                                "scheme": {
-                                                    "detail": "keyword",
-                                                    "input": "keyword",
-                                                    "help": "metadata/funders/award/organizations/scheme.help",
-                                                    "label": "metadata/funders/award/organizations/scheme.label",
-                                                    "hint": "metadata/funders/award/organizations/scheme.hint"
-                                                }
+                                        "children": {
+                                            "id": {
+                                                "detail": "keyword",
+                                                "input": "keyword",
+                                                "help": "metadata/funders/award/organizations/id.help",
+                                                "label": "metadata/funders/award/organizations/id.label",
+                                                "hint": "metadata/funders/award/organizations/id.hint"
+                                            },
+                                            "organization": {
+                                                "detail": "keyword",
+                                                "input": "keyword",
+                                                "help": "metadata/funders/award/organizations/organization.help",
+                                                "label": "metadata/funders/award/organizations/organization.label",
+                                                "hint": "metadata/funders/award/organizations/organization.hint"
+                                            },
+                                            "scheme": {
+                                                "detail": "keyword",
+                                                "input": "keyword",
+                                                "help": "metadata/funders/award/organizations/scheme.help",
+                                                "label": "metadata/funders/award/organizations/scheme.label",
+                                                "hint": "metadata/funders/award/organizations/scheme.hint"
                                             }
                                         }
                                     },
@@ -880,42 +873,12 @@
                                 "hint": "metadata/funders/funder.hint",
                                 "facet": "metadata_funders_funder",
                                 "children": {
-                                    "identifiers": {
-                                        "detail": "array",
-                                        "input": "array",
-                                        "help": "metadata/funders/funder/identifiers.help",
-                                        "label": "metadata/funders/funder/identifiers.label",
-                                        "hint": "metadata/funders/funder/identifiers.hint",
-                                        "child": {
-                                            "detail": "identifier",
-                                            "input": "identifier",
-                                            "help": "metadata/funders/funder/identifiers.help",
-                                            "label": "metadata/funders/funder/identifiers.label",
-                                            "hint": "metadata/funders/funder/identifiers.hint",
-                                            "children": {
-                                                "identifier": {
-                                                    "detail": "keyword",
-                                                    "input": "keyword",
-                                                    "help": "metadata/funders/funder/identifiers/identifier.help",
-                                                    "label": "metadata/funders/funder/identifiers/identifier.label",
-                                                    "hint": "metadata/funders/funder/identifiers/identifier.hint"
-                                                },
-                                                "schema": {
-                                                    "detail": "keyword",
-                                                    "input": "keyword",
-                                                    "help": "metadata/funders/funder/identifiers/schema.help",
-                                                    "label": "metadata/funders/funder/identifiers/schema.label",
-                                                    "hint": "metadata/funders/funder/identifiers/schema.hint"
-                                                }
-                                            }
-                                        }
-                                    },
-                                    "name": {
+                                    "id": {
                                         "detail": "keyword",
                                         "input": "keyword",
-                                        "help": "metadata/funders/funder/name.help",
-                                        "label": "metadata/funders/funder/name.label",
-                                        "hint": "metadata/funders/funder/name.hint"
+                                        "help": "metadata/funders/funder/id.help",
+                                        "label": "metadata/funders/funder/id.label",
+                                        "hint": "metadata/funders/funder/id.hint"
                                     },
                                     "@v": {
                                         "detail": "keyword",
@@ -923,6 +886,13 @@
                                         "help": "metadata/funders/funder/@v.help",
                                         "label": "metadata/funders/funder/@v.label",
                                         "hint": "metadata/funders/funder/@v.hint"
+                                    },
+                                    "name": {
+                                        "detail": "fulltext",
+                                        "input": "fulltext",
+                                        "help": "metadata/funders/funder/name.help",
+                                        "label": "metadata/funders/funder/name.label",
+                                        "hint": "metadata/funders/funder/name.hint"
                                     }
                                 }
                             }

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2025-04-04 09:14+0200\n"
+"POT-Creation-Date: 2025-04-10 08:43+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,6 +16,22 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.16.0\n"
+
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/common/ext.py:36
+msgid "access.status.open"
+msgstr ""
+
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/common/ext.py:37
+msgid "access.status.embargoed"
+msgstr ""
+
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/common/ext.py:38
+msgid "access.status.restricted"
+msgstr ""
+
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/common/ext.py:39
+msgid "access.status.metadata-only"
+msgstr ""
 
 #: /home/dusanst/Projects/new_nr_docs/nr-docs/common/just_for_translations.py:5
 msgid "Submitted"
@@ -60,34 +76,46 @@ msgid ""
 "{allowed_extensions}"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/common/workflows/default.py:412
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/common/workflows/default.py:433
 #: /home/dusanst/Projects/new_nr_docs/nr-docs/common/workflows/generic_community.py:297
 #: /home/dusanst/Projects/new_nr_docs/nr-docs/common/workflows/restricted.py:274
 msgid "state:draft"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/common/workflows/default.py:413
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/common/workflows/default.py:434
 #: /home/dusanst/Projects/new_nr_docs/nr-docs/common/workflows/generic_community.py:298
 #: /home/dusanst/Projects/new_nr_docs/nr-docs/common/workflows/restricted.py:275
 msgid "state:published"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/common/workflows/default.py:414
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/common/workflows/default.py:435
 #: /home/dusanst/Projects/new_nr_docs/nr-docs/common/workflows/generic_community.py:299
 #: /home/dusanst/Projects/new_nr_docs/nr-docs/common/workflows/restricted.py:276
 msgid "state:submitted"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/common/workflows/default.py:415
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/common/workflows/default.py:436
 #: /home/dusanst/Projects/new_nr_docs/nr-docs/common/workflows/generic_community.py:300
 #: /home/dusanst/Projects/new_nr_docs/nr-docs/common/workflows/restricted.py:277
 msgid "state:retracting"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/common/workflows/default.py:416
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/common/workflows/default.py:437
 #: /home/dusanst/Projects/new_nr_docs/nr-docs/common/workflows/generic_community.py:301
 #: /home/dusanst/Projects/new_nr_docs/nr-docs/common/workflows/restricted.py:278
 msgid "state:deleted"
+msgstr ""
+
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/resources/files/config.py:30
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/resources/files/config.py:80
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/resources/records/config.py:27
+msgid "Native JSON"
+msgstr ""
+
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/resources/files/config.py:36
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/resources/files/config.py:86
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/resources/records/config.py:33
+msgid "Native UI JSON"
 msgstr ""
 
 #: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:15
@@ -755,9 +783,6 @@ msgid "Creators"
 msgstr ""
 
 msgid "Document description"
-msgstr ""
-
-msgid "Description"
 msgstr ""
 
 msgid "Add note"
