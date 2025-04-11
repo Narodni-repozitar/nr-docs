@@ -52,8 +52,29 @@ from oarepo_workflows import (
     WorkflowTransitions,
 )
 
+from invenio_access import action_factory
+from invenio_access.permissions import Permission
+from invenio_records_permissions.generators import Generator
+
+
+direct_publish_action = action_factory("administration-direct-publish")
+permission = Permission(direct_publish_action)
+
+
+class DirectPublishAction(Generator):
+    def __init__(self):
+        super(DirectPublishAction, self).__init__()
+
+    def needs(self, **kwargs):
+        return [direct_publish_action]
+
 
 class DefaultWorkflowPermissions(CommunityDefaultWorkflowPermissions):
+    can_publish = [
+        *CommunityDefaultWorkflowPermissions.can_publish,
+        DirectPublishAction(),
+    ]
+
     can_create = [
         PrimaryCommunityRole("submitter"),
         PrimaryCommunityRole("owner"),
