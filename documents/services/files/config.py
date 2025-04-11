@@ -36,6 +36,7 @@ class DocumentsFileServiceConfig(PermissionsPresetsConfigMixin, FileServiceConfi
     record_cls = DocumentsRecord
 
     service_id = "documents_file"
+    indexer_queue_name = "documents_file"
 
     search_item_links_template = LinksTemplate
     allowed_mimetypes = []
@@ -52,15 +53,26 @@ class DocumentsFileServiceConfig(PermissionsPresetsConfigMixin, FileServiceConfi
 
     @property
     def file_links_list(self):
-        return {
+        try:
+            supercls_links = super().file_links_list
+        except AttributeError:  # if they aren't defined in the superclass
+            supercls_links = {}
+        links = {
+            **supercls_links,
             "self": RecordLink(
                 "{+api}/docs/{id}/files", when=has_permission_file_service("list_files")
             ),
         }
+        return {k: v for k, v in links.items() if v is not None}
 
     @property
     def file_links_item(self):
-        return {
+        try:
+            supercls_links = super().file_links_item
+        except AttributeError:  # if they aren't defined in the superclass
+            supercls_links = {}
+        links = {
+            **supercls_links,
             "commit": FileLink(
                 "{+api}/docs/{id}/files/{key}/commit",
                 when=has_permission_file_service("commit_files"),
@@ -75,6 +87,7 @@ class DocumentsFileServiceConfig(PermissionsPresetsConfigMixin, FileServiceConfi
                 when=has_permission_file_service("read_files"),
             ),
         }
+        return {k: v for k, v in links.items() if v is not None}
 
 
 class DocumentsFileDraftServiceConfig(PermissionsPresetsConfigMixin, FileServiceConfig):
@@ -89,6 +102,7 @@ class DocumentsFileDraftServiceConfig(PermissionsPresetsConfigMixin, FileService
     record_cls = DocumentsDraft
 
     service_id = "documents_file_draft"
+    indexer_queue_name = "documents_file_draft"
 
     search_item_links_template = LinksTemplate
 
@@ -102,15 +116,26 @@ class DocumentsFileDraftServiceConfig(PermissionsPresetsConfigMixin, FileService
 
     @property
     def file_links_list(self):
-        return {
+        try:
+            supercls_links = super().file_links_list
+        except AttributeError:  # if they aren't defined in the superclass
+            supercls_links = {}
+        links = {
+            **supercls_links,
             "self": RecordLink(
                 "{+api}/docs/{id}/draft/files", when=has_file_permission("list_files")
             ),
         }
+        return {k: v for k, v in links.items() if v is not None}
 
     @property
     def file_links_item(self):
-        return {
+        try:
+            supercls_links = super().file_links_item
+        except AttributeError:  # if they aren't defined in the superclass
+            supercls_links = {}
+        links = {
+            **supercls_links,
             "commit": FileLink(
                 "{+api}/docs/{id}/draft/files/{key}/commit",
                 when=has_file_permission("commit_files"),
@@ -125,3 +150,4 @@ class DocumentsFileDraftServiceConfig(PermissionsPresetsConfigMixin, FileService
                 when=has_file_permission("read_files"),
             ),
         }
+        return {k: v for k, v in links.items() if v is not None}
