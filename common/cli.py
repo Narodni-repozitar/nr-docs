@@ -105,14 +105,19 @@ def create_users(file_path):
             u = User.query.filter_by(email=username).first()
 
             if not u:
-                # create the user
-                u = _datastore.create_user(
-                    password=password,
-                    email=username,
-                    active=True,
-                    confirmed_at=datetime.datetime.utcnow(),
-                    user_profile=profile,
-                )
+                user_data = {
+                    "email": username,
+                    "active": True,
+                    "confirmed_at": datetime.datetime.utcnow(),
+                    "user_profile": profile,
+                }
+                from flask_security.utils import hash_password
+
+                # Hash the password before creating the user
+                if password:
+                    user_data["password"] = hash_password(password)
+
+                u = _datastore.create_user(**user_data)
                 db.session.add(u)
                 db.session.commit()
 
