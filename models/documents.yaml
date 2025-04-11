@@ -1,33 +1,33 @@
 plugins:
   builder:
     disable:
-    - script_sample_data
-    - invenio_record_metadata_alembic_setup_cfg
+      - script_sample_data
+      - invenio_record_metadata_alembic_setup_cfg
   packages:
-  - oarepo-model-builder-requests
-  - oarepo-model-builder-drafts
-  - oarepo-model-builder-multilingual
-  - oarepo-model-builder-nr
-  - oarepo-model-builder-relations
-  - oarepo-model-builder-vocabularies
-  - oarepo-model-builder-drafts-files
-  - oarepo-model-builder-ui
-  - oarepo-model-builder-files
-  - oarepo-model-builder-cf
-  - oarepo-model-builder-polymorphic
-  - oarepo-model-builder-communities>=5.0.0
-  - oarepo-model-builder-rdm
+    - oarepo-model-builder-requests
+    - oarepo-model-builder-drafts
+    - oarepo-model-builder-multilingual
+    - oarepo-model-builder-nr
+    - oarepo-model-builder-relations
+    - oarepo-model-builder-vocabularies
+    - oarepo-model-builder-drafts-files
+    - oarepo-model-builder-ui
+    - oarepo-model-builder-files
+    - oarepo-model-builder-cf
+    - oarepo-model-builder-polymorphic
+    - oarepo-model-builder-communities>=5.0.0
+    - oarepo-model-builder-rdm
 profiles:
-- record
-- draft
-- files
-- draft_files
+  - record
+  - draft
+  - files
+  - draft_files
 record:
   extend: nr-documents#DocumentModel
   use:
-  - ./documents-custom_fields.yaml
-  - ./documents-facets.yaml
-  - ./documents-harvest.yaml
+    - ./documents-custom_fields.yaml
+    - ./documents-facets.yaml
+    - ./documents-harvest.yaml
 
   properties:
     state:
@@ -42,11 +42,14 @@ record:
   draft: {}
   draft-files:
     resource:
-      base-classes: [ oarepo_ui.resources.file_resource.S3RedirectFileResource ]
+      base-classes: [oarepo_ui.resources.file_resource.S3RedirectFileResource]
     service-config:
-      components: [ "{{common.services.files.allowed_document_extensions.AllowedDocumentExtensionsComponent}}" ]
+      components:
+        [
+          "{{common.services.files.allowed_document_extensions.AllowedDocumentExtensionsComponent}}",
+        ]
 
-    permissions:  # TODO: should be taken automatically from the record's permissions presets
+    permissions: # TODO: should be taken automatically from the record's permissions presets
       presets:
         - docs
 
@@ -56,20 +59,23 @@ record:
 
   files:
     resource:
-      base-classes: [ oarepo_ui.resources.file_resource.S3RedirectFileResource ]
+      base-classes: [oarepo_ui.resources.file_resource.S3RedirectFileResource]
     resource-config:
       base-html-url: /docs/
     properties:
       use:
-      - ./documents-files.yaml
+        - ./documents-files.yaml
     use:
-    - invenio_files
+      - invenio_files
 
-    permissions:  # TODO: should be taken automatically from the record's permissions presets
+    permissions: # TODO: should be taken automatically from the record's permissions presets
       presets:
         - docs
     service-config:
-      components: [ "{{common.services.files.allowed_document_extensions.AllowedDocumentExtensionsComponent}}" ]
+      components:
+        [
+          "{{common.services.files.allowed_document_extensions.AllowedDocumentExtensionsComponent}}",
+        ]
 
   module:
     qualified: documents
@@ -91,7 +97,8 @@ record:
       - "{{oarepo_oaipmh_harvester.components.OaiSectionComponent}}"
 
   json-serializer:
-    base-classes: [ common.services.filtered_json_ui_serializer.FilteredUIJSONSerializer ]
+    base-classes:
+      [common.services.filtered_json_ui_serializer.FilteredUIJSONSerializer]
 
   search-options:
     base-classes:
@@ -116,16 +123,30 @@ record:
              user_id = identity.id
              if user_id is None:
                  return
- 
+
              for au in ActionUsers.query.filter_by(user_id=user_id, exclude=False).all():
                  identity.provides.add(ActionNeed(au.action))
- 
+
          def init_app_callback_identity_loaded(self, app):
              """Load action permissions into the identity when it is loaded."""
- 
+
              from flask_principal import identity_loaded
              identity_loaded.connect_via(app)(self.load_action_permissions)
 
+         def init_app_callback_facets_i18n(self, app):
+             """Patch i18n in facets"""
+             from invenio_rdm_records.records.systemfields.access.field.record import (
+                 AccessStatusEnum,
+             )
+             from documents.services.records.facets import access_status
+             from invenio_i18n import lazy_gettext as _
+     
+             access_status._value_labels = {
+                 AccessStatusEnum.OPEN.value: _("access.status.open"),
+                 AccessStatusEnum.EMBARGOED.value: _("access.status.embargoed"),
+                 AccessStatusEnum.RESTRICTED.value: _("access.status.restricted"),
+                 AccessStatusEnum.METADATA_ONLY.value: _("access.status.metadata-only"),
+             }
 
   mapping:
     template:
@@ -133,9 +154,9 @@ record:
         index:
           query:
             default_field:
-            - "title_search.*"
-            - "creator_search.*"
-            - "abstract_search.*"
+              - "title_search.*"
+              - "creator_search.*"
+              - "abstract_search.*"
 
 runtime-dependencies:
   nr-metadata: 2.0.0
@@ -145,8 +166,8 @@ runtime-dependencies:
 
 settings:
   i18n-languages:
-  - cs
-  - en
+    - cs
+    - en
   supported-langs:
     cs:
       keyword:
