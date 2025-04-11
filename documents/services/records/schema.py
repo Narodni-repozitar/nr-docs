@@ -4,6 +4,9 @@ from marshmallow import fields as ma_fields
 from marshmallow.utils import get_value
 from marshmallow_utils.fields import SanitizedUnicode
 from marshmallow_utils.fields.nestedattr import NestedAttribute
+from nr_metadata.common.services.records.schema_datatypes import (
+    NRLanguageVocabularySchema,
+)
 from nr_metadata.documents.services.records.schema import (
     NRDocumentMetadataSchema,
     NRDocumentRecordSchema,
@@ -13,10 +16,6 @@ from oarepo_communities.schemas.parent import CommunitiesParentSchema
 from oarepo_runtime.services.schema.marshmallow import DictOnlySchema
 from oarepo_runtime.services.schema.validation import validate_datetime
 from oarepo_workflows.services.records.schema import RDMWorkflowParentSchema
-
-from nr_metadata.common.services.records.schema_datatypes import (
-    NRLanguageVocabularySchema,
-)
 
 
 # TODO: fix model builder to include required languages. Until then

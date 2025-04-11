@@ -235,7 +235,7 @@
             "groups": true
         },
         "ext": {
-            "extra-code": "    def load_action_permissions(self, sender, identity):\n        # TODO: need to have a deeper look at this\n        from flask_principal import ActionNeed\n        from invenio_access.models import ActionUsers\n\n        user_id = identity.id\n        if user_id is None:\n            return\n\n        for au in ActionUsers.query.filter_by(user_id=user_id, exclude=False).all():\n            identity.provides.add(ActionNeed(au.action))\n\n    def init_app_callback_identity_loaded(self, app):\n        \"\"\"Load action permissions into the identity when it is loaded.\"\"\"\n\n        from flask_principal import identity_loaded\n        identity_loaded.connect_via(app)(self.load_action_permissions)\n",
+            "extra-code": "    def load_action_permissions(self, sender, identity):\n        # TODO: need to have a deeper look at this\n        from flask_principal import ActionNeed\n        from invenio_access.models import ActionUsers\n\n        user_id = identity.id\n        if user_id is None:\n            return\n\n        for au in ActionUsers.query.filter_by(user_id=user_id, exclude=False).all():\n            identity.provides.add(ActionNeed(au.action))\n\n    def init_app_callback_identity_loaded(self, app):\n        \"\"\"Load action permissions into the identity when it is loaded.\"\"\"\n\n        from flask_principal import identity_loaded\n        identity_loaded.connect_via(app)(self.load_action_permissions)\n\n    def init_app_callback_facets_i18n(self, app):\n        \"\"\"Patch i18n in facets\"\"\"\n        from invenio_rdm_records.records.systemfields.access.field.record import (\n            AccessStatusEnum,\n        )\n        from documents.services.records.facets import access_status\n        from invenio_i18n import lazy_gettext as _\n\n        access_status._value_labels = {\n            AccessStatusEnum.OPEN.value: _(\"access.status.open\"),\n            AccessStatusEnum.EMBARGOED.value: _(\"access.status.embargoed\"),\n            AccessStatusEnum.RESTRICTED.value: _(\"access.status.restricted\"),\n            AccessStatusEnum.METADATA_ONLY.value: _(\"access.status.metadata-only\"),\n        }\n",
             "generate": true,
             "module": "documents.ext",
             "class": "documents.ext.DocumentsExt",
@@ -259,40 +259,10 @@
             "suffix-upper": "DOCUMENTS",
             "suffix-snake": "documents"
         },
-        "tests": {
-            "extra-fixtures": [],
-            "extra-code": "",
-            "module": "tests"
-        },
         "draft": {
             "type": "draft_record",
             "properties": {},
             "searchable": true,
-            "tests": {
-                "extra-fixtures": [],
-                "extra-code": "",
-                "module": "tests"
-            }
-        },
-        "draft-files": {
-            "type": "draft-file",
-            "properties": {},
-            "searchable": true,
-            "permissions": {
-                "presets": [
-                    "docs"
-                ]
-            },
-            "service-config": {
-                "components": [
-                    "{{common.services.files.allowed_document_extensions.AllowedDocumentExtensionsComponent}}"
-                ]
-            },
-            "resource": {
-                "base-classes": [
-                    "oarepo_ui.resources.file_resource.S3RedirectFileResource"
-                ]
-            },
             "tests": {
                 "extra-fixtures": [],
                 "extra-code": "",
@@ -406,6 +376,36 @@
                 "module": "tests"
             }
         },
+        "tests": {
+            "extra-fixtures": [],
+            "extra-code": "",
+            "module": "tests"
+        },
+        "draft-files": {
+            "type": "draft-file",
+            "properties": {},
+            "searchable": true,
+            "permissions": {
+                "presets": [
+                    "docs"
+                ]
+            },
+            "service-config": {
+                "components": [
+                    "{{common.services.files.allowed_document_extensions.AllowedDocumentExtensionsComponent}}"
+                ]
+            },
+            "resource": {
+                "base-classes": [
+                    "oarepo_ui.resources.file_resource.S3RedirectFileResource"
+                ]
+            },
+            "tests": {
+                "extra-fixtures": [],
+                "extra-code": "",
+                "module": "tests"
+            }
+        },
         "sample": {
             "file": "data/sample_data.yaml"
         },
@@ -417,20 +417,6 @@
             "skip": false
         },
         "model-name": "Documents",
-        "record-resolver": {
-            "generate": true,
-            "module": "documents.records.requests.resolvers",
-            "class": "documents.records.requests.resolvers.DocumentsResolver",
-            "base-classes": [
-                "oarepo_runtime.records.entity_resolvers.RecordResolver"
-            ],
-            "imports": [],
-            "custom-proxy-class": "oarepo_runtime.records.entity_resolvers.RecordProxy"
-        },
-        "ui-record-resolver": {
-            "generate": true,
-            "class": "oarepo_requests.resolvers.ui.RecordEntityReferenceUIResolver"
-        },
         "config": {
             "generate": true,
             "module": "documents.config",
@@ -481,6 +467,20 @@
             "module": "documents.services.records.schema",
             "class": "documents.services.records.schema.GeneratedParentSchema",
             "generate": true
+        },
+        "record-resolver": {
+            "generate": true,
+            "module": "documents.records.requests.resolvers",
+            "class": "documents.records.requests.resolvers.DocumentsResolver",
+            "base-classes": [
+                "oarepo_runtime.records.entity_resolvers.RecordResolver"
+            ],
+            "imports": [],
+            "custom-proxy-class": "oarepo_runtime.records.entity_resolvers.RecordProxy"
+        },
+        "ui-record-resolver": {
+            "generate": true,
+            "class": "oarepo_requests.resolvers.ui.RecordEntityReferenceUIResolver"
         },
         "resource": {
             "base-classes": [
@@ -558,9 +558,20 @@
             "extra-code": "",
             "extensions": [
                 "{{oarepo_runtime.records.systemfields.mapping.SystemFieldDumperExt}}()",
-                "{{documents.records.dumpers.edtf.DocumentsEDTFIntervalDumperExt}}()",
-                "{{documents.records.dumpers.multilingual.MultilingualSearchDumperExt}}()"
+                "{{documents.records.dumpers.multilingual.MultilingualSearchDumperExt}}()",
+                "{{documents.records.dumpers.edtf.DocumentsEDTFIntervalDumperExt}}()"
             ],
+            "imports": []
+        },
+        "multilingual-dumper": {
+            "generate": true,
+            "module": "documents.records.dumpers.multilingual",
+            "class": "documents.records.dumpers.multilingual.MultilingualSearchDumperExt",
+            "base-classes": [
+                "oarepo_runtime.records.dumpers.multilingual_dumper.MultilingualDumper"
+            ],
+            "extra-code": "",
+            "extensions": [],
             "imports": []
         },
         "edtf-interval-dumper": {
@@ -594,21 +605,10 @@
                 "oarepo_runtime.services.results.RecordItem"
             ],
             "components": [
+                "{{oarepo_communities.services.results.RecordCommunitiesComponent}}()",
                 "{{oarepo_requests.services.results.RequestsComponent}}()",
-                "{{oarepo_requests.services.results.RequestTypesComponent}}()",
-                "{{oarepo_communities.services.results.RecordCommunitiesComponent}}()"
+                "{{oarepo_requests.services.results.RequestTypesComponent}}()"
             ],
-            "imports": []
-        },
-        "multilingual-dumper": {
-            "generate": true,
-            "module": "documents.records.dumpers.multilingual",
-            "class": "documents.records.dumpers.multilingual.MultilingualSearchDumperExt",
-            "base-classes": [
-                "oarepo_runtime.records.dumpers.multilingual_dumper.MultilingualDumper"
-            ],
-            "extra-code": "",
-            "extensions": [],
             "imports": []
         },
         "draft-parent-record": {
@@ -1166,13 +1166,6 @@
                                 "title": {
                                     "type": "i18nStr",
                                     "required": true,
-                                    "marshmallow": {
-                                        "read": false,
-                                        "write": false,
-                                        "class": null,
-                                        "field-class": "oarepo_runtime.services.schema.i18n.I18nStrField",
-                                        "generate": false
-                                    },
                                     "ui": {
                                         "marshmallow": {
                                             "read": false,
@@ -1181,6 +1174,13 @@
                                             "field-class": "oarepo_runtime.services.schema.i18n_ui.I18nStrUIField"
                                         },
                                         "detail": "multilingual"
+                                    },
+                                    "marshmallow": {
+                                        "read": false,
+                                        "write": false,
+                                        "class": null,
+                                        "field-class": "oarepo_runtime.services.schema.i18n.I18nStrField",
+                                        "generate": false
                                     },
                                     "sample": {
                                         "skip": false
@@ -5404,6 +5404,7 @@
                     "propertyNames": {
                         "pattern": "^[a-z_-][a-z0-9_-]*$"
                     },
+                    "uniqueItems": true,
                     "additionalProperties": {
                         "type": "object",
                         "additionalProperties": false,
@@ -5418,8 +5419,7 @@
                                 "type": "string"
                             }
                         }
-                    },
-                    "uniqueItems": true
+                    }
                 },
                 "ui": {
                     "marshmallow": {

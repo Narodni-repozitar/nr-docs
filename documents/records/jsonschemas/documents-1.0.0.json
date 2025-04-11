@@ -925,6 +925,7 @@
             "propertyNames": {
                 "pattern": "^[a-z_-][a-z0-9_-]*$"
             },
+            "uniqueItems": true,
             "additionalProperties": {
                 "type": "object",
                 "additionalProperties": false,
@@ -939,8 +940,7 @@
                         "type": "string"
                     }
                 }
-            },
-            "uniqueItems": true
+            }
         },
         "state": {
             "type": "string"

@@ -53,8 +53,12 @@ class DocumentsFileServiceConfig(PermissionsPresetsConfigMixin, FileServiceConfi
 
     @property
     def file_links_list(self):
+        try:
+            supercls_links = super().file_links_list
+        except AttributeError:  # if they aren't defined in the superclass
+            supercls_links = {}
         links = {
-            **super().file_links_list,
+            **supercls_links,
             "self": RecordLink(
                 "{+api}/docs/{id}/files", when=has_permission_file_service("list_files")
             ),
@@ -63,8 +67,12 @@ class DocumentsFileServiceConfig(PermissionsPresetsConfigMixin, FileServiceConfi
 
     @property
     def file_links_item(self):
+        try:
+            supercls_links = super().file_links_item
+        except AttributeError:  # if they aren't defined in the superclass
+            supercls_links = {}
         links = {
-            **super().file_links_item,
+            **supercls_links,
             "commit": FileLink(
                 "{+api}/docs/{id}/files/{key}/commit",
                 when=has_permission_file_service("commit_files"),
@@ -108,8 +116,12 @@ class DocumentsFileDraftServiceConfig(PermissionsPresetsConfigMixin, FileService
 
     @property
     def file_links_list(self):
+        try:
+            supercls_links = super().file_links_list
+        except AttributeError:  # if they aren't defined in the superclass
+            supercls_links = {}
         links = {
-            **super().file_links_list,
+            **supercls_links,
             "self": RecordLink(
                 "{+api}/docs/{id}/draft/files", when=has_file_permission("list_files")
             ),
@@ -118,8 +130,12 @@ class DocumentsFileDraftServiceConfig(PermissionsPresetsConfigMixin, FileService
 
     @property
     def file_links_item(self):
+        try:
+            supercls_links = super().file_links_item
+        except AttributeError:  # if they aren't defined in the superclass
+            supercls_links = {}
         links = {
-            **super().file_links_item,
+            **supercls_links,
             "commit": FileLink(
                 "{+api}/docs/{id}/draft/files/{key}/commit",
                 when=has_file_permission("commit_files"),
