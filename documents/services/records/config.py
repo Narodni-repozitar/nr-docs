@@ -39,7 +39,6 @@ from documents.services.records.search import (
     DocumentsSearchOptions,
 )
 from invenio_rdm_records.services.customizations import FromConfigPIDsProviders, FromConfigRequiredPIDs
-from common.services.components.pids import OAIPIDComponent
 
 class DocumentsServiceConfig(
     PermissionsPresetsConfigMixin, FilteredResultServiceConfig

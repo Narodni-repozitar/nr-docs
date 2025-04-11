@@ -53,6 +53,7 @@ from documents.records.models import (
     DocumentsParentState,
 )
 
+
 class DocumentsParentRecord(RDMParent):
     model_cls = DocumentsParentMetadata
 
@@ -278,7 +279,6 @@ class DocumentsRecord(RDMRecord):
 
     bucket_id = ModelField(dump=False)
     bucket = ModelField(dump=False)
-
 
 
 class RDMRecordMediaFiles(DocumentsRecord):

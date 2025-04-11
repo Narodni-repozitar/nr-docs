@@ -68,7 +68,6 @@ class DirectPublishAction(Generator):
     def needs(self, **kwargs):
         return [direct_publish_action]
 
-from invenio_rdm_records.services.generators import SecretLinks
 
 class DefaultWorkflowPermissions(CommunityDefaultWorkflowPermissions):
     can_publish = [
