@@ -52,7 +52,6 @@ from documents.records.models import (
     DocumentsParentMetadata,
     DocumentsParentState,
 )
-from invenio_db import db
 
 class DocumentsParentRecord(RDMParent):
     model_cls = DocumentsParentMetadata
@@ -65,7 +64,7 @@ class DocumentsParentRecord(RDMParent):
 
 
 class DocumentsIdProvider(DraftRecordIdProviderV2):
-    pid_type = "dcmnts"
+    pid_type = "recid"
 
 
 class DocumentsRecord(RDMRecord):
@@ -279,23 +278,6 @@ class DocumentsRecord(RDMRecord):
 
     bucket_id = ModelField(dump=False)
     bucket = ModelField(dump=False)
-
-    @classmethod
-    def get_record(cls, id_, with_deleted=False):
-        """Retrieve the record by id.
-
-        Raise a database exception if the record does not exist.
-
-        :param id_: record ID.
-        :param with_deleted: If `True` then it includes deleted records.
-        :returns: The :class:`Record` instance.
-        """
-        with db.session.no_autoflush:
-            query = db.session.query(cls.model_cls).filter_by(id=id_)
-            if not with_deleted:
-                query = query.filter(cls.model_cls.is_deleted != True)  # noqa
-            obj = query.one()
-            return cls(obj.data, model=obj)
 
 
 
@@ -527,23 +509,6 @@ class DocumentsDraft(RDMDraft):
 
     bucket_id = ModelField(dump=False)
     bucket = ModelField(dump=False)
-
-    @classmethod
-    def get_record(cls, id_, with_deleted=False):
-        """Retrieve the record by id.
-
-        Raise a database exception if the record does not exist.
-
-        :param id_: record ID.
-        :param with_deleted: If `True` then it includes deleted records.
-        :returns: The :class:`Record` instance.
-        """
-        with db.session.no_autoflush:
-            query = db.session.query(cls.model_cls).filter_by(id=id_)
-            if not with_deleted:
-                query = query.filter(cls.model_cls.is_deleted != True)  # noqa
-            obj = query.one()
-            return cls(obj.data, model=obj)
 
 
 class RDMDraftMediaFiles(DocumentsDraft):

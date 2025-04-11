@@ -1,35 +1,26 @@
 
 from dcxml import simpledc
 from flask import g
-from invenio_rdm_records.resources.serializers import DublinCoreXMLSerializer
 from invenio_rdm_records.proxies import current_rdm_records_service
-
-from flask import current_app
-from invenio_records_resources.services.base.config import ConfiguratorMixin
-from invenio_base.utils import obj_or_import_string
 from oarepo_runtime.resources.responses import OAIExportableResponseHandler
+from oarepo_rdm.proxies import current_oarepo_rdm
 
-def get_serializer(oai_code, schema):
-    for model_dict in current_app.config["RDM_MODELS"]:
-        config_cls = obj_or_import_string(model_dict["api_resource_config"])
-        if issubclass(config_cls, ConfiguratorMixin):
-            config = config_cls.build(current_app)
-        else:
-            config = config_cls()
-
+def get_serializer(oai_code: str, schema: str):
+    for model in current_oarepo_rdm.rdm_models:
+        if schema != model.api_service_config.record_cls.schema.value:
+            continue
         handlers = [
             handler
-            for handler in config.response_handlers.values()
+            for handler in model.api_resource_config.response_handlers.values()
             if isinstance(handler, OAIExportableResponseHandler)
         ]
-
         for handler in handlers:
-            if handler.oai_code == oai_code and handler.schema == schema:
+            if handler.oai_code == oai_code:
                 return handler.serializer
     return None
 
 def dublincore_etree(pid, record, **serializer_kwargs):
-    """Get DublinCore XML etree for OAI-PMH. From invenio-rdm-records."""
+
     item = current_rdm_records_service.oai_result_item(g.identity, record["_source"])
     serializer = get_serializer("oai_dc", record["_source"]["$schema"])
     # TODO: DublinCoreXMLSerializer should be able to dump an etree directly
