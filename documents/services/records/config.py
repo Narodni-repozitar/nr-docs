@@ -1,3 +1,4 @@
+from invenio_rdm_records.services.config import _groups_enabled
 from invenio_records_resources.services import (
     ConditionalLink,
     LinksTemplate,
@@ -62,6 +63,7 @@ class DocumentsServiceConfig(
     record_cls = DocumentsRecord
 
     service_id = "documents"
+    indexer_queue_name = "documents"
 
     search_item_links_template = LinksTemplate
     draft_cls = DocumentsDraft
@@ -89,7 +91,18 @@ class DocumentsServiceConfig(
 
     @property
     def links_item(self):
-        return {
+        try:
+            supercls_links = super().links_item
+        except AttributeError:  # if they aren't defined in the superclass
+            supercls_links = {}
+        links = {
+            **supercls_links,
+            "access_grants": RecordLink("{+api}/records/{id}/access/grants"),
+            "access_groups": RecordLink(
+                "{+api}/records/{id}/access/groups", when=_groups_enabled
+            ),
+            "access_links": RecordLink("{+api}/records/{id}/access/links"),
+            "access_users": RecordLink("{+api}/records/{id}/access/users"),
             "applicable-requests": ConditionalLink(
                 cond=is_published_record(),
                 if_=RecordLink("{+api}/docs/{id}/requests/applicable"),
@@ -153,10 +166,16 @@ class DocumentsServiceConfig(
                 "{+api}/docs/{id}/versions", when=has_permission("search_versions")
             ),
         }
+        return {k: v for k, v in links.items() if v is not None}
 
     @property
     def links_search_item(self):
-        return {
+        try:
+            supercls_links = super().links_search_item
+        except AttributeError:  # if they aren't defined in the superclass
+            supercls_links = {}
+        links = {
+            **supercls_links,
             "self": ConditionalLink(
                 cond=is_published_record(),
                 if_=RecordLink("{+api}/docs/{id}", when=has_permission("read")),
@@ -172,23 +191,42 @@ class DocumentsServiceConfig(
                 ),
             ),
         }
+        return {k: v for k, v in links.items() if v is not None}
 
     @property
     def links_search(self):
-        return {
+        try:
+            supercls_links = super().links_search
+        except AttributeError:  # if they aren't defined in the superclass
+            supercls_links = {}
+        links = {
+            **supercls_links,
             **pagination_links("{+api}/docs/{?args*}"),
             **pagination_links_html("{+ui}/docs/{?args*}"),
         }
+        return {k: v for k, v in links.items() if v is not None}
 
     @property
     def links_search_drafts(self):
-        return {
+        try:
+            supercls_links = super().links_search_drafts
+        except AttributeError:  # if they aren't defined in the superclass
+            supercls_links = {}
+        links = {
+            **supercls_links,
             **pagination_links("{+api}/user/docs/{?args*}"),
             **pagination_links_html("{+ui}/user/docs/{?args*}"),
         }
+        return {k: v for k, v in links.items() if v is not None}
 
     @property
     def links_search_versions(self):
-        return {
+        try:
+            supercls_links = super().links_search_versions
+        except AttributeError:  # if they aren't defined in the superclass
+            supercls_links = {}
+        links = {
+            **supercls_links,
             **pagination_links("{+api}/docs/{id}/versions{?args*}"),
         }
+        return {k: v for k, v in links.items() if v is not None}
