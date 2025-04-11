@@ -45,6 +45,7 @@ class DocumentsSchema(NRDocumentRecordSchema):
     # TODO: fix model builder to include required languages. Until then
     # please keep the overriden code here
     metadata = ma_fields.Nested(lambda: LocalNRDocumentMetadataSchema())
+
     oai = ma_fields.Nested(lambda: OaiSchema())
 
     state = ma_fields.String(dump_only=True)

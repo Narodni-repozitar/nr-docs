@@ -124,7 +124,7 @@ const ItemExtraInfo = ({ createdDate, publishers, version }) => {
             {createdDate && (
               <>
                 {i18next.t("Uploaded on")} <span>{createdDate}</span>{" "}
-                {version && `(${i18next.t("version")}: ${version})`}
+                {version && `(${i18next.t("version")}: ${String(version)})`}
               </>
             )}
             {createdDate && publishers.length > 0 && " | "}

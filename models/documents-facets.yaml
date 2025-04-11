@@ -1,23 +1,23 @@
 facets:
   facet-groups:
     default:
-      syntheticFields.people: 1
+      access.status: 1
       syntheticFields.year: 2
-      access_status: 3
-      metadata.rights: 4
-      metadata.resourceType: 5
-      metadata.languages: 7
-      syntheticFields.organizations: 8
-      metadata.fundingReferences.funder: 9
-      metadata.fundingReferences.projectID: 10
+      metadata.languages: 3
+      metadata.resourceType: 4
+      metadata.rights: 5
+      syntheticFields.organizations: 6
+      syntheticFields.people: 7
+      metadata.funders.funder: 8
+      metadata.funders.award: 9
     curator:
-      syntheticFields.people: 1
+      access.status: 1
       syntheticFields.year: 2
-      access_status: 3
-      metadata.rights: 4
-      metadata.resourceType: 5
-      metadata.languages: 7
-      syntheticFields.organizations: 8
-      metadata.fundingReferences.funder: 9
-      metadata.fundingReferences.projectID: 10
-      metadata.files.enabled: 11
+      metadata.languages: 3
+      metadata.resourceType: 4
+      metadata.rights: 5
+      syntheticFields.organizations: 6
+      syntheticFields.people: 7
+      metadata.funders.funder: 8
+      metadata.funders.award: 9
+      metadata.files.enabled: 10

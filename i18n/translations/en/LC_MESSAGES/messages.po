@@ -4582,7 +4582,7 @@ msgstr ""
 
 #: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:208
 msgid "metadata/funders/award.label"
-msgstr ""
+msgstr "Award number"
 
 #: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:214
 msgid "metadata/funders/funder.label"
@@ -5231,4 +5231,43 @@ msgid "metadata/relatedItems/itemCreators/role/@v.label"
 msgstr ""
 
 msgid "metadata/relatedItems/itemCreators/role/@v.hint"
+msgstr ""
+
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/resources/files/config.py:30
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/resources/files/config.py:80
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/resources/records/config.py:27
+msgid "Native JSON"
+msgstr ""
+
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/resources/files/config.py:36
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/resources/files/config.py:86
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/resources/records/config.py:33
+msgid "Native UI JSON"
+msgstr ""
+
+msgid "metadata/funders/award/id.help"
+msgstr ""
+
+msgid "metadata/funders/award/id.label"
+msgstr ""
+
+msgid "metadata/funders/award/id.hint"
+msgstr ""
+
+msgid "metadata/funders/award/identifiers/scheme.help"
+msgstr ""
+
+msgid "metadata/funders/award/identifiers/scheme.label"
+msgstr ""
+
+msgid "metadata/funders/award/identifiers/scheme.hint"
+msgstr ""
+
+msgid "metadata/funders/funder/id.help"
+msgstr ""
+
+msgid "metadata/funders/funder/id.label"
+msgstr ""
+
+msgid "metadata/funders/funder/id.hint"
 msgstr ""
