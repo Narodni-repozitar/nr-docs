@@ -38,7 +38,7 @@ from documents.services.records.search import (
     DocumentsDraftSearchOptions,
     DocumentsSearchOptions,
 )
-
+from invenio_rdm_records.services.customizations import FromConfigPIDsProviders, FromConfigRequiredPIDs
 
 class DocumentsServiceConfig(
     PermissionsPresetsConfigMixin, FilteredResultServiceConfig
@@ -68,6 +68,10 @@ class DocumentsServiceConfig(
     draft_cls = DocumentsDraft
     search_drafts = DocumentsDraftSearchOptions
 
+    # PIDs configuration
+    pids_providers = FromConfigPIDsProviders()
+    pids_required = FromConfigRequiredPIDs()
+
     @property
     def components(self):
         return process_service_configs(
@@ -79,7 +83,7 @@ class DocumentsServiceConfig(
             CommunityDefaultWorkflowComponent,
             CommunityInclusionComponent,
             CustomFieldsComponent,
-            WorkflowComponent,
+            WorkflowComponent
         )
 
     model = "documents"

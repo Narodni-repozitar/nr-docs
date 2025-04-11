@@ -170,6 +170,9 @@ class DefaultWorkflowPermissions(CommunityDefaultWorkflowPermissions):
         Disable(),
     ]
 
+    can_manage = [RecordOwners(), PrimaryCommunityMembers()] # allows creating and reading links
+    can_manage_record_access = [RecordOwners()] # allows setting record access
+
 
 # if the record is in draft state, the owner or curator can request publishing
 publish_requesters = IfNotHarvested(
