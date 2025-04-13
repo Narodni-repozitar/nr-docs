@@ -20,7 +20,7 @@ from ui.documents.components.allowed_file_extension_ui_component import (
 )
 
 
-class DocumentsResourceConfig(RecordsUIResourceConfig):
+class DocumentsUIResourceConfig(RecordsUIResourceConfig):
     template_folder = "templates"
     url_prefix = "/docs/"
     blueprint_name = "documents"
@@ -66,4 +66,4 @@ class DocumentsResource(RecordsUIResource):
 
 def create_blueprint(app):
     """Register blueprint for this resource."""
-    return DocumentsResource(DocumentsResourceConfig()).as_blueprint()
+    return DocumentsResource(DocumentsUIResourceConfig()).as_blueprint()

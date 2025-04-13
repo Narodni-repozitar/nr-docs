@@ -65,7 +65,7 @@ class DocumentsParentRecord(RDMParent):
 
 
 class DocumentsIdProvider(DraftRecordIdProviderV2):
-    pid_type = "dcmnts"
+    pid_type = "recid"
 
 
 class DocumentsRecord(RDMRecord):
