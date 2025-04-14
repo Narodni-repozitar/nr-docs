@@ -12,11 +12,12 @@ def get_serializer(oai_code: str, schema: str):
         handlers = [
             handler
             for handler in model.api_resource_config.response_handlers.values()
-            if isinstance(handler, OAIExportableResponseHandler)
+            if isinstance(handler, OAIExportableResponseHandler) and handler.oai_code == oai_code
         ]
-        for handler in handlers:
-            if handler.oai_code == oai_code:
-                return handler.serializer
+        if len(handlers) == 1:
+            return handlers[0].serializer
+        # exception for having more handlers?
+
     return None
 
 def dublincore_etree(pid, record, **serializer_kwargs):
