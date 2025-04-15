@@ -13,7 +13,7 @@ from . import (
     config,
 )
 from .cli import documents as documents_cli
-
+from . import extension_registry # noqa
 
 class OaiS3HarvesterExt(object):
     """extension."""
