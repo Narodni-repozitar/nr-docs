@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, Grid, Icon, Popup } from "semantic-ui-react";
+import { Card, Grid } from "semantic-ui-react";
 import {
   PreviewButton,
   SaveButton,

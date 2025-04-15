@@ -4637,3 +4637,6 @@ msgstr ""
 
 msgid "metadata/funders/funder/id.hint"
 msgstr ""
+
+msgid "Repository assigned DOI:"
+msgstr "DOI přidělené repozitářem:"

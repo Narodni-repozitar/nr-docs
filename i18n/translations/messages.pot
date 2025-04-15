@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2025-04-10 08:43+0200\n"
+"POT-Creation-Date: 2025-04-15 20:07+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,22 +16,6 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.16.0\n"
-
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/common/ext.py:36
-msgid "access.status.open"
-msgstr ""
-
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/common/ext.py:37
-msgid "access.status.embargoed"
-msgstr ""
-
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/common/ext.py:38
-msgid "access.status.restricted"
-msgstr ""
-
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/common/ext.py:39
-msgid "access.status.metadata-only"
-msgstr ""
 
 #: /home/dusanst/Projects/new_nr_docs/nr-docs/common/just_for_translations.py:5
 msgid "Submitted"
@@ -63,6 +47,7 @@ msgid "access/status.label"
 msgstr ""
 
 #: /home/dusanst/Projects/new_nr_docs/nr-docs/common/doi/mapping.py:7
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/common/services/pids/providers.py:92
 msgid "Missing data for required field."
 msgstr ""
 
@@ -104,6 +89,22 @@ msgstr ""
 #: /home/dusanst/Projects/new_nr_docs/nr-docs/common/workflows/generic_community.py:301
 #: /home/dusanst/Projects/new_nr_docs/nr-docs/common/workflows/restricted.py:278
 msgid "state:deleted"
+msgstr ""
+
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/ext.py:91
+msgid "access.status.open"
+msgstr ""
+
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/ext.py:92
+msgid "access.status.embargoed"
+msgstr ""
+
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/ext.py:93
+msgid "access.status.restricted"
+msgstr ""
+
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/ext.py:94
+msgid "access.status.metadata-only"
 msgstr ""
 
 #: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/resources/files/config.py:30
@@ -768,6 +769,9 @@ msgstr ""
 msgid ""
 "The request ({{requestType}}) could not be made due to validation errors. "
 "Please fix them and try again:"
+msgstr ""
+
+msgid "Repository assigned DOI:"
 msgstr ""
 
 msgid "metadata/accessRights.label"
