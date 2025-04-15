@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, Grid } from "semantic-ui-react";
+import { Card, Grid, Icon, Popup } from "semantic-ui-react";
 import {
   PreviewButton,
   SaveButton,
@@ -8,6 +8,7 @@ import {
   AccessRightField,
   useFormConfig,
 } from "@js/oarepo_ui";
+import { ClipboardCopyButton } from "@js/oarepo_ui/components/ClipboardCopyButton";
 import { i18next } from "@translations/i18next";
 import { SelectedCommunity } from "@js/communities_components/CommunitySelector/SelectedCommunity";
 import { RecordRequests } from "@js/oarepo_requests/components";
@@ -27,6 +28,12 @@ const FormActionsContainer = () => {
       recordRestrictionGracePeriod,
     },
   } = useFormConfig();
+
+  let repositoryAssignedDoi = values?.pids?.doi?.identifier;
+
+  if (repositoryAssignedDoi && !repositoryAssignedDoi.startsWith("https")) {
+    repositoryAssignedDoi = `https://doi.org/${repositoryAssignedDoi}`;
+  }
 
   const onBeforeAction = ({ requestActionName, requestOrRequestType }) => {
     const requestType =
@@ -75,6 +82,19 @@ const FormActionsContainer = () => {
             <Grid.Column width={16} className="pt-10">
               <SelectedCommunity />
             </Grid.Column>
+            {repositoryAssignedDoi && (
+              <Grid.Column width={16} className="pt-10">
+                <p>{i18next.t("Repository assigned DOI:")}</p>
+                <a
+                  href={repositoryAssignedDoi}
+                  target="_blank"
+                  rel="noreferrer noopener"
+                >
+                  {repositoryAssignedDoi}
+                </a>{" "}
+                <ClipboardCopyButton copyText={repositoryAssignedDoi} />
+              </Grid.Column>
+            )}
           </Grid>
         </Card.Content>
       </Card>

@@ -18,7 +18,11 @@
 {% if record.expanded.communities %}
   <RecordCommunities communities={record.expanded.communities} />
 {% endif %}
-<IdentifiersAndLinks originalRecordUrl={metadata.originalRecord} objectIdentifiers={metadata.objectIdentifiers}/>
+<IdentifiersAndLinks 
+  originalRecordUrl={metadata.originalRecord} 
+  objectIdentifiers={metadata.objectIdentifiers} 
+  repositoryAssignedIdentifier={record.get('pids', {}).get('doi', {}).get('identifier')}
+/>
 <Metrics record={api_record} />
 
 {% if "oai" not in record 
