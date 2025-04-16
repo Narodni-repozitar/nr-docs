@@ -7,6 +7,7 @@ import {
   useDepositApiClient,
   AccessRightField,
   useFormConfig,
+  useSanitizeInput,
 } from "@js/oarepo_ui";
 import { ClipboardCopyButton } from "@js/oarepo_ui/components/ClipboardCopyButton";
 import { i18next } from "@translations/i18next";
@@ -28,6 +29,8 @@ const FormActionsContainer = () => {
       recordRestrictionGracePeriod,
     },
   } = useFormConfig();
+
+  const { sanitizeInput } = useSanitizeInput();
 
   let repositoryAssignedDoi = values?.pids?.doi?.identifier;
 
@@ -84,9 +87,9 @@ const FormActionsContainer = () => {
             </Grid.Column>
             {repositoryAssignedDoi && (
               <Grid.Column width={16} className="pt-10">
-                <p>{i18next.t("Repository assigned DOI:")}</p>
+                <p>{i18next.t("Assigned DOI:")}</p>
                 <a
-                  href={repositoryAssignedDoi}
+                  href={sanitizeInput(repositoryAssignedDoi)}
                   target="_blank"
                   rel="noreferrer noopener"
                 >

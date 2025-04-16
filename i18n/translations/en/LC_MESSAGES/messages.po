@@ -5274,3 +5274,6 @@ msgstr ""
 
 msgid "Repository assigned DOI:"
 msgstr ""
+
+msgid "Assigned DOI:"
+msgstr ""
