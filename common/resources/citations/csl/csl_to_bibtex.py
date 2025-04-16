@@ -49,19 +49,19 @@ def create_bibtex_entry(csl_data, id_):
     
     bibtex_fields = []
     if authors_str:
-        bibtex_fields.append(f'\tauthor = {{{authors_str}}}')
+        bibtex_fields.append(f'author = {{{authors_str}}}')
     if title:
-        bibtex_fields.append(f'\ttitle = {{{title}}}')
+        bibtex_fields.append(f'title = {{{title}}}')
     if year:
-        bibtex_fields.append(f'\tyear = {{{year}}}')
+        bibtex_fields.append(f'year = {{{year}}}')
     if month:
-        bibtex_fields.append(f'\tmonth = {{{month}}}')   
+        bibtex_fields.append(f'month = {{{month}}}')   
     if publisher:
-        bibtex_fields.append(f'\tpublisher = {{{publisher}}}')   
+        bibtex_fields.append(f'publisher = "{publisher}"')   
     if doi:
-        bibtex_fields.append(f'\tdoi = {{{doi}}}') 
+        bibtex_fields.append(f'doi = {{{doi}}}') 
         
-    bibtex_entry = f"@{entry_type}{{{id_}\n"
+    bibtex_entry = f"@{entry_type}{{{id_},\n"
     bibtex_entry += ",\n".join(bibtex_fields)
     bibtex_entry += "\n}\n"
  
