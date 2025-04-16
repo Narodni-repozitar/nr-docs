@@ -165,8 +165,8 @@ def process_index_queues():
     for name, indexer in indexers.items():
         queue = indexer.mq_queue.bind(channel)
         _, num_messages, num_consumers = queue.queue_declare()
-        print(
-            f"Indexer {name} has {num_messages} messages and {num_consumers} consumers"
-        )
         if num_messages > 0:
+            print(
+                f"Indexer {name} has {num_messages} messages and {num_consumers} consumers"
+            )
             process_bulk_queue.delay(indexer_name=name)
