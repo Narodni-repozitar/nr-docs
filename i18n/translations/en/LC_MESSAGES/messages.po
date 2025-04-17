@@ -5272,8 +5272,5 @@ msgstr ""
 msgid "metadata/funders/funder/id.hint"
 msgstr ""
 
-msgid "Repository assigned DOI:"
-msgstr ""
-
 msgid "Assigned DOI:"
 msgstr ""

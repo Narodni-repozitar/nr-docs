@@ -21,7 +21,7 @@
 <IdentifiersAndLinks 
   originalRecordUrl={metadata.originalRecord} 
   objectIdentifiers={metadata.objectIdentifiers} 
-  managedIdentifier={record.get('pids', {}).get('doi', {}).get('identifier')}
+  pids={record.get('pids', {})}
 />
 <Metrics record={api_record} />
 

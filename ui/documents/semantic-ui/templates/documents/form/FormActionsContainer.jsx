@@ -33,7 +33,9 @@ const FormActionsContainer = () => {
   const { sanitizeInput } = useSanitizeInput();
 
   let repositoryAssignedDoi = values?.pids?.doi?.identifier;
-
+  // UI serialization is not passed to the form, so I think this is OK, as it is the only
+  // thing we need here currently - maybe in the future we could send the UI seiralization
+  // of record to form config
   if (repositoryAssignedDoi && !repositoryAssignedDoi.startsWith("https")) {
     repositoryAssignedDoi = `https://doi.org/${repositoryAssignedDoi}`;
   }
