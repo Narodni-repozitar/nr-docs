@@ -1,0 +1,67 @@
+- username: tulvlastnik@test.com
+  password: testtest
+  profile:
+    full_name: Vlastnik komunity tul
+  communities:
+    - slug: tul
+      role: owner
+- username: tulkurator@test.com
+  password: testtest
+  profile:
+    full_name: Kurator komunity tul
+  communities:
+    - slug: tul
+      role: curator
+- username: tulprispevatel1@test.com
+  password: testtest
+  profile:
+    full_name: Prispevatel 1 komunity tul
+  communities:
+    - slug: tul
+      role: submitter
+- username: tulprispevatel2@test.com
+  password: testtest
+  profile:
+    full_name: Prispevatel 2 komunity tul
+  communities:
+    - slug: tul
+      role: submitter
+- username: tulclen@test.com
+  password: testtest
+  profile:
+    full_name: Clen komunity tul
+  communities:
+    - slug: tul
+      role: member
+- username: utbvlastnik@test.com
+  password: testtest
+  profile:
+    full_name: Vlastnik komunity utb
+  communities:
+    - slug: utb
+      role: owner
+- username: utbkurator@test.com
+  password: testtest
+  profile:
+    full_name: Kurator komunity utb
+  communities:
+    - slug: utb
+      role: curator
+- username: utbprispevatel@test.com
+  password: testtest
+  profile:
+    full_name: Prispevatel komunity utb
+  communities:
+    - slug: utb
+      role: submitter
+- username: utbclen@test.com
+  password: testtest
+  profile:
+    full_name: Clen komunity utb
+  communities:
+    - slug: utb
+      role: member
+- username: prihlaseny@test.com
+  password: testtest
+  profile:
+    full_name: Prihlaseny uzivatel

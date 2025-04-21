@@ -86,15 +86,17 @@ class DefaultWorkflowPermissions(CommunityDefaultWorkflowPermissions):
     # who can read a draft record (on an /api/user/documents url)
     can_read_draft = _can_read_anytime + [
         IfInState(
-            "draft",
-            then_=[PrimaryCommunityMembers()],
+            ["draft", "submitted"],
+            then_=[
+                PrimaryCommunityMembers(),
+            ],
         ),
     ]
 
     # who can read a published record (on an /api/documents/ url)
     can_read = _can_read_anytime + [
         IfInState(
-            "published",
+            ["published", "deleted"],
             then_=[
                 IfRestricted(
                     "record",
@@ -165,30 +167,35 @@ class DefaultWorkflowPermissions(CommunityDefaultWorkflowPermissions):
     can_draft_read_files = can_read_draft
     can_draft_get_content_files = can_read_draft
 
-    can_draft_set_content_files = can_update_draft
-    can_draft_update_files = can_update_draft
-    can_draft_commit_files = can_update_draft
+    can_draft_update_files = [
+        IfInState(
+            "draft",
+            then_=[
+                RecordOwners(),
+                PrimaryCommunityRole("curator"),
+                PrimaryCommunityRole("owner"),
+            ],
+        ),
+    ]
+    can_draft_create_files = can_draft_update_files
+    can_draft_set_content_files = can_draft_update_files
+    can_draft_commit_files = can_draft_update_files
+    can_draft_manage_files = can_update_draft
+    can_draft_delete_files = can_draft_update_files
+
     can_commit_files = [
-        IfInState("draft", then_=can_update_draft, else_=[Disable()]),
+        Disable(),
     ]
 
-    can_draft_create_files = can_update_draft
-
-    # file service calls the permission can_create_files, not can_create_draft_files
-    # this is a bit strange, but it is how it is
     can_create_files = [
-        IfInState("draft", then_=can_update_draft, else_=[Disable()]),
+        Disable(),
     ]
     can_set_content_files = [
-        IfInState("draft", then_=can_update_draft, else_=[Disable()]),
+        Disable(),
     ]
-
-    can_draft_delete_files = can_update_draft
     can_delete_files = [
-        IfInState("draft", then_=can_update_draft, else_=[Disable()]),
+        Disable(),
     ]
-
-    can_draft_manage_files = can_update_draft
     # endregion
 
     # region Published files
@@ -280,7 +287,12 @@ class DefaultWorkflowPermissions(CommunityDefaultWorkflowPermissions):
 publish_requesters = [
     IfNotHarvested(
         then_=IfInState(
-            "draft", then_=[RecordOwners(), PrimaryCommunityRole("curator")]
+            "draft",
+            then_=[
+                RecordOwners(),
+                PrimaryCommunityRole("curator"),
+                PrimaryCommunityRole("owner"),
+            ],
         ),
         else_=SystemProcess(),
     )
@@ -516,7 +528,11 @@ class DefaultWorkflowRequests(WorkflowRequestPolicy):
             IfNotHarvested(
                 then_=IfInState(
                     "published",
-                    then_=[PrimaryCommunityMembers()],
+                    then_=[
+                        RecordOwners(),
+                        PrimaryCommunityRole("curator"),
+                        PrimaryCommunityRole("owner"),
+                    ],
                 ),
                 else_=SystemProcess(),
             )

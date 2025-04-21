@@ -114,16 +114,17 @@ class DocumentsServiceConfig(
                 when=has_draft() & has_permission("read_draft"),
             ),
             "edit_html": RecordLink(
-                "{+ui}/docs/{id}/edit", when=has_draft() & has_permission("update")
+                "{+ui}/docs/{id}/edit",
+                when=has_draft() & has_permission("update_draft"),
             ),
             "files": ConditionalLink(
                 cond=is_published_record(),
                 if_=RecordLink(
-                    "{+api}/docs/{id}/files", when=has_file_permission("list_files")
+                    "{+api}/docs/{id}/files", when=has_file_permission("read_files")
                 ),
                 else_=RecordLink(
                     "{+api}/docs/{id}/draft/files",
-                    when=has_file_permission("list_files"),
+                    when=has_file_permission("read_files"),
                 ),
             ),
             "latest": RecordLink(
