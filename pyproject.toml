@@ -103,6 +103,9 @@ zenodo_to_nr_docs = "common.resources.zenodo_to_nr_docs:REQUEST_BODY_PARSERS"
 [project.entry-points."invenio_access.actions"]
 direct_publish_action = "common.workflows.default:direct_publish_action"
 
+[project.entry-points."invenio.documents.response_handlers"]
+csl_citation = "common.resources.citations:citations_response_handlers"
+
 [project.optional-dependencies]
 tests = [
     "pytest-invenio>=1.4.11",
