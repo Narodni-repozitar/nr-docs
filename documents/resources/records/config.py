@@ -42,8 +42,8 @@ class DocumentsResourceConfig(RecordResourceConfig):
 
             "application/x-dc+xml": OAIExportableResponseHandler(
                 export_code="dc_xml", name="Dublin Core XML", serializer=DocumentsDublinCoreXMLSerializer(),
-                headers=etag_headers, oai_code="oai_dc", oai_schema="http://www.openarchives.org/OAI/2.0/oai_dc.xsd",
-                oai_namespace="http://www.openarchives.org/OAI/2.0/oai_dc/", oai_serializer=dublincore_etree
+                headers=etag_headers, oai_metadata_prefix="oai_dc", oai_schema="http://www.openarchives.org/OAI/2.0/oai_dc.xsd",
+                oai_namespace="http://www.openarchives.org/OAI/2.0/oai_dc/"
             ),
              **entrypoint_response_handlers,
 
