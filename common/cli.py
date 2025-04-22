@@ -5,6 +5,7 @@ import tqdm
 import yaml
 from celery import current_app as current_celery_app
 from flask import current_app
+from flask_security.utils import hash_password
 from invenio_access.permissions import system_identity
 from invenio_accounts.models import User
 from invenio_communities.communities.records.api import Community
@@ -105,9 +106,10 @@ def create_users(file_path):
             u = User.query.filter_by(email=username).first()
 
             if not u:
+
                 # create the user
                 u = _datastore.create_user(
-                    password=password,
+                    password=hash_password(password),
                     email=username,
                     active=True,
                     confirmed_at=datetime.datetime.utcnow(),
@@ -163,8 +165,8 @@ def process_index_queues():
     for name, indexer in indexers.items():
         queue = indexer.mq_queue.bind(channel)
         _, num_messages, num_consumers = queue.queue_declare()
-        print(
-            f"Indexer {name} has {num_messages} messages and {num_consumers} consumers"
-        )
         if num_messages > 0:
+            print(
+                f"Indexer {name} has {num_messages} messages and {num_consumers} consumers"
+            )
             process_bulk_queue.delay(indexer_name=name)

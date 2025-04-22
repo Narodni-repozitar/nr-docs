@@ -60,10 +60,10 @@ class DocumentsUIResourceConfig(RecordsUIResourceConfig):
         ]
 
 
-class DocumentsResource(RecordsUIResource):
+class DocumentsUIResource(RecordsUIResource):
     pass
 
 
 def create_blueprint(app):
     """Register blueprint for this resource."""
-    return DocumentsResource(DocumentsUIResourceConfig()).as_blueprint()
+    return DocumentsUIResource(DocumentsUIResourceConfig()).as_blueprint()

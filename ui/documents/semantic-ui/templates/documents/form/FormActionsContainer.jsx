@@ -7,7 +7,9 @@ import {
   useDepositApiClient,
   AccessRightField,
   useFormConfig,
+  useSanitizeInput,
 } from "@js/oarepo_ui";
+import { ClipboardCopyButton } from "@js/oarepo_ui/components/ClipboardCopyButton";
 import { i18next } from "@translations/i18next";
 import { SelectedCommunity } from "@js/communities_components/CommunitySelector/SelectedCommunity";
 import { RecordRequests } from "@js/oarepo_requests/components";
@@ -27,6 +29,16 @@ const FormActionsContainer = () => {
       recordRestrictionGracePeriod,
     },
   } = useFormConfig();
+
+  const { sanitizeInput } = useSanitizeInput();
+
+  let repositoryAssignedDoi = values?.pids?.doi?.identifier;
+  // UI serialization is not passed to the form, so I think this is OK, as it is the only
+  // thing we need here currently - maybe in the future we could send the UI seiralization
+  // of record to form config
+  if (repositoryAssignedDoi && !repositoryAssignedDoi.startsWith("https")) {
+    repositoryAssignedDoi = `https://doi.org/${repositoryAssignedDoi}`;
+  }
 
   const onBeforeAction = ({ requestActionName, requestOrRequestType }) => {
     const requestType =
@@ -75,6 +87,19 @@ const FormActionsContainer = () => {
             <Grid.Column width={16} className="pt-10">
               <SelectedCommunity />
             </Grid.Column>
+            {repositoryAssignedDoi && (
+              <Grid.Column width={16} className="pt-10">
+                <p>{i18next.t("Assigned DOI:")}</p>
+                <a
+                  href={sanitizeInput(repositoryAssignedDoi)}
+                  target="_blank"
+                  rel="noreferrer noopener"
+                >
+                  {repositoryAssignedDoi}
+                </a>{" "}
+                <ClipboardCopyButton copyText={repositoryAssignedDoi} />
+              </Grid.Column>
+            )}
           </Grid>
         </Card.Content>
       </Card>

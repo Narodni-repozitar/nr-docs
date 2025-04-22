@@ -23,13 +23,13 @@ class AwardsWriter(BaseWriter):
         """
         awards_service = current_service_registry.get("awards")
 
-        uuids = []
+        awards = []
         for entry in batch.ok_entries:
             payload = entry.entry
             stored = AwardsMetadata.query.filter_by(pid=payload["id"]).first()
             if stored:
                 entry.id = payload["id"]
-                uuids.append(stored.id)
+                awards.append(stored)
                 continue
 
             pid = payload.pop("id")
@@ -38,12 +38,11 @@ class AwardsWriter(BaseWriter):
                 payload["funder"]["name"] = self.lookup_funder_name(funder_id)
             award = AwardsMetadata(pid=pid, json=payload)
             db.session.add(award)
+            awards.append(award)
             entry.id = award.pid
 
-            uuids.append(award.id)
-
         db.session.commit()
-        awards_service.indexer.bulk_index(uuids)
+        awards_service.indexer.bulk_index([award.id for award in awards])
 
         return batch
 
@@ -70,7 +69,7 @@ class NamesWriter(BaseWriter):
         """
         names_service = current_service_registry.get("names")
 
-        uuids = []
+        names = []
         for entry in batch.ok_entries:
             payload = entry.entry
             if "affiliations" in payload:
@@ -78,17 +77,17 @@ class NamesWriter(BaseWriter):
             stored = NamesMetadata.query.filter_by(pid=payload["id"]).first()
             if stored:
                 entry.id = payload["id"]
-                uuids.append(stored.id)
+                names.append(stored)
                 continue
 
             pid = payload.pop("id")
             name = NamesMetadata(pid=pid, json=payload)
             db.session.add(name)
+            names.append(name)
             entry.id = name.pid
-            uuids.append(name.id)
 
         db.session.commit()
-        names_service.indexer.bulk_index(uuids)
+        names_service.indexer.bulk_index([name.id for name in names])
 
         return batch
 

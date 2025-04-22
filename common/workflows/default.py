@@ -23,11 +23,14 @@
 
 from datetime import timedelta
 
+from invenio_access import action_factory
+from invenio_access.permissions import Permission
 from invenio_i18n import lazy_gettext as _
 from invenio_rdm_records.services.generators import IfRecordDeleted, IfRestricted
 from invenio_records_permissions.generators import (
     AnyUser,
     Disable,
+    Generator,
     SystemProcess,
 )
 from invenio_users_resources.services.permissions import UserManager
@@ -42,7 +45,7 @@ from oarepo_communities.services.permissions.policy import (
 )
 from oarepo_oaipmh_harvester.services.generators import IfNotHarvested
 from oarepo_requests.services.permissions.generators import IfRequestedBy
-from oarepo_runtime.services.permissions.generators import IfDraftType, RecordOwners
+from oarepo_runtime.services.permissions.generators import RecordOwners
 from oarepo_workflows import (
     AutoApprove,
     IfInState,
@@ -51,11 +54,6 @@ from oarepo_workflows import (
     WorkflowRequestPolicy,
     WorkflowTransitions,
 )
-
-from invenio_access import action_factory
-from invenio_access.permissions import Permission
-from invenio_records_permissions.generators import Generator
-
 
 direct_publish_action = action_factory("administration-direct-publish")
 permission = Permission(direct_publish_action)
@@ -70,18 +68,11 @@ class DirectPublishAction(Generator):
 
 
 class DefaultWorkflowPermissions(CommunityDefaultWorkflowPermissions):
-    can_publish = [
-        *CommunityDefaultWorkflowPermissions.can_publish,
-        DirectPublishAction(),
-    ]
 
-    can_create = [
-        PrimaryCommunityRole("submitter"),
-        PrimaryCommunityRole("owner"),
-        PrimaryCommunityRole("curator"),
-    ]
+    # region Read record
 
-    can_read_generic = [
+    _can_read_anytime = [
+        # owner of the draft can see the record
         RecordOwners(),
         # curator can see the record in any state
         CommunityRole("curator"),
@@ -90,13 +81,18 @@ class DefaultWorkflowPermissions(CommunityDefaultWorkflowPermissions):
         # if the record is published and restricted, only members of the community can see it,
         # otherwise, any user can see it
         # every member of the community can see the metadata of the drafts, but not the files
+    ]
+
+    # who can read a draft record (on an /api/user/documents url)
+    can_read_draft = _can_read_anytime + [
         IfInState(
             "draft",
             then_=[PrimaryCommunityMembers()],
         ),
     ]
 
-    can_read = can_read_generic + [
+    # who can read a published record (on an /api/documents/ url)
+    can_read = _can_read_anytime + [
         IfInState(
             "published",
             then_=[
@@ -108,6 +104,9 @@ class DefaultWorkflowPermissions(CommunityDefaultWorkflowPermissions):
             ],
         ),
     ]
+
+    # who can read a deleted record (on an /api/documents/ url)
+    # this is strange, but taken from RDM
     can_read_deleted = [
         IfRecordDeleted(
             then_=[
@@ -118,24 +117,11 @@ class DefaultWorkflowPermissions(CommunityDefaultWorkflowPermissions):
         )
     ]
 
-    can_read_files = can_read_generic + [
-        IfInState(
-            "published",
-            then_=[
-                IfRestricted(
-                    "files",
-                    then_=[PrimaryCommunityMembers()],
-                    else_=[AnyUser()],
-                )
-            ],
-        ),
-    ]
+    # endregion
 
-    can_list_files = can_read_files
-
-    can_get_content_files = can_read_files
-
-    can_update = [
+    # region Update record
+    # who can update a draft record (on an /api/user/documents url)
+    can_update_draft = [
         IfInState(
             "draft",
             then_=[
@@ -154,41 +140,165 @@ class DefaultWorkflowPermissions(CommunityDefaultWorkflowPermissions):
         ),
     ]
 
-    can_delete = [
-        # draft can be deleted, published record must be deleted via request
+    # no one can update a published record
+    can_update = [Disable()]
+    # endregion
+
+    # region Delete record
+    # who can read a draft record (on an /api/user/documents url)
+    can_delete_draft = can_update_draft
+
+    # who can delete a published record (on an /api/documents/ url)
+    can_delete = CommunityDefaultWorkflowPermissions.can_delete
+    # endregion
+
+    # region Create record
+    # who can create a new record (on an /api/user/documents url)
+    can_create = [
+        PrimaryCommunityRole("submitter"),
+        PrimaryCommunityRole("owner"),
+        PrimaryCommunityRole("curator"),
+    ]
+    # endregion
+
+    # region Draft files
+    can_draft_read_files = can_read_draft
+    can_draft_get_content_files = can_read_draft
+
+    can_draft_set_content_files = can_update_draft
+    can_draft_update_files = can_update_draft
+    can_draft_commit_files = can_update_draft
+    can_commit_files = [
+        IfInState("draft", then_=can_update_draft, else_=[Disable()]),
+    ]
+
+    can_draft_create_files = can_update_draft
+
+    # file service calls the permission can_create_files, not can_create_draft_files
+    # this is a bit strange, but it is how it is
+    can_create_files = [
+        IfInState("draft", then_=can_update_draft, else_=[Disable()]),
+    ]
+    can_set_content_files = [
+        IfInState("draft", then_=can_update_draft, else_=[Disable()]),
+    ]
+
+    can_draft_delete_files = can_update_draft
+    can_delete_files = [
+        IfInState("draft", then_=can_update_draft, else_=[Disable()]),
+    ]
+
+    can_draft_manage_files = can_update_draft
+    # endregion
+
+    # region Published files
+    can_read_files = _can_read_anytime + [
         IfInState(
-            "draft",
+            "published",
             then_=[
-                RecordOwners(),
-                PrimaryCommunityRole("curator"),
-                PrimaryCommunityRole("owner"),
+                IfRestricted(
+                    "files",
+                    then_=[PrimaryCommunityMembers()],
+                    else_=[AnyUser()],
+                )
             ],
         ),
-    ] + CommunityDefaultWorkflowPermissions.can_delete
+    ]
+    can_list_files = can_read_files
+    can_get_content_files = can_read
 
+    # modification of files is only on drafts
+    can_update_files = [Disable()]
     can_manage_files = [
         Disable(),
     ]
+    can_read_deleted_files = [SystemProcess()]
+    # endregion
+
+    # region Direct publish (without request and approval process)
+    can_publish = [
+        *CommunityDefaultWorkflowPermissions.can_publish,
+        # only those with "administration-direct-publish" can publish directly (DERS)
+        DirectPublishAction(),
+    ]
+    # endregion
+
+    # region Direct edit metadata (without request and approval process)
+    can_edit = CommunityDefaultWorkflowPermissions.can_edit + [
+        # only those with "administration-direct-publish" can edit directly (DERS)
+        DirectPublishAction(),
+    ]
+    # endregion
+
+    # region Direct create new version (without request and approval process)
+    can_new_version = CommunityDefaultWorkflowPermissions.can_new_version + [
+        # only those with "administration-direct-publish" can create new version directly (DERS)
+        DirectPublishAction(),
+    ]
+    # endregion
+
+    # region Embargoes
+    can_lift_embargo = CommunityDefaultWorkflowPermissions.can_lift_embargo
+    # endregion
+
+    # region Default values
+    can_bulk_add = CommunityDefaultWorkflowPermissions.can_bulk_add
+    can_add_community = CommunityDefaultWorkflowPermissions.can_add_community
+    can_remove_community = CommunityDefaultWorkflowPermissions.can_remove_community
+
+    can_create_or_update_many = (
+        CommunityDefaultWorkflowPermissions.can_create_or_update_many
+    )
+    can_manage = CommunityDefaultWorkflowPermissions.can_manage
+    can_manage_internal = CommunityDefaultWorkflowPermissions.can_manage_internal
+    can_manage_quota = CommunityDefaultWorkflowPermissions.can_manage_quota
+    can_manage_record_access = (
+        CommunityDefaultWorkflowPermissions.can_manage_record_access
+    )
+    can_moderate = CommunityDefaultWorkflowPermissions.can_moderate
+
+    can_pid_create = CommunityDefaultWorkflowPermissions.can_pid_create
+    can_pid_delete = CommunityDefaultWorkflowPermissions.can_pid_delete
+    can_pid_update = CommunityDefaultWorkflowPermissions.can_pid_update
+    can_pid_discard = CommunityDefaultWorkflowPermissions.can_pid_discard
+    can_pid_manage = CommunityDefaultWorkflowPermissions.can_pid_manage
+    can_pid_register = CommunityDefaultWorkflowPermissions.can_pid_register
+
+    can_preview = CommunityDefaultWorkflowPermissions.can_read
+
+    can_purge = CommunityDefaultWorkflowPermissions.can_purge
+    can_query_stats = CommunityDefaultWorkflowPermissions.can_query_stats
+
+    can_remove_record = CommunityDefaultWorkflowPermissions.can_remove_record
+
+    can_review = CommunityDefaultWorkflowPermissions.can_review
+    can_view = CommunityDefaultWorkflowPermissions.can_view
+    # endregion
 
     can_manage = [RecordOwners(), PrimaryCommunityMembers()] # allows creating and reading links
     can_manage_record_access = [RecordOwners()] # allows setting record access
 
 
 # if the record is in draft state, the owner or curator can request publishing
-publish_requesters = IfNotHarvested(
-    then_=IfInState("draft", then_=[RecordOwners(), PrimaryCommunityRole("curator")]),
-    else_=SystemProcess(),
-)
-
+publish_requesters = [
+    IfNotHarvested(
+        then_=IfInState(
+            "draft", then_=[RecordOwners(), PrimaryCommunityRole("curator")]
+        ),
+        else_=SystemProcess(),
+    )
+]
 # if the requester is the curator of the community, auto approve the request
-publish_recipients = IfRequestedBy(
-    requesters=[
-        PrimaryCommunityRole("curator"),
-        PrimaryCommunityRole("owner"),
-    ],
-    then_=[AutoApprove()],
-    else_=[PrimaryCommunityRole("curator"), PrimaryCommunityRole("owner")],
-)
+publish_recipients = [
+    IfRequestedBy(
+        requesters=[
+            PrimaryCommunityRole("curator"),
+            PrimaryCommunityRole("owner"),
+        ],
+        then_=[AutoApprove()],
+        else_=[PrimaryCommunityRole("curator"), PrimaryCommunityRole("owner")],
+    )
+]
 
 publish_transitions = WorkflowTransitions(
     submitted="submitted",
@@ -210,25 +320,22 @@ publish_escalations = [
 
 class DefaultWorkflowRequests(WorkflowRequestPolicy):
     publish_draft = WorkflowRequest(
-        requesters=[
-            IfDraftType(
-                "metadata",
-                then_=publish_requesters,
-            )
-        ],
-        recipients=[publish_recipients],
+        requesters=publish_requesters,
+        recipients=publish_recipients,
         transitions=publish_transitions,
         escalations=publish_escalations,
     )
 
     publish_new_version = WorkflowRequest(
-        requesters=[
-            IfDraftType(
-                ["new_version", "initial"],
-                then_=publish_requesters,
-            )
-        ],
-        recipients=[publish_recipients],
+        requesters=publish_requesters,
+        recipients=publish_recipients,
+        transitions=publish_transitions,
+        escalations=publish_escalations,
+    )
+
+    publish_changed_metadata = WorkflowRequest(
+        requesters=publish_requesters,
+        recipients=publish_recipients,
         transitions=publish_transitions,
         escalations=publish_escalations,
     )

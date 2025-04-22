@@ -5271,3 +5271,6 @@ msgstr ""
 
 msgid "metadata/funders/funder/id.hint"
 msgstr ""
+
+msgid "Assigned DOI:"
+msgstr ""
