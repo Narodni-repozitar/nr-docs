@@ -105,6 +105,7 @@ direct_publish_action = "common.workflows.default:direct_publish_action"
 
 [project.entry-points."invenio.documents.response_handlers"]
 csl_citation = "common.resources.citations:citations_response_handlers"
+datacite = "common.resources.serializers:datacite_serializer"
 
 [project.optional-dependencies]
 tests = [
