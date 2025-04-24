@@ -13,7 +13,9 @@
 {% if record.expanded.request_types or recordRequests %}
   <RecordRequests record={record} />
 {% endif %}
+{% if extra_context.permissions.can_manage %}
 <RecordSharing record={record} permissions={extra_context.permissions} groups_enabled={config.USERS_RESOURCES_GROUPS_ENABLED} />
+{% endif %}
 </section>
 {% endif %}
 {% if record.expanded.communities %}
