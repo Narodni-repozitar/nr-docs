@@ -366,6 +366,13 @@ class DefaultWorkflowRequests(WorkflowRequestPolicy):
         escalations=publish_escalations,
     )
 
+    # same setting for delete_draft as for publishing the record, but the deletion
+    # is always accepted
+    delete_draft = WorkflowRequest(
+        requesters=publish_requesters,
+        recipients=[AutoApprove()],
+    )
+
     edit_published_record = WorkflowRequest(
         requesters=[
             IfNotHarvested(
