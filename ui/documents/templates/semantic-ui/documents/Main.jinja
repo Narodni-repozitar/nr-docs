@@ -10,9 +10,9 @@
 <div>
     <h1 class="ui header m-0 inline">
         {% if ns.localized_title %}
-            {{ ns.localized_title|safe }}
+            {{ ns.localized_title }}
         {% else %}
-            {{ metadata.title|safe if metadata.title else _("Title not provided")}}
+            {{ metadata.title if metadata.title else _("Title not provided")}}
         {% endif %}
         <AccessRight access={record.access_status} search_link={record.links.search_link} />
     </h1>
