@@ -1325,12 +1325,6 @@ access:
   visibility: public
 metadata:
   title: Sociologický ústav AV ČR
----
-slug: 5pv8
-access:
-  visibility: public
-metadata:
-  title: Sociologický ústav AV ČR
   curation_policy: Záznamy zakládají vkladatelé v rámci komunity nebo sami kurátoři,
     následuje schválení a zveřejnění záznamu kurátorem komunity. V rámci komunity
     vidí všichni členové všechny záznamy i soubory, včetně rozpracovaných záznamů.
@@ -1577,12 +1571,6 @@ metadata:
   website: https://www.iem.cas.cz/
   organizations:
   - name: Ústav experimentální botaniky AV ČR
----
-slug: 9pth
-access:
-  visibility: public
-metadata:
-  title: Ústav experimentální medicíny AV ČR
 ---
 slug: 9pth
 access:
@@ -1933,18 +1921,6 @@ metadata:
   website: http://www.utia.cas.cz/cs
   organizations:
   - name: Ústav teorie informace a automatizace AV ČR
----
-slug: e2dx
-access:
-  visibility: public
-metadata:
-  title: Ústav termomechaniky AV ČR
----
-slug: e2dx
-access:
-  visibility: public
-metadata:
-  title: Ústav termomechaniky AV ČR
 ---
 slug: e2dx
 access:
