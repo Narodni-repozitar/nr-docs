@@ -26,7 +26,12 @@ from datetime import timedelta
 from invenio_access import action_factory
 from invenio_access.permissions import Permission
 from invenio_i18n import lazy_gettext as _
-from invenio_rdm_records.services.generators import IfRecordDeleted, IfRestricted
+from invenio_rdm_records.services.generators import (
+    AccessGrant,
+    IfRecordDeleted,
+    IfRestricted,
+    SecretLinks,
+)
 from invenio_records_permissions.generators import (
     AnyUser,
     Disable,
@@ -89,6 +94,10 @@ class RestrictedWorkflowPermissions(CommunityDefaultWorkflowPermissions):
             ["draft", "submitted"],
             then_=[
                 PrimaryCommunityMembers(),
+                AccessGrant("preview"),
+                AccessGrant("edit"),
+                SecretLinks("preview"),
+                SecretLinks("edit"),
             ],
         ),
     ]
@@ -98,11 +107,17 @@ class RestrictedWorkflowPermissions(CommunityDefaultWorkflowPermissions):
         IfInState(
             ["published", "deleted"],
             then_=[
+                AccessGrant("preview"),
+                AccessGrant("view"),
+                AccessGrant("edit"),
+                SecretLinks("preview"),
+                SecretLinks("view"),
+                SecretLinks("edit"),
                 IfRestricted(
                     "record",
                     then_=[PrimaryCommunityMembers()],
                     else_=[AnyUser()],
-                )
+                ),
             ],
         ),
     ]
@@ -130,6 +145,8 @@ class RestrictedWorkflowPermissions(CommunityDefaultWorkflowPermissions):
                 RecordOwners(),
                 PrimaryCommunityRole("curator"),
                 PrimaryCommunityRole("owner"),
+                AccessGrant("edit"),
+                SecretLinks("edit"),
             ],
         ),
         # if not draft, can not be directly updated by any means, must use request
@@ -181,6 +198,8 @@ class RestrictedWorkflowPermissions(CommunityDefaultWorkflowPermissions):
                 RecordOwners(),
                 PrimaryCommunityRole("curator"),
                 PrimaryCommunityRole("owner"),
+                AccessGrant("edit"),
+                SecretLinks("edit"),
             ],
         ),
     ]
@@ -210,15 +229,18 @@ class RestrictedWorkflowPermissions(CommunityDefaultWorkflowPermissions):
         IfInState(
             "published",
             then_=[
+                AccessGrant("view"),
+                AccessGrant("edit"),
                 IfRestricted(
                     "files",
                     then_=[
                         RecordOwners(),
                         PrimaryCommunityRole("curator"),
                         PrimaryCommunityRole("owner"),
+                        SecretLinks("view"),
                     ],
                     else_=[AnyUser()],
-                )
+                ),
             ],
         ),
     ]
@@ -267,7 +289,11 @@ class RestrictedWorkflowPermissions(CommunityDefaultWorkflowPermissions):
     can_create_or_update_many = (
         CommunityDefaultWorkflowPermissions.can_create_or_update_many
     )
-    can_manage = CommunityDefaultWorkflowPermissions.can_manage
+    can_manage = CommunityDefaultWorkflowPermissions.can_manage + [
+        PrimaryCommunityRole("curator"),
+        PrimaryCommunityRole("owner"),
+        AccessGrant("manage"),
+    ]
     can_manage_internal = CommunityDefaultWorkflowPermissions.can_manage_internal
     can_manage_quota = CommunityDefaultWorkflowPermissions.can_manage_quota
     can_manage_record_access = (
@@ -369,6 +395,7 @@ class RestrictedWorkflowRequests(WorkflowRequestPolicy):
                         RecordOwners(),
                         PrimaryCommunityRole("curator"),
                         PrimaryCommunityRole("owner"),
+                        AccessGrant("edit"),
                     ],
                 ),
                 else_=SystemProcess(),
@@ -388,6 +415,7 @@ class RestrictedWorkflowRequests(WorkflowRequestPolicy):
                         RecordOwners(),
                         PrimaryCommunityRole("curator"),
                         PrimaryCommunityRole("owner"),
+                        AccessGrant("edit"),
                     ],
                 ),
                 else_=SystemProcess(),
