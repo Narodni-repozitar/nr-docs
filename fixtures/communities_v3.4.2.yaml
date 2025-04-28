@@ -1,1794 +1,2264 @@
-slug: agritec
+slug: 7emz
 access:
   visibility: public
 metadata:
   title: AGRITEC, výzkum, šlechtění, služby
+  curation_policy: Záznamy zakládají vkladatelé v rámci komunity nebo sami kurátoři,
+    následuje schválení a zveřejnění záznamu kurátorem komunity. V rámci komunity
+    vidí všichni členové všechny záznamy i soubory, včetně rozpracovaných záznamů.
   type:
     id: organization
   website: https://www.agritec.cz/
   organizations:
   - name: AGRITEC, výzkum, šlechtění, služby
 ---
-slug: agrotest-fyto
+slug: 22g4
 access:
   visibility: public
 metadata:
   title: Agrotest fyto, s.r.o.
+  curation_policy: Záznamy zakládají vkladatelé v rámci komunity nebo sami kurátoři,
+    následuje schválení a zveřejnění záznamu kurátorem komunity. V rámci komunity
+    vidí všichni členové všechny záznamy i soubory, včetně rozpracovaných záznamů.
   type:
     id: organization
   website: http://www.vukrom.cz/
   organizations:
   - name: Agrotest fyto
 ---
-slug: agrovyzkum-rapotin
+slug: zqh5
 access:
   visibility: public
 metadata:
   title: Agrovýzkum Rapotín
+  curation_policy: Záznamy zakládají vkladatelé v rámci komunity nebo sami kurátoři,
+    následuje schválení a zveřejnění záznamu kurátorem komunity. V rámci komunity
+    vidí všichni členové všechny záznamy i soubory, včetně rozpracovaných záznamů.
   type:
     id: organization
   website: https://www.vuchs.cz/main/agrovyzkum/
   organizations:
   - name: Agrovýzkum Rapotín
 ---
-slug: akademie-muzickych-umeni-v-praze
+slug: 8gve
 access:
   visibility: public
 metadata:
   title: Akademie múzických umění
+  curation_policy: Záznamy zakládají vkladatelé v rámci komunity nebo sami kurátoři,
+    následuje schválení a zveřejnění záznamu kurátorem komunity. V rámci komunity
+    vidí všichni členové všechny záznamy i soubory, včetně rozpracovaných záznamů.
   type:
     id: organization
   website: https://www.amu.cz/cs/
   organizations:
   - name: Akademie múzických umění v Praze
 ---
-slug: akademie-vytvarnych-umeni
+slug: nvcb
 access:
   visibility: public
 metadata:
   title: Akademie výtvarných umění
+  curation_policy: Záznamy zakládají vkladatelé v rámci komunity nebo sami kurátoři,
+    následuje schválení a zveřejnění záznamu kurátorem komunity. V rámci komunity
+    vidí všichni členové všechny záznamy i soubory, včetně rozpracovaných záznamů.
   type:
     id: organization
   website: http://www.avu.cz
   organizations:
   - name: Akademie výtvarných umění v Praze
 ---
-slug: archeologicky-ustav-brno
+slug: tq0x
 access:
   visibility: public
 metadata:
   title: Archeologický ústav AV ČR, Brno
+  curation_policy: Záznamy zakládají vkladatelé v rámci komunity nebo sami kurátoři,
+    následuje schválení a zveřejnění záznamu kurátorem komunity. V rámci komunity
+    vidí všichni členové všechny záznamy i soubory, včetně rozpracovaných záznamů.
   type:
     id: organization
   website: https://www.arub.cz/
   organizations:
   - name: Archeologický ústav AV ČR, Brno
 ---
-slug: archeologicky-ustav-praha
+slug: fy00
 access:
   visibility: public
 metadata:
   title: Archeologický ústav AV ČR, Praha
+  curation_policy: Záznamy zakládají vkladatelé v rámci komunity nebo sami kurátoři,
+    následuje schválení a zveřejnění záznamu kurátorem komunity. V rámci komunity
+    vidí všichni členové všechny záznamy i soubory, včetně rozpracovaných záznamů.
   type:
     id: organization
   website: https://www.arup.cas.cz/
   organizations:
   - name: Archeologický ústav AV ČR, Praha
 ---
-slug: archip
+slug: 52fb
 access:
   visibility: public
 metadata:
   title: Architectural Institute in Prague
   description: Ukončená spolupráce, do komunity nepřibývají nové záznamy.
+  curation_policy: Komunita nemá vlastní členy ani vkladatele. Nové záznamy v této
+    komunitě nevznikají.
   type:
     id: organization
   website: http://www.archip.eu
   organizations:
   - name: Architectural Institute in Prague
 ---
-slug: archiv-doc-jiri-soucek
+slug: qvhz
 access:
   visibility: public
 metadata:
   title: Archiv Doc. Jiřího Součka
+  curation_policy: Komunita nemá vlastní členy ani vkladatele. Nové záznamy v této
+    komunitě nevznikají.
   type:
     id: topic
 ---
-slug: archiv-ing-arch-jana-moucky
+slug: 4j8v
 access:
   visibility: public
 metadata:
   title: Archiv Ing. Arch. Jana Moučky
+  curation_policy: Komunita nemá vlastní členy ani vkladatele. Nové záznamy v této
+    komunitě nevznikají.
   type:
     id: topic
 ---
-slug: arnika
+slug: y0dw
 access:
   visibility: public
 metadata:
   title: Arnika
+  curation_policy: Záznamy zakládají vkladatelé v rámci komunity nebo sami kurátoři,
+    následuje schválení a zveřejnění záznamu kurátorem komunity. V rámci komunity
+    vidí všichni členové všechny záznamy i soubory, včetně rozpracovaných záznamů.
   type:
     id: organization
   website: https://arnika.org
   organizations:
   - name: Arnika
 ---
-slug: astronomicky-ustav
+slug: vy9t
 access:
   visibility: public
 metadata:
   title: Astronomický ústav AV ČR
+  curation_policy: Záznamy zakládají vkladatelé v rámci komunity nebo sami kurátoři,
+    následuje schválení a zveřejnění záznamu kurátorem komunity. V rámci komunity
+    vidí všichni členové všechny záznamy i soubory, včetně rozpracovaných záznamů.
   type:
     id: organization
   website: https://www.asu.cas.cz/
   organizations:
   - name: Astronomický ústav AV ČR
 ---
-slug: biofyzikalni-ustav
+slug: zpci
 access:
   visibility: public
 metadata:
   title: Biofyzikální ústav AV ČR
+  curation_policy: Záznamy zakládají vkladatelé v rámci komunity nebo sami kurátoři,
+    následuje schválení a zveřejnění záznamu kurátorem komunity. V rámci komunity
+    vidí všichni členové všechny záznamy i soubory, včetně rozpracovaných záznamů.
   type:
     id: organization
   website: https://www.ibp.cz/cs/
   organizations:
   - name: Biofyzikální ústav AV ČR
 ---
-slug: biologicke-centrum
+slug: n0xu
 access:
   visibility: public
 metadata:
   title: Biologické centrum AV ČR
+  curation_policy: Záznamy zakládají vkladatelé v rámci komunity nebo sami kurátoři,
+    následuje schválení a zveřejnění záznamu kurátorem komunity. V rámci komunity
+    vidí všichni členové všechny záznamy i soubory, včetně rozpracovaných záznamů.
   type:
     id: organization
   website: https://www.bc.cas.cz/
   organizations:
   - name: Biologické centrum AV ČR
 ---
-slug: biotechnologicky-ustav
+slug: 2qd9
 access:
   visibility: public
 metadata:
   title: Biotechnologický ústav AV ČR
+  curation_policy: Záznamy zakládají vkladatelé v rámci komunity nebo sami kurátoři,
+    následuje schválení a zveřejnění záznamu kurátorem komunity. V rámci komunity
+    vidí všichni členové všechny záznamy i soubory, včetně rozpracovaných záznamů.
   type:
     id: organization
   website: https://www.ibt.cas.cz/cs/
   organizations:
   - name: Biotechnologický ústav AV ČR
 ---
-slug: botanicky-ustav
+slug: 91ek
 access:
   visibility: public
 metadata:
   title: Botanický ústav AV ČR
+  curation_policy: Záznamy zakládají vkladatelé v rámci komunity nebo sami kurátoři,
+    následuje schválení a zveřejnění záznamu kurátorem komunity. V rámci komunity
+    vidí všichni členové všechny záznamy i soubory, včetně rozpracovaných záznamů.
   type:
     id: organization
   website: https://www.ibot.cas.cz/
   organizations:
   - name: Botanický ústav AV ČR
 ---
-slug: cenia
+slug: zn3n
 access:
   visibility: public
 metadata:
   title: CENIA, česká informační agentura životního prostředí
+  curation_policy: Záznamy zakládají vkladatelé v rámci komunity nebo sami kurátoři,
+    následuje schválení a zveřejnění záznamu kurátorem komunity. V rámci komunity
+    vidí všichni členové všechny záznamy i soubory, včetně rozpracovaných záznamů.
   type:
     id: organization
   website: https://www.cenia.cz
   organizations:
   - name: CENIA, česká informační agentura životního prostředí
 ---
-slug: centrum-dopravniho-vyzkumu
+slug: x6b0
 access:
   visibility: public
 metadata:
   title: Centrum dopravního výzkumu, v.v.i. Brno
+  curation_policy: Záznamy zakládají vkladatelé v rámci komunity nebo sami kurátoři,
+    následuje schválení a zveřejnění záznamu kurátorem komunity. V rámci komunity
+    vidí všichni členové všechny záznamy i soubory, včetně rozpracovaných záznamů.
   type:
     id: organization
   website: https://www.cdv.cz
   organizations:
   - name: Centrum dopravního výzkumu
 ---
-slug: centrum-pro-dopravu-a-energetiku
+slug: xmfn
 access:
   visibility: public
 metadata:
   title: Centrum pro dopravu a energetiku
+  curation_policy: Záznamy zakládají vkladatelé v rámci komunity nebo sami kurátoři,
+    následuje schválení a zveřejnění záznamu kurátorem komunity. V rámci komunity
+    vidí všichni členové všechny záznamy i soubory, včetně rozpracovaných záznamů.
   type:
     id: organization
   website: https://www.cde-org.cz
   organizations:
   - name: Centrum pro dopravu a energetiku
 ---
-slug: centrum-pro-regionalni-rozvoj
+slug: 3f7b
 access:
   visibility: public
 metadata:
   title: Centrum pro regionální rozvoj České republiky
   description: Ukončená spolupráce, do komunity nepřibývají nové záznamy.
+  curation_policy: Komunita nemá vlastní členy ani vkladatele. Nové záznamy v této
+    komunitě nevznikají.
   type:
     id: organization
   website: http://www.crr.cz
   organizations:
   - name: Centrum pro regionální rozvoj České republiky
 ---
-slug: centrum-pro-studium-vysokeho-skolstvi
+slug: vvwy
 access:
   visibility: public
 metadata:
   title: Centrum pro studium vysokého školství
+  curation_policy: Záznamy zakládají vkladatelé v rámci komunity nebo sami kurátoři,
+    následuje schválení a zveřejnění záznamu kurátorem komunity. V rámci komunity
+    vidí všichni členové všechny záznamy i soubory, včetně rozpracovaných záznamů.
   type:
     id: organization
   website: https://www.csvs.cz/
   organizations:
   - name: Centrum pro studium vysokého školství
 ---
-slug: centrum-vyzkumu-globalni-zmeny
+slug: j47p
 access:
   visibility: public
 metadata:
   title: Ústav výzkumu globální změny AV ČR
+  curation_policy: Záznamy zakládají vkladatelé v rámci komunity nebo sami kurátoři,
+    následuje schválení a zveřejnění záznamu kurátorem komunity. V rámci komunity
+    vidí všichni členové všechny záznamy i soubory, včetně rozpracovaných záznamů.
   type:
     id: organization
   website: http://www.czechglobe.cz/
   organizations:
   - name: Ústav výzkumu globální změny AV ČR
 ---
-slug: ceska-asociace-ergoterapeutu
+slug: whmr
 access:
   visibility: public
 metadata:
   title: Česká asociace ergoterapeutů
+  curation_policy: Záznamy zakládají vkladatelé v rámci komunity nebo sami kurátoři,
+    následuje schválení a zveřejnění záznamu kurátorem komunity. V rámci komunity
+    vidí všichni členové všechny záznamy i soubory, včetně rozpracovaných záznamů.
   type:
     id: organization
   website: https://ergoterapie.cz/
   organizations:
   - name: Česká asociace ergoterapeutů
 ---
-slug: ceska-asociace-paraplegiku
+slug: exqr
 access:
   visibility: public
 metadata:
   title: Česká asociace paraplegiků
+  curation_policy: Záznamy zakládají vkladatelé v rámci komunity nebo sami kurátoři,
+    následuje schválení a zveřejnění záznamu kurátorem komunity. V rámci komunity
+    vidí všichni členové všechny záznamy i soubory, včetně rozpracovaných záznamů.
   type:
     id: organization
   website: http://www.czepa.cz/
   organizations:
   - name: Česká asociace paraplegiků
 ---
-slug: ceska-narodni-banka
+slug: bnyi
 access:
   visibility: public
 metadata:
   title: Česká národní banka
+  curation_policy: Záznamy zakládají vkladatelé v rámci komunity nebo sami kurátoři,
+    následuje schválení a zveřejnění záznamu kurátorem komunity. V rámci komunity
+    vidí všichni členové všechny záznamy i soubory, včetně rozpracovaných záznamů.
   type:
     id: organization
   website: http://www.cnb.cz
   organizations:
   - name: Česká národní banka
 ---
-slug: ceska-spolecnost-ornitologicka
+slug: iq4i
 access:
   visibility: public
 metadata:
   title: Česká společnost ornitologická
+  curation_policy: Záznamy zakládají vkladatelé v rámci komunity nebo sami kurátoři,
+    následuje schválení a zveřejnění záznamu kurátorem komunity. V rámci komunity
+    vidí všichni členové všechny záznamy i soubory, včetně rozpracovaných záznamů.
   type:
     id: organization
   website: http://www.birdlife.cz/
   organizations:
   - name: Česká společnost ornitologická
 ---
-slug: ceska-zemedelska-univerzita
+slug: 1tt2
 access:
   visibility: public
 metadata:
   title: Česká zemědělská univerzita v Praze
+  curation_policy: Záznamy zakládají vkladatelé v rámci komunity nebo sami kurátoři,
+    následuje schválení a zveřejnění záznamu kurátorem komunity. V rámci komunity
+    vidí všichni členové všechny záznamy i soubory, včetně rozpracovaných záznamů.
   type:
     id: organization
   website: https://www.czu.cz/cs
   organizations:
   - name: Česká zemědělská univerzita v Praze
 ---
-slug: cesky-statisticky-urad
+slug: badt
 access:
   visibility: public
 metadata:
   title: Český statistický úřad
+  curation_policy: Záznamy zakládají vkladatelé v rámci komunity nebo sami kurátoři,
+    následuje schválení a zveřejnění záznamu kurátorem komunity. V rámci komunity
+    vidí všichni členové všechny záznamy i soubory, včetně rozpracovaných záznamů.
   type:
     id: organization
   website: https://www.czso.cz/
   organizations:
   - name: Český statistický úřad
 ---
-slug: cesnet
+slug: ykbr
 access:
   visibility: public
 metadata:
   title: CESNET
+  curation_policy: Záznamy zakládají vkladatelé v rámci komunity nebo sami kurátoři,
+    následuje schválení a zveřejnění záznamu kurátorem komunity. V rámci komunity
+    vidí všichni členové všechny záznamy i soubory, včetně rozpracovaných záznamů.
   type:
     id: organization
   website: https://www.cesnet.cz/
   organizations:
   - name: CESNET
 ---
-slug: clovek-v-tisni
+slug: izxu
 access:
   visibility: public
 metadata:
   title: Člověk v tísni, o.p.s
   description: Ukončená spolupráce, do komunity nepřibývají nové záznamy.
+  curation_policy: Komunita nemá vlastní členy ani vkladatele. Nové záznamy v této
+    komunitě nevznikají.
   type:
     id: organization
   website: http://www.clovekvtisni.cz
   organizations:
   - name: Člověk v tísni
 ---
-slug: crdm
+slug: utzb
 access:
   visibility: public
 metadata:
   title: Česká rada dětí a mládeže
+  curation_policy: Záznamy zakládají vkladatelé v rámci komunity nebo sami kurátoři,
+    následuje schválení a zveřejnění záznamu kurátorem komunity. V rámci komunity
+    vidí všichni členové všechny záznamy i soubory, včetně rozpracovaných záznamů.
   type:
     id: organization
   website: http://crdm.cz/
   organizations:
   - name: Česká rada dětí a mládeže
 ---
-slug: cvut
+slug: y9bq
 access:
   visibility: public
 metadata:
   title: České vysoké učení technické v Praze
+  curation_policy: Záznamy zakládají vkladatelé v rámci komunity nebo sami kurátoři,
+    následuje schválení a zveřejnění záznamu kurátorem komunity. V rámci komunity
+    vidí všichni členové všechny záznamy i soubory, včetně rozpracovaných záznamů.
   type:
     id: organization
   website: https://www.cvut.cz/
   organizations:
   - name: České vysoké učení technické v Praze
 ---
-slug: czwa
+slug: cjyn
 access:
   visibility: public
 metadata:
   title: 'CzWa: Asociace pro vodu ČR'
+  curation_policy: Záznamy zakládají vkladatelé v rámci komunity nebo sami kurátoři,
+    následuje schválení a zveřejnění záznamu kurátorem komunity. V rámci komunity
+    vidí všichni členové všechny záznamy i soubory, včetně rozpracovaných záznamů.
   type:
     id: organization
   website: http://www.czwa.cz/
   organizations:
   - name: Asociace pro vodu ČR
 ---
-slug: ekodomov
+slug: uh4x
 access:
   visibility: public
 metadata:
   title: Ekodomov
+  curation_policy: Záznamy zakládají vkladatelé v rámci komunity nebo sami kurátoři,
+    následuje schválení a zveřejnění záznamu kurátorem komunity. V rámci komunity
+    vidí všichni členové všechny záznamy i soubory, včetně rozpracovaných záznamů.
   type:
     id: organization
   website: http://www.ekodomov.cz/
   organizations:
   - name: Ekodomov
 ---
-slug: entomologicky-ustav
+slug: zfpq
 access:
   visibility: public
 metadata:
   title: Entomologický ústav AV ČR
   description: Ústav byl v roce 2006 sloučen pod Biologické centrum AV ČR.
+  curation_policy: Komunita nemá vlastní členy ani vkladatele. Nové záznamy v této
+    komunitě nevznikají.
   type:
     id: organization
   website: https://www.entu.cas.cz/
   organizations:
   - name: Entomologický ústav AV ČR
 ---
-slug: etnologicky-ustav
+slug: 4jef
 access:
   visibility: public
 metadata:
   title: Etnologický ústav AV ČR
+  curation_policy: Záznamy zakládají vkladatelé v rámci komunity nebo sami kurátoři,
+    následuje schválení a zveřejnění záznamu kurátorem komunity. V rámci komunity
+    vidí všichni členové všechny záznamy i soubory, včetně rozpracovaných záznamů.
   type:
     id: organization
   website: https://www.eu.avcr.cz/cs/
   organizations:
   - name: Etnologický ústav AV ČR
 ---
-slug: evropske-hodnoty
+slug: n2rk
 access:
   visibility: public
 metadata:
   title: Evropské hodnoty
   description: Ukončená spolupráce, do komunity nepřibývají nové záznamy.
+  curation_policy: Komunita nemá vlastní členy ani vkladatele. Nové záznamy v této
+    komunitě nevznikají.
   type:
     id: organization
   website: http://www.evropskehodnoty.cz/
   organizations:
   - name: Evropské hodnoty
 ---
-slug: fairtrade-cz-sk
+slug: zeea
 access:
   visibility: public
 metadata:
   title: Fairtrade Česko a Slovensko
+  curation_policy: Záznamy zakládají vkladatelé v rámci komunity nebo sami kurátoři,
+    následuje schválení a zveřejnění záznamu kurátorem komunity. V rámci komunity
+    vidí všichni členové všechny záznamy i soubory, včetně rozpracovaných záznamů.
   type:
     id: organization
   website: https://www.fairtrade-cesko.cz
   organizations:
   - name: Fairtrade Česko a Slovensko
 ---
-slug: filosoficky-ustav
+slug: 720e
 access:
   visibility: public
 metadata:
   title: Filosofický ústav AV ČR
+  curation_policy: Záznamy zakládají vkladatelé v rámci komunity nebo sami kurátoři,
+    následuje schválení a zveřejnění záznamu kurátorem komunity. V rámci komunity
+    vidí všichni členové všechny záznamy i soubory, včetně rozpracovaných záznamů.
   type:
     id: organization
   website: http://www.flu.cas.cz
   organizations:
   - name: Filosofický ústav AV ČR
 ---
-slug: fyzikalni-ustav
+slug: yd66
 access:
   visibility: public
 metadata:
   title: Fyzikální ústav AV ČR
+  curation_policy: Záznamy zakládají vkladatelé v rámci komunity nebo sami kurátoři,
+    následuje schválení a zveřejnění záznamu kurátorem komunity. V rámci komunity
+    vidí všichni členové všechny záznamy i soubory, včetně rozpracovaných záznamů.
   type:
     id: organization
   website: https://www.fzu.cz/home
   organizations:
   - name: Fyzikální ústav AV ČR
 ---
-slug: fyziologicky-ustav
+slug: nrpj
 access:
   visibility: public
 metadata:
   title: Fyziologický ústav AV ČR
+  curation_policy: Záznamy zakládají vkladatelé v rámci komunity nebo sami kurátoři,
+    následuje schválení a zveřejnění záznamu kurátorem komunity. V rámci komunity
+    vidí všichni členové všechny záznamy i soubory, včetně rozpracovaných záznamů.
   type:
     id: organization
   website: https://fgu.cas.cz/
   organizations:
   - name: Fyziologický ústav AV ČR
 ---
-slug: galerie-vytvarneho-umeni-v-ostrave
+slug: t0nj
 access:
   visibility: public
 metadata:
   title: Galerie výtvarného umění v Ostravě
+  curation_policy: Záznamy zakládají vkladatelé v rámci komunity nebo sami kurátoři,
+    následuje schválení a zveřejnění záznamu kurátorem komunity. V rámci komunity
+    vidí všichni členové všechny záznamy i soubory, včetně rozpracovaných záznamů.
   type:
     id: organization
   website: http://www.gvuo.cz/
   organizations:
   - name: Galerie výtvarného umění v Ostravě
 ---
-slug: gender-studies
+slug: 3fmh
 access:
   visibility: public
 metadata:
   title: Gender Studies
+  curation_policy: Záznamy zakládají vkladatelé v rámci komunity nebo sami kurátoři,
+    následuje schválení a zveřejnění záznamu kurátorem komunity. V rámci komunity
+    vidí všichni členové všechny záznamy i soubory, včetně rozpracovaných záznamů.
   type:
     id: organization
   website: http://www.genderstudies.cz/
   organizations:
   - name: Gender Studies
 ---
-slug: geofyzikalni-ustav
+slug: z1e8
 access:
   visibility: public
 metadata:
   title: Geofyzikální ústav AV ČR
+  curation_policy: Záznamy zakládají vkladatelé v rámci komunity nebo sami kurátoři,
+    následuje schválení a zveřejnění záznamu kurátorem komunity. V rámci komunity
+    vidí všichni členové všechny záznamy i soubory, včetně rozpracovaných záznamů.
   type:
     id: organization
   website: http://www.ig.cas.cz/
   organizations:
   - name: Geofyzikální ústav AV ČR
 ---
-slug: geologicky-ustav
+slug: 50at
 access:
   visibility: public
 metadata:
   title: Geologický ústav AV ČR
+  curation_policy: Záznamy zakládají vkladatelé v rámci komunity nebo sami kurátoři,
+    následuje schválení a zveřejnění záznamu kurátorem komunity. V rámci komunity
+    vidí všichni členové všechny záznamy i soubory, včetně rozpracovaných záznamů.
   type:
     id: organization
   website: http://www.gli.cas.cz
   organizations:
   - name: Geologický ústav AV ČR
 ---
-slug: gle
+slug: 6amm
 access:
   visibility: public
 metadata:
   title: GLE
+  curation_policy: Záznamy zakládají vkladatelé v rámci komunity nebo sami kurátoři,
+    následuje schválení a zveřejnění záznamu kurátorem komunity. V rámci komunity
+    vidí všichni členové všechny záznamy i soubory, včetně rozpracovaných záznamů.
   type:
     id: organization
   website: http://gle.cz/
   organizations:
   - name: GLE
 ---
-slug: hestia
+slug: azxq
 access:
   visibility: public
 metadata:
   title: HESTIA
+  curation_policy: Záznamy zakládají vkladatelé v rámci komunity nebo sami kurátoři,
+    následuje schválení a zveřejnění záznamu kurátorem komunity. V rámci komunity
+    vidí všichni členové všechny záznamy i soubory, včetně rozpracovaných záznamů.
   type:
     id: organization
   website: http://www.hest.cz/
   organizations:
   - name: HESTIA
 ---
-slug: historicky-ustav
+slug: y7gg
 access:
   visibility: public
 metadata:
   title: Historický ústav AV ČR
+  curation_policy: Záznamy zakládají vkladatelé v rámci komunity nebo sami kurátoři,
+    následuje schválení a zveřejnění záznamu kurátorem komunity. V rámci komunity
+    vidí všichni členové všechny záznamy i soubory, včetně rozpracovaných záznamů.
   type:
     id: organization
   website: http://www.hiu.cas.cz/
   organizations:
   - name: Historický ústav AV ČR
 ---
-slug: hydrobiologicky-ustav
+slug: v6jj
 access:
   visibility: public
 metadata:
   title: Hydrobiologický ústav AV ČR
   description: Ústav byl v roce 2006 sloučen pod Biologické centrum AV ČR.
+  curation_policy: Komunita nemá vlastní členy ani vkladatele. Nové záznamy v této
+    komunitě nevznikají.
   type:
     id: organization
   website: https://www.hbu.cas.cz/
   organizations:
   - name: Hydrobiologický ústav AV ČR
 ---
-slug: chmelarsky-institut
+slug: xrh6
 access:
   visibility: public
 metadata:
   title: Chmelařský institut
+  curation_policy: Záznamy zakládají vkladatelé v rámci komunity nebo sami kurátoři,
+    následuje schválení a zveřejnění záznamu kurátorem komunity. V rámci komunity
+    vidí všichni členové všechny záznamy i soubory, včetně rozpracovaných záznamů.
   type:
     id: organization
   website: http://www.chizatec.cz/
   organizations:
   - name: Chmelařský institut
 ---
-slug: institut-umeni
+slug: j9x8
 access:
   visibility: public
 metadata:
   title: Institut umění - Divadelní ústav
+  curation_policy: Záznamy zakládají vkladatelé v rámci komunity nebo sami kurátoři,
+    následuje schválení a zveřejnění záznamu kurátorem komunity. V rámci komunity
+    vidí všichni členové všechny záznamy i soubory, včetně rozpracovaných záznamů.
   type:
     id: organization
   website: http://www.idu.cz/
   organizations:
   - name: Institut umění - Divadelní ústav
 ---
-slug: iuridicum-remedium
+slug: ki0x
 access:
   visibility: public
 metadata:
   title: Iuridicum Remedium, o.s.
+  curation_policy: Záznamy zakládají vkladatelé v rámci komunity nebo sami kurátoři,
+    následuje schválení a zveřejnění záznamu kurátorem komunity. V rámci komunity
+    vidí všichni členové všechny záznamy i soubory, včetně rozpracovaných záznamů.
   type:
     id: organization
   website: http://www.iure.org/
   organizations:
   - name: Iuridicum Remedium
 ---
-slug: jihoceska-univerzita-v-ceskych-budejovicich
+slug: q6tw
 access:
   visibility: public
 metadata:
   title: Jihočeská univerzita v Českých Budějovicích
+  curation_policy: Záznamy zakládají vkladatelé v rámci komunity nebo sami kurátoři,
+    následuje schválení a zveřejnění záznamu kurátorem komunity. V rámci komunity
+    vidí všichni členové všechny záznamy i soubory, včetně rozpracovaných záznamů.
   type:
     id: organization
   website: https://www.jcu.cz/cz/
   organizations:
   - name: Jihočeská univerzita v Českých Budějovicích
 ---
-slug: jihomoravske-muzeum-ve-znojme
+slug: wk7f
 access:
   visibility: public
 metadata:
   title: Jihomoravské muzeum ve Znojmě
+  curation_policy: Záznamy zakládají vkladatelé v rámci komunity nebo sami kurátoři,
+    následuje schválení a zveřejnění záznamu kurátorem komunity. V rámci komunity
+    vidí všichni členové všechny záznamy i soubory, včetně rozpracovaných záznamů.
   type:
     id: organization
   website: https://www.muzeumznojmo.cz
   organizations:
   - name: Jihomoravské muzeum ve Znojmě
 ---
-slug: knihovna-av-cr
+slug: mp7c
 access:
   visibility: public
 metadata:
   title: Knihovna AV ČR
+  curation_policy: Záznamy zakládají vkladatelé v rámci komunity nebo sami kurátoři,
+    následuje schválení a zveřejnění záznamu kurátorem komunity. V rámci komunity
+    vidí všichni členové všechny záznamy i soubory, včetně rozpracovaných záznamů.
   type:
     id: organization
   website: https://lib.cas.cz/
   organizations:
   - name: Knihovna AV ČR
 ---
-slug: masarykova-univerzita
+slug: cujt
 access:
   visibility: public
 metadata:
   title: Masarykova univerzita
+  curation_policy: Záznamy zakládají vkladatelé v rámci komunity nebo sami kurátoři,
+    následuje schválení a zveřejnění záznamu kurátorem komunity. V rámci komunity
+    vidí všichni členové všechny záznamy i soubory, včetně rozpracovaných záznamů.
   type:
     id: organization
   website: https://www.muni.cz/
   organizations:
   - name: Masarykova univerzita
 ---
-slug: masarykuv-ustav-a-archiv
+slug: ku9r
 access:
   visibility: public
 metadata:
   title: Masarykův ústav + Archiv
+  curation_policy: Záznamy zakládají vkladatelé v rámci komunity nebo sami kurátoři,
+    následuje schválení a zveřejnění záznamu kurátorem komunity. V rámci komunity
+    vidí všichni členové všechny záznamy i soubory, včetně rozpracovaných záznamů.
   type:
     id: organization
   website: https://www.mua.cas.cz/cs
   organizations:
   - name: Masarykův ústav a Archiv AV ČR
 ---
-slug: matematicky-ustav
+slug: w6ed
 access:
   visibility: public
 metadata:
   title: Matematický ústav AV ČR
+  curation_policy: Záznamy zakládají vkladatelé v rámci komunity nebo sami kurátoři,
+    následuje schválení a zveřejnění záznamu kurátorem komunity. V rámci komunity
+    vidí všichni členové všechny záznamy i soubory, včetně rozpracovaných záznamů.
   type:
     id: organization
   website: http://www.math.cas.cz
   organizations:
   - name: Matematický ústav AV ČR
 ---
-slug: mendelova-univerzita-v-brne
+slug: q46u
 access:
   visibility: public
 metadata:
   title: Mendelova univerzita v Brně
+  curation_policy: Záznamy zakládají vkladatelé v rámci komunity nebo sami kurátoři,
+    následuje schválení a zveřejnění záznamu kurátorem komunity. V rámci komunity
+    vidí všichni členové všechny záznamy i soubory, včetně rozpracovaných záznamů.
   type:
     id: organization
   website: https://mendelu.cz/
   organizations:
   - name: Mendelova univerzita v Brně
 ---
-slug: mikrobiologicky-ustav
+slug: egdf
 access:
   visibility: public
 metadata:
   title: Mikrobiologický ústav AV ČR
+  curation_policy: Záznamy zakládají vkladatelé v rámci komunity nebo sami kurátoři,
+    následuje schválení a zveřejnění záznamu kurátorem komunity. V rámci komunity
+    vidí všichni členové všechny záznamy i soubory, včetně rozpracovaných záznamů.
   type:
     id: organization
   website: https://mbu.cas.cz/
   organizations:
   - name: Mikrobiologický ústav AV ČR
 ---
-slug: ministerstvo-spravedlnosti
+slug: x7j7
 access:
   visibility: public
 metadata:
   title: Ministerstvo spravedlnosti
+  curation_policy: Záznamy zakládají vkladatelé v rámci komunity nebo sami kurátoři,
+    následuje schválení a zveřejnění záznamu kurátorem komunity. V rámci komunity
+    vidí všichni členové všechny záznamy i soubory, včetně rozpracovaných záznamů.
   type:
     id: organization
   website: https://portal.justice.cz
   organizations:
   - name: Ministerstvo spravedlnosti ČR
 ---
-slug: moravska-galerie
+slug: z1em
 access:
   visibility: public
 metadata:
   title: Moravská galerie v Brně
+  curation_policy: Záznamy zakládají vkladatelé v rámci komunity nebo sami kurátoři,
+    následuje schválení a zveřejnění záznamu kurátorem komunity. V rámci komunity
+    vidí všichni členové všechny záznamy i soubory, včetně rozpracovaných záznamů.
   type:
     id: organization
   website: https://moravska-galerie.cz
   organizations:
   - name: Moravská galerie v Brně
 ---
-slug: moravska-zemska-knihovna
+slug: nm8z
 access:
   visibility: public
 metadata:
   title: Moravská zemská knihovna
+  curation_policy: Záznamy zakládají vkladatelé v rámci komunity nebo sami kurátoři,
+    následuje schválení a zveřejnění záznamu kurátorem komunity. V rámci komunity
+    vidí všichni členové všechny záznamy i soubory, včetně rozpracovaných záznamů.
   type:
     id: organization
   website: http://www.mzk.cz/
   organizations:
   - name: Moravská zemská knihovna
 ---
-slug: muzeum-brnenska
+slug: 21gf
 access:
   visibility: public
 metadata:
   title: Muzeum Brněnska
+  curation_policy: Záznamy zakládají vkladatelé v rámci komunity nebo sami kurátoři,
+    následuje schválení a zveřejnění záznamu kurátorem komunity. V rámci komunity
+    vidí všichni členové všechny záznamy i soubory, včetně rozpracovaných záznamů.
   type:
     id: organization
   website: https://www.muzeumbrnenska.cz
   organizations:
   - name: Muzeum Brněnska
 ---
-slug: muzeum-skla-a-bizuterie
+slug: 9zy2
 access:
   visibility: public
 metadata:
   title: Muzeum skla a bižuterie v Jablonci nad Nisou
+  curation_policy: Záznamy zakládají vkladatelé v rámci komunity nebo sami kurátoři,
+    následuje schválení a zveřejnění záznamu kurátorem komunity. V rámci komunity
+    vidí všichni členové všechny záznamy i soubory, včetně rozpracovaných záznamů.
   type:
     id: organization
   website: https://www.msb-jablonec.cz/novinky
   organizations:
   - name: Muzeum skla a bižuterie v Jablonci nad Nisou
 ---
-slug: muzeum-vychodnich-cech
+slug: 0zuv
 access:
   visibility: public
 metadata:
   title: Muzeum východních Čech v Hradci Králové
+  curation_policy: Záznamy zakládají vkladatelé v rámci komunity nebo sami kurátoři,
+    následuje schválení a zveřejnění záznamu kurátorem komunity. V rámci komunity
+    vidí všichni členové všechny záznamy i soubory, včetně rozpracovaných záznamů.
   type:
     id: organization
   website: http://www.muzeumhk.cz
   organizations:
   - name: Muzeum východních Čech v Hradci Králové
 ---
-slug: nacr
+slug: w8y4
 access:
   visibility: public
 metadata:
   title: Národní archiv
+  curation_policy: Záznamy zakládají vkladatelé v rámci komunity nebo sami kurátoři,
+    následuje schválení a zveřejnění záznamu kurátorem komunity. V rámci komunity
+    vidí všichni členové všechny záznamy i soubory, včetně rozpracovaných záznamů.
   type:
     id: organization
   website: http://www.nacr.cz/
   organizations:
   - name: Národní archiv
 ---
-slug: nadace-promeny
+slug: gj2a
 access:
   visibility: public
 metadata:
   title: Nadace Karel Komárek Family Foundation
+  curation_policy: Záznamy zakládají vkladatelé v rámci komunity nebo sami kurátoři,
+    následuje schválení a zveřejnění záznamu kurátorem komunity. V rámci komunity
+    vidí všichni členové všechny záznamy i soubory, včetně rozpracovaných záznamů.
   type:
     id: organization
   website: https://www.komarekfoundation.org/
   organizations:
   - name: Nadace Karel Komárek Family Foundation
 ---
-slug: narodni-hrebcin-kladruby
+slug: rtgy
 access:
   visibility: public
 metadata:
   title: Národní hřebčín Kladruby nad Labem
+  curation_policy: Záznamy zakládají vkladatelé v rámci komunity nebo sami kurátoři,
+    následuje schválení a zveřejnění záznamu kurátorem komunity. V rámci komunity
+    vidí všichni členové všechny záznamy i soubory, včetně rozpracovaných záznamů.
   type:
     id: organization
   website: https://www.nhkladruby.cz/
   organizations:
   - name: Národní hřebčín Kladruby nad Labem
 ---
-slug: narodni-informacni-a-poradenske-stredisko-pro-kulturu
+slug: ge7e
 access:
   visibility: public
 metadata:
   title: Národní informační a poradenské středisko pro kulturu (NIPOS)
+  curation_policy: Záznamy zakládají vkladatelé v rámci komunity nebo sami kurátoři,
+    následuje schválení a zveřejnění záznamu kurátorem komunity. V rámci komunity
+    vidí všichni členové všechny záznamy i soubory, včetně rozpracovaných záznamů.
   type:
     id: organization
   website: http://www.nipos-mk.cz/
   organizations:
   - name: Národní informační a poradenské středisko pro kulturu (NIPOS)
 ---
-slug: narodni-knihovna
+slug: vz34
 access:
   visibility: public
 metadata:
   title: Národní knihovna ČR
+  curation_policy: Záznamy zakládají vkladatelé v rámci komunity nebo sami kurátoři,
+    následuje schválení a zveřejnění záznamu kurátorem komunity. V rámci komunity
+    vidí všichni členové všechny záznamy i soubory, včetně rozpracovaných záznamů.
   type:
     id: organization
   website: https://www.nkp.cz/
   organizations:
   - name: Národní knihovna ČR
 ---
-slug: narodni-lekarska-knihovna
+slug: a0hr
 access:
   visibility: public
 metadata:
   title: Národní lékařská knihovna
+  curation_policy: Záznamy zakládají vkladatelé v rámci komunity nebo sami kurátoři,
+    následuje schválení a zveřejnění záznamu kurátorem komunity. V rámci komunity
+    vidí všichni členové všechny záznamy i soubory, včetně rozpracovaných záznamů.
   type:
     id: organization
   website: https://nlk.cz/
   organizations:
   - name: Národní lékařská knihovna
 ---
-slug: narodni-muzeum
+slug: 19pv
 access:
   visibility: public
 metadata:
   title: Národní muzeum
+  curation_policy: Záznamy zakládají vkladatelé v rámci komunity nebo sami kurátoři,
+    následuje schválení a zveřejnění záznamu kurátorem komunity. V rámci komunity
+    vidí všichni členové všechny záznamy i soubory, včetně rozpracovaných záznamů.
   type:
     id: organization
   website: http://www.nm.cz/
   organizations:
   - name: Národní muzeum
 ---
-slug: narodni-muzeum-v-prirode
+slug: 2nk4
 access:
   visibility: public
 metadata:
   title: Národní muzeum v přírodě
+  curation_policy: Záznamy zakládají vkladatelé v rámci komunity nebo sami kurátoři,
+    následuje schválení a zveřejnění záznamu kurátorem komunity. V rámci komunity
+    vidí všichni členové všechny záznamy i soubory, včetně rozpracovaných záznamů.
   type:
     id: organization
   website: https://www.nmvp.cz/
   organizations:
   - name: Národní muzeum v přírodě
 ---
-slug: narodni-pamatkovy-ustav
+slug: 87p8
 access:
   visibility: public
 metadata:
   title: Národní památkový ústav
+  curation_policy: Záznamy zakládají vkladatelé v rámci komunity nebo sami kurátoři,
+    následuje schválení a zveřejnění záznamu kurátorem komunity. V rámci komunity
+    vidí všichni členové všechny záznamy i soubory, včetně rozpracovaných záznamů.
   type:
     id: organization
   website: http://www.npu.cz/
   organizations:
   - name: Národní památkový ústav
 ---
-slug: narodni-technicka-knihovna
+slug: fcq7
 access:
   visibility: public
 metadata:
   title: Národní technická knihovna
+  curation_policy: Záznamy zakládají vkladatelé v rámci komunity nebo sami kurátoři,
+    následuje schválení a zveřejnění záznamu kurátorem komunity. V rámci komunity
+    vidí všichni členové všechny záznamy i soubory, včetně rozpracovaných záznamů.
   type:
     id: organization
   website: https://www.techlib.cz/cs/
   organizations:
   - name: Národní technická knihovna
 ---
-slug: narodni-technicke-muzeum
+slug: 7x0e
 access:
   visibility: public
 metadata:
   title: Národní technické muzeum
+  curation_policy: Záznamy zakládají vkladatelé v rámci komunity nebo sami kurátoři,
+    následuje schválení a zveřejnění záznamu kurátorem komunity. V rámci komunity
+    vidí všichni členové všechny záznamy i soubory, včetně rozpracovaných záznamů.
   type:
     id: organization
   website: http://www.ntm.cz/
   organizations:
   - name: Národní technické muzeum
 ---
-slug: narodni-zemedelske-muzeum
+slug: 2ixq
 access:
   visibility: public
 metadata:
   title: Národní zemědělské muzeum
+  curation_policy: Záznamy zakládají vkladatelé v rámci komunity nebo sami kurátoři,
+    následuje schválení a zveřejnění záznamu kurátorem komunity. V rámci komunity
+    vidí všichni členové všechny záznamy i soubory, včetně rozpracovaných záznamů.
   type:
     id: organization
   website: http://nzm.cz/
   organizations:
   - name: Národní zemědělské muzeum
 ---
-slug: narodohospodarsky-ustav
+slug: 99xq
 access:
   visibility: public
 metadata:
   title: Národohospodářský ústav AV ČR
+  curation_policy: Záznamy zakládají vkladatelé v rámci komunity nebo sami kurátoři,
+    následuje schválení a zveřejnění záznamu kurátorem komunity. V rámci komunity
+    vidí všichni členové všechny záznamy i soubory, včetně rozpracovaných záznamů.
   type:
     id: organization
   website: https://www.ei.cas.cz/
   organizations:
   - name: Národohospodářský ústav AV ČR
 ---
-slug: nfa
+slug: gr8c
 access:
   visibility: public
 metadata:
   title: Národní filmový archiv
+  curation_policy: Záznamy zakládají vkladatelé v rámci komunity nebo sami kurátoři,
+    následuje schválení a zveřejnění záznamu kurátorem komunity. V rámci komunity
+    vidí všichni členové všechny záznamy i soubory, včetně rozpracovaných záznamů.
   type:
     id: organization
   website: https://nfa.cz
   organizations:
   - name: Národní filmový archiv
 ---
-slug: nulk
+slug: v0rv
 access:
   visibility: public
 metadata:
   title: Národní ústav lidové kultury
+  curation_policy: Záznamy zakládají vkladatelé v rámci komunity nebo sami kurátoři,
+    následuje schválení a zveřejnění záznamu kurátorem komunity. V rámci komunity
+    vidí všichni členové všechny záznamy i soubory, včetně rozpracovaných záznamů.
   type:
     id: organization
   website: http://www.nulk.cz/
   organizations:
   - name: Národní ústav lidové kultury
 ---
-slug: nuv
+slug: wbhz
 access:
   visibility: public
 metadata:
   title: Národní ústav pro vzdělávání
   description: Ukončená spolupráce, do komunity nepřibývají nové záznamy.
+  curation_policy: Komunita nemá vlastní členy ani vkladatele. Nové záznamy v této
+    komunitě nevznikají.
   type:
     id: organization
   website: https://archiv-nuv.npi.cz/
   organizations:
   - name: Národní ústav pro vzdělávání
 ---
-slug: orientalni-ustav
+slug: r68a
 access:
   visibility: public
 metadata:
   title: Orientální ústav AV ČR
+  curation_policy: Záznamy zakládají vkladatelé v rámci komunity nebo sami kurátoři,
+    následuje schválení a zveřejnění záznamu kurátorem komunity. V rámci komunity
+    vidí všichni členové všechny záznamy i soubory, včetně rozpracovaných záznamů.
   type:
     id: organization
   website: https://orient.cas.cz/cs/
   organizations:
   - name: Orientální ústav AV ČR
 ---
-slug: oseva
+slug: 5vxr
 access:
   visibility: public
 metadata:
   title: OSEVA vývoj a výzkum
+  curation_policy: Záznamy zakládají vkladatelé v rámci komunity nebo sami kurátoři,
+    následuje schválení a zveřejnění záznamu kurátorem komunity. V rámci komunity
+    vidí všichni členové všechny záznamy i soubory, včetně rozpracovaných záznamů.
   type:
     id: organization
   website: http://www.oseva-vav.cz
   organizations:
   - name: OSEVA vývoj a výzkum
 ---
-slug: ostravska-univerzita
+slug: j61g
 access:
   visibility: public
 metadata:
   title: Ostravská univerzita
+  curation_policy: Záznamy zakládají vkladatelé v rámci komunity nebo sami kurátoři,
+    následuje schválení a zveřejnění záznamu kurátorem komunity. V rámci komunity
+    vidí všichni členové všechny záznamy i soubory, včetně rozpracovaných záznamů.
   type:
     id: organization
   website: https://www.osu.cz/
   organizations:
   - name: Ostravská univerzita
 ---
-slug: pamatnik-narodniho-pisemnictvi
+slug: 4dz4
 access:
   visibility: public
 metadata:
   title: Památník národního písemnictví
+  curation_policy: Záznamy zakládají vkladatelé v rámci komunity nebo sami kurátoři,
+    následuje schválení a zveřejnění záznamu kurátorem komunity. V rámci komunity
+    vidí všichni členové všechny záznamy i soubory, včetně rozpracovaných záznamů.
   type:
     id: organization
   website: http://www.pamatniknarodnihopisemnictvi.cz/
   organizations:
   - name: Památník národního písemnictví
 ---
-slug: parazitologicky-ustav
+slug: 4x3a
 access:
   visibility: public
 metadata:
   title: Parazitologický ústav AV ČR
   description: Ústav byl v roce 2006 sloučen pod Biologické centrum AV ČR.
+  curation_policy: Komunita nemá vlastní členy ani vkladatele. Nové záznamy v této
+    komunitě nevznikají.
   type:
     id: organization
   website: https://www.paru.cas.cz/
   organizations:
   - name: Parazitologický ústav AV ČR
 ---
-slug: parlamentni-institut
+slug: mxan
 access:
   visibility: public
 metadata:
   title: Parlamentní institut
+  curation_policy: Záznamy zakládají vkladatelé v rámci komunity nebo sami kurátoři,
+    následuje schválení a zveřejnění záznamu kurátorem komunity. V rámci komunity
+    vidí všichni členové všechny záznamy i soubory, včetně rozpracovaných záznamů.
   type:
     id: organization
   website: http://www.psp.cz/sqw/hp.sqw?k=40
   organizations:
   - name: Parlamentní institut
 ---
-slug: psychologicky-ustav
+slug: umjz
 access:
   visibility: public
 metadata:
   title: Psychologický ústav AV ČR
+  curation_policy: Záznamy zakládají vkladatelé v rámci komunity nebo sami kurátoři,
+    následuje schválení a zveřejnění záznamu kurátorem komunity. V rámci komunity
+    vidí všichni členové všechny záznamy i soubory, včetně rozpracovaných záznamů.
   type:
     id: organization
   website: https://www.psu.cas.cz
   organizations:
   - name: Psychologický ústav AV ČR
 ---
-slug: sdruzeni-pro-integraci-a-migraci
+slug: d0y5
 access:
   visibility: public
 metadata:
   title: Sdružení pro integraci a migraci
+  curation_policy: Záznamy zakládají vkladatelé v rámci komunity nebo sami kurátoři,
+    následuje schválení a zveřejnění záznamu kurátorem komunity. V rámci komunity
+    vidí všichni členové všechny záznamy i soubory, včetně rozpracovaných záznamů.
   type:
     id: organization
   website: http://www.migrace.com/
   organizations:
   - name: Sdružení pro integraci a migraci
 ---
-slug: severoceske-muzeum-v-liberci
+slug: 0d9d
 access:
   visibility: public
 metadata:
   title: Severočeské muzeum v Liberci
+  curation_policy: Záznamy zakládají vkladatelé v rámci komunity nebo sami kurátoři,
+    následuje schválení a zveřejnění záznamu kurátorem komunity. V rámci komunity
+    vidí všichni členové všechny záznamy i soubory, včetně rozpracovaných záznamů.
   type:
     id: organization
   website: http://www.muzeumlb.cz/
   organizations:
   - name: Severočeské muzeum v Liberci
 ---
-slug: siriri
+slug: xzdm
 access:
   visibility: public
 metadata:
   title: SIRIRI
+  curation_policy: Záznamy zakládají vkladatelé v rámci komunity nebo sami kurátoři,
+    následuje schválení a zveřejnění záznamu kurátorem komunity. V rámci komunity
+    vidí všichni členové všechny záznamy i soubory, včetně rozpracovaných záznamů.
   type:
     id: organization
   website: https://siriri.org/
   organizations:
   - name: SIRIRI
 ---
-slug: slezska-univerzita-opava
+slug: ymfu
 access:
   visibility: public
 metadata:
   title: Slezská univerzita v Opavě
+  curation_policy: Záznamy zakládají vkladatelé v rámci komunity nebo sami kurátoři,
+    následuje schválení a zveřejnění záznamu kurátorem komunity. V rámci komunity
+    vidí všichni členové všechny záznamy i soubory, včetně rozpracovaných záznamů.
   type:
     id: organization
   website: http://www.slu.cas.cz/
   organizations:
   - name: Slezská univerzita v Opavě
 ---
-slug: slezske-zemske-muzeum
+slug: 2a8j
 access:
   visibility: public
 metadata:
   title: Slezské zemské muzeum
+  curation_policy: Záznamy zakládají vkladatelé v rámci komunity nebo sami kurátoři,
+    následuje schválení a zveřejnění záznamu kurátorem komunity. V rámci komunity
+    vidí všichni členové všechny záznamy i soubory, včetně rozpracovaných záznamů.
   type:
     id: organization
   website: http://www.szm.cz/
   organizations:
   - name: Slezské zemské muzeum
 ---
-slug: slovansky-ustav
+slug: 58f6
 access:
   visibility: public
 metadata:
   title: Slovanský ústav AV ČR
+  curation_policy: Záznamy zakládají vkladatelé v rámci komunity nebo sami kurátoři,
+    následuje schválení a zveřejnění záznamu kurátorem komunity. V rámci komunity
+    vidí všichni členové všechny záznamy i soubory, včetně rozpracovaných záznamů.
   type:
     id: organization
   website: https://www.slu.cas.cz/cs
   organizations:
   - name: Slovanský ústav AV ČR
 ---
-slug: centrum-pro-vyzkum-verejneho-mineni
+slug: 5pv8
 access:
   visibility: public
 metadata:
   title: Sociologický ústav AV ČR
 ---
-slug: sociologicky-ustav
+slug: 5pv8
 access:
   visibility: public
 metadata:
   title: Sociologický ústav AV ČR
+  curation_policy: Záznamy zakládají vkladatelé v rámci komunity nebo sami kurátoři,
+    následuje schválení a zveřejnění záznamu kurátorem komunity. V rámci komunity
+    vidí všichni členové všechny záznamy i soubory, včetně rozpracovaných záznamů.
   type:
     id: organization
   website: http://www.soc.cas.cz/
   organizations:
   - name: Sociologický ústav AV ČR
 ---
-slug: surao
+slug: 5k78
 access:
   visibility: public
 metadata:
   title: Správa úložišť radioaktivních odpadů
+  curation_policy: Záznamy zakládají vkladatelé v rámci komunity nebo sami kurátoři,
+    následuje schválení a zveřejnění záznamu kurátorem komunity. V rámci komunity
+    vidí všichni členové všechny záznamy i soubory, včetně rozpracovaných záznamů.
   type:
     id: organization
   website: http://www.surao.cz/
   organizations:
   - name: Správa úložišť radioaktivních odpadů
 ---
-slug: szpi
+slug: azir
 access:
   visibility: public
 metadata:
   title: Státní zemědělská a potravinářská inspekce
+  curation_policy: Záznamy zakládají vkladatelé v rámci komunity nebo sami kurátoři,
+    následuje schválení a zveřejnění záznamu kurátorem komunity. V rámci komunity
+    vidí všichni členové všechny záznamy i soubory, včetně rozpracovaných záznamů.
   type:
     id: organization
   website: http://www.szpi.gov.cz
   organizations:
   - name: Státní zemědělská a potravinářská inspekce
 ---
-slug: technicke-muzeum-v-brne
+slug: ugvw
 access:
   visibility: public
 metadata:
   title: Technické muzeum v Brně
+  curation_policy: Záznamy zakládají vkladatelé v rámci komunity nebo sami kurátoři,
+    následuje schválení a zveřejnění záznamu kurátorem komunity. V rámci komunity
+    vidí všichni členové všechny záznamy i soubory, včetně rozpracovaných záznamů.
   type:
     id: organization
   website: https://www.tmbrno.cz
   organizations:
   - name: Technické muzeum v Brně
 ---
-slug: technologicke-centrum
+slug: bb83
 access:
   visibility: public
 metadata:
   title: Technologické centrum AV ČR
+  curation_policy: Záznamy zakládají vkladatelé v rámci komunity nebo sami kurátoři,
+    následuje schválení a zveřejnění záznamu kurátorem komunity. V rámci komunity
+    vidí všichni členové všechny záznamy i soubory, včetně rozpracovaných záznamů.
   type:
     id: organization
   website: https://www.tc.cz/cs
   organizations:
   - name: Technologické centrum AV ČR
 ---
-slug: uhk
+slug: p80y
 access:
   visibility: public
 metadata:
   title: Univerzita Hradec Králové
+  curation_policy: Záznamy zakládají vkladatelé v rámci komunity nebo sami kurátoři,
+    následuje schválení a zveřejnění záznamu kurátorem komunity. V rámci komunity
+    vidí všichni členové všechny záznamy i soubory, včetně rozpracovaných záznamů.
   type:
     id: organization
   website: https://www.uhk.cz/
   organizations:
   - name: Univerzita Hradec Králové
 ---
-slug: ujep
+slug: verw
 access:
   visibility: public
 metadata:
   title: Univerzita Jana Evangelisty Purkyně
+  curation_policy: Záznamy zakládají vkladatelé v rámci komunity nebo sami kurátoři,
+    následuje schválení a zveřejnění záznamu kurátorem komunity. V rámci komunity
+    vidí všichni členové všechny záznamy i soubory, včetně rozpracovaných záznamů.
   type:
     id: organization
   website: https://www.ujep.cz/cs/
   organizations:
   - name: Univerzita Jana Evangelisty Purkyně v Ústí nad Labem
 ---
-slug: umeleckoprumyslove-museum
+slug: ujww
 access:
   visibility: public
 metadata:
   title: Uměleckoprůmyslové museum
+  curation_policy: Záznamy zakládají vkladatelé v rámci komunity nebo sami kurátoři,
+    následuje schválení a zveřejnění záznamu kurátorem komunity. V rámci komunity
+    vidí všichni členové všechny záznamy i soubory, včetně rozpracovaných záznamů.
   type:
     id: organization
   website: http://www.upm.cz/
   organizations:
   - name: Uměleckoprůmyslové museum
 ---
-slug: univerzita-karlova-v-praze
+slug: 8g23
 access:
   visibility: public
 metadata:
   title: Univerzita Karlova
+  curation_policy: Záznamy zakládají vkladatelé v rámci komunity nebo sami kurátoři,
+    následuje schválení a zveřejnění záznamu kurátorem komunity. V rámci komunity
+    vidí všichni členové všechny záznamy i soubory, včetně rozpracovaných záznamů.
   type:
     id: organization
   website: https://cuni.cz/
   organizations:
   - name: Univerzita Karlova
 ---
-slug: upce
+slug: 9f6r
 access:
   visibility: public
 metadata:
   title: Univerzita Pardubice
+  curation_policy: Záznamy zakládají vkladatelé v rámci komunity nebo sami kurátoři,
+    následuje schválení a zveřejnění záznamu kurátorem komunity. V rámci komunity
+    vidí všichni členové všechny záznamy i soubory, včetně rozpracovaných záznamů.
   type:
     id: organization
   website: https://www.upce.cz/
   organizations:
   - name: Univerzita Pardubice
 ---
-slug: upol
+slug: jivv
 access:
   visibility: public
 metadata:
   title: Univerzita Palackého v Olomouci
+  curation_policy: Záznamy zakládají vkladatelé v rámci komunity nebo sami kurátoři,
+    následuje schválení a zveřejnění záznamu kurátorem komunity. V rámci komunity
+    vidí všichni členové všechny záznamy i soubory, včetně rozpracovaných záznamů.
   type:
     id: organization
   website: https://www.upol.cz/
   organizations:
   - name: Univerzita Palackého v Olomouci
 ---
-slug: urad-prumysloveho-vlastnictvi
+slug: 5wmr
 access:
   visibility: public
 metadata:
   title: Úřad průmyslového vlastnictví
+  curation_policy: Záznamy zakládají vkladatelé v rámci komunity nebo sami kurátoři,
+    následuje schválení a zveřejnění záznamu kurátorem komunity. V rámci komunity
+    vidí všichni členové všechny záznamy i soubory, včetně rozpracovaných záznamů.
   type:
     id: organization
   website: http://upv.cz/
   organizations:
   - name: Úřad průmyslového vlastnictví
 ---
-slug: ustav-analyticke-chemie
+slug: np2e
 access:
   visibility: public
 metadata:
   title: Ústav analytické chemie AV ČR
+  curation_policy: Záznamy zakládají vkladatelé v rámci komunity nebo sami kurátoři,
+    následuje schválení a zveřejnění záznamu kurátorem komunity. V rámci komunity
+    vidí všichni členové všechny záznamy i soubory, včetně rozpracovaných záznamů.
   type:
     id: organization
   website: https://www.iach.cz/cs/
   organizations:
   - name: Ústav analytické chemie AV ČR
 ---
-slug: ustav-anorganicke-chemie
+slug: xaqc
 access:
   visibility: public
 metadata:
   title: Ústav anorganické chemie AV ČR
+  curation_policy: Záznamy zakládají vkladatelé v rámci komunity nebo sami kurátoři,
+    následuje schválení a zveřejnění záznamu kurátorem komunity. V rámci komunity
+    vidí všichni členové všechny záznamy i soubory, včetně rozpracovaných záznamů.
   type:
     id: organization
   website: https://www.iic.cas.cz/
   organizations:
   - name: Ústav anorganické chemie AV ČR
 ---
-slug: ustav-archeologicke-pamatkove-pece-severozapadnich-cech
+slug: 085p
 access:
   visibility: public
 metadata:
   title: Ústav archeologické památkové péče severozápadních Čech
+  curation_policy: Záznamy zakládají vkladatelé v rámci komunity nebo sami kurátoři,
+    následuje schválení a zveřejnění záznamu kurátorem komunity. V rámci komunity
+    vidí všichni členové všechny záznamy i soubory, včetně rozpracovaných záznamů.
   type:
     id: organization
   website: http://www.uappmost.cz/wp/
   organizations:
   - name: Ústav archeologické památkové péče severozápadních Čech
 ---
-slug: ustav-biologie-obratlovcu
+slug: 7a4m
 access:
   visibility: public
 metadata:
   title: Ústav biologie obratlovců AV ČR
+  curation_policy: Záznamy zakládají vkladatelé v rámci komunity nebo sami kurátoři,
+    následuje schválení a zveřejnění záznamu kurátorem komunity. V rámci komunity
+    vidí všichni členové všechny záznamy i soubory, včetně rozpracovaných záznamů.
   type:
     id: organization
   website: https://www.ivb.cz
   organizations:
   - name: Ústav biologie obratlovců AV ČR
 ---
-slug: ustav-dejin-umeni
+slug: 3xe6
 access:
   visibility: public
 metadata:
   title: Ústav dějin umění AV ČR
+  curation_policy: Záznamy zakládají vkladatelé v rámci komunity nebo sami kurátoři,
+    následuje schválení a zveřejnění záznamu kurátorem komunity. V rámci komunity
+    vidí všichni členové všechny záznamy i soubory, včetně rozpracovaných záznamů.
   type:
     id: organization
   website: http://www.udu.cas.cz/
   organizations:
   - name: Ústav dějin umění AV ČR
 ---
-slug: ustav-experimentalni-botaniky
+slug: ai17
 access:
   visibility: public
 metadata:
   title: Ústav experimentální botaniky AV ČR
+  curation_policy: Záznamy zakládají vkladatelé v rámci komunity nebo sami kurátoři,
+    následuje schválení a zveřejnění záznamu kurátorem komunity. V rámci komunity
+    vidí všichni členové všechny záznamy i soubory, včetně rozpracovaných záznamů.
   type:
     id: organization
   website: https://www.iem.cas.cz/
   organizations:
   - name: Ústav experimentální botaniky AV ČR
 ---
-slug: farmakologicky-ustav
+slug: 9pth
 access:
   visibility: public
 metadata:
   title: Ústav experimentální medicíny AV ČR
 ---
-slug: ustav-experimentalni-mediciny
+slug: 9pth
 access:
   visibility: public
 metadata:
   title: Ústav experimentální medicíny AV ČR
+  curation_policy: Záznamy zakládají vkladatelé v rámci komunity nebo sami kurátoři,
+    následuje schválení a zveřejnění záznamu kurátorem komunity. V rámci komunity
+    vidí všichni členové všechny záznamy i soubory, včetně rozpracovaných záznamů.
   type:
     id: organization
   website: https://www.iem.cas.cz/
   organizations:
   - name: Ústav experimentální medicíny
 ---
-slug: ustav-fotoniky-a-elektroniky
+slug: dv07
 access:
   visibility: public
 metadata:
   title: Ústav fotoniky a elektroniky AV ČR
+  curation_policy: Záznamy zakládají vkladatelé v rámci komunity nebo sami kurátoři,
+    následuje schválení a zveřejnění záznamu kurátorem komunity. V rámci komunity
+    vidí všichni členové všechny záznamy i soubory, včetně rozpracovaných záznamů.
   type:
     id: organization
   website: http://www.ufe.cz/
   organizations:
   - name: Ústav fotoniky a elektroniky AV ČR
 ---
-slug: ustav-fyzikalni-chemie-j-heyrovskeho
+slug: d6ab
 access:
   visibility: public
 metadata:
   title: Ústav fyzikální chemie J. Heyrovského AV ČR
+  curation_policy: Záznamy zakládají vkladatelé v rámci komunity nebo sami kurátoři,
+    následuje schválení a zveřejnění záznamu kurátorem komunity. V rámci komunity
+    vidí všichni členové všechny záznamy i soubory, včetně rozpracovaných záznamů.
   type:
     id: organization
   website: https://www.jh-inst.cas.cz/
   organizations:
   - name: Ústav fyzikální chemie J. Heyrovského AV ČR
 ---
-slug: ustav-fyziky-atmosfery
+slug: k7ki
 access:
   visibility: public
 metadata:
   title: Ústav fyziky atmosféry AV ČR
+  curation_policy: Záznamy zakládají vkladatelé v rámci komunity nebo sami kurátoři,
+    následuje schválení a zveřejnění záznamu kurátorem komunity. V rámci komunity
+    vidí všichni členové všechny záznamy i soubory, včetně rozpracovaných záznamů.
   type:
     id: organization
   website: https://www.ufa.cas.cz/
   organizations:
   - name: Ústav fyziky atmosféry AV ČR
 ---
-slug: ustav-fyziky-materialu
+slug: rj0h
 access:
   visibility: public
 metadata:
   title: Ústav fyziky materiálů AV ČR
+  curation_policy: Záznamy zakládají vkladatelé v rámci komunity nebo sami kurátoři,
+    následuje schválení a zveřejnění záznamu kurátorem komunity. V rámci komunity
+    vidí všichni členové všechny záznamy i soubory, včetně rozpracovaných záznamů.
   type:
     id: organization
   website: https://www.ipm.cz/
   organizations:
   - name: Ústav fyziky materiálů AV ČR
 ---
-slug: ustav-fyziky-plazmatu
+slug: 0kgr
 access:
   visibility: public
 metadata:
   title: Ústav fyziky plazmatu AV ČR
+  curation_policy: Záznamy zakládají vkladatelé v rámci komunity nebo sami kurátoři,
+    následuje schválení a zveřejnění záznamu kurátorem komunity. V rámci komunity
+    vidí všichni členové všechny záznamy i soubory, včetně rozpracovaných záznamů.
   type:
     id: organization
   website: https://www.ipp.cas.cz/
   organizations:
   - name: Ústav fyziky plazmatu AV ČR
 ---
-slug: ustav-geoniky
+slug: iftu
 access:
   visibility: public
 metadata:
   title: Ústav geoniky AV ČR
+  curation_policy: Záznamy zakládají vkladatelé v rámci komunity nebo sami kurátoři,
+    následuje schválení a zveřejnění záznamu kurátorem komunity. V rámci komunity
+    vidí všichni členové všechny záznamy i soubory, včetně rozpracovaných záznamů.
   type:
     id: organization
   website: http://www.ugn.cas.cz/
   organizations:
   - name: Ústav geoniky AV ČR
 ---
-slug: ustav-chemickych-procesu
+slug: 2prw
 access:
   visibility: public
 metadata:
   title: Ústav chemických procesů AV ČR
+  curation_policy: Záznamy zakládají vkladatelé v rámci komunity nebo sami kurátoři,
+    následuje schválení a zveřejnění záznamu kurátorem komunity. V rámci komunity
+    vidí všichni členové všechny záznamy i soubory, včetně rozpracovaných záznamů.
   type:
     id: organization
   website: http://www.icpf.cas.cz/
   organizations:
   - name: Ústav chemických procesů AV ČR
 ---
-slug: ustav-informatiky
+slug: zfcp
 access:
   visibility: public
 metadata:
   title: Ústav informatiky AV ČR
+  curation_policy: Záznamy zakládají vkladatelé v rámci komunity nebo sami kurátoři,
+    následuje schválení a zveřejnění záznamu kurátorem komunity. V rámci komunity
+    vidí všichni členové všechny záznamy i soubory, včetně rozpracovaných záznamů.
   type:
     id: organization
   website: http://www.cs.cas.cz/
   organizations:
   - name: Ústav informatiky AV ČR
 ---
-slug: ustav-jaderne-fyziky
+slug: pmyj
 access:
   visibility: public
 metadata:
   title: Ústav jaderné fyziky AV ČR
+  curation_policy: Záznamy zakládají vkladatelé v rámci komunity nebo sami kurátoři,
+    následuje schválení a zveřejnění záznamu kurátorem komunity. V rámci komunity
+    vidí všichni členové všechny záznamy i soubory, včetně rozpracovaných záznamů.
   type:
     id: organization
   website: http://www.ujf.cas.cz/
   organizations:
   - name: Ústav jaderné fyziky AV ČR
 ---
-slug: ustav-makromolekularni-chemie
+slug: 4qfm
 access:
   visibility: public
 metadata:
   title: Ústav makromolekulární chemie AV ČR
+  curation_policy: Záznamy zakládají vkladatelé v rámci komunity nebo sami kurátoři,
+    následuje schválení a zveřejnění záznamu kurátorem komunity. V rámci komunity
+    vidí všichni členové všechny záznamy i soubory, včetně rozpracovaných záznamů.
   type:
     id: organization
   website: https://www.imc.cas.cz/cs/
   organizations:
   - name: Ústav makromolekulární chemie AV ČR
 ---
-slug: ustav-molekularni-biologie-rostlin
+slug: k4yf
 access:
   visibility: public
 metadata:
   title: Ústav molekulární biologie rostlin AV ČR
   description: Ústav byl v roce 2006 sloučen pod Biologické centrum AV ČR.
+  curation_policy: Komunita nemá vlastní členy ani vkladatele. Nové záznamy v této
+    komunitě nevznikají.
   type:
     id: organization
   website: https://www.img.cas.cz/
   organizations:
   - name: Ústav molekulární biologie rostlin AV ČR
 ---
-slug: ustav-molekularni-genetiky
+slug: 12ey
 access:
   visibility: public
 metadata:
   title: Ústav molekulární genetiky AV ČR
+  curation_policy: Záznamy zakládají vkladatelé v rámci komunity nebo sami kurátoři,
+    následuje schválení a zveřejnění záznamu kurátorem komunity. V rámci komunity
+    vidí všichni členové všechny záznamy i soubory, včetně rozpracovaných záznamů.
   type:
     id: organization
   website: https://imtm.cz/
   organizations:
   - name: Ústav molekulární genetiky AV ČR
 ---
-slug: ustav-organicke-chemie-a-biochemie
+slug: 9rjk
 access:
   visibility: public
 metadata:
   title: Ústav organické chemie a biochemie AV ČR
+  curation_policy: Záznamy zakládají vkladatelé v rámci komunity nebo sami kurátoři,
+    následuje schválení a zveřejnění záznamu kurátorem komunity. V rámci komunity
+    vidí všichni členové všechny záznamy i soubory, včetně rozpracovaných záznamů.
   type:
     id: organization
   website: https://www.uochb.cz/cs
   organizations:
   - name: Ústav organické chemie a biochemie AV ČR
 ---
-slug: ustav-pristrojove-techniky
+slug: g9t1
 access:
   visibility: public
 metadata:
   title: Ústav přístrojové techniky AV ČR
+  curation_policy: Záznamy zakládají vkladatelé v rámci komunity nebo sami kurátoři,
+    následuje schválení a zveřejnění záznamu kurátorem komunity. V rámci komunity
+    vidí všichni členové všechny záznamy i soubory, včetně rozpracovaných záznamů.
   type:
     id: organization
   website: http://www.isibrno.cz/cs
   organizations:
   - name: Ústav přístrojové techniky AV ČR
 ---
-slug: ustav-pro-ceskou-literaturu
+slug: 5qqp
 access:
   visibility: public
 metadata:
   title: Ústav pro českou literaturu AV ČR
+  curation_policy: Záznamy zakládají vkladatelé v rámci komunity nebo sami kurátoři,
+    následuje schválení a zveřejnění záznamu kurátorem komunity. V rámci komunity
+    vidí všichni členové všechny záznamy i soubory, včetně rozpracovaných záznamů.
   type:
     id: organization
   website: http://www.ucl.cas.cz
   organizations:
   - name: Ústav pro českou literaturu AV ČR
 ---
-slug: ustav-pro-hydrodynamiku
+slug: 1t68
 access:
   visibility: public
 metadata:
   title: Ústav pro hydrodynamiku AV ČR
+  curation_policy: Záznamy zakládají vkladatelé v rámci komunity nebo sami kurátoři,
+    následuje schválení a zveřejnění záznamu kurátorem komunity. V rámci komunity
+    vidí všichni členové všechny záznamy i soubory, včetně rozpracovaných záznamů.
   type:
     id: organization
   website: https://www.ih.cas.cz/
   organizations:
   - name: Ústav pro hydrodynamiku AV ČR
 ---
-slug: ustav-pro-jazyk-cesky
+slug: 218m
 access:
   visibility: public
 metadata:
   title: Ústav pro jazyk český AV ČR
+  curation_policy: Záznamy zakládají vkladatelé v rámci komunity nebo sami kurátoři,
+    následuje schválení a zveřejnění záznamu kurátorem komunity. V rámci komunity
+    vidí všichni členové všechny záznamy i soubory, včetně rozpracovaných záznamů.
   type:
     id: organization
   website: http://www.ujc.cas.cz/
   organizations:
   - name: Ústav pro jazyk český AV ČR
 ---
-slug: ustav-pro-soudobe-dejiny
+slug: d6nj
 access:
   visibility: public
 metadata:
   title: Ústav pro soudobé dějiny AV ČR
+  curation_policy: Záznamy zakládají vkladatelé v rámci komunity nebo sami kurátoři,
+    následuje schválení a zveřejnění záznamu kurátorem komunity. V rámci komunity
+    vidí všichni členové všechny záznamy i soubory, včetně rozpracovaných záznamů.
   type:
     id: organization
   website: http://www.usd.cas.cz/
   organizations:
   - name: Ústav pro soudobé dějiny AV ČR
 ---
-slug: ustav-pro-studium-totalitnich-rezimu
+slug: wwac
 access:
   visibility: public
 metadata:
   title: Ústav pro studium totalitních režimů
+  curation_policy: Záznamy zakládají vkladatelé v rámci komunity nebo sami kurátoři,
+    následuje schválení a zveřejnění záznamu kurátorem komunity. V rámci komunity
+    vidí všichni členové všechny záznamy i soubory, včetně rozpracovaných záznamů.
   type:
     id: organization
   website: http://www.ustrcr.cz/
   organizations:
   - name: Ústav pro studium totalitních režimů
 ---
-slug: ustav-pudni-biologie
+slug: u7ee
 access:
   visibility: public
 metadata:
   title: Ústav půdní biologie AV ČR
   description: Ústav byl v roce 2006 sloučen pod Biologické centrum AV ČR.
+  curation_policy: Komunita nemá vlastní členy ani vkladatele. Nové záznamy v této
+    komunitě nevznikají.
   type:
     id: organization
   website: https://www.upb.cas.cz/
   organizations:
   - name: Ústav půdní biologie AV ČR
 ---
-slug: ustav-statu-a-prava
+slug: 4g9q
 access:
   visibility: public
 metadata:
   title: Ústav státu a práva AV ČR
+  curation_policy: Záznamy zakládají vkladatelé v rámci komunity nebo sami kurátoři,
+    následuje schválení a zveřejnění záznamu kurátorem komunity. V rámci komunity
+    vidí všichni členové všechny záznamy i soubory, včetně rozpracovaných záznamů.
   type:
     id: organization
   website: https://www.ilaw.cas.cz/
   organizations:
   - name: Ústav státu a práva AV ČR
 ---
-slug: ustav-struktury-a-mechaniky-hornin
+slug: rzv2
 access:
   visibility: public
 metadata:
   title: Ústav struktury a mechaniky hornin AV ČR
+  curation_policy: Záznamy zakládají vkladatelé v rámci komunity nebo sami kurátoři,
+    následuje schválení a zveřejnění záznamu kurátorem komunity. V rámci komunity
+    vidí všichni členové všechny záznamy i soubory, včetně rozpracovaných záznamů.
   type:
     id: organization
   website: https://www.irsm.cas.cz/
   organizations:
   - name: Ústav struktury a mechaniky hornin AV ČR
 ---
-slug: ustav-teoreticke-a-aplikovane-mechaniky
+slug: yqr9
 access:
   visibility: public
 metadata:
   title: Ústav teoretické a aplikované mechaniky AV ČR
+  curation_policy: Záznamy zakládají vkladatelé v rámci komunity nebo sami kurátoři,
+    následuje schválení a zveřejnění záznamu kurátorem komunity. V rámci komunity
+    vidí všichni členové všechny záznamy i soubory, včetně rozpracovaných záznamů.
   type:
     id: organization
   website: http://www.itam.cas.cz/
   organizations:
   - name: Ústav teoretické a aplikované mechaniky AV ČR
 ---
-slug: ustav-teorie-informace-a-automatizace
+slug: ygir
 access:
   visibility: public
 metadata:
   title: Ústav teorie informace a automatizace AV ČR
+  curation_policy: Záznamy zakládají vkladatelé v rámci komunity nebo sami kurátoři,
+    následuje schválení a zveřejnění záznamu kurátorem komunity. V rámci komunity
+    vidí všichni členové všechny záznamy i soubory, včetně rozpracovaných záznamů.
   type:
     id: organization
   website: http://www.utia.cas.cz/cs
   organizations:
   - name: Ústav teorie informace a automatizace AV ČR
 ---
-slug: ustav-fyzikalniho-inzenyrstvi
+slug: e2dx
 access:
   visibility: public
 metadata:
   title: Ústav termomechaniky AV ČR
 ---
-slug: ustav-pro-elektrotechniku
+slug: e2dx
 access:
   visibility: public
 metadata:
   title: Ústav termomechaniky AV ČR
 ---
-slug: ustav-termomechaniky
+slug: e2dx
 access:
   visibility: public
 metadata:
   title: Ústav termomechaniky AV ČR
+  curation_policy: Záznamy zakládají vkladatelé v rámci komunity nebo sami kurátoři,
+    následuje schválení a zveřejnění záznamu kurátorem komunity. V rámci komunity
+    vidí všichni členové všechny záznamy i soubory, včetně rozpracovaných záznamů.
   type:
     id: organization
   website: https://www.it.cas.cz/
   organizations:
   - name: Ústav termomechaniky AV ČR
 ---
-slug: ustav-zivocisne-fyziologie-a-genetiky
+slug: m8yc
 access:
   visibility: public
 metadata:
   title: Ústav živočišné fyziologie a genetiky AV ČR
+  curation_policy: Záznamy zakládají vkladatelé v rámci komunity nebo sami kurátoři,
+    následuje schválení a zveřejnění záznamu kurátorem komunity. V rámci komunity
+    vidí všichni členové všechny záznamy i soubory, včetně rozpracovaných záznamů.
   type:
     id: organization
   website: http://www.iapg.cas.cz/
   organizations:
   - name: Ústav živočišné fyziologie a genetiky AV ČR
 ---
-slug: vscht
+slug: whdy
 access:
   visibility: public
 metadata:
   title: Vysoká škola chemicko-technologická v Praze
+  curation_policy: Záznamy zakládají vkladatelé v rámci komunity nebo sami kurátoři,
+    následuje schválení a zveřejnění záznamu kurátorem komunity. V rámci komunity
+    vidí všichni členové všechny záznamy i soubory, včetně rozpracovaných záznamů.
   type:
     id: organization
   website: https://www.vscht.cz/
   organizations:
   - name: Vysoká škola chemicko-technologická v Praze
 ---
-slug: vugtk
+slug: 8rg6
 access:
   visibility: public
 metadata:
   title: Výzkumný ústav geodetický, topografický a kartografický
+  curation_policy: Záznamy zakládají vkladatelé v rámci komunity nebo sami kurátoři,
+    následuje schválení a zveřejnění záznamu kurátorem komunity. V rámci komunity
+    vidí všichni členové všechny záznamy i soubory, včetně rozpracovaných záznamů.
   type:
     id: organization
   website: http://www.vugtk.cz/
   organizations:
   - name: Výzkumný ústav geodetický, topografický a kartografický
 ---
-slug: vyzkumny-ustav-potravinarsky
+slug: wvya
 access:
   visibility: public
 metadata:
   title: Výzkumný ústav potravinářský Praha
   description: Ukončená spolupráce, do komunity nepřibývají nové záznamy.
+  curation_policy: Komunita nemá vlastní členy ani vkladatele. Nové záznamy v této
+    komunitě nevznikají.
   type:
     id: organization
   website: http://www.vupp.cz
   organizations:
   - name: Výzkumný ústav potravinářský Praha
 ---
-slug: vutbr
+slug: 5j61
 access:
   visibility: public
 metadata:
   title: Vysoké učení technické v Brně
+  curation_policy: Záznamy zakládají vkladatelé v rámci komunity nebo sami kurátoři,
+    následuje schválení a zveřejnění záznamu kurátorem komunity. V rámci komunity
+    vidí všichni členové všechny záznamy i soubory, včetně rozpracovaných záznamů.
   type:
     id: organization
   website: https://www.vut.cz/
   organizations:
   - name: Vysoké učení technické v Brně
 ---
-slug: vuv-tgm
+slug: t373
 access:
   visibility: public
 metadata:
   title: Výzkumný ústav vodohospodářský T. G. Masaryka
+  curation_policy: Záznamy zakládají vkladatelé v rámci komunity nebo sami kurátoři,
+    následuje schválení a zveřejnění záznamu kurátorem komunity. V rámci komunity
+    vidí všichni členové všechny záznamy i soubory, včetně rozpracovaných záznamů.
   type:
     id: organization
   website: https://www.vuv.cz/
   organizations:
   - name: Výzkumný ústav vodohospodářský T. G. Masaryka
 ---
-slug: vvud
+slug: ieex
 access:
   visibility: public
 metadata:
   title: Výzkumný a vývojový ústav dřevařský, Praha
+  curation_policy: Záznamy zakládají vkladatelé v rámci komunity nebo sami kurátoři,
+    následuje schválení a zveřejnění záznamu kurátorem komunity. V rámci komunity
+    vidí všichni členové všechny záznamy i soubory, včetně rozpracovaných záznamů.
   type:
     id: organization
   website: http://www.vvud.cz
   organizations:
   - name: Výzkumný a vývojový ústav dřevařský, Praha
 ---
-slug: vysoka-skola-ekonomicka-v-praze
+slug: wzkj
 access:
   visibility: public
 metadata:
   title: Vysoká škola ekonomická v Praze
+  curation_policy: Záznamy zakládají vkladatelé v rámci komunity nebo sami kurátoři,
+    následuje schválení a zveřejnění záznamu kurátorem komunity. V rámci komunity
+    vidí všichni členové všechny záznamy i soubory, včetně rozpracovaných záznamů.
   type:
     id: organization
   website: https://www.vse.cz/
   organizations:
   - name: Vysoká škola ekonomická v Praze
 ---
-slug: vysoka-skola-evropskych-a-regionalnich-studii
+slug: ata0
 access:
   visibility: public
 metadata:
   title: Vysoká škola evropských a regionálních studií
+  curation_policy: Záznamy zakládají vkladatelé v rámci komunity nebo sami kurátoři,
+    následuje schválení a zveřejnění záznamu kurátorem komunity. V rámci komunity
+    vidí všichni členové všechny záznamy i soubory, včetně rozpracovaných záznamů.
   type:
     id: organization
   website: http://www.vsers.cz
   organizations:
   - name: Vysoká škola evropských a regionálních studií
 ---
-slug: vysoka-skola-financni-a-spravni
+slug: r3w4
 access:
   visibility: public
 metadata:
   title: Vysoká škola finanční a správní
+  curation_policy: Záznamy zakládají vkladatelé v rámci komunity nebo sami kurátoři,
+    následuje schválení a zveřejnění záznamu kurátorem komunity. V rámci komunity
+    vidí všichni členové všechny záznamy i soubory, včetně rozpracovaných záznamů.
   type:
     id: organization
   website: http://www.vsfs.cz
   organizations:
   - name: Vysoká škola finanční a správní
 ---
-slug: vyzkumny-ustav-bezpecnosti-prace
+slug: km8v
 access:
   visibility: public
 metadata:
   title: Výzkumný ústav bezpečnosti práce
+  curation_policy: Záznamy zakládají vkladatelé v rámci komunity nebo sami kurátoři,
+    následuje schválení a zveřejnění záznamu kurátorem komunity. V rámci komunity
+    vidí všichni členové všechny záznamy i soubory, včetně rozpracovaných záznamů.
   type:
     id: organization
   website: http://www.vubp.cz/
   organizations:
   - name: Výzkumný ústav bezpečnosti práce
 ---
-slug: vyzkumny-ustav-lesniho-hospodarstvi-a-myslivosti
+slug: i7tm
 access:
   visibility: public
 metadata:
   title: Výzkumný ústav lesního hospodářství a myslivosti
+  curation_policy: Záznamy zakládají vkladatelé v rámci komunity nebo sami kurátoři,
+    následuje schválení a zveřejnění záznamu kurátorem komunity. V rámci komunity
+    vidí všichni členové všechny záznamy i soubory, včetně rozpracovaných záznamů.
   type:
     id: organization
   website: http://www.vulhm.cz/
   organizations:
   - name: Výzkumný ústav lesního hospodářství a myslivosti
 ---
-slug: vyzkumny-ustav-prace-a-socialnich-veci
+slug: 2f9n
 access:
   visibility: public
 metadata:
   title: Výzkumný ústav práce a sociálních věcí
+  curation_policy: Záznamy zakládají vkladatelé v rámci komunity nebo sami kurátoři,
+    následuje schválení a zveřejnění záznamu kurátorem komunity. V rámci komunity
+    vidí všichni členové všechny záznamy i soubory, včetně rozpracovaných záznamů.
   type:
     id: organization
   website: http://www.vupsv.cz/
   organizations:
   - name: Výzkumný ústav práce a sociálních věcí
 ---
-slug: vyzkumny-ustav-rostlinne-vyroby
+slug: xnkt
 access:
   visibility: public
 metadata:
   title: Národní centrum zemědělského a potravinářského výzkumu
+  curation_policy: Záznamy zakládají vkladatelé v rámci komunity nebo sami kurátoři,
+    následuje schválení a zveřejnění záznamu kurátorem komunity. V rámci komunity
+    vidí všichni členové všechny záznamy i soubory, včetně rozpracovaných záznamů.
   type:
     id: organization
   website: http://www.vurv.cz/
   organizations:
   - name: Národní centrum zemědělského a potravinářského výzkumu
 ---
-slug: vyzkumny-ustav-silva-taroucy
+slug: 4eqq
 access:
   visibility: public
 metadata:
   title: Výzkumný ústav pro krajinu
+  curation_policy: Záznamy zakládají vkladatelé v rámci komunity nebo sami kurátoři,
+    následuje schválení a zveřejnění záznamu kurátorem komunity. V rámci komunity
+    vidí všichni členové všechny záznamy i soubory, včetně rozpracovaných záznamů.
   type:
     id: organization
   website: http://www.vukoz.cz/
   organizations:
   - name: Výzkumný ústav pro krajinu
 ---
-slug: woodexpert
+slug: 0w0h
 access:
   visibility: public
 metadata:
   title: WOODEXPERT s.r.o.
+  curation_policy: Záznamy zakládají vkladatelé v rámci komunity nebo sami kurátoři,
+    následuje schválení a zveřejnění záznamu kurátorem komunity. V rámci komunity
+    vidí všichni členové všechny záznamy i soubory, včetně rozpracovaných záznamů.
   type:
     id: organization
   website: http://woodexpert.cz/
   organizations:
   - name: WOODEXPERT s.r.o.
 ---
-slug: zapadoceska-univerzita
+slug: 6f0m
 access:
   visibility: public
 metadata:
   title: Západočeská univerzita v Plzni
+  curation_policy: Záznamy zakládají vkladatelé v rámci komunity nebo sami kurátoři,
+    následuje schválení a zveřejnění záznamu kurátorem komunity. V rámci komunity
+    vidí všichni členové všechny záznamy i soubory, včetně rozpracovaných záznamů.
   type:
     id: organization
   website: https://www.zcu.cz/cs/index.html
   organizations:
   - name: Západočeská univerzita v Plzni
 ---
-slug: zapadoceske-muzeum-v-plzni
+slug: efbe
 access:
   visibility: public
 metadata:
   title: Západočeské muzeum v Plzni
+  curation_policy: Záznamy zakládají vkladatelé v rámci komunity nebo sami kurátoři,
+    následuje schválení a zveřejnění záznamu kurátorem komunity. V rámci komunity
+    vidí všichni členové všechny záznamy i soubory, včetně rozpracovaných záznamů.
   type:
     id: organization
   website: http://www.zcm.cz/
   organizations:
   - name: Západočeské muzeum v Plzni
 ---
-slug: utb
+slug: uxbx
 access:
   visibility: public
 metadata:
   title: Univerzita Tomáše Bati ve Zlíně
+  curation_policy: Záznamy zakládají vkladatelé v rámci komunity nebo sami kurátoři,
+    následuje schválení a zveřejnění záznamu kurátorem komunity. V rámci komunity
+    vidí všichni členové všechny záznamy i soubory, včetně rozpracovaných záznamů.
   type:
     id: organization
   website: https://www.utb.cz/
   organizations:
   - name: Univerzita Tomáše Bati ve Zlíně
 ---
-slug: tul
+slug: ben8
 access:
   visibility: public
 metadata:
   title: Technická univerzita v Liberci
+  curation_policy: Záznamy zakládají vkladatelé v rámci komunity nebo sami kurátoři,
+    následuje schválení a zveřejnění záznamu kurátorem komunity. V rámci komunity
+    vidí všichni členové všechny záznamy i soubory, včetně rozpracovaných záznamů.
   type:
     id: organization
   website: https://www.tul.cz/
   organizations:
   - name: Technická univerzita v Liberci
 ---
-slug: universal
+slug: xjez
 access:
   visibility: public
 metadata:
   title: Generická komunita
+  curation_policy: 'Záznamy zakládají vkladatelé, odesílají je ke schválení kurátorovi
+    (NTK). Kurátor (NTK) kontroluje záznamy a zveřejňuje je. Vkladatelé navzájem nevidí
+    své rozpracované záznamy, ani soubory, pokud nejsou veřejně přístupné. '
   type:
     id: topic
 ---
-slug: eosc-cz
+slug: 12d3
 access:
   visibility: public
 metadata:
   title: Iniciativa EOSC CZ
+  curation_policy: Záznamy zakládají vkladatelé v rámci komunity nebo sami kurátoři,
+    následuje schválení a zveřejnění záznamu kurátorem komunity. V rámci komunity
+    vidí všichni členové všechny záznamy i soubory, včetně rozpracovaných záznamů.
   type:
     id: topic
   website: https://www.eosc.cz/
