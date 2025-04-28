@@ -96,6 +96,8 @@ class DefaultWorkflowPermissions(CommunityDefaultWorkflowPermissions):
                 PrimaryCommunityMembers(),
                 AccessGrant("preview"),
                 AccessGrant("edit"),
+                SecretLinks("preview"),
+                SecretLinks("edit"),
             ],
         ),
     ]
@@ -140,6 +142,7 @@ class DefaultWorkflowPermissions(CommunityDefaultWorkflowPermissions):
                 PrimaryCommunityRole("curator"),
                 PrimaryCommunityRole("owner"),
                 AccessGrant("edit"),
+                SecretLinks("edit"),
             ],
         ),
         # if not draft, can not be directly updated by any means, must use request
