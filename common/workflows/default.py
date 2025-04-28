@@ -107,8 +107,12 @@ class DefaultWorkflowPermissions(CommunityDefaultWorkflowPermissions):
         IfInState(
             ["published", "deleted"],
             then_=[
+                AccessGrant("preview"),
                 AccessGrant("view"),
                 AccessGrant("edit"),
+                SecretLinks("preview"),
+                SecretLinks("view"),
+                SecretLinks("edit"),
                 IfRestricted(
                     "record",
                     then_=[PrimaryCommunityMembers()],
@@ -188,6 +192,7 @@ class DefaultWorkflowPermissions(CommunityDefaultWorkflowPermissions):
                 PrimaryCommunityRole("curator"),
                 PrimaryCommunityRole("owner"),
                 AccessGrant("edit"),
+                SecretLinks("edit"),
             ],
         ),
     ]
