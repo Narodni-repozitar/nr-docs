@@ -26,7 +26,7 @@ from datetime import timedelta
 from invenio_access import action_factory
 from invenio_access.permissions import Permission
 from invenio_i18n import lazy_gettext as _
-from invenio_rdm_records.services.generators import IfRecordDeleted, IfRestricted
+from invenio_rdm_records.services.generators import IfRecordDeleted, IfRestricted, SecretLinks
 from invenio_records_permissions.generators import (
     AnyUser,
     Disable,
@@ -205,7 +205,7 @@ class DefaultWorkflowPermissions(CommunityDefaultWorkflowPermissions):
             then_=[
                 IfRestricted(
                     "files",
-                    then_=[PrimaryCommunityMembers()],
+                    then_=[PrimaryCommunityMembers(), SecretLinks("view")],
                     else_=[AnyUser()],
                 )
             ],
