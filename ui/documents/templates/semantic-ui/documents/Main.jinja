@@ -12,7 +12,7 @@
         {% if ns.localized_title %}
             {{ ns.localized_title }}
         {% else %}
-            {{ metadata.title if metadata.title else _("Title not provided") }}
+            {{ metadata.title if metadata.title else _("Title not provided")}}
         {% endif %}
         <AccessRight access={record.access_status} search_link={record.links.search_link} />
     </h1>

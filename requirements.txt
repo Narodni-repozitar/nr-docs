@@ -14,7 +14,7 @@ marisa-trie==1.2.1
 marshmallow-i18n-messages==0.1.0
 nr-metadata==2.0.68
 nr-oaipmh-harvesters==1.0.48
-nr-vocabularies==2.1.10
+nr-vocabularies==2.1.11
 oarepo-communities==5.1.13
 oarepo-dashboard==1.0.20
 oarepo-doi==2.0.1
@@ -24,11 +24,11 @@ oarepo-oai-pmh-harvester==5.0.1
 oarepo-oidc-einfra==1.0.4
 oarepo-published-service==1.0.3
 oarepo-rdm==0.5.5
-oarepo-requests==2.4.4
-oarepo-runtime==1.5.127
-oarepo-ui==5.2.68
+oarepo-requests==2.4.5
+oarepo-runtime==1.5.128
+oarepo-ui==5.2.70
 oarepo-vocabularies==2.1.25
-oarepo-workflows==1.1.14
+oarepo-workflows==1.1.16
 openpyxl==3.1.5
 orcid==1.0.3
 python-dotenv==1.1.0
