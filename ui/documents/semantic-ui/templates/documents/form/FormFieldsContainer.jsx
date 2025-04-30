@@ -108,7 +108,8 @@ const FormFieldsContainer = () => {
             id="NrDocs.Deposit.DateIssuedField.container"
             fieldPath="metadata.dateIssued"
           >
-            <EDTFSingleDatePicker fieldPath="metadata.dateIssued" />
+            {/* TODO: pass & use required from ui.json */}
+            <EDTFSingleDatePicker fieldPath="metadata.dateIssued" required={true} />
           </Overridable>
           <Overridable
             id="NrDocs.Deposit.PublishersField.container"
