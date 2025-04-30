@@ -104,6 +104,9 @@ class DocumentsFileDraftServiceConfig(PermissionsPresetsConfigMixin, FileService
     service_id = "documents_file_draft"
     indexer_queue_name = "documents_file_draft"
 
+    # TODO: put this to model builder
+    permission_action_prefix = "draft_"
+
     search_item_links_template = LinksTemplate
 
     @property

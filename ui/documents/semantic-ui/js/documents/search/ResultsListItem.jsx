@@ -26,7 +26,7 @@ const ItemHeader = ({ title, searchUrl, selfLink }) => {
   );
   return (
     <Item.Header as="h2">
-      <a href={viewLink}>{title}</a>
+      <a href={viewLink} dangerouslySetInnerHTML={{ __html: title }}></a>
     </Item.Header>
   );
 };
@@ -208,8 +208,13 @@ export const ResultsListItemComponent = ({
       title?.title?.lang === i18next.language
   )?.title?.value;
 
-  const title =
-    translatedTitle ?? _get(result, "metadata.title", i18next.t("No title"));
+  const title = sanitizeHtml(
+    translatedTitle ?? _get(result, "metadata.title", i18next.t("No title")),
+    {
+      allowedTags: allowedHtmlTags,
+      allowedAttributes: {},
+    }
+  );
 
   const version = _get(result, "metadata.version", null);
 
