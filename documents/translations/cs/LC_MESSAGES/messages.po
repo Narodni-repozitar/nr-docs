@@ -2,8 +2,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
-"POT-Creation-Date: 2025-04-11T12:03:58.786689\n"
-"PO-Revision-Date: 2025-04-11T12:03:58.786700\n"
+"POT-Creation-Date: 2025-05-05T10:12:13.373743\n"
+"PO-Revision-Date: 2025-05-05T10:12:13.373754\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -173,7 +173,7 @@ msgid "metadata/abstract/value.hint"
 msgstr ""
 
 msgid "metadata/accessibility.label"
-msgstr "Dostupnost zdroje"
+msgstr "Dostupnost dokumentu"
 
 msgid "metadata/accessibility.help"
 msgstr ""
@@ -203,7 +203,9 @@ msgid "metadata/additionalTitles.label"
 msgstr "Další názvy"
 
 msgid "metadata/additionalTitles.help"
-msgstr "Pokud existují další názvy zdroje, uveďte je. Vyberte typ a jazyk."
+msgstr ""
+"Pokud existují další názvy dokumentu, uveďte je. Vyberte typ a jazyk. "
+"Doporučujeme zadat zejména překlad názvu dokumentu, pokud existuje."
 
 msgid "metadata/additionalTitles.hint"
 msgstr ""
@@ -587,7 +589,7 @@ msgid "metadata/dateIssued.label"
 msgstr "Datum vydání"
 
 msgid "metadata/dateIssued.hint"
-msgstr "Zvolte z kalendáře datum, kdy byl zdroj vydán."
+msgstr "Zvolte z kalendáře datum, kdy byl dokument vydán."
 
 msgid "metadata/dateIssued.help"
 msgstr ""
@@ -595,7 +597,7 @@ msgstr ""
 "zvolit typ data."
 
 msgid "metadata/dateModified.label"
-msgstr "Datum změny zdroje"
+msgstr "Datum změny dokumentu"
 
 msgid "metadata/dateModified.help"
 msgstr ""
@@ -607,7 +609,7 @@ msgid "metadata/events.label"
 msgstr "Související akce"
 
 msgid "metadata/events.help"
-msgstr ""
+msgstr "Akce související s dokumentem (např. konference)."
 
 msgid "metadata/events.hint"
 msgstr ""
@@ -712,7 +714,7 @@ msgid "metadata/externalLocation/externalLocationNote.hint"
 msgstr ""
 
 msgid "metadata/externalLocation/externalLocationURL.label"
-msgstr "Externí umístění zdroje"
+msgstr "Externí umístění dokumentu"
 
 msgid "metadata/externalLocation/externalLocationURL.help"
 msgstr ""
@@ -966,13 +968,13 @@ msgid "metadata/geoLocations/geoLocationPoint/pointLongitude.hint"
 msgstr ""
 
 msgid "metadata/languages.label"
-msgstr "Jazyk"
+msgstr "Jazyk dokumentu"
 
 msgid "metadata/languages.help"
 msgstr ""
 
 msgid "metadata/languages.hint"
-msgstr "Vyberte jazyk/jazyky zdroje."
+msgstr "Vyberte jazyk/jazyky dokumentu."
 
 msgid "metadata/languages/id.help"
 msgstr ""
@@ -1034,7 +1036,7 @@ msgid "metadata/notes.label"
 msgstr "Poznámky"
 
 msgid "metadata/notes.help"
-msgstr "Prostor pro další informace ke zdroji."
+msgstr "Prostor pro další informace k dokumentu."
 
 msgid "metadata/notes.hint"
 msgstr ""
@@ -1109,9 +1111,9 @@ msgstr "Vazba na související zdroje"
 
 msgid "metadata/relatedItems.help"
 msgstr ""
-"Zapište informace o zdroji, který souvisí se zdrojem, který zde popisujete "
-"(např. pokud popisujete článek, sem můžete identifikovat časopis, ve kterém "
-"článek vyšel)."
+"Zapište informace o zdroji, který souvisí s dokumentem, který zde popisujete"
+" (např. pokud popisujete článek, můžete zde identifikovat časopis, ve kterém"
+" byl článek vydán)."
 
 msgid "metadata/relatedItems.hint"
 msgstr ""
@@ -1525,7 +1527,7 @@ msgid "metadata/relatedItems/itemRelationType.label"
 msgstr "Typ vazby"
 
 msgid "metadata/relatedItems/itemRelationType.hint"
-msgstr "Vyberte typ vazby mezi popisovaným a souvisejícím zdrojem."
+msgstr "Vyberte typ vazby mezi popisovaným dokumentem a souvisejícím zdrojem."
 
 msgid "metadata/relatedItems/itemRelationType.help"
 msgstr ""
@@ -1558,7 +1560,7 @@ msgid "metadata/relatedItems/itemRelationType/@v.hint"
 msgstr ""
 
 msgid "metadata/relatedItems/itemResourceType.label"
-msgstr "Typ zdroje"
+msgstr "Typ dokumentu"
 
 msgid "metadata/relatedItems/itemResourceType.help"
 msgstr ""
@@ -1639,10 +1641,10 @@ msgid "metadata/relatedItems/itemYear.hint"
 msgstr ""
 
 msgid "metadata/resourceType.hint"
-msgstr "Vyberte typ zdroje."
+msgstr "Vyberte typ dokumentu."
 
 msgid "metadata/resourceType.label"
-msgstr "Typ zdroje"
+msgstr "Typ dokumentu"
 
 msgid "metadata/resourceType.help"
 msgstr ""
@@ -1679,7 +1681,7 @@ msgstr "Licence"
 
 msgid "metadata/rights.help"
 msgstr ""
-"Pokud se k popisovanému zdroji váže licence Creative Commons, vyberte "
+"Pokud se k popisovanému dokumentu váže licence Creative Commons, vyberte "
 "příslušnou variantu z nabídky. Doporučujeme výběr nejnovější verze 4.0 "
 "International."
 
@@ -1718,8 +1720,7 @@ msgstr "Edice"
 
 msgid "metadata/series.help"
 msgstr ""
-"Zapište název edice/série. Zapište svazek edice/série, pokud je název "
-"uveden."
+"Zapište název edice/série. Zapište svazek edice/série, pokud je uveden."
 
 msgid "metadata/series.hint"
 msgstr ""
@@ -1728,7 +1729,7 @@ msgid "metadata/series/seriesTitle.label"
 msgstr "Název edice"
 
 msgid "metadata/series/seriesTitle.help"
-msgstr "Tématicky sdružuje podobné zdroje k sobě."
+msgstr "Tématicky sdružuje podobné dokumenty k sobě."
 
 msgid "metadata/series/seriesTitle.hint"
 msgstr ""
@@ -1745,11 +1746,11 @@ msgstr ""
 msgid "metadata/subjectCategories.label"
 msgstr "Oborové třídění"
 
+msgid "metadata/subjectCategories.help"
+msgstr "Vyberte zařazení do vědního oboru. Lze vybrat více oborů."
+
 msgid "metadata/subjectCategories.hint"
 msgstr "Vyberte název oboru."
-
-msgid "metadata/subjectCategories.help"
-msgstr ""
 
 msgid "metadata/subjectCategories/id.help"
 msgstr ""
@@ -1783,8 +1784,8 @@ msgstr "Klíčová slova"
 
 msgid "metadata/subjects.help"
 msgstr ""
-"Zapisujte slova popisující zdroj, zvolte vždy jazyk. Zapisujte klíčová slova"
-" jednotlivě."
+"Zapisujte slova popisující dokument, zvolte vždy jazyk. Zapisujte klíčová "
+"slova jednotlivě."
 
 msgid "metadata/subjects.hint"
 msgstr ""
@@ -2044,13 +2045,13 @@ msgid "metadata/title.label"
 msgstr "Název"
 
 msgid "metadata/title.hint"
-msgstr "Uveďte hlavní název zdroje."
+msgstr "Uveďte hlavní název dokumentu."
 
 msgid "metadata/title.help"
 msgstr ""
 
 msgid "metadata/version.label"
-msgstr "Verze zdroje"
+msgstr "Verze dokumentu"
 
 msgid "metadata/version.hint"
 msgstr "Zapište verzi (první, druhá…)."

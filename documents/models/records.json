@@ -22,8 +22,6 @@
             "file": "documents/records/mappings/os-v2/documents/documents-1.0.0.json",
             "index-field-args": []
         },
-        "searchable": true,
-        "custom-fields": [],
         "permissions": {
             "presets": [
                 "docs"
@@ -46,6 +44,8 @@
             "class": "documents.services.records.schema.DocumentsSchema",
             "extra-code": ""
         },
+        "custom-fields": [],
+        "searchable": true,
         "pid": {
             "type": "dcmnts",
             "provider-base-classes": [
@@ -68,6 +68,62 @@
                 "create=True"
             ],
             "extra-code": ""
+        },
+        "ui": {
+            "marshmallow": {
+                "generate": true,
+                "base-classes": [
+                    "oarepo_requests.services.ui_schema.UIRequestsSerializationMixin",
+                    "nr_metadata.documents.services.records.ui_schema.NRDocumentRecordUISchema"
+                ],
+                "module": "documents.services.records.ui_schema",
+                "class": "documents.services.records.ui_schema.DocumentsUISchema",
+                "extra-code": "",
+                "imports": []
+            },
+            "module": "documents.models",
+            "file": "documents/models/ui.json",
+            "alias": "documents"
+        },
+        "json-serializer": {
+            "base-classes": [
+                "common.services.filtered_json_ui_serializer.FilteredUIJSONSerializer"
+            ],
+            "module": "documents.resources.records.ui",
+            "class": "documents.resources.records.ui.DocumentsUIJSONSerializer",
+            "imports": [],
+            "extra-code": "",
+            "generate": true,
+            "list_schema_cls": "flask_resources.BaseListSchema",
+            "format_serializer_cls": "flask_resources.serializers.JSONSerializer",
+            "schema-context-args": {
+                "\"object_key\"": "\"ui\"",
+                "\"identity\"": "{{ flask.g{g.identity} }}"
+            }
+        },
+        "service-config": {
+            "base-classes": [
+                "oarepo_runtime.services.config.service.PermissionsPresetsConfigMixin",
+                "common.services.config.FilteredResultServiceConfig"
+            ],
+            "components": [
+                "{{oarepo_vocabularies.authorities.components.AuthorityComponent}}",
+                "{{oarepo_runtime.services.components.DateIssuedComponent}}",
+                "{{oarepo_doi.services.components.DoiComponent}}",
+                "{{oarepo_oaipmh_harvester.components.OaiSectionComponent}}",
+                "{{oarepo_communities.services.components.default_workflow.CommunityDefaultWorkflowComponent}}",
+                "{{oarepo_communities.services.components.include.CommunityInclusionComponent}}",
+                "{{oarepo_runtime.services.components.CustomFieldsComponent}}",
+                "{{oarepo_workflows.services.components.workflow.WorkflowComponent}}"
+            ],
+            "generate": true,
+            "config-key": "DOCUMENTS_RECORD_SERVICE_CONFIG",
+            "module": "documents.services.records.config",
+            "class": "documents.services.records.config.DocumentsServiceConfig",
+            "extra-code": "",
+            "service-id": "documents",
+            "additional-args": [],
+            "search-item-links-template-cls": "invenio_records_resources.services.LinksTemplate"
         },
         "record": {
             "imports": [
@@ -113,96 +169,6 @@
             "class": "documents.records.api.DocumentsRecord",
             "extra-code": ""
         },
-        "service-config": {
-            "base-classes": [
-                "oarepo_runtime.services.config.service.PermissionsPresetsConfigMixin",
-                "common.services.config.FilteredResultServiceConfig"
-            ],
-            "components": [
-                "{{oarepo_vocabularies.authorities.components.AuthorityComponent}}",
-                "{{oarepo_runtime.services.components.DateIssuedComponent}}",
-                "{{oarepo_doi.services.components.DoiComponent}}",
-                "{{oarepo_oaipmh_harvester.components.OaiSectionComponent}}",
-                "{{oarepo_communities.services.components.default_workflow.CommunityDefaultWorkflowComponent}}",
-                "{{oarepo_communities.services.components.include.CommunityInclusionComponent}}",
-                "{{oarepo_runtime.services.components.CustomFieldsComponent}}",
-                "{{oarepo_workflows.services.components.workflow.WorkflowComponent}}"
-            ],
-            "generate": true,
-            "config-key": "DOCUMENTS_RECORD_SERVICE_CONFIG",
-            "module": "documents.services.records.config",
-            "class": "documents.services.records.config.DocumentsServiceConfig",
-            "extra-code": "",
-            "service-id": "documents",
-            "additional-args": [],
-            "search-item-links-template-cls": "invenio_records_resources.services.LinksTemplate"
-        },
-        "ui": {
-            "marshmallow": {
-                "generate": true,
-                "base-classes": [
-                    "oarepo_requests.services.ui_schema.UIRequestsSerializationMixin",
-                    "nr_metadata.documents.services.records.ui_schema.NRDocumentRecordUISchema"
-                ],
-                "module": "documents.services.records.ui_schema",
-                "class": "documents.services.records.ui_schema.DocumentsUISchema",
-                "extra-code": "",
-                "imports": []
-            },
-            "module": "documents.models",
-            "file": "documents/models/ui.json",
-            "alias": "documents"
-        },
-        "json-serializer": {
-            "base-classes": [
-                "common.services.filtered_json_ui_serializer.FilteredUIJSONSerializer"
-            ],
-            "module": "documents.resources.records.ui",
-            "class": "documents.resources.records.ui.DocumentsUIJSONSerializer",
-            "imports": [],
-            "extra-code": "",
-            "generate": true,
-            "list_schema_cls": "flask_resources.BaseListSchema",
-            "format_serializer_cls": "flask_resources.serializers.JSONSerializer",
-            "schema-context-args": {
-                "\"object_key\"": "\"ui\"",
-                "\"identity\"": "{{ flask.g{g.identity} }}"
-            }
-        },
-        "search-options": {
-            "base-classes": [
-                "oarepo_runtime.services.search.I18nRDMSearchOptions"
-            ],
-            "sort-options-field": "extra_sort_options",
-            "fields": {
-                "sort_options": "{{oarepo_runtime.services.search.ICUSortOptions}}('documents')"
-            },
-            "module": "documents.services.records.search",
-            "class": "documents.services.records.search.DocumentsSearchOptions",
-            "generate": true,
-            "extra-code": "",
-            "imports": [],
-            "versions": {
-                "class": "documents.DocumentsVersionsSearchOptions",
-                "base-classes": [
-                    "invenio_rdm_records.services.config.RDMSearchVersionsOptions"
-                ]
-            }
-        },
-        "resource-config": {
-            "base-url": "/docs/",
-            "base-html-url": "/docs/",
-            "base-classes": [
-                "invenio_drafts_resources.resources.RecordResourceConfig"
-            ],
-            "generate": true,
-            "config-key": "DOCUMENTS_RECORD_RESOURCE_CONFIG",
-            "module": "documents.resources.records.config",
-            "class": "documents.resources.records.config.DocumentsResourceConfig",
-            "extra-code": "",
-            "imports": [],
-            "additional-args": []
-        },
         "facets": {
             "facet-groups": {
                 "default": {
@@ -244,6 +210,40 @@
             "alias": "documents",
             "imports": []
         },
+        "search-options": {
+            "base-classes": [
+                "oarepo_runtime.services.search.I18nRDMSearchOptions"
+            ],
+            "sort-options-field": "extra_sort_options",
+            "fields": {
+                "sort_options": "{{oarepo_runtime.services.search.ICUSortOptions}}('documents')"
+            },
+            "module": "documents.services.records.search",
+            "class": "documents.services.records.search.DocumentsSearchOptions",
+            "generate": true,
+            "extra-code": "",
+            "imports": [],
+            "versions": {
+                "class": "documents.DocumentsVersionsSearchOptions",
+                "base-classes": [
+                    "invenio_rdm_records.services.config.RDMSearchVersionsOptions"
+                ]
+            }
+        },
+        "resource-config": {
+            "base-url": "/docs/",
+            "base-html-url": "/docs/",
+            "base-classes": [
+                "invenio_drafts_resources.resources.RecordResourceConfig"
+            ],
+            "generate": true,
+            "config-key": "DOCUMENTS_RECORD_RESOURCE_CONFIG",
+            "module": "documents.resources.records.config",
+            "class": "documents.resources.records.config.DocumentsResourceConfig",
+            "extra-code": "",
+            "imports": [],
+            "additional-args": []
+        },
         "module": {
             "qualified": "documents",
             "alias": "documents",
@@ -258,16 +258,6 @@
             "suffix": "documents",
             "suffix-upper": "DOCUMENTS",
             "suffix-snake": "documents"
-        },
-        "draft": {
-            "type": "draft_record",
-            "properties": {},
-            "searchable": true,
-            "tests": {
-                "extra-fixtures": [],
-                "extra-code": "",
-                "module": "tests"
-            }
         },
         "files": {
             "type": "file",
@@ -340,7 +330,6 @@
                     "type": "keyword"
                 }
             },
-            "searchable": true,
             "permissions": {
                 "presets": [
                     "docs"
@@ -357,6 +346,7 @@
                     "InvenioFileSchema"
                 ]
             },
+            "searchable": true,
             "service-config": {
                 "components": [
                     "{{common.services.files.allowed_document_extensions.AllowedDocumentExtensionsComponent}}"
@@ -376,20 +366,15 @@
                 "module": "tests"
             }
         },
-        "tests": {
-            "extra-fixtures": [],
-            "extra-code": "",
-            "module": "tests"
-        },
         "draft-files": {
             "type": "draft-file",
             "properties": {},
-            "searchable": true,
             "permissions": {
                 "presets": [
                     "docs"
                 ]
             },
+            "searchable": true,
             "service-config": {
                 "components": [
                     "{{common.services.files.allowed_document_extensions.AllowedDocumentExtensionsComponent}}"
@@ -400,6 +385,21 @@
                     "oarepo_ui.resources.file_resource.S3RedirectFileResource"
                 ]
             },
+            "tests": {
+                "extra-fixtures": [],
+                "extra-code": "",
+                "module": "tests"
+            }
+        },
+        "tests": {
+            "extra-fixtures": [],
+            "extra-code": "",
+            "module": "tests"
+        },
+        "draft": {
+            "type": "draft_record",
+            "properties": {},
+            "searchable": true,
             "tests": {
                 "extra-fixtures": [],
                 "extra-code": "",
@@ -417,36 +417,18 @@
             "skip": false
         },
         "model-name": "Documents",
-        "config": {
+        "resource": {
+            "base-classes": [
+                "invenio_drafts_resources.resources.RecordResource"
+            ],
             "generate": true,
-            "module": "documents.config",
-            "extra_code": "",
-            "imports": []
-        },
-        "api-blueprint": {
-            "generate": true,
-            "alias": "documents",
-            "extra_code": "",
-            "module": "documents.views.records.api",
-            "function": "documents.views.records.api.create_api_blueprint",
-            "imports": []
-        },
-        "app-blueprint": {
-            "generate": true,
-            "alias": "documents",
-            "extra_code": "",
-            "module": "documents.views.records.app",
-            "function": "documents.views.records.app.create_app_blueprint",
-            "imports": []
-        },
-        "saved-model": {
-            "file": "documents/models/records.json",
-            "module": "documents.models",
-            "alias": "documents"
-        },
-        "proxy": {
-            "module": "documents.proxies",
-            "generate": true
+            "config-key": "DOCUMENTS_RECORD_RESOURCE_CLASS",
+            "module": "documents.resources.records.resource",
+            "class": "documents.resources.records.resource.DocumentsResource",
+            "proxy": "current_resource",
+            "extra-code": "",
+            "imports": [],
+            "additional-args": []
         },
         "draft-parent-record-metadata": {
             "base-classes": [
@@ -482,39 +464,40 @@
             "generate": true,
             "class": "oarepo_requests.resolvers.ui.RecordEntityReferenceUIResolver"
         },
-        "resource": {
-            "base-classes": [
-                "invenio_drafts_resources.resources.RecordResource"
-            ],
+        "config": {
             "generate": true,
-            "config-key": "DOCUMENTS_RECORD_RESOURCE_CLASS",
-            "module": "documents.resources.records.resource",
-            "class": "documents.resources.records.resource.DocumentsResource",
-            "proxy": "current_resource",
-            "extra-code": "",
-            "imports": [],
-            "additional-args": []
+            "module": "documents.config",
+            "extra_code": "",
+            "imports": []
+        },
+        "api-blueprint": {
+            "generate": true,
+            "alias": "documents",
+            "extra_code": "",
+            "module": "documents.views.records.api",
+            "function": "documents.views.records.api.create_api_blueprint",
+            "imports": []
+        },
+        "app-blueprint": {
+            "generate": true,
+            "alias": "documents",
+            "extra_code": "",
+            "module": "documents.views.records.app",
+            "function": "documents.views.records.app.create_app_blueprint",
+            "imports": []
+        },
+        "saved-model": {
+            "file": "documents/models/records.json",
+            "module": "documents.models",
+            "alias": "documents"
+        },
+        "proxy": {
+            "module": "documents.proxies",
+            "generate": true
         },
         "translations": {
             "module": "documents.translations",
             "alias": "documents"
-        },
-        "json-schema-settings": {
-            "generate": true,
-            "alias": "documents",
-            "version": "1.0.0",
-            "module": "documents.records.jsonschemas",
-            "name": "documents-1.0.0.json",
-            "file": "documents/records/jsonschemas/documents-1.0.0.json"
-        },
-        "files-field": {
-            "generate": true,
-            "field-class": "invenio_records_resources.records.systemfields.FilesField",
-            "file-class": "documents.records.api.DocumentsRecord",
-            "field-args": [
-                "store=False"
-            ],
-            "imports": []
         },
         "record-metadata": {
             "generate": true,
@@ -563,6 +546,23 @@
             ],
             "imports": []
         },
+        "json-schema-settings": {
+            "generate": true,
+            "alias": "documents",
+            "version": "1.0.0",
+            "module": "documents.records.jsonschemas",
+            "name": "documents-1.0.0.json",
+            "file": "documents/records/jsonschemas/documents-1.0.0.json"
+        },
+        "files-field": {
+            "generate": true,
+            "field-class": "invenio_records_resources.records.systemfields.FilesField",
+            "file-class": "documents.records.api.DocumentsRecord",
+            "field-args": [
+                "store=False"
+            ],
+            "imports": []
+        },
         "multilingual-dumper": {
             "generate": true,
             "module": "documents.records.dumpers.multilingual",
@@ -573,6 +573,34 @@
             "extra-code": "",
             "extensions": [],
             "imports": []
+        },
+        "draft-parent-record": {
+            "class": "documents.records.api.DocumentsParentRecord",
+            "base-classes": [
+                "invenio_rdm_records.records.api.RDMParent"
+            ],
+            "imports": [],
+            "fields": {
+                "workflow": "{{oarepo_workflows.records.systemfields.workflow.WorkflowField}}()"
+            },
+            "module": "documents.records.api",
+            "generate": true
+        },
+        "draft-parent-record-state": {
+            "class": "documents.records.models.DocumentsParentState",
+            "base-classes": [
+                "invenio_db.db{db.Model}",
+                "invenio_drafts_resources.records.ParentRecordStateMixin"
+            ],
+            "imports": [],
+            "module": "documents.records.models",
+            "generate": true,
+            "table": "documents_parent_state_metadata"
+        },
+        "draft-parent-record-schema": {
+            "name": "parent-v1.0.0.json",
+            "file": "documents/records/jsonschemas/parent-v1.0.0.json",
+            "generate": true
         },
         "edtf-interval-dumper": {
             "generate": true,
@@ -610,34 +638,6 @@
                 "{{oarepo_requests.services.results.RequestTypesComponent}}()"
             ],
             "imports": []
-        },
-        "draft-parent-record": {
-            "class": "documents.records.api.DocumentsParentRecord",
-            "base-classes": [
-                "invenio_rdm_records.records.api.RDMParent"
-            ],
-            "imports": [],
-            "fields": {
-                "workflow": "{{oarepo_workflows.records.systemfields.workflow.WorkflowField}}()"
-            },
-            "module": "documents.records.api",
-            "generate": true
-        },
-        "draft-parent-record-state": {
-            "class": "documents.records.models.DocumentsParentState",
-            "base-classes": [
-                "invenio_db.db{db.Model}",
-                "invenio_drafts_resources.records.ParentRecordStateMixin"
-            ],
-            "imports": [],
-            "module": "documents.records.models",
-            "generate": true,
-            "table": "documents_parent_state_metadata"
-        },
-        "draft-parent-record-schema": {
-            "name": "parent-v1.0.0.json",
-            "file": "documents/records/jsonschemas/parent-v1.0.0.json",
-            "generate": true
         },
         "requests": {
             "types": {},
@@ -1095,8 +1095,8 @@
                             },
                             "detail": "string"
                         },
-                        "label.cs": "Dostupnost zdroje",
-                        "label.en": "Resource accessibility",
+                        "label.cs": "Dostupnost dokumentu",
+                        "label.en": "Document Accessibility",
                         "items": {
                             "type": "i18nStr",
                             "multilingual": {
@@ -1147,8 +1147,8 @@
                         "type": "array",
                         "label.cs": "Další názvy",
                         "label.en": "Additional Titles",
-                        "help.cs": "Pokud existují další názvy zdroje, uveďte je. Vyberte typ a jazyk.",
-                        "help.en": "If the resource is given any additional titles, choose the type of title and corresponding language.",
+                        "help.cs": "Pokud existují další názvy dokumentu, uveďte je. Vyberte typ a jazyk. Doporučujeme zadat zejména překlad názvu dokumentu, pokud existuje.",
+                        "help.en": "If the document is given any additional titles, choose the type of title and corresponding language. We recommend to fill out mainly a translation of the title, if it exists.",
                         "items": {
                             "type": "object",
                             "ui": {
@@ -1464,7 +1464,7 @@
                                         "generate": true
                                     },
                                     "label.cs": "Role přispěvatele",
-                                    "label.en": "Contributor's role",
+                                    "label.en": "Contributor's Role",
                                     "hint.cs": "Vyberte roli přispěvatele z nabídky (editor, ilustrátor…).",
                                     "hint.en": "Choose the role of the contributor (editor, illustrator…).",
                                     "imports": [
@@ -1804,7 +1804,7 @@
                                         "generate": false
                                     },
                                     "label.cs": "Role přispěvatele",
-                                    "label.en": "Contributor's role",
+                                    "label.en": "Contributor's Role",
                                     "hint.cs": "Vyberte roli přispěvatele z nabídky (editor, ilustrátor…).",
                                     "hint.en": "Choose the role of the contributor (editor, illustrator…).",
                                     "imports": [
@@ -1921,6 +1921,7 @@
                     },
                     "dateIssued": {
                         "type": "edtf",
+                        "required": true,
                         "ui": {
                             "marshmallow": {
                                 "read": false,
@@ -1936,7 +1937,7 @@
                         },
                         "label.cs": "Datum vydání",
                         "label.en": "Date Issued",
-                        "hint.cs": "Zvolte z kalendáře datum, kdy byl zdroj vydán.",
+                        "hint.cs": "Zvolte z kalendáře datum, kdy byl dokument vydán.",
                         "hint.en": "Choose the issuance date from the calendar.",
                         "help.cs": "Datum může být rok, rok a měsíc nebo celé datum. V záhlaví kalendáře můžete zvolit typ data.",
                         "help.en": "The date can be a year, year and month or a full date. In the calendar header select type of date."
@@ -1956,13 +1957,15 @@
                         "sample": {
                             "faker": "date"
                         },
-                        "label.cs": "Datum změny zdroje",
-                        "label.en": "Date modified"
+                        "label.cs": "Datum změny dokumentu",
+                        "label.en": "Date Modified"
                     },
                     "events": {
                         "type": "array",
                         "label.cs": "Související akce",
                         "label.en": "Events",
+                        "help.cs": "Akce související s dokumentem (např. konference).",
+                        "help.en": "Event related to the document (i.e. conference).",
                         "items": {
                             "type": "object",
                             "ui": {
@@ -2232,15 +2235,15 @@
                                 "sample": {
                                     "faker": "url"
                                 },
-                                "label.cs": "Externí umístění zdroje",
-                                "label.en": "Resource External Location"
+                                "label.cs": "Externí umístění dokumentu",
+                                "label.en": "Document External Location"
                             }
                         }
                     },
                     "funders": {
                         "type": "array",
                         "label.cs": "Granty a financování",
-                        "label.en": "Funders",
+                        "label.en": "Funding Reference",
                         "items": {
                             "type": "object",
                             "ui": {
@@ -2727,8 +2730,8 @@
                         "type": "array",
                         "required": true,
                         "minItems": 1,
-                        "label.cs": "Jazyk",
-                        "label.en": "Language",
+                        "label.cs": "Jazyk dokumentu",
+                        "label.en": "Document Language",
                         "marshmallow": {
                             "validators": [
                                 "ma.validate.Length(min=1)"
@@ -2762,10 +2765,10 @@
                                 "fr",
                                 "it"
                             ],
-                            "label.cs": "Jazyk",
-                            "label.en": "Language",
-                            "hint.cs": "Vyberte jazyk/jazyky zdroje.",
-                            "hint.en": "Choose the language(s) of the resource.",
+                            "label.cs": "Jazyk dokumentu",
+                            "label.en": "Document Language",
+                            "hint.cs": "Vyberte jazyk/jazyky dokumentu.",
+                            "hint.en": "Choose the language(s) of the document.",
                             "imports": [
                                 {
                                     "import": "oarepo_vocabularies.records.api.Vocabulary"
@@ -2927,8 +2930,8 @@
                         "type": "array",
                         "label.cs": "Poznámky",
                         "label.en": "Notes",
-                        "help.cs": "Prostor pro další informace ke zdroji.",
-                        "help.en": "Space for additional information related to the resource.",
+                        "help.cs": "Prostor pro další informace k dokumentu.",
+                        "help.en": "Space for additional information related to the document.",
                         "items": {
                             "type": "fulltext",
                             "marshmallow": {
@@ -2988,7 +2991,7 @@
                                         "faker": "isbn13"
                                     },
                                     "label.cs": "Identifikátor objektu",
-                                    "label.en": "Object identifier",
+                                    "label.en": "Object Identifier",
                                     "hint.cs": "např. 10.1086/679716 pro DOI.",
                                     "hint.en": "e.g. 10.1086/679716 for DOI."
                                 },
@@ -3014,7 +3017,7 @@
                                         }
                                     },
                                     "label.cs": "Typ identifikátoru",
-                                    "label.en": "Identifier type",
+                                    "label.en": "Identifier Type",
                                     "hint.cs": "např. DOI, HANDLE nebo ISBN.",
                                     "hint.en": "e.g. DOI, HANDLE or ISBN."
                                 }
@@ -3037,7 +3040,7 @@
                             "faker": "url"
                         },
                         "label.cs": "Odkaz na původní záznam",
-                        "label.en": "Original record URL"
+                        "label.en": "Original Record URL"
                     },
                     "publishers": {
                         "type": "array",
@@ -3065,9 +3068,9 @@
                     "relatedItems": {
                         "type": "array",
                         "label.cs": "Vazba na související zdroje",
-                        "label.en": "Link to related resources",
-                        "help.cs": "Zapište informace o zdroji, který souvisí se zdrojem, který zde popisujete (např. pokud popisujete článek, sem můžete identifikovat časopis, ve kterém článek vyšel).",
-                        "help.en": "Write down information about the resource related to the one you are describing here (e.g. if you are describing an article, you can identify the journal in which the article was published).",
+                        "label.en": "Link to Related Resources",
+                        "help.cs": "Zapište informace o zdroji, který souvisí s dokumentem, který zde popisujete (např. pokud popisujete článek, můžete zde identifikovat časopis, ve kterém byl článek vydán).",
+                        "help.en": "Write down information about the resource related to the document you are describing here (e.g. if you are describing an article, you can identify the journal in which the article was published).",
                         "items": {
                             "type": "object",
                             "ui": {
@@ -3318,7 +3321,7 @@
                                                     "generate": false
                                                 },
                                                 "label.cs": "Role přispěvatele",
-                                                "label.en": "Contributor's role",
+                                                "label.en": "Contributor's Role",
                                                 "hint.cs": "Vyberte roli přispěvatele z nabídky (editor, ilustrátor…).",
                                                 "hint.en": "Choose the role of the contributor (editor, illustrator…).",
                                                 "imports": [
@@ -3651,7 +3654,7 @@
                                                     "generate": false
                                                 },
                                                 "label.cs": "Role přispěvatele",
-                                                "label.en": "Contributor's role",
+                                                "label.en": "Contributor's Role",
                                                 "hint.cs": "Vyberte roli přispěvatele z nabídky (editor, ilustrátor…).",
                                                 "hint.en": "Choose the role of the contributor (editor, illustrator…).",
                                                 "imports": [
@@ -3817,7 +3820,7 @@
                                                     "faker": "isbn13"
                                                 },
                                                 "label.cs": "Identifikátor objektu",
-                                                "label.en": "Object identifier",
+                                                "label.en": "Object Identifier",
                                                 "hint.cs": "např. 10.1086/679716 pro DOI.",
                                                 "hint.en": "e.g. 10.1086/679716 for DOI."
                                             },
@@ -3843,7 +3846,7 @@
                                                     }
                                                 },
                                                 "label.cs": "Typ identifikátoru",
-                                                "label.en": "Identifier type",
+                                                "label.en": "Identifier Type",
                                                 "hint.cs": "např. DOI, HANDLE nebo ISBN.",
                                                 "hint.en": "e.g. DOI, HANDLE or ISBN."
                                             }
@@ -3888,9 +3891,9 @@
                                         "generate": true
                                     },
                                     "label.cs": "Typ vazby",
-                                    "label.en": "Relation type",
-                                    "hint.cs": "Vyberte typ vazby mezi popisovaným a souvisejícím zdrojem.",
-                                    "hint.en": "Choose the relation type between described and related resource.",
+                                    "label.en": "Relation Type",
+                                    "hint.cs": "Vyberte typ vazby mezi popisovaným dokumentem a souvisejícím zdrojem.",
+                                    "hint.en": "Choose the relation type between the described document and the related resource.",
                                     "imports": [
                                         {
                                             "import": "oarepo_vocabularies.records.api.Vocabulary"
@@ -4008,8 +4011,8 @@
                                         "Diplomová práce",
                                         "Dataset"
                                     ],
-                                    "label.cs": "Typ zdroje",
-                                    "label.en": "Resource type",
+                                    "label.cs": "Typ dokumentu",
+                                    "label.en": "Document Type",
                                     "imports": [
                                         {
                                             "import": "oarepo_vocabularies.records.api.Vocabulary"
@@ -4152,7 +4155,7 @@
                                     "label.cs": "URL",
                                     "label.en": "URL",
                                     "hint.cs": "Uveďte URL adresu souvisejícího zdroje, ze které je dostupný.",
-                                    "hint.en": "Fill in URL of related resource from which is available."
+                                    "hint.en": "Fill in URL of related resource from which it is available."
                                 },
                                 "itemVolume": {
                                     "type": "keyword",
@@ -4216,10 +4219,10 @@
                             "Diplomová práce",
                             "Dataset"
                         ],
-                        "hint.cs": "Vyberte typ zdroje.",
-                        "hint.en": "Choose resource type.",
-                        "label.cs": "Typ zdroje",
-                        "label.en": "Resource type",
+                        "hint.cs": "Vyberte typ dokumentu.",
+                        "hint.en": "Choose document type.",
+                        "label.cs": "Typ dokumentu",
+                        "label.en": "Document Type",
                         "imports": [
                             {
                                 "import": "oarepo_vocabularies.records.api.Vocabulary"
@@ -4341,9 +4344,9 @@
                             "CC BY-NC-ND"
                         ],
                         "label.cs": "Licence",
-                        "label.en": "Licenses",
-                        "help.cs": "Pokud se k popisovanému zdroji váže licence Creative Commons, vyberte příslušnou variantu z nabídky. Doporučujeme výběr nejnovější verze 4.0 International.",
-                        "help.en": "If a Creative Commons license is associated with the resource, select the appropriate license option from the menu. We recommend choosing the latest version, namely 4.0 International.",
+                        "label.en": "License",
+                        "help.cs": "Pokud se k popisovanému dokumentu váže licence Creative Commons, vyberte příslušnou variantu z nabídky. Doporučujeme výběr nejnovější verze 4.0 International.",
+                        "help.en": "If a Creative Commons license is associated with the document, select the appropriate license option from the menu. We recommend choosing the latest version, namely 4.0 International.",
                         "imports": [
                             {
                                 "import": "oarepo_vocabularies.records.api.Vocabulary"
@@ -4439,8 +4442,8 @@
                         "type": "array",
                         "label.cs": "Edice",
                         "label.en": "Series",
-                        "help.cs": "Zapište název edice/série. Zapište svazek edice/série, pokud je název uveden.",
-                        "help.en": "Write down the name of the series/edition. Write down the volume of the series/edition if the name is provided.",
+                        "help.cs": "Zapište název edice/série. Zapište svazek edice/série, pokud je uveden.",
+                        "help.en": "Write down the name of the series/edition. Write down the volume of the series/edition if it is provided.",
                         "items": {
                             "type": "object",
                             "ui": {
@@ -4475,8 +4478,8 @@
                                     ],
                                     "label.cs": "Název edice",
                                     "label.en": "Series Title",
-                                    "help.cs": "Tématicky sdružuje podobné zdroje k sobě.",
-                                    "help.en": "Thematically groups similar resources together."
+                                    "help.cs": "Tématicky sdružuje podobné dokumenty k sobě.",
+                                    "help.en": "Thematically groups similar documents together."
                                 },
                                 "seriesVolume": {
                                     "type": "keyword",
@@ -4506,6 +4509,8 @@
                         "type": "array",
                         "label.cs": "Oborové třídění",
                         "label.en": "Subject Categories",
+                        "help.cs": "Vyberte zařazení do vědního oboru. Lze vybrat více oborů.",
+                        "help.en": "Choose a scientific field. You can pick multiple fields.",
                         "hint.cs": "Vyberte název oboru.",
                         "hint.en": "Choose subject category.",
                         "items": {
@@ -4632,8 +4637,8 @@
                         },
                         "label.cs": "Klíčová slova",
                         "label.en": "Keywords",
-                        "help.cs": "Zapisujte slova popisující zdroj, zvolte vždy jazyk. Zapisujte klíčová slova jednotlivě.",
-                        "help.en": "Write down words describing the resource, always choose language. Write the keywords one by one.",
+                        "help.cs": "Zapisujte slova popisující dokument, zvolte vždy jazyk. Zapisujte klíčová slova jednotlivě.",
+                        "help.en": "Write down words describing the document, always choose language. Write the keywords one by one.",
                         "items": {
                             "type": "object",
                             "ui": {
@@ -4744,7 +4749,7 @@
                                         "psh"
                                     ],
                                     "label.cs": "Schema klíčového slova",
-                                    "label.en": "Subject scheme"
+                                    "label.en": "Subject Scheme"
                                 },
                                 "valueURI": {
                                     "type": "url",
@@ -4762,7 +4767,7 @@
                                         "faker": "url"
                                     },
                                     "label.cs": "Definice klíčového slova",
-                                    "label.en": "Subject definition URI"
+                                    "label.en": "Subject Definition URI"
                                 }
                             }
                         }
@@ -4770,7 +4775,7 @@
                     "systemIdentifiers": {
                         "type": "array",
                         "label.cs": "Systémové identifikátory",
-                        "label.en": "System identifiers",
+                        "label.en": "System Identifiers",
                         "items": {
                             "type": "object",
                             "ui": {
@@ -4822,7 +4827,7 @@
                                         }
                                     },
                                     "label.cs": "Typ identifikátoru",
-                                    "label.en": "Identifier type"
+                                    "label.en": "Identifier Type"
                                 }
                             }
                         }
@@ -4919,7 +4924,7 @@
                                     "write": false
                                 },
                                 "label.cs": "Datum obhajoby",
-                                "label.en": "Date defended"
+                                "label.en": "Date Defended"
                             },
                             "defended": {
                                 "type": "boolean",
@@ -4939,7 +4944,7 @@
                             "degreeGrantors": {
                                 "type": "array",
                                 "label.cs": "Instituce / grantor",
-                                "label.en": "Degree grantor",
+                                "label.en": "Degree Grantor",
                                 "items": {
                                     "type": "taxonomy",
                                     "vocabulary-type": "institutions",
@@ -5200,7 +5205,7 @@
                             "studyFields": {
                                 "type": "array",
                                 "label.cs": "Oblasti studia",
-                                "label.en": "Study fields",
+                                "label.en": "Study Fields",
                                 "items": {
                                     "type": "keyword",
                                     "marshmallow": {
@@ -5232,8 +5237,8 @@
                         },
                         "label.cs": "Název",
                         "label.en": "Title",
-                        "hint.cs": "Uveďte hlavní název zdroje.",
-                        "hint.en": "Fill in the main title of the resource."
+                        "hint.cs": "Uveďte hlavní název dokumentu.",
+                        "hint.en": "Fill in the main title of the document."
                     },
                     "version": {
                         "type": "keyword",
@@ -5254,8 +5259,8 @@
                             "2.1",
                             "2.2"
                         ],
-                        "label.cs": "Verze zdroje",
-                        "label.en": "Resource version",
+                        "label.cs": "Verze dokumentu",
+                        "label.en": "Document Version",
                         "hint.cs": "Zapište verzi (první, druhá…).",
                         "hint.en": "Write down the version (first, second…)."
                     }
@@ -5401,10 +5406,6 @@
                 "type": "object",
                 "json-schema": {
                     "type": "object",
-                    "propertyNames": {
-                        "pattern": "^[a-z_-][a-z0-9_-]*$"
-                    },
-                    "uniqueItems": true,
                     "additionalProperties": {
                         "type": "object",
                         "additionalProperties": false,
@@ -5419,6 +5420,10 @@
                                 "type": "string"
                             }
                         }
+                    },
+                    "uniqueItems": true,
+                    "propertyNames": {
+                        "pattern": "^[a-z_-][a-z0-9_-]*$"
                     }
                 },
                 "ui": {
@@ -5489,7 +5494,7 @@
                             "write": false
                         },
                         "label.cs": "Datum poslední změny",
-                        "label.en": "Updated date"
+                        "label.en": "Updated Date"
                     },
                     "defenseYear": {
                         "type": "edtf",
@@ -5507,7 +5512,7 @@
                             "write": false
                         },
                         "label.cs": "Rok obhajoby",
-                        "label.en": "Defense year"
+                        "label.en": "Defense Year"
                     },
                     "keywords": {
                         "type": "object",
@@ -5618,7 +5623,7 @@
                             "write": false
                         },
                         "label.cs": "Datum vydání",
-                        "label.en": "Publication date"
+                        "label.en": "Publication Date"
                     }
                 }
             },

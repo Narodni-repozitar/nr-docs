@@ -12,6 +12,8 @@ theme = WebpackThemeBundle(
             },
             dependencies={
                 "react-searchkit": "^2.0.0",
+                # TODO: remove this after fixed by Sam
+                "react-invenio-forms": "3.5.2",
                 "react-dnd-test-backend": "^16.0.1",
                 "@oarepo/file-manager": "^1.1.0",
             },
