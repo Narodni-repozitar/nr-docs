@@ -6,9 +6,6 @@ from common.services.filtered_json_ui_serializer import FilteredUIJSONSerializer
 from documents.services.records.ui_schema import DocumentsUISchema
 from invenio_rdm_records.resources.serializers import DublinCoreXMLSerializer
 
-class DocumentsDublinCoreXMLSerializer(DublinCoreXMLSerializer):
-    """"""
-
 class DocumentsUIJSONSerializer(FilteredUIJSONSerializer):
     """UI JSON serializer."""
 

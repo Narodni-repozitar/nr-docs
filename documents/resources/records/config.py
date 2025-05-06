@@ -4,11 +4,11 @@ from invenio_drafts_resources.resources import RecordResourceConfig
 from invenio_records_resources.resources.records.headers import etag_headers
 from oarepo_runtime.i18n import lazy_gettext as _
 from oarepo_runtime.resources.responses import ExportableResponseHandler
-
-from common.oai.server.serializers import dublincore_etree
-from documents.resources.records.ui import DocumentsUIJSONSerializer, DocumentsDublinCoreXMLSerializer
+from invenio_rdm_records.resources.serializers.datacite import DataCite43XMLSerializer
+from documents.resources.records.ui import DocumentsDublinCoreXMLSerializer
 from oarepo_runtime.resources.responses import ExportableResponseHandler , OAIExportableResponseHandler
 from invenio_records_resources.resources.records.headers import etag_headers
+from invenio_rdm_records.resources.serializers.datacite import DataCite43JSONSerializer
 
 
 from documents.resources.records.ui import DocumentsUIJSONSerializer
@@ -44,6 +44,18 @@ class DocumentsResourceConfig(RecordResourceConfig):
                 export_code="dc_xml", name="Dublin Core XML", serializer=DocumentsDublinCoreXMLSerializer(),
                 headers=etag_headers, oai_metadata_prefix="oai_dc", oai_schema="http://www.openarchives.org/OAI/2.0/oai_dc.xsd",
                 oai_namespace="http://www.openarchives.org/OAI/2.0/oai_dc/"
+            ),
+            "application/vnd.datacite.datacite+xml": ExportableResponseHandler(
+                export_code="datacite_xml",
+                name="DataCite XML",
+                serializer=DataCite43XMLSerializer(),
+                headers=etag_headers
+            ),
+            "application/vnd.datacite.datacite+json": ExportableResponseHandler(
+                export_code="datacite_json",
+                name="DataCite JSON",
+                serializer=DataCite43JSONSerializer(),
+                headers=etag_headers
             ),
              **entrypoint_response_handlers,
 
