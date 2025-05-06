@@ -80,7 +80,7 @@ record:
   module:
     qualified: documents
   pid:
-    type: recid
+    type: dcmnts
 
   resource-config:
     base-html-url: /docs/
