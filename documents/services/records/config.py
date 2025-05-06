@@ -84,7 +84,7 @@ class DocumentsServiceConfig(
             CommunityDefaultWorkflowComponent,
             CommunityInclusionComponent,
             CustomFieldsComponent,
-            WorkflowComponent
+            WorkflowComponent,
         )
 
     model = "documents"
