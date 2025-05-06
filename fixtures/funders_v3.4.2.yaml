@@ -1,9 +1,9 @@
 id: AV0
 name: Czech Academy of Sciences
 identifiers:
-- scheme: CrossrefFunderID
+- scheme: crossrefFunderId
   identifier: http://dx.doi.org/10.13039/501100004240
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/053avzc18
 country: CZ
 title:
@@ -12,7 +12,7 @@ title:
 id: BIS
 name: Security Information Service
 identifiers:
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/01tjgrk20
 country: CZ
 title:
@@ -21,7 +21,7 @@ title:
 id: CBU
 name: Czech Mining Office Board
 identifiers:
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/04kgngk14
 country: CZ
 title:
@@ -30,7 +30,7 @@ title:
 id: CSU
 name: Czech Statistical Office
 identifiers:
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/03w948j83
 country: CZ
 title:
@@ -39,7 +39,7 @@ title:
 id: CUZ
 name: Czech Office for Surveying, Mapping and Cadastre
 identifiers:
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/0111dmn28
 country: CZ
 title:
@@ -48,9 +48,9 @@ title:
 id: GA0
 name: Czech Science Foundation
 identifiers:
-- scheme: CrossrefFunderID
+- scheme: crossrefFunderId
   identifier: http://dx.doi.org/10.13039/501100001824
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/01pv73b02
 country: CZ
 title:
@@ -143,9 +143,9 @@ title:
 id: MD0
 name: Ministry of Transport of the Czech Republic
 identifiers:
-- scheme: CrossrefFunderID
+- scheme: crossrefFunderId
   identifier: http://dx.doi.org/10.13039/100007654
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/00p9p2506
 country: CZ
 title:
@@ -159,7 +159,7 @@ title:
 id: MF0
 name: Ministry of Finance of the Czech Republic
 identifiers:
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/00mjd8b34
 country: CZ
 title:
@@ -168,9 +168,9 @@ title:
 id: MK0
 name: Ministry of Culture of the Czech Republic
 identifiers:
-- scheme: CrossrefFunderID
+- scheme: crossrefFunderId
   identifier: http://dx.doi.org/10.13039/501100005619
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/00fxxw604
 country: CZ
 title:
@@ -179,7 +179,7 @@ title:
 id: MMR
 name: Ministry of Regional Development of the Czech Republic
 identifiers:
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/045smbc57
 country: CZ
 title:
@@ -188,9 +188,9 @@ title:
 id: MO0
 name: Ministry of Defence of the Czech Republic
 identifiers:
-- scheme: CrossrefFunderID
+- scheme: crossrefFunderId
   identifier: http://dx.doi.org/10.13039/501100014911
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/00r7raa16
 country: CZ
 title:
@@ -199,9 +199,9 @@ title:
 id: MPO
 name: Ministry of Industry and Trade of the Czech Republic
 identifiers:
-- scheme: CrossrefFunderID
+- scheme: crossrefFunderId
   identifier: http://dx.doi.org/10.13039/501100004578
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/03j4eb467
 country: CZ
 title:
@@ -210,9 +210,9 @@ title:
 id: MPS
 name: Ministry of Labour and Social Affairs of the Czech Republic
 identifiers:
-- scheme: CrossrefFunderID
+- scheme: crossrefFunderId
   identifier: http://dx.doi.org/10.13039/501100007452
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/01bvj3e58
 country: CZ
 title:
@@ -221,7 +221,7 @@ title:
 id: MS0
 name: Ministry of Justice of the Czech Republic
 identifiers:
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/0531qh590
 country: CZ
 title:
@@ -230,9 +230,9 @@ title:
 id: MSM
 name: Ministry of Education, Youth and Sports of the Czech Republic
 identifiers:
-- scheme: CrossrefFunderID
+- scheme: crossrefFunderId
   identifier: http://dx.doi.org/10.13039/501100001823
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/037n8p820
 country: CZ
 title:
@@ -241,9 +241,9 @@ title:
 id: MV0
 name: Ministry of Interior of the Czech Republic
 identifiers:
-- scheme: CrossrefFunderID
+- scheme: crossrefFunderId
   identifier: http://dx.doi.org/10.13039/100009532
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/05w1nn565
 country: CZ
 title:
@@ -252,9 +252,9 @@ title:
 id: MZ0
 name: Ministry of Health of the Czech Republic
 identifiers:
-- scheme: CrossrefFunderID
+- scheme: crossrefFunderId
   identifier: http://dx.doi.org/10.13039/501100003243
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/00y6khe77
 country: CZ
 title:
@@ -263,9 +263,9 @@ title:
 id: MZE
 name: Ministry of Agriculture of the Czech Republic
 identifiers:
-- scheme: CrossrefFunderID
+- scheme: crossrefFunderId
   identifier: http://dx.doi.org/10.13039/501100006533
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/049wftm75
 country: CZ
 title:
@@ -274,9 +274,9 @@ title:
 id: MZP
 name: Ministry of Environment of the Czech Republic
 identifiers:
-- scheme: CrossrefFunderID
+- scheme: crossrefFunderId
   identifier: http://dx.doi.org/10.13039/501100013855
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/04e74dh47
 country: CZ
 title:
@@ -285,7 +285,7 @@ title:
 id: MZV
 name: Ministry of Foreign Affairs of the Czech Republic
 identifiers:
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/00h3t4h60
 country: CZ
 title:
@@ -294,7 +294,7 @@ title:
 id: NBU
 name: National Security Authority
 identifiers:
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/02yy6jb09
 country: CZ
 title:
@@ -303,7 +303,7 @@ title:
 id: SUJ
 name: State Office for Nuclear Safety
 identifiers:
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/02dy2h219
 country: CZ
 title:
@@ -312,9 +312,9 @@ title:
 id: TA0
 name: Technology Agency of the Czech Republic
 identifiers:
-- scheme: CrossrefFunderID
+- scheme: crossrefFunderId
   identifier: http://dx.doi.org/10.13039/100014809
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/04v0fk911
 country: CZ
 title:
@@ -347,9 +347,9 @@ title:
 id: EC
 name: European Commission
 identifiers:
-- scheme: CrossrefFunderID
+- scheme: crossrefFunderId
   identifier: http://dx.doi.org/10.13039/501100000780
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/00k4n6c32
 country: BE
 title:
@@ -358,7 +358,7 @@ title:
 id: GA-UK
 name: Charles University Grant Agency
 identifiers:
-- scheme: CrossrefFunderID
+- scheme: crossrefFunderId
   identifier: http://dx.doi.org/10.13039/100007543
 country: CZ
 title:
@@ -367,9 +367,9 @@ title:
 id: NIH
 name: National Institutes of Health
 identifiers:
-- scheme: CrossrefFunderID
+- scheme: crossrefFunderId
   identifier: http://dx.doi.org/10.13039/100000002
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/01cwqze88
 country: US
 title:
@@ -378,9 +378,9 @@ title:
 id: NATO
 name: North Atlantic Treaty Organization
 identifiers:
-- scheme: CrossrefFunderID
+- scheme: crossrefFunderId
   identifier: http://dx.doi.org/10.13039/100004415
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/00bkaqj51
 country: BE
 title:
@@ -389,9 +389,9 @@ title:
 id: IAEA
 name: International Atomic Energy Agency
 identifiers:
-- scheme: CrossrefFunderID
+- scheme: crossrefFunderId
   identifier: http://dx.doi.org/10.13039/501100004493
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/00gtfax65
 country: IT
 title:
@@ -400,9 +400,9 @@ title:
 id: NSF
 name: National Science Foundation
 identifiers:
-- scheme: CrossrefFunderID
+- scheme: crossrefFunderId
   identifier: http://dx.doi.org/10.13039/100000001
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/021nxhr62
 country: US
 title:
@@ -411,9 +411,9 @@ title:
 id: ESF-science
 name: European Science Foundation
 identifiers:
-- scheme: CrossrefFunderID
+- scheme: crossrefFunderId
   identifier: http://dx.doi.org/10.13039/501100000782
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/04esata81
 country: FR
 title:
@@ -439,9 +439,9 @@ title:
 id: National-geographic
 name: National Geographic Society
 identifiers:
-- scheme: CrossrefFunderID
+- scheme: crossrefFunderId
   identifier: http://dx.doi.org/10.13039/100006363
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/04bqh5m06
 country: US
 title:
@@ -450,9 +450,9 @@ title:
 id: BNSF
 name: Bulgarian National Science Fund
 identifiers:
-- scheme: CrossrefFunderID
+- scheme: crossrefFunderId
   identifier: http://dx.doi.org/10.13039/501100003336
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/05eg49r29
 country: BG
 title:
@@ -461,9 +461,9 @@ title:
 id: CEU
 name: Central European University
 identifiers:
-- scheme: CrossrefFunderID
+- scheme: crossrefFunderId
   identifier: http://dx.doi.org/10.13039/501100006061
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/02zx40v98
 country: AT
 title:
@@ -472,9 +472,9 @@ title:
 id: CNRS
 name: French National Centre for Scientific Research
 identifiers:
-- scheme: CrossrefFunderID
+- scheme: crossrefFunderId
   identifier: http://dx.doi.org/10.13039/501100004794
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/02feahw73
 country: FR
 title:
@@ -483,9 +483,9 @@ title:
 id: CVUT
 name: Czech Technical University in Prague
 identifiers:
-- scheme: CrossrefFunderID
+- scheme: crossrefFunderId
   identifier: http://dx.doi.org/10.13039/100007655
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/03kqpb082
 country: CZ
 title:
@@ -494,7 +494,7 @@ title:
 id: CzechInvest
 name: CzechInvest
 identifiers:
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/04zyrd219
 country: CZ
 title:
@@ -503,9 +503,9 @@ title:
 id: DFG
 name: German Research Association
 identifiers:
-- scheme: CrossrefFunderID
+- scheme: crossrefFunderId
   identifier: http://dx.doi.org/10.13039/501100001659
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/018mejw64
 country: DE
 title:
@@ -514,9 +514,9 @@ title:
 id: EEA
 name: European Environment Agency
 identifiers:
-- scheme: CrossrefFunderID
+- scheme: crossrefFunderId
   identifier: http://dx.doi.org/10.13039/501100000806
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/02k4b9v70
 country: DK
 title:
@@ -531,9 +531,9 @@ title:
 id: EPSRC
 name: Engineering and Physical Sciences Research Council
 identifiers:
-- scheme: CrossrefFunderID
+- scheme: crossrefFunderId
   identifier: http://dx.doi.org/10.13039/501100000266
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/0439y7842
 country: GB
 title:
@@ -548,7 +548,7 @@ title:
 id: ESF-social
 name: European Social Fund
 identifiers:
-- scheme: CrossrefFunderID
+- scheme: crossrefFunderId
   identifier: http://dx.doi.org/10.13039/501100004895
 title:
   en: European Social Fund
@@ -556,9 +556,9 @@ title:
 id: ESA
 name: European Space Agency
 identifiers:
-- scheme: CrossrefFunderID
+- scheme: crossrefFunderId
   identifier: http://dx.doi.org/10.13039/501100000844
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/03wd9za21
 country: FR
 title:
@@ -573,9 +573,9 @@ title:
 id: IVF
 name: International Visegrad Fund
 identifiers:
-- scheme: CrossrefFunderID
+- scheme: crossrefFunderId
   identifier: http://dx.doi.org/10.13039/100012825
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/04e3ssz85
 country: SK
 title:
@@ -584,9 +584,9 @@ title:
 id: EEA-Norway-grants
 name: EEA and Norway Grants
 identifiers:
-- scheme: CrossrefFunderID
+- scheme: crossrefFunderId
   identifier: http://dx.doi.org/10.13039/501100013609
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/02dfxg175
 country: BE
 title:
@@ -595,7 +595,7 @@ title:
 id: NF-Neuron
 name: Neuron Benevolent Fund for the Support of Science
 identifiers:
-- scheme: CrossrefFunderID
+- scheme: crossrefFunderId
   identifier: http://dx.doi.org/10.13039/501100013856
 country: CZ
 title:
@@ -604,9 +604,9 @@ title:
 id: NASA
 name: National Aeronautics and Space Administration
 identifiers:
-- scheme: CrossrefFunderID
+- scheme: crossrefFunderId
   identifier: http://dx.doi.org/10.13039/100000104
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/027ka1x80
 country: US
 title:
@@ -615,7 +615,7 @@ title:
 id: NCEEER
 name: National Council for Eurasian and East European Research
 identifiers:
-- scheme: CrossrefFunderID
+- scheme: crossrefFunderId
   identifier: http://dx.doi.org/10.13039/100012658
 country: US
 title:
@@ -624,9 +624,9 @@ title:
 id: NCN
 name: National Science Centre (Poland)
 identifiers:
-- scheme: CrossrefFunderID
+- scheme: crossrefFunderId
   identifier: http://dx.doi.org/10.13039/501100004281
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/03ha2q922
 country: PL
 title:
@@ -635,7 +635,7 @@ title:
 id: NSC-Taiwan
 name: National Science Council of Taiwan
 identifiers:
-- scheme: CrossrefFunderID
+- scheme: crossrefFunderId
   identifier: http://dx.doi.org/10.13039/501100001868
 country: TW
 title:
@@ -644,7 +644,7 @@ title:
 id: VEGA
 name: Scientific Grant Agency
 identifiers:
-- scheme: CrossrefFunderID
+- scheme: crossrefFunderId
   identifier: http://dx.doi.org/10.13039/501100006109
 country: SK
 title:
@@ -653,9 +653,9 @@ title:
 id: SNSF
 name: Swiss National Science Foundation
 identifiers:
-- scheme: CrossrefFunderID
+- scheme: crossrefFunderId
   identifier: http://dx.doi.org/10.13039/501100001711
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/00yjd3n13
 country: CH
 title:
@@ -664,9 +664,9 @@ title:
 id: FWF
 name: Austrian Science Fund
 identifiers:
-- scheme: CrossrefFunderID
+- scheme: crossrefFunderId
   identifier: http://dx.doi.org/10.13039/501100002428
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/013tf3c58
 country: AT
 title:
@@ -675,7 +675,7 @@ title:
 id: UPCE
 name: University of Pardubice
 identifiers:
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/01chzd453
 title:
   en: University of Pardubice
@@ -683,7 +683,7 @@ title:
 id: APVV
 name: Slovak Research and Development Agency
 identifiers:
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/037nx0e70
 country: SK
 title:
@@ -692,7 +692,7 @@ title:
 id: MU
 name: Masaryk University
 identifiers:
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/02j46qs45
 title:
   en: Masaryk University
@@ -700,7 +700,7 @@ title:
 id: NAZV
 name: National Agency for Agricultural Research
 identifiers:
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/051rtqg79
 title:
   en: National Agency for Agricultural Research
