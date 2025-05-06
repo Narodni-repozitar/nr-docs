@@ -18,7 +18,7 @@ from oarepo_runtime.services.components import (
     process_service_configs,
 )
 from oarepo_runtime.services.config import (
-    has_draft,
+    has_draft_permission,
     has_file_permission,
     has_permission,
     has_published_record,
@@ -110,12 +110,10 @@ class DocumentsServiceConfig(
                 }
             ),
             "draft": RecordLink(
-                "{+api}/docs/{id}/draft",
-                when=has_draft() & has_permission("read_draft"),
+                "{+api}/docs/{id}/draft", when=has_draft_permission("read_draft")
             ),
             "edit_html": RecordLink(
-                "{+ui}/docs/{id}/edit",
-                when=has_draft() & has_permission("update_draft"),
+                "{+ui}/docs/{id}/edit", when=has_draft_permission("update_draft")
             ),
             "files": ConditionalLink(
                 cond=is_published_record(),

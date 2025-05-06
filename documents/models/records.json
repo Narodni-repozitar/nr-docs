@@ -101,30 +101,6 @@
                 "\"identity\"": "{{ flask.g{g.identity} }}"
             }
         },
-        "service-config": {
-            "base-classes": [
-                "oarepo_runtime.services.config.service.PermissionsPresetsConfigMixin",
-                "common.services.config.FilteredResultServiceConfig"
-            ],
-            "components": [
-                "{{oarepo_vocabularies.authorities.components.AuthorityComponent}}",
-                "{{oarepo_runtime.services.components.DateIssuedComponent}}",
-                "{{oarepo_doi.services.components.DoiComponent}}",
-                "{{oarepo_oaipmh_harvester.components.OaiSectionComponent}}",
-                "{{oarepo_communities.services.components.default_workflow.CommunityDefaultWorkflowComponent}}",
-                "{{oarepo_communities.services.components.include.CommunityInclusionComponent}}",
-                "{{oarepo_runtime.services.components.CustomFieldsComponent}}",
-                "{{oarepo_workflows.services.components.workflow.WorkflowComponent}}"
-            ],
-            "generate": true,
-            "config-key": "DOCUMENTS_RECORD_SERVICE_CONFIG",
-            "module": "documents.services.records.config",
-            "class": "documents.services.records.config.DocumentsServiceConfig",
-            "extra-code": "",
-            "service-id": "documents",
-            "additional-args": [],
-            "search-item-links-template-cls": "invenio_records_resources.services.LinksTemplate"
-        },
         "record": {
             "imports": [
                 {
@@ -168,6 +144,30 @@
             "module": "documents.records.api",
             "class": "documents.records.api.DocumentsRecord",
             "extra-code": ""
+        },
+        "service-config": {
+            "base-classes": [
+                "oarepo_runtime.services.config.service.PermissionsPresetsConfigMixin",
+                "common.services.config.FilteredResultServiceConfig"
+            ],
+            "components": [
+                "{{oarepo_vocabularies.authorities.components.AuthorityComponent}}",
+                "{{oarepo_runtime.services.components.DateIssuedComponent}}",
+                "{{oarepo_doi.services.components.DoiComponent}}",
+                "{{oarepo_oaipmh_harvester.components.OaiSectionComponent}}",
+                "{{oarepo_communities.services.components.default_workflow.CommunityDefaultWorkflowComponent}}",
+                "{{oarepo_communities.services.components.include.CommunityInclusionComponent}}",
+                "{{oarepo_runtime.services.components.CustomFieldsComponent}}",
+                "{{oarepo_workflows.services.components.workflow.WorkflowComponent}}"
+            ],
+            "generate": true,
+            "config-key": "DOCUMENTS_RECORD_SERVICE_CONFIG",
+            "module": "documents.services.records.config",
+            "class": "documents.services.records.config.DocumentsServiceConfig",
+            "extra-code": "",
+            "service-id": "documents",
+            "additional-args": [],
+            "search-item-links-template-cls": "invenio_records_resources.services.LinksTemplate"
         },
         "facets": {
             "facet-groups": {
@@ -417,19 +417,6 @@
             "skip": false
         },
         "model-name": "Documents",
-        "resource": {
-            "base-classes": [
-                "invenio_drafts_resources.resources.RecordResource"
-            ],
-            "generate": true,
-            "config-key": "DOCUMENTS_RECORD_RESOURCE_CLASS",
-            "module": "documents.resources.records.resource",
-            "class": "documents.resources.records.resource.DocumentsResource",
-            "proxy": "current_resource",
-            "extra-code": "",
-            "imports": [],
-            "additional-args": []
-        },
         "draft-parent-record-metadata": {
             "base-classes": [
                 "oarepo_workflows.records.models.RecordWorkflowParentModelMixin",
@@ -463,6 +450,19 @@
         "ui-record-resolver": {
             "generate": true,
             "class": "oarepo_requests.resolvers.ui.RecordEntityReferenceUIResolver"
+        },
+        "resource": {
+            "base-classes": [
+                "invenio_drafts_resources.resources.RecordResource"
+            ],
+            "generate": true,
+            "config-key": "DOCUMENTS_RECORD_RESOURCE_CLASS",
+            "module": "documents.resources.records.resource",
+            "class": "documents.resources.records.resource.DocumentsResource",
+            "proxy": "current_resource",
+            "extra-code": "",
+            "imports": [],
+            "additional-args": []
         },
         "config": {
             "generate": true,
@@ -5405,7 +5405,6 @@
             "pids": {
                 "type": "object",
                 "json-schema": {
-                    "type": "object",
                     "additionalProperties": {
                         "type": "object",
                         "additionalProperties": false,
@@ -5422,6 +5421,7 @@
                         }
                     },
                     "uniqueItems": true,
+                    "type": "object",
                     "propertyNames": {
                         "pattern": "^[a-z_-][a-z0-9_-]*$"
                     }
