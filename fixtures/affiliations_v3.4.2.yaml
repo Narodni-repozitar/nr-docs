@@ -2818,3 +2818,11 @@ identifiers:
   identifier: https://ror.org/0102mm775
 - scheme: url
   identifier: https://www.umk.pl
+---
+id: likat
+name: Leibniz Institute for Catalysis
+identifiers:
+- scheme: ror
+  identifier: https://ror.org/029hg0311
+- scheme: url
+  identifier: https://www.catalysis.de
