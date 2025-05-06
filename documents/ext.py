@@ -167,6 +167,9 @@ class DocumentsExt:
                 "documents.resources.records.config.DocumentsResourceConfig"
             ),
             "ui_resource_config": "ui.documents.DocumentsUIResourceConfig",
+            "record_cls": "documents.records.api.DocumentsRecord",
+            "pid_type": "dcmnts",
+            "draft_cls": "documents.records.api.DocumentsDraft",
         }
 
         app.config.setdefault("GLOBAL_SEARCH_MODELS", [])
