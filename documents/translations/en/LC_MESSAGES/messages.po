@@ -2,8 +2,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
-"POT-Creation-Date: 2025-04-11T12:03:58.786723\n"
-"PO-Revision-Date: 2025-04-11T12:03:58.786724\n"
+"POT-Creation-Date: 2025-05-06T12:15:40.849078\n"
+"PO-Revision-Date: 2025-05-06T12:15:40.849079\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -173,7 +173,7 @@ msgid "metadata/abstract/value.hint"
 msgstr ""
 
 msgid "metadata/accessibility.label"
-msgstr "Resource accessibility"
+msgstr "Document Accessibility"
 
 msgid "metadata/accessibility.help"
 msgstr ""
@@ -204,8 +204,9 @@ msgstr "Additional Titles"
 
 msgid "metadata/additionalTitles.help"
 msgstr ""
-"If the resource is given any additional titles, choose the type of title and"
-" corresponding language."
+"If the document is given any additional titles, choose the type of title and"
+" corresponding language. We recommend to fill out mainly a translation of "
+"the title, if it exists."
 
 msgid "metadata/additionalTitles.hint"
 msgstr ""
@@ -382,7 +383,7 @@ msgid "metadata/contributors/person_or_org/type.enum.organizational"
 msgstr ""
 
 msgid "metadata/contributors/role.label"
-msgstr "Contributor's role"
+msgstr "Contributor's Role"
 
 msgid "metadata/contributors/role.hint"
 msgstr "Choose the role of the contributor (editor, illustrator…)."
@@ -541,7 +542,7 @@ msgid "metadata/creators/person_or_org/type.enum.organizational"
 msgstr ""
 
 msgid "metadata/creators/role.label"
-msgstr "Contributor's role"
+msgstr "Contributor's Role"
 
 msgid "metadata/creators/role.hint"
 msgstr "Choose the role of the contributor (editor, illustrator…)."
@@ -597,7 +598,7 @@ msgstr ""
 "header select type of date."
 
 msgid "metadata/dateModified.label"
-msgstr "Date modified"
+msgstr "Date Modified"
 
 msgid "metadata/dateModified.help"
 msgstr ""
@@ -609,7 +610,7 @@ msgid "metadata/events.label"
 msgstr "Events"
 
 msgid "metadata/events.help"
-msgstr ""
+msgstr "Event related to the document (i.e. conference)."
 
 msgid "metadata/events.hint"
 msgstr ""
@@ -714,7 +715,7 @@ msgid "metadata/externalLocation/externalLocationNote.hint"
 msgstr ""
 
 msgid "metadata/externalLocation/externalLocationURL.label"
-msgstr "Resource External Location"
+msgstr "Document External Location"
 
 msgid "metadata/externalLocation/externalLocationURL.help"
 msgstr ""
@@ -723,7 +724,7 @@ msgid "metadata/externalLocation/externalLocationURL.hint"
 msgstr ""
 
 msgid "metadata/funders.label"
-msgstr "Funders"
+msgstr "Funding Reference"
 
 msgid "metadata/funders.help"
 msgstr ""
@@ -967,13 +968,13 @@ msgid "metadata/geoLocations/geoLocationPoint/pointLongitude.hint"
 msgstr ""
 
 msgid "metadata/languages.label"
-msgstr "Language"
+msgstr "Document Language"
 
 msgid "metadata/languages.help"
 msgstr ""
 
 msgid "metadata/languages.hint"
-msgstr "Choose the language(s) of the resource."
+msgstr "Choose the language(s) of the document."
 
 msgid "metadata/languages/id.help"
 msgstr ""
@@ -1035,7 +1036,7 @@ msgid "metadata/notes.label"
 msgstr "Notes"
 
 msgid "metadata/notes.help"
-msgstr "Space for additional information related to the resource."
+msgstr "Space for additional information related to the document."
 
 msgid "metadata/notes.hint"
 msgstr ""
@@ -1052,7 +1053,7 @@ msgid "metadata/objectIdentifiers.hint"
 msgstr ""
 
 msgid "metadata/objectIdentifiers/identifier.label"
-msgstr "Object identifier"
+msgstr "Object Identifier"
 
 msgid "metadata/objectIdentifiers/identifier.hint"
 msgstr "e.g. 10.1086/679716 for DOI."
@@ -1061,7 +1062,7 @@ msgid "metadata/objectIdentifiers/identifier.help"
 msgstr ""
 
 msgid "metadata/objectIdentifiers/scheme.label"
-msgstr "Identifier type"
+msgstr "Identifier Type"
 
 msgid "metadata/objectIdentifiers/scheme.hint"
 msgstr "e.g. DOI, HANDLE or ISBN."
@@ -1088,7 +1089,7 @@ msgid "metadata/objectIdentifiers/scheme.enum.IGSN"
 msgstr ""
 
 msgid "metadata/originalRecord.label"
-msgstr "Original record URL"
+msgstr "Original Record URL"
 
 msgid "metadata/originalRecord.help"
 msgstr ""
@@ -1106,11 +1107,11 @@ msgid "metadata/publishers.hint"
 msgstr ""
 
 msgid "metadata/relatedItems.label"
-msgstr "Link to related resources"
+msgstr "Link to Related Resources"
 
 msgid "metadata/relatedItems.help"
 msgstr ""
-"Write down information about the resource related to the one you are "
+"Write down information about the resource related to the document you are "
 "describing here (e.g. if you are describing an article, you can identify the"
 " journal in which the article was published)."
 
@@ -1249,7 +1250,7 @@ msgid ""
 msgstr ""
 
 msgid "metadata/relatedItems/itemContributors/role.label"
-msgstr "Contributor's role"
+msgstr "Contributor's Role"
 
 msgid "metadata/relatedItems/itemContributors/role.hint"
 msgstr "Choose the role of the contributor (editor, illustrator…)."
@@ -1415,7 +1416,7 @@ msgid ""
 msgstr ""
 
 msgid "metadata/relatedItems/itemCreators/role.label"
-msgstr "Contributor's role"
+msgstr "Contributor's Role"
 
 msgid "metadata/relatedItems/itemCreators/role.hint"
 msgstr "Choose the role of the contributor (editor, illustrator…)."
@@ -1478,7 +1479,7 @@ msgid "metadata/relatedItems/itemPIDs.hint"
 msgstr ""
 
 msgid "metadata/relatedItems/itemPIDs/identifier.label"
-msgstr "Object identifier"
+msgstr "Object Identifier"
 
 msgid "metadata/relatedItems/itemPIDs/identifier.hint"
 msgstr "e.g. 10.1086/679716 for DOI."
@@ -1487,7 +1488,7 @@ msgid "metadata/relatedItems/itemPIDs/identifier.help"
 msgstr ""
 
 msgid "metadata/relatedItems/itemPIDs/scheme.label"
-msgstr "Identifier type"
+msgstr "Identifier Type"
 
 msgid "metadata/relatedItems/itemPIDs/scheme.hint"
 msgstr "e.g. DOI, HANDLE or ISBN."
@@ -1523,10 +1524,12 @@ msgid "metadata/relatedItems/itemPublisher.hint"
 msgstr ""
 
 msgid "metadata/relatedItems/itemRelationType.label"
-msgstr "Relation type"
+msgstr "Relation Type"
 
 msgid "metadata/relatedItems/itemRelationType.hint"
-msgstr "Choose the relation type between described and related resource."
+msgstr ""
+"Choose the relation type between the described document and the related "
+"resource."
 
 msgid "metadata/relatedItems/itemRelationType.help"
 msgstr ""
@@ -1559,7 +1562,7 @@ msgid "metadata/relatedItems/itemRelationType/@v.hint"
 msgstr ""
 
 msgid "metadata/relatedItems/itemResourceType.label"
-msgstr "Resource type"
+msgstr "Document Type"
 
 msgid "metadata/relatedItems/itemResourceType.help"
 msgstr ""
@@ -1616,7 +1619,7 @@ msgid "metadata/relatedItems/itemURL.label"
 msgstr "URL"
 
 msgid "metadata/relatedItems/itemURL.hint"
-msgstr "Fill in URL of related resource from which is available."
+msgstr "Fill in URL of related resource from which it is available."
 
 msgid "metadata/relatedItems/itemURL.help"
 msgstr ""
@@ -1640,10 +1643,10 @@ msgid "metadata/relatedItems/itemYear.hint"
 msgstr ""
 
 msgid "metadata/resourceType.hint"
-msgstr "Choose resource type."
+msgstr "Choose document type."
 
 msgid "metadata/resourceType.label"
-msgstr "Resource type"
+msgstr "Document Type"
 
 msgid "metadata/resourceType.help"
 msgstr ""
@@ -1676,11 +1679,11 @@ msgid "metadata/resourceType/@v.hint"
 msgstr ""
 
 msgid "metadata/rights.label"
-msgstr "Licenses"
+msgstr "License"
 
 msgid "metadata/rights.help"
 msgstr ""
-"If a Creative Commons license is associated with the resource, select the "
+"If a Creative Commons license is associated with the document, select the "
 "appropriate license option from the menu. We recommend choosing the latest "
 "version, namely 4.0 International."
 
@@ -1720,7 +1723,7 @@ msgstr "Series"
 msgid "metadata/series.help"
 msgstr ""
 "Write down the name of the series/edition. Write down the volume of the "
-"series/edition if the name is provided."
+"series/edition if it is provided."
 
 msgid "metadata/series.hint"
 msgstr ""
@@ -1729,7 +1732,7 @@ msgid "metadata/series/seriesTitle.label"
 msgstr "Series Title"
 
 msgid "metadata/series/seriesTitle.help"
-msgstr "Thematically groups similar resources together."
+msgstr "Thematically groups similar documents together."
 
 msgid "metadata/series/seriesTitle.hint"
 msgstr ""
@@ -1746,11 +1749,11 @@ msgstr ""
 msgid "metadata/subjectCategories.label"
 msgstr "Subject Categories"
 
+msgid "metadata/subjectCategories.help"
+msgstr "Choose a scientific field. You can pick multiple fields."
+
 msgid "metadata/subjectCategories.hint"
 msgstr "Choose subject category."
-
-msgid "metadata/subjectCategories.help"
-msgstr ""
 
 msgid "metadata/subjectCategories/id.help"
 msgstr ""
@@ -1784,7 +1787,7 @@ msgstr "Keywords"
 
 msgid "metadata/subjects.help"
 msgstr ""
-"Write down words describing the resource, always choose language. Write the "
+"Write down words describing the document, always choose language. Write the "
 "keywords one by one."
 
 msgid "metadata/subjects.hint"
@@ -1827,7 +1830,7 @@ msgid "metadata/subjects/subject/value.hint"
 msgstr ""
 
 msgid "metadata/subjects/subjectScheme.label"
-msgstr "Subject scheme"
+msgstr "Subject Scheme"
 
 msgid "metadata/subjects/subjectScheme.help"
 msgstr ""
@@ -1836,7 +1839,7 @@ msgid "metadata/subjects/subjectScheme.hint"
 msgstr ""
 
 msgid "metadata/subjects/valueURI.label"
-msgstr "Subject definition URI"
+msgstr "Subject Definition URI"
 
 msgid "metadata/subjects/valueURI.help"
 msgstr ""
@@ -1845,7 +1848,7 @@ msgid "metadata/subjects/valueURI.hint"
 msgstr ""
 
 msgid "metadata/systemIdentifiers.label"
-msgstr "System identifiers"
+msgstr "System Identifiers"
 
 msgid "metadata/systemIdentifiers.help"
 msgstr ""
@@ -1863,7 +1866,7 @@ msgid "metadata/systemIdentifiers/identifier.hint"
 msgstr ""
 
 msgid "metadata/systemIdentifiers/scheme.label"
-msgstr "Identifier type"
+msgstr "Identifier Type"
 
 msgid "metadata/systemIdentifiers/scheme.help"
 msgstr ""
@@ -1925,7 +1928,7 @@ msgid "metadata/thesis.hint"
 msgstr ""
 
 msgid "metadata/thesis/dateDefended.label"
-msgstr "Date defended"
+msgstr "Date Defended"
 
 msgid "metadata/thesis/dateDefended.help"
 msgstr ""
@@ -1943,7 +1946,7 @@ msgid "metadata/thesis/defended.hint"
 msgstr ""
 
 msgid "metadata/thesis/degreeGrantors.label"
-msgstr "Degree grantor"
+msgstr "Degree Grantor"
 
 msgid "metadata/thesis/degreeGrantors.help"
 msgstr ""
@@ -2033,7 +2036,7 @@ msgid "metadata/thesis/degreeGrantors/@v.hint"
 msgstr ""
 
 msgid "metadata/thesis/studyFields.label"
-msgstr "Study fields"
+msgstr "Study Fields"
 
 msgid "metadata/thesis/studyFields.help"
 msgstr ""
@@ -2045,13 +2048,13 @@ msgid "metadata/title.label"
 msgstr "Title"
 
 msgid "metadata/title.hint"
-msgstr "Fill in the main title of the resource."
+msgstr "Fill in the main title of the document."
 
 msgid "metadata/title.help"
 msgstr ""
 
 msgid "metadata/version.label"
-msgstr "Resource version"
+msgstr "Document Version"
 
 msgid "metadata/version.hint"
 msgstr "Write down the version (first, second…)."
@@ -2177,7 +2180,7 @@ msgid "syntheticFields.hint"
 msgstr ""
 
 msgid "syntheticFields/date.label"
-msgstr "Updated date"
+msgstr "Updated Date"
 
 msgid "syntheticFields/date.help"
 msgstr ""
@@ -2186,7 +2189,7 @@ msgid "syntheticFields/date.hint"
 msgstr ""
 
 msgid "syntheticFields/defenseYear.label"
-msgstr "Defense year"
+msgstr "Defense Year"
 
 msgid "syntheticFields/defenseYear.help"
 msgstr ""
@@ -2240,7 +2243,7 @@ msgid "syntheticFields/people.hint"
 msgstr ""
 
 msgid "syntheticFields/year.label"
-msgstr "Publication date"
+msgstr "Publication Date"
 
 msgid "syntheticFields/year.help"
 msgstr ""

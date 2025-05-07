@@ -580,6 +580,7 @@
                 "dateIssued": {
                     "detail": "edtf",
                     "input": "edtf",
+                    "required": true,
                     "help": "metadata/dateIssued.help",
                     "label": "metadata/dateIssued.label",
                     "hint": "metadata/dateIssued.hint",
