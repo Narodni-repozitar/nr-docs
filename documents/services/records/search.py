@@ -452,3 +452,4 @@ class DocumentsDraftSearchOptions(I18nRDMDraftsSearchOptions):
         "record_status": facets.record_status,
         "has_draft": facets.has_draft,
     }
+    sort_options = ICUSortOptions("documents")
