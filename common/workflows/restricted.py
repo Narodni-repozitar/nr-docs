@@ -189,7 +189,7 @@ class RestrictedWorkflowPermissions(CommunityDefaultWorkflowPermissions):
         )
     ]
 
-    can_draft_get_content_files = can_read_draft
+    can_draft_get_content_files = can_draft_read_files
 
     can_draft_update_files = [
         IfInState(
@@ -245,7 +245,7 @@ class RestrictedWorkflowPermissions(CommunityDefaultWorkflowPermissions):
         ),
     ]
     can_list_files = can_read_files
-    can_get_content_files = can_read
+    can_get_content_files = can_read_files
 
     # modification of files is only on drafts
     can_update_files = [Disable()]
