@@ -26,7 +26,7 @@ oarepo-published-service==1.0.3
 oarepo-rdm==0.5.5
 oarepo-requests==2.4.8
 oarepo-runtime==1.5.131
-oarepo-ui==5.2.74
+oarepo-ui==5.2.75
 oarepo-vocabularies==2.1.25
 oarepo-workflows==1.1.16
 openpyxl==3.1.5
