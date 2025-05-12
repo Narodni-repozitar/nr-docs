@@ -20,6 +20,7 @@ from nr_metadata.records.synthetic_fields import KeywordsFieldSelector
 from oarepo_communities.records.systemfields.communities import (
     OARepoCommunitiesFieldContext,
 )
+from oarepo_runtime.records.pid_providers import UniversalPIDMixin
 from oarepo_runtime.records.relations import (
     PIDRelation,
     RelationsField,
@@ -64,7 +65,7 @@ class DocumentsParentRecord(RDMParent):
     )
 
 
-class DocumentsIdProvider(DraftRecordIdProviderV2):
+class DocumentsIdProvider(UniversalPIDMixin, DraftRecordIdProviderV2):
     pid_type = "dcmnts"
 
 
@@ -207,7 +208,7 @@ class DocumentsRecord(RDMRecord):
         ),
         funder=UnstrictPIDRelation(
             "metadata.funders.funder",
-            keys=["id", "@v", "name"],
+            keys=["id", "@v", "name", "title"],
             pid_field=Funder.pid,
         ),
         languages=PIDRelation(
@@ -438,7 +439,7 @@ class DocumentsDraft(RDMDraft):
         ),
         funder=UnstrictPIDRelation(
             "metadata.funders.funder",
-            keys=["id", "@v", "name"],
+            keys=["id", "@v", "name", "title"],
             pid_field=Funder.pid,
         ),
         languages=PIDRelation(

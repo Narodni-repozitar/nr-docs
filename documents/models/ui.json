@@ -894,6 +894,13 @@
                                         "help": "metadata/funders/funder/name.help",
                                         "label": "metadata/funders/funder/name.label",
                                         "hint": "metadata/funders/funder/name.hint"
+                                    },
+                                    "title": {
+                                        "detail": false,
+                                        "input": false,
+                                        "help": "metadata/funders/funder/title.help",
+                                        "label": "metadata/funders/funder/title.label",
+                                        "hint": "metadata/funders/funder/title.hint"
                                     }
                                 }
                             }

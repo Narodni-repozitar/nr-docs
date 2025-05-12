@@ -150,38 +150,20 @@ class DocumentsExt:
         )
 
     def init_app_callback_rdm_models(self, app):
-        rdm_model_config = {
-            "service_id": "documents",
-            # deprecated
-            "model_service": "documents.services.records.service.DocumentsService",
-            # deprecated
-            "service_config": (
-                "documents.services.records.config.DocumentsServiceConfig"
-            ),
-            "api_service": "documents.services.records.service.DocumentsService",
-            "api_service_config": (
-                "documents.services.records.config.DocumentsServiceConfig"
-            ),
-            "api_resource": "documents.resources.records.resource.DocumentsResource",
-            "api_resource_config": (
-                "documents.resources.records.config.DocumentsResourceConfig"
-            ),
-            "ui_resource_config": "ui.documents.DocumentsUIResourceConfig",
-        }
 
         app.config.setdefault("GLOBAL_SEARCH_MODELS", [])
         for cfg in app.config["GLOBAL_SEARCH_MODELS"]:
-            if cfg["model_service"] == rdm_model_config["model_service"]:
+            if cfg["model_service"] == RDM_MODEL_CONFIG["model_service"]:
                 break
         else:
-            app.config["GLOBAL_SEARCH_MODELS"].append(rdm_model_config)
+            app.config["GLOBAL_SEARCH_MODELS"].append(RDM_MODEL_CONFIG)
 
         app.config.setdefault("RDM_MODELS", [])
         for cfg in app.config["RDM_MODELS"]:
-            if cfg["model_service"] == rdm_model_config["model_service"]:
+            if cfg["model_service"] == RDM_MODEL_CONFIG["model_service"]:
                 break
         else:
-            app.config["RDM_MODELS"].append(rdm_model_config)
+            app.config["RDM_MODELS"].append(RDM_MODEL_CONFIG)
 
     @cached_property
     def service_files(self):
@@ -222,3 +204,20 @@ class DocumentsExt:
             service=self.service_draft_files,
             config=config.DOCUMENTS_DRAFT_FILES_RESOURCE_CONFIG(),
         )
+
+
+RDM_MODEL_CONFIG = {  # allows merging stuff from other builders
+    "service_id": "documents",
+    # deprecated
+    "model_service": "documents.services.records.service.DocumentsService",
+    # deprecated
+    "service_config": "documents.services.records.config.DocumentsServiceConfig",
+    "api_service": "documents.services.records.service.DocumentsService",
+    "api_service_config": "documents.services.records.config.DocumentsServiceConfig",
+    "api_resource": "documents.resources.records.resource.DocumentsResource",
+    "api_resource_config": "documents.resources.records.config.DocumentsResourceConfig",
+    "ui_resource_config": "ui.documents.DocumentsUIResourceConfig",
+    "record_cls": "documents.records.api.DocumentsRecord",
+    "pid_type": "dcmnts",
+    "draft_cls": "documents.records.api.DocumentsDraft",
+}

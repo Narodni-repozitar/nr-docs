@@ -22,6 +22,8 @@
             "file": "documents/records/mappings/os-v2/documents/documents-1.0.0.json",
             "index-field-args": []
         },
+        "custom-fields": [],
+        "searchable": true,
         "permissions": {
             "presets": [
                 "docs"
@@ -44,11 +46,10 @@
             "class": "documents.services.records.schema.DocumentsSchema",
             "extra-code": ""
         },
-        "custom-fields": [],
-        "searchable": true,
         "pid": {
             "type": "dcmnts",
             "provider-base-classes": [
+                "oarepo_runtime.records.pid_providers.UniversalPIDMixin",
                 "invenio_drafts_resources.records.api.DraftRecordIdProviderV2"
             ],
             "imports": [
@@ -68,38 +69,6 @@
                 "create=True"
             ],
             "extra-code": ""
-        },
-        "ui": {
-            "marshmallow": {
-                "generate": true,
-                "base-classes": [
-                    "oarepo_requests.services.ui_schema.UIRequestsSerializationMixin",
-                    "nr_metadata.documents.services.records.ui_schema.NRDocumentRecordUISchema"
-                ],
-                "module": "documents.services.records.ui_schema",
-                "class": "documents.services.records.ui_schema.DocumentsUISchema",
-                "extra-code": "",
-                "imports": []
-            },
-            "module": "documents.models",
-            "file": "documents/models/ui.json",
-            "alias": "documents"
-        },
-        "json-serializer": {
-            "base-classes": [
-                "common.services.filtered_json_ui_serializer.FilteredUIJSONSerializer"
-            ],
-            "module": "documents.resources.records.ui",
-            "class": "documents.resources.records.ui.DocumentsUIJSONSerializer",
-            "imports": [],
-            "extra-code": "",
-            "generate": true,
-            "list_schema_cls": "flask_resources.BaseListSchema",
-            "format_serializer_cls": "flask_resources.serializers.JSONSerializer",
-            "schema-context-args": {
-                "\"object_key\"": "\"ui\"",
-                "\"identity\"": "{{ flask.g{g.identity} }}"
-            }
         },
         "record": {
             "imports": [
@@ -145,6 +114,38 @@
             "class": "documents.records.api.DocumentsRecord",
             "extra-code": ""
         },
+        "ui": {
+            "marshmallow": {
+                "generate": true,
+                "base-classes": [
+                    "oarepo_requests.services.ui_schema.UIRequestsSerializationMixin",
+                    "nr_metadata.documents.services.records.ui_schema.NRDocumentRecordUISchema"
+                ],
+                "module": "documents.services.records.ui_schema",
+                "class": "documents.services.records.ui_schema.DocumentsUISchema",
+                "extra-code": "",
+                "imports": []
+            },
+            "module": "documents.models",
+            "file": "documents/models/ui.json",
+            "alias": "documents"
+        },
+        "json-serializer": {
+            "base-classes": [
+                "common.services.filtered_json_ui_serializer.FilteredUIJSONSerializer"
+            ],
+            "module": "documents.resources.records.ui",
+            "class": "documents.resources.records.ui.DocumentsUIJSONSerializer",
+            "imports": [],
+            "extra-code": "",
+            "generate": true,
+            "list_schema_cls": "flask_resources.BaseListSchema",
+            "format_serializer_cls": "flask_resources.serializers.JSONSerializer",
+            "schema-context-args": {
+                "\"object_key\"": "\"ui\"",
+                "\"identity\"": "{{ flask.g{g.identity} }}"
+            }
+        },
         "service-config": {
             "base-classes": [
                 "oarepo_runtime.services.config.service.PermissionsPresetsConfigMixin",
@@ -158,6 +159,7 @@
                 "{{oarepo_communities.services.components.default_workflow.CommunityDefaultWorkflowComponent}}",
                 "{{oarepo_communities.services.components.include.CommunityInclusionComponent}}",
                 "{{oarepo_runtime.services.components.CustomFieldsComponent}}",
+                "{{oarepo_requests.services.components.autorequest.AutorequestComponent}}",
                 "{{oarepo_workflows.services.components.workflow.WorkflowComponent}}"
             ],
             "generate": true,
@@ -168,6 +170,40 @@
             "service-id": "documents",
             "additional-args": [],
             "search-item-links-template-cls": "invenio_records_resources.services.LinksTemplate"
+        },
+        "search-options": {
+            "base-classes": [
+                "oarepo_runtime.services.search.I18nRDMSearchOptions"
+            ],
+            "sort-options-field": "extra_sort_options",
+            "fields": {
+                "sort_options": "{{oarepo_runtime.services.search.ICUSortOptions}}('documents')"
+            },
+            "module": "documents.services.records.search",
+            "class": "documents.services.records.search.DocumentsSearchOptions",
+            "generate": true,
+            "extra-code": "",
+            "imports": [],
+            "versions": {
+                "class": "documents.DocumentsVersionsSearchOptions",
+                "base-classes": [
+                    "invenio_rdm_records.services.config.RDMSearchVersionsOptions"
+                ]
+            }
+        },
+        "resource-config": {
+            "base-url": "/docs/",
+            "base-html-url": "/docs/",
+            "base-classes": [
+                "invenio_drafts_resources.resources.RecordResourceConfig"
+            ],
+            "generate": true,
+            "config-key": "DOCUMENTS_RECORD_RESOURCE_CONFIG",
+            "module": "documents.resources.records.config",
+            "class": "documents.resources.records.config.DocumentsResourceConfig",
+            "extra-code": "",
+            "imports": [],
+            "additional-args": []
         },
         "facets": {
             "facet-groups": {
@@ -209,40 +245,6 @@
             "extra_code": "",
             "alias": "documents",
             "imports": []
-        },
-        "search-options": {
-            "base-classes": [
-                "oarepo_runtime.services.search.I18nRDMSearchOptions"
-            ],
-            "sort-options-field": "extra_sort_options",
-            "fields": {
-                "sort_options": "{{oarepo_runtime.services.search.ICUSortOptions}}('documents')"
-            },
-            "module": "documents.services.records.search",
-            "class": "documents.services.records.search.DocumentsSearchOptions",
-            "generate": true,
-            "extra-code": "",
-            "imports": [],
-            "versions": {
-                "class": "documents.DocumentsVersionsSearchOptions",
-                "base-classes": [
-                    "invenio_rdm_records.services.config.RDMSearchVersionsOptions"
-                ]
-            }
-        },
-        "resource-config": {
-            "base-url": "/docs/",
-            "base-html-url": "/docs/",
-            "base-classes": [
-                "invenio_drafts_resources.resources.RecordResourceConfig"
-            ],
-            "generate": true,
-            "config-key": "DOCUMENTS_RECORD_RESOURCE_CONFIG",
-            "module": "documents.resources.records.config",
-            "class": "documents.resources.records.config.DocumentsResourceConfig",
-            "extra-code": "",
-            "imports": [],
-            "additional-args": []
         },
         "module": {
             "qualified": "documents",
@@ -335,6 +337,7 @@
                     "docs"
                 ]
             },
+            "searchable": true,
             "marshmallow": {
                 "imports": [
                     {
@@ -346,7 +349,6 @@
                     "InvenioFileSchema"
                 ]
             },
-            "searchable": true,
             "service-config": {
                 "components": [
                     "{{common.services.files.allowed_document_extensions.AllowedDocumentExtensionsComponent}}"
@@ -369,12 +371,12 @@
         "draft-files": {
             "type": "draft-file",
             "properties": {},
+            "searchable": true,
             "permissions": {
                 "presets": [
                     "docs"
                 ]
             },
-            "searchable": true,
             "service-config": {
                 "components": [
                     "{{common.services.files.allowed_document_extensions.AllowedDocumentExtensionsComponent}}"
@@ -437,33 +439,6 @@
             "class": "documents.services.records.schema.GeneratedParentSchema",
             "generate": true
         },
-        "record-resolver": {
-            "generate": true,
-            "module": "documents.records.requests.resolvers",
-            "class": "documents.records.requests.resolvers.DocumentsResolver",
-            "base-classes": [
-                "oarepo_runtime.records.entity_resolvers.RecordResolver"
-            ],
-            "imports": [],
-            "custom-proxy-class": "oarepo_runtime.records.entity_resolvers.RecordProxy"
-        },
-        "ui-record-resolver": {
-            "generate": true,
-            "class": "oarepo_requests.resolvers.ui.RecordEntityReferenceUIResolver"
-        },
-        "resource": {
-            "base-classes": [
-                "invenio_drafts_resources.resources.RecordResource"
-            ],
-            "generate": true,
-            "config-key": "DOCUMENTS_RECORD_RESOURCE_CLASS",
-            "module": "documents.resources.records.resource",
-            "class": "documents.resources.records.resource.DocumentsResource",
-            "proxy": "current_resource",
-            "extra-code": "",
-            "imports": [],
-            "additional-args": []
-        },
         "config": {
             "generate": true,
             "module": "documents.config",
@@ -495,9 +470,44 @@
             "module": "documents.proxies",
             "generate": true
         },
+        "resource": {
+            "base-classes": [
+                "invenio_drafts_resources.resources.RecordResource"
+            ],
+            "generate": true,
+            "config-key": "DOCUMENTS_RECORD_RESOURCE_CLASS",
+            "module": "documents.resources.records.resource",
+            "class": "documents.resources.records.resource.DocumentsResource",
+            "proxy": "current_resource",
+            "extra-code": "",
+            "imports": [],
+            "additional-args": []
+        },
+        "record-resolver": {
+            "generate": true,
+            "module": "documents.records.requests.resolvers",
+            "class": "documents.records.requests.resolvers.DocumentsResolver",
+            "base-classes": [
+                "oarepo_runtime.records.entity_resolvers.RecordResolver"
+            ],
+            "imports": [],
+            "custom-proxy-class": "oarepo_runtime.records.entity_resolvers.RecordProxy"
+        },
+        "ui-record-resolver": {
+            "generate": true,
+            "class": "oarepo_requests.resolvers.ui.RecordEntityReferenceUIResolver"
+        },
         "translations": {
             "module": "documents.translations",
             "alias": "documents"
+        },
+        "json-schema-settings": {
+            "generate": true,
+            "alias": "documents",
+            "version": "1.0.0",
+            "module": "documents.records.jsonschemas",
+            "name": "documents-1.0.0.json",
+            "file": "documents/records/jsonschemas/documents-1.0.0.json"
         },
         "record-metadata": {
             "generate": true,
@@ -546,14 +556,6 @@
             ],
             "imports": []
         },
-        "json-schema-settings": {
-            "generate": true,
-            "alias": "documents",
-            "version": "1.0.0",
-            "module": "documents.records.jsonschemas",
-            "name": "documents-1.0.0.json",
-            "file": "documents/records/jsonschemas/documents-1.0.0.json"
-        },
         "files-field": {
             "generate": true,
             "field-class": "invenio_records_resources.records.systemfields.FilesField",
@@ -573,34 +575,6 @@
             "extra-code": "",
             "extensions": [],
             "imports": []
-        },
-        "draft-parent-record": {
-            "class": "documents.records.api.DocumentsParentRecord",
-            "base-classes": [
-                "invenio_rdm_records.records.api.RDMParent"
-            ],
-            "imports": [],
-            "fields": {
-                "workflow": "{{oarepo_workflows.records.systemfields.workflow.WorkflowField}}()"
-            },
-            "module": "documents.records.api",
-            "generate": true
-        },
-        "draft-parent-record-state": {
-            "class": "documents.records.models.DocumentsParentState",
-            "base-classes": [
-                "invenio_db.db{db.Model}",
-                "invenio_drafts_resources.records.ParentRecordStateMixin"
-            ],
-            "imports": [],
-            "module": "documents.records.models",
-            "generate": true,
-            "table": "documents_parent_state_metadata"
-        },
-        "draft-parent-record-schema": {
-            "name": "parent-v1.0.0.json",
-            "file": "documents/records/jsonschemas/parent-v1.0.0.json",
-            "generate": true
         },
         "edtf-interval-dumper": {
             "generate": true,
@@ -638,6 +612,34 @@
                 "{{oarepo_requests.services.results.RequestTypesComponent}}()"
             ],
             "imports": []
+        },
+        "draft-parent-record": {
+            "class": "documents.records.api.DocumentsParentRecord",
+            "base-classes": [
+                "invenio_rdm_records.records.api.RDMParent"
+            ],
+            "imports": [],
+            "fields": {
+                "workflow": "{{oarepo_workflows.records.systemfields.workflow.WorkflowField}}()"
+            },
+            "module": "documents.records.api",
+            "generate": true
+        },
+        "draft-parent-record-state": {
+            "class": "documents.records.models.DocumentsParentState",
+            "base-classes": [
+                "invenio_db.db{db.Model}",
+                "invenio_drafts_resources.records.ParentRecordStateMixin"
+            ],
+            "imports": [],
+            "module": "documents.records.models",
+            "generate": true,
+            "table": "documents_parent_state_metadata"
+        },
+        "draft-parent-record-schema": {
+            "name": "parent-v1.0.0.json",
+            "file": "documents/records/jsonschemas/parent-v1.0.0.json",
+            "generate": true
         },
         "requests": {
             "types": {},
@@ -2567,6 +2569,37 @@
                                                 "type": "fulltext"
                                             },
                                             "target": "name"
+                                        },
+                                        {
+                                            "key": "title",
+                                            "model": {
+                                                "type": "object",
+                                                "json-schema": {
+                                                    "propertyNames": {
+                                                        "pattern": "^[a-z]{2}$"
+                                                    },
+                                                    "additionalProperties": {
+                                                        "type": "string"
+                                                    }
+                                                },
+                                                "mapping": {
+                                                    "dynamic": true
+                                                },
+                                                "properties": {},
+                                                "ui": {
+                                                    "marshmallow": {
+                                                        "unknown": "INCLUDE",
+                                                        "generate": true,
+                                                        "class": "documents.services.records.ui_schema.TitleUISchema"
+                                                    }
+                                                },
+                                                "marshmallow": {
+                                                    "unknown": "INCLUDE",
+                                                    "generate": true,
+                                                    "class": "documents.services.records.schema.TitleSchema"
+                                                }
+                                            },
+                                            "target": "title"
                                         }
                                     ],
                                     "class": "oarepo_runtime.records.relations.UnstrictPIDRelation",
@@ -2627,6 +2660,32 @@
                                         },
                                         "name": {
                                             "type": "fulltext"
+                                        },
+                                        "title": {
+                                            "type": "object",
+                                            "json-schema": {
+                                                "propertyNames": {
+                                                    "pattern": "^[a-z]{2}$"
+                                                },
+                                                "additionalProperties": {
+                                                    "type": "string"
+                                                }
+                                            },
+                                            "mapping": {
+                                                "dynamic": true
+                                            },
+                                            "ui": {
+                                                "marshmallow": {
+                                                    "unknown": "INCLUDE",
+                                                    "generate": true,
+                                                    "class": "documents.services.records.ui_schema.TitleUISchema"
+                                                }
+                                            },
+                                            "marshmallow": {
+                                                "unknown": "INCLUDE",
+                                                "generate": true,
+                                                "class": "documents.services.records.schema.TitleSchema"
+                                            }
                                         }
                                     }
                                 }
@@ -5405,6 +5464,11 @@
             "pids": {
                 "type": "object",
                 "json-schema": {
+                    "type": "object",
+                    "uniqueItems": true,
+                    "propertyNames": {
+                        "pattern": "^[a-z_-][a-z0-9_-]*$"
+                    },
                     "additionalProperties": {
                         "type": "object",
                         "additionalProperties": false,
@@ -5419,11 +5483,6 @@
                                 "type": "string"
                             }
                         }
-                    },
-                    "uniqueItems": true,
-                    "type": "object",
-                    "propertyNames": {
-                        "pattern": "^[a-z_-][a-z0-9_-]*$"
                     }
                 },
                 "ui": {
