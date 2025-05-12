@@ -1,4 +1,4 @@
-oarepo[s3,rdm]==12.2.12
+oarepo[s3,rdm]==12.2.14
 cachetools==6.0.0b4
 deepmerge==2.0
 et-xmlfile==2.0.0
@@ -15,7 +15,7 @@ marshmallow-i18n-messages==0.1.0
 nr-metadata==2.0.69
 nr-oaipmh-harvesters==1.0.50
 nr-vocabularies==2.1.13
-oarepo-communities==5.1.13
+oarepo-communities==5.1.14
 oarepo-dashboard==1.0.21
 oarepo-doi==2.0.2
 oarepo-glitchtip==1.0.1
@@ -24,16 +24,19 @@ oarepo-oai-pmh-harvester==5.0.4
 oarepo-oidc-einfra==1.0.4
 oarepo-published-service==1.0.3
 oarepo-rdm==0.5.5
-oarepo-requests==2.4.7
+oarepo-requests==2.4.8
 oarepo-runtime==1.5.131
 oarepo-ui==5.2.73
 oarepo-vocabularies==2.1.25
 oarepo-workflows==1.1.16
 openpyxl==3.1.5
+opentelemetry-api==1.33.0
+opentelemetry-sdk==1.33.0
+opentelemetry-semantic-conventions==0.54b0
 orcid==1.0.3
 python-dotenv==1.1.0
 rapidfuzz==3.13.0
-sentry-sdk==2.27.0
+sentry-sdk==3.0.0a1
 sickle==0.7.0
 urnparse==0.2.2
 whitenoise==6.9.0
