@@ -435,11 +435,10 @@ class DefaultWorkflowRequests(WorkflowRequestPolicy):
         recipients=[
             IfRequestedBy(
                 requesters=[
-                    PrimaryCommunityRole("curator"),
                     PrimaryCommunityRole("owner"),
                 ],
                 then_=[AutoApprove()],
-                else_=[PrimaryCommunityRole("curator")],
+                else_=[PrimaryCommunityRole("owner")],
             )
         ],
         # the record comes to the state of retracting when the request is submitted. If the request
@@ -458,25 +457,6 @@ class DefaultWorkflowRequests(WorkflowRequestPolicy):
                     PrimaryCommunityRole("owner"),
                 ],
             )
-        ],
-    )
-
-    delete_draft = WorkflowRequest(
-        requesters=[
-            IfNotHarvested(
-                then_=IfInState(
-                    "draft",
-                    then_=[
-                        RecordOwners(),
-                        PrimaryCommunityRole("curator"),
-                        PrimaryCommunityRole("owner"),
-                    ],
-                ),
-                else_=SystemProcess(),
-            )
-        ],
-        recipients=[
-            AutoApprove(),
         ],
     )
 

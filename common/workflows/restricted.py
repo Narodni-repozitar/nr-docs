@@ -426,25 +426,6 @@ class RestrictedWorkflowRequests(WorkflowRequestPolicy):
         recipients=[AutoApprove()],
     )
 
-    delete_draft = WorkflowRequest(
-        requesters=[
-            IfNotHarvested(
-                then_=IfInState(
-                    "draft",
-                    then_=[
-                        RecordOwners(),
-                        PrimaryCommunityRole("curator"),
-                        PrimaryCommunityRole("owner"),
-                    ],
-                ),
-                else_=SystemProcess(),
-            )
-        ],
-        recipients=[
-            AutoApprove(),
-        ],
-    )
-
     delete_published_record = WorkflowRequest(
         # if the record is draft, it is covered by the delete permission
         # if published, only the owner or curator can request deleting
@@ -466,11 +447,10 @@ class RestrictedWorkflowRequests(WorkflowRequestPolicy):
         recipients=[
             IfRequestedBy(
                 requesters=[
-                    PrimaryCommunityRole("curator"),
                     PrimaryCommunityRole("owner"),
                 ],
                 then_=[AutoApprove()],
-                else_=[PrimaryCommunityRole("curator")],
+                else_=[PrimaryCommunityRole("owner")],
             )
         ],
         # the record comes to the state of retracting when the request is submitted. If the request
