@@ -461,6 +461,25 @@ class DefaultWorkflowRequests(WorkflowRequestPolicy):
         ],
     )
 
+    delete_draft = WorkflowRequest(
+        requesters=[
+            IfNotHarvested(
+                then_=IfInState(
+                    "draft",
+                    then_=[
+                        RecordOwners(),
+                        PrimaryCommunityRole("curator"),
+                        PrimaryCommunityRole("owner"),
+                    ],
+                ),
+                else_=SystemProcess(),
+            )
+        ],
+        recipients=[
+            AutoApprove(),
+        ],
+    )
+
     assign_doi = WorkflowRequest(
         requesters=[
             IfNotHarvested(
