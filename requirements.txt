@@ -13,7 +13,7 @@ levenshtein==0.27.1
 marisa-trie==1.2.1
 marshmallow-i18n-messages==0.1.0
 nr-metadata==2.0.69
-nr-oaipmh-harvesters==1.0.50
+nr-oaipmh-harvesters==1.0.51
 nr-vocabularies==2.1.13
 oarepo-communities==5.1.14
 oarepo-dashboard==1.0.21
