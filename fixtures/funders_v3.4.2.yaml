@@ -1,14 +1,15 @@
 id: N-A
+name: N-A
 title:
   cs: N/A
   en: N/A
 ---
 id: AV0
+name: Akademie věd České republiky
 title:
   cs: Akademie věd České republiky
   en: Czech Academy of Sciences
 country: CZ
-acronym: AV ČR
 identifiers:
 - scheme: crossrefFunderId
   identifier: http://dx.doi.org/10.13039/501100004240
@@ -16,51 +17,51 @@ identifiers:
   identifier: https://ror.org/053avzc18
 ---
 id: BIS
+name: Bezpečnostní a informační služba
 title:
   cs: Bezpečnostní a informační služba
   en: Security Information Service
 country: CZ
-acronym: BIS
 identifiers:
 - scheme: ror
   identifier: https://ror.org/01tjgrk20
 ---
 id: CBU
+name: Český báňský úřad
 title:
   cs: Český báňský úřad
   en: Czech Mining Office Board
 country: CZ
-acronym: ČBÚ
 identifiers:
 - scheme: ror
   identifier: https://ror.org/04kgngk14
 ---
 id: CSU
+name: Český statistický úřad
 title:
   cs: Český statistický úřad
   en: Czech Statistical Office
 country: CZ
-acronym: ČSÚ
 identifiers:
 - scheme: ror
   identifier: https://ror.org/03w948j83
 ---
 id: CUZ
+name: Český úřad zeměměřičský a katastrální
 title:
   cs: Český úřad zeměměřičský a katastrální
   en: Czech Office for Surveying, Mapping and Cadastre
 country: CZ
-acronym: ČÚZK
 identifiers:
 - scheme: ror
   identifier: https://ror.org/0111dmn28
 ---
 id: GA0
+name: Grantová agentura České republiky
 title:
   cs: Grantová agentura České republiky
   en: Czech Science Foundation
 country: CZ
-acronym: GA ČR
 identifiers:
 - scheme: crossrefFunderId
   identifier: http://dx.doi.org/10.13039/501100001824
@@ -68,95 +69,109 @@ identifiers:
   identifier: https://ror.org/01pv73b02
 ---
 id: KHK
+name: Královéhradecký kraj
 title:
   cs: Královéhradecký kraj
   en: Hradec Králové Region
 country: CZ
 ---
 id: KHP
+name: Hlavní město Praha
 title:
   cs: Hlavní město Praha
   en: Prague
 country: CZ
 ---
 id: KJC
+name: Jihočeský kraj
 title:
   cs: Jihočeský kraj
   en: South Bohemian Region
 country: CZ
 ---
 id: KJM
+name: Jihomoravský kraj
 title:
   cs: Jihomoravský kraj
   en: South Moravian Region
 country: CZ
 ---
 id: KKV
+name: Karlovarský kraj
 title:
   cs: Karlovarský kraj
   en: Karlovy Vary Region
 country: CZ
 ---
 id: KLI
+name: Liberecký kraj
 title:
   cs: Liberecký kraj
   en: Liberec Region
 country: CZ
 ---
 id: KMS
+name: Moravskoslezský kraj
 title:
   cs: Moravskoslezský kraj
   en: Moravian-Silesian Region
 country: CZ
 ---
 id: KOL
+name: Olomoucký kraj
 title:
   cs: Olomoucký kraj
   en: Olomouc Region
 country: CZ
 ---
 id: KPB
+name: Pardubický kraj
 title:
   cs: Pardubický kraj
   en: Pardubice Region
 country: CZ
 ---
 id: KPZ
+name: Plzeňský kraj
 title:
   cs: Plzeňský kraj
   en: Pilsen Region
 country: CZ
 ---
 id: KSC
+name: Středočeský kraj
 title:
   cs: Středočeský kraj
   en: Central Bohemia Region
 country: CZ
 ---
 id: KUL
+name: Ústecký kraj
 title:
   cs: Ústecký kraj
   en: Usti Region
 country: CZ
 ---
 id: KVY
+name: Kraj Vysočina
 title:
   cs: Kraj Vysočina
   en: Vysocina Region
 country: CZ
 ---
 id: KZL
+name: Zlínský kraj
 title:
   cs: Zlínský kraj
   en: Zlin Region
 country: CZ
 ---
 id: MD0
+name: Ministerstvo dopravy
 title:
   cs: Ministerstvo dopravy
   en: Ministry of Transport of the Czech Republic
 country: CZ
-acronym: MD ČR
 identifiers:
 - scheme: crossrefFunderId
   identifier: http://dx.doi.org/10.13039/100007654
@@ -164,27 +179,27 @@ identifiers:
   identifier: https://ror.org/00p9p2506
 ---
 id: MDS
+name: Ministerstvo dopravy a spojů
 title:
   cs: Ministerstvo dopravy a spojů
 country: CZ
-acronym: MDS
 ---
 id: MF0
+name: Ministerstvo financí
 title:
   cs: Ministerstvo financí
   en: Ministry of Finance of the Czech Republic
 country: CZ
-acronym: MF ČR
 identifiers:
 - scheme: ror
   identifier: https://ror.org/00mjd8b34
 ---
 id: MK0
+name: Ministerstvo kultury
 title:
   cs: Ministerstvo kultury
   en: Ministry of Culture of the Czech Republic
 country: CZ
-acronym: MK ČR
 identifiers:
 - scheme: crossrefFunderId
   identifier: http://dx.doi.org/10.13039/501100005619
@@ -192,21 +207,21 @@ identifiers:
   identifier: https://ror.org/00fxxw604
 ---
 id: MMR
+name: Ministerstvo pro místní rozvoj
 title:
   cs: Ministerstvo pro místní rozvoj
   en: Ministry of Regional Development of the Czech Republic
 country: CZ
-acronym: MMR
 identifiers:
 - scheme: ror
   identifier: https://ror.org/045smbc57
 ---
 id: MO0
+name: Ministerstvo obrany
 title:
   cs: Ministerstvo obrany
   en: Ministry of Defence of the Czech Republic
 country: CZ
-acronym: MO ČR
 identifiers:
 - scheme: crossrefFunderId
   identifier: http://dx.doi.org/10.13039/501100014911
@@ -214,11 +229,11 @@ identifiers:
   identifier: https://ror.org/00r7raa16
 ---
 id: MPO
+name: Ministerstvo průmyslu a obchodu
 title:
   cs: Ministerstvo průmyslu a obchodu
   en: Ministry of Industry and Trade of the Czech Republic
 country: CZ
-acronym: MPO
 identifiers:
 - scheme: crossrefFunderId
   identifier: http://dx.doi.org/10.13039/501100004578
@@ -226,11 +241,11 @@ identifiers:
   identifier: https://ror.org/03j4eb467
 ---
 id: MPS
+name: Ministerstvo práce a sociálních věcí
 title:
   cs: Ministerstvo práce a sociálních věcí
   en: Ministry of Labour and Social Affairs of the Czech Republic
 country: CZ
-acronym: MPSV
 identifiers:
 - scheme: crossrefFunderId
   identifier: http://dx.doi.org/10.13039/501100007452
@@ -238,21 +253,21 @@ identifiers:
   identifier: https://ror.org/01bvj3e58
 ---
 id: MS0
+name: Ministerstvo spravedlnosti
 title:
   cs: Ministerstvo spravedlnosti
   en: Ministry of Justice of the Czech Republic
 country: CZ
-acronym: MS ČR
 identifiers:
 - scheme: ror
   identifier: https://ror.org/0531qh590
 ---
 id: MSM
+name: Ministerstvo školství, mládeže a tělovýchovy
 title:
   cs: Ministerstvo školství, mládeže a tělovýchovy
   en: Ministry of Education, Youth and Sports of the Czech Republic
 country: CZ
-acronym: MŠMT
 identifiers:
 - scheme: crossrefFunderId
   identifier: http://dx.doi.org/10.13039/501100001823
@@ -260,11 +275,11 @@ identifiers:
   identifier: https://ror.org/037n8p820
 ---
 id: MV0
+name: Ministerstvo vnitra
 title:
   cs: Ministerstvo vnitra
   en: Ministry of Interior of the Czech Republic
 country: CZ
-acronym: MV ČR
 identifiers:
 - scheme: crossrefFunderId
   identifier: http://dx.doi.org/10.13039/100009532
@@ -272,11 +287,11 @@ identifiers:
   identifier: https://ror.org/05w1nn565
 ---
 id: MZ0
+name: Ministerstvo zdravotnictví
 title:
   cs: Ministerstvo zdravotnictví
   en: Ministry of Health of the Czech Republic
 country: CZ
-acronym: MZ ČR
 identifiers:
 - scheme: crossrefFunderId
   identifier: http://dx.doi.org/10.13039/501100003243
@@ -284,11 +299,11 @@ identifiers:
   identifier: https://ror.org/00y6khe77
 ---
 id: MZE
+name: Ministerstvo zemědělství
 title:
   cs: Ministerstvo zemědělství
   en: Ministry of Agriculture of the Czech Republic
 country: CZ
-acronym: MZe ČR
 identifiers:
 - scheme: crossrefFunderId
   identifier: http://dx.doi.org/10.13039/501100006533
@@ -296,11 +311,11 @@ identifiers:
   identifier: https://ror.org/049wftm75
 ---
 id: MZP
+name: Ministerstvo životního prostředí
 title:
   cs: Ministerstvo životního prostředí
   en: Ministry of Environment of the Czech Republic
 country: CZ
-acronym: MZP ČR
 identifiers:
 - scheme: crossrefFunderId
   identifier: http://dx.doi.org/10.13039/501100013855
@@ -308,41 +323,41 @@ identifiers:
   identifier: https://ror.org/04e74dh47
 ---
 id: MZV
+name: Ministerstvo zahraničních věcí
 title:
   cs: Ministerstvo zahraničních věcí
   en: Ministry of Foreign Affairs of the Czech Republic
 country: CZ
-acronym: MZV ČR
 identifiers:
 - scheme: ror
   identifier: https://ror.org/00h3t4h60
 ---
 id: NBU
+name: Národní bezpečnostní úřad
 title:
   cs: Národní bezpečnostní úřad
   en: National Security Authority
 country: CZ
-acronym: NBÚ
 identifiers:
 - scheme: ror
   identifier: https://ror.org/02yy6jb09
 ---
 id: SUJ
+name: Státní úřad pro jadernou bezpečnost
 title:
   cs: Státní úřad pro jadernou bezpečnost
   en: State Office for Nuclear Safety
 country: CZ
-acronym: SÚJB
 identifiers:
 - scheme: ror
   identifier: https://ror.org/02dy2h219
 ---
 id: TA0
+name: Technologická agentura České republiky
 title:
   cs: Technologická agentura České republiky
   en: Technology Agency of the Czech Republic
 country: CZ
-acronym: TA ČR
 identifiers:
 - scheme: crossrefFunderId
   identifier: http://dx.doi.org/10.13039/100014809
@@ -350,37 +365,39 @@ identifiers:
   identifier: https://ror.org/04v0fk911
 ---
 id: URV
+name: Úřad vlády
 title:
   cs: Úřad vlády
   en: Office of the Goverment
 country: CZ
 ---
 id: USC
+name: Územně samosprávné celky (nerozlišeno)
 title:
   cs: Územně samosprávné celky (nerozlišeno)
   en: Regional autonomous units of the CR (unstructured)
 country: CZ
 ---
 id: MI0
+name: Ministerstvo informatiky
 title:
   cs: Ministerstvo informatiky
   en: Ministry of Informatics of the Czech Republic
 country: CZ
-acronym: MI ČR
 ---
 id: MH0
+name: Ministerstvo hospodářství
 title:
   cs: Ministerstvo hospodářství
   en: Ministry of Industry of the Czech Republic
 country: CZ
-acronym: MH ČR
 ---
 id: EC
+name: Evropská komise
 title:
   cs: Evropská komise
   en: European Commission
 country: BE
-acronym: EC
 identifiers:
 - scheme: crossrefFunderId
   identifier: http://dx.doi.org/10.13039/501100000780
@@ -388,20 +405,20 @@ identifiers:
   identifier: https://ror.org/00k4n6c32
 ---
 id: GA-UK
+name: Grantová agentura Univerzity Karlovy
 title:
   cs: Grantová agentura Univerzity Karlovy
   en: Charles University Grant Agency
 country: CZ
-acronym: GA UK
 identifiers:
 - scheme: crossrefFunderId
   identifier: http://dx.doi.org/10.13039/100007543
 ---
 id: NIH
+name: National Institutes of Health
 title:
   en: National Institutes of Health
 country: US
-acronym: NIH
 identifiers:
 - scheme: crossrefFunderId
   identifier: http://dx.doi.org/10.13039/100000002
@@ -409,11 +426,11 @@ identifiers:
   identifier: https://ror.org/01cwqze88
 ---
 id: NATO
+name: Severoatlantická aliance
 title:
   cs: Severoatlantická aliance
   en: North Atlantic Treaty Organization
 country: BE
-acronym: NATO
 identifiers:
 - scheme: crossrefFunderId
   identifier: http://dx.doi.org/10.13039/100004415
@@ -421,11 +438,11 @@ identifiers:
   identifier: https://ror.org/00bkaqj51
 ---
 id: IAEA
+name: Mezinárodní agentura pro atomovou energii
 title:
   cs: Mezinárodní agentura pro atomovou energii
   en: International Atomic Energy Agency
 country: IT
-acronym: IAEA
 identifiers:
 - scheme: crossrefFunderId
   identifier: http://dx.doi.org/10.13039/501100004493
@@ -433,11 +450,11 @@ identifiers:
   identifier: https://ror.org/00gtfax65
 ---
 id: NSF
+name: Národní vědecká nadace
 title:
   cs: Národní vědecká nadace
   en: National Science Foundation
 country: US
-acronym: NSF
 identifiers:
 - scheme: crossrefFunderId
   identifier: http://dx.doi.org/10.13039/100000001
@@ -445,10 +462,10 @@ identifiers:
   identifier: https://ror.org/021nxhr62
 ---
 id: ESF-science
+name: European Science Foundation
 title:
   en: European Science Foundation
 country: FR
-acronym: ESF
 identifiers:
 - scheme: crossrefFunderId
   identifier: http://dx.doi.org/10.13039/501100000782
@@ -456,23 +473,24 @@ identifiers:
   identifier: https://ror.org/04esata81
 ---
 id: HSRF
+name: Health System Research Fund
 title:
   en: Health System Research Fund
-acronym: HSRF
 ---
 id: SFZP-CR
+name: Státní fond životního prostředí ČR
 title:
   cs: Státní fond životního prostředí ČR
 country: CZ
-acronym: SFŽP ČR
 ---
 id: CESNET
+name: Fond rozvoje sdružení CESNET
 title:
   cs: Fond rozvoje sdružení CESNET
 country: CZ
-acronym: CESNET
 ---
 id: National-geographic
+name: National Geographic Society
 title:
   en: National Geographic Society
 country: US
@@ -483,10 +501,10 @@ identifiers:
   identifier: https://ror.org/04bqh5m06
 ---
 id: BNSF
+name: Bulgarian National Science Fund
 title:
   en: Bulgarian National Science Fund
 country: BG
-acronym: BNSF
 identifiers:
 - scheme: crossrefFunderId
   identifier: http://dx.doi.org/10.13039/501100003336
@@ -494,11 +512,11 @@ identifiers:
   identifier: https://ror.org/05eg49r29
 ---
 id: CEU
+name: Středoevropská univerzita
 title:
   cs: Středoevropská univerzita
   en: Central European University
 country: AT
-acronym: CEU
 identifiers:
 - scheme: crossrefFunderId
   identifier: http://dx.doi.org/10.13039/501100006061
@@ -506,11 +524,11 @@ identifiers:
   identifier: https://ror.org/02zx40v98
 ---
 id: CNRS
+name: French National Centre for Scientific Research
 title:
   en: French National Centre for Scientific Research
   fr: Centre national de la recherche scientifique
 country: FR
-acronym: CNRS
 identifiers:
 - scheme: crossrefFunderId
   identifier: http://dx.doi.org/10.13039/501100004794
@@ -518,11 +536,11 @@ identifiers:
   identifier: https://ror.org/02feahw73
 ---
 id: CVUT
+name: České vysoké učení technické v Praze
 title:
   cs: České vysoké učení technické v Praze
   en: Czech Technical University in Prague
 country: CZ
-acronym: ČVUT
 identifiers:
 - scheme: crossrefFunderId
   identifier: http://dx.doi.org/10.13039/100007655
@@ -530,6 +548,7 @@ identifiers:
   identifier: https://ror.org/03kqpb082
 ---
 id: CzechInvest
+name: CzechInvest
 title:
   cs: CzechInvest
 country: CZ
@@ -538,11 +557,11 @@ identifiers:
   identifier: https://ror.org/04zyrd219
 ---
 id: DFG
+name: German Research Association
 title:
   de: Deutsche Forschungsgemeinschaft
   en: German Research Association
 country: DE
-acronym: DFG
 identifiers:
 - scheme: crossrefFunderId
   identifier: http://dx.doi.org/10.13039/501100001659
@@ -550,6 +569,7 @@ identifiers:
   identifier: https://ror.org/018mejw64
 ---
 id: EEA
+name: Evropská agentura pro životní prostředí
 title:
   cs: Evropská agentura pro životní prostředí
   en: European Environment Agency
@@ -561,17 +581,17 @@ identifiers:
   identifier: https://ror.org/02k4b9v70
 ---
 id: EIGE
+name: European Institute for Gender Equality
 title:
   en: European Institute for Gender Equality
 country: LT
-acronym: EIGE
 ---
 id: EPSRC
+name: Rada pro výzkum v oblasti strojírenství a fyzikálních věd
 title:
   cs: Rada pro výzkum v oblasti strojírenství a fyzikálních věd
   en: Engineering and Physical Sciences Research Council
 country: GB
-acronym: EPSRC
 identifiers:
 - scheme: crossrefFunderId
   identifier: http://dx.doi.org/10.13039/501100000266
@@ -579,22 +599,23 @@ identifiers:
   identifier: https://ror.org/0439y7842
 ---
 id: FRA
+name: Agentura Evropské unie pro základní práva
 title:
   cs: Agentura Evropské unie pro základní práva
   en: European Union Agency for Fundamental Rights
 country: AT
-acronym: FRA
 ---
 id: ESF-social
+name: Evropský sociální fond
 title:
   cs: Evropský sociální fond
   en: European Social Fund
-acronym: ESF
 identifiers:
 - scheme: crossrefFunderId
   identifier: http://dx.doi.org/10.13039/501100004895
 ---
 id: ESA
+name: Evropská kosmická agentura
 title:
   cs: Evropská kosmická agentura
   en: European Space Agency
@@ -606,11 +627,13 @@ identifiers:
   identifier: https://ror.org/03wd9za21
 ---
 id: LCR
+name: Grantová služba LČR (Lesy ČR)
 title:
   cs: Grantová služba LČR (Lesy ČR)
 country: CZ
 ---
 id: IVF
+name: Mezinárodní visegrádský fond
 title:
   cs: Mezinárodní visegrádský fond
   en: International Visegrad Fund
@@ -622,6 +645,7 @@ identifiers:
   identifier: https://ror.org/04e3ssz85
 ---
 id: EEA-Norway-grants
+name: Fondy EHP a Norska
 title:
   cs: Fondy EHP a Norska
   en: EEA and Norway Grants
@@ -633,6 +657,7 @@ identifiers:
   identifier: https://ror.org/02dfxg175
 ---
 id: NF-Neuron
+name: Nadační fond Neuron
 title:
   cs: Nadační fond Neuron
   en: Neuron Benevolent Fund for the Support of Science
@@ -642,11 +667,11 @@ identifiers:
   identifier: http://dx.doi.org/10.13039/501100013856
 ---
 id: NASA
+name: Národní úřad pro letectví a vesmír
 title:
   cs: Národní úřad pro letectví a vesmír
   en: National Aeronautics and Space Administration
 country: US
-acronym: NASA
 identifiers:
 - scheme: crossrefFunderId
   identifier: http://dx.doi.org/10.13039/100000104
@@ -654,20 +679,20 @@ identifiers:
   identifier: https://ror.org/027ka1x80
 ---
 id: NCEEER
+name: National Council for Eurasian and East European Research
 title:
   en: National Council for Eurasian and East European Research
 country: US
-acronym: NCEEER
 identifiers:
 - scheme: crossrefFunderId
   identifier: http://dx.doi.org/10.13039/100012658
 ---
 id: NCN
+name: National Science Centre (Poland)
 title:
   en: National Science Centre (Poland)
   pl: Narodowe Centrum Nauki
 country: PL
-acronym: NCN
 identifiers:
 - scheme: crossrefFunderId
   identifier: http://dx.doi.org/10.13039/501100004281
@@ -675,6 +700,7 @@ identifiers:
   identifier: https://ror.org/03ha2q922
 ---
 id: NSC-Taiwan
+name: National Science Council of Taiwan
 title:
   en: National Science Council of Taiwan
 country: TW
@@ -683,21 +709,21 @@ identifiers:
   identifier: http://dx.doi.org/10.13039/501100001868
 ---
 id: VEGA
+name: Scientific Grant Agency
 title:
   en: Scientific Grant Agency
   sk: Vedecká grantová agentúra MŠVVaŠ SR a SAV
 country: SK
-acronym: VEGA
 identifiers:
 - scheme: crossrefFunderId
   identifier: http://dx.doi.org/10.13039/501100006109
 ---
 id: SNSF
+name: Swiss National Science Foundation
 title:
   de: Schweizerischer Nationalfonds zur Förderung der Wissenschaftlichen Forschung
   en: Swiss National Science Foundation
 country: CH
-acronym: SNSF
 identifiers:
 - scheme: crossrefFunderId
   identifier: http://dx.doi.org/10.13039/501100001711
@@ -705,11 +731,11 @@ identifiers:
   identifier: https://ror.org/00yjd3n13
 ---
 id: FWF
+name: Austrian Science Fund
 title:
   de: Fonds zur Förderung der wissenschaftlichen Forschung
   en: Austrian Science Fund
 country: AT
-acronym: FWF
 identifiers:
 - scheme: crossrefFunderId
   identifier: http://dx.doi.org/10.13039/501100002428
@@ -717,39 +743,39 @@ identifiers:
   identifier: https://ror.org/013tf3c58
 ---
 id: UPCE
+name: Univerzita Pardubice
 title:
   cs: Univerzita Pardubice
   en: University of Pardubice
-acronym: UPCE
 identifiers:
 - scheme: ror
   identifier: https://ror.org/01chzd453
 ---
 id: APVV
+name: Slovak Research and Development Agency
 title:
   sk: Agentúra na podporu výskumu a vývoja
   en: Slovak Research and Development Agency
 country: SK
-acronym: APVV
 identifiers:
 - scheme: ror
   identifier: https://ror.org/037nx0e70
 ---
 id: MU
+name: Masarykova univerzita
 title:
   cs: Masarykova univerzita
   en: Masaryk University
 country: CZ
-acronym: MU
 identifiers:
 - scheme: ror
   identifier: https://ror.org/02j46qs45
 ---
 id: NAZV
+name: Národní agentura pro zemědělský výzkum
 title:
   cs: Národní agentura pro zemědělský výzkum
   en: National Agency for Agricultural Research
-acronym: NAZV
 identifiers:
 - scheme: ror
   identifier: https://ror.org/051rtqg79
