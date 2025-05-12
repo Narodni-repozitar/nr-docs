@@ -12,6 +12,7 @@ from oarepo_communities.services.components.include import CommunityInclusionCom
 from oarepo_communities.services.links import CommunitiesLinks
 from oarepo_doi.services.components import DoiComponent
 from oarepo_oaipmh_harvester.components import OaiSectionComponent
+from oarepo_requests.services.components.autorequest import AutorequestComponent
 from oarepo_runtime.services.components import (
     CustomFieldsComponent,
     DateIssuedComponent,
@@ -79,6 +80,7 @@ class DocumentsServiceConfig(
             CommunityDefaultWorkflowComponent,
             CommunityInclusionComponent,
             CustomFieldsComponent,
+            AutorequestComponent,
             WorkflowComponent,
         )
 
