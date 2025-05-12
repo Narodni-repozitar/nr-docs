@@ -21,7 +21,7 @@ oarepo-doi==2.0.3
 oarepo-glitchtip==1.0.1
 oarepo-global-search==1.0.44
 oarepo-oai-pmh-harvester==5.0.4
-oarepo-oidc-einfra==1.0.6
+oarepo-oidc-einfra==1.0.7
 oarepo-published-service==1.0.3
 oarepo-rdm==0.5.5
 oarepo-requests==2.4.8
