@@ -580,6 +580,7 @@
                 "dateIssued": {
                     "detail": "edtf",
                     "input": "edtf",
+                    "required": true,
                     "help": "metadata/dateIssued.help",
                     "label": "metadata/dateIssued.label",
                     "hint": "metadata/dateIssued.hint",
@@ -893,6 +894,13 @@
                                         "help": "metadata/funders/funder/name.help",
                                         "label": "metadata/funders/funder/name.label",
                                         "hint": "metadata/funders/funder/name.hint"
+                                    },
+                                    "title": {
+                                        "detail": false,
+                                        "input": false,
+                                        "help": "metadata/funders/funder/title.help",
+                                        "label": "metadata/funders/funder/title.label",
+                                        "hint": "metadata/funders/funder/title.hint"
                                     }
                                 }
                             }

@@ -12,13 +12,13 @@ from oarepo_communities.services.components.include import CommunityInclusionCom
 from oarepo_communities.services.links import CommunitiesLinks
 from oarepo_doi.services.components import DoiComponent
 from oarepo_oaipmh_harvester.components import OaiSectionComponent
+from oarepo_requests.services.components.autorequest import AutorequestComponent
 from oarepo_runtime.services.components import (
     CustomFieldsComponent,
     DateIssuedComponent,
     process_service_configs,
 )
 from oarepo_runtime.services.config import (
-    DraftLink,
     has_draft_permission,
     has_file_permission,
     has_permission,
@@ -84,6 +84,7 @@ class DocumentsServiceConfig(
             CommunityDefaultWorkflowComponent,
             CommunityInclusionComponent,
             CustomFieldsComponent,
+            AutorequestComponent,
             WorkflowComponent,
         )
 
@@ -114,15 +115,11 @@ class DocumentsServiceConfig(
                     "self_html": "{+ui}/communities/{slug}/records",
                 }
             ),
-            # TODO: changed manually, fix model builder to generate this
-            "draft": DraftLink(
-                "{+api}/docs/{id}/draft",
-                when=has_draft_permission("read_draft"),
+            "draft": RecordLink(
+                "{+api}/docs/{id}/draft", when=has_draft_permission("read_draft")
             ),
-            # TODO: changed manually, fix model builder to generate this
-            "edit_html": DraftLink(
-                "{+ui}/docs/{id}/edit",
-                when=has_draft_permission("update_draft"),
+            "edit_html": RecordLink(
+                "{+ui}/docs/{id}/edit", when=has_draft_permission("update_draft")
             ),
             "files": ConditionalLink(
                 cond=is_published_record(),

@@ -182,7 +182,7 @@ class DefaultWorkflowPermissions(CommunityDefaultWorkflowPermissions):
 
     # region Draft files
     can_draft_read_files = can_read_draft
-    can_draft_get_content_files = can_read_draft
+    can_draft_get_content_files = can_draft_read_files
 
     can_draft_update_files = [
         IfInState(
@@ -233,7 +233,7 @@ class DefaultWorkflowPermissions(CommunityDefaultWorkflowPermissions):
         ),
     ]
     can_list_files = can_read_files
-    can_get_content_files = can_read
+    can_get_content_files = can_read_files
 
     # modification of files is only on drafts
     can_update_files = [Disable()]
@@ -434,11 +434,10 @@ class DefaultWorkflowRequests(WorkflowRequestPolicy):
         recipients=[
             IfRequestedBy(
                 requesters=[
-                    PrimaryCommunityRole("curator"),
                     PrimaryCommunityRole("owner"),
                 ],
                 then_=[AutoApprove()],
-                else_=[PrimaryCommunityRole("curator")],
+                else_=[PrimaryCommunityRole("owner")],
             )
         ],
         # the record comes to the state of retracting when the request is submitted. If the request

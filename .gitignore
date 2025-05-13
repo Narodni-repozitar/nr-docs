@@ -14,3 +14,4 @@ node_modules
 .tx
 /requirements-resolved-local.txt
 /uv.lock
+celerybeat-schedule.db

@@ -4428,11 +4428,6 @@ msgstr ""
 msgid "versions/next_draft_id.hint"
 msgstr ""
 
-msgid ""
-"The request ({{requestType}}) could not be made due to validation errors. "
-"Please fix them and try again:"
-msgstr ""
-
 #: /Users/m/w/nrp/nr-docs/common/just_for_translations.py:11
 #: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:42
 msgid "access/status.label"
@@ -5274,3 +5269,22 @@ msgstr ""
 
 msgid "Assigned DOI:"
 msgstr ""
+
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/common/resources/citations/__init__.py:26
+msgid "CSL"
+msgstr ""
+
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/common/resources/citations/__init__.py:32
+msgid "ISO 690"
+msgstr ""
+
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/common/resources/citations/__init__.py:38
+msgid "BibTex"
+msgstr ""
+
+msgid ""
+"The request ({{requestType}}) could not be made due to form validation "
+"errors. Please fix them and try again:"
+msgstr ""
+"Požadavek ({{requestType}}) nemohl být proveden kvůli chybám validace "
+"formuláře. Prosím, opravte je a zkuste to znovu:"

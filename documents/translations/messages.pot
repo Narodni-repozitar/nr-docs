@@ -2,8 +2,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
-"POT-Creation-Date: 2025-04-11T12:03:58.786738\n"
-"PO-Revision-Date: 2025-04-11T12:03:58.786739\n"
+"POT-Creation-Date: 2025-05-13T12:29:54.661500\n"
+"PO-Revision-Date: 2025-05-13T12:29:54.661501\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -914,6 +914,15 @@ msgstr ""
 msgid "metadata/funders/funder/name.hint"
 msgstr ""
 
+msgid "metadata/funders/funder/title.help"
+msgstr ""
+
+msgid "metadata/funders/funder/title.label"
+msgstr ""
+
+msgid "metadata/funders/funder/title.hint"
+msgstr ""
+
 msgid "metadata/geoLocations.label"
 msgstr ""
 
@@ -1727,10 +1736,10 @@ msgstr ""
 msgid "metadata/subjectCategories.label"
 msgstr ""
 
-msgid "metadata/subjectCategories.hint"
+msgid "metadata/subjectCategories.help"
 msgstr ""
 
-msgid "metadata/subjectCategories.help"
+msgid "metadata/subjectCategories.hint"
 msgstr ""
 
 msgid "metadata/subjectCategories/id.help"

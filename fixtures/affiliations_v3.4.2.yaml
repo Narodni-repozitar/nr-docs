@@ -1,2820 +1,3696 @@
 id: agritec-vyzkum-slechteni-sluzby
-name: AGRITEC Research, Breeding and Services
+title:
+  cs: AGRITEC, výzkum, šlechtění, služby
+  en: AGRITEC Research, Breeding and Services
+name: AGRITEC, výzkum, šlechtění, služby
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '48392952'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/03jz5v392
-- scheme: URL
+- scheme: url
   identifier: http://www.agritec.cz/
 ---
 id: avss-agritec-plant-research
+title:
+  cs: Agritec Plant Research
 name: Agritec Plant Research
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '26784246'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/03jz5v392
 ---
 id: agrotest-fyto
+title:
+  cs: Agrotest fyto
 name: Agrotest fyto
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '25328859'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/04rrs1z45
-- scheme: URL
+- scheme: url
   identifier: http://www.vukrom.cz/
 ---
 id: chmelarsky-institut
-name: Hop Research Institute
+title:
+  cs: Chmelařský institut
+  en: Hop Research Institute
+name: Chmelařský institut
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '14864347'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/01mkmmc36
-- scheme: URL
+- scheme: url
   identifier: http://www.chizatec.cz/
 ---
 id: nipos
-name: National Information and Consulting Centre for Culture
+title:
+  cs: Národní informační a poradenské středisko pro kulturu
+  en: National Information and Consulting Centre for Culture
+name: Národní informační a poradenské středisko pro kulturu
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '14450551'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/01pzyyx54
-- scheme: URL
+- scheme: url
   identifier: http://www.nipos-mk.cz/
 ---
 id: oseva
-name: OSEVA Development and Research
+title:
+  cs: OSEVA vývoj a výzkum
+  en: OSEVA Development and Research
+name: OSEVA vývoj a výzkum
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '26791251'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/0379e1d13
-- scheme: URL
+- scheme: url
   identifier: http://www.oseva-vav.cz
 ---
 id: ustr
-name: Institute for the Study of Totalitarian Regimes
+title:
+  cs: Ústav pro studium totalitních režimů
+  en: Institute for the Study of Totalitarian Regimes
+name: Ústav pro studium totalitních režimů
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '75112779'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/04ef3fk55
-- scheme: URL
+- scheme: url
   identifier: http://www.ustrcr.cz/
 ---
 id: vyzkumny-a-vyvojovy-ustav-drevarsky-praha
-name: Timber Research and Development Institute, Prague
+title:
+  cs: Výzkumný a vývojový ústav dřevařský, Praha
+  en: Timber Research and Development Institute, Prague
+name: Výzkumný a vývojový ústav dřevařský, Praha
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '00014125'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/02phgvp38
-- scheme: URL
+- scheme: url
   identifier: http://www.vvud.cz
 ---
 id: cdv
-name: Transport Research Centre
+title:
+  cs: Centrum dopravního výzkumu
+  en: Transport Research Centre
+name: Centrum dopravního výzkumu
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '44994575'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/03rqbe322
-- scheme: URL
+- scheme: url
   identifier: http://www.cdv.cz/
 ---
 id: centrum-pro-studium-vysokeho-skolstvi
-name: Centre for Higher Education Studies
+title:
+  cs: Centrum pro studium vysokého školství
+  en: Centre for Higher Education Studies
+name: Centrum pro studium vysokého školství
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '00237752'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/009wgvk87
-- scheme: URL
+- scheme: url
   identifier: http://www.csvs.cz/
 ---
 id: ustav-archeologicke-pamatkove-pece-severozapadnich-cech
-name: Institute of Archeological and Cultural Heritage Preservation in Northwestern
-  Bohemia
+title:
+  cs: Ústav archeologické památkové péče severozápadních Čech
+  en: Institute of Archeological and Cultural Heritage Preservation in Northwestern
+    Bohemia
+name: Ústav archeologické památkové péče severozápadních Čech
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '47325011'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/01abd7j14
-- scheme: URL
+- scheme: url
   identifier: http://www.uappmost.cz/wp/
 ---
 id: vubp
-name: Occupational Safety Research Institute
+title:
+  cs: Výzkumný ústav bezpečnosti práce
+  en: Occupational Safety Research Institute
+name: Výzkumný ústav bezpečnosti práce
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: 00025950
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/03zbxqj79
-- scheme: URL
+- scheme: url
   identifier: http://www.vubp.cz/
 ---
 id: vugtk
-name: Research Institute of Geodesy, Topography and Cartography
+title:
+  cs: Výzkumný ústav geodetický, topografický a kartografický
+  en: Research Institute of Geodesy, Topography and Cartography
+name: Výzkumný ústav geodetický, topografický a kartografický
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '00025615'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/04fgffc11
-- scheme: URL
+- scheme: url
   identifier: http://www.vugtk.cz/
 ---
 id: vulhm
-name: Forestry and Game Management Research Institute
+title:
+  cs: Výzkumný ústav lesního hospodářství a myslivosti
+  en: Forestry and Game Management Research Institute
+name: Výzkumný ústav lesního hospodářství a myslivosti
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '00020702'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/034cj1z12
-- scheme: URL
+- scheme: url
   identifier: http://www.vulhm.cz/
 ---
 id: vupp
-name: Food Research Institute Prague
+title:
+  cs: Výzkumný ústav potravinářský Praha
+  en: Food Research Institute Prague
+name: Výzkumný ústav potravinářský Praha
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '00027022'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/02jdepa55
-- scheme: URL
+- scheme: url
   identifier: http://www.vupp.cz
 ---
 id: vupsv
-name: Research Institute for Labour and Social Affairs
+title:
+  cs: Výzkumný ústav práce a sociálních věcí
+  en: Research Institute for Labour and Social Affairs
+name: Výzkumný ústav práce a sociálních věcí
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '45773009'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/01gccqc59
-- scheme: URL
+- scheme: url
   identifier: http://www.vupsv.cz/
 ---
 id: vurv
-name: Crop Research Institute
+title:
+  cs: Výzkumný ústav rostlinné výroby
+  en: Crop Research Institute
+name: Výzkumný ústav rostlinné výroby
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '00027006'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/0436mv865
-- scheme: URL
+- scheme: url
   identifier: http://www.vurv.cz/
 ---
 id: vyzkumny-ustav-silva-taroucy-pro-krajinu-a-okrasne-zahradnictvi
-name: Silva Tarouca Research Institute for Landscape and Ornamental Gardening
+title:
+  cs: Výzkumný ústav Silva Taroucy pro krajinu a okrasné zahradnictví
+  en: Silva Tarouca Research Institute for Landscape and Ornamental Gardening
+name: Výzkumný ústav Silva Taroucy pro krajinu a okrasné zahradnictví
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '00027073'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/04gf11d56
-- scheme: URL
+- scheme: url
   identifier: http://www.vukoz.cz/
 ---
 id: vyzkumny-ustav-vodohospodarsky-t-g-masaryka
-name: T. G. Masaryk Water Research Institute
+title:
+  cs: Výzkumný ústav vodohospodářský T. G. Masaryka
+  en: T. G. Masaryk Water Research Institute
+name: Výzkumný ústav vodohospodářský T. G. Masaryka
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '00020711'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/0582kjx49
-- scheme: URL
+- scheme: url
   identifier: https://www.vuv.cz/index.php/cz/
 ---
 id: amu
-name: Academy of Performing Arts in Prague
+title:
+  cs: Akademie múzických umění v Praze
+  en: Academy of Performing Arts in Prague
+name: Akademie múzických umění v Praze
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '61384984'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/05mjwh489
-- scheme: URL
+- scheme: url
   identifier: http://www.amu.cz
 ---
 id: avu
-name: Academy of Fine Arts in Prague
+title:
+  cs: Akademie výtvarných umění v Praze
+  en: Academy of Fine Arts in Prague
+name: Akademie výtvarných umění v Praze
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '60461446'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/04nvnkt69
-- scheme: URL
+- scheme: url
   identifier: http://www.avu.cz
 ---
 id: czu
-name: Czech University of Life Sciences Prague
+title:
+  cs: Česká zemědělská univerzita v Praze
+  en: Czech University of Life Sciences Prague
+name: Česká zemědělská univerzita v Praze
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '60460709'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/0415vcw02
-- scheme: URL
+- scheme: url
   identifier: http://czu.cz/
 ---
 id: cvut
-name: Czech Technical University in Prague
+title:
+  cs: České vysoké učení technické v Praze
+  en: Czech Technical University in Prague
+name: České vysoké učení technické v Praze
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '68407700'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/03kqpb082
-- scheme: URL
+- scheme: url
   identifier: http://www.cvut.cz
 ---
 id: jamu
-name: Janáček Academy of Music and Performing Arts in Brno
+title:
+  cs: Janáčkova akademie múzických umění v Brně
+  en: Janáček Academy of Music and Performing Arts in Brno
+name: Janáčkova akademie múzických umění v Brně
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '62156462'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/01n7dqn92
-- scheme: URL
+- scheme: url
   identifier: http://www.jamu.cz
 ---
 id: jcu
-name: University of South Bohemia in České Budějovice
+title:
+  cs: Jihočeská univerzita v Českých Budějovicích
+  en: University of South Bohemia in České Budějovice
+name: Jihočeská univerzita v Českých Budějovicích
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '60076658'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/033n3pw66
-- scheme: URL
+- scheme: url
   identifier: http://www.jcu.cz
 ---
 id: mu
-name: Masaryk University
+title:
+  cs: Masarykova univerzita
+  en: Masaryk University
+name: Masarykova univerzita
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '00216224'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/02j46qs45
-- scheme: URL
+- scheme: url
   identifier: http://www.muni.cz
 ---
 id: mendelu
-name: Mendel University in Brno
+title:
+  cs: Mendelova univerzita v Brně
+  en: Mendel University in Brno
+name: Mendelova univerzita v Brně
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '62156489'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/058aeep47
-- scheme: URL
+- scheme: url
   identifier: http://www.mendelu.cz
 ---
 id: ostravska-univerzita
-name: University of Ostrava
+title:
+  cs: Ostravská univerzita
+  en: University of Ostrava
+name: Ostravská univerzita
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '61988987'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/00pyqav47
-- scheme: URL
+- scheme: url
   identifier: http://www.osu.cz
 ---
 id: slezska-univerzita-v-opave
-name: Silesian University in Opava
+title:
+  cs: Slezská univerzita v Opavě
+  en: Silesian University in Opava
+name: Slezská univerzita v Opavě
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '47813059'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/02w4f2z17
-- scheme: URL
+- scheme: url
   identifier: http://www.slu.cz
 ---
 id: tul
-name: Technical University of Liberec
+title:
+  cs: Technická univerzita v Liberci
+  en: Technical University of Liberec
+name: Technická univerzita v Liberci
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '46747885'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/02jtk7k02
-- scheme: URL
+- scheme: url
   identifier: http://www.tul.cz
 ---
 id: univerzita-hradec-kralove
-name: University of Hradec Králové
+title:
+  cs: Univerzita Hradec Králové
+  en: University of Hradec Králové
+name: Univerzita Hradec Králové
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '62690094'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/05k238v14
-- scheme: URL
+- scheme: url
   identifier: http://www.uhk.cz
 ---
 id: ujep
-name: Jan Evangelista Purkyně University in Ústí nad Labem
+title:
+  cs: Univerzita Jana Evangelisty Purkyně v Ústí nad Labem
+  en: Jan Evangelista Purkyně University in Ústí nad Labem
+name: Univerzita Jana Evangelisty Purkyně v Ústí nad Labem
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '44555601'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/04vjwcp92
-- scheme: URL
+- scheme: url
   identifier: http://www.ujep.cz
 ---
 id: uk
-name: Charles University
+title:
+  cs: Univerzita Karlova
+  en: Charles University
+name: Univerzita Karlova
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: 00216208
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/024d6js02
-- scheme: URL
+- scheme: url
   identifier: http://www.cuni.cz
 ---
 id: univerzita-palackeho-v-olomouci
-name: Palacký University Olomouc
+title:
+  cs: Univerzita Palackého v Olomouci
+  en: Palacký University Olomouc
+name: Univerzita Palackého v Olomouci
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '61989592'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/04qxnmv42
-- scheme: URL
+- scheme: url
   identifier: http://www.upol.cz
 ---
 id: upce
-name: University of Pardubice
+title:
+  cs: Univerzita Pardubice
+  en: University of Pardubice
+name: Univerzita Pardubice
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '00216275'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/01chzd453
-- scheme: URL
+- scheme: url
   identifier: http://www.upce.cz
 ---
 id: utb
-name: Tomas Bata University in Zlín
+title:
+  cs: Univerzita Tomáše Bati ve Zlíně
+  en: Tomas Bata University in Zlín
+name: Univerzita Tomáše Bati ve Zlíně
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '70883521'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/04nayfw11
-- scheme: URL
+- scheme: url
   identifier: http://www.utb.cz
 ---
 id: vfu
-name: University of Veterinary and Pharmaceutical Sciences Brno
+title:
+  cs: Veterinární a farmaceutická univerzita Brno
+  en: University of Veterinary and Pharmaceutical Sciences Brno
+name: Veterinární a farmaceutická univerzita Brno
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '62157124'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/04rk6w354
-- scheme: URL
+- scheme: url
   identifier: http://www.vfu.cz
 ---
 id: vsb-tuo
-name: VSB - Technical University of Ostrava
+title:
+  cs: Vysoká škola báňská - Technická univerzita Ostrava
+  en: VSB - Technical University of Ostrava
+name: Vysoká škola báňská - Technická univerzita Ostrava
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '61989100'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/05x8mcb75
-- scheme: URL
+- scheme: url
   identifier: http://www.vsb.cz
 ---
 id: vse
-name: Prague University of Economics and Business
+title:
+  cs: Vysoká škola ekonomická v Praze
+  en: Prague University of Economics and Business
+name: Vysoká škola ekonomická v Praze
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '61384399'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/029ecwj92
-- scheme: URL
+- scheme: url
   identifier: http://www.vse.cz
 ---
 id: vscht
-name: University of Chemistry and Technology, Prague
+title:
+  cs: Vysoká škola chemicko-technologická v Praze
+  en: University of Chemistry and Technology, Prague
+name: Vysoká škola chemicko-technologická v Praze
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '60461373'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/05ggn0a85
-- scheme: URL
+- scheme: url
   identifier: http://www.vscht.cz
 ---
 id: vysoka-skola-polytechnicka-jihlava
-name: College of Polytechnics Jihlava
+title:
+  cs: Vysoká škola polytechnická Jihlava
+  en: College of Polytechnics Jihlava
+name: Vysoká škola polytechnická Jihlava
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '71226401'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/05c4w7j07
-- scheme: URL
+- scheme: url
   identifier: http://www.vspj.cz
 ---
 id: vysoka-skola-technicka-a-ekonomicka-v-ceskych-budejovicich
-name: Institute of Technology and Business in České Budějovice
+title:
+  cs: Vysoká škola technická a ekonomická v Českých Budějovicích
+  en: Institute of Technology and Business in České Budějovice
+name: Vysoká škola technická a ekonomická v Českých Budějovicích
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '75081431'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/05a70k539
-- scheme: URL
+- scheme: url
   identifier: http://www.vstecb.cz
 ---
 id: umprum
-name: Academy of Arts, Architecture and Design in Prague
+title:
+  cs: Vysoká škola uměleckoprůmyslová v Praze
+  en: Academy of Arts, Architecture and Design in Prague
+name: Vysoká škola uměleckoprůmyslová v Praze
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '60461071'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/02ea0g317
-- scheme: URL
+- scheme: url
   identifier: http://www.vsup.cz
 ---
 id: vut
-name: Brno University of Technology
+title:
+  cs: Vysoké učení technické v Brně
+  en: Brno University of Technology
+name: Vysoké učení technické v Brně
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '00216305'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/03613d656
-- scheme: URL
+- scheme: url
   identifier: http://www.vutbr.cz
 ---
 id: zcu
-name: University of West Bohemia
+title:
+  cs: Západočeská univerzita v Plzni
+  en: University of West Bohemia
+name: Západočeská univerzita v Plzni
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '49777513'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/040t43x18
-- scheme: URL
+- scheme: url
   identifier: http://www.zcu.cz
 ---
 id: policejni-akademie-ceske-republiky-v-praze
-name: Police Academy of the Czech Republic in Prague
+title:
+  cs: Policejní akademie České republiky v Praze
+  en: Police Academy of the Czech Republic in Prague
+name: Policejní akademie České republiky v Praze
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '48135445'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/02h92td50
-- scheme: URL
+- scheme: url
   identifier: http://www.polac.cz
 ---
 id: univerzita-obrany
-name: University of Defence in Brno
+title:
+  cs: Univerzita obrany
+  en: University of Defence in Brno
+name: Univerzita obrany
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '60162694'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/04arkmn57
-- scheme: URL
+- scheme: url
   identifier: http://www.unob.cz
 ---
 id: cenia-ceska-informacni-agentura-zivotniho-prostredi
-name: CENIA
+title:
+  cs: CENIA, česká informační agentura životního prostředí
+  en: CENIA
+name: CENIA, česká informační agentura životního prostředí
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '45249130'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/00xh22n12
-- scheme: URL
+- scheme: url
   identifier: http://www.cenia.cz
 ---
 id: centrum-pro-regionalni-rozvoj-ceske-republiky
-name: Centre for Regional Development of the Czech Republic
+title:
+  cs: Centrum pro regionální rozvoj České republiky
+  en: Centre for Regional Development of the Czech Republic
+name: Centrum pro regionální rozvoj České republiky
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: 04095316
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/031ytbr64
-- scheme: URL
+- scheme: url
   identifier: http://www.crr.cz
 ---
 id: csu
-name: Czech Statistical Office
+title:
+  cs: Český statistický úřad
+  en: Czech Statistical Office
+name: Český statistický úřad
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: 00025593
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/03w948j83
-- scheme: URL
+- scheme: url
   identifier: https://www.czso.cz/
 ---
 id: ministerstvo-obrany-cr
-name: Ministry of Defence of the Czech Republic
+title:
+  cs: Ministerstvo obrany ČR
+  en: Ministry of Defence of the Czech Republic
+name: Ministerstvo obrany ČR
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '60162694'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/00r7raa16
-- scheme: URL
+- scheme: url
   identifier: https://www.army.cz/
 ---
 id: ministerstvo-spravedlnosti-cr
-name: Ministry of Justice of the Czech Republic
+title:
+  cs: Ministerstvo spravedlnosti ČR
+  en: Ministry of Justice of the Czech Republic
+name: Ministerstvo spravedlnosti ČR
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: 00025429
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/0531qh590
-- scheme: URL
+- scheme: url
   identifier: https://portal.justice.cz
 ---
 id: ministerstvo-zivotniho-prostredi-cr
-name: Ministry of the Environment of the Czech Republic
+title:
+  cs: Ministerstvo životního prostředí ČR
+  en: Ministry of the Environment of the Czech Republic
+name: Ministerstvo životního prostředí ČR
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: 00164801
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/04e74dh47
-- scheme: URL
+- scheme: url
   identifier: https://www.mzp.cz/
 ---
 id: nuv
-name: National Institute for Education
+title:
+  cs: Národní ústav pro vzdělávání
+  en: National Institute for Education
+name: Národní ústav pro vzdělávání
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: 00022179
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/03enrvz51
-- scheme: URL
+- scheme: url
   identifier: http://www.nuv.cz
 ---
 id: pi
-name: Parliamentary Institute
+title:
+  cs: Parlamentní institut
+  en: Parliamentary Institute
+name: Parlamentní institut
 identifiers:
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/00zahx847
-- scheme: URL
+- scheme: url
   identifier: http://www.psp.cz/sqw/hp.sqw?k=40
 ---
 id: surao
-name: Czech Radioactive Waste Repository Authority
+title:
+  cs: Správa úložišť radioaktivních odpadů
+  en: Czech Radioactive Waste Repository Authority
+name: Správa úložišť radioaktivních odpadů
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '66000769'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/05pa5kt82
-- scheme: URL
+- scheme: url
   identifier: http://www.surao.cz/
 ---
 id: szpi
-name: Czech Agriculture and Food Inspection Authority
+title:
+  cs: Státní zemědělská a potravinářská inspekce
+  en: Czech Agriculture and Food Inspection Authority
+name: Státní zemědělská a potravinářská inspekce
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '75014149'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/05yjswp61
-- scheme: URL
+- scheme: url
   identifier: http://www.szpi.gov.cz
 ---
 id: upv
-name: Industrial Property Office
+title:
+  cs: Úřad průmyslového vlastnictví
+  en: Industrial Property Office
+name: Úřad průmyslového vlastnictví
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '48135097'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/05tp92v87
-- scheme: URL
+- scheme: url
   identifier: http://upv.cz/
 ---
 id: archip
+title:
+  cs: Architectural Institute in Prague
+  en: Architectural Institute in Prague
 name: Architectural Institute in Prague
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '28881699'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/0286btk29
-- scheme: URL
+- scheme: url
   identifier: http://www.archip.eu
 ---
 id: prague-college
+title:
+  cs: Prague College
 name: Prague College
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '27164004'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/01x9n3j10
-- scheme: URL
+- scheme: url
   identifier: http://www.praguecollege.cz/
 ---
 id: vsers
-name: College of European and Regional Studies
+title:
+  cs: Vysoká škola evropských a regionálních studií
+  en: College of European and Regional Studies
+name: Vysoká škola evropských a regionálních studií
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '26033909'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/040qrz805
-- scheme: URL
+- scheme: url
   identifier: http://www.vsers.cz
 ---
 id: vysoka-skola-financni-a-spravni
-name: University of Finance and Administration
+title:
+  cs: Vysoká škola finanční a správní
+  en: University of Finance and Administration
+name: Vysoká škola finanční a správní
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '04274644'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/020ydms54
-- scheme: URL
+- scheme: url
   identifier: http://www.vsfs.cz
 ---
 id: vysoka-skola-podnikani-a-prava
-name: College of Entrepreneurship and Law
+title:
+  cs: Vysoká škola podnikání a práva
+  en: College of Entrepreneurship and Law
+name: Vysoká škola podnikání a práva
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: 04130081
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/016emmf09
-- scheme: URL
+- scheme: url
   identifier: http://www.vspp.cz
 ---
 id: osobni-archiv-doc-rndr-jiriho-souceka-drsc-
-name: Personal archive of Jiří Souček
+title:
+  cs: Osobní archiv doc. RNDr. Jiřího Součka, DrSc.
+  en: Personal archive of Jiří Souček
+name: Osobní archiv doc. RNDr. Jiřího Součka, DrSc.
 ---
 id: osobni-archiv-ing-arch-jana-moucky
-name: Personal archive of Jan Moučka
+title:
+  cs: Osobní archiv Ing. arch. Jana Moučky
+  en: Personal archive of Jan Moučka
+name: Osobní archiv Ing. arch. Jana Moučky
 ---
 id: arnika
+title:
+  cs: Arnika
+  en: Arnika
 name: Arnika
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '26543281'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/05dxd7816
-- scheme: URL
+- scheme: url
   identifier: http://arnika.org/
 ---
 id: centrum-pro-dopravu-a-energetiku
-name: Centre for Transport and Energy
+title:
+  cs: Centrum pro dopravu a energetiku
+  en: Centre for Transport and Energy
+name: Centrum pro dopravu a energetiku
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '67980961'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/002jrdr94
-- scheme: URL
+- scheme: url
   identifier: https://cde.ecn.cz/
 ---
 id: ceska-asociace-ergoterapeutu
-name: Czech Association of Occupational Therapists
+title:
+  cs: Česká asociace ergoterapeutů
+  en: Czech Association of Occupational Therapists
+name: Česká asociace ergoterapeutů
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '62348451'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/05t43a661
-- scheme: URL
+- scheme: url
   identifier: http://ergoterapie.cz/
 ---
 id: czepa
-name: Czech Paraplegics Association
+title:
+  cs: Česká asociace paraplegiků
+  en: Czech Paraplegics Association
+name: Česká asociace paraplegiků
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '00473146'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/00csdcr36
-- scheme: URL
+- scheme: url
   identifier: http://www.czepa.cz/
 ---
 id: crdm
-name: Czech Council of Children and Youth
+title:
+  cs: Česká rada dětí a mládeže
+  en: Czech Council of Children and Youth
+name: Česká rada dětí a mládeže
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '68379439'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/00qzqdm10
-- scheme: URL
+- scheme: url
   identifier: http://crdm.cz/
 ---
 id: ceska-spolecnost-ornitologicka
-name: Czech Society for Ornithology
+title:
+  cs: Česká společnost ornitologická
+  en: Czech Society for Ornithology
+name: Česká společnost ornitologická
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '49629549'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/054stgg72
-- scheme: URL
+- scheme: url
   identifier: http://www.birdlife.cz/
 ---
 id: clovek-v-tisni
-name: People in Need Czech Republic
+title:
+  cs: Člověk v tísni
+  en: People in Need Czech Republic
+name: Člověk v tísni
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '25755277'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/00kr65d46
-- scheme: URL
+- scheme: url
   identifier: http://www.clovekvtisni.cz
 ---
 id: ekodomov
+title:
+  cs: Ekodomov
+  en: Ekodomov
 name: Ekodomov
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '26664488'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/0301hkr79
-- scheme: URL
+- scheme: url
   identifier: http://www.ekodomov.cz/
 ---
 id: evropske-hodnoty
-name: European Values
+title:
+  cs: Evropské hodnoty
+  en: European Values
+name: Evropské hodnoty
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '26987627'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/031xfkk69
-- scheme: URL
+- scheme: url
   identifier: http://www.evropskehodnoty.cz/
 ---
 id: fairtrade-cesko-a-slovensko
-name: Fairtrade Czech Republic & Slovakia
+title:
+  cs: Fairtrade Česko a Slovensko
+  en: Fairtrade Czech Republic & Slovakia
+name: Fairtrade Česko a Slovensko
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '71226672'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/01nr4vy20
-- scheme: URL
+- scheme: url
   identifier: https://www.fairtrade-cesko.cz
 ---
 id: gender-studies
+title:
+  cs: Gender Studies
+  en: Gender Studies
 name: Gender Studies
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '25737058'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/00at2pp81
-- scheme: URL
+- scheme: url
   identifier: http://www.genderstudies.cz/
 ---
 id: gle
+title:
+  cs: GLE
+  en: GLE
 name: GLE
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '28204409'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/005nzs995
-- scheme: URL
+- scheme: url
   identifier: http://gle.cz/
 ---
 id: hestia
+title:
+  cs: HESTIA
+  en: HESTIA
 name: HESTIA
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '67779751'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/05xeax323
-- scheme: URL
+- scheme: url
   identifier: http://www.hest.cz/
 ---
 id: iure
+title:
+  cs: Iuridicum Remedium
 name: Iuridicum Remedium
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '26534487'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/049kbyp41
-- scheme: URL
+- scheme: url
   identifier: http://www.iure.org/
 ---
 id: nadace-promeny-karla-komarka
-name: Karel Komárek Family Foundation
+title:
+  cs: Nadace Karel Komárek Family Foundation
+  en: Karel Komárek Family Foundation
+name: Nadace Karel Komárek Family Foundation
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '27421538'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/02rs6vz87
-- scheme: URL
+- scheme: url
   identifier: http://www.nadace-promeny.cz/
 ---
 id: simi
-name: Association for Integration and Migration
+title:
+  cs: Sdružení pro integraci a migraci
+  en: Association for Integration and Migration
+name: Sdružení pro integraci a migraci
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '26612933'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/00y2q5g68
-- scheme: URL
+- scheme: url
   identifier: http://www.migrace.com/
 ---
 id: siriri
+title:
+  cs: SIRIRI
+  en: SIRIRI
 name: SIRIRI
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '27447669'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/03adnqh21
-- scheme: URL
+- scheme: url
   identifier: https://siriri.org/
 ---
 id: jihomoravske-muzeum-ve-znojme
-name: South Moravian Museum in Znojmo
+title:
+  cs: Jihomoravské muzeum ve Znojmě
+  en: South Moravian Museum in Znojmo
+name: Jihomoravské muzeum ve Znojmě
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: 00092738
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/006eggh59
-- scheme: URL
+- scheme: url
   identifier: http://www.znojmuz.cz/
 ---
 id: muzeum-brnenska
-name: Museum of the Brno Region
+title:
+  cs: Muzeum Brněnska
+  en: Museum of the Brno Region
+name: Muzeum Brněnska
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: 00089257
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/03nc1mn84
-- scheme: URL
+- scheme: url
   identifier: https://www.muzeumbrnenska.cz
 ---
 id: muzeum-vychodnich-cech-v-hradci-kralove
-name: East Bohemian Museum in Hradec Králové
+title:
+  cs: Muzeum východních Čech v Hradci Králové
+  en: East Bohemian Museum in Hradec Králové
+name: Muzeum východních Čech v Hradci Králové
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: 00088382
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/01x1xh678
-- scheme: URL
+- scheme: url
   identifier: http://www.muzeumhk.cz
 ---
 id: narodni-muzeum
-name: National Museum
+title:
+  cs: Národní muzeum
+  en: National Museum
+name: Národní muzeum
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '00023272'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/04z6gwv56
-- scheme: URL
+- scheme: url
   identifier: http://www.nm.cz/
 ---
 id: narodni-muzeum-v-prirode
-name: National Open-Air Museum
+title:
+  cs: Národní muzeum v přírodě
+  en: National Open-Air Museum
+name: Národní muzeum v přírodě
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: 00098604
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/03sxmek83
-- scheme: URL
+- scheme: url
   identifier: https://www.nmvp.cz/
 ---
 id: ntm
-name: National Technical Museum
+title:
+  cs: Národní technické muzeum
+  en: National Technical Museum
+name: Národní technické muzeum
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: 00023299
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/02fy0zn70
-- scheme: URL
+- scheme: url
   identifier: http://www.ntm.cz/
 ---
 id: narodni-zemedelske-muzeum
-name: National Museum of Agriculture
+title:
+  cs: Národní zemědělské muzeum
+  en: National Museum of Agriculture
+name: Národní zemědělské muzeum
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '75075741'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/04a98ab79
-- scheme: URL
+- scheme: url
   identifier: http://nzm.cz/
 ---
 id: pnp
-name: Museum of Czech Literature
+title:
+  cs: Památník národního písemnictví
+  en: Museum of Czech Literature
+name: Památník národního písemnictví
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '00023311'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/05teadr95
-- scheme: URL
+- scheme: url
   identifier: http://www.pamatniknarodnihopisemnictvi.cz/
 ---
 id: severoceske-muzeum-v-liberci
-name: North Bohemian Museum in Liberec
+title:
+  cs: Severočeské muzeum v Liberci
+  en: North Bohemian Museum in Liberec
+name: Severočeské muzeum v Liberci
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: 00083232
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/009ps8477
-- scheme: URL
+- scheme: url
   identifier: http://www.muzeumlb.cz/
 ---
 id: slezske-zemske-muzeum
-name: Silesian Museum
+title:
+  cs: Slezské zemské muzeum
+  en: Silesian Museum
+name: Slezské zemské muzeum
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: 00100595
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/0404wkz93
-- scheme: URL
+- scheme: url
   identifier: http://www.szm.cz/
 ---
 id: upm
-name: Museum of Decorative Arts in Prague
+title:
+  cs: Uměleckoprůmyslové museum
+  en: Museum of Decorative Arts in Prague
+name: Uměleckoprůmyslové museum
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '00023442'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/02y7mzf89
-- scheme: URL
+- scheme: url
   identifier: http://www.upm.cz/
 ---
 id: zcm
-name: Museum of West Bohemia in Pilsen
+title:
+  cs: Západočeské muzeum v Plzni
+  en: Museum of West Bohemia in Pilsen
+name: Západočeské muzeum v Plzni
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: 00228745
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/016jp5513
-- scheme: URL
+- scheme: url
   identifier: http://www.zcm.cz/
 ---
 id: knav
-name: Library of the Czech Academy of Sciences
+title:
+  cs: Knihovna AV ČR
+  en: Library of the Czech Academy of Sciences
+name: Knihovna AV ČR
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '67985971'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/028sgmw18
-- scheme: URL
+- scheme: url
   identifier: http://www.lib.cas.cz/
 ---
 id: mzk
-name: Moravian Library
+title:
+  cs: Moravská zemská knihovna
+  en: Moravian Library
+name: Moravská zemská knihovna
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: 00094943
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/03f239z63
-- scheme: URL
+- scheme: url
   identifier: http://www.mzk.cz/
 ---
 id: nk cr
-name: National Library of the Czech Republic
+title:
+  cs: Národní knihovna ČR
+  en: National Library of the Czech Republic
+name: Národní knihovna ČR
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '00023221'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/038agj363
-- scheme: URL
+- scheme: url
   identifier: https://www.nkp.cz/
 ---
 id: nlk
-name: National Medical Library
+title:
+  cs: Národní lékařská knihovna
+  en: National Medical Library
+name: Národní lékařská knihovna
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: 00023825
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/03zszgs95
-- scheme: URL
+- scheme: url
   identifier: http://www.nlk.cz/
 ---
 id: ntk
-name: National Library of Technology
+title:
+  cs: Národní technická knihovna
+  en: National Library of Technology
+name: Národní technická knihovna
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '61387142'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/028txef36
-- scheme: URL
+- scheme: url
   identifier: http://techlib.cz/
 ---
 id: gvuo
-name: Gallery of Fine Arts in Ostrava
+title:
+  cs: Galerie výtvarného umění v Ostravě
+  en: Gallery of Fine Arts in Ostrava
+name: Galerie výtvarného umění v Ostravě
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '00373231'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/04hazwa85
-- scheme: URL
+- scheme: url
   identifier: http://www.gvuo.cz/
 ---
 id: moravska-galerie-v-brne
-name: Moravian Gallery in Brno
+title:
+  cs: Moravská galerie v Brně
+  en: Moravian Gallery in Brno
+name: Moravská galerie v Brně
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: 00094871
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/01tkgk805
-- scheme: URL
+- scheme: url
   identifier: http://www.moravska-galerie.cz/
 ---
 id: arub
-name: Institute of Archaeology of the CAS, Brno
+title:
+  cs: Archeologický ústav AV ČR, Brno
+  en: Institute of Archaeology of the CAS, Brno
+name: Archeologický ústav AV ČR, Brno
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '68081758'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/02bvcjw39
-- scheme: URL
+- scheme: url
   identifier: http://www.arub.cz/
 ---
 id: archeologicky-ustav-av-cr-praha
-name: Institute of Archaeology of the CAS, Prague
+title:
+  cs: Archeologický ústav AV ČR, Praha
+  en: Institute of Archaeology of the CAS, Prague
+name: Archeologický ústav AV ČR, Praha
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '67985912'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/0287jta43
-- scheme: URL
+- scheme: url
   identifier: http://www.arup.cas.cz/
 ---
 id: astronomicky-ustav-av-cr
-name: Astronomical Institute of the CAS
+title:
+  cs: Astronomický ústav AV ČR
+  en: Astronomical Institute of the CAS
+name: Astronomický ústav AV ČR
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '67985815'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/03tp8z347
-- scheme: URL
+- scheme: url
   identifier: http://www.asu.cas.cz/
 ---
 id: biofyzikalni-ustav-av-cr
-name: Institute of Biophysics of the CAS
+title:
+  cs: Biofyzikální ústav AV ČR
+  en: Institute of Biophysics of the CAS
+name: Biofyzikální ústav AV ČR
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '68081707'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/00angvn73
-- scheme: URL
+- scheme: url
   identifier: http://www.ibp.cz/
 ---
 id: biologicke-centrum-av-cr
-name: Biology Centre of the CAS
+title:
+  cs: Biologické centrum AV ČR
+  en: Biology Centre of the CAS
+name: Biologické centrum AV ČR
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '60077344'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/05pq4yn02
-- scheme: URL
+- scheme: url
   identifier: http://www.bc.cas.cz/
 ---
 id: biotechnologicky-ustav-av-cr
-name: Institute of Biotechnology of the CAS
+title:
+  cs: Biotechnologický ústav AV ČR
+  en: Institute of Biotechnology of the CAS
+name: Biotechnologický ústav AV ČR
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '86652036'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/00wzqmx94
-- scheme: URL
+- scheme: url
   identifier: http://www.ibt.cas.cz/cs
 ---
 id: botanicky-ustav-av-cr
-name: Institute of Botany of the CAS
+title:
+  cs: Botanický ústav AV ČR
+  en: Institute of Botany of the CAS
+name: Botanický ústav AV ČR
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '67985939'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/03qqnc658
-- scheme: URL
+- scheme: url
   identifier: http://www.ibot.cas.cz/
 ---
 id: sociologicky-ustav-av-cr
-name: Institute of Sociology of the CAS
+title:
+  cs: Sociologický ústav AV ČR
+  en: Institute of Sociology of the CAS
+name: Sociologický ústav AV ČR
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '68378025'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/018hy5194
-- scheme: URL
+- scheme: url
   identifier: http://www.soc.cas.cz/
 ---
 id: entomologicky-ustav-av-cr
-name: Institute of Entomology of the CAS
+title:
+  cs: Entomologický ústav AV ČR
+  en: Institute of Entomology of the CAS
+name: Entomologický ústav AV ČR
 identifiers:
-- scheme: ICO
-  identifier: '60077344'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/039nazg33
-- scheme: URL
+- scheme: url
   identifier: http://www.entu.cas.cz/
 ---
 id: etnologicky-ustav-av-cr
-name: Institute of Ethnology of the CAS
+title:
+  cs: Etnologický ústav AV ČR
+  en: Institute of Ethnology of the CAS
+name: Etnologický ústav AV ČR
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '68378076'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/01qj7sc02
-- scheme: URL
+- scheme: url
   identifier: http://www.eu.cas.cz/
 ---
 id: filosoficky-ustav-av-cr
-name: Institute of Philosophy of the CAS
+title:
+  cs: Filosofický ústav AV ČR
+  en: Institute of Philosophy of the CAS
+name: Filosofický ústav AV ČR
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '67985955'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/01hyg6578
-- scheme: URL
+- scheme: url
   identifier: http://www.flu.cas.cz
 ---
 id: fyzikalni-ustav-av-cr
-name: Institute of Physics of the CAS
+title:
+  cs: Fyzikální ústav AV ČR
+  en: Institute of Physics of the CAS
+name: Fyzikální ústav AV ČR
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '68378271'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/02yhj4v17
-- scheme: URL
+- scheme: url
   identifier: http://www.fzu.cz/
 ---
 id: fyziologicky-ustav-av-cr
-name: Institute of Physiology of the CAS
+title:
+  cs: Fyziologický ústav AV ČR
+  en: Institute of Physiology of the CAS
+name: Fyziologický ústav AV ČR
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '67985823'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/05xw0ep96
-- scheme: URL
+- scheme: url
   identifier: http://www.fgu.cas.cz/
 ---
 id: geofyzikalni-ustav-av-cr
-name: Institute of Geophysics of the CAS
+title:
+  cs: Geofyzikální ústav AV ČR
+  en: Institute of Geophysics of the CAS
+name: Geofyzikální ústav AV ČR
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '67985530'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/02e8b2r87
-- scheme: URL
+- scheme: url
   identifier: http://www.ig.cas.cz/
 ---
 id: geologicky-ustav-av-cr
-name: Institute of Geology of the CAS
+title:
+  cs: Geologický ústav AV ČR
+  en: Institute of Geology of the CAS
+name: Geologický ústav AV ČR
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '67985831'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/04wh80b80
-- scheme: URL
+- scheme: url
   identifier: http://www.gli.cas.cz
 ---
 id: historicky-ustav-av-cr
-name: Institute of History of the CAS
+title:
+  cs: Historický ústav AV ČR
+  en: Institute of History of the CAS
+name: Historický ústav AV ČR
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '67985963'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/03tybc759
-- scheme: URL
+- scheme: url
   identifier: http://www.hiu.cas.cz/
 ---
 id: hydrobiologicky-ustav-av-cr
-name: Institute of Hydrobiology of the CAS
+title:
+  cs: Hydrobiologický ústav AV ČR
+  en: Institute of Hydrobiology of the CAS
+name: Hydrobiologický ústav AV ČR
 identifiers:
-- scheme: ICO
-  identifier: '60077344'
-- scheme: URL
+- scheme: ror
+  identifier: https://ror.org/0436nxt45
+- scheme: url
   identifier: http://www.hbu.cas.cz
 ---
 id: masarykuv-ustav-a-archiv-av-cr
-name: Masaryk Institute and Archives of the CAS
+title:
+  cs: Masarykův ústav a Archiv AV ČR
+  en: Masaryk Institute and Archives of the CAS
+name: Masarykův ústav a Archiv AV ČR
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '67985921'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/03nvfe914
-- scheme: URL
+- scheme: url
   identifier: http://www.mua.cas.cz
 ---
 id: matematicky-ustav-av-cr
-name: Institute of Mathematics of the CAS
+title:
+  cs: Matematický ústav AV ČR
+  en: Institute of Mathematics of the CAS
+name: Matematický ústav AV ČR
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '67985840'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/02tv1yf50
-- scheme: URL
+- scheme: url
   identifier: http://www.math.cas.cz
 ---
 id: mikrobiologicky-ustav-av-cr
-name: Institute of Microbiology of the CAS
+title:
+  cs: Mikrobiologický ústav AV ČR
+  en: Institute of Microbiology of the CAS
+name: Mikrobiologický ústav AV ČR
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '61388971'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/02p1jz666
-- scheme: URL
+- scheme: url
   identifier: http://www.biomed.cas.cz/mbu/cz/
 ---
 id: narodohospodarsky-ustav-av-cr
-name: Economics Institute of the CAS
+title:
+  cs: Národohospodářský ústav AV ČR
+  en: Economics Institute of the CAS
+name: Národohospodářský ústav AV ČR
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '67985998'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/01y3ft232
-- scheme: URL
+- scheme: url
   identifier: http://www.ei.cas.cz
 ---
 id: orientalni-ustav-av-cr
-name: Oriental Institute of the CAS
+title:
+  cs: Orientální ústav AV ČR
+  en: Oriental Institute of the CAS
+name: Orientální ústav AV ČR
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '68378009'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/04tr8pt83
-- scheme: URL
+- scheme: url
   identifier: http://www.orient.cas.cz/
 ---
 id: parazitologicky-ustav-av-cr
-name: Institute of Parasitology of the CAS
+title:
+  cs: Parazitologický ústav AV ČR
+  en: Institute of Parasitology of the CAS
+name: Parazitologický ústav AV ČR
 identifiers:
-- scheme: ICO
-  identifier: '60077344'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/05rhyza23
-- scheme: URL
+- scheme: url
   identifier: http://www.paru.cas.cz/cs/
 ---
 id: psychologicky-ustav-av-cr
-name: Institute of Psychology of the CAS
+title:
+  cs: Psychologický ústav AV ČR
+  en: Institute of Psychology of the CAS
+name: Psychologický ústav AV ČR
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '68081740'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/03aba6h29
-- scheme: URL
+- scheme: url
   identifier: http://www.psu.cas.cz/
 ---
 id: slovansky-ustav-av-cr
-name: Institute of Slavonic Studies of the CAS
+title:
+  cs: Slovanský ústav AV ČR
+  en: Institute of Slavonic Studies of the CAS
+name: Slovanský ústav AV ČR
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '68378017'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/03qq0n189
-- scheme: URL
+- scheme: url
   identifier: http://www.slu.cas.cz/
 ---
 id: stredisko-spolecnych-cinnosti
-name: Centre for Administration and Operations of the ASCR
+title:
+  cs: Středisko společných činností
+  en: Centre for Administration and Operations of the ASCR
+name: Středisko společných činností
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '60457856'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/03zkxs276
-- scheme: URL
+- scheme: url
   identifier: http://www.ssc.cas.cz/cs/
 ---
 id: technologicke-centrum-av-cr
-name: Technology Centre of the CAS
+title:
+  cs: Technologické centrum AV ČR
+  en: Technology Centre of the CAS
+name: Technologické centrum AV ČR
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '60456540'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/02tc3qm58
-- scheme: URL
+- scheme: url
   identifier: http://www.tc.cz/
 ---
 id: ustav-analyticke-chemie-av-cr
-name: Institute of Analytical Chemistry of the CAS
+title:
+  cs: Ústav analytické chemie AV ČR
+  en: Institute of Analytical Chemistry of the CAS
+name: Ústav analytické chemie AV ČR
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '68081715'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/05g7knd32
-- scheme: URL
+- scheme: url
   identifier: http://www.iach.cz/
 ---
 id: ustav-anorganicke-chemie-av-cr
-name: Institute of Inorganic Chemistry of the CAS
+title:
+  cs: Ústav anorganické chemie AV ČR
+  en: Institute of Inorganic Chemistry of the CAS
+name: Ústav anorganické chemie AV ČR
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '61388980'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/01hsjcv06
-- scheme: URL
+- scheme: url
   identifier: http://www.iic.cas.cz/
 ---
 id: ustav-biologie-obratlovcu-av-cr
-name: Institute of Vertebrate Biology of the CAS
+title:
+  cs: Ústav biologie obratlovců AV ČR
+  en: Institute of Vertebrate Biology of the CAS
+name: Ústav biologie obratlovců AV ČR
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '68081766'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/05bcgdd94
-- scheme: URL
+- scheme: url
   identifier: http://www.ivb.cz
 ---
 id: ustav-dejin-umeni-av-cr
-name: Institute of Art History of the CAS
+title:
+  cs: Ústav dějin umění AV ČR
+  en: Institute of Art History of the CAS
+name: Ústav dějin umění AV ČR
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '68378033'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/00913gw18
-- scheme: URL
+- scheme: url
   identifier: http://www.udu.cas.cz/
 ---
 id: ustav-experimentalni-botaniky-av-cr
-name: Institute of Experimental Botany of the CAS
+title:
+  cs: Ústav experimentální botaniky AV ČR
+  en: Institute of Experimental Botany of the CAS
+name: Ústav experimentální botaniky AV ČR
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '61389030'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/057br4398
-- scheme: URL
+- scheme: url
   identifier: http://www.ueb.cas.cz/
 ---
 id: ustav-experimentalni-mediciny-av-cr
-name: Institute of Experimental Medicine of the CAS
+title:
+  cs: Ústav experimentální medicíny AV ČR
+  en: Institute of Experimental Medicine of the CAS
+name: Ústav experimentální medicíny AV ČR
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '68378041'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/03hjekm25
-- scheme: URL
+- scheme: url
   identifier: http://www.iem.cas.cz/
 ---
 id: ustav-fotoniky-a-elektroniky-av-cr
-name: Institute of Photonics and Electronics of the CAS
+title:
+  cs: Ústav fotoniky a elektroniky AV ČR
+  en: Institute of Photonics and Electronics of the CAS
+name: Ústav fotoniky a elektroniky AV ČR
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '67985882'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/05wrbcx33
-- scheme: URL
+- scheme: url
   identifier: http://www.ufe.cz/
 ---
 id: ustav-fyzikalni-chemie-j-heyrovskeho-av-cr
-name: J. Heyrovsky Institute of Physical Chemistry of the CAS
+title:
+  cs: Ústav fyzikální chemie J. Heyrovského AV ČR
+  en: J. Heyrovsky Institute of Physical Chemistry of the CAS
+name: Ústav fyzikální chemie J. Heyrovského AV ČR
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '61388955'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/02sat5y74
-- scheme: URL
+- scheme: url
   identifier: http://www.jh-inst.cas.cz/
 ---
 id: ustav-fyziky-atmosfery-av-cr
-name: Institute of Atmospheric Physics  of the CAS
+title:
+  cs: Ústav fyziky atmosféry AV ČR
+  en: Institute of Atmospheric Physics  of the CAS
+name: Ústav fyziky atmosféry AV ČR
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '68378289'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/04vtzcr32
-- scheme: URL
+- scheme: url
   identifier: http://www.ufa.cas.cz/
 ---
 id: ustav-fyziky-materialu-av-cr
-name: Institute of Physics of Materials of the CAS
+title:
+  cs: Ústav fyziky materiálů AV ČR
+  en: Institute of Physics of Materials of the CAS
+name: Ústav fyziky materiálů AV ČR
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '68081723'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/02d02f052
-- scheme: URL
+- scheme: url
   identifier: http://www.ipm.cz/
 ---
 id: ustav-fyziky-plazmatu-av-cr
-name: Institute of Plasma Physics of the CAS
+title:
+  cs: Ústav fyziky plazmatu AV ČR
+  en: Institute of Plasma Physics of the CAS
+name: Ústav fyziky plazmatu AV ČR
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '61389021'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/01h494015
-- scheme: URL
+- scheme: url
   identifier: http://www.ipp.cas.cz/
 ---
 id: ustav-geoniky-av-cr
-name: Institute of Geonics of the CAS
+title:
+  cs: Ústav geoniky AV ČR
+  en: Institute of Geonics of the CAS
+name: Ústav geoniky AV ČR
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '68145535'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/02d3n7h84
-- scheme: URL
+- scheme: url
   identifier: http://www.ugn.cas.cz/
 ---
 id: ustav-chemickych-procesu-av-cr
-name: Institute of Chemical Process Fundamentals of the CAS
+title:
+  cs: Ústav chemických procesů AV ČR
+  en: Institute of Chemical Process Fundamentals of the CAS
+name: Ústav chemických procesů AV ČR
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '67985858'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/02acv3g39
-- scheme: URL
+- scheme: url
   identifier: http://www.icpf.cas.cz/
 ---
 id: ustav-informatiky-av-cr
-name: Institute of Computer Science of the CAS
+title:
+  cs: Ústav informatiky AV ČR
+  en: Institute of Computer Science of the CAS
+name: Ústav informatiky AV ČR
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '67985807'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/0496n6574
-- scheme: URL
+- scheme: url
   identifier: http://www.cs.cas.cz/
 ---
 id: ustav-jaderne-fyziky-av-cr
-name: Nuclear Physics Institute of the CAS
+title:
+  cs: Ústav jaderné fyziky AV ČR
+  en: Nuclear Physics Institute of the CAS
+name: Ústav jaderné fyziky AV ČR
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '61389005'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/04jymbd90
-- scheme: URL
+- scheme: url
   identifier: http://www.ujf.cas.cz/
 ---
 id: ustav-makromolekularni-chemie-av-cr
-name: Institute of Macromolecular Chemistry of the CAS
+title:
+  cs: Ústav makromolekulární chemie AV ČR
+  en: Institute of Macromolecular Chemistry of the CAS
+name: Ústav makromolekulární chemie AV ČR
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '61389013'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/0143w7709
-- scheme: URL
+- scheme: url
   identifier: http://www.imc.cas.cz/
 ---
 id: ustav-molekularni-biologie-rostlin-av-cr
-name: Institute of Plant Molecular Biology of the CAS
+title:
+  cs: Ústav molekulární biologie rostlin AV ČR
+  en: Institute of Plant Molecular Biology of the CAS
+name: Ústav molekulární biologie rostlin AV ČR
 identifiers:
-- scheme: ICO
-  identifier: '60077344'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/00jr65m43
-- scheme: URL
+- scheme: url
   identifier: http://www.bc.cas.cz/
 ---
 id: ustav-molekularni-genetiky-av-cr
-name: Institute of Molecular Genetics of the CAS
+title:
+  cs: Ústav molekulární genetiky AV ČR
+  en: Institute of Molecular Genetics of the CAS
+name: Ústav molekulární genetiky AV ČR
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '68378050'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/045syc608
-- scheme: URL
+- scheme: url
   identifier: http://www.img.cas.cz/
 ---
 id: ustav-organicke-chemie-a-biochemie-av-cr
-name: Institute of Organic Chemistry and Biochemistry of the CAS
+title:
+  cs: Ústav organické chemie a biochemie AV ČR
+  en: Institute of Organic Chemistry and Biochemistry of the CAS
+name: Ústav organické chemie a biochemie AV ČR
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '61388963'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/04nfjn472
-- scheme: URL
+- scheme: url
   identifier: http://www.uochb.cz/
 ---
 id: ustav-pro-ceskou-literaturu-av-cr
-name: Institute of Czech Literature of the CAS
+title:
+  cs: Ústav pro českou literaturu AV ČR
+  en: Institute of Czech Literature of the CAS
+name: Ústav pro českou literaturu AV ČR
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '68378068'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/01vr20t27
-- scheme: URL
+- scheme: url
   identifier: http://www.ucl.cas.cz
 ---
 id: ustav-pro-elektrotechniku
-name: Institute of Electrical Engineering
+title:
+  cs: Ústav pro elektrotechniku
+  en: Institute of Electrical Engineering
+name: Ústav pro elektrotechniku
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '61388998'
-- scheme: URL
+- scheme: url
   identifier: http://www3.it.cas.cz/
 ---
 id: ustav-pro-hydrodynamiku-av-cr
-name: Institute of Hydrodynamics of the CAS
+title:
+  cs: Ústav pro hydrodynamiku AV ČR
+  en: Institute of Hydrodynamics of the CAS
+name: Ústav pro hydrodynamiku AV ČR
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '67985874'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/009wryk55
-- scheme: URL
+- scheme: url
   identifier: http://www.ih.cas.cz/
 ---
 id: ustav-pro-jazyk-cesky-av-cr
-name: Czech Language Institute of the CAS
+title:
+  cs: Ústav pro jazyk český AV ČR
+  en: Czech Language Institute of the CAS
+name: Ústav pro jazyk český AV ČR
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '68378092'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/01912nj27
-- scheme: URL
+- scheme: url
   identifier: http://www.ujc.cas.cz/
 ---
 id: ustav-pro-soudobe-dejiny-av-cr
-name: Institute of Contemporary History of the CAS
+title:
+  cs: Ústav pro soudobé dějiny AV ČR
+  en: Institute of Contemporary History of the CAS
+name: Ústav pro soudobé dějiny AV ČR
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '68378114'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/01zghvr36
-- scheme: URL
+- scheme: url
   identifier: http://www.usd.cas.cz/
 ---
 id: ustav-pristrojove-techniky-av-cr
-name: Institute of Scientific Instruments of the CAS
+title:
+  cs: Ústav přístrojové techniky AV ČR
+  en: Institute of Scientific Instruments of the CAS
+name: Ústav přístrojové techniky AV ČR
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '68081731'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/027taah18
-- scheme: URL
+- scheme: url
   identifier: http://www.isibrno.cz/
 ---
 id: ustav-pudni-biologie-av-cr
-name: Institute of Soil Biology of the CAS
+title:
+  cs: Ústav půdní biologie AV ČR
+  en: Institute of Soil Biology of the CAS
+name: Ústav půdní biologie AV ČR
 identifiers:
-- scheme: ICO
-  identifier: '60077344'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/02tz8r820
-- scheme: URL
+- scheme: url
   identifier: http://www.upb.cas.cz/
 ---
 id: ustav-statu-a-prava-av-cr
-name: Institute of State and Law of the CAS
+title:
+  cs: Ústav státu a práva AV ČR
+  en: Institute of State and Law of the CAS
+name: Ústav státu a práva AV ČR
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '68378122'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/00hzy8397
-- scheme: URL
+- scheme: url
   identifier: http://www.ilaw.cas.cz/
 ---
 id: ustav-struktury-a-mechaniky-hornin-av-cr
-name: Institute of Rock Structure and Mechanics of the CAS
+title:
+  cs: Ústav struktury a mechaniky hornin AV ČR
+  en: Institute of Rock Structure and Mechanics of the CAS
+name: Ústav struktury a mechaniky hornin AV ČR
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '67985891'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/00m4pvq34
-- scheme: URL
+- scheme: url
   identifier: http://www.irsm.cas.cz/
 ---
 id: ustav-teoreticke-a-aplikovane-mechaniky-av-cr
-name: Institute of Theoretical and Applied Mechanics of the CAS
+title:
+  cs: Ústav teoretické a aplikované mechaniky AV ČR
+  en: Institute of Theoretical and Applied Mechanics of the CAS
+name: Ústav teoretické a aplikované mechaniky AV ČR
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '68378297'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/01hxbnq19
-- scheme: URL
+- scheme: url
   identifier: http://www.itam.cas.cz/
 ---
 id: ustav-teorie-informace-a-automatizace-av-cr
-name: Institute of Information Theory and Automation of the CAS
+title:
+  cs: Ústav teorie informace a automatizace AV ČR
+  en: Institute of Information Theory and Automation of the CAS
+name: Ústav teorie informace a automatizace AV ČR
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '67985556'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/03h1hsz49
-- scheme: URL
+- scheme: url
   identifier: http://www.utia.cas.cz/
 ---
 id: ustav-termomechaniky-av-cr
-name: Institute of Thermomechanics of the CAS
+title:
+  cs: Ústav termomechaniky AV ČR
+  en: Institute of Thermomechanics of the CAS
+name: Ústav termomechaniky AV ČR
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '61388998'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/03fvq2a72
-- scheme: URL
+- scheme: url
   identifier: http://www.it.cas.cz/
 ---
 id: czechglobe
-name: Global Change Research Institute of the CAS
+title:
+  cs: Ústav výzkumu globální změny AV ČR
+  en: Global Change Research Institute of the CAS
+name: Ústav výzkumu globální změny AV ČR
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '86652079'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/01v5hek98
-- scheme: URL
+- scheme: url
   identifier: http://www.czechglobe.cz/
 ---
 id: ustav-zivocisne-fyziologie-a-genetiky-av-cr
-name: Institute of Animal Physiology and Genetics  of the CAS
+title:
+  cs: Ústav živočišné fyziologie a genetiky AV ČR
+  en: Institute of Animal Physiology and Genetics  of the CAS
+name: Ústav živočišné fyziologie a genetiky AV ČR
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '67985904'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/0157za327
-- scheme: URL
+- scheme: url
   identifier: http://www.iapg.cas.cz/
 ---
 id: narodni-archiv
-name: National Archives
+title:
+  cs: Národní archiv
+  en: National Archives
+name: Národní archiv
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '70979821'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/03cykd395
-- scheme: URL
+- scheme: url
   identifier: http://www.nacr.cz/
 ---
 id: cnb
-name: Czech National Bank
+title:
+  cs: Česká národní banka
+  en: Czech National Bank
+name: Česká národní banka
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '48136450'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/05n31vd29
-- scheme: URL
+- scheme: url
   identifier: http://www.cnb.cz
 ---
 id: idu
-name: Arts and Theatre Institute
+title:
+  cs: Institut umění - Divadelní ústav
+  en: Arts and Theatre Institute
+name: Institut umění - Divadelní ústav
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '00023205'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/024jn1h80
-- scheme: URL
+- scheme: url
   identifier: http://www.idu.cz/
 ---
 id: npu
-name: National Heritage Institute
+title:
+  cs: Národní památkový ústav
+  en: National Heritage Institute
+name: Národní památkový ústav
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '75032333'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/019k25552
-- scheme: URL
+- scheme: url
   identifier: http://www.npu.cz/
 ---
 id: nulk
-name: National Institute of Folk Culture
+title:
+  cs: Národní ústav lidové kultury
+  en: National Institute of Folk Culture
+name: Národní ústav lidové kultury
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: 00094927
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/056kzn313
-- scheme: URL
+- scheme: url
   identifier: http://www.nulk.cz/
 ---
 id: woodexpert
+title:
+  cs: WOODEXPERT
 name: WOODEXPERT
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '28282027'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/00kygh256
-- scheme: URL
+- scheme: url
   identifier: http://woodexpert.cz/
 ---
 id: nfa
-name: National Film Archive
+title:
+  cs: Národní filmový archiv
+  en: National Film Archive
+name: Národní filmový archiv
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '00057266'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/051316d77
-- scheme: URL
+- scheme: url
   identifier: https://nfa.cz
 ---
 id: czwa
-name: Czech Water Association
+title:
+  cs: Asociace pro vodu ČR
+  en: Czech Water Association
+name: Asociace pro vodu ČR
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '44994397'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/02m4t4k66
-- scheme: URL
+- scheme: url
   identifier: http://www.czwa.cz/
 ---
 id: ceitec
+title:
+  cs: CEITEC
 name: CEITEC
 identifiers:
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/01p7k1986
-- scheme: URL
+- scheme: url
   identifier: https://www.ceitec.cz/
 ---
 id: aau
-name: Anglo-americká vysoká škola
+title:
+  cs: Anglo-American University
+  en: Anglo-americká vysoká škola
+name: Anglo-American University
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '25940082'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/03arvv474
-- scheme: URL
+- scheme: url
   identifier: https://www.aauni.edu
 ---
 id: comtes-fht
+title:
+  cs: COMTES FHT
 name: COMTES FHT
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '26316919'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/00hzjtg80
-- scheme: URL
+- scheme: url
   identifier: https://www.comtesfht.cz/
 ---
 id: statni-oblastni-archiv-v-plzni
-name: State Regional Archive in Plzeň
+title:
+  cs: Státní oblastní archiv v Plzni
+  en: State Regional Archive in Plzeň
+name: Státní oblastní archiv v Plzni
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '70979090'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/04753zn39
-- scheme: URL
+- scheme: url
   identifier: http://www.soaplzen.cz/
 ---
 id: mup
-name: Metropolitan University Prague
+title:
+  cs: Metropolitní univerzita Praha
+  en: Metropolitan University Prague
+name: Metropolitní univerzita Praha
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '26482789'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/01zdaff53
-- scheme: URL
+- scheme: url
   identifier: https://www.mup.cz/
 ---
 id: npmk
-name: National Pedagogical Museum and Library of J. A. Comenius
+title:
+  cs: Národní pedagogické muzeum a knihovna J. A. Komenského
+  en: National Pedagogical Museum and Library of J. A. Comenius
+name: Národní pedagogické muzeum a knihovna J. A. Komenského
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '61387169'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/02fh5m162
-- scheme: URL
+- scheme: url
   identifier: https://www.npmk.cz/
 ---
 id: nudz
-name: National Institute of Mental Health
+title:
+  cs: Národní ústav duševního zdraví
+  en: National Institute of Mental Health
+name: Národní ústav duševního zdraví
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '00023752'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/05xj56w78
-- scheme: URL
+- scheme: url
   identifier: https://www.nudz.cz
 ---
 id: nukib
-name: National Cyber and Information Security Agency
+title:
+  cs: Národní úřad pro kybernetickou a informační bezpečnost
+  en: National Cyber and Information Security Agency
+name: Národní úřad pro kybernetickou a informační bezpečnost
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: 05800226
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/002wyas44
-- scheme: URL
+- scheme: url
   identifier: https://www.nukib.cz/
 ---
 id: suro
-name: National Radiation Protection Institute
+title:
+  cs: Státní ústav radiační ochrany
+  en: National Radiation Protection Institute
+name: Státní ústav radiační ochrany
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '86652052'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/02vwpg498
-- scheme: URL
+- scheme: url
   identifier: https://www.suro.cz/
 ---
 id: savs
-name: ŠKODA AUTO University
+title:
+  cs: ŠKODA AUTO Vysoká škola
+  en: ŠKODA AUTO University
+name: ŠKODA AUTO Vysoká škola
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '29142890'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/02zpfcb35
-- scheme: URL
+- scheme: url
   identifier: https://www.savs.cz/
 ---
 id: ta cr
-name: Technology Agency of the Czech Republic
+title:
+  cs: Technologická agentura České republiky
+  en: Technology Agency of the Czech Republic
+name: Technologická agentura České republiky
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '72050365'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/04v0fk911
-- scheme: URL
+- scheme: url
   identifier: https://www.tacr.cz
 ---
 id: unyp
+title:
+  cs: University of New York in Prague
 name: University of New York in Prague
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '25676598'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/042hb4t21
-- scheme: URL
+- scheme: url
   identifier: https://www.unyp.cz/cs
 ---
 id: ujak
-name: Jan Amos Komenský University Prague
+title:
+  cs: Univerzita Jana Amose Komenského Praha
+  en: Jan Amos Komenský University Prague
+name: Univerzita Jana Amose Komenského Praha
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '46358978'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/00ecy3w15
-- scheme: URL
+- scheme: url
   identifier: http://www.ujak.cz/
 ---
 id: umv
-name: Institute of International Relations Prague
+title:
+  cs: Ústav mezinárodních vztahů
+  en: Institute of International Relations Prague
+name: Ústav mezinárodních vztahů
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '48546054'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/04hp42s89
-- scheme: URL
+- scheme: url
   identifier: https://www.iir.cz/
 ---
 id: uzei
-name: Institute of Agricultural Economics and Information
+title:
+  cs: Ústav zemědělské ekonomiky a informací
+  en: Institute of Agricultural Economics and Information
+name: Ústav zemědělské ekonomiky a informací
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '00027251'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/042jnea65
-- scheme: URL
+- scheme: url
   identifier: https://www.uzei.cz
 ---
 id: vysoka-skola-prigo
-name: PRIGO University
+title:
+  cs: Vysoká škola PRIGO
+  en: PRIGO University
+name: Vysoká škola PRIGO
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '25840886'
-- scheme: URL
+- scheme: url
   identifier: https://www.vs-prigo.cz
 ---
 id: vstvs palestra
-name: College of Physical Education and Sport PALESTRA
+title:
+  cs: Vysoká škola tělesné výchovy a sportu PALESTRA
+  en: College of Physical Education and Sport PALESTRA
+name: Vysoká škola tělesné výchovy a sportu PALESTRA
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '27132781'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/02a5sx544
-- scheme: URL
+- scheme: url
   identifier: https://vstvs.palestra.cz/
 ---
 id: cog-cz
+title:
+  cs: COG-CZ
 name: COG-CZ
 identifiers:
-- scheme: URL
+- scheme: url
   identifier: https://virus.img.cas.cz/
 ---
 id: fnol
-name: Olomouc University Hospital
+title:
+  cs: Fakultní nemocnice Olomouc
+  en: Olomouc University Hospital
+name: Fakultní nemocnice Olomouc
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: 00098892
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/01jxtne23
-- scheme: URL
+- scheme: url
   identifier: https://www.fnol.cz/
 ---
 id: fnbrno
-name: University Hospital Brno
+title:
+  cs: Fakultní nemocnice Brno
+  en: University Hospital Brno
+name: Fakultní nemocnice Brno
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '65269705'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/00qq1fp34
-- scheme: URL
+- scheme: url
   identifier: https://www.fnbrno.cz/
 ---
 id: uni-minnesota
+title:
+  cs: University of Minnesota
+  en: University of Minnesota
 name: University of Minnesota
 identifiers:
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/017zqws13
-- scheme: URL
+- scheme: url
   identifier: https://twin-cities.umn.edu/
 ---
 id: polytechnique-montreal
+title:
+  cs: Polytechnique Montréal
+  en: Polytechnique Montréal
 name: Polytechnique Montréal
 identifiers:
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/05f8d4e86
-- scheme: URL
+- scheme: url
   identifier: https://www.polymtl.ca/
 ---
 id: cesnet
+title:
+  cs: CESNET
 name: CESNET
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '63839172'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/050dkka69
-- scheme: URL
+- scheme: url
   identifier: https://www.cesnet.cz
 ---
 id: muzeum-skla-a-bizuterie-v-jablonci-nad-nisou
-name: Museum of Glass and Jewellery
+title:
+  cs: Muzeum skla a bižuterie v Jablonci nad Nisou
+  en: Museum of Glass and Jewellery
+name: Muzeum skla a bižuterie v Jablonci nad Nisou
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: 00079481
-- scheme: URL
+- scheme: url
   identifier: https://www.msb-jablonec.cz/novinky
 ---
 id: narodni-hrebcin-kladruby-nad-labem
-name: National Stud at Kladruby nad Labem
+title:
+  cs: Národní hřebčín Kladruby nad Labem
+  en: National Stud at Kladruby nad Labem
+name: Národní hřebčín Kladruby nad Labem
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '72048972'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/05b4e2111
-- scheme: URL
+- scheme: url
   identifier: https://www.nhkladruby.cz/
 ---
 id: agrovyzkum-rapotin
-name: Agrovyzkum Rapotin
+title:
+  cs: Agrovýzkum Rapotín
+  en: Agrovyzkum Rapotin
+name: Agrovýzkum Rapotín
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '26788462'
-- scheme: URL
+- scheme: url
   identifier: https://www.vuchs.cz/main/agrovyzkum/
 ---
 id: advacam
+title:
+  cs: ADVACAM
+  en: ADVACAM
 name: ADVACAM
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '01732731'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/04evkr214
-- scheme: URL
+- scheme: url
   identifier: https://advacam.com
 ---
 id: ambis
-name: College of Regional Development and Banking Institute - AMBIS
+title:
+  cs: AMBIS vysoká škola
+  en: College of Regional Development and Banking Institute - AMBIS
+name: AMBIS vysoká škola
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '61858307'
-- scheme: URL
+- scheme: url
   identifier: https://www.ambis.cz/
 ---
 id: centrum-kardiovaskularni-a-transplantacni-chirurgie-brno
-name: Centre of Cardiovascular and Transplantation Surgery
+title:
+  cs: Centrum kardiovaskulární a transplantační chirurgie Brno
+  en: Centre of Cardiovascular and Transplantation Surgery
+name: Centrum kardiovaskulární a transplantační chirurgie Brno
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: 00209775
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/04adqmv58
-- scheme: URL
+- scheme: url
   identifier: https://www.cktch.cz/
 ---
 id: centrum-vyzkumu-rez
-name: Research Centre Řež
+title:
+  cs: Centrum výzkumu Řež
+  en: Research Centre Řež
+name: Centrum výzkumu Řež
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '26722445'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/03k9fzs17
-- scheme: URL
+- scheme: url
   identifier: https://www.cvrez.cz/
 ---
 id: ceska-geologicka-sluzba
-name: Czech Geological Survey
+title:
+  cs: Česká geologická služba
+  en: Czech Geological Survey
+name: Česká geologická služba
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: 00025798
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/02xz6bf62
-- scheme: URL
+- scheme: url
   identifier: https://cgs.gov.cz/
 ---
 id: chmu
-name: Czech Hydrometeorological Institute
+title:
+  cs: Český hydrometeorologický ústav
+  en: Czech Hydrometeorological Institute
+name: Český hydrometeorologický ústav
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: 00020699
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/00xbsaf62
-- scheme: URL
+- scheme: url
   identifier: https://www.chmi.cz/
 ---
 id: eruni
-name: European Research University
+title:
+  cs: Evropská výzkumná univerzita
+  en: European Research University
+name: Evropská výzkumná univerzita
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '25840886'
-- scheme: URL
+- scheme: url
   identifier: https://www.vs-prigo.cz/
 ---
 id: fakultni-nemocnice-bulovka
-name: Bulovka University Hospital
+title:
+  cs: Fakultní nemocnice Bulovka
+  en: Bulovka University Hospital
+name: Fakultní nemocnice Bulovka
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '00064211'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/009e9xr64
-- scheme: URL
+- scheme: url
   identifier: https://bulovka.cz/
 ---
 id: fakultni-nemocnice-hradec-kralove
-name: University Hospital Hradec Králové
+title:
+  cs: Fakultní nemocnice Hradec Králové
+  en: University Hospital Hradec Králové
+name: Fakultní nemocnice Hradec Králové
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: 00179906
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/04wckhb82
-- scheme: URL
+- scheme: url
   identifier: https://www.fnhk.cz/
 ---
 id: fakultni-nemocnice-kralovske-vinohrady
-name: University Hospital Kralovske Vinohrady
+title:
+  cs: Fakultní nemocnice Královské Vinohrady
+  en: University Hospital Kralovske Vinohrady
+name: Fakultní nemocnice Královské Vinohrady
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '00064173'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/04sg4ka71
-- scheme: URL
+- scheme: url
   identifier: https://www.fnkv.cz/
 ---
 id: fakultni-nemocnice-ostrava
-name: University Hospital in Ostrava
+title:
+  cs: Fakultní nemocnice Ostrava
+  en: University Hospital in Ostrava
+name: Fakultní nemocnice Ostrava
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: 00843989
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/00a6yph09
-- scheme: URL
+- scheme: url
   identifier: https://www.fno.cz/
 ---
 id: fakultni-nemocnice-plzen
-name: University Hospital in Pilsen
+title:
+  cs: Fakultní nemocnice Plzeň
+  en: University Hospital in Pilsen
+name: Fakultní nemocnice Plzeň
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: 00669806
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/02c1tfz23
-- scheme: URL
+- scheme: url
   identifier: https://www.fnplzen.cz/
 ---
 id: fakultni-nemocnice-u-sv.anny-v-brne
-name: St. Anne's University Hospital Brno
+title:
+  cs: Fakultní nemocnice u sv. Anny v Brně
+  en: St. Anne's University Hospital Brno
+name: Fakultní nemocnice u sv. Anny v Brně
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: 00159816
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/049bjee35
-- scheme: URL
+- scheme: url
   identifier: https://www.fnusa.cz/
 ---
 id: fakultni-nemocnice-v-motole
-name: Motol University Hospital
+title:
+  cs: Fakultní nemocnice v Motole
+  en: Motol University Hospital
+name: Fakultní nemocnice v Motole
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '00064203'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/0125yxn03
-- scheme: URL
+- scheme: url
   identifier: https://www.fnmotol.cz/
 ---
 id: fakultni-thomayerova-nemocnice
-name: Thomayer University Hospital
+title:
+  cs: Fakultní Thomayerova nemocnice
+  en: Thomayer University Hospital
+name: Fakultní Thomayerova nemocnice
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: 00064190
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/04hyq8434
-- scheme: URL
+- scheme: url
   identifier: https://www.ftn.cz/
 ---
 id: gacr
-name: Czech Science Foundation
+title:
+  cs: Grantová agentura České republiky
+  en: Czech Science Foundation
+name: Grantová agentura České republiky
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '48549037'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/01pv73b02
-- scheme: URL
+- scheme: url
   identifier: https://gacr.cz/
 ---
 id: ikem
-name: Institute for Clinical and Experimental Medicine
+title:
+  cs: Institut klinické a experimentální medicíny
+  en: Institute for Clinical and Experimental Medicine
+name: Institut klinické a experimentální medicíny
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '00023001'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/036zr1b90
-- scheme: URL
+- scheme: url
   identifier: https://www.ikem.cz/cs/
 ---
 id: institut-postgradualniho-vzdelavani-ve-zdravotnictvi
-name: Institute for Postgraduate Medical Education
+title:
+  cs: Institut postgraduálního vzdělávání ve zdravotnictví
+  en: Institute for Postgraduate Medical Education
+name: Institut postgraduálního vzdělávání ve zdravotnictví
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: 00023841
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/00rzeqe23
-- scheme: URL
+- scheme: url
   identifier: https://www.ipvz.cz
 ---
 id: jihoceska-vedecka-knihovna-v-ceskych-budejovicich
-name: Research Library of South Bohemia in České Budějovice
+title:
+  cs: Jihočeská vědecká knihovna v Českých Budějovicích
+  en: Research Library of South Bohemia in České Budějovice
+name: Jihočeská vědecká knihovna v Českých Budějovicích
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '00073504'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/03mmhfz41
-- scheme: URL
+- scheme: url
   identifier: https://www.cbvk.cz/
 ---
 id: knihovna-města-hradce-kralove
-name: Hradec Králové City Library
+title:
+  cs: Knihovna města Hradce Králové
+  en: Hradec Králové City Library
+name: Knihovna města Hradce Králové
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: 00125491
-- scheme: URL
+- scheme: url
   identifier: https://www.knihovnahk.cz/
 ---
 id: knihovna-usteckeho-kraje
-name: Ústí Regional Library
+title:
+  cs: Knihovna Ústeckého kraje
+  en: Ústí Regional Library
+name: Knihovna Ústeckého kraje
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: 00083186
-- scheme: URL
+- scheme: url
   identifier: https://www.knihovnauk.cz/
 ---
 id: krajska-knihovna-frantiska-bartose-ve-zline
-name: František Bartoš Regional Library in Zlín
+title:
+  cs: Krajská knihovna Františka Bartoše ve Zlíně
+  en: František Bartoš Regional Library in Zlín
+name: Krajská knihovna Františka Bartoše ve Zlíně
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '70947422'
-- scheme: URL
+- scheme: url
   identifier: https://www.kfbz.cz/
 ---
 id: krajska-knihovna-v-pardubicich
-name: Pardubice Regional Library
+title:
+  cs: Krajská knihovna v Pardubicích
+  en: Pardubice Regional Library
+name: Krajská knihovna v Pardubicích
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: 00085219
-- scheme: URL
+- scheme: url
   identifier: https://kkpce.cz/cs/
 ---
 id: krajska-knihovna-vysociny
-name: Vysočina Regional Library
+title:
+  cs: Krajská knihovna Vysočiny
+  en: Vysočina Regional Library
+name: Krajská knihovna Vysočiny
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '70950164'
-- scheme: URL
+- scheme: url
   identifier: https://www.kkvysociny.cz/
 ---
 id: krajska-vedecka-knihovna-v-liberci
-name: Regional Research Library in Liberec
+title:
+  cs: Krajská vědecká knihovna v Liberci
+  en: Regional Research Library in Liberec
+name: Krajská vědecká knihovna v Liberci
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: 00083194
-- scheme: URL
+- scheme: url
   identifier: https://www.kvkli.cz/
 ---
 id: krajska-zdravotni
-name: Regional Health Corporation
+title:
+  cs: Krajská zdravotní
+  en: Regional Health Corporation
+name: Krajská zdravotní
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '25488627'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/03hdcss70
-- scheme: URL
+- scheme: url
   identifier: https://www.kzcr.eu/
 ---
 id: masarykuv-onkologicky-ustav
-name: Masaryk Memorial Cancer Institute
+title:
+  cs: Masarykův onkologický ústav
+  en: Masaryk Memorial Cancer Institute
+name: Masarykův onkologický ústav
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: 00209805
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/0270ceh40
-- scheme: URL
+- scheme: url
   identifier: https://www.mou.cz/
 ---
 id: membrain
+title:
+  cs: MemBrain
+  en: MemBrain
 name: MemBrain
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '28676092'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/05fmr5p93
-- scheme: URL
+- scheme: url
   identifier: https://www.membrain.cz/
 ---
 id: mestska-knihovna-v-praze
-name: Municipal Library of Prague
+title:
+  cs: Městská knihovna v Praze
+  en: Municipal Library of Prague
+name: Městská knihovna v Praze
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '00064467'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/02kqf1812
-- scheme: URL
+- scheme: url
   identifier: https://www.mlp.cz/cz/
 ---
 id: ministerstvo-financ-cr
-name: Ministry of Finance of the Czech Republic
+title:
+  cs: Ministerstvo financí ČR
+  en: Ministry of Finance of the Czech Republic
+name: Ministerstvo financí ČR
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: 00006947
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/00mjd8b34
-- scheme: URL
+- scheme: url
   identifier: https://www.mfcr.cz/
 ---
 id: msmt
-name: Ministry of Education, Youth and Sports
+title:
+  cs: Ministerstvo školství, mládeže a tělovýchovy
+  en: Ministry of Education, Youth and Sports
+name: Ministerstvo školství, mládeže a tělovýchovy
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: 00022985
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/037n8p820
-- scheme: URL
+- scheme: url
   identifier: https://www.msmt.cz/
 ---
 id: moravskoslezska-vedecka-knihovna-v-ostrave
-name: Moravian-Silesian Research Library in Ostrava
+title:
+  cs: Moravskoslezská vědecká knihovna v Ostravě
+  en: Moravian-Silesian Research Library in Ostrava
+name: Moravskoslezská vědecká knihovna v Ostravě
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: 00100579
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/0404e3g62
-- scheme: URL
+- scheme: url
   identifier: https://www.msvk.cz/
 ---
 id: narodni-galerie-v-praze
-name: National Gallery Prague
+title:
+  cs: Národní galerie v Praze
+  en: National Gallery Prague
+name: Národní galerie v Praze
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: 00023281
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/00qd5p471
-- scheme: URL
+- scheme: url
   identifier: https://www.ngprague.cz/
 ---
 id: nemocnice-na-homolce
-name: Na Homolce Hospital
+title:
+  cs: Nemocnice Na Homolce
+  en: Na Homolce Hospital
+name: Nemocnice Na Homolce
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: 00023884
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/00w93dg44
-- scheme: URL
+- scheme: url
   identifier: https://www.homolka.cz/
 ---
 id: prague-film-school
+title:
+  cs: Prague Film School
+  en: Prague Film School
 name: Prague Film School
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '26698099'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/02gfwnc58
-- scheme: URL
+- scheme: url
   identifier: https://www.praguefilmschool.cz/
 ---
 id: psychiatricka-nemocnice-bohnice-lekarska-knihovna
-name: Psychiatric Hospital Bohnice - Medical Library
+title:
+  cs: Psychiatrická nemocnice Bohnice - Lékařská knihovna
+  en: Psychiatric Hospital Bohnice - Medical Library
+name: Psychiatrická nemocnice Bohnice - Lékařská knihovna
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '00064220'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/02yrkqr67
-- scheme: URL
+- scheme: url
   identifier: https://bohnice.cz/aktivity/knihovna/
 ---
 id: sukl
-name: State Institute for Drug Control
+title:
+  cs: Státní ústav pro kontrolu léčiv
+  en: State Institute for Drug Control
+name: Státní ústav pro kontrolu léčiv
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: 00023817
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/04myyf417
-- scheme: URL
+- scheme: url
   identifier: https://www.sukl.cz/
 ---
 id: szu
-name: National Institute of Public Health
+title:
+  cs: Státní zdravotní ústav
+  en: National Institute of Public Health
+name: Státní zdravotní ústav
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '75010330'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/04ftj7e51
-- scheme: URL
+- scheme: url
   identifier: https://szu.cz/
 ---
 id: stredoceska-vedecka-knihovna-v-kladne
-name: Central Bohemian Research Library in Kladno
+title:
+  cs: Středočeská vědecká knihovna v Kladně
+  en: Central Bohemian Research Library in Kladno
+name: Středočeská vědecká knihovna v Kladně
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: 00069892
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/02va58e96
-- scheme: URL
+- scheme: url
   identifier: https://svkkl.cz/
 ---
 id: studijni-a-vedecka-knihovna-plzenskeho-kraje
-name: Education and Research Library of Pilsener Region
+title:
+  cs: Studijní a vědecká knihovna Plzeňského kraje
+  en: Education and Research Library of Pilsener Region
+name: Studijní a vědecká knihovna Plzeňského kraje
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: 00078077
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/017afg044
-- scheme: URL
+- scheme: url
   identifier: https://svkpk.cz/
 ---
 id: studijni-a-vedecka-knihovna-v-hradci-kralove
-name: Research Library in Hradec Králové
+title:
+  cs: Studijní a vědecká knihovna v Hradci Králové
+  en: Research Library in Hradec Králové
+name: Studijní a vědecká knihovna v Hradci Králové
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: 00412821
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/03cd72537
-- scheme: URL
+- scheme: url
   identifier: https://www.svkhk.cz/
 ---
 id: tmb
-name: Technical Museum in Brno
+title:
+  cs: Technické muzeum v Brně
+  en: Technical Museum in Brno
+name: Technické muzeum v Brně
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '00101435'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/00rb9a558
-- scheme: URL
+- scheme: url
   identifier: https://www.tmbrno.cz/
 ---
 id: eli-eric
-name: The Extreme Light Infrastructure ERIC (only facility Dolní Břežany, CZ)
+title:
+  cs: The Extreme Light Infrastructure ERIC
+  en: The Extreme Light Infrastructure ERIC (only facility Dolní Břežany, CZ)
+name: The Extreme Light Infrastructure ERIC
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '10974938'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/00yzpcc69
-- scheme: URL
+- scheme: url
   identifier: https://eli-laser.eu
 ---
 id: urad-vlady-cr
-name: Office of the Government of the Czech Republic
+title:
+  cs: Úřad vlády České republiky
+  en: Office of the Government of the Czech Republic
+name: Úřad vlády České republiky
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: 00006599
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/027acbb13
-- scheme: URL
+- scheme: url
   identifier: https://vlada.gov.cz/
 ---
 id: ukht
-name: Institute of Hematology and Blood Transfusion
+title:
+  cs: Ústav hematologie a krevní transfuze
+  en: Institute of Hematology and Blood Transfusion
+name: Ústav hematologie a krevní transfuze
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '00023736'
-- scheme: URL
+- scheme: url
   identifier: https://www.uhkt.cz
 ---
 id: vedecka-knihovna-v-olomouci
-name: Olomouc Research Library
+title:
+  cs: Vědecká knihovna v Olomouci
+  en: Olomouc Research Library
+name: Vědecká knihovna v Olomouci
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '00100625'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/02jh2mm49
-- scheme: URL
+- scheme: url
   identifier: https://www.vkol.cz/
 ---
 id: vojenska-nemocnice-brno
-name: Military Hospital Brno
+title:
+  cs: Vojenská nemocnice Brno
+  en: Military Hospital Brno
+name: Vojenská nemocnice Brno
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '60555530'
-- scheme: URL
+- scheme: url
   identifier: https://www.vnbrno.cz/
 ---
 id: vfn
-name: General University Hospital in Prague
+title:
+  cs: Všeobecná fakultní nemocnice v Praze
+  en: General University Hospital in Prague
+name: Všeobecná fakultní nemocnice v Praze
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '00064165'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/04yg23125
-- scheme: URL
+- scheme: url
   identifier: https://www.vfn.cz/
 ---
 id: vyzkumny-a-slechtitelsky-ustav-ovocnarsky-holovousy
-name: Research and Breeding Institute of Pomology Holovousy
+title:
+  cs: Výzkumný a šlechtitelský ústav ovocnářský Holovousy
+  en: Research and Breeding Institute of Pomology Holovousy
+name: Výzkumný a šlechtitelský ústav ovocnářský Holovousy
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '25271121'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/045c1s446
-- scheme: URL
+- scheme: url
   identifier: https://www.vsuo.cz/cs/
 ---
 id: vyzkumny-ustav-bramborarsky-havlickuv-brod
-name: Potato Research Institute Havlíčkův Brod
+title:
+  cs: Výzkumný ústav bramborářský Havlíčkův Brod
+  en: Potato Research Institute Havlíčkův Brod
+name: Výzkumný ústav bramborářský Havlíčkův Brod
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '60109807'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/00vcrhv91
-- scheme: URL
+- scheme: url
   identifier: https://www.vubhb.cz/cs
 ---
 id: vumop
-name: Research Institute for Soil and Water Conservation
+title:
+  cs: Výzkumný ústav meliorací a ochrany půdy
+  en: Research Institute for Soil and Water Conservation
+name: Výzkumný ústav meliorací a ochrany půdy
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: 00027049
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/045rrq664
-- scheme: URL
+- scheme: url
   identifier: https://www.vumop.cz/
 ---
 id: vyzkumny-ustav-pivovarsky-a-sladarsky
-name: Research Institute od Brewing and Malting
+title:
+  cs: Výzkumný ústav pivovarský a sladařský
+  en: Research Institute od Brewing and Malting
+name: Výzkumný ústav pivovarský a sladařský
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '60193697'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/04jr76q91
-- scheme: URL
+- scheme: url
   identifier: https://beerresearch.cz/
 ---
 id: vuts-technicka-knihovna
-name: VUTS, JSC - Technical Library
+title:
+  cs: Výzkumný ústav textilních strojů - technická knihovna
+  en: VUTS, JSC - Technical Library
+name: Výzkumný ústav textilních strojů - technická knihovna
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '46709002'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/02c875652
-- scheme: URL
+- scheme: url
   identifier: https://www.vuts.cz/
 ---
 id: vyzkumny-ustav-veterinarniho-lekarstvi
-name: Veterinary Research Institute
+title:
+  cs: Výzkumný ústav veterinárního lékařství
+  en: Veterinary Research Institute
+name: Výzkumný ústav veterinárního lékařství
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '00027162'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/02zyjt610
-- scheme: URL
+- scheme: url
   identifier: https://www.vri.cz/
 ---
 id: vuzv
-name: Institute of Animal Science
+title:
+  cs: Výzkumný ústav živočišné výroby
+  en: Institute of Animal Science
+name: Výzkumný ústav živočišné výroby
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '00027014'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/00yb99p92
-- scheme: URL
+- scheme: url
   identifier: https://vuzv.cz/
 ---
 id: zemedelsky-vyzkum
-name: Agricultural Research
+title:
+  cs: Zemědělský výzkum
+  en: Agricultural Research
+name: Zemědělský výzkum
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '26296080'
-- scheme: URL
+- scheme: url
   identifier: https://www.vupt.cz/
 ---
 id: vyzkumny-ustav-picninarsky
-name: Research Institute for Fodder Crops
+title:
+  cs: Výzkumný ústav pícninářský
+  en: Research Institute for Fodder Crops
+name: Výzkumný ústav pícninářský
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '48532452'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/02tjqwz24
-- scheme: URL
+- scheme: url
   identifier: https://www.vupt.cz/
 ---
 id: prague-city-university
+title:
+  en: Prague City University
 name: Prague City University
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: 04264193
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/01x9n3j10
-- scheme: URL
+- scheme: url
   identifier: https://www.praguecityuniversity.cz
 ---
 id: panevropska-univerzita
-name: Pan-European University
+title:
+  cs: Panevropská univerzita
+  en: Pan-European University
+name: Panevropská univerzita
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: 04130081
-- scheme: URL
+- scheme: url
   identifier: https://www.peuni.cz
 ---
 id: indira-gandhi-centre-for-atomic-research
+title:
+  en: Indira Gandhi Centre for Atomic Research
 name: Indira Gandhi Centre for Atomic Research
 identifiers:
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/05tkzma19
-- scheme: URL
+- scheme: url
   identifier: https://www.igcar.gov.in/hbni.html
 ---
 id: institute-of-chemical-engineering-sciences
+title:
+  en: Institute of Chemical Engineering Sciences
 name: Institute of Chemical Engineering Sciences
 identifiers:
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/03e5bsk66
-- scheme: URL
+- scheme: url
   identifier: https://www.iceht.forth.gr
 ---
 id: tescan
+title:
+  cs: TESCAN GROUP
 name: TESCAN GROUP
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '17774713'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/0556an218
-- scheme: URL
+- scheme: url
   identifier: https://www.tescan.cz
 ---
 id: atelier-krejcirikovi
+title:
+  cs: Ateliér Krejčiříkovi, s.r.o.
 name: Ateliér Krejčiříkovi, s.r.o.
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: 05291895
 ---
 id: hnuti-duha
+title:
+  cs: Hnutí DUHA - Friends of the Earth Czech Republic
 name: Hnutí DUHA - Friends of the Earth Czech Republic
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '15547779'
 ---
 id: kroupalide
+title:
+  cs: KROUPALIDÉ advokátní kancelář s.r.o.
 name: KROUPALIDÉ advokátní kancelář s.r.o.
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '29310571'
 ---
 id: sociofactor
+title:
+  cs: SocioFactor s.r.o.
 name: SocioFactor s.r.o.
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '28586336'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/01g3ety71
 ---
 id: suip
-name: State Labour Inspection Office
+title:
+  cs: Státní úřad inspekce práce
+  en: State Labour Inspection Office
+name: Státní úřad inspekce práce
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '75046962'
 ---
 id: ujv-rez
-name: Nuclear Research Institute Rez
+title:
+  cs: Ústav Jaderného Výzkumu Řež, a. s.
+  en: Nuclear Research Institute Rez
+name: Ústav Jaderného Výzkumu Řež, a. s.
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '46356088'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/05gwtvp11
 ---
 id: vsmie
-name: College of Information Management Business Administration and Law
+title:
+  cs: Vysoká škola manažerské informatiky, ekonomiky a práva
+  en: College of Information Management Business Administration and Law
+name: Vysoká škola manažerské informatiky, ekonomiky a práva
 identifiers:
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/015t1sz24
 ---
 id: edri
+title:
+  en: European Digital Rights
 name: European Digital Rights
 ---
 id: central-european-policy-institute
+title:
+  en: Central European Policy Institute
 name: Central European Policy Institute
 ---
 id: jihomoravske-dobrovolnicke-centrum
+title:
+  cs: Jihomoravské dobrovolnické centrum z.s.
 name: Jihomoravské dobrovolnické centrum z.s.
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '26517230'
 ---
 id: dcul
+title:
+  cs: Dobrovolnické centrum, z. s.
 name: Dobrovolnické centrum, z. s.
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '70225842'
 ---
 id: nidm
+title:
+  cs: Národní institut dětí a mládeže MŠMT
 name: Národní institut dětí a mládeže MŠMT
 ---
 id: wipo
-name: World Intellectual Property Organization
+title:
+  cs: Světová organizace duševního vlastnictví
+  en: World Intellectual Property Organization
+name: Světová organizace duševního vlastnictví
 identifiers:
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/04anve402
 ---
 id: euipo
-name: European Union Intellectual Property Office
+title:
+  cs: Úřad Evropské unie pro duševní vlastnictví
+  en: European Union Intellectual Property Office
+name: Úřad Evropské unie pro duševní vlastnictví
 identifiers:
-- scheme: URL
+- scheme: url
   identifier: https://www.euipo.europa.eu/
 ---
 id: migration-policy-task-force
+title:
+  en: Migration Policy Task Force
 name: Migration Policy Task Force
 ---
 id: infodatasys
+title:
+  cs: Ing. Karel MATĚJKA, CSc.-IDS
 name: Ing. Karel MATĚJKA, CSc.-IDS
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '43838243'
 ---
 id: norwegian-forest-and-landscape-institute
+title:
+  en: Norwegian Forest and Landscape Institute
 name: Norwegian Forest and Landscape Institute
 ---
 id: isga
+title:
+  en: International School Grounds Alliance
 name: International School Grounds Alliance
 ---
 id: staatsbetrieb-sachsenforst
+title:
+  cs: Staatsbetrieb Sachsenforst
 name: Staatsbetrieb Sachsenforst
 ---
 id: cs-ustav-pro-vyzkum-verejneho-mineni
+title:
+  cs: Československý ústav pro výzkum veřejného mínění
 name: Československý ústav pro výzkum veřejného mínění
 ---
 id: uni-bergen
+title:
+  en: University of Bergen
 name: University of Bergen
 identifiers:
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/03zga2b32
-- scheme: URL
+- scheme: url
   identifier: https://www.uib.no/en
 ---
 id: uni-bayreuth
+title:
+  en: University of Bayreuth
 name: University of Bayreuth
 identifiers:
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/0234wmv40
-- scheme: URL
+- scheme: url
   identifier: https://www.uni-bayreuth.de/en
 ---
 id: mpsv
-name: Ministry of Labour and Social Affairs
+title:
+  cs: Ministerstvo práce a sociálních věcí České republiky
+  en: Ministry of Labour and Social Affairs
+name: Ministerstvo práce a sociálních věcí České republiky
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '00551023'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/01bvj3e58
-- scheme: URL
+- scheme: url
   identifier: http://www.mpsv.cz/
 ---
 id: mvcr
-name: Ministry of the Interior
+title:
+  cs: Ministerstvo vnitra České republiky
+  en: Ministry of the Interior
+name: Ministerstvo vnitra České republiky
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '00007064'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/05w1nn565
-- scheme: URL
+- scheme: url
   identifier: http://www.mvcr.cz/
 ---
 id: mkcr
-name: Ministry of Culture
+title:
+  cs: Ministerstvo Kultury České Republiky
+  en: Ministry of Culture
+name: Ministerstvo Kultury České Republiky
 identifiers:
-- scheme: ICO
+- scheme: ico
   identifier: '00023671'
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/00fxxw604
-- scheme: URL
+- scheme: url
   identifier: http://www.mkcr.cz/
 ---
 id: goethe-institut
+title:
+  de: Goethe Institut
+  en: Goethe Institute
 name: Goethe Institute
 identifiers:
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/02szraf30
-- scheme: URL
+- scheme: url
   identifier: https://www.goethe.de/
 ---
 id: iucn
+title:
+  en: International Union for Conservation of Nature
 name: International Union for Conservation of Nature
 identifiers:
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/01szdrn56
-- scheme: URL
+- scheme: url
   identifier: http://www.iucn.org/
 ---
 id: greynet
+title:
+  en: GreyNet International
 name: GreyNet International
 identifiers:
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/01pxfxj80
-- scheme: URL
+- scheme: url
   identifier: https://www.greynet.org
 ---
 id: stu
+title:
+  sk: Slovenská technická univerzita v Bratislave
+  en: Slovak University of Technology in Bratislava
 name: Slovak University of Technology in Bratislava
 identifiers:
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/0561ghm58
-- scheme: URL
+- scheme: url
   identifier: https://www.stuba.sk/
 ---
 id: fu-berlin
+title:
+  en: Free University of Berlin
+  de: Freie Universität Berlin
 name: Free University of Berlin
 identifiers:
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/046ak2485
-- scheme: URL
+- scheme: url
   identifier: https://www.fu-berlin.de
 ---
 id: qub
+title:
+  cy: Prifysgol y Frenhines
+  en: Queen's University Belfast
 name: Queen's University Belfast
 identifiers:
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/00hswnk62
-- scheme: URL
+- scheme: url
   identifier: https://www.qub.ac.uk
 ---
 id: uni-manchester
+title:
+  en: University of Manchester
 name: University of Manchester
 identifiers:
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/027m9bs27
-- scheme: URL
+- scheme: url
   identifier: https://www.manchester.ac.uk
 ---
 id: elte
+title:
+  hu: Eötvös Loránd Tudományegyetem
+  en: Eötvös Loránd University
 name: Eötvös Loránd University
 identifiers:
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/01jsq2704
-- scheme: URL
+- scheme: url
   identifier: https://www.elte.hu
 ---
 id: stfc
+title:
+  en: Science and Technology Facilities Council
 name: Science and Technology Facilities Council
 identifiers:
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/057g20z61
-- scheme: URL
+- scheme: url
   identifier: https://www.ukri.org/councils/stfc/
 ---
 id: hartree-centre
+title:
+  en: Hartree Centre
 name: Hartree Centre
 identifiers:
-- scheme: URL
+- scheme: url
   identifier: https://www.hartree.stfc.ac.uk/
 ---
 id: uni-toronto
+title:
+  en: University of Toronto
 name: University of Toronto
 identifiers:
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/03dbr7087
-- scheme: URL
+- scheme: url
   identifier: https://www.utoronto.ca/
 ---
 id: wigner
+title:
+  hu: Wigner Fizikai Kutatóközpont
+  en: Wigner Research Centre for Physics
 name: Wigner Research Centre for Physics
 identifiers:
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/035dsb084
-- scheme: URL
+- scheme: url
   identifier: https://wigner.hu/en
 ---
 id: tum
+title:
+  de: Technische Universität München
+  en: Technical University of Munich
 name: Technical University of Munich
 identifiers:
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/02kkvpp62
-- scheme: URL
+- scheme: url
   identifier: https://www.tum.de
 ---
 id: metu
+title:
+  tr: Orta Doğu Teknik Üniversitesi
+  en: Middle East Technical University
 name: Middle East Technical University
 identifiers:
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/014weej12
-- scheme: URL
+- scheme: url
   identifier: https://www.metu.edu.tr
 ---
 id: vu
+title:
+  en: Vrije Universiteit Amsterdam
 name: Vrije Universiteit Amsterdam
 identifiers:
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/008xxew50
-- scheme: URL
+- scheme: url
   identifier: https://vu.nl/
 ---
 id: uniba
+title:
+  sk: Univerzita Komenského v Bratislave
+  en: Comenius University Bratislava
 name: Comenius University Bratislava
 identifiers:
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/0587ef340
-- scheme: URL
+- scheme: url
   identifier: https://uniba.sk/
 ---
 id: nscc
+title:
+  sk: Národné superpočítačové centrum
+  en: Slovak National Supercomputing Centre
 name: Slovak National Supercomputing Centre
 identifiers:
-- scheme: URL
+- scheme: url
   identifier: https://nscc.sk/
 ---
 id: vssav
+title:
+  sk: Výpočtové stredisko Slovenskej akadémie vied
+  en: Computing Centre of the Slovak Academy od Sciences
 name: Computing Centre of the Slovak Academy od Sciences
 identifiers:
-- scheme: URL
+- scheme: url
   identifier: https://vs.sav.sk/
 ---
 id: am-uni
+title:
+  fr: Aix-Marseille Université
+  en: Aix-Marseille University
 name: Aix-Marseille University
 identifiers:
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/035xkbk20
-- scheme: URL
+- scheme: url
   identifier: http://www.univ-amu.fr/
 ---
 id: iuf
+title:
+  fr: Institut Universitaire de France
 name: Institut Universitaire de France
 identifiers:
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/055khg266
-- scheme: URL
+- scheme: url
   identifier: http://iuf.amue.fr/
 ---
 id: xmu
+title:
+  zh: Xiàmén Dàxué
+  en: Xiamen University
 name: Xiamen University
 identifiers:
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/00mcjh785
-- scheme: URL
+- scheme: url
   identifier: https://www.xmu.edu.cn
 ---
 id: umk
+title:
+  pl: Uniwersytet Mikołaja Kopernika w Toruniu
+  en: Nicolaus Copernicus University
 name: Nicolaus Copernicus University
 identifiers:
-- scheme: ROR
+- scheme: ror
   identifier: https://ror.org/0102mm775
-- scheme: URL
+- scheme: url
   identifier: https://www.umk.pl
+---
+id: likat
+title:
+  de: Leibniz-Institut für Katalyse e.V.
+  en: Leibniz Institute for Catalysis
+name: Leibniz Institute for Catalysis
+identifiers:
+- scheme: ror
+  identifier: https://ror.org/029hg0311
+- scheme: url
+  identifier: https://www.catalysis.de

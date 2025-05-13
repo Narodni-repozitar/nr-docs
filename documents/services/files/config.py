@@ -104,10 +104,8 @@ class DocumentsFileDraftServiceConfig(PermissionsPresetsConfigMixin, FileService
     service_id = "documents_file_draft"
     indexer_queue_name = "documents_file_draft"
 
-    # TODO: put this to model builder
-    permission_action_prefix = "draft_"
-
     search_item_links_template = LinksTemplate
+    permission_action_prefix = "draft_"
 
     @property
     def components(self):
@@ -126,7 +124,7 @@ class DocumentsFileDraftServiceConfig(PermissionsPresetsConfigMixin, FileService
         links = {
             **supercls_links,
             "self": RecordLink(
-                "{+api}/docs/{id}/draft/files", when=has_file_permission("list_files")
+                "{+api}/docs/{id}/draft/files", when=has_file_permission("read_files")
             ),
         }
         return {k: v for k, v in links.items() if v is not None}
