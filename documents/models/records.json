@@ -5006,7 +5006,7 @@
                                 "label.en": "Degree Grantor",
                                 "items": {
                                     "type": "taxonomy",
-                                    "vocabulary-type": "institutions",
+                                    "vocabulary-type": "degree-grantors",
                                     "ui": {
                                         "marshmallow": {
                                             "class": "nr_metadata.documents.services.records.ui_schema.NRDegreeGrantorUISchema",
@@ -5109,10 +5109,10 @@
                                         }
                                     ],
                                     "model": "vocabularies",
-                                    "pid-field": "Vocabulary.pid.with_type_ctx(\"institutions\")",
+                                    "pid-field": "Vocabulary.pid.with_type_ctx(\"degree-grantors\")",
                                     "facets": {
                                         "args": [
-                                            "vocabulary='institutions'"
+                                            "vocabulary='degree-grantors'"
                                         ]
                                     },
                                     "properties": {
@@ -5464,8 +5464,6 @@
             "pids": {
                 "type": "object",
                 "json-schema": {
-                    "type": "object",
-                    "uniqueItems": true,
                     "propertyNames": {
                         "pattern": "^[a-z_-][a-z0-9_-]*$"
                     },
@@ -5483,7 +5481,9 @@
                                 "type": "string"
                             }
                         }
-                    }
+                    },
+                    "uniqueItems": true,
+                    "type": "object"
                 },
                 "ui": {
                     "marshmallow": {
