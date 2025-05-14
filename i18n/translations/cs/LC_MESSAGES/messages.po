@@ -36,7 +36,7 @@ msgstr "Přístupová práva"
 #: models/nr-documents/nr_documents/services/records/facets.py:48
 #: models/nr-documents/nr_documents/services/records/facets.py:52
 msgid "metadata/accessibility.label"
-msgstr "Dostupnost zdroje"
+msgstr "Dostupnost dokumentu"
 
 #: models/nr-documents/nr_documents/services/records/facets.py:59
 msgid "metadata/accessibility/lang.label"
@@ -119,7 +119,7 @@ msgstr "Datum zveřejnění"
 #: models/nr-documents/nr_documents/services/records/facets.py:167
 #: sites/nr-docs/site/nr_docs/translations/jinjax_messages.jinja:2
 msgid "metadata/dateModified.label"
-msgstr "Datum změny zdroje"
+msgstr "Datum změny dokumentu"
 
 #: models/nr-documents/nr_documents/services/records/facets.py:172
 msgid "metadata/events/eventLocation/country.label"
@@ -131,7 +131,7 @@ msgstr "Lokace"
 
 #: models/nr-documents/nr_documents/services/records/facets.py:183
 msgid "metadata/externalLocation/externalLocationURL.label"
-msgstr "Externí umístění zdroje"
+msgstr "Externí umístění dokumentu"
 
 #: models/nr-documents/nr_documents/services/records/facets.py:188
 msgid "metadata/fundingReferences/funder.label"
@@ -156,7 +156,7 @@ msgstr "Zeměpisná délka"
 #: models/nr-documents/nr_documents/services/records/facets.py:214
 #: sites/nr-docs/site/nr_docs/translations/jinjax_messages.jinja:3
 msgid "metadata/languages.label"
-msgstr "Jazyk"
+msgstr "Jazyk dokumentu"
 
 #: models/nr-documents/nr_documents/services/records/facets.py:219
 #: models/nr-documents/nr_documents/services/records/facets.py:223
@@ -259,7 +259,7 @@ msgstr "Typ vazby"
 
 #: models/nr-documents/nr_documents/services/records/facets.py:347
 msgid "metadata/relatedItems/itemResourceType.label"
-msgstr "Typ zdroje"
+msgstr "Typ dokumentu"
 
 #: models/nr-documents/nr_documents/services/records/facets.py:353
 msgid "metadata/relatedItems/itemStartPage.label"
@@ -280,7 +280,7 @@ msgstr "Rok vydání"
 #: models/nr-documents/nr_documents/services/records/facets.py:373
 #: sites/nr-docs/site/nr_docs/translations/jinjax_messages.jinja:4
 msgid "metadata/resourceType.label"
-msgstr "Typ zdroje"
+msgstr "Typ dokumentu"
 
 #: models/nr-documents/nr_documents/services/records/facets.py:378
 #: sites/nr-docs/site/nr_docs/translations/jinjax_messages.jinja:12
@@ -373,7 +373,7 @@ msgstr "Název"
 #: models/nr-documents/nr_documents/services/records/facets.py:492
 #: sites/nr-docs/site/nr_docs/translations/jinjax_messages.jinja:22
 msgid "metadata/version.label"
-msgstr "Verze zdroje"
+msgstr "Verze dokumentu"
 
 #: models/nr-documents/nr_documents/services/records/facets.py:496
 msgid "syntheticFields/institutions.label"
@@ -1139,7 +1139,9 @@ msgid "metadata/additionalTitles.label"
 msgstr "Další názvy"
 
 msgid "metadata/additionalTitles.help"
-msgstr "Pokud existují další názvy zdroje, uveďte je. Vyberte typ a jazyk."
+msgstr ""
+"Pokud existují další názvy dokumentu, uveďte je. Vyberte typ a jazyk. "
+"Doporučujeme zadat zejména překlad názvu dokumentu, pokud existuje."
 
 msgid "metadata/additionalTitles.hint"
 msgstr ""
@@ -1542,7 +1544,7 @@ msgid "metadata/dateModified.hint"
 msgstr ""
 
 msgid "metadata/events.help"
-msgstr ""
+msgstr "Akce související s dokumentem (např. konference)."
 
 msgid "metadata/events.hint"
 msgstr ""
@@ -1746,7 +1748,7 @@ msgid "metadata/languages.help"
 msgstr ""
 
 msgid "metadata/languages.hint"
-msgstr "Vyberte jazyk/jazyky zdroje."
+msgstr "Vyberte jazyk/jazyky dokumentu."
 
 msgid "metadata/languages/id.help"
 msgstr ""
@@ -1796,7 +1798,7 @@ msgid "metadata/methods/value.hint"
 msgstr ""
 
 msgid "metadata/notes.help"
-msgstr "Prostor pro další informace ke zdroji."
+msgstr "Prostor pro další informace k dokumentu."
 
 msgid "metadata/notes.hint"
 msgstr ""
@@ -1853,9 +1855,9 @@ msgstr "Vazba na související zdroje"
 
 msgid "metadata/relatedItems.help"
 msgstr ""
-"Zapište informace o zdroji, který souvisí se zdrojem, který zde popisujete "
-"(např. pokud popisujete článek, sem můžete identifikovat časopis, ve kterém "
-"článek vyšel)."
+"Zapište informace o zdroji, který souvisí s dokumentem, který zde popisujete"
+" (např. pokud popisujete článek, můžete zde identifikovat časopis, ve kterém"
+" byl článek vydán)."
 
 msgid "metadata/relatedItems.hint"
 msgstr ""
@@ -2232,7 +2234,7 @@ msgid "metadata/relatedItems/itemRelationType.help"
 msgstr ""
 
 msgid "metadata/relatedItems/itemRelationType.hint"
-msgstr "Vyberte typ vazby mezi popisovaným a souvisejícím zdrojem."
+msgstr "Vyberte typ vazby mezi popisovaným dokumentem a souvisejícím zdrojem."
 
 msgid "metadata/relatedItems/itemRelationType/id.help"
 msgstr ""
@@ -2331,7 +2333,7 @@ msgid "metadata/resourceType.help"
 msgstr ""
 
 msgid "metadata/resourceType.hint"
-msgstr "Vyberte typ zdroje."
+msgstr "Vyberte typ dokumentu."
 
 msgid "metadata/resourceType/id.help"
 msgstr ""
@@ -2362,7 +2364,7 @@ msgstr ""
 
 msgid "metadata/rights.help"
 msgstr ""
-"Pokud se k popisovanému zdroji váže licence Creative Commons, vyberte "
+"Pokud se k popisovanému dokumentu váže licence Creative Commons, vyberte "
 "příslušnou variantu z nabídky. Doporučujeme výběr nejnovější verze 4.0 "
 "International."
 
@@ -2398,14 +2400,13 @@ msgstr ""
 
 msgid "metadata/series.help"
 msgstr ""
-"Zapište název edice/série. Zapište svazek edice/série, pokud je název "
-"uveden."
+"Zapište název edice/série. Zapište svazek edice/série, pokud je uveden."
 
 msgid "metadata/series.hint"
 msgstr ""
 
 msgid "metadata/series/seriesTitle.help"
-msgstr "Tématicky sdružuje podobné zdroje k sobě."
+msgstr "Tématicky sdružuje podobné dokumenty k sobě."
 
 msgid "metadata/series/seriesTitle.hint"
 msgstr ""
@@ -2417,7 +2418,7 @@ msgid "metadata/series/seriesVolume.hint"
 msgstr ""
 
 msgid "metadata/subjectCategories.help"
-msgstr ""
+msgstr "Vyberte zařazení do vědního oboru. Lze vybrat více oborů."
 
 msgid "metadata/subjectCategories.hint"
 msgstr "Vyberte název oboru."
@@ -2451,8 +2452,8 @@ msgstr ""
 
 msgid "metadata/subjects.help"
 msgstr ""
-"Zapisujte slova popisující zdroj, zvolte vždy jazyk. Zapisujte klíčová slova"
-" jednotlivě."
+"Zapisujte slova popisující dokument, zvolte vždy jazyk. Zapisujte klíčová "
+"slova jednotlivě."
 
 msgid "metadata/subjects.hint"
 msgstr ""
@@ -2667,7 +2668,7 @@ msgid "metadata/title.help"
 msgstr ""
 
 msgid "metadata/title.hint"
-msgstr "Uveďte hlavní název zdroje."
+msgstr "Uveďte hlavní název dokumentu."
 
 msgid "metadata/version.help"
 msgstr ""
@@ -3054,7 +3055,7 @@ msgstr ""
 "zvolit typ data."
 
 msgid "metadata/dateIssued.hint"
-msgstr "Zvolte z kalendáře datum, kdy byl zdroj vydán."
+msgstr "Zvolte z kalendáře datum, kdy byl dokument vydán."
 
 msgid "metadata/objectIdentifiers/scheme.enum.IGSN"
 msgstr ""
@@ -3888,51 +3889,51 @@ msgstr ""
 
 #: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:105
 msgid "metadata/contributors/person_or_org/family_name.label"
-msgstr ""
+msgstr "Příjmení"
 
 #: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:110
 msgid "metadata/contributors/person_or_org/given_name.label"
-msgstr ""
+msgstr "Jméno"
 
 #: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:115
 msgid "metadata/contributors/person_or_org/identifiers/identifier.label"
-msgstr ""
+msgstr "Identifikátor"
 
 #: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:120
 msgid "metadata/contributors/person_or_org/identifiers/scheme.label"
-msgstr ""
+msgstr "Schéma"
 
 #: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:125
 msgid "metadata/contributors/person_or_org/name.label"
-msgstr ""
+msgstr "Plné jméno"
 
 #: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:130
 msgid "metadata/contributors/person_or_org/type.label"
-msgstr ""
+msgstr "Typ"
 
 #: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:146
 msgid "metadata/creators/person_or_org/family_name.label"
-msgstr ""
+msgstr "Příjmení"
 
 #: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:151
 msgid "metadata/creators/person_or_org/given_name.label"
-msgstr ""
+msgstr "Jméno"
 
 #: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:156
 msgid "metadata/creators/person_or_org/identifiers/identifier.label"
-msgstr ""
+msgstr "Identifikátor"
 
 #: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:161
 msgid "metadata/creators/person_or_org/identifiers/scheme.label"
-msgstr ""
+msgstr "Schéma"
 
 #: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:166
 msgid "metadata/creators/person_or_org/name.label"
-msgstr ""
+msgstr "Plné jméno"
 
 #: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:171
 msgid "metadata/creators/person_or_org/type.label"
-msgstr ""
+msgstr "Typ"
 
 #: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:175
 msgid "metadata/creators/role/id.label"
@@ -3964,7 +3965,7 @@ msgid "metadata/contributors/person_or_org.help"
 msgstr ""
 
 msgid "metadata/contributors/person_or_org.label"
-msgstr ""
+msgstr "Osoba nebo organizace"
 
 msgid "metadata/contributors/person_or_org.hint"
 msgstr ""
@@ -3985,7 +3986,7 @@ msgid "metadata/contributors/person_or_org/identifiers.help"
 msgstr ""
 
 msgid "metadata/contributors/person_or_org/identifiers.label"
-msgstr ""
+msgstr "Identifikátory"
 
 msgid "metadata/contributors/person_or_org/identifiers.hint"
 msgstr ""
@@ -4033,7 +4034,7 @@ msgid "metadata/creators/person_or_org.help"
 msgstr ""
 
 msgid "metadata/creators/person_or_org.label"
-msgstr ""
+msgstr "Osoba nebo organizace"
 
 msgid "metadata/creators/person_or_org.hint"
 msgstr ""
@@ -4054,7 +4055,7 @@ msgid "metadata/creators/person_or_org/identifiers.help"
 msgstr ""
 
 msgid "metadata/creators/person_or_org/identifiers.label"
-msgstr ""
+msgstr "Identifikátory"
 
 msgid "metadata/creators/person_or_org/identifiers.hint"
 msgstr ""
@@ -4306,55 +4307,55 @@ msgstr ""
 
 #: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:264
 msgid "metadata/relatedItems/itemContributors/person_or_org/family_name.label"
-msgstr ""
+msgstr "Příjmení"
 
 #: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:269
 msgid "metadata/relatedItems/itemContributors/person_or_org/given_name.label"
-msgstr ""
+msgstr "Jméno"
 
 #: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:274
 msgid ""
 "metadata/relatedItems/itemContributors/person_or_org/identifiers/identifier.label"
-msgstr ""
+msgstr "Identifikátor"
 
 #: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:281
 msgid ""
 "metadata/relatedItems/itemContributors/person_or_org/identifiers/scheme.label"
-msgstr ""
+msgstr "Schéma"
 
 #: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:288
 msgid "metadata/relatedItems/itemContributors/person_or_org/name.label"
-msgstr ""
+msgstr "Plné jméno"
 
 #: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:293
 msgid "metadata/relatedItems/itemContributors/person_or_org/type.label"
-msgstr ""
+msgstr "Typ"
 
 #: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:310
 msgid "metadata/relatedItems/itemCreators/person_or_org/family_name.label"
-msgstr ""
+msgstr "Příjmení"
 
 #: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:315
 msgid "metadata/relatedItems/itemCreators/person_or_org/given_name.label"
-msgstr ""
+msgstr "Jméno"
 
 #: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:320
 msgid ""
 "metadata/relatedItems/itemCreators/person_or_org/identifiers/identifier.label"
-msgstr ""
+msgstr "Identifikátor"
 
 #: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:327
 msgid ""
 "metadata/relatedItems/itemCreators/person_or_org/identifiers/scheme.label"
-msgstr ""
+msgstr "Schéma"
 
 #: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:334
 msgid "metadata/relatedItems/itemCreators/person_or_org/name.label"
-msgstr ""
+msgstr "Plné jméno"
 
 #: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:339
 msgid "metadata/relatedItems/itemCreators/person_or_org/type.label"
-msgstr ""
+msgstr "Typ"
 
 #: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:344
 msgid "metadata/relatedItems/itemCreators/role.label"
@@ -4423,7 +4424,7 @@ msgid "metadata/relatedItems/itemContributors/person_or_org.help"
 msgstr ""
 
 msgid "metadata/relatedItems/itemContributors/person_or_org.label"
-msgstr ""
+msgstr "Osoba nebo organizace"
 
 msgid "metadata/relatedItems/itemContributors/person_or_org.hint"
 msgstr ""
@@ -4444,7 +4445,7 @@ msgid "metadata/relatedItems/itemContributors/person_or_org/identifiers.help"
 msgstr ""
 
 msgid "metadata/relatedItems/itemContributors/person_or_org/identifiers.label"
-msgstr ""
+msgstr "Identifikátory"
 
 msgid "metadata/relatedItems/itemContributors/person_or_org/identifiers.hint"
 msgstr ""
@@ -4498,7 +4499,7 @@ msgid "metadata/relatedItems/itemCreators/person_or_org.help"
 msgstr ""
 
 msgid "metadata/relatedItems/itemCreators/person_or_org.label"
-msgstr ""
+msgstr "Osoba nebo organizace"
 
 msgid "metadata/relatedItems/itemCreators/person_or_org.hint"
 msgstr ""
@@ -4519,7 +4520,7 @@ msgid "metadata/relatedItems/itemCreators/person_or_org/identifiers.help"
 msgstr ""
 
 msgid "metadata/relatedItems/itemCreators/person_or_org/identifiers.label"
-msgstr ""
+msgstr "Identifikátory"
 
 msgid "metadata/relatedItems/itemCreators/person_or_org/identifiers.hint"
 msgstr ""
@@ -4649,4 +4650,13 @@ msgstr ""
 msgid ""
 "The request ({{requestType}}) could not be made due to form validation "
 "errors. Please fix them and try again:"
+msgstr ""
+
+msgid "metadata/funders/funder/title.help"
+msgstr ""
+
+msgid "metadata/funders/funder/title.label"
+msgstr ""
+
+msgid "metadata/funders/funder/title.hint"
 msgstr ""

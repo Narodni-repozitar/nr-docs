@@ -36,7 +36,7 @@ msgstr "Access rights"
 #: models/nr-documents/nr_documents/services/records/facets.py:48
 #: models/nr-documents/nr_documents/services/records/facets.py:52
 msgid "metadata/accessibility.label"
-msgstr "Resource accessibility"
+msgstr "Document Accessibility"
 
 #: models/nr-documents/nr_documents/services/records/facets.py:59
 msgid "metadata/accessibility/lang.label"
@@ -89,7 +89,7 @@ msgstr "Type"
 
 #: models/nr-documents/nr_documents/services/records/facets.py:134
 msgid "metadata/contributors/role.label"
-msgstr "Contributor's role"
+msgstr "Role"
 
 #: models/nr-documents/nr_documents/services/records/facets.py:140
 msgid "metadata/creators/affiliations.label"
@@ -119,7 +119,7 @@ msgstr "Date Available"
 #: models/nr-documents/nr_documents/services/records/facets.py:167
 #: sites/nr-docs/site/nr_docs/translations/jinjax_messages.jinja:2
 msgid "metadata/dateModified.label"
-msgstr "Date modified"
+msgstr "Date Modified"
 
 #: models/nr-documents/nr_documents/services/records/facets.py:172
 msgid "metadata/events/eventLocation/country.label"
@@ -131,7 +131,7 @@ msgstr "Location"
 
 #: models/nr-documents/nr_documents/services/records/facets.py:183
 msgid "metadata/externalLocation/externalLocationURL.label"
-msgstr "Resource External Location"
+msgstr "Document External Location"
 
 #: models/nr-documents/nr_documents/services/records/facets.py:188
 msgid "metadata/fundingReferences/funder.label"
@@ -156,7 +156,7 @@ msgstr "Longitude"
 #: models/nr-documents/nr_documents/services/records/facets.py:214
 #: sites/nr-docs/site/nr_docs/translations/jinjax_messages.jinja:3
 msgid "metadata/languages.label"
-msgstr "Language"
+msgstr "Document Language"
 
 #: models/nr-documents/nr_documents/services/records/facets.py:219
 #: models/nr-documents/nr_documents/services/records/facets.py:223
@@ -174,17 +174,17 @@ msgstr "Text"
 
 #: models/nr-documents/nr_documents/services/records/facets.py:242
 msgid "metadata/objectIdentifiers/identifier.label"
-msgstr "Object identifier"
+msgstr "Object Identifier"
 
 #: models/nr-documents/nr_documents/services/records/facets.py:247
 msgid "metadata/objectIdentifiers/scheme.label"
-msgstr "Identifier type"
+msgstr "Identifier Type"
 
 #: models/nr-documents/nr_documents/services/records/facets.py:251
 #: ui/docs-app/docs_app/templates/semantic-ui/docs_app/Sidebar.html.jinja:14
 #: ui/docs-app/docs_app/templates/semantic-ui/docs_app/Sidebar.html.jinja:15
 msgid "metadata/originalRecord.label"
-msgstr "Original record URL"
+msgstr "Original Record URL"
 
 #: models/nr-documents/nr_documents/services/records/facets.py:256
 msgid "metadata/relatedItems/itemContributors/affiliations.label"
@@ -210,7 +210,7 @@ msgstr "Type"
 
 #: models/nr-documents/nr_documents/services/records/facets.py:284
 msgid "metadata/relatedItems/itemContributors/role.label"
-msgstr "Contributor's role"
+msgstr "Role"
 
 #: models/nr-documents/nr_documents/services/records/facets.py:290
 msgid "metadata/relatedItems/itemCreators/affiliations.label"
@@ -243,11 +243,11 @@ msgstr "Issue"
 
 #: models/nr-documents/nr_documents/services/records/facets.py:326
 msgid "metadata/relatedItems/itemPIDs/identifier.label"
-msgstr "Object identifier"
+msgstr "Object Identifier"
 
 #: models/nr-documents/nr_documents/services/records/facets.py:331
 msgid "metadata/relatedItems/itemPIDs/scheme.label"
-msgstr "Identifier type"
+msgstr "Identifier Type"
 
 #: models/nr-documents/nr_documents/services/records/facets.py:336
 msgid "metadata/relatedItems/itemPublisher.label"
@@ -255,11 +255,11 @@ msgstr "Publisher"
 
 #: models/nr-documents/nr_documents/services/records/facets.py:341
 msgid "metadata/relatedItems/itemRelationType.label"
-msgstr "Relation type"
+msgstr "Relation Type"
 
 #: models/nr-documents/nr_documents/services/records/facets.py:347
 msgid "metadata/relatedItems/itemResourceType.label"
-msgstr "Resource type"
+msgstr "Document Type"
 
 #: models/nr-documents/nr_documents/services/records/facets.py:353
 msgid "metadata/relatedItems/itemStartPage.label"
@@ -280,12 +280,12 @@ msgstr "Publication Year"
 #: models/nr-documents/nr_documents/services/records/facets.py:373
 #: sites/nr-docs/site/nr_docs/translations/jinjax_messages.jinja:4
 msgid "metadata/resourceType.label"
-msgstr "Resource type"
+msgstr "Document Type"
 
 #: models/nr-documents/nr_documents/services/records/facets.py:378
 #: sites/nr-docs/site/nr_docs/translations/jinjax_messages.jinja:12
 msgid "metadata/rights.label"
-msgstr "Licenses"
+msgstr "License"
 
 #: models/nr-documents/nr_documents/services/records/facets.py:382
 msgid "metadata/series/seriesTitle.label"
@@ -319,11 +319,11 @@ msgstr "Text"
 
 #: models/nr-documents/nr_documents/services/records/facets.py:428
 msgid "metadata/subjects/subjectScheme.label"
-msgstr "Subject scheme"
+msgstr "Subject Scheme"
 
 #: models/nr-documents/nr_documents/services/records/facets.py:432
 msgid "metadata/subjects/valueURI.label"
-msgstr "Subject definition URI"
+msgstr "Subject Definition URI"
 
 #: models/nr-documents/nr_documents/services/records/facets.py:437
 msgid "metadata/systemIdentifiers/identifier.label"
@@ -331,7 +331,7 @@ msgstr "System Identifier"
 
 #: models/nr-documents/nr_documents/services/records/facets.py:442
 msgid "metadata/systemIdentifiers/scheme.label"
-msgstr "Identifier type"
+msgstr "Identifier Type"
 
 #: models/nr-documents/nr_documents/services/records/facets.py:446
 #: models/nr-documents/nr_documents/services/records/facets.py:450
@@ -350,7 +350,7 @@ msgstr "Text"
 #: models/nr-documents/nr_documents/services/records/facets.py:470
 #: sites/nr-docs/site/nr_docs/translations/jinjax_messages.jinja:5
 msgid "metadata/thesis/dateDefended.label"
-msgstr "Date defended"
+msgstr "Date Defended"
 
 #: models/nr-documents/nr_documents/services/records/facets.py:474
 msgid "metadata/thesis/defended.label"
@@ -359,12 +359,12 @@ msgstr "Defended?"
 #: models/nr-documents/nr_documents/services/records/facets.py:479
 #: sites/nr-docs/site/nr_docs/translations/jinjax_messages.jinja:8
 msgid "metadata/thesis/degreeGrantors.label"
-msgstr "Degree grantor"
+msgstr "Degree Grantor"
 
 #: models/nr-documents/nr_documents/services/records/facets.py:484
 #: sites/nr-docs/site/nr_docs/translations/jinjax_messages.jinja:9
 msgid "metadata/thesis/studyFields.label"
-msgstr "Study fields"
+msgstr "Study Fields"
 
 #: models/nr-documents/nr_documents/services/records/facets.py:488
 msgid "metadata/title.label"
@@ -373,7 +373,7 @@ msgstr "Title"
 #: models/nr-documents/nr_documents/services/records/facets.py:492
 #: sites/nr-docs/site/nr_docs/translations/jinjax_messages.jinja:22
 msgid "metadata/version.label"
-msgstr "Resource version"
+msgstr "Document Version"
 
 #: models/nr-documents/nr_documents/services/records/facets.py:496
 msgid "syntheticFields/institutions.label"
@@ -1139,8 +1139,9 @@ msgstr "Additional Titles"
 
 msgid "metadata/additionalTitles.help"
 msgstr ""
-"If the resource is given any additional titles, choose the type of title and"
-" corresponding language."
+"If the document is given any additional titles, choose the type of title and"
+" corresponding language. We recommend to fill out mainly a translation of "
+"the title, if it exists."
 
 msgid "metadata/additionalTitles.hint"
 msgstr ""
@@ -1551,7 +1552,7 @@ msgid "metadata/dateModified.hint"
 msgstr ""
 
 msgid "metadata/events.help"
-msgstr ""
+msgstr "Event related to the document (i.e. conference)."
 
 msgid "metadata/events.hint"
 msgstr ""
@@ -1754,7 +1755,7 @@ msgid "metadata/languages.help"
 msgstr ""
 
 msgid "metadata/languages.hint"
-msgstr "Choose the language(s) of the resource."
+msgstr "Choose the language(s) of the document."
 
 msgid "metadata/languages/id.help"
 msgstr ""
@@ -1804,7 +1805,7 @@ msgid "metadata/methods/value.hint"
 msgstr ""
 
 msgid "metadata/notes.help"
-msgstr "Space for additional information related to the resource."
+msgstr "Space for additional information related to the document."
 
 msgid "metadata/notes.hint"
 msgstr ""
@@ -1857,11 +1858,11 @@ msgid "metadata/publishers.hint"
 msgstr ""
 
 msgid "metadata/relatedItems.label"
-msgstr "Link to related resources"
+msgstr "Link to Related Resources"
 
 msgid "metadata/relatedItems.help"
 msgstr ""
-"Write down information about the resource related to the one you are "
+"Write down information about the resource related to the document you are "
 "describing here (e.g. if you are describing an article, you can identify the"
 " journal in which the article was published)."
 
@@ -2248,7 +2249,9 @@ msgid "metadata/relatedItems/itemRelationType.help"
 msgstr ""
 
 msgid "metadata/relatedItems/itemRelationType.hint"
-msgstr "Choose the relation type between described and related resource."
+msgstr ""
+"Choose the relation type between the described document and the related "
+"resource."
 
 msgid "metadata/relatedItems/itemRelationType/id.help"
 msgstr ""
@@ -2329,7 +2332,7 @@ msgid "metadata/relatedItems/itemURL.help"
 msgstr ""
 
 msgid "metadata/relatedItems/itemURL.hint"
-msgstr "Fill in URL of related resource from which is available."
+msgstr "Fill in URL of related resource from which it is available."
 
 msgid "metadata/relatedItems/itemVolume.help"
 msgstr ""
@@ -2347,7 +2350,7 @@ msgid "metadata/resourceType.help"
 msgstr ""
 
 msgid "metadata/resourceType.hint"
-msgstr "Choose resource type."
+msgstr "Choose document type."
 
 msgid "metadata/resourceType/id.help"
 msgstr ""
@@ -2378,7 +2381,7 @@ msgstr ""
 
 msgid "metadata/rights.help"
 msgstr ""
-"If a Creative Commons license is associated with the resource, select the "
+"If a Creative Commons license is associated with the document, select the "
 "appropriate license option from the menu. We recommend choosing the latest "
 "version, namely 4.0 International."
 
@@ -2415,13 +2418,13 @@ msgstr ""
 msgid "metadata/series.help"
 msgstr ""
 "Write down the name of the series/edition. Write down the volume of the "
-"series/edition if the name is provided."
+"series/edition if it is provided."
 
 msgid "metadata/series.hint"
 msgstr ""
 
 msgid "metadata/series/seriesTitle.help"
-msgstr "Thematically groups similar resources together."
+msgstr "Thematically groups similar documents together."
 
 msgid "metadata/series/seriesTitle.hint"
 msgstr ""
@@ -2433,7 +2436,7 @@ msgid "metadata/series/seriesVolume.hint"
 msgstr ""
 
 msgid "metadata/subjectCategories.help"
-msgstr ""
+msgstr "Choose a scientific field. You can pick multiple fields."
 
 msgid "metadata/subjectCategories.hint"
 msgstr "Choose subject category."
@@ -2467,7 +2470,7 @@ msgstr ""
 
 msgid "metadata/subjects.help"
 msgstr ""
-"Write down words describing the resource, always choose language. Write the "
+"Write down words describing the document, always choose language. Write the "
 "keywords one by one."
 
 msgid "metadata/subjects.hint"
@@ -2510,7 +2513,7 @@ msgid "metadata/subjects/valueURI.hint"
 msgstr ""
 
 msgid "metadata/systemIdentifiers.label"
-msgstr "System identifiers"
+msgstr "System Identifiers"
 
 msgid "metadata/systemIdentifiers.help"
 msgstr ""
@@ -2683,7 +2686,7 @@ msgid "metadata/title.help"
 msgstr ""
 
 msgid "metadata/title.hint"
-msgstr "Fill in the main title of the resource."
+msgstr "Fill in the main title of the document."
 
 msgid "metadata/version.help"
 msgstr ""
@@ -3591,7 +3594,7 @@ msgstr "Given Name"
 
 #: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:485
 msgid "syntheticFields/date.label"
-msgstr "Updated date"
+msgstr "Updated Date"
 
 #: /Users/m/w/nrp/nr-docs/documents/services/records/facets.py:495
 msgid "syntheticFields/keywords.label"
@@ -3930,11 +3933,11 @@ msgstr ""
 
 #: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:491
 msgid "syntheticFields/defenseYear.label"
-msgstr "Defense year"
+msgstr "Defense Year"
 
 #: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:509
 msgid "syntheticFields/year.label"
-msgstr "Publication date"
+msgstr "Publication Date"
 
 msgid "pid.help"
 msgstr ""
@@ -4525,51 +4528,51 @@ msgstr ""
 
 #: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:105
 msgid "metadata/contributors/person_or_org/family_name.label"
-msgstr ""
+msgstr "Family Name"
 
 #: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:110
 msgid "metadata/contributors/person_or_org/given_name.label"
-msgstr ""
+msgstr "Name"
 
 #: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:115
 msgid "metadata/contributors/person_or_org/identifiers/identifier.label"
-msgstr ""
+msgstr "Identifier"
 
 #: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:120
 msgid "metadata/contributors/person_or_org/identifiers/scheme.label"
-msgstr ""
+msgstr "Scheme"
 
 #: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:125
 msgid "metadata/contributors/person_or_org/name.label"
-msgstr ""
+msgstr "Full Name"
 
 #: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:130
 msgid "metadata/contributors/person_or_org/type.label"
-msgstr ""
+msgstr "Type"
 
 #: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:146
 msgid "metadata/creators/person_or_org/family_name.label"
-msgstr ""
+msgstr "Family Name"
 
 #: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:151
 msgid "metadata/creators/person_or_org/given_name.label"
-msgstr ""
+msgstr "Name"
 
 #: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:156
 msgid "metadata/creators/person_or_org/identifiers/identifier.label"
-msgstr ""
+msgstr "Identifier"
 
 #: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:161
 msgid "metadata/creators/person_or_org/identifiers/scheme.label"
-msgstr ""
+msgstr "Scheme"
 
 #: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:166
 msgid "metadata/creators/person_or_org/name.label"
-msgstr ""
+msgstr "Full Name"
 
 #: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:171
 msgid "metadata/creators/person_or_org/type.label"
-msgstr ""
+msgstr "Type"
 
 #: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:175
 msgid "metadata/creators/role/id.label"
@@ -4586,7 +4589,7 @@ msgstr "Funder"
 #: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:70
 #: i18n/translations/jinjax_messages.jinja:16
 msgid "metadata/funders.label"
-msgstr "Funders"
+msgstr "Funding Reference"
 
 msgid "metadata/contributors/affiliations/name.help"
 msgstr ""
@@ -4601,7 +4604,7 @@ msgid "metadata/contributors/person_or_org.help"
 msgstr ""
 
 msgid "metadata/contributors/person_or_org.label"
-msgstr ""
+msgstr "Person or Organization"
 
 msgid "metadata/contributors/person_or_org.hint"
 msgstr ""
@@ -4622,7 +4625,7 @@ msgid "metadata/contributors/person_or_org/identifiers.help"
 msgstr ""
 
 msgid "metadata/contributors/person_or_org/identifiers.label"
-msgstr ""
+msgstr "Identifiers"
 
 msgid "metadata/contributors/person_or_org/identifiers.hint"
 msgstr ""
@@ -4670,7 +4673,7 @@ msgid "metadata/creators/person_or_org.help"
 msgstr ""
 
 msgid "metadata/creators/person_or_org.label"
-msgstr ""
+msgstr "Person or Organization"
 
 msgid "metadata/creators/person_or_org.hint"
 msgstr ""
@@ -4691,7 +4694,7 @@ msgid "metadata/creators/person_or_org/identifiers.help"
 msgstr ""
 
 msgid "metadata/creators/person_or_org/identifiers.label"
-msgstr ""
+msgstr "Identifiers"
 
 msgid "metadata/creators/person_or_org/identifiers.hint"
 msgstr ""
@@ -4730,7 +4733,7 @@ msgid "metadata/creators/role.help"
 msgstr ""
 
 msgid "metadata/creators/role.label"
-msgstr "Contributor's role"
+msgstr "Role"
 
 msgid "metadata/creators/role.hint"
 msgstr "Choose the role of the contributor (editor, illustrator…)."
@@ -4942,59 +4945,59 @@ msgstr ""
 
 #: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:264
 msgid "metadata/relatedItems/itemContributors/person_or_org/family_name.label"
-msgstr ""
+msgstr "Family Name"
 
 #: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:269
 msgid "metadata/relatedItems/itemContributors/person_or_org/given_name.label"
-msgstr ""
+msgstr "Name"
 
 #: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:274
 msgid ""
 "metadata/relatedItems/itemContributors/person_or_org/identifiers/identifier.label"
-msgstr ""
+msgstr "Identifier"
 
 #: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:281
 msgid ""
 "metadata/relatedItems/itemContributors/person_or_org/identifiers/scheme.label"
-msgstr ""
+msgstr "Scheme"
 
 #: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:288
 msgid "metadata/relatedItems/itemContributors/person_or_org/name.label"
-msgstr ""
+msgstr "Full Name"
 
 #: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:293
 msgid "metadata/relatedItems/itemContributors/person_or_org/type.label"
-msgstr ""
+msgstr "Type"
 
 #: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:310
 msgid "metadata/relatedItems/itemCreators/person_or_org/family_name.label"
-msgstr ""
+msgstr "Family Name"
 
 #: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:315
 msgid "metadata/relatedItems/itemCreators/person_or_org/given_name.label"
-msgstr ""
+msgstr "Name"
 
 #: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:320
 msgid ""
 "metadata/relatedItems/itemCreators/person_or_org/identifiers/identifier.label"
-msgstr ""
+msgstr "Identifier"
 
 #: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:327
 msgid ""
 "metadata/relatedItems/itemCreators/person_or_org/identifiers/scheme.label"
-msgstr ""
+msgstr "Scheme"
 
 #: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:334
 msgid "metadata/relatedItems/itemCreators/person_or_org/name.label"
-msgstr ""
+msgstr "Full Name"
 
 #: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:339
 msgid "metadata/relatedItems/itemCreators/person_or_org/type.label"
-msgstr ""
+msgstr "Type"
 
 #: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:344
 msgid "metadata/relatedItems/itemCreators/role.label"
-msgstr "Contributor's role"
+msgstr "Role"
 
 #: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/for_translations_only.py:4
 msgid "Supercurator"
@@ -5059,7 +5062,7 @@ msgid "metadata/relatedItems/itemContributors/person_or_org.help"
 msgstr ""
 
 msgid "metadata/relatedItems/itemContributors/person_or_org.label"
-msgstr ""
+msgstr "Person or Organization"
 
 msgid "metadata/relatedItems/itemContributors/person_or_org.hint"
 msgstr ""
@@ -5080,7 +5083,7 @@ msgid "metadata/relatedItems/itemContributors/person_or_org/identifiers.help"
 msgstr ""
 
 msgid "metadata/relatedItems/itemContributors/person_or_org/identifiers.label"
-msgstr ""
+msgstr "Identifiers"
 
 msgid "metadata/relatedItems/itemContributors/person_or_org/identifiers.hint"
 msgstr ""
@@ -5134,7 +5137,7 @@ msgid "metadata/relatedItems/itemCreators/person_or_org.help"
 msgstr ""
 
 msgid "metadata/relatedItems/itemCreators/person_or_org.label"
-msgstr ""
+msgstr "Person or Organization"
 
 msgid "metadata/relatedItems/itemCreators/person_or_org.hint"
 msgstr ""
@@ -5155,7 +5158,7 @@ msgid "metadata/relatedItems/itemCreators/person_or_org/identifiers.help"
 msgstr ""
 
 msgid "metadata/relatedItems/itemCreators/person_or_org/identifiers.label"
-msgstr ""
+msgstr "Identifiers"
 
 msgid "metadata/relatedItems/itemCreators/person_or_org/identifiers.hint"
 msgstr ""
@@ -5288,3 +5291,12 @@ msgid ""
 msgstr ""
 "Požadavek ({{requestType}}) nemohl být proveden kvůli chybám validace "
 "formuláře. Prosím, opravte je a zkuste to znovu:"
+
+msgid "metadata/funders/funder/title.help"
+msgstr ""
+
+msgid "metadata/funders/funder/title.label"
+msgstr ""
+
+msgid "metadata/funders/funder/title.hint"
+msgstr ""
