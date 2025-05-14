@@ -24,7 +24,7 @@ oarepo-oai-pmh-harvester==5.0.4
 oarepo-oidc-einfra==1.0.8
 oarepo-published-service==1.0.3
 oarepo-rdm==0.5.6
-oarepo-requests==2.4.12
+oarepo-requests==2.4.13
 oarepo-runtime==1.5.132
 oarepo-ui==5.2.76
 oarepo-vocabularies==2.1.25
