@@ -51,7 +51,6 @@ documents_request_types = "documents.views.request_types.app:create_app_blueprin
 translations = "i18n"
 documents = "documents"
 documents_file = "documents"
-transifex = "common.transifex"
 
 [project.entry-points."invenio_base.api_apps"]
 documents = "documents.ext:DocumentsExt"
