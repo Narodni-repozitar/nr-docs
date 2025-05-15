@@ -2,8 +2,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
-"POT-Creation-Date: 2025-05-13T12:29:54.661464\n"
-"PO-Revision-Date: 2025-05-13T12:29:54.661472\n"
+"POT-Creation-Date: 2025-05-14T11:45:35.582785\n"
+"PO-Revision-Date: 2025-05-14T11:45:35.582797\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -267,10 +267,10 @@ msgstr ""
 msgid "metadata/contributors.hint"
 msgstr ""
 
-msgid "metadata/contributors/affiliations.help"
-msgstr ""
-
 msgid "metadata/contributors/affiliations.label"
+msgstr "Afiliace"
+
+msgid "metadata/contributors/affiliations.help"
 msgstr ""
 
 msgid "metadata/contributors/affiliations.hint"
@@ -303,73 +303,73 @@ msgstr ""
 msgid "metadata/contributors/affiliations/@v.hint"
 msgstr ""
 
-msgid "metadata/contributors/person_or_org.help"
-msgstr ""
-
 msgid "metadata/contributors/person_or_org.label"
+msgstr "Osoba nebo organizace"
+
+msgid "metadata/contributors/person_or_org.help"
 msgstr ""
 
 msgid "metadata/contributors/person_or_org.hint"
 msgstr ""
 
-msgid "metadata/contributors/person_or_org/family_name.help"
-msgstr ""
-
 msgid "metadata/contributors/person_or_org/family_name.label"
+msgstr "Příjmení"
+
+msgid "metadata/contributors/person_or_org/family_name.help"
 msgstr ""
 
 msgid "metadata/contributors/person_or_org/family_name.hint"
 msgstr ""
 
-msgid "metadata/contributors/person_or_org/given_name.help"
-msgstr ""
-
 msgid "metadata/contributors/person_or_org/given_name.label"
+msgstr "Jméno"
+
+msgid "metadata/contributors/person_or_org/given_name.help"
 msgstr ""
 
 msgid "metadata/contributors/person_or_org/given_name.hint"
 msgstr ""
 
-msgid "metadata/contributors/person_or_org/identifiers.help"
-msgstr ""
-
 msgid "metadata/contributors/person_or_org/identifiers.label"
+msgstr "Identifikátory"
+
+msgid "metadata/contributors/person_or_org/identifiers.help"
 msgstr ""
 
 msgid "metadata/contributors/person_or_org/identifiers.hint"
 msgstr ""
 
-msgid "metadata/contributors/person_or_org/identifiers/identifier.help"
-msgstr ""
-
 msgid "metadata/contributors/person_or_org/identifiers/identifier.label"
+msgstr "Identifikátor"
+
+msgid "metadata/contributors/person_or_org/identifiers/identifier.help"
 msgstr ""
 
 msgid "metadata/contributors/person_or_org/identifiers/identifier.hint"
 msgstr ""
 
-msgid "metadata/contributors/person_or_org/identifiers/scheme.help"
-msgstr ""
-
 msgid "metadata/contributors/person_or_org/identifiers/scheme.label"
+msgstr "Schéma"
+
+msgid "metadata/contributors/person_or_org/identifiers/scheme.help"
 msgstr ""
 
 msgid "metadata/contributors/person_or_org/identifiers/scheme.hint"
 msgstr ""
 
-msgid "metadata/contributors/person_or_org/name.help"
-msgstr ""
-
 msgid "metadata/contributors/person_or_org/name.label"
+msgstr "Plné jméno"
+
+msgid "metadata/contributors/person_or_org/name.help"
 msgstr ""
 
 msgid "metadata/contributors/person_or_org/name.hint"
 msgstr ""
 
-msgid "metadata/contributors/person_or_org/type.help"
-msgstr ""
-
 msgid "metadata/contributors/person_or_org/type.label"
+msgstr "Typ"
+
+msgid "metadata/contributors/person_or_org/type.help"
 msgstr ""
 
 msgid "metadata/contributors/person_or_org/type.hint"
@@ -426,10 +426,10 @@ msgstr ""
 msgid "metadata/creators.hint"
 msgstr ""
 
-msgid "metadata/creators/affiliations.help"
-msgstr ""
-
 msgid "metadata/creators/affiliations.label"
+msgstr "Afiliace"
+
+msgid "metadata/creators/affiliations.help"
 msgstr ""
 
 msgid "metadata/creators/affiliations.hint"
@@ -462,73 +462,73 @@ msgstr ""
 msgid "metadata/creators/affiliations/@v.hint"
 msgstr ""
 
-msgid "metadata/creators/person_or_org.help"
-msgstr ""
-
 msgid "metadata/creators/person_or_org.label"
+msgstr "Osoba nebo organizace"
+
+msgid "metadata/creators/person_or_org.help"
 msgstr ""
 
 msgid "metadata/creators/person_or_org.hint"
 msgstr ""
 
-msgid "metadata/creators/person_or_org/family_name.help"
-msgstr ""
-
 msgid "metadata/creators/person_or_org/family_name.label"
+msgstr "Příjmení"
+
+msgid "metadata/creators/person_or_org/family_name.help"
 msgstr ""
 
 msgid "metadata/creators/person_or_org/family_name.hint"
 msgstr ""
 
-msgid "metadata/creators/person_or_org/given_name.help"
-msgstr ""
-
 msgid "metadata/creators/person_or_org/given_name.label"
+msgstr "Jméno"
+
+msgid "metadata/creators/person_or_org/given_name.help"
 msgstr ""
 
 msgid "metadata/creators/person_or_org/given_name.hint"
 msgstr ""
 
-msgid "metadata/creators/person_or_org/identifiers.help"
-msgstr ""
-
 msgid "metadata/creators/person_or_org/identifiers.label"
+msgstr "Identifikátory"
+
+msgid "metadata/creators/person_or_org/identifiers.help"
 msgstr ""
 
 msgid "metadata/creators/person_or_org/identifiers.hint"
 msgstr ""
 
-msgid "metadata/creators/person_or_org/identifiers/identifier.help"
-msgstr ""
-
 msgid "metadata/creators/person_or_org/identifiers/identifier.label"
+msgstr "Identifikátor"
+
+msgid "metadata/creators/person_or_org/identifiers/identifier.help"
 msgstr ""
 
 msgid "metadata/creators/person_or_org/identifiers/identifier.hint"
 msgstr ""
 
-msgid "metadata/creators/person_or_org/identifiers/scheme.help"
-msgstr ""
-
 msgid "metadata/creators/person_or_org/identifiers/scheme.label"
+msgstr "Schéma"
+
+msgid "metadata/creators/person_or_org/identifiers/scheme.help"
 msgstr ""
 
 msgid "metadata/creators/person_or_org/identifiers/scheme.hint"
 msgstr ""
 
-msgid "metadata/creators/person_or_org/name.help"
-msgstr ""
-
 msgid "metadata/creators/person_or_org/name.label"
+msgstr "Plné jméno"
+
+msgid "metadata/creators/person_or_org/name.help"
 msgstr ""
 
 msgid "metadata/creators/person_or_org/name.hint"
 msgstr ""
 
-msgid "metadata/creators/person_or_org/type.help"
-msgstr ""
-
 msgid "metadata/creators/person_or_org/type.label"
+msgstr "Typ"
+
+msgid "metadata/creators/person_or_org/type.help"
 msgstr ""
 
 msgid "metadata/creators/person_or_org/type.hint"
@@ -1136,10 +1136,10 @@ msgstr ""
 msgid "metadata/relatedItems/itemContributors.hint"
 msgstr ""
 
-msgid "metadata/relatedItems/itemContributors/affiliations.help"
-msgstr ""
-
 msgid "metadata/relatedItems/itemContributors/affiliations.label"
+msgstr "Afiliace"
+
+msgid "metadata/relatedItems/itemContributors/affiliations.help"
 msgstr ""
 
 msgid "metadata/relatedItems/itemContributors/affiliations.hint"
@@ -1172,48 +1172,48 @@ msgstr ""
 msgid "metadata/relatedItems/itemContributors/affiliations/@v.hint"
 msgstr ""
 
-msgid "metadata/relatedItems/itemContributors/person_or_org.help"
-msgstr ""
-
 msgid "metadata/relatedItems/itemContributors/person_or_org.label"
+msgstr "Osoba nebo organizace"
+
+msgid "metadata/relatedItems/itemContributors/person_or_org.help"
 msgstr ""
 
 msgid "metadata/relatedItems/itemContributors/person_or_org.hint"
 msgstr ""
 
-msgid "metadata/relatedItems/itemContributors/person_or_org/family_name.help"
-msgstr ""
-
 msgid "metadata/relatedItems/itemContributors/person_or_org/family_name.label"
+msgstr "Příjmení"
+
+msgid "metadata/relatedItems/itemContributors/person_or_org/family_name.help"
 msgstr ""
 
 msgid "metadata/relatedItems/itemContributors/person_or_org/family_name.hint"
 msgstr ""
 
-msgid "metadata/relatedItems/itemContributors/person_or_org/given_name.help"
-msgstr ""
-
 msgid "metadata/relatedItems/itemContributors/person_or_org/given_name.label"
+msgstr "Jméno"
+
+msgid "metadata/relatedItems/itemContributors/person_or_org/given_name.help"
 msgstr ""
 
 msgid "metadata/relatedItems/itemContributors/person_or_org/given_name.hint"
 msgstr ""
 
-msgid "metadata/relatedItems/itemContributors/person_or_org/identifiers.help"
-msgstr ""
-
 msgid "metadata/relatedItems/itemContributors/person_or_org/identifiers.label"
+msgstr "Identifikátory"
+
+msgid "metadata/relatedItems/itemContributors/person_or_org/identifiers.help"
 msgstr ""
 
 msgid "metadata/relatedItems/itemContributors/person_or_org/identifiers.hint"
 msgstr ""
 
 msgid ""
-"metadata/relatedItems/itemContributors/person_or_org/identifiers/identifier.help"
-msgstr ""
+"metadata/relatedItems/itemContributors/person_or_org/identifiers/identifier.label"
+msgstr "Identifikátor"
 
 msgid ""
-"metadata/relatedItems/itemContributors/person_or_org/identifiers/identifier.label"
+"metadata/relatedItems/itemContributors/person_or_org/identifiers/identifier.help"
 msgstr ""
 
 msgid ""
@@ -1221,30 +1221,30 @@ msgid ""
 msgstr ""
 
 msgid ""
-"metadata/relatedItems/itemContributors/person_or_org/identifiers/scheme.help"
-msgstr ""
+"metadata/relatedItems/itemContributors/person_or_org/identifiers/scheme.label"
+msgstr "Schéma"
 
 msgid ""
-"metadata/relatedItems/itemContributors/person_or_org/identifiers/scheme.label"
+"metadata/relatedItems/itemContributors/person_or_org/identifiers/scheme.help"
 msgstr ""
 
 msgid ""
 "metadata/relatedItems/itemContributors/person_or_org/identifiers/scheme.hint"
 msgstr ""
 
-msgid "metadata/relatedItems/itemContributors/person_or_org/name.help"
-msgstr ""
-
 msgid "metadata/relatedItems/itemContributors/person_or_org/name.label"
+msgstr "Plné jméno"
+
+msgid "metadata/relatedItems/itemContributors/person_or_org/name.help"
 msgstr ""
 
 msgid "metadata/relatedItems/itemContributors/person_or_org/name.hint"
 msgstr ""
 
-msgid "metadata/relatedItems/itemContributors/person_or_org/type.help"
-msgstr ""
-
 msgid "metadata/relatedItems/itemContributors/person_or_org/type.label"
+msgstr "Typ"
+
+msgid "metadata/relatedItems/itemContributors/person_or_org/type.help"
 msgstr ""
 
 msgid "metadata/relatedItems/itemContributors/person_or_org/type.hint"
@@ -1303,10 +1303,10 @@ msgstr ""
 msgid "metadata/relatedItems/itemCreators.hint"
 msgstr ""
 
-msgid "metadata/relatedItems/itemCreators/affiliations.help"
-msgstr ""
-
 msgid "metadata/relatedItems/itemCreators/affiliations.label"
+msgstr "Afiliace"
+
+msgid "metadata/relatedItems/itemCreators/affiliations.help"
 msgstr ""
 
 msgid "metadata/relatedItems/itemCreators/affiliations.hint"
@@ -1339,48 +1339,48 @@ msgstr ""
 msgid "metadata/relatedItems/itemCreators/affiliations/@v.hint"
 msgstr ""
 
-msgid "metadata/relatedItems/itemCreators/person_or_org.help"
-msgstr ""
-
 msgid "metadata/relatedItems/itemCreators/person_or_org.label"
+msgstr "Osoba nebo organizace"
+
+msgid "metadata/relatedItems/itemCreators/person_or_org.help"
 msgstr ""
 
 msgid "metadata/relatedItems/itemCreators/person_or_org.hint"
 msgstr ""
 
-msgid "metadata/relatedItems/itemCreators/person_or_org/family_name.help"
-msgstr ""
-
 msgid "metadata/relatedItems/itemCreators/person_or_org/family_name.label"
+msgstr "Příjmení"
+
+msgid "metadata/relatedItems/itemCreators/person_or_org/family_name.help"
 msgstr ""
 
 msgid "metadata/relatedItems/itemCreators/person_or_org/family_name.hint"
 msgstr ""
 
-msgid "metadata/relatedItems/itemCreators/person_or_org/given_name.help"
-msgstr ""
-
 msgid "metadata/relatedItems/itemCreators/person_or_org/given_name.label"
+msgstr "Jméno"
+
+msgid "metadata/relatedItems/itemCreators/person_or_org/given_name.help"
 msgstr ""
 
 msgid "metadata/relatedItems/itemCreators/person_or_org/given_name.hint"
 msgstr ""
 
-msgid "metadata/relatedItems/itemCreators/person_or_org/identifiers.help"
-msgstr ""
-
 msgid "metadata/relatedItems/itemCreators/person_or_org/identifiers.label"
+msgstr "Identifikátory"
+
+msgid "metadata/relatedItems/itemCreators/person_or_org/identifiers.help"
 msgstr ""
 
 msgid "metadata/relatedItems/itemCreators/person_or_org/identifiers.hint"
 msgstr ""
 
 msgid ""
-"metadata/relatedItems/itemCreators/person_or_org/identifiers/identifier.help"
-msgstr ""
+"metadata/relatedItems/itemCreators/person_or_org/identifiers/identifier.label"
+msgstr "Identifikátor"
 
 msgid ""
-"metadata/relatedItems/itemCreators/person_or_org/identifiers/identifier.label"
+"metadata/relatedItems/itemCreators/person_or_org/identifiers/identifier.help"
 msgstr ""
 
 msgid ""
@@ -1388,30 +1388,30 @@ msgid ""
 msgstr ""
 
 msgid ""
-"metadata/relatedItems/itemCreators/person_or_org/identifiers/scheme.help"
-msgstr ""
+"metadata/relatedItems/itemCreators/person_or_org/identifiers/scheme.label"
+msgstr "Schéma"
 
 msgid ""
-"metadata/relatedItems/itemCreators/person_or_org/identifiers/scheme.label"
+"metadata/relatedItems/itemCreators/person_or_org/identifiers/scheme.help"
 msgstr ""
 
 msgid ""
 "metadata/relatedItems/itemCreators/person_or_org/identifiers/scheme.hint"
 msgstr ""
 
-msgid "metadata/relatedItems/itemCreators/person_or_org/name.help"
-msgstr ""
-
 msgid "metadata/relatedItems/itemCreators/person_or_org/name.label"
+msgstr "Plné jméno"
+
+msgid "metadata/relatedItems/itemCreators/person_or_org/name.help"
 msgstr ""
 
 msgid "metadata/relatedItems/itemCreators/person_or_org/name.hint"
 msgstr ""
 
-msgid "metadata/relatedItems/itemCreators/person_or_org/type.help"
-msgstr ""
-
 msgid "metadata/relatedItems/itemCreators/person_or_org/type.label"
+msgstr "Typ"
+
+msgid "metadata/relatedItems/itemCreators/person_or_org/type.help"
 msgstr ""
 
 msgid "metadata/relatedItems/itemCreators/person_or_org/type.hint"
