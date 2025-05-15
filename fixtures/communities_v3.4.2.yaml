@@ -2202,17 +2202,6 @@ metadata:
   organizations:
   - name: Technická univerzita v Liberci
 ---
-slug: xjez
-access:
-  visibility: public
-metadata:
-  title: Generická komunita
-  curation_policy: 'Záznamy zakládají vkladatelé, odesílají je ke schválení kurátorovi
-    (NTK). Kurátor (NTK) kontroluje záznamy a zveřejňuje je. Vkladatelé navzájem nevidí
-    své rozpracované záznamy, ani soubory, pokud nejsou veřejně přístupné. '
-  type:
-    id: topic
----
 slug: 12d3
 access:
   visibility: public
