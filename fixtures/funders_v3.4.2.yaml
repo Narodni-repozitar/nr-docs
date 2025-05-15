@@ -182,6 +182,7 @@ id: MDS
 name: Ministerstvo dopravy a spojů
 title:
   cs: Ministerstvo dopravy a spojů
+  en: Ministerstvo dopravy a spojů
 country: CZ
 ---
 id: MF0
@@ -417,6 +418,7 @@ identifiers:
 id: NIH
 name: National Institutes of Health
 title:
+  cs: National Institutes of Health
   en: National Institutes of Health
 country: US
 identifiers:
@@ -464,6 +466,7 @@ identifiers:
 id: ESF-science
 name: European Science Foundation
 title:
+  cs: European Science Foundation
   en: European Science Foundation
 country: FR
 identifiers:
@@ -475,23 +478,27 @@ identifiers:
 id: HSRF
 name: Health System Research Fund
 title:
+  cs: Health System Research Fund
   en: Health System Research Fund
 ---
 id: SFZP-CR
 name: Státní fond životního prostředí ČR
 title:
   cs: Státní fond životního prostředí ČR
+  en: Státní fond životního prostředí ČR
 country: CZ
 ---
 id: CESNET
 name: Fond rozvoje sdružení CESNET
 title:
   cs: Fond rozvoje sdružení CESNET
+  en: Fond rozvoje sdružení CESNET
 country: CZ
 ---
 id: National-geographic
 name: National Geographic Society
 title:
+  cs: National Geographic Society
   en: National Geographic Society
 country: US
 identifiers:
@@ -503,6 +510,7 @@ identifiers:
 id: BNSF
 name: Bulgarian National Science Fund
 title:
+  cs: Bulgarian National Science Fund
   en: Bulgarian National Science Fund
 country: BG
 identifiers:
@@ -551,6 +559,7 @@ id: CzechInvest
 name: CzechInvest
 title:
   cs: CzechInvest
+  en: CzechInvest
 country: CZ
 identifiers:
 - scheme: ror
@@ -559,6 +568,7 @@ identifiers:
 id: DFG
 name: German Research Association
 title:
+  cs: German Research Association
   de: Deutsche Forschungsgemeinschaft
   en: German Research Association
 country: DE
@@ -583,6 +593,7 @@ identifiers:
 id: EIGE
 name: European Institute for Gender Equality
 title:
+  cs: European Institute for Gender Equality
   en: European Institute for Gender Equality
 country: LT
 ---
@@ -630,6 +641,7 @@ id: LCR
 name: Grantová služba LČR (Lesy ČR)
 title:
   cs: Grantová služba LČR (Lesy ČR)
+  en: Grantová služba LČR (Lesy ČR)
 country: CZ
 ---
 id: IVF
@@ -681,6 +693,7 @@ identifiers:
 id: NCEEER
 name: National Council for Eurasian and East European Research
 title:
+  cs: National Council for Eurasian and East European Research
   en: National Council for Eurasian and East European Research
 country: US
 identifiers:
@@ -690,6 +703,7 @@ identifiers:
 id: NCN
 name: National Science Centre (Poland)
 title:
+  cs: National Science Centre (Poland)
   en: National Science Centre (Poland)
   pl: Narodowe Centrum Nauki
 country: PL
@@ -702,6 +716,7 @@ identifiers:
 id: NSC-Taiwan
 name: National Science Council of Taiwan
 title:
+  cs: National Science Council of Taiwan
   en: National Science Council of Taiwan
 country: TW
 identifiers:
@@ -711,6 +726,7 @@ identifiers:
 id: VEGA
 name: Scientific Grant Agency
 title:
+  cs: Scientific Grant Agency
   en: Scientific Grant Agency
   sk: Vedecká grantová agentúra MŠVVaŠ SR a SAV
 country: SK
@@ -721,6 +737,7 @@ identifiers:
 id: SNSF
 name: Swiss National Science Foundation
 title:
+  cs: Swiss National Science Foundation
   de: Schweizerischer Nationalfonds zur Förderung der Wissenschaftlichen Forschung
   en: Swiss National Science Foundation
 country: CH
@@ -733,6 +750,7 @@ identifiers:
 id: FWF
 name: Austrian Science Fund
 title:
+  cs: Austrian Science Fund
   de: Fonds zur Förderung der wissenschaftlichen Forschung
   en: Austrian Science Fund
 country: AT
@@ -754,6 +772,7 @@ identifiers:
 id: APVV
 name: Slovak Research and Development Agency
 title:
+  cs: Slovak Research and Development Agency
   sk: Agentúra na podporu výskumu a vývoja
   en: Slovak Research and Development Agency
 country: SK
