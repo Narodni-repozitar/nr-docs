@@ -2076,20 +2076,6 @@ metadata:
   organizations:
   - name: Vysoká škola finanční a správní
 ---
-slug: km8v
-access:
-  visibility: public
-metadata:
-  title: Výzkumný ústav bezpečnosti práce
-  curation_policy: Záznamy zakládají vkladatelé v rámci komunity nebo sami kurátoři,
-    následuje schválení a zveřejnění záznamu kurátorem komunity. V rámci komunity
-    vidí všichni členové všechny záznamy i soubory, včetně rozpracovaných záznamů.
-  type:
-    id: organization
-  website: http://www.vubp.cz/
-  organizations:
-  - name: Výzkumný ústav bezpečnosti práce
----
 slug: i7tm
 access:
   visibility: public
@@ -2104,19 +2090,19 @@ metadata:
   organizations:
   - name: Výzkumný ústav lesního hospodářství a myslivosti
 ---
-slug: 2f9n
+slug: km8v
 access:
   visibility: public
 metadata:
-  title: Výzkumný ústav práce a sociálních věcí
+  title: Výzkumný institut práce a sociálních věcí
   curation_policy: Záznamy zakládají vkladatelé v rámci komunity nebo sami kurátoři,
     následuje schválení a zveřejnění záznamu kurátorem komunity. V rámci komunity
     vidí všichni členové všechny záznamy i soubory, včetně rozpracovaných záznamů.
   type:
     id: organization
-  website: http://www.vupsv.cz/
+  website: https://www.rilsa.cz
   organizations:
-  - name: Výzkumný ústav práce a sociálních věcí
+  - name: Výzkumný institut práce a sociálních věcí
 ---
 slug: xnkt
 access:
