@@ -307,6 +307,7 @@ class DefaultWorkflowPermissions(CommunityDefaultWorkflowPermissions):
     can_view = CommunityDefaultWorkflowPermissions.can_view
     # endregion
 
+
 # if the record is in draft state, the owner or curator can request publishing
 publish_requesters = [
     IfNotHarvested(

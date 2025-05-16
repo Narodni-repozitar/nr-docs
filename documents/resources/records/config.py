@@ -1,16 +1,11 @@
 import importlib_metadata
 from flask_resources.serializers.json import JSONSerializer
 from invenio_drafts_resources.resources import RecordResourceConfig
-from invenio_records_resources.resources.records.headers import etag_headers
 from oarepo_runtime.i18n import lazy_gettext as _
 from oarepo_runtime.resources.responses import ExportableResponseHandler
 from invenio_records_resources.resources.records.headers import etag_headers
-
-
 from documents.resources.records.ui import DocumentsDublinCoreXMLSerializer
 from oarepo_runtime.resources.responses import OAIExportableResponseHandler
-from invenio_rdm_records.resources.serializers.datacite import DataCite43JSONSerializer
-from invenio_rdm_records.resources.serializers.datacite import DataCite43XMLSerializer
 
 
 
