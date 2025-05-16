@@ -5,18 +5,27 @@
 affiliations:
 - service: affiliations
   writer: service
+  update: true
 - source: ./affiliations_v3.4.2.yaml
+
 communities:
 - service: communities
   writer: service
+  update: true
 - source: ./communities_v3.4.2.yaml
+
 funders:
 - service: funders
   writer: service
+  update: true
 - source: ./funders_v3.4.2.yaml
+
 awards:
 - writer: awards
+  update: true
 - source: ./awards.yaml
+
 names:
 - writer: names
+  update: true
 - source: ./names.yaml
