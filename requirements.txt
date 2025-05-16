@@ -1,4 +1,4 @@
-oarepo[s3,rdm]==12.2.15
+oarepo[s3,rdm]==12.2.16
 cachetools==6.0.0b4
 deepmerge==2.0
 et-xmlfile==2.0.0
@@ -17,16 +17,16 @@ nr-oaipmh-harvesters==1.0.55
 nr-vocabularies==2.1.13
 oarepo-communities==5.1.14
 oarepo-dashboard==1.0.21
-oarepo-doi==2.0.3
+oarepo-doi==2.0.4
 oarepo-glitchtip==1.0.1
 oarepo-global-search==1.0.44
 oarepo-oai-pmh-harvester==5.0.4
 oarepo-oidc-einfra==1.0.8
 oarepo-published-service==1.0.3
 oarepo-rdm==0.5.6
-oarepo-requests==2.4.13
+oarepo-requests==2.4.14
 oarepo-runtime==1.5.133
-oarepo-ui==5.2.76
+oarepo-ui==5.2.78
 oarepo-vocabularies==2.1.25
 oarepo-workflows==1.1.16
 openpyxl==3.1.5
