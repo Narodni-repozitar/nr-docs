@@ -4651,6 +4651,8 @@ msgid ""
 "The request ({{requestType}}) could not be made due to form validation "
 "errors. Please fix them and try again:"
 msgstr ""
+"Požadavek ({{requestType}}) nemohl být proveden kvůli chybám validace "
+"formuláře. Prosím, opravte je a zkuste to znovu:"
 
 msgid "metadata/funders/funder/title.help"
 msgstr ""
