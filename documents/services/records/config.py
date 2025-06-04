@@ -25,7 +25,10 @@ from oarepo_runtime.services.config import (
     has_published_record,
     is_published_record,
 )
-from oarepo_runtime.services.config.service import PermissionsPresetsConfigMixin
+from oarepo_runtime.services.config.service import (
+    PermissionsPresetsConfigMixin,
+    SearchAllConfigMixin,
+)
 from oarepo_runtime.services.records import pagination_links_html
 from oarepo_vocabularies.authorities.components import AuthorityComponent
 from oarepo_workflows.services.components.workflow import WorkflowComponent
@@ -42,7 +45,7 @@ from documents.services.records.search import (
 
 
 class DocumentsServiceConfig(
-    PermissionsPresetsConfigMixin, FilteredResultServiceConfig
+    SearchAllConfigMixin, PermissionsPresetsConfigMixin, FilteredResultServiceConfig
 ):
     """DocumentsRecord service config."""
 
