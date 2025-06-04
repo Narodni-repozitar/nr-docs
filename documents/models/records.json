@@ -22,8 +22,8 @@
             "file": "documents/records/mappings/os-v2/documents/documents-1.0.0.json",
             "index-field-args": []
         },
-        "custom-fields": [],
         "searchable": true,
+        "custom-fields": [],
         "permissions": {
             "presets": [
                 "docs"
@@ -148,6 +148,7 @@
         },
         "service-config": {
             "base-classes": [
+                "oarepo_runtime.services.config.service.SearchAllConfigMixin",
                 "oarepo_runtime.services.config.service.PermissionsPresetsConfigMixin",
                 "common.services.config.FilteredResultServiceConfig"
             ],
@@ -195,7 +196,7 @@
             "base-url": "/docs/",
             "base-html-url": "/docs/",
             "base-classes": [
-                "invenio_drafts_resources.resources.RecordResourceConfig"
+                "oarepo_runtime.resources.config.BaseRecordResourceConfig"
             ],
             "generate": true,
             "config-key": "DOCUMENTS_RECORD_RESOURCE_CONFIG",
@@ -368,6 +369,16 @@
                 "module": "tests"
             }
         },
+        "draft": {
+            "type": "draft_record",
+            "properties": {},
+            "searchable": true,
+            "tests": {
+                "extra-fixtures": [],
+                "extra-code": "",
+                "module": "tests"
+            }
+        },
         "draft-files": {
             "type": "draft-file",
             "properties": {},
@@ -397,16 +408,6 @@
             "extra-fixtures": [],
             "extra-code": "",
             "module": "tests"
-        },
-        "draft": {
-            "type": "draft_record",
-            "properties": {},
-            "searchable": true,
-            "tests": {
-                "extra-fixtures": [],
-                "extra-code": "",
-                "module": "tests"
-            }
         },
         "sample": {
             "file": "data/sample_data.yaml"
@@ -470,19 +471,6 @@
             "module": "documents.proxies",
             "generate": true
         },
-        "resource": {
-            "base-classes": [
-                "invenio_drafts_resources.resources.RecordResource"
-            ],
-            "generate": true,
-            "config-key": "DOCUMENTS_RECORD_RESOURCE_CLASS",
-            "module": "documents.resources.records.resource",
-            "class": "documents.resources.records.resource.DocumentsResource",
-            "proxy": "current_resource",
-            "extra-code": "",
-            "imports": [],
-            "additional-args": []
-        },
         "record-resolver": {
             "generate": true,
             "module": "documents.records.requests.resolvers",
@@ -496,6 +484,19 @@
         "ui-record-resolver": {
             "generate": true,
             "class": "oarepo_requests.resolvers.ui.RecordEntityReferenceUIResolver"
+        },
+        "resource": {
+            "base-classes": [
+                "oarepo_runtime.resources.resource.BaseRecordResource"
+            ],
+            "generate": true,
+            "config-key": "DOCUMENTS_RECORD_RESOURCE_CLASS",
+            "module": "documents.resources.records.resource",
+            "class": "documents.resources.records.resource.DocumentsResource",
+            "proxy": "current_resource",
+            "extra-code": "",
+            "imports": [],
+            "additional-args": []
         },
         "translations": {
             "module": "documents.translations",
@@ -528,7 +529,7 @@
         "service": {
             "imports": [],
             "base-classes": [
-                "invenio_rdm_records.services.services.RDMRecordService"
+                "oarepo_runtime.services.service.SearchAllRecordsService"
             ],
             "generate": true,
             "config-key": "DOCUMENTS_RECORD_SERVICE_CLASS",
@@ -5537,6 +5538,7 @@
                 "type": "object",
                 "json-schema": {
                     "type": "object",
+                    "uniqueItems": true,
                     "additionalProperties": {
                         "type": "object",
                         "additionalProperties": false,
@@ -5552,7 +5554,6 @@
                             }
                         }
                     },
-                    "uniqueItems": true,
                     "propertyNames": {
                         "pattern": "^[a-z_-][a-z0-9_-]*$"
                     }

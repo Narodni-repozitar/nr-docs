@@ -931,6 +931,7 @@
         },
         "pids": {
             "type": "object",
+            "uniqueItems": true,
             "additionalProperties": {
                 "type": "object",
                 "additionalProperties": false,
@@ -946,7 +947,6 @@
                     }
                 }
             },
-            "uniqueItems": true,
             "propertyNames": {
                 "pattern": "^[a-z_-][a-z0-9_-]*$"
             }
