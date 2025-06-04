@@ -798,3 +798,12 @@ title:
 identifiers:
 - scheme: ror
   identifier: https://ror.org/051rtqg79
+---
+id: ERC
+name: Evropská rada pro výzkum
+title:
+  cs: Evropská rada pro výzkum
+  en: European Research Council
+identifiers:
+- scheme: ror
+  identifier: https://ror.org/0472cxd90

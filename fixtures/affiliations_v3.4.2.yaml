@@ -3694,3 +3694,13 @@ identifiers:
   identifier: https://ror.org/029hg0311
 - scheme: url
   identifier: https://www.catalysis.de
+---
+id: uni-graz
+name: University of Graz
+title:
+  en: University of Graz
+identifiers:
+- scheme: ror
+  identifier: https://ror.org/01faaaf77
+- scheme: url
+  identifier: https://www.uni-graz.at/en/
