@@ -1,8 +1,8 @@
 import importlib_metadata
 from flask_resources.serializers.json import JSONSerializer
+from invenio_drafts_resources.resources import RecordResourceConfig
 from oarepo_runtime.i18n import lazy_gettext as _
 from oarepo_runtime.resources.responses import ExportableResponseHandler
-from oarepo_runtime.resources.config import BaseRecordResourceConfig
 from invenio_records_resources.resources.records.headers import etag_headers
 from documents.resources.records.ui import DocumentsDublinCoreXMLSerializer
 from oarepo_runtime.resources.responses import OAIExportableResponseHandler
@@ -11,7 +11,8 @@ from oarepo_runtime.resources.responses import OAIExportableResponseHandler
 
 from documents.resources.records.ui import DocumentsUIJSONSerializer
 
-class DocumentsResourceConfig(BaseRecordResourceConfig):
+
+class DocumentsResourceConfig(RecordResourceConfig):
     """DocumentsRecord resource config."""
 
     blueprint_name = "documents"
@@ -36,14 +37,12 @@ class DocumentsResourceConfig(BaseRecordResourceConfig):
                 name=_("Native UI JSON"),
                 serializer=DocumentsUIJSONSerializer(),
             ),
-
             "application/x-dc+xml": OAIExportableResponseHandler(
                 export_code="dc_xml", name="Dublin Core XML", serializer=DocumentsDublinCoreXMLSerializer(),
                 headers=etag_headers, oai_metadata_prefix="oai_dc", oai_schema="http://www.openarchives.org/OAI/2.0/oai_dc.xsd",
                 oai_namespace="http://www.openarchives.org/OAI/2.0/oai_dc/"
             ),
             **entrypoint_response_handlers,
-
         }
 
     @property

@@ -95,12 +95,6 @@ class DocumentsExt:
             AccessStatusEnum.METADATA_ONLY.value: _("access.status.metadata-only"),
         }
 
-    def _instantiate_configurator_cls(self, cls_):
-        if issubclass(cls_, ConfiguratorMixin):
-            return cls_.build(self.app)
-        else:
-            return cls_()
-
     @cached_property
     def service_records(self):
         service_config = config.DOCUMENTS_RECORD_SERVICE_CONFIG
@@ -123,7 +117,7 @@ class DocumentsExt:
     def resource_records(self):
         return config.DOCUMENTS_RECORD_RESOURCE_CLASS(
             service=self.service_records,
-            config=self._instantiate_configurator_cls(config.DOCUMENTS_RECORD_RESOURCE_CONFIG),
+            config=config.DOCUMENTS_RECORD_RESOURCE_CONFIG(),
         )
 
     @cached_property
@@ -137,7 +131,7 @@ class DocumentsExt:
     def resource_record_requests(self):
         return config.DOCUMENTS_REQUESTS_RESOURCE_CLASS(
             service=self.service_record_requests,
-            config=self._instantiate_configurator_cls(config.DOCUMENTS_RECORD_RESOURCE_CONFIG),
+            config=config.DOCUMENTS_RECORD_RESOURCE_CONFIG(),
             record_requests_config=DraftRecordRequestsResourceConfig(),
         )
 
@@ -152,7 +146,7 @@ class DocumentsExt:
     def resource_record_request_types(self):
         return config.DOCUMENTS_REQUEST_TYPES_RESOURCE_CLASS(
             service=self.service_record_request_types,
-            config=self._instantiate_configurator_cls(config.DOCUMENTS_RECORD_RESOURCE_CONFIG),
+            config=config.DOCUMENTS_RECORD_RESOURCE_CONFIG(),
             record_requests_config=DraftRequestTypesResourceConfig(),
         )
 
