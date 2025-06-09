@@ -1,8 +1,8 @@
 import importlib_metadata
 from flask_resources.serializers.json import JSONSerializer
-from invenio_drafts_resources.resources import RecordResourceConfig
 from oarepo_runtime.i18n import lazy_gettext as _
 from oarepo_runtime.resources.responses import ExportableResponseHandler
+from oarepo_runtime.resources.config import BaseRecordResourceConfig
 from invenio_records_resources.resources.records.headers import etag_headers
 from documents.resources.records.ui import DocumentsDublinCoreXMLSerializer
 from oarepo_runtime.resources.responses import OAIExportableResponseHandler
@@ -11,8 +11,7 @@ from oarepo_runtime.resources.responses import OAIExportableResponseHandler
 
 from documents.resources.records.ui import DocumentsUIJSONSerializer
 
-
-class DocumentsResourceConfig(RecordResourceConfig):
+class DocumentsResourceConfig(BaseRecordResourceConfig):
     """DocumentsRecord resource config."""
 
     blueprint_name = "documents"

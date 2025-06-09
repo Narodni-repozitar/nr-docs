@@ -2,6 +2,7 @@ import re
 from functools import cached_property
 
 from invenio_rdm_records.services.pids import PIDManager, PIDsService
+from invenio_records_resources.services.base.config import ConfiguratorMixin
 from oarepo_requests.proxies import current_oarepo_requests_service
 from oarepo_requests.resources.draft.config import DraftRecordRequestsResourceConfig
 from oarepo_requests.resources.draft.types.config import DraftRequestTypesResourceConfig
@@ -94,6 +95,12 @@ class DocumentsExt:
             AccessStatusEnum.METADATA_ONLY.value: _("access.status.metadata-only"),
         }
 
+    def _instantiate_configurator_cls(self, cls_):
+        if issubclass(cls_, ConfiguratorMixin):
+            return cls_.build(self.app)
+        else:
+            return cls_()
+
     @cached_property
     def service_records(self):
         service_config = config.DOCUMENTS_RECORD_SERVICE_CONFIG
@@ -116,7 +123,7 @@ class DocumentsExt:
     def resource_records(self):
         return config.DOCUMENTS_RECORD_RESOURCE_CLASS(
             service=self.service_records,
-            config=config.DOCUMENTS_RECORD_RESOURCE_CONFIG(),
+            config=self._instantiate_configurator_cls(config.DOCUMENTS_RECORD_RESOURCE_CONFIG),
         )
 
     @cached_property
@@ -130,7 +137,7 @@ class DocumentsExt:
     def resource_record_requests(self):
         return config.DOCUMENTS_REQUESTS_RESOURCE_CLASS(
             service=self.service_record_requests,
-            config=config.DOCUMENTS_RECORD_RESOURCE_CONFIG(),
+            config=self._instantiate_configurator_cls(config.DOCUMENTS_RECORD_RESOURCE_CONFIG),
             record_requests_config=DraftRecordRequestsResourceConfig(),
         )
 
@@ -145,7 +152,7 @@ class DocumentsExt:
     def resource_record_request_types(self):
         return config.DOCUMENTS_REQUEST_TYPES_RESOURCE_CLASS(
             service=self.service_record_request_types,
-            config=config.DOCUMENTS_RECORD_RESOURCE_CONFIG(),
+            config=self._instantiate_configurator_cls(config.DOCUMENTS_RECORD_RESOURCE_CONFIG),
             record_requests_config=DraftRequestTypesResourceConfig(),
         )
 
