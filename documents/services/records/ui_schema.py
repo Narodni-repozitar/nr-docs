@@ -19,7 +19,8 @@ class DocumentsUISchema(UIRequestsSerializationMixin, NRDocumentRecordUISchema):
     metadata = ma_fields.Nested(lambda: NRDocumentMetadataUISchema())
 
     oai = ma_fields.Nested(lambda: OaiUISchema())
-
+    # TODO: model builder seems to ignore field-class during merging of schemas,Add commentMore actions
+    # need to investigate why !!!
     state = LocalizedStateField(dump_only=True)
 
     state_timestamp = LocalizedDateTime(dump_only=True)
