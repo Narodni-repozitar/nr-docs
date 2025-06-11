@@ -2,6 +2,7 @@ import re
 from functools import cached_property
 
 from invenio_rdm_records.services.pids import PIDManager, PIDsService
+from invenio_records_resources.services.base.config import ConfiguratorMixin
 from oarepo_requests.proxies import current_oarepo_requests_service
 from oarepo_requests.resources.draft.config import DraftRecordRequestsResourceConfig
 from oarepo_requests.resources.draft.types.config import DraftRequestTypesResourceConfig

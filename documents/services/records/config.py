@@ -40,7 +40,7 @@ from documents.services.records.search import (
     DocumentsDraftSearchOptions,
     DocumentsSearchOptions,
 )
-
+from invenio_rdm_records.services.customizations import FromConfigPIDsProviders, FromConfigRequiredPIDs
 
 class DocumentsServiceConfig(
     PermissionsPresetsConfigMixin, FilteredResultServiceConfig
@@ -69,6 +69,10 @@ class DocumentsServiceConfig(
     search_item_links_template = LinksTemplate
     draft_cls = DocumentsDraft
     search_drafts = DocumentsDraftSearchOptions
+
+    # PIDs configuration
+    pids_providers = FromConfigPIDsProviders()
+    pids_required = FromConfigRequiredPIDs()
 
     @property
     def components(self):
