@@ -5,6 +5,7 @@ from invenio_rdm_records.services.pids import PIDManager, PIDsService
 from oarepo_requests.proxies import current_oarepo_requests_service
 from oarepo_requests.resources.draft.config import DraftRecordRequestsResourceConfig
 from oarepo_requests.resources.draft.types.config import DraftRequestTypesResourceConfig
+from oarepo_runtime.config import build_config
 
 from documents import config
 
@@ -96,15 +97,11 @@ class DocumentsExt:
 
     @cached_property
     def service_records(self):
-        service_config = config.DOCUMENTS_RECORD_SERVICE_CONFIG
-        if hasattr(service_config, "build"):
-            config_class = service_config.build(self.app)
-        else:
-            config_class = service_config()
+        service_config = build_config(config.DOCUMENTS_RECORD_SERVICE_CONFIG, self.app)
 
         service_kwargs = {
-            "pids_service": PIDsService(config_class, PIDManager),
-            "config": config_class,
+            "pids_service": PIDsService(service_config, PIDManager),
+            "config": service_config,
         }
         return config.DOCUMENTS_RECORD_SERVICE_CLASS(
             **service_kwargs,
@@ -116,7 +113,7 @@ class DocumentsExt:
     def resource_records(self):
         return config.DOCUMENTS_RECORD_RESOURCE_CLASS(
             service=self.service_records,
-            config=config.DOCUMENTS_RECORD_RESOURCE_CONFIG(),
+            config=build_config(config.DOCUMENTS_RECORD_RESOURCE_CONFIG, self.app),
         )
 
     @cached_property
@@ -130,7 +127,7 @@ class DocumentsExt:
     def resource_record_requests(self):
         return config.DOCUMENTS_REQUESTS_RESOURCE_CLASS(
             service=self.service_record_requests,
-            config=config.DOCUMENTS_RECORD_RESOURCE_CONFIG(),
+            config=build_config(config.DOCUMENTS_RECORD_RESOURCE_CONFIG, self.app),
             record_requests_config=DraftRecordRequestsResourceConfig(),
         )
 
@@ -145,7 +142,7 @@ class DocumentsExt:
     def resource_record_request_types(self):
         return config.DOCUMENTS_REQUEST_TYPES_RESOURCE_CLASS(
             service=self.service_record_request_types,
-            config=config.DOCUMENTS_RECORD_RESOURCE_CONFIG(),
+            config=build_config(config.DOCUMENTS_RECORD_RESOURCE_CONFIG, self.app),
             record_requests_config=DraftRequestTypesResourceConfig(),
         )
 
@@ -167,13 +164,9 @@ class DocumentsExt:
 
     @cached_property
     def service_files(self):
-        service_config = config.DOCUMENTS_FILES_SERVICE_CONFIG
-        if hasattr(service_config, "build"):
-            config_class = service_config.build(self.app)
-        else:
-            config_class = service_config()
+        service_config = build_config(config.DOCUMENTS_FILES_SERVICE_CONFIG, self.app)
 
-        service_kwargs = {"config": config_class}
+        service_kwargs = {"config": service_config}
         return config.DOCUMENTS_FILES_SERVICE_CLASS(
             **service_kwargs,
         )
@@ -182,18 +175,16 @@ class DocumentsExt:
     def resource_files(self):
         return config.DOCUMENTS_FILES_RESOURCE_CLASS(
             service=self.service_files,
-            config=config.DOCUMENTS_FILES_RESOURCE_CONFIG(),
+            config=build_config(config.DOCUMENTS_FILES_RESOURCE_CONFIG, self.app),
         )
 
     @cached_property
     def service_draft_files(self):
-        service_config = config.DOCUMENTS_DRAFT_FILES_SERVICE_CONFIG
-        if hasattr(service_config, "build"):
-            config_class = service_config.build(self.app)
-        else:
-            config_class = service_config()
+        service_config = build_config(
+            config.DOCUMENTS_DRAFT_FILES_SERVICE_CONFIG, self.app
+        )
 
-        service_kwargs = {"config": config_class}
+        service_kwargs = {"config": service_config}
         return config.DOCUMENTS_DRAFT_FILES_SERVICE_CLASS(
             **service_kwargs,
         )
@@ -202,7 +193,7 @@ class DocumentsExt:
     def resource_draft_files(self):
         return config.DOCUMENTS_DRAFT_FILES_RESOURCE_CLASS(
             service=self.service_draft_files,
-            config=config.DOCUMENTS_DRAFT_FILES_RESOURCE_CONFIG(),
+            config=build_config(config.DOCUMENTS_DRAFT_FILES_RESOURCE_CONFIG, self.app),
         )
 
 

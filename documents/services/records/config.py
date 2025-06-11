@@ -5,6 +5,7 @@ from invenio_records_resources.services import (
     RecordLink,
     pagination_links,
 )
+from oarepo_communities.services.components.access import CommunityRecordAccessComponent
 from oarepo_communities.services.components.default_workflow import (
     CommunityDefaultWorkflowComponent,
 )
@@ -19,14 +20,17 @@ from oarepo_runtime.services.components import (
     process_service_configs,
 )
 from oarepo_runtime.services.config import (
+    DraftLink,
     has_draft_permission,
     has_file_permission,
     has_permission,
-    DraftLink,
     has_published_record,
     is_published_record,
 )
-from oarepo_runtime.services.config.service import PermissionsPresetsConfigMixin
+from oarepo_runtime.services.config.service import (
+    PermissionsPresetsConfigMixin,
+    SearchAllConfigMixin,
+)
 from oarepo_runtime.services.records import pagination_links_html
 from oarepo_vocabularies.authorities.components import AuthorityComponent
 from oarepo_workflows.services.components.workflow import WorkflowComponent
@@ -43,7 +47,7 @@ from documents.services.records.search import (
 
 
 class DocumentsServiceConfig(
-    PermissionsPresetsConfigMixin, FilteredResultServiceConfig
+    SearchAllConfigMixin, PermissionsPresetsConfigMixin, FilteredResultServiceConfig
 ):
     """DocumentsRecord service config."""
 
@@ -80,6 +84,7 @@ class DocumentsServiceConfig(
             OaiSectionComponent,
             CommunityDefaultWorkflowComponent,
             CommunityInclusionComponent,
+            CommunityRecordAccessComponent,
             CustomFieldsComponent,
             AutorequestComponent,
             WorkflowComponent,
