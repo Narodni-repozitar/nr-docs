@@ -272,6 +272,7 @@ const FormFieldsContainer = () => {
         >
           <Overridable id="NrDocs.Deposit.FileUploader.container">
             <FilesField
+              required
               fileMetadataFields={[
                 {
                   id: "fileNote",
