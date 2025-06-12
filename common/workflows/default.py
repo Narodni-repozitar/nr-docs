@@ -478,7 +478,7 @@ class DefaultWorkflowRequests(WorkflowRequestPolicy):
                     PrimaryCommunityRole("owner"),
                 ],
                 then_=[AutoApprove()],
-                else_=[PrimaryCommunityRole("curator")],
+                else_=[PrimaryCommunityRole("curator"), PrimaryCommunityRole("owner")],
             )
         ],
         escalations=[
