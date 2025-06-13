@@ -67,11 +67,8 @@ class StringCitationSerializer(MarshmallowSerializer):
     we need a CSL-JSON serialized version of it.
     """
 
-    _default_style = "harvard1"
-    """The `citeproc-py` library supports by default the 'harvard1' style."""
-
-    _default_locale = "en-US"
-    """The `citeproc-py` library supports by default the 'harvard1' style."""
+    _default_style = "iso690-author-date-cs"
+    _default_locale = "cs_CZ"
 
     _user_args = {
         "style": fields.Str(load_default=_default_style),
@@ -112,13 +109,11 @@ class StringCitationSerializer(MarshmallowSerializer):
         locale = locale or self._default_locale
 
         style_filepath = get_style_location(style)
-        
+
         schema = CSLJSONSchema()
         csl = schema.dump(record)
-        
-        return get_citation_string(
-            csl, record["id"], style_filepath, locale
-        )
+
+        return get_citation_string(csl, record["id"], style_filepath, locale)
 
     def serialize_object_list(self, records):
         """Serialize a list of records.
@@ -128,8 +123,8 @@ class StringCitationSerializer(MarshmallowSerializer):
         return "\n".join(
             [self.serialize_object(rec) for rec in records["hits"]["hits"]]
         )
-      
-      
+
+
 class CSLBibTexSerializer(MarshmallowSerializer):
     """CSL -> BibTex serializer for records.
 
@@ -156,11 +151,11 @@ class CSLBibTexSerializer(MarshmallowSerializer):
         :param record: Record instance.
         """
         from .csl_to_bibtex import create_bibtex_entry
-        
+
         schema = CSLJSONSchema()
         csl = schema.dump(record)
-        
-        return create_bibtex_entry(csl, record['id'])
+
+        return create_bibtex_entry(csl, record["id"])
 
     def serialize_object_list(self, records):
         """Serialize a list of records.
@@ -169,4 +164,4 @@ class CSLBibTexSerializer(MarshmallowSerializer):
         """
         return "\n".join(
             [self.serialize_object(rec) for rec in records["hits"]["hits"]]
-        )  
+        )
