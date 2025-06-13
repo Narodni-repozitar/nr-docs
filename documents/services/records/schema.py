@@ -40,7 +40,9 @@ class DocumentsSchema(NRDocumentRecordSchema):
 
     access = NestedAttribute(lambda: AccessSchema())
 
-    metadata = ma_fields.Nested(lambda: NRDocumentMetadataSchema())
+    # TODO: fix model builder to include required languages. Until then
+    # please keep the overriden code here
+    metadata = ma_fields.Nested(lambda: LocalNRDocumentMetadataSchema())
 
     oai = ma_fields.Nested(lambda: OaiSchema())
 
