@@ -20,7 +20,6 @@ from oarepo_runtime.services.components import (
     process_service_configs,
 )
 from oarepo_runtime.services.config import (
-    DraftLink,
     has_draft_permission,
     has_file_permission,
     has_permission,
@@ -117,12 +116,10 @@ class DocumentsServiceConfig(
                     "self_html": "{+ui}/communities/{slug}/records",
                 }
             ),
-            # TODO: changed manually, fix model builder to generate this
-            "draft": DraftLink(
+            "draft": RecordLink(
                 "{+api}/docs/{id}/draft", when=has_draft_permission("read_draft")
             ),
-            # TODO: changed manually, fix model builder to generate this
-            "edit_html": DraftLink(
+            "edit_html": RecordLink(
                 "{+ui}/docs/{id}/edit", when=has_draft_permission("update_draft")
             ),
             "files": ConditionalLink(

@@ -39,7 +39,9 @@ record:
     syntheticFields:
       properties: {}
 
-  draft: {}
+  draft:
+    use:
+      - ./documents-facets.yaml
   draft-files:
     resource:
       base-classes: [oarepo_ui.resources.file_resource.S3RedirectFileResource]
