@@ -9,11 +9,22 @@ from nr_metadata.documents.services.records.schema import (
     NRDocumentRecordSchema,
     NRDocumentSyntheticFieldsSchema,
 )
+from nr_metadata.common.services.records.schema_datatypes import (
+    NRLanguageVocabularySchema,
+)
 from oarepo_communities.schemas.parent import CommunitiesParentSchema
 from oarepo_runtime.services.schema.marshmallow import DictOnlySchema
 from oarepo_runtime.services.schema.validation import validate_datetime
 from oarepo_workflows.services.records.schema import RDMWorkflowParentSchema
 
+# TODO: fix model builder to include required languages. Until then
+# please keep the overriden code here
+class LocalNRDocumentMetadataSchema(NRDocumentMetadataSchema):
+    languages = ma_fields.List(
+        ma_fields.Nested(lambda: NRLanguageVocabularySchema()),
+        required=True,
+        validate=[ma.validate.Length(min=1)],
+    )
 
 class GeneratedParentSchema(RDMWorkflowParentSchema):
     """"""
