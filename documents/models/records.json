@@ -374,6 +374,33 @@
             "type": "draft_record",
             "properties": {},
             "searchable": true,
+            "facets": {
+                "facet-groups": {
+                    "default": {
+                        "access.status": 1,
+                        "syntheticFields.year": 2,
+                        "metadata.languages": 3,
+                        "metadata.resourceType": 4,
+                        "metadata.rights": 5,
+                        "syntheticFields.organizations": 6,
+                        "syntheticFields.people": 7,
+                        "metadata.funders.funder": 8,
+                        "metadata.funders.award": 9
+                    },
+                    "curator": {
+                        "access.status": 1,
+                        "syntheticFields.year": 2,
+                        "metadata.languages": 3,
+                        "metadata.resourceType": 4,
+                        "metadata.rights": 5,
+                        "syntheticFields.organizations": 6,
+                        "syntheticFields.people": 7,
+                        "metadata.funders.funder": 8,
+                        "metadata.funders.award": 9,
+                        "metadata.files.enabled": 10
+                    }
+                }
+            },
             "tests": {
                 "extra-fixtures": [],
                 "extra-code": "",
@@ -2613,11 +2640,11 @@
                                             "model": {
                                                 "type": "object",
                                                 "json-schema": {
-                                                    "additionalProperties": {
-                                                        "type": "string"
-                                                    },
                                                     "propertyNames": {
                                                         "pattern": "^[a-z]{2}$"
+                                                    },
+                                                    "additionalProperties": {
+                                                        "type": "string"
                                                     }
                                                 },
                                                 "mapping": {
@@ -2702,11 +2729,11 @@
                                         "title": {
                                             "type": "object",
                                             "json-schema": {
-                                                "additionalProperties": {
-                                                    "type": "string"
-                                                },
                                                 "propertyNames": {
                                                     "pattern": "^[a-z]{2}$"
+                                                },
+                                                "additionalProperties": {
+                                                    "type": "string"
                                                 }
                                             },
                                             "mapping": {
@@ -5538,6 +5565,11 @@
             "pids": {
                 "type": "object",
                 "json-schema": {
+                    "type": "object",
+                    "uniqueItems": true,
+                    "propertyNames": {
+                        "pattern": "^[a-z_-][a-z0-9_-]*$"
+                    },
                     "additionalProperties": {
                         "type": "object",
                         "additionalProperties": false,
@@ -5552,11 +5584,6 @@
                                 "type": "string"
                             }
                         }
-                    },
-                    "type": "object",
-                    "uniqueItems": true,
-                    "propertyNames": {
-                        "pattern": "^[a-z_-][a-z0-9_-]*$"
                     }
                 },
                 "ui": {

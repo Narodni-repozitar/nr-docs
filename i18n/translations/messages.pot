@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2025-05-23 13:40+0200\n"
+"POT-Creation-Date: 2025-06-13 16:46+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,739 +17,721 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.17.0\n"
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/common/just_for_translations.py:5
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/common/just_for_translations.py:5
 msgid "Submitted"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/common/just_for_translations.py:6
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/common/just_for_translations.py:6
 msgid "Expired"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/common/just_for_translations.py:7
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/common/just_for_translations.py:7
 msgid "Accepted"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/common/just_for_translations.py:8
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/common/just_for_translations.py:8
 msgid "Declined"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/common/just_for_translations.py:9
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/common/just_for_translations.py:9
 msgid "Cancelled"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/common/just_for_translations.py:10
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/common/just_for_translations.py:10
 msgid "Beta version of document respository"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/common/just_for_translations.py:11
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:26
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/common/just_for_translations.py:11
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/documents/services/records/facets.py:27
 msgid "access/status.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/common/doi/mapping.py:7
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/common/services/pids/providers.py:92
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/common/doi/mapping.py:7
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/common/services/pids/providers.py:92
 msgid "Missing data for required field."
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/common/resources/citations/__init__.py:26
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/common/resources/citations/__init__.py:26
 msgid "CSL"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/common/resources/citations/__init__.py:32
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/common/resources/citations/__init__.py:32
 msgid "ISO 690"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/common/resources/citations/__init__.py:38
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/common/resources/citations/__init__.py:38
 msgid "BibTex"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/common/services/components/temporary_access.py:51
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/common/services/components/temporary_access.py:51
 msgid "Files are not allowed for metadata only access."
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/common/services/files/allowed_document_extensions.py:30
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/common/services/files/allowed_document_extensions.py:30
 #, python-brace-format
 msgid ""
 "Invalid file extension for '{file_key}'. Supported formats: "
 "{allowed_extensions}"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/common/workflows/default.py:582
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/common/workflows/generic_community.py:580
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/common/workflows/restricted.py:594
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/common/workflows/default.py:582
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/common/workflows/generic_community.py:580
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/common/workflows/restricted.py:594
 msgid "state:draft"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/common/workflows/default.py:583
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/common/workflows/generic_community.py:581
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/common/workflows/restricted.py:595
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/common/workflows/default.py:583
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/common/workflows/generic_community.py:581
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/common/workflows/restricted.py:595
 msgid "state:published"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/common/workflows/default.py:584
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/common/workflows/generic_community.py:582
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/common/workflows/restricted.py:596
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/common/workflows/default.py:584
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/common/workflows/generic_community.py:582
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/common/workflows/restricted.py:596
 msgid "state:submitted"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/common/workflows/default.py:585
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/common/workflows/generic_community.py:583
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/common/workflows/restricted.py:597
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/common/workflows/default.py:585
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/common/workflows/generic_community.py:583
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/common/workflows/restricted.py:597
 msgid "state:retracting"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/common/workflows/default.py:586
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/common/workflows/generic_community.py:584
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/common/workflows/restricted.py:598
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/common/workflows/default.py:586
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/common/workflows/generic_community.py:584
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/common/workflows/restricted.py:598
 msgid "state:deleted"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/ext.py:91
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/documents/ext.py:92
 msgid "access.status.open"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/ext.py:92
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/documents/ext.py:93
 msgid "access.status.embargoed"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/ext.py:93
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/documents/ext.py:94
 msgid "access.status.restricted"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/ext.py:94
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/documents/ext.py:95
 msgid "access.status.metadata-only"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/resources/files/config.py:30
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/resources/files/config.py:80
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/resources/records/config.py:27
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/documents/resources/files/config.py:30
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/documents/resources/files/config.py:80
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/documents/resources/records/config.py:27
 msgid "Native JSON"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/resources/files/config.py:36
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/resources/files/config.py:86
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/resources/records/config.py:33
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/documents/resources/files/config.py:36
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/documents/resources/files/config.py:86
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/documents/resources/records/config.py:33
 msgid "Native UI JSON"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:15
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/documents/services/records/facets.py:16
 msgid "access/embargo/active.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:19
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/documents/services/records/facets.py:20
 msgid "access/embargo/until.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:22
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/documents/services/records/facets.py:23
 msgid "access/files.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:24
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/documents/services/records/facets.py:25
 msgid "access/record.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:29
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:33
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:44
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/documents/services/records/facets.py:30
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/documents/services/records/facets.py:34
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/documents/services/records/facets.py:39
 #: i18n/translations/jinjax_messages.jinja:8
 msgid "metadata/abstract.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:39
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/documents/services/records/facets.py:45
 msgid "metadata/abstract/lang.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:44
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:48
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:56
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/documents/services/records/facets.py:50
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/documents/services/records/facets.py:54
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/documents/services/records/facets.py:59
 #: i18n/translations/jinjax_messages.jinja:11
 msgid "metadata/accessibility.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:55
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/documents/services/records/facets.py:66
 msgid "metadata/accessibility/lang.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:61
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:66
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/documents/services/records/facets.py:72
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/documents/services/records/facets.py:77
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/documents/services/records/facets.py:85
 msgid "metadata/additionalTitles/title.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:73
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/documents/services/records/facets.py:92
 msgid "metadata/additionalTitles/title/lang.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:79
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/documents/services/records/facets.py:98
 msgid "metadata/additionalTitles/titleType.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:84
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/documents/services/records/facets.py:103
 msgid "metadata/contributors/affiliations.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:90
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/documents/services/records/facets.py:109
 msgid "metadata/contributors/person_or_org/family_name.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:95
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/documents/services/records/facets.py:114
 msgid "metadata/contributors/person_or_org/given_name.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:100
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/documents/services/records/facets.py:119
 msgid "metadata/contributors/person_or_org/identifiers/identifier.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:105
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/documents/services/records/facets.py:124
 msgid "metadata/contributors/person_or_org/identifiers/scheme.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:110
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/documents/services/records/facets.py:129
 msgid "metadata/contributors/person_or_org/name.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:115
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/documents/services/records/facets.py:134
 msgid "metadata/contributors/person_or_org/type.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:120
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/documents/services/records/facets.py:139
 msgid "metadata/contributors/role.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:126
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/documents/services/records/facets.py:145
 msgid "metadata/creators/affiliations.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:132
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/documents/services/records/facets.py:151
 msgid "metadata/creators/person_or_org/family_name.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:137
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/documents/services/records/facets.py:156
 msgid "metadata/creators/person_or_org/given_name.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:142
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/documents/services/records/facets.py:161
 msgid "metadata/creators/person_or_org/identifiers/identifier.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:147
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/documents/services/records/facets.py:166
 msgid "metadata/creators/person_or_org/identifiers/scheme.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:152
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/documents/services/records/facets.py:171
 msgid "metadata/creators/person_or_org/name.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:157
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/documents/services/records/facets.py:176
 msgid "metadata/creators/person_or_org/type.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:162
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/documents/services/records/facets.py:181
 msgid "metadata/creators/role.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:167
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/documents/services/records/facets.py:186
 msgid "metadata/dateAvailable.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:171
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:27
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/documents/services/records/facets.py:190
 #: i18n/translations/jinjax_messages.jinja:2
 msgid "metadata/dateIssued.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:175
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:28
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/documents/services/records/facets.py:194
 #: i18n/translations/jinjax_messages.jinja:3
 msgid "metadata/dateModified.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:180
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/documents/services/records/facets.py:199
 msgid "metadata/events/eventLocation/country.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:186
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/documents/services/records/facets.py:205
 msgid "metadata/events/eventLocation/place.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:191
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/documents/services/records/facets.py:210
 msgid "metadata/externalLocation/externalLocationURL.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:196
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/documents/services/records/facets.py:215
 msgid "metadata/funders/award.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:202
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/documents/services/records/facets.py:221
 msgid "metadata/funders/funder.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:208
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/documents/services/records/facets.py:227
 msgid "metadata/geoLocations/geoLocationPlace.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:213
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/documents/services/records/facets.py:232
 msgid "metadata/geoLocations/geoLocationPoint/pointLatitude.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:218
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/documents/services/records/facets.py:237
 msgid "metadata/geoLocations/geoLocationPoint/pointLongitude.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:223
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:30
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/documents/services/records/facets.py:242
 #: i18n/translations/jinjax_messages.jinja:4
 msgid "metadata/languages.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:228
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:232
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:80
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/documents/services/records/facets.py:247
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/documents/services/records/facets.py:251
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/documents/services/records/facets.py:256
 #: i18n/translations/jinjax_messages.jinja:19
 msgid "metadata/methods.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:238
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/documents/services/records/facets.py:262
 msgid "metadata/methods/lang.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:244
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/documents/services/records/facets.py:268
 msgid "metadata/objectIdentifiers/identifier.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:249
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/documents/services/records/facets.py:273
 msgid "metadata/objectIdentifiers/scheme.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:253
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/documents/services/records/facets.py:277
 msgid "metadata/originalRecord.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:258
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/documents/services/records/facets.py:282
 msgid "metadata/relatedItems/itemContributors/affiliations.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:264
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/documents/services/records/facets.py:288
 msgid "metadata/relatedItems/itemContributors/person_or_org/family_name.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:269
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/documents/services/records/facets.py:293
 msgid "metadata/relatedItems/itemContributors/person_or_org/given_name.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:275
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/documents/services/records/facets.py:299
 msgid ""
 "metadata/relatedItems/itemContributors/person_or_org/identifiers/identifier.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:282
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/documents/services/records/facets.py:306
 msgid ""
 "metadata/relatedItems/itemContributors/person_or_org/identifiers/scheme.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:288
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/documents/services/records/facets.py:312
 msgid "metadata/relatedItems/itemContributors/person_or_org/name.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:293
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/documents/services/records/facets.py:317
 msgid "metadata/relatedItems/itemContributors/person_or_org/type.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:298
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/documents/services/records/facets.py:322
 msgid "metadata/relatedItems/itemContributors/role.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:304
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/documents/services/records/facets.py:328
 msgid "metadata/relatedItems/itemCreators/affiliations.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:310
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/documents/services/records/facets.py:334
 msgid "metadata/relatedItems/itemCreators/person_or_org/family_name.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:315
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/documents/services/records/facets.py:339
 msgid "metadata/relatedItems/itemCreators/person_or_org/given_name.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:321
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/documents/services/records/facets.py:345
 msgid ""
 "metadata/relatedItems/itemCreators/person_or_org/identifiers/identifier.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:328
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/documents/services/records/facets.py:352
 msgid ""
 "metadata/relatedItems/itemCreators/person_or_org/identifiers/scheme.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:334
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/documents/services/records/facets.py:358
 msgid "metadata/relatedItems/itemCreators/person_or_org/name.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:339
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/documents/services/records/facets.py:363
 msgid "metadata/relatedItems/itemCreators/person_or_org/type.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:344
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/documents/services/records/facets.py:368
 msgid "metadata/relatedItems/itemCreators/role.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:350
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/documents/services/records/facets.py:374
 msgid "metadata/relatedItems/itemEndPage.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:355
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/documents/services/records/facets.py:379
 msgid "metadata/relatedItems/itemIssue.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:360
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/documents/services/records/facets.py:384
 msgid "metadata/relatedItems/itemPIDs/identifier.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:365
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/documents/services/records/facets.py:389
 msgid "metadata/relatedItems/itemPIDs/scheme.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:370
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/documents/services/records/facets.py:394
 msgid "metadata/relatedItems/itemPublisher.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:375
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/documents/services/records/facets.py:399
 msgid "metadata/relatedItems/itemRelationType.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:381
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/documents/services/records/facets.py:405
 msgid "metadata/relatedItems/itemResourceType.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:387
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/documents/services/records/facets.py:411
 msgid "metadata/relatedItems/itemStartPage.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:392
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/documents/services/records/facets.py:416
 msgid "metadata/relatedItems/itemURL.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:397
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/documents/services/records/facets.py:421
 msgid "metadata/relatedItems/itemVolume.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:402
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/documents/services/records/facets.py:426
 msgid "metadata/relatedItems/itemYear.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:407
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:33
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/documents/services/records/facets.py:431
 #: i18n/translations/jinjax_messages.jinja:5
 msgid "metadata/resourceType.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:412
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:60
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/documents/services/records/facets.py:436
 #: i18n/translations/jinjax_messages.jinja:13
 msgid "metadata/rights.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:416
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/documents/services/records/facets.py:440
 msgid "metadata/series/seriesTitle.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:420
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/documents/services/records/facets.py:444
 msgid "metadata/series/seriesVolume.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:425
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:89
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/documents/services/records/facets.py:449
 #: i18n/translations/jinjax_messages.jinja:22
 msgid "metadata/subjectCategories.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:431
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/documents/services/records/facets.py:455
 msgid "metadata/subjects/classificationCode.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:436
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:441
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/documents/services/records/facets.py:460
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/documents/services/records/facets.py:465
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/documents/services/records/facets.py:473
 msgid "metadata/subjects/subject.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:448
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/documents/services/records/facets.py:480
 msgid "metadata/subjects/subject/lang.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:454
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/documents/services/records/facets.py:486
 msgid "metadata/subjects/subjectScheme.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:458
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/documents/services/records/facets.py:490
 msgid "metadata/subjects/valueURI.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:463
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/documents/services/records/facets.py:495
 msgid "metadata/systemIdentifiers/identifier.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:468
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/documents/services/records/facets.py:500
 msgid "metadata/systemIdentifiers/scheme.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:472
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:476
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:92
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/documents/services/records/facets.py:504
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/documents/services/records/facets.py:508
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/documents/services/records/facets.py:513
 #: i18n/translations/jinjax_messages.jinja:23
 msgid "metadata/technicalInfo.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:483
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/documents/services/records/facets.py:520
 msgid "metadata/technicalInfo/lang.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:488
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:37
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/documents/services/records/facets.py:525
 #: i18n/translations/jinjax_messages.jinja:6
 msgid "metadata/thesis/dateDefended.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:492
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/documents/services/records/facets.py:529
 msgid "metadata/thesis/defended.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:497
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:48
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/documents/services/records/facets.py:534
 #: i18n/translations/jinjax_messages.jinja:9
 msgid "metadata/thesis/degreeGrantors.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:502
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:51
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/documents/services/records/facets.py:539
 #: i18n/translations/jinjax_messages.jinja:10
 msgid "metadata/thesis/studyFields.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:506
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:96
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/documents/services/records/facets.py:543
 #: i18n/translations/jinjax_messages.jinja:24
 msgid "metadata/version.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:510
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/documents/services/records/facets.py:547
 msgid "oai/harvest/datestamp.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:514
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/documents/services/records/facets.py:551
 msgid "oai/harvest/identifier.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:517
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/documents/services/records/facets.py:554
 msgid "state.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:520
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/documents/services/records/facets.py:557
 msgid "state_timestamp.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:524
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/documents/services/records/facets.py:561
 msgid "syntheticFields/date.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:528
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/documents/services/records/facets.py:565
 msgid "syntheticFields/defenseYear.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:532
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/documents/services/records/facets.py:569
 msgid "syntheticFields/keywords.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:537
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/documents/services/records/facets.py:574
 msgid "syntheticFields/organizations.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:541
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/documents/services/records/facets.py:578
 msgid "syntheticFields/people.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:545
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/documents/services/records/facets.py:582
 msgid "syntheticFields/year.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:549
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/documents/services/records/facets.py:586
 msgid "record_status"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:551
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/documents/services/records/facets.py:588
 msgid "has_draft"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:553
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/documents/services/records/facets.py:590
 msgid "expires_at.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/documents/services/records/facets.py:555
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/documents/services/records/facets.py:592
 msgid "fork_version_id.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/ui/for_translations_only.py:4
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/ui/for_translations_only.py:4
 msgid "Supercurator"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/ui/for_translations_only.py:5
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/ui/for_translations_only.py:5
 msgid "Can manage community."
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/ui/for_translations_only.py:6
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/ui/for_translations_only.py:6
 msgid "Curator"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/ui/for_translations_only.py:7
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/ui/for_translations_only.py:7
 msgid "Can curate records."
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/ui/for_translations_only.py:8
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/ui/for_translations_only.py:8
 msgid "Submitter"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/ui/for_translations_only.py:9
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/ui/for_translations_only.py:9
 msgid "Can submit records."
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/ui/for_translations_only.py:10
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/ui/for_translations_only.py:10
 msgid "Member"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/ui/for_translations_only.py:11
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/ui/for_translations_only.py:11
 msgid "Community member with read permissions."
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/ui/branding/__init__.py:25
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/ui/branding/__init__.py:25
 msgid "New upload"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/ui/branding/templates/footer.html:12
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/ui/branding/templates/footer.html:12
 msgid "Contact"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/ui/branding/templates/header.html:20
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/ui/branding/templates/header.html:21
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/ui/branding/templates/searchbar.html:30
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/ui/branding/templates/searchbar.html:31
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/ui/titlepage/templates/TitlePage.jinja:49
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/ui/titlepage/templates/TitlePage.jinja:51
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/ui/branding/templates/header.html:20
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/ui/branding/templates/header.html:21
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/ui/branding/templates/searchbar.html:30
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/ui/branding/templates/searchbar.html:31
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/ui/titlepage/templates/TitlePage.jinja:49
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/ui/titlepage/templates/TitlePage.jinja:51
 msgid "Search"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/ui/branding/templates/header_login.html:15
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/ui/branding/templates/header_login.html:15
 msgid "Log in"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/ui/branding/templates/header_login.html:19
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/ui/branding/templates/header_login.html:19
 msgid "Sign up"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/ui/branding/templates/header_login.html:36
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/ui/branding/templates/header_login.html:36
 msgid "Quick create"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/ui/branding/templates/header_login.html:53
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/ui/documents/templates/semantic-ui/documents/Sidebar.jinja:4
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/ui/documents/templates/semantic-ui/documents/Sidebar.jinja:5
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/ui/branding/templates/header_login.html:53
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/ui/documents/templates/semantic-ui/documents/Sidebar.jinja:4
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/ui/documents/templates/semantic-ui/documents/Sidebar.jinja:5
 msgid "Actions"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/ui/branding/templates/header_login.html:72
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/ui/branding/templates/header_login.html:113
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/ui/branding/templates/header_login.html:72
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/ui/branding/templates/header_login.html:113
 msgid "My account"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/ui/branding/templates/header_login.html:107
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/ui/branding/templates/header_login.html:136
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/ui/branding/templates/header_login.html:143
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/ui/branding/templates/header_login.html:107
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/ui/branding/templates/header_login.html:136
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/ui/branding/templates/header_login.html:143
 msgid "Log out"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/ui/branding/templates/searchbar.html:5
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/ui/branding/templates/searchbar.html:11
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/ui/branding/templates/searchbar.html:21
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/ui/branding/templates/searchbar.html:5
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/ui/branding/templates/searchbar.html:11
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/ui/branding/templates/searchbar.html:21
 msgid "in"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/ui/branding/templates/searchbar.html:5
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/ui/branding/templates/searchbar.html:6
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/ui/branding/templates/searchbar.html:5
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/ui/branding/templates/searchbar.html:6
 msgid "In this community"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/ui/branding/templates/searchbar.html:11
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/ui/branding/templates/searchbar.html:12
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/ui/branding/templates/searchbar.html:20
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/ui/branding/templates/searchbar.html:21
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/ui/branding/templates/searchbar.html:11
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/ui/branding/templates/searchbar.html:12
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/ui/branding/templates/searchbar.html:20
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/ui/branding/templates/searchbar.html:21
 msgid "All document records"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/ui/documents/templates/semantic-ui/documents/Detail.jinja:2
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/ui/documents/templates/semantic-ui/documents/Detail.jinja:2
 msgid "NR Document repository"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:15
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:15
 msgid "Title not provided"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:21
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/ui/documents/templates/semantic-ui/documents/Search.jinja:3
+msgid "Search results"
+msgstr ""
+
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/ui/documents/templates/semantic-ui/documents/Search.jinja:3
+msgid "documents"
+msgstr ""
+
+#: /Users/alzbetapokorna/cesnet/5/upload/nr-docs/ui/documents/templates/semantic-ui/documents/Sidebar.jinja:9
+msgid "Edit"
+msgstr ""
+
 #: i18n/translations/jinjax_messages.jinja:1
 msgid "metadata/additionalTitles.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:40
 #: i18n/translations/jinjax_messages.jinja:7
 msgid "metadata/subjects.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:57
 #: i18n/translations/jinjax_messages.jinja:12
 msgid "metadata/publishers.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:63
 #: i18n/translations/jinjax_messages.jinja:14
 msgid "metadata/events.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:66
 #: i18n/translations/jinjax_messages.jinja:15
 msgid "metadata/externalLocation.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:70
 #: i18n/translations/jinjax_messages.jinja:16
 msgid "metadata/funders.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:75
 #: i18n/translations/jinjax_messages.jinja:17
 msgid "metadata/relatedItems.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:77
 #: i18n/translations/jinjax_messages.jinja:18
 msgid "metadata/geoLocations.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:83
 #: i18n/translations/jinjax_messages.jinja:20
 msgid "metadata/notes.label"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:86
 #: i18n/translations/jinjax_messages.jinja:21
 msgid "metadata/series.label"
-msgstr ""
-
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/ui/documents/templates/semantic-ui/documents/Search.jinja:3
-msgid "Search results"
-msgstr ""
-
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/ui/documents/templates/semantic-ui/documents/Search.jinja:3
-msgid "documents"
-msgstr ""
-
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/ui/documents/templates/semantic-ui/documents/Sidebar.jinja:9
-msgid "Edit"
 msgstr ""
 
 msgid "Publication date"
