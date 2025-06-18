@@ -14,6 +14,7 @@ identifiers:
 id: avss-agritec-plant-research
 title:
   cs: Agritec Plant Research
+  en: Agritec Plant Research
 name: Agritec Plant Research
 identifiers:
 - scheme: ico
@@ -24,6 +25,7 @@ identifiers:
 id: agrotest-fyto
 title:
   cs: Agrotest fyto
+  en: Agrotest fyto
 name: Agrotest fyto
 identifiers:
 - scheme: ico
@@ -763,6 +765,7 @@ identifiers:
 id: prague-college
 title:
   cs: Prague College
+  en: Prague College
 name: Prague College
 identifiers:
 - scheme: ico
@@ -995,6 +998,7 @@ identifiers:
 id: iure
 title:
   cs: Iuridicum Remedium
+  en: Iuridicum Remedium
 name: Iuridicum Remedium
 identifiers:
 - scheme: ico
@@ -2126,6 +2130,7 @@ identifiers:
 id: woodexpert
 title:
   cs: WOODEXPERT
+  en: WOODEXPERT
 name: WOODEXPERT
 identifiers:
 - scheme: ico
@@ -2164,6 +2169,7 @@ identifiers:
 id: ceitec
 title:
   cs: CEITEC
+  en: CEITEC
 name: CEITEC
 identifiers:
 - scheme: ror
@@ -2187,6 +2193,7 @@ identifiers:
 id: comtes-fht
 title:
   cs: COMTES FHT
+  en: COMTES FHT
 name: COMTES FHT
 identifiers:
 - scheme: ico
@@ -2303,6 +2310,7 @@ identifiers:
 id: unyp
 title:
   cs: University of New York in Prague
+  en: University of New York in Prague
 name: University of New York in Prague
 identifiers:
 - scheme: ico
@@ -2378,6 +2386,7 @@ identifiers:
 id: cog-cz
 title:
   cs: COG-CZ
+  en: COG-CZ
 name: COG-CZ
 identifiers:
 - scheme: url
@@ -2434,6 +2443,7 @@ identifiers:
 id: cesnet
 title:
   cs: CESNET
+  en: CESNET
 name: CESNET
 identifiers:
 - scheme: ico
@@ -3200,6 +3210,7 @@ identifiers:
 id: prague-city-university
 title:
   en: Prague City University
+  cs: Prague City University
 name: Prague City University
 identifiers:
 - scheme: ico
@@ -3223,6 +3234,7 @@ identifiers:
 id: indira-gandhi-centre-for-atomic-research
 title:
   en: Indira Gandhi Centre for Atomic Research
+  cs: Indira Gandhi Centre for Atomic Research
 name: Indira Gandhi Centre for Atomic Research
 identifiers:
 - scheme: ror
@@ -3233,6 +3245,7 @@ identifiers:
 id: institute-of-chemical-engineering-sciences
 title:
   en: Institute of Chemical Engineering Sciences
+  cs: Institute of Chemical Engineering Sciences
 name: Institute of Chemical Engineering Sciences
 identifiers:
 - scheme: ror
@@ -3243,6 +3256,7 @@ identifiers:
 id: tescan
 title:
   cs: TESCAN GROUP
+  en: TESCAN GROUP
 name: TESCAN GROUP
 identifiers:
 - scheme: ico
@@ -3255,6 +3269,7 @@ identifiers:
 id: atelier-krejcirikovi
 title:
   cs: Ateliér Krejčiříkovi, s.r.o.
+  en: Ateliér Krejčiříkovi, s.r.o.
 name: Ateliér Krejčiříkovi, s.r.o.
 identifiers:
 - scheme: ico
@@ -3263,6 +3278,7 @@ identifiers:
 id: hnuti-duha
 title:
   cs: Hnutí DUHA - Friends of the Earth Czech Republic
+  en: Hnutí DUHA - Friends of the Earth Czech Republic
 name: Hnutí DUHA - Friends of the Earth Czech Republic
 identifiers:
 - scheme: ico
@@ -3271,6 +3287,7 @@ identifiers:
 id: kroupalide
 title:
   cs: KROUPALIDÉ advokátní kancelář s.r.o.
+  en: KROUPALIDÉ advokátní kancelář s.r.o.
 name: KROUPALIDÉ advokátní kancelář s.r.o.
 identifiers:
 - scheme: ico
@@ -3279,6 +3296,7 @@ identifiers:
 id: sociofactor
 title:
   cs: SocioFactor s.r.o.
+  en: SocioFactor s.r.o.
 name: SocioFactor s.r.o.
 identifiers:
 - scheme: ico
@@ -3318,16 +3336,19 @@ identifiers:
 id: edri
 title:
   en: European Digital Rights
+  cs: European Digital Rights
 name: European Digital Rights
 ---
 id: central-european-policy-institute
 title:
   en: Central European Policy Institute
+  cs: Central European Policy Institute
 name: Central European Policy Institute
 ---
 id: jihomoravske-dobrovolnicke-centrum
 title:
   cs: Jihomoravské dobrovolnické centrum z.s.
+  en: Jihomoravské dobrovolnické centrum z.s.
 name: Jihomoravské dobrovolnické centrum z.s.
 identifiers:
 - scheme: ico
@@ -3336,6 +3357,7 @@ identifiers:
 id: dcul
 title:
   cs: Dobrovolnické centrum, z. s.
+  en: Dobrovolnické centrum, z. s.
 name: Dobrovolnické centrum, z. s.
 identifiers:
 - scheme: ico
@@ -3344,6 +3366,7 @@ identifiers:
 id: nidm
 title:
   cs: Národní institut dětí a mládeže MŠMT
+  en: Národní institut dětí a mládeže MŠMT
 name: Národní institut dětí a mládeže MŠMT
 ---
 id: wipo
@@ -3367,11 +3390,13 @@ identifiers:
 id: migration-policy-task-force
 title:
   en: Migration Policy Task Force
+  cs: Migration Policy Task Force
 name: Migration Policy Task Force
 ---
 id: infodatasys
 title:
   cs: Ing. Karel MATĚJKA, CSc.-IDS
+  en: Ing. Karel MATĚJKA, CSc.-IDS
 name: Ing. Karel MATĚJKA, CSc.-IDS
 identifiers:
 - scheme: ico
@@ -3380,26 +3405,31 @@ identifiers:
 id: norwegian-forest-and-landscape-institute
 title:
   en: Norwegian Forest and Landscape Institute
+  cs: Norwegian Forest and Landscape Institute
 name: Norwegian Forest and Landscape Institute
 ---
 id: isga
 title:
   en: International School Grounds Alliance
+  cs: International School Grounds Alliance
 name: International School Grounds Alliance
 ---
 id: staatsbetrieb-sachsenforst
 title:
   cs: Staatsbetrieb Sachsenforst
+  en: Staatsbetrieb Sachsenforst
 name: Staatsbetrieb Sachsenforst
 ---
 id: cs-ustav-pro-vyzkum-verejneho-mineni
 title:
   cs: Československý ústav pro výzkum veřejného mínění
+  en: Československý ústav pro výzkum veřejného mínění
 name: Československý ústav pro výzkum veřejného mínění
 ---
 id: uni-bergen
 title:
   en: University of Bergen
+  cs: University of Bergen
 name: University of Bergen
 identifiers:
 - scheme: ror
@@ -3410,6 +3440,7 @@ identifiers:
 id: uni-bayreuth
 title:
   en: University of Bayreuth
+  cs: University of Bayreuth
 name: University of Bayreuth
 identifiers:
 - scheme: ror
@@ -3460,6 +3491,7 @@ id: goethe-institut
 title:
   de: Goethe Institut
   en: Goethe Institute
+  cs: Goethe Institut
 name: Goethe Institute
 identifiers:
 - scheme: ror
@@ -3470,6 +3502,7 @@ identifiers:
 id: iucn
 title:
   en: International Union for Conservation of Nature
+  cs: International Union for Conservation of Nature
 name: International Union for Conservation of Nature
 identifiers:
 - scheme: ror
@@ -3480,6 +3513,7 @@ identifiers:
 id: greynet
 title:
   en: GreyNet International
+  cs: GreyNet International
 name: GreyNet International
 identifiers:
 - scheme: ror
@@ -3491,6 +3525,7 @@ id: stu
 title:
   sk: Slovenská technická univerzita v Bratislave
   en: Slovak University of Technology in Bratislava
+  cs: Slovenská technická univerzita v Bratislave
 name: Slovak University of Technology in Bratislava
 identifiers:
 - scheme: ror
@@ -3502,6 +3537,7 @@ id: fu-berlin
 title:
   en: Free University of Berlin
   de: Freie Universität Berlin
+  cs: Freie Universität Berlin
 name: Free University of Berlin
 identifiers:
 - scheme: ror
@@ -3513,6 +3549,7 @@ id: qub
 title:
   cy: Prifysgol y Frenhines
   en: Queen's University Belfast
+  cs: Prifysgol y Frenhines
 name: Queen's University Belfast
 identifiers:
 - scheme: ror
@@ -3523,6 +3560,7 @@ identifiers:
 id: uni-manchester
 title:
   en: University of Manchester
+  cs: University of Manchester
 name: University of Manchester
 identifiers:
 - scheme: ror
@@ -3534,6 +3572,7 @@ id: elte
 title:
   hu: Eötvös Loránd Tudományegyetem
   en: Eötvös Loránd University
+  cs: Eötvös Loránd Tudományegyetem
 name: Eötvös Loránd University
 identifiers:
 - scheme: ror
@@ -3544,6 +3583,7 @@ identifiers:
 id: stfc
 title:
   en: Science and Technology Facilities Council
+  cs: Science and Technology Facilities Council
 name: Science and Technology Facilities Council
 identifiers:
 - scheme: ror
@@ -3554,6 +3594,7 @@ identifiers:
 id: hartree-centre
 title:
   en: Hartree Centre
+  cs: Hartree Centre
 name: Hartree Centre
 identifiers:
 - scheme: url
@@ -3562,6 +3603,7 @@ identifiers:
 id: uni-toronto
 title:
   en: University of Toronto
+  cs: University of Toronto
 name: University of Toronto
 identifiers:
 - scheme: ror
@@ -3573,6 +3615,7 @@ id: wigner
 title:
   hu: Wigner Fizikai Kutatóközpont
   en: Wigner Research Centre for Physics
+  cs: Wigner Fizikai Kutatóközpont
 name: Wigner Research Centre for Physics
 identifiers:
 - scheme: ror
@@ -3584,6 +3627,7 @@ id: tum
 title:
   de: Technische Universität München
   en: Technical University of Munich
+  cs: Technische Universität München
 name: Technical University of Munich
 identifiers:
 - scheme: ror
@@ -3595,6 +3639,7 @@ id: metu
 title:
   tr: Orta Doğu Teknik Üniversitesi
   en: Middle East Technical University
+  cs: Orta Doğu Teknik Üniversitesi
 name: Middle East Technical University
 identifiers:
 - scheme: ror
@@ -3605,6 +3650,7 @@ identifiers:
 id: vu
 title:
   en: Vrije Universiteit Amsterdam
+  cs: Vrije Universiteit Amsterdam
 name: Vrije Universiteit Amsterdam
 identifiers:
 - scheme: ror
@@ -3616,6 +3662,7 @@ id: uniba
 title:
   sk: Univerzita Komenského v Bratislave
   en: Comenius University Bratislava
+  cs: Univerzita Komenského v Bratislave
 name: Comenius University Bratislava
 identifiers:
 - scheme: ror
@@ -3627,6 +3674,7 @@ id: nscc
 title:
   sk: Národné superpočítačové centrum
   en: Slovak National Supercomputing Centre
+  cs: Národné superpočítačové centrum
 name: Slovak National Supercomputing Centre
 identifiers:
 - scheme: url
@@ -3636,6 +3684,7 @@ id: vssav
 title:
   sk: Výpočtové stredisko Slovenskej akadémie vied
   en: Computing Centre of the Slovak Academy od Sciences
+  cs: Výpočtové stredisko Slovenskej akadémie vied
 name: Computing Centre of the Slovak Academy od Sciences
 identifiers:
 - scheme: url
@@ -3645,6 +3694,7 @@ id: am-uni
 title:
   fr: Aix-Marseille Université
   en: Aix-Marseille University
+  cs: Aix-Marseille Université
 name: Aix-Marseille University
 identifiers:
 - scheme: ror
@@ -3655,6 +3705,8 @@ identifiers:
 id: iuf
 title:
   fr: Institut Universitaire de France
+  cs: Institut Universitaire de France
+  en: Institut Universitaire de France
 name: Institut Universitaire de France
 identifiers:
 - scheme: ror
@@ -3666,6 +3718,7 @@ id: xmu
 title:
   zh: Xiàmén Dàxué
   en: Xiamen University
+  cs: Xiàmén Dàxué
 name: Xiamen University
 identifiers:
 - scheme: ror
@@ -3677,6 +3730,7 @@ id: umk
 title:
   pl: Uniwersytet Mikołaja Kopernika w Toruniu
   en: Nicolaus Copernicus University
+  cs: Uniwersytet Mikołaja Kopernika w Toruniu
 name: Nicolaus Copernicus University
 identifiers:
 - scheme: ror
@@ -3688,6 +3742,7 @@ id: likat
 title:
   de: Leibniz-Institut für Katalyse e.V.
   en: Leibniz Institute for Catalysis
+  cs: Leibniz-Institut für Katalyse e.V.
 name: Leibniz Institute for Catalysis
 identifiers:
 - scheme: ror
@@ -3699,6 +3754,7 @@ id: uni-graz
 name: University of Graz
 title:
   en: University of Graz
+  cs: University of Graz
 identifiers:
 - scheme: ror
   identifier: https://ror.org/01faaaf77
