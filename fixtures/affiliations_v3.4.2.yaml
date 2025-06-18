@@ -7,7 +7,7 @@ identifiers:
 - scheme: ico
   identifier: '48392952'
 - scheme: ror
-  identifier: https://ror.org/03jz5v392
+  identifier: 03jz5v392
 - scheme: url
   identifier: http://www.agritec.cz/
 ---
@@ -20,7 +20,7 @@ identifiers:
 - scheme: ico
   identifier: '26784246'
 - scheme: ror
-  identifier: https://ror.org/03jz5v392
+  identifier: 03jz5v392
 ---
 id: agrotest-fyto
 title:
@@ -31,7 +31,7 @@ identifiers:
 - scheme: ico
   identifier: '25328859'
 - scheme: ror
-  identifier: https://ror.org/04rrs1z45
+  identifier: 04rrs1z45
 - scheme: url
   identifier: http://www.vukrom.cz/
 ---
@@ -44,7 +44,7 @@ identifiers:
 - scheme: ico
   identifier: '14864347'
 - scheme: ror
-  identifier: https://ror.org/01mkmmc36
+  identifier: 01mkmmc36
 - scheme: url
   identifier: http://www.chizatec.cz/
 ---
@@ -57,7 +57,7 @@ identifiers:
 - scheme: ico
   identifier: '14450551'
 - scheme: ror
-  identifier: https://ror.org/01pzyyx54
+  identifier: 01pzyyx54
 - scheme: url
   identifier: http://www.nipos-mk.cz/
 ---
@@ -70,7 +70,7 @@ identifiers:
 - scheme: ico
   identifier: '26791251'
 - scheme: ror
-  identifier: https://ror.org/0379e1d13
+  identifier: 0379e1d13
 - scheme: url
   identifier: http://www.oseva-vav.cz
 ---
@@ -83,7 +83,7 @@ identifiers:
 - scheme: ico
   identifier: '75112779'
 - scheme: ror
-  identifier: https://ror.org/04ef3fk55
+  identifier: 04ef3fk55
 - scheme: url
   identifier: http://www.ustrcr.cz/
 ---
@@ -96,7 +96,7 @@ identifiers:
 - scheme: ico
   identifier: '00014125'
 - scheme: ror
-  identifier: https://ror.org/02phgvp38
+  identifier: 02phgvp38
 - scheme: url
   identifier: http://www.vvud.cz
 ---
@@ -109,7 +109,7 @@ identifiers:
 - scheme: ico
   identifier: '44994575'
 - scheme: ror
-  identifier: https://ror.org/03rqbe322
+  identifier: 03rqbe322
 - scheme: url
   identifier: http://www.cdv.cz/
 ---
@@ -122,7 +122,7 @@ identifiers:
 - scheme: ico
   identifier: '00237752'
 - scheme: ror
-  identifier: https://ror.org/009wgvk87
+  identifier: 009wgvk87
 - scheme: url
   identifier: http://www.csvs.cz/
 ---
@@ -136,7 +136,7 @@ identifiers:
 - scheme: ico
   identifier: '47325011'
 - scheme: ror
-  identifier: https://ror.org/01abd7j14
+  identifier: 01abd7j14
 - scheme: url
   identifier: http://www.uappmost.cz/wp/
 ---
@@ -149,7 +149,7 @@ identifiers:
 - scheme: ico
   identifier: 00025950
 - scheme: ror
-  identifier: https://ror.org/03zbxqj79
+  identifier: 03zbxqj79
 - scheme: url
   identifier: http://www.vubp.cz/
 ---
@@ -162,7 +162,7 @@ identifiers:
 - scheme: ico
   identifier: '00025615'
 - scheme: ror
-  identifier: https://ror.org/04fgffc11
+  identifier: 04fgffc11
 - scheme: url
   identifier: http://www.vugtk.cz/
 ---
@@ -175,7 +175,7 @@ identifiers:
 - scheme: ico
   identifier: '00020702'
 - scheme: ror
-  identifier: https://ror.org/034cj1z12
+  identifier: 034cj1z12
 - scheme: url
   identifier: http://www.vulhm.cz/
 ---
@@ -188,7 +188,7 @@ identifiers:
 - scheme: ico
   identifier: '00027022'
 - scheme: ror
-  identifier: https://ror.org/02jdepa55
+  identifier: 02jdepa55
 - scheme: url
   identifier: http://www.vupp.cz
 ---
@@ -201,7 +201,7 @@ identifiers:
 - scheme: ico
   identifier: '45773009'
 - scheme: ror
-  identifier: https://ror.org/01gccqc59
+  identifier: 01gccqc59
 - scheme: url
   identifier: http://www.vupsv.cz/
 ---
@@ -214,7 +214,7 @@ identifiers:
 - scheme: ico
   identifier: '00027006'
 - scheme: ror
-  identifier: https://ror.org/0436mv865
+  identifier: 0436mv865
 - scheme: url
   identifier: http://www.vurv.cz/
 ---
@@ -227,7 +227,7 @@ identifiers:
 - scheme: ico
   identifier: '00027073'
 - scheme: ror
-  identifier: https://ror.org/04gf11d56
+  identifier: 04gf11d56
 - scheme: url
   identifier: http://www.vukoz.cz/
 ---
@@ -240,7 +240,7 @@ identifiers:
 - scheme: ico
   identifier: '00020711'
 - scheme: ror
-  identifier: https://ror.org/0582kjx49
+  identifier: 0582kjx49
 - scheme: url
   identifier: https://www.vuv.cz/index.php/cz/
 ---
@@ -253,7 +253,7 @@ identifiers:
 - scheme: ico
   identifier: '61384984'
 - scheme: ror
-  identifier: https://ror.org/05mjwh489
+  identifier: 05mjwh489
 - scheme: url
   identifier: http://www.amu.cz
 ---
@@ -266,7 +266,7 @@ identifiers:
 - scheme: ico
   identifier: '60461446'
 - scheme: ror
-  identifier: https://ror.org/04nvnkt69
+  identifier: 04nvnkt69
 - scheme: url
   identifier: http://www.avu.cz
 ---
@@ -279,7 +279,7 @@ identifiers:
 - scheme: ico
   identifier: '60460709'
 - scheme: ror
-  identifier: https://ror.org/0415vcw02
+  identifier: 0415vcw02
 - scheme: url
   identifier: http://czu.cz/
 ---
@@ -292,7 +292,7 @@ identifiers:
 - scheme: ico
   identifier: '68407700'
 - scheme: ror
-  identifier: https://ror.org/03kqpb082
+  identifier: 03kqpb082
 - scheme: url
   identifier: http://www.cvut.cz
 ---
@@ -305,7 +305,7 @@ identifiers:
 - scheme: ico
   identifier: '62156462'
 - scheme: ror
-  identifier: https://ror.org/01n7dqn92
+  identifier: 01n7dqn92
 - scheme: url
   identifier: http://www.jamu.cz
 ---
@@ -318,7 +318,7 @@ identifiers:
 - scheme: ico
   identifier: '60076658'
 - scheme: ror
-  identifier: https://ror.org/033n3pw66
+  identifier: 033n3pw66
 - scheme: url
   identifier: http://www.jcu.cz
 ---
@@ -331,7 +331,7 @@ identifiers:
 - scheme: ico
   identifier: '00216224'
 - scheme: ror
-  identifier: https://ror.org/02j46qs45
+  identifier: 02j46qs45
 - scheme: url
   identifier: http://www.muni.cz
 ---
@@ -344,7 +344,7 @@ identifiers:
 - scheme: ico
   identifier: '62156489'
 - scheme: ror
-  identifier: https://ror.org/058aeep47
+  identifier: 058aeep47
 - scheme: url
   identifier: http://www.mendelu.cz
 ---
@@ -357,7 +357,7 @@ identifiers:
 - scheme: ico
   identifier: '61988987'
 - scheme: ror
-  identifier: https://ror.org/00pyqav47
+  identifier: 00pyqav47
 - scheme: url
   identifier: http://www.osu.cz
 ---
@@ -370,7 +370,7 @@ identifiers:
 - scheme: ico
   identifier: '47813059'
 - scheme: ror
-  identifier: https://ror.org/02w4f2z17
+  identifier: 02w4f2z17
 - scheme: url
   identifier: http://www.slu.cz
 ---
@@ -383,7 +383,7 @@ identifiers:
 - scheme: ico
   identifier: '46747885'
 - scheme: ror
-  identifier: https://ror.org/02jtk7k02
+  identifier: 02jtk7k02
 - scheme: url
   identifier: http://www.tul.cz
 ---
@@ -396,7 +396,7 @@ identifiers:
 - scheme: ico
   identifier: '62690094'
 - scheme: ror
-  identifier: https://ror.org/05k238v14
+  identifier: 05k238v14
 - scheme: url
   identifier: http://www.uhk.cz
 ---
@@ -409,7 +409,7 @@ identifiers:
 - scheme: ico
   identifier: '44555601'
 - scheme: ror
-  identifier: https://ror.org/04vjwcp92
+  identifier: 04vjwcp92
 - scheme: url
   identifier: http://www.ujep.cz
 ---
@@ -422,7 +422,7 @@ identifiers:
 - scheme: ico
   identifier: 00216208
 - scheme: ror
-  identifier: https://ror.org/024d6js02
+  identifier: 024d6js02
 - scheme: url
   identifier: http://www.cuni.cz
 ---
@@ -435,7 +435,7 @@ identifiers:
 - scheme: ico
   identifier: '61989592'
 - scheme: ror
-  identifier: https://ror.org/04qxnmv42
+  identifier: 04qxnmv42
 - scheme: url
   identifier: http://www.upol.cz
 ---
@@ -448,7 +448,7 @@ identifiers:
 - scheme: ico
   identifier: '00216275'
 - scheme: ror
-  identifier: https://ror.org/01chzd453
+  identifier: 01chzd453
 - scheme: url
   identifier: http://www.upce.cz
 ---
@@ -461,7 +461,7 @@ identifiers:
 - scheme: ico
   identifier: '70883521'
 - scheme: ror
-  identifier: https://ror.org/04nayfw11
+  identifier: 04nayfw11
 - scheme: url
   identifier: http://www.utb.cz
 ---
@@ -474,7 +474,7 @@ identifiers:
 - scheme: ico
   identifier: '62157124'
 - scheme: ror
-  identifier: https://ror.org/04rk6w354
+  identifier: 04rk6w354
 - scheme: url
   identifier: http://www.vfu.cz
 ---
@@ -487,7 +487,7 @@ identifiers:
 - scheme: ico
   identifier: '61989100'
 - scheme: ror
-  identifier: https://ror.org/05x8mcb75
+  identifier: 05x8mcb75
 - scheme: url
   identifier: http://www.vsb.cz
 ---
@@ -500,7 +500,7 @@ identifiers:
 - scheme: ico
   identifier: '61384399'
 - scheme: ror
-  identifier: https://ror.org/029ecwj92
+  identifier: 029ecwj92
 - scheme: url
   identifier: http://www.vse.cz
 ---
@@ -513,7 +513,7 @@ identifiers:
 - scheme: ico
   identifier: '60461373'
 - scheme: ror
-  identifier: https://ror.org/05ggn0a85
+  identifier: 05ggn0a85
 - scheme: url
   identifier: http://www.vscht.cz
 ---
@@ -526,7 +526,7 @@ identifiers:
 - scheme: ico
   identifier: '71226401'
 - scheme: ror
-  identifier: https://ror.org/05c4w7j07
+  identifier: 05c4w7j07
 - scheme: url
   identifier: http://www.vspj.cz
 ---
@@ -539,7 +539,7 @@ identifiers:
 - scheme: ico
   identifier: '75081431'
 - scheme: ror
-  identifier: https://ror.org/05a70k539
+  identifier: 05a70k539
 - scheme: url
   identifier: http://www.vstecb.cz
 ---
@@ -552,7 +552,7 @@ identifiers:
 - scheme: ico
   identifier: '60461071'
 - scheme: ror
-  identifier: https://ror.org/02ea0g317
+  identifier: 02ea0g317
 - scheme: url
   identifier: http://www.vsup.cz
 ---
@@ -565,7 +565,7 @@ identifiers:
 - scheme: ico
   identifier: '00216305'
 - scheme: ror
-  identifier: https://ror.org/03613d656
+  identifier: 03613d656
 - scheme: url
   identifier: http://www.vutbr.cz
 ---
@@ -578,7 +578,7 @@ identifiers:
 - scheme: ico
   identifier: '49777513'
 - scheme: ror
-  identifier: https://ror.org/040t43x18
+  identifier: 040t43x18
 - scheme: url
   identifier: http://www.zcu.cz
 ---
@@ -591,7 +591,7 @@ identifiers:
 - scheme: ico
   identifier: '48135445'
 - scheme: ror
-  identifier: https://ror.org/02h92td50
+  identifier: 02h92td50
 - scheme: url
   identifier: http://www.polac.cz
 ---
@@ -604,7 +604,7 @@ identifiers:
 - scheme: ico
   identifier: '60162694'
 - scheme: ror
-  identifier: https://ror.org/04arkmn57
+  identifier: 04arkmn57
 - scheme: url
   identifier: http://www.unob.cz
 ---
@@ -617,7 +617,7 @@ identifiers:
 - scheme: ico
   identifier: '45249130'
 - scheme: ror
-  identifier: https://ror.org/00xh22n12
+  identifier: 00xh22n12
 - scheme: url
   identifier: http://www.cenia.cz
 ---
@@ -630,7 +630,7 @@ identifiers:
 - scheme: ico
   identifier: 04095316
 - scheme: ror
-  identifier: https://ror.org/031ytbr64
+  identifier: 031ytbr64
 - scheme: url
   identifier: http://www.crr.cz
 ---
@@ -643,7 +643,7 @@ identifiers:
 - scheme: ico
   identifier: 00025593
 - scheme: ror
-  identifier: https://ror.org/03w948j83
+  identifier: 03w948j83
 - scheme: url
   identifier: https://www.czso.cz/
 ---
@@ -656,7 +656,7 @@ identifiers:
 - scheme: ico
   identifier: '60162694'
 - scheme: ror
-  identifier: https://ror.org/00r7raa16
+  identifier: 00r7raa16
 - scheme: url
   identifier: https://www.army.cz/
 ---
@@ -669,7 +669,7 @@ identifiers:
 - scheme: ico
   identifier: 00025429
 - scheme: ror
-  identifier: https://ror.org/0531qh590
+  identifier: 0531qh590
 - scheme: url
   identifier: https://portal.justice.cz
 ---
@@ -682,7 +682,7 @@ identifiers:
 - scheme: ico
   identifier: 00164801
 - scheme: ror
-  identifier: https://ror.org/04e74dh47
+  identifier: 04e74dh47
 - scheme: url
   identifier: https://www.mzp.cz/
 ---
@@ -695,7 +695,7 @@ identifiers:
 - scheme: ico
   identifier: 00022179
 - scheme: ror
-  identifier: https://ror.org/03enrvz51
+  identifier: 03enrvz51
 - scheme: url
   identifier: http://www.nuv.cz
 ---
@@ -706,7 +706,7 @@ title:
 name: Parlamentní institut
 identifiers:
 - scheme: ror
-  identifier: https://ror.org/00zahx847
+  identifier: 00zahx847
 - scheme: url
   identifier: http://www.psp.cz/sqw/hp.sqw?k=40
 ---
@@ -719,7 +719,7 @@ identifiers:
 - scheme: ico
   identifier: '66000769'
 - scheme: ror
-  identifier: https://ror.org/05pa5kt82
+  identifier: 05pa5kt82
 - scheme: url
   identifier: http://www.surao.cz/
 ---
@@ -732,7 +732,7 @@ identifiers:
 - scheme: ico
   identifier: '75014149'
 - scheme: ror
-  identifier: https://ror.org/05yjswp61
+  identifier: 05yjswp61
 - scheme: url
   identifier: http://www.szpi.gov.cz
 ---
@@ -745,7 +745,7 @@ identifiers:
 - scheme: ico
   identifier: '48135097'
 - scheme: ror
-  identifier: https://ror.org/05tp92v87
+  identifier: 05tp92v87
 - scheme: url
   identifier: http://upv.cz/
 ---
@@ -758,7 +758,7 @@ identifiers:
 - scheme: ico
   identifier: '28881699'
 - scheme: ror
-  identifier: https://ror.org/0286btk29
+  identifier: 0286btk29
 - scheme: url
   identifier: http://www.archip.eu
 ---
@@ -771,7 +771,7 @@ identifiers:
 - scheme: ico
   identifier: '27164004'
 - scheme: ror
-  identifier: https://ror.org/01x9n3j10
+  identifier: 01x9n3j10
 - scheme: url
   identifier: http://www.praguecollege.cz/
 ---
@@ -784,7 +784,7 @@ identifiers:
 - scheme: ico
   identifier: '26033909'
 - scheme: ror
-  identifier: https://ror.org/040qrz805
+  identifier: 040qrz805
 - scheme: url
   identifier: http://www.vsers.cz
 ---
@@ -797,7 +797,7 @@ identifiers:
 - scheme: ico
   identifier: '04274644'
 - scheme: ror
-  identifier: https://ror.org/020ydms54
+  identifier: 020ydms54
 - scheme: url
   identifier: http://www.vsfs.cz
 ---
@@ -810,7 +810,7 @@ identifiers:
 - scheme: ico
   identifier: 04130081
 - scheme: ror
-  identifier: https://ror.org/016emmf09
+  identifier: 016emmf09
 - scheme: url
   identifier: http://www.vspp.cz
 ---
@@ -835,7 +835,7 @@ identifiers:
 - scheme: ico
   identifier: '26543281'
 - scheme: ror
-  identifier: https://ror.org/05dxd7816
+  identifier: 05dxd7816
 - scheme: url
   identifier: http://arnika.org/
 ---
@@ -848,7 +848,7 @@ identifiers:
 - scheme: ico
   identifier: '67980961'
 - scheme: ror
-  identifier: https://ror.org/002jrdr94
+  identifier: 002jrdr94
 - scheme: url
   identifier: https://cde.ecn.cz/
 ---
@@ -861,7 +861,7 @@ identifiers:
 - scheme: ico
   identifier: '62348451'
 - scheme: ror
-  identifier: https://ror.org/05t43a661
+  identifier: 05t43a661
 - scheme: url
   identifier: http://ergoterapie.cz/
 ---
@@ -874,7 +874,7 @@ identifiers:
 - scheme: ico
   identifier: '00473146'
 - scheme: ror
-  identifier: https://ror.org/00csdcr36
+  identifier: 00csdcr36
 - scheme: url
   identifier: http://www.czepa.cz/
 ---
@@ -887,7 +887,7 @@ identifiers:
 - scheme: ico
   identifier: '68379439'
 - scheme: ror
-  identifier: https://ror.org/00qzqdm10
+  identifier: 00qzqdm10
 - scheme: url
   identifier: http://crdm.cz/
 ---
@@ -900,7 +900,7 @@ identifiers:
 - scheme: ico
   identifier: '49629549'
 - scheme: ror
-  identifier: https://ror.org/054stgg72
+  identifier: 054stgg72
 - scheme: url
   identifier: http://www.birdlife.cz/
 ---
@@ -913,7 +913,7 @@ identifiers:
 - scheme: ico
   identifier: '25755277'
 - scheme: ror
-  identifier: https://ror.org/00kr65d46
+  identifier: 00kr65d46
 - scheme: url
   identifier: http://www.clovekvtisni.cz
 ---
@@ -926,7 +926,7 @@ identifiers:
 - scheme: ico
   identifier: '26664488'
 - scheme: ror
-  identifier: https://ror.org/0301hkr79
+  identifier: 0301hkr79
 - scheme: url
   identifier: http://www.ekodomov.cz/
 ---
@@ -939,7 +939,7 @@ identifiers:
 - scheme: ico
   identifier: '26987627'
 - scheme: ror
-  identifier: https://ror.org/031xfkk69
+  identifier: 031xfkk69
 - scheme: url
   identifier: http://www.evropskehodnoty.cz/
 ---
@@ -952,7 +952,7 @@ identifiers:
 - scheme: ico
   identifier: '71226672'
 - scheme: ror
-  identifier: https://ror.org/01nr4vy20
+  identifier: 01nr4vy20
 - scheme: url
   identifier: https://www.fairtrade-cesko.cz
 ---
@@ -965,7 +965,7 @@ identifiers:
 - scheme: ico
   identifier: '25737058'
 - scheme: ror
-  identifier: https://ror.org/00at2pp81
+  identifier: 00at2pp81
 - scheme: url
   identifier: http://www.genderstudies.cz/
 ---
@@ -978,7 +978,7 @@ identifiers:
 - scheme: ico
   identifier: '28204409'
 - scheme: ror
-  identifier: https://ror.org/005nzs995
+  identifier: 005nzs995
 - scheme: url
   identifier: http://gle.cz/
 ---
@@ -991,7 +991,7 @@ identifiers:
 - scheme: ico
   identifier: '67779751'
 - scheme: ror
-  identifier: https://ror.org/05xeax323
+  identifier: 05xeax323
 - scheme: url
   identifier: http://www.hest.cz/
 ---
@@ -1004,7 +1004,7 @@ identifiers:
 - scheme: ico
   identifier: '26534487'
 - scheme: ror
-  identifier: https://ror.org/049kbyp41
+  identifier: 049kbyp41
 - scheme: url
   identifier: http://www.iure.org/
 ---
@@ -1017,7 +1017,7 @@ identifiers:
 - scheme: ico
   identifier: '27421538'
 - scheme: ror
-  identifier: https://ror.org/02rs6vz87
+  identifier: 02rs6vz87
 - scheme: url
   identifier: http://www.nadace-promeny.cz/
 ---
@@ -1030,7 +1030,7 @@ identifiers:
 - scheme: ico
   identifier: '26612933'
 - scheme: ror
-  identifier: https://ror.org/00y2q5g68
+  identifier: 00y2q5g68
 - scheme: url
   identifier: http://www.migrace.com/
 ---
@@ -1043,7 +1043,7 @@ identifiers:
 - scheme: ico
   identifier: '27447669'
 - scheme: ror
-  identifier: https://ror.org/03adnqh21
+  identifier: 03adnqh21
 - scheme: url
   identifier: https://siriri.org/
 ---
@@ -1056,7 +1056,7 @@ identifiers:
 - scheme: ico
   identifier: 00092738
 - scheme: ror
-  identifier: https://ror.org/006eggh59
+  identifier: 006eggh59
 - scheme: url
   identifier: http://www.znojmuz.cz/
 ---
@@ -1069,7 +1069,7 @@ identifiers:
 - scheme: ico
   identifier: 00089257
 - scheme: ror
-  identifier: https://ror.org/03nc1mn84
+  identifier: 03nc1mn84
 - scheme: url
   identifier: https://www.muzeumbrnenska.cz
 ---
@@ -1082,7 +1082,7 @@ identifiers:
 - scheme: ico
   identifier: 00088382
 - scheme: ror
-  identifier: https://ror.org/01x1xh678
+  identifier: 01x1xh678
 - scheme: url
   identifier: http://www.muzeumhk.cz
 ---
@@ -1095,7 +1095,7 @@ identifiers:
 - scheme: ico
   identifier: '00023272'
 - scheme: ror
-  identifier: https://ror.org/04z6gwv56
+  identifier: 04z6gwv56
 - scheme: url
   identifier: http://www.nm.cz/
 ---
@@ -1108,7 +1108,7 @@ identifiers:
 - scheme: ico
   identifier: 00098604
 - scheme: ror
-  identifier: https://ror.org/03sxmek83
+  identifier: 03sxmek83
 - scheme: url
   identifier: https://www.nmvp.cz/
 ---
@@ -1121,7 +1121,7 @@ identifiers:
 - scheme: ico
   identifier: 00023299
 - scheme: ror
-  identifier: https://ror.org/02fy0zn70
+  identifier: 02fy0zn70
 - scheme: url
   identifier: http://www.ntm.cz/
 ---
@@ -1134,7 +1134,7 @@ identifiers:
 - scheme: ico
   identifier: '75075741'
 - scheme: ror
-  identifier: https://ror.org/04a98ab79
+  identifier: 04a98ab79
 - scheme: url
   identifier: http://nzm.cz/
 ---
@@ -1147,7 +1147,7 @@ identifiers:
 - scheme: ico
   identifier: '00023311'
 - scheme: ror
-  identifier: https://ror.org/05teadr95
+  identifier: 05teadr95
 - scheme: url
   identifier: http://www.pamatniknarodnihopisemnictvi.cz/
 ---
@@ -1160,7 +1160,7 @@ identifiers:
 - scheme: ico
   identifier: 00083232
 - scheme: ror
-  identifier: https://ror.org/009ps8477
+  identifier: 009ps8477
 - scheme: url
   identifier: http://www.muzeumlb.cz/
 ---
@@ -1173,7 +1173,7 @@ identifiers:
 - scheme: ico
   identifier: 00100595
 - scheme: ror
-  identifier: https://ror.org/0404wkz93
+  identifier: 0404wkz93
 - scheme: url
   identifier: http://www.szm.cz/
 ---
@@ -1186,7 +1186,7 @@ identifiers:
 - scheme: ico
   identifier: '00023442'
 - scheme: ror
-  identifier: https://ror.org/02y7mzf89
+  identifier: 02y7mzf89
 - scheme: url
   identifier: http://www.upm.cz/
 ---
@@ -1199,7 +1199,7 @@ identifiers:
 - scheme: ico
   identifier: 00228745
 - scheme: ror
-  identifier: https://ror.org/016jp5513
+  identifier: 016jp5513
 - scheme: url
   identifier: http://www.zcm.cz/
 ---
@@ -1212,7 +1212,7 @@ identifiers:
 - scheme: ico
   identifier: '67985971'
 - scheme: ror
-  identifier: https://ror.org/028sgmw18
+  identifier: 028sgmw18
 - scheme: url
   identifier: http://www.lib.cas.cz/
 ---
@@ -1225,7 +1225,7 @@ identifiers:
 - scheme: ico
   identifier: 00094943
 - scheme: ror
-  identifier: https://ror.org/03f239z63
+  identifier: 03f239z63
 - scheme: url
   identifier: http://www.mzk.cz/
 ---
@@ -1238,7 +1238,7 @@ identifiers:
 - scheme: ico
   identifier: '00023221'
 - scheme: ror
-  identifier: https://ror.org/038agj363
+  identifier: 038agj363
 - scheme: url
   identifier: https://www.nkp.cz/
 ---
@@ -1251,7 +1251,7 @@ identifiers:
 - scheme: ico
   identifier: 00023825
 - scheme: ror
-  identifier: https://ror.org/03zszgs95
+  identifier: 03zszgs95
 - scheme: url
   identifier: http://www.nlk.cz/
 ---
@@ -1264,7 +1264,7 @@ identifiers:
 - scheme: ico
   identifier: '61387142'
 - scheme: ror
-  identifier: https://ror.org/028txef36
+  identifier: 028txef36
 - scheme: url
   identifier: http://techlib.cz/
 ---
@@ -1277,7 +1277,7 @@ identifiers:
 - scheme: ico
   identifier: '00373231'
 - scheme: ror
-  identifier: https://ror.org/04hazwa85
+  identifier: 04hazwa85
 - scheme: url
   identifier: http://www.gvuo.cz/
 ---
@@ -1290,7 +1290,7 @@ identifiers:
 - scheme: ico
   identifier: 00094871
 - scheme: ror
-  identifier: https://ror.org/01tkgk805
+  identifier: 01tkgk805
 - scheme: url
   identifier: http://www.moravska-galerie.cz/
 ---
@@ -1303,7 +1303,7 @@ identifiers:
 - scheme: ico
   identifier: '68081758'
 - scheme: ror
-  identifier: https://ror.org/02bvcjw39
+  identifier: 02bvcjw39
 - scheme: url
   identifier: http://www.arub.cz/
 ---
@@ -1316,7 +1316,7 @@ identifiers:
 - scheme: ico
   identifier: '67985912'
 - scheme: ror
-  identifier: https://ror.org/0287jta43
+  identifier: 0287jta43
 - scheme: url
   identifier: http://www.arup.cas.cz/
 ---
@@ -1329,7 +1329,7 @@ identifiers:
 - scheme: ico
   identifier: '67985815'
 - scheme: ror
-  identifier: https://ror.org/03tp8z347
+  identifier: 03tp8z347
 - scheme: url
   identifier: http://www.asu.cas.cz/
 ---
@@ -1342,7 +1342,7 @@ identifiers:
 - scheme: ico
   identifier: '68081707'
 - scheme: ror
-  identifier: https://ror.org/00angvn73
+  identifier: 00angvn73
 - scheme: url
   identifier: http://www.ibp.cz/
 ---
@@ -1355,7 +1355,7 @@ identifiers:
 - scheme: ico
   identifier: '60077344'
 - scheme: ror
-  identifier: https://ror.org/05pq4yn02
+  identifier: 05pq4yn02
 - scheme: url
   identifier: http://www.bc.cas.cz/
 ---
@@ -1368,7 +1368,7 @@ identifiers:
 - scheme: ico
   identifier: '86652036'
 - scheme: ror
-  identifier: https://ror.org/00wzqmx94
+  identifier: 00wzqmx94
 - scheme: url
   identifier: http://www.ibt.cas.cz/cs
 ---
@@ -1381,7 +1381,7 @@ identifiers:
 - scheme: ico
   identifier: '67985939'
 - scheme: ror
-  identifier: https://ror.org/03qqnc658
+  identifier: 03qqnc658
 - scheme: url
   identifier: http://www.ibot.cas.cz/
 ---
@@ -1394,7 +1394,7 @@ identifiers:
 - scheme: ico
   identifier: '68378025'
 - scheme: ror
-  identifier: https://ror.org/018hy5194
+  identifier: 018hy5194
 - scheme: url
   identifier: http://www.soc.cas.cz/
 ---
@@ -1405,7 +1405,7 @@ title:
 name: Entomologický ústav AV ČR
 identifiers:
 - scheme: ror
-  identifier: https://ror.org/039nazg33
+  identifier: 039nazg33
 - scheme: url
   identifier: http://www.entu.cas.cz/
 ---
@@ -1418,7 +1418,7 @@ identifiers:
 - scheme: ico
   identifier: '68378076'
 - scheme: ror
-  identifier: https://ror.org/01qj7sc02
+  identifier: 01qj7sc02
 - scheme: url
   identifier: http://www.eu.cas.cz/
 ---
@@ -1431,7 +1431,7 @@ identifiers:
 - scheme: ico
   identifier: '67985955'
 - scheme: ror
-  identifier: https://ror.org/01hyg6578
+  identifier: 01hyg6578
 - scheme: url
   identifier: http://www.flu.cas.cz
 ---
@@ -1444,7 +1444,7 @@ identifiers:
 - scheme: ico
   identifier: '68378271'
 - scheme: ror
-  identifier: https://ror.org/02yhj4v17
+  identifier: 02yhj4v17
 - scheme: url
   identifier: http://www.fzu.cz/
 ---
@@ -1457,7 +1457,7 @@ identifiers:
 - scheme: ico
   identifier: '67985823'
 - scheme: ror
-  identifier: https://ror.org/05xw0ep96
+  identifier: 05xw0ep96
 - scheme: url
   identifier: http://www.fgu.cas.cz/
 ---
@@ -1470,7 +1470,7 @@ identifiers:
 - scheme: ico
   identifier: '67985530'
 - scheme: ror
-  identifier: https://ror.org/02e8b2r87
+  identifier: 02e8b2r87
 - scheme: url
   identifier: http://www.ig.cas.cz/
 ---
@@ -1483,7 +1483,7 @@ identifiers:
 - scheme: ico
   identifier: '67985831'
 - scheme: ror
-  identifier: https://ror.org/04wh80b80
+  identifier: 04wh80b80
 - scheme: url
   identifier: http://www.gli.cas.cz
 ---
@@ -1496,7 +1496,7 @@ identifiers:
 - scheme: ico
   identifier: '67985963'
 - scheme: ror
-  identifier: https://ror.org/03tybc759
+  identifier: 03tybc759
 - scheme: url
   identifier: http://www.hiu.cas.cz/
 ---
@@ -1507,7 +1507,7 @@ title:
 name: Hydrobiologický ústav AV ČR
 identifiers:
 - scheme: ror
-  identifier: https://ror.org/0436nxt45
+  identifier: 0436nxt45
 - scheme: url
   identifier: http://www.hbu.cas.cz
 ---
@@ -1520,7 +1520,7 @@ identifiers:
 - scheme: ico
   identifier: '67985921'
 - scheme: ror
-  identifier: https://ror.org/03nvfe914
+  identifier: 03nvfe914
 - scheme: url
   identifier: http://www.mua.cas.cz
 ---
@@ -1533,7 +1533,7 @@ identifiers:
 - scheme: ico
   identifier: '67985840'
 - scheme: ror
-  identifier: https://ror.org/02tv1yf50
+  identifier: 02tv1yf50
 - scheme: url
   identifier: http://www.math.cas.cz
 ---
@@ -1546,7 +1546,7 @@ identifiers:
 - scheme: ico
   identifier: '61388971'
 - scheme: ror
-  identifier: https://ror.org/02p1jz666
+  identifier: 02p1jz666
 - scheme: url
   identifier: http://www.biomed.cas.cz/mbu/cz/
 ---
@@ -1559,7 +1559,7 @@ identifiers:
 - scheme: ico
   identifier: '67985998'
 - scheme: ror
-  identifier: https://ror.org/01y3ft232
+  identifier: 01y3ft232
 - scheme: url
   identifier: http://www.ei.cas.cz
 ---
@@ -1572,7 +1572,7 @@ identifiers:
 - scheme: ico
   identifier: '68378009'
 - scheme: ror
-  identifier: https://ror.org/04tr8pt83
+  identifier: 04tr8pt83
 - scheme: url
   identifier: http://www.orient.cas.cz/
 ---
@@ -1583,7 +1583,7 @@ title:
 name: Parazitologický ústav AV ČR
 identifiers:
 - scheme: ror
-  identifier: https://ror.org/05rhyza23
+  identifier: 05rhyza23
 - scheme: url
   identifier: http://www.paru.cas.cz/cs/
 ---
@@ -1596,7 +1596,7 @@ identifiers:
 - scheme: ico
   identifier: '68081740'
 - scheme: ror
-  identifier: https://ror.org/03aba6h29
+  identifier: 03aba6h29
 - scheme: url
   identifier: http://www.psu.cas.cz/
 ---
@@ -1609,7 +1609,7 @@ identifiers:
 - scheme: ico
   identifier: '68378017'
 - scheme: ror
-  identifier: https://ror.org/03qq0n189
+  identifier: 03qq0n189
 - scheme: url
   identifier: http://www.slu.cas.cz/
 ---
@@ -1622,7 +1622,7 @@ identifiers:
 - scheme: ico
   identifier: '60457856'
 - scheme: ror
-  identifier: https://ror.org/03zkxs276
+  identifier: 03zkxs276
 - scheme: url
   identifier: http://www.ssc.cas.cz/cs/
 ---
@@ -1635,7 +1635,7 @@ identifiers:
 - scheme: ico
   identifier: '60456540'
 - scheme: ror
-  identifier: https://ror.org/02tc3qm58
+  identifier: 02tc3qm58
 - scheme: url
   identifier: http://www.tc.cz/
 ---
@@ -1648,7 +1648,7 @@ identifiers:
 - scheme: ico
   identifier: '68081715'
 - scheme: ror
-  identifier: https://ror.org/05g7knd32
+  identifier: 05g7knd32
 - scheme: url
   identifier: http://www.iach.cz/
 ---
@@ -1661,7 +1661,7 @@ identifiers:
 - scheme: ico
   identifier: '61388980'
 - scheme: ror
-  identifier: https://ror.org/01hsjcv06
+  identifier: 01hsjcv06
 - scheme: url
   identifier: http://www.iic.cas.cz/
 ---
@@ -1674,7 +1674,7 @@ identifiers:
 - scheme: ico
   identifier: '68081766'
 - scheme: ror
-  identifier: https://ror.org/05bcgdd94
+  identifier: 05bcgdd94
 - scheme: url
   identifier: http://www.ivb.cz
 ---
@@ -1687,7 +1687,7 @@ identifiers:
 - scheme: ico
   identifier: '68378033'
 - scheme: ror
-  identifier: https://ror.org/00913gw18
+  identifier: 00913gw18
 - scheme: url
   identifier: http://www.udu.cas.cz/
 ---
@@ -1700,7 +1700,7 @@ identifiers:
 - scheme: ico
   identifier: '61389030'
 - scheme: ror
-  identifier: https://ror.org/057br4398
+  identifier: 057br4398
 - scheme: url
   identifier: http://www.ueb.cas.cz/
 ---
@@ -1713,7 +1713,7 @@ identifiers:
 - scheme: ico
   identifier: '68378041'
 - scheme: ror
-  identifier: https://ror.org/03hjekm25
+  identifier: 03hjekm25
 - scheme: url
   identifier: http://www.iem.cas.cz/
 ---
@@ -1726,7 +1726,7 @@ identifiers:
 - scheme: ico
   identifier: '67985882'
 - scheme: ror
-  identifier: https://ror.org/05wrbcx33
+  identifier: 05wrbcx33
 - scheme: url
   identifier: http://www.ufe.cz/
 ---
@@ -1739,7 +1739,7 @@ identifiers:
 - scheme: ico
   identifier: '61388955'
 - scheme: ror
-  identifier: https://ror.org/02sat5y74
+  identifier: 02sat5y74
 - scheme: url
   identifier: http://www.jh-inst.cas.cz/
 ---
@@ -1752,7 +1752,7 @@ identifiers:
 - scheme: ico
   identifier: '68378289'
 - scheme: ror
-  identifier: https://ror.org/04vtzcr32
+  identifier: 04vtzcr32
 - scheme: url
   identifier: http://www.ufa.cas.cz/
 ---
@@ -1765,7 +1765,7 @@ identifiers:
 - scheme: ico
   identifier: '68081723'
 - scheme: ror
-  identifier: https://ror.org/02d02f052
+  identifier: 02d02f052
 - scheme: url
   identifier: http://www.ipm.cz/
 ---
@@ -1778,7 +1778,7 @@ identifiers:
 - scheme: ico
   identifier: '61389021'
 - scheme: ror
-  identifier: https://ror.org/01h494015
+  identifier: 01h494015
 - scheme: url
   identifier: http://www.ipp.cas.cz/
 ---
@@ -1791,7 +1791,7 @@ identifiers:
 - scheme: ico
   identifier: '68145535'
 - scheme: ror
-  identifier: https://ror.org/02d3n7h84
+  identifier: 02d3n7h84
 - scheme: url
   identifier: http://www.ugn.cas.cz/
 ---
@@ -1804,7 +1804,7 @@ identifiers:
 - scheme: ico
   identifier: '67985858'
 - scheme: ror
-  identifier: https://ror.org/02acv3g39
+  identifier: 02acv3g39
 - scheme: url
   identifier: http://www.icpf.cas.cz/
 ---
@@ -1817,7 +1817,7 @@ identifiers:
 - scheme: ico
   identifier: '67985807'
 - scheme: ror
-  identifier: https://ror.org/0496n6574
+  identifier: 0496n6574
 - scheme: url
   identifier: http://www.cs.cas.cz/
 ---
@@ -1830,7 +1830,7 @@ identifiers:
 - scheme: ico
   identifier: '61389005'
 - scheme: ror
-  identifier: https://ror.org/04jymbd90
+  identifier: 04jymbd90
 - scheme: url
   identifier: http://www.ujf.cas.cz/
 ---
@@ -1843,7 +1843,7 @@ identifiers:
 - scheme: ico
   identifier: '61389013'
 - scheme: ror
-  identifier: https://ror.org/0143w7709
+  identifier: 0143w7709
 - scheme: url
   identifier: http://www.imc.cas.cz/
 ---
@@ -1854,7 +1854,7 @@ title:
 name: Ústav molekulární biologie rostlin AV ČR
 identifiers:
 - scheme: ror
-  identifier: https://ror.org/00jr65m43
+  identifier: 00jr65m43
 - scheme: url
   identifier: http://www.bc.cas.cz/
 ---
@@ -1867,7 +1867,7 @@ identifiers:
 - scheme: ico
   identifier: '68378050'
 - scheme: ror
-  identifier: https://ror.org/045syc608
+  identifier: 045syc608
 - scheme: url
   identifier: http://www.img.cas.cz/
 ---
@@ -1880,7 +1880,7 @@ identifiers:
 - scheme: ico
   identifier: '61388963'
 - scheme: ror
-  identifier: https://ror.org/04nfjn472
+  identifier: 04nfjn472
 - scheme: url
   identifier: http://www.uochb.cz/
 ---
@@ -1893,7 +1893,7 @@ identifiers:
 - scheme: ico
   identifier: '68378068'
 - scheme: ror
-  identifier: https://ror.org/01vr20t27
+  identifier: 01vr20t27
 - scheme: url
   identifier: http://www.ucl.cas.cz
 ---
@@ -1917,7 +1917,7 @@ identifiers:
 - scheme: ico
   identifier: '67985874'
 - scheme: ror
-  identifier: https://ror.org/009wryk55
+  identifier: 009wryk55
 - scheme: url
   identifier: http://www.ih.cas.cz/
 ---
@@ -1930,7 +1930,7 @@ identifiers:
 - scheme: ico
   identifier: '68378092'
 - scheme: ror
-  identifier: https://ror.org/01912nj27
+  identifier: 01912nj27
 - scheme: url
   identifier: http://www.ujc.cas.cz/
 ---
@@ -1943,7 +1943,7 @@ identifiers:
 - scheme: ico
   identifier: '68378114'
 - scheme: ror
-  identifier: https://ror.org/01zghvr36
+  identifier: 01zghvr36
 - scheme: url
   identifier: http://www.usd.cas.cz/
 ---
@@ -1956,7 +1956,7 @@ identifiers:
 - scheme: ico
   identifier: '68081731'
 - scheme: ror
-  identifier: https://ror.org/027taah18
+  identifier: 027taah18
 - scheme: url
   identifier: http://www.isibrno.cz/
 ---
@@ -1967,7 +1967,7 @@ title:
 name: Ústav půdní biologie AV ČR
 identifiers:
 - scheme: ror
-  identifier: https://ror.org/02tz8r820
+  identifier: 02tz8r820
 - scheme: url
   identifier: http://www.upb.cas.cz/
 ---
@@ -1980,7 +1980,7 @@ identifiers:
 - scheme: ico
   identifier: '68378122'
 - scheme: ror
-  identifier: https://ror.org/00hzy8397
+  identifier: 00hzy8397
 - scheme: url
   identifier: http://www.ilaw.cas.cz/
 ---
@@ -1993,7 +1993,7 @@ identifiers:
 - scheme: ico
   identifier: '67985891'
 - scheme: ror
-  identifier: https://ror.org/00m4pvq34
+  identifier: 00m4pvq34
 - scheme: url
   identifier: http://www.irsm.cas.cz/
 ---
@@ -2006,7 +2006,7 @@ identifiers:
 - scheme: ico
   identifier: '68378297'
 - scheme: ror
-  identifier: https://ror.org/01hxbnq19
+  identifier: 01hxbnq19
 - scheme: url
   identifier: http://www.itam.cas.cz/
 ---
@@ -2019,7 +2019,7 @@ identifiers:
 - scheme: ico
   identifier: '67985556'
 - scheme: ror
-  identifier: https://ror.org/03h1hsz49
+  identifier: 03h1hsz49
 - scheme: url
   identifier: http://www.utia.cas.cz/
 ---
@@ -2032,7 +2032,7 @@ identifiers:
 - scheme: ico
   identifier: '61388998'
 - scheme: ror
-  identifier: https://ror.org/03fvq2a72
+  identifier: 03fvq2a72
 - scheme: url
   identifier: http://www.it.cas.cz/
 ---
@@ -2045,7 +2045,7 @@ identifiers:
 - scheme: ico
   identifier: '86652079'
 - scheme: ror
-  identifier: https://ror.org/01v5hek98
+  identifier: 01v5hek98
 - scheme: url
   identifier: http://www.czechglobe.cz/
 ---
@@ -2058,7 +2058,7 @@ identifiers:
 - scheme: ico
   identifier: '67985904'
 - scheme: ror
-  identifier: https://ror.org/0157za327
+  identifier: 0157za327
 - scheme: url
   identifier: http://www.iapg.cas.cz/
 ---
@@ -2071,7 +2071,7 @@ identifiers:
 - scheme: ico
   identifier: '70979821'
 - scheme: ror
-  identifier: https://ror.org/03cykd395
+  identifier: 03cykd395
 - scheme: url
   identifier: http://www.nacr.cz/
 ---
@@ -2084,7 +2084,7 @@ identifiers:
 - scheme: ico
   identifier: '48136450'
 - scheme: ror
-  identifier: https://ror.org/05n31vd29
+  identifier: 05n31vd29
 - scheme: url
   identifier: http://www.cnb.cz
 ---
@@ -2097,7 +2097,7 @@ identifiers:
 - scheme: ico
   identifier: '00023205'
 - scheme: ror
-  identifier: https://ror.org/024jn1h80
+  identifier: 024jn1h80
 - scheme: url
   identifier: http://www.idu.cz/
 ---
@@ -2110,7 +2110,7 @@ identifiers:
 - scheme: ico
   identifier: '75032333'
 - scheme: ror
-  identifier: https://ror.org/019k25552
+  identifier: 019k25552
 - scheme: url
   identifier: http://www.npu.cz/
 ---
@@ -2123,7 +2123,7 @@ identifiers:
 - scheme: ico
   identifier: 00094927
 - scheme: ror
-  identifier: https://ror.org/056kzn313
+  identifier: 056kzn313
 - scheme: url
   identifier: http://www.nulk.cz/
 ---
@@ -2136,7 +2136,7 @@ identifiers:
 - scheme: ico
   identifier: '28282027'
 - scheme: ror
-  identifier: https://ror.org/00kygh256
+  identifier: 00kygh256
 - scheme: url
   identifier: http://woodexpert.cz/
 ---
@@ -2149,7 +2149,7 @@ identifiers:
 - scheme: ico
   identifier: '00057266'
 - scheme: ror
-  identifier: https://ror.org/051316d77
+  identifier: 051316d77
 - scheme: url
   identifier: https://nfa.cz
 ---
@@ -2162,7 +2162,7 @@ identifiers:
 - scheme: ico
   identifier: '44994397'
 - scheme: ror
-  identifier: https://ror.org/02m4t4k66
+  identifier: 02m4t4k66
 - scheme: url
   identifier: http://www.czwa.cz/
 ---
@@ -2173,7 +2173,7 @@ title:
 name: CEITEC
 identifiers:
 - scheme: ror
-  identifier: https://ror.org/01p7k1986
+  identifier: 01p7k1986
 - scheme: url
   identifier: https://www.ceitec.cz/
 ---
@@ -2186,7 +2186,7 @@ identifiers:
 - scheme: ico
   identifier: '25940082'
 - scheme: ror
-  identifier: https://ror.org/03arvv474
+  identifier: 03arvv474
 - scheme: url
   identifier: https://www.aauni.edu
 ---
@@ -2199,7 +2199,7 @@ identifiers:
 - scheme: ico
   identifier: '26316919'
 - scheme: ror
-  identifier: https://ror.org/00hzjtg80
+  identifier: 00hzjtg80
 - scheme: url
   identifier: https://www.comtesfht.cz/
 ---
@@ -2212,7 +2212,7 @@ identifiers:
 - scheme: ico
   identifier: '70979090'
 - scheme: ror
-  identifier: https://ror.org/04753zn39
+  identifier: 04753zn39
 - scheme: url
   identifier: http://www.soaplzen.cz/
 ---
@@ -2225,7 +2225,7 @@ identifiers:
 - scheme: ico
   identifier: '26482789'
 - scheme: ror
-  identifier: https://ror.org/01zdaff53
+  identifier: 01zdaff53
 - scheme: url
   identifier: https://www.mup.cz/
 ---
@@ -2238,7 +2238,7 @@ identifiers:
 - scheme: ico
   identifier: '61387169'
 - scheme: ror
-  identifier: https://ror.org/02fh5m162
+  identifier: 02fh5m162
 - scheme: url
   identifier: https://www.npmk.cz/
 ---
@@ -2251,7 +2251,7 @@ identifiers:
 - scheme: ico
   identifier: '00023752'
 - scheme: ror
-  identifier: https://ror.org/05xj56w78
+  identifier: 05xj56w78
 - scheme: url
   identifier: https://www.nudz.cz
 ---
@@ -2264,7 +2264,7 @@ identifiers:
 - scheme: ico
   identifier: 05800226
 - scheme: ror
-  identifier: https://ror.org/002wyas44
+  identifier: 002wyas44
 - scheme: url
   identifier: https://www.nukib.cz/
 ---
@@ -2277,7 +2277,7 @@ identifiers:
 - scheme: ico
   identifier: '86652052'
 - scheme: ror
-  identifier: https://ror.org/02vwpg498
+  identifier: 02vwpg498
 - scheme: url
   identifier: https://www.suro.cz/
 ---
@@ -2290,7 +2290,7 @@ identifiers:
 - scheme: ico
   identifier: '29142890'
 - scheme: ror
-  identifier: https://ror.org/02zpfcb35
+  identifier: 02zpfcb35
 - scheme: url
   identifier: https://www.savs.cz/
 ---
@@ -2303,7 +2303,7 @@ identifiers:
 - scheme: ico
   identifier: '72050365'
 - scheme: ror
-  identifier: https://ror.org/04v0fk911
+  identifier: 04v0fk911
 - scheme: url
   identifier: https://www.tacr.cz
 ---
@@ -2316,7 +2316,7 @@ identifiers:
 - scheme: ico
   identifier: '25676598'
 - scheme: ror
-  identifier: https://ror.org/042hb4t21
+  identifier: 042hb4t21
 - scheme: url
   identifier: https://www.unyp.cz/cs
 ---
@@ -2329,7 +2329,7 @@ identifiers:
 - scheme: ico
   identifier: '46358978'
 - scheme: ror
-  identifier: https://ror.org/00ecy3w15
+  identifier: 00ecy3w15
 - scheme: url
   identifier: http://www.ujak.cz/
 ---
@@ -2342,7 +2342,7 @@ identifiers:
 - scheme: ico
   identifier: '48546054'
 - scheme: ror
-  identifier: https://ror.org/04hp42s89
+  identifier: 04hp42s89
 - scheme: url
   identifier: https://www.iir.cz/
 ---
@@ -2355,7 +2355,7 @@ identifiers:
 - scheme: ico
   identifier: '00027251'
 - scheme: ror
-  identifier: https://ror.org/042jnea65
+  identifier: 042jnea65
 - scheme: url
   identifier: https://www.uzei.cz
 ---
@@ -2379,7 +2379,7 @@ identifiers:
 - scheme: ico
   identifier: '27132781'
 - scheme: ror
-  identifier: https://ror.org/02a5sx544
+  identifier: 02a5sx544
 - scheme: url
   identifier: https://vstvs.palestra.cz/
 ---
@@ -2401,7 +2401,7 @@ identifiers:
 - scheme: ico
   identifier: 00098892
 - scheme: ror
-  identifier: https://ror.org/01jxtne23
+  identifier: 01jxtne23
 - scheme: url
   identifier: https://www.fnol.cz/
 ---
@@ -2414,7 +2414,7 @@ identifiers:
 - scheme: ico
   identifier: '65269705'
 - scheme: ror
-  identifier: https://ror.org/00qq1fp34
+  identifier: 00qq1fp34
 - scheme: url
   identifier: https://www.fnbrno.cz/
 ---
@@ -2425,7 +2425,7 @@ title:
 name: University of Minnesota
 identifiers:
 - scheme: ror
-  identifier: https://ror.org/017zqws13
+  identifier: 017zqws13
 - scheme: url
   identifier: https://twin-cities.umn.edu/
 ---
@@ -2436,7 +2436,7 @@ title:
 name: Polytechnique Montréal
 identifiers:
 - scheme: ror
-  identifier: https://ror.org/05f8d4e86
+  identifier: 05f8d4e86
 - scheme: url
   identifier: https://www.polymtl.ca/
 ---
@@ -2449,7 +2449,7 @@ identifiers:
 - scheme: ico
   identifier: '63839172'
 - scheme: ror
-  identifier: https://ror.org/050dkka69
+  identifier: 050dkka69
 - scheme: url
   identifier: https://www.cesnet.cz
 ---
@@ -2473,7 +2473,7 @@ identifiers:
 - scheme: ico
   identifier: '72048972'
 - scheme: ror
-  identifier: https://ror.org/05b4e2111
+  identifier: 05b4e2111
 - scheme: url
   identifier: https://www.nhkladruby.cz/
 ---
@@ -2497,7 +2497,7 @@ identifiers:
 - scheme: ico
   identifier: '01732731'
 - scheme: ror
-  identifier: https://ror.org/04evkr214
+  identifier: 04evkr214
 - scheme: url
   identifier: https://advacam.com
 ---
@@ -2521,7 +2521,7 @@ identifiers:
 - scheme: ico
   identifier: 00209775
 - scheme: ror
-  identifier: https://ror.org/04adqmv58
+  identifier: 04adqmv58
 - scheme: url
   identifier: https://www.cktch.cz/
 ---
@@ -2534,7 +2534,7 @@ identifiers:
 - scheme: ico
   identifier: '26722445'
 - scheme: ror
-  identifier: https://ror.org/03k9fzs17
+  identifier: 03k9fzs17
 - scheme: url
   identifier: https://www.cvrez.cz/
 ---
@@ -2547,7 +2547,7 @@ identifiers:
 - scheme: ico
   identifier: 00025798
 - scheme: ror
-  identifier: https://ror.org/02xz6bf62
+  identifier: 02xz6bf62
 - scheme: url
   identifier: https://cgs.gov.cz/
 ---
@@ -2560,7 +2560,7 @@ identifiers:
 - scheme: ico
   identifier: 00020699
 - scheme: ror
-  identifier: https://ror.org/00xbsaf62
+  identifier: 00xbsaf62
 - scheme: url
   identifier: https://www.chmi.cz/
 ---
@@ -2584,7 +2584,7 @@ identifiers:
 - scheme: ico
   identifier: '00064211'
 - scheme: ror
-  identifier: https://ror.org/009e9xr64
+  identifier: 009e9xr64
 - scheme: url
   identifier: https://bulovka.cz/
 ---
@@ -2597,7 +2597,7 @@ identifiers:
 - scheme: ico
   identifier: 00179906
 - scheme: ror
-  identifier: https://ror.org/04wckhb82
+  identifier: 04wckhb82
 - scheme: url
   identifier: https://www.fnhk.cz/
 ---
@@ -2610,7 +2610,7 @@ identifiers:
 - scheme: ico
   identifier: '00064173'
 - scheme: ror
-  identifier: https://ror.org/04sg4ka71
+  identifier: 04sg4ka71
 - scheme: url
   identifier: https://www.fnkv.cz/
 ---
@@ -2623,7 +2623,7 @@ identifiers:
 - scheme: ico
   identifier: 00843989
 - scheme: ror
-  identifier: https://ror.org/00a6yph09
+  identifier: 00a6yph09
 - scheme: url
   identifier: https://www.fno.cz/
 ---
@@ -2636,7 +2636,7 @@ identifiers:
 - scheme: ico
   identifier: 00669806
 - scheme: ror
-  identifier: https://ror.org/02c1tfz23
+  identifier: 02c1tfz23
 - scheme: url
   identifier: https://www.fnplzen.cz/
 ---
@@ -2649,7 +2649,7 @@ identifiers:
 - scheme: ico
   identifier: 00159816
 - scheme: ror
-  identifier: https://ror.org/049bjee35
+  identifier: 049bjee35
 - scheme: url
   identifier: https://www.fnusa.cz/
 ---
@@ -2662,7 +2662,7 @@ identifiers:
 - scheme: ico
   identifier: '00064203'
 - scheme: ror
-  identifier: https://ror.org/0125yxn03
+  identifier: 0125yxn03
 - scheme: url
   identifier: https://www.fnmotol.cz/
 ---
@@ -2675,7 +2675,7 @@ identifiers:
 - scheme: ico
   identifier: 00064190
 - scheme: ror
-  identifier: https://ror.org/04hyq8434
+  identifier: 04hyq8434
 - scheme: url
   identifier: https://www.ftn.cz/
 ---
@@ -2688,7 +2688,7 @@ identifiers:
 - scheme: ico
   identifier: '48549037'
 - scheme: ror
-  identifier: https://ror.org/01pv73b02
+  identifier: 01pv73b02
 - scheme: url
   identifier: https://gacr.cz/
 ---
@@ -2701,7 +2701,7 @@ identifiers:
 - scheme: ico
   identifier: '00023001'
 - scheme: ror
-  identifier: https://ror.org/036zr1b90
+  identifier: 036zr1b90
 - scheme: url
   identifier: https://www.ikem.cz/cs/
 ---
@@ -2714,7 +2714,7 @@ identifiers:
 - scheme: ico
   identifier: 00023841
 - scheme: ror
-  identifier: https://ror.org/00rzeqe23
+  identifier: 00rzeqe23
 - scheme: url
   identifier: https://www.ipvz.cz
 ---
@@ -2727,7 +2727,7 @@ identifiers:
 - scheme: ico
   identifier: '00073504'
 - scheme: ror
-  identifier: https://ror.org/03mmhfz41
+  identifier: 03mmhfz41
 - scheme: url
   identifier: https://www.cbvk.cz/
 ---
@@ -2806,7 +2806,7 @@ identifiers:
 - scheme: ico
   identifier: '25488627'
 - scheme: ror
-  identifier: https://ror.org/03hdcss70
+  identifier: 03hdcss70
 - scheme: url
   identifier: https://www.kzcr.eu/
 ---
@@ -2819,7 +2819,7 @@ identifiers:
 - scheme: ico
   identifier: 00209805
 - scheme: ror
-  identifier: https://ror.org/0270ceh40
+  identifier: 0270ceh40
 - scheme: url
   identifier: https://www.mou.cz/
 ---
@@ -2832,7 +2832,7 @@ identifiers:
 - scheme: ico
   identifier: '28676092'
 - scheme: ror
-  identifier: https://ror.org/05fmr5p93
+  identifier: 05fmr5p93
 - scheme: url
   identifier: https://www.membrain.cz/
 ---
@@ -2845,7 +2845,7 @@ identifiers:
 - scheme: ico
   identifier: '00064467'
 - scheme: ror
-  identifier: https://ror.org/02kqf1812
+  identifier: 02kqf1812
 - scheme: url
   identifier: https://www.mlp.cz/cz/
 ---
@@ -2858,7 +2858,7 @@ identifiers:
 - scheme: ico
   identifier: 00006947
 - scheme: ror
-  identifier: https://ror.org/00mjd8b34
+  identifier: 00mjd8b34
 - scheme: url
   identifier: https://www.mfcr.cz/
 ---
@@ -2871,7 +2871,7 @@ identifiers:
 - scheme: ico
   identifier: 00022985
 - scheme: ror
-  identifier: https://ror.org/037n8p820
+  identifier: 037n8p820
 - scheme: url
   identifier: https://www.msmt.cz/
 ---
@@ -2884,7 +2884,7 @@ identifiers:
 - scheme: ico
   identifier: 00100579
 - scheme: ror
-  identifier: https://ror.org/0404e3g62
+  identifier: 0404e3g62
 - scheme: url
   identifier: https://www.msvk.cz/
 ---
@@ -2897,7 +2897,7 @@ identifiers:
 - scheme: ico
   identifier: 00023281
 - scheme: ror
-  identifier: https://ror.org/00qd5p471
+  identifier: 00qd5p471
 - scheme: url
   identifier: https://www.ngprague.cz/
 ---
@@ -2910,7 +2910,7 @@ identifiers:
 - scheme: ico
   identifier: 00023884
 - scheme: ror
-  identifier: https://ror.org/00w93dg44
+  identifier: 00w93dg44
 - scheme: url
   identifier: https://www.homolka.cz/
 ---
@@ -2923,7 +2923,7 @@ identifiers:
 - scheme: ico
   identifier: '26698099'
 - scheme: ror
-  identifier: https://ror.org/02gfwnc58
+  identifier: 02gfwnc58
 - scheme: url
   identifier: https://www.praguefilmschool.cz/
 ---
@@ -2936,7 +2936,7 @@ identifiers:
 - scheme: ico
   identifier: '00064220'
 - scheme: ror
-  identifier: https://ror.org/02yrkqr67
+  identifier: 02yrkqr67
 - scheme: url
   identifier: https://bohnice.cz/aktivity/knihovna/
 ---
@@ -2949,7 +2949,7 @@ identifiers:
 - scheme: ico
   identifier: 00023817
 - scheme: ror
-  identifier: https://ror.org/04myyf417
+  identifier: 04myyf417
 - scheme: url
   identifier: https://www.sukl.cz/
 ---
@@ -2962,7 +2962,7 @@ identifiers:
 - scheme: ico
   identifier: '75010330'
 - scheme: ror
-  identifier: https://ror.org/04ftj7e51
+  identifier: 04ftj7e51
 - scheme: url
   identifier: https://szu.cz/
 ---
@@ -2975,7 +2975,7 @@ identifiers:
 - scheme: ico
   identifier: 00069892
 - scheme: ror
-  identifier: https://ror.org/02va58e96
+  identifier: 02va58e96
 - scheme: url
   identifier: https://svkkl.cz/
 ---
@@ -2988,7 +2988,7 @@ identifiers:
 - scheme: ico
   identifier: 00078077
 - scheme: ror
-  identifier: https://ror.org/017afg044
+  identifier: 017afg044
 - scheme: url
   identifier: https://svkpk.cz/
 ---
@@ -3001,7 +3001,7 @@ identifiers:
 - scheme: ico
   identifier: 00412821
 - scheme: ror
-  identifier: https://ror.org/03cd72537
+  identifier: 03cd72537
 - scheme: url
   identifier: https://www.svkhk.cz/
 ---
@@ -3014,7 +3014,7 @@ identifiers:
 - scheme: ico
   identifier: '00101435'
 - scheme: ror
-  identifier: https://ror.org/00rb9a558
+  identifier: 00rb9a558
 - scheme: url
   identifier: https://www.tmbrno.cz/
 ---
@@ -3027,7 +3027,7 @@ identifiers:
 - scheme: ico
   identifier: '10974938'
 - scheme: ror
-  identifier: https://ror.org/00yzpcc69
+  identifier: 00yzpcc69
 - scheme: url
   identifier: https://eli-laser.eu
 ---
@@ -3040,7 +3040,7 @@ identifiers:
 - scheme: ico
   identifier: 00006599
 - scheme: ror
-  identifier: https://ror.org/027acbb13
+  identifier: 027acbb13
 - scheme: url
   identifier: https://vlada.gov.cz/
 ---
@@ -3064,7 +3064,7 @@ identifiers:
 - scheme: ico
   identifier: '00100625'
 - scheme: ror
-  identifier: https://ror.org/02jh2mm49
+  identifier: 02jh2mm49
 - scheme: url
   identifier: https://www.vkol.cz/
 ---
@@ -3088,7 +3088,7 @@ identifiers:
 - scheme: ico
   identifier: '00064165'
 - scheme: ror
-  identifier: https://ror.org/04yg23125
+  identifier: 04yg23125
 - scheme: url
   identifier: https://www.vfn.cz/
 ---
@@ -3101,7 +3101,7 @@ identifiers:
 - scheme: ico
   identifier: '25271121'
 - scheme: ror
-  identifier: https://ror.org/045c1s446
+  identifier: 045c1s446
 - scheme: url
   identifier: https://www.vsuo.cz/cs/
 ---
@@ -3114,7 +3114,7 @@ identifiers:
 - scheme: ico
   identifier: '60109807'
 - scheme: ror
-  identifier: https://ror.org/00vcrhv91
+  identifier: 00vcrhv91
 - scheme: url
   identifier: https://www.vubhb.cz/cs
 ---
@@ -3127,7 +3127,7 @@ identifiers:
 - scheme: ico
   identifier: 00027049
 - scheme: ror
-  identifier: https://ror.org/045rrq664
+  identifier: 045rrq664
 - scheme: url
   identifier: https://www.vumop.cz/
 ---
@@ -3140,7 +3140,7 @@ identifiers:
 - scheme: ico
   identifier: '60193697'
 - scheme: ror
-  identifier: https://ror.org/04jr76q91
+  identifier: 04jr76q91
 - scheme: url
   identifier: https://beerresearch.cz/
 ---
@@ -3153,7 +3153,7 @@ identifiers:
 - scheme: ico
   identifier: '46709002'
 - scheme: ror
-  identifier: https://ror.org/02c875652
+  identifier: 02c875652
 - scheme: url
   identifier: https://www.vuts.cz/
 ---
@@ -3166,7 +3166,7 @@ identifiers:
 - scheme: ico
   identifier: '00027162'
 - scheme: ror
-  identifier: https://ror.org/02zyjt610
+  identifier: 02zyjt610
 - scheme: url
   identifier: https://www.vri.cz/
 ---
@@ -3179,7 +3179,7 @@ identifiers:
 - scheme: ico
   identifier: '00027014'
 - scheme: ror
-  identifier: https://ror.org/00yb99p92
+  identifier: 00yb99p92
 - scheme: url
   identifier: https://vuzv.cz/
 ---
@@ -3203,7 +3203,7 @@ identifiers:
 - scheme: ico
   identifier: '48532452'
 - scheme: ror
-  identifier: https://ror.org/02tjqwz24
+  identifier: 02tjqwz24
 - scheme: url
   identifier: https://www.vupt.cz/
 ---
@@ -3216,7 +3216,7 @@ identifiers:
 - scheme: ico
   identifier: 04264193
 - scheme: ror
-  identifier: https://ror.org/01x9n3j10
+  identifier: 01x9n3j10
 - scheme: url
   identifier: https://www.praguecityuniversity.cz
 ---
@@ -3238,7 +3238,7 @@ title:
 name: Indira Gandhi Centre for Atomic Research
 identifiers:
 - scheme: ror
-  identifier: https://ror.org/05tkzma19
+  identifier: 05tkzma19
 - scheme: url
   identifier: https://www.igcar.gov.in/hbni.html
 ---
@@ -3249,7 +3249,7 @@ title:
 name: Institute of Chemical Engineering Sciences
 identifiers:
 - scheme: ror
-  identifier: https://ror.org/03e5bsk66
+  identifier: 03e5bsk66
 - scheme: url
   identifier: https://www.iceht.forth.gr
 ---
@@ -3262,7 +3262,7 @@ identifiers:
 - scheme: ico
   identifier: '17774713'
 - scheme: ror
-  identifier: https://ror.org/0556an218
+  identifier: 0556an218
 - scheme: url
   identifier: https://www.tescan.cz
 ---
@@ -3302,7 +3302,7 @@ identifiers:
 - scheme: ico
   identifier: '28586336'
 - scheme: ror
-  identifier: https://ror.org/01g3ety71
+  identifier: 01g3ety71
 ---
 id: suip
 title:
@@ -3322,7 +3322,7 @@ identifiers:
 - scheme: ico
   identifier: '46356088'
 - scheme: ror
-  identifier: https://ror.org/05gwtvp11
+  identifier: 05gwtvp11
 ---
 id: vsmie
 title:
@@ -3331,7 +3331,7 @@ title:
 name: Vysoká škola manažerské informatiky, ekonomiky a práva
 identifiers:
 - scheme: ror
-  identifier: https://ror.org/015t1sz24
+  identifier: 015t1sz24
 ---
 id: edri
 title:
@@ -3376,7 +3376,7 @@ title:
 name: Světová organizace duševního vlastnictví
 identifiers:
 - scheme: ror
-  identifier: https://ror.org/04anve402
+  identifier: 04anve402
 ---
 id: euipo
 title:
@@ -3433,7 +3433,7 @@ title:
 name: University of Bergen
 identifiers:
 - scheme: ror
-  identifier: https://ror.org/03zga2b32
+  identifier: 03zga2b32
 - scheme: url
   identifier: https://www.uib.no/en
 ---
@@ -3444,7 +3444,7 @@ title:
 name: University of Bayreuth
 identifiers:
 - scheme: ror
-  identifier: https://ror.org/0234wmv40
+  identifier: 0234wmv40
 - scheme: url
   identifier: https://www.uni-bayreuth.de/en
 ---
@@ -3457,7 +3457,7 @@ identifiers:
 - scheme: ico
   identifier: '00551023'
 - scheme: ror
-  identifier: https://ror.org/01bvj3e58
+  identifier: 01bvj3e58
 - scheme: url
   identifier: http://www.mpsv.cz/
 ---
@@ -3470,7 +3470,7 @@ identifiers:
 - scheme: ico
   identifier: '00007064'
 - scheme: ror
-  identifier: https://ror.org/05w1nn565
+  identifier: 05w1nn565
 - scheme: url
   identifier: http://www.mvcr.cz/
 ---
@@ -3483,7 +3483,7 @@ identifiers:
 - scheme: ico
   identifier: '00023671'
 - scheme: ror
-  identifier: https://ror.org/00fxxw604
+  identifier: 00fxxw604
 - scheme: url
   identifier: http://www.mkcr.cz/
 ---
@@ -3495,7 +3495,7 @@ title:
 name: Goethe Institute
 identifiers:
 - scheme: ror
-  identifier: https://ror.org/02szraf30
+  identifier: 02szraf30
 - scheme: url
   identifier: https://www.goethe.de/
 ---
@@ -3506,7 +3506,7 @@ title:
 name: International Union for Conservation of Nature
 identifiers:
 - scheme: ror
-  identifier: https://ror.org/01szdrn56
+  identifier: 01szdrn56
 - scheme: url
   identifier: http://www.iucn.org/
 ---
@@ -3517,7 +3517,7 @@ title:
 name: GreyNet International
 identifiers:
 - scheme: ror
-  identifier: https://ror.org/01pxfxj80
+  identifier: 01pxfxj80
 - scheme: url
   identifier: https://www.greynet.org
 ---
@@ -3529,7 +3529,7 @@ title:
 name: Slovak University of Technology in Bratislava
 identifiers:
 - scheme: ror
-  identifier: https://ror.org/0561ghm58
+  identifier: 0561ghm58
 - scheme: url
   identifier: https://www.stuba.sk/
 ---
@@ -3541,7 +3541,7 @@ title:
 name: Free University of Berlin
 identifiers:
 - scheme: ror
-  identifier: https://ror.org/046ak2485
+  identifier: 046ak2485
 - scheme: url
   identifier: https://www.fu-berlin.de
 ---
@@ -3553,7 +3553,7 @@ title:
 name: Queen's University Belfast
 identifiers:
 - scheme: ror
-  identifier: https://ror.org/00hswnk62
+  identifier: 00hswnk62
 - scheme: url
   identifier: https://www.qub.ac.uk
 ---
@@ -3564,7 +3564,7 @@ title:
 name: University of Manchester
 identifiers:
 - scheme: ror
-  identifier: https://ror.org/027m9bs27
+  identifier: 027m9bs27
 - scheme: url
   identifier: https://www.manchester.ac.uk
 ---
@@ -3576,7 +3576,7 @@ title:
 name: Eötvös Loránd University
 identifiers:
 - scheme: ror
-  identifier: https://ror.org/01jsq2704
+  identifier: 01jsq2704
 - scheme: url
   identifier: https://www.elte.hu
 ---
@@ -3587,7 +3587,7 @@ title:
 name: Science and Technology Facilities Council
 identifiers:
 - scheme: ror
-  identifier: https://ror.org/057g20z61
+  identifier: 057g20z61
 - scheme: url
   identifier: https://www.ukri.org/councils/stfc/
 ---
@@ -3607,7 +3607,7 @@ title:
 name: University of Toronto
 identifiers:
 - scheme: ror
-  identifier: https://ror.org/03dbr7087
+  identifier: 03dbr7087
 - scheme: url
   identifier: https://www.utoronto.ca/
 ---
@@ -3619,7 +3619,7 @@ title:
 name: Wigner Research Centre for Physics
 identifiers:
 - scheme: ror
-  identifier: https://ror.org/035dsb084
+  identifier: 035dsb084
 - scheme: url
   identifier: https://wigner.hu/en
 ---
@@ -3631,7 +3631,7 @@ title:
 name: Technical University of Munich
 identifiers:
 - scheme: ror
-  identifier: https://ror.org/02kkvpp62
+  identifier: 02kkvpp62
 - scheme: url
   identifier: https://www.tum.de
 ---
@@ -3643,7 +3643,7 @@ title:
 name: Middle East Technical University
 identifiers:
 - scheme: ror
-  identifier: https://ror.org/014weej12
+  identifier: 014weej12
 - scheme: url
   identifier: https://www.metu.edu.tr
 ---
@@ -3654,7 +3654,7 @@ title:
 name: Vrije Universiteit Amsterdam
 identifiers:
 - scheme: ror
-  identifier: https://ror.org/008xxew50
+  identifier: 008xxew50
 - scheme: url
   identifier: https://vu.nl/
 ---
@@ -3666,7 +3666,7 @@ title:
 name: Comenius University Bratislava
 identifiers:
 - scheme: ror
-  identifier: https://ror.org/0587ef340
+  identifier: 0587ef340
 - scheme: url
   identifier: https://uniba.sk/
 ---
@@ -3698,7 +3698,7 @@ title:
 name: Aix-Marseille University
 identifiers:
 - scheme: ror
-  identifier: https://ror.org/035xkbk20
+  identifier: 035xkbk20
 - scheme: url
   identifier: http://www.univ-amu.fr/
 ---
@@ -3710,7 +3710,7 @@ title:
 name: Institut Universitaire de France
 identifiers:
 - scheme: ror
-  identifier: https://ror.org/055khg266
+  identifier: 055khg266
 - scheme: url
   identifier: http://iuf.amue.fr/
 ---
@@ -3722,7 +3722,7 @@ title:
 name: Xiamen University
 identifiers:
 - scheme: ror
-  identifier: https://ror.org/00mcjh785
+  identifier: 00mcjh785
 - scheme: url
   identifier: https://www.xmu.edu.cn
 ---
@@ -3734,7 +3734,7 @@ title:
 name: Nicolaus Copernicus University
 identifiers:
 - scheme: ror
-  identifier: https://ror.org/0102mm775
+  identifier: 0102mm775
 - scheme: url
   identifier: https://www.umk.pl
 ---
@@ -3746,7 +3746,7 @@ title:
 name: Leibniz Institute for Catalysis
 identifiers:
 - scheme: ror
-  identifier: https://ror.org/029hg0311
+  identifier: 029hg0311
 - scheme: url
   identifier: https://www.catalysis.de
 ---
@@ -3757,6 +3757,6 @@ title:
   cs: University of Graz
 identifiers:
 - scheme: ror
-  identifier: https://ror.org/01faaaf77
+  identifier: 01faaaf77
 - scheme: url
   identifier: https://www.uni-graz.at/en/
