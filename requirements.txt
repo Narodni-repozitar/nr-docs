@@ -1,4 +1,4 @@
-oarepo[s3,rdm]==12.2.24
+oarepo[s3,rdm]==12.2.25
 cachetools==6.0.0
 deepmerge==2.0
 et-xmlfile==2.0.0
@@ -25,7 +25,7 @@ oarepo-oidc-einfra==1.1.4
 oarepo-published-service==1.0.3
 oarepo-rdm==0.6.0
 oarepo-requests==2.4.22
-oarepo-runtime==1.7.2
+oarepo-runtime==1.9.0
 oarepo-ui==5.2.83
 oarepo-vocabularies==2.2.3
 oarepo-workflows==1.1.16

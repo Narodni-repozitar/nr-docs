@@ -34,7 +34,11 @@ from oarepo_runtime.records.systemfields import (
     SyntheticSystemField,
 )
 from oarepo_runtime.records.systemfields.has_draftcheck import HasDraftCheckField
-from oarepo_runtime.records.systemfields.icu import ICUSearchField
+from oarepo_runtime.records.systemfields.icu import (
+    FulltextIndexField,
+    ICUSearchField,
+    TermIndexField,
+)
 from oarepo_runtime.records.systemfields.record_status import RecordStatusSystemField
 from oarepo_vocabularies.records.api import Vocabulary
 from oarepo_workflows.records.systemfields.state import (
@@ -87,11 +91,106 @@ class DocumentsRecord(RDMRecord):
 
     sort = TitleICUSortField(source_field="metadata.title")
 
-    title_search = ICUSearchField(source_field="metadata.title")
+    search_title = ICUSearchField(source_field="metadata.title", boost=20)
 
-    creator_search = ICUSearchField(source_field="metadata.creators.fullName")
+    search_creator_name = FulltextIndexField(
+        source_field="metadata.creators.person_or_org.name", boost=20
+    )
 
-    abstract_search = ICUSearchField(source_field="metadata.abstract.value")
+    search_contributor_name = FulltextIndexField(
+        source_field="metadata.contributors.person_or_org.name", boost=20
+    )
+
+    search_contributor_identifier = TermIndexField(
+        source_field="metadata.contributors.person_or_org.identifiers.identifier",
+        boost=20,
+    )
+
+    search_creator_identifier = TermIndexField(
+        source_field="metadata.creators.person_or_org.identifiers.identifier", boost=20
+    )
+
+    search_abstract = ICUSearchField(source_field="metadata.abstract", boost=10)
+
+    search_subjects_subject_value = FulltextIndexField(
+        source_field="metadata.subjects.subject.value", boost=10
+    )
+
+    search_additional_title = ICUSearchField(
+        source_field="metadata.additionalTitles.title", boost=9
+    )
+
+    search_objectIdentifiers = TermIndexField(
+        source_field="metadata.objectIdentifiers.identifier", boost=8
+    )
+
+    search_funder_funder_id = TermIndexField(
+        source_field="metadata.funders.funder.id", boost=7
+    )
+
+    search_funder_funder_name = FulltextIndexField(
+        source_field="metadata.funders.funder.name", boost=7
+    )
+
+    search_funder_funder_title = ICUSearchField(
+        source_field="metadata.funders.funder.title", boost=7
+    )
+
+    search_publishers = FulltextIndexField(source_field="metadata.publishers", boost=7)
+
+    search_resourceType_title = ICUSearchField(
+        source_field="metadata.resourceType.title", boost=7
+    )
+
+    search_thesis_degreeGrantors_id = TermIndexField(
+        source_field="metadata.thesis.degreeGrantors.id", boost=6
+    )
+
+    search_thesis_degreeGrantors_title = ICUSearchField(
+        source_field="metadata.thesis.degreeGrantors.title", boost=6
+    )
+
+    search_events_eventNameOriginal = FulltextIndexField(
+        source_field="metadata.events.eventNameOriginal", boost=6
+    )
+
+    search_events_eventNameAlternate = FulltextIndexField(
+        source_field="metadata.events.eventNameAlternate", boost=6
+    )
+
+    search_contributor_affiliations_name = FulltextIndexField(
+        source_field="metadata.contributors.affiliations.name", boost=5
+    )
+
+    search_creator_affiliations_name = FulltextIndexField(
+        source_field="metadata.creators.affiliations.name", boost=5
+    )
+
+    search_funder_award_number = TermIndexField(
+        source_field="metadata.funders.award.number", boost=5
+    )
+
+    search_funder_award_title = ICUSearchField(
+        source_field="metadata.funders.award.title", boost=5
+    )
+
+    search_relatedItems_itemTitle = FulltextIndexField(
+        source_field="metadata.relatedItems.itemTitle", boost=5
+    )
+
+    search_series_title = FulltextIndexField(
+        source_field="metadata.series.seriesTitle", boost=2
+    )
+
+    search_relatedItems_itemPIDs_identifier = TermIndexField(
+        source_field="metadata.relatedItems.itemPIDs.identifier", boost=2
+    )
+
+    search_notes = FulltextIndexField(source_field="metadata.notes")
+
+    search_systemIdentifiers_identifier = TermIndexField(
+        source_field="metadata.systemIdentifiers.identifier"
+    )
 
     people = SyntheticSystemField(
         PathSelector(
@@ -322,11 +421,106 @@ class DocumentsDraft(RDMDraft):
 
     sort = TitleICUSortField(source_field="metadata.title")
 
-    title_search = ICUSearchField(source_field="metadata.title")
+    search_title = ICUSearchField(source_field="metadata.title", boost=20)
 
-    creator_search = ICUSearchField(source_field="metadata.creators.fullName")
+    search_creator_name = FulltextIndexField(
+        source_field="metadata.creators.person_or_org.name", boost=20
+    )
 
-    abstract_search = ICUSearchField(source_field="metadata.abstract.value")
+    search_contributor_name = FulltextIndexField(
+        source_field="metadata.contributors.person_or_org.name", boost=20
+    )
+
+    search_contributor_identifier = TermIndexField(
+        source_field="metadata.contributors.person_or_org.identifiers.identifier",
+        boost=20,
+    )
+
+    search_creator_identifier = TermIndexField(
+        source_field="metadata.creators.person_or_org.identifiers.identifier", boost=20
+    )
+
+    search_abstract = ICUSearchField(source_field="metadata.abstract", boost=10)
+
+    search_subjects_subject_value = FulltextIndexField(
+        source_field="metadata.subjects.subject.value", boost=10
+    )
+
+    search_additional_title = ICUSearchField(
+        source_field="metadata.additionalTitles.title", boost=9
+    )
+
+    search_objectIdentifiers = TermIndexField(
+        source_field="metadata.objectIdentifiers.identifier", boost=8
+    )
+
+    search_funder_funder_id = TermIndexField(
+        source_field="metadata.funders.funder.id", boost=7
+    )
+
+    search_funder_funder_name = FulltextIndexField(
+        source_field="metadata.funders.funder.name", boost=7
+    )
+
+    search_funder_funder_title = ICUSearchField(
+        source_field="metadata.funders.funder.title", boost=7
+    )
+
+    search_publishers = FulltextIndexField(source_field="metadata.publishers", boost=7)
+
+    search_resourceType_title = ICUSearchField(
+        source_field="metadata.resourceType.title", boost=7
+    )
+
+    search_thesis_degreeGrantors_id = TermIndexField(
+        source_field="metadata.thesis.degreeGrantors.id", boost=6
+    )
+
+    search_thesis_degreeGrantors_title = ICUSearchField(
+        source_field="metadata.thesis.degreeGrantors.title", boost=6
+    )
+
+    search_events_eventNameOriginal = FulltextIndexField(
+        source_field="metadata.events.eventNameOriginal", boost=6
+    )
+
+    search_events_eventNameAlternate = FulltextIndexField(
+        source_field="metadata.events.eventNameAlternate", boost=6
+    )
+
+    search_contributor_affiliations_name = FulltextIndexField(
+        source_field="metadata.contributors.affiliations.name", boost=5
+    )
+
+    search_creator_affiliations_name = FulltextIndexField(
+        source_field="metadata.creators.affiliations.name", boost=5
+    )
+
+    search_funder_award_number = TermIndexField(
+        source_field="metadata.funders.award.number", boost=5
+    )
+
+    search_funder_award_title = ICUSearchField(
+        source_field="metadata.funders.award.title", boost=5
+    )
+
+    search_relatedItems_itemTitle = FulltextIndexField(
+        source_field="metadata.relatedItems.itemTitle", boost=5
+    )
+
+    search_series_title = FulltextIndexField(
+        source_field="metadata.series.seriesTitle", boost=2
+    )
+
+    search_relatedItems_itemPIDs_identifier = TermIndexField(
+        source_field="metadata.relatedItems.itemPIDs.identifier", boost=2
+    )
+
+    search_notes = FulltextIndexField(source_field="metadata.notes")
+
+    search_systemIdentifiers_identifier = TermIndexField(
+        source_field="metadata.systemIdentifiers.identifier"
+    )
 
     people = SyntheticSystemField(
         PathSelector(

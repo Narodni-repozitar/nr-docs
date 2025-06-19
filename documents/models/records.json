@@ -7,9 +7,33 @@
                     "index": {
                         "query": {
                             "default_field": [
-                                "title_search.*",
-                                "creator_search.*",
-                                "abstract_search.*"
+                                "search_contributor_identifier",
+                                "search_contributor_name.*",
+                                "search_creator_identifier",
+                                "search_creator_name.*",
+                                "search_title.*",
+                                "search_abstract.*",
+                                "search_subjects_subject_value.*",
+                                "search_additional_title.*",
+                                "search_objectIdentifiers",
+                                "search_funder_funder_id.*",
+                                "search_funder_funder_name.*",
+                                "search_funder_funder_title.*",
+                                "search_publishers.*",
+                                "search_resourceType_title.*",
+                                "search_thesis_degreeGrantors_id",
+                                "search_thesis_degreeGrantors_title.*",
+                                "search_events_eventNameOriginal.*",
+                                "search_events_eventNameAlternate.*",
+                                "search_contributor_affiliations_name.*",
+                                "search_creator_affiliations_name.*",
+                                "search_funder_award_number",
+                                "search_funder_award_title.*",
+                                "search_relatedItems_itemTitle.*",
+                                "search_series_title.*",
+                                "search_relatedItems_itemPIDs_identifier",
+                                "search_notes.*",
+                                "search_systemIdentifiers_identifier"
                             ]
                         }
                     }
@@ -120,9 +144,33 @@
             ],
             "fields": {
                 "sort": "{{common.services.sort.TitleICUSortField}}(source_field='metadata.title')",
-                "title_search": "{{oarepo_runtime.records.systemfields.icu.ICUSearchField}}(source_field='metadata.title')",
-                "creator_search": "{{oarepo_runtime.records.systemfields.icu.ICUSearchField}}(source_field='metadata.creators.fullName')",
-                "abstract_search": "{{oarepo_runtime.records.systemfields.icu.ICUSearchField}}(source_field='metadata.abstract.value')",
+                "search_title": "{{oarepo_runtime.records.systemfields.icu.ICUSearchField}}(source_field='metadata.title', boost=20)",
+                "search_creator_name": "{{oarepo_runtime.records.systemfields.icu.FulltextIndexField}}(source_field='metadata.creators.person_or_org.name', boost=20)",
+                "search_contributor_name": "{{oarepo_runtime.records.systemfields.icu.FulltextIndexField}}(source_field='metadata.contributors.person_or_org.name', boost=20)",
+                "search_contributor_identifier": "{{oarepo_runtime.records.systemfields.icu.TermIndexField}}(source_field='metadata.contributors.person_or_org.identifiers.identifier', boost=20)",
+                "search_creator_identifier": "{{oarepo_runtime.records.systemfields.icu.TermIndexField}}(source_field='metadata.creators.person_or_org.identifiers.identifier', boost=20)",
+                "search_abstract": "{{oarepo_runtime.records.systemfields.icu.ICUSearchField}}(source_field='metadata.abstract', boost=10)",
+                "search_subjects_subject_value": "{{oarepo_runtime.records.systemfields.icu.FulltextIndexField}}(source_field='metadata.subjects.subject.value', boost=10)",
+                "search_additional_title": "{{oarepo_runtime.records.systemfields.icu.ICUSearchField}}(source_field='metadata.additionalTitles.title', boost=9)",
+                "search_objectIdentifiers": "{{oarepo_runtime.records.systemfields.icu.TermIndexField}}(source_field='metadata.objectIdentifiers.identifier', boost=8)",
+                "search_funder_funder_id": "{{oarepo_runtime.records.systemfields.icu.TermIndexField}}(source_field='metadata.funders.funder.id', boost=7)",
+                "search_funder_funder_name": "{{oarepo_runtime.records.systemfields.icu.FulltextIndexField}}(source_field='metadata.funders.funder.name', boost=7)",
+                "search_funder_funder_title": "{{oarepo_runtime.records.systemfields.icu.ICUSearchField}}(source_field='metadata.funders.funder.title', boost=7)",
+                "search_publishers": "{{oarepo_runtime.records.systemfields.icu.FulltextIndexField}}(source_field='metadata.publishers', boost=7)",
+                "search_resourceType_title": "{{oarepo_runtime.records.systemfields.icu.ICUSearchField}}(source_field='metadata.resourceType.title', boost=7)",
+                "search_thesis_degreeGrantors_id": "{{oarepo_runtime.records.systemfields.icu.TermIndexField}}(source_field='metadata.thesis.degreeGrantors.id', boost=6)",
+                "search_thesis_degreeGrantors_title": "{{oarepo_runtime.records.systemfields.icu.ICUSearchField}}(source_field='metadata.thesis.degreeGrantors.title', boost=6)",
+                "search_events_eventNameOriginal": "{{oarepo_runtime.records.systemfields.icu.FulltextIndexField}}(source_field='metadata.events.eventNameOriginal', boost=6)",
+                "search_events_eventNameAlternate": "{{oarepo_runtime.records.systemfields.icu.FulltextIndexField}}(source_field='metadata.events.eventNameAlternate', boost=6)",
+                "search_contributor_affiliations_name": "{{oarepo_runtime.records.systemfields.icu.FulltextIndexField}}(source_field='metadata.contributors.affiliations.name', boost=5)",
+                "search_creator_affiliations_name": "{{oarepo_runtime.records.systemfields.icu.FulltextIndexField}}(source_field='metadata.creators.affiliations.name', boost=5)",
+                "search_funder_award_number": "{{oarepo_runtime.records.systemfields.icu.TermIndexField}}(source_field='metadata.funders.award.number', boost=5)",
+                "search_funder_award_title": "{{oarepo_runtime.records.systemfields.icu.ICUSearchField}}(source_field='metadata.funders.award.title', boost=5)",
+                "search_relatedItems_itemTitle": "{{oarepo_runtime.records.systemfields.icu.FulltextIndexField}}(source_field='metadata.relatedItems.itemTitle', boost=5)",
+                "search_series_title": "{{oarepo_runtime.records.systemfields.icu.FulltextIndexField}}(source_field='metadata.series.seriesTitle', boost=2)",
+                "search_relatedItems_itemPIDs_identifier": "{{oarepo_runtime.records.systemfields.icu.TermIndexField}}(source_field='metadata.relatedItems.itemPIDs.identifier', boost=2)",
+                "search_notes": "{{oarepo_runtime.records.systemfields.icu.FulltextIndexField}}(source_field='metadata.notes')",
+                "search_systemIdentifiers_identifier": "{{oarepo_runtime.records.systemfields.icu.TermIndexField}}(source_field='metadata.systemIdentifiers.identifier')",
                 "people": "SyntheticSystemField(\n    PathSelector(\n        \"metadata.creators.person_or_org\", \"metadata.contributors.person_or_org\"\n    ),\n    filter=lambda x: x.get(\"type\") == \"personal\",\n    map=lambda x: x.get(\"name\"),\n    key=\"syntheticFields.people\",\n)\n",
                 "organizations": "SyntheticSystemField(\n  MultiSelector(\n      FilteredSelector(\n          PathSelector(\"metadata.creators.person_or_org\", \"metadata.contributors.person_or_org\"),\n          filter=lambda x: x[\"type\"] == \"personal\",\n          projection=\"affiliations.title.cs\",\n      ),\n      FilteredSelector(\n          PathSelector(\"metadata.creators.person_or_org\", \"metadata.contributors.person_or_org\"),\n          filter=lambda x: x[\"type\"] == \"organizational\",\n          projection=\"name\",\n      ),\n  ),\n  key=\"syntheticFields.organizations\",\n)\n",
                 "keywords": "SyntheticSystemField(\n    selector=KeywordsFieldSelector(\"metadata.subjects.subject\"),\n    key=\"syntheticFields.keywords\",\n)\n",
@@ -2613,11 +2661,11 @@
                                             "model": {
                                                 "type": "object",
                                                 "json-schema": {
-                                                    "additionalProperties": {
-                                                        "type": "string"
-                                                    },
                                                     "propertyNames": {
                                                         "pattern": "^[a-z]{2}$"
+                                                    },
+                                                    "additionalProperties": {
+                                                        "type": "string"
                                                     }
                                                 },
                                                 "mapping": {
@@ -2702,11 +2750,11 @@
                                         "title": {
                                             "type": "object",
                                             "json-schema": {
-                                                "additionalProperties": {
-                                                    "type": "string"
-                                                },
                                                 "propertyNames": {
                                                     "pattern": "^[a-z]{2}$"
+                                                },
+                                                "additionalProperties": {
+                                                    "type": "string"
                                                 }
                                             },
                                             "mapping": {
@@ -5538,6 +5586,11 @@
             "pids": {
                 "type": "object",
                 "json-schema": {
+                    "type": "object",
+                    "uniqueItems": true,
+                    "propertyNames": {
+                        "pattern": "^[a-z_-][a-z0-9_-]*$"
+                    },
                     "additionalProperties": {
                         "type": "object",
                         "additionalProperties": false,
@@ -5552,11 +5605,6 @@
                                 "type": "string"
                             }
                         }
-                    },
-                    "type": "object",
-                    "uniqueItems": true,
-                    "propertyNames": {
-                        "pattern": "^[a-z_-][a-z0-9_-]*$"
                     }
                 },
                 "ui": {

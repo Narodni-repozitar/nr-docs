@@ -109,9 +109,53 @@ record:
   record:
     fields:
       sort: "{{common.services.sort.TitleICUSortField}}(source_field='metadata.title')"
-      title_search: "{{oarepo_runtime.records.systemfields.icu.ICUSearchField}}(source_field='metadata.title')"
-      creator_search: "{{oarepo_runtime.records.systemfields.icu.ICUSearchField}}(source_field='metadata.creators.fullName')"
-      abstract_search: "{{oarepo_runtime.records.systemfields.icu.ICUSearchField}}(source_field='metadata.abstract.value')"
+
+      # search fields
+
+      # boost 20
+      search_title: "{{oarepo_runtime.records.systemfields.icu.ICUSearchField}}(source_field='metadata.title', boost=20)"
+      search_creator_name: "{{oarepo_runtime.records.systemfields.icu.FulltextIndexField}}(source_field='metadata.creators.person_or_org.name', boost=20)"
+      search_contributor_name: "{{oarepo_runtime.records.systemfields.icu.FulltextIndexField}}(source_field='metadata.contributors.person_or_org.name', boost=20)"
+      search_contributor_identifier: "{{oarepo_runtime.records.systemfields.icu.TermIndexField}}(source_field='metadata.contributors.person_or_org.identifiers.identifier', boost=20)"
+      search_creator_identifier: "{{oarepo_runtime.records.systemfields.icu.TermIndexField}}(source_field='metadata.creators.person_or_org.identifiers.identifier', boost=20)"
+
+      # boost 10
+      search_abstract: "{{oarepo_runtime.records.systemfields.icu.ICUSearchField}}(source_field='metadata.abstract', boost=10)"
+      search_subjects_subject_value: "{{oarepo_runtime.records.systemfields.icu.FulltextIndexField}}(source_field='metadata.subjects.subject.value', boost=10)"
+
+      # boost 9
+      search_additional_title: "{{oarepo_runtime.records.systemfields.icu.ICUSearchField}}(source_field='metadata.additionalTitles.title', boost=9)"
+
+      # boost 8
+      search_objectIdentifiers: "{{oarepo_runtime.records.systemfields.icu.TermIndexField}}(source_field='metadata.objectIdentifiers.identifier', boost=8)"
+
+      # boost 7
+      search_funder_funder_id: "{{oarepo_runtime.records.systemfields.icu.TermIndexField}}(source_field='metadata.funders.funder.id', boost=7)"
+      search_funder_funder_name: "{{oarepo_runtime.records.systemfields.icu.FulltextIndexField}}(source_field='metadata.funders.funder.name', boost=7)"
+      search_funder_funder_title: "{{oarepo_runtime.records.systemfields.icu.ICUSearchField}}(source_field='metadata.funders.funder.title', boost=7)"
+      search_publishers: "{{oarepo_runtime.records.systemfields.icu.FulltextIndexField}}(source_field='metadata.publishers', boost=7)"
+      search_resourceType_title: "{{oarepo_runtime.records.systemfields.icu.ICUSearchField}}(source_field='metadata.resourceType.title', boost=7)"
+
+      # boost 6
+      search_thesis_degreeGrantors_id: "{{oarepo_runtime.records.systemfields.icu.TermIndexField}}(source_field='metadata.thesis.degreeGrantors.id', boost=6)"
+      search_thesis_degreeGrantors_title: "{{oarepo_runtime.records.systemfields.icu.ICUSearchField}}(source_field='metadata.thesis.degreeGrantors.title', boost=6)"
+      search_events_eventNameOriginal: "{{oarepo_runtime.records.systemfields.icu.FulltextIndexField}}(source_field='metadata.events.eventNameOriginal', boost=6)"
+      search_events_eventNameAlternate: "{{oarepo_runtime.records.systemfields.icu.FulltextIndexField}}(source_field='metadata.events.eventNameAlternate', boost=6)"
+
+      # boost 5
+      search_contributor_affiliations_name: "{{oarepo_runtime.records.systemfields.icu.FulltextIndexField}}(source_field='metadata.contributors.affiliations.name', boost=5)"
+      search_creator_affiliations_name: "{{oarepo_runtime.records.systemfields.icu.FulltextIndexField}}(source_field='metadata.creators.affiliations.name', boost=5)"
+      search_funder_award_number: "{{oarepo_runtime.records.systemfields.icu.TermIndexField}}(source_field='metadata.funders.award.number', boost=5)"
+      search_funder_award_title: "{{oarepo_runtime.records.systemfields.icu.ICUSearchField}}(source_field='metadata.funders.award.title', boost=5)"
+      search_relatedItems_itemTitle: "{{oarepo_runtime.records.systemfields.icu.FulltextIndexField}}(source_field='metadata.relatedItems.itemTitle', boost=5)"
+
+      # boost 2
+      search_series_title: "{{oarepo_runtime.records.systemfields.icu.FulltextIndexField}}(source_field='metadata.series.seriesTitle', boost=2)"
+      search_relatedItems_itemPIDs_identifier: "{{oarepo_runtime.records.systemfields.icu.TermIndexField}}(source_field='metadata.relatedItems.itemPIDs.identifier', boost=2)"
+
+      # boost 1
+      search_notes: "{{oarepo_runtime.records.systemfields.icu.FulltextIndexField}}(source_field='metadata.notes')"
+      search_systemIdentifiers_identifier: "{{oarepo_runtime.records.systemfields.icu.TermIndexField}}(source_field='metadata.systemIdentifiers.identifier')"
 
   ext:
     extra-code: |1
@@ -154,9 +198,50 @@ record:
         index:
           query:
             default_field:
-              - "title_search.*"
-              - "creator_search.*"
-              - "abstract_search.*"
+              # boost 20
+              - search_contributor_identifier
+              - search_contributor_name.*
+              - search_creator_identifier
+              - search_creator_name.*
+              - search_title.*
+
+              # boost 10
+              - search_abstract.*
+              - search_subjects_subject_value.*
+
+              # boost 9
+              - search_additional_title.*
+
+              # boost 8
+              - search_objectIdentifiers
+
+              # boost 7
+              - search_funder_funder_id.*
+              - search_funder_funder_name.*
+              - search_funder_funder_title.*
+              - search_publishers.*
+              - search_resourceType_title.*
+
+              # boost 6
+              - search_thesis_degreeGrantors_id
+              - search_thesis_degreeGrantors_title.*
+              - search_events_eventNameOriginal.*
+              - search_events_eventNameAlternate.*
+
+              # boost 5
+              - search_contributor_affiliations_name.*
+              - search_creator_affiliations_name.*
+              - search_funder_award_number
+              - search_funder_award_title.*
+              - search_relatedItems_itemTitle.*
+
+              # boost 2
+              - search_series_title.*
+              - search_relatedItems_itemPIDs_identifier
+
+              # boost 1
+              - search_notes.*
+              - search_systemIdentifiers_identifier
 
 runtime-dependencies:
   nr-metadata: 2.0.0
