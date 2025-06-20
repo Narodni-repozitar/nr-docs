@@ -370,16 +370,6 @@
                 "module": "tests"
             }
         },
-        "draft": {
-            "type": "draft_record",
-            "properties": {},
-            "searchable": true,
-            "tests": {
-                "extra-fixtures": [],
-                "extra-code": "",
-                "module": "tests"
-            }
-        },
         "draft-files": {
             "type": "draft-file",
             "properties": {},
@@ -405,6 +395,16 @@
                 "module": "tests"
             }
         },
+        "draft": {
+            "type": "draft_record",
+            "properties": {},
+            "searchable": true,
+            "tests": {
+                "extra-fixtures": [],
+                "extra-code": "",
+                "module": "tests"
+            }
+        },
         "tests": {
             "extra-fixtures": [],
             "extra-code": "",
@@ -421,26 +421,6 @@
             "skip": false
         },
         "model-name": "Documents",
-        "draft-parent-record-metadata": {
-            "base-classes": [
-                "oarepo_workflows.records.models.RecordWorkflowParentModelMixin",
-                "invenio_db.db{db.Model}",
-                "invenio_records.models.RecordMetadataBase"
-            ],
-            "class": "documents.records.models.DocumentsParentMetadata",
-            "imports": [],
-            "table": "documents_parent_record_metadata",
-            "module": "documents.records.models",
-            "generate": true
-        },
-        "parent-record-marshmallow": {
-            "base-classes": [
-                "oarepo_workflows.services.records.schema.RDMWorkflowParentSchema"
-            ],
-            "module": "documents.services.records.schema",
-            "class": "documents.services.records.schema.GeneratedParentSchema",
-            "generate": true
-        },
         "config": {
             "generate": true,
             "module": "documents.config",
@@ -470,6 +450,26 @@
         },
         "proxy": {
             "module": "documents.proxies",
+            "generate": true
+        },
+        "draft-parent-record-metadata": {
+            "base-classes": [
+                "oarepo_workflows.records.models.RecordWorkflowParentModelMixin",
+                "invenio_db.db{db.Model}",
+                "invenio_records.models.RecordMetadataBase"
+            ],
+            "class": "documents.records.models.DocumentsParentMetadata",
+            "imports": [],
+            "table": "documents_parent_record_metadata",
+            "module": "documents.records.models",
+            "generate": true
+        },
+        "parent-record-marshmallow": {
+            "base-classes": [
+                "oarepo_workflows.services.records.schema.RDMWorkflowParentSchema"
+            ],
+            "module": "documents.services.records.schema",
+            "class": "documents.services.records.schema.GeneratedParentSchema",
             "generate": true
         },
         "resource": {
@@ -553,8 +553,8 @@
             "extra-code": "",
             "extensions": [
                 "{{oarepo_runtime.records.systemfields.mapping.SystemFieldDumperExt}}()",
-                "{{documents.records.dumpers.multilingual.MultilingualSearchDumperExt}}()",
-                "{{documents.records.dumpers.edtf.DocumentsEDTFIntervalDumperExt}}()"
+                "{{documents.records.dumpers.edtf.DocumentsEDTFIntervalDumperExt}}()",
+                "{{documents.records.dumpers.multilingual.MultilingualSearchDumperExt}}()"
             ],
             "imports": []
         },
@@ -565,17 +565,6 @@
             "field-args": [
                 "store=False"
             ],
-            "imports": []
-        },
-        "multilingual-dumper": {
-            "generate": true,
-            "module": "documents.records.dumpers.multilingual",
-            "class": "documents.records.dumpers.multilingual.MultilingualSearchDumperExt",
-            "base-classes": [
-                "oarepo_runtime.records.dumpers.multilingual_dumper.MultilingualDumper"
-            ],
-            "extra-code": "",
-            "extensions": [],
             "imports": []
         },
         "edtf-interval-dumper": {
@@ -613,6 +602,17 @@
                 "{{oarepo_requests.services.results.RequestTypesComponent}}()",
                 "{{oarepo_communities.services.results.RecordCommunitiesComponent}}()"
             ],
+            "imports": []
+        },
+        "multilingual-dumper": {
+            "generate": true,
+            "module": "documents.records.dumpers.multilingual",
+            "class": "documents.records.dumpers.multilingual.MultilingualSearchDumperExt",
+            "base-classes": [
+                "oarepo_runtime.records.dumpers.multilingual_dumper.MultilingualDumper"
+            ],
+            "extra-code": "",
+            "extensions": [],
             "imports": []
         },
         "draft-parent-record": {
@@ -1170,6 +1170,13 @@
                                 "title": {
                                     "type": "i18nStr",
                                     "required": true,
+                                    "marshmallow": {
+                                        "read": false,
+                                        "write": false,
+                                        "class": null,
+                                        "field-class": "oarepo_runtime.services.schema.i18n.I18nStrField",
+                                        "generate": false
+                                    },
                                     "ui": {
                                         "marshmallow": {
                                             "read": false,
@@ -1178,13 +1185,6 @@
                                             "field-class": "oarepo_runtime.services.schema.i18n_ui.I18nStrUIField"
                                         },
                                         "detail": "multilingual"
-                                    },
-                                    "marshmallow": {
-                                        "read": false,
-                                        "write": false,
-                                        "class": null,
-                                        "field-class": "oarepo_runtime.services.schema.i18n.I18nStrField",
-                                        "generate": false
                                     },
                                     "sample": {
                                         "skip": false
@@ -2613,11 +2613,11 @@
                                             "model": {
                                                 "type": "object",
                                                 "json-schema": {
-                                                    "additionalProperties": {
-                                                        "type": "string"
-                                                    },
                                                     "propertyNames": {
                                                         "pattern": "^[a-z]{2}$"
+                                                    },
+                                                    "additionalProperties": {
+                                                        "type": "string"
                                                     }
                                                 },
                                                 "mapping": {
@@ -2702,11 +2702,11 @@
                                         "title": {
                                             "type": "object",
                                             "json-schema": {
-                                                "additionalProperties": {
-                                                    "type": "string"
-                                                },
                                                 "propertyNames": {
                                                     "pattern": "^[a-z]{2}$"
+                                                },
+                                                "additionalProperties": {
+                                                    "type": "string"
                                                 }
                                             },
                                             "mapping": {
@@ -3143,8 +3143,8 @@
                         "type": "array",
                         "label.cs": "Vydavatel/é",
                         "label.en": "Publishers",
-                        "help.cs": "Uveďte vydavatele. Můžete zapsat i více vydavatelů.",
-                        "help.en": "Fill in the name of the publisher. You can write more publishers.",
+                        "help.cs": "Uveďte vydavatele. Můžete zapsat i více vydavatelů. Při žádosti o DOI se registruje pouze první vydavatel.",
+                        "help.en": "Fill in the name of the publisher. You can write more publishers. When assigning DOI, only the first publisher will be registered.",
                         "items": {
                             "type": "fulltext",
                             "marshmallow": {
@@ -5538,6 +5538,10 @@
             "pids": {
                 "type": "object",
                 "json-schema": {
+                    "propertyNames": {
+                        "pattern": "^[a-z_-][a-z0-9_-]*$"
+                    },
+                    "type": "object",
                     "additionalProperties": {
                         "type": "object",
                         "additionalProperties": false,
@@ -5553,11 +5557,7 @@
                             }
                         }
                     },
-                    "type": "object",
-                    "uniqueItems": true,
-                    "propertyNames": {
-                        "pattern": "^[a-z_-][a-z0-9_-]*$"
-                    }
+                    "uniqueItems": true
                 },
                 "ui": {
                     "marshmallow": {
