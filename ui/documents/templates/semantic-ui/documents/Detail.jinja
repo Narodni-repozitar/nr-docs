@@ -19,6 +19,7 @@
 {{ super() }}
 {% if not embedded %}
 {{ webpack['oarepo_requests_ui_record_requests.js']}}
+{{ webpack['oarepo_requests_ui_requests_list_modal.js'] }}
 {% endif %}
 {{ webpack['copy_to_clipboard.js']}}
 {%- endblock %}
