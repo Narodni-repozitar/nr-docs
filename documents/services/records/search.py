@@ -254,7 +254,8 @@ class DocumentsSearchOptions(I18nRDMSearchOptions):
 class DocumentsDraftSearchOptions(I18nRDMDraftsSearchOptions):
     """DocumentsDraft search options."""
 
-    facet_groups = {}
+    # TODO: added manually, should be generated
+    facet_groups = DocumentsSearchOptions.facet_groups
 
     facets = {
         "record_status": facets.record_status,

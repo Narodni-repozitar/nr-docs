@@ -1326,9 +1326,33 @@
         "index": {
             "query": {
                 "default_field": [
-                    "title_search.*",
-                    "creator_search.*",
-                    "abstract_search.*"
+                    "search_contributor_identifier",
+                    "search_contributor_name.*",
+                    "search_creator_identifier",
+                    "search_creator_name.*",
+                    "search_title.*",
+                    "search_abstract.*",
+                    "search_subjects_subject_value.*",
+                    "search_additional_title.*",
+                    "search_objectIdentifiers",
+                    "search_funder_funder_id.*",
+                    "search_funder_funder_name.*",
+                    "search_funder_funder_title.*",
+                    "search_publishers.*",
+                    "search_resourceType_title.*",
+                    "search_thesis_degreeGrantors_id",
+                    "search_thesis_degreeGrantors_title.*",
+                    "search_events_eventNameOriginal.*",
+                    "search_events_eventNameAlternate.*",
+                    "search_contributor_affiliations_name.*",
+                    "search_creator_affiliations_name.*",
+                    "search_funder_award_number",
+                    "search_funder_award_title.*",
+                    "search_relatedItems_itemTitle.*",
+                    "search_series_title.*",
+                    "search_relatedItems_itemPIDs_identifier",
+                    "search_notes.*",
+                    "search_systemIdentifiers_identifier"
                 ]
             }
         }
