@@ -4665,6 +4665,10 @@ msgstr ""
 msgid "metadata/funders/funder/title.hint"
 msgstr ""
 
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/documents/templates/semantic-ui/documents/Sidebar.jinja:7
+msgid "Search record's requests"
+msgstr "Hledat požadavky záznamu"
+
 #: /home/dusanst/Projects/new_nr_docs/nr-docs/common/just_for_translations.py:12
 msgid "images/repo_logo_cs_rgb.svg"
 msgstr "images/repo_logo_cs_rgb.svg"

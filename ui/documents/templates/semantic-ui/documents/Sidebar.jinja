@@ -4,7 +4,9 @@
 <section class="ui segment" aria-label='{{ _("Actions") }}'>
 <h2 class="ui small header detail-sidebar-header">
   {{ _("Actions") }}
-  <span id="record-requests-modal" data-record='{{ record | tojson }}'></span>
+  <a href="{{record.links.requests_html}}" target="_blank" rel="noopener noreferrer" title="{{_("Search record's requests")}}">
+    <i class="eye icon black"></i>
+  </a>
 </h2>
 {% if record.links.edit_html%}
   <div class="mb-10">
