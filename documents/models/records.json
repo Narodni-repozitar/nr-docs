@@ -2661,11 +2661,11 @@
                                             "model": {
                                                 "type": "object",
                                                 "json-schema": {
-                                                    "propertyNames": {
-                                                        "pattern": "^[a-z]{2}$"
-                                                    },
                                                     "additionalProperties": {
                                                         "type": "string"
+                                                    },
+                                                    "propertyNames": {
+                                                        "pattern": "^[a-z]{2}$"
                                                     }
                                                 },
                                                 "mapping": {
@@ -2750,11 +2750,11 @@
                                         "title": {
                                             "type": "object",
                                             "json-schema": {
-                                                "propertyNames": {
-                                                    "pattern": "^[a-z]{2}$"
-                                                },
                                                 "additionalProperties": {
                                                     "type": "string"
+                                                },
+                                                "propertyNames": {
+                                                    "pattern": "^[a-z]{2}$"
                                                 }
                                             },
                                             "mapping": {
@@ -5586,19 +5586,7 @@
             "pids": {
                 "type": "object",
                 "json-schema": {
-<<<<<<< HEAD
                     "type": "object",
-                    "uniqueItems": true,
-                    "propertyNames": {
-                        "pattern": "^[a-z_-][a-z0-9_-]*$"
-                    },
-||||||| c0be03f3
-=======
-                    "propertyNames": {
-                        "pattern": "^[a-z_-][a-z0-9_-]*$"
-                    },
-                    "type": "object",
->>>>>>> main
                     "additionalProperties": {
                         "type": "object",
                         "additionalProperties": false,
@@ -5613,19 +5601,11 @@
                                 "type": "string"
                             }
                         }
-<<<<<<< HEAD
-                    }
-||||||| c0be03f3
                     },
-                    "type": "object",
                     "uniqueItems": true,
                     "propertyNames": {
                         "pattern": "^[a-z_-][a-z0-9_-]*$"
                     }
-=======
-                    },
-                    "uniqueItems": true
->>>>>>> main
                 },
                 "ui": {
                     "marshmallow": {
