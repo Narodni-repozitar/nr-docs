@@ -12,6 +12,14 @@ from oarepo_vocabularies.services.facets import (
     VocabularyFacet,
 )
 
+record_status = TermsFacet(field="record_status", label=_("record_status"))
+
+has_draft = TermsFacet(field="has_draft", label=_("has_draft"))
+
+expires_at = DateTimeFacet(field="expires_at", label=_("expires_at.label"))
+
+fork_version_id = TermsFacet(field="fork_version_id", label=_("fork_version_id.label"))
+
 access_embargo_active = TermsFacet(
     field="access.embargo.active", label=_("access/embargo/active.label")
 )
@@ -581,12 +589,3 @@ syntheticFields_people = TermsFacet(
 syntheticFields_year = YearAutoHistogramFacet(
     field="syntheticFields.year", label=_("syntheticFields/year.label")
 )
-
-
-record_status = TermsFacet(field="record_status", label=_("record_status"))
-
-has_draft = TermsFacet(field="has_draft", label=_("has_draft"))
-
-expires_at = DateTimeFacet(field="expires_at", label=_("expires_at.label"))
-
-fork_version_id = TermsFacet(field="fork_version_id", label=_("fork_version_id.label"))

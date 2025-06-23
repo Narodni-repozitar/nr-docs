@@ -1,4 +1,4 @@
-{# def metadata, extra_context, record, ui, is_preview=None, api_record=None #}
+{# def metadata, extra_context, record, ui, is_preview=None, api_record=None, embedded #}
 {%- set title = metadata.title ~ " | " ~ _("NR Document repository") %}
 
 {% extends "oarepo_ui/detail.html" %}
@@ -17,6 +17,8 @@
 
 {%- block javascript %}
 {{ super() }}
+{% if not embedded %}
 {{ webpack['oarepo_requests_ui_record_requests.js']}}
+{% endif %}
 {{ webpack['copy_to_clipboard.js']}}
 {%- endblock %}
