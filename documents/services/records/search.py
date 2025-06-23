@@ -39,6 +39,10 @@ class DocumentsSearchOptions(I18nRDMSearchOptions):
 
     facets = {
         **getattr(I18nRDMSearchOptions, "facets", {}),
+        "record_status": facets.record_status,
+        "has_draft": facets.has_draft,
+        "expires_at": facets.expires_at,
+        "fork_version_id": facets.fork_version_id,
         "access_embargo_active": facets.access_embargo_active,
         "access_embargo_until": facets.access_embargo_until,
         "access_files": facets.access_files,
@@ -242,10 +246,6 @@ class DocumentsSearchOptions(I18nRDMSearchOptions):
         "syntheticFields_organizations": facets.syntheticFields_organizations,
         "syntheticFields_people": facets.syntheticFields_people,
         "syntheticFields_year": facets.syntheticFields_year,
-        "record_status": facets.record_status,
-        "has_draft": facets.has_draft,
-        "expires_at": facets.expires_at,
-        "fork_version_id": facets.fork_version_id,
     }
 
     sort_options = ICUSortOptions("documents")
@@ -258,6 +258,10 @@ class DocumentsDraftSearchOptions(I18nRDMDraftsSearchOptions):
     facet_groups = DocumentsSearchOptions.facet_groups
 
     facets = {
+        "record_status": facets.record_status,
+        "has_draft": facets.has_draft,
+        "expires_at": facets.expires_at,
+        "fork_version_id": facets.fork_version_id,
         "access_embargo_active": facets.access_embargo_active,
         "access_embargo_until": facets.access_embargo_until,
         "access_files": facets.access_files,
@@ -461,11 +465,7 @@ class DocumentsDraftSearchOptions(I18nRDMDraftsSearchOptions):
         "syntheticFields_organizations": facets.syntheticFields_organizations,
         "syntheticFields_people": facets.syntheticFields_people,
         "syntheticFields_year": facets.syntheticFields_year,
-        "expires_at": facets.expires_at,
-        "fork_version_id": facets.fork_version_id,
         **getattr(I18nRDMDraftsSearchOptions, "facets", {}),
-        "record_status": facets.record_status,
-        "has_draft": facets.has_draft,
     }
     # TODO: this should be generated
     sort_options = ICUSortOptions("documents")
