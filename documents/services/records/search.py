@@ -254,8 +254,36 @@ class DocumentsSearchOptions(I18nRDMSearchOptions):
 class DocumentsDraftSearchOptions(I18nRDMDraftsSearchOptions):
     """DocumentsDraft search options."""
 
-    # TODO: added manually, should be generated
-    facet_groups = DocumentsSearchOptions.facet_groups
+    facet_groups = {
+        "curator": {
+            "access_status": facets.access_status,
+            "syntheticFields_year": facets.syntheticFields_year,
+            "metadata_languages": facets.metadata_languages,
+            "metadata_resourceType": facets.metadata_resourceType,
+            "metadata_rights": facets.metadata_rights,
+            "syntheticFields_organizations": facets.syntheticFields_organizations,
+            "syntheticFields_people": facets.syntheticFields_people,
+            "metadata_funders_funder": facets.metadata_funders_funder,
+            "metadata_funders_award": facets.metadata_funders_award,
+            **getattr(I18nRDMDraftsSearchOptions, "facet_groups", {}).get(
+                "curator", {}
+            ),
+        },
+        "default": {
+            "access_status": facets.access_status,
+            "syntheticFields_year": facets.syntheticFields_year,
+            "metadata_languages": facets.metadata_languages,
+            "metadata_resourceType": facets.metadata_resourceType,
+            "metadata_rights": facets.metadata_rights,
+            "syntheticFields_organizations": facets.syntheticFields_organizations,
+            "syntheticFields_people": facets.syntheticFields_people,
+            "metadata_funders_funder": facets.metadata_funders_funder,
+            "metadata_funders_award": facets.metadata_funders_award,
+            **getattr(I18nRDMDraftsSearchOptions, "facet_groups", {}).get(
+                "default", {}
+            ),
+        },
+    }
 
     facets = {
         "record_status": facets.record_status,
