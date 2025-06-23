@@ -16,6 +16,7 @@ nr-metadata==2.0.74
 nr-oaipmh-harvesters==1.0.62
 nr-vocabularies==2.1.15
 oarepo-communities==5.3.5
+oarepo-citations==1.0.0
 oarepo-dashboard==1.0.24
 oarepo-doi==2.0.9
 oarepo-glitchtip==1.0.1
