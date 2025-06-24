@@ -1845,7 +1845,9 @@ msgid "metadata/originalRecord.hint"
 msgstr ""
 
 msgid "metadata/publishers.help"
-msgstr "Uveďte vydavatele. Můžete zapsat i více vydavatelů."
+msgstr ""
+"Uveďte vydavatele. Můžete zapsat i více vydavatelů. Při žádosti o DOI se "
+"registruje pouze první vydavatel."
 
 msgid "metadata/publishers.hint"
 msgstr ""
@@ -4662,3 +4664,7 @@ msgstr ""
 
 msgid "metadata/funders/funder/title.hint"
 msgstr ""
+
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/common/just_for_translations.py:12
+msgid "images/repo_logo_cs_rgb.svg"
+msgstr "images/repo_logo_cs_rgb.svg"

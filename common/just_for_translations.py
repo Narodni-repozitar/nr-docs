@@ -9,4 +9,5 @@ translation_strings = [
     _("Cancelled"),
     _("Beta version of document respository"),
     _("access/status.label"),
+    _("images/repo_logo_cs_rgb.svg"),
 ]
