@@ -1852,7 +1852,9 @@ msgid "metadata/originalRecord.hint"
 msgstr ""
 
 msgid "metadata/publishers.help"
-msgstr "Fill in the name of the publisher. You can write more publishers."
+msgstr ""
+"Fill in the name of the publisher. You can write more publishers. When "
+"assigning DOI, only the first publisher will be registered."
 
 msgid "metadata/publishers.hint"
 msgstr ""
@@ -5298,3 +5300,7 @@ msgstr ""
 
 msgid "metadata/funders/funder/title.hint"
 msgstr ""
+
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/common/just_for_translations.py:12
+msgid "images/repo_logo_cs_rgb.svg"
+msgstr "images/repo_logo_en_rgb.svg"
