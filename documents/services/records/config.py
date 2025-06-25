@@ -152,6 +152,16 @@ class DocumentsServiceConfig(
                 if_=RecordLink("{+api}/docs/{id}/requests"),
                 else_=RecordLink("{+api}/docs/{id}/draft/requests"),
             ),
+            # TODO: changed manually, fix model builder to generate this
+            "requests_html": ConditionalLink(
+                cond=is_published_record(),
+                if_=RecordLink(
+                    "{+ui}/me/requests?q=topic.documents:{id}&f=all:true&f=is_all:true"
+                ),
+                else_=RecordLink(
+                    "{+ui}/me/requests?q=topic.draft_documents:{id}&f=all:true&f=is_all:true"
+                ),
+            ),
             "self": ConditionalLink(
                 cond=is_published_record(),
                 if_=RecordLink("{+api}/docs/{id}", when=has_permission("read")),
