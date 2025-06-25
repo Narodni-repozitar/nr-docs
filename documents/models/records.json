@@ -98,7 +98,7 @@
             "base-classes": [
                 "oarepo_runtime.services.config.service.SearchAllConfigMixin",
                 "oarepo_runtime.services.config.service.PermissionsPresetsConfigMixin",
-                "common.services.config.FilteredResultServiceConfig"
+                "invenio_rdm_records.services.config.RDMRecordServiceConfig"
             ],
             "components": [
                 "{{oarepo_vocabularies.authorities.components.AuthorityComponent}}",
@@ -207,7 +207,7 @@
         },
         "json-serializer": {
             "base-classes": [
-                "common.services.filtered_json_ui_serializer.FilteredUIJSONSerializer"
+                "oarepo_runtime.resources.FilteredUIJSONSerializer"
             ],
             "module": "documents.resources.records.ui",
             "class": "documents.resources.records.ui.DocumentsUIJSONSerializer",
