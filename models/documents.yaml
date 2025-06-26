@@ -91,7 +91,8 @@ record:
   service-config:
     base-classes:
       - oarepo_runtime.services.config.service.PermissionsPresetsConfigMixin
-      - common.services.config.FilteredResultServiceConfig
+      - invenio_rdm_records.services.config.RDMRecordServiceConfig
+
     components:
       - "{{oarepo_vocabularies.authorities.components.AuthorityComponent}}"
       - "{{oarepo_runtime.services.components.DateIssuedComponent}}"
@@ -100,7 +101,7 @@ record:
 
   json-serializer:
     base-classes:
-      [common.services.filtered_json_ui_serializer.FilteredUIJSONSerializer]
+      [oarepo_runtime.resources.FilteredUIJSONSerializer]
 
   search-options:
     base-classes:
