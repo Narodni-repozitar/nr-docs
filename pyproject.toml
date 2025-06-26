@@ -11,6 +11,7 @@ dependencies = [
     "nr-metadata>=2.0.0",
     "nr-oaipmh-harvesters>=1.0.0",
     "nr-vocabularies>=2.0.8",
+    "oarepo-citations>=1.0.0",
     "oarepo-communities>=5.0.0",
     "oarepo-dashboard>=1.0.0",
     "oarepo-doi>=2.0.0",
