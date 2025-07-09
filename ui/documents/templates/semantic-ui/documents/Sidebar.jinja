@@ -41,13 +41,6 @@
 <RecordVersions record={record} is_preview={is_preview} />
 {% endif %}
 
-{% set citation_settings = {
-  "styles": [
-    { "style": "iso690-author-date-cs", "label": "ČSN ISO 690" },
-    { "style": "bibtex", "label": "BibTeX" }
-  ],
-  "defaultStyle": "iso690-author-date-cs"
-} %}
-<RecordCitations record={record} citation_settings={citation_settings} />
+<RecordCitations record={record} styles={config.get("CITATION_STYLES")} defaultStyle={config.get("CITATION_STYLES_DEFAULT")} />
 <RecordExport record={record} metadata={metadata} extra_context={extra_context}/>
 
