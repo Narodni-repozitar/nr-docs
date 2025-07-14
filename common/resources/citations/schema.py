@@ -160,11 +160,11 @@ class CSLJSONSchema(Schema):
     
     def get_url(self, obj):
         """Get URL."""
-        objectIds = obj["metadata"].get("objectIdentifiers", [])
-        doi = next((o["identifier"] for o in objectIds if o["scheme"].lower() == "doi"), None)
+        object_ids = obj["metadata"].get("objectIdentifiers", [])
+        doi = next((o["identifier"] for o in object_ids if o["scheme"].lower() == "doi"), None)
         url = None
         if doi:
             url = f"https://doi.org/{doi}"
         else:
-            url = next((o["url"] for o in objectIds if o["scheme"].lower() != "doi"), None)
+            url = next((o["url"] for o in object_ids if o["scheme"].lower() != "doi"), None)
         return url if url else missing
