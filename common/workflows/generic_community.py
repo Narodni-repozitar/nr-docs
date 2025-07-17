@@ -474,14 +474,21 @@ class GenericCommunityWorkflowRequests(WorkflowRequestPolicy):
             )
         ],
         recipients=[
-            IfRequestedBy(
-                requesters=[
-                    PrimaryCommunityRole("curator"),
-                    PrimaryCommunityRole("owner"),
+            IfInState(
+                "draft",
+                then_=[
+                    AutoApprove()
                 ],
-                then_=[AutoApprove()],
-                else_=[PrimaryCommunityRole("curator"), PrimaryCommunityRole("owner")],
-            )
+                else_=[IfRequestedBy(
+                    requesters=[
+                        PrimaryCommunityRole("curator"),
+                        PrimaryCommunityRole("owner"),
+                    ],
+                    then_=[AutoApprove()],
+                    else_=[PrimaryCommunityRole("curator"), PrimaryCommunityRole("owner")],
+                )]
+            ),
+
         ],
         escalations=[
             WorkflowRequestEscalation(
@@ -502,14 +509,21 @@ class GenericCommunityWorkflowRequests(WorkflowRequestPolicy):
             )
         ],
         recipients=[
-            IfRequestedBy(
-                requesters=[
-                    PrimaryCommunityRole("curator"),
-                    PrimaryCommunityRole("owner"),
+            IfInState(
+                "draft",
+                then_=[
+                    AutoApprove()
                 ],
-                then_=[AutoApprove()],
-                else_=[PrimaryCommunityRole("curator")],
-            )
+                else_=[IfRequestedBy(
+                    requesters=[
+                        PrimaryCommunityRole("curator"),
+                        PrimaryCommunityRole("owner"),
+                    ],
+                    then_=[AutoApprove()],
+                    else_=[PrimaryCommunityRole("curator"), PrimaryCommunityRole("owner")],
+                )]
+            ),
+
         ],
         escalations=[
             WorkflowRequestEscalation(
