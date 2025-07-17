@@ -81,6 +81,14 @@ class NRDocsDataCitePIDProvider(OarepoDataCitePIDProvider):
         if "languages" in metadata:
             payload["language"] = metadata["languages"][0]["id"]
 
+        if "objectIdentifiers" in metadata:
+            identifiers = []
+            for _id in metadata["objectIdentifiers"]:
+                identifiers.append({"identifier": _id["identifier"],
+                                    "identifierType": _id["scheme"]})
+
+            payload["identifiers"] = identifiers
+            
         return payload
 
     def validate(self, record, identifier=None, provider=None, **kwargs):
