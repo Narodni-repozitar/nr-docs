@@ -181,7 +181,10 @@ const FormFieldsContainer = () => {
             id="NrDocs.Deposit.SubjectsField.container"
             fieldPath="metadata.subjects"
           >
-            <SubjectsField fieldPath="metadata.subjects" />
+            <SubjectsField
+              fieldPath="metadata.subjects"
+              hasLocalLanguageSelectField
+            />
           </Overridable>
           <Overridable
             id="NrDocs.Deposit.SubjectCategoriesField.container"
@@ -196,7 +199,11 @@ const FormFieldsContainer = () => {
             id="NrDocs.Deposit.AbstractField.container"
             fieldPath="metadata.abstract"
           >
-            <MultilingualTextInput fieldPath="metadata.abstract" rich={true} />
+            <MultilingualTextInput
+              fieldPath="metadata.abstract"
+              rich={true}
+              hasLocalLanguageSelectField={true}
+            />
           </Overridable>
           <Overridable
             id="NrDocs.Deposit.SeriesField.container"
