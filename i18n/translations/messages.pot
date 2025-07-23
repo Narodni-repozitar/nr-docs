@@ -8,14 +8,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2025-05-23 13:40+0200\n"
+"POT-Creation-Date: 2025-07-23 09:53+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.16.0\n"
+"Generated-By: Babel 2.17.0\n"
 
 #: /home/dusanst/Projects/new_nr_docs/nr-docs/common/just_for_translations.py:5
 msgid "Submitted"
@@ -51,58 +51,47 @@ msgid "images/repo_logo_cs_rgb.svg"
 msgstr ""
 
 #: /home/dusanst/Projects/new_nr_docs/nr-docs/common/doi/mapping.py:7
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/common/services/pids/providers.py:92
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/common/services/pids/providers.py:100
 msgid "Missing data for required field."
-msgstr ""
-
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/common/resources/citations/__init__.py:26
-msgid "CSL"
-msgstr ""
-
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/common/resources/citations/__init__.py:32
-msgid "ISO 690"
-msgstr ""
-
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/common/resources/citations/__init__.py:38
-msgid "BibTex"
 msgstr ""
 
 #: /home/dusanst/Projects/new_nr_docs/nr-docs/common/services/components/temporary_access.py:51
 msgid "Files are not allowed for metadata only access."
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/common/services/files/allowed_document_extensions.py:29
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/common/services/files/allowed_document_extensions.py:30
+#, python-brace-format
 msgid ""
 "Invalid file extension for '{file_key}'. Supported formats: "
 "{allowed_extensions}"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/common/workflows/default.py:586
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/common/workflows/generic_community.py:584
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/common/workflows/default.py:600
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/common/workflows/generic_community.py:598
 #: /home/dusanst/Projects/new_nr_docs/nr-docs/common/workflows/restricted.py:598
 msgid "state:draft"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/common/workflows/default.py:587
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/common/workflows/generic_community.py:585
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/common/workflows/default.py:601
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/common/workflows/generic_community.py:599
 #: /home/dusanst/Projects/new_nr_docs/nr-docs/common/workflows/restricted.py:599
 msgid "state:published"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/common/workflows/default.py:588
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/common/workflows/generic_community.py:586
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/common/workflows/default.py:602
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/common/workflows/generic_community.py:600
 #: /home/dusanst/Projects/new_nr_docs/nr-docs/common/workflows/restricted.py:600
 msgid "state:submitted"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/common/workflows/default.py:589
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/common/workflows/generic_community.py:587
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/common/workflows/default.py:603
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/common/workflows/generic_community.py:601
 #: /home/dusanst/Projects/new_nr_docs/nr-docs/common/workflows/restricted.py:601
 msgid "state:retracting"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/common/workflows/default.py:590
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/common/workflows/generic_community.py:588
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/common/workflows/default.py:604
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/common/workflows/generic_community.py:602
 #: /home/dusanst/Projects/new_nr_docs/nr-docs/common/workflows/restricted.py:602
 msgid "state:deleted"
 msgstr ""
@@ -170,7 +159,6 @@ msgstr ""
 #: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:38
 #: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:42
 #: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:47
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:44
 #: i18n/translations/jinjax_messages.jinja:8
 msgid "metadata/abstract.label"
 msgstr ""
@@ -182,7 +170,6 @@ msgstr ""
 #: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:58
 #: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:62
 #: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:67
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:56
 #: i18n/translations/jinjax_messages.jinja:11
 msgid "metadata/accessibility.label"
 msgstr ""
@@ -274,13 +261,11 @@ msgid "metadata/dateAvailable.label"
 msgstr ""
 
 #: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:198
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:27
 #: i18n/translations/jinjax_messages.jinja:2
 msgid "metadata/dateIssued.label"
 msgstr ""
 
 #: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:202
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:28
 #: i18n/translations/jinjax_messages.jinja:3
 msgid "metadata/dateModified.label"
 msgstr ""
@@ -318,7 +303,6 @@ msgid "metadata/geoLocations/geoLocationPoint/pointLongitude.label"
 msgstr ""
 
 #: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:250
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:30
 #: i18n/translations/jinjax_messages.jinja:4
 msgid "metadata/languages.label"
 msgstr ""
@@ -326,7 +310,6 @@ msgstr ""
 #: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:255
 #: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:259
 #: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:264
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:80
 #: i18n/translations/jinjax_messages.jinja:19
 msgid "metadata/methods.label"
 msgstr ""
@@ -359,12 +342,12 @@ msgstr ""
 msgid "metadata/relatedItems/itemContributors/person_or_org/given_name.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:306
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:307
 msgid ""
 "metadata/relatedItems/itemContributors/person_or_org/identifiers/identifier.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:313
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:314
 msgid ""
 "metadata/relatedItems/itemContributors/person_or_org/identifiers/scheme.label"
 msgstr ""
@@ -393,12 +376,12 @@ msgstr ""
 msgid "metadata/relatedItems/itemCreators/person_or_org/given_name.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:352
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:353
 msgid ""
 "metadata/relatedItems/itemCreators/person_or_org/identifiers/identifier.label"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:359
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:360
 msgid ""
 "metadata/relatedItems/itemCreators/person_or_org/identifiers/scheme.label"
 msgstr ""
@@ -460,13 +443,11 @@ msgid "metadata/relatedItems/itemYear.label"
 msgstr ""
 
 #: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:439
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:33
 #: i18n/translations/jinjax_messages.jinja:5
 msgid "metadata/resourceType.label"
 msgstr ""
 
 #: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:444
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:60
 #: i18n/translations/jinjax_messages.jinja:13
 msgid "metadata/rights.label"
 msgstr ""
@@ -480,7 +461,6 @@ msgid "metadata/series/seriesVolume.label"
 msgstr ""
 
 #: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:457
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:89
 #: i18n/translations/jinjax_messages.jinja:22
 msgid "metadata/subjectCategories.label"
 msgstr ""
@@ -518,7 +498,6 @@ msgstr ""
 #: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:512
 #: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:516
 #: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:521
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:92
 #: i18n/translations/jinjax_messages.jinja:23
 msgid "metadata/technicalInfo.label"
 msgstr ""
@@ -528,7 +507,6 @@ msgid "metadata/technicalInfo/lang.label"
 msgstr ""
 
 #: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:533
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:37
 #: i18n/translations/jinjax_messages.jinja:6
 msgid "metadata/thesis/dateDefended.label"
 msgstr ""
@@ -538,19 +516,16 @@ msgid "metadata/thesis/defended.label"
 msgstr ""
 
 #: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:542
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:48
 #: i18n/translations/jinjax_messages.jinja:9
 msgid "metadata/thesis/degreeGrantors.label"
 msgstr ""
 
 #: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:547
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:51
 #: i18n/translations/jinjax_messages.jinja:10
 msgid "metadata/thesis/studyFields.label"
 msgstr ""
 
 #: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:551
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:96
 #: i18n/translations/jinjax_messages.jinja:24
 msgid "metadata/version.label"
 msgstr ""
@@ -656,9 +631,9 @@ msgstr ""
 msgid "Quick create"
 msgstr ""
 
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/ui/branding/templates/header_login.html:53
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/ui/documents/templates/semantic-ui/documents/Sidebar.jinja:4
-#: /Users/miroslavbauer/Code/github.com/Narodni-repozitar/nr-docs/ui/documents/templates/semantic-ui/documents/Sidebar.jinja:5
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/branding/templates/header_login.html:53
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/documents/templates/semantic-ui/documents/Sidebar.jinja:4
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/documents/templates/semantic-ui/documents/Sidebar.jinja:6
 msgid "Actions"
 msgstr ""
 
@@ -699,56 +674,6 @@ msgstr ""
 msgid "Title not provided"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:21
-#: i18n/translations/jinjax_messages.jinja:1
-msgid "metadata/additionalTitles.label"
-msgstr ""
-
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:40
-#: i18n/translations/jinjax_messages.jinja:7
-msgid "metadata/subjects.label"
-msgstr ""
-
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:57
-#: i18n/translations/jinjax_messages.jinja:12
-msgid "metadata/publishers.label"
-msgstr ""
-
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:63
-#: i18n/translations/jinjax_messages.jinja:14
-msgid "metadata/events.label"
-msgstr ""
-
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:66
-#: i18n/translations/jinjax_messages.jinja:15
-msgid "metadata/externalLocation.label"
-msgstr ""
-
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:70
-#: i18n/translations/jinjax_messages.jinja:16
-msgid "metadata/funders.label"
-msgstr ""
-
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:75
-#: i18n/translations/jinjax_messages.jinja:17
-msgid "metadata/relatedItems.label"
-msgstr ""
-
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:77
-#: i18n/translations/jinjax_messages.jinja:18
-msgid "metadata/geoLocations.label"
-msgstr ""
-
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:83
-#: i18n/translations/jinjax_messages.jinja:20
-msgid "metadata/notes.label"
-msgstr ""
-
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/documents/templates/semantic-ui/documents/Main.jinja:86
-#: i18n/translations/jinjax_messages.jinja:21
-msgid "metadata/series.label"
-msgstr ""
-
 #: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/documents/templates/semantic-ui/documents/Search.jinja:3
 msgid "Search results"
 msgstr ""
@@ -763,6 +688,46 @@ msgstr ""
 
 #: /home/dusanst/Projects/new_nr_docs/nr-docs/ui/documents/templates/semantic-ui/documents/Sidebar.jinja:14
 msgid "Edit"
+msgstr ""
+
+#: i18n/translations/jinjax_messages.jinja:1
+msgid "metadata/additionalTitles.label"
+msgstr ""
+
+#: i18n/translations/jinjax_messages.jinja:7
+msgid "metadata/subjects.label"
+msgstr ""
+
+#: i18n/translations/jinjax_messages.jinja:12
+msgid "metadata/publishers.label"
+msgstr ""
+
+#: i18n/translations/jinjax_messages.jinja:14
+msgid "metadata/events.label"
+msgstr ""
+
+#: i18n/translations/jinjax_messages.jinja:15
+msgid "metadata/externalLocation.label"
+msgstr ""
+
+#: i18n/translations/jinjax_messages.jinja:16
+msgid "metadata/funders.label"
+msgstr ""
+
+#: i18n/translations/jinjax_messages.jinja:17
+msgid "metadata/relatedItems.label"
+msgstr ""
+
+#: i18n/translations/jinjax_messages.jinja:18
+msgid "metadata/geoLocations.label"
+msgstr ""
+
+#: i18n/translations/jinjax_messages.jinja:20
+msgid "metadata/notes.label"
+msgstr ""
+
+#: i18n/translations/jinjax_messages.jinja:21
+msgid "metadata/series.label"
 msgstr ""
 
 msgid "Publication date"

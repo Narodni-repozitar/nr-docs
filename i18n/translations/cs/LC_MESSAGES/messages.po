@@ -1626,6 +1626,8 @@ msgstr "Uveďte hlavní název akce (např. konference)."
 
 msgid "metadata/externalLocation.help"
 msgstr ""
+"Vložte URL adresu dalšího umístění dokumentu (př. jiný repozitář, databáze, "
+"webová stránka)."
 
 msgid "metadata/externalLocation.hint"
 msgstr ""
@@ -3943,7 +3945,7 @@ msgstr ""
 
 #: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:208
 msgid "metadata/funders/award.label"
-msgstr "Číslo projektu"
+msgstr "Název projektu"
 
 #: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:214
 msgid "metadata/funders/funder.label"
