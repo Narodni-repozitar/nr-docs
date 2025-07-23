@@ -2,8 +2,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
-"POT-Creation-Date: 2025-06-23T06:07:55.608324\n"
-"PO-Revision-Date: 2025-06-23T06:07:55.608326\n"
+"POT-Creation-Date: 2025-07-23T09:52:24.145347\n"
+"PO-Revision-Date: 2025-07-23T09:52:24.145349\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -696,11 +696,13 @@ msgstr "Fill in the main name of the event (i.e. conference)."
 msgid "metadata/events/eventNameOriginal.help"
 msgstr ""
 
+msgid "metadata/externalLocation.label"
+msgstr "External Location"
+
 msgid "metadata/externalLocation.help"
 msgstr ""
-
-msgid "metadata/externalLocation.label"
-msgstr ""
+"Provide the URL link for another location of the document (e.g. another "
+"repository, database, website)."
 
 msgid "metadata/externalLocation.hint"
 msgstr ""
@@ -733,7 +735,7 @@ msgid "metadata/funders.hint"
 msgstr ""
 
 msgid "metadata/funders/award.label"
-msgstr "Award number"
+msgstr "Project name"
 
 msgid "metadata/funders/award.help"
 msgstr ""
