@@ -124,7 +124,7 @@ class DefaultWorkflowPermissions(CommunityDefaultWorkflowPermissions):
 
     # note: can_read_draft and can_read are not mutually exclusive (they test IfInState)
     # so we can just add them together
-    can_search_all_records = can_read_draft + can_read
+    can_read_all_records = can_read_draft + can_read
 
     # who can read a deleted record (on an /api/documents/ url)
     # this is strange, but taken from RDM
@@ -478,19 +478,21 @@ class DefaultWorkflowRequests(WorkflowRequestPolicy):
         recipients=[
             IfInState(
                 "draft",
-                then_=[
-                    AutoApprove()
+                then_=[AutoApprove()],
+                else_=[
+                    IfRequestedBy(
+                        requesters=[
+                            PrimaryCommunityRole("curator"),
+                            PrimaryCommunityRole("owner"),
+                        ],
+                        then_=[AutoApprove()],
+                        else_=[
+                            PrimaryCommunityRole("curator"),
+                            PrimaryCommunityRole("owner"),
+                        ],
+                    )
                 ],
-                else_=[IfRequestedBy(
-                    requesters=[
-                        PrimaryCommunityRole("curator"),
-                        PrimaryCommunityRole("owner"),
-                    ],
-                    then_=[AutoApprove()],
-                    else_=[PrimaryCommunityRole("curator"), PrimaryCommunityRole("owner")],
-                )]
             ),
-
         ],
         escalations=[
             WorkflowRequestEscalation(
@@ -513,19 +515,21 @@ class DefaultWorkflowRequests(WorkflowRequestPolicy):
         recipients=[
             IfInState(
                 "draft",
-                then_=[
-                    AutoApprove()
+                then_=[AutoApprove()],
+                else_=[
+                    IfRequestedBy(
+                        requesters=[
+                            PrimaryCommunityRole("curator"),
+                            PrimaryCommunityRole("owner"),
+                        ],
+                        then_=[AutoApprove()],
+                        else_=[
+                            PrimaryCommunityRole("curator"),
+                            PrimaryCommunityRole("owner"),
+                        ],
+                    )
                 ],
-                else_=[IfRequestedBy(
-                    requesters=[
-                        PrimaryCommunityRole("curator"),
-                        PrimaryCommunityRole("owner"),
-                    ],
-                    then_=[AutoApprove()],
-                    else_=[PrimaryCommunityRole("curator"), PrimaryCommunityRole("owner")],
-                )]
             ),
-
         ],
         escalations=[
             WorkflowRequestEscalation(
