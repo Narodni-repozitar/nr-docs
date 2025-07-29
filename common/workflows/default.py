@@ -50,6 +50,7 @@ from oarepo_communities.services.permissions.policy import (
 )
 from oarepo_oaipmh_harvester.services.generators import IfNotHarvested
 from oarepo_requests.services.permissions.generators import IfRequestedBy
+from oarepo_runtime.services.permissions import UserWithRole
 from oarepo_runtime.services.permissions.generators import RecordOwners
 from oarepo_workflows import (
     AutoApprove,
@@ -86,6 +87,7 @@ class DefaultWorkflowPermissions(CommunityDefaultWorkflowPermissions):
         # if the record is published and restricted, only members of the community can see it,
         # otherwise, any user can see it
         # every member of the community can see the metadata of the drafts, but not the files
+        UserWithRole("request_manager"),
     ]
 
     # who can read a draft record (on an /api/user/documents url)
