@@ -53,7 +53,7 @@ class NRDocsDataCitePIDProvider(OarepoDataCitePIDProvider):
             dc_rights = []
             right = metadata["rights"]
             dc_rights.append(
-                {"rights": right["title"], "rightsIdentifier": right["id"]}
+                {"rightsIdentifier": right["id"]}
             )
             if len(dc_rights) > 0:
                 payload["rightsList"] = dc_rights
