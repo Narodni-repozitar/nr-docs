@@ -89,6 +89,10 @@ EOF
 done 
 )>/tmp/nr-docs-users.yaml
 
+# request managers
+invenio roles create request_manager
+invenio roles add nrdocstest+vlastnik@gmail.com request_manager
+
 invenio documents create-users /tmp/nr-docs-users.yaml
 
 invenio oarepo communities create generic "Obecná komunita"
