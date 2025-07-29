@@ -16,3 +16,9 @@ class NrDocsRequestsPermissionPolicy(CreatorsFromWorkflowRequestsPermissionPolic
     can_read = CreatorsFromWorkflowRequestsPermissionPolicy.can_read + [
         UserWithRole("request_manager"),
     ]
+    can_create_comment = (
+        CreatorsFromWorkflowRequestsPermissionPolicy.can_create_comment
+        + [
+            UserWithRole("request_manager"),
+        ]
+    )
