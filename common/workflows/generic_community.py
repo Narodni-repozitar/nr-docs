@@ -332,7 +332,7 @@ publish_recipients = [
             PrimaryCommunityRole("owner"),
         ],
         then_=[AutoApprove()],
-        else_=[PrimaryCommunityRole("curator"), PrimaryCommunityRole("owner")],
+        else_=[PrimaryCommunityRole("curator")],
     )
 ]
 
@@ -486,7 +486,6 @@ class GenericCommunityWorkflowRequests(WorkflowRequestPolicy):
                         then_=[AutoApprove()],
                         else_=[
                             PrimaryCommunityRole("curator"),
-                            PrimaryCommunityRole("owner"),
                         ],
                     )
                 ],
@@ -523,7 +522,6 @@ class GenericCommunityWorkflowRequests(WorkflowRequestPolicy):
                         then_=[AutoApprove()],
                         else_=[
                             PrimaryCommunityRole("curator"),
-                            PrimaryCommunityRole("owner"),
                         ],
                     )
                 ],
