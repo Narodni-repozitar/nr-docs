@@ -438,7 +438,7 @@ msgstr "Events"
 
 #: sites/nr-docs/site/nr_docs/translations/jinjax_messages.jinja:14
 msgid "metadata/externalLocation.label"
-msgstr "External location"
+msgstr "External Location"
 
 #: sites/nr-docs/site/nr_docs/translations/jinjax_messages.jinja:15
 msgid "metadata/fundingReferences.label"
@@ -1634,6 +1634,8 @@ msgstr "Fill in the main name of the event (i.e. conference)."
 
 msgid "metadata/externalLocation.help"
 msgstr ""
+"Provide the URL link for another location of the document (e.g. another "
+"repository, database, website)."
 
 msgid "metadata/externalLocation.hint"
 msgstr ""
@@ -1852,7 +1854,9 @@ msgid "metadata/originalRecord.hint"
 msgstr ""
 
 msgid "metadata/publishers.help"
-msgstr "Fill in the name of the publisher. You can write more publishers."
+msgstr ""
+"Fill in the name of the publisher. You can write more publishers. When "
+"assigning DOI, only the first publisher will be registered."
 
 msgid "metadata/publishers.hint"
 msgstr ""
@@ -4580,7 +4584,7 @@ msgstr ""
 
 #: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:208
 msgid "metadata/funders/award.label"
-msgstr "Award number"
+msgstr "Project name"
 
 #: /home/dusanst/Projects/new_nr_docs/nr-docs/documents/services/records/facets.py:214
 msgid "metadata/funders/funder.label"
