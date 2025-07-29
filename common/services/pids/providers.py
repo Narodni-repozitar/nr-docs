@@ -57,8 +57,9 @@ class NRDocsDataCitePIDProvider(OarepoDataCitePIDProvider):
             )
             _rights = {"rightsIdentifier": right["id"]}
             if "title" in voc.data:
-                right_title = voc.data["title"].get("en", voc.data["title"]["cs"])
-                _rights["rights"] = right_title
+                right_title = voc.data["title"].get("en", voc.data["title"].get("cs"))
+                if right_title:
+                    _rights["rights"] = right_title
             dc_rights.append(
                 _rights
             )
