@@ -16,13 +16,13 @@ nr-metadata==2.0.76
 nr-oaipmh-harvesters==1.0.65
 nr-vocabularies==2.1.17
 oarepo-citations==1.0.2
-oarepo-communities==5.4.1
+oarepo-communities==5.4.2
 oarepo-dashboard==1.0.25
-oarepo-doi==2.0.15
+oarepo-doi==2.0.16
 oarepo-glitchtip==1.0.1
 oarepo-global-search==1.0.44
 oarepo-oai-pmh-harvester==5.0.6
-oarepo-oidc-einfra==1.2.0
+oarepo-oidc-einfra==1.2.1
 oarepo-published-service==1.0.3
 oarepo-rdm==0.6.0
 oarepo-requests==2.5.5
