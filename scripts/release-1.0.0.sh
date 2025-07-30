@@ -30,11 +30,6 @@ if [ -d .venv ]; then
     source .venv/bin/activate
 fi
 
-if [ -z "$USER_PASSWORD" ] ; then
-    echo "USER_PASSWORD is not set"
-    exit 1
-fi
-
 if [ -z "$BUCKET_NAME" ] ; then
     echo "BUCKET_NAME is not set"
     exit 1
