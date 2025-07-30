@@ -2,6 +2,7 @@ import {
   parseSearchAppConfigs,
   createSearchAppsInit,
   HistogramWSlider,
+  MultilineSearchbarElement,
 } from "@js/oarepo_ui/search";
 import { parametrize } from "react-overridable";
 import ResultsListItem from "./ResultsListItem";
@@ -18,6 +19,7 @@ export const componentOverrides = {
   [`${overridableIdPrefix}.ResultsList.item`]: ResultsListItem,
   [`${overridableIdPrefix}.BucketAggregation.element.syntheticFields_year`]:
     HistogramWSlider,
+  [`${overridableIdPrefix}.SearchBar.element`]: MultilineSearchbarElement,
 };
 
 createSearchAppsInit({ componentOverrides });
