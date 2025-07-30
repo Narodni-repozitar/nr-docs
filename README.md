@@ -33,7 +33,7 @@ To install and set up this repository, follow these steps:
      as it is in the user profile inside the repository.
    - technical support will run
       - `invenio roles add <email> request_manager`
-      - `invenio roles add <email> repository_owner`
+      - `invenio roles add <email> communities_owner`
       - `invenio roles add <email> administration`
    - This command will:
       - add the person as an owner of all communities inside the repository
@@ -44,7 +44,7 @@ To install and set up this repository, follow these steps:
      as it is in the user profile inside the repository.
    - technical support will run
       - `invenio roles remove <email> request_manager`
-      - `invenio roles remove <email> repository_owner`
+      - `invenio roles remove <email> communities_owner`
       - `invenio roles remove <email> administration`
 8. Repository owner needs to log in and set up:
     - workflows for each created community if they are different from the default
