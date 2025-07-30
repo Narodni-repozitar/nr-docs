@@ -49,7 +49,7 @@ msgstr "Text"
 #: models/nr-documents/nr_documents/services/records/facets.py:73
 #: models/nr-documents/nr_documents/services/records/facets.py:78
 msgid "metadata/additionalTitles/title.label"
-msgstr ""
+msgstr "Additional Title"
 
 #: models/nr-documents/nr_documents/services/records/facets.py:85
 msgid "metadata/additionalTitles/title/lang.label"
@@ -123,7 +123,7 @@ msgstr "Date Modified"
 
 #: models/nr-documents/nr_documents/services/records/facets.py:172
 msgid "metadata/events/eventLocation/country.label"
-msgstr "Country"
+msgstr "Country Name"
 
 #: models/nr-documents/nr_documents/services/records/facets.py:178
 msgid "metadata/events/eventLocation/place.label"
@@ -1570,7 +1570,7 @@ msgid "metadata/events/eventLocation.help"
 msgstr ""
 
 msgid "metadata/events/eventLocation.label"
-msgstr ""
+msgstr "Event location"
 
 msgid "metadata/events/eventLocation.hint"
 msgstr ""

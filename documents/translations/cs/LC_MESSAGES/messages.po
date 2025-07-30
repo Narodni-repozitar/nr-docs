@@ -2,8 +2,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
-"POT-Creation-Date: 2025-07-23T09:52:24.145304\n"
-"PO-Revision-Date: 2025-07-23T09:52:24.145312\n"
+"POT-Creation-Date: 2025-07-29T15:28:41.117644\n"
+"PO-Revision-Date: 2025-07-29T15:28:41.117655\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -210,10 +210,10 @@ msgstr ""
 msgid "metadata/additionalTitles.hint"
 msgstr ""
 
-msgid "metadata/additionalTitles/title.help"
-msgstr ""
-
 msgid "metadata/additionalTitles/title.label"
+msgstr "Další název"
+
+msgid "metadata/additionalTitles/title.help"
 msgstr ""
 
 msgid "metadata/additionalTitles/title.hint"
@@ -623,17 +623,17 @@ msgstr "Vyberte časový interval (Od - Do), ve kterém se událost odehrála."
 msgid "metadata/events/eventDate.help"
 msgstr ""
 
-msgid "metadata/events/eventLocation.help"
-msgstr ""
-
 msgid "metadata/events/eventLocation.label"
+msgstr "Místo konání akce"
+
+msgid "metadata/events/eventLocation.help"
 msgstr ""
 
 msgid "metadata/events/eventLocation.hint"
 msgstr ""
 
 msgid "metadata/events/eventLocation/country.label"
-msgstr "Země"
+msgstr "Název země"
 
 msgid "metadata/events/eventLocation/country.hint"
 msgstr "Vyberte stát z nabídky."
