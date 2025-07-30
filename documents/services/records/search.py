@@ -1,3 +1,4 @@
+from invenio_i18n import lazy_gettext as _
 from oarepo_runtime.services.search import (
     I18nRDMDraftsSearchOptions,
     I18nRDMSearchOptions,
@@ -246,6 +247,18 @@ class DocumentsSearchOptions(I18nRDMSearchOptions):
         "syntheticFields_organizations": facets.syntheticFields_organizations,
         "syntheticFields_people": facets.syntheticFields_people,
         "syntheticFields_year": facets.syntheticFields_year,
+    }
+
+    # TODO: this should be generated, please keep this in if regenerating model
+    extra_sort_options = {
+        "updated-desc": dict(
+            title=_("Recently updated"),
+            fields=["-updated"],
+        ),
+        "updated-asc": dict(
+            title=_("Least recently updated"),
+            fields=["updated"],
+        ),
     }
 
     sort_options = ICUSortOptions("documents")

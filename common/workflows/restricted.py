@@ -50,6 +50,7 @@ from oarepo_communities.services.permissions.policy import (
 )
 from oarepo_oaipmh_harvester.services.generators import IfNotHarvested
 from oarepo_requests.services.permissions.generators import IfRequestedBy
+from oarepo_runtime.services.permissions import UserWithRole
 from oarepo_runtime.services.permissions.generators import RecordOwners
 from oarepo_workflows import (
     AutoApprove,
@@ -86,6 +87,7 @@ class RestrictedWorkflowPermissions(CommunityDefaultWorkflowPermissions):
         # if the record is published and restricted, only members of the community can see it,
         # otherwise, any user can see it
         # every member of the community can see the metadata of the drafts, but not the files
+        UserWithRole("request_manager"),
     ]
 
     # who can read a draft record (on an /api/user/documents url)
@@ -124,7 +126,7 @@ class RestrictedWorkflowPermissions(CommunityDefaultWorkflowPermissions):
 
     # note: can_read_draft and can_read are not mutually exclusive (they test IfInState)
     # so we can just add them together
-    can_search_all_records = can_read_draft + can_read
+    can_read_all_records = can_read_draft + can_read
 
     # who can read a deleted record (on an /api/documents/ url)
     # this is strange, but taken from RDM
@@ -346,7 +348,7 @@ publish_recipients = [
             PrimaryCommunityRole("owner"),
         ],
         then_=[AutoApprove()],
-        else_=[PrimaryCommunityRole("curator"), PrimaryCommunityRole("owner")],
+        else_=[PrimaryCommunityRole("curator")],
     )
 ]
 
@@ -494,7 +496,7 @@ class RestrictedWorkflowRequests(WorkflowRequestPolicy):
                     PrimaryCommunityRole("owner"),
                 ],
                 then_=[AutoApprove()],
-                else_=[PrimaryCommunityRole("curator"), PrimaryCommunityRole("owner")],
+                else_=[PrimaryCommunityRole("curator")],
             )
         ],
         escalations=[
