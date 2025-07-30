@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2025-07-29 15:29+0200\n"
+"POT-Creation-Date: 2025-07-30 12:21+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -51,7 +51,7 @@ msgid "images/repo_logo_cs_rgb.svg"
 msgstr ""
 
 #: /home/dusanst/Projects/new_nr_docs/nr-docs/common/doi/mapping.py:7
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/common/services/pids/providers.py:100
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/common/services/pids/providers.py:108
 msgid "Missing data for required field."
 msgstr ""
 
@@ -66,33 +66,33 @@ msgid ""
 "{allowed_extensions}"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/common/workflows/default.py:600
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/common/workflows/generic_community.py:598
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/common/workflows/restricted.py:598
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/common/workflows/default.py:604
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/common/workflows/generic_community.py:602
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/common/workflows/restricted.py:600
 msgid "state:draft"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/common/workflows/default.py:601
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/common/workflows/generic_community.py:599
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/common/workflows/restricted.py:599
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/common/workflows/default.py:605
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/common/workflows/generic_community.py:603
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/common/workflows/restricted.py:601
 msgid "state:published"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/common/workflows/default.py:602
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/common/workflows/generic_community.py:600
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/common/workflows/restricted.py:600
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/common/workflows/default.py:606
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/common/workflows/generic_community.py:604
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/common/workflows/restricted.py:602
 msgid "state:submitted"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/common/workflows/default.py:603
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/common/workflows/generic_community.py:601
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/common/workflows/restricted.py:601
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/common/workflows/default.py:607
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/common/workflows/generic_community.py:605
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/common/workflows/restricted.py:603
 msgid "state:retracting"
 msgstr ""
 
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/common/workflows/default.py:604
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/common/workflows/generic_community.py:602
-#: /home/dusanst/Projects/new_nr_docs/nr-docs/common/workflows/restricted.py:602
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/common/workflows/default.py:608
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/common/workflows/generic_community.py:606
+#: /home/dusanst/Projects/new_nr_docs/nr-docs/common/workflows/restricted.py:604
 msgid "state:deleted"
 msgstr ""
 

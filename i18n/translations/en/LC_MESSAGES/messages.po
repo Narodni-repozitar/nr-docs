@@ -123,7 +123,7 @@ msgstr "Date Modified"
 
 #: models/nr-documents/nr_documents/services/records/facets.py:172
 msgid "metadata/events/eventLocation/country.label"
-msgstr "Country Name"
+msgstr "Country"
 
 #: models/nr-documents/nr_documents/services/records/facets.py:178
 msgid "metadata/events/eventLocation/place.label"
@@ -1570,7 +1570,7 @@ msgid "metadata/events/eventLocation.help"
 msgstr ""
 
 msgid "metadata/events/eventLocation.label"
-msgstr "Event location"
+msgstr "Event Location"
 
 msgid "metadata/events/eventLocation.hint"
 msgstr ""

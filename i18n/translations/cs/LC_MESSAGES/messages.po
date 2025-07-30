@@ -123,7 +123,7 @@ msgstr "Datum změny dokumentu"
 
 #: models/nr-documents/nr_documents/services/records/facets.py:172
 msgid "metadata/events/eventLocation/country.label"
-msgstr "Název země"
+msgstr "Země"
 
 #: models/nr-documents/nr_documents/services/records/facets.py:178
 msgid "metadata/events/eventLocation/place.label"
