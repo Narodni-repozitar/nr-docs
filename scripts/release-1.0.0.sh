@@ -58,9 +58,9 @@ invenio roles create communities_owner
 invenio access allow administration-access role administration
 invenio access allow administration-moderation role administration
 
-invenio documents set-community-owner-group
-
 invenio oarepo communities create generic "Obecná komunita"
+
+invenio documents set-community-owner-group
 
 invenio oarepo index reindex
 
@@ -75,5 +75,5 @@ invenio oarepo oai harvester add nusl-manual-submissions --name "Manual submissi
             --writer 'timestamp_update{service=documents,date_created_csv_path="./scripts/datecreated.csv"}'
 
 if [ "$HARVEST" == "true" ] ; then
-    invenio oarepo oai harvester run nusl-manual-submissions --batch-size 100 --verbose
+    invenio oarepo oai harvester run nusl-manual-submissions --batch-size 100
 fi
