@@ -52,8 +52,9 @@ invenio communities custom-fields init
 invenio files location create --default default s3://${BUCKET_NAME};
 
 invenio oarepo fixtures load --batch-size 1000 --verbose
-
 invenio oarepo fixtures load --no-system-fixtures ./fixtures --batch-size 1000 --verbose
+
+invenio oarepo vocabularies import-ror
 
 invenio roles create request_manager
 invenio roles create administration
@@ -63,3 +64,21 @@ invenio access allow administration-access role administration
 invenio access allow administration-moderation role administration
 
 invenio documents set-community-owner-group
+
+invenio oarepo communities create generic "Obecná komunita"
+
+invenio oarepo index reindex
+
+invenio oarepo oai harvester add nusl-manual-submissions --name "Manual submissions NUSL harvester" \
+            --url https://invenio.nusl.cz/oai2d --set manual_submission --prefix marcxml \
+            --loader 'sickle' \
+            --transformer marcxml --transformer nusl \
+            --writer 'service{service=documents}' \
+            --writer 'attachment{service=documents_file_draft}' \
+            --writer 'publish{service=documents}' \
+            --writer 'owner{service=documents}' \
+            --writer 'timestamp_update{service=documents,date_created_csv_path="./scripts/datecreated.csv"}'
+
+if [ "$HARVEST" == "true" ] ; then
+    invenio oarepo oai harvester run nusl-manual-submissions --batch-size 100 --verbose
+fi
