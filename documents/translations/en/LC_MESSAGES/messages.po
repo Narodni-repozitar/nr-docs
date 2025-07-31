@@ -2,8 +2,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
-"POT-Creation-Date: 2025-07-23T09:52:24.145347\n"
-"PO-Revision-Date: 2025-07-23T09:52:24.145349\n"
+"POT-Creation-Date: 2025-07-30T12:20:14.940470\n"
+"PO-Revision-Date: 2025-07-30T12:20:14.940471\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -211,10 +211,10 @@ msgstr ""
 msgid "metadata/additionalTitles.hint"
 msgstr ""
 
-msgid "metadata/additionalTitles/title.help"
-msgstr ""
-
 msgid "metadata/additionalTitles/title.label"
+msgstr "Additional Title"
+
+msgid "metadata/additionalTitles/title.help"
 msgstr ""
 
 msgid "metadata/additionalTitles/title.hint"
@@ -624,10 +624,10 @@ msgstr "Choose the time period (From - To) in which the event took place."
 msgid "metadata/events/eventDate.help"
 msgstr ""
 
-msgid "metadata/events/eventLocation.help"
-msgstr ""
-
 msgid "metadata/events/eventLocation.label"
+msgstr "Event Location"
+
+msgid "metadata/events/eventLocation.help"
 msgstr ""
 
 msgid "metadata/events/eventLocation.hint"
