@@ -62,9 +62,6 @@ documents = "documents.ext:DocumentsExt"
 oai_s3_harvester = "common.ext:OaiS3HarvesterExt"
 actions_permissions = "common.ext:ActionPermissionsExt"
 
-[project.entry-points."invenio_base.finalize_app"]
-deprecated_vocabularies = "common.services.vocabularies:remove_deprecated_vocabulary_items_from_search"
-
 [project.entry-points."invenio_db.alembic"]
 documents = "common:alembic"
 
@@ -79,6 +76,7 @@ documents_file = "documents.views.files.api:create_api_blueprint"
 documents_file_draft = "documents.views.draft_files.api:create_api_blueprint"
 documents_requests = "documents.views.requests.api:create_api_blueprint"
 documents_request_types = "documents.views.request_types.api:create_api_blueprint"
+
 
 [project.entry-points."invenio_search.mappings"]
 documents = "documents.records.mappings"
