@@ -35,6 +35,10 @@ if [ -z "$BUCKET_NAME" ] ; then
     exit 1
 fi
 
+if [ -z "$HARVESTING_SERVICE_PASSWORD" ] ; then
+    HARVESTING_SERVICE_PASSWORD=$(openssl rand -hex 32)
+fi
+
 if [ "$DESTROY" == "true" ] ; then
     invenio db destroy --yes-i-know || true
     invenio index destroy --force --yes-i-know || true
@@ -64,14 +68,22 @@ invenio documents set-community-owner-group
 
 invenio oarepo index reindex
 
+HARVESTING_SERVICE="harvesting_service@narodni-repozitar.cz"
+
+
+invenio users create -a "$HARVESTING_SERVICE" \
+  -p '{"full_name": "OAI PMH Harvesting Service"}' \
+  --password "$HARVESTING_SERVICE_PASSWORD"
+
+invenio access allow superuser-access user "$HARVESTING_SERVICE"
+
 invenio oarepo oai harvester add nusl-manual-submissions --name "Manual submissions NUSL harvester" \
             --url https://invenio.nusl.cz/oai2d --set manual_submission --prefix marcxml \
             --loader 'sickle' \
             --transformer marcxml --transformer nusl \
-            --writer 'service{service=documents}' \
-            --writer 'attachment{service=documents_file_draft}' \
-            --writer 'publish{service=documents}' \
-            --writer 'owner{service=documents}' \
+            --writer "service{service=documents, identity=$HARVESTING_SERVICE}" \
+            --writer "attachment{service=documents_file_draft, identity=$HARVESTING_SERVICE}" \
+            --writer "publish{service=documents, identity=$HARVESTING_SERVICE}" \
             --writer 'timestamp_update{service=documents,date_created_csv_path="./scripts/datecreated.csv"}'
 
 if [ "$HARVEST" == "true" ] ; then
