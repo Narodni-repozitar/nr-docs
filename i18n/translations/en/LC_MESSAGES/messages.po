@@ -2205,7 +2205,7 @@ msgid "metadata/relatedItems/itemIssue.help"
 msgstr ""
 
 msgid "metadata/relatedItems/itemIssue.hint"
-msgstr "Fill in only if related item is journal or conference proceedings."
+msgstr "For journal/proceedings."
 
 msgid "metadata/relatedItems/itemPIDs.help"
 msgstr "Persistent object identifiers such as ISBN, DOI, etc."
@@ -2342,7 +2342,7 @@ msgid "metadata/relatedItems/itemVolume.help"
 msgstr ""
 
 msgid "metadata/relatedItems/itemVolume.hint"
-msgstr "Fill in only if related item is journal or conference proceedings."
+msgstr "For journal/proceedings."
 
 msgid "metadata/relatedItems/itemYear.help"
 msgstr ""
