@@ -1607,7 +1607,7 @@ msgid "metadata/events/eventLocation/place.hint"
 msgstr "Uveďte místo, které má vazbu k danému objektu/akci (př. město)."
 
 msgid "metadata/events/eventNameAlternate.help"
-msgstr "Pokud má akce další známe názvy, uveďte je zde."
+msgstr "Pokud má akce další známé názvy, uveďte je zde."
 
 msgid "metadata/events/eventNameAlternate.label"
 msgstr "Alternativní název akce"
@@ -2190,7 +2190,7 @@ msgid "metadata/relatedItems/itemIssue.help"
 msgstr ""
 
 msgid "metadata/relatedItems/itemIssue.hint"
-msgstr "Uvádějte pouze pokud se jedná o časopis nebo sborník."
+msgstr "Pro časopis/sborník."
 
 msgid "metadata/relatedItems/itemPIDs.help"
 msgstr "Trvalé identifikátory objektu jako ISBN, DOI atd."
@@ -2325,7 +2325,7 @@ msgid "metadata/relatedItems/itemVolume.help"
 msgstr ""
 
 msgid "metadata/relatedItems/itemVolume.hint"
-msgstr "Uvádějte pouze pokud se jedná o časopis nebo sborník."
+msgstr "Pro časopis/sborník."
 
 msgid "metadata/relatedItems/itemYear.help"
 msgstr ""
