@@ -52,8 +52,16 @@ class NRDocsDataCitePIDProvider(OarepoDataCitePIDProvider):
         if "rights" in metadata:
             dc_rights = []
             right = metadata["rights"]
+            voc = vocabulary_service.read(
+                system_identity, ("rights", right["id"])
+            )
+            _rights = {"rightsIdentifier": right["id"]}
+            if "title" in voc.data:
+                right_title = voc.data["title"].get("en", voc.data["title"].get("cs"))
+                if right_title:
+                    _rights["rights"] = right_title
             dc_rights.append(
-                {"rights": right["title"], "rightsIdentifier": right["id"]}
+                _rights
             )
             if len(dc_rights) > 0:
                 payload["rightsList"] = dc_rights

@@ -11,22 +11,21 @@ dependencies = [
     "nr-metadata>=2.0.0",
     "nr-oaipmh-harvesters>=1.0.0",
     "nr-vocabularies>=2.0.8",
-    "oarepo-citations>=1.0.0",
-    "oarepo-communities>=5.0.0",
-    "oarepo-dashboard>=1.0.0",
-    "oarepo-doi>=2.0.0",
-    "oarepo-glitchtip==1.0.*",
-    "oarepo-global-search>=1.0.13",
-    "oarepo-oidc-einfra>=1.0.0",
-    "oarepo-published-service>=1.0.0",
-    "oarepo-published-service>=1.0.2",
-    "oarepo-rdm>=0.5.0",
-    "oarepo-requests>=2.0.0",
-    "oarepo-runtime",
-    "oarepo-ui",
-    "oarepo-vocabularies",
-    "oarepo-workflows>=1.0.0",
-    "oarepo[s3,rdm]>=12.1.0,<13",
+    "oarepo-citations>=1.0.0,<2.0.0",
+    "oarepo-communities>=5.0.0,<6.0.0",
+    "oarepo-dashboard>=1.0.0,<2.0.0",
+    "oarepo-doi>=2.0.0,<3.0.0",
+    "oarepo-glitchtip>=1.0.0,<2.0.0",
+    "oarepo-global-search>=1.0.13,<2.0.0",
+    "oarepo-oidc-einfra>=1.0.0,<2.0.0",
+    "oarepo-published-service>=1.0.3,<2.0.0",
+    "oarepo-rdm>=0.5.0,<1.0.0",
+    "oarepo-requests>=2.0.0,<3.0.0",
+    "oarepo-runtime>=1.0.0,<2.0.0",
+    "oarepo-ui>=5.0.0,<6.0.0",
+    "oarepo-vocabularies>=2.0.0,<3.0.0",
+    "oarepo-workflows>=1.0.0,<2.0.0",
+    "oarepo[s3,rdm]>=12.1.0,<13.0.0",
     "python-dotenv",
 ]
 requires-python = ">=3.12,<3.13"
@@ -77,6 +76,7 @@ documents_file = "documents.views.files.api:create_api_blueprint"
 documents_file_draft = "documents.views.draft_files.api:create_api_blueprint"
 documents_requests = "documents.views.requests.api:create_api_blueprint"
 documents_request_types = "documents.views.request_types.api:create_api_blueprint"
+
 
 [project.entry-points."invenio_search.mappings"]
 documents = "documents.records.mappings"
