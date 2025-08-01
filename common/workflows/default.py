@@ -207,7 +207,6 @@ class DefaultWorkflowPermissions(CommunityDefaultWorkflowPermissions):
     can_draft_create_files = can_draft_update_files
     can_draft_set_content_files = can_draft_update_files
     can_draft_commit_files = can_draft_update_files
-    can_draft_manage_files = can_update_draft
     can_draft_delete_files = can_draft_update_files
 
     can_commit_files = [
@@ -246,7 +245,7 @@ class DefaultWorkflowPermissions(CommunityDefaultWorkflowPermissions):
     # modification of files is only on drafts
     can_update_files = [Disable()]
     can_manage_files = [
-        Disable(),
+        HarvestAction(),
     ]
     can_read_deleted_files = [SystemProcess()]
     # endregion
