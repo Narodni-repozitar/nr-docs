@@ -4,7 +4,6 @@ import {
   PreviewButton,
   SaveButton,
   DeleteButton,
-  useDepositApiClient,
   AccessRightField,
   useFormConfig,
   useSanitizeInput,
@@ -18,10 +17,11 @@ import {
   REQUEST_TYPE,
   beforeActionFormErrorPlugin,
 } from "@js/oarepo_requests_common";
+import { save } from "@js/oarepo_ui/forms/state/deposit/actions";
+import { connect } from "react-redux";
 
-const FormActionsContainer = () => {
-  const { values, setErrors } = useFormikContext();
-  const { save } = useDepositApiClient();
+const FormActionsContainerComponent = ({ saveAction }) => {
+  const { values } = useFormikContext();
   const {
     formConfig: {
       permissions,
@@ -48,11 +48,12 @@ const FormActionsContainer = () => {
       requestActionName === REQUEST_TYPE.DECLINE ||
       requestActionName === REQUEST_TYPE.CANCEL ||
       requestType === "initiate_community_migration" ||
-      requestType === "confirm_community_migration"
+      requestType === "confirm_community_migration" ||
+      requestType === "delete_draft"
     ) {
       return true;
     } else {
-      return save({
+      return saveAction(values, {
         errorMessage: i18next.t(
           "The request ({{requestType}}) could not be made due to form validation errors. Please fix them and try again:",
           {
@@ -80,7 +81,6 @@ const FormActionsContainer = () => {
                 record={values}
                 onBeforeAction={onBeforeAction}
                 onErrorPlugins={[beforeActionFormErrorPlugin]}
-                actionExtraContext={{ setErrors }}
               />
               <DeleteButton redirectUrl="/me/records" />
             </Grid.Column>
@@ -118,4 +118,8 @@ const FormActionsContainer = () => {
   );
 };
 
-export default FormActionsContainer;
+const mapDispatchToProps = (dispatch) => ({
+  saveAction: (values, params) => dispatch(save(values, params)),
+});
+
+export default connect(null, mapDispatchToProps)(FormActionsContainerComponent);
