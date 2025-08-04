@@ -49,7 +49,7 @@ msgstr "Text"
 #: models/nr-documents/nr_documents/services/records/facets.py:73
 #: models/nr-documents/nr_documents/services/records/facets.py:78
 msgid "metadata/additionalTitles/title.label"
-msgstr ""
+msgstr "Additional Title"
 
 #: models/nr-documents/nr_documents/services/records/facets.py:85
 msgid "metadata/additionalTitles/title/lang.label"
@@ -1570,7 +1570,7 @@ msgid "metadata/events/eventLocation.help"
 msgstr ""
 
 msgid "metadata/events/eventLocation.label"
-msgstr ""
+msgstr "Event Location"
 
 msgid "metadata/events/eventLocation.hint"
 msgstr ""
@@ -2205,7 +2205,7 @@ msgid "metadata/relatedItems/itemIssue.help"
 msgstr ""
 
 msgid "metadata/relatedItems/itemIssue.hint"
-msgstr "Fill in only if related item is journal or conference proceedings."
+msgstr "For journal/proceedings."
 
 msgid "metadata/relatedItems/itemPIDs.help"
 msgstr "Persistent object identifiers such as ISBN, DOI, etc."
@@ -2342,7 +2342,7 @@ msgid "metadata/relatedItems/itemVolume.help"
 msgstr ""
 
 msgid "metadata/relatedItems/itemVolume.hint"
-msgstr "Fill in only if related item is journal or conference proceedings."
+msgstr "For journal/proceedings."
 
 msgid "metadata/relatedItems/itemYear.help"
 msgstr ""
