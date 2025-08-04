@@ -24,7 +24,6 @@
 from datetime import timedelta
 
 from invenio_access import action_factory
-from invenio_access.permissions import Permission
 from invenio_i18n import lazy_gettext as _
 from invenio_rdm_records.services.generators import (
     AccessGrant,
@@ -48,6 +47,7 @@ from oarepo_communities.services.permissions.generators import (
 from oarepo_communities.services.permissions.policy import (
     CommunityDefaultWorkflowPermissions,
 )
+from oarepo_oaipmh_harvester.permissions import HarvestAction
 from oarepo_oaipmh_harvester.services.generators import IfNotHarvested
 from oarepo_requests.services.permissions.generators import IfRequestedBy
 from oarepo_runtime.services.permissions import UserWithRole
@@ -62,7 +62,6 @@ from oarepo_workflows import (
 )
 
 direct_publish_action = action_factory("administration-direct-publish")
-permission = Permission(direct_publish_action)
 
 
 class DirectPublishAction(Generator):
@@ -88,6 +87,7 @@ class DefaultWorkflowPermissions(CommunityDefaultWorkflowPermissions):
         # otherwise, any user can see it
         # every member of the community can see the metadata of the drafts, but not the files
         UserWithRole("request_manager"),
+        HarvestAction(),
     ]
 
     # who can read a draft record (on an /api/user/documents url)
@@ -137,7 +137,8 @@ class DefaultWorkflowPermissions(CommunityDefaultWorkflowPermissions):
                 SystemProcess(),
             ],
             else_=can_read,
-        )
+        ),
+        HarvestAction(),
     ]
 
     # endregion
@@ -183,6 +184,7 @@ class DefaultWorkflowPermissions(CommunityDefaultWorkflowPermissions):
         PrimaryCommunityRole("submitter"),
         PrimaryCommunityRole("owner"),
         PrimaryCommunityRole("curator"),
+        HarvestAction(),
     ]
     # endregion
 
@@ -205,7 +207,6 @@ class DefaultWorkflowPermissions(CommunityDefaultWorkflowPermissions):
     can_draft_create_files = can_draft_update_files
     can_draft_set_content_files = can_draft_update_files
     can_draft_commit_files = can_draft_update_files
-    can_draft_manage_files = can_update_draft
     can_draft_delete_files = can_draft_update_files
 
     can_commit_files = [
@@ -244,7 +245,7 @@ class DefaultWorkflowPermissions(CommunityDefaultWorkflowPermissions):
     # modification of files is only on drafts
     can_update_files = [Disable()]
     can_manage_files = [
-        Disable(),
+        HarvestAction(),
     ]
     can_read_deleted_files = [SystemProcess()]
     # endregion
@@ -254,6 +255,7 @@ class DefaultWorkflowPermissions(CommunityDefaultWorkflowPermissions):
         *CommunityDefaultWorkflowPermissions.can_publish,
         # only those with "administration-direct-publish" can publish directly (DERS)
         DirectPublishAction(),
+        HarvestAction(),
     ]
     # endregion
 
@@ -261,6 +263,7 @@ class DefaultWorkflowPermissions(CommunityDefaultWorkflowPermissions):
     can_edit = CommunityDefaultWorkflowPermissions.can_edit + [
         # only those with "administration-direct-publish" can edit directly (DERS)
         DirectPublishAction(),
+        HarvestAction(),
     ]
     # endregion
 
@@ -268,6 +271,7 @@ class DefaultWorkflowPermissions(CommunityDefaultWorkflowPermissions):
     can_new_version = CommunityDefaultWorkflowPermissions.can_new_version + [
         # only those with "administration-direct-publish" can create new version directly (DERS)
         DirectPublishAction(),
+        HarvestAction(),
     ]
     # endregion
 

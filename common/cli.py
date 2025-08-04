@@ -9,6 +9,7 @@ from flask_security.utils import hash_password
 from invenio_access.permissions import system_identity
 from invenio_accounts.models import User
 from invenio_communities.communities.records.api import Community
+from invenio_communities.communities.records.models import CommunityMetadata
 from invenio_db import db
 from invenio_indexer.proxies import current_indexer_registry
 from invenio_indexer.tasks import process_bulk_queue
@@ -170,3 +171,35 @@ def process_index_queues():
                 f"Indexer {name} has {num_messages} messages and {num_consumers} consumers"
             )
             process_bulk_queue.delay(indexer_name=name)
+
+
+@documents.command(name="set-community-owner-group")
+@click.argument("group_name", default="communities_owner")
+def set_community_owner_group(group_name):
+    """Set the passed group (default is communities_owner) as the owner of all communities."""
+    from invenio_communities.proxies import current_communities
+
+    members_service = current_communities.service.members
+
+    communities = CommunityMetadata.query.all()
+    for community in tqdm.tqdm(communities):
+        try:
+            members_service.add(
+                system_identity,
+                community.id,
+                {
+                    "members": [
+                        {
+                            "type": "group",
+                            "id": group_name,
+                        }
+                    ],
+                    "role": "owner",
+                },
+            )
+        except Exception as e:
+            click.secho(
+                f"Error adding communities_owner to community {community.slug}: {type(e).__name__}: {e}",
+                fg="yellow",
+            )
+            continue
