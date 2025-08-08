@@ -12,8 +12,6 @@ class AllowedFileExtensionUIComponent(UIResourceComponent):
         data: Dict = None,
         identity: Identity,
         form_config: Dict,
-        args: Dict,
-        view_args: Dict,
         ui_links: Dict = None,
         extra_context: Dict = None,
         **kwargs,

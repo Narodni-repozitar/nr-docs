@@ -14,38 +14,38 @@
         {% else %}
             {{ metadata.title if metadata.title else _("Title not provided")}}
         {% endif %}
-        <AccessRight access={record.access_status} search_link={record.links.search_link} />
+        <AccessRight access={{record.access_status}} search_link={{record.links.search_link}} />
     </h1>
 </div>
 <dl class="ui very basic table">
-    <Field label={_('metadata/additionalTitles.label')}>
-       <AdditionalTitles data={metadata.additionalTitles}></AdditionalTitles>
+    <Field label={{_('metadata/additionalTitles.label')}}>
+       <AdditionalTitles data={{metadata.additionalTitles}}></AdditionalTitles>
     </Field>
 
-    <Creatibutors  metadata={metadata} search_link={record.links.search_link}></Creatibutors>
+    <Creatibutors  metadata={{metadata}} search_link={{record.links.search_link}}></Creatibutors>
     
-    <Field label={ _('metadata/dateIssued.label') }>{{metadata.dateIssued}}</Field>
-    <Field label={ _('metadata/dateModified.label') }>{{metadata.dateModified}}</Field>
+    <Field label={{ _('metadata/dateIssued.label') }}>{{metadata.dateIssued}}</Field>
+    <Field label={{ _('metadata/dateModified.label') }}>{{metadata.dateModified}}</Field>
 
-    <Field label={ _('metadata/languages.label') }>
+    <Field label={{ _('metadata/languages.label') }}>
         <VocabularyArray vocabulary={metadata.languages} search_link={record.links.search_link} searchFacet="metadata_languages" vocabulary_type="languages"></VocabularyArray>
     </Field>
-     <Field label={ _('metadata/resourceType.label') }>
+     <Field label={{ _('metadata/resourceType.label')}}>
         <VocabularyItem vocabulary={metadata.resourceType} search_link={record.links.search_link} searchFacet="metadata_resourceType" vocabulary_type="resource-types"></VocabularyItem>
     </Field>
     {% if metadata.thesis %}
-        <Field label={ _('metadata/thesis/dateDefended.label') }>{{metadata.thesis.dateDefended}}</Field>
+        <Field label={{ _('metadata/thesis/dateDefended.label')}}>{{metadata.thesis.dateDefended}}</Field>
     {% endif %}
 
-    <Field label={ _('metadata/subjects.label') }>
-        <Subjects subjects={metadata.subjects} search_link={record.links.search_link}></Subjects>
+    <Field label={{_('metadata/subjects.label')}}>
+        <Subjects subjects={{metadata.subjects}} search_link={{record.links.search_link}}></Subjects>
     </Field>
 
-    <Field label={ _('metadata/abstract.label') }>
+    <Field label={{ _('metadata/abstract.label')}}>
         <Multilingual data={metadata.abstract}></Multilingual>
     </Field>
         {% if metadata.thesis %}
-          <Field label={ _('metadata/thesis/degreeGrantors.label') }>
+          <Field label={{_('metadata/thesis/degreeGrantors.label')}}>
             <TaxonomyArray taxonomy={metadata.thesis.degreeGrantors} search_link={record.links.search_link} searchFacet="metadata_thesis_degreeGrantors" vocabulary_type="institutions"></TaxonomyArray>
         </Field>
         <Field label={ _('metadata/thesis/studyFields.label') }>
