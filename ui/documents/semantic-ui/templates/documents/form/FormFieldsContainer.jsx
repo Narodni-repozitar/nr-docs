@@ -32,7 +32,7 @@ import { i18next } from "@translations/i18next";
 import _has from "lodash/has";
 
 const FormFieldsContainer = () => {
-  const { formConfig, files: recordFiles } = useFormConfig();
+  const formConfig = useFormConfig();
   const editMode = _has(formConfig, "updateUrl");
 
   const submissibleResourceTypes = React.useCallback(
@@ -280,7 +280,7 @@ const FormFieldsContainer = () => {
                   isUserInput: true,
                 },
               ]}
-              recordFiles={recordFiles}
+              // recordFiles={recordFiles}
               allowedFileTypes={formConfig.allowed_file_extensions}
             />
           </Overridable>

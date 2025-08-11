@@ -22,13 +22,8 @@ import { connect } from "react-redux";
 
 const FormActionsContainerComponent = ({ saveAction }) => {
   const { values } = useFormikContext();
-  const {
-    formConfig: {
-      permissions,
-      allowRecordRestriction,
-      recordRestrictionGracePeriod,
-    },
-  } = useFormConfig();
+  const { permissions, allowRecordRestriction, recordRestrictionGracePeriod } =
+    useFormConfig();
 
   const { sanitizeInput } = useSanitizeInput();
 
