@@ -17,10 +17,10 @@ import {
   REQUEST_TYPE,
   beforeActionFormErrorPlugin,
 } from "@js/oarepo_requests_common";
-import { save } from "@js/oarepo_ui/forms/state/deposit/actions";
+import { save, setErrors } from "@js/oarepo_ui/forms/state/deposit/actions";
 import { connect } from "react-redux";
 
-const FormActionsContainerComponent = ({ saveAction }) => {
+const FormActionsContainerComponent = ({ saveAction, setErrorsAction }) => {
   const { values } = useFormikContext();
   const { permissions, allowRecordRestriction, recordRestrictionGracePeriod } =
     useFormConfig();
@@ -76,6 +76,7 @@ const FormActionsContainerComponent = ({ saveAction }) => {
                 record={values}
                 onBeforeAction={onBeforeAction}
                 onErrorPlugins={[beforeActionFormErrorPlugin]}
+                actionExtraContext={{ setErrors: setErrorsAction }}
               />
               <DeleteButton redirectUrl="/me/records" />
             </Grid.Column>
@@ -115,6 +116,8 @@ const FormActionsContainerComponent = ({ saveAction }) => {
 
 const mapDispatchToProps = (dispatch) => ({
   saveAction: (values, params) => dispatch(save(values, params)),
+  setErrorsAction: (errors, formFeedbackMessage) =>
+    dispatch(setErrors(errors, formFeedbackMessage)),
 });
 
 export default connect(null, mapDispatchToProps)(FormActionsContainerComponent);
