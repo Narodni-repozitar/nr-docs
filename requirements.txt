@@ -18,7 +18,7 @@ nr-vocabularies==2.1.17
 oarepo-citations==1.0.2
 oarepo-communities==5.4.4
 oarepo-dashboard==1.0.26
-oarepo-doi==2.0.16
+oarepo-doi==2.0.17
 oarepo-glitchtip==1.0.1
 oarepo-global-search==1.0.45
 oarepo-oai-pmh-harvester==5.0.9
