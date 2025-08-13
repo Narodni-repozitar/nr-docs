@@ -79,7 +79,6 @@ class DocumentsServiceConfig(
     def components(self):
         return process_service_configs(
             self,
-            NUSLPIDComponent,
             AuthorityComponent,
             DateIssuedComponent,
             DoiComponent,
@@ -90,6 +89,7 @@ class DocumentsServiceConfig(
             CustomFieldsComponent,
             AutorequestComponent,
             WorkflowComponent,
+            NUSLPIDComponent
         )
 
     model = "documents"
