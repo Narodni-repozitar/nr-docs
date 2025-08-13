@@ -35,6 +35,7 @@ from oarepo_runtime.services.records import pagination_links_html
 from oarepo_vocabularies.authorities.components import AuthorityComponent
 from oarepo_workflows.services.components.workflow import WorkflowComponent
 
+from common.services.components.nusl_pid_component import NUSLPIDComponent
 from common.services.config import FilteredResultServiceConfig
 from documents.records.api import DocumentsDraft, DocumentsRecord
 from documents.services.records.permissions import DocumentsPermissionPolicy
@@ -78,6 +79,7 @@ class DocumentsServiceConfig(
     def components(self):
         return process_service_configs(
             self,
+            NUSLPIDComponent,
             AuthorityComponent,
             DateIssuedComponent,
             DoiComponent,
