@@ -1,5 +1,4 @@
 from invenio_communities.records.records.systemfields import CommunitiesField
-from invenio_drafts_resources.records.api import DraftRecordIdProviderV2
 from invenio_drafts_resources.services.records.components.media_files import (
     MediaFilesAttrConfig,
 )
@@ -20,7 +19,6 @@ from nr_metadata.records.synthetic_fields import KeywordsFieldSelector
 from oarepo_communities.records.systemfields.communities import (
     OARepoCommunitiesFieldContext,
 )
-from oarepo_runtime.records.pid_providers import UniversalPIDMixin
 from oarepo_runtime.records.relations import (
     PIDRelation,
     RelationsField,
@@ -47,6 +45,7 @@ from oarepo_workflows.records.systemfields.state import (
 )
 from oarepo_workflows.records.systemfields.workflow import WorkflowField
 
+from common.records.api import DocumentsIdProvider
 from common.services.sort import TitleICUSortField
 from documents.files.api import DocumentsFile, DocumentsFileDraft
 from documents.records.dumpers.dumper import DocumentsDraftDumper, DocumentsDumper
@@ -68,11 +67,6 @@ class DocumentsParentRecord(RDMParent):
         DocumentsCommunitiesMetadata, context_cls=OARepoCommunitiesFieldContext
     )
 
-
-class DocumentsIdProvider(UniversalPIDMixin, DraftRecordIdProviderV2):
-    pid_type = "dcmnts"
-
-
 class DocumentsRecord(RDMRecord):
 
     model_cls = DocumentsMetadata
@@ -84,7 +78,7 @@ class DocumentsRecord(RDMRecord):
     )
 
     pid = PIDField(
-        provider=DocumentsIdProvider, context_cls=PIDFieldContext, create=True
+        provider=DocumentsIdProvider, context_cls=PIDFieldContext, create=False
     )
 
     dumper = DocumentsDumper()
