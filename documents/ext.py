@@ -8,6 +8,7 @@ from oarepo_requests.resources.draft.types.config import DraftRequestTypesResour
 from oarepo_runtime.config import build_config
 
 from documents import config
+from common.resources.redirect import nusl_redirect_blueprint
 
 
 class DocumentsExt:
@@ -28,6 +29,8 @@ class DocumentsExt:
         for method in dir(self):
             if method.startswith("init_app_callback_"):
                 getattr(self, method)(app)
+                
+        app.register_blueprint(nusl_redirect_blueprint)
 
     def register_flask_extension(self, app):
 
