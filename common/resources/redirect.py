@@ -1,6 +1,5 @@
 from flask import Blueprint, redirect, abort
 from invenio_pidstore.models import PersistentIdentifier
-from invenio_pidstore.errors import PIDDoesNotExistError
 
 nusl_redirect_blueprint = Blueprint(
     'nusl_redirect',
@@ -10,11 +9,11 @@ nusl_redirect_blueprint = Blueprint(
 
 @nusl_redirect_blueprint.route('/<pid>')
 def nusl_redirect(pid):
+    """Redirect NUSL PID to the actual record."""
     try:
         nusl_pid = PersistentIdentifier.get(pid_type="nusl", pid_value=pid)
         redirect_target = nusl_pid.get_redirect()
-        
-        if redirect_target:
-            return redirect(f'/docs/{redirect_target.pid_value}')
-    except PIDDoesNotExistError:
+        return redirect(f'/docs/{redirect_target.pid_value}')
+    except Exception as e:
+        print(f"NUSL redirect failed for {pid}: {e}")
         abort(404)
