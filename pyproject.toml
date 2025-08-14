@@ -48,6 +48,7 @@ documents_requests = "documents.views.requests.app:create_app_blueprint"
 documents_request_types = "documents.views.request_types.app:create_app_blueprint"
 # should be in app rdm patches
 invenio_app_rdm_administration = "invenio_app_rdm.administration.views:create_ui_blueprint"
+nusl_redirect = "common.resources.redirect:nusl_redirect_blueprint"
 
 [project.entry-points."invenio_i18n.translations"]
 translations = "i18n"

@@ -4,7 +4,7 @@
 # Usage:
 # export USER_PASSWORD=<your_password>
 # export BUCKET_NAME=<your_bucket_name>
-# ./scripts/release_04_08.sh [--destroy] [--harvest]
+# ./scripts/release_1.0.0.sh [--destroy] [--harvest]
 #
 #
 
