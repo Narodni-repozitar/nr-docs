@@ -3760,3 +3760,14 @@ identifiers:
   identifier: 01faaaf77
 - scheme: url
   identifier: https://www.uni-graz.at/en/
+---
+id: dtu
+name: Technical University of Denmark
+title:
+  da: Danmarks Tekniske Universitet
+  en: Technical University of Denmark
+identifiers:
+- scheme: ror
+  identifier: 04qtj9h94
+- scheme: url
+  identifier: https://dtu.dk
