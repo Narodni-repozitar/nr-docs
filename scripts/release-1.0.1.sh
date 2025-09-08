@@ -1,10 +1,10 @@
 #
-# Import script for 1.0.0 release
+# Import script for 1.0.1 release
 #
 # Usage:
 # export USER_PASSWORD=<your_password>
 # export BUCKET_NAME=<your_bucket_name>
-# ./scripts/release_1.0.0.sh [--destroy] [--harvest]
+# ./scripts/release-1.0.1.sh [--destroy] [--harvest]
 #
 #
 
@@ -50,14 +50,14 @@ invenio oarepo cf init
 invenio communities custom-fields init
 invenio files location create --default default s3://${BUCKET_NAME};
 
+invenio roles create request_manager
+invenio roles create administration
+invenio roles create communities_owner
+
 invenio oarepo fixtures load --batch-size 1000 --verbose
 invenio oarepo fixtures load --no-system-fixtures ./fixtures --batch-size 1000 --verbose
 
 invenio oarepo vocabularies import-ror
-
-invenio roles create request_manager
-invenio roles create administration
-invenio roles create communities_owner
 
 invenio access allow administration-access role administration
 invenio access allow administration-moderation role administration
