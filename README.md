@@ -58,3 +58,27 @@ Notes:
 (1) Might be simplified in the future by having a group of owners inside PERUN
     and having specialized mechanism for synchronization of this group with the
     NTK repository.
+
+
+## OBD harvest
+
+1. Create a user for OBD harvest in the repository
+2. Add the user rights to directly publish record
+   `invenio access allow administration-direct-publish user test@test.com`
+3. Make the user a community submitter for the given community
+4. Create a token for the user
+   `invenio tokens create -n "obd" -u test@test.com`
+5. POST the data with the correct headers
+
+   ```bash
+   curl -X POST -k \
+      -H "Authorization: Bearer $OBD_TOKEN" \
+      -H "Content-Type: application/zenodo+json" \
+      --data-binary '@obd_data.json' https://127.0.0.1:5000/api/docs/
+   ```
+
+   where `obd_data.json` is a file with the data to be imported in zenodo serialization.
+   Note: slug of the community inside the `obd_data.json` must be same as the community
+   within this repository.
+6. Upload files as normal in Zenodo, using the `links.files` API endpoint.
+7. Publish the record using the `links.publish` API endpoint.

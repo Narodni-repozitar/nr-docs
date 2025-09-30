@@ -1,0 +1,135 @@
+{
+    "created": "2025-09-30T18:40:25.185967+00:00",
+    "modified": "2025-09-30T18:40:25.364508+00:00",
+    "id": 17237797,
+    "conceptrecid": "13294303",
+    "doi": "10.5281/zenodo.17237797",
+    "conceptdoi": "10.5281/zenodo.13294303",
+    "doi_url": "https://doi.org/10.5281/zenodo.17237797",
+    "metadata": {
+        "title": "mite_data",
+        "doi": "10.5281/zenodo.17237797",
+        "publication_date": "2025-09-30",
+        "description": "Repository containing entries following the MITE data standard.",
+        "access_right": "open",
+        "creators": [
+            {
+                "name": "Zdouc, Mitja M.",
+                "orcid": "0000-0001-6534-6609"
+            },
+            {
+                "name": "Rutz, Adriano",
+                "orcid": "0000-0003-0443-9902"
+            }
+        ],
+        "keywords": [
+            "python",
+            "tailoring enzymes",
+            "data standard"
+        ],
+        "related_identifiers": [
+            {
+                "identifier": "https://github.com/mite-standard/mite_data/tree/1.18",
+                "relation": "isSupplementTo",
+                "resource_type": "software",
+                "scheme": "url"
+            }
+        ],
+        "version": "1.18",
+        "custom": {
+            "code:codeRepository": "https://github.com/mite-standard/mite_data"
+        },
+        "resource_type": {
+            "title": "Software",
+            "type": "software"
+        },
+        "license": {
+            "id": "cc-zero"
+        },
+        "communities": [
+            {
+                "id": "generic"
+            }
+        ],
+        "relations": {
+            "version": [
+                {
+                    "index": 16,
+                    "is_last": true,
+                    "parent": {
+                        "pid_type": "recid",
+                        "pid_value": "13294303"
+                    }
+                }
+            ]
+        },
+        "notes": "If you use this software, please cite the referenced paper."
+    },
+    "title": "mite_data",
+    "links": {
+        "self": "https://zenodo.org/api/records/17237797",
+        "self_html": "https://zenodo.org/records/17237797",
+        "preview_html": "https://zenodo.org/records/17237797?preview=1",
+        "doi": "https://doi.org/10.5281/zenodo.17237797",
+        "self_doi": "https://doi.org/10.5281/zenodo.17237797",
+        "self_doi_html": "https://zenodo.org/doi/10.5281/zenodo.17237797",
+        "reserve_doi": "https://zenodo.org/api/records/17237797/draft/pids/doi",
+        "parent": "https://zenodo.org/api/records/13294303",
+        "parent_html": "https://zenodo.org/records/13294303",
+        "parent_doi": "https://doi.org/10.5281/zenodo.13294303",
+        "parent_doi_html": "https://zenodo.org/doi/10.5281/zenodo.13294303",
+        "self_iiif_manifest": "https://zenodo.org/api/iiif/record:17237797/manifest",
+        "self_iiif_sequence": "https://zenodo.org/api/iiif/record:17237797/sequence/default",
+        "files": "https://zenodo.org/api/records/17237797/files",
+        "media_files": "https://zenodo.org/api/records/17237797/media-files",
+        "archive": "https://zenodo.org/api/records/17237797/files-archive",
+        "archive_media": "https://zenodo.org/api/records/17237797/media-files-archive",
+        "latest": "https://zenodo.org/api/records/17237797/versions/latest",
+        "latest_html": "https://zenodo.org/records/17237797/latest",
+        "versions": "https://zenodo.org/api/records/17237797/versions",
+        "draft": "https://zenodo.org/api/records/17237797/draft",
+        "access_links": "https://zenodo.org/api/records/17237797/access/links",
+        "access_grants": "https://zenodo.org/api/records/17237797/access/grants",
+        "access_users": "https://zenodo.org/api/records/17237797/access/users",
+        "access_request": "https://zenodo.org/api/records/17237797/access/request",
+        "access": "https://zenodo.org/api/records/17237797/access",
+        "communities": "https://zenodo.org/api/records/17237797/communities",
+        "communities-suggestions": "https://zenodo.org/api/records/17237797/communities-suggestions",
+        "requests": "https://zenodo.org/api/records/17237797/requests"
+    },
+    "updated": "2025-09-30T18:40:25.364508+00:00",
+    "recid": "17237797",
+    "revision": 4,
+    "files": [
+        {
+            "id": "af9ac83b-202d-4d46-b9dc-6aef88fe99ca",
+            "key": "mite-standard/mite_data-1.18.zip",
+            "size": 431888,
+            "checksum": "md5:ac526cbb54db182d4b19abdf0e0544bb",
+            "links": {
+                "self": "https://zenodo.org/api/records/17237797/files/mite-standard/mite_data-1.18.zip/content"
+            }
+        }
+    ],
+    "swh": {
+        "swhid": "swh:1:dir:f81031fb8c4c1d0d3b17971d608c41281c8d9584;origin=https://doi.org/10.5281/zenodo.13294303;visit=swh:1:snp:561286836a2fa3fb1c0d35ec98bf273b853bf7f6;anchor=swh:1:rel:103f41a0b18518b181040f217da60b1ff1604c38;path=mite-standard-mite_data-e9da5a6"
+    },
+    "owners": [
+        {
+            "id": "479857"
+        }
+    ],
+    "status": "published",
+    "stats": {
+        "downloads": 499,
+        "unique_downloads": 433,
+        "views": 1630,
+        "unique_views": 1500,
+        "version_downloads": 0,
+        "version_unique_downloads": 0,
+        "version_unique_views": 0,
+        "version_views": 0
+    },
+    "state": "done",
+    "submitted": true
+}
