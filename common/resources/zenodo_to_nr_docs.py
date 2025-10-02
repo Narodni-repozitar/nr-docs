@@ -28,7 +28,7 @@ def zenodo_to_nr_docs(zenodo_record):
         used_language = nr_docs["languages"][0]["id"]
     else:
         nr_docs["languages"] = [{"id": used_language}]
-    community = metadata["communities"][0]["id"]
+    community = metadata["communities"][0]["identifier"]
 
     transform_funcs = {
         "additionalTitles": transform_additional_titles,
