@@ -2090,16 +2090,16 @@ identifiers:
 ---
 id: idu
 title:
-  cs: Institut umění - Divadelní ústav
-  en: Arts and Theatre Institute
-name: Institut umění - Divadelní ústav
+  cs: Národní institut pro kulturu
+  en: Czech Cultural Institute
+name: Národní institut pro kulturu
 identifiers:
 - scheme: ico
   identifier: '00023205'
 - scheme: ror
   identifier: 024jn1h80
 - scheme: url
-  identifier: http://www.idu.cz/
+  identifier: https://nipk.cz/
 ---
 id: npu
 title:
