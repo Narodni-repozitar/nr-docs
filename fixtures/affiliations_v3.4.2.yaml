@@ -2090,16 +2090,16 @@ identifiers:
 ---
 id: idu
 title:
-  cs: Institut umění - Divadelní ústav
-  en: Arts and Theatre Institute
-name: Institut umění - Divadelní ústav
+  cs: Národní institut pro kulturu
+  en: Czech Cultural Institute
+name: Národní institut pro kulturu
 identifiers:
 - scheme: ico
   identifier: '00023205'
 - scheme: ror
   identifier: 024jn1h80
 - scheme: url
-  identifier: http://www.idu.cz/
+  identifier: https://nipk.cz/
 ---
 id: npu
 title:
@@ -3772,8 +3772,20 @@ identifiers:
 - scheme: url
   identifier: https://dtu.dk
 ---
-id: GA-JU
-name: Grantová agentura Jihočeské univerzity
+id: syft
+name: Syft Technologies
 title:
-  cs: Grantová agentura Jihočeské univerzity
-  en: Grant Agency of University of South Bohemia
+  en: Syft Technologies
+  cs: Syft Technologies
+identifiers:
+- scheme: url
+  identifier: https://syft.com/
+---
+id: vinci
+name: Da Vinci Laboratory Solutions UK & Ireland
+title:
+  en: Da Vinci Laboratory Solutions UK & Ireland
+  cs: Da Vinci Laboratory Solutions UK & Ireland
+identifiers:
+- scheme: url
+  identifier: https://www.davinci-ls.com/en-us/home
