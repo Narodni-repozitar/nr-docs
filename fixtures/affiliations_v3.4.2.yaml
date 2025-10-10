@@ -3771,3 +3771,21 @@ identifiers:
   identifier: 04qtj9h94
 - scheme: url
   identifier: https://dtu.dk
+---
+id: syft
+name: Syft Technologies
+title:
+  en: Syft Technologies
+  cs: Syft Technologies
+identifiers:
+- scheme: url
+  identifier: https://syft.com/
+---
+id: vinci
+name: Da Vinci Laboratory Solutions UK & Ireland
+title:
+  en: Da Vinci Laboratory Solutions UK & Ireland
+  cs: Da Vinci Laboratory Solutions UK & Ireland
+identifiers:
+- scheme: url
+  identifier: https://www.davinci-ls.com/en-us/home
