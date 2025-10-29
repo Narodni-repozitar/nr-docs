@@ -1,13 +1,12 @@
 from invenio_access.permissions import system_identity
 from invenio_vocabularies.proxies import current_service as vocabulary_service
-from oarepo_doi.doi_mapping_base import DataCiteMappingBase
 from babel_edtf import parse_edtf
 from oarepo_runtime.i18n import lazy_gettext as _
 
 missing_data_message = _("Missing data for required field.")
 
 
-class DataCiteMappingNRDocs(DataCiteMappingBase):
+class DataCiteMappingNRDocs:
     def metadata_check(self, data):
         errors = {}
         data = data["metadata"]
