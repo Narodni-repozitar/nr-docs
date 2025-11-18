@@ -3,7 +3,7 @@ from invenio_access.permissions import system_identity
 from invenio_db import db
 from invenio_records_resources.proxies import current_service_registry
 from invenio_records_resources.services.uow import UnitOfWork
-from pathlib import Path
+import requests
 from sqlalchemy import Table, update
 from typing import Dict
 
@@ -11,16 +11,17 @@ from invenio_records_resources.services.uow import RecordIndexOp
 from oarepo_runtime.datastreams.types import StreamBatch, StreamEntry
 from oarepo_runtime.datastreams.writers import BaseWriter
 from oarepo_runtime.datastreams.writers.utils import record_invenio_exceptions
+from io import StringIO
 
 class TimestampUpdateWriter(BaseWriter):
-    def __init__(self, *, service, date_created_csv_path, identity=None):
+    def __init__(self, *, service, date_created_csv_url, identity=None):
         if isinstance(service, str):
             service = current_service_registry.get(service)
 
         self._service = service
         self._identity = identity or system_identity
 
-        self._dates = self._try_load_dates(date_created_csv_path)
+        self._dates = self._load_dates(date_created_csv_url)
 
     def write(self, batch: StreamBatch) -> StreamBatch:
         with UnitOfWork() as uow:
@@ -79,24 +80,31 @@ class TimestampUpdateWriter(BaseWriter):
             raise KeyError(f"Date not found for identifier {nusl_id}")
         return self._dates[nusl_id]
     
-    def _try_load_dates(self, path: str) -> Dict[str, str]:
-        csv_path = Path(path)
-        if not csv_path.exists():
-            raise ValueError(f"CSV file not found at: '{csv_path}'")
-        if not csv_path.is_file():
-            raise ValueError(f"Path exists but is not a file: '{csv_path}'")
-
+    def _load_dates(self, url: str) -> Dict[str, str]:
+        """Load dates from a GitHub raw content URL"""
+        if not url.startswith(('http://', 'https://')):
+            raise ValueError(f"Invalid URL provided: {url}. Please provide a full URL starting with http:// or https://")
+        
         dates = {}
         try:
-            with csv_path.open('r', encoding='utf-8') as f:
-                reader = csv.reader(f)
-                for line_num, (identifier, date) in enumerate(reader, 1):
-                    if not identifier or not date:
-                        continue
-                    dates[identifier.strip()] = f"{date.strip()}T00:00:00+00:00"
+            response = requests.get(url, timeout=30)
+            response.raise_for_status()
+            
+            csv_content = StringIO(response.text)
+            reader = csv.reader(csv_content)
+            
+            for line_num, row in enumerate(reader, 1):
+                if len(row) >= 2:
+                    identifier, date = row[0], row[1]
+                    if identifier and date:
+                        dates[identifier.strip()] = f"{date.strip()}T00:00:00+00:00"
+                        
+        except requests.RequestException as e:
+            raise RuntimeError(f"Failed to fetch CSV from URL {url}: {str(e)}")
         except csv.Error as e:
             raise ValueError(f"Error processing CSV at line {line_num}: {str(e)}")
-        except (IOError, UnicodeDecodeError) as e:
-            raise RuntimeError(f"Failed to read CSV file: {str(e)}")
+        
+        if not dates:
+            raise ValueError(f"No valid date entries found in CSV from {url}")
         
         return dates
