@@ -62,8 +62,6 @@ invenio oarepo vocabularies import-ror
 invenio access allow administration-access role administration
 invenio access allow administration-moderation role administration
 
-invenio oarepo communities create generic "Obecná komunita"
-
 invenio documents set-community-owner-group
 
 invenio oarepo index reindex
