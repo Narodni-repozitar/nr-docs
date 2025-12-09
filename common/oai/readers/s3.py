@@ -121,14 +121,14 @@ class S3Reader(BaseReader):
                         continue
 
                     record_stream_entries = []
-                    if record["files"]:
-                        record_stream_entries = create_stream_entries_from_files(
-                            record["files"],
-                            s3_client,
-                            s3_bucket_name,
-                            obj["Key"],
-                            record["id"],
-                        )
+                    # if record["files"]:
+                    #     record_stream_entries = create_stream_entries_from_files(
+                    #         record["files"],
+                    #         s3_client,
+                    #         s3_bucket_name,
+                    #         obj["Key"],
+                    #         record["id"],
+                    #     )
 
                     yield StreamEntry(
                         entry=record["raw"],
