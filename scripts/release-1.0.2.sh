@@ -62,6 +62,8 @@ invenio oarepo vocabularies import-ror
 invenio access allow administration-access role administration
 invenio access allow administration-moderation role administration
 
+invenio oarepo communities create generic "Obecná komunita"
+
 invenio documents set-community-owner-group
 
 invenio oarepo index reindex
@@ -76,13 +78,13 @@ invenio users create -a "$HARVESTING_SERVICE" \
 invenio access allow oai-harvest-access user "$HARVESTING_SERVICE"
 
 invenio oarepo oai harvester add nusl-manual-submissions --name "Manual submissions NUSL harvester" \
-            --url https://s3.cl4.du.cesnet.cz --set manual_submission --prefix marcxml \
-            --loader 's3{bucket=nr-repo-docs-harvest,harvest_name=nusl-harvest-04}' \
+            --url https://invenio.nusl.cz/oai2d --set manual_submission --prefix marcxml \
+            --loader 'sickle' \
             --transformer marcxml --transformer nusl \
             --writer "service{service=documents, identity=$HARVESTING_SERVICE}" \
             --writer "attachment{service=documents_file_draft, identity=$HARVESTING_SERVICE}" \
             --writer "publish{service=documents, identity=$HARVESTING_SERVICE}" \
-            --writer 'timestamp_update{service=documents,date_created_csv_url="https://raw.githubusercontent.com/Narodni-repozitar/nr-docs/refs/heads/main/scripts/datecreated.csv"}'
+            --writer 'timestamp_update{service=documents,date_created_csv_path="./scripts/datecreated.csv"}'
 
 if [ "$HARVEST" == "true" ] ; then
     invenio oarepo oai harvester run nusl-manual-submissions --batch-size 100
