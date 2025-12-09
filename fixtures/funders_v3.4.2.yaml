@@ -807,3 +807,25 @@ title:
 identifiers:
 - scheme: ror
   identifier: https://ror.org/0472cxd90
+---
+id: GA-JU
+name: Grantová agentura Jihočeské univerzity
+title:
+  cs: Grantová agentura Jihočeské univerzity
+  en: Grant Agency of University of South Bohemia
+---
+id: linkoping-uni
+name: Linköping University
+title:
+  en: Linköping University
+  fi: Linköpingin Yliopisto
+  sv: Linköpings Universitet
+identifiers:
+- scheme: ror
+  identifier: https://ror.org/05ynxx418
+---
+id: vr
+name: Swedish Research Council
+title:
+  en: Swedish Research Council
+  sv: Vetenskapsrådet
