@@ -15,6 +15,7 @@ import { CommunitySelector } from "@js/communities_components/CommunitySelector/
 import {
   LocalVocabularySelectField,
   VocabularyTreeSelectField,
+  VocabularyField,
 } from "@js/oarepo_vocabularies";
 import { AccordionField } from "react-invenio-forms";
 import {
@@ -80,10 +81,10 @@ const FormFieldsContainer = () => {
             id="NrDocs.Deposit.ResourceTypeField.container"
             fieldPath="metadata.resourceType"
           >
-            <LocalVocabularySelectField
+            <VocabularyField
               fieldPath="metadata.resourceType"
               filterFunction={submissibleResourceTypes}
-              optionsListName="resource-types"
+              vocabularyName="resource-types"
             />
           </Overridable>
           <Overridable
@@ -99,9 +100,9 @@ const FormFieldsContainer = () => {
             id="NrDocs.Deposit.LanguagesField.container"
             fieldPath="metadata.languages"
           >
-            <LocalVocabularySelectField
+            <VocabularyField
               fieldPath="metadata.languages"
-              optionsListName="languages"
+              vocabularyName="languages"
             />
           </Overridable>
           <Overridable
