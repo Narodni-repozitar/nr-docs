@@ -48,7 +48,7 @@ class NuslIfHarvested(IfHarvested):
         return (q_harvested & then_query) | (~q_harvested & else_query)
 
 
-class NuslIfNotHarvested(CustomIfHarvested):
+class NuslIfNotHarvested(NuslIfHarvested):
     """Inverse of CustomIfHarvested - returns True when record is NOT harvested."""
     
     def _condition(self, record, **context):
