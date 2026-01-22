@@ -48,7 +48,8 @@ from oarepo_communities.services.permissions.policy import (
     CommunityDefaultWorkflowPermissions,
 )
 from oarepo_oaipmh_harvester.permissions import HarvestAction
-from oarepo_oaipmh_harvester.services.generators import IfNotHarvested
+# from oarepo_oaipmh_harvester.services.generators import IfNotHarvested
+from common.services.permissions.generators import NuslIfNotHarvested as IfNotHarvested
 from oarepo_requests.services.permissions.generators import IfRequestedBy
 from oarepo_runtime.services.permissions import UserWithRole
 from oarepo_runtime.services.permissions.generators import RecordOwners
