@@ -3817,6 +3817,7 @@ name: Lodz University of Technology
 title:
   pl: Politechnika Łódzka
   en: Lodz University of Technology
+  cs: Lodz University of Technology
 identifiers:
 - scheme: url
   identifier: https://p.lodz.pl 
@@ -3827,8 +3828,33 @@ id: cherkasy-uni
 name: Cherkasy National University
 title:
   en: Cherkasy National University
+  cs: Cherkasy National University
 identifiers:
 - scheme: url
   identifier: http://www.cdu.edu.ua/
 - scheme: ror
   identifier: https://ror.org/009apaj69
+---
+id: uni-munster
+name: University of Münster
+title:
+  en: University of Münster
+  cs: University of Münster
+  de: Universität Münster
+identifiers:
+- scheme: url
+  identifier: https://www.uni-muenster.de
+- scheme: ror
+  identifier: https://ror.org/00pd74e08
+---
+id: uw
+name: University of Warsaw
+title:
+  en: University of Warsaw
+  cs: University of Warsaw
+  pl: Uniwersytet Warszawski
+identifiers:
+- scheme: url
+  identifier: http://en.uw.edu.pl/
+- scheme: ror
+  identifier: https://ror.org/039bjqg32
