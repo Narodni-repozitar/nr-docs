@@ -57,8 +57,7 @@ invenio roles create communities_owner
 invenio oarepo fixtures load --batch-size 1000 --verbose
 invenio oarepo fixtures load --no-system-fixtures ./fixtures --batch-size 1000 --verbose
 
-# Temporary local solution (downloaded the zip manually, hosted locally)
-invenio oarepo vocabularies import-ror http://localhost:8000/v2.1-2026-01-15-ror-data.zip
+invenio oarepo vocabularies import-ror
 
 invenio access allow administration-access role administration
 invenio access allow administration-moderation role administration
