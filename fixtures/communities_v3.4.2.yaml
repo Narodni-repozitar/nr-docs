@@ -2,7 +2,7 @@ slug: 7emz
 access:
   visibility: public
 metadata:
-  title: AGRITEC, výzkum, šlechtění, služby
+  title: AGRITEC, výzkum, šlechtění a služby
   curation_policy: Záznamy zakládají vkladatelé v rámci komunity nebo sami kurátoři,
     následuje schválení a zveřejnění záznamu kurátorem komunity. V rámci komunity
     vidí všichni členové všechny záznamy i soubory, včetně rozpracovaných záznamů.
@@ -16,7 +16,7 @@ slug: 22g4
 access:
   visibility: public
 metadata:
-  title: Agrotest fyto, s.r.o.
+  title: Agrotest fyto
   curation_policy: Záznamy zakládají vkladatelé v rámci komunity nebo sami kurátoři,
     následuje schválení a zveřejnění záznamu kurátorem komunity. V rámci komunity
     vidí všichni členové všechny záznamy i soubory, včetně rozpracovaných záznamů.
@@ -44,7 +44,7 @@ slug: 8gve
 access:
   visibility: public
 metadata:
-  title: Akademie múzických umění
+  title: Akademie múzických umění v Praze
   curation_policy: Záznamy zakládají vkladatelé v rámci komunity nebo sami kurátoři,
     následuje schválení a zveřejnění záznamu kurátorem komunity. V rámci komunity
     vidí všichni členové všechny záznamy i soubory, včetně rozpracovaných záznamů.
@@ -58,7 +58,7 @@ slug: nvcb
 access:
   visibility: public
 metadata:
-  title: Akademie výtvarných umění
+  title: Akademie výtvarných umění v Praze
   curation_policy: Záznamy zakládají vkladatelé v rámci komunity nebo sami kurátoři,
     následuje schválení a zveřejnění záznamu kurátorem komunity. V rámci komunity
     vidí všichni členové všechny záznamy i soubory, včetně rozpracovaných záznamů.
@@ -218,7 +218,7 @@ slug: zn3n
 access:
   visibility: public
 metadata:
-  title: CENIA, česká informační agentura životního prostředí
+  title: CENIA, Česká informační agentura životního prostředí
   curation_policy: Záznamy zakládají vkladatelé v rámci komunity nebo sami kurátoři,
     následuje schválení a zveřejnění záznamu kurátorem komunity. V rámci komunity
     vidí všichni členové všechny záznamy i soubory, včetně rozpracovaných záznamů.
@@ -232,7 +232,7 @@ slug: x6b0
 access:
   visibility: public
 metadata:
-  title: Centrum dopravního výzkumu, v.v.i. Brno
+  title: Centrum dopravního výzkumu
   curation_policy: Záznamy zakládají vkladatelé v rámci komunity nebo sami kurátoři,
     následuje schválení a zveřejnění záznamu kurátorem komunity. V rámci komunity
     vidí všichni členové všechny záznamy i soubory, včetně rozpracovaných záznamů.
@@ -400,7 +400,7 @@ slug: izxu
 access:
   visibility: public
 metadata:
-  title: Člověk v tísni, o.p.s
+  title: Člověk v tísni
   description: Ukončená spolupráce, do komunity nepřibývají nové záznamy.
   curation_policy: Komunita nemá vlastní členy ani vkladatele. Nové záznamy v této
     komunitě nevznikají.
@@ -694,7 +694,8 @@ slug: j9x8
 access:
   visibility: public
 metadata:
-  title: Institut umění - Divadelní ústav
+  title: Národní institut pro kulturu
+  description: Sloučení s NIPOS pod Nárdoní institut pro kulturu v roce 2025.
   curation_policy: Záznamy zakládají vkladatelé v rámci komunity nebo sami kurátoři,
     následuje schválení a zveřejnění záznamu kurátorem komunity. V rámci komunity
     vidí všichni členové všechny záznamy i soubory, včetně rozpracovaných záznamů.
@@ -702,13 +703,13 @@ metadata:
     id: organization
   website: http://www.idu.cz/
   organizations:
-  - name: Institut umění - Divadelní ústav
+  - name: Národní institut pro kulturu
 ---
 slug: ki0x
 access:
   visibility: public
 metadata:
-  title: Iuridicum Remedium, o.s.
+  title: Iuridicum Remedium
   curation_policy: Záznamy zakládají vkladatelé v rámci komunity nebo sami kurátoři,
     následuje schválení a zveřejnění záznamu kurátorem komunity. V rámci komunity
     vidí všichni členové všechny záznamy i soubory, včetně rozpracovaných záznamů.
@@ -862,7 +863,7 @@ slug: nm8z
 access:
   visibility: public
 metadata:
-  title: Moravská zemská knihovna
+  title: Moravská zemská knihovna v Brně
   curation_policy: Záznamy zakládají vkladatelé v rámci komunity nebo sami kurátoři,
     následuje schválení a zveřejnění záznamu kurátorem komunity. V rámci komunity
     vidí všichni členové všechny záznamy i soubory, včetně rozpracovaných záznamů.
@@ -960,7 +961,8 @@ slug: ge7e
 access:
   visibility: public
 metadata:
-  title: Národní informační a poradenské středisko pro kulturu (NIPOS)
+  title: Národní institut pro kulturu
+  description: Sloučení s NIPOS pod Nárdoní institut pro kulturu v roce 2025.
   curation_policy: Záznamy zakládají vkladatelé v rámci komunity nebo sami kurátoři,
     následuje schválení a zveřejnění záznamu kurátorem komunity. V rámci komunity
     vidí všichni členové všechny záznamy i soubory, včetně rozpracovaných záznamů.
@@ -968,7 +970,7 @@ metadata:
     id: organization
   website: http://www.nipos-mk.cz/
   organizations:
-  - name: Národní informační a poradenské středisko pro kulturu (NIPOS)
+  - name: Národní institut pro kulturu
 ---
 slug: vz34
 access:
@@ -1408,7 +1410,7 @@ slug: verw
 access:
   visibility: public
 metadata:
-  title: Univerzita Jana Evangelisty Purkyně
+  title: Univerzita Jana Evangelisty Purkyně v Ústí nad Labem
   curation_policy: Záznamy zakládají vkladatelé v rámci komunity nebo sami kurátoři,
     následuje schválení a zveřejnění záznamu kurátorem komunity. V rámci komunity
     vidí všichni členové všechny záznamy i soubory, včetně rozpracovaných záznamů.
@@ -1422,7 +1424,7 @@ slug: ujww
 access:
   visibility: public
 metadata:
-  title: Uměleckoprůmyslové museum
+  title: Uměleckoprůmyslové museum v Praze
   curation_policy: Záznamy zakládají vkladatelé v rámci komunity nebo sami kurátoři,
     následuje schválení a zveřejnění záznamu kurátorem komunity. V rámci komunity
     vidí všichni členové všechny záznamy i soubory, včetně rozpracovaných záznamů.
@@ -2076,6 +2078,18 @@ metadata:
   organizations:
   - name: Vysoká škola finanční a správní
 ---
+slug: km8v
+access:
+  visibility: public
+metadata:
+  title: Výzkumný institut práce a sociálních věcí
+  curation_policy: Záznamy zakládají vkladatelé v rámci komunity nebo sami kurátoři,
+    následuje schválení a zveřejnění záznamu kurátorem komunity. V rámci komunity
+    vidí všichni členové všechny záznamy i soubory, včetně rozpracovaných záznamů.
+  type:
+    id: organization
+  website: https://www.rilsa.cz
+---
 slug: i7tm
 access:
   visibility: public
@@ -2089,20 +2103,6 @@ metadata:
   website: http://www.vulhm.cz/
   organizations:
   - name: Výzkumný ústav lesního hospodářství a myslivosti
----
-slug: km8v
-access:
-  visibility: public
-metadata:
-  title: Výzkumný institut práce a sociálních věcí
-  curation_policy: Záznamy zakládají vkladatelé v rámci komunity nebo sami kurátoři,
-    následuje schválení a zveřejnění záznamu kurátorem komunity. V rámci komunity
-    vidí všichni členové všechny záznamy i soubory, včetně rozpracovaných záznamů.
-  type:
-    id: organization
-  website: https://www.rilsa.cz
-  organizations:
-  - name: Výzkumný institut práce a sociálních věcí
 ---
 slug: xnkt
 access:
@@ -2136,7 +2136,7 @@ slug: 0w0h
 access:
   visibility: public
 metadata:
-  title: WOODEXPERT s.r.o.
+  title: WOODEXPERT
   curation_policy: Záznamy zakládají vkladatelé v rámci komunity nebo sami kurátoři,
     následuje schválení a zveřejnění záznamu kurátorem komunity. V rámci komunity
     vidí všichni členové všechny záznamy i soubory, včetně rozpracovaných záznamů.
@@ -2201,15 +2201,3 @@ metadata:
   website: https://www.tul.cz/
   organizations:
   - name: Technická univerzita v Liberci
----
-slug: 12d3
-access:
-  visibility: public
-metadata:
-  title: Iniciativa EOSC CZ
-  curation_policy: Záznamy zakládají vkladatelé v rámci komunity nebo sami kurátoři,
-    následuje schválení a zveřejnění záznamu kurátorem komunity. V rámci komunity
-    vidí všichni členové všechny záznamy i soubory, včetně rozpracovaných záznamů.
-  type:
-    id: topic
-  website: https://www.eosc.cz/

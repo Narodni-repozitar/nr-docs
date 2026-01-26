@@ -3789,3 +3789,46 @@ title:
 identifiers:
 - scheme: url
   identifier: https://www.davinci-ls.com/en-us/home
+---
+id: nik
+name: Národní institut pro kulturu
+title:
+  cs: Národní institut pro kulturu
+  en: Czech Cultural Institute
+identifiers:
+- scheme: url
+  identifier: https://nipk.cz/
+- scheme: ico
+  identifier: '00023205'
+---
+id: uni-silesia
+name: University of Silesia in Katowice
+title:
+  en: University of Silesia in Katowice
+  cs: University of Silesia in Katowice
+identifiers:
+- scheme: url
+  identifier: https://us.edu.pl/
+- scheme: ror
+  identifier: '0104rcc94'
+---
+id: lodz-technology
+name: Lodz University of Technology
+title:
+  pl: Politechnika Łódzka
+  en: Lodz University of Technology
+identifiers:
+- scheme: url
+  identifier: https://p.lodz.pl 
+- scheme: ror
+  identifier: '00s8fpf52'
+---
+id: cherkasy-uni
+name: Cherkasy National University
+title:
+  en: Cherkasy National University
+identifiers:
+- scheme: url
+  identifier: http://www.cdu.edu.ua/
+- scheme: ror
+  identifier: https://ror.org/009apaj69

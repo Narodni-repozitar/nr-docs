@@ -14,12 +14,6 @@ communities:
   update: true
 - source: ./communities_v3.4.2.yaml
 
-restricted_communities:
-- service: communities
-  writer: service
-  update: true
-- source: ./restricted_communities.yaml
-
 funders:
 - service: funders
   writer: service
