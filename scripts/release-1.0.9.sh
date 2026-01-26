@@ -71,7 +71,6 @@ invenio oarepo index reindex
 
 HARVESTING_SERVICE="harvesting_service@narodni-repozitar.cz"
 
-x
 invenio users create -a "$HARVESTING_SERVICE" \
   -p '{"full_name": "OAI PMH Harvesting Service"}' \
   --password "$HARVESTING_SERVICE_PASSWORD"
