@@ -1,10 +1,10 @@
 #
-# Import script for 1.0.2 release
+# Import script for 1.0.9 release
 #
 # Usage:
 # export USER_PASSWORD=<your_password>
 # export BUCKET_NAME=<your_bucket_name>
-# ./scripts/release-1.0.2.sh [--destroy] [--harvest]
+# ./scripts/release-1.0.9.sh [--destroy] [--harvest]
 #
 #
 
@@ -70,7 +70,6 @@ invenio oarepo index reindex
 
 HARVESTING_SERVICE="harvesting_service@narodni-repozitar.cz"
 
-
 invenio users create -a "$HARVESTING_SERVICE" \
   -p '{"full_name": "OAI PMH Harvesting Service"}' \
   --password "$HARVESTING_SERVICE_PASSWORD"
@@ -78,13 +77,13 @@ invenio users create -a "$HARVESTING_SERVICE" \
 invenio access allow oai-harvest-access user "$HARVESTING_SERVICE"
 
 invenio oarepo oai harvester add nusl-manual-submissions --name "Manual submissions NUSL harvester" \
-            --url https://invenio.nusl.cz/oai2d --set manual_submission --prefix marcxml \
-            --loader 'sickle' \
+            --url https://s3.cl4.du.cesnet.cz --set manual_submission --prefix marcxml \
+            --loader 's3{bucket=nr-repo-docs-harvest,harvest_name=nusl-harvest-04}' \
             --transformer marcxml --transformer nusl \
             --writer "service{service=documents, identity=$HARVESTING_SERVICE}" \
             --writer "attachment{service=documents_file_draft, identity=$HARVESTING_SERVICE}" \
             --writer "publish{service=documents, identity=$HARVESTING_SERVICE}" \
-            --writer 'timestamp_update{service=documents,date_created_csv_path="./scripts/datecreated.csv"}'
+            --writer 'timestamp_update{service=documents,date_created_csv_url="https://raw.githubusercontent.com/Narodni-repozitar/nr-docs/refs/heads/deployment/1.0.2.1/scripts/datecreated.csv"}'
 
 if [ "$HARVEST" == "true" ] ; then
     invenio oarepo oai harvester run nusl-manual-submissions --batch-size 100

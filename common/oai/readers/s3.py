@@ -63,7 +63,7 @@ class S3Reader(BaseReader):
             aws_secret_access_key=os.environ["NUSL_S3_SECRET_KEY"],
         )
         s3_bucket_name = os.environ.get("NUSL_S3_BUCKET", "nr-repo-docs-harvest")
-        harvest_name = os.environ.get("NUSL_S3_HARVEST_NAME", "nusl-harvest-03")
+        harvest_name = os.environ.get("NUSL_S3_HARVEST_NAME", "nusl-harvest-04")
 
         paginator = s3_client.get_paginator("list_objects_v2")
         pages = paginator.paginate(Bucket=s3_bucket_name, Prefix=harvest_name)
@@ -121,14 +121,14 @@ class S3Reader(BaseReader):
                         continue
 
                     record_stream_entries = []
-                    if record["files"]:
-                        record_stream_entries = create_stream_entries_from_files(
-                            record["files"],
-                            s3_client,
-                            s3_bucket_name,
-                            obj["Key"],
-                            record["id"],
-                        )
+                    # if record["files"]:
+                    #     record_stream_entries = create_stream_entries_from_files(
+                    #         record["files"],
+                    #         s3_client,
+                    #         s3_bucket_name,
+                    #         obj["Key"],
+                    #         record["id"],
+                    #     )
 
                     yield StreamEntry(
                         entry=record["raw"],
@@ -308,32 +308,19 @@ def get_valid_datestamp(header_xml_element, namespaces, record_id):
 def is_record_out_of_period(datestamp_until, datestamp_from, datestamp):
     """
     Determines if a given datestamp falls outside a specified period.
-
-    Parameters:
-    - datestamp_until (datetime or None): The end date of the period. If None, the period is considered
-      to extend indefinitely into the future.
-    - datestamp_from (datetime or None): The start date of the period. If None, the period is considered
-      to have started in the indefinite past.
-    - datestamp (datetime): The datestamp to check.
-
-    Returns:
-    - bool: True if `datestamp` falls outside the period defined by `datestamp_from` and `datestamp_until`;
-      False otherwise.
     """
-    datestamp_is_in_period = (
-        datestamp_from
-        and datestamp_until
-        and datestamp_until > datestamp < datestamp_from
-    )
-    datestamp_is_before_period = (
-        datestamp_from and not datestamp_until and datestamp < datestamp_from
-    )
-    datestamp_is_after_period = (
-        not datestamp_from and datestamp_until and datestamp_until < datestamp
+    parsed_datestamp = datetime.datetime.fromisoformat(
+        expand_datestamp(datestamp)
     )
 
-    return (
-        datestamp_is_in_period
-        or datestamp_is_before_period
-        or datestamp_is_after_period
-    )
+    if datestamp_from and datestamp_from.tzinfo is None:
+        datestamp_from = datestamp_from.replace(tzinfo=pytz.utc)
+    if datestamp_until and datestamp_until.tzinfo is None:
+        datestamp_until = datestamp_until.replace(tzinfo=pytz.utc)
+
+    if datestamp_from and parsed_datestamp < datestamp_from:
+        return True
+    if datestamp_until and parsed_datestamp > datestamp_until:
+        return True
+
+    return False
