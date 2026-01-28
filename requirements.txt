@@ -1,5 +1,5 @@
 oarepo[s3,rdm]==12.2.31
-cachetools==6.2.4
+cachetools==6.2.5
 deepmerge==2.0
 et-xmlfile==2.0.0
 flask-babelex==0.9.4
