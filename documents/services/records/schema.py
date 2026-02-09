@@ -27,6 +27,21 @@ class LocalNRDocumentMetadataSchema(NRDocumentMetadataSchema):
         validate=[ma.validate.Length(min=1)],
     )
 
+    def load(self, data, **kwargs):
+        """Remove @v from relations before loading, so that new values will be loaded from vocabulary."""
+
+        def remove_relations_version(d):
+            if isinstance(d, dict):
+                d.pop("@v", None)
+                for v in d.values():
+                    remove_relations_version(v)
+            elif isinstance(d, list):
+                for v in d:
+                    remove_relations_version(v)
+
+        remove_relations_version(data)
+        return super().load(data, **kwargs)
+
 
 class GeneratedParentSchema(RDMWorkflowParentSchema):
     """"""

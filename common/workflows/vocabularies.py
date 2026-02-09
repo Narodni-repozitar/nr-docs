@@ -7,3 +7,4 @@ class DocsVocabulariesPermissionPolicy(VocabulariesPermissionPolicy):
     can_update = VocabulariesPermissionPolicy.can_update + [Administration()]
     can_edit = VocabulariesPermissionPolicy.can_update + [Administration()]
     can_view_deposit_page = VocabulariesPermissionPolicy.can_create + [Administration()]
+    can_delete = VocabulariesPermissionPolicy.can_delete + [Administration()]
